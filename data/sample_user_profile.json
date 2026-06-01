@@ -1,0 +1,37 @@
+{
+  "user_id": "USER-DEMO-001",
+  "age_years": 67,
+  "sex": "male",
+  "pregnancy_status": "not_applicable",
+  "lactation_status": "not_applicable",
+  "smoking_status": "former",
+  "exposures": [],
+  "medications": [
+    {
+      "name": "warfarin",
+      "dose": null,
+      "frequency": null
+    },
+    {
+      "name": "levothyroxine",
+      "dose": null,
+      "frequency": "qAM"
+    },
+    {
+      "name": "hydrochlorothiazide",
+      "dose": null,
+      "frequency": "daily"
+    }
+  ],
+  "conditions": [
+    "cardiovascular disease",
+    "hypothyroidism"
+  ],
+  "allergies": [],
+  "devices": [],
+  "immune_status": "normal",
+  "goals": [
+    "heart_health",
+    "general_wellness"
+  ]
+}

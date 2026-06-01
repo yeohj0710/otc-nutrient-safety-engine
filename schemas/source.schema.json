@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/safety-engine/source.schema.json",
+  "title": "Source Registry Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "title",
+    "source_type",
+    "organization",
+    "jurisdiction",
+    "publication_year",
+    "publication_date",
+    "url",
+    "doi",
+    "pmid",
+    "authors",
+    "journal",
+    "evidence_tier",
+    "access_model",
+    "ingestion_status",
+    "notes_ko"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string"
+    },
+    "organization": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "jurisdiction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "publication_year": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "publication_date": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "doi": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pmid": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authors": {
+      "type": [
+        "array",
+        "string",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "journal": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_tier": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "access_model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ingestion_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes_ko": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

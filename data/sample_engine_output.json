@@ -1,0 +1,353 @@
+{
+  "evaluation_id": "EVAL-DEMO-001",
+  "evaluated_at": "2026-03-22T16:58:00Z",
+  "engine_version": "starter-pack-v0.1.0",
+  "jurisdiction_preference": [
+    "KR",
+    "US",
+    "EU",
+    "strictest"
+  ],
+  "strictest_mode_for_conflicts": true,
+  "overall_decision": "manual_review_recommended",
+  "summary_ko": "후보 스택 중 St. John's wort는 주요 약물상호작용으로 금기 수준 검토가 필요하고, beta-carotene은 과거흡연자에게 회피 권고, vitamin D와 magnesium은 용량 상한 검토가 필요하다. warfarin 사용자이므로 vitamin K와 omega-3는 일정 유지/INR 모니터링 중심으로 판단한다.",
+  "blocked_ingredients": [
+    "beta_carotene",
+    "vitamin_d",
+    "st_johns_wort"
+  ],
+  "dose_adjust_required_ingredients": [
+    "vitamin_k",
+    "calcium",
+    "omega3_epa_dha",
+    "magnesium_supplement"
+  ],
+  "manual_review_required_ingredients": [
+    "beta_carotene",
+    "vitamin_k",
+    "calcium",
+    "vitamin_d",
+    "omega3_epa_dha",
+    "magnesium_supplement",
+    "st_johns_wort"
+  ],
+  "top_risks": [
+    {
+      "ingredient_id": "beta_carotene",
+      "ingredient_name_ko": "베타카로틴",
+      "decision": "avoid",
+      "headline_ko": "흡연자·과거흡연자·석면노출자는 고용량 beta-carotene 보충제를 회피한다."
+    },
+    {
+      "ingredient_id": "vitamin_k",
+      "ingredient_name_ko": "비타민 K",
+      "decision": "warn",
+      "headline_ko": "warfarin류 복용자는 vitamin K 음식/보충제 섭취량을 급격히 바꾸지 말고 일관되게 유지한다."
+    },
+    {
+      "ingredient_id": "calcium",
+      "ingredient_name_ko": "칼슘",
+      "decision": "warn",
+      "headline_ko": "칼슘과 levothyroxine은 최소 4시간 이상 간격을 둔다."
+    },
+    {
+      "ingredient_id": "vitamin_d",
+      "ingredient_name_ko": "비타민 D",
+      "decision": "avoid",
+      "headline_ko": "비타민 D 총일일섭취량이 100 mcg/day(4,000 IU/day)를 넘지 않도록 제한한다."
+    },
+    {
+      "ingredient_id": "omega3_epa_dha",
+      "ingredient_name_ko": "오메가-3(EPA+DHA)",
+      "decision": "warn",
+      "headline_ko": "CVD 또는 고위험 환자에서 omega-3 4 g/day 장기복용은 AF 위험을 설명하고 모니터링한다."
+    },
+    {
+      "ingredient_id": "magnesium_supplement",
+      "ingredient_name_ko": "마그네슘(보충제)",
+      "decision": "warn",
+      "headline_ko": "보충제/의약품 유래 마그네슘이 350 mg/day를 넘으면 설사·위장관 이상 및 과량 리스크를 검토한다."
+    },
+    {
+      "ingredient_id": "st_johns_wort",
+      "ingredient_name_ko": "세인트존스워트",
+      "decision": "contraindicated",
+      "headline_ko": "상호작용 가능 약물을 복용 중이면 세인트존스워트는 기본적으로 금기 처리한다."
+    }
+  ],
+  "ingredient_results": [
+    {
+      "ingredient_id": "beta_carotene",
+      "ingredient_name_ko": "베타카로틴",
+      "candidate_label": "beta-carotene",
+      "decision": "avoid",
+      "matched_rule_ids": [
+        "RULE-BETACAROTENE-SMOKERS-AVOID"
+      ],
+      "warnings_ko": [
+        "흡연자·과거흡연자·석면노출자는 고용량 beta-carotene 보충제를 회피한다."
+      ],
+      "monitoring_ko": [
+        "흡연력/석면 노출 이력은 별도 structured field로 수집한다."
+      ],
+      "references": [
+        {
+          "source_id": "SRC-PMID-8127329",
+          "title": "The effect of vitamin E and beta carotene on the incidence of lung cancer and other cancers in male smokers",
+          "locator": "abstract: PubMed abstract results/conclusion",
+          "chunk_id": "CHK-BETACAR-SMOKER-RISK-ATBC",
+          "summary_ko": "남성 흡연자 RCT에서 beta-carotene 20 mg/day 보충은 폐암 발생 증가(18%)와 총사망 증가를 시사했다.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8127329/"
+        },
+        {
+          "source_id": "SRC-US-ODS-VITAMIN-A",
+          "title": "Vitamin A and Carotenoids - Health Professional Fact Sheet",
+          "locator": "lines: lung cancer caution / ODS safety section",
+          "chunk_id": "CHK-BETACAR-SMOKER-RISK-GENERAL",
+          "summary_ko": "ODS는 흡연자·과거 흡연자·석면 노출자에서 beta-carotene 고용량 보충이 폐암 위험 증가와 연관될 수 있음을 경고한다.",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminA-HealthProfessional/"
+        }
+      ]
+    },
+    {
+      "ingredient_id": "vitamin_k",
+      "ingredient_name_ko": "비타민 K",
+      "candidate_label": "vitamin K2",
+      "decision": "warn",
+      "matched_rule_ids": [
+        "RULE-VITK-WARFARIN-CONSISTENCY"
+      ],
+      "warnings_ko": [
+        "warfarin류 복용자는 vitamin K 음식/보충제 섭취량을 급격히 바꾸지 말고 일관되게 유지한다."
+      ],
+      "monitoring_ko": [
+        "INR 모니터링과 복용량 조정은 의료진 판단."
+      ],
+      "references": [
+        {
+          "source_id": "SRC-US-ODS-VITAMIN-K",
+          "title": "Vitamin K - Health Professional Fact Sheet",
+          "locator": "lines: L259-L261",
+          "chunk_id": "CHK-VITK-WARFARIN",
+          "summary_ko": "warfarin 등 항응고제를 쓰는 사람은 vitamin K 섭취량을 음식/보충제에서 일관되게 유지해야 하며 급격한 변화는 항응고 효과를 바꿀 수 있다.",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminK-HealthProfessional/"
+        }
+      ]
+    },
+    {
+      "ingredient_id": "calcium",
+      "ingredient_name_ko": "칼슘",
+      "candidate_label": "calcium carbonate",
+      "decision": "warn",
+      "matched_rule_ids": [
+        "RULE-CALCIUM-LEVOTHYROXINE-4H"
+      ],
+      "warnings_ko": [
+        "칼슘과 levothyroxine은 최소 4시간 이상 간격을 둔다."
+      ],
+      "monitoring_ko": [],
+      "references": [
+        {
+          "source_id": "SRC-US-ODS-CALCIUM",
+          "title": "Calcium - Health Professional Fact Sheet",
+          "locator": "lines: interaction section around levothyroxine",
+          "chunk_id": "CHK-CALCIUM-LEVOTHYROXINE",
+          "summary_ko": "칼슘탄산염은 levothyroxine 흡수를 낮출 수 있어 일반적으로 4시간 이내 동시 복용을 피한다.",
+          "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/"
+        }
+      ]
+    },
+    {
+      "ingredient_id": "vitamin_d",
+      "ingredient_name_ko": "비타민 D",
+      "candidate_label": "vitamin D3",
+      "decision": "avoid",
+      "matched_rule_ids": [
+        "RULE-VITD-UL-US-ADULT",
+        "RULE-VITD-THIAZIDE-HYPERCALCEMIA"
+      ],
+      "warnings_ko": [
+        "비타민 D 총일일섭취량이 100 mcg/day(4,000 IU/day)를 넘지 않도록 제한한다.",
+        "thiazide 이뇨제 복용 중이면 vitamin D 고용량 사용을 보수적으로 제한하고 calcium 상태를 확인한다."
+      ],
+      "monitoring_ko": [
+        "serum calcium, renal function 검토 권장."
+      ],
+      "references": [
+        {
+          "source_id": "SRC-US-ODS-VITAMIN-D",
+          "title": "Vitamin D - Health Professional Fact Sheet",
+          "locator": "lines: L473-L505",
+          "chunk_id": "CHK-VITD-UL-US",
+          "summary_ko": "성인 비타민 D UL은 100 mcg/day(4,000 IU/day)이다.",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+        },
+        {
+          "source_id": "SRC-US-ODS-VITAMIN-D",
+          "title": "Vitamin D - Health Professional Fact Sheet",
+          "locator": "lines: interaction section around thiazide diuretics",
+          "chunk_id": "CHK-VITD-THIAZIDE",
+          "summary_ko": "thiazide 이뇨제와 vitamin D를 같이 쓰면 특히 고령·신기능장애·부갑상선기능항진 환자에서 고칼슘혈증 위험이 커질 수 있다.",
+          "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/"
+        }
+      ]
+    },
+    {
+      "ingredient_id": "omega3_epa_dha",
+      "ingredient_name_ko": "오메가-3(EPA+DHA)",
+      "candidate_label": "fish oil EPA+DHA",
+      "decision": "warn",
+      "matched_rule_ids": [
+        "RULE-OMEGA3-WARFARIN-MONITOR",
+        "RULE-OMEGA3-AF-HIGHRISK"
+      ],
+      "warnings_ko": [
+        "CVD 또는 고위험 환자에서 omega-3 4 g/day 장기복용은 AF 위험을 설명하고 모니터링한다."
+      ],
+      "monitoring_ko": [
+        "심계항진/부정맥 증상 또는 ECG 기반 확인."
+      ],
+      "references": [
+        {
+          "source_id": "SRC-US-ODS-OMEGA3",
+          "title": "Omega-3 Fatty Acids - Health Professional Fact Sheet",
+          "locator": "lines: L444-L445",
+          "chunk_id": "CHK-OMEGA3-BLEEDING",
+          "summary_ko": "EPA/DHA 2–15 g/day는 platelet aggregation 감소로 bleeding time을 늘릴 수 있다.",
+          "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        },
+        {
+          "source_id": "SRC-US-ODS-OMEGA3",
+          "title": "Omega-3 Fatty Acids - Health Professional Fact Sheet",
+          "locator": "lines: L451-L453",
+          "chunk_id": "CHK-OMEGA3-WARFARIN",
+          "summary_ko": "fish oil은 고용량에서 항혈소판 작용이 있고 warfarin과 함께 쓰면 INR 변화 가능성이 있어 주기적 모니터링이 권장된다.",
+          "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        },
+        {
+          "source_id": "SRC-US-ODS-OMEGA3",
+          "title": "Omega-3 Fatty Acids - Health Professional Fact Sheet",
+          "locator": "lines: L446-L446",
+          "chunk_id": "CHK-OMEGA3-AF-ODS",
+          "summary_ko": "4 g/day omega-3를 수년간 복용한 고위험 심혈관 환자에서 심방세동 위험이 약간 증가했다.",
+          "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-HealthProfessional/"
+        },
+        {
+          "source_id": "SRC-PMID-34612056",
+          "title": "Effect of Long-Term Marine ω-3 Fatty Acids Supplementation on the Risk of Atrial Fibrillation in Randomized Controlled Trials of Cardiovascular Outcomes: A Systematic Review and Meta-Analysis",
+          "locator": "abstract: PubMed abstract results/conclusion",
+          "chunk_id": "CHK-OMEGA3-AF-META",
+          "summary_ko": "메타분석에서 marine omega-3 보충은 AF 위험 증가와 연관되었고 >1 g/day 시험군에서 위험이 더 컸다.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34612056/"
+        }
+      ]
+    },
+    {
+      "ingredient_id": "magnesium_supplement",
+      "ingredient_name_ko": "마그네슘(보충제)",
+      "candidate_label": "magnesium glycinate",
+      "decision": "warn",
+      "matched_rule_ids": [
+        "RULE-MAG-UL-US-ADULT",
+        "RULE-MAG-UL-EU-ADULT"
+      ],
+      "warnings_ko": [
+        "보충제/의약품 유래 마그네슘이 350 mg/day를 넘으면 설사·위장관 이상 및 과량 리스크를 검토한다.",
+        "EU 기준을 쓰면 readily dissociable magnesium salts in supplements는 250 mg/day 초과 시 경고한다."
+      ],
+      "monitoring_ko": [],
+      "references": [
+        {
+          "source_id": "SRC-US-ODS-MAGNESIUM",
+          "title": "Magnesium - Health Professional Fact Sheet",
+          "locator": "lines: L288-L304",
+          "chunk_id": "CHK-MAG-UL-US",
+          "summary_ko": "보충제/의약품 유래 마그네슘의 성인 UL은 350 mg/day이다.",
+          "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/"
+        },
+        {
+          "source_id": "SRC-EU-EFSA-UL-SUMMARY-2025",
+          "title": "Overview on Tolerable Upper Intake Levels as derived by the Scientific Committee on Food (SCF) and the EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA)",
+          "locator": "table: EFSA summary magnesium row",
+          "chunk_id": "CHK-MAG-UL-EU",
+          "summary_ko": "EFSA는 readily dissociable magnesium salts in supplements 기준 성인 UL을 250 mg/day로 요약한다.",
+          "url": "https://www.efsa.europa.eu/sites/default/files/2024-05/ul-summary-report.pdf"
+        }
+      ]
+    },
+    {
+      "ingredient_id": "st_johns_wort",
+      "ingredient_name_ko": "세인트존스워트",
+      "candidate_label": "St. John's wort extract",
+      "decision": "contraindicated",
+      "matched_rule_ids": [
+        "RULE-SJW-MAJOR-DRUG-INTERACTIONS"
+      ],
+      "warnings_ko": [
+        "상호작용 가능 약물을 복용 중이면 세인트존스워트는 기본적으로 금기 처리한다."
+      ],
+      "monitoring_ko": [],
+      "references": [
+        {
+          "source_id": "SRC-US-NCCIH-STJOHNSWORT",
+          "title": "St. John's Wort",
+          "locator": "lines: L132-L147",
+          "chunk_id": "CHK-SJW-NCCIH-INTERACTIONS",
+          "summary_ko": "세인트존스워트는 여러 약물의 효과를 약화시키거나 serotonin 관련 부작용을 유발할 수 있으며, 특히 항우울제, 피임약, cyclosporine, 항경련제, 심장약, HIV약, 암약, warfarin, statin과 상호작용한다.",
+          "url": "https://www.nccih.nih.gov/health/st-johns-wort"
+        },
+        {
+          "source_id": "SRC-PMID-31742659",
+          "title": "Clinical relevance of St. John's wort drug interactions revisited",
+          "locator": "abstract: PubMed abstract lines 274-276",
+          "chunk_id": "CHK-SJW-REVIEW-MECHANISM",
+          "summary_ko": "St. John's wort는 PXR 활성화로 CYP3A4와 P-gp를 유도해 cyclosporine, tacrolimus, indinavir, warfarin, alprazolam, simvastatin, oral contraceptives 등의 약동학을 바꿀 수 있다.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31742659/"
+        }
+      ]
+    }
+  ],
+  "reference_bundle": {
+    "source_ids": [
+      "SRC-EU-EFSA-UL-SUMMARY-2025",
+      "SRC-PMID-31742659",
+      "SRC-PMID-34612056",
+      "SRC-PMID-8127329",
+      "SRC-US-NCCIH-STJOHNSWORT",
+      "SRC-US-ODS-CALCIUM",
+      "SRC-US-ODS-MAGNESIUM",
+      "SRC-US-ODS-OMEGA3",
+      "SRC-US-ODS-VITAMIN-A",
+      "SRC-US-ODS-VITAMIN-D",
+      "SRC-US-ODS-VITAMIN-K"
+    ],
+    "chunk_ids": [
+      "CHK-BETACAR-SMOKER-RISK-ATBC",
+      "CHK-BETACAR-SMOKER-RISK-GENERAL",
+      "CHK-CALCIUM-LEVOTHYROXINE",
+      "CHK-MAG-UL-EU",
+      "CHK-MAG-UL-US",
+      "CHK-OMEGA3-AF-META",
+      "CHK-OMEGA3-AF-ODS",
+      "CHK-OMEGA3-BLEEDING",
+      "CHK-OMEGA3-WARFARIN",
+      "CHK-SJW-NCCIH-INTERACTIONS",
+      "CHK-SJW-REVIEW-MECHANISM",
+      "CHK-VITD-THIAZIDE",
+      "CHK-VITD-UL-US",
+      "CHK-VITK-WARFARIN"
+    ],
+    "rule_ids": [
+      "RULE-BETACAROTENE-SMOKERS-AVOID",
+      "RULE-CALCIUM-LEVOTHYROXINE-4H",
+      "RULE-MAG-UL-EU-ADULT",
+      "RULE-MAG-UL-US-ADULT",
+      "RULE-OMEGA3-AF-HIGHRISK",
+      "RULE-OMEGA3-WARFARIN-MONITOR",
+      "RULE-SJW-MAJOR-DRUG-INTERACTIONS",
+      "RULE-VITD-THIAZIDE-HYPERCALCEMIA",
+      "RULE-VITD-UL-US-ADULT",
+      "RULE-VITK-WARFARIN-CONSISTENCY"
+    ]
+  }
+}

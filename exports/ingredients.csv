@@ -1,0 +1,24 @@
+﻿ingredient_id,ingredient_name_ko,ingredient_name_en,category,forms,matching_aliases_ko,matching_aliases_en,quality_notes_ko
+vitamin_a_preformed,비타민 A(프리폼드),Vitamin A (preformed),vitamin,retinol | retinyl palmitate | retinyl acetate | retinyl esters,비타민A | 레티놀 | 레티닐팔미테이트 | 레티닐아세테이트 | 프리폼드 비타민A,vitamin a | retinol | retinyl palmitate | retinyl acetate | preformed vitamin a,UL은 프리폼드 vitamin A에만 적용. beta-carotene과 분리 매칭 필요.
+beta_carotene,베타카로틴,Beta-carotene,carotenoid,beta-carotene | provitamin A carotenoid,베타카로틴 | β-카로틴 | 프로비타민A,beta-carotene | provitamin a carotenoid,흡연력/석면노출 여부를 별도 사용자 필드로 보관 권장.
+vitamin_d,비타민 D,Vitamin D,vitamin,cholecalciferol | ergocalciferol | calcidiol,비타민D | 콜레칼시페롤 | 에르고칼시페롤 | 칼시디올,vitamin d | cholecalciferol | ergocalciferol | calcidiol,단위 변환(IU↔mcg) 필요. 1 mcg = 40 IU.
+calcium,칼슘,Calcium,mineral,calcium carbonate | calcium citrate | elemental calcium,칼슘 | 탄산칼슘 | 구연산칼슘 | 원소칼슘,calcium | calcium carbonate | calcium citrate | elemental calcium,제형별 원소칼슘 환산 필요.
+magnesium_supplement,마그네슘(보충제),Magnesium (supplemental),mineral,magnesium oxide | magnesium citrate | magnesium glycinate | magnesium salts,마그네슘 | 산화마그네슘 | 구연산마그네슘 | 글리시네이트 마그네슘,magnesium | magnesium oxide | magnesium citrate | magnesium glycinate,UL은 음식 전체가 아니라 보충제/의약품 유래 마그네슘에 적용.
+iron,철,Iron,mineral,ferrous sulfate | ferrous gluconate | ferric iron | heme iron,철 | 철분 | 황산제일철 | 푸마르산제일철 | 글루콘산제일철,iron | ferrous sulfate | ferrous gluconate | ferric iron | heme iron,원소철 기준으로 통일 권장.
+folic_acid,엽산(합성 folate),Folic acid / synthetic folate,vitamin,folic acid | 5-MTHF | folate from fortified foods,엽산 | 폴산 | 합성 엽산 | 5-MTHF,folic acid | folate | 5-MTHF | synthetic folate,UL은 자연식품 folate가 아니라 supplements/fortified foods의 folate에 적용.
+vitamin_k,비타민 K,Vitamin K,vitamin,phylloquinone | menaquinone | vitamin K1 | vitamin K2,비타민K | 필로퀴논 | 메나퀴논 | 비타민K1 | 비타민K2 | MK-7,vitamin k | phylloquinone | menaquinone | vitamin k1 | vitamin k2 | mk-7,warfarin류와는 일관성(consistency) 규칙이 핵심.
+omega3_epa_dha,오메가-3(EPA+DHA),Omega-3 (EPA+DHA),fatty_acid,EPA | DHA | fish oil | icosapent ethyl,오메가3 | EPA | DHA | 피쉬오일 | 어유 | 이코사펜트에틸,omega-3 | epa | dha | fish oil | icosapent ethyl,"EPA, DHA, EPA+DHA 합산 mg/day를 별도 계산 필요."
+zinc,아연,Zinc,mineral,zinc sulfate | zinc gluconate | zinc acetate,아연 | 황산아연 | 글루콘산아연 | 아세트산아연,zinc | zinc sulfate | zinc gluconate | zinc acetate,장기 고용량 복용 시 copper status 모니터링 권장.
+selenium,셀레늄,Selenium,mineral,selenium yeast | selenite | selenomethionine,셀레늄 | 셀레노메티오닌 | 셀레나이트 | 셀레늄효모,selenium | selenomethionine | selenite | selenium yeast,US/EU 상한값 차이 존재.
+iodine,요오드,Iodine,mineral,potassium iodide | iodine,요오드 | 아이오딘 | 요오드화칼륨 | 요오드화포타슘,iodine | potassium iodide,갑상선질환/자가면역 상태와 함께 해석 필요.
+niacin,니아신,Niacin,vitamin,nicotinic acid | nicotinamide | niacinamide | inositol hexanicotinate,니아신 | 니코틴산 | 니코틴아마이드 | 나이아신 | 이노시톨헥사니코티네이트,niacin | nicotinic acid | nicotinamide | niacinamide | inositol hexanicotinate,UL은 supplemental niacin에 적용.
+vitamin_b6,비타민 B6,Vitamin B6,vitamin,pyridoxine | PLP | pyridoxal phosphate,비타민B6 | 피리독신 | PLP | 피리독살인산,vitamin b6 | pyridoxine | plp | pyridoxal phosphate,US/EU 상한값 차이가 큼.
+st_johns_wort,세인트존스워트,St. John's wort,herb,Hypericum perforatum,세인트존스워트 | 성요한풀 | 하이페리컴,st john's wort | hypericum | hypericum perforatum,약물상호작용이 핵심 리스크.
+red_yeast_rice,홍국,Red yeast rice,fermented_ingredient,Monascus purpureus | monacolin K,홍국 | 레드이스트라이스 | 모나콜린K,red yeast rice | monacolin k | lovastatin-like,제품별 monacolin K 함량 편차와 citrinin 오염 가능성 고려.
+green_tea_extract,녹차추출물,Green tea extract,plant_extract,green tea extract | catechins | EGCG,녹차추출물 | 카테킨 | EGCG | 녹차카테킨,green tea extract | catechins | egcg,음료형 녹차와 고농축 추출물 보충제를 구분 권장.
+melatonin,멜라토닌,Melatonin,hormone_like_supplement,melatonin,멜라토닌,melatonin,국가별 규제상태 차이 크고 제품 함량 편차 이슈 있음.
+probiotics,프로바이오틱스,Probiotics,microbial_supplement,Lactobacillus | Bifidobacterium | Saccharomyces boulardii,프로바이오틱스 | 유산균 | 락토바실러스 | 비피도박테리움 | 사카로마이세스,probiotics | lactobacillus | bifidobacterium | saccharomyces boulardii,균주(strain) 단위로 세분화 가능하게 설계 권장.
+ashwagandha,아슈와간다,Ashwagandha,herb,Withania somnifera,아슈와간다 | 위타니아 | 위타니아 솜니페라,ashwagandha | withania somnifera,간손상/기저 간질환 리스크 관련 rule 필요.
+asian_ginseng,인삼(아시아 인삼),Asian ginseng,herb,Panax ginseng,인삼 | 고려인삼 | 아시아인삼 | Panax ginseng,asian ginseng | panax ginseng | ginseng,장기 안전성 불확실; 임신/소아 caution.
+glucosamine_chondroitin,글루코사민/콘드로이틴,Glucosamine/Chondroitin,joint_supplement,glucosamine sulfate | chondroitin sulfate,글루코사민 | 콘드로이틴 | 황산글루코사민 | 황산콘드로이틴,glucosamine | chondroitin | glucosamine sulfate | chondroitin sulfate,warfarin bleeding risk rule 중요.
+coenzyme_q10,코엔자임Q10,Coenzyme Q10,cofactor_supplement,ubiquinone | ubiquinol,코엔자임Q10 | 코큐텐 | 유비퀴논 | 유비퀴놀,coenzyme q10 | coq10 | ubiquinone | ubiquinol,warfarin/insulin interaction caution.

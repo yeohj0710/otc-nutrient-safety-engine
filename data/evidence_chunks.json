@@ -1,0 +1,1406 @@
+[
+  {
+    "chunk_id": "CHK-KR-KDRI-2025-41NUTRIENTS",
+    "source_id": "SRC-KR-MOHW-KDRI-2025-PR",
+    "ingredient_ids": [],
+    "locator_type": "lines",
+    "locator_value": "L796-L817",
+    "excerpt_summary_ko": "2025 한국인 영양소 섭취기준은 41개 영양소에 대해 연령·성별·생애주기 기준을 제공하며, 체계적 문헌평가를 거쳐 확정되었다.",
+    "claim_type": "reference_framework",
+    "structured_claim": {
+      "nutrients_count": 41,
+      "dimensions": [
+        "age",
+        "sex",
+        "life_stage"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": "국내 기준 프레임워크의 최상위 anchor source."
+  },
+  {
+    "chunk_id": "CHK-KR-MFDS-HFF-NOTICE-CATALOG",
+    "source_id": "SRC-KR-MFDS-HFF-NOTICE-2025-11",
+    "ingredient_ids": [],
+    "locator_type": "lines",
+    "locator_value": "L722-L736",
+    "excerpt_summary_ko": "식약처 고시 제2025-11호는 건강기능식품의 기준 및 규격 최신 개정고시이며, 성분별 1일 섭취량·표시·주의사항 근거의 기본 진입점이다.",
+    "claim_type": "regulatory_anchor",
+    "structured_claim": {
+      "notice_no": "2025-11",
+      "revised_at": "2025-03-05"
+    },
+    "confidence": "high",
+    "notes_ko": "세부 nutrient row 직접 파싱은 차기 단계."
+  },
+  {
+    "chunk_id": "CHK-KR-FOODSAFETY-CAUTION-BOARD",
+    "source_id": "SRC-KR-FOODSAFETY-CAUTION-BOARD",
+    "ingredient_ids": [],
+    "locator_type": "lines",
+    "locator_value": "L8-L23",
+    "excerpt_summary_ko": "식품안전나라에는 건강기능식품 섭취 주의사항과 의약품 병용 섭취 주의사항 게시판이 존재한다.",
+    "claim_type": "regulatory_anchor",
+    "structured_claim": {
+      "contains": [
+        "섭취 주의사항",
+        "의약품 병용 섭취 주의사항"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-US-ODS-UL-DEFINITION",
+    "source_id": "SRC-US-ODS-NUTRIENT-REC",
+    "ingredient_ids": [],
+    "locator_type": "lines",
+    "locator_value": "L112-L114",
+    "excerpt_summary_ko": "UL은 일반적으로 유해 영향 가능성이 낮다고 보는 최대 일일 섭취량으로 정의된다.",
+    "claim_type": "definition",
+    "structured_claim": {
+      "term": "UL",
+      "definition": "Maximum daily intake unlikely to cause adverse health effects."
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-EU-EFSA-UL-DEFINITION",
+    "source_id": "SRC-EU-EFSA-UL-SUMMARY-2025",
+    "ingredient_ids": [],
+    "locator_type": "lines",
+    "locator_value": "P0 L1-L8",
+    "excerpt_summary_ko": "EFSA UL summary report v11(2025)은 UL을 만성 총일일섭취량의 최대 수준으로 정의한다.",
+    "claim_type": "definition",
+    "structured_claim": {
+      "term": "UL",
+      "definition_scope": "total chronic daily intake from all dietary sources"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-VITA-UL-US",
+    "source_id": "SRC-US-ODS-VITAMIN-A",
+    "ingredient_ids": [
+      "vitamin_a_preformed"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L285-L293",
+    "excerpt_summary_ko": "프리폼드 비타민 A의 성인 UL은 3,000 mcg/day이며, 이 UL은 retinol/retinyl ester에만 적용되고 beta-carotene에는 직접 적용되지 않는다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 3000,
+      "unit": "mcg RAE/day",
+      "scope": "preformed_only"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-VITA-PREG-CAUTION",
+    "source_id": "SRC-US-ODS-VITAMIN-A",
+    "ingredient_ids": [
+      "vitamin_a_preformed"
+    ],
+    "locator_type": "lines",
+    "locator_value": "pregnancy warning / ODS lines around L276-L280",
+    "excerpt_summary_ko": "임신 중이거나 임신 가능성이 있는 경우 비타민 A 보충제를 3,000 mcg RAE(10,000 IU) 초과로 복용하지 않도록 주의해야 한다.",
+    "claim_type": "pregnancy_lactation",
+    "structured_claim": {
+      "pregnancy": "required",
+      "avoid_over": 3000,
+      "unit": "mcg RAE/day"
+    },
+    "confidence": "medium",
+    "notes_ko": "ODS pregnancy caution lines 기반. 정확한 line locator는 후속 재추출 가능."
+  },
+  {
+    "chunk_id": "CHK-BETACAR-SMOKER-RISK-ATBC",
+    "source_id": "SRC-PMID-8127329",
+    "ingredient_ids": [
+      "beta_carotene"
+    ],
+    "locator_type": "abstract",
+    "locator_value": "PubMed abstract results/conclusion",
+    "excerpt_summary_ko": "남성 흡연자 RCT에서 beta-carotene 20 mg/day 보충은 폐암 발생 증가(18%)와 총사망 증가를 시사했다.",
+    "claim_type": "adverse_effect_signal",
+    "structured_claim": {
+      "population": "male smokers",
+      "dose": 20,
+      "unit": "mg/day",
+      "risk": "increased_lung_cancer"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-BETACAR-SMOKER-RISK-GENERAL",
+    "source_id": "SRC-US-ODS-VITAMIN-A",
+    "ingredient_ids": [
+      "beta_carotene"
+    ],
+    "locator_type": "lines",
+    "locator_value": "lung cancer caution / ODS safety section",
+    "excerpt_summary_ko": "ODS는 흡연자·과거 흡연자·석면 노출자에서 beta-carotene 고용량 보충이 폐암 위험 증가와 연관될 수 있음을 경고한다.",
+    "claim_type": "population_caution",
+    "structured_claim": {
+      "smoking_status_any": [
+        "current",
+        "former"
+      ],
+      "exposure_any": [
+        "asbestos"
+      ],
+      "avoid_high_dose": true
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-VITD-UL-US",
+    "source_id": "SRC-US-ODS-VITAMIN-D",
+    "ingredient_ids": [
+      "vitamin_d"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L473-L505",
+    "excerpt_summary_ko": "성인 비타민 D UL은 100 mcg/day(4,000 IU/day)이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 100,
+      "unit": "mcg/day",
+      "alt_unit": "4000 IU/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-VITD-THIAZIDE",
+    "source_id": "SRC-US-ODS-VITAMIN-D",
+    "ingredient_ids": [
+      "vitamin_d"
+    ],
+    "locator_type": "lines",
+    "locator_value": "interaction section around thiazide diuretics",
+    "excerpt_summary_ko": "thiazide 이뇨제와 vitamin D를 같이 쓰면 특히 고령·신기능장애·부갑상선기능항진 환자에서 고칼슘혈증 위험이 커질 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "thiazide diuretic",
+        "hydrochlorothiazide",
+        "chlorthalidone"
+      ],
+      "risk": "hypercalcemia"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-VITD-ORLISTAT",
+    "source_id": "SRC-US-ODS-VITAMIN-D",
+    "ingredient_ids": [
+      "vitamin_d"
+    ],
+    "locator_type": "lines",
+    "locator_value": "interaction section around orlistat",
+    "excerpt_summary_ko": "orlistat은 vitamin D 흡수를 감소시킬 수 있어 혈중 25(OH)D 상태와 보충 계획을 재검토해야 한다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "orlistat"
+      ],
+      "effect": "reduced_absorption"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-CALCIUM-UL-US",
+    "source_id": "SRC-US-ODS-CALCIUM",
+    "ingredient_ids": [
+      "calcium"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L361-L370",
+    "excerpt_summary_ko": "칼슘 성인 UL은 19–50세 2,500 mg/day, 51세 이상 2,000 mg/day이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_bands": [
+        {
+          "min": 19,
+          "max": 50,
+          "max_daily_intake": 2500
+        },
+        {
+          "min": 51,
+          "max": 200,
+          "max_daily_intake": 2000
+        }
+      ],
+      "unit": "mg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-CALCIUM-LEVOTHYROXINE",
+    "source_id": "SRC-US-ODS-CALCIUM",
+    "ingredient_ids": [
+      "calcium"
+    ],
+    "locator_type": "lines",
+    "locator_value": "interaction section around levothyroxine",
+    "excerpt_summary_ko": "칼슘탄산염은 levothyroxine 흡수를 낮출 수 있어 일반적으로 4시간 이내 동시 복용을 피한다.",
+    "claim_type": "timing_separation",
+    "structured_claim": {
+      "medications_any": [
+        "levothyroxine"
+      ],
+      "separate_by_hours": 4
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-CALCIUM-QUINOLONE",
+    "source_id": "SRC-US-ODS-CALCIUM",
+    "ingredient_ids": [
+      "calcium"
+    ],
+    "locator_type": "lines",
+    "locator_value": "interaction section around quinolone antibiotics",
+    "excerpt_summary_ko": "칼슘 보충제는 quinolone 항생제 흡수를 감소시킬 수 있어 시간 간격을 둔다.",
+    "claim_type": "timing_separation",
+    "structured_claim": {
+      "medications_any": [
+        "quinolone antibiotic",
+        "ciprofloxacin",
+        "levofloxacin",
+        "moxifloxacin"
+      ],
+      "separate_hint": "take antibiotic at least 2h before or 4-6h after calcium"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-MAG-UL-US",
+    "source_id": "SRC-US-ODS-MAGNESIUM",
+    "ingredient_ids": [
+      "magnesium_supplement"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L288-L304",
+    "excerpt_summary_ko": "보충제/의약품 유래 마그네슘의 성인 UL은 350 mg/day이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 350,
+      "unit": "mg/day",
+      "scope": "supplements_only"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-MAG-UL-EU",
+    "source_id": "SRC-EU-EFSA-UL-SUMMARY-2025",
+    "ingredient_ids": [
+      "magnesium_supplement"
+    ],
+    "locator_type": "table",
+    "locator_value": "EFSA summary magnesium row",
+    "excerpt_summary_ko": "EFSA는 readily dissociable magnesium salts in supplements 기준 성인 UL을 250 mg/day로 요약한다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "EU",
+      "age_min": 19,
+      "max_daily_intake": 250,
+      "unit": "mg/day",
+      "scope": "supplements_only"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-MAG-ABX",
+    "source_id": "SRC-US-ODS-MAGNESIUM",
+    "ingredient_ids": [
+      "magnesium_supplement"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L305-L307 + interaction detail",
+    "excerpt_summary_ko": "마그네슘은 tetracycline/quinolone 항생제와 결합해 흡수를 낮출 수 있어 시간 간격이 필요하다.",
+    "claim_type": "timing_separation",
+    "structured_claim": {
+      "medications_any": [
+        "tetracycline antibiotic",
+        "quinolone antibiotic",
+        "doxycycline",
+        "minocycline",
+        "ciprofloxacin",
+        "levofloxacin"
+      ],
+      "separate_hint": "antibiotics 2h before or 4-6h after magnesium"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-MAG-BISPHOSPHONATE",
+    "source_id": "SRC-US-ODS-MAGNESIUM",
+    "ingredient_ids": [
+      "magnesium_supplement"
+    ],
+    "locator_type": "lines",
+    "locator_value": "interaction section around oral bisphosphonates",
+    "excerpt_summary_ko": "마그네슘은 경구 bisphosphonate 흡수를 줄일 수 있어 투여 간격을 둔다.",
+    "claim_type": "timing_separation",
+    "structured_claim": {
+      "medications_any": [
+        "oral bisphosphonate",
+        "alendronate",
+        "risedronate"
+      ],
+      "separate_by_hours": 2
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-IRON-UL-US",
+    "source_id": "SRC-US-ODS-IRON",
+    "ingredient_ids": [
+      "iron"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L314-L334",
+    "excerpt_summary_ko": "철의 성인 UL은 45 mg/day이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 45,
+      "unit": "mg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-IRON-SAFELEVEL-EU",
+    "source_id": "SRC-EU-EFSA-UL-SUMMARY-2025",
+    "ingredient_ids": [
+      "iron"
+    ],
+    "locator_type": "table",
+    "locator_value": "EFSA summary iron row",
+    "excerpt_summary_ko": "EFSA는 성인/임신/수유에 대해 iron UL은 설정하지 않았고, safe level of intake 40 mg/day를 제시한다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "EU",
+      "age_min": 19,
+      "safe_level_daily_intake": 40,
+      "unit": "mg/day",
+      "note": "not formal UL"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-IRON-INTERACTIONS",
+    "source_id": "SRC-US-ODS-IRON",
+    "ingredient_ids": [
+      "iron"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L335-L337",
+    "excerpt_summary_ko": "철 보충제는 levodopa, levothyroxine과 상호작용할 수 있고 proton pump inhibitor는 철 흡수를 줄일 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "levodopa",
+        "levothyroxine",
+        "proton pump inhibitor",
+        "omeprazole",
+        "esomeprazole",
+        "pantoprazole"
+      ],
+      "effects": [
+        "reduced_absorption",
+        "reduced_drug_effect"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-IRON-CALCIUM-SPLIT",
+    "source_id": "SRC-US-ODS-IRON",
+    "ingredient_ids": [
+      "iron",
+      "calcium"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L214-L214",
+    "excerpt_summary_ko": "개별 calcium과 iron 보충제는 서로 흡수에 영향을 줄 수 있어 다른 시간대 복용을 제안한다.",
+    "claim_type": "timing_separation",
+    "structured_claim": {
+      "coingredient_any": [
+        "calcium"
+      ],
+      "separate_hint": "separate calcium and iron supplements"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-FOLATE-UL-US",
+    "source_id": "SRC-US-ODS-FOLATE",
+    "ingredient_ids": [
+      "folic_acid"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L363-L371",
+    "excerpt_summary_ko": "성인 folate UL은 1,000 mcg/day이며 supplements 또는 fortified foods의 folate에만 적용된다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 1000,
+      "unit": "mcg/day",
+      "scope": "supplements_or_fortified_only"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-FOLATE-B12-MASKING",
+    "source_id": "SRC-US-ODS-FOLATE",
+    "ingredient_ids": [
+      "folic_acid"
+    ],
+    "locator_type": "lines",
+    "locator_value": "vitamin B12 deficiency caution section",
+    "excerpt_summary_ko": "고용량 folic acid는 vitamin B12 결핍의 빈혈 증상을 가려 신경학적 손상을 늦게 발견하게 만들 수 있다.",
+    "claim_type": "disease_caution",
+    "structured_claim": {
+      "diseases_any": [
+        "vitamin B12 deficiency suspected",
+        "pernicious anemia"
+      ],
+      "risk": "masking_hematologic_signs"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-FOLATE-UL-EU",
+    "source_id": "SRC-EU-EFSA-UL-SUMMARY-2025",
+    "ingredient_ids": [
+      "folic_acid"
+    ],
+    "locator_type": "lines",
+    "locator_value": "P3 folate row L108-L110 / L140",
+    "excerpt_summary_ko": "EFSA도 supplements/fortified foods 유래 folate에 대해 성인 UL 1,000 mcg/day를 유지한다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "EU",
+      "age_min": 19,
+      "max_daily_intake": 1000,
+      "unit": "mcg/day",
+      "scope": "supplements_or_fortified_only"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-VITK-WARFARIN",
+    "source_id": "SRC-US-ODS-VITAMIN-K",
+    "ingredient_ids": [
+      "vitamin_k"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L259-L261",
+    "excerpt_summary_ko": "warfarin 등 항응고제를 쓰는 사람은 vitamin K 섭취량을 음식/보충제에서 일관되게 유지해야 하며 급격한 변화는 항응고 효과를 바꿀 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "warfarin",
+        "phenprocoumon",
+        "acenocoumarol",
+        "tioclomarol"
+      ],
+      "rule_mode": "consistency_required"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-VITK-ORLISTAT",
+    "source_id": "SRC-US-ODS-VITAMIN-K",
+    "ingredient_ids": [
+      "vitamin_k"
+    ],
+    "locator_type": "lines",
+    "locator_value": "orlistat interaction section",
+    "excerpt_summary_ko": "orlistat은 vitamin K 흡수를 줄일 수 있어 특히 warfarin 병용 시 INR 모니터링이 필요할 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "orlistat"
+      ],
+      "effect": "reduced_absorption"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-OMEGA3-SAFE-UPTO5",
+    "source_id": "SRC-US-ODS-OMEGA3",
+    "ingredient_ids": [
+      "omega3_epa_dha"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L444-L445",
+    "excerpt_summary_ko": "IOM은 omega-3 UL을 따로 설정하지 않았지만 EFSA와 FDA는 EPA+DHA 합산 최대 약 5 g/day까지는 일반적으로 안전하다고 본다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US/EU",
+      "safe_upper_practical": 5000,
+      "unit": "mg/day",
+      "note": "not formal UL"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-OMEGA3-BLEEDING",
+    "source_id": "SRC-US-ODS-OMEGA3",
+    "ingredient_ids": [
+      "omega3_epa_dha"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L444-L445",
+    "excerpt_summary_ko": "EPA/DHA 2–15 g/day는 platelet aggregation 감소로 bleeding time을 늘릴 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "dose_range": "2000-15000 mg/day",
+      "risk": "increased_bleeding_time"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-OMEGA3-WARFARIN",
+    "source_id": "SRC-US-ODS-OMEGA3",
+    "ingredient_ids": [
+      "omega3_epa_dha"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L451-L453",
+    "excerpt_summary_ko": "fish oil은 고용량에서 항혈소판 작용이 있고 warfarin과 함께 쓰면 INR 변화 가능성이 있어 주기적 모니터링이 권장된다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "warfarin"
+      ],
+      "monitor": "INR"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-OMEGA3-AF-ODS",
+    "source_id": "SRC-US-ODS-OMEGA3",
+    "ingredient_ids": [
+      "omega3_epa_dha"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L446-L446",
+    "excerpt_summary_ko": "4 g/day omega-3를 수년간 복용한 고위험 심혈관 환자에서 심방세동 위험이 약간 증가했다.",
+    "claim_type": "adverse_effect_signal",
+    "structured_claim": {
+      "population": "CVD_or_high_risk",
+      "dose": 4000,
+      "unit": "mg/day",
+      "risk": "atrial_fibrillation"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-OMEGA3-AF-META",
+    "source_id": "SRC-PMID-34612056",
+    "ingredient_ids": [
+      "omega3_epa_dha"
+    ],
+    "locator_type": "abstract",
+    "locator_value": "PubMed abstract results/conclusion",
+    "excerpt_summary_ko": "메타분석에서 marine omega-3 보충은 AF 위험 증가와 연관되었고 >1 g/day 시험군에서 위험이 더 컸다.",
+    "claim_type": "systematic_review_finding",
+    "structured_claim": {
+      "risk": "atrial_fibrillation",
+      "hr": 1.25,
+      "high_dose_more_risk": true
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-ZINC-UL-US",
+    "source_id": "SRC-US-ODS-ZINC",
+    "ingredient_ids": [
+      "zinc"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L332-L344",
+    "excerpt_summary_ko": "아연 성인 UL은 40 mg/day이며, 근거는 copper status에 대한 악영향이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 40,
+      "unit": "mg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-ZINC-ABX",
+    "source_id": "SRC-US-ODS-ZINC",
+    "ingredient_ids": [
+      "zinc"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L345-L347",
+    "excerpt_summary_ko": "아연은 quinolone/tetracycline 항생제와 상호작용할 수 있어 복용 간격 조정이 필요하다.",
+    "claim_type": "timing_separation",
+    "structured_claim": {
+      "medications_any": [
+        "quinolone antibiotic",
+        "tetracycline antibiotic"
+      ],
+      "separate_hint": "2h before or 4-6h after"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-ZINC-COPPER",
+    "source_id": "SRC-US-ODS-ZINC",
+    "ingredient_ids": [
+      "zinc"
+    ],
+    "locator_type": "lines",
+    "locator_value": "UL rationale around copper status",
+    "excerpt_summary_ko": "고용량 zinc는 장기 복용 시 copper deficiency와 관련될 수 있어 장기 복용자는 copper status 모니터링이 필요하다.",
+    "claim_type": "monitoring",
+    "structured_claim": {
+      "risk": "copper_deficiency"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-SELENIUM-UL-US",
+    "source_id": "SRC-US-ODS-SELENIUM",
+    "ingredient_ids": [
+      "selenium"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L344-L357",
+    "excerpt_summary_ko": "셀레늄 성인 UL은 400 mcg/day이며, selenosis의 대표 징후는 탈모와 손발톱 취약성/손실이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 400,
+      "unit": "mcg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-SELENIUM-UL-EU",
+    "source_id": "SRC-EU-EFSA-UL-SUMMARY-2025",
+    "ingredient_ids": [
+      "selenium"
+    ],
+    "locator_type": "table",
+    "locator_value": "EFSA summary selenium row",
+    "excerpt_summary_ko": "EFSA는 성인·임신·수유 셀레늄 UL을 255 mcg/day로 제시한다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "EU",
+      "age_min": 19,
+      "max_daily_intake": 255,
+      "unit": "mcg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-IODINE-UL-US",
+    "source_id": "SRC-US-ODS-IODINE",
+    "ingredient_ids": [
+      "iodine"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L321-L328",
+    "excerpt_summary_ko": "요오드 성인 UL은 1,100 mcg/day이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 1100,
+      "unit": "mcg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-IODINE-THYROID-DISEASE",
+    "source_id": "SRC-US-ODS-IODINE",
+    "ingredient_ids": [
+      "iodine"
+    ],
+    "locator_type": "lines",
+    "locator_value": "thyroid disease caution section",
+    "excerpt_summary_ko": "요오드 결핍이나 자가면역 갑상선질환이 있는 사람은 일반적으로 안전하다고 여겨지는 섭취량에서도 부작용이 나타날 수 있다.",
+    "claim_type": "disease_caution",
+    "structured_claim": {
+      "diseases_any": [
+        "autoimmune thyroid disease",
+        "iodine deficiency"
+      ],
+      "risk": "thyroid_dysfunction"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-IODINE-ANTITHYROID-ACEI",
+    "source_id": "SRC-US-ODS-IODINE",
+    "ingredient_ids": [
+      "iodine"
+    ],
+    "locator_type": "lines",
+    "locator_value": "interaction section",
+    "excerpt_summary_ko": "항갑상선제와 iodine 병용은 hypothyroidism 위험을 높일 수 있고, potassium iodide는 ACE inhibitor/칼륨보존성 이뇨제와 병용 시 hyperkalemia 위험이 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "antithyroid drug",
+        "methimazole",
+        "propylthiouracil",
+        "ACE inhibitor",
+        "lisinopril",
+        "enalapril",
+        "potassium-sparing diuretic",
+        "spironolactone"
+      ],
+      "risks": [
+        "hypothyroidism",
+        "hyperkalemia"
+      ]
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-NIACIN-UL-US",
+    "source_id": "SRC-US-ODS-NIACIN",
+    "ingredient_ids": [
+      "niacin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L276-L285",
+    "excerpt_summary_ko": "supplemental niacin의 성인 UL은 35 mg/day이며 flushing 근거로 설정되었다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 35,
+      "unit": "mg/day",
+      "scope": "supplemental_only"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-NIACIN-HIGHDOSE-AE",
+    "source_id": "SRC-US-ODS-NIACIN",
+    "ingredient_ids": [
+      "niacin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L267-L273",
+    "excerpt_summary_ko": "1,000–3,000 mg/day nicotinic acid는 저혈압, 간독성, 고혈당, 위장관 이상, 통풍, 심방세동 등을 유발할 수 있어 간기능·혈당·요산 추적이 권장된다.",
+    "claim_type": "adverse_effect_signal",
+    "structured_claim": {
+      "dose_range": "1000-3000 mg/day",
+      "risks": [
+        "hypotension",
+        "hepatotoxicity",
+        "hyperglycemia",
+        "gout",
+        "atrial_fibrillation"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-NIACIN-DIABETES-MEDS",
+    "source_id": "SRC-US-ODS-NIACIN",
+    "ingredient_ids": [
+      "niacin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L294-L296",
+    "excerpt_summary_ko": "고용량 nicotinic acid는 혈당을 올릴 수 있어 항당뇨약 사용자에서는 모니터링이 필요하다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "antidiabetes medication",
+        "metformin",
+        "insulin",
+        "sulfonylurea"
+      ],
+      "monitor": "blood_glucose"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-B6-UL-US",
+    "source_id": "SRC-US-ODS-VITAMIN-B6",
+    "ingredient_ids": [
+      "vitamin_b6"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L244-L253",
+    "excerpt_summary_ko": "비타민 B6의 미국 성인 UL은 100 mg/day이다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "US",
+      "age_min": 19,
+      "max_daily_intake": 100,
+      "unit": "mg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-B6-UL-EU",
+    "source_id": "SRC-US-ODS-VITAMIN-B6",
+    "ingredient_ids": [
+      "vitamin_b6"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L256-L257",
+    "excerpt_summary_ko": "ODS는 EFSA 2023 의견을 인용해 EFSA adult UL 12 mg/day를 소개한다.",
+    "claim_type": "dose_limit",
+    "structured_claim": {
+      "jurisdiction": "EU",
+      "age_min": 19,
+      "max_daily_intake": 12,
+      "unit": "mg/day"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-B6-NEUROPATHY",
+    "source_id": "SRC-US-ODS-VITAMIN-B6",
+    "ingredient_ids": [
+      "vitamin_b6"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L241-L245",
+    "excerpt_summary_ko": "장기간 고용량 pyridoxine은 감각신경병증을 유발할 수 있다.",
+    "claim_type": "adverse_effect_signal",
+    "structured_claim": {
+      "risk": "sensory_neuropathy"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-SJW-NCCIH-INTERACTIONS",
+    "source_id": "SRC-US-NCCIH-STJOHNSWORT",
+    "ingredient_ids": [
+      "st_johns_wort"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L132-L147",
+    "excerpt_summary_ko": "세인트존스워트는 여러 약물의 효과를 약화시키거나 serotonin 관련 부작용을 유발할 수 있으며, 특히 항우울제, 피임약, cyclosporine, 항경련제, 심장약, HIV약, 암약, warfarin, statin과 상호작용한다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "antidepressant",
+        "birth control pill",
+        "cyclosporine",
+        "phenytoin",
+        "carbamazepine",
+        "digoxin",
+        "ivabradine",
+        "indinavir",
+        "nevirapine",
+        "irinotecan",
+        "imatinib",
+        "docetaxel",
+        "warfarin",
+        "simvastatin"
+      ],
+      "risk": "major_interactions"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-SJW-REVIEW-MECHANISM",
+    "source_id": "SRC-PMID-31742659",
+    "ingredient_ids": [
+      "st_johns_wort"
+    ],
+    "locator_type": "abstract",
+    "locator_value": "PubMed abstract lines 274-276",
+    "excerpt_summary_ko": "St. John's wort는 PXR 활성화로 CYP3A4와 P-gp를 유도해 cyclosporine, tacrolimus, indinavir, warfarin, alprazolam, simvastatin, oral contraceptives 등의 약동학을 바꿀 수 있다.",
+    "claim_type": "mechanistic_interaction",
+    "structured_claim": {
+      "mechanism": [
+        "PXR_activation",
+        "CYP3A4_induction",
+        "P-gp_induction"
+      ],
+      "medications_any": [
+        "cyclosporine",
+        "tacrolimus",
+        "indinavir",
+        "warfarin",
+        "alprazolam",
+        "simvastatin",
+        "oral contraceptive"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-SJW-PREGNANCY",
+    "source_id": "SRC-US-NCCIH-STJOHNSWORT",
+    "ingredient_ids": [
+      "st_johns_wort"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L146-L147",
+    "excerpt_summary_ko": "세인트존스워트는 임신 중 잠재적 위해 가능성이 있어 사용을 피하는 보수 규칙을 두는 것이 안전하다.",
+    "claim_type": "pregnancy_lactation",
+    "structured_claim": {
+      "pregnancy": "required",
+      "decision": "avoid"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-RYR-MONACOLIN-VARIABILITY",
+    "source_id": "SRC-US-NCCIH-REDYEASTRICE",
+    "ingredient_ids": [
+      "red_yeast_rice"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L122-L128",
+    "excerpt_summary_ko": "홍국 제품의 monacolin K 함량은 매우 다양하고 라벨에 표시되지 않는 경우가 많아 제품 간 일관된 용량 판정이 어렵다.",
+    "claim_type": "quality_signal",
+    "structured_claim": {
+      "issue": "high_variability_in_active_constituent"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-RYR-EFSA-NO-SAFE-LEVEL",
+    "source_id": "SRC-US-NCCIH-REDYEASTRICE",
+    "ingredient_ids": [
+      "red_yeast_rice"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L137-L143",
+    "excerpt_summary_ko": "EFSA 2018 의견에 따르면 red yeast rice 유래 monacolins는 심각한 부작용을 일으킬 수 있으며 보장된 안전 섭취수준을 특정할 수 없었다.",
+    "claim_type": "contraindication",
+    "structured_claim": {
+      "risk": "statin_like_toxicity",
+      "safe_level_identified": false
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-RYR-STATIN-LIKE-SIDES",
+    "source_id": "SRC-US-NCCIH-REDYEASTRICE",
+    "ingredient_ids": [
+      "red_yeast_rice"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L142-L151",
+    "excerpt_summary_ko": "monacolin K가 많은 홍국 제품은 statin과 유사한 근육·신장·간 손상 및 약물상호작용 위험이 있고, citrinin 오염 및 임신·수유 비권장 이슈가 있다.",
+    "claim_type": "quality_signal",
+    "structured_claim": {
+      "risks": [
+        "muscle_damage",
+        "kidney_damage",
+        "liver_damage",
+        "drug_interactions",
+        "citrinin_contamination"
+      ],
+      "pregnancy_lactation": "not_recommended"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GTE-LIVER-INJURY",
+    "source_id": "SRC-US-NCCIH-GREENTEA",
+    "ingredient_ids": [
+      "green_tea_extract"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L134-L139",
+    "excerpt_summary_ko": "음료형 녹차는 큰 안전성 문제가 없지만 녹차추출물 보충제는 오심, 복부불편, 혈압상승, 드물지만 간손상과 관련될 수 있다.",
+    "claim_type": "adverse_effect_signal",
+    "structured_claim": {
+      "form_scope": "extract_supplements",
+      "risks": [
+        "nausea",
+        "abdominal_discomfort",
+        "increased_blood_pressure",
+        "liver_injury"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GTE-DRUG-INTERACTIONS",
+    "source_id": "SRC-US-NCCIH-GREENTEA",
+    "ingredient_ids": [
+      "green_tea_extract"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L136-L139",
+    "excerpt_summary_ko": "녹차추출물은 nadolol, atorvastatin, raloxifene과 상호작용할 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "nadolol",
+        "atorvastatin",
+        "raloxifene"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GTE-HLA",
+    "source_id": "SRC-US-NCCIH-GREENTEA",
+    "ingredient_ids": [
+      "green_tea_extract"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L136-L136, L180-L180",
+    "excerpt_summary_ko": "특정 면역관련 유전형(HLA-B*35:01)이 있는 사람에서 녹차추출물 유발 간손상 취약성이 더 클 수 있다.",
+    "claim_type": "genetic_caution",
+    "structured_claim": {
+      "genes_any": [
+        "HLA-B*35:01"
+      ],
+      "risk": "liver_injury"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-MELATONIN-PREG-OLDER",
+    "source_id": "SRC-US-NCCIH-MELATONIN",
+    "ingredient_ids": [
+      "melatonin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L177-L197",
+    "excerpt_summary_ko": "멜라토닌은 장기 안전성 정보가 부족하고, 임신·수유 중 안전성 연구가 부족하며, 고령자에서 낮 졸림이 생길 수 있다. 간질 또는 혈액희석제 사용자도 의료진 감독하 복용이 바람직하다.",
+    "claim_type": "pregnancy_lactation",
+    "structured_claim": {
+      "pregnancy": "required",
+      "lactation": "required",
+      "older_adult_caution": true,
+      "medications_any": [
+        "blood thinner"
+      ],
+      "conditions_any": [
+        "epilepsy"
+      ]
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-MELATONIN-LABEL-VARIABILITY",
+    "source_id": "SRC-US-NCCIH-MELATONIN",
+    "ingredient_ids": [
+      "melatonin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L196-L197",
+    "excerpt_summary_ko": "멜라토닌 제품은 라벨 표시와 실제 함량이 다를 수 있고 serotonin이 검출된 제품도 보고되었다.",
+    "claim_type": "quality_signal",
+    "structured_claim": {
+      "issue": "label_content_mismatch",
+      "unexpected_constituent": "serotonin"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-MELATONIN-ANALYTICAL-STUDY",
+    "source_id": "SRC-PMID-27855744",
+    "ingredient_ids": [
+      "melatonin"
+    ],
+    "locator_type": "abstract",
+    "locator_value": "PubMed abstract lines 271-273",
+    "excerpt_summary_ko": "31개 멜라토닌 제품 분석에서 표시 대비 -83%~+478% 함량 편차와 최대 465% lot-to-lot 편차가 확인되었고, 일부 제품에서 serotonin이 검출되었다.",
+    "claim_type": "quality_signal",
+    "structured_claim": {
+      "label_variability_range": "-83% to +478%",
+      "lot_variability": "up to 465%",
+      "unexpected_constituent": "serotonin"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-PROBIOTICS-PREMATURE-INFANTS-NCCIH",
+    "source_id": "SRC-US-NCCIH-PROBIOTICS",
+    "ingredient_ids": [
+      "probiotics"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L115-L117",
+    "excerpt_summary_ko": "프로바이오틱스는 미숙아에서 중증 또는 치명적 감염 사례가 보고되어 주의가 필요하다.",
+    "claim_type": "population_caution",
+    "structured_claim": {
+      "population": "premature_infants",
+      "decision": "avoid"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-PROBIOTICS-FDA-PRETERM",
+    "source_id": "SRC-US-FDA-PROBIOTICS-PRETERM-2023",
+    "ingredient_ids": [
+      "probiotics"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L89-L94",
+    "excerpt_summary_ko": "FDA는 hospital setting의 미숙아에게 투여되는 probiotic 제품이 침습성, 잠재적으로 치명적인 감염을 일으킬 수 있다고 경고했다.",
+    "claim_type": "government_safety_alert",
+    "structured_claim": {
+      "population": "hospitalized_preterm_infants",
+      "risks": [
+        "invasive_disease",
+        "death"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-ASHWA-HILI-CASESERIES",
+    "source_id": "SRC-PMID-37756041",
+    "ingredient_ids": [
+      "ashwagandha"
+    ],
+    "locator_type": "abstract",
+    "locator_value": "PubMed abstract lines 281-283",
+    "excerpt_summary_ko": "아슈와간다 유발 간손상 사례군에서 cholestatic hepatitis가 흔했고, 기저 만성 간질환이 있던 일부는 ACLF로 진행하여 사망했다.",
+    "claim_type": "case_series_finding",
+    "structured_claim": {
+      "risks": [
+        "cholestatic_hepatitis",
+        "acute_on_chronic_liver_failure"
+      ],
+      "high_risk_population": [
+        "pre_existing_chronic_liver_disease"
+      ]
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-ASHWA-LIVER-DISEASE-CAUTION",
+    "source_id": "SRC-PMID-37756041",
+    "ingredient_ids": [
+      "ashwagandha"
+    ],
+    "locator_type": "conclusion",
+    "locator_value": "PubMed conclusion",
+    "excerpt_summary_ko": "기저 간질환이 있는 사람에서는 아슈와간다 사용을 보수적으로 피하거나 강한 경고를 두는 것이 안전하다.",
+    "claim_type": "disease_caution",
+    "structured_claim": {
+      "diseases_any": [
+        "chronic liver disease",
+        "cirrhosis"
+      ],
+      "decision": "avoid"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GINSENG-SAFETY-SHORTTERM",
+    "source_id": "SRC-US-NCCIH-ASIANGINSENG",
+    "ingredient_ids": [
+      "asian_ginseng"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L136-L138",
+    "excerpt_summary_ko": "아시아 인삼은 권장량의 단기 경구 사용은 대체로 안전하다고 보지만, 장기 안전성은 불확실하고 소아·임신·수유는 비권장하는 견해가 있다.",
+    "claim_type": "pregnancy_lactation",
+    "structured_claim": {
+      "pregnancy": "required",
+      "lactation": "required",
+      "population_any": [
+        "infants",
+        "children"
+      ],
+      "decision": "avoid_or_warn"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GINSENG-DIABETES",
+    "source_id": "SRC-US-NCCIH-ASIANGINSENG",
+    "ingredient_ids": [
+      "asian_ginseng"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L131-L132",
+    "excerpt_summary_ko": "아시아 인삼은 혈당을 낮출 가능성이 있어 당뇨 약물 사용자에서는 혈당 모니터링을 두는 것이 안전하다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "antidiabetes medication",
+        "insulin",
+        "metformin",
+        "sulfonylurea"
+      ],
+      "monitor": "blood_glucose"
+    },
+    "confidence": "medium",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GLUCOSAMINE-WARFARIN",
+    "source_id": "SRC-US-NCCIH-GLUCOSAMINE-CHONDROITIN",
+    "ingredient_ids": [
+      "glucosamine_chondroitin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L172-L174",
+    "excerpt_summary_ko": "글루코사민/콘드로이틴은 warfarin 사용자에서 출혈 위험 증가와 연관될 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "warfarin"
+      ],
+      "risk": "bleeding"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GLUCOSAMINE-GLUCOSE",
+    "source_id": "SRC-US-NCCIH-GLUCOSAMINE-CHONDROITIN",
+    "ingredient_ids": [
+      "glucosamine_chondroitin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L172-L174",
+    "excerpt_summary_ko": "글루코사민은 일부 사람에서 혈당을 높일 수 있어 당뇨 환자는 모니터링이 필요하다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "diseases_any": [
+        "diabetes"
+      ],
+      "monitor": "blood_glucose"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-GLUCOSAMINE-PREG",
+    "source_id": "SRC-US-NCCIH-GLUCOSAMINE-CHONDROITIN",
+    "ingredient_ids": [
+      "glucosamine_chondroitin"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L172-L174",
+    "excerpt_summary_ko": "임신/수유 중 안전성 자료가 부족하다.",
+    "claim_type": "pregnancy_lactation",
+    "structured_claim": {
+      "pregnancy": "required",
+      "lactation": "required",
+      "decision": "warn"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-COQ10-WARFARIN-INSULIN",
+    "source_id": "SRC-US-NCCIH-HEADACHES-COQ10",
+    "ingredient_ids": [
+      "coenzyme_q10"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L209-L214",
+    "excerpt_summary_ko": "CoQ10은 warfarin과 insulin과 상호작용할 수 있다.",
+    "claim_type": "interaction",
+    "structured_claim": {
+      "medications_any": [
+        "warfarin",
+        "insulin"
+      ],
+      "risk": "interaction"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  },
+  {
+    "chunk_id": "CHK-COQ10-SAFETY",
+    "source_id": "SRC-US-NCCIH-HEADACHES-COQ10",
+    "ingredient_ids": [
+      "coenzyme_q10"
+    ],
+    "locator_type": "lines",
+    "locator_value": "L211-L212",
+    "excerpt_summary_ko": "CoQ10은 보고된 중대한 부작용은 드물지만 약물상호작용 확인이 중요하다.",
+    "claim_type": "general_safety",
+    "structured_claim": {
+      "serious_adverse_events_reported": "none_major_reported"
+    },
+    "confidence": "high",
+    "notes_ko": null
+  }
+]

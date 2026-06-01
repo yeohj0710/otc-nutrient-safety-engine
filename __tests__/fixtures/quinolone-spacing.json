@@ -1,0 +1,39 @@
+{
+  "name": "47세 남성, quinolone 항생제 복용, magnesium/calcium/iron 간격 주의",
+  "query": {
+    "profile": {
+      "age": 47,
+      "sex": "male",
+      "medications": ["ciprofloxacin"],
+      "jurisdiction": "KR",
+      "selectedCompounds": ["magnesium", "calcium", "iron"]
+    },
+    "candidateItems": [
+      {
+        "ingredientId": "magnesium_supplement",
+        "name": "magnesium glycinate",
+        "dailyIntakeValue": 300,
+        "dailyIntakeUnit": "mg/day"
+      },
+      {
+        "ingredientId": "calcium",
+        "name": "calcium carbonate",
+        "dailyIntakeValue": 500,
+        "dailyIntakeUnit": "mg/day"
+      },
+      {
+        "ingredientId": "iron",
+        "name": "iron",
+        "dailyIntakeValue": 18,
+        "dailyIntakeUnit": "mg/day",
+        "coingredients": ["calcium"]
+      }
+    ],
+    "sort": "severity_desc"
+  },
+  "expected": {
+    "definitely_matched": ["RULE-CALCIUM-QUINOLONE-SPLIT", "RULE-MAG-ABX-SPLIT", "RULE-IRON-CALCIUM-SPLIT"],
+    "needs_more_info": [],
+    "possibly_relevant": []
+  }
+}

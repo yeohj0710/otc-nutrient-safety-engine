@@ -1,0 +1,18 @@
+{
+  "name": "68세 남성, warfarin 복용, vitamin K 관련 상호작용",
+  "query": {
+    "profile": {
+      "age": 68,
+      "sex": "male",
+      "medications": ["warfarin"],
+      "jurisdiction": "KR",
+      "selectedCompounds": ["vitamin k"]
+    },
+    "sort": "severity_desc"
+  },
+  "expected": {
+    "definitely_matched": ["RULE-VITK-WARFARIN-CONSISTENCY"],
+    "needs_more_info": [],
+    "possibly_relevant": []
+  }
+}

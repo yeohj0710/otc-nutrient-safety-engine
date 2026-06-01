@@ -1,0 +1,94 @@
+{
+  "evaluation_id": "EVAL-DEMO-001",
+  "evaluated_at": "2026-03-22T16:58:00Z",
+  "jurisdiction_preference": [
+    "KR",
+    "US",
+    "EU",
+    "strictest"
+  ],
+  "strictest_mode_for_conflicts": true,
+  "user_profile": {
+    "user_id": "USER-DEMO-001",
+    "age_years": 67,
+    "sex": "male",
+    "pregnancy_status": "not_applicable",
+    "lactation_status": "not_applicable",
+    "smoking_status": "former",
+    "exposures": [],
+    "medications": [
+      {
+        "name": "warfarin",
+        "dose": null,
+        "frequency": null
+      },
+      {
+        "name": "levothyroxine",
+        "dose": null,
+        "frequency": "qAM"
+      },
+      {
+        "name": "hydrochlorothiazide",
+        "dose": null,
+        "frequency": "daily"
+      }
+    ],
+    "conditions": [
+      "cardiovascular disease",
+      "hypothyroidism"
+    ],
+    "allergies": [],
+    "devices": [],
+    "immune_status": "normal",
+    "goals": [
+      "heart_health",
+      "general_wellness"
+    ]
+  },
+  "candidate_stack": [
+    {
+      "ingredient_id": "beta_carotene",
+      "label": "beta-carotene",
+      "daily_intake_value": 20,
+      "daily_intake_unit": "mg/day"
+    },
+    {
+      "ingredient_id": "vitamin_k",
+      "label": "vitamin K2",
+      "daily_intake_value": 120,
+      "daily_intake_unit": "mcg/day"
+    },
+    {
+      "ingredient_id": "calcium",
+      "label": "calcium carbonate",
+      "daily_intake_value": 1200,
+      "daily_intake_unit": "mg/day",
+      "timing_note": "with breakfast"
+    },
+    {
+      "ingredient_id": "vitamin_d",
+      "label": "vitamin D3",
+      "daily_intake_value": 125,
+      "daily_intake_unit": "mcg/day",
+      "alt_display": "5000 IU/day"
+    },
+    {
+      "ingredient_id": "omega3_epa_dha",
+      "label": "fish oil EPA+DHA",
+      "daily_intake_value": 4000,
+      "daily_intake_unit": "mg/day"
+    },
+    {
+      "ingredient_id": "magnesium_supplement",
+      "label": "magnesium glycinate",
+      "daily_intake_value": 400,
+      "daily_intake_unit": "mg/day"
+    },
+    {
+      "ingredient_id": "st_johns_wort",
+      "label": "St. John's wort extract",
+      "daily_intake_value": 900,
+      "daily_intake_unit": "mg/day"
+    }
+  ]
+}

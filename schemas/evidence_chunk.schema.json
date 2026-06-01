@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/safety-engine/evidence_chunk.schema.json",
+  "title": "Evidence Chunk Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "chunk_id",
+    "source_id",
+    "ingredient_ids",
+    "locator_type",
+    "locator_value",
+    "excerpt_summary_ko",
+    "claim_type",
+    "structured_claim",
+    "confidence",
+    "notes_ko"
+  ],
+  "properties": {
+    "chunk_id": {
+      "type": "string"
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "ingredient_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "locator_type": {
+      "type": "string"
+    },
+    "locator_value": {
+      "type": "string"
+    },
+    "excerpt_summary_ko": {
+      "type": "string"
+    },
+    "claim_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "structured_claim": {
+      "type": [
+        "object",
+        "array",
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "confidence": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes_ko": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

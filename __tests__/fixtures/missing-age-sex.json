@@ -1,0 +1,23 @@
+{
+  "name": "정보 부족 케이스: 나이와 성별 미입력",
+  "query": {
+    "profile": {
+      "jurisdiction": "KR",
+      "selectedCompounds": ["vitamin d"]
+    },
+    "candidateItems": [
+      {
+        "ingredientId": "vitamin_d",
+        "name": "vitamin D3",
+        "dailyIntakeValue": 125,
+        "dailyIntakeUnit": "mcg/day"
+      }
+    ],
+    "sort": "severity_desc"
+  },
+  "expected": {
+    "definitely_matched": [],
+    "needs_more_info": ["RULE-VITD-UL-US-ADULT"],
+    "possibly_relevant": []
+  }
+}

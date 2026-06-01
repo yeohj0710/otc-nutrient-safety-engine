@@ -1,0 +1,32 @@
+{
+  "name": "61세 여성, thiazide 복용, vitamin D/calcium 관련 주의",
+  "query": {
+    "profile": {
+      "age": 61,
+      "sex": "female",
+      "medications": ["hydrochlorothiazide"],
+      "jurisdiction": "KR",
+      "selectedCompounds": ["vitamin d", "calcium"]
+    },
+    "candidateItems": [
+      {
+        "ingredientId": "vitamin_d",
+        "name": "vitamin D3",
+        "dailyIntakeValue": 125,
+        "dailyIntakeUnit": "mcg/day"
+      },
+      {
+        "ingredientId": "calcium",
+        "name": "calcium carbonate",
+        "dailyIntakeValue": 2200,
+        "dailyIntakeUnit": "mg/day"
+      }
+    ],
+    "sort": "severity_desc"
+  },
+  "expected": {
+    "definitely_matched": ["RULE-VITD-UL-US-ADULT", "RULE-VITD-THIAZIDE-HYPERCALCEMIA", "RULE-CALCIUM-UL-US-51PLUS"],
+    "needs_more_info": [],
+    "possibly_relevant": []
+  }
+}

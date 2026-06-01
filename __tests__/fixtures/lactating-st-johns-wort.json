@@ -1,0 +1,18 @@
+{
+  "name": "29세 여성, 수유 중",
+  "query": {
+    "profile": {
+      "age": 29,
+      "sex": "female",
+      "lactationStatus": "lactating",
+      "jurisdiction": "KR",
+      "selectedCompounds": ["st. john's wort"]
+    },
+    "sort": "severity_desc"
+  },
+  "expected": {
+    "definitely_matched": ["RULE-SJW-PREGNANCY"],
+    "needs_more_info": [],
+    "possibly_relevant": []
+  }
+}

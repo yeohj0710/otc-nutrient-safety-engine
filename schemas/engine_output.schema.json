@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/safety-engine/engine_output.schema.json",
+  "title": "Safety Engine Output",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "evaluation_id",
+    "evaluated_at",
+    "engine_version",
+    "jurisdiction_preference",
+    "strictest_mode_for_conflicts",
+    "overall_decision",
+    "summary_ko",
+    "blocked_ingredients",
+    "dose_adjust_required_ingredients",
+    "manual_review_required_ingredients",
+    "top_risks",
+    "ingredient_results",
+    "reference_bundle"
+  ],
+  "properties": {
+    "evaluation_id": {
+      "type": "string"
+    },
+    "evaluated_at": {
+      "type": "string"
+    },
+    "engine_version": {
+      "type": "string"
+    },
+    "jurisdiction_preference": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "strictest_mode_for_conflicts": {
+      "type": "boolean"
+    },
+    "overall_decision": {
+      "type": "string"
+    },
+    "summary_ko": {
+      "type": "string"
+    },
+    "blocked_ingredients": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dose_adjust_required_ingredients": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "manual_review_required_ingredients": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "top_risks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "ingredient_id",
+          "ingredient_name_ko",
+          "decision",
+          "headline_ko"
+        ],
+        "properties": {
+          "ingredient_id": {
+            "type": "string"
+          },
+          "ingredient_name_ko": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string"
+          },
+          "headline_ko": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ingredient_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "ingredient_id",
+          "ingredient_name_ko",
+          "candidate_label",
+          "decision",
+          "matched_rule_ids",
+          "warnings_ko",
+          "monitoring_ko",
+          "references"
+        ],
+        "properties": {
+          "ingredient_id": {
+            "type": "string"
+          },
+          "ingredient_name_ko": {
+            "type": "string"
+          },
+          "candidate_label": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string"
+          },
+          "matched_rule_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "warnings_ko": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "monitoring_ko": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "source_id",
+                "title",
+                "locator",
+                "chunk_id",
+                "summary_ko",
+                "url"
+              ],
+              "properties": {
+                "source_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "locator": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "chunk_id": {
+                  "type": "string"
+                },
+                "summary_ko": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "reference_bundle": {
+      "type": "object"
+    }
+  }
+}

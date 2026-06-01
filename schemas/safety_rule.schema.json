@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/safety-engine/safety_rule.schema.json",
+  "title": "Safety Rule Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule_id",
+    "rule_group_id",
+    "ingredient_id",
+    "rule_name_ko",
+    "rule_category",
+    "severity",
+    "priority",
+    "jurisdiction",
+    "applies_when",
+    "threshold_operator",
+    "threshold_value",
+    "threshold_unit",
+    "threshold_scope",
+    "action_text_ko",
+    "rationale_ko",
+    "monitoring_ko",
+    "exception_ko",
+    "evidence_chunk_ids",
+    "source_ids",
+    "review_status",
+    "schema_note"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string"
+    },
+    "rule_group_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ingredient_id": {
+      "type": "string"
+    },
+    "rule_name_ko": {
+      "type": "string"
+    },
+    "rule_category": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "integer"
+    },
+    "jurisdiction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "applies_when": {
+      "type": "object"
+    },
+    "threshold_operator": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "threshold_value": {
+      "type": [
+        "number",
+        "integer",
+        "null"
+      ]
+    },
+    "threshold_unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "threshold_scope": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "action_text_ko": {
+      "type": "string"
+    },
+    "rationale_ko": {
+      "type": "string"
+    },
+    "monitoring_ko": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exception_ko": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_chunk_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review_status": {
+      "type": "string"
+    },
+    "schema_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,384 @@
+@import "tailwindcss";
+
+:root {
+  --background: oklch(0.984 0.003 80);
+  --foreground: oklch(0.216 0.012 45);
+  --surface: oklch(1 0 0);
+  --surface-elevated: oklch(0.994 0.001 90);
+  --surface-strong: oklch(0.989 0.002 90);
+  --border-subtle: color-mix(in oklab, var(--foreground) 12%, transparent);
+  --muted: oklch(0.51 0.01 52);
+  --accent: oklch(0.39 0.028 170);
+  --accent-strong: oklch(0.29 0.021 170);
+  --accent-soft: oklch(0.96 0.006 170);
+  --warning: oklch(0.57 0.08 60);
+  --danger: oklch(0.56 0.11 28);
+  --success: oklch(0.56 0.07 160);
+  --shadow-soft:
+    0 6px 18px rgba(27, 25, 22, 0.04), 0 1px 3px rgba(27, 25, 22, 0.03);
+  --shadow-panel:
+    0 10px 24px rgba(27, 25, 22, 0.045), 0 2px 8px rgba(27, 25, 22, 0.03);
+  --shadow-float:
+    0 12px 24px rgba(27, 25, 22, 0.055), 0 3px 10px rgba(27, 25, 22, 0.03);
+  --ease-emphasized: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-toggle-fast: 180ms;
+  --duration-toggle: 280ms;
+  --duration-expand: 380ms;
+  --page-shell-max: 54rem;
+  --page-shell-narrow-max: 48rem;
+  --font-fallback-sans:
+    "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", "Noto Sans KR",
+    sans-serif;
+  --font-fallback-display: var(--font-fallback-sans);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-strong: var(--surface-strong);
+  --color-border-subtle: var(--border-subtle);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --font-sans: var(--font-app-sans), var(--font-fallback-sans);
+  --font-display: var(--font-app-sans), var(--font-fallback-display);
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-app-sans), var(--font-fallback-sans);
+  font-kerning: normal;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button:not(:disabled),
+summary,
+[role="button"] {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--accent) 78%, white);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent-soft) 78%, white);
+  color: var(--foreground);
+}
+
+.app-page {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      72rem 28rem at 50% -12rem,
+      color-mix(in oklab, var(--accent-soft) 38%, white) 0%,
+      transparent 72%
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--background) 97%, white) 0%,
+      var(--background) 42%,
+      var(--background) 100%
+    );
+}
+
+.page-shell {
+  width: 100%;
+  max-width: var(--page-shell-max);
+  margin-inline: auto;
+}
+
+.page-shell-narrow {
+  width: 100%;
+  max-width: var(--page-shell-narrow-max);
+  margin-inline: auto;
+}
+
+.app-page::before,
+.app-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.surface-card {
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in oklab, var(--surface) 98%, var(--background));
+  box-shadow: var(--shadow-soft);
+}
+
+.surface-card-strong {
+  border: 1px solid var(--border-subtle);
+  background: color-mix(
+    in oklab,
+    var(--surface-elevated) 98%,
+    var(--background)
+  );
+  box-shadow: var(--shadow-panel);
+}
+
+.site-masthead {
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      rgba(255, 255, 255, 0.82) 100%
+    ),
+    color-mix(in oklab, var(--surface-elevated) 96%, var(--background));
+  box-shadow: 0 4px 12px rgba(27, 25, 22, 0.03);
+  backdrop-filter: blur(12px);
+}
+
+.site-credit-pill {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  align-items: flex-start;
+  background: transparent;
+  padding: 0;
+}
+
+.site-brand-mark {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 4px 10px rgba(27, 25, 22, 0.04);
+}
+
+.site-brand-mark-footer {
+  width: 2rem;
+  height: 2rem;
+  box-shadow: none;
+}
+
+.site-footer-panel {
+  border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: none;
+}
+
+.site-topbar-label {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.eyebrow::before {
+  content: none;
+}
+
+.measure-copy {
+  max-width: 54ch;
+}
+
+.collapsible-chevron {
+  transition:
+    transform var(--duration-expand) var(--ease-emphasized),
+    color var(--duration-toggle) var(--ease-soft),
+    background-color var(--duration-toggle) var(--ease-soft),
+    border-color var(--duration-toggle) var(--ease-soft);
+  transform-origin: center;
+}
+
+[data-open="true"] .collapsible-chevron,
+details[open] .collapsible-chevron {
+  transform: rotate(180deg);
+}
+
+.collapsible-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows var(--duration-expand) var(--ease-emphasized),
+    opacity var(--duration-toggle) var(--ease-soft);
+}
+
+.collapsible-panel[data-open="true"],
+details[open] > .collapsible-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.collapsible-panel-dense {
+  opacity: 1;
+  transition: grid-template-rows 240ms var(--ease-soft);
+  contain: layout;
+}
+
+.collapsible-panel-dense .collapsible-panel-inner {
+  overflow: hidden;
+  contain: layout paint;
+}
+
+.collapsible-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.collapsible-panel-body {
+  transform: translate3d(0, -8px, 0);
+  opacity: 0;
+  transition:
+    transform var(--duration-expand) var(--ease-emphasized),
+    opacity 220ms var(--ease-soft);
+  will-change: transform, opacity;
+}
+
+.collapsible-panel[data-open="true"] .collapsible-panel-body,
+details[open] > .collapsible-panel .collapsible-panel-body {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.collapsible-panel-dense .collapsible-panel-body {
+  transform: none;
+  opacity: 1;
+  transition: none;
+  will-change: auto;
+  contain: layout paint;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 127, 107, 0);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(74, 127, 107, 0.08);
+  }
+}
+
+@keyframes skeleton-shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.surface-grid {
+  position: relative;
+}
+
+.surface-grid::before {
+  display: none;
+}
+
+.editorial-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.loading-skeleton {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(243, 241, 236, 0.92) 0%,
+    rgba(237, 234, 228, 0.96) 100%
+  );
+}
+
+.loading-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.72) 50%,
+    transparent 100%
+  );
+  animation: skeleton-shimmer 1.25s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

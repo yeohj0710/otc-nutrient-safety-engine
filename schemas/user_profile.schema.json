@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/safety-engine/user_profile.schema.json",
+  "title": "User Profile",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "user_id",
+    "age_years",
+    "sex",
+    "pregnancy_status",
+    "lactation_status",
+    "smoking_status",
+    "exposures",
+    "medications",
+    "conditions",
+    "allergies",
+    "devices",
+    "immune_status",
+    "goals"
+  ],
+  "properties": {
+    "user_id": {
+      "type": "string"
+    },
+    "age_years": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "sex": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pregnancy_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lactation_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "smoking_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exposures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "medications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "name",
+          "dose",
+          "frequency"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "dose": {
+            "type": [
+              "string",
+              "number",
+              "integer",
+              "null"
+            ]
+          },
+          "frequency": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allergies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "immune_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+﻿evaluation_id,evaluated_at,ingredient_id,label,daily_intake_value,daily_intake_unit,timing_note,alt_display,jurisdiction_preference,strictest_mode_for_conflicts
+EVAL-DEMO-001,2026-03-22T16:58:00Z,beta_carotene,beta-carotene,20,mg/day,,,"[""KR"", ""US"", ""EU"", ""strictest""]",True
+EVAL-DEMO-001,2026-03-22T16:58:00Z,vitamin_k,vitamin K2,120,mcg/day,,,"[""KR"", ""US"", ""EU"", ""strictest""]",True
+EVAL-DEMO-001,2026-03-22T16:58:00Z,calcium,calcium carbonate,1200,mg/day,with breakfast,,"[""KR"", ""US"", ""EU"", ""strictest""]",True
+EVAL-DEMO-001,2026-03-22T16:58:00Z,vitamin_d,vitamin D3,125,mcg/day,,5000 IU/day,"[""KR"", ""US"", ""EU"", ""strictest""]",True
+EVAL-DEMO-001,2026-03-22T16:58:00Z,omega3_epa_dha,fish oil EPA+DHA,4000,mg/day,,,"[""KR"", ""US"", ""EU"", ""strictest""]",True
+EVAL-DEMO-001,2026-03-22T16:58:00Z,magnesium_supplement,magnesium glycinate,400,mg/day,,,"[""KR"", ""US"", ""EU"", ""strictest""]",True
+EVAL-DEMO-001,2026-03-22T16:58:00Z,st_johns_wort,St. John's wort extract,900,mg/day,,,"[""KR"", ""US"", ""EU"", ""strictest""]",True

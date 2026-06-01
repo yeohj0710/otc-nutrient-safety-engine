@@ -1,0 +1,2 @@
+﻿user_id,age_years,sex,pregnancy_status,lactation_status,smoking_status,exposures,medications,conditions,allergies,devices,immune_status,goals
+USER-DEMO-001,67,male,not_applicable,not_applicable,former,[],"[{""name"": ""warfarin"", ""dose"": null, ""frequency"": null}, {""name"": ""levothyroxine"", ""dose"": null, ""frequency"": ""qAM""}, {""name"": ""hydrochlorothiazide"", ""dose"": null, ""frequency"": ""daily""}]","[""cardiovascular disease"", ""hypothyroidism""]",[],[],normal,"[""heart_health"", ""general_wellness""]"

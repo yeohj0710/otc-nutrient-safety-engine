@@ -1,0 +1,8 @@
+﻿evaluation_id,ingredient_id,ingredient_name_ko,candidate_label,decision,matched_rule_ids,warnings_ko,monitoring_ko,reference_count
+EVAL-DEMO-001,beta_carotene,베타카로틴,beta-carotene,avoid,RULE-BETACAROTENE-SMOKERS-AVOID,흡연자·과거흡연자·석면노출자는 고용량 beta-carotene 보충제를 회피한다.,흡연력/석면 노출 이력은 별도 structured field로 수집한다.,2
+EVAL-DEMO-001,vitamin_k,비타민 K,vitamin K2,warn,RULE-VITK-WARFARIN-CONSISTENCY,warfarin류 복용자는 vitamin K 음식/보충제 섭취량을 급격히 바꾸지 말고 일관되게 유지한다.,INR 모니터링과 복용량 조정은 의료진 판단.,1
+EVAL-DEMO-001,calcium,칼슘,calcium carbonate,warn,RULE-CALCIUM-LEVOTHYROXINE-4H,칼슘과 levothyroxine은 최소 4시간 이상 간격을 둔다.,,1
+EVAL-DEMO-001,vitamin_d,비타민 D,vitamin D3,avoid,RULE-VITD-UL-US-ADULT | RULE-VITD-THIAZIDE-HYPERCALCEMIA,"비타민 D 총일일섭취량이 100 mcg/day(4,000 IU/day)를 넘지 않도록 제한한다. || thiazide 이뇨제 복용 중이면 vitamin D 고용량 사용을 보수적으로 제한하고 calcium 상태를 확인한다.","serum calcium, renal function 검토 권장.",2
+EVAL-DEMO-001,omega3_epa_dha,오메가-3(EPA+DHA),fish oil EPA+DHA,warn,RULE-OMEGA3-WARFARIN-MONITOR | RULE-OMEGA3-AF-HIGHRISK,CVD 또는 고위험 환자에서 omega-3 4 g/day 장기복용은 AF 위험을 설명하고 모니터링한다.,심계항진/부정맥 증상 또는 ECG 기반 확인.,4
+EVAL-DEMO-001,magnesium_supplement,마그네슘(보충제),magnesium glycinate,warn,RULE-MAG-UL-US-ADULT | RULE-MAG-UL-EU-ADULT,보충제/의약품 유래 마그네슘이 350 mg/day를 넘으면 설사·위장관 이상 및 과량 리스크를 검토한다. || EU 기준을 쓰면 readily dissociable magnesium salts in supplements는 250 mg/day 초과 시 경고한다.,,2
+EVAL-DEMO-001,st_johns_wort,세인트존스워트,St. John's wort extract,contraindicated,RULE-SJW-MAJOR-DRUG-INTERACTIONS,상호작용 가능 약물을 복용 중이면 세인트존스워트는 기본적으로 금기 처리한다.,,2

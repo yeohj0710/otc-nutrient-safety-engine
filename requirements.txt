@@ -1,0 +1,6 @@
+requests>=2.32
+pandas>=2.2
+pydantic>=2.8
+python-dotenv>=1.0
+rispy>=0.9
+playwright>=1.49

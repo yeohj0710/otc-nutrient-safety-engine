@@ -1,0 +1,2233 @@
+[
+  {
+    "rule_id": "RULE-VITA-UL-US-ADULT",
+    "rule_group_id": "GROUP-VITA-UL-ADULT",
+    "ingredient_id": "vitamin_a_preformed",
+    "rule_name_ko": "프리폼드 비타민 A 성인 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "avoid",
+    "priority": 90,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      },
+      "ingredient_forms_any": [
+        "retinol",
+        "retinyl palmitate",
+        "retinyl acetate",
+        "retinyl esters"
+      ]
+    },
+    "threshold_operator": ">",
+    "threshold_value": 3000,
+    "threshold_unit": "mcg RAE/day",
+    "threshold_scope": "preformed_only",
+    "action_text_ko": "프리폼드 비타민 A 총일일섭취량이 3,000 mcg RAE/day를 넘지 않도록 제한한다.",
+    "rationale_ko": "프리폼드 vitamin A UL은 3,000 mcg/day이며 beta-carotene에는 직접 적용되지 않는다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-VITA-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-A"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-VITA-PREGNANCY-HIGHDOSE",
+    "rule_group_id": "GROUP-VITA-PREGNANCY",
+    "ingredient_id": "vitamin_a_preformed",
+    "rule_name_ko": "임신/임신가능 여성의 고용량 비타민 A 회피",
+    "rule_category": "pregnancy_lactation",
+    "severity": "avoid",
+    "priority": 95,
+    "jurisdiction": "US",
+    "applies_when": {
+      "pregnancy_status_any": [
+        "pregnant",
+        "trying_to_conceive",
+        "unknown_possible"
+      ],
+      "ingredient_forms_any": [
+        "retinol",
+        "retinyl palmitate",
+        "retinyl acetate",
+        "retinyl esters"
+      ]
+    },
+    "threshold_operator": ">",
+    "threshold_value": 3000,
+    "threshold_unit": "mcg RAE/day",
+    "threshold_scope": "preformed_only",
+    "action_text_ko": "임신 중이거나 임신 가능성이 있으면 프리폼드 비타민 A 보충제를 3,000 mcg RAE/day 초과로 사용하지 않는다.",
+    "rationale_ko": "고용량 retinoid 계열 vitamin A는 선천기형 위험과 연결되어 보수적 제한이 필요하다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-VITA-PREG-CAUTION",
+      "CHK-VITA-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-A"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-BETACAROTENE-SMOKERS-AVOID",
+    "rule_group_id": "GROUP-BETACAROTENE-SMOKERS",
+    "ingredient_id": "beta_carotene",
+    "rule_name_ko": "흡연자/과거흡연자의 고용량 베타카로틴 회피",
+    "rule_category": "population_caution",
+    "severity": "avoid",
+    "priority": 92,
+    "jurisdiction": "US/INTL",
+    "applies_when": {
+      "smoking_status_any": [
+        "current",
+        "former"
+      ],
+      "exposure_any": [
+        "asbestos"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "흡연자·과거흡연자·석면노출자는 고용량 beta-carotene 보충제를 회피한다.",
+    "rationale_ko": "흡연자 대상 RCT와 ODS 경고는 폐암 위험 증가 신호를 제시한다.",
+    "monitoring_ko": "흡연력/석면 노출 이력은 별도 structured field로 수집한다.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-BETACAR-SMOKER-RISK-ATBC",
+      "CHK-BETACAR-SMOKER-RISK-GENERAL"
+    ],
+    "source_ids": [
+      "SRC-PMID-8127329",
+      "SRC-US-ODS-VITAMIN-A"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-VITD-UL-US-ADULT",
+    "rule_group_id": "GROUP-VITD-UL-ADULT",
+    "ingredient_id": "vitamin_d",
+    "rule_name_ko": "비타민 D 성인 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "avoid",
+    "priority": 85,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 100,
+    "threshold_unit": "mcg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "비타민 D 총일일섭취량이 100 mcg/day(4,000 IU/day)를 넘지 않도록 제한한다.",
+    "rationale_ko": "ODS 성인 UL 기준.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-VITD-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-D"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-VITD-THIAZIDE-HYPERCALCEMIA",
+    "rule_group_id": "GROUP-VITD-THIAZIDE",
+    "ingredient_id": "vitamin_d",
+    "rule_name_ko": "비타민 D + thiazide 이뇨제",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 80,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "hydrochlorothiazide",
+        "chlorthalidone",
+        "thiazide diuretic"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "thiazide 이뇨제 복용 중이면 vitamin D 고용량 사용을 보수적으로 제한하고 calcium 상태를 확인한다.",
+    "rationale_ko": "thiazide와 vitamin D 병용은 고칼슘혈증 위험을 높일 수 있다.",
+    "monitoring_ko": "serum calcium, renal function 검토 권장.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-VITD-THIAZIDE"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-D"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-VITD-ORLISTAT-ABSORPTION",
+    "rule_group_id": "GROUP-VITD-ORLISTAT",
+    "ingredient_id": "vitamin_d",
+    "rule_name_ko": "비타민 D + orlistat 흡수저하",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 65,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "orlistat"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "orlistat 복용 중이면 vitamin D 흡수 저하 가능성을 반영해 분리 복용 또는 상태 재평가를 권고한다.",
+    "rationale_ko": "orlistat은 지용성 비타민 흡수를 감소시킬 수 있다.",
+    "monitoring_ko": "25(OH)D 추적 또는 증상 기반 재평가.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-VITD-ORLISTAT"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-D"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-CALCIUM-UL-US-19-50",
+    "rule_group_id": "GROUP-CALCIUM-UL-ADULT",
+    "ingredient_id": "calcium",
+    "rule_name_ko": "칼슘 UL 19–50세(미국)",
+    "rule_category": "dose_limit",
+    "severity": "avoid",
+    "priority": 82,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19,
+        "max": 50
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 2500,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "칼슘 총일일섭취량이 2,500 mg/day를 넘지 않도록 제한한다.",
+    "rationale_ko": "ODS age-band UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-CALCIUM-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-CALCIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-CALCIUM-UL-US-51PLUS",
+    "rule_group_id": "GROUP-CALCIUM-UL-ADULT",
+    "ingredient_id": "calcium",
+    "rule_name_ko": "칼슘 UL 51세 이상(미국)",
+    "rule_category": "dose_limit",
+    "severity": "avoid",
+    "priority": 82,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 51
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 2000,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "51세 이상은 칼슘 총일일섭취량이 2,000 mg/day를 넘지 않도록 제한한다.",
+    "rationale_ko": "ODS age-band UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-CALCIUM-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-CALCIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-CALCIUM-LEVOTHYROXINE-4H",
+    "rule_group_id": "GROUP-CALCIUM-LEVOTHYROXINE",
+    "ingredient_id": "calcium",
+    "rule_name_ko": "칼슘 + 레보티록신 분리복용",
+    "rule_category": "timing_separation",
+    "severity": "warn",
+    "priority": 88,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "levothyroxine"
+      ],
+      "same_day": true
+    },
+    "threshold_operator": null,
+    "threshold_value": 4,
+    "threshold_unit": "hours",
+    "threshold_scope": "timing",
+    "action_text_ko": "칼슘과 levothyroxine은 최소 4시간 이상 간격을 둔다.",
+    "rationale_ko": "칼슘탄산염이 levothyroxine 흡수를 낮출 수 있다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-CALCIUM-LEVOTHYROXINE"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-CALCIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-CALCIUM-QUINOLONE-SPLIT",
+    "rule_group_id": "GROUP-CALCIUM-QUINOLONE",
+    "ingredient_id": "calcium",
+    "rule_name_ko": "칼슘 + 퀴놀론 항생제 분리복용",
+    "rule_category": "timing_separation",
+    "severity": "warn",
+    "priority": 78,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "quinolone antibiotic",
+        "ciprofloxacin",
+        "levofloxacin",
+        "moxifloxacin"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "칼슘과 quinolone 항생제는 복용 간격을 둔다.",
+    "rationale_ko": "킬레이션으로 항생제 흡수가 감소할 수 있다.",
+    "monitoring_ko": "기본 규칙: 항생제를 칼슘보다 최소 2시간 전 또는 4–6시간 후 복용.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-CALCIUM-QUINOLONE"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-CALCIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-MAG-UL-US-ADULT",
+    "rule_group_id": "GROUP-MAG-UL-ADULT",
+    "ingredient_id": "magnesium_supplement",
+    "rule_name_ko": "마그네슘(보충제) 성인 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 83,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 350,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "supplements_only",
+    "action_text_ko": "보충제/의약품 유래 마그네슘이 350 mg/day를 넘으면 설사·위장관 이상 및 과량 리스크를 검토한다.",
+    "rationale_ko": "ODS supplemental magnesium UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-MAG-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-MAGNESIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-MAG-UL-EU-ADULT",
+    "rule_group_id": "GROUP-MAG-UL-ADULT",
+    "ingredient_id": "magnesium_supplement",
+    "rule_name_ko": "마그네슘(보충제) 성인 UL(EU)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 83,
+    "jurisdiction": "EU",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      },
+      "jurisdiction_preference_any": [
+        "EU",
+        "strictest"
+      ]
+    },
+    "threshold_operator": ">",
+    "threshold_value": 250,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "supplements_only",
+    "action_text_ko": "EU 기준을 쓰면 readily dissociable magnesium salts in supplements는 250 mg/day 초과 시 경고한다.",
+    "rationale_ko": "EFSA는 supplements 기준 adult UL 250 mg/day를 제시한다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-MAG-UL-EU"
+    ],
+    "source_ids": [
+      "SRC-EU-EFSA-UL-SUMMARY-2025"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-MAG-ABX-SPLIT",
+    "rule_group_id": "GROUP-MAG-ABX",
+    "ingredient_id": "magnesium_supplement",
+    "rule_name_ko": "마그네슘 + tetracycline/quinolone 항생제 분리복용",
+    "rule_category": "timing_separation",
+    "severity": "warn",
+    "priority": 78,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "tetracycline antibiotic",
+        "quinolone antibiotic",
+        "doxycycline",
+        "minocycline",
+        "ciprofloxacin",
+        "levofloxacin"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "항생제를 마그네슘보다 최소 2시간 전 또는 4–6시간 후에 복용한다.",
+    "rationale_ko": "킬레이션으로 항생제 흡수가 감소할 수 있다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-MAG-ABX"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-MAGNESIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-MAG-BISPHOSPHONATE-SPLIT",
+    "rule_group_id": "GROUP-MAG-BISPHOSPHONATE",
+    "ingredient_id": "magnesium_supplement",
+    "rule_name_ko": "마그네슘 + 경구 비스포스포네이트 분리복용",
+    "rule_category": "timing_separation",
+    "severity": "warn",
+    "priority": 76,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "oral bisphosphonate",
+        "alendronate",
+        "risedronate"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "경구 bisphosphonate와 마그네슘은 최소 2시간 이상 간격을 둔다.",
+    "rationale_ko": "bisphosphonate 흡수가 감소할 수 있다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-MAG-BISPHOSPHONATE"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-MAGNESIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IRON-UL-US-ADULT",
+    "rule_group_id": "GROUP-IRON-UL-ADULT",
+    "ingredient_id": "iron",
+    "rule_name_ko": "철 성인 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 80,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 45,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "철 총일일섭취량이 45 mg/day를 넘으면 위장관 이상과 과량 리스크를 검토한다.",
+    "rationale_ko": "ODS 성인 UL 45 mg/day.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IRON-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IRON"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IRON-SAFELEVEL-EU-ADULT",
+    "rule_group_id": "GROUP-IRON-UL-ADULT",
+    "ingredient_id": "iron",
+    "rule_name_ko": "철 safe level(EU)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 78,
+    "jurisdiction": "EU",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      },
+      "jurisdiction_preference_any": [
+        "EU",
+        "strictest"
+      ]
+    },
+    "threshold_operator": ">",
+    "threshold_value": 40,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "EU 기준을 쓰면 iron은 formal UL 대신 safe level 40 mg/day를 참고 상한으로 사용한다.",
+    "rationale_ko": "EFSA summary는 성인 safe level 40 mg/day를 제시한다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IRON-SAFELEVEL-EU"
+    ],
+    "source_ids": [
+      "SRC-EU-EFSA-UL-SUMMARY-2025"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IRON-LEVOTHYROXINE-SPLIT",
+    "rule_group_id": "GROUP-IRON-LEVOTHYROXINE",
+    "ingredient_id": "iron",
+    "rule_name_ko": "철 + 레보티록신 분리복용",
+    "rule_category": "timing_separation",
+    "severity": "warn",
+    "priority": 88,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "levothyroxine"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": 4,
+    "threshold_unit": "hours",
+    "threshold_scope": "timing",
+    "action_text_ko": "철 보충제와 levothyroxine은 일반적으로 최소 4시간 간격을 둔다.",
+    "rationale_ko": "철은 levothyroxine 흡수/효과를 저하시킬 수 있다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IRON-INTERACTIONS"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IRON"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IRON-LEVODOPA-INTERACTION",
+    "rule_group_id": "GROUP-IRON-LEVODOPA",
+    "ingredient_id": "iron",
+    "rule_name_ko": "철 + levodopa 상호작용",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 82,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "levodopa"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "levodopa 사용자는 철 보충제 병용 여부를 별도 검토한다.",
+    "rationale_ko": "철 보충제는 levodopa와 상호작용할 수 있다.",
+    "monitoring_ko": "복용시간 분리와 임상반응 재평가.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IRON-INTERACTIONS"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IRON"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IRON-PPI-ABSORPTION",
+    "rule_group_id": "GROUP-IRON-PPI",
+    "ingredient_id": "iron",
+    "rule_name_ko": "철 + PPI 흡수저하",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 68,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "proton pump inhibitor",
+        "omeprazole",
+        "esomeprazole",
+        "pantoprazole",
+        "lansoprazole"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "PPI 사용자는 철 흡수 저하 가능성을 반영해 제형/용량/복용전략을 재평가한다.",
+    "rationale_ko": "PPI는 철 흡수를 줄일 수 있다.",
+    "monitoring_ko": "ferritin/Hb 또는 증상 기반 재평가.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IRON-INTERACTIONS"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IRON"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IRON-CALCIUM-SPLIT",
+    "rule_group_id": "GROUP-IRON-CALCIUM",
+    "ingredient_id": "iron",
+    "rule_name_ko": "철 + 칼슘 분리복용",
+    "rule_category": "timing_separation",
+    "severity": "warn",
+    "priority": 60,
+    "jurisdiction": "US",
+    "applies_when": {
+      "coingredients_any": [
+        "calcium"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "개별 iron과 calcium 보충제는 같은 시간대 복용을 피한다.",
+    "rationale_ko": "칼슘이 철 흡수를 방해할 수 있다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IRON-CALCIUM-SPLIT"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IRON"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-FOLATE-UL-US-ADULT",
+    "rule_group_id": "GROUP-FOLATE-UL-ADULT",
+    "ingredient_id": "folic_acid",
+    "rule_name_ko": "엽산 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 80,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 1000,
+    "threshold_unit": "mcg/day",
+    "threshold_scope": "supplements_or_fortified_only",
+    "action_text_ko": "supplements/fortified foods 유래 folate는 1,000 mcg/day를 넘지 않도록 제한한다.",
+    "rationale_ko": "자연식품 folate가 아니라 synthetic folate에만 적용되는 UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-FOLATE-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-FOLATE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-FOLATE-UL-EU-ADULT",
+    "rule_group_id": "GROUP-FOLATE-UL-ADULT",
+    "ingredient_id": "folic_acid",
+    "rule_name_ko": "엽산 UL(EU)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 80,
+    "jurisdiction": "EU",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      },
+      "jurisdiction_preference_any": [
+        "EU",
+        "strictest"
+      ]
+    },
+    "threshold_operator": ">",
+    "threshold_value": 1000,
+    "threshold_unit": "mcg/day",
+    "threshold_scope": "supplements_or_fortified_only",
+    "action_text_ko": "EU 기준도 supplements/fortified foods folate 1,000 mcg/day를 상한으로 본다.",
+    "rationale_ko": "EFSA summary 동일.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-FOLATE-UL-EU"
+    ],
+    "source_ids": [
+      "SRC-EU-EFSA-UL-SUMMARY-2025"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-FOLATE-B12-MASKING",
+    "rule_group_id": "GROUP-FOLATE-B12",
+    "ingredient_id": "folic_acid",
+    "rule_name_ko": "고용량 엽산과 B12 결핍 masking 위험",
+    "rule_category": "disease_caution",
+    "severity": "warn",
+    "priority": 72,
+    "jurisdiction": "US",
+    "applies_when": {
+      "diseases_any": [
+        "vitamin B12 deficiency suspected",
+        "pernicious anemia",
+        "unexplained macrocytosis"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "B12 결핍 가능성이 있으면 고용량 folic acid를 단독 장기 사용하지 않는다.",
+    "rationale_ko": "빈혈 교정으로 신경학적 악화를 늦게 발견할 수 있다.",
+    "monitoring_ko": "B12 status 확인.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-FOLATE-B12-MASKING"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-FOLATE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-VITK-WARFARIN-CONSISTENCY",
+    "rule_group_id": "GROUP-VITK-WARFARIN",
+    "ingredient_id": "vitamin_k",
+    "rule_name_ko": "비타민 K + warfarin 일관성 유지",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 90,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "warfarin",
+        "phenprocoumon",
+        "acenocoumarol",
+        "tioclomarol"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "warfarin류 복용자는 vitamin K 음식/보충제 섭취량을 급격히 바꾸지 말고 일관되게 유지한다.",
+    "rationale_ko": "항응고 효과가 커지거나 줄어들 수 있다.",
+    "monitoring_ko": "INR 모니터링과 복용량 조정은 의료진 판단.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-VITK-WARFARIN"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-K"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-VITK-ORLISTAT-MONITOR",
+    "rule_group_id": "GROUP-VITK-ORLISTAT",
+    "ingredient_id": "vitamin_k",
+    "rule_name_ko": "비타민 K + orlistat",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 65,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "orlistat"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "orlistat 사용 시 vitamin K 흡수 저하 가능성을 검토한다.",
+    "rationale_ko": "지용성 비타민 흡수 감소.",
+    "monitoring_ko": "warfarin 병용자는 INR 추가 모니터링.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-VITK-ORLISTAT"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-K"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-OMEGA3-SAFE-UPTO5",
+    "rule_group_id": "GROUP-OMEGA3-UPPER-PRACTICAL",
+    "ingredient_id": "omega3_epa_dha",
+    "rule_name_ko": "오메가3 실무상 상한 참고치",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 55,
+    "jurisdiction": "US/EU",
+    "applies_when": {},
+    "threshold_operator": ">",
+    "threshold_value": 5000,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "epa_dha_combined",
+    "action_text_ko": "EPA+DHA 합산 5 g/day 초과는 일반 소비자용 서비스에서 기본 경고 구간으로 둔다.",
+    "rationale_ko": "EFSA/FDA는 약 5 g/day까지 일반적으로 안전하다고 보나 formal UL은 아니다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-OMEGA3-SAFE-UPTO5"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-OMEGA3"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-OMEGA3-WARFARIN-MONITOR",
+    "rule_group_id": "GROUP-OMEGA3-WARFARIN",
+    "ingredient_id": "omega3_epa_dha",
+    "rule_name_ko": "오메가3 + warfarin/항응고제",
+    "rule_category": "interaction",
+    "severity": "monitor",
+    "priority": 78,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "warfarin",
+        "anticoagulant",
+        "apixaban",
+        "rivaroxaban",
+        "dabigatran"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "고용량 omega-3를 항응고제와 병용하면 INR/출혈 징후를 모니터링한다.",
+    "rationale_ko": "고용량에서 항혈소판/응고시간 연장 가능성이 있다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-OMEGA3-BLEEDING",
+      "CHK-OMEGA3-WARFARIN"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-OMEGA3"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-OMEGA3-AF-HIGHRISK",
+    "rule_group_id": "GROUP-OMEGA3-AF",
+    "ingredient_id": "omega3_epa_dha",
+    "rule_name_ko": "고위험 심혈관 환자의 오메가3 4 g/day AF 주의",
+    "rule_category": "adverse_effect_signal",
+    "severity": "warn",
+    "priority": 74,
+    "jurisdiction": "US/INTL",
+    "applies_when": {
+      "diseases_any": [
+        "cardiovascular disease",
+        "high cardiovascular risk"
+      ],
+      "candidate_daily_intake": {
+        "gte": 4000,
+        "unit": "mg/day"
+      }
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "CVD 또는 고위험 환자에서 omega-3 4 g/day 장기복용은 AF 위험을 설명하고 모니터링한다.",
+    "rationale_ko": "ODS fact sheet와 메타분석 모두 AF 위험 증가 신호를 제시한다.",
+    "monitoring_ko": "심계항진/부정맥 증상 또는 ECG 기반 확인.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-OMEGA3-AF-ODS",
+      "CHK-OMEGA3-AF-META"
+    ],
+    "source_ids": [
+      "SRC-PMID-34612056",
+      "SRC-US-ODS-OMEGA3"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-ZINC-UL-US-ADULT",
+    "rule_group_id": "GROUP-ZINC-UL-ADULT",
+    "ingredient_id": "zinc",
+    "rule_name_ko": "아연 성인 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 78,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 40,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "아연 총일일섭취량이 40 mg/day를 넘지 않도록 제한한다.",
+    "rationale_ko": "고용량 zinc는 copper status 악화와 연관.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-ZINC-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-ZINC"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-ZINC-ABX-SPLIT",
+    "rule_group_id": "GROUP-ZINC-ABX",
+    "ingredient_id": "zinc",
+    "rule_name_ko": "아연 + 항생제 분리복용",
+    "rule_category": "timing_separation",
+    "severity": "warn",
+    "priority": 76,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "quinolone antibiotic",
+        "tetracycline antibiotic"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "아연과 quinolone/tetracycline 항생제는 2시간 전 또는 4–6시간 후로 분리 복용한다.",
+    "rationale_ko": "킬레이션으로 항생제 흡수가 감소할 수 있다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-ZINC-ABX"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-ZINC"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-ZINC-LONGTERM-COPPER",
+    "rule_group_id": "GROUP-ZINC-COPPER",
+    "ingredient_id": "zinc",
+    "rule_name_ko": "장기 고용량 아연의 구리결핍 모니터링",
+    "rule_category": "monitoring",
+    "severity": "monitor",
+    "priority": 66,
+    "jurisdiction": "US",
+    "applies_when": {
+      "long_term_use_days": {
+        "gte": 30
+      },
+      "candidate_daily_intake": {
+        "gt": 40,
+        "unit": "mg/day"
+      }
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "장기 고용량 zinc는 copper deficiency 징후를 확인한다.",
+    "rationale_ko": "UL 근거가 copper status이다.",
+    "monitoring_ko": "CBC, copper status, 신경학적 증상 확인.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-ZINC-COPPER",
+      "CHK-ZINC-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-ZINC"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-SELENIUM-UL-US-ADULT",
+    "rule_group_id": "GROUP-SELENIUM-UL-ADULT",
+    "ingredient_id": "selenium",
+    "rule_name_ko": "셀레늄 성인 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 78,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 400,
+    "threshold_unit": "mcg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "셀레늄 총일일섭취량이 400 mcg/day를 넘지 않도록 제한한다.",
+    "rationale_ko": "ODS 성인 UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-SELENIUM-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-SELENIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-SELENIUM-UL-EU-ADULT",
+    "rule_group_id": "GROUP-SELENIUM-UL-ADULT",
+    "ingredient_id": "selenium",
+    "rule_name_ko": "셀레늄 성인 UL(EU)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 78,
+    "jurisdiction": "EU",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      },
+      "jurisdiction_preference_any": [
+        "EU",
+        "strictest"
+      ]
+    },
+    "threshold_operator": ">",
+    "threshold_value": 255,
+    "threshold_unit": "mcg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "EU 기준을 쓰면 셀레늄은 255 mcg/day 초과를 경고한다.",
+    "rationale_ko": "EFSA 2023/2025 summary adult UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-SELENIUM-UL-EU"
+    ],
+    "source_ids": [
+      "SRC-EU-EFSA-UL-SUMMARY-2025"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-SELENIUM-SELENOSIS-SYMPTOMS",
+    "rule_group_id": "GROUP-SELENIUM-TOXICITY",
+    "ingredient_id": "selenium",
+    "rule_name_ko": "셀레늄 과다 섭취 증상 플래그",
+    "rule_category": "monitoring",
+    "severity": "monitor",
+    "priority": 58,
+    "jurisdiction": "US",
+    "applies_when": {
+      "candidate_daily_intake": {
+        "gt": 200,
+        "unit": "mcg/day"
+      }
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "셀레늄 고용량 복용 시 탈모, 손발톱 변화, 입마늘냄새, 위장증상 등을 확인한다.",
+    "rationale_ko": "selenosis 대표 징후.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-SELENIUM-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-SELENIUM"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IODINE-UL-US-ADULT",
+    "rule_group_id": "GROUP-IODINE-UL-ADULT",
+    "ingredient_id": "iodine",
+    "rule_name_ko": "요오드 성인 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 78,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 1100,
+    "threshold_unit": "mcg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "요오드 총일일섭취량이 1,100 mcg/day를 넘지 않도록 제한한다.",
+    "rationale_ko": "ODS 성인 UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IODINE-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IODINE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IODINE-AUTOIMMUNE-THYROID",
+    "rule_group_id": "GROUP-IODINE-THYROID-DISEASE",
+    "ingredient_id": "iodine",
+    "rule_name_ko": "자가면역 갑상선질환/요오드 결핍에서 요오드 주의",
+    "rule_category": "disease_caution",
+    "severity": "warn",
+    "priority": 82,
+    "jurisdiction": "US",
+    "applies_when": {
+      "diseases_any": [
+        "autoimmune thyroid disease",
+        "Hashimoto thyroiditis",
+        "Graves disease",
+        "iodine deficiency"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "자가면역 갑상선질환 또는 요오드 결핍이 있으면 요오드 보충은 별도 검토 후 사용한다.",
+    "rationale_ko": "일반적으로 안전한 섭취량에서도 갑상선 이상반응이 나타날 수 있다.",
+    "monitoring_ko": "TSH, FT4, 임상증상 확인.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IODINE-THYROID-DISEASE"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IODINE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IODINE-ANTITHYROID",
+    "rule_group_id": "GROUP-IODINE-ANTITHYROID",
+    "ingredient_id": "iodine",
+    "rule_name_ko": "요오드 + 항갑상선제",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 82,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "antithyroid drug",
+        "methimazole",
+        "propylthiouracil"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "항갑상선제 복용 중이면 추가 iodine 보충을 임의로 시작하지 않는다.",
+    "rationale_ko": "hypothyroidism 위험이 커질 수 있다.",
+    "monitoring_ko": "갑상선 기능 추적.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IODINE-ANTITHYROID-ACEI"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IODINE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-IODINE-POTASSIUM-IODIDE-HYPERKALEMIA",
+    "rule_group_id": "GROUP-IODINE-ACEI-HYPERKALEMIA",
+    "ingredient_id": "iodine",
+    "rule_name_ko": "potassium iodide + ACE inhibitor/칼륨보존성 이뇨제",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 76,
+    "jurisdiction": "US",
+    "applies_when": {
+      "ingredient_forms_any": [
+        "potassium iodide"
+      ],
+      "medications_any": [
+        "ACE inhibitor",
+        "lisinopril",
+        "enalapril",
+        "ramipril",
+        "potassium-sparing diuretic",
+        "spironolactone",
+        "amiloride"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "potassium iodide 제형은 ACE inhibitor/칼륨보존성 이뇨제와 병용 시 hyperkalemia 위험을 검토한다.",
+    "rationale_ko": "potassium load + RAAS 관련 약물 조합.",
+    "monitoring_ko": "serum potassium 확인.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-IODINE-ANTITHYROID-ACEI"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-IODINE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-NIACIN-UL-US-ADULT",
+    "rule_group_id": "GROUP-NIACIN-UL-ADULT",
+    "ingredient_id": "niacin",
+    "rule_name_ko": "니아신 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 76,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 35,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "supplemental_only",
+    "action_text_ko": "supplemental niacin은 35 mg/day 초과 시 경고한다.",
+    "rationale_ko": "UL은 flushing 근거이며 nicotinic acid/nicotinamide 모두에 적용.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-NIACIN-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-NIACIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-NIACIN-HIGHDOSE-MONITOR",
+    "rule_group_id": "GROUP-NIACIN-HIGHDose",
+    "ingredient_id": "niacin",
+    "rule_name_ko": "고용량 니아신 이상반응 모니터링",
+    "rule_category": "monitoring",
+    "severity": "monitor",
+    "priority": 70,
+    "jurisdiction": "US",
+    "applies_when": {
+      "candidate_daily_intake": {
+        "gte": 1000,
+        "unit": "mg/day"
+      }
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "1,000 mg/day 이상 nicotinic acid는 저혈압·간독성·고혈당·통풍·심방세동 위험을 설명하고 모니터링한다.",
+    "rationale_ko": "ODS high-dose adverse effect summary.",
+    "monitoring_ko": "LFT, fasting glucose/A1C, uric acid.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-NIACIN-HIGHDOSE-AE"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-NIACIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-NIACIN-DIABETES-MEDS",
+    "rule_group_id": "GROUP-NIACIN-DIABETES",
+    "ingredient_id": "niacin",
+    "rule_name_ko": "니아신 + 항당뇨약",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 72,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "antidiabetes medication",
+        "metformin",
+        "insulin",
+        "sulfonylurea"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "고용량 nicotinic acid 복용 시 혈당 상승 가능성을 반영해 항당뇨약 사용자에서는 모니터링한다.",
+    "rationale_ko": "니아신은 insulin resistance/혈당 상승을 유발할 수 있다.",
+    "monitoring_ko": "blood glucose/A1C 추적.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-NIACIN-DIABETES-MEDS",
+      "CHK-NIACIN-HIGHDOSE-AE"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-NIACIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-B6-UL-US-ADULT",
+    "rule_group_id": "GROUP-B6-UL-ADULT",
+    "ingredient_id": "vitamin_b6",
+    "rule_name_ko": "비타민 B6 UL(미국)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 76,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      }
+    },
+    "threshold_operator": ">",
+    "threshold_value": 100,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "미국 기준에서는 vitamin B6 총일일섭취량 100 mg/day 초과를 경고한다.",
+    "rationale_ko": "ODS/FNB adult UL.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-B6-UL-US"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-B6"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-B6-UL-EU-ADULT",
+    "rule_group_id": "GROUP-B6-UL-ADULT",
+    "ingredient_id": "vitamin_b6",
+    "rule_name_ko": "비타민 B6 UL(EU)",
+    "rule_category": "dose_limit",
+    "severity": "warn",
+    "priority": 84,
+    "jurisdiction": "EU",
+    "applies_when": {
+      "age_years": {
+        "min": 19
+      },
+      "jurisdiction_preference_any": [
+        "EU",
+        "strictest"
+      ]
+    },
+    "threshold_operator": ">",
+    "threshold_value": 12,
+    "threshold_unit": "mg/day",
+    "threshold_scope": "all_sources",
+    "action_text_ko": "EU 기준 또는 strictest 모드에서는 vitamin B6 12 mg/day 초과를 경고한다.",
+    "rationale_ko": "EFSA adult UL 12 mg/day.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-B6-UL-EU"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-B6"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-B6-NEUROPATHY",
+    "rule_group_id": "GROUP-B6-NEUROPATHY",
+    "ingredient_id": "vitamin_b6",
+    "rule_name_ko": "고용량 비타민 B6 감각신경병증 주의",
+    "rule_category": "adverse_effect_signal",
+    "severity": "warn",
+    "priority": 70,
+    "jurisdiction": "US/EU",
+    "applies_when": {
+      "candidate_daily_intake": {
+        "gte": 50,
+        "unit": "mg/day"
+      },
+      "long_term_use_days": {
+        "gte": 30
+      }
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "중등도 이상 고용량 vitamin B6 장기복용 시 감각신경병증 증상을 확인한다.",
+    "rationale_ko": "장기간 고용량 pyridoxine은 sensory neuropathy와 연관.",
+    "monitoring_ko": "손발저림, 감각저하, 보행이상 등.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-B6-NEUROPATHY",
+      "CHK-B6-UL-US",
+      "CHK-B6-UL-EU"
+    ],
+    "source_ids": [
+      "SRC-US-ODS-VITAMIN-B6"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-SJW-MAJOR-DRUG-INTERACTIONS",
+    "rule_group_id": "GROUP-SJW-MAJOR-INTERACTIONS",
+    "ingredient_id": "st_johns_wort",
+    "rule_name_ko": "세인트존스워트 주요 약물상호작용",
+    "rule_category": "interaction",
+    "severity": "contraindicated",
+    "priority": 99,
+    "jurisdiction": "US/INTL",
+    "applies_when": {
+      "medications_any": [
+        "antidepressant",
+        "birth control pill",
+        "cyclosporine",
+        "phenytoin",
+        "carbamazepine",
+        "digoxin",
+        "ivabradine",
+        "indinavir",
+        "nevirapine",
+        "irinotecan",
+        "imatinib",
+        "docetaxel",
+        "warfarin",
+        "simvastatin"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "상호작용 가능 약물을 복용 중이면 세인트존스워트는 기본적으로 금기 처리한다.",
+    "rationale_ko": "강한 CYP3A4/P-gp 유도와 다수의 clinically relevant interaction.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-SJW-NCCIH-INTERACTIONS",
+      "CHK-SJW-REVIEW-MECHANISM"
+    ],
+    "source_ids": [
+      "SRC-PMID-31742659",
+      "SRC-US-NCCIH-STJOHNSWORT"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-SJW-SEROTONIN-RISK",
+    "rule_group_id": "GROUP-SJW-SEROTONIN",
+    "ingredient_id": "st_johns_wort",
+    "rule_name_ko": "세인트존스워트 + serotonergic drug",
+    "rule_category": "interaction",
+    "severity": "avoid",
+    "priority": 96,
+    "jurisdiction": "US/INTL",
+    "applies_when": {
+      "medications_any": [
+        "SSRI",
+        "SNRI",
+        "MAOI",
+        "triptan",
+        "serotonergic_drug"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "serotonergic 약물과 세인트존스워트 병용은 피한다.",
+    "rationale_ko": "serotonin 관련 중대한 부작용 가능성.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-SJW-NCCIH-INTERACTIONS"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-STJOHNSWORT"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-SJW-PREGNANCY",
+    "rule_group_id": "GROUP-SJW-PREGNANCY",
+    "ingredient_id": "st_johns_wort",
+    "rule_name_ko": "세인트존스워트 임신/수유 회피",
+    "rule_category": "pregnancy_lactation",
+    "severity": "avoid",
+    "priority": 90,
+    "jurisdiction": "US",
+    "applies_when": {
+      "pregnancy_status_any": [
+        "pregnant"
+      ],
+      "or_lactating": true
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "임신·수유 중 세인트존스워트는 기본 회피로 둔다.",
+    "rationale_ko": "NCCIH는 임신 중 birth defect risk 가능성과 수유아 이상반응 가능성을 언급한다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-SJW-PREGNANCY"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-STJOHNSWORT"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-RYR-STATIN-LIKE-INTERACTIONS",
+    "rule_group_id": "GROUP-RYR-STATIN-LIKE",
+    "ingredient_id": "red_yeast_rice",
+    "rule_name_ko": "홍국의 statin-like 위험",
+    "rule_category": "interaction",
+    "severity": "avoid",
+    "priority": 88,
+    "jurisdiction": "US/EU",
+    "applies_when": {
+      "medications_any": [
+        "statin",
+        "lovastatin",
+        "atorvastatin",
+        "simvastatin",
+        "pravastatin"
+      ],
+      "candidate_products_any": [
+        "red yeast rice"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "홍국은 statin과 유사한 작용과 부작용/상호작용을 가질 수 있어 statin 사용자에게는 기본 회피 또는 별도 검토로 둔다.",
+    "rationale_ko": "monacolin K 함량 제품은 statin-like toxicity 및 상호작용 가능.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-RYR-EFSA-NO-SAFE-LEVEL",
+      "CHK-RYR-STATIN-LIKE-SIDES"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-REDYEASTRICE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-RYR-PREGNANCY",
+    "rule_group_id": "GROUP-RYR-PREGNANCY",
+    "ingredient_id": "red_yeast_rice",
+    "rule_name_ko": "홍국 임신/수유 회피",
+    "rule_category": "pregnancy_lactation",
+    "severity": "avoid",
+    "priority": 92,
+    "jurisdiction": "US",
+    "applies_when": {
+      "pregnancy_status_any": [
+        "pregnant"
+      ],
+      "or_lactating": true
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "임신·수유 중 red yeast rice는 사용하지 않는다.",
+    "rationale_ko": "NCCIH는 임신/수유 비권장.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-RYR-STATIN-LIKE-SIDES"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-REDYEASTRICE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-RYR-QUALITY-UNCERTAIN",
+    "rule_group_id": "GROUP-RYR-QUALITY",
+    "ingredient_id": "red_yeast_rice",
+    "rule_name_ko": "홍국 제품 품질/함량 불확실성",
+    "rule_category": "quality_signal",
+    "severity": "warn",
+    "priority": 72,
+    "jurisdiction": "US",
+    "applies_when": {},
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "red yeast rice는 monacolin K 함량 편차와 citrinin 오염 가능성을 설명하고, 제품 품질 검증 없이는 보수적으로 해석한다.",
+    "rationale_ko": "라벨에 monacolin K가 거의 표시되지 않고 변동성이 크다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-RYR-MONACOLIN-VARIABILITY",
+      "CHK-RYR-STATIN-LIKE-SIDES"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-REDYEASTRICE"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GTE-LIVER-CAUTION",
+    "rule_group_id": "GROUP-GTE-LIVER",
+    "ingredient_id": "green_tea_extract",
+    "rule_name_ko": "녹차추출물 간손상 주의",
+    "rule_category": "disease_caution",
+    "severity": "warn",
+    "priority": 80,
+    "jurisdiction": "US",
+    "applies_when": {
+      "ingredient_forms_any": [
+        "green tea extract",
+        "catechins",
+        "EGCG"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "고농축 녹차추출물 보충제는 간손상 가능성을 설명하고 간질환자에서는 보수적으로 사용한다.",
+    "rationale_ko": "주로 extract/tablet/capsule form에서 간손상 보고.",
+    "monitoring_ko": "LFT, 피로/황달/가려움 등.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GTE-LIVER-INJURY"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-GREENTEA"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GTE-DRUG-INTERACTIONS",
+    "rule_group_id": "GROUP-GTE-DRUGS",
+    "ingredient_id": "green_tea_extract",
+    "rule_name_ko": "녹차추출물 + 약물상호작용",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 72,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "nadolol",
+        "atorvastatin",
+        "raloxifene"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "nadolol, atorvastatin, raloxifene 복용자는 녹차추출물 보충제를 별도 검토한다.",
+    "rationale_ko": "혈중농도 감소 가능성.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GTE-DRUG-INTERACTIONS"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-GREENTEA"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GTE-PREGNANCY-CAFFEINE",
+    "rule_group_id": "GROUP-GTE-PREGNANCY",
+    "ingredient_id": "green_tea_extract",
+    "rule_name_ko": "녹차추출물 임신 카페인 주의",
+    "rule_category": "pregnancy_lactation",
+    "severity": "warn",
+    "priority": 58,
+    "jurisdiction": "US",
+    "applies_when": {
+      "pregnancy_status_any": [
+        "pregnant",
+        "trying_to_conceive"
+      ],
+      "ingredient_forms_any": [
+        "green tea extract",
+        "catechins",
+        "EGCG"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "임신 중 녹차추출물은 카페인/추출물 안전성을 함께 검토한다.",
+    "rationale_ko": "NCCIH는 임신 중 caffeine intake moderation을 권고.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GTE-LIVER-INJURY"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-GREENTEA"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-MELATONIN-PREG-LACTATION",
+    "rule_group_id": "GROUP-MELATONIN-PREG",
+    "ingredient_id": "melatonin",
+    "rule_name_ko": "멜라토닌 임신/수유 주의",
+    "rule_category": "pregnancy_lactation",
+    "severity": "warn",
+    "priority": 76,
+    "jurisdiction": "US",
+    "applies_when": {
+      "pregnancy_status_any": [
+        "pregnant"
+      ],
+      "or_lactating": true
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "임신·수유 중 멜라토닌은 안전성 근거 부족으로 기본 경고 처리한다.",
+    "rationale_ko": "NCCIH safety data insufficient.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-MELATONIN-PREG-OLDER"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-MELATONIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-MELATONIN-OLDER-ADULT",
+    "rule_group_id": "GROUP-MELATONIN-OLDER",
+    "ingredient_id": "melatonin",
+    "rule_name_ko": "고령자 멜라토닌 낮 졸림 주의",
+    "rule_category": "population_caution",
+    "severity": "warn",
+    "priority": 60,
+    "jurisdiction": "US",
+    "applies_when": {
+      "age_years": {
+        "min": 65
+      }
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "고령자는 멜라토닌의 잔여 효과로 낮 졸림이 생길 수 있어 저용량·취침전 사용을 보수적으로 검토한다.",
+    "rationale_ko": "NCCIH older adult caution.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-MELATONIN-PREG-OLDER"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-MELATONIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-MELATONIN-QUALITY-VARIABILITY",
+    "rule_group_id": "GROUP-MELATONIN-QUALITY",
+    "ingredient_id": "melatonin",
+    "rule_name_ko": "멜라토닌 제품 함량 편차/serotonin 혼입",
+    "rule_category": "quality_signal",
+    "severity": "warn",
+    "priority": 72,
+    "jurisdiction": "US/INTL",
+    "applies_when": {},
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "멜라토닌 제품은 라벨 신뢰도가 낮을 수 있어 품질검증 제품 우선과 batch variability 경고를 둔다.",
+    "rationale_ko": "분석연구에서 큰 함량 편차와 serotonin 검출.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-MELATONIN-LABEL-VARIABILITY",
+      "CHK-MELATONIN-ANALYTICAL-STUDY"
+    ],
+    "source_ids": [
+      "SRC-PMID-27855744",
+      "SRC-US-NCCIH-MELATONIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-PROBIOTICS-PRETERM-INFANTS",
+    "rule_group_id": "GROUP-PROBIOTICS-PRETERM",
+    "ingredient_id": "probiotics",
+    "rule_name_ko": "미숙아/입원 중 preterm infant의 프로바이오틱스 회피",
+    "rule_category": "population_caution",
+    "severity": "contraindicated",
+    "priority": 99,
+    "jurisdiction": "US",
+    "applies_when": {
+      "population_any": [
+        "premature_infant",
+        "hospitalized_preterm_infant"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "미숙아 또는 병원 입원 중인 preterm infant에게는 프로바이오틱스를 기본 금기로 둔다.",
+    "rationale_ko": "FDA는 침습성 감염·사망 위험을 경고했다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-PROBIOTICS-PREMATURE-INFANTS-NCCIH",
+      "CHK-PROBIOTICS-FDA-PRETERM"
+    ],
+    "source_ids": [
+      "SRC-US-FDA-PROBIOTICS-PRETERM-2023",
+      "SRC-US-NCCIH-PROBIOTICS"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-PROBIOTICS-IMMUNOCOMPROMISED-REVIEW",
+    "rule_group_id": "GROUP-PROBIOTICS-HIGHRISK",
+    "ingredient_id": "probiotics",
+    "rule_name_ko": "면역저하/중심정맥관 등 고위험군 프로바이오틱스 수동검토",
+    "rule_category": "population_caution",
+    "severity": "warn",
+    "priority": 70,
+    "jurisdiction": "US",
+    "applies_when": {
+      "immune_status_any": [
+        "immunocompromised"
+      ],
+      "devices_any": [
+        "central_venous_catheter"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "중증 면역저하 환자나 고위험 inpatient는 프로바이오틱스를 수동검토로 보낸다.",
+    "rationale_ko": "침습성 감염 가능성을 보수적으로 반영.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-PROBIOTICS-PREMATURE-INFANTS-NCCIH"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-PROBIOTICS"
+    ],
+    "review_status": "starter_hypothesis",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-ASHWA-LIVER-DISEASE-AVOID",
+    "rule_group_id": "GROUP-ASHWA-LIVER",
+    "ingredient_id": "ashwagandha",
+    "rule_name_ko": "아슈와간다 + 기저 간질환 회피",
+    "rule_category": "disease_caution",
+    "severity": "avoid",
+    "priority": 88,
+    "jurisdiction": "INTL",
+    "applies_when": {
+      "diseases_any": [
+        "chronic liver disease",
+        "cirrhosis",
+        "hepatitis",
+        "history_of_drug_induced_liver_injury"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "기저 간질환이 있으면 아슈와간다는 기본 회피 또는 별도 승인 대상으로 둔다.",
+    "rationale_ko": "case series에서 ACLF/사망 신호.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-ASHWA-HILI-CASESERIES",
+      "CHK-ASHWA-LIVER-DISEASE-CAUTION"
+    ],
+    "source_ids": [
+      "SRC-PMID-37756041"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-ASHWA-LIVER-SYMPTOMS",
+    "rule_group_id": "GROUP-ASHWA-LIVER-MONITOR",
+    "ingredient_id": "ashwagandha",
+    "rule_name_ko": "아슈와간다 간손상 증상 모니터링",
+    "rule_category": "monitoring",
+    "severity": "monitor",
+    "priority": 68,
+    "jurisdiction": "INTL",
+    "applies_when": {},
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "아슈와간다 복용 시 황달, 담즙정체성 가려움, 진한 소변 등 간손상 증상을 안내한다.",
+    "rationale_ko": "cholestatic hepatitis presentation이 흔했다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-ASHWA-HILI-CASESERIES"
+    ],
+    "source_ids": [
+      "SRC-PMID-37756041"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GINSENG-PREG-CHILDREN",
+    "rule_group_id": "GROUP-GINSENG-PREG",
+    "ingredient_id": "asian_ginseng",
+    "rule_name_ko": "아시아 인삼 임신/수유/소아 주의",
+    "rule_category": "pregnancy_lactation",
+    "severity": "warn",
+    "priority": 70,
+    "jurisdiction": "US",
+    "applies_when": {
+      "population_any": [
+        "infant",
+        "child"
+      ],
+      "or_pregnant_or_lactating": true
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "임신·수유·소아는 아시아 인삼 사용을 보수적으로 제한한다.",
+    "rationale_ko": "NCCIH safety section.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GINSENG-SAFETY-SHORTTERM"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-ASIANGINSENG"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GINSENG-DIABETES-MONITOR",
+    "rule_group_id": "GROUP-GINSENG-DIABETES",
+    "ingredient_id": "asian_ginseng",
+    "rule_name_ko": "아시아 인삼 + 당뇨/혈당강하제",
+    "rule_category": "interaction",
+    "severity": "monitor",
+    "priority": 64,
+    "jurisdiction": "US",
+    "applies_when": {
+      "diseases_any": [
+        "diabetes"
+      ],
+      "or_medications_any": [
+        "antidiabetes medication",
+        "metformin",
+        "insulin",
+        "sulfonylurea"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "아시아 인삼 사용 시 혈당 저하 가능성을 반영해 모니터링한다.",
+    "rationale_ko": "혈당 개선 가능성이 있으나 근거는 일관되지 않는다.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GINSENG-DIABETES"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-ASIANGINSENG"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GLUCOSAMINE-WARFARIN",
+    "rule_group_id": "GROUP-GLUCOSAMINE-WARFARIN",
+    "ingredient_id": "glucosamine_chondroitin",
+    "rule_name_ko": "글루코사민/콘드로이틴 + warfarin",
+    "rule_category": "interaction",
+    "severity": "avoid",
+    "priority": 86,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "warfarin"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "warfarin 사용자는 글루코사민/콘드로이틴 병용을 피하거나 별도 승인 대상으로 둔다.",
+    "rationale_ko": "출혈 위험 증가와 연관.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GLUCOSAMINE-WARFARIN"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-GLUCOSAMINE-CHONDROITIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GLUCOSAMINE-DIABETES-MONITOR",
+    "rule_group_id": "GROUP-GLUCOSAMINE-DIABETES",
+    "ingredient_id": "glucosamine_chondroitin",
+    "rule_name_ko": "글루코사민 + 당뇨 혈당 모니터링",
+    "rule_category": "interaction",
+    "severity": "monitor",
+    "priority": 60,
+    "jurisdiction": "US",
+    "applies_when": {
+      "diseases_any": [
+        "diabetes"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "당뇨 환자는 글루코사민 사용 시 혈당 변화를 모니터링한다.",
+    "rationale_ko": "일부에서 혈당 상승 가능성.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GLUCOSAMINE-GLUCOSE"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-GLUCOSAMINE-CHONDROITIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-GLUCOSAMINE-PREGNANCY",
+    "rule_group_id": "GROUP-GLUCOSAMINE-PREG",
+    "ingredient_id": "glucosamine_chondroitin",
+    "rule_name_ko": "글루코사민/콘드로이틴 임신/수유 주의",
+    "rule_category": "pregnancy_lactation",
+    "severity": "warn",
+    "priority": 56,
+    "jurisdiction": "US",
+    "applies_when": {
+      "pregnancy_status_any": [
+        "pregnant"
+      ],
+      "or_lactating": true
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "임신·수유 중 글루코사민/콘드로이틴은 안전성 근거 부족으로 경고한다.",
+    "rationale_ko": "NCCIH safety data limited.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-GLUCOSAMINE-PREG"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-GLUCOSAMINE-CHONDROITIN"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-COQ10-WARFARIN",
+    "rule_group_id": "GROUP-COQ10-WARFARIN",
+    "ingredient_id": "coenzyme_q10",
+    "rule_name_ko": "CoQ10 + warfarin",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 68,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "warfarin"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "warfarin 사용자는 CoQ10 병용 시 항응고 상태 변화를 모니터링한다.",
+    "rationale_ko": "NCCIH interaction mention.",
+    "monitoring_ko": "INR 추적.",
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-COQ10-WARFARIN-INSULIN"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-HEADACHES-COQ10"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  },
+  {
+    "rule_id": "RULE-COQ10-INSULIN",
+    "rule_group_id": "GROUP-COQ10-INSULIN",
+    "ingredient_id": "coenzyme_q10",
+    "rule_name_ko": "CoQ10 + insulin",
+    "rule_category": "interaction",
+    "severity": "warn",
+    "priority": 58,
+    "jurisdiction": "US",
+    "applies_when": {
+      "medications_any": [
+        "insulin"
+      ]
+    },
+    "threshold_operator": null,
+    "threshold_value": null,
+    "threshold_unit": null,
+    "threshold_scope": null,
+    "action_text_ko": "insulin 사용자는 CoQ10 시작/중단 시 혈당 변화를 확인한다.",
+    "rationale_ko": "NCCIH interaction mention.",
+    "monitoring_ko": null,
+    "exception_ko": null,
+    "evidence_chunk_ids": [
+      "CHK-COQ10-WARFARIN-INSULIN"
+    ],
+    "source_ids": [
+      "SRC-US-NCCIH-HEADACHES-COQ10"
+    ],
+    "review_status": "starter_validated",
+    "schema_note": "applies_when is JSON for extension; engine may compile to rule predicates."
+  }
+]

@@ -1,0 +1,194 @@
+{
+  "package_meta": {
+    "package_name": "safety_engine_reference_pack_v0_1",
+    "version": "0.1.0",
+    "generated_at": "2026-03-22T16:58:00Z",
+    "description_ko": "건강기능식품/영양소 안전 검증 엔진 구축용 스타터 레퍼런스 팩. 정규화된 source / ingredient / evidence_chunk / safety_rule 구조와 샘플 엔진 입출력을 포함한다.",
+    "intended_use_ko": [
+      "안전 검증 엔진 규칙 테이블 초기 구축",
+      "레퍼런스 추적 가능한 RAG/Rule Engine 설계",
+      "추가 조사 시 source/chunk/rule 단위 증분 업데이트",
+      "JSON API / PostgreSQL / 벡터DB 인덱싱의 공통 원천데이터"
+    ],
+    "core_design_principles_ko": [
+      "영양소/원료와 evidence chunk를 분리해 동일 근거를 여러 규칙이 재사용 가능하게 설계",
+      "관할권(KR/US/EU)과 threshold_scope를 분리 저장해 기준 충돌을 관리",
+      "review_status로 starter_validated / starter_hypothesis 구분",
+      "논문/모노그래프의 특정 위치(locator)와 chunk_id를 규칙에 직접 연결",
+      "premium DB(Micromedex, Natural Medicines, USP) 슬롯을 예약해 후속 라이선스 연동 가능"
+    ],
+    "counts": {
+      "sources": 44,
+      "ingredients": 24,
+      "evidence_chunks": 72,
+      "safety_rules": 70,
+      "validated_rules": 69,
+      "hypothesis_rules": 1
+    },
+    "tables": [
+      {
+        "name": "source_registry",
+        "primary_key": "source_id",
+        "description_ko": "문헌/규정/데이터셋 메타데이터"
+      },
+      {
+        "name": "ingredients",
+        "primary_key": "ingredient_id",
+        "description_ko": "원료/영양소 사전과 매칭 alias"
+      },
+      {
+        "name": "evidence_chunks",
+        "primary_key": "chunk_id",
+        "description_ko": "문헌 내 근거 청크와 locator"
+      },
+      {
+        "name": "safety_rules",
+        "primary_key": "rule_id",
+        "description_ko": "엔진이 실행할 규칙"
+      }
+    ],
+    "conflict_resolution_policy_ko": {
+      "jurisdiction_preference": [
+        "KR",
+        "US",
+        "EU",
+        "strictest"
+      ],
+      "strictest_mode_for_conflicts": true,
+      "notes": [
+        "같은 ingredient에 대해 KR/US/EU 기준이 충돌하면 사용자 또는 시스템 기본 관할권 우선순위를 적용",
+        "strictest_mode_for_conflicts=true 이면 서로 다른 상한치 중 더 보수적인 값 우선",
+        "threshold_scope가 다른 값(예: supplements_only vs all_sources)은 동일 축으로 비교하지 않고 별도 판단"
+      ]
+    },
+    "ingestion_todo_ko": [
+      "2025 한국인 영양소 섭취기준의 영양소별 수치 테이블을 age/sex/life_stage별 row로 추가 분해",
+      "식품안전나라 원료별 정보 / 제품별 섭취주의 문구를 원료·제품 레벨 chunk로 확장",
+      "MFDS 이상사례 open data를 ingredient-level signal table로 정규화",
+      "Micromedex / Natural Medicines / USP 유료 DB 라이선스 연동 후 source_type=licensed_reference로 보강",
+      "질환·검사수치·약물 ATC/RxNorm 표준화 스키마 추가"
+    ]
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 4699
+    },
+    {
+      "path": "data/evidence_chunks.json",
+      "size_bytes": 44846
+    },
+    {
+      "path": "data/ingredients.json",
+      "size_bytes": 13850
+    },
+    {
+      "path": "data/knowledge_pack.json",
+      "size_bytes": 195142
+    },
+    {
+      "path": "data/manifest.json",
+      "size_bytes": 5557
+    },
+    {
+      "path": "data/package_meta.json",
+      "size_bytes": 3019
+    },
+    {
+      "path": "data/safety_rules.json",
+      "size_bytes": 76430
+    },
+    {
+      "path": "data/sample_engine_output.json",
+      "size_bytes": 14967
+    },
+    {
+      "path": "data/sample_evaluation_input.json",
+      "size_bytes": 2177
+    },
+    {
+      "path": "data/sample_user_profile.json",
+      "size_bytes": 689
+    },
+    {
+      "path": "data/source_registry.json",
+      "size_bytes": 27621
+    },
+    {
+      "path": "docs/extension_guide.md",
+      "size_bytes": 1957
+    },
+    {
+      "path": "docs/postgres_schema.sql",
+      "size_bytes": 5223
+    },
+    {
+      "path": "docs/source_map.md",
+      "size_bytes": 7495
+    },
+    {
+      "path": "exports/evidence_chunks.csv",
+      "size_bytes": 25062
+    },
+    {
+      "path": "exports/ingredients.csv",
+      "size_bytes": 6642
+    },
+    {
+      "path": "exports/safety_engine_knowledge_base.xlsx",
+      "size_bytes": 57875
+    },
+    {
+      "path": "exports/safety_rules.csv",
+      "size_bytes": 38065
+    },
+    {
+      "path": "exports/sample_candidate_stack.csv",
+      "size_bytes": 1064
+    },
+    {
+      "path": "exports/sample_output_references.csv",
+      "size_bytes": 5608
+    },
+    {
+      "path": "exports/sample_output_summary.csv",
+      "size_bytes": 2110
+    },
+    {
+      "path": "exports/sample_user_profile.csv",
+      "size_bytes": 530
+    },
+    {
+      "path": "exports/source_registry.csv",
+      "size_bytes": 12542
+    },
+    {
+      "path": "schemas/engine_output.schema.json",
+      "size_bytes": 4265
+    },
+    {
+      "path": "schemas/evidence_chunk.schema.json",
+      "size_bytes": 1242
+    },
+    {
+      "path": "schemas/ingredient.schema.json",
+      "size_bytes": 1128
+    },
+    {
+      "path": "schemas/knowledge_pack.schema.json",
+      "size_bytes": 17234
+    },
+    {
+      "path": "schemas/safety_rule.schema.json",
+      "size_bytes": 2222
+    },
+    {
+      "path": "schemas/source.schema.json",
+      "size_bytes": 1848
+    },
+    {
+      "path": "schemas/user_profile.schema.json",
+      "size_bytes": 2151
+    }
+  ]
+}

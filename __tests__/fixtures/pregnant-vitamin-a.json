@@ -1,0 +1,27 @@
+{
+  "name": "32세 여성, 임신 중, 비타민 A 관련 주의",
+  "query": {
+    "profile": {
+      "age": 32,
+      "sex": "female",
+      "pregnancyStatus": "pregnant",
+      "jurisdiction": "KR",
+      "selectedCompounds": ["vitamin a", "retinol"]
+    },
+    "candidateItems": [
+      {
+        "ingredientId": "vitamin_a_preformed",
+        "name": "retinol",
+        "form": "retinol",
+        "dailyIntakeValue": 3500,
+        "dailyIntakeUnit": "mcg RAE/day"
+      }
+    ],
+    "sort": "severity_desc"
+  },
+  "expected": {
+    "definitely_matched": ["RULE-VITA-UL-US-ADULT", "RULE-VITA-PREGNANCY-HIGHDOSE"],
+    "needs_more_info": [],
+    "possibly_relevant": []
+  }
+}

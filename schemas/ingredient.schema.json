@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/safety-engine/ingredient.schema.json",
+  "title": "Ingredient Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ingredient_id",
+    "ingredient_name_ko",
+    "ingredient_name_en",
+    "category",
+    "forms",
+    "matching_aliases_ko",
+    "matching_aliases_en",
+    "quality_notes_ko"
+  ],
+  "properties": {
+    "ingredient_id": {
+      "type": "string"
+    },
+    "ingredient_name_ko": {
+      "type": "string"
+    },
+    "ingredient_name_en": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "category": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "forms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "matching_aliases_ko": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "matching_aliases_en": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality_notes_ko": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
