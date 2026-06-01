@@ -38,6 +38,10 @@
 
 https://otc-nutrient-safety-engine.vercel.app
 
+## GitHub
+
+https://github.com/yeohj0710/otc-nutrient-safety-engine
+
 ## 검색 pipeline 실행
 
 ```bash
