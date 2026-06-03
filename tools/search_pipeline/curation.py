@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
@@ -281,7 +282,16 @@ def _record_text(record: dict[str, str]) -> str:
 
 
 def _matched_terms(text: str, terms: tuple[str, ...]) -> list[str]:
-    return [term for term in terms if term.lower() in text]
+    return [term for term in terms if _term_matches(text, term)]
+
+
+def _term_matches(text: str, term: str) -> bool:
+    escaped = re.escape(term.lower())
+    if re.search(r"[A-Za-z0-9]", term):
+        pattern = rf"(?<![A-Za-z0-9]){escaped}(?![A-Za-z0-9])"
+    else:
+        pattern = escaped
+    return re.search(pattern, text) is not None
 
 
 def _signal(decision: str) -> str:

@@ -1,0 +1,597 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 115915,
+    "items": [
+      {
+        "DOI": "10.1097/gme.0000000000000336",
+        "title": [
+          "Effects of vitamin D and calcium supplementation on hypercalcemia and hypercalciuria"
+        ],
+        "container-title": [
+          "Menopause"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              11
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2014,
+              11
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1097/gme.0000000000000336"
+      },
+      {
+        "DOI": "10.1097/gme.0000000000000270",
+        "title": [
+          "Incidence of hypercalciuria and hypercalcemia during vitamin D and calcium supplementation in older women"
+        ],
+        "container-title": [
+          "Menopause"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              11
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2014,
+              11
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1097/gme.0000000000000270"
+      },
+      {
+        "DOI": "10.1016/j.juro.2014.08.023",
+        "title": [
+          "Re: Incidence of Hypercalciuria and Hypercalcemia during Vitamin D and Calcium Supplementation in Older Women"
+        ],
+        "container-title": [
+          "Journal of Urology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2014,
+              11
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2014,
+              11
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.juro.2014.08.023"
+      },
+      {
+        "DOI": "10.5414/cn107258",
+        "title": [
+          "Acute kidney injury in a patient with sarcoidosis: hypercalciuria and hypercalcemia leading to calcium phosphate deposition"
+        ],
+        "container-title": [
+          "Clinical Nephrology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2013,
+              8,
+              1
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2013,
+              8,
+              1
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.5414/cn107258"
+      },
+      {
+        "DOI": "10.1042/cs062015pa",
+        "title": [
+          "Vitamin D and the Hypercalciuria of Idiopathic Urinary Calcium Stone Disease"
+        ],
+        "container-title": [
+          "Clinical Science"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1982,
+              2,
+              1
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1982,
+              2,
+              1
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1042/cs062015pa"
+      },
+      {
+        "DOI": "10.1183/13993003.congress-2025.pa1894",
+        "title": [
+          "Iatrogenic hypercalcemia due to vitamin D and calcium supplement intoxication"
+        ],
+        "container-title": [
+          "Sarcoidosis and other granulomatous ILD/DPLD"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              27
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              11,
+              18
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              27
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1183/13993003.congress-2025.pa1894"
+      },
+      {
+        "DOI": "10.1016/j.juro.2016.12.035",
+        "title": [
+          "Re: Hypercalcemia, Hypercalciuria, and Kidney Stones in Long-Term Studies of Vitamin D Supplementation: A Systematic Review and Meta-Analysis"
+        ],
+        "container-title": [
+          "Journal of Urology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2017,
+              3
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.juro.2016.12.035"
+      },
+      {
+        "DOI": "10.1530/boneabs.1.pp127",
+        "title": [
+          "Hypercalcemia following high vitamin D loading dose"
+        ],
+        "container-title": [
+          "Bone Abstracts"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              5,
+              1
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2013,
+              5,
+              1
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1530/boneabs.1.pp127"
+      },
+      {
+        "DOI": "10.1016/j.juro.2015.02.1641",
+        "title": [
+          "MP41-13 VITAMIN D REPLACEMENT IN RECURRENT RENAL STONE FORMERS WITH HYPERCALCIURIA DOES NOT INCREASE URINE CALCIUM EXCRETION OR RENAL STONE GROWTH"
+        ],
+        "container-title": [
+          "Journal of Urology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              4
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              4
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.juro.2015.02.1641"
+      },
+      {
+        "DOI": "10.1093/ndt/gfv203.42",
+        "title": [
+          "SP904IMPACT OF VITAMIN D SUPPLEMENTATION ON CALCIUM BLOOD LEVEL, URINE CALCIUM EXCRETION AND STONE FORMATION DYNAMICS IN PATIENTS WITH IDIOPATHIC HYPERCALCIURIA- PRELIMINARY REPORT"
+        ],
+        "container-title": [
+          "Nephrology Dialysis Transplantation"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              5
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              5,
+              21
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              5
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1093/ndt/gfv203.42"
+      },
+      {
+        "DOI": "10.5489/cuaj.3332",
+        "title": [
+          "Combined vitamin D and calcium supplementation in vitamin D inadequate patients with urolithiasis: Impact on hypercalciuria and de novo stone formation"
+        ],
+        "container-title": [
+          "Canadian Urological Association Journal"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              12,
+              14
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              12,
+              14
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.5489/cuaj.3332"
+      },
+      {
+        "DOI": "10.1530/endoabs.55.cb7",
+        "title": [
+          "A case of hypercalcemia with normal 25-OH vitamin D levels, post-treatment with high dose cholecalciferol for low vitamin D levels"
+        ],
+        "container-title": [
+          "Endocrine Abstracts"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              9
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              9
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1530/endoabs.55.cb7"
+      },
+      {
+        "DOI": "10.3390/nu10030366",
+        "title": [
+          "Vitamin D, Hypercalciuria and Kidney Stones"
+        ],
+        "container-title": [
+          "Nutrients"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2018,
+              3,
+              17
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2018,
+              3,
+              17
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.3390/nu10030366"
+      },
+      {
+        "DOI": "10.1007/978-1-84800-362-0_12",
+        "title": [
+          "Calcium Metabolism and Hypercalciuria"
+        ],
+        "container-title": [
+          "Urinary Tract Stone Disease"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2010,
+              12,
+              2
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2010
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1007/978-1-84800-362-0_12"
+      },
+      {
+        "DOI": "10.1177/1559897715582175",
+        "title": [
+          "Calcium Supplementation and Hyperabsorption Lead to Hypercalcemia and Hypercalciuria"
+        ],
+        "container-title": [
+          "MD Conference Express"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              5,
+              1
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2015,
+              5,
+              18
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              5,
+              1
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1177/1559897715582175"
+      },
+      {
+        "DOI": "10.1007/s40278-016-20018-7",
+        "title": [
+          "Calcium/vitamin D"
+        ],
+        "container-title": [
+          "Reactions Weekly"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              8
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2016,
+              8,
+              6
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2016,
+              8
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1007/s40278-016-20018-7"
+      },
+      {
+        "DOI": "10.3945/ajcn.116.134981",
+        "title": [
+          "Hypercalcemia, hypercalciuria, and kidney stones in long-term studies of vitamin D supplementation: a systematic review and meta-analysis"
+        ],
+        "container-title": [
+          "The American Journal of Clinical Nutrition"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              10
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2016,
+              10
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.3945/ajcn.116.134981"
+      },
+      {
+        "DOI": "10.1016/j.juro.2015.12.020",
+        "title": [
+          "Re: Altered Calcium and Vitamin D Homeostasis in First-Time Calcium Kidney Stone-Formers"
+        ],
+        "container-title": [
+          "Journal of Urology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2016,
+              3
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2016,
+              3
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.juro.2015.12.020"
+      },
+      {
+        "DOI": "10.1159/000181963",
+        "title": [
+          "The Cause of Idiopathic Calcium Stone Disease: Hypercalciuria or Hyperoxaluria?"
+        ],
+        "container-title": [
+          "Nephron"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2008,
+              12,
+              2
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2008,
+              12,
+              2
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1159/000181963"
+      },
+      {
+        "DOI": "10.1016/j.juro.2018.02.1044",
+        "title": [
+          "MP31-15 SERUM VITAMIN D STATUS, VITAMIN D3 SUPPLEMENTATION AND URINE CALCIUM LEVELS AMONG 140 CALCIUM KIDNEY STONE PATIENTS"
+        ],
+        "container-title": [
+          "Journal of Urology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              4
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2018,
+              4
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/j.juro.2018.02.1044"
+      }
+    ],
+    "items-per-page": 20,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}

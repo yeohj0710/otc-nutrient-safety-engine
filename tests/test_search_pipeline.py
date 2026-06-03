@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from tools.search_pipeline.curation import _matched_terms
 from tools.search_pipeline.dedup import dedup_retrieved_records
 from tools.search_pipeline.pubmed_adapter import parse_pubmed_xml
 from tools.search_pipeline.ris_parser import parse_ris_file
@@ -94,6 +95,14 @@ class DedupTest(unittest.TestCase):
 
         self.assertEqual(result.total_records, 2)
         self.assertEqual(result.duplicate_records, 1)
+
+
+class CurationTermMatchTest(unittest.TestCase):
+    def test_short_terms_match_word_boundaries_only(self) -> None:
+        text = "atrial stratification in anticoagulant users"
+
+        self.assertEqual(_matched_terms(text, ("rat", "cat")), [])
+        self.assertEqual(_matched_terms("rat model and cat study", ("rat", "cat")), ["rat", "cat"])
 
 
 if __name__ == "__main__":

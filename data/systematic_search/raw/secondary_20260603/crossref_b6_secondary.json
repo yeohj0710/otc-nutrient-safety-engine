@@ -1,0 +1,556 @@
+{
+  "status": "ok",
+  "message-type": "work-list",
+  "message-version": "1.0.0",
+  "message": {
+    "facets": {},
+    "total-results": 1940422,
+    "items": [
+      {
+        "DOI": "10.21236/ad0608841",
+        "title": [
+          "PYRIDOXINE (VITAMIN B6) TOXICITY LITERATURE REVIEW"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1964,
+              10,
+              1
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1964,
+              10,
+              1
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.21236/ad0608841"
+      },
+      {
+        "DOI": "10.1212/wnl.90.15_supplement.p4.021",
+        "title": [
+          "Vitamin B6 Toxicity Revisited: A Case of Reversible Pyridoxine-associated Neuropathy and Disequilibrium. (P4.021)"
+        ],
+        "container-title": [
+          "Neurology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              10
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2018,
+              4,
+              10
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1212/wnl.90.15_supplement.p4.021"
+      },
+      {
+        "DOI": "10.5040/9781350363595.art-1474",
+        "title": [
+          "Pyridoxine (Vitamin B6)"
+        ],
+        "container-title": [
+          "Drugs Handbook 2012–2013"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2011
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.5040/9781350363595.art-1474"
+      },
+      {
+        "DOI": "10.1212/wnl.96.15_supplement.5222",
+        "title": [
+          "Vitamin B6 (pyridoxine) Toxicity and OTC Supplements (5222)"
+        ],
+        "container-title": [
+          "Neurology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              4,
+              13
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              4,
+              13
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1212/wnl.96.15_supplement.5222"
+      },
+      {
+        "DOI": "10.1093/med/9780198722700.003.0010",
+        "title": [
+          "Vitamin B6 (pyridoxine) in pregnancy and breastfeeding"
+        ],
+        "container-title": [
+          "Oxford Medicine Online"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2015,
+              1
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2015,
+              1
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1093/med/9780198722700.003.0010"
+      },
+      {
+        "DOI": "10.2174/9781681088921121010008",
+        "title": [
+          "Vitamin B6 (Pyridoxine)"
+        ],
+        "container-title": [
+          "Hypersensitivity to Vitamins"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              11,
+              4
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              11,
+              4
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.2174/9781681088921121010008"
+      },
+      {
+        "DOI": "10.1016/b978-1-4831-6823-4.50008-2",
+        "title": [
+          "PYRIDOXINE (VITAMIN B6)"
+        ],
+        "container-title": [
+          "The Vitamin Co-Factors of Enzyme Systems"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1966
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1966
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/b978-1-4831-6823-4.50008-2"
+      },
+      {
+        "DOI": "10.1007/978-3-540-29678-2_4895",
+        "title": [
+          "Pyridoxine (Vitamin B6) Deficiency"
+        ],
+        "container-title": [
+          "Encyclopedia of Neuroscience"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2024,
+              1,
+              24
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2009
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1007/978-3-540-29678-2_4895"
+      },
+      {
+        "DOI": "10.1007/978-3-0348-7393-2_52",
+        "title": [
+          "Pyridoxine (vitamin B6), neurotransmitters and hypertension"
+        ],
+        "container-title": [
+          "Biochemistry of Vitamin B6 and PQQ"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1994
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1994
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1007/978-3-0348-7393-2_52"
+      },
+      {
+        "DOI": "10.2165/00002018-199000051-00035",
+        "title": [
+          "Separation and Determination of Pyridoxine (Vitamin B6) in Serum by HPLC"
+        ],
+        "container-title": [
+          "Drug Safety"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1990
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.2165/00002018-199000051-00035"
+      },
+      {
+        "DOI": "10.1515/9783110214499.75",
+        "title": [
+          "5 Vitamin B6  Pyridoxine"
+        ],
+        "container-title": [
+          "Vitamins in the prevention of human diseases"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2010,
+              12,
+              13
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2010,
+              12,
+              13
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1515/9783110214499.75"
+      },
+      {
+        "DOI": "10.1016/s0278-6915(02)00072-8",
+        "title": [
+          "Pyridoxine (vitamin B6) toxicity: enhancement by uremia in rats"
+        ],
+        "container-title": [
+          "Food and Chemical Toxicology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2002,
+              10
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2002,
+              10
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/s0278-6915(02)00072-8"
+      },
+      {
+        "DOI": "10.5040/9798216032656.0029",
+        "title": [
+          "Vitamin B6 (Pyridoxine)"
+        ],
+        "container-title": [
+          "Vitamins and Minerals"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2018
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.5040/9798216032656.0029"
+      },
+      {
+        "DOI": "10.1093/oso/9780195084771.003.0377",
+        "title": [
+          "Pyridoxine/Vitamin B6"
+        ],
+        "container-title": [
+          "Experimental and Clinical Neurotoxicology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2000,
+              3,
+              9
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2000,
+              3,
+              9
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1093/oso/9780195084771.003.0377"
+      },
+      {
+        "DOI": "10.1016/b978-1-4831-9698-5.50033-1",
+        "title": [
+          "Introduction to PYRIDOXINE AND RELATED COMPOUNDS (Vitamin B6 Group)"
+        ],
+        "container-title": [
+          "The Vitamins"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1954
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1954
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/b978-1-4831-9698-5.50033-1"
+      },
+      {
+        "DOI": "10.1007/bf03293293",
+        "title": [
+          "Adverse effects of pyridoxine [vitamin B6"
+        ],
+        "container-title": [
+          "Reactions"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1985,
+              7
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2013,
+              2,
+              10
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1985,
+              7
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1007/bf03293293"
+      },
+      {
+        "DOI": "10.1093/advances/nmab033",
+        "title": [
+          "Vitamin B-6-Induced Neuropathy: Exploring the Mechanisms of Pyridoxine Toxicity"
+        ],
+        "container-title": [
+          "Advances in Nutrition"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              9
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              9
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1093/advances/nmab033"
+      },
+      {
+        "DOI": "10.1016/b978-0-12-332603-4.50011-1",
+        "title": [
+          "Interactions of Vitamin B6 (Pyridoxine) and Xenobiotics"
+        ],
+        "container-title": [
+          "Nutritional Toxicology"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              1989
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              1989
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1016/b978-0-12-332603-4.50011-1"
+      },
+      {
+        "DOI": "10.1007/978-3-031-97759-6_23",
+        "title": [
+          "Vitamin B6: Pyridoxine"
+        ],
+        "container-title": [
+          "Handbook of Clinical and Practical Pediatric Nutrition"
+        ],
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              11,
+              24
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1007/978-3-031-97759-6_23"
+      },
+      {
+        "DOI": "10.1111/j.1753-4887.1955.tb03380.x",
+        "title": [
+          "AVAILABILITY OF VITAMIN B6 (PYRIDOXINE) IN HEATED MILK"
+        ],
+        "container-title": [
+          "Nutrition Reviews"
+        ],
+        "published-online": {
+          "date-parts": [
+            [
+              2009,
+              4,
+              27
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2009,
+              4,
+              27
+            ]
+          ]
+        },
+        "URL": "https://doi.org/10.1111/j.1753-4887.1955.tb03380.x"
+      }
+    ],
+    "items-per-page": 20,
+    "query": {
+      "start-index": 0,
+      "search-terms": null
+    }
+  }
+}
