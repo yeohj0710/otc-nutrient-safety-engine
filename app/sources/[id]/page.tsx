@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { getKnowledgeIndex, getSourceDetail } from "@/src/lib/knowledge";
+import { getSourceBrowseData, getSourceDetail } from "@/src/lib/knowledge";
 import { cleanDisplayText } from "@/src/lib/display-text";
 import {
   getEvidenceCaptureLabel,
@@ -508,5 +508,5 @@ export default async function SourceDetailPage(props: {
 }
 
 export async function generateStaticParams() {
-  return getKnowledgeIndex().sources.map((source) => ({ id: source.id }));
+  return getSourceBrowseData().map((source) => ({ id: source.id }));
 }

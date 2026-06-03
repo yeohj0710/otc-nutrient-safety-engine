@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 import { RuleCard } from "@/src/components/rule-card";
 import { cleanDisplayText } from "@/src/lib/display-text";
-import { getKnowledgeIndex, getRuleDetail } from "@/src/lib/knowledge";
+import { getRuleBrowseData, getRuleDetail } from "@/src/lib/knowledge";
 import {
   getEvidenceCaptureLabel,
   getEvidenceContextExcerpt,
@@ -352,5 +352,5 @@ export default async function RuleDetailPage(props: {
 }
 
 export async function generateStaticParams() {
-  return getKnowledgeIndex().safetyRules.map((rule) => ({ id: rule.id }));
+  return getRuleBrowseData().map((rule) => ({ id: rule.id }));
 }

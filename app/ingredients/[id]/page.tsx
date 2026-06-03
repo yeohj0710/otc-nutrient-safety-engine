@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import {
+  getIngredientReferenceBrowseData,
   getIngredientReferenceDetail,
-  getKnowledgeIndex,
 } from "@/src/lib/knowledge";
 import { cleanDisplayText } from "@/src/lib/display-text";
 import {
@@ -350,7 +350,7 @@ export default async function IngredientReferenceDetailPage(props: {
 }
 
 export async function generateStaticParams() {
-  return getKnowledgeIndex().ingredients.map((ingredient) => ({
+  return getIngredientReferenceBrowseData().map((ingredient) => ({
     id: ingredient.id,
   }));
 }

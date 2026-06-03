@@ -37,6 +37,7 @@ import {
   type KnowledgeSource,
   type SafetyRule,
 } from "@/src/types/knowledge";
+import { studyIngredientIdSet, studyScope } from "@/src/lib/study-scope";
 
 const knowledgeIndex = knowledgeIndexSchema.parse(
   knowledgeIndexJson,
@@ -86,8 +87,51 @@ export function getKnowledgeMeta() {
   return getKnowledgeIndex().meta;
 }
 
+function getStudySafetyRules(index = getKnowledgeIndex()) {
+  return index.safetyRules.filter((rule) =>
+    studyIngredientIdSet.has(rule.ingredientId),
+  );
+}
+
+function getStudyIngredientRecords(index = getKnowledgeIndex()) {
+  const scopedRuleIngredientIds = new Set(
+    getStudySafetyRules(index).map((rule) => rule.ingredientId),
+  );
+
+  return index.ingredients.filter((ingredient) =>
+    scopedRuleIngredientIds.has(ingredient.id),
+  );
+}
+
+function getStudySourceIds(index = getKnowledgeIndex()) {
+  return new Set(getStudySafetyRules(index).flatMap((rule) => rule.sourceIds));
+}
+
+function getStudyEvidenceChunkIds(index = getKnowledgeIndex()) {
+  return new Set(
+    getStudySafetyRules(index).flatMap((rule) => rule.evidenceChunkIds),
+  );
+}
+
+export function getStudyScopeSummary() {
+  const index = getKnowledgeIndex();
+  const rules = getStudySafetyRules(index);
+  const sourceIds = getStudySourceIds(index);
+  const evidenceChunkIds = getStudyEvidenceChunkIds(index);
+
+  return {
+    ...studyScope,
+    counts: {
+      ingredients: getStudyIngredientRecords(index).length,
+      safetyRules: rules.length,
+      sources: sourceIds.size,
+      evidenceChunks: evidenceChunkIds.size,
+    },
+  };
+}
+
 export function getIngredientOptions() {
-  return getKnowledgeIndex().ingredients.map((ingredient) => ({
+  return getStudyIngredientRecords().map((ingredient) => ({
     id: ingredient.id,
     label: ingredient.nameKo,
     aliases: ingredient.aliases,
@@ -155,18 +199,28 @@ function buildConditionExplorerOptions(values: string[]) {
 }
 
 export function getSourceById(sourceId: string) {
+  if (!getStudySourceIds().has(sourceId)) {
+    return null;
+  }
+
   return (
     getKnowledgeIndex().sources.find((source) => source.id === sourceId) ?? null
   );
 }
 
 export function getRuleById(ruleId: string) {
-  return (
-    getKnowledgeIndex().safetyRules.find((rule) => rule.id === ruleId) ?? null
-  );
+  const rule =
+    getKnowledgeIndex().safetyRules.find((candidate) => candidate.id === ruleId) ??
+    null;
+
+  return rule && studyIngredientIdSet.has(rule.ingredientId) ? rule : null;
 }
 
 export function getIngredientById(ingredientId: string) {
+  if (!studyIngredientIdSet.has(ingredientId)) {
+    return null;
+  }
+
   return (
     getKnowledgeIndex().ingredients.find(
       (ingredient) => ingredient.id === ingredientId,
@@ -199,20 +253,22 @@ export function buildReferenceBundle(rule: SafetyRule) {
 }
 
 export function getRulesBySourceId(sourceId: string) {
-  return getKnowledgeIndex().safetyRules.filter((rule) =>
+  return getStudySafetyRules().filter((rule) =>
     rule.sourceIds.includes(sourceId),
   );
 }
 
 export function getRulesByEvidenceChunkId(chunkId: string) {
-  return getKnowledgeIndex().safetyRules.filter((rule) =>
+  return getStudySafetyRules().filter((rule) =>
     rule.evidenceChunkIds.includes(chunkId),
   );
 }
 
 export function getEvidenceChunksBySourceId(sourceId: string) {
+  const scopedChunkIds = getStudyEvidenceChunkIds();
+
   return getKnowledgeIndex().evidenceChunks.filter(
-    (chunk) => chunk.sourceId === sourceId,
+    (chunk) => chunk.sourceId === sourceId && scopedChunkIds.has(chunk.id),
   );
 }
 
@@ -224,6 +280,10 @@ export function getSourceDetail(sourceId: string) {
 
   const evidenceChunks = getEvidenceChunksBySourceId(sourceId);
   const linkedRules = getRulesBySourceId(sourceId);
+
+  if (linkedRules.length === 0) {
+    return null;
+  }
 
   return {
     source,
@@ -256,21 +316,23 @@ export function getRuleDetail(ruleId: string) {
 export function getSourceBrowseData() {
   const index = getKnowledgeIndex();
 
-  return index.sources.map((source) => ({
-    id: source.id,
-    title: source.title,
-    sourceType: source.sourceType,
-    year: source.year,
-    jurisdiction: source.jurisdiction,
-    evidenceLevel: source.evidenceLevel,
-    journalOrPublisher: source.journalOrPublisher,
-    linkedRuleCount: getRulesBySourceId(source.id).length,
-    linkedChunkCount: getEvidenceChunksBySourceId(source.id).length,
-  }));
+  return index.sources
+    .filter((source) => getStudySourceIds(index).has(source.id))
+    .map((source) => ({
+      id: source.id,
+      title: source.title,
+      sourceType: source.sourceType,
+      year: source.year,
+      jurisdiction: source.jurisdiction,
+      evidenceLevel: source.evidenceLevel,
+      journalOrPublisher: source.journalOrPublisher,
+      linkedRuleCount: getRulesBySourceId(source.id).length,
+      linkedChunkCount: getEvidenceChunksBySourceId(source.id).length,
+    }));
 }
 
 export function getRuleBrowseData() {
-  return getKnowledgeIndex().safetyRules.map((rule) => ({
+  return getStudySafetyRules().map((rule) => ({
     id: rule.id,
     ingredientId: rule.ingredientId,
     nutrientOrIngredient: rule.nutrientOrIngredient,
@@ -289,7 +351,7 @@ export function getIngredientReferenceDetail(ingredientId: string) {
   }
 
   const index = getKnowledgeIndex();
-  const linkedRules = index.safetyRules.filter(
+  const linkedRules = getStudySafetyRules(index).filter(
     (rule) => rule.ingredientId === ingredientId,
   );
   const referencedChunkIds = new Set(
@@ -333,7 +395,8 @@ export function getIngredientReferenceDetail(ingredientId: string) {
 
 export function getIngredientReferenceBrowseData() {
   return getKnowledgeIndex()
-    .ingredients.map((ingredient) => {
+    .ingredients.filter((ingredient) => studyIngredientIdSet.has(ingredient.id))
+    .map((ingredient) => {
       const detail = getIngredientReferenceDetail(ingredient.id);
       const sourceLookup = new Map(
         (detail?.linkedSources ?? []).map((source) => [source.id, source]),
@@ -428,9 +491,10 @@ export function getIngredientReferenceBrowseData() {
 
 export function getExplorerMetadata() {
   const index = getKnowledgeIndex();
+  const scopedRules = getStudySafetyRules(index);
   const medicationValues = [
-    ...index.safetyRules.flatMap((rule) => rule.interactionDrugs),
-    ...index.safetyRules.flatMap((rule) =>
+    ...scopedRules.flatMap((rule) => rule.interactionDrugs),
+    ...scopedRules.flatMap((rule) =>
       rule.conditions
         .filter((condition) =>
           ["medications_any", "or_medications_any"].includes(condition.field),
@@ -443,8 +507,8 @@ export function getExplorerMetadata() {
     ),
   ];
   const conditionValues = [
-    ...index.safetyRules.flatMap((rule) => rule.interactionDiseases),
-    ...index.safetyRules.flatMap((rule) =>
+    ...scopedRules.flatMap((rule) => rule.interactionDiseases),
+    ...scopedRules.flatMap((rule) =>
       rule.conditions
         .filter((condition) => condition.field === "diseases_any")
         .flatMap((condition) =>
@@ -458,10 +522,11 @@ export function getExplorerMetadata() {
 
   return {
     meta: {
-      sourceCount: index.meta.sourceCount,
-      evidenceChunkCount: index.meta.evidenceChunkCount,
-      safetyRuleCount: index.meta.safetyRuleCount,
+      sourceCount: getStudySourceIds(index).size,
+      evidenceChunkCount: getStudyEvidenceChunkIds(index).size,
+      safetyRuleCount: scopedRules.length,
     },
+    scope: getStudyScopeSummary(),
     ingredients: getIngredientOptions(),
     medicationOptions: buildMedicationExplorerOptions(medicationValues),
     conditionOptions: buildConditionExplorerOptions(conditionValues),
@@ -474,13 +539,14 @@ export function getExplorerMetadata() {
     sourceEvidenceLevels: [
       ...new Set(
         index.sources
+          .filter((source) => getStudySourceIds(index).has(source.id))
           .map((source) => source.evidenceLevel)
           .filter((value): value is string => Boolean(value)),
       ),
     ],
     jurisdictions: [
       ...new Set(
-        index.safetyRules
+        scopedRules
           .map((rule) => rule.jurisdiction)
           .filter((value): value is string => Boolean(value)),
       ),
