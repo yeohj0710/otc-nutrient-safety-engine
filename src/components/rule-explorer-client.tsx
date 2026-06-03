@@ -5,6 +5,13 @@ import { useEffect, useRef, useState, useTransition } from "react";
 import { RuleCard } from "@/src/components/rule-card";
 import type { AiExplainResponse } from "@/src/lib/ai/schema";
 import { cleanDisplayText } from "@/src/lib/display-text";
+import {
+  normalizeDailyIntakeUnit,
+  parseDailyIntakeText,
+  parseLongTermUseDays,
+  removeDoseAndDurationText,
+  toNullableNumber,
+} from "@/src/lib/query-input";
 import type {
   EngineQuery,
   EngineResponse,
@@ -37,6 +44,7 @@ type ExplorerMetadata = {
 };
 
 type ExplorerValueOption = {
+  id?: string;
   label: string;
   canonicalValue?: string;
   aliases?: string[];
@@ -100,7 +108,7 @@ const explorerStorageKey = "nutrition-safety-explorer-state-v3";
 const minimumQueryLoadingMs = 900;
 
 type PersistedExplorerState = {
-  version: 2;
+  version: 3;
   form: {
     age: string;
     sex: string;
@@ -111,6 +119,12 @@ type PersistedExplorerState = {
     conditions: string;
     allergies: string;
     selectedCompounds: string;
+    dailyIntakeValue: string;
+    dailyIntakeUnit: string;
+    longTermUseDays: string;
+    ingredientForm: string;
+    productName: string;
+    coingredients: string;
     jurisdiction: string;
     memo: string;
   };
@@ -141,6 +155,12 @@ type ExplorerProfileDraft = {
   conditions: string;
   allergies: string;
   selectedCompounds: string;
+  dailyIntakeValue: string;
+  dailyIntakeUnit: string;
+  longTermUseDays: string;
+  ingredientForm: string;
+  productName: string;
+  coingredients: string;
   jurisdiction: string;
   memo: string;
 };
@@ -159,6 +179,12 @@ const blankExplorerProfile: ExplorerProfileDraft = {
   conditions: "",
   allergies: "",
   selectedCompounds: "",
+  dailyIntakeValue: "",
+  dailyIntakeUnit: "",
+  longTermUseDays: "",
+  ingredientForm: "",
+  productName: "",
+  coingredients: "",
   jurisdiction: "",
   memo: "",
 };
@@ -171,6 +197,20 @@ function buildStarterDraft(
     selectedCompounds: profile.selectedCompounds ?? "",
     medications: profile.medications ?? "",
     conditions: profile.conditions ?? "",
+    age: profile.age ?? "",
+    sex: profile.sex ?? "",
+    pregnancyStatus: profile.pregnancyStatus ?? "",
+    lactationStatus: profile.lactationStatus ?? "",
+    smokerStatus: profile.smokerStatus ?? "",
+    allergies: profile.allergies ?? "",
+    dailyIntakeValue: profile.dailyIntakeValue ?? "",
+    dailyIntakeUnit: profile.dailyIntakeUnit ?? "",
+    longTermUseDays: profile.longTermUseDays ?? "",
+    ingredientForm: profile.ingredientForm ?? "",
+    productName: profile.productName ?? "",
+    coingredients: profile.coingredients ?? "",
+    jurisdiction: profile.jurisdiction ?? "",
+    memo: profile.memo ?? "",
   };
 }
 
@@ -182,6 +222,12 @@ function hasAdvancedProfileValues(profile: ExplorerProfileDraft) {
     profile.lactationStatus ||
     profile.smokerStatus ||
     profile.allergies ||
+    profile.dailyIntakeValue ||
+    profile.dailyIntakeUnit ||
+    profile.longTermUseDays ||
+    profile.ingredientForm ||
+    profile.productName ||
+    profile.coingredients ||
     profile.jurisdiction ||
     profile.memo,
   );
@@ -216,10 +262,15 @@ function getPregnancyStatusLabel(value: string) {
 
 const defaultExampleProfile: ExplorerProfileDraft = {
   ...blankExplorerProfile,
-  medications: "warfarin",
-  conditions: "간질환",
-  selectedCompounds: "비타민 A",
-  memo: "입덧 때문에 액상형 보충제를 간헐적으로 복용 중입니다.",
+  selectedCompounds: "비타민 D",
+  dailyIntakeValue: "5000",
+  dailyIntakeUnit: "iu/day",
+  longTermUseDays: "90",
+  coingredients: "calcium",
+  age: "45",
+  sex: "female",
+  jurisdiction: "US",
+  memo: "고함량 비타민 D와 칼슘을 함께 복용하는 경우입니다.",
 };
 
 function normalizeExplorerInput(value: string) {
@@ -282,32 +333,47 @@ function matchesExplorerSearchTerm(query: string, candidate: string) {
 }
 
 function resolveExplorerOption(value: string, options: ExplorerValueOption[]) {
-  const queryKey = normalizeExplorerLookupKey(value);
-  if (!queryKey) return null;
+  const searchValues = [
+    value,
+    removeDoseAndDurationText(value),
+  ].filter((item, index, array) => item && array.indexOf(item) === index);
 
-  const exactMatch =
-    options.find((option) =>
+  for (const searchValue of searchValues) {
+    const queryKey = normalizeExplorerLookupKey(searchValue);
+    if (!queryKey) continue;
+
+    const exactMatch =
+      options.find((option) =>
+        getExplorerSearchTerms(option).some(
+          (candidate) => matchesExplorerSearchTerm(searchValue, candidate).exact,
+        ),
+      ) ?? null;
+
+    if (exactMatch) {
+      return exactMatch;
+    }
+
+    const prefixMatches = options.filter((option) =>
       getExplorerSearchTerms(option).some(
-        (candidate) => matchesExplorerSearchTerm(value, candidate).exact,
+        (candidate) =>
+          matchesExplorerSearchTerm(searchValue, candidate).startsWith,
       ),
-    ) ?? null;
+    );
 
-  if (exactMatch) {
-    return exactMatch;
+    if (prefixMatches.length === 1) {
+      return prefixMatches[0];
+    }
   }
 
-  const prefixMatches = options.filter((option) =>
-    getExplorerSearchTerms(option).some(
-      (candidate) => matchesExplorerSearchTerm(value, candidate).startsWith,
-    ),
-  );
-
-  return prefixMatches.length === 1 ? prefixMatches[0] : null;
+  return null;
 }
 
-function buildCanonicalEntries(value: string, options: ExplorerValueOption[]) {
+function buildCanonicalEntryDetails(
+  value: string,
+  options: ExplorerValueOption[],
+) {
   const seen = new Set<string>();
-  const entries: string[] = [];
+  const entries: Array<{ label: string; id?: string; raw: string }> = [];
 
   for (const token of splitMultiValue(value)) {
     const resolved = resolveExplorerOption(token, options);
@@ -317,10 +383,14 @@ function buildCanonicalEntries(value: string, options: ExplorerValueOption[]) {
 
     if (!key || seen.has(key)) continue;
     seen.add(key);
-    entries.push(canonical);
+    entries.push({ label: canonical, id: resolved?.id, raw: token });
   }
 
   return entries;
+}
+
+function buildCanonicalEntries(value: string, options: ExplorerValueOption[]) {
+  return buildCanonicalEntryDetails(value, options).map((entry) => entry.label);
 }
 
 function analyzeExplorerField(value: string, options: ExplorerValueOption[]) {
@@ -851,6 +921,24 @@ export function RuleExplorerClient({
   const [selectedCompounds, setSelectedCompounds] = useState(
     blankExplorerProfile.selectedCompounds,
   );
+  const [dailyIntakeValue, setDailyIntakeValue] = useState(
+    blankExplorerProfile.dailyIntakeValue,
+  );
+  const [dailyIntakeUnit, setDailyIntakeUnit] = useState(
+    blankExplorerProfile.dailyIntakeUnit,
+  );
+  const [longTermUseDays, setLongTermUseDays] = useState(
+    blankExplorerProfile.longTermUseDays,
+  );
+  const [ingredientForm, setIngredientForm] = useState(
+    blankExplorerProfile.ingredientForm,
+  );
+  const [productName, setProductName] = useState(
+    blankExplorerProfile.productName,
+  );
+  const [coingredients, setCoingredients] = useState(
+    blankExplorerProfile.coingredients,
+  );
   const [jurisdiction, setJurisdiction] = useState(
     blankExplorerProfile.jurisdiction,
   );
@@ -909,7 +997,7 @@ export function RuleExplorerClient({
       }
 
       const snapshot = JSON.parse(raw) as PersistedExplorerState;
-      if (snapshot.version !== 2) {
+      if (snapshot.version !== 3) {
         setHasRestoredState(true);
         return;
       }
@@ -926,6 +1014,12 @@ export function RuleExplorerClient({
         conditions: snapshot.form.conditions ?? "",
         allergies: snapshot.form.allergies ?? "",
         selectedCompounds: snapshot.form.selectedCompounds ?? "",
+        dailyIntakeValue: snapshot.form.dailyIntakeValue ?? "",
+        dailyIntakeUnit: snapshot.form.dailyIntakeUnit ?? "",
+        longTermUseDays: snapshot.form.longTermUseDays ?? "",
+        ingredientForm: snapshot.form.ingredientForm ?? "",
+        productName: snapshot.form.productName ?? "",
+        coingredients: snapshot.form.coingredients ?? "",
         jurisdiction: snapshot.form.jurisdiction ?? "",
         memo: snapshot.form.memo ?? "",
       };
@@ -939,6 +1033,12 @@ export function RuleExplorerClient({
       setConditions(restoredProfile.conditions);
       setAllergies(restoredProfile.allergies);
       setSelectedCompounds(restoredProfile.selectedCompounds);
+      setDailyIntakeValue(restoredProfile.dailyIntakeValue);
+      setDailyIntakeUnit(restoredProfile.dailyIntakeUnit);
+      setLongTermUseDays(restoredProfile.longTermUseDays);
+      setIngredientForm(restoredProfile.ingredientForm);
+      setProductName(restoredProfile.productName);
+      setCoingredients(restoredProfile.coingredients);
       setJurisdiction(restoredProfile.jurisdiction);
       setMemo(restoredProfile.memo);
 
@@ -971,7 +1071,7 @@ export function RuleExplorerClient({
     }
 
     const snapshot: PersistedExplorerState = {
-      version: 2,
+      version: 3,
       form: {
         age,
         sex,
@@ -982,6 +1082,12 @@ export function RuleExplorerClient({
         conditions,
         allergies,
         selectedCompounds,
+        dailyIntakeValue,
+        dailyIntakeUnit,
+        longTermUseDays,
+        ingredientForm,
+        productName,
+        coingredients,
         jurisdiction,
         memo,
       },
@@ -1013,6 +1119,12 @@ export function RuleExplorerClient({
     conditions,
     allergies,
     selectedCompounds,
+    dailyIntakeValue,
+    dailyIntakeUnit,
+    longTermUseDays,
+    ingredientForm,
+    productName,
+    coingredients,
     jurisdiction,
     memo,
     severityFilter,
@@ -1112,6 +1224,68 @@ export function RuleExplorerClient({
     const normalizedPregnancyStatus = normalizePregnancyStatus(
       profile.pregnancyStatus,
     );
+    const selectedCompoundDetails = buildCanonicalEntryDetails(
+      profile.selectedCompounds,
+      metadata.ingredients,
+    );
+    const selectedCompoundEntries = selectedCompoundDetails.map(
+      (entry) => entry.label,
+    );
+    const coingredientEntries = buildCanonicalEntries(
+      profile.coingredients,
+      metadata.ingredients,
+    );
+    const explicitDoseValue = toNullableNumber(profile.dailyIntakeValue);
+    const explicitDoseUnit = normalizeDailyIntakeUnit(profile.dailyIntakeUnit);
+    const globalDose = parseDailyIntakeText(
+      `${profile.dailyIntakeValue} ${profile.dailyIntakeUnit} ${profile.selectedCompounds} ${profile.memo}`,
+    );
+    const explicitLongTermUseDays = toNullableNumber(profile.longTermUseDays);
+    const globalLongTermUseDays = parseLongTermUseDays(
+      `${profile.longTermUseDays} ${profile.selectedCompounds} ${profile.memo}`,
+    );
+    const candidateItems = selectedCompoundDetails.map((entry) => {
+      const tokenDose = parseDailyIntakeText(`${entry.raw} ${profile.memo}`);
+      const dailyIntakeValue =
+        explicitDoseValue ?? tokenDose?.value ?? globalDose?.value;
+      const dailyIntakeUnit =
+        explicitDoseUnit ?? tokenDose?.unit ?? globalDose?.unit;
+      const longTermDays =
+        explicitLongTermUseDays ??
+        parseLongTermUseDays(`${entry.raw} ${profile.memo}`) ??
+        globalLongTermUseDays;
+      const otherSelectedCompounds = selectedCompoundEntries.filter(
+        (candidate) =>
+          normalizeExplorerLookupKey(candidate) !==
+          normalizeExplorerLookupKey(entry.label),
+      );
+      const combinedCoingredients = [
+        ...coingredientEntries,
+        ...otherSelectedCompounds,
+      ].filter(
+        (candidate, index, array) =>
+          normalizeExplorerLookupKey(candidate) &&
+          array.findIndex(
+            (item) =>
+              normalizeExplorerLookupKey(item) ===
+              normalizeExplorerLookupKey(candidate),
+          ) === index,
+      );
+
+      return {
+        ingredientId: entry.id,
+        name: entry.label,
+        form: profile.ingredientForm.trim() || undefined,
+        product: profile.productName.trim() || undefined,
+        dailyIntakeValue: dailyIntakeValue ?? undefined,
+        dailyIntakeUnit: dailyIntakeUnit ?? undefined,
+        longTermUseDays:
+          typeof longTermDays === "number" ? Math.round(longTermDays) : undefined,
+        sameDay: combinedCoingredients.length > 0 ? true : undefined,
+        coingredients:
+          combinedCoingredients.length > 0 ? combinedCoingredients : undefined,
+      };
+    });
 
     return {
       profile: {
@@ -1133,13 +1307,12 @@ export function RuleExplorerClient({
           metadata.conditionOptions,
         ),
         allergies: splitMultiValue(profile.allergies),
-        selectedCompounds: buildCanonicalEntries(
-          profile.selectedCompounds,
-          metadata.ingredients,
-        ),
-        jurisdiction: profile.jurisdiction || undefined,
+        selectedCompounds: selectedCompoundEntries,
+        jurisdiction: profile.jurisdiction || "US",
         memo: profile.memo,
+        strictestMode: true,
       },
+      candidateItems: candidateItems.length > 0 ? candidateItems : undefined,
       sort,
     } satisfies EngineQuery;
   }
@@ -1157,6 +1330,12 @@ export function RuleExplorerClient({
       conditions,
       allergies,
       selectedCompounds,
+      dailyIntakeValue,
+      dailyIntakeUnit,
+      longTermUseDays,
+      ingredientForm,
+      productName,
+      coingredients,
       jurisdiction,
       memo,
     };
@@ -1222,6 +1401,12 @@ export function RuleExplorerClient({
     setConditions("");
     setAllergies("");
     setSelectedCompounds("");
+    setDailyIntakeValue("");
+    setDailyIntakeUnit("");
+    setLongTermUseDays("");
+    setIngredientForm("");
+    setProductName("");
+    setCoingredients("");
     setJurisdiction("");
     setMemo("");
     resetResultFilters();
@@ -1249,6 +1434,12 @@ export function RuleExplorerClient({
     setLactationStatus(nextProfile.lactationStatus);
     setSmokerStatus(nextProfile.smokerStatus);
     setAllergies(nextProfile.allergies);
+    setDailyIntakeValue(nextProfile.dailyIntakeValue);
+    setDailyIntakeUnit(nextProfile.dailyIntakeUnit);
+    setLongTermUseDays(nextProfile.longTermUseDays);
+    setIngredientForm(nextProfile.ingredientForm);
+    setProductName(nextProfile.productName);
+    setCoingredients(nextProfile.coingredients);
     setJurisdiction(nextProfile.jurisdiction);
     setMemo(nextProfile.memo);
     setError(null);
@@ -1350,7 +1541,10 @@ export function RuleExplorerClient({
     },
   } as const;
   const hasAnyPrimaryInput = Boolean(
-    selectedCompounds.trim() || medications.trim() || conditions.trim(),
+    selectedCompounds.trim() ||
+      medications.trim() ||
+      conditions.trim() ||
+      dailyIntakeValue.trim(),
   );
   const starterProfiles: Array<{
     label: string;
@@ -1363,22 +1557,48 @@ export function RuleExplorerClient({
     pregnancyStatus?: string;
     lactationStatus?: string;
     smokerStatus?: string;
+    dailyIntakeValue?: string;
+    dailyIntakeUnit?: string;
+    longTermUseDays?: string;
+    ingredientForm?: string;
+    productName?: string;
+    coingredients?: string;
+    jurisdiction?: string;
+    memo?: string;
   }> = [
     {
-      label: "와파린 + 비타민 K",
-      description: "약물 상호작용 확인용 조합",
-      selectedCompounds: "비타민 K",
-      medications: "warfarin",
-      age: "68",
-      sex: "male",
+      label: "비타민 D 5000 IU",
+      description: "고함량 비타민 D 확인용 조합",
+      selectedCompounds: "비타민 D",
+      dailyIntakeValue: "5000",
+      dailyIntakeUnit: "iu/day",
+      longTermUseDays: "90",
+      coingredients: "calcium",
+      age: "45",
+      sex: "female",
+      jurisdiction: "US",
     },
     {
-      label: "퀴놀론 + 마그네슘",
-      description: "복용 간격 규칙을 보는 예시",
-      selectedCompounds: "magnesium",
-      medications: "quinolone antibiotic",
-      age: "47",
+      label: "비타민 B6 50 mg",
+      description: "장기복용 신경병증 신호 확인용 조합",
+      selectedCompounds: "vitamin B6",
+      dailyIntakeValue: "50",
+      dailyIntakeUnit: "mg/day",
+      longTermUseDays: "180",
+      age: "35",
+      sex: "female",
+      jurisdiction: "US",
+    },
+    {
+      label: "아연 50 mg",
+      description: "고함량 미네랄 확인용 조합",
+      selectedCompounds: "zinc",
+      dailyIntakeValue: "50",
+      dailyIntakeUnit: "mg/day",
+      longTermUseDays: "120",
+      age: "40",
       sex: "male",
+      jurisdiction: "US",
     },
   ] as const;
 
@@ -1561,6 +1781,87 @@ export function RuleExplorerClient({
                       applySuggestionToField(current, suggestion),
                     )
                   }
+                />
+              </label>
+            </div>
+
+            <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-6">
+              <label
+                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+              >
+                <span className={fieldLabelClass}>1일 섭취량</span>
+                <input
+                  value={dailyIntakeValue}
+                  onChange={(event) => setDailyIntakeValue(event.target.value)}
+                  type="number"
+                  inputMode="decimal"
+                  placeholder="예: 5000"
+                  className={fieldControlClass}
+                />
+              </label>
+
+              <div className="rounded-[1rem] border border-stone-200 bg-white p-3">
+                <SelectField
+                  label="단위"
+                  value={dailyIntakeUnit}
+                  onChange={setDailyIntakeUnit}
+                  options={[
+                    { value: "", label: "자동" },
+                    { value: "iu/day", label: "IU/day" },
+                    { value: "mg/day", label: "mg/day" },
+                    { value: "mcg/day", label: "mcg/day" },
+                    { value: "mcg RAE/day", label: "mcg RAE/day" },
+                  ]}
+                />
+              </div>
+
+              <label
+                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+              >
+                <span className={fieldLabelClass}>복용 기간</span>
+                <input
+                  value={longTermUseDays}
+                  onChange={(event) => setLongTermUseDays(event.target.value)}
+                  type="number"
+                  inputMode="numeric"
+                  placeholder="일수"
+                  className={fieldControlClass}
+                />
+              </label>
+
+              <label
+                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+              >
+                <span className={fieldLabelClass}>제형</span>
+                <input
+                  value={ingredientForm}
+                  onChange={(event) => setIngredientForm(event.target.value)}
+                  placeholder="예: capsule"
+                  className={fieldControlClass}
+                />
+              </label>
+
+              <label
+                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+              >
+                <span className={fieldLabelClass}>동시 성분</span>
+                <input
+                  value={coingredients}
+                  onChange={(event) => setCoingredients(event.target.value)}
+                  placeholder="예: calcium"
+                  className={fieldControlClass}
+                />
+              </label>
+
+              <label
+                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+              >
+                <span className={fieldLabelClass}>제품명</span>
+                <input
+                  value={productName}
+                  onChange={(event) => setProductName(event.target.value)}
+                  placeholder="선택"
+                  className={fieldControlClass}
                 />
               </label>
             </div>
