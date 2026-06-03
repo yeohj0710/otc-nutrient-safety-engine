@@ -6,6 +6,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from .dedup import dedup_retrieved_records
+from .curation import generate_screening_outputs, write_rule_seed
 from .embase_adapter import EmbaseAdapter
 from .pubmed_adapter import PubMedAdapter
 from .ris_parser import parse_ris_file
@@ -33,6 +34,7 @@ def main() -> None:
             query=args.query,
             filters=args.filters,
             max_records=args.max_records,
+            sort=args.sort,
         )
         print(
             "PubMed search completed: "
@@ -89,6 +91,24 @@ def main() -> None:
         )
         return
 
+    if args.command == "classify":
+        generate_screening_outputs(
+            Path(args.output_root),
+            profile=args.profile,
+            date_tag=args.date_tag,
+        )
+        print(f"Classification outputs written for profile={args.profile}")
+        return
+
+    if args.command == "seed-rules":
+        path = write_rule_seed(
+            Path(args.output_root),
+            profile=args.profile,
+            date_tag=args.date_tag,
+        )
+        print(f"Rule seed written: {path}")
+        return
+
     parser.print_help()
 
 
@@ -139,6 +159,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     subparsers.add_parser("dedup", help="Mark duplicates in retrieved_records.csv.")
+
+    classify = subparsers.add_parser("classify", help="Create screening, extraction, and priority CSVs.")
+    add_curation_args(classify)
+
+    seed_rules = subparsers.add_parser("seed-rules", help="Create a safety rule seed CSV.")
+    add_curation_args(seed_rules)
     return parser
 
 
@@ -147,6 +173,21 @@ def add_search_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--query", required=True, help="Database search query.")
     parser.add_argument("--filters", default="", help="Human-readable filter description.")
     parser.add_argument("--max-records", type=int, default=500, help="Maximum records to retrieve/export.")
+    parser.add_argument("--sort", default="", help="Optional source sort, e.g. relevance for PubMed.")
+
+
+def add_curation_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument(
+        "--profile",
+        required=True,
+        choices=["anticoag_renal", "otc_nutrients"],
+        help="Curation profile used for target-specific keyword classification.",
+    )
+    parser.add_argument(
+        "--date-tag",
+        default="",
+        help="Review date or YYYYMMDD suffix for generated files. Defaults to today.",
+    )
 
 
 if __name__ == "__main__":

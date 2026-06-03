@@ -55,6 +55,7 @@ class PubMedAdapter:
         query: str,
         filters: str = "",
         max_records: int = 500,
+        sort: str = "",
         search_date: str | None = None,
     ) -> PubMedResult:
         ensure_layout(self.output_root)
@@ -62,7 +63,7 @@ class PubMedAdapter:
         run_dir = self.output_root / "raw" / "pubmed" / run_id
         run_dir.mkdir(parents=True, exist_ok=True)
 
-        esearch_payload = self._esearch(query=query, max_records=max_records)
+        esearch_payload = self._esearch(query=query, max_records=max_records, sort=sort)
         write_json(run_dir / "esearch.json", esearch_payload)
 
         id_list = esearch_payload.get("esearchresult", {}).get("idlist", [])
@@ -95,7 +96,7 @@ class PubMedAdapter:
             export_method="ncbi_eutils_esearch_efetch",
             raw_path=to_repo_relative(run_dir),
             status="completed",
-            notes=f"retrieved_pmids={len(id_list)}",
+            notes=f"retrieved_pmids={len(id_list)};sort={sort or 'pubmed_default'}",
         )
 
         append_csv_rows(
@@ -144,15 +145,18 @@ class PubMedAdapter:
         last_response.raise_for_status()
         return last_response
 
-    def _esearch(self, *, query: str, max_records: int) -> dict[str, object]:
+    def _esearch(self, *, query: str, max_records: int, sort: str = "") -> dict[str, object]:
+        params = {
+            "db": "pubmed",
+            "term": query,
+            "retmode": "json",
+            "retmax": max_records,
+        }
+        if sort:
+            params["sort"] = sort
         response = self._request(
             "esearch.fcgi",
-            {
-                "db": "pubmed",
-                "term": query,
-                "retmode": "json",
-                "retmax": max_records,
-            },
+            params,
         )
         return response.json()
 
