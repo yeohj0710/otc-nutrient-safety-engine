@@ -33,6 +33,9 @@ yarn-error.log*
 .pnpm-debug.log*
 .next-*.log
 tmp-next-dev.*.log
+codex-start-*.log
+.playwright-cli/
+output/
 
 # env files (can opt-in for committing if needed)
 .env*

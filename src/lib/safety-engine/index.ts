@@ -16,6 +16,7 @@ import {
   getConditionAliases,
   getConditionPresetCanonicalValues,
 } from "@/src/lib/knowledge/condition-aliases";
+import { getLiteratureContextForQuery } from "@/src/lib/literature-candidates";
 import { getMedicationAliases } from "@/src/lib/knowledge/medication-aliases";
 
 const severityRank = {
@@ -850,6 +851,10 @@ export function runSafetyEngine(query: EngineQuery, knowledgeIndex: KnowledgeInd
     needs_more_info: sortRuleMatches(ruleMatches.filter((match) => match.classification === "needs_more_info"), query.sort),
     excluded: sortRuleMatches(ruleMatches.filter((match) => match.classification === "excluded"), query.sort),
   };
+  const literature = getLiteratureContextForQuery(
+    query,
+    knowledgeIndex.safetyRules.length,
+  );
 
   return engineResponseSchema.parse({
     generatedAt: new Date().toISOString(),
@@ -862,5 +867,6 @@ export function runSafetyEngine(query: EngineQuery, knowledgeIndex: KnowledgeInd
       excluded: grouped.excluded.length,
     },
     ...grouped,
+    literature,
   });
 }

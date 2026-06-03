@@ -559,6 +559,7 @@ function FieldRecognitionAssist({
           ))}
         </div>
       ) : null}
+
     </div>
   );
 }
@@ -894,6 +895,157 @@ function buildAiProfileSummary(response: EngineResponse) {
   if (profile.jurisdiction) parts.push(`관할권 ${profile.jurisdiction}`);
 
   return parts.join(" / ") || "선택 성분과 개인 조건에 맞춘 영양 안전 결과";
+}
+
+function formatCount(value: number) {
+  return value.toLocaleString("ko-KR");
+}
+
+function formatPriorityLabel(value: string) {
+  if (value === "manual_review_high") return "우선검토 높음";
+  if (value === "manual_review_medium") return "우선검토 중간";
+  if (value === "manual_review_low") return "우선검토 낮음";
+  return cleanDisplayText(value.replace(/_/g, " "));
+}
+
+function formatDecisionLabel(value: string) {
+  if (value === "include_candidate") return "포함 후보";
+  if (value === "maybe_needs_manual_review") return "추가 검토";
+  if (value === "manual_review_low") return "낮은 검토";
+  return cleanDisplayText(value.replace(/_/g, " "));
+}
+
+function formatTargetLabel(value: string) {
+  return cleanDisplayText(value.replace(/_/g, " "));
+}
+
+function getCandidateTerms(
+  candidate: EngineResponse["literature"]["relatedCandidates"][number],
+) {
+  return [
+    ...candidate.matchedIngredientTerms,
+    ...candidate.matchedPopulationTerms,
+    ...candidate.matchedOutcomeTerms,
+  ].slice(0, 5);
+}
+
+function LiteratureContextPanel({
+  literature,
+}: {
+  literature: EngineResponse["literature"];
+}) {
+  const summary = literature.summary;
+  const summaryCards = [
+    {
+      label: "PubMed hit",
+      value: formatCount(summary.latestPubMedHitCount),
+      caption: `저장 ${formatCount(summary.latestPubMedStoredRecords)}건`,
+    },
+    {
+      label: "누적 후보",
+      value: formatCount(summary.cumulativePubMedCandidates),
+      caption: `포함 후보 ${formatCount(summary.includeCandidateCount)}건`,
+    },
+    {
+      label: "보조검색 hit",
+      value: formatCount(summary.secondaryHitTotal),
+      caption: `저장 ${formatCount(summary.secondaryStoredRecords)}건`,
+    },
+    {
+      label: "화면 rule",
+      value: formatCount(summary.visibleRuleCount),
+      caption: `우선검토 ${formatCount(summary.priorityCandidateCount)}건`,
+    },
+  ];
+
+  return (
+    <section className="surface-card rounded-[1.25rem] p-4 motion-safe:animate-[rise-in_620ms_var(--ease-emphasized)_both]">
+      <div className="flex flex-col gap-2 border-b border-border-subtle pb-3 md:flex-row md:items-center md:justify-between">
+        <div className="min-w-0">
+          <h2 className="text-[0.88rem] font-semibold tracking-[-0.02em] text-foreground md:text-[0.94rem]">
+            문헌 검색 풀과 관련 후보문헌
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-muted">
+            {literature.matchExplanation}
+          </p>
+        </div>
+        <span className="rounded-full border border-stone-200 bg-white px-3 py-1.5 text-xs font-medium text-muted">
+          {formatCount(literature.totalCandidateCount)}건 중{" "}
+          {formatCount(literature.shownCandidateCount)}건 표시
+        </span>
+      </div>
+
+      <div className="mt-4 grid gap-2 sm:grid-cols-2 xl:grid-cols-4">
+        {summaryCards.map((item) => (
+          <div
+            key={item.label}
+            className="rounded-[0.85rem] border border-stone-200 bg-white px-3.5 py-3"
+          >
+            <p className="text-xs font-medium text-muted">{item.label}</p>
+            <p className="mt-1 text-[1.15rem] font-semibold leading-none text-foreground tabular-nums">
+              {item.value}
+            </p>
+            <p className="mt-1.5 text-xs leading-5 text-muted">{item.caption}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 grid gap-3 lg:grid-cols-2">
+        {literature.relatedCandidates.map((candidate) => {
+          const terms = getCandidateTerms(candidate);
+
+          return (
+            <article
+              key={candidate.id}
+              className="rounded-[0.95rem] border border-stone-200 bg-white p-4"
+            >
+              <div className="flex flex-wrap gap-2">
+                <span className="rounded-full bg-stone-100 px-2.5 py-1 text-[0.72rem] font-medium text-stone-700">
+                  {formatPriorityLabel(candidate.priority)}
+                </span>
+                <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[0.72rem] font-medium text-emerald-800">
+                  {formatDecisionLabel(candidate.suggestedDecision)}
+                </span>
+                {candidate.year ? (
+                  <span className="rounded-full bg-white px-2.5 py-1 text-[0.72rem] font-medium text-muted ring-1 ring-stone-200">
+                    {candidate.year}
+                  </span>
+                ) : null}
+              </div>
+              <h3 className="mt-3 text-sm font-semibold leading-6 text-foreground">
+                <a
+                  href={candidate.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline decoration-border-subtle underline-offset-4 transition hover:text-stone-600"
+                >
+                  {cleanDisplayText(candidate.title)}
+                </a>
+              </h3>
+              <div className="mt-3 flex flex-wrap gap-2 text-[0.74rem]">
+                <span className="rounded-full border border-stone-200 px-2.5 py-1 text-muted">
+                  {formatTargetLabel(candidate.targetId)}
+                </span>
+                {candidate.pmid ? (
+                  <span className="rounded-full border border-stone-200 px-2.5 py-1 text-muted">
+                    PMID {candidate.pmid}
+                  </span>
+                ) : null}
+              </div>
+              {terms.length > 0 ? (
+                <p className="mt-3 text-xs leading-5 text-muted">
+                  관련 단어: {terms.map(cleanDisplayText).join(", ")}
+                </p>
+              ) : null}
+              <p className="mt-2 text-xs leading-5 text-muted">
+                {candidate.relevanceReasons.map(cleanDisplayText).join(" / ")}
+              </p>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
 }
 
 export function RuleExplorerClient({
@@ -2517,6 +2669,10 @@ export function RuleExplorerClient({
             </div>
           ) : null}
         </section>
+      ) : null}
+
+      {response?.literature ? (
+        <LiteratureContextPanel literature={response.literature} />
       ) : null}
     </div>
   );

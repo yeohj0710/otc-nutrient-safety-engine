@@ -83,6 +83,38 @@ export function getKnowledgeIndex() {
     : knowledgeIndex;
 }
 
+export function getStudyKnowledgeIndex(): KnowledgeIndex {
+  const index = getKnowledgeIndex();
+  const safetyRules = getStudySafetyRules(index);
+  const sourceIds = new Set(safetyRules.flatMap((rule) => rule.sourceIds));
+  const evidenceChunkIds = new Set(
+    safetyRules.flatMap((rule) => rule.evidenceChunkIds),
+  );
+  const ingredientIds = new Set(safetyRules.map((rule) => rule.ingredientId));
+  const sources = index.sources.filter((source) => sourceIds.has(source.id));
+  const evidenceChunks = index.evidenceChunks.filter((chunk) =>
+    evidenceChunkIds.has(chunk.id),
+  );
+  const ingredients = index.ingredients.filter((ingredient) =>
+    ingredientIds.has(ingredient.id),
+  );
+
+  return {
+    ...index,
+    meta: {
+      ...index.meta,
+      sourceCount: sources.length,
+      ingredientCount: ingredients.length,
+      evidenceChunkCount: evidenceChunks.length,
+      safetyRuleCount: safetyRules.length,
+    },
+    sources,
+    ingredients,
+    evidenceChunks,
+    safetyRules,
+  };
+}
+
 export function getKnowledgeMeta() {
   return getKnowledgeIndex().meta;
 }

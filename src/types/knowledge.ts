@@ -208,6 +208,54 @@ export const ruleMatchSchema = z.object({
   }),
 });
 
+export const literatureCandidateSchema = z.object({
+  id: z.string().min(1),
+  pmid: z.string().nullable(),
+  year: z.number().int().nullable(),
+  targetId: z.string().min(1),
+  priority: z.string().min(1),
+  suggestedDecision: z.string().min(1),
+  matchedPopulationTerms: z.array(z.string()).default([]),
+  matchedIngredientTerms: z.array(z.string()).default([]),
+  matchedOutcomeTerms: z.array(z.string()).default([]),
+  matchedStudyTerms: z.array(z.string()).default([]),
+  reviewRole: z.string().min(1),
+  title: z.string().min(1),
+  url: z.string().min(1),
+  relevanceScore: z.number().default(0),
+  relevanceReasons: z.array(z.string()).default([]),
+});
+
+export const literatureSearchSummarySchema = z.object({
+  studyId: z.string().min(1),
+  studyLabel: z.string().min(1),
+  generatedAt: z.string().min(1),
+  primarySearchRuns: z.number().int(),
+  latestPubMedHitCount: z.number().int(),
+  latestPubMedStoredRecords: z.number().int(),
+  cumulativePubMedCandidates: z.number().int(),
+  secondarySearchRuns: z.number().int(),
+  secondaryHitTotal: z.number().int(),
+  secondaryStoredRecords: z.number().int(),
+  includeCandidateCount: z.number().int(),
+  manualReviewLowCount: z.number().int(),
+  likelyExcludeCount: z.number().int(),
+  duplicateExcludedCount: z.number().int(),
+  highPriorityCount: z.number().int(),
+  mediumPriorityCount: z.number().int(),
+  lowPriorityCount: z.number().int(),
+  priorityCandidateCount: z.number().int(),
+  visibleRuleCount: z.number().int(),
+});
+
+export const literatureContextSchema = z.object({
+  summary: literatureSearchSummarySchema,
+  relatedCandidates: z.array(literatureCandidateSchema),
+  totalCandidateCount: z.number().int(),
+  shownCandidateCount: z.number().int(),
+  matchExplanation: z.string().min(1),
+});
+
 export const knowledgeIndexSchema = z.object({
   meta: z.object({
     packageName: z.string().min(1),
@@ -244,6 +292,7 @@ export const engineResponseSchema = z.object({
   possibly_relevant: z.array(ruleMatchSchema),
   needs_more_info: z.array(ruleMatchSchema),
   excluded: z.array(ruleMatchSchema),
+  literature: literatureContextSchema,
 });
 
 export type KnowledgeSource = z.infer<typeof knowledgeSourceSchema>;
@@ -257,5 +306,10 @@ export type PersonProfile = z.infer<typeof personProfileSchema>;
 export type EngineQuery = z.infer<typeof engineQuerySchema>;
 export type ConditionResult = z.infer<typeof conditionResultSchema>;
 export type RuleMatch = z.infer<typeof ruleMatchSchema>;
+export type LiteratureCandidate = z.infer<typeof literatureCandidateSchema>;
+export type LiteratureSearchSummary = z.infer<
+  typeof literatureSearchSummarySchema
+>;
+export type LiteratureContext = z.infer<typeof literatureContextSchema>;
 export type EngineResponse = z.infer<typeof engineResponseSchema>;
 export type KnowledgeIndex = z.infer<typeof knowledgeIndexSchema>;

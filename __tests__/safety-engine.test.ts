@@ -44,6 +44,32 @@ describe("runSafetyEngine", () => {
     expect(matchedIds.has("RULE-SJW-MAJOR-DRUG-INTERACTIONS")).toBe(true);
   });
 
+  it("returns the systematic search pool beside rule results", () => {
+    const response = runSafetyEngine(
+      {
+        profile: {
+          age: 45,
+          jurisdiction: "US",
+        },
+        candidateItems: [
+          {
+            ingredientId: "vitamin_d",
+            name: "vitamin D",
+            dailyIntakeValue: 5000,
+            dailyIntakeUnit: "iu/day",
+          },
+        ],
+        sort: "severity_desc",
+      },
+      knowledgeIndex,
+    );
+
+    expect(response.literature.summary.cumulativePubMedCandidates).toBe(435);
+    expect(response.literature.totalCandidateCount).toBe(371);
+    expect(response.literature.relatedCandidates.length).toBeGreaterThan(0);
+    expect(response.literature.relatedCandidates[0].url).toContain("pubmed");
+  });
+
   it("marks form-specific iodine interaction rules as needs_more_info when the form is missing", () => {
     const response = runSafetyEngine(
       {
