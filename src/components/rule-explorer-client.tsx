@@ -1724,7 +1724,6 @@ export function RuleExplorerClient({
       selectedCompounds: "비타민 D",
       dailyIntakeValue: "5000",
       dailyIntakeUnit: "iu/day",
-      longTermUseDays: "90",
       coingredients: "calcium",
       age: "45",
       sex: "female",
