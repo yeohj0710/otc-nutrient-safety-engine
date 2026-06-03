@@ -20,7 +20,7 @@ Before exploring the repo from scratch, check `docs/project_map.md`.
 
 - 이 repo는 권혁찬 연구용이며, 기존 여형준 연구처럼 결정적 규칙 엔진과 문헌검색 pipeline을 쓰되 연구 질문은 다르게 둔다.
 - 기존 연구가 항응고제 복용자와 신장 관련 고위험군 같은 환자/질환 맥락을 중심으로 했다면, 이 연구는 일반의약품과 건강기능식품 경계에 있는 고함량 영양성분 자체를 중심으로 한다.
-- 1차 타겟은 고함량 지용성 비타민·칼슘 축, 비타민 B6/B군 복합제 축, 철분·마그네슘·칼슘 미네랄 축이다.
+- 1차 타겟은 고함량 지용성 비타민과 칼슘, 비타민 B6와 B군 복합제, 철분과 마그네슘과 아연을 포함한 미네랄 성분이다.
 - 랩미팅 설명은 PubMed 중심으로 유지하고, Embase는 후속 확장 경로로만 언급한다.
 - The Embase implementation still exists in `tools/search_pipeline/embase_adapter.py` as internal follow-up work. Do not remove it unless the user explicitly asks.
 - The systematic search pipeline is Python-based and separate from the Next.js runtime:
