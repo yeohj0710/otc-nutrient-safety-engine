@@ -24,6 +24,7 @@ import {
   sortEvidenceChunksByPriority,
   sortSourcesByPriority,
 } from "@/src/lib/references";
+import { cleanDisplayList, cleanDisplayText } from "@/src/lib/display-text";
 import type { RuleMatch } from "@/src/types/knowledge";
 
 const confirmedSeverityMeta = {
@@ -80,21 +81,22 @@ const operatorLabelMap: Record<string, string> = {
 };
 
 function renderList(items: string[]) {
-  return items.length > 0 ? items.join(", ") : "해당 없음";
+  return cleanDisplayList(items);
 }
 
 function sanitizeExplanations(items: string[], fallback: string) {
   const cleaned = items
     .map((item) => item.trim())
     .filter(Boolean)
-    .map((item) => (/[占�]/.test(item) ? fallback : item));
+    .map((item) => (/[占�]/.test(item) ? fallback : item))
+    .map((item) => cleanDisplayText(item) ?? fallback);
 
   return cleaned.length > 0 ? cleaned : [fallback];
 }
 
 function formatBadgeLabel(value: string | null | undefined) {
   if (!value) return null;
-  return value.replace(/_/g, " ");
+  return cleanDisplayText(value.replace(/_/g, " "));
 }
 
 function getAdaptiveSummaryCardSpan(value: string) {
@@ -175,7 +177,7 @@ function buildDoseLimitRecommendation(match: RuleMatch) {
   if (!thresholdValue) return null;
 
   const audience = getRuleAudienceLabel(match);
-  const ingredient = match.rule.nutrientOrIngredient;
+  const ingredient = cleanDisplayText(match.rule.nutrientOrIngredient);
 
   switch (match.rule.thresholdOperator) {
     case ">":
@@ -288,19 +290,21 @@ function toPoliteRuleSummary(message: string) {
 function getTargetSummary(match: RuleMatch) {
   const targets: string[] = [];
   if (match.rule.interactionDrugs.length > 0) {
-    targets.push(`복용 약물: ${match.rule.interactionDrugs.join(", ")}`);
+    targets.push(`복용 약물: ${cleanDisplayList(match.rule.interactionDrugs)}`);
   }
   if (match.rule.interactionDiseases.length > 0) {
-    targets.push(`질환/상태: ${match.rule.interactionDiseases.join(", ")}`);
+    targets.push(
+      `질환/상태: ${cleanDisplayList(match.rule.interactionDiseases)}`,
+    );
   }
   if (match.rule.populationTags.length > 0) {
-    targets.push(`대상 집단: ${match.rule.populationTags.join(", ")}`);
+    targets.push(`대상 집단: ${cleanDisplayList(match.rule.populationTags)}`);
   }
   if (targets.length === 0 && match.rule.conditions.length > 0) {
     const labels = match.rule.conditions
       .map((condition) => condition.labelKo)
       .filter(Boolean);
-    if (labels.length > 0) targets.push(`연결 조건: ${labels.join(", ")}`);
+    if (labels.length > 0) targets.push(`연결 조건: ${cleanDisplayList(labels)}`);
   }
 
   return targets.length > 0
@@ -350,9 +354,9 @@ function buildDeterministicRecommendation(
     /\s+/g,
     " ",
   );
-  const firstDrug = match.rule.interactionDrugs[0];
+  const firstDrug = cleanDisplayText(match.rule.interactionDrugs[0]);
   const lead = firstDrug ? `${firstDrug}을 복용 중이라면 ` : "";
-  const ingredient = match.rule.nutrientOrIngredient;
+  const ingredient = cleanDisplayText(match.rule.nutrientOrIngredient);
 
   if (match.rule.ruleCategory === "dose_limit") {
     const doseLimitRecommendation = buildDoseLimitRecommendation(match);
@@ -503,22 +507,32 @@ export function RuleCard({
     ? primaryEvidenceExcerpt
     : null;
   const primaryEvidenceDisplayText =
-    primaryEvidenceTranslation ??
-    primaryEvidenceSummaryExcerpt ??
-    primaryEvidenceRepresentativeExcerpt;
+    cleanDisplayText(
+      primaryEvidenceTranslation ??
+        primaryEvidenceSummaryExcerpt ??
+        primaryEvidenceRepresentativeExcerpt,
+    );
   const primaryEvidenceOriginalDisplay =
-    primaryEvidenceOriginalSentence ??
-    (primaryEvidenceHasOriginal ? primaryEvidenceRepresentativeExcerpt : null);
+    cleanDisplayText(
+      primaryEvidenceOriginalSentence ??
+        (primaryEvidenceHasOriginal
+          ? primaryEvidenceRepresentativeExcerpt
+          : null),
+    );
   const shouldShowPrimaryEvidenceOriginalDisplay =
     Boolean(primaryEvidenceOriginalDisplay) &&
     primaryEvidenceOriginalDisplay !== primaryEvidenceDisplayText;
   const supportingGuidanceSource =
-    primaryEvidenceContextSummary ??
-    primaryEvidenceTranslation ??
-    toPoliteRuleSummary(match.rule.messageShort || match.resolvedMessage);
+    cleanDisplayText(
+      primaryEvidenceContextSummary ??
+        primaryEvidenceTranslation ??
+        toPoliteRuleSummary(match.rule.messageShort || match.resolvedMessage),
+    ) ?? "";
   const primaryRecommendation =
-    aiRecommendation ??
-    buildDeterministicRecommendation(match, supportingGuidanceSource);
+    cleanDisplayText(
+      aiRecommendation ??
+        buildDeterministicRecommendation(match, supportingGuidanceSource),
+    ) ?? "";
   const confidenceLabel = formatBadgeLabel(match.rule.confidence) ?? "unknown";
   const supportingSourceCount = sortedSources.length;
   const supportingEvidenceCount = sortedEvidenceChunks.length;
@@ -574,7 +588,7 @@ export function RuleCard({
             {badgeMeta.label}
           </span>
           <span className="rounded-full border border-border-subtle bg-white/82 px-3 py-1 text-[10px] font-medium text-foreground">
-            {match.rule.nutrientOrIngredient}
+            {cleanDisplayText(match.rule.nutrientOrIngredient)}
           </span>
         </div>
 
@@ -601,11 +615,11 @@ export function RuleCard({
                     rel="noreferrer"
                     className="block break-words text-[0.9rem] font-semibold leading-6 text-foreground underline decoration-border-subtle underline-offset-4 transition hover:text-stone-700"
                   >
-                    {primarySource.title}
+                    {cleanDisplayText(primarySource.title)}
                   </a>
                 ) : (
                   <p className="break-words text-[0.9rem] font-semibold leading-6 text-foreground">
-                    {primarySource.title}
+                    {cleanDisplayText(primarySource.title)}
                   </p>
                 )}
               </div>
@@ -691,7 +705,7 @@ export function RuleCard({
                       >
                         <dt className="font-medium text-muted">{item.label}</dt>
                         <dd className="mt-1 leading-6 text-foreground">
-                          {item.value}
+                          {cleanDisplayText(item.value)}
                         </dd>
                       </div>
                     ))}
@@ -714,7 +728,7 @@ export function RuleCard({
                           >
                             <div className="flex flex-wrap items-center gap-2 text-[11px]">
                               <span className="rounded-full bg-accent-soft px-2.5 py-1 text-accent-strong">
-                                {getSourceTrustSummary(source)}
+                                {cleanDisplayText(getSourceTrustSummary(source))}
                               </span>
                               {source.year ? (
                                 <span className="rounded-full border border-border-subtle px-2.5 py-1 text-muted">
@@ -732,10 +746,11 @@ export function RuleCard({
                               href={`/sources/${source.id}`}
                               className="mt-3 block text-sm font-semibold leading-6 text-foreground underline decoration-border-subtle underline-offset-4"
                             >
-                              {source.title}
+                              {cleanDisplayText(source.title)}
                             </Link>
                             <p className="mt-1 text-xs leading-5 text-muted">
-                              {source.journalOrPublisher ?? "발행 정보 없음"}
+                              {cleanDisplayText(source.journalOrPublisher) ??
+                                "발행 정보 없음"}
                             </p>
 
                             {externalLinks.length > 0 ? (
@@ -789,7 +804,7 @@ export function RuleCard({
                     <div className="mt-3 rounded-[1rem] border border-stone-200 bg-stone-50/60 px-4 py-4">
                       <div className="flex flex-wrap items-center gap-2 text-[11px]">
                         <span className="rounded-full bg-accent-soft px-2.5 py-1 text-accent-strong">
-                          {getSourceTrustSummary(primarySource)}
+                          {cleanDisplayText(getSourceTrustSummary(primarySource))}
                         </span>
                         {primarySource.year ? (
                           <span className="rounded-full border border-stone-200 bg-white px-2.5 py-1 text-muted">
@@ -802,7 +817,7 @@ export function RuleCard({
                         href={`/sources/${primarySource.id}`}
                         className="mt-3 block text-sm font-semibold leading-6 text-foreground transition hover:text-stone-700"
                       >
-                        {primarySource.title}
+                        {cleanDisplayText(primarySource.title)}
                       </Link>
 
                       <div className="mt-3 flex flex-wrap gap-2">
@@ -842,7 +857,9 @@ export function RuleCard({
                         ) : null}
                         {getEvidenceLocatorText(primaryEvidence) ? (
                           <span className="rounded-full border border-stone-200 bg-white px-2.5 py-1 text-muted">
-                            {getEvidenceLocatorText(primaryEvidence)}
+                            {cleanDisplayText(
+                              getEvidenceLocatorText(primaryEvidence),
+                            )}
                           </span>
                         ) : null}
                       </div>
@@ -852,8 +869,8 @@ export function RuleCard({
                       <blockquote className="mt-3 text-sm leading-7 text-foreground">
                         {primaryEvidenceExcerpt
                           ? hasOriginalEvidenceExcerpt(primaryEvidence)
-                            ? `"${primaryEvidenceExcerpt}"`
-                            : primaryEvidenceExcerpt
+                            ? `"${cleanDisplayText(primaryEvidenceExcerpt)}"`
+                            : cleanDisplayText(primaryEvidenceExcerpt)
                           : "대표 근거 문장이 아직 등록되지 않았습니다."}
                       </blockquote>
                       {primaryEvidenceTranslation &&
@@ -865,7 +882,7 @@ export function RuleCard({
                               : "한국어 번역"}
                           </p>
                           <p className="mt-1 text-sm leading-6 text-muted">
-                            {primaryEvidenceTranslation}
+                            {cleanDisplayText(primaryEvidenceTranslation)}
                           </p>
                         </div>
                       ) : null}
@@ -875,7 +892,7 @@ export function RuleCard({
                             앞뒤 문맥
                           </p>
                           <p className="mt-1 text-sm leading-6 text-muted">
-                            {primaryEvidenceContextExcerpt}
+                            {cleanDisplayText(primaryEvidenceContextExcerpt)}
                           </p>
                         </div>
                       ) : null}
@@ -885,12 +902,14 @@ export function RuleCard({
                             핵심 해석
                           </p>
                           <p className="mt-1 text-sm leading-6 text-muted">
-                            {primaryEvidenceSummaryExcerpt}
+                            {cleanDisplayText(primaryEvidenceSummaryExcerpt)}
                           </p>
                         </div>
                       ) : null}
                       <p className="mt-3 text-xs leading-5 text-muted">
-                        {getEvidenceVerificationSummary(primaryEvidence)}
+                        {cleanDisplayText(
+                          getEvidenceVerificationSummary(primaryEvidence),
+                        )}
                       </p>
                       {primaryEvidenceIsShortOriginal ? (
                         <p className="mt-2 text-xs leading-5 text-muted">
@@ -901,7 +920,7 @@ export function RuleCard({
                       ) : null}
                       {primaryEvidenceNote ? (
                         <p className="mt-2 text-xs leading-5 text-muted">
-                          {primaryEvidenceNote}
+                          {cleanDisplayText(primaryEvidenceNote)}
                         </p>
                       ) : null}
                     </div>
@@ -936,27 +955,27 @@ export function RuleCard({
                           <div className="flex flex-wrap items-center gap-2 text-[11px]">
                             {verificationLabel ? (
                               <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-emerald-900">
-                                {verificationLabel}
+                                {cleanDisplayText(verificationLabel)}
                               </span>
                             ) : null}
                             {captureLabel ? (
                               <span className="rounded-full border border-border-subtle bg-white px-2.5 py-1 text-muted">
-                                {captureLabel}
+                                {cleanDisplayText(captureLabel)}
                               </span>
                             ) : null}
                             {claimLabel ? (
                               <span className="rounded-full bg-foreground px-2.5 py-1 text-white">
-                                {claimLabel}
+                                {cleanDisplayText(claimLabel)}
                               </span>
                             ) : null}
                             {source ? (
                               <span className="rounded-full bg-accent-soft px-2.5 py-1 text-accent-strong">
-                                {getSourceTrustSummary(source)}
+                                {cleanDisplayText(getSourceTrustSummary(source))}
                               </span>
                             ) : null}
                             {locatorText ? (
                               <span className="rounded-full border border-border-subtle px-2.5 py-1 text-muted">
-                                {locatorText}
+                                {cleanDisplayText(locatorText)}
                               </span>
                             ) : null}
                             {linkedRuleIds.length > 0 ? (
@@ -968,7 +987,7 @@ export function RuleCard({
 
                           {source ? (
                             <p className="mt-3 text-sm font-semibold leading-6 text-foreground">
-                              {source.title}
+                              {cleanDisplayText(source.title)}
                             </p>
                           ) : null}
 
@@ -979,8 +998,8 @@ export function RuleCard({
                               </p>
                               <blockquote className="mt-2 text-sm leading-6 text-foreground">
                                 {hasOriginalEvidenceExcerpt(chunk)
-                                  ? `"${primaryExcerpt}"`
-                                  : primaryExcerpt}
+                                  ? `"${cleanDisplayText(primaryExcerpt)}"`
+                                  : cleanDisplayText(primaryExcerpt)}
                               </blockquote>
                               {translationExcerpt &&
                               translationExcerpt !== primaryExcerpt ? (
@@ -991,7 +1010,7 @@ export function RuleCard({
                                       : "한국어 번역"}
                                   </p>
                                   <p className="mt-1 text-sm leading-6 text-muted">
-                                    {translationExcerpt}
+                                    {cleanDisplayText(translationExcerpt)}
                                   </p>
                                 </div>
                               ) : null}
@@ -1001,7 +1020,7 @@ export function RuleCard({
                                     앞뒤 문맥
                                   </p>
                                   <p className="mt-1 text-sm leading-6 text-muted">
-                                    {contextExcerpt}
+                                    {cleanDisplayText(contextExcerpt)}
                                   </p>
                                 </div>
                               ) : null}
@@ -1011,12 +1030,14 @@ export function RuleCard({
                                     핵심 해석
                                   </p>
                                   <p className="mt-1 text-sm leading-6 text-muted">
-                                    {summaryExcerpt}
+                                    {cleanDisplayText(summaryExcerpt)}
                                   </p>
                                 </div>
                               ) : null}
                               <p className="mt-3 text-xs leading-5 text-muted">
-                                {getEvidenceVerificationSummary(chunk)}
+                                {cleanDisplayText(
+                                  getEvidenceVerificationSummary(chunk),
+                                )}
                               </p>
                               {isShortOriginal ? (
                                 <p className="mt-2 text-xs leading-5 text-muted">
@@ -1027,14 +1048,14 @@ export function RuleCard({
                               ) : null}
                               {evidenceNote ? (
                                 <p className="mt-2 text-xs leading-5 text-muted">
-                                  {evidenceNote}
+                                  {cleanDisplayText(evidenceNote)}
                                 </p>
                               ) : null}
                             </div>
                           ) : null}
 
                           <p className="mt-3 text-sm leading-6 text-foreground">
-                            {getEvidenceCheckHint(chunk, source)}
+                            {cleanDisplayText(getEvidenceCheckHint(chunk, source))}
                           </p>
 
                           {searchKeywords.length > 0 ? (
@@ -1044,7 +1065,7 @@ export function RuleCard({
                                   key={`${chunk.id}-${keyword}`}
                                   className="rounded-full border border-border-subtle bg-white px-2.5 py-1 text-[11px] text-muted"
                                 >
-                                  {keyword}
+                                  {cleanDisplayText(keyword)}
                                 </span>
                               ))}
                             </div>

@@ -6,6 +6,7 @@ import {
   getIngredientReferenceDetail,
   getKnowledgeIndex,
 } from "@/src/lib/knowledge";
+import { cleanDisplayText } from "@/src/lib/display-text";
 import {
   getEvidenceContextExcerpt,
   getEvidencePrimaryExcerpt,
@@ -25,7 +26,7 @@ import { siteName } from "@/src/lib/site";
 
 function formatLabel(value: string | null | undefined) {
   if (!value) return null;
-  return value.replace(/_/g, " ");
+  return cleanDisplayText(value.replace(/_/g, " "));
 }
 
 function getPreferredPrimaryLink(links: Array<{ label: string; url: string }>) {
@@ -56,8 +57,8 @@ export async function generateMetadata(props: {
   }
 
   return {
-    title: `${detail.ingredient.nameKo} 레퍼런스`,
-    description: `${detail.ingredient.nameKo}와 연결된 논문, 공공 자료, 근거 문장과 외부 링크를 한 페이지에서 확인합니다.`,
+    title: `${cleanDisplayText(detail.ingredient.nameKo)} 레퍼런스`,
+    description: `${cleanDisplayText(detail.ingredient.nameKo)}와 연결된 논문, 공공 자료, 근거 문장과 외부 링크를 한 페이지에서 확인합니다.`,
     robots: {
       index: false,
       follow: false,
@@ -137,11 +138,11 @@ export default async function IngredientReferenceDetailPage(props: {
         <section className="surface-card-strong rounded-[2rem] px-6 py-6">
           <p className="eyebrow">Ingredient Reference Detail</p>
           <h1 className="mt-4 text-[clamp(1.62rem,2.8vw,2.18rem)] font-semibold tracking-[-0.03em] text-foreground">
-            {detail.ingredient.nameKo}
+            {cleanDisplayText(detail.ingredient.nameKo)}
           </h1>
           {detail.ingredient.nameEn ? (
             <p className="mt-2 text-sm text-muted">
-              {detail.ingredient.nameEn}
+              {cleanDisplayText(detail.ingredient.nameEn)}
             </p>
           ) : null}
 
@@ -149,7 +150,7 @@ export default async function IngredientReferenceDetailPage(props: {
             {detail.ingredient.category ? (
               <span className="rounded-full bg-accent-soft px-3 py-1 text-accent-strong">
                 {formatLabel(detail.ingredient.category) ??
-                  detail.ingredient.category}
+                  cleanDisplayText(detail.ingredient.category)}
               </span>
             ) : null}
             <span className="rounded-full border border-border-subtle bg-white px-3 py-1 text-muted">
@@ -226,7 +227,7 @@ export default async function IngredientReferenceDetailPage(props: {
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-wrap items-center gap-2 text-[11px]">
                         <span className="rounded-full bg-accent-soft px-3 py-1 text-accent-strong">
-                          {getSourceTrustSummary(source)}
+                          {cleanDisplayText(getSourceTrustSummary(source))}
                         </span>
                         {source.year ? (
                           <span className="rounded-full border border-border-subtle bg-white px-3 py-1 text-muted">
@@ -248,11 +249,11 @@ export default async function IngredientReferenceDetailPage(props: {
                             rel="noreferrer"
                             className="block text-[0.98rem] font-semibold leading-7 text-foreground underline decoration-border-subtle underline-offset-4 transition hover:text-stone-700"
                           >
-                            {source.title}
+                            {cleanDisplayText(source.title)}
                           </a>
                         ) : (
                           <h2 className="text-[0.98rem] font-semibold leading-7 text-foreground">
-                            {source.title}
+                            {cleanDisplayText(source.title)}
                           </h2>
                         )}
 
@@ -278,16 +279,16 @@ export default async function IngredientReferenceDetailPage(props: {
 
                       <div className="rounded-[1.1rem] border border-border-subtle bg-stone-50/70 px-4 py-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-                          {primaryExcerptLabel}
+                          {cleanDisplayText(primaryExcerptLabel)}
                         </p>
                         {primaryExcerpt ? (
                           hasFullOriginalLine ? (
                             <blockquote className="mt-2 text-sm leading-7 text-foreground">
-                              &ldquo;{primaryExcerpt}&rdquo;
+                              &ldquo;{cleanDisplayText(primaryExcerpt)}&rdquo;
                             </blockquote>
                           ) : (
                             <p className="mt-2 text-sm leading-7 text-foreground">
-                              {primaryExcerpt}
+                              {cleanDisplayText(primaryExcerpt)}
                             </p>
                           )
                         ) : (
@@ -301,7 +302,7 @@ export default async function IngredientReferenceDetailPage(props: {
                               한국어 번역
                             </p>
                             <p className="mt-1 text-sm leading-6 text-muted">
-                              {translation}
+                              {cleanDisplayText(translation)}
                             </p>
                           </div>
                         ) : null}
@@ -311,7 +312,7 @@ export default async function IngredientReferenceDetailPage(props: {
                               앞뒤 문맥
                             </p>
                             <p className="mt-1 text-sm leading-6 text-muted">
-                              {contextExcerpt}
+                              {cleanDisplayText(contextExcerpt)}
                             </p>
                           </div>
                         ) : null}
@@ -321,7 +322,7 @@ export default async function IngredientReferenceDetailPage(props: {
                               핵심 해석
                             </p>
                             <p className="mt-1 text-sm leading-6 text-muted">
-                              {summaryExcerpt}
+                              {cleanDisplayText(summaryExcerpt)}
                             </p>
                           </div>
                         ) : null}
@@ -331,7 +332,7 @@ export default async function IngredientReferenceDetailPage(props: {
                               레퍼런스 원문 해당 부분
                             </p>
                             <p className="mt-1 text-xs leading-6 text-muted">
-                              &ldquo;{originalFragment}&rdquo;
+                              &ldquo;{cleanDisplayText(originalFragment)}&rdquo;
                             </p>
                           </div>
                         ) : null}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { RuleCard } from "@/src/components/rule-card";
+import { cleanDisplayText } from "@/src/lib/display-text";
 import { getKnowledgeIndex, getRuleDetail } from "@/src/lib/knowledge";
 import {
   getEvidenceCaptureLabel,
@@ -37,14 +38,16 @@ export async function generateMetadata(props: {
   }
 
   return {
-    title: `${detail.rule.nutrientOrIngredient} 안전 안내`,
-    description: detail.rule.action || detail.rule.messageShort,
+    title: `${cleanDisplayText(detail.rule.nutrientOrIngredient)} 안전 안내`,
+    description:
+      cleanDisplayText(detail.rule.action || detail.rule.messageShort) ?? "",
     alternates: {
       canonical: `/rules/${detail.rule.id}`,
     },
     openGraph: {
-      title: `${detail.rule.nutrientOrIngredient} 안전 안내`,
-      description: detail.rule.action || detail.rule.messageShort,
+      title: `${cleanDisplayText(detail.rule.nutrientOrIngredient)} 안전 안내`,
+      description:
+        cleanDisplayText(detail.rule.action || detail.rule.messageShort) ?? "",
       url: `/rules/${detail.rule.id}`,
     },
   };
@@ -94,7 +97,7 @@ export default async function RuleDetailPage(props: {
           <div>
             <p className="eyebrow">Rule Detail</p>
             <h1 className="mt-4 font-display text-[clamp(1.68rem,2.9vw,2.45rem)] leading-[1.05] tracking-[-0.04em] text-foreground">
-              {detail.rule.nutrientOrIngredient}
+              {cleanDisplayText(detail.rule.nutrientOrIngredient)}
             </h1>
             <p className="mt-3 text-sm text-muted">{detail.rule.id}</p>
           </div>
@@ -124,10 +127,10 @@ export default async function RuleDetailPage(props: {
                   className="rounded-2xl bg-stone-50 px-4 py-3"
                 >
                   <span className="font-medium text-stone-900">
-                    {condition.labelKo ?? condition.field}
+                    {cleanDisplayText(condition.labelKo ?? condition.field)}
                   </span>
                   <span className="ml-2">
-                    {JSON.stringify(condition.value)}
+                    {cleanDisplayText(JSON.stringify(condition.value))}
                   </span>
                 </li>
               ))}
@@ -143,16 +146,20 @@ export default async function RuleDetailPage(props: {
             <div>
               <dt className="font-semibold text-stone-900">짧은 안내</dt>
               <dd className="mt-1 text-stone-700">
-                {detail.rule.messageShort}
+                {cleanDisplayText(detail.rule.messageShort)}
               </dd>
             </div>
             <div>
               <dt className="font-semibold text-stone-900">권장 조치</dt>
-              <dd className="mt-1 text-stone-700">{detail.rule.action}</dd>
+              <dd className="mt-1 text-stone-700">
+                {cleanDisplayText(detail.rule.action)}
+              </dd>
             </div>
             <div className="md:col-span-2">
               <dt className="font-semibold text-stone-900">상세 설명</dt>
-              <dd className="mt-1 text-stone-700">{detail.rule.messageLong}</dd>
+              <dd className="mt-1 text-stone-700">
+                {cleanDisplayText(detail.rule.messageLong)}
+              </dd>
             </div>
           </dl>
         </section>
@@ -180,10 +187,11 @@ export default async function RuleDetailPage(props: {
                   <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                     <div>
                       <p className="font-semibold text-stone-950">
-                        {source.title}
+                        {cleanDisplayText(source.title)}
                       </p>
                       <p className="mt-1 text-sm text-stone-700">
-                        {source.journalOrPublisher ?? "발행 정보 없음"}
+                        {cleanDisplayText(source.journalOrPublisher) ??
+                          "발행 정보 없음"}
                       </p>
                       <p className="mt-2 text-xs text-stone-500">{source.id}</p>
                     </div>
@@ -239,17 +247,17 @@ export default async function RuleDetailPage(props: {
                         <div className="flex flex-wrap gap-2 text-[11px]">
                           {verificationLabel ? (
                             <span className="rounded-full bg-emerald-50 px-3 py-1 text-emerald-900">
-                              {verificationLabel}
+                              {cleanDisplayText(verificationLabel)}
                             </span>
                           ) : null}
                           {captureLabel ? (
                             <span className="rounded-full border border-stone-200 bg-white px-3 py-1 text-stone-700">
-                              {captureLabel}
+                              {cleanDisplayText(captureLabel)}
                             </span>
                           ) : null}
                           {locatorText ? (
                             <span className="rounded-full border border-stone-200 bg-white px-3 py-1 text-stone-700">
-                              {locatorText}
+                              {cleanDisplayText(locatorText)}
                             </span>
                           ) : null}
                         </div>
@@ -258,7 +266,7 @@ export default async function RuleDetailPage(props: {
                         </p>
                         {source ? (
                           <p className="mt-1 text-sm text-stone-600">
-                            {source.title}
+                            {cleanDisplayText(source.title)}
                           </p>
                         ) : null}
                       </div>
@@ -287,8 +295,8 @@ export default async function RuleDetailPage(props: {
                       <p className="mt-2 text-sm leading-6 text-stone-700">
                         {primaryExcerpt
                           ? hasOriginalEvidenceExcerpt(chunk)
-                            ? `"${primaryExcerpt}"`
-                            : primaryExcerpt
+                            ? `"${cleanDisplayText(primaryExcerpt)}"`
+                            : cleanDisplayText(primaryExcerpt)
                           : "발췌 내용이 아직 없습니다."}
                       </p>
                       {translationExcerpt &&
@@ -298,7 +306,7 @@ export default async function RuleDetailPage(props: {
                             한국어 번역
                           </p>
                           <p className="mt-1 text-sm leading-6 text-stone-600">
-                            {translationExcerpt}
+                            {cleanDisplayText(translationExcerpt)}
                           </p>
                         </div>
                       ) : null}
@@ -308,7 +316,7 @@ export default async function RuleDetailPage(props: {
                             앞뒤 문맥
                           </p>
                           <p className="mt-1 text-sm leading-6 text-stone-600">
-                            {contextExcerpt}
+                            {cleanDisplayText(contextExcerpt)}
                           </p>
                         </div>
                       ) : null}
@@ -318,18 +326,18 @@ export default async function RuleDetailPage(props: {
                             핵심 해석
                           </p>
                           <p className="mt-1 text-sm leading-6 text-stone-600">
-                            {summaryExcerpt}
+                            {cleanDisplayText(summaryExcerpt)}
                           </p>
                         </div>
                       ) : null}
                     </div>
 
                     <p className="mt-3 text-sm leading-6 text-stone-700">
-                      {getEvidenceVerificationSummary(chunk)}
+                      {cleanDisplayText(getEvidenceVerificationSummary(chunk))}
                     </p>
                     {evidenceNote ? (
                       <p className="mt-2 text-sm leading-6 text-stone-600">
-                        {evidenceNote}
+                        {cleanDisplayText(evidenceNote)}
                       </p>
                     ) : null}
                   </article>

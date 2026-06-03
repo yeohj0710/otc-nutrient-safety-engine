@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useTransition } from "react";
 
 import { RuleCard } from "@/src/components/rule-card";
 import type { AiExplainResponse } from "@/src/lib/ai/schema";
+import { cleanDisplayText } from "@/src/lib/display-text";
 import type {
   EngineQuery,
   EngineResponse,
@@ -95,7 +96,7 @@ const ghostButtonClass =
   "rounded-full border border-stone-200 bg-white px-4 py-[0.58rem] text-[0.84rem] font-medium text-stone-700 transition duration-150 hover:border-stone-300 hover:bg-stone-50";
 const subtleActionButtonClass =
   "rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[0.76rem] font-medium text-stone-600 transition duration-150 hover:border-stone-300 hover:text-stone-900";
-const explorerStorageKey = "otc-nutrient-safety-explorer-state-v1";
+const explorerStorageKey = "nutrition-safety-explorer-state-v3";
 const minimumQueryLoadingMs = 900;
 
 type PersistedExplorerState = {
@@ -215,10 +216,10 @@ function getPregnancyStatusLabel(value: string) {
 
 const defaultExampleProfile: ExplorerProfileDraft = {
   ...blankExplorerProfile,
-  medications: "hydrochlorothiazide",
-  conditions: "신장결석 병력",
-  selectedCompounds: "비타민 D, 칼슘",
-  memo: "고함량 복합비타민과 칼슘제를 함께 복용하는 상황을 가정합니다.",
+  medications: "warfarin",
+  conditions: "간질환",
+  selectedCompounds: "비타민 A",
+  memo: "입덧 때문에 액상형 보충제를 간헐적으로 복용 중입니다.",
 };
 
 function normalizeExplorerInput(value: string) {
@@ -1364,21 +1365,20 @@ export function RuleExplorerClient({
     smokerStatus?: string;
   }> = [
     {
-      label: "비타민 D + 칼슘",
-      description: "지용성 비타민과 미네랄 고함량 조합",
-      selectedCompounds: "비타민 D, 칼슘",
-      medications: "hydrochlorothiazide",
-      conditions: "신장결석 병력",
-      age: "66",
+      label: "와파린 + 비타민 K",
+      description: "약물 상호작용 확인용 조합",
+      selectedCompounds: "비타민 K",
+      medications: "warfarin",
+      age: "68",
       sex: "male",
     },
     {
-      label: "비타민 B6 고함량",
-      description: "B군 복합제의 용량 기반 주의",
-      selectedCompounds: "vitamin B6",
-      conditions: "말초신경병증 병력",
-      age: "52",
-      sex: "female",
+      label: "퀴놀론 + 마그네슘",
+      description: "복용 간격 규칙을 보는 예시",
+      selectedCompounds: "magnesium",
+      medications: "quinolone antibiotic",
+      age: "47",
+      sex: "male",
     },
   ] as const;
 
@@ -1537,7 +1537,7 @@ export function RuleExplorerClient({
                 className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
               >
                 <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className={fieldLabelClass}>3. 질환 · 상태</span>
+                  <span className={fieldLabelClass}>3. 질환 및 상태</span>
                   <span className="rounded-full bg-stone-100 px-2.5 py-1 text-[11px] font-medium text-stone-600">
                     선택
                   </span>
@@ -2080,7 +2080,7 @@ export function RuleExplorerClient({
                       {presentation.title}
                     </h2>
                     <p className="hidden mt-2 text-sm leading-6 text-muted">
-                      {presentation.summary}
+                      {cleanDisplayText(presentation.summary)}
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
@@ -2198,7 +2198,7 @@ export function RuleExplorerClient({
           </h3>
           <p className="measure-copy mt-3 text-sm leading-6 text-muted">
             {hasQueried
-              ? "성분 표기나 약물 이름을 조금 다르게 적어 보거나, 질환과 임신·수유 상태 같은 조건을 추가하면 더 정확하게 다시 좁혀볼 수 있습니다."
+              ? "성분 표기나 약물 이름을 조금 다르게 적어 보거나, 질환과 임신 및 수유 상태 같은 조건을 추가하면 더 정확하게 다시 좁혀볼 수 있습니다."
               : "성분만 먼저 넣고 시작해도 됩니다. 개인 조건이 아직 없으면 일반적인 참고 안내를 중심으로 차분하게 보여드립니다."}
           </p>
           {!hasQueried ? (

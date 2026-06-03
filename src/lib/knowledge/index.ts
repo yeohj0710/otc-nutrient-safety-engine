@@ -457,7 +457,11 @@ export function getExplorerMetadata() {
   ];
 
   return {
-    meta: index.meta,
+    meta: {
+      sourceCount: index.meta.sourceCount,
+      evidenceChunkCount: index.meta.evidenceChunkCount,
+      safetyRuleCount: index.meta.safetyRuleCount,
+    },
     ingredients: getIngredientOptions(),
     medicationOptions: buildMedicationExplorerOptions(medicationValues),
     conditionOptions: buildConditionExplorerOptions(conditionValues),

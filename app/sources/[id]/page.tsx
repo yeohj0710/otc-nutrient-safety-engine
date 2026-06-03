@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getKnowledgeIndex, getSourceDetail } from "@/src/lib/knowledge";
+import { cleanDisplayText } from "@/src/lib/display-text";
 import {
   getEvidenceCaptureLabel,
   getEvidenceCheckHint,
@@ -26,7 +27,7 @@ import { siteName } from "@/src/lib/site";
 
 function formatLabel(value: string | null | undefined) {
   if (!value) return null;
-  return value.replace(/_/g, " ");
+  return cleanDisplayText(value.replace(/_/g, " "));
 }
 
 function sortRulesByPriority<
@@ -81,7 +82,7 @@ export async function generateMetadata(props: {
   }
 
   return {
-    title: `${detail.source.title} | 출처 상세`,
+    title: `${cleanDisplayText(detail.source.title)} | 출처 상세`,
     description:
       "원문 링크, 근거 발췌, 연결된 규칙을 한 페이지에서 확인할 수 있는 출처 상세 화면입니다.",
     robots: {
@@ -126,12 +127,12 @@ export default async function SourceDetailPage(props: {
             <div className="min-w-0">
               <p className="eyebrow">Source Detail</p>
               <h1 className="mt-4 font-display text-[clamp(1.68rem,2.85vw,2.5rem)] leading-[1.05] tracking-[-0.04em] text-foreground">
-                {detail.source.title}
+                {cleanDisplayText(detail.source.title)}
               </h1>
               <p className="mt-3 text-sm text-muted">{detail.source.id}</p>
               <div className="mt-4 flex flex-wrap gap-2 text-[11px]">
                 <span className="rounded-full bg-emerald-50 px-3 py-1 text-emerald-900">
-                  {getSourceTrustSummary(detail.source)}
+                  {cleanDisplayText(getSourceTrustSummary(detail.source))}
                 </span>
                 {detail.source.year ? (
                   <span className="rounded-full bg-stone-100 px-3 py-1 text-stone-700">
@@ -207,7 +208,7 @@ export default async function SourceDetailPage(props: {
                 <div className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-3">
                   <dt className="text-stone-500">발행기관</dt>
                   <dd className="font-medium text-stone-900">
-                    {detail.source.journalOrPublisher ??
+                    {cleanDisplayText(detail.source.journalOrPublisher) ??
                       "발행기관 정보가 없습니다."}
                   </dd>
                 </div>
@@ -300,12 +301,12 @@ export default async function SourceDetailPage(props: {
                           </span>
                           {claimLabel ? (
                             <span className="rounded-full bg-stone-900 px-3 py-1 text-white">
-                              {claimLabel}
+                              {cleanDisplayText(claimLabel)}
                             </span>
                           ) : null}
                           {locatorText ? (
                             <span className="rounded-full bg-stone-100 px-3 py-1 text-stone-700">
-                              {locatorText}
+                              {cleanDisplayText(locatorText)}
                             </span>
                           ) : null}
                           {chunk.usedInRuleIds.length > 0 ? (
@@ -341,7 +342,8 @@ export default async function SourceDetailPage(props: {
                         {getEvidenceExcerptLabel(chunk)}
                       </p>
                       <blockquote className="mt-3 text-[0.97rem] leading-7 text-stone-950 md:text-[1rem]">
-                        {primaryExcerpt ?? "등록된 발췌 문장이 아직 없습니다."}
+                        {cleanDisplayText(primaryExcerpt) ??
+                          "등록된 발췌 문장이 아직 없습니다."}
                       </blockquote>
 
                       {translationExcerpt &&
@@ -351,7 +353,7 @@ export default async function SourceDetailPage(props: {
                             한국어 번역
                           </p>
                           <p className="mt-2 text-sm leading-6 text-stone-700">
-                            {translationExcerpt}
+                            {cleanDisplayText(translationExcerpt)}
                           </p>
                         </div>
                       ) : null}
@@ -362,7 +364,7 @@ export default async function SourceDetailPage(props: {
                             앞뒤 문맥
                           </p>
                           <p className="mt-2 text-sm leading-6 text-stone-700">
-                            {contextExcerpt}
+                            {cleanDisplayText(contextExcerpt)}
                           </p>
                         </div>
                       ) : null}
@@ -373,7 +375,7 @@ export default async function SourceDetailPage(props: {
                             핵심 해석
                           </p>
                           <p className="mt-2 text-sm leading-6 text-stone-700">
-                            {summaryExcerpt}
+                            {cleanDisplayText(summaryExcerpt)}
                           </p>
                         </div>
                       ) : null}
@@ -383,7 +385,7 @@ export default async function SourceDetailPage(props: {
                           검증 상태
                         </p>
                         <p className="mt-2 text-sm leading-6 text-stone-700">
-                          {verificationSummary}
+                          {cleanDisplayText(verificationSummary)}
                         </p>
                       </div>
 
@@ -393,7 +395,7 @@ export default async function SourceDetailPage(props: {
                             메모
                           </p>
                           <p className="mt-2 text-sm leading-6 text-stone-700">
-                            {evidenceNote}
+                            {cleanDisplayText(evidenceNote)}
                           </p>
                         </div>
                       ) : null}
@@ -413,7 +415,9 @@ export default async function SourceDetailPage(props: {
                           어디를 보면 되나요?
                         </p>
                         <p className="mt-2 text-sm leading-6 text-stone-700">
-                          {getEvidenceCheckHint(chunk, detail.source)}
+                          {cleanDisplayText(
+                            getEvidenceCheckHint(chunk, detail.source),
+                          )}
                         </p>
                       </div>
 
@@ -428,7 +432,7 @@ export default async function SourceDetailPage(props: {
                                 key={`${chunk.id}-${keyword}`}
                                 className="rounded-full bg-stone-100 px-3 py-1 text-xs text-stone-700"
                               >
-                                {keyword}
+                                {cleanDisplayText(keyword)}
                               </span>
                             ))}
                           </div>

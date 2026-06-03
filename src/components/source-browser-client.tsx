@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 
+import { cleanDisplayText } from "@/src/lib/display-text";
+
 type SourceBrowseItem = {
   id: string;
   title: string;
@@ -20,7 +22,7 @@ const controlClassName =
 
 function formatLabel(value: string | null) {
   if (!value) return null;
-  return value.replace(/_/g, " ");
+  return cleanDisplayText(value.replace(/_/g, " "));
 }
 
 function formatCount(value: number) {
@@ -286,10 +288,10 @@ export function SourceBrowserClient({
                       href={`/sources/${source.id}`}
                       className="block text-base font-semibold leading-7 tracking-[-0.02em] text-foreground underline decoration-border-subtle underline-offset-4 transition hover:text-stone-700"
                     >
-                      {source.title}
+                      {cleanDisplayText(source.title)}
                     </Link>
                     <p className="mt-1 text-sm leading-6 text-muted">
-                      {source.journalOrPublisher ??
+                      {cleanDisplayText(source.journalOrPublisher) ??
                         "발행 기관 정보가 아직 없습니다."}
                     </p>
                     <p className="mt-1 text-xs leading-5 text-muted">

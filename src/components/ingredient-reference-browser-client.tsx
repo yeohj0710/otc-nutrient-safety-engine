@@ -2,6 +2,8 @@
 
 import { useDeferredValue, useMemo, useState } from "react";
 
+import { cleanDisplayText } from "@/src/lib/display-text";
+
 type IngredientReferenceLink = {
   label: string;
   url: string;
@@ -43,14 +45,16 @@ const controlClassName =
 
 function formatLabel(value: string | null) {
   if (!value) return null;
-  return value.replace(/_/g, " ");
+  return cleanDisplayText(value.replace(/_/g, " "));
 }
 
 function getReferenceSummary(reference: IngredientReferenceItem) {
   return (
-    reference.summaryExcerpt ??
-    reference.translation ??
-    reference.representativeText ??
+    cleanDisplayText(
+      reference.summaryExcerpt ??
+        reference.translation ??
+        reference.representativeText,
+    ) ??
     "이 출처와 연결된 핵심 근거 요약이 아직 정리되지 않았습니다."
   );
 }
@@ -159,11 +163,11 @@ export function IngredientReferenceBrowserClient({
                       </div>
 
                       <h3 className="mt-3 text-xl font-semibold tracking-[-0.02em] text-foreground">
-                        {ingredient.nameKo}
+                        {cleanDisplayText(ingredient.nameKo)}
                       </h3>
                       {ingredient.nameEn ? (
                         <p className="mt-1 text-sm text-muted">
-                          {ingredient.nameEn}
+                          {cleanDisplayText(ingredient.nameEn)}
                         </p>
                       ) : null}
                     </div>
@@ -234,7 +238,7 @@ export function IngredientReferenceBrowserClient({
                                   <div className="flex flex-col gap-4">
                                     <div className="flex flex-wrap items-center gap-2 text-[11px]">
                                       <span className="rounded-full bg-accent-soft px-2.5 py-1 text-accent-strong">
-                                        {reference.trustSummary}
+                                        {cleanDisplayText(reference.trustSummary)}
                                       </span>
                                       {reference.year ? (
                                         <span className="rounded-full border border-border-subtle bg-white px-2.5 py-1 text-muted">
@@ -248,7 +252,7 @@ export function IngredientReferenceBrowserClient({
                                       ) : null}
                                       {reference.locatorText ? (
                                         <span className="rounded-full border border-border-subtle bg-white px-2.5 py-1 text-muted">
-                                          {reference.locatorText}
+                                          {cleanDisplayText(reference.locatorText)}
                                         </span>
                                       ) : null}
                                     </div>
@@ -261,16 +265,18 @@ export function IngredientReferenceBrowserClient({
                                           rel="noreferrer"
                                           className="block text-base font-semibold leading-7 text-foreground underline decoration-border-subtle underline-offset-4 transition hover:text-stone-700"
                                         >
-                                          {reference.title}
+                                          {cleanDisplayText(reference.title)}
                                         </a>
                                       ) : (
                                         <h4 className="text-base font-semibold leading-7 text-foreground">
-                                          {reference.title}
+                                          {cleanDisplayText(reference.title)}
                                         </h4>
                                       )}
                                       {reference.journalOrPublisher ? (
                                         <p className="mt-1 text-sm text-muted">
-                                          {reference.journalOrPublisher}
+                                          {cleanDisplayText(
+                                            reference.journalOrPublisher,
+                                          )}
                                         </p>
                                       ) : null}
                                     </div>
@@ -284,7 +290,10 @@ export function IngredientReferenceBrowserClient({
                                       </p>
                                       {reference.locatorText ? (
                                         <p className="mt-3 text-xs leading-5 text-muted">
-                                          확인 위치: {reference.locatorText}
+                                          확인 위치:{" "}
+                                          {cleanDisplayText(
+                                            reference.locatorText,
+                                          )}
                                         </p>
                                       ) : null}
 
@@ -294,7 +303,9 @@ export function IngredientReferenceBrowserClient({
                                             {reference.representativeLabel}
                                           </p>
                                           <p className="mt-1 text-sm leading-6 text-foreground">
-                                            {reference.representativeText}
+                                            {cleanDisplayText(
+                                              reference.representativeText,
+                                            )}
                                           </p>
                                         </div>
                                       ) : null}
@@ -305,7 +316,9 @@ export function IngredientReferenceBrowserClient({
                                             한국어 번역
                                           </p>
                                           <p className="mt-1 text-sm leading-6 text-muted">
-                                            {reference.translation}
+                                            {cleanDisplayText(
+                                              reference.translation,
+                                            )}
                                           </p>
                                         </div>
                                       ) : null}
@@ -316,7 +329,9 @@ export function IngredientReferenceBrowserClient({
                                             앞뒤 문맥
                                           </p>
                                           <p className="mt-1 text-sm leading-6 text-muted">
-                                            {reference.contextExcerpt}
+                                            {cleanDisplayText(
+                                              reference.contextExcerpt,
+                                            )}
                                           </p>
                                         </div>
                                       ) : null}
@@ -327,7 +342,9 @@ export function IngredientReferenceBrowserClient({
                                             레퍼런스 원문 해당 부분
                                           </p>
                                           <p className="mt-1 text-xs leading-6 text-muted">
-                                            &ldquo;{reference.originalFragment}
+                                            &ldquo;{cleanDisplayText(
+                                              reference.originalFragment,
+                                            )}
                                             &rdquo;
                                           </p>
                                         </div>

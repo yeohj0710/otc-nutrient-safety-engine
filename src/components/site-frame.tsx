@@ -71,7 +71,7 @@ export function SiteFrame({ children }: { children: React.ReactNode }) {
                 <p className="truncate">{projectSignature}</p>
               </div>
               <p className="truncate md:text-right">
-                {projectAffiliation} · {projectAuthor}
+                {projectAffiliation} / {projectAuthor}
               </p>
             </div>
           </div>
