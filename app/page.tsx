@@ -38,136 +38,103 @@ export default function Home() {
       cue: "속불편, 흡수 간섭",
     },
   ];
-  const scopeItems = [
-    {
-      label: "PubMed/MEDLINE",
-      value: formatCount(literatureSummary.latestPubMedHitCount),
-      note: `저장 ${formatCount(literatureSummary.latestPubMedStoredRecords)}건`,
-    },
-    {
-      label: "보조 검색원",
-      value: formatCount(literatureSummary.secondaryHitTotal),
-      note: `대조 문헌 ${formatCount(literatureSummary.secondaryStoredRecords)}건`,
-    },
-    {
-      label: "먼저 볼 문헌",
-      value: formatCount(literatureSummary.priorityCandidateCount),
-      note: `누적 후보 ${formatCount(literatureSummary.cumulativePubMedCandidates)}건`,
-    },
-    {
-      label: "바로 확인할 기준",
-      value: formatCount(metadata.meta.safetyRuleCount),
-      note: `근거 출처 ${formatCount(metadata.meta.sourceCount)}개`,
-    },
+  const ledgerItems = [
+    ["검색 결과", formatCount(literatureSummary.latestPubMedHitCount), "PubMed/MEDLINE"],
+    ["보조 검색", formatCount(literatureSummary.secondaryHitTotal), "검색원 전체"],
+    ["먼저 볼 문헌", formatCount(literatureSummary.priorityCandidateCount), `저장 ${formatCount(literatureSummary.latestPubMedStoredRecords)}건`],
+    ["함량 기준", formatCount(metadata.meta.safetyRuleCount), `출처 ${formatCount(metadata.meta.sourceCount)}개`],
   ];
 
   return (
-    <main className="app-page min-h-screen px-4 py-4 sm:px-6 lg:px-8">
-      <div className="mx-auto grid w-full max-w-6xl gap-4">
-        <section className="surface-card rounded-[0.8rem] px-4 py-4 md:px-5">
-          <div className="grid gap-5 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(0,1.22fr)] lg:items-stretch">
-            <div className="flex min-w-0 flex-col justify-between gap-5">
-              <div>
-                <p className="text-[0.72rem] font-semibold text-muted">
-                  성분과 함량을 먼저 확인
-                </p>
-                <h1 className="mt-2 break-keep text-[1.25rem] font-semibold tracking-[-0.01em] text-foreground md:text-[1.38rem]">
-                {siteName}
-              </h1>
-                <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
-                {siteDescription}
-              </p>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <Link
-                  href="#explorer"
-                  className="inline-flex min-h-10 items-center justify-center rounded-[0.55rem] bg-slate-900 px-4 py-[0.58rem] text-[0.84rem] font-medium text-white transition duration-200 hover:bg-slate-700"
-                >
-                  성분·함량 조회
-                </Link>
-                <Link
-                  href="/ingredients"
-                  className="inline-flex min-h-10 items-center justify-center rounded-[0.55rem] border border-border-subtle bg-white px-4 py-[0.58rem] text-[0.84rem] font-medium text-foreground transition duration-200 hover:border-slate-300"
-                >
-                  성분 근거 자료
-                </Link>
-              </div>
+    <main className="min-h-screen bg-slate-100 px-4 py-6 sm:px-6 lg:px-8">
+      <div className="mx-auto grid w-full max-w-7xl gap-5">
+        <section className="grid overflow-hidden border border-slate-800 bg-white shadow-sm lg:grid-cols-[minmax(0,1fr)_24rem]">
+          <div className="bg-slate-950 px-5 py-6 text-white md:px-7">
+            <p className="text-[0.72rem] font-bold uppercase tracking-[0.22em] text-amber-200">
+              성분과 함량을 먼저 확인
+            </p>
+            <h1 className="mt-3 break-keep text-[1.7rem] font-bold leading-tight md:text-[2.15rem]">
+              {siteName}
+            </h1>
+            <p className="mt-4 max-w-3xl text-[0.96rem] leading-7 text-slate-200">
+              {siteDescription}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              <Link
+                href="#explorer"
+                className="inline-flex min-h-11 items-center justify-center bg-amber-300 px-4 py-2 text-sm font-bold text-slate-950 transition duration-200 hover:bg-amber-200"
+              >
+                성분·함량 조회
+              </Link>
+              <Link
+                href="/ingredients"
+                className="inline-flex min-h-11 items-center justify-center border border-white/25 px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-white/10"
+              >
+                성분 근거 자료
+              </Link>
             </div>
+          </div>
 
-            <div className="overflow-hidden rounded-[0.65rem] border border-border-subtle bg-white">
-              <div className="grid grid-cols-[minmax(0,1fr)_8.5rem_minmax(0,1fr)] border-b border-border-subtle bg-slate-50 px-3 py-2 text-[0.72rem] font-semibold uppercase text-muted">
-                <span>성분</span>
-                <span>함량 기준</span>
-                <span>주의 신호</span>
-              </div>
-              {lookupRows.map((row) => (
-                <div
-                  key={row.ingredient}
-                  className="grid grid-cols-[minmax(0,1fr)_8.5rem_minmax(0,1fr)] gap-3 border-b border-border-subtle px-3 py-3 text-sm last:border-b-0"
-                >
-                  <span className="min-w-0 font-semibold text-foreground">
-                    {row.ingredient}
-                  </span>
-                  <span className="text-xs leading-5 text-muted">
-                    {row.threshold}
-                  </span>
-                  <span className="text-xs leading-5 text-muted">{row.cue}</span>
-                </div>
-              ))}
+          <div className="border-t border-slate-800 lg:border-l lg:border-t-0">
+            <div className="grid grid-cols-[minmax(0,1fr)_8.5rem_minmax(0,1fr)] bg-slate-200 px-3 py-2 text-xs font-bold text-slate-700">
+              <span>성분</span>
+              <span>함량 기준</span>
+              <span>주의 신호</span>
             </div>
+            {lookupRows.map((row) => (
+              <div
+                key={row.ingredient}
+                className="grid grid-cols-[minmax(0,1fr)_8.5rem_minmax(0,1fr)] gap-3 border-t border-slate-200 px-3 py-4 text-sm"
+              >
+                <span className="min-w-0 font-bold text-slate-950">
+                  {row.ingredient}
+                </span>
+                <span className="text-xs leading-5 text-slate-600">
+                  {row.threshold}
+                </span>
+                <span className="text-xs leading-5 text-slate-600">
+                  {row.cue}
+                </span>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section className="surface-card rounded-[0.8rem] px-4 py-4 md:px-5">
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-start">
-            <div>
-              <p className="text-[0.76rem] font-semibold uppercase text-muted">
-                성분 중심 연구 범위
-              </p>
-              <h2 className="mt-1 text-[1.02rem] font-semibold text-foreground">
-                고함량 제품 조건과 상한섭취량 신호를 함께 봅니다
-              </h2>
-              <p className="mt-2 text-sm leading-6 text-muted">
-                비타민 D·칼슘, 비타민 B6, 철·마그네슘·아연을 성분 단위로
-                나누고 용량, 병용 성분, 제품형 주의 신호를 연결합니다.
-              </p>
-            </div>
-
-            <dl className="grid grid-cols-2 gap-2 text-sm">
-              {scopeItems.map((item, index) => (
-                <div
-                  key={item.label}
-                  className={`min-w-0 rounded-[0.55rem] border px-3 py-3 ${
-                    index === 2
-                      ? "border-slate-300 bg-slate-900 text-white"
-                      : "border-slate-200 bg-white"
+        <section className="grid border border-slate-300 bg-white md:grid-cols-[16rem_minmax(0,1fr)]">
+          <div className="border-b border-slate-300 bg-amber-100 px-4 py-4 md:border-b-0 md:border-r">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-700">
+              성분 중심 연구 범위
+            </p>
+            <h2 className="mt-2 text-lg font-bold leading-7 text-slate-950">
+              고함량 조건과 상한섭취량 신호를 한 표에서 봅니다
+            </h2>
+          </div>
+          <dl className="grid grid-cols-2 md:grid-cols-4">
+            {ledgerItems.map(([label, value, note], index) => (
+              <div
+                key={label}
+                className={`border-b border-r border-slate-200 px-4 py-4 last:border-r-0 md:border-b-0 ${
+                  index === 2 ? "bg-slate-950 text-white" : "bg-white"
+                }`}
+              >
+                <dt
+                  className={`text-xs font-bold ${
+                    index === 2 ? "text-amber-200" : "text-slate-500"
                   }`}
                 >
-                  <dt
-                    className={`text-[0.74rem] font-medium ${
-                      index === 2 ? "text-slate-300" : "text-muted"
-                    }`}
-                  >
-                    {item.label}
-                  </dt>
-                  <dd
-                    className={`mt-1 text-[1.12rem] font-semibold ${
-                      index === 2 ? "text-white" : "text-foreground"
-                    }`}
-                  >
-                    {item.value}
-                  </dd>
-                  <dd
-                    className={`mt-1 text-[0.76rem] leading-5 ${
-                      index === 2 ? "text-slate-300" : "text-muted"
-                    }`}
-                  >
-                    {item.note}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+                  {label}
+                </dt>
+                <dd className="mt-2 text-2xl font-bold">{value}</dd>
+                <dd
+                  className={`mt-1 text-xs leading-5 ${
+                    index === 2 ? "text-slate-300" : "text-slate-600"
+                  }`}
+                >
+                  {note}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         <section id="explorer" className="scroll-mt-6">

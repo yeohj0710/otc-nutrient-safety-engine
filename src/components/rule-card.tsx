@@ -579,20 +579,20 @@ export function RuleCard({
   ];
 
   return (
-    <article className="surface-card overflow-hidden rounded-[1.5rem] px-5 py-5 md:px-6 md:py-6">
+    <article className="overflow-hidden border border-slate-300 bg-white px-5 py-5 md:px-6 md:py-6">
       <div className="space-y-4">
         <div className="flex flex-wrap items-center gap-2">
           <span
-            className={`rounded-full border px-3 py-1 text-[11px] font-semibold ${badgeMeta.tone}`}
+            className={`rounded-none border px-3 py-1 text-[11px] font-bold ${badgeMeta.tone}`}
           >
             {badgeMeta.label}
           </span>
-          <span className="rounded-full border border-border-subtle bg-white/82 px-3 py-1 text-[10px] font-medium text-foreground">
+          <span className="rounded-none border border-slate-300 bg-slate-50 px-3 py-1 text-[10px] font-bold text-slate-950">
             {cleanDisplayText(match.rule.nutrientOrIngredient)}
           </span>
         </div>
 
-        <div className={`rounded-[1rem] border px-5 py-4 ${actionPanelTone}`}>
+        <div className={`rounded-none border px-5 py-4 ${actionPanelTone}`}>
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
             핵심 안내
           </p>
@@ -602,11 +602,11 @@ export function RuleCard({
         </div>
 
         {primarySource ? (
-          <div className="rounded-[1rem] border border-stone-200 bg-white px-4 py-4">
+          <div className="rounded-none border border-slate-300 bg-white px-4 py-4">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
               근거
             </p>
-            <div className="mt-3 rounded-[1rem] border border-stone-200 bg-stone-50/70 px-4 py-4">
+            <div className="mt-3 rounded-none border border-slate-300 bg-slate-50 px-4 py-4">
               <div className="min-w-0">
                 {primaryExternalLink ? (
                   <a
@@ -648,7 +648,7 @@ export function RuleCard({
       </div>
 
       <details
-        className="mt-5 rounded-[1rem] border border-stone-200 bg-white"
+        className="mt-5 rounded-none border border-slate-300 bg-white"
         open={defaultExpandedEvidence}
       >
         <summary className="flex list-none items-center justify-between gap-3 px-4 py-4 text-sm font-semibold text-foreground">

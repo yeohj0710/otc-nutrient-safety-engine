@@ -26,7 +26,7 @@
   --duration-toggle-fast: 180ms;
   --duration-toggle: 280ms;
   --duration-expand: 380ms;
-  --page-shell-max: 54rem;
+  --page-shell-max: 80rem;
   --page-shell-narrow-max: 48rem;
   --font-fallback-sans:
     "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", "Noto Sans KR",
@@ -64,7 +64,7 @@ body {
   font-family: var(--font-app-sans), var(--font-fallback-sans);
   font-kerning: normal;
   line-height: 1.5;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -187,7 +187,7 @@ textarea:focus-visible {
   width: 2.75rem;
   height: 2.75rem;
   border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
-  border-radius: 999px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 4px 10px rgba(27, 25, 22, 0.04);
 }
@@ -209,7 +209,7 @@ textarea:focus-visible {
   margin-bottom: 0.2rem;
   font-size: 0.64rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -220,7 +220,7 @@ textarea:focus-visible {
   gap: 0.65rem;
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -345,7 +345,7 @@ details[open] > .collapsible-panel .collapsible-panel-body {
 .editorial-kicker {
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 

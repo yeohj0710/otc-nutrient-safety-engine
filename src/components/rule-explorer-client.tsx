@@ -89,21 +89,21 @@ const categoryRank: Record<string, number> = {
 };
 
 const fieldLabelClass =
-  "mb-2 block text-[0.88rem] font-semibold tracking-[-0.01em] text-stone-950";
+  "mb-2 block text-[0.82rem] font-bold text-slate-950";
 const fieldControlClass =
-  "w-full rounded-[1rem] border border-stone-200 bg-white px-4 py-3 text-[15px] leading-6 text-stone-900 outline-none transition duration-150 placeholder:text-stone-400 focus:border-stone-400 focus:shadow-[0_0_0_3px_rgba(226,232,240,0.9)]";
-const fieldGroupClass = "text-sm text-stone-700";
+  "w-full rounded-none border border-slate-300 bg-white px-3 py-2.5 text-[15px] leading-6 text-slate-950 outline-none transition duration-150 placeholder:text-slate-400 focus:border-slate-950 focus:shadow-[0_0_0_3px_rgba(251,191,36,0.35)]";
+const fieldGroupClass = "text-sm text-slate-800";
 const selectControlClass = `${fieldControlClass} appearance-none pr-12`;
 const toggleChipBaseClass =
-  "group inline-flex min-h-10 items-center justify-between gap-3 rounded-[1rem] border px-3.5 py-2 text-[0.86rem] font-medium transition-[background-color,border-color,color,box-shadow] duration-250 [transition-timing-function:var(--ease-soft)]";
+  "group inline-flex min-h-10 items-center justify-between gap-3 rounded-none border px-3.5 py-2 text-[0.86rem] font-semibold transition-[background-color,border-color,color,box-shadow] duration-250 [transition-timing-function:var(--ease-soft)]";
 const primaryButtonClass =
-  "whitespace-nowrap rounded-full bg-stone-950 px-5 py-[0.62rem] text-[0.86rem] font-medium text-white transition duration-150 hover:bg-stone-800";
+  "whitespace-nowrap rounded-none bg-slate-950 px-5 py-[0.62rem] text-[0.86rem] font-bold text-white transition duration-150 hover:bg-slate-800";
 const secondaryButtonClass =
-  "whitespace-nowrap rounded-full border border-stone-200 bg-white px-5 py-[0.62rem] text-[0.86rem] font-medium text-stone-700 transition duration-150 hover:border-stone-300 hover:bg-stone-50";
+  "whitespace-nowrap rounded-none border border-slate-300 bg-amber-100 px-5 py-[0.62rem] text-[0.86rem] font-bold text-slate-950 transition duration-150 hover:bg-amber-200";
 const ghostButtonClass =
-  "rounded-full border border-stone-200 bg-white px-4 py-[0.58rem] text-[0.84rem] font-medium text-stone-700 transition duration-150 hover:border-stone-300 hover:bg-stone-50";
+  "rounded-none border border-slate-300 bg-white px-4 py-[0.58rem] text-[0.84rem] font-semibold text-slate-800 transition duration-150 hover:bg-slate-100";
 const subtleActionButtonClass =
-  "rounded-full border border-stone-200 bg-white px-3 py-1.5 text-[0.76rem] font-medium text-stone-600 transition duration-150 hover:border-stone-300 hover:text-stone-900";
+  "rounded-none border border-slate-300 bg-white px-3 py-1.5 text-[0.76rem] font-semibold text-slate-700 transition duration-150 hover:bg-slate-100";
 const explorerStorageKey = "nutrition-safety-explorer-state-v3";
 const minimumQueryLoadingMs = 900;
 
@@ -1754,8 +1754,8 @@ export function RuleExplorerClient({
   ] as const;
 
   return (
-    <div className="space-y-4">
-      <section className="surface-card overflow-hidden rounded-[1.5rem]">
+    <div className="dose-explorer space-y-5">
+      <section className="overflow-hidden border border-slate-300 bg-white">
         <div>
           <div className="px-4 py-4 md:px-5">
             <div className="hidden flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -1841,9 +1841,9 @@ export function RuleExplorerClient({
           </div>
 
           <div className="px-4 py-4 md:px-5">
-            <div className="grid gap-3 lg:grid-cols-3">
+            <div className="grid gap-0 border border-slate-300 lg:grid-cols-[1.2fr_0.9fr_0.9fr]">
               <label
-                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+                className={`${fieldGroupClass} border-b border-slate-300 bg-white p-3 lg:border-b-0 lg:border-r`}
               >
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <span className={fieldLabelClass}>1. 선택 성분</span>
@@ -1936,9 +1936,9 @@ export function RuleExplorerClient({
               </label>
             </div>
 
-            <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-6">
+            <div className="mt-3 grid gap-0 border border-slate-300 md:grid-cols-2 xl:grid-cols-6">
               <label
-                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+                className={`${fieldGroupClass} border-b border-slate-300 bg-slate-50 p-3 xl:border-b-0 xl:border-r`}
               >
                 <span className={fieldLabelClass}>1일 섭취량</span>
                 <input
@@ -1951,7 +1951,7 @@ export function RuleExplorerClient({
                 />
               </label>
 
-              <div className="rounded-[1rem] border border-stone-200 bg-white p-3">
+              <div className="border-b border-slate-300 bg-white p-3 md:border-r xl:border-b-0">
                 <SelectField
                   label="단위"
                   value={dailyIntakeUnit}
@@ -1967,7 +1967,7 @@ export function RuleExplorerClient({
               </div>
 
               <label
-                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+                className={`${fieldGroupClass} border-b border-slate-300 bg-slate-50 p-3 xl:border-b-0 xl:border-r`}
               >
                 <span className={fieldLabelClass}>복용 기간</span>
                 <input
@@ -1981,7 +1981,7 @@ export function RuleExplorerClient({
               </label>
 
               <label
-                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+                className={`${fieldGroupClass} border-b border-slate-300 bg-white p-3 md:border-r xl:border-b-0`}
               >
                 <span className={fieldLabelClass}>제형</span>
                 <input
@@ -1993,7 +1993,7 @@ export function RuleExplorerClient({
               </label>
 
               <label
-                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+                className={`${fieldGroupClass} border-b border-slate-300 bg-slate-50 p-3 xl:border-b-0 xl:border-r`}
               >
                 <span className={fieldLabelClass}>동시 성분</span>
                 <input
@@ -2005,7 +2005,7 @@ export function RuleExplorerClient({
               </label>
 
               <label
-                className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
+                className={`${fieldGroupClass} bg-white p-3`}
               >
                 <span className={fieldLabelClass}>제품명</span>
                 <input
@@ -2017,7 +2017,7 @@ export function RuleExplorerClient({
               </label>
             </div>
 
-            <section className="mt-3 overflow-hidden rounded-[1rem] border border-stone-200 bg-stone-50/70">
+            <section className="mt-3 overflow-hidden border border-slate-300 bg-white">
               <button
                 type="button"
                 onClick={() => setIsAdvancedOpen((value) => !value)}
@@ -2174,7 +2174,7 @@ export function RuleExplorerClient({
               </div>
             </section>
 
-            <section className="mt-3 overflow-hidden rounded-[1rem] border border-stone-200 bg-stone-50/70">
+            <section className="mt-3 overflow-hidden border border-slate-300 bg-white">
               <button
                 type="button"
                 onClick={() => setIsExamplesOpen((value) => !value)}

@@ -9,72 +9,54 @@ import {
 
 export function SiteFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-full flex-col">
-      <header className="px-4 pt-3 sm:px-6 lg:px-6">
-        <div className="page-shell">
-          <div className="site-masthead rounded-[1.1rem] px-4 py-2.5">
-            <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-              <Link
-                href="/"
-                className="flex min-w-0 items-center gap-3 text-sm font-medium text-foreground transition duration-200 hover:text-stone-700"
-              >
-                <span className="site-brand-mark">
-                  <Image
-                    src="/yonsei-logo.svg"
-                    alt="연세대학교 로고"
-                    width={42}
-                    height={42}
-                    className="h-10 w-10 object-contain"
-                    priority
-                  />
-                </span>
-                <span className="min-w-0">
-                  <span className="site-topbar-label">
-                    Research Attribution
-                  </span>
-                  <span className="block truncate">{projectAffiliation}</span>
-                  <span className="mt-0.5 block text-sm font-normal leading-5 text-muted">
-                    {projectSignature}
-                  </span>
-                </span>
-              </Link>
+    <div className="flex min-h-full flex-col bg-slate-50">
+      <header className="border-b border-slate-800 bg-slate-950 px-4 py-3 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
+          <Link
+            href="/"
+            className="flex min-w-0 items-center gap-3 text-sm font-medium text-white transition duration-200 hover:text-amber-100"
+          >
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-white/20 bg-white">
+              <Image
+                src="/yonsei-logo.svg"
+                alt="연세대학교 로고"
+                width={40}
+                height={40}
+                className="h-9 w-9 object-contain"
+                priority
+              />
+            </span>
+            <span className="min-w-0">
+              <span className="block text-[0.66rem] font-bold uppercase tracking-[0.2em] text-amber-200">
+                성분 함량 판정표
+              </span>
+              <span className="mt-0.5 block truncate">{projectSignature}</span>
+            </span>
+          </Link>
 
-              <div className="site-credit-pill md:max-w-[20rem] md:items-end">
-                <span className="site-topbar-label md:text-right">
-                  Researcher
-                </span>
-                <span className="text-sm font-medium leading-5 text-foreground md:text-right">
-                  {projectAuthor}
-                </span>
-              </div>
-            </div>
+          <div className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 border-l border-white/20 pl-4 text-sm md:min-w-[24rem]">
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-slate-400">
+              소속
+            </span>
+            <span className="truncate text-slate-100">{projectAffiliation}</span>
+            <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-slate-400">
+              작성자
+            </span>
+            <span className="truncate font-semibold text-white">
+              {projectAuthor}
+            </span>
           </div>
         </div>
       </header>
 
       <div className="flex-1">{children}</div>
 
-      <footer className="px-4 pb-4 pt-2 sm:px-6 lg:px-6">
-        <div className="page-shell">
-          <div className="site-footer-panel rounded-[0.95rem] px-4 py-2.5 text-xs text-muted">
-            <div className="flex flex-col gap-1.5 md:flex-row md:items-center md:justify-between">
-              <div className="flex min-w-0 items-center gap-2">
-                <span className="site-brand-mark site-brand-mark-footer">
-                  <Image
-                    src="/yonsei-logo.svg"
-                    alt="연세대학교 로고"
-                    width={28}
-                    height={28}
-                    className="h-6 w-6 object-contain"
-                  />
-                </span>
-                <p className="truncate">{projectSignature}</p>
-              </div>
-              <p className="truncate md:text-right">
-                {projectAffiliation} / {projectAuthor}
-              </p>
-            </div>
-          </div>
+      <footer className="border-t border-slate-200 bg-white px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto grid w-full max-w-7xl gap-1 text-xs text-slate-500 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+          <p className="truncate">{projectSignature}</p>
+          <p className="truncate md:text-right">
+            {projectAffiliation} / {projectAuthor}
+          </p>
         </div>
       </footer>
     </div>
