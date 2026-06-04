@@ -383,6 +383,13 @@ details[open] > .collapsible-panel .collapsible-panel-body {
   box-shadow: 0 18px 48px rgba(2, 32, 71, 0.08);
 }
 
+.dose-explorer > section:first-child {
+  border: 0;
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(2, 32, 71, 0.08);
+}
+
 .dose-explorer .bg-white,
 .dose-explorer .bg-stone-50,
 .dose-explorer .bg-stone-50\/70,
@@ -413,7 +420,13 @@ details[open] > .collapsible-panel .collapsible-panel-body {
 .dose-explorer .border-stone-200\/80,
 .dose-explorer .border-slate-300,
 .dose-explorer .border-border-subtle {
-  border-color: #edf1f7;
+  border-color: transparent;
+}
+
+.dose-explorer label[class*="border"],
+.dose-explorer div[class*="border"],
+.dose-explorer section[class*="border"] {
+  border-color: transparent !important;
 }
 
 .dose-explorer .rounded-full,
