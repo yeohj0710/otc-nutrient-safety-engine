@@ -23,14 +23,14 @@ export default function Home() {
   const literatureSummary = literatureCandidateData.summary;
   const scopeItems = [
     {
-      label: "PubMed 검색 적중",
+      label: "PubMed/MEDLINE 적중",
       value: formatCount(literatureSummary.latestPubMedHitCount),
       note: `저장 ${formatCount(literatureSummary.latestPubMedStoredRecords)}건`,
     },
     {
-      label: "보조검색 적중",
+      label: "보조 검색원 적중",
       value: formatCount(literatureSummary.secondaryHitTotal),
-      note: `저장 ${formatCount(literatureSummary.secondaryStoredRecords)}건`,
+      note: `대조 record ${formatCount(literatureSummary.secondaryStoredRecords)}건`,
     },
     {
       label: "우선검토 후보문헌",
@@ -88,8 +88,9 @@ export default function Home() {
                 검색량과 판정 결과를 나누어 봅니다
               </h2>
               <p className="mt-2 text-sm leading-6 text-muted">
-                문헌 검색은 넓게 수행하고, 화면에는 현재 입력값에 맞는
-                직접 판정 규칙과 관련 후보문헌을 함께 표시합니다.
+                PubMed/MEDLINE, Europe PMC, Crossref, ClinicalTrials.gov를
+                구분해 기록하고, 화면에는 현재 입력값에 맞는 직접 판정
+                규칙과 관련 후보문헌을 함께 표시합니다.
               </p>
             </div>
 
