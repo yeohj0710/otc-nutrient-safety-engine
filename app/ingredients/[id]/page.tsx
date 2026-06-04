@@ -57,7 +57,7 @@ export async function generateMetadata(props: {
   }
 
   return {
-    title: `${cleanDisplayText(detail.ingredient.nameKo)} 레퍼런스`,
+    title: `${cleanDisplayText(detail.ingredient.nameKo)} 근거 자료`,
     description: `${cleanDisplayText(detail.ingredient.nameKo)}와 연결된 논문, 공공 자료, 근거 문장과 외부 링크를 한 페이지에서 확인합니다.`,
     robots: {
       index: false,
@@ -136,7 +136,7 @@ export default async function IngredientReferenceDetailPage(props: {
     <main className="app-page min-h-screen px-4 pb-20 pt-6 md:px-5 lg:px-6">
       <div className="page-shell-narrow space-y-6">
         <section className="surface-card-strong rounded-[2rem] px-6 py-6">
-          <p className="eyebrow">Ingredient Reference Detail</p>
+          <p className="eyebrow">영양소 근거 자세히 보기</p>
           <h1 className="mt-4 text-[clamp(1.62rem,2.8vw,2.18rem)] font-semibold tracking-[-0.03em] text-foreground">
             {cleanDisplayText(detail.ingredient.nameKo)}
           </h1>
@@ -165,7 +165,7 @@ export default async function IngredientReferenceDetailPage(props: {
           </div>
 
           <p className="mt-4 max-w-[52ch] text-sm leading-7 text-muted">
-            이 영양소와 연결된 레퍼런스를 한 번에 검토할 수 있도록 정리했습니다.
+            이 영양소와 연결된 근거 자료를 한 번에 검토할 수 있도록 정리했습니다.
             제목을 누르면 실제 논문이나 기관 원문으로 바로 이동합니다.
           </p>
 
@@ -189,7 +189,7 @@ export default async function IngredientReferenceDetailPage(props: {
           <div className="flex items-center justify-between gap-3">
             <div>
               <p className="text-sm font-semibold text-foreground">
-                연결된 레퍼런스
+                연결된 근거 자료
               </p>
               <p className="mt-1 text-sm leading-6 text-muted">
                 제목, 대표 근거, 외부 링크만 먼저 보여드립니다.
@@ -203,7 +203,7 @@ export default async function IngredientReferenceDetailPage(props: {
           {sourceCards.length === 0 ? (
             <div className="mt-5 rounded-[1.4rem] border border-dashed border-border-subtle bg-stone-50 px-5 py-8 text-center">
               <p className="text-sm text-muted">
-                아직 연결된 레퍼런스가 없습니다.
+                아직 연결된 근거 자료가 없습니다.
               </p>
             </div>
           ) : (
@@ -329,7 +329,7 @@ export default async function IngredientReferenceDetailPage(props: {
                         {originalFragment ? (
                           <div className="mt-3 border-t border-border-subtle pt-3">
                             <p className="text-xs font-semibold text-muted">
-                              레퍼런스 원문 해당 부분
+                              근거 자료 원문 해당 부분
                             </p>
                             <p className="mt-1 text-xs leading-6 text-muted">
                               &ldquo;{cleanDisplayText(originalFragment)}&rdquo;

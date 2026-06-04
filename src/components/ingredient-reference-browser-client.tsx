@@ -116,7 +116,7 @@ export function IngredientReferenceBrowserClient({
 
           {hasExpandedIngredient ? (
             <p className="text-xs leading-5 text-muted">
-              다른 영양소를 누르면 그 카드 안에서 바로 레퍼런스가 바뀝니다.
+              다른 영양소를 누르면 그 카드 안에서 바로 근거 자료가 바뀝니다.
             </p>
           ) : null}
         </div>
@@ -183,7 +183,7 @@ export function IngredientReferenceBrowserClient({
                       data-open={isExpanded}
                       className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition-[transform,background-color,box-shadow] duration-300 [transition-timing-function:var(--ease-soft)] hover:-translate-y-0.5 hover:bg-accent-strong hover:shadow-[0_10px_20px_rgba(37,70,60,0.16)]"
                     >
-                      <span>{isExpanded ? "접기" : "레퍼런스 보기"}</span>
+                      <span>{isExpanded ? "접기" : "근거 자료 보기"}</span>
                       <svg
                         aria-hidden="true"
                         viewBox="0 0 20 20"
@@ -205,7 +205,7 @@ export function IngredientReferenceBrowserClient({
                         {ingredient.references.length === 0 ? (
                           <div className="rounded-[1.1rem] border border-dashed border-border-subtle bg-stone-50 px-4 py-5">
                             <p className="text-sm text-muted">
-                              아직 정리된 레퍼런스가 없습니다.
+                              아직 정리된 근거 자료가 없습니다.
                             </p>
                           </div>
                         ) : (
@@ -339,7 +339,7 @@ export function IngredientReferenceBrowserClient({
                                       {reference.originalFragment ? (
                                         <div className="mt-3 border-t border-border-subtle pt-3">
                                           <p className="text-xs font-semibold text-muted">
-                                            레퍼런스 원문 해당 부분
+                                            근거 자료 원문 해당 부분
                                           </p>
                                           <p className="mt-1 text-xs leading-6 text-muted">
                                             &ldquo;{cleanDisplayText(

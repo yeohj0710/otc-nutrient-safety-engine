@@ -23,19 +23,19 @@ export default function Home() {
   const literatureSummary = literatureCandidateData.summary;
   const lookupRows = [
     {
-      ingredient: "Vitamin D + calcium",
+      ingredient: "비타민 D + 칼슘",
       threshold: "4,000 IU/day 기준",
-      cue: "hypercalcemia, kidney stone",
+      cue: "혈중 칼슘 증가, 신장결석",
     },
     {
-      ingredient: "Vitamin B6",
+      ingredient: "비타민 B6",
       threshold: "50 mg/day 이상",
-      cue: "neuropathy, long-term use",
+      cue: "신경 증상, 장기 복용",
     },
     {
-      ingredient: "Mineral stack",
-      threshold: "iron, zinc, magnesium",
-      cue: "GI effect, absorption timing",
+      ingredient: "철·아연·마그네슘",
+      threshold: "동시 섭취 확인",
+      cue: "속불편, 흡수 간섭",
     },
   ];
   const scopeItems = [
@@ -47,15 +47,15 @@ export default function Home() {
     {
       label: "보조 검색원",
       value: formatCount(literatureSummary.secondaryHitTotal),
-      note: `대조 record ${formatCount(literatureSummary.secondaryStoredRecords)}건`,
+      note: `대조 문헌 ${formatCount(literatureSummary.secondaryStoredRecords)}건`,
     },
     {
-      label: "화면 후보문헌",
+      label: "먼저 볼 문헌",
       value: formatCount(literatureSummary.priorityCandidateCount),
       note: `누적 후보 ${formatCount(literatureSummary.cumulativePubMedCandidates)}건`,
     },
     {
-      label: "직접 판정 규칙",
+      label: "바로 확인할 기준",
       value: formatCount(metadata.meta.safetyRuleCount),
       note: `근거 출처 ${formatCount(metadata.meta.sourceCount)}개`,
     },
@@ -68,8 +68,8 @@ export default function Home() {
           <div className="grid gap-5 lg:grid-cols-[minmax(20rem,0.78fr)_minmax(0,1.22fr)] lg:items-stretch">
             <div className="flex min-w-0 flex-col justify-between gap-5">
               <div>
-                <p className="text-[0.72rem] font-semibold uppercase text-muted">
-                  Ingredient dose lookup
+                <p className="text-[0.72rem] font-semibold text-muted">
+                  성분과 함량을 먼저 확인
                 </p>
                 <h1 className="mt-2 break-keep text-[1.25rem] font-semibold tracking-[-0.01em] text-foreground md:text-[1.38rem]">
                 {siteName}
@@ -89,16 +89,16 @@ export default function Home() {
                   href="/ingredients"
                   className="inline-flex min-h-10 items-center justify-center rounded-[0.55rem] border border-border-subtle bg-white px-4 py-[0.58rem] text-[0.84rem] font-medium text-foreground transition duration-200 hover:border-slate-300"
                 >
-                  성분 레퍼런스
+                  성분 근거 자료
                 </Link>
               </div>
             </div>
 
             <div className="overflow-hidden rounded-[0.65rem] border border-border-subtle bg-white">
               <div className="grid grid-cols-[minmax(0,1fr)_8.5rem_minmax(0,1fr)] border-b border-border-subtle bg-slate-50 px-3 py-2 text-[0.72rem] font-semibold uppercase text-muted">
-                <span>Ingredient</span>
-                <span>Amount</span>
-                <span>Signal</span>
+                <span>성분</span>
+                <span>함량 기준</span>
+                <span>주의 신호</span>
               </div>
               {lookupRows.map((row) => (
                 <div

@@ -63,7 +63,7 @@ export default function SourcesPage() {
                 href="/ingredients"
                 className="inline-flex min-h-10 items-center justify-center rounded-full border border-border-subtle bg-white px-4 py-[0.58rem] text-[0.84rem] font-medium text-foreground transition duration-200 hover:border-stone-300"
               >
-                영양소 레퍼런스
+                영양소 근거 자료
               </Link>
             </div>
           </div>
