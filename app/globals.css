@@ -372,6 +372,61 @@ details[open] > .collapsible-panel .collapsible-panel-body {
   animation: skeleton-shimmer 1.25s ease-in-out infinite;
 }
 
+.dose-explorer {
+  color: #f8fafc;
+}
+
+.dose-explorer .surface-card,
+.dose-explorer .surface-card-strong {
+  border-color: rgba(148, 163, 184, 0.35);
+  background-color: #020617;
+  box-shadow: none;
+}
+
+.dose-explorer .bg-white,
+.dose-explorer .bg-stone-50,
+.dose-explorer .bg-stone-50\/70,
+.dose-explorer .bg-stone-100,
+.dose-explorer .bg-slate-50 {
+  background-color: #0f172a;
+}
+
+.dose-explorer .bg-amber-50,
+.dose-explorer .bg-amber-50\/45 {
+  background-color: rgba(251, 191, 36, 0.12);
+}
+
+.dose-explorer .text-foreground,
+.dose-explorer .text-stone-900,
+.dose-explorer .text-stone-700,
+.dose-explorer .text-slate-800 {
+  color: #f8fafc;
+}
+
+.dose-explorer .text-muted,
+.dose-explorer .text-stone-600,
+.dose-explorer .text-stone-500 {
+  color: #cbd5e1;
+}
+
+.dose-explorer .border-stone-200,
+.dose-explorer .border-stone-200\/80,
+.dose-explorer .border-slate-300,
+.dose-explorer .border-border-subtle {
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.dose-explorer .rounded-full,
+.dose-explorer .rounded-\[1rem\],
+.dose-explorer .rounded-\[1\.25rem\],
+.dose-explorer .rounded-\[1\.5rem\] {
+  border-radius: 0;
+}
+
+.dose-explorer .shadow-sm {
+  box-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
