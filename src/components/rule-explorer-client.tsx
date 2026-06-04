@@ -89,21 +89,21 @@ const categoryRank: Record<string, number> = {
 };
 
 const fieldLabelClass =
-  "mb-2 block text-[0.82rem] font-bold text-slate-950";
+  "mb-2 block text-[0.82rem] font-bold text-[#191f28]";
 const fieldControlClass =
-  "w-full rounded-none border border-slate-300 bg-white px-3 py-2.5 text-[15px] leading-6 text-slate-950 outline-none transition duration-150 placeholder:text-slate-400 focus:border-slate-950 focus:shadow-[0_0_0_3px_rgba(251,191,36,0.35)]";
-const fieldGroupClass = "text-sm text-slate-800";
+  "w-full rounded-[0.5rem] border border-[#edf1f7] bg-[#f9fafb] px-3 py-2.5 text-[15px] leading-6 text-[#191f28] outline-none transition duration-150 placeholder:text-[#8b95a1] focus:border-[#3182f6] focus:bg-white focus:shadow-[0_0_0_3px_rgba(49,130,246,0.12)]";
+const fieldGroupClass = "text-sm text-[#4e5968]";
 const selectControlClass = `${fieldControlClass} appearance-none pr-12`;
 const toggleChipBaseClass =
   "group inline-flex min-h-10 items-center justify-between gap-3 rounded-none border px-3.5 py-2 text-[0.86rem] font-semibold transition-[background-color,border-color,color,box-shadow] duration-250 [transition-timing-function:var(--ease-soft)]";
 const primaryButtonClass =
-  "whitespace-nowrap rounded-none bg-slate-950 px-5 py-[0.62rem] text-[0.86rem] font-bold text-white transition duration-150 hover:bg-slate-800";
+  "whitespace-nowrap rounded-[0.5rem] bg-[#3182f6] px-5 py-[0.62rem] text-[0.86rem] font-bold text-white transition duration-150 hover:bg-[#1b64da]";
 const secondaryButtonClass =
-  "whitespace-nowrap rounded-none border border-slate-300 bg-amber-100 px-5 py-[0.62rem] text-[0.86rem] font-bold text-slate-950 transition duration-150 hover:bg-amber-200";
+  "whitespace-nowrap rounded-[0.5rem] border border-transparent bg-[#eef6ff] px-5 py-[0.62rem] text-[0.86rem] font-bold text-[#3182f6] transition duration-150 hover:bg-[#e2f0ff]";
 const ghostButtonClass =
-  "rounded-none border border-slate-300 bg-white px-4 py-[0.58rem] text-[0.84rem] font-semibold text-slate-800 transition duration-150 hover:bg-slate-100";
+  "rounded-[0.5rem] border border-transparent bg-[#f2f4f6] px-4 py-[0.58rem] text-[0.84rem] font-semibold text-[#4e5968] transition duration-150 hover:bg-[#e5e8eb]";
 const subtleActionButtonClass =
-  "rounded-none border border-slate-300 bg-white px-3 py-1.5 text-[0.76rem] font-semibold text-slate-700 transition duration-150 hover:bg-slate-100";
+  "rounded-[0.5rem] border border-transparent bg-[#f2f4f6] px-3 py-1.5 text-[0.76rem] font-semibold text-[#4e5968] transition duration-150 hover:bg-[#e5e8eb]";
 const explorerStorageKey = "nutrition-safety-explorer-state-v3";
 const minimumQueryLoadingMs = 900;
 

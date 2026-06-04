@@ -373,14 +373,14 @@ details[open] > .collapsible-panel .collapsible-panel-body {
 }
 
 .dose-explorer {
-  color: #f8fafc;
+  color: #191f28;
 }
 
 .dose-explorer .surface-card,
 .dose-explorer .surface-card-strong {
-  border-color: rgba(148, 163, 184, 0.35);
-  background-color: #020617;
-  box-shadow: none;
+  border-color: transparent;
+  background-color: #ffffff;
+  box-shadow: 0 18px 48px rgba(2, 32, 71, 0.08);
 }
 
 .dose-explorer .bg-white,
@@ -388,43 +388,47 @@ details[open] > .collapsible-panel .collapsible-panel-body {
 .dose-explorer .bg-stone-50\/70,
 .dose-explorer .bg-stone-100,
 .dose-explorer .bg-slate-50 {
-  background-color: #0f172a;
+  background-color: #ffffff;
 }
 
 .dose-explorer .bg-amber-50,
 .dose-explorer .bg-amber-50\/45 {
-  background-color: rgba(251, 191, 36, 0.12);
+  background-color: #f2f7ff;
 }
 
 .dose-explorer .text-foreground,
 .dose-explorer .text-stone-900,
 .dose-explorer .text-stone-700,
 .dose-explorer .text-slate-800 {
-  color: #f8fafc;
+  color: #191f28;
 }
 
 .dose-explorer .text-muted,
 .dose-explorer .text-stone-600,
 .dose-explorer .text-stone-500 {
-  color: #cbd5e1;
+  color: #6b7684;
 }
 
 .dose-explorer .border-stone-200,
 .dose-explorer .border-stone-200\/80,
 .dose-explorer .border-slate-300,
 .dose-explorer .border-border-subtle {
-  border-color: rgba(148, 163, 184, 0.35);
+  border-color: #edf1f7;
 }
 
 .dose-explorer .rounded-full,
 .dose-explorer .rounded-\[1rem\],
 .dose-explorer .rounded-\[1\.25rem\],
 .dose-explorer .rounded-\[1\.5rem\] {
-  border-radius: 0;
+  border-radius: 0.5rem;
 }
 
-.dose-explorer .shadow-sm {
-  box-shadow: none;
+.dose-explorer input,
+.dose-explorer select,
+.dose-explorer textarea {
+  border-color: #edf1f7 !important;
+  background-color: #f9fafb !important;
+  box-shadow: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

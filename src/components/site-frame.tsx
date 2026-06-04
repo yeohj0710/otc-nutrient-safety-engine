@@ -9,54 +9,34 @@ import {
 
 export function SiteFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-full flex-col bg-[#050816] text-slate-100">
-      <header className="border-b border-amber-300/35 bg-black px-4 py-3 text-white sm:px-6 lg:px-8">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <Link
-            href="/"
-            className="flex min-w-0 items-center gap-3 text-sm font-medium text-white transition duration-200 hover:text-amber-100"
-          >
-            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-none border border-amber-300/45 bg-white">
-              <Image
-                src="/yonsei-logo.svg"
-                alt="연세대학교 로고"
-                width={40}
-                height={40}
-                className="h-9 w-9 object-contain"
-                priority
-              />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-[0.66rem] font-bold uppercase tracking-[0.2em] text-amber-300">
-                성분 함량 판정표
-              </span>
-              <span className="mt-0.5 block truncate">{projectSignature}</span>
+    <div className="flex min-h-full flex-col bg-[#f5f7fb] text-[#191f28]">
+      <header className="bg-white/92 px-5 py-4 shadow-[0_1px_0_rgba(0,0,0,0.06)] backdrop-blur sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
+          <Link href="/" className="flex min-w-0 items-center gap-3">
+            <Image
+              src="/yonsei-logo.svg"
+              alt="연세대학교 로고"
+              width={32}
+              height={32}
+              className="h-8 w-8 shrink-0 object-contain"
+              priority
+            />
+            <span className="truncate text-sm font-semibold">
+              {projectSignature}
             </span>
           </Link>
-
-          <div className="grid grid-cols-[auto_minmax(0,1fr)] gap-x-3 gap-y-1 border-l border-amber-300/30 pl-4 text-sm md:min-w-[24rem]">
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-amber-300/80">
-              소속
-            </span>
-            <span className="truncate text-slate-100">{projectAffiliation}</span>
-            <span className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-amber-300/80">
-              작성자
-            </span>
-            <span className="truncate font-semibold text-white">
-              {projectAuthor}
-            </span>
-          </div>
+          <span className="hidden text-sm font-medium text-[#6b7684] md:block">
+            {projectAuthor}
+          </span>
         </div>
       </header>
 
       <div className="flex-1">{children}</div>
 
-      <footer className="border-t border-amber-300/25 bg-black px-4 py-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid w-full max-w-7xl gap-1 text-xs text-slate-400 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
-          <p className="truncate">{projectSignature}</p>
-          <p className="truncate md:text-right">
-            {projectAffiliation} / {projectAuthor}
-          </p>
+      <footer className="px-5 py-8 sm:px-8">
+        <div className="mx-auto flex w-full max-w-6xl justify-between gap-4 text-xs text-[#8b95a1]">
+          <span>{projectAffiliation}</span>
+          <span>{projectAuthor}</span>
         </div>
       </footer>
     </div>
