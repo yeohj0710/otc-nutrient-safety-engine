@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare:knowledge": "tsx scripts/build-knowledge-index.ts",
+    "prepare:knowledge": "tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts",
     "dev": "tsx scripts/dev-with-knowledge-watch.ts",
     "build": "npm run prepare:knowledge && next build",
     "start": "next start",

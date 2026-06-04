@@ -3,10 +3,7 @@ import path from "node:path";
 
 type CsvRecord = Record<string, string>;
 
-const outputDate = "260603";
-const researchOutputDir =
-  process.env.RESEARCH_OUTPUT_DIR ??
-  "G:\\내 드라이브\\여형준님\\21 6-1\\전공심화실습(1)\\00_260603_최종연구_공유작업실\\01_생성_산출물";
+const searchDataDir = path.join(process.cwd(), "data", "systematic_search");
 
 function parseCsv(input: string): CsvRecord[] {
   const rows: string[][] = [];
@@ -67,36 +64,14 @@ function parseCsv(input: string): CsvRecord[] {
   );
 }
 
-function readResearchCsv(studyLabel: string, suffix: string) {
-  const filePath = path.join(
-    researchOutputDir,
-    `${studyLabel}_${suffix}_${outputDate}.csv`,
-  );
-
+function readSearchCsv(filename: string) {
+  const filePath = path.join(searchDataDir, filename);
   return parseCsv(readFileSync(filePath, "utf8"));
 }
 
 function toNumber(value: string | undefined) {
   const parsed = Number(value ?? "");
   return Number.isFinite(parsed) ? parsed : 0;
-}
-
-function getStoredByStage(rows: CsvRecord[], stage: string, targetId?: string) {
-  return rows
-    .filter(
-      (row) =>
-        row.stage === stage && (targetId === undefined || row.target_id === targetId),
-    )
-    .reduce((sum, row) => sum + toNumber(row.stored_records), 0);
-}
-
-function getHitByStage(rows: CsvRecord[], stage: string, targetId?: string) {
-  return rows
-    .filter(
-      (row) =>
-        row.stage === stage && (targetId === undefined || row.target_id === targetId),
-    )
-    .reduce((sum, row) => sum + toNumber(row.hit_count), 0);
 }
 
 function detectStudyLabel() {
@@ -109,26 +84,27 @@ function detectStudyId(studyLabel: string) {
 
 function buildDataset() {
   const studyLabel = detectStudyLabel();
-  const prismaRows = readResearchCsv(studyLabel, "PRISMA_선별요약");
-  const secondaryRows = readResearchCsv(studyLabel, "보조검색요약");
-  const priorityRows = readResearchCsv(studyLabel, "우선검토후보");
+  const searchRows = readSearchCsv("search_runs.csv");
+  const retrievedRows = readSearchCsv("retrieved_records.csv");
+  const screeningRows = readSearchCsv("screening_log.csv");
+  const secondaryRows = readSearchCsv("secondary_search_runs_20260603.csv");
+  const priorityRows = readSearchCsv("screening_priority_20260603.csv").filter(
+    (row) =>
+      row.suggested_decision !== "likely_exclude" &&
+      row.suggested_decision !== "exclude_duplicate",
+  );
 
   const summary = {
     studyId: detectStudyId(studyLabel),
     studyLabel,
     generatedAt: new Date().toISOString(),
-    primarySearchRuns: prismaRows.filter((row) => row.stage === "search_run").length,
-    latestPubMedHitCount: getHitByStage(prismaRows, "latest_total", "all_latest"),
-    latestPubMedStoredRecords: getStoredByStage(
-      prismaRows,
-      "latest_total",
-      "all_latest",
+    primarySearchRuns: searchRows.length,
+    latestPubMedHitCount: searchRows.reduce(
+      (sum, row) => sum + toNumber(row.hit_count),
+      0,
     ),
-    cumulativePubMedCandidates: getStoredByStage(
-      prismaRows,
-      "cumulative_records",
-      "all_runs",
-    ),
+    latestPubMedStoredRecords: retrievedRows.length,
+    cumulativePubMedCandidates: retrievedRows.length,
     secondarySearchRuns: secondaryRows.length,
     secondaryHitTotal: secondaryRows.reduce(
       (sum, row) => sum + toNumber(row.hit_count),
@@ -138,37 +114,27 @@ function buildDataset() {
       (sum, row) => sum + toNumber(row.stored_records),
       0,
     ),
-    includeCandidateCount: getStoredByStage(
-      prismaRows,
-      "screening_decision",
-      "include_candidate",
-    ),
-    manualReviewLowCount: getStoredByStage(
-      prismaRows,
-      "screening_decision",
-      "manual_review_low",
-    ),
-    likelyExcludeCount: getStoredByStage(
-      prismaRows,
-      "screening_decision",
-      "likely_exclude",
-    ),
-    duplicateExcludedCount: getStoredByStage(
-      prismaRows,
-      "screening_decision",
-      "exclude_duplicate",
-    ),
-    highPriorityCount: getStoredByStage(
-      prismaRows,
-      "priority",
-      "manual_review_high",
-    ),
-    mediumPriorityCount: getStoredByStage(
-      prismaRows,
-      "priority",
-      "manual_review_medium",
-    ),
-    lowPriorityCount: getStoredByStage(prismaRows, "priority", "manual_review_low"),
+    includeCandidateCount: screeningRows.filter(
+      (row) => row.suggested_decision === "include_candidate",
+    ).length,
+    manualReviewLowCount: screeningRows.filter(
+      (row) => row.suggested_decision === "manual_review_low",
+    ).length,
+    likelyExcludeCount: screeningRows.filter(
+      (row) => row.suggested_decision === "likely_exclude",
+    ).length,
+    duplicateExcludedCount: screeningRows.filter(
+      (row) => row.suggested_decision === "exclude_duplicate",
+    ).length,
+    highPriorityCount: priorityRows.filter(
+      (row) => row.priority === "manual_review_high",
+    ).length,
+    mediumPriorityCount: priorityRows.filter(
+      (row) => row.priority === "manual_review_medium",
+    ).length,
+    lowPriorityCount: priorityRows.filter(
+      (row) => row.priority === "manual_review_low",
+    ).length,
     priorityCandidateCount: priorityRows.length,
   };
 
@@ -191,7 +157,8 @@ function buildDataset() {
     matchedStudyTerms: row.matched_study_terms
       ? row.matched_study_terms.split(";").map((value) => value.trim()).filter(Boolean)
       : [],
-    reviewRole: row.review_role,
+    reviewRole:
+      row.review_role || "manual review candidate for final evidence mapping",
     title: row.title,
     url: row.url,
   }));
