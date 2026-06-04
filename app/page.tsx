@@ -71,7 +71,7 @@ export default function Home() {
                 <p className="text-[0.72rem] font-semibold uppercase text-muted">
                   Ingredient dose lookup
                 </p>
-                <h1 className="mt-2 text-[1.25rem] font-semibold tracking-[-0.01em] text-foreground md:text-[1.48rem]">
+                <h1 className="mt-2 break-keep text-[1.25rem] font-semibold tracking-[-0.01em] text-foreground md:text-[1.38rem]">
                 {siteName}
               </h1>
                 <p className="mt-3 max-w-xl text-sm leading-6 text-muted">
