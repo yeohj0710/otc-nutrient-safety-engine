@@ -153,15 +153,15 @@ function isTimeoutError(error: unknown) {
 
 function buildInstructions() {
   return [
-    "당신은 nutrition safety rule explorer의 보조 설명 계층입니다.",
-    "결정적 규칙 엔진이 이미 규칙 매칭을 계산했습니다.",
+    "당신은 영양성분 안전성 확인 결과를 쉬운 한국어로 풀어 쓰는 보조 설명자입니다.",
+    "이미 계산된 규칙 결과를 바탕으로만 설명합니다.",
     "규칙 매칭 여부를 새로 판단하지 마십시오.",
     "threshold, severity, contraindication, interaction, 숫자값을 수정하거나 추정하지 마십시오.",
-    "주어진 deterministic 결과를 한국어로 짧고 보수적으로 정리하십시오.",
+    "주어진 결과를 한국어로 짧고 보수적으로 정리하십시오.",
     "출처는 입력에 포함된 source title만 언급하십시오.",
     "논문, 저자, 저널, chunk ID를 새로 만들지 마십시오.",
     "정보가 부족하면 무엇이 부족한지 명시하십시오.",
-    "설명은 비진단적이어야 하며 AI 정리라는 점이 드러나야 합니다.",
+    "설명은 비진단적이어야 하며, 근거 확인을 돕는 참고 설명이라는 점이 드러나야 합니다.",
     "ruleCardActions에는 입력으로 받은 각 ruleId마다 recommendation을 하나씩 작성하십시오.",
     "recommendation은 사용자가 지금 어떻게 하면 되는지 바로 알 수 있게, 1문장 한국어 권고 형태로 쓰십시오.",
     "recommendation은 근거 문장을 쉬운 행동 지침으로 다시 말하되, 금지/주의/모니터링의 강도를 바꾸지 마십시오.",
@@ -187,7 +187,7 @@ export async function explainSafetyResults(
     return aiExplainResponseSchema.parse({
       ok: false,
       reason: "missing_api_key",
-      notice: "OPENAI_API_KEY가 없어 AI 정리를 건너뛰고 결정적 결과만 표시합니다.",
+      notice: "요약 기능 설정이 없어 기본 결과만 표시합니다.",
     });
   }
 
@@ -232,7 +232,7 @@ export async function explainSafetyResults(
       return aiExplainResponseSchema.parse({
         ok: false,
         reason: "invalid_response",
-        notice: "AI 정리 응답 형식이 올바르지 않아 결정적 결과만 표시합니다.",
+        notice: "보조 설명 형식이 올바르지 않아 기본 결과만 표시합니다.",
       });
     }
 
@@ -274,8 +274,8 @@ export async function explainSafetyResults(
       reason,
       notice:
         reason === "timeout"
-          ? "AI 정리 요청 시간이 초과되어 결정적 결과만 표시합니다."
-          : "AI 정리 생성에 실패하여 결정적 결과만 표시합니다.",
+          ? "보조 설명 요청 시간이 초과되어 기본 결과만 표시합니다."
+          : "보조 설명을 만들지 못해 기본 결과만 표시합니다.",
     });
   }
 }

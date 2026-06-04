@@ -517,7 +517,7 @@ function FieldRecognitionAssist({
       {recognized.length > 0 ? (
         <div className="flex flex-wrap items-center gap-2">
           <span className="text-xs font-medium text-stone-500">
-            자동 인식됨
+            입력값 반영
           </span>
           {recognized.map((item) => (
             <span
@@ -1879,7 +1879,7 @@ export function RuleExplorerClient({
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <span className={fieldLabelClass}>B. 병용 약</span>
                   <span className="rounded-full bg-stone-100 px-2.5 py-1 text-[11px] font-medium text-stone-600">
-                    정확도 상승
+                    조건 반영
                   </span>
                 </div>
                 <input

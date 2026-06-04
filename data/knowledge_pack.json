@@ -6,7 +6,7 @@
     "description_ko": "건강기능식품/영양소 안전 검증 엔진 구축용 knowledge_pack 원문 발췌(verbatim) 보강본. 기존 source/evidence/rule 구조를 유지하면서 evidence_chunks에 quote_original, quote_translation_ko, verification_status, extraction_method, locator 객체, used_in_rule_ids를 추가했다.",
     "intended_use_ko": [
       "안전 검증 엔진 규칙 테이블 초기 구축",
-      "레퍼런스 추적 가능한 RAG/Rule Engine 설계",
+      "근거 출처를 확인할 수 있는 안전성 기준 설계",
       "추가 조사 시 source/chunk/rule 단위 증분 업데이트",
       "JSON API / PostgreSQL / 벡터DB 인덱싱의 공통 원천데이터"
     ],
@@ -123,7 +123,7 @@
       "coenzyme_q10",
       "collagen_peptides"
     ],
-    "focus_update_scope_ko": "사용자 지정 22개 성분을 순위대로 재검토했다. 상위 13개는 기존 rule을 논문 레퍼런스로 재보강했고, 하위 9개는 targeted literature source/chunk 및 필요한 general safety rule을 추가했다.",
+    "focus_update_scope_ko": "검토 대상 22개 성분을 순위대로 다시 확인했다. 상위 13개는 기존 기준을 논문 근거로 보강했고, 하위 9개는 필요한 문헌 근거와 일반 안전성 기준을 추가했다.",
     "incremental_update_notes_ko": [
       "base = v0.2 focus replacement knowledge_pack",
       "append-only 원칙으로 source/evidence/rule을 증분 추가",
@@ -949,7 +949,7 @@
       "evidence_tier": "government_fact_sheet",
       "access_model": "public",
       "ingestion_status": "ingested_chunked",
-      "notes_ko": "고용량 비타민C의 UL, 신장결석, 철과다질환, 항암/방사선 치료 상호작용 주의를 정리하는 1차 공공 레퍼런스."
+      "notes_ko": "고용량 비타민C의 상한섭취량, 신장결석, 철과다질환, 항암·방사선 치료 상호작용 주의를 정리하는 1차 공공 근거 자료."
     },
     {
       "source_id": "SRC-PMID-30178451",
@@ -1165,7 +1165,7 @@
       "evidence_tier": "government_fact_sheet",
       "access_model": "public",
       "ingestion_status": "ingested_chunked",
-      "notes_ko": "실리마린의 일반 안전성, 알레르기, 품질 이슈, 임신·수유 근거 부족을 요약하는 공공 레퍼런스."
+      "notes_ko": "실리마린의 일반 안전성, 알레르기, 품질 문제, 임신·수유 근거 부족을 요약하는 공공 근거 자료."
     },
     {
       "source_id": "SRC-US-LIVERTOX-MILK-THISTLE",
@@ -1273,7 +1273,7 @@
       "evidence_tier": "government_fact_sheet",
       "access_model": "public",
       "ingestion_status": "ingested_chunked",
-      "notes_ko": "metformin/PPI 등과 연관된 비타민B12 상태 저하와 보충제 용량 범위를 정리하는 1차 공공 레퍼런스."
+      "notes_ko": "metformin, PPI 등과 연관된 비타민B12 상태 저하와 보충제 용량 범위를 정리하는 1차 공공 근거 자료."
     },
     {
       "source_id": "SRC-PMID-37447150",
@@ -1309,7 +1309,7 @@
       "evidence_tier": "government_fact_sheet",
       "access_model": "public",
       "ingestion_status": "ingested_chunked",
-      "notes_ko": "MVMS 정의, 대표 용량 범위, warfarin·비타민K, 임신·엽산, 비타민A 포인트를 다루는 공공 레퍼런스."
+      "notes_ko": "종합비타민·무기질 보충제의 정의, 대표 용량 범위, warfarin·비타민K, 임신·엽산, 비타민A 주의점을 다루는 공공 근거 자료."
     },
     {
       "source_id": "SRC-PMID-28336109",

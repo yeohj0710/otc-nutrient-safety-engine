@@ -31,8 +31,8 @@ export const aiExplanationSchema = z.object({
   disclaimer: z.string().min(1),
 });
 
-export const aiExplanationTextFormat = zodTextFormat(aiExplanationSchema, "nutrition_safety_ai_explanation", {
-  description: "결정적 규칙 엔진 결과를 바탕으로 작성한 보수적인 한국어 사용자 설명",
+export const aiExplanationTextFormat = zodTextFormat(aiExplanationSchema, "nutrition_safety_support_explanation", {
+  description: "이미 계산된 안전성 기준 결과를 바탕으로 작성한 보수적인 한국어 보조 설명",
 });
 
 export const aiExplainFilterSchema = z.object({

@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     const response = await explainSafetyResults(input);
     return NextResponse.json(response);
   } catch (error) {
-    const message = error instanceof Error ? error.message : "AI 설명 요청을 처리하지 못했습니다.";
+    const message = error instanceof Error ? error.message : "보조 설명 요청을 처리하지 못했습니다.";
     return NextResponse.json({ error: message }, { status: 400 });
   }
 }

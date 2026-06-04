@@ -1308,7 +1308,7 @@
         "evidence_tier": "government_fact_sheet",
         "access_model": "public",
         "ingestion_status": "ingested_chunked",
-        "notes_ko": "고용량 비타민C의 UL, 신장결석, 철과다질환, 항암/방사선 치료 상호작용 주의를 정리하는 1차 공공 레퍼런스."
+        "notes_ko": "고용량 비타민C의 상한섭취량, 신장결석, 철과다질환, 항암·방사선 치료 상호작용 주의를 정리하는 1차 공공 근거 자료."
       }
     },
     {
@@ -1668,7 +1668,7 @@
         "evidence_tier": "government_fact_sheet",
         "access_model": "public",
         "ingestion_status": "ingested_chunked",
-        "notes_ko": "실리마린의 일반 안전성, 알레르기, 품질 이슈, 임신·수유 근거 부족을 요약하는 공공 레퍼런스."
+        "notes_ko": "실리마린의 일반 안전성, 알레르기, 품질 문제, 임신·수유 근거 부족을 요약하는 공공 근거 자료."
       }
     },
     {
@@ -1848,7 +1848,7 @@
         "evidence_tier": "government_fact_sheet",
         "access_model": "public",
         "ingestion_status": "ingested_chunked",
-        "notes_ko": "metformin/PPI 등과 연관된 비타민B12 상태 저하와 보충제 용량 범위를 정리하는 1차 공공 레퍼런스."
+        "notes_ko": "metformin, PPI 등과 연관된 비타민B12 상태 저하와 보충제 용량 범위를 정리하는 1차 공공 근거 자료."
       }
     },
     {
@@ -1908,7 +1908,7 @@
         "evidence_tier": "government_fact_sheet",
         "access_model": "public",
         "ingestion_status": "ingested_chunked",
-        "notes_ko": "MVMS 정의, 대표 용량 범위, warfarin·비타민K, 임신·엽산, 비타민A 포인트를 다루는 공공 레퍼런스."
+        "notes_ko": "종합비타민·무기질 보충제의 정의, 대표 용량 범위, warfarin·비타민K, 임신·엽산, 비타민A 주의점을 다루는 공공 근거 자료."
       }
     },
     {
