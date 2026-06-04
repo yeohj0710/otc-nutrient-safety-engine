@@ -1787,11 +1787,11 @@ export function RuleExplorerClient({
               <div className="space-y-3">
                 <div className="max-w-[46rem]">
                   <p className="text-sm font-semibold text-foreground">
-                    첫 화면에는 예시 입력과 예시 결과가 바로 보이도록
+                    첫 화면에는 함량 예시와 판정 결과가 바로 보이도록
                     구성했습니다.
                   </p>
                   <p className="mt-0.5 text-sm leading-5 text-muted">
-                    그대로 `규칙 조회`를 눌러도 되고, 필요한 칸만 내 상황에 맞게
+                    그대로 `함량 판정`을 눌러도 되고, 필요한 칸만 제품 표기에 맞게
                     바꿔서 다시 조회해도 됩니다.
                   </p>
                 </div>
@@ -1846,7 +1846,7 @@ export function RuleExplorerClient({
                 className={`${fieldGroupClass} border-b border-slate-300 bg-white p-3 lg:border-b-0 lg:border-r`}
               >
                 <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className={fieldLabelClass}>1. 선택 성분</span>
+                  <span className={fieldLabelClass}>A. 성분명</span>
                   <span className="rounded-full bg-stone-100 px-2.5 py-1 text-[11px] font-medium text-stone-600">
                     필수
                   </span>
@@ -1877,7 +1877,7 @@ export function RuleExplorerClient({
                 className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
               >
                 <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className={fieldLabelClass}>2. 복용 약물</span>
+                  <span className={fieldLabelClass}>B. 병용 약</span>
                   <span className="rounded-full bg-stone-100 px-2.5 py-1 text-[11px] font-medium text-stone-600">
                     정확도 상승
                   </span>
@@ -1908,7 +1908,7 @@ export function RuleExplorerClient({
                 className={`${fieldGroupClass} rounded-[1rem] border border-stone-200 bg-white p-3`}
               >
                 <div className="mb-3 flex items-center justify-between gap-3">
-                  <span className={fieldLabelClass}>3. 질환 및 상태</span>
+                  <span className={fieldLabelClass}>C. 확인 조건</span>
                   <span className="rounded-full bg-stone-100 px-2.5 py-1 text-[11px] font-medium text-stone-600">
                     선택
                   </span>
@@ -1940,7 +1940,7 @@ export function RuleExplorerClient({
               <label
                 className={`${fieldGroupClass} border-b border-slate-300 bg-slate-50 p-3 xl:border-b-0 xl:border-r`}
               >
-                <span className={fieldLabelClass}>1일 섭취량</span>
+                <span className={fieldLabelClass}>하루 함량</span>
                 <input
                   value={dailyIntakeValue}
                   onChange={(event) => setDailyIntakeValue(event.target.value)}
@@ -1953,7 +1953,7 @@ export function RuleExplorerClient({
 
               <div className="border-b border-slate-300 bg-white p-3 md:border-r xl:border-b-0">
                 <SelectField
-                  label="단위"
+                  label="표기 단위"
                   value={dailyIntakeUnit}
                   onChange={setDailyIntakeUnit}
                   options={[
@@ -1969,7 +1969,7 @@ export function RuleExplorerClient({
               <label
                 className={`${fieldGroupClass} border-b border-slate-300 bg-slate-50 p-3 xl:border-b-0 xl:border-r`}
               >
-                <span className={fieldLabelClass}>복용 기간</span>
+                <span className={fieldLabelClass}>사용 기간</span>
                 <input
                   value={longTermUseDays}
                   onChange={(event) => setLongTermUseDays(event.target.value)}
@@ -1983,7 +1983,7 @@ export function RuleExplorerClient({
               <label
                 className={`${fieldGroupClass} border-b border-slate-300 bg-white p-3 md:border-r xl:border-b-0`}
               >
-                <span className={fieldLabelClass}>제형</span>
+                <span className={fieldLabelClass}>제품 형태</span>
                 <input
                   value={ingredientForm}
                   onChange={(event) => setIngredientForm(event.target.value)}
@@ -1995,7 +1995,7 @@ export function RuleExplorerClient({
               <label
                 className={`${fieldGroupClass} border-b border-slate-300 bg-slate-50 p-3 xl:border-b-0 xl:border-r`}
               >
-                <span className={fieldLabelClass}>동시 성분</span>
+                <span className={fieldLabelClass}>함께 든 성분</span>
                 <input
                   value={coingredients}
                   onChange={(event) => setCoingredients(event.target.value)}
@@ -2007,7 +2007,7 @@ export function RuleExplorerClient({
               <label
                 className={`${fieldGroupClass} bg-white p-3`}
               >
-                <span className={fieldLabelClass}>제품명</span>
+                <span className={fieldLabelClass}>제품 표시명</span>
                 <input
                   value={productName}
                   onChange={(event) => setProductName(event.target.value)}
@@ -2027,7 +2027,7 @@ export function RuleExplorerClient({
               >
                 <div>
                   <p className="text-[15px] font-semibold text-stone-900">
-                    추가 정보 입력
+                    세부 조건 열기
                   </p>
                   <p className="hidden mt-1 text-sm leading-6 text-stone-600">
                     꼭 필요할 때만 더 열어 입력할 수 있습니다.
@@ -2184,7 +2184,7 @@ export function RuleExplorerClient({
               >
                 <div>
                   <p className="text-[15px] font-semibold text-stone-900">
-                    예시 입력
+                    함량 예시
                   </p>
                   <p className="hidden mt-1 text-sm leading-6 text-stone-600">
                     자주 쓰는 조합을 바로 불러와 빠르게 조회할 수 있습니다.
@@ -2273,10 +2273,10 @@ export function RuleExplorerClient({
                   {isQueryLoading ? (
                     <span className="inline-flex items-center gap-2">
                       <span className="inline-flex h-4 w-4 rounded-full border-2 border-white/35 border-t-white animate-spin" />
-                      근거 정리 중
+                      함량표 대조 중
                     </span>
                   ) : (
-                    "규칙 조회"
+                    "함량 판정"
                   )}
                 </button>
                 <button
@@ -2284,7 +2284,7 @@ export function RuleExplorerClient({
                   onClick={resetForm}
                   className={secondaryButtonClass}
                 >
-                  전체 초기화
+                  표 비우기
                 </button>
               </div>
             </div>
