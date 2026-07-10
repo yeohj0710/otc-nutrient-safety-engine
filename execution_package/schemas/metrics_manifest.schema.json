@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MetricsManifest",
+  "type": "object",
+  "required": [
+    "dataset_version",
+    "generated_at",
+    "source_commit",
+    "metrics"
+  ],
+  "properties": {
+    "dataset_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_commit": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "value",
+          "denominator",
+          "source_artifact",
+          "generator"
+        ],
+        "properties": {
+          "value": {},
+          "denominator": {},
+          "ci_lower": {},
+          "ci_upper": {},
+          "source_artifact": {
+            "type": "string"
+          },
+          "generator": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

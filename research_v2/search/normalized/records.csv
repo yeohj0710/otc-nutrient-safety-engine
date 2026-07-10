@@ -1,0 +1,1 @@
+record_id,search_run_id,clinical_node_candidate,source_database,database_record_id,pmid,doi,title,abstract,year,language,authors,journal,is_duplicate,duplicate_of,removed_before_screening,removal_reason,raw_source_path,raw_source_sha256,normalization_version

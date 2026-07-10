@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at_utc": "2026-07-10T02:35:00Z",
+  "gates": {
+    "0": {
+      "status": "passed",
+      "evidence": [
+        "audit/repo_identity.json",
+        "audit/legacy_inventory.csv",
+        "../../tests/research_v2/test_identity_gate.py",
+        "../../tests/research_v2/test_inventory_legacy.py"
+      ]
+    },
+    "1": {
+      "status": "awaiting_human_action",
+      "reason": "H-001 protocol and K1-K5 approval not supplied"
+    },
+    "2": {
+      "status": "preflight_ready_not_executed",
+      "evidence": [
+        "../search/preflight_report.json",
+        "../search/search_strategies.csv",
+        "../search/seed_candidates.csv"
+      ],
+      "reason": "H-001 H-002 H-003 and H-007 remain open"
+    },
+    "3": {"status": "not_started"},
+    "4": {"status": "not_started"},
+    "5": {"status": "not_started"},
+    "6": {"status": "not_started"},
+    "7": {"status": "not_started"},
+    "8": {"status": "not_started"},
+    "9": {"status": "not_started"},
+    "10": {"status": "not_started"}
+  }
+}

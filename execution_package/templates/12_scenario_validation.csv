@@ -1,0 +1,1 @@
+﻿scenario_id,split,clinical_node_id,difficulty,input_json,gold_hazard,gold_action_class,required_questions,acceptable_rule_ids,reviewer_ids,predicted_hazard,predicted_action_class,returned_rule_ids,critical_false_negative,false_reassurance,provenance_complete,notes

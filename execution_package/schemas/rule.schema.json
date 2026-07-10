@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceRule",
+  "type": "object",
+  "required": [
+    "rule_id",
+    "clinical_node_id",
+    "ingredient_id",
+    "outcome_id",
+    "action_class",
+    "message_short",
+    "certainty_grade",
+    "evidence_ids",
+    "source_quote_ids",
+    "status",
+    "severity",
+    "message_explanation",
+    "questions_to_ask",
+    "uncertainty_statement",
+    "reviewer_ids",
+    "valid_from",
+    "review_due"
+  ],
+  "properties": {
+    "rule_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clinical_node_id": {
+      "enum": [
+        "A1",
+        "A2",
+        "R1",
+        "R2",
+        "R3"
+      ]
+    },
+    "ingredient_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "population_criteria": {
+      "type": "object"
+    },
+    "medication_criteria": {
+      "type": "object"
+    },
+    "dose": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "duration": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "outcome_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "action_class": {
+      "enum": [
+        "urgent_referral",
+        "avoid_or_hold_for_review",
+        "monitor_or_discuss",
+        "information_needed",
+        "no_reviewed_rule"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "critical",
+        "high",
+        "moderate",
+        "informational"
+      ]
+    },
+    "message_short": {
+      "type": "string",
+      "minLength": 1
+    },
+    "message_explanation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "questions_to_ask": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty_statement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "certainty_grade": {
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "very_low",
+        "not_graded"
+      ]
+    },
+    "jurisdiction": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "source_quote_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "reviewer_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "status": {
+      "enum": [
+        "draft_human",
+        "draft_ai",
+        "evidence_verified",
+        "content_reviewed",
+        "scenario_validated",
+        "released",
+        "deprecated"
+      ]
+    },
+    "valid_from": {
+      "type": "string",
+      "format": "date"
+    },
+    "review_due": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "additionalProperties": false
+}

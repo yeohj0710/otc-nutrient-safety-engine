@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "protocol_version": "0.1",
+  "status": "draft_pre_approval",
+  "common": {
+    "population": "adult humans",
+    "route": "oral",
+    "include_if": [
+      "ingredient and exposure dose or level are identifiable",
+      "a prespecified safety outcome is reported"
+    ],
+    "eligible_designs": [
+      "randomized_controlled_trial",
+      "nonrandomized_intervention",
+      "cohort",
+      "case_control",
+      "crossover",
+      "systematic_review_context_only",
+      "guideline_normative_layer",
+      "case_report_signal_layer"
+    ],
+    "exclude_if": [
+      "nonhuman_or_in_vitro_only",
+      "dietary_exposure_not_separable_from_supplement",
+      "efficacy_only_without_safety_outcome",
+      "nonoral_only",
+      "editorial_advertisement_or_nonexpert_web_source",
+      "full_text_not_verifiable_after_documented_attempts"
+    ],
+    "search_limits": {
+      "language": "none",
+      "date": "none",
+      "study_design": "none"
+    }
+  },
+  "nodes": [
+    {
+      "node_id": "K1",
+      "population": "adults using oral vitamin D with or without supplemental calcium",
+      "exposure": ["vitamin D", "cholecalciferol", "ergocalciferol", "calcifediol", "supplemental calcium co-use"],
+      "comparator": ["placebo", "no supplement", "lower dose", "different dosing interval"],
+      "primary_outcomes": ["hypercalcemia", "hypercalciuria", "nephrolithiasis"],
+      "secondary_outcomes": ["treatment discontinuation due to adverse events", "renal function change"]
+    },
+    {
+      "node_id": "K2",
+      "population": "adults using vitamin B6 or B-complex products",
+      "exposure": ["pyridoxine", "pyridoxal-5-phosphate", "vitamin B6", "B-complex"],
+      "comparator": ["no supplement", "lower dose", "shorter duration"],
+      "primary_outcomes": ["peripheral neuropathy", "sensory neuropathy", "neurotoxicity"],
+      "secondary_outcomes": ["paresthesia", "gait disturbance", "symptom reversibility"]
+    },
+    {
+      "node_id": "K3",
+      "population": "adults using oral iron products",
+      "exposure": ["ferrous sulfate", "ferrous fumarate", "ferrous gluconate", "ferric preparations", "elemental iron"],
+      "comparator": ["placebo", "no supplement", "lower dose", "alternate formulation", "alternate schedule"],
+      "primary_outcomes": ["gastrointestinal adverse events", "iron overload signal"],
+      "secondary_outcomes": ["discontinuation", "adherence", "constipation", "diarrhea", "nausea", "abdominal pain"]
+    },
+    {
+      "node_id": "K4",
+      "population": "adults using supplemental magnesium including people with impaired renal function",
+      "exposure": ["magnesium oxide", "magnesium hydroxide", "magnesium citrate", "elemental magnesium"],
+      "comparator": ["placebo", "no supplement", "lower dose", "different salt"],
+      "primary_outcomes": ["diarrhea", "hypermagnesemia"],
+      "secondary_outcomes": ["treatment discontinuation", "hypotension", "bradycardia", "altered mental status"]
+    },
+    {
+      "node_id": "K5",
+      "population": "adults using oral zinc products",
+      "exposure": ["zinc sulfate", "zinc gluconate", "zinc acetate", "elemental zinc", "zinc lozenge"],
+      "comparator": ["placebo", "no supplement", "lower dose", "shorter duration"],
+      "primary_outcomes": ["gastrointestinal adverse events", "copper deficiency"],
+      "secondary_outcomes": ["anemia", "neutropenia", "neuropathy", "treatment discontinuation"]
+    }
+  ]
+}

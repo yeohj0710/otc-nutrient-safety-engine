@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ValidationScenario",
+  "type": "object",
+  "required": [
+    "scenario_id",
+    "split",
+    "input",
+    "gold_hazard",
+    "gold_action_class",
+    "reviewer_ids",
+    "difficulty",
+    "clinical_node_id"
+  ],
+  "properties": {
+    "scenario_id": {
+      "type": "string"
+    },
+    "split": {
+      "enum": [
+        "development",
+        "held_out"
+      ]
+    },
+    "clinical_node_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "A1",
+        "A2",
+        "R1",
+        "R2",
+        "R3",
+        null
+      ]
+    },
+    "difficulty": {
+      "enum": [
+        "clear_positive",
+        "boundary",
+        "missing_information",
+        "negative_control",
+        "cross_condition",
+        "out_of_scope"
+      ]
+    },
+    "input": {
+      "type": "object"
+    },
+    "gold_hazard": {
+      "type": "boolean"
+    },
+    "gold_action_class": {
+      "enum": [
+        "urgent_referral",
+        "avoid_or_hold_for_review",
+        "monitor_or_discuss",
+        "information_needed",
+        "no_reviewed_rule",
+        "out_of_scope"
+      ]
+    },
+    "required_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptable_rule_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reviewer_ids": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "adjudication_note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

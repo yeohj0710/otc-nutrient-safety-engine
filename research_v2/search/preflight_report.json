@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "status": "preflight_ready_not_executed",
+  "generated_at_utc": "2026-07-10T02:35:00Z",
+  "protocol_version": "0.1",
+  "queries": [
+    {
+      "node_id": "K1",
+      "path": "research_v2/search/pubmed_queries/K1.txt",
+      "sha256": "3bdcd51bdd23652f730efc78f7bc7a4669007c22dd4fefff0b18b7c5a8c09c46",
+      "seed_candidates": 5,
+      "parentheses_balanced": true
+    },
+    {
+      "node_id": "K2",
+      "path": "research_v2/search/pubmed_queries/K2.txt",
+      "sha256": "ccf1a450ef694bcbb80f5dbc4332ad1f016cab9e06c4f62ca816aceace1a39b0",
+      "seed_candidates": 4,
+      "parentheses_balanced": true
+    },
+    {
+      "node_id": "K3",
+      "path": "research_v2/search/pubmed_queries/K3.txt",
+      "sha256": "6e9440a5c0fbeb4345fd2ed084ec753aeb85aeb7c538df1408e3bb8288f2123c",
+      "seed_candidates": 4,
+      "parentheses_balanced": true
+    },
+    {
+      "node_id": "K4",
+      "path": "research_v2/search/pubmed_queries/K4.txt",
+      "sha256": "8588a1eb03639989754515fc92249b67033c048070dafdf962bc4714ccda33c6",
+      "seed_candidates": 5,
+      "parentheses_balanced": true
+    },
+    {
+      "node_id": "K5",
+      "path": "research_v2/search/pubmed_queries/K5.txt",
+      "sha256": "da5f5813b159f36584ed8b95dd4702da29c4623ae7f099e6c542882fd71a16aa",
+      "seed_candidates": 4,
+      "parentheses_balanced": true
+    }
+  ],
+  "search_limits": {
+    "language_filter": false,
+    "date_filter": false,
+    "study_design_filter": false,
+    "top_n_allowed_for_gate2": false,
+    "pubmed_uid_limit": 10000,
+    "over_limit_action": "fail_requires_segmentation_or_edirect"
+  },
+  "pipeline_verification": {
+    "pubmed_tests": 6,
+    "status": "passed",
+    "full_retrieval_default": true,
+    "export_import_reconciliation": true
+  },
+  "environment": {
+    "NCBI_EMAIL_present": false,
+    "NCBI_API_KEY_present": false,
+    "final_search_executed": false
+  },
+  "human_dependencies": ["H-001", "H-002", "H-003", "H-007"],
+  "method_sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/help/",
+    "https://www.ncbi.nlm.nih.gov/books/NBK25499/",
+    "https://training.cochrane.org/handbook/current/chapter-04",
+    "https://www.prisma-statement.org/prisma-search"
+  ]
+}

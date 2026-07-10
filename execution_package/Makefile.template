@@ -1,0 +1,25 @@
+.PHONY: bootstrap identity audit validate-data analyze figures thesis validate-release
+
+bootstrap:
+	python execution_package/scripts/bootstrap_research_v2.py --repo-root . --package-root execution_package
+
+identity:
+	python execution_package/scripts/check_project_identity.py --root .
+
+audit: identity
+	@echo "Run legacy inventory and protocol gate checks"
+
+validate-data:
+	@echo "Validate schemas, search logs, screening decisions, extraction and provenance"
+
+analyze: validate-data
+	@echo "Generate evidence map, focused synthesis, AI metrics, scenario metrics and metrics manifest"
+
+figures: analyze
+	@echo "Generate all thesis figures from frozen data"
+
+thesis: figures
+	@echo "Build DOCX and PDF after evidence freeze"
+
+validate-release:
+	python execution_package/scripts/validate_release.py research_v2 --thresholds research_v2/config/quality_thresholds.json

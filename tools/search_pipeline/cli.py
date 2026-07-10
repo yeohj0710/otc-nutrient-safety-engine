@@ -172,7 +172,15 @@ def add_search_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--target", required=True, help="Target ID, e.g. anticoag.")
     parser.add_argument("--query", required=True, help="Database search query.")
     parser.add_argument("--filters", default="", help="Human-readable filter description.")
-    parser.add_argument("--max-records", type=int, default=500, help="Maximum records to retrieve/export.")
+    parser.add_argument(
+        "--max-records",
+        type=int,
+        default=None,
+        help=(
+            "Legacy capped debug mode. Omit for full retrieval; full queries over "
+            "10,000 PubMed UIDs fail and require segmentation or EDirect."
+        ),
+    )
     parser.add_argument("--sort", default="", help="Optional source sort, e.g. relevance for PubMed.")
 
 

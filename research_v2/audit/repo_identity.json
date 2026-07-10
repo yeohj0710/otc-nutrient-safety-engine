@@ -1,0 +1,29 @@
+{
+  "student_name": "권혁찬",
+  "student_id": "2021194024",
+  "recommended_repo": "otc-nutrient-safety-engine",
+  "repo_root": "C:\\dev\\otc-nutrient-safety-engine",
+  "remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
+  "branch": "main",
+  "head_commit": "212510dc368ef2414136bc676729b8f8aab67370",
+  "active_project_identity_path": "research_v2\\project_identity.json",
+  "active_project_identity": {
+    "student_name": "권혁찬",
+    "student_id": "2021194024",
+    "recommended_repo": "otc-nutrient-safety-engine",
+    "disallowed_primary_repo_identity": "여형준",
+    "study_slug": "kwon-high-dose-otc-nutrient-safety",
+    "title_ko": "일반의약품형 고함량 영양성분의 함량 기준 안전성 평가와 근거 추적형 조회 도구의 개발 및 검증",
+    "title_en": "Dose-based safety evaluation of high-dose nutrient ingredients and development and validation of a traceable query tool",
+    "initialized_at": "2026-07-10T02:11:32.037159+00:00",
+    "mode": "kwon_primary_research"
+  },
+  "marker_files": [],
+  "checks": {
+    "active_identity_matches": true,
+    "remote_matches_recommended_repo": true,
+    "yeo_markers_absent_from_active_paths": true
+  },
+  "failures": [],
+  "pass": true
+}

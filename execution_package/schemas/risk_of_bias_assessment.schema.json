@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RiskOfBiasAssessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assessment_id",
+    "study_family_id",
+    "outcome_id",
+    "tool",
+    "tool_version",
+    "domains",
+    "overall_judgement",
+    "reviewer_ids"
+  ],
+  "properties": {
+    "assessment_id": {"type": "string"},
+    "study_family_id": {"type": "string"},
+    "outcome_id": {"type": "string"},
+    "tool": {"type": "string"},
+    "tool_version": {"type": "string"},
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["domain", "judgement", "rationale", "locator"],
+        "properties": {
+          "domain": {"type": "string"},
+          "judgement": {"type": "string"},
+          "rationale": {"type": "string"},
+          "locator": {"type": "string"}
+        }
+      }
+    },
+    "overall_judgement": {"type": "string"},
+    "reviewer_ids": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+    "adjudication_note": {"type": ["string", "null"]}
+  }
+}

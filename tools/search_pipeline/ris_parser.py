@@ -97,7 +97,15 @@ def _entry_to_record(
     title = _first(entry, "title", "primary_title", "T1", "TI")
     abstract = _first(entry, "abstract", "notes_abstract", "AB", "N2")
     year = _year(_first(entry, "year", "publication_year", "PY", "Y1", "DA"))
-    journal = _first(entry, "journal_name", "secondary_title", "JF", "JO", "T2")
+    journal = _first(
+        entry,
+        "journal_name",
+        "secondary_title",
+        "alternate_title3",
+        "JF",
+        "JO",
+        "T2",
+    )
     doi = _normalize_doi(_first(entry, "doi", "DO"))
     pmid = _first(entry, "pmid", "PMID")
     url = _first(entry, "url", "urls", "UR", "LK")

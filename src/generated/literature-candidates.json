@@ -1,8 +1,8 @@
 {
   "summary": {
-    "studyId": "kwon_otc_nutrients",
+    "studyId": "kwon-high-dose-otc-nutrient-safety",
     "studyLabel": "권혁찬",
-    "generatedAt": "2026-06-04T12:50:42.689Z",
+    "generatedAt": "2026-06-03T00:00:00.000Z",
     "primarySearchRuns": 6,
     "latestPubMedHitCount": 52701,
     "latestPubMedStoredRecords": 435,
@@ -21,7 +21,7 @@
   },
   "candidates": [
     {
-      "id": "kwon_otc_nutrients-candidate-0001",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0001",
       "pmid": "42182979",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -41,7 +41,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42182979/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0002",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0002",
       "pmid": "42181337",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -63,7 +63,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42181337/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0003",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0003",
       "pmid": "42158881",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -84,7 +84,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42158881/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0004",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0004",
       "pmid": "42151904",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -105,7 +105,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42151904/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0005",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0005",
       "pmid": "42147788",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -128,7 +128,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42147788/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0006",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0006",
       "pmid": "42147385",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -149,7 +149,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42147385/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0007",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0007",
       "pmid": "42146312",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -169,7 +169,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42146312/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0008",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0008",
       "pmid": "42145024",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -191,7 +191,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42145024/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0009",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0009",
       "pmid": "42142201",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -212,7 +212,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42142201/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0010",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0010",
       "pmid": "42130995",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -236,7 +236,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42130995/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0011",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0011",
       "pmid": "42129010",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -256,7 +256,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42129010/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0012",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0012",
       "pmid": "42106847",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -280,7 +280,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42106847/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0013",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0013",
       "pmid": "42095997",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -302,7 +302,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42095997/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0014",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0014",
       "pmid": "42085570",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -321,7 +321,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42085570/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0015",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0015",
       "pmid": "42077171",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -342,7 +342,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42077171/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0016",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0016",
       "pmid": "42076747",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -363,7 +363,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42076747/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0017",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0017",
       "pmid": "42046473",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -385,7 +385,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42046473/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0018",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0018",
       "pmid": "42043773",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -404,7 +404,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42043773/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0019",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0019",
       "pmid": "42027563",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -427,7 +427,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42027563/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0020",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0020",
       "pmid": "42021547",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -446,7 +446,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42021547/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0021",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0021",
       "pmid": "42015790",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -472,7 +472,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42015790/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0022",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0022",
       "pmid": "41994682",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -492,7 +492,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41994682/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0023",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0023",
       "pmid": "41993139",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -511,7 +511,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41993139/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0024",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0024",
       "pmid": "41988524",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -535,7 +535,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41988524/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0025",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0025",
       "pmid": "41983252",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -556,7 +556,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41983252/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0026",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0026",
       "pmid": "41956768",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -575,7 +575,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41956768/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0027",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0027",
       "pmid": "41954050",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -597,7 +597,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41954050/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0028",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0028",
       "pmid": "41947071",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -621,7 +621,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41947071/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0029",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0029",
       "pmid": "41940240",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -643,7 +643,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41940240/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0030",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0030",
       "pmid": "41935325",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -662,7 +662,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41935325/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0031",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0031",
       "pmid": "41928901",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -685,7 +685,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41928901/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0032",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0032",
       "pmid": "41923194",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -706,7 +706,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41923194/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0033",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0033",
       "pmid": "41921771",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -728,7 +728,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41921771/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0034",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0034",
       "pmid": "41917895",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -751,7 +751,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41917895/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0035",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0035",
       "pmid": "41917886",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -774,7 +774,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41917886/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0036",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0036",
       "pmid": "41909156",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -794,7 +794,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41909156/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0037",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0037",
       "pmid": "42161587",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -814,7 +814,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42161587/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0038",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0038",
       "pmid": "42137389",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -835,7 +835,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42137389/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0039",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0039",
       "pmid": "42122249",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -858,7 +858,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42122249/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0040",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0040",
       "pmid": "42106643",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -880,7 +880,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42106643/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0041",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0041",
       "pmid": "42063363",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -901,7 +901,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42063363/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0042",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0042",
       "pmid": "42029414",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -926,7 +926,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42029414/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0043",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0043",
       "pmid": "42017538",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -948,7 +948,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42017538/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0044",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0044",
       "pmid": "41942316",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -970,7 +970,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41942316/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0045",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0045",
       "pmid": "41900781",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -991,7 +991,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41900781/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0046",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0046",
       "pmid": "41835766",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1012,7 +1012,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41835766/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0047",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0047",
       "pmid": "41734103",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1031,7 +1031,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41734103/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0048",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0048",
       "pmid": "41692080",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1054,7 +1054,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41692080/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0049",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0049",
       "pmid": "41622521",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1077,7 +1077,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41622521/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0050",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0050",
       "pmid": "41615824",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1099,7 +1099,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41615824/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0051",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0051",
       "pmid": "41590508",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1119,7 +1119,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41590508/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0052",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0052",
       "pmid": "41539356",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1139,7 +1139,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41539356/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0053",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0053",
       "pmid": "41475853",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1158,7 +1158,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41475853/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0054",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0054",
       "pmid": "41431308",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1180,7 +1180,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41431308/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0055",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0055",
       "pmid": "41385215",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1199,7 +1199,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41385215/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0056",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0056",
       "pmid": "41361445",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1221,7 +1221,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41361445/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0057",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0057",
       "pmid": "41352035",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1242,7 +1242,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41352035/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0058",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0058",
       "pmid": "41295274",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1261,7 +1261,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41295274/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0059",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0059",
       "pmid": "41211168",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1280,7 +1280,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41211168/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0060",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0060",
       "pmid": "41158987",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1301,7 +1301,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41158987/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0061",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0061",
       "pmid": "41149778",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1322,7 +1322,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41149778/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0062",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0062",
       "pmid": "41133339",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1343,7 +1343,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41133339/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0063",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0063",
       "pmid": "41111862",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1365,7 +1365,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41111862/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0064",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0064",
       "pmid": "41010482",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1386,7 +1386,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41010482/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0065",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0065",
       "pmid": "40913882",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1407,7 +1407,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40913882/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0066",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0066",
       "pmid": "40853095",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1431,7 +1431,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40853095/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0067",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0067",
       "pmid": "40843754",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1454,7 +1454,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40843754/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0068",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0068",
       "pmid": "40809450",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1471,7 +1471,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40809450/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0069",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0069",
       "pmid": "40754968",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1490,7 +1490,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40754968/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0070",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0070",
       "pmid": "40751583",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1514,7 +1514,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40751583/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0071",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0071",
       "pmid": "40714656",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1535,7 +1535,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40714656/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0072",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0072",
       "pmid": "40645780",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1554,7 +1554,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40645780/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0073",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0073",
       "pmid": "40636590",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1576,7 +1576,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40636590/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0074",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0074",
       "pmid": "40625625",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1596,7 +1596,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40625625/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0075",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0075",
       "pmid": "40611181",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1616,7 +1616,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40611181/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0076",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0076",
       "pmid": "40463402",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -1638,7 +1638,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40463402/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0077",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0077",
       "pmid": "42219438",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1657,7 +1657,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42219438/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0078",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0078",
       "pmid": "42218825",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1680,7 +1680,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42218825/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0079",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0079",
       "pmid": "42217623",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1701,7 +1701,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42217623/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0080",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0080",
       "pmid": "42216694",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1723,7 +1723,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42216694/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0081",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0081",
       "pmid": "42209618",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1740,7 +1740,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42209618/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0082",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0082",
       "pmid": "42207388",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1763,7 +1763,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42207388/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0083",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0083",
       "pmid": "42201017",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1784,7 +1784,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42201017/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0084",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0084",
       "pmid": "42198820",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1808,7 +1808,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42198820/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0085",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0085",
       "pmid": "42197003",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1831,7 +1831,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42197003/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0086",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0086",
       "pmid": "42196945",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1853,7 +1853,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42196945/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0087",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0087",
       "pmid": "42194759",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1875,7 +1875,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42194759/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0088",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0088",
       "pmid": "42194653",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1896,7 +1896,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42194653/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0089",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0089",
       "pmid": "42193244",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1917,7 +1917,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42193244/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0090",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0090",
       "pmid": "42182005",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1938,7 +1938,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42182005/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0091",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0091",
       "pmid": "42181090",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1961,7 +1961,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42181090/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0092",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0092",
       "pmid": "42178031",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -1982,7 +1982,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42178031/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0093",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0093",
       "pmid": "42175738",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2001,7 +2001,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42175738/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0094",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0094",
       "pmid": "42174738",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2022,7 +2022,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42174738/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0095",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0095",
       "pmid": "42173557",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2044,7 +2044,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42173557/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0096",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0096",
       "pmid": "42172659",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2061,7 +2061,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42172659/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0097",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0097",
       "pmid": "42171972",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2082,7 +2082,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42171972/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0098",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0098",
       "pmid": "42169402",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2104,7 +2104,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42169402/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0099",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0099",
       "pmid": "42163418",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2128,7 +2128,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42163418/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0100",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0100",
       "pmid": "42158645",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2149,7 +2149,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42158645/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0101",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0101",
       "pmid": "42157941",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2170,7 +2170,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42157941/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0102",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0102",
       "pmid": "42156079",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2191,7 +2191,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42156079/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0103",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0103",
       "pmid": "42152139",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2212,7 +2212,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42152139/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0104",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0104",
       "pmid": "42143473",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2231,7 +2231,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42143473/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0105",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0105",
       "pmid": "42141851",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2250,7 +2250,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42141851/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0106",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0106",
       "pmid": "42135948",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2271,7 +2271,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42135948/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0107",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0107",
       "pmid": "42135934",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2290,7 +2290,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42135934/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0108",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0108",
       "pmid": "42132970",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2311,7 +2311,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42132970/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0109",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0109",
       "pmid": "42132028",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2333,7 +2333,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42132028/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0110",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0110",
       "pmid": "42129691",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2356,7 +2356,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42129691/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0111",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0111",
       "pmid": "42126811",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2379,7 +2379,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42126811/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0112",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0112",
       "pmid": "42126511",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2400,7 +2400,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42126511/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0113",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0113",
       "pmid": "42124000",
       "year": 2026,
       "targetId": "mineral_gi_interaction",
@@ -2421,7 +2421,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/42124000/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0114",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0114",
       "pmid": "36906146",
       "year": 2023,
       "targetId": "high_dose_vitd_calcium",
@@ -2444,7 +2444,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36906146/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0115",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0115",
       "pmid": "34774245",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -2464,7 +2464,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34774245/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0116",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0116",
       "pmid": "30294301",
       "year": 2018,
       "targetId": "high_dose_vitd_calcium",
@@ -2484,7 +2484,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30294301/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0117",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0117",
       "pmid": "18689406",
       "year": 2008,
       "targetId": "high_dose_vitd_calcium",
@@ -2505,7 +2505,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/18689406/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0118",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0118",
       "pmid": "38814276",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -2527,7 +2527,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38814276/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0119",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0119",
       "pmid": "28216084",
       "year": 2018,
       "targetId": "high_dose_vitd_calcium",
@@ -2551,7 +2551,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/28216084/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0120",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0120",
       "pmid": "35575431",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -2573,7 +2573,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35575431/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0121",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0121",
       "pmid": "34959915",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -2596,7 +2596,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34959915/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0122",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0122",
       "pmid": "34969941",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -2618,7 +2618,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34969941/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0123",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0123",
       "pmid": "30449546",
       "year": 2018,
       "targetId": "high_dose_vitd_calcium",
@@ -2640,7 +2640,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30449546/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0124",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0124",
       "pmid": "37976176",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -2659,7 +2659,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37976176/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0125",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0125",
       "pmid": "25031016",
       "year": 2016,
       "targetId": "high_dose_vitd_calcium",
@@ -2681,7 +2681,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25031016/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0126",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0126",
       "pmid": "35639792",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -2703,7 +2703,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35639792/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0127",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0127",
       "pmid": "39275206",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -2725,7 +2725,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39275206/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0128",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0128",
       "pmid": "2645429",
       "year": 1989,
       "targetId": "high_dose_vitd_calcium",
@@ -2748,7 +2748,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/2645429/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0129",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0129",
       "pmid": "11195313",
       "year": 2000,
       "targetId": "high_dose_vitd_calcium",
@@ -2771,7 +2771,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/11195313/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0130",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0130",
       "pmid": "22734293",
       "year": 2012,
       "targetId": "high_dose_vitd_calcium",
@@ -2796,7 +2796,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/22734293/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0131",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0131",
       "pmid": "8483281",
       "year": 1993,
       "targetId": "high_dose_vitd_calcium",
@@ -2817,7 +2817,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/8483281/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0132",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0132",
       "pmid": "16515769",
       "year": 2006,
       "targetId": "high_dose_vitd_calcium",
@@ -2839,7 +2839,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/16515769/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0133",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0133",
       "pmid": "40610079",
       "year": 2025,
       "targetId": "high_dose_vitd_calcium",
@@ -2860,7 +2860,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40610079/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0134",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0134",
       "pmid": "29562593",
       "year": 2018,
       "targetId": "high_dose_vitd_calcium",
@@ -2881,7 +2881,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/29562593/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0135",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0135",
       "pmid": "39337491",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -2903,7 +2903,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39337491/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0136",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0136",
       "pmid": "30601231",
       "year": 2019,
       "targetId": "high_dose_vitd_calcium",
@@ -2923,7 +2923,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30601231/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0137",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0137",
       "pmid": "21775970",
       "year": 2011,
       "targetId": "high_dose_vitd_calcium",
@@ -2945,7 +2945,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/21775970/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0138",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0138",
       "pmid": "37049567",
       "year": 2023,
       "targetId": "high_dose_vitd_calcium",
@@ -2965,7 +2965,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37049567/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0139",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0139",
       "pmid": "34857184",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -2990,7 +2990,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34857184/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0140",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0140",
       "pmid": "22470872",
       "year": 2012,
       "targetId": "high_dose_vitd_calcium",
@@ -3013,7 +3013,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/22470872/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0141",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0141",
       "pmid": "40551736",
       "year": 2025,
       "targetId": "high_dose_vitd_calcium",
@@ -3039,7 +3039,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40551736/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0142",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0142",
       "pmid": "2197848",
       "year": 1990,
       "targetId": "high_dose_vitd_calcium",
@@ -3057,7 +3057,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/2197848/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0143",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0143",
       "pmid": "41076359",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -3080,7 +3080,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41076359/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0144",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0144",
       "pmid": "25188231",
       "year": 2014,
       "targetId": "high_dose_vitd_calcium",
@@ -3102,7 +3102,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25188231/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0145",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0145",
       "pmid": "33213577",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3124,7 +3124,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33213577/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0146",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0146",
       "pmid": "33659946",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3148,7 +3148,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33659946/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0147",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0147",
       "pmid": "32857334",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -3170,7 +3170,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32857334/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0148",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0148",
       "pmid": "38723841",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -3192,7 +3192,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38723841/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0149",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0149",
       "pmid": "33136356",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3213,7 +3213,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33136356/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0150",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0150",
       "pmid": "10417956",
       "year": 1999,
       "targetId": "high_dose_vitd_calcium",
@@ -3235,7 +3235,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/10417956/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0151",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0151",
       "pmid": "37505607",
       "year": 2023,
       "targetId": "high_dose_vitd_calcium",
@@ -3258,7 +3258,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37505607/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0152",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0152",
       "pmid": "10232622",
       "year": 1999,
       "targetId": "high_dose_vitd_calcium",
@@ -3281,7 +3281,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/10232622/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0153",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0153",
       "pmid": "31718265",
       "year": 2019,
       "targetId": "high_dose_vitd_calcium",
@@ -3301,7 +3301,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31718265/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0154",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0154",
       "pmid": "26816771",
       "year": 2014,
       "targetId": "high_dose_vitd_calcium",
@@ -3321,7 +3321,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/26816771/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0155",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0155",
       "pmid": "20511052",
       "year": 2010,
       "targetId": "high_dose_vitd_calcium",
@@ -3341,7 +3341,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/20511052/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0156",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0156",
       "pmid": "6765068",
       "year": 1982,
       "targetId": "high_dose_vitd_calcium",
@@ -3364,7 +3364,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/6765068/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0157",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0157",
       "pmid": "32532150",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3387,7 +3387,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32532150/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0158",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0158",
       "pmid": "37304381",
       "year": 2023,
       "targetId": "high_dose_vitd_calcium",
@@ -3408,7 +3408,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37304381/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0159",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0159",
       "pmid": "35352189",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -3432,7 +3432,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35352189/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0160",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0160",
       "pmid": "19364661",
       "year": 2009,
       "targetId": "high_dose_vitd_calcium",
@@ -3453,7 +3453,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/19364661/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0161",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0161",
       "pmid": "32188044",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3478,7 +3478,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32188044/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0162",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0162",
       "pmid": "32161591",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3498,7 +3498,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32161591/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0163",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0163",
       "pmid": "39969362",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -3523,7 +3523,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39969362/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0164",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0164",
       "pmid": "18844846",
       "year": 2008,
       "targetId": "high_dose_vitd_calcium",
@@ -3543,7 +3543,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/18844846/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0165",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0165",
       "pmid": "35565910",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -3563,7 +3563,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35565910/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0166",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0166",
       "pmid": "28734988",
       "year": 2018,
       "targetId": "high_dose_vitd_calcium",
@@ -3585,7 +3585,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/28734988/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0167",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0167",
       "pmid": "24456284",
       "year": 2014,
       "targetId": "high_dose_vitd_calcium",
@@ -3606,7 +3606,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/24456284/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0168",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0168",
       "pmid": "32652950",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3632,7 +3632,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32652950/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0169",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0169",
       "pmid": "7984788",
       "year": 1994,
       "targetId": "high_dose_vitd_calcium",
@@ -3654,7 +3654,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/7984788/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0170",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0170",
       "pmid": "30632117",
       "year": 2019,
       "targetId": "high_dose_vitd_calcium",
@@ -3675,7 +3675,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30632117/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0171",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0171",
       "pmid": "32063764",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -3697,7 +3697,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32063764/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0172",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0172",
       "pmid": "41683299",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -3718,7 +3718,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41683299/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0173",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0173",
       "pmid": "35975961",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -3742,7 +3742,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35975961/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0174",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0174",
       "pmid": "23001438",
       "year": 2013,
       "targetId": "high_dose_vitd_calcium",
@@ -3762,7 +3762,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/23001438/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0175",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0175",
       "pmid": "12474635",
       "year": 2002,
       "targetId": "high_dose_vitd_calcium",
@@ -3784,7 +3784,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12474635/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0176",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0176",
       "pmid": "18290725",
       "year": 2007,
       "targetId": "high_dose_vitd_calcium",
@@ -3809,7 +3809,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/18290725/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0177",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0177",
       "pmid": "26473773",
       "year": 2015,
       "targetId": "high_dose_vitd_calcium",
@@ -3834,7 +3834,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/26473773/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0178",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0178",
       "pmid": "36654561",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -3857,7 +3857,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36654561/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0179",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0179",
       "pmid": "30529281",
       "year": 2019,
       "targetId": "high_dose_vitd_calcium",
@@ -3882,7 +3882,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30529281/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0180",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0180",
       "pmid": "38397979",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -3902,7 +3902,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38397979/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0181",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0181",
       "pmid": "37090466",
       "year": 2023,
       "targetId": "high_dose_vitd_calcium",
@@ -3925,7 +3925,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37090466/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0182",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0182",
       "pmid": "41828612",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -3946,7 +3946,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41828612/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0183",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0183",
       "pmid": "39413318",
       "year": 2024,
       "targetId": "high_dose_vitd_calcium",
@@ -3969,7 +3969,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39413318/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0184",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0184",
       "pmid": "25511115",
       "year": 2015,
       "targetId": "high_dose_vitd_calcium",
@@ -3994,7 +3994,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25511115/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0185",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0185",
       "pmid": "10511319",
       "year": 1999,
       "targetId": "high_dose_vitd_calcium",
@@ -4016,7 +4016,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/10511319/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0186",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0186",
       "pmid": "40433721",
       "year": 2025,
       "targetId": "high_dose_vitd_calcium",
@@ -4037,7 +4037,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40433721/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0187",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0187",
       "pmid": "33316222",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -4059,7 +4059,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33316222/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0188",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0188",
       "pmid": "33030138",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -4082,7 +4082,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33030138/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0189",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0189",
       "pmid": "9387131",
       "year": 1997,
       "targetId": "high_dose_vitd_calcium",
@@ -4105,7 +4105,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/9387131/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0190",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0190",
       "pmid": "25290538",
       "year": 2014,
       "targetId": "high_dose_vitd_calcium",
@@ -4126,7 +4126,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25290538/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0191",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0191",
       "pmid": "30851716",
       "year": 2019,
       "targetId": "high_dose_vitd_calcium",
@@ -4149,7 +4149,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30851716/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0192",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0192",
       "pmid": "34258083",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -4174,7 +4174,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34258083/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0193",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0193",
       "pmid": "24753153",
       "year": 2014,
       "targetId": "high_dose_vitd_calcium",
@@ -4196,7 +4196,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/24753153/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0194",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0194",
       "pmid": "31605425",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -4217,7 +4217,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31605425/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0195",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0195",
       "pmid": "12015155",
       "year": 2002,
       "targetId": "high_dose_vitd_calcium",
@@ -4238,7 +4238,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12015155/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0196",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0196",
       "pmid": "30042334",
       "year": 2018,
       "targetId": "high_dose_vitd_calcium",
@@ -4258,7 +4258,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30042334/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0197",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0197",
       "pmid": "41499143",
       "year": 2026,
       "targetId": "high_dose_vitd_calcium",
@@ -4280,7 +4280,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41499143/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0198",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0198",
       "pmid": "39868552",
       "year": 2025,
       "targetId": "high_dose_vitd_calcium",
@@ -4304,7 +4304,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39868552/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0199",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0199",
       "pmid": "25635597",
       "year": 2015,
       "targetId": "high_dose_vitd_calcium",
@@ -4325,7 +4325,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25635597/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0200",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0200",
       "pmid": "32684163",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -4345,7 +4345,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32684163/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0201",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0201",
       "pmid": "35420658",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -4370,7 +4370,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35420658/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0202",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0202",
       "pmid": "32777848",
       "year": 2020,
       "targetId": "high_dose_vitd_calcium",
@@ -4391,7 +4391,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32777848/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0203",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0203",
       "pmid": "36235726",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -4413,7 +4413,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36235726/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0204",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0204",
       "pmid": "35516667",
       "year": 2022,
       "targetId": "high_dose_vitd_calcium",
@@ -4435,7 +4435,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35516667/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0205",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0205",
       "pmid": "34083750",
       "year": 2021,
       "targetId": "high_dose_vitd_calcium",
@@ -4455,7 +4455,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34083750/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0206",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0206",
       "pmid": "37447150",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4481,7 +4481,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37447150/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0207",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0207",
       "pmid": "31515515",
       "year": 2019,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4502,7 +4502,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31515515/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0208",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0208",
       "pmid": "38311315",
       "year": 2024,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4523,7 +4523,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38311315/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0209",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0209",
       "pmid": "33912895",
       "year": 2021,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4544,7 +4544,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33912895/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0210",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0210",
       "pmid": "31837157",
       "year": 2020,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4564,7 +4564,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31837157/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0211",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0211",
       "pmid": "1463588",
       "year": 1992,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4585,7 +4585,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/1463588/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0212",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0212",
       "pmid": "16155443",
       "year": 2005,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4605,7 +4605,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/16155443/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0213",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0213",
       "pmid": "30562392",
       "year": 2018,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4629,7 +4629,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30562392/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0214",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0214",
       "pmid": "37786445",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4650,7 +4650,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37786445/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0215",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0215",
       "pmid": "36608063",
       "year": 2021,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4677,7 +4677,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36608063/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0216",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0216",
       "pmid": "36524152",
       "year": 2022,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4700,7 +4700,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36524152/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0217",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0217",
       "pmid": "39339645",
       "year": 2024,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4719,7 +4719,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39339645/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0218",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0218",
       "pmid": "1677062",
       "year": 1991,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4740,7 +4740,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/1677062/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0219",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0219",
       "pmid": "6087425",
       "year": 1982,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4763,7 +4763,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/6087425/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0220",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0220",
       "pmid": "30022794",
       "year": 2018,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4785,7 +4785,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30022794/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0221",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0221",
       "pmid": "39135540",
       "year": 2024,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4807,7 +4807,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39135540/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0222",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0222",
       "pmid": "30556597",
       "year": 2018,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4829,7 +4829,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30556597/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0223",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0223",
       "pmid": "33824024",
       "year": 2021,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4848,7 +4848,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33824024/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0224",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0224",
       "pmid": "30838307",
       "year": 2019,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4871,7 +4871,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30838307/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0225",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0225",
       "pmid": "17872812",
       "year": 2007,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4893,7 +4893,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/17872812/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0226",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0226",
       "pmid": "16625530",
       "year": 2006,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4916,7 +4916,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/16625530/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0227",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0227",
       "pmid": "28233512",
       "year": 2017,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4936,7 +4936,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/28233512/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0228",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0228",
       "pmid": "22426157",
       "year": 2012,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4956,7 +4956,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/22426157/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0229",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0229",
       "pmid": "36791631",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -4981,7 +4981,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36791631/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0230",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0230",
       "pmid": "2162644",
       "year": 1990,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5003,7 +5003,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/2162644/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0231",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0231",
       "pmid": "1770192",
       "year": 1991,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5025,7 +5025,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/1770192/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0232",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0232",
       "pmid": "33875038",
       "year": 2022,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5045,7 +5045,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33875038/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0233",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0233",
       "pmid": "35810581",
       "year": 2022,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5063,7 +5063,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35810581/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0234",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0234",
       "pmid": "26039815",
       "year": 2015,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5086,7 +5086,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/26039815/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0235",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0235",
       "pmid": "40129048",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5105,7 +5105,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40129048/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0236",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0236",
       "pmid": "38213037",
       "year": 2024,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5130,7 +5130,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38213037/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0237",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0237",
       "pmid": "6269259",
       "year": 1980,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5151,7 +5151,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/6269259/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0238",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0238",
       "pmid": "9250127",
       "year": 1997,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5172,7 +5172,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/9250127/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0239",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0239",
       "pmid": "32279306",
       "year": 2020,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5195,7 +5195,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32279306/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0240",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0240",
       "pmid": "28816346",
       "year": 2017,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5216,7 +5216,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/28816346/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0241",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0241",
       "pmid": "25137514",
       "year": 2014,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5237,7 +5237,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25137514/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0242",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0242",
       "pmid": "37231628",
       "year": 2024,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5262,7 +5262,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37231628/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0243",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0243",
       "pmid": "24615445",
       "year": 2014,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5284,7 +5284,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/24615445/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0244",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0244",
       "pmid": "28556429",
       "year": 2018,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5306,7 +5306,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/28556429/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0245",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0245",
       "pmid": "30383288",
       "year": 2018,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5328,7 +5328,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30383288/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0246",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0246",
       "pmid": "37603058",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5347,7 +5347,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37603058/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0247",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0247",
       "pmid": "35819060",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5369,7 +5369,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35819060/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0248",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0248",
       "pmid": "25590290",
       "year": 2015,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5390,7 +5390,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25590290/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0249",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0249",
       "pmid": "31526351",
       "year": 2020,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5409,7 +5409,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31526351/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0250",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0250",
       "pmid": "32878163",
       "year": 2020,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5428,7 +5428,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32878163/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0251",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0251",
       "pmid": "34931740",
       "year": 2022,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5452,7 +5452,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34931740/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0252",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0252",
       "pmid": "41619753",
       "year": 2026,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5475,7 +5475,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41619753/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0253",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0253",
       "pmid": "40303879",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5495,7 +5495,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40303879/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0254",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0254",
       "pmid": "26440850",
       "year": 2015,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5516,7 +5516,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/26440850/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0255",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0255",
       "pmid": "40418248",
       "year": 2025,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5538,7 +5538,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40418248/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0256",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0256",
       "pmid": "31155015",
       "year": 2019,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5560,7 +5560,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31155015/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0257",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0257",
       "pmid": "38098895",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5583,7 +5583,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38098895/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0258",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0258",
       "pmid": "14971437",
       "year": 2004,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5604,7 +5604,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/14971437/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0259",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0259",
       "pmid": "15756083",
       "year": 2005,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5625,7 +5625,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/15756083/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0260",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0260",
       "pmid": "16763894",
       "year": 2006,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5645,7 +5645,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/16763894/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0261",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0261",
       "pmid": "39270087",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5664,7 +5664,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39270087/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0262",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0262",
       "pmid": "15098856",
       "year": 2004,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5686,7 +5686,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/15098856/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0263",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0263",
       "pmid": "29737502",
       "year": 2018,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5709,7 +5709,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/29737502/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0264",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0264",
       "pmid": "22742602",
       "year": 2012,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5732,7 +5732,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/22742602/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0265",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0265",
       "pmid": "36922273",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5751,7 +5751,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36922273/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0266",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0266",
       "pmid": "39364056",
       "year": 2024,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5772,7 +5772,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39364056/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0267",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0267",
       "pmid": "33684562",
       "year": 2021,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5794,7 +5794,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33684562/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0268",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0268",
       "pmid": "36875946",
       "year": 2022,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5814,7 +5814,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/36875946/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0269",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0269",
       "pmid": "25579852",
       "year": 2015,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5837,7 +5837,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25579852/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0270",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0270",
       "pmid": "12069675",
       "year": 2002,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5857,7 +5857,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12069675/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0271",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0271",
       "pmid": "25961321",
       "year": 2015,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5878,7 +5878,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25961321/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0272",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0272",
       "pmid": "37697258",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5903,7 +5903,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37697258/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0273",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0273",
       "pmid": "16702346",
       "year": 2006,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5923,7 +5923,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/16702346/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0274",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0274",
       "pmid": "22044276",
       "year": 2012,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5944,7 +5944,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/22044276/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0275",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0275",
       "pmid": "34547524",
       "year": 2022,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5966,7 +5966,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34547524/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0276",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0276",
       "pmid": "17176168",
       "year": 2006,
       "targetId": "b6_bcomplex_neuropathy",
@@ -5987,7 +5987,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/17176168/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0277",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0277",
       "pmid": "22023381",
       "year": 2013,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6009,7 +6009,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/22023381/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0278",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0278",
       "pmid": "9427014",
       "year": 1997,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6031,7 +6031,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/9427014/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0279",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0279",
       "pmid": "23647723",
       "year": 2013,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6055,7 +6055,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/23647723/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0280",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0280",
       "pmid": "29897291",
       "year": 2019,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6074,7 +6074,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/29897291/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0281",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0281",
       "pmid": "38021490",
       "year": 2023,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6095,7 +6095,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38021490/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0282",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0282",
       "pmid": "17764205",
       "year": 2006,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6118,7 +6118,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/17764205/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0283",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0283",
       "pmid": "25056196",
       "year": 2014,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6139,7 +6139,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25056196/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0284",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0284",
       "pmid": "25162163",
       "year": 2014,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6161,7 +6161,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25162163/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0285",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0285",
       "pmid": "31917143",
       "year": 2020,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6184,7 +6184,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31917143/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0286",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0286",
       "pmid": "24813907",
       "year": 2014,
       "targetId": "b6_bcomplex_neuropathy",
@@ -6206,7 +6206,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/24813907/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0287",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0287",
       "pmid": "35068123",
       "year": 2022,
       "targetId": "mineral_gi_interaction",
@@ -6230,7 +6230,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35068123/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0288",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0288",
       "pmid": "38367035",
       "year": 2024,
       "targetId": "mineral_gi_interaction",
@@ -6253,7 +6253,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38367035/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0289",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0289",
       "pmid": "33525523",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6272,7 +6272,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33525523/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0290",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0290",
       "pmid": "33767108",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6299,7 +6299,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33767108/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0291",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0291",
       "pmid": "40603803",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -6323,7 +6323,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40603803/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0292",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0292",
       "pmid": "26371734",
       "year": 2015,
       "targetId": "mineral_gi_interaction",
@@ -6345,7 +6345,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/26371734/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0293",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0293",
       "pmid": "34642269",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6369,7 +6369,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34642269/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0294",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0294",
       "pmid": "18095746",
       "year": 2008,
       "targetId": "mineral_gi_interaction",
@@ -6394,7 +6394,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/18095746/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0295",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0295",
       "pmid": "39940312",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -6418,7 +6418,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39940312/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0296",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0296",
       "pmid": "40888045",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -6442,7 +6442,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40888045/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0297",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0297",
       "pmid": "2407097",
       "year": 1990,
       "targetId": "mineral_gi_interaction",
@@ -6464,7 +6464,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/2407097/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0298",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0298",
       "pmid": "32360756",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6489,7 +6489,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32360756/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0299",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0299",
       "pmid": "32969946",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6511,7 +6511,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32969946/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0300",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0300",
       "pmid": "32718584",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6537,7 +6537,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32718584/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0301",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0301",
       "pmid": "14505158",
       "year": 2003,
       "targetId": "mineral_gi_interaction",
@@ -6556,7 +6556,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/14505158/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0302",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0302",
       "pmid": "7786695",
       "year": 1994,
       "targetId": "mineral_gi_interaction",
@@ -6573,7 +6573,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/7786695/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0303",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0303",
       "pmid": "35276810",
       "year": 2022,
       "targetId": "mineral_gi_interaction",
@@ -6598,7 +6598,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35276810/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0304",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0304",
       "pmid": "39693029",
       "year": 2024,
       "targetId": "mineral_gi_interaction",
@@ -6621,7 +6621,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39693029/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0305",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0305",
       "pmid": "37814433",
       "year": 2023,
       "targetId": "mineral_gi_interaction",
@@ -6644,7 +6644,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37814433/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0306",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0306",
       "pmid": "37047530",
       "year": 2023,
       "targetId": "mineral_gi_interaction",
@@ -6665,7 +6665,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37047530/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0307",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0307",
       "pmid": "10801947",
       "year": 2000,
       "targetId": "mineral_gi_interaction",
@@ -6688,7 +6688,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/10801947/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0308",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0308",
       "pmid": "10980978",
       "year": 1999,
       "targetId": "mineral_gi_interaction",
@@ -6710,7 +6710,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/10980978/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0309",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0309",
       "pmid": "7879732",
       "year": 1995,
       "targetId": "mineral_gi_interaction",
@@ -6733,7 +6733,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/7879732/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0310",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0310",
       "pmid": "41060063",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -6755,7 +6755,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41060063/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0311",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0311",
       "pmid": "9701159",
       "year": 1998,
       "targetId": "mineral_gi_interaction",
@@ -6779,7 +6779,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/9701159/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0312",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0312",
       "pmid": "34538035",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6801,7 +6801,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34538035/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0313",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0313",
       "pmid": "23945676",
       "year": 2013,
       "targetId": "mineral_gi_interaction",
@@ -6824,7 +6824,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/23945676/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0314",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0314",
       "pmid": "15743019",
       "year": 2004,
       "targetId": "mineral_gi_interaction",
@@ -6844,7 +6844,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/15743019/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0315",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0315",
       "pmid": "39582678",
       "year": 2024,
       "targetId": "mineral_gi_interaction",
@@ -6868,7 +6868,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/39582678/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0316",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0316",
       "pmid": "34573676",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6892,7 +6892,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34573676/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0317",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0317",
       "pmid": "37418874",
       "year": 2023,
       "targetId": "mineral_gi_interaction",
@@ -6916,7 +6916,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37418874/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0318",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0318",
       "pmid": "10801946",
       "year": 2000,
       "targetId": "mineral_gi_interaction",
@@ -6939,7 +6939,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/10801946/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0319",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0319",
       "pmid": "32664341",
       "year": 2020,
       "targetId": "mineral_gi_interaction",
@@ -6958,7 +6958,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32664341/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0320",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0320",
       "pmid": "34202347",
       "year": 2021,
       "targetId": "mineral_gi_interaction",
@@ -6982,7 +6982,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/34202347/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0321",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0321",
       "pmid": "32461401",
       "year": 2020,
       "targetId": "mineral_gi_interaction",
@@ -7003,7 +7003,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/32461401/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0322",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0322",
       "pmid": "40597553",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -7024,7 +7024,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40597553/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0323",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0323",
       "pmid": "12455225",
       "year": 2002,
       "targetId": "mineral_gi_interaction",
@@ -7047,7 +7047,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12455225/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0324",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0324",
       "pmid": "29661354",
       "year": 2018,
       "targetId": "mineral_gi_interaction",
@@ -7067,7 +7067,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/29661354/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0325",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0325",
       "pmid": "31412634",
       "year": 2019,
       "targetId": "mineral_gi_interaction",
@@ -7089,7 +7089,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31412634/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0326",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0326",
       "pmid": "35294077",
       "year": 2022,
       "targetId": "mineral_gi_interaction",
@@ -7114,7 +7114,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35294077/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0327",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0327",
       "pmid": "21462108",
       "year": 2010,
       "targetId": "mineral_gi_interaction",
@@ -7136,7 +7136,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/21462108/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0328",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0328",
       "pmid": "11165888",
       "year": 2001,
       "targetId": "mineral_gi_interaction",
@@ -7158,7 +7158,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/11165888/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0329",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0329",
       "pmid": "38235788",
       "year": 2024,
       "targetId": "mineral_gi_interaction",
@@ -7181,7 +7181,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38235788/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0330",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0330",
       "pmid": "26956254",
       "year": 2016,
       "targetId": "mineral_gi_interaction",
@@ -7204,7 +7204,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/26956254/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0331",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0331",
       "pmid": "9240918",
       "year": 1997,
       "targetId": "mineral_gi_interaction",
@@ -7228,7 +7228,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/9240918/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0332",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0332",
       "pmid": "24195595",
       "year": 2013,
       "targetId": "mineral_gi_interaction",
@@ -7250,7 +7250,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/24195595/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0333",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0333",
       "pmid": "29484538",
       "year": 2018,
       "targetId": "mineral_gi_interaction",
@@ -7271,7 +7271,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/29484538/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0334",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0334",
       "pmid": "2697140",
       "year": 1989,
       "targetId": "mineral_gi_interaction",
@@ -7293,7 +7293,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/2697140/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0335",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0335",
       "pmid": "12730454",
       "year": 2003,
       "targetId": "mineral_gi_interaction",
@@ -7316,7 +7316,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12730454/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0336",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0336",
       "pmid": "38423387",
       "year": 2024,
       "targetId": "mineral_gi_interaction",
@@ -7338,7 +7338,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38423387/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0337",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0337",
       "pmid": "21462113",
       "year": 2010,
       "targetId": "mineral_gi_interaction",
@@ -7360,7 +7360,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/21462113/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0338",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0338",
       "pmid": "30263400",
       "year": 2016,
       "targetId": "mineral_gi_interaction",
@@ -7383,7 +7383,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30263400/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0339",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0339",
       "pmid": "12949399",
       "year": 2003,
       "targetId": "mineral_gi_interaction",
@@ -7407,7 +7407,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12949399/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0340",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0340",
       "pmid": "40526762",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -7430,7 +7430,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40526762/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0341",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0341",
       "pmid": "16711471",
       "year": 2005,
       "targetId": "mineral_gi_interaction",
@@ -7452,7 +7452,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/16711471/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0342",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0342",
       "pmid": "33147581",
       "year": 2020,
       "targetId": "mineral_gi_interaction",
@@ -7476,7 +7476,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/33147581/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0343",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0343",
       "pmid": "1984334",
       "year": 1991,
       "targetId": "mineral_gi_interaction",
@@ -7500,7 +7500,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/1984334/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0344",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0344",
       "pmid": "11925486",
       "year": 2002,
       "targetId": "mineral_gi_interaction",
@@ -7523,7 +7523,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/11925486/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0345",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0345",
       "pmid": "6765389",
       "year": 1982,
       "targetId": "mineral_gi_interaction",
@@ -7547,7 +7547,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/6765389/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0346",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0346",
       "pmid": "6293043",
       "year": 1982,
       "targetId": "mineral_gi_interaction",
@@ -7569,7 +7569,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/6293043/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0347",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0347",
       "pmid": "7770189",
       "year": 1995,
       "targetId": "mineral_gi_interaction",
@@ -7592,7 +7592,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/7770189/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0348",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0348",
       "pmid": "11531150",
       "year": 2001,
       "targetId": "mineral_gi_interaction",
@@ -7613,7 +7613,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/11531150/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0349",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0349",
       "pmid": "11285353",
       "year": 2001,
       "targetId": "mineral_gi_interaction",
@@ -7636,7 +7636,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/11285353/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0350",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0350",
       "pmid": "2693644",
       "year": 1989,
       "targetId": "mineral_gi_interaction",
@@ -7660,7 +7660,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/2693644/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0351",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0351",
       "pmid": "1844992",
       "year": 1991,
       "targetId": "mineral_gi_interaction",
@@ -7684,7 +7684,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/1844992/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0352",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0352",
       "pmid": "3973750",
       "year": 1985,
       "targetId": "mineral_gi_interaction",
@@ -7708,7 +7708,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/3973750/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0353",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0353",
       "pmid": "10721903",
       "year": 2000,
       "targetId": "mineral_gi_interaction",
@@ -7731,7 +7731,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/10721903/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0354",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0354",
       "pmid": "12030275",
       "year": 2002,
       "targetId": "mineral_gi_interaction",
@@ -7754,7 +7754,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12030275/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0355",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0355",
       "pmid": "3031416",
       "year": 1987,
       "targetId": "mineral_gi_interaction",
@@ -7778,7 +7778,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/3031416/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0356",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0356",
       "pmid": "23394991",
       "year": 2013,
       "targetId": "mineral_gi_interaction",
@@ -7801,7 +7801,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/23394991/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0357",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0357",
       "pmid": "21421535",
       "year": 2011,
       "targetId": "mineral_gi_interaction",
@@ -7821,7 +7821,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/21421535/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0358",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0358",
       "pmid": "31092704",
       "year": 2019,
       "targetId": "mineral_gi_interaction",
@@ -7843,7 +7843,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/31092704/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0359",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0359",
       "pmid": "41355657",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -7864,7 +7864,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/41355657/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0360",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0360",
       "pmid": "35943487",
       "year": 2022,
       "targetId": "mineral_gi_interaction",
@@ -7891,7 +7891,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/35943487/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0361",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0361",
       "pmid": "40072480",
       "year": 2025,
       "targetId": "mineral_gi_interaction",
@@ -7914,7 +7914,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/40072480/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0362",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0362",
       "pmid": "22409531",
       "year": 2012,
       "targetId": "mineral_gi_interaction",
@@ -7933,7 +7933,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/22409531/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0363",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0363",
       "pmid": "8394500",
       "year": 1993,
       "targetId": "mineral_gi_interaction",
@@ -7957,7 +7957,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/8394500/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0364",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0364",
       "pmid": "30691123",
       "year": 2019,
       "targetId": "mineral_gi_interaction",
@@ -7979,7 +7979,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/30691123/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0365",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0365",
       "pmid": "3005669",
       "year": 1986,
       "targetId": "mineral_gi_interaction",
@@ -8000,7 +8000,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/3005669/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0366",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0366",
       "pmid": "12840181",
       "year": 2003,
       "targetId": "mineral_gi_interaction",
@@ -8022,7 +8022,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/12840181/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0367",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0367",
       "pmid": "1969784",
       "year": 1990,
       "targetId": "mineral_gi_interaction",
@@ -8044,7 +8044,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/1969784/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0368",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0368",
       "pmid": "25310742",
       "year": 2014,
       "targetId": "mineral_gi_interaction",
@@ -8068,7 +8068,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25310742/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0369",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0369",
       "pmid": "38641845",
       "year": 2024,
       "targetId": "mineral_gi_interaction",
@@ -8094,7 +8094,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/38641845/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0370",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0370",
       "pmid": "27364763",
       "year": 2016,
       "targetId": "mineral_gi_interaction",
@@ -8114,7 +8114,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/27364763/"
     },
     {
-      "id": "kwon_otc_nutrients-candidate-0371",
+      "id": "kwon-high-dose-otc-nutrient-safety-candidate-0371",
       "pmid": "33758936",
       "year": 2021,
       "targetId": "mineral_gi_interaction",

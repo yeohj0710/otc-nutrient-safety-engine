@@ -15,9 +15,13 @@ SEARCH_RUN_COLUMNS = [
     "filters",
     "search_date",
     "hit_count",
+    "exported_count",
+    "imported_count",
     "max_records",
+    "retrieval_mode",
     "export_method",
     "raw_path",
+    "raw_file_sha256",
     "status",
     "notes",
 ]
@@ -86,9 +90,13 @@ class SearchRun(CsvModel):
     filters: str = ""
     search_date: str = Field(default_factory=lambda: date.today().isoformat())
     hit_count: int = 0
+    exported_count: int = 0
+    imported_count: int = 0
     max_records: int = 0
+    retrieval_mode: str = "full"
     export_method: str = ""
     raw_path: str = ""
+    raw_file_sha256: str = ""
     status: str = "completed"
     notes: str = ""
 

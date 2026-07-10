@@ -74,16 +74,37 @@ function toNumber(value: string | undefined) {
   return Number.isFinite(parsed) ? parsed : 0;
 }
 
-function detectStudyLabel() {
-  return process.cwd().includes("otc-nutrient-safety-engine") ? "권혁찬" : "여형준";
+function latestSearchTimestamp(searchRows: CsvRecord[]) {
+  const latestDate = searchRows.reduce(
+    (latest, row) => (row.search_date > latest ? row.search_date : latest),
+    "",
+  );
+  return latestDate ? `${latestDate}T00:00:00.000Z` : "1970-01-01T00:00:00.000Z";
 }
 
-function detectStudyId(studyLabel: string) {
-  return studyLabel === "권혁찬" ? "kwon_otc_nutrients" : "yeohj_anticoag_renal";
+function readProjectIdentity() {
+  const identityPath = path.join(
+    process.cwd(),
+    "research_v2",
+    "project_identity.json",
+  );
+  const identity = JSON.parse(readFileSync(identityPath, "utf8")) as {
+    student_name?: string;
+    study_slug?: string;
+  };
+
+  if (identity.student_name !== "권혁찬" || !identity.study_slug) {
+    throw new Error(`unexpected project identity: ${identityPath}`);
+  }
+
+  return {
+    studyId: identity.study_slug,
+    studyLabel: identity.student_name,
+  };
 }
 
 function buildDataset() {
-  const studyLabel = detectStudyLabel();
+  const projectIdentity = readProjectIdentity();
   const searchRows = readSearchCsv("search_runs.csv");
   const retrievedRows = readSearchCsv("retrieved_records.csv");
   const screeningRows = readSearchCsv("screening_log.csv");
@@ -95,9 +116,9 @@ function buildDataset() {
   );
 
   const summary = {
-    studyId: detectStudyId(studyLabel),
-    studyLabel,
-    generatedAt: new Date().toISOString(),
+    studyId: projectIdentity.studyId,
+    studyLabel: projectIdentity.studyLabel,
+    generatedAt: latestSearchTimestamp(searchRows),
     primarySearchRuns: searchRows.length,
     latestPubMedHitCount: searchRows.reduce(
       (sum, row) => sum + toNumber(row.hit_count),

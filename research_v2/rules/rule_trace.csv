@@ -1,0 +1,1 @@
+﻿rule_id,clinical_node_id,ingredient_id,population_summary,medication_summary,dose_condition,duration_condition,outcome_id,action_class,severity,message_short,uncertainty_statement,certainty_grade,evidence_ids,source_quote_ids,reviewer_ids,status,valid_from,review_due

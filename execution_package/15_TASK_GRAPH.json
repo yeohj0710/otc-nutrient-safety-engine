@@ -1,0 +1,590 @@
+{
+  "project": "Yeo graduation thesis redesign",
+  "version": "2026-07-10",
+  "phases": [
+    {
+      "phase": "P0",
+      "name": "Identity and legacy audit",
+      "tasks": [
+        {
+          "id": "P0-T1",
+          "title": "Inspect git remote, project identity, deployment and student markers",
+          "depends_on": [],
+          "artifacts": [
+            "research_v2/audit/repo_identity.json"
+          ],
+          "acceptance_criteria": [
+            "All identity fields match Yeo or mismatch is explicitly isolated"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P0-T2",
+          "title": "Inventory and quarantine legacy assets",
+          "depends_on": [
+            "P0-T1"
+          ],
+          "artifacts": [
+            "research_v2/audit/legacy_inventory.csv",
+            "research_v2/legacy_untrusted/README.md"
+          ],
+          "acceptance_criteria": [
+            "No legacy metric is imported into v2 without provenance"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P0-T3",
+          "title": "Implement Gate 0 automated test",
+          "depends_on": [
+            "P0-T1"
+          ],
+          "artifacts": [
+            "scripts/check_project_identity.py"
+          ],
+          "acceptance_criteria": [
+            "Test fails on Kwon markers in Yeo release data"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P1",
+      "name": "Protocol and registration",
+      "tasks": [
+        {
+          "id": "P1-T1",
+          "title": "Finalize protocol and clinical nodes",
+          "depends_on": [
+            "P0-T2"
+          ],
+          "artifacts": [
+            "research_v2/protocol/protocol.md",
+            "research_v2/protocol/eligibility.json"
+          ],
+          "acceptance_criteria": [
+            "Five nodes and outcomes fixed; amendments process present"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P1-T2",
+          "title": "Freeze protocol hash and register",
+          "depends_on": [
+            "P1-T1"
+          ],
+          "artifacts": [
+            "research_v2/protocol/protocol.sha256",
+            "research_v2/protocol/registration.json"
+          ],
+          "acceptance_criteria": [
+            "Timestamp, commit and public/private registration location recorded"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P2",
+      "name": "Search",
+      "tasks": [
+        {
+          "id": "P2-T1",
+          "title": "Develop and peer-review database search strategies",
+          "depends_on": [
+            "P1-T1"
+          ],
+          "artifacts": [
+            "research_v2/search/search_strategies.csv",
+            "research_v2/search/peer_review.csv"
+          ],
+          "acceptance_criteria": [
+            "Seed set retrieved; platform translations checked"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P2-T2",
+          "title": "Run full searches and preserve raw exports",
+          "depends_on": [
+            "P2-T1"
+          ],
+          "artifacts": [
+            "research_v2/search/search_run_log.csv",
+            "research_v2/search/raw/"
+          ],
+          "acceptance_criteria": [
+            "No top-N truncation; hit/export/import reconciled"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P2-T3",
+          "title": "Deduplicate and build study families",
+          "depends_on": [
+            "P2-T2"
+          ],
+          "artifacts": [
+            "research_v2/search/normalized/records.parquet",
+            "research_v2/search/dedup_log.csv"
+          ],
+          "acceptance_criteria": [
+            "Duplicate audit sample reviewed; study families linked"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P3",
+      "name": "Screening and full text",
+      "tasks": [
+        {
+          "id": "P3-T1",
+          "title": "Create calibration and gold-standard screening sets",
+          "depends_on": [
+            "P2-T3"
+          ],
+          "artifacts": [
+            "research_v2/ai_eval/screening_gold.csv",
+            "research_v2/screening/calibration.csv"
+          ],
+          "acceptance_criteria": [
+            "At least 300 gold items and 60 positives; group split"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P3-T2",
+          "title": "Complete title/abstract screening",
+          "depends_on": [
+            "P3-T1"
+          ],
+          "artifacts": [
+            "research_v2/screening/title_abstract.csv"
+          ],
+          "acceptance_criteria": [
+            "All records adjudicated; AI made no final exclusions"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P3-T3",
+          "title": "Retrieve and assess full texts",
+          "depends_on": [
+            "P3-T2"
+          ],
+          "artifacts": [
+            "research_v2/full_text/retrieval_log.csv",
+            "research_v2/screening/full_text.csv"
+          ],
+          "acceptance_criteria": [
+            "Every report has decision or documented retrieval attempts"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P3-T4",
+          "title": "Generate validated PRISMA counts",
+          "depends_on": [
+            "P3-T3"
+          ],
+          "artifacts": [
+            "research_v2/screening/prisma_counts.json",
+            "research_v2/screening/prisma_flow.svg"
+          ],
+          "acceptance_criteria": [
+            "Arithmetic checks pass; studies and reports distinguished"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P4",
+      "name": "Extraction and evidence appraisal",
+      "tasks": [
+        {
+          "id": "P4-T1",
+          "title": "Pilot and complete verified extraction",
+          "depends_on": [
+            "P3-T3"
+          ],
+          "artifacts": [
+            "research_v2/extraction/extraction.csv",
+            "research_v2/extraction/source_quotes.csv"
+          ],
+          "acceptance_criteria": [
+            "All included studies have verified values, units and locators"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P4-T2",
+          "title": "Assess risk of bias",
+          "depends_on": [
+            "P4-T1"
+          ],
+          "artifacts": [
+            "research_v2/risk_of_bias/assessments.csv"
+          ],
+          "acceptance_criteria": [
+            "Design-appropriate tools; disagreements adjudicated"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P4-T3",
+          "title": "Grade certainty by outcome",
+          "depends_on": [
+            "P4-T2"
+          ],
+          "artifacts": [
+            "research_v2/synthesis/grade.csv"
+          ],
+          "acceptance_criteria": [
+            "All critical outcomes have domain rationale"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P5",
+      "name": "AI evaluation",
+      "tasks": [
+        {
+          "id": "P5-T1",
+          "title": "Freeze models and prompts",
+          "depends_on": [
+            "P3-T1"
+          ],
+          "artifacts": [
+            "research_v2/ai_eval/run_manifest.json",
+            "research_v2/ai_eval/prompts/"
+          ],
+          "acceptance_criteria": [
+            "Model versions, prompt hashes and parameters recorded"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P5-T2",
+          "title": "Evaluate screening on held-out set",
+          "depends_on": [
+            "P5-T1",
+            "P3-T2"
+          ],
+          "artifacts": [
+            "research_v2/ai_eval/screening_predictions.csv",
+            "research_v2/ai_eval/screening_metrics.json"
+          ],
+          "acceptance_criteria": [
+            "Recall, precision, specificity, F1 and CIs reported"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P5-T3",
+          "title": "Evaluate full-text extraction",
+          "depends_on": [
+            "P5-T1",
+            "P4-T1"
+          ],
+          "artifacts": [
+            "research_v2/ai_eval/extraction_predictions.csv",
+            "research_v2/ai_eval/extraction_metrics.json"
+          ],
+          "acceptance_criteria": [
+            "Field, numeric, locator, unsupported and omission rates reported"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P5-T4",
+          "title": "Analyze AI errors and set permitted use",
+          "depends_on": [
+            "P5-T2",
+            "P5-T3"
+          ],
+          "artifacts": [
+            "research_v2/ai_eval/error_taxonomy.csv",
+            "research_v2/ai_eval/use_boundary.md"
+          ],
+          "acceptance_criteria": [
+            "At least 10 concrete error cases; use reduced if thresholds fail"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P6",
+      "name": "Evidence synthesis",
+      "tasks": [
+        {
+          "id": "P6-T1",
+          "title": "Build five-node evidence map",
+          "depends_on": [
+            "P4-T3"
+          ],
+          "artifacts": [
+            "research_v2/synthesis/evidence_map.csv",
+            "research_v2/synthesis/evidence_map.svg"
+          ],
+          "acceptance_criteria": [
+            "Study design, direction, directness, RoB and certainty represented"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P6-T2",
+          "title": "Select focused node by prespecified rule",
+          "depends_on": [
+            "P6-T1"
+          ],
+          "artifacts": [
+            "research_v2/synthesis/focused_node_decision.json"
+          ],
+          "acceptance_criteria": [
+            "All candidate nodes scored before selection"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P6-T3",
+          "title": "Run focused synthesis",
+          "depends_on": [
+            "P6-T2"
+          ],
+          "artifacts": [
+            "research_v2/synthesis/focused_results.json",
+            "research_v2/synthesis/figures/"
+          ],
+          "acceptance_criteria": [
+            "Meta-analysis decision justified; reproducible outputs"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P6-T4",
+          "title": "Freeze evidence",
+          "depends_on": [
+            "P6-T3",
+            "P5-T4"
+          ],
+          "artifacts": [
+            "research_v2/audit/evidence_freeze.json"
+          ],
+          "acceptance_criteria": [
+            "Search, extraction, appraisal, synthesis and AI evaluation complete"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P7",
+      "name": "Rules and software",
+      "tasks": [
+        {
+          "id": "P7-T1",
+          "title": "Create verified source quote and rule dataset",
+          "depends_on": [
+            "P6-T4"
+          ],
+          "artifacts": [
+            "research_v2/rules/source_quotes.jsonl",
+            "research_v2/rules/rules.jsonl"
+          ],
+          "acceptance_criteria": [
+            "Every released rule has quote, locator, certainty and reviewer"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P7-T2",
+          "title": "Refactor deterministic engine and UI",
+          "depends_on": [
+            "P7-T1"
+          ],
+          "artifacts": [
+            "src/engine/",
+            "src/provenance/",
+            "src/ui/"
+          ],
+          "acceptance_criteria": [
+            "Runtime uses released rules only; missing information explicit"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P7-T3",
+          "title": "Run unit, contract and regression tests",
+          "depends_on": [
+            "P7-T2"
+          ],
+          "artifacts": [
+            "research_v2/validation/technical_test_report.json"
+          ],
+          "acceptance_criteria": [
+            "All critical tests pass"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P8",
+      "name": "Independent validation",
+      "tasks": [
+        {
+          "id": "P8-T1",
+          "title": "Create and adjudicate independent scenarios",
+          "depends_on": [
+            "P7-T1"
+          ],
+          "artifacts": [
+            "research_v2/validation/scenario_gold.jsonl"
+          ],
+          "acceptance_criteria": [
+            "At least 100 scenarios; held-out; two reviewers"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        },
+        {
+          "id": "P8-T2",
+          "title": "Evaluate engine and analyze errors",
+          "depends_on": [
+            "P7-T3",
+            "P8-T1"
+          ],
+          "artifacts": [
+            "research_v2/validation/scenario_predictions.jsonl",
+            "research_v2/validation/scenario_metrics.json",
+            "research_v2/validation/error_analysis.md"
+          ],
+          "acceptance_criteria": [
+            "Sensitivity, specificity, macro-F1, CI, critical FN and provenance reported"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P8-T3",
+          "title": "Complete expert content-validity review",
+          "depends_on": [
+            "P7-T1"
+          ],
+          "artifacts": [
+            "research_v2/validation/expert_review.csv",
+            "research_v2/validation/content_validity.json"
+          ],
+          "acceptance_criteria": [
+            "Round-specific I-CVI/S-CVI and revisions reported"
+          ],
+          "human_action_required": true,
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "phase": "P9",
+      "name": "Thesis and release",
+      "tasks": [
+        {
+          "id": "P9-T1",
+          "title": "Generate metrics manifest and claim ledger",
+          "depends_on": [
+            "P8-T2",
+            "P8-T3"
+          ],
+          "artifacts": [
+            "research_v2/thesis/metrics_manifest.json",
+            "research_v2/thesis/claim_ledger.csv"
+          ],
+          "acceptance_criteria": [
+            "Every thesis metric has source and generator"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P9-T2",
+          "title": "Draft thesis after evidence freeze",
+          "depends_on": [
+            "P9-T1"
+          ],
+          "artifacts": [
+            "research_v2/thesis/thesis.docx"
+          ],
+          "acceptance_criteria": [
+            "Methods match execution; Results data-generated; claims traceable"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P9-T3",
+          "title": "Render and visually inspect PDF",
+          "depends_on": [
+            "P9-T2"
+          ],
+          "artifacts": [
+            "research_v2/thesis/thesis.pdf",
+            "research_v2/thesis/render_audit/"
+          ],
+          "acceptance_criteria": [
+            "No overflow, broken tables, missing fonts or citation mismatch"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        },
+        {
+          "id": "P9-T4",
+          "title": "Run all gates and create final release",
+          "depends_on": [
+            "P9-T3"
+          ],
+          "artifacts": [
+            "research_v2/audit/final_gate_report.json",
+            "REPRODUCE.md"
+          ],
+          "acceptance_criteria": [
+            "Gates 0-10 pass or unresolved failures explicitly block release"
+          ],
+          "human_action_required": false,
+          "status": "not_started"
+        }
+      ]
+    }
+  ]
+}

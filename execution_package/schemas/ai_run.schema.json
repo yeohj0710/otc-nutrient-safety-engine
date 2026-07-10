@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIRun",
+  "type": "object",
+  "required": [
+    "run_id",
+    "task",
+    "model",
+    "model_version",
+    "timestamp",
+    "prompt_sha256",
+    "input_sha256",
+    "raw_output_path"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task": {
+      "enum": [
+        "screening",
+        "extraction",
+        "rule_candidate",
+        "verification"
+      ]
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "temperature": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "top_p": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "seed": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "prompt_sha256": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "input_sha256": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "raw_output_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "retry_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "error": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

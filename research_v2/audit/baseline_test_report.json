@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "date_utc": "2026-07-10T02:05:06Z",
+  "git_head": "212510dc368ef2414136bc676729b8f8aab67370",
+  "working_tree_before": "clean",
+  "python_tests": {
+    "runtime": "bundled Python",
+    "status": "fail",
+    "error": "ModuleNotFoundError: No module named 'requests'",
+    "error_code": "X-01"
+  },
+  "node_tests": {
+    "status": "pass",
+    "test_files": 7,
+    "tests": 33
+  },
+  "typecheck": {
+    "status": "pass"
+  },
+  "generated_file_change": {
+    "path": "src/generated/literature-candidates.json",
+    "change": "generatedAt updated from 2026-06-04T12:50:42.689Z to 2026-07-10T02:05:06.529Z",
+    "error_code": "X-02"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GRADEAssessment",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "clinical_node_id",
+    "outcome_id",
+    "importance",
+    "study_count",
+    "starting_level",
+    "domains",
+    "final_certainty",
+    "rationale",
+    "reviewer_ids"
+  ],
+  "properties": {
+    "clinical_node_id": {"enum": ["A1", "A2", "R1", "R2", "R3"]},
+    "outcome_id": {"type": "string"},
+    "importance": {"enum": ["critical", "important", "limited"]},
+    "study_count": {"type": "integer", "minimum": 0},
+    "participants": {"type": ["integer", "null"], "minimum": 0},
+    "starting_level": {"enum": ["high", "low", "mixed"]},
+    "domains": {
+      "type": "object",
+      "required": ["risk_of_bias", "inconsistency", "indirectness", "imprecision", "publication_bias"],
+      "properties": {
+        "risk_of_bias": {"type": "string"},
+        "inconsistency": {"type": "string"},
+        "indirectness": {"type": "string"},
+        "imprecision": {"type": "string"},
+        "publication_bias": {"type": "string"},
+        "rating_up": {"type": ["string", "null"]}
+      }
+    },
+    "final_certainty": {"enum": ["high", "moderate", "low", "very_low"]},
+    "rationale": {"type": "string", "minLength": 1},
+    "reviewer_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  }
+}

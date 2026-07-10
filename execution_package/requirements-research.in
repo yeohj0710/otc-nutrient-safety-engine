@@ -1,0 +1,14 @@
+# Resolve and lock exact versions in the execution repository.
+pandas>=2.2
+pyarrow>=16
+numpy>=2.0
+scipy>=1.13
+statsmodels>=0.14
+scikit-learn>=1.5
+matplotlib>=3.9
+jsonschema>=4.22
+pydantic>=2.7
+jinja2>=3.1
+openpyxl>=3.1
+python-docx>=1.1
+pytest>=8.2

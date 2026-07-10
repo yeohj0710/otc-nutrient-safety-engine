@@ -1,0 +1,35 @@
+(
+  "Zinc"[Mesh]
+  OR "zinc supplement"[tiab]
+  OR "zinc supplements"[tiab]
+  OR "zinc sulfate"[tiab]
+  OR "zinc sulphate"[tiab]
+  OR "zinc gluconate"[tiab]
+  OR "zinc acetate"[tiab]
+  OR "elemental zinc"[tiab]
+)
+AND
+(
+  "Dietary Supplements"[Mesh]
+  OR supplement*[tiab]
+  OR "over the counter"[tiab]
+  OR OTC[tiab]
+  OR oral[tiab]
+  OR lozenge*[tiab]
+)
+AND
+(
+  "Copper Deficiency"[Mesh]
+  OR hypocuprem*[tiab]
+  OR "copper deficiency"[tiab]
+  OR anemia[tiab]
+  OR anaemia[tiab]
+  OR neutropenia[tiab]
+  OR neuropath*[tiab]
+  OR nausea[tiab]
+  OR vomiting[tiab]
+  OR "abdominal pain"[tiab]
+  OR diarrhea[tiab]
+  OR diarrhoea[tiab]
+  OR toxic*[tiab]
+)

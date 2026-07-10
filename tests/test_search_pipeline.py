@@ -3,10 +3,15 @@ from __future__ import annotations
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import Mock
 
 from tools.search_pipeline.curation import _matched_terms
 from tools.search_pipeline.dedup import dedup_retrieved_records
-from tools.search_pipeline.pubmed_adapter import parse_pubmed_xml
+from tools.search_pipeline.pubmed_adapter import (
+    PubMedAdapter,
+    PubMedRetrievalLimitError,
+    parse_pubmed_xml,
+)
 from tools.search_pipeline.ris_parser import parse_ris_file
 from tools.search_pipeline.schemas import RETRIEVED_RECORD_COLUMNS
 from tools.search_pipeline.storage import write_csv_rows
@@ -47,6 +52,49 @@ class PubMedParserTest(unittest.TestCase):
         self.assertEqual(records[0].doi, "10.1000/example")
         self.assertEqual(records[0].year, "2024")
         self.assertIn("Warfarin users", records[0].abstract_or_summary)
+
+
+class PubMedFullRetrievalTest(unittest.TestCase):
+    def test_full_retrieval_rejects_result_over_10000(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            adapter = PubMedAdapter(email="test@example.com", output_root=Path(tmp))
+            adapter._esearch = Mock(
+                return_value={"esearchresult": {"count": "10001", "idlist": []}}
+            )
+
+            with self.assertRaisesRegex(
+                PubMedRetrievalLimitError, "segment the query"
+            ):
+                adapter.run(target_id="K1", query="vitamin D", max_records=None)
+
+    def test_full_retrieval_requests_and_imports_every_uid_under_limit(self) -> None:
+        count_payload = {"esearchresult": {"count": "3", "idlist": []}}
+        uid_payload = {
+            "esearchresult": {"count": "3", "idlist": ["1", "2", "3"]}
+        }
+        xml = """<?xml version="1.0"?>
+<PubmedArticleSet>
+  <PubmedArticle><MedlineCitation><PMID>1</PMID><Article><ArticleTitle>One</ArticleTitle></Article></MedlineCitation></PubmedArticle>
+  <PubmedArticle><MedlineCitation><PMID>2</PMID><Article><ArticleTitle>Two</ArticleTitle></Article></MedlineCitation></PubmedArticle>
+  <PubmedArticle><MedlineCitation><PMID>3</PMID><Article><ArticleTitle>Three</ArticleTitle></Article></MedlineCitation></PubmedArticle>
+</PubmedArticleSet>
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            adapter = PubMedAdapter(email="test@example.com", output_root=Path(tmp))
+            adapter._esearch = Mock(side_effect=[count_payload, uid_payload])
+            adapter._efetch = Mock(return_value=xml)
+
+            result = adapter.run(
+                target_id="K1", query="vitamin D", max_records=None
+            )
+
+        self.assertEqual(result.search_run.hit_count, 3)
+        self.assertEqual(result.search_run.exported_count, 3)
+        self.assertEqual(result.search_run.imported_count, 3)
+        self.assertEqual(result.search_run.retrieval_mode, "full")
+        self.assertEqual(len(result.records), 3)
+        self.assertEqual(adapter._esearch.call_args_list[0].kwargs["max_records"], 0)
+        self.assertEqual(adapter._esearch.call_args_list[1].kwargs["max_records"], 3)
 
 
 class RisParserTest(unittest.TestCase):

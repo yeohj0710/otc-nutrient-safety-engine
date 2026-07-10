@@ -1,0 +1,31 @@
+{
+  "pass": false,
+  "research_root": "research_v2",
+  "thresholds": {
+    "screening_recall_point_estimate_min": 0.95,
+    "extraction_required_field_accuracy_min": 0.9,
+    "provenance_completeness_required": 1.0,
+    "scenario_hazard_sensitivity_point_estimate_min": 0.95,
+    "sentinel_critical_false_negative_max": 0,
+    "minimum_validation_scenarios": 100,
+    "minimum_screening_gold_items": 300,
+    "minimum_screening_gold_positive": 60,
+    "recommended_validation_scenarios": 120
+  },
+  "released_rule_count": 0,
+  "failures": [
+    "empty_claim_ledger",
+    "empty_search_run_log",
+    "missing:ai_eval/extraction_metrics.json",
+    "missing:ai_eval/screening_metrics.json",
+    "missing:protocol/protocol.md",
+    "missing:protocol/protocol.sha256",
+    "missing:rules/rules.jsonl",
+    "missing:screening/prisma_counts.json",
+    "missing:synthesis/evidence_map.csv",
+    "missing:thesis/metrics_manifest.json",
+    "missing:validation/content_validity.json",
+    "missing:validation/scenario_metrics.json"
+  ],
+  "warnings": []
+}

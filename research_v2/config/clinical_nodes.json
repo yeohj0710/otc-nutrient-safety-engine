@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "nodes": [
+    {
+      "id": "K1",
+      "label_ko": "고함량 비타민 D ± 칼슘",
+      "population": "adults using high-dose vitamin D with or without supplemental calcium",
+      "exposure": "oral vitamin D with or without supplemental calcium",
+      "primary_outcomes": [
+        "hypercalcemia",
+        "hypercalciuria",
+        "nephrolithiasis"
+      ]
+    },
+    {
+      "id": "K2",
+      "label_ko": "고함량 비타민 B6 또는 B군 복합제",
+      "population": "adults using vitamin B6 or B-complex products",
+      "exposure": "oral pyridoxine, pyridoxal-5-phosphate, or B-complex products",
+      "primary_outcomes": [
+        "peripheral neuropathy",
+        "neurotoxicity"
+      ]
+    },
+    {
+      "id": "K3",
+      "label_ko": "자가복용 고함량 철분",
+      "population": "adults using oral iron without a confirmed therapeutic indication or monitoring plan",
+      "exposure": "oral elemental iron supplements or OTC iron products",
+      "primary_outcomes": [
+        "gastrointestinal adverse events",
+        "iron overload"
+      ]
+    },
+    {
+      "id": "K4",
+      "label_ko": "보충제·제산제·완하제형 마그네슘",
+      "population": "adults using supplemental magnesium, including people with impaired renal function",
+      "exposure": "oral supplemental magnesium salts",
+      "primary_outcomes": [
+        "diarrhea",
+        "hypermagnesemia"
+      ]
+    },
+    {
+      "id": "K5",
+      "label_ko": "장기 고함량 아연",
+      "population": "adults using chronic high-dose zinc products",
+      "exposure": "oral zinc supplements or OTC zinc products",
+      "primary_outcomes": [
+        "gastrointestinal adverse events",
+        "copper deficiency"
+      ]
+    }
+  ]
+}

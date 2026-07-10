@@ -1,0 +1,32 @@
+(
+  "Vitamin D"[Mesh]
+  OR "vitamin D"[tiab]
+  OR cholecalciferol[tiab]
+  OR ergocalciferol[tiab]
+  OR calcifediol[tiab]
+)
+AND
+(
+  "Dietary Supplements"[Mesh]
+  OR supplement*[tiab]
+  OR dosing[tiab]
+  OR bolus[tiab]
+  OR "high dose"[tiab]
+  OR "high-dose"[tiab]
+  OR calcium[tiab]
+)
+AND
+(
+  "Hypercalcemia"[Mesh]
+  OR "Hypercalciuria"[Mesh]
+  OR "Kidney Calculi"[Mesh]
+  OR hypercalcem*[tiab]
+  OR hypercalciur*[tiab]
+  OR nephrolithiasis[tiab]
+  OR urolithiasis[tiab]
+  OR "kidney stone"[tiab]
+  OR "kidney stones"[tiab]
+  OR toxic*[tiab]
+  OR "adverse event"[tiab]
+  OR "adverse events"[tiab]
+)

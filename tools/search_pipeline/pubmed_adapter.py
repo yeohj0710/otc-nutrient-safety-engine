@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import os
 import time
 import xml.etree.ElementTree as ET
@@ -24,6 +25,11 @@ from .storage import (
 
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 PUBMED_TOOL_NAME = "nutrition_safety_engine"
+PUBMED_ESEARCH_UID_LIMIT = 10_000
+
+
+class PubMedRetrievalLimitError(RuntimeError):
+    """Raised when a PubMed query must be segmented for complete retrieval."""
 
 
 @dataclass(frozen=True)
@@ -54,7 +60,7 @@ class PubMedAdapter:
         target_id: str,
         query: str,
         filters: str = "",
-        max_records: int = 500,
+        max_records: int | None = None,
         sort: str = "",
         search_date: str | None = None,
     ) -> PubMedResult:
@@ -63,11 +69,87 @@ class PubMedAdapter:
         run_dir = self.output_root / "raw" / "pubmed" / run_id
         run_dir.mkdir(parents=True, exist_ok=True)
 
-        esearch_payload = self._esearch(query=query, max_records=max_records, sort=sort)
+        count_payload = self._esearch(query=query, max_records=0, sort=sort)
+        write_json(run_dir / "esearch_count.json", count_payload)
+        hit_count = int(count_payload.get("esearchresult", {}).get("count", 0))
+
+        if max_records is not None and max_records <= 0:
+            raise ValueError("max_records must be a positive integer or None for full retrieval")
+
+        if max_records is None and hit_count > PUBMED_ESEARCH_UID_LIMIT:
+            search_run = SearchRun(
+                search_run_id=run_id,
+                source="pubmed",
+                target_id=target_id,
+                query=query,
+                mapped_query=query,
+                filters=filters,
+                search_date=search_date or date.today().isoformat(),
+                hit_count=hit_count,
+                exported_count=0,
+                imported_count=0,
+                max_records=0,
+                retrieval_mode="requires_segmentation",
+                export_method="ncbi_eutils_esearch_efetch",
+                raw_path=to_repo_relative(run_dir),
+                raw_file_sha256=raw_directory_sha256(run_dir),
+                status="requires_segmentation",
+                notes="PubMed ESearch UID limit exceeded; no records imported",
+            )
+            append_csv_rows(
+                self.output_root / "search_runs.csv",
+                [search_run.csv_row(SEARCH_RUN_COLUMNS)],
+                SEARCH_RUN_COLUMNS,
+            )
+            raise PubMedRetrievalLimitError(
+                "PubMed ESearch cannot return more than 10,000 UIDs; "
+                "segment the query by date or use EDirect"
+            )
+
+        requested_records = (
+            hit_count if max_records is None else min(max_records, hit_count)
+        )
+        retrieval_mode = "full" if max_records is None else "legacy_capped_debug"
+        esearch_payload = (
+            count_payload
+            if requested_records == 0
+            else self._esearch(
+                query=query, max_records=requested_records, sort=sort
+            )
+        )
         write_json(run_dir / "esearch.json", esearch_payload)
 
         id_list = esearch_payload.get("esearchresult", {}).get("idlist", [])
-        hit_count = int(esearch_payload.get("esearchresult", {}).get("count", 0))
+        if len(id_list) != requested_records:
+            search_run = SearchRun(
+                search_run_id=run_id,
+                source="pubmed",
+                target_id=target_id,
+                query=query,
+                mapped_query=query,
+                filters=filters,
+                search_date=search_date or date.today().isoformat(),
+                hit_count=hit_count,
+                exported_count=len(id_list),
+                imported_count=0,
+                max_records=requested_records,
+                retrieval_mode=retrieval_mode,
+                export_method="ncbi_eutils_esearch_efetch",
+                raw_path=to_repo_relative(run_dir),
+                raw_file_sha256=raw_directory_sha256(run_dir),
+                status="failed_reconciliation",
+                notes=f"expected_uids={requested_records};returned_uids={len(id_list)}",
+            )
+            append_csv_rows(
+                self.output_root / "search_runs.csv",
+                [search_run.csv_row(SEARCH_RUN_COLUMNS)],
+                SEARCH_RUN_COLUMNS,
+            )
+            raise RuntimeError(
+                "PubMed UID reconciliation failed: "
+                f"expected {requested_records}, received {len(id_list)}"
+            )
+
         records: list[RetrievedRecord] = []
 
         for batch_index, pmids in enumerate(_chunks(id_list, 200), start=1):
@@ -92,11 +174,22 @@ class PubMedAdapter:
             filters=filters,
             search_date=search_date or date.today().isoformat(),
             hit_count=hit_count,
-            max_records=max_records,
+            exported_count=len(id_list),
+            imported_count=len(records),
+            max_records=requested_records,
+            retrieval_mode=retrieval_mode,
             export_method="ncbi_eutils_esearch_efetch",
             raw_path=to_repo_relative(run_dir),
-            status="completed",
-            notes=f"retrieved_pmids={len(id_list)};sort={sort or 'pubmed_default'}",
+            raw_file_sha256=raw_directory_sha256(run_dir),
+            status=(
+                "completed"
+                if len(records) == len(id_list)
+                else "failed_reconciliation"
+            ),
+            notes=(
+                f"retrieved_pmids={len(id_list)};parsed_records={len(records)};"
+                f"sort={sort or 'pubmed_default'}"
+            ),
         )
 
         append_csv_rows(
@@ -104,6 +197,11 @@ class PubMedAdapter:
             [search_run.csv_row(SEARCH_RUN_COLUMNS)],
             SEARCH_RUN_COLUMNS,
         )
+        if search_run.status != "completed":
+            raise RuntimeError(
+                "PubMed import reconciliation failed: "
+                f"exported {len(id_list)}, imported {len(records)}"
+            )
         upsert_csv_rows(
             self.output_root / "retrieved_records.csv",
             [record.csv_row(RETRIEVED_RECORD_COLUMNS) for record in records],
@@ -218,6 +316,16 @@ def parse_pubmed_xml(
 def _chunks(items: list[str], size: int) -> Iterable[list[str]]:
     for index in range(0, len(items), size):
         yield items[index : index + size]
+
+
+def raw_directory_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    for file_path in sorted(item for item in path.rglob("*") if item.is_file()):
+        relative = file_path.relative_to(path).as_posix().encode("utf-8")
+        digest.update(relative)
+        digest.update(b"\0")
+        digest.update(hashlib.sha256(file_path.read_bytes()).digest())
+    return digest.hexdigest()
 
 
 def _text(element: ET.Element | None) -> str:

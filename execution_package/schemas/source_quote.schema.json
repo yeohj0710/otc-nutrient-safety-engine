@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceQuote",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "quote_id",
+    "evidence_id",
+    "report_id",
+    "locator",
+    "text_or_verified_paraphrase",
+    "verification_note",
+    "reviewer_id"
+  ],
+  "properties": {
+    "quote_id": {"type": "string", "minLength": 1},
+    "evidence_id": {"type": "string", "minLength": 1},
+    "report_id": {"type": "string", "minLength": 1},
+    "locator": {
+      "type": "object",
+      "required": ["page"],
+      "properties": {
+        "page": {"type": ["integer", "string"]},
+        "section": {"type": ["string", "null"]},
+        "paragraph": {"type": ["string", "null"]},
+        "table_or_figure": {"type": ["string", "null"]}
+      }
+    },
+    "text_or_verified_paraphrase": {"type": "string", "minLength": 1},
+    "verbatim": {"type": "boolean"},
+    "verification_note": {"type": "string", "minLength": 1},
+    "reviewer_id": {"type": "string", "minLength": 1},
+    "copyright_restriction": {"type": ["string", "null"]}
+  }
+}
