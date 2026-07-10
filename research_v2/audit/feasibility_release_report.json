@@ -1,0 +1,34 @@
+{
+  "scope": "pubmed_single_reviewer_feasibility",
+  "pass": true,
+  "checks": {
+    "claim_boundary": {
+      "pass": true
+    },
+    "seed_recall": {
+      "pass": true,
+      "value": "22/22"
+    },
+    "abstract_provenance": {
+      "pass": true,
+      "rows": 22
+    },
+    "rules_not_released": {
+      "pass": true,
+      "draft_ai": 5
+    },
+    "unsupported_metrics_absent": {
+      "pass": true
+    },
+    "rendered_thesis": {
+      "pass": true,
+      "pages": 7,
+      "minimum_page_characters": 363
+    },
+    "research_tests": {
+      "pass": true,
+      "last_line": "45 passed in 5.23s"
+    }
+  },
+  "clinical_release_authorized": false
+}

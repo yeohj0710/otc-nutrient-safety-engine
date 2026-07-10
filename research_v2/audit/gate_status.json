@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "active_claim_boundary": "protocol/claim_boundary.json",
-  "updated_at_utc": "2026-07-10T12:42:00Z",
+  "updated_at_utc": "2026-07-10T12:55:00Z",
   "gates": {
     "0": {
       "status": "passed",
@@ -50,46 +50,53 @@
       "reason": "118 abstract candidates generated; full-text causal estimates and GRADE conclusions remain prohibited"
     },
     "5": {
-      "status": "metric_code_ready_awaiting_gold_data",
+      "status": "not_evaluated_reduced_scope",
       "evidence": [
         "../../execution_package/scripts/compute_ai_metrics.py",
         "../../scripts/research/compute_extraction_metrics.py"
       ],
-      "reason": "held-out human gold labels do not exist"
+      "reason": "held-out human gold labels do not exist; no AI screening performance claim is made"
     },
     "6": {
-      "status": "analysis_code_ready_awaiting_verified_evidence",
+      "status": "passed_descriptive_abstract_map_only",
       "evidence": [
         "../../scripts/research/build_evidence_map.py",
         "../../scripts/research/select_focused_node.py",
-        "audit/evidence_freeze_preflight.json"
+        "audit/evidence_freeze_preflight.json",
+        "../synthesis/abstract_evidence_map.csv"
       ],
-      "reason": "verified extraction GRADE and focused synthesis results do not exist"
+      "reason": "five-node abstract evidence map completed; meta-analysis RoB and GRADE are prohibited without full text"
     },
     "7": {
-      "status": "compiler_ready_awaiting_reviewed_rules",
+      "status": "draft_ai_complete_no_release",
       "evidence": [
         "../../execution_package/schemas/rule.schema.json",
-        "../../scripts/research/compile_rules.py"
+        "../../scripts/research/compile_rules.py",
+        "../rules/rule_trace.csv",
+        "../rules/compile_report.json"
       ],
-      "reason": "no evidence-frozen human-reviewed released rules exist"
+      "reason": "five source-linked draft_ai rules exist; released rule count is intentionally zero"
     },
     "8": {
-      "status": "metric_code_ready_awaiting_human_inputs",
+      "status": "not_evaluated_reduced_scope",
       "evidence": ["../../scripts/research/validation_metrics.py"],
-      "reason": "H-005 independent scenarios and expert ratings do not exist"
+      "reason": "H-005 independent scenarios and expert ratings do not exist; clinical sensitivity is not claimed"
     },
     "9": {
-      "status": "generation_guard_ready_awaiting_evidence_freeze",
+      "status": "passed_feasibility_research_copy",
       "evidence": [
         "../../scripts/research/build_metrics_manifest.py",
-        "audit/thesis_template_artifact.md"
+        "audit/thesis_template_artifact.md",
+        "../thesis/metrics_manifest.json",
+        "../thesis/권혁찬_졸업논문_PubMed_타당성연구.docx",
+        "../thesis/권혁찬_졸업논문_PubMed_타당성연구.pdf"
       ],
-      "reason": "thesis drafting is prohibited before evidence freeze; H-008 official format confirmation is open"
+      "reason": "seven-page rendered feasibility research copy generated; H-008 remains required for official school submission"
     },
     "10": {
-      "status": "not_started",
-      "reason": "requires Gate 0-9 completion and rendered thesis"
+      "status": "passed_feasibility_release_only",
+      "evidence": ["feasibility_release_report.json"],
+      "reason": "feasibility validator passed; clinical release authorization remains false"
     }
   }
 }

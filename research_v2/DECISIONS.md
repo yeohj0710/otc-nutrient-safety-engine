@@ -1,5 +1,11 @@
 # Research decisions
 
+## D-010 — PubMed 타당성 연구본을 독립 산출물로 종료
+
+- 결정: 원래 임상 검증 범위를 완료한 것처럼 꾸미지 않고 amendment-001의 PubMed 단독 타당성 연구본을 독립 산출물로 동결한다.
+- 근거: 전량 검색, seed 회수, 초록 계보, 기술 재현성은 검증됐지만 이중 전문 검토, RoB, GRADE, 전문가 시나리오는 없다.
+- 결과: Gate 10은 `passed_feasibility_release_only`; `clinical_release_authorized=false`; 공식 학교 제출과 임상 규칙 release는 사람 확인 전 금지한다.
+
 ## D-0005 — PubMed 단일검토자 실행가능성 연구로 공식 축소
 
 - 결정일: 2026-07-10

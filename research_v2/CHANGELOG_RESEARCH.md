@@ -1,5 +1,15 @@
 # Research changelog
 
+## 2026-07-10 — PubMed 타당성 연구본 release
+
+- K2–K5 검색식을 v0.2로 개정해 사전 seed 회수를 15/22에서 22/22로 교정했다.
+- PubMed occurrence 16,194건을 전량 보존하고 15,890개 고유 레코드를 생성했다.
+- 사전 seed 22건의 초록 근거 지도와 source locator 22개를 생성했다.
+- 규칙 5개는 `draft_ai`, released 규칙은 0개로 유지했다.
+- 미확보 임상 성능 지표를 `not_evaluated`로 기록했다.
+- 권혁찬 연구본 DOCX/PDF를 생성하고 7쪽을 렌더링 검사했다.
+- `validate_feasibility_release.py` 통과. 임상 release 권한은 false다.
+
 ## 2026-07-10
 
 - 제공 실행패키지 76개 해시 검증 후 `execution_package/`에 복사.
