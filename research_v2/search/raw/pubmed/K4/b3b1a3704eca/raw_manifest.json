@@ -1,0 +1,131 @@
+{
+  "node_id": "K4",
+  "query_sha256": "b3b1a3704ecad6cc64aa2b20f0ed80adcaa4e28336587b804cd1863be2908f72",
+  "search_date": "2026-07-10",
+  "hit_count": 3742,
+  "exported_count": 3742,
+  "imported_count": 3742,
+  "segment_count": 1,
+  "contact_source": "git_config_user_email",
+  "contact_value_stored": false,
+  "tool": "kwon_pubmed_feasibility",
+  "request_rate_limit_per_second": 2.5,
+  "raw_files": [
+    {
+      "path": "efetch_0001.xml",
+      "size": 4698226,
+      "sha256": "42423f4fc8d03b24961c81cd271d15b1e306aae20ca8b4dc953e76be980c12eb"
+    },
+    {
+      "path": "efetch_0002.xml",
+      "size": 5001431,
+      "sha256": "72fad4308b891152358c361651441c8d9d2c24a85691bf1b548bc8097583648e"
+    },
+    {
+      "path": "efetch_0003.xml",
+      "size": 4539626,
+      "sha256": "d662082e9b9758fbf6f2ec2dda9a60c5935a8c9be4e1d7cf7e3422366794d89d"
+    },
+    {
+      "path": "efetch_0004.xml",
+      "size": 4986597,
+      "sha256": "408b4ddadf6be3287f1f42e39e6a89ed795b1db46db8786d41cecd8d0f28d508"
+    },
+    {
+      "path": "efetch_0005.xml",
+      "size": 4543923,
+      "sha256": "6e4be0e3e8dda6a053de34be61ce79820f2155938879cfed206ce6ad675b3e1f"
+    },
+    {
+      "path": "efetch_0006.xml",
+      "size": 3860243,
+      "sha256": "b0e9c1d161374bb68a44090d1c1f9b41d084d4de9fe608ff38575bfd3e46be50"
+    },
+    {
+      "path": "efetch_0007.xml",
+      "size": 3629020,
+      "sha256": "d957dcab24a2fbf4758b1fcbefb6ffb056abaf04b512182006ab7f73d10389d0"
+    },
+    {
+      "path": "efetch_0008.xml",
+      "size": 3623023,
+      "sha256": "a1e676acf23d13d8e4a9d71dabdc36f6a8dfadc78c3705a12c60dade0b2ad615"
+    },
+    {
+      "path": "efetch_0009.xml",
+      "size": 3111692,
+      "sha256": "40c4e79ed7fdbd6ede7e6140c54e4b44074642682fdd518a7dff364f9d0c5d7a"
+    },
+    {
+      "path": "efetch_0010.xml",
+      "size": 3151443,
+      "sha256": "9b94940bceb7e333f9b83ea19f9d06357fdfc0fbde5c8a6cade9d11145da6af3"
+    },
+    {
+      "path": "efetch_0011.xml",
+      "size": 2741907,
+      "sha256": "f36ac098dac04fb85805e1174bf87658183a9b0f0348b09cce0e65458f43d4c4"
+    },
+    {
+      "path": "efetch_0012.xml",
+      "size": 2421102,
+      "sha256": "d33003358f77d1b461c11c1c61b92fdcbb2156a9a6f4f3653eecb7388fb8ddd6"
+    },
+    {
+      "path": "efetch_0013.xml",
+      "size": 1824759,
+      "sha256": "d6252d5f20274c3649d6bcdb75c4aa8ef5abb27bc80bf9e98d87916ab2e5a6fe"
+    },
+    {
+      "path": "efetch_0014.xml",
+      "size": 1706929,
+      "sha256": "2ea069e73bc4ebf55488956c09178b3e601bc883a647841bf72cb1aceffbee93"
+    },
+    {
+      "path": "efetch_0015.xml",
+      "size": 1667002,
+      "sha256": "96b1f797d1803484d319190421a28c63fc00ece9d2b34101fa77d0ce0eb120ce"
+    },
+    {
+      "path": "efetch_0016.xml",
+      "size": 1451609,
+      "sha256": "86624bd69b4449a4aa5c151d48aad14556519bb54610d36d0a0f2cb47a0264cd"
+    },
+    {
+      "path": "efetch_0017.xml",
+      "size": 1545395,
+      "sha256": "f01d91e22653b92455709f9a771f0c0262023e12bb76a9e90781b1e230fdfc5c"
+    },
+    {
+      "path": "efetch_0018.xml",
+      "size": 1332796,
+      "sha256": "1cdc26add853fa3fcd6f92a142cc9165d87d5be6234acd6e32c550bd5b78e06a"
+    },
+    {
+      "path": "efetch_0019.xml",
+      "size": 833562,
+      "sha256": "578145c40c0713c48f9fab00fc03c61a14f4bd65b99fe1a3177417b30fd7b0fd"
+    },
+    {
+      "path": "esearch_count.json",
+      "size": 110,
+      "sha256": "f09a5efed1986438172059852c6d5acbe83b5f40330c80dfaa36424158a3a1ac"
+    },
+    {
+      "path": "query.txt",
+      "size": 840,
+      "sha256": "c55e10a66dfb14bbed945b773e134bf5c329fd54a292f26059b8a91d9bd7105e"
+    },
+    {
+      "path": "segments.json",
+      "size": 971,
+      "sha256": "507dba7920aa0793be8af9613647b1001e09d91668cb1a3c4739bcdca60e24c5"
+    },
+    {
+      "path": "uids_001.json",
+      "size": 55370,
+      "sha256": "e259393e54994eae6a3d52bc3838b8a587141c93824e4febdf22e065c375f0e6"
+    }
+  ],
+  "raw_files_sha256": "0700381e289df00e1cce9348fa08eb14a957bf86c96621ac0358d081e080cdbb"
+}

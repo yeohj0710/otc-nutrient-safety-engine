@@ -310,6 +310,35 @@ def parse_pubmed_xml(
             )
         )
 
+    for book_article in root.findall(".//PubmedBookArticle"):
+        pmid = _text(book_article.find(".//BookDocument/PMID"))
+        if not pmid:
+            continue
+        title = _iter_text(book_article.find(".//BookDocument/ArticleTitle"))
+        abstract = _abstract_text(book_article)
+        source = _iter_text(book_article.find(".//BookDocument/Book/BookTitle"))
+        year = (
+            _text(book_article.find(".//BookDocument/Book/PubDate/Year"))
+            or _text(book_article.find(".//BookDocument/ContributionDate/Year"))
+        )
+        doi = _article_id(book_article, "doi")
+        records.append(
+            RetrievedRecord(
+                record_id=f"pubmed:{pmid}:{search_run_id}",
+                source="pubmed",
+                target_id=target_id,
+                search_run_id=search_run_id,
+                title=title,
+                abstract_or_summary=abstract,
+                year=year,
+                journal_or_source=source,
+                doi=doi,
+                pmid=pmid,
+                url=f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
+                raw_record_id=pmid,
+            )
+        )
+
     return records
 
 

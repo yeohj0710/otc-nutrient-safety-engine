@@ -1,6 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "updated_at_utc": "2026-07-10T10:52:00Z",
+  "active_claim_boundary": "protocol/claim_boundary.json",
+  "updated_at_utc": "2026-07-10T12:42:00Z",
   "gates": {
     "0": {
       "status": "passed",
@@ -12,27 +13,41 @@
       ]
     },
     "1": {
-      "status": "awaiting_human_action",
-      "reason": "H-001 protocol and K1-K5 approval not supplied"
+      "status": "scope_reduced_protocol_active",
+      "evidence": [
+        "../protocol/amendment_001_pubmed_feasibility.md",
+        "../protocol/claim_boundary.json"
+      ],
+      "reason": "human approval not claimed; feasibility scope adopted by explicit user direction"
     },
     "2": {
-      "status": "preflight_ready_not_executed",
+      "status": "passed_reduced_scope",
       "evidence": [
         "../search/preflight_report.json",
         "../search/search_strategies.csv",
-        "../search/seed_candidates.csv"
+        "../search/seed_candidates.csv",
+        "../search/seed_recall_summary.json",
+        "../search/search_run_log.csv",
+        "../search/raw/pubmed"
       ],
-      "reason": "H-001 H-002 H-003 and H-007 remain open"
+      "reason": "PubMed full exports reconciled; v0.2 retrieved all 22 prespecified seeds; institutional databases remain outside the reduced scope"
     },
     "3": {
-      "status": "tooling_ready_awaiting_human_inputs",
-      "evidence": ["audit/human_adjudication_readiness.json"],
-      "reason": "H-004 and Gate 2 records are unavailable"
+      "status": "computational_screening_complete_reduced_scope",
+      "evidence": [
+        "../screening/computational_screening.csv",
+        "../screening/computational_screening_summary.json",
+        "../search/dedup_log.csv"
+      ],
+      "reason": "15890 unique records classified as non-final computational proposals; zero human decisions are claimed"
     },
     "4": {
-      "status": "tooling_ready_awaiting_human_inputs",
-      "evidence": ["../../scripts/research/validate_human_adjudication.py"],
-      "reason": "included full texts and independent extraction verification are unavailable"
+      "status": "abstract_evidence_review_in_progress",
+      "evidence": [
+        "../extraction/abstract_evidence_shortlist.csv",
+        "../extraction/abstract_evidence_shortlist_summary.json"
+      ],
+      "reason": "118 abstract candidates generated; full-text causal estimates and GRADE conclusions remain prohibited"
     },
     "5": {
       "status": "metric_code_ready_awaiting_gold_data",

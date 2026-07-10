@@ -1,0 +1,13 @@
+{
+  "retrieved": 22,
+  "total": 22,
+  "recall": 1.0,
+  "node_retrieved": {
+    "K1": 5,
+    "K2": 4,
+    "K3": 4,
+    "K4": 5,
+    "K5": 4
+  },
+  "gate": "pass"
+}

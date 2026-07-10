@@ -1,6 +1,6 @@
 strategy_id,node_id,database,platform,version,status,query_file,controlled_vocabulary,proximity_reviewed,seed_set_version,review_status,notes
 STR-K1-PUBMED,K1,MEDLINE,PubMed,0.1,draft_pre_peer_review,research_v2/search/pubmed_queries/K1.txt,MeSH,false,seed-v0.1,awaiting_H-002,"No language date or design filter"
-STR-K2-PUBMED,K2,MEDLINE,PubMed,0.1,draft_pre_peer_review,research_v2/search/pubmed_queries/K2.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Pyridoxine and B-complex terms require noise review"
-STR-K3-PUBMED,K3,MEDLINE,PubMed,0.1,draft_pre_peer_review,research_v2/search/pubmed_queries/K3.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Therapeutic indication and self-use will be separated during screening"
-STR-K4-PUBMED,K4,MEDLINE,PubMed,0.1,draft_pre_peer_review,research_v2/search/pubmed_queries/K4.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Supplement laxative antacid forms retained"
-STR-K5-PUBMED,K5,MEDLINE,PubMed,0.1,draft_pre_peer_review,research_v2/search/pubmed_queries/K5.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Acute GI and chronic copper-deficiency outcomes retained"
+STR-K2-PUBMED,K2,MEDLINE,PubMed,0.2,computationally_validated_pending_peer_review,research_v2/search/pubmed_queries/K2.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Added abuse misuse and consumption after PMID 6308447 miss"
+STR-K3-PUBMED,K3,MEDLINE,PubMed,0.2,computationally_validated_pending_peer_review,research_v2/search/pubmed_queries/K3.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Added adverse-event and side-effect variants after PMID 37010569 miss"
+STR-K4-PUBMED,K4,MEDLINE,PubMed,0.2,computationally_validated_pending_peer_review,research_v2/search/pubmed_queries/K4.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Added generic magnesium and administration terms after three seed misses"
+STR-K5-PUBMED,K5,MEDLINE,PubMed,0.2,computationally_validated_pending_peer_review,research_v2/search/pubmed_queries/K5.txt,MeSH,false,seed-v0.1,awaiting_H-002,"Added hyphenated OTC and over-supplementation variants after two seed misses"

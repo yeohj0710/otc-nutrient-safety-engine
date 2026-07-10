@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0-feasibility",
+  "claim_boundary": "pubmed_single_reviewer_feasibility",
+  "metrics": {
+    "pubmed_occurrences": {
+      "status": "evaluated",
+      "value": 16194,
+      "denominator": null,
+      "ci95": null,
+      "source_artifact": "screening/computational_screening_summary.json",
+      "note": ""
+    },
+    "unique_records": {
+      "status": "evaluated",
+      "value": 15890,
+      "denominator": null,
+      "ci95": null,
+      "source_artifact": "screening/computational_screening_summary.json",
+      "note": ""
+    },
+    "duplicates_removed": {
+      "status": "evaluated",
+      "value": 304,
+      "denominator": 16194,
+      "ci95": null,
+      "source_artifact": "screening/computational_screening_summary.json",
+      "note": ""
+    },
+    "prespecified_seed_recall": {
+      "status": "evaluated",
+      "value": 1.0,
+      "denominator": 22,
+      "ci95": null,
+      "source_artifact": "search/seed_recall_summary.json",
+      "note": "descriptive query check; not AI held-out screening recall"
+    },
+    "abstract_candidates": {
+      "status": "evaluated",
+      "value": 118,
+      "denominator": 15890,
+      "ci95": null,
+      "source_artifact": "extraction/abstract_evidence_shortlist_summary.json",
+      "note": ""
+    },
+    "abstract_verified_seeds": {
+      "status": "evaluated",
+      "value": 22,
+      "denominator": 22,
+      "ci95": null,
+      "source_artifact": "extraction/seed_abstract_evidence.csv",
+      "note": ""
+    },
+    "released_rules": {
+      "status": "evaluated",
+      "value": 0,
+      "denominator": 5,
+      "ci95": null,
+      "source_artifact": "rules/compile_report.json",
+      "note": "five draft_ai rules; none released"
+    },
+    "ai_screening_heldout_recall": {
+      "status": "not_evaluated",
+      "value": null,
+      "denominator": null,
+      "ci95": null,
+      "source_artifact": null,
+      "note": "no independent human gold set"
+    },
+    "scenario_hazard_sensitivity": {
+      "status": "not_evaluated",
+      "value": null,
+      "denominator": null,
+      "ci95": null,
+      "source_artifact": null,
+      "note": "no independent expert-rated scenarios"
+    },
+    "critical_false_negatives": {
+      "status": "not_evaluated",
+      "value": null,
+      "denominator": null,
+      "ci95": null,
+      "source_artifact": null,
+      "note": "no independent sentinel set"
+    },
+    "expert_content_validity": {
+      "status": "not_evaluated",
+      "value": null,
+      "denominator": null,
+      "ci95": null,
+      "source_artifact": null,
+      "note": "no expert panel"
+    }
+  }
+}

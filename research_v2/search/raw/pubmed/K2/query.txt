@@ -1,0 +1,31 @@
+(
+  "Vitamin B 6"[Mesh]
+  OR "vitamin B6"[tiab]
+  OR "vitamin B-6"[tiab]
+  OR pyridoxin*[tiab]
+  OR "pyridoxal 5 phosphate"[tiab]
+  OR "pyridoxal-5-phosphate"[tiab]
+  OR "B complex"[tiab]
+  OR "B-complex"[tiab]
+)
+AND
+(
+  "Dietary Supplements"[Mesh]
+  OR supplement*[tiab]
+  OR dose[tiab]
+  OR dosage[tiab]
+  OR intake[tiab]
+  OR chronic[tiab]
+  OR long-term[tiab]
+)
+AND
+(
+  "Peripheral Nervous System Diseases"[Mesh]
+  OR "Neurotoxicity Syndromes"[Mesh]
+  OR neuropath*[tiab]
+  OR neurotoxic*[tiab]
+  OR paresthes*[tiab]
+  OR paraesthes*[tiab]
+  OR "sensory neuronopathy"[tiab]
+  OR "gait disturbance"[tiab]
+)

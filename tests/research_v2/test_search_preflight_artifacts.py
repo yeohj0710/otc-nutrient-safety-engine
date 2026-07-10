@@ -45,9 +45,9 @@ def test_preflight_query_hashes_and_limits_are_consistent() -> None:
         )
     )
 
-    assert report["status"] == "preflight_ready_not_executed"
+    assert report["status"] == "executed_reduced_scope"
     assert report["search_limits"]["top_n_allowed_for_gate2"] is False
-    assert report["environment"]["final_search_executed"] is False
+    assert report["environment"]["final_search_executed"] is True
     assert report["human_dependencies"] == ["H-001", "H-002", "H-003", "H-007"]
 
     for query in report["queries"]:

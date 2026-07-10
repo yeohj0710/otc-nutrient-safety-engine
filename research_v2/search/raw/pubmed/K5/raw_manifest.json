@@ -1,0 +1,80 @@
+{
+  "node_id": "K5",
+  "query_sha256": "70545820063fc6ee86f9106a27c350eaa7d1113dec3c2c083773ebcc13edc912",
+  "search_date": "2026-07-10",
+  "hit_count": 1671,
+  "exported_count": 1671,
+  "imported_count": 1671,
+  "segment_count": 1,
+  "contact_source": "git_config_user_email",
+  "contact_value_stored": false,
+  "tool": "kwon_pubmed_feasibility",
+  "request_rate_limit_per_second": 2.5,
+  "raw_files": [
+    {
+      "path": "efetch_0001.xml",
+      "size": 5110857,
+      "sha256": "db49d03d5cf6ee7b35c9cee6cebdb40fbb6c09ff85567d70d592ef6b5420e8d0"
+    },
+    {
+      "path": "efetch_0002.xml",
+      "size": 4784672,
+      "sha256": "2bb7f126cd3eecb149da7fcc60b9d4346d47ca4a8570b4c157f640faf7917271"
+    },
+    {
+      "path": "efetch_0003.xml",
+      "size": 3518554,
+      "sha256": "6845391685fbcc6d028018493638e08c4aa9d84d567b6d47ed0f4bf1d33a849d"
+    },
+    {
+      "path": "efetch_0004.xml",
+      "size": 2980095,
+      "sha256": "d18d8515b784cc47c63cc20817244afd442003be33b1fed6b02eb9cf664d1362"
+    },
+    {
+      "path": "efetch_0005.xml",
+      "size": 2292695,
+      "sha256": "602746c464e2590b4d19dd13d3f887d5e4c090dd123269186da77e48d9b8fcbc"
+    },
+    {
+      "path": "efetch_0006.xml",
+      "size": 1736668,
+      "sha256": "89775dc142473e06597804d9e5eb781cf72f56ba41ff934217dfd43ee7495e96"
+    },
+    {
+      "path": "efetch_0007.xml",
+      "size": 1553783,
+      "sha256": "62b2d154598b20394e0d872ce771304c7e65efea32e101f06e10ade68031d23b"
+    },
+    {
+      "path": "efetch_0008.xml",
+      "size": 1334751,
+      "sha256": "a1a681ac3280511070bd05a1249dda44c4a97f4d3deafda7f96e8833b3d1d07e"
+    },
+    {
+      "path": "efetch_0009.xml",
+      "size": 411845,
+      "sha256": "0401bcb8427a2fed05550bfd277d07c4a712053fc4079126a93309f51da760f9"
+    },
+    {
+      "path": "esearch_count.json",
+      "size": 110,
+      "sha256": "24d91f845212658f1465ad07e0ae808810a75c2adc729e5eabf7fd1e5c28a66f"
+    },
+    {
+      "path": "query.txt",
+      "size": 687,
+      "sha256": "ea906da02fa3088e83a223c5b2f856b8292d0ac623b895244452e9047b2aa4b5"
+    },
+    {
+      "path": "segments.json",
+      "size": 816,
+      "sha256": "2b59eb873347ebd3beda7e3b3fd93cdcfec1d0d88ebc33388eac397a72380db8"
+    },
+    {
+      "path": "uids_001.json",
+      "size": 24745,
+      "sha256": "e3b8781489ef32f7548305f588a2adfaec14a4f3d979e753d1c7a3ac454e75b6"
+    }
+  ]
+}

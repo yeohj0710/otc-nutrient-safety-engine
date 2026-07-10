@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "status": "preflight_ready_not_executed",
+  "status": "executed_reduced_scope",
   "generated_at_utc": "2026-07-10T02:35:00Z",
-  "protocol_version": "0.1",
+  "protocol_version": "amendment-001",
   "queries": [
     {
       "node_id": "K1",
@@ -14,28 +14,28 @@
     {
       "node_id": "K2",
       "path": "research_v2/search/pubmed_queries/K2.txt",
-      "sha256": "ccf1a450ef694bcbb80f5dbc4332ad1f016cab9e06c4f62ca816aceace1a39b0",
+      "sha256": "5de13728b4ef4261f5bf81eb31ba2f6a00f23279b7248b256d60b924a20315cc",
       "seed_candidates": 4,
       "parentheses_balanced": true
     },
     {
       "node_id": "K3",
       "path": "research_v2/search/pubmed_queries/K3.txt",
-      "sha256": "6e9440a5c0fbeb4345fd2ed084ec753aeb85aeb7c538df1408e3bb8288f2123c",
+      "sha256": "174afc558acde725c9484f7eb83fe3c3582a0b191ec00387f2ffbc849315346f",
       "seed_candidates": 4,
       "parentheses_balanced": true
     },
     {
       "node_id": "K4",
       "path": "research_v2/search/pubmed_queries/K4.txt",
-      "sha256": "8588a1eb03639989754515fc92249b67033c048070dafdf962bc4714ccda33c6",
+      "sha256": "7d3b447f66ee4d2e78b23b4c535c1047caeddd92f82f0b72fb525051d6ecafde",
       "seed_candidates": 5,
       "parentheses_balanced": true
     },
     {
       "node_id": "K5",
       "path": "research_v2/search/pubmed_queries/K5.txt",
-      "sha256": "da5f5813b159f36584ed8b95dd4702da29c4623ae7f099e6c542882fd71a16aa",
+      "sha256": "ba2c2d315cc1dfe068db7e87dd53bec08f587ae5249299de6e908c56a8a41aa2",
       "seed_candidates": 4,
       "parentheses_balanced": true
     }
@@ -57,7 +57,7 @@
   "environment": {
     "NCBI_EMAIL_present": false,
     "NCBI_API_KEY_present": false,
-    "final_search_executed": false
+    "final_search_executed": true
   },
   "human_dependencies": ["H-001", "H-002", "H-003", "H-007"],
   "method_sources": [

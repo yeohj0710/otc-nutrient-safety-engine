@@ -1,0 +1,180 @@
+{
+  "node_id": "K1",
+  "query_sha256": "083b50eba620ab38f5e24757f4e3671577070e2791165ec3258ea70a2232a02e",
+  "search_date": "2026-07-10",
+  "hit_count": 5697,
+  "exported_count": 5697,
+  "imported_count": 5697,
+  "segment_count": 1,
+  "contact_source": "git_config_user_email",
+  "contact_value_stored": false,
+  "tool": "kwon_pubmed_feasibility",
+  "request_rate_limit_per_second": 2.5,
+  "raw_files": [
+    {
+      "path": "efetch_0001.xml",
+      "size": 4494953,
+      "sha256": "b83cc0851cd00a18fa9b15cb9f5599ee276bad2badaa79be7facbc713672ab41"
+    },
+    {
+      "path": "efetch_0002.xml",
+      "size": 5373513,
+      "sha256": "3bab8655d8e0b37fd0456f0467988dd30d8669d7043e5546d10c0b4e8b664512"
+    },
+    {
+      "path": "efetch_0003.xml",
+      "size": 5501473,
+      "sha256": "3f70686bfa5e36bbc7ee1aef80943fb663a4dbc24224245c40ed9efed142e2b2"
+    },
+    {
+      "path": "efetch_0004.xml",
+      "size": 4777890,
+      "sha256": "e6a789eaec8dcc8cd6adbcb96ed5d576c3c7697b139d1f9302c3abc42765e9ae"
+    },
+    {
+      "path": "efetch_0005.xml",
+      "size": 4597007,
+      "sha256": "86085ae348949a47364147d4e865593b4b74acc115858297d1cd088094065c04"
+    },
+    {
+      "path": "efetch_0006.xml",
+      "size": 3947917,
+      "sha256": "bf012a38c166537b1a5edf7a9b019340b7ca53f3140f1e7cf9516d1f49601a29"
+    },
+    {
+      "path": "efetch_0007.xml",
+      "size": 4514967,
+      "sha256": "9619c99d7e463f4e9b966ca634acea3006e9b51c927e106a4be2c59f43ad145e"
+    },
+    {
+      "path": "efetch_0008.xml",
+      "size": 3646123,
+      "sha256": "cc6c4e1cf1fe36e0a311555f6903ed0c5af00f70e1dc5be10024226760d16cb9"
+    },
+    {
+      "path": "efetch_0009.xml",
+      "size": 3474013,
+      "sha256": "3b939000e55760d6b312f934a01dc33654fe8dcdfcb61f0e58c5e592b0ae3d91"
+    },
+    {
+      "path": "efetch_0010.xml",
+      "size": 3740364,
+      "sha256": "9f79cebe12a1407ca40d74414cbad851d83a9c5f8baf9ae579365628f1a8ca65"
+    },
+    {
+      "path": "efetch_0011.xml",
+      "size": 3159951,
+      "sha256": "36c589b579fc143a15731f808b086fda5b3b93311e9a26c276a4ebd8073b9c35"
+    },
+    {
+      "path": "efetch_0012.xml",
+      "size": 2883760,
+      "sha256": "adf7ba1f7647ba1d0209ce3eb725012d18d176c518adce992525eb8b8f1abaab"
+    },
+    {
+      "path": "efetch_0013.xml",
+      "size": 3018828,
+      "sha256": "a86589ae3cc4ee9741888d6061a4a6d705065443a94f6d8e852fb7c0c10c9151"
+    },
+    {
+      "path": "efetch_0014.xml",
+      "size": 2668868,
+      "sha256": "d28de077e3bb3cdd1f54f04470497cb2d4eb63cf40b8fafc2bc90040185142c8"
+    },
+    {
+      "path": "efetch_0015.xml",
+      "size": 2536596,
+      "sha256": "2acc62a43bea481c9fbd89ed1f61c40c902a063000291147a8599c9f8d0bdfcd"
+    },
+    {
+      "path": "efetch_0016.xml",
+      "size": 2254749,
+      "sha256": "ce7fefe2f1d58e5156c7fd9f7dc4d78a36595c9b0bb01a60a9b5092cadf90e5b"
+    },
+    {
+      "path": "efetch_0017.xml",
+      "size": 2120819,
+      "sha256": "032a0b24e3b5daf17bf49625c2ea94b0bbe8d407ec7a9ed946b89d6e2e00febb"
+    },
+    {
+      "path": "efetch_0018.xml",
+      "size": 1662843,
+      "sha256": "1b4bc7db6131714415d70f07d1f08cf76587e246490ae9d7e435d1ad34adf478"
+    },
+    {
+      "path": "efetch_0019.xml",
+      "size": 1588714,
+      "sha256": "4b389522d6720a809c3bee32372c7a4586f874cbf07fde9ac2d89dbea5ab2c5a"
+    },
+    {
+      "path": "efetch_0020.xml",
+      "size": 1550652,
+      "sha256": "a5b1215afaeaac77d71f863075c5b9f9a8f74de61a0f9a2450acab89980434af"
+    },
+    {
+      "path": "efetch_0021.xml",
+      "size": 1540910,
+      "sha256": "63ff50849b0347229477736f220b9fbe1d324fb9269149f5dd837ff5c9334366"
+    },
+    {
+      "path": "efetch_0022.xml",
+      "size": 1519213,
+      "sha256": "7984e50077577cb7b12f7c1924fa6f8aee326dc7ddabbf41d324dba65dd3bf66"
+    },
+    {
+      "path": "efetch_0023.xml",
+      "size": 1410682,
+      "sha256": "93853d86a397f6b143a1a95afb1a36fc0f79fcb2d3a8f192348cc3613716ec92"
+    },
+    {
+      "path": "efetch_0024.xml",
+      "size": 1430554,
+      "sha256": "58aa23cbd96578641b6521c59df59802265f6d56f2c29423790d8910763bddb4"
+    },
+    {
+      "path": "efetch_0025.xml",
+      "size": 1333732,
+      "sha256": "ae7499abcce82bcc65992b6d1b8959af5a43423ce99ccf2d571022e25c92f098"
+    },
+    {
+      "path": "efetch_0026.xml",
+      "size": 1313763,
+      "sha256": "97290529cf25736c43d7d24f4a5ea67074f734df2f497ebc5d7355cd59b73974"
+    },
+    {
+      "path": "efetch_0027.xml",
+      "size": 1285733,
+      "sha256": "447a91bd19daecf369d22a0771075ff58b7d37148b3c5693308f0368508e380c"
+    },
+    {
+      "path": "efetch_0028.xml",
+      "size": 1457344,
+      "sha256": "03b865a3caec02f369973b859def44c6ff79dd0dc69a4b2712b6cb4642100210"
+    },
+    {
+      "path": "efetch_0029.xml",
+      "size": 469081,
+      "sha256": "a7c2be7563a83fa3c36e072805f38f606dc5917f8782448c2f78f782e436c668"
+    },
+    {
+      "path": "esearch_count.json",
+      "size": 110,
+      "sha256": "9bd30c64983e82aaca1ef9f97412afb52b8d4484e80376ffc5dca8656d69dce8"
+    },
+    {
+      "path": "query.txt",
+      "size": 630,
+      "sha256": "d091ed6e26514573f8be96cd75333b329ad20d3bf6559f63c5ae973bf8707eae"
+    },
+    {
+      "path": "segments.json",
+      "size": 757,
+      "sha256": "891eaccdff51efb21e939f91b23475a07063cc22b2e1882d72e3247ad5c8dc00"
+    },
+    {
+      "path": "uids_001.json",
+      "size": 83951,
+      "sha256": "b92007b39530ae88a6a90718e1f041fa80fefbbb1c45c8711fbde769888f2e2e"
+    }
+  ]
+}
