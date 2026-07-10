@@ -1,5 +1,7 @@
 # Human actions required
 
+통합 입력 양식: `권혁찬_연구_사람작업패킷_20260710.xlsx`. 파일명과 SHA-256은 `audit/human_action_packet_manifest.json`에 기록했다.
+
 ## H-001 — 프로토콜과 K1-K5 승인
 
 - 필요한 사람: 지도교수 또는 지정 연구 검토자
