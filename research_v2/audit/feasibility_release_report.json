@@ -27,7 +27,7 @@
     },
     "research_tests": {
       "pass": true,
-      "last_line": "45 passed in 5.23s"
+      "passed_count": 45
     }
   },
   "clinical_release_authorized": false

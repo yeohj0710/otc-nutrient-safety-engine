@@ -34,7 +34,8 @@ def main() -> None:
     checks["rendered_thesis"] = {"pass": bool(pdf) and len(page_chars) >= 5 and min(page_chars) >= 100, "pages": len(page_chars), "minimum_page_characters": min(page_chars) if page_chars else 0}
     test_python = REPO / ".venv-research" / "Scripts" / "python.exe"
     tests = subprocess.run([str(test_python if test_python.exists() else Path(sys.executable)), "-m", "pytest", "tests/research_v2", "-q"], cwd=REPO, capture_output=True, text=True)
-    checks["research_tests"] = {"pass": tests.returncode == 0, "last_line": tests.stdout.strip().splitlines()[-1] if tests.stdout.strip() else tests.stderr.strip()}
+    test_summary = tests.stdout.strip().splitlines()[-1] if tests.stdout.strip() else tests.stderr.strip()
+    checks["research_tests"] = {"pass": tests.returncode == 0, "passed_count": 45 if "45 passed" in test_summary else None}
     report = {"scope": "pubmed_single_reviewer_feasibility", "pass": all(item["pass"] for item in checks.values()), "checks": checks, "clinical_release_authorized": False}
     out = ROOT / "audit" / "feasibility_release_report.json"
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
