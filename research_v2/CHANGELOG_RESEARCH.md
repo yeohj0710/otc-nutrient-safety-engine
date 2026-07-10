@@ -18,3 +18,11 @@
 - release validator의 reference provenance 오탐을 좁은 파일 예외로 수정; 활성 자료 identity 검사는 유지.
 - P0-P1 순차 회귀검사: Python 13개, Node 33개, TypeScript, Next.js production build 통과.
 - release preflight 실행; Gate 1 승인과 Gate 2 원시 검색 전이므로 12개 미완료 조건을 그대로 실패 처리.
+- 실행패키지 task graph의 여형준 프로젝트명·반대 Gate 0 문구를 권혁찬 기준으로 교정하고 실제 P0-P2 상태 반영.
+- 독립 선별·추출·RoB·GRADE 사람 판정의 완전성을 검사하는 fail-closed validator와 빈 입력 실패 보고서 생성.
+- held-out 추출 평가기와 독립 시나리오·전문가 내용타당도 지표 계산기 구현; CI, critical FN, provenance, I-CVI/S-CVI 포함.
+- 추출 지표 계산의 문자열 truthy 합산 오류를 X-06으로 기록하고 boolean 변환·회귀검사로 수정.
+- 권혁찬 K1-K5만 허용하도록 rule schema를 교정하고, 두 검토자·근거·source quote를 강제하는 released-only compiler 구현.
+- evidence freeze 선행조건·해시 검사와 동결 뒤에만 작동하는 metrics manifest 생성기 구현.
+- 현재 빈 입력에 evidence freeze preflight를 실행해 17개 결손을 `not_frozen`으로 보존.
+- `REPRODUCE.md`에 Gate 순서와 재현 명령 기록.

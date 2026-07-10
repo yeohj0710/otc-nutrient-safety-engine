@@ -1,5 +1,5 @@
 {
-  "project": "Yeo graduation thesis redesign",
+  "project": "Kwon graduation thesis redesign",
   "version": "2026-07-10",
   "phases": [
     {
@@ -14,10 +14,10 @@
             "research_v2/audit/repo_identity.json"
           ],
           "acceptance_criteria": [
-            "All identity fields match Yeo or mismatch is explicitly isolated"
+            "All identity fields match Kwon and Yeo package markers are isolated from active research"
           ],
           "human_action_required": false,
-          "status": "not_started"
+          "status": "completed"
         },
         {
           "id": "P0-T2",
@@ -33,22 +33,22 @@
             "No legacy metric is imported into v2 without provenance"
           ],
           "human_action_required": false,
-          "status": "not_started"
+          "status": "completed"
         },
         {
           "id": "P0-T3",
-          "title": "Implement Gate 0 automated test",
+          "title": "Implement Gate 0 automated identity test",
           "depends_on": [
             "P0-T1"
           ],
           "artifacts": [
-            "scripts/check_project_identity.py"
+            "execution_package/scripts/check_project_identity.py"
           ],
           "acceptance_criteria": [
-            "Test fails on Kwon markers in Yeo release data"
+            "Test fails on Yeo markers in Kwon active release data"
           ],
           "human_action_required": false,
-          "status": "not_started"
+          "status": "completed"
         }
       ]
     },
@@ -70,7 +70,7 @@
             "Five nodes and outcomes fixed; amendments process present"
           ],
           "human_action_required": true,
-          "status": "not_started"
+          "status": "awaiting_human_approval"
         },
         {
           "id": "P1-T2",
@@ -86,7 +86,7 @@
             "Timestamp, commit and public/private registration location recorded"
           ],
           "human_action_required": true,
-          "status": "not_started"
+          "status": "blocked_by_P1_T1"
         }
       ]
     },
@@ -108,7 +108,7 @@
             "Seed set retrieved; platform translations checked"
           ],
           "human_action_required": true,
-          "status": "not_started"
+          "status": "awaiting_peer_review"
         },
         {
           "id": "P2-T2",
@@ -124,7 +124,7 @@
             "No top-N truncation; hit/export/import reconciled"
           ],
           "human_action_required": false,
-          "status": "not_started"
+          "status": "blocked_by_P2_T1"
         },
         {
           "id": "P2-T3",

@@ -55,3 +55,18 @@ def test_preflight_query_hashes_and_limits_are_consistent() -> None:
         assert path.exists()
         assert hashlib.sha256(path.read_bytes()).hexdigest() == query["sha256"]
         assert query["parentheses_balanced"] is True
+
+
+def test_ai_prompt_manifest_is_frozen_without_claiming_a_model_run() -> None:
+    manifest = json.loads(
+        (RESEARCH_ROOT / "ai_eval" / "prompt_manifest.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert manifest["status"] == "prompts_frozen_model_not_selected"
+    assert manifest["held_out_tuning_prohibited"] is True
+    assert manifest["run_executed"] is False
+    assert manifest["model"] is None
+    for prompt in manifest["prompts"]:
+        path = REPO_ROOT / prompt["path"]
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == prompt["sha256"]

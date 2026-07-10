@@ -1,0 +1,36 @@
+{
+  "checks": {
+    "title_abstract": {
+      "pass": false,
+      "errors": [
+        "no_screening_rows"
+      ]
+    },
+    "full_text": {
+      "pass": false,
+      "errors": [
+        "no_screening_rows"
+      ]
+    },
+    "extraction": {
+      "pass": false,
+      "errors": [
+        "no_extraction_rows"
+      ]
+    },
+    "risk_of_bias": {
+      "pass": false,
+      "errors": [
+        "no_rob_rows"
+      ]
+    },
+    "grade": {
+      "pass": false,
+      "errors": [
+        "no_grade_rows"
+      ]
+    }
+  },
+  "pass": false,
+  "note": "Only completed independent human decisions can satisfy these checks."
+}

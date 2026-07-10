@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at_utc": "2026-07-10T02:35:00Z",
+  "updated_at_utc": "2026-07-10T10:52:00Z",
   "gates": {
     "0": {
       "status": "passed",
@@ -24,13 +24,54 @@
       ],
       "reason": "H-001 H-002 H-003 and H-007 remain open"
     },
-    "3": {"status": "not_started"},
-    "4": {"status": "not_started"},
-    "5": {"status": "not_started"},
-    "6": {"status": "not_started"},
-    "7": {"status": "not_started"},
-    "8": {"status": "not_started"},
-    "9": {"status": "not_started"},
-    "10": {"status": "not_started"}
+    "3": {
+      "status": "tooling_ready_awaiting_human_inputs",
+      "evidence": ["audit/human_adjudication_readiness.json"],
+      "reason": "H-004 and Gate 2 records are unavailable"
+    },
+    "4": {
+      "status": "tooling_ready_awaiting_human_inputs",
+      "evidence": ["../../scripts/research/validate_human_adjudication.py"],
+      "reason": "included full texts and independent extraction verification are unavailable"
+    },
+    "5": {
+      "status": "metric_code_ready_awaiting_gold_data",
+      "evidence": [
+        "../../execution_package/scripts/compute_ai_metrics.py",
+        "../../scripts/research/compute_extraction_metrics.py"
+      ],
+      "reason": "held-out human gold labels do not exist"
+    },
+    "6": {
+      "status": "analysis_code_ready_awaiting_verified_evidence",
+      "evidence": [
+        "../../scripts/research/build_evidence_map.py",
+        "../../scripts/research/select_focused_node.py",
+        "audit/evidence_freeze_preflight.json"
+      ],
+      "reason": "verified extraction GRADE and focused synthesis results do not exist"
+    },
+    "7": {
+      "status": "compiler_ready_awaiting_reviewed_rules",
+      "evidence": [
+        "../../execution_package/schemas/rule.schema.json",
+        "../../scripts/research/compile_rules.py"
+      ],
+      "reason": "no evidence-frozen human-reviewed released rules exist"
+    },
+    "8": {
+      "status": "metric_code_ready_awaiting_human_inputs",
+      "evidence": ["../../scripts/research/validation_metrics.py"],
+      "reason": "H-005 independent scenarios and expert ratings do not exist"
+    },
+    "9": {
+      "status": "generation_guard_ready_awaiting_evidence_freeze",
+      "evidence": ["../../scripts/research/build_metrics_manifest.py"],
+      "reason": "thesis drafting is prohibited before evidence freeze"
+    },
+    "10": {
+      "status": "not_started",
+      "reason": "requires Gate 0-9 completion and rendered thesis"
+    }
   }
 }
