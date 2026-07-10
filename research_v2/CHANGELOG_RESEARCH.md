@@ -26,3 +26,5 @@
 - evidence freeze 선행조건·해시 검사와 동결 뒤에만 작동하는 metrics manifest 생성기 구현.
 - 현재 빈 입력에 evidence freeze preflight를 실행해 17개 결손을 `not_frozen`으로 보존.
 - `REPRODUCE.md`에 Gate 순서와 재현 명령 기록.
+- 기존 권혁찬 DOCX 구조와 대응 PDF 21쪽을 검사해 서식 참조 계약 작성; legacy 본문·수치는 사용 금지.
+- 최신 공식 졸업논문 서식 확인을 H-008로 추가. DOCX renderer의 LibreOffice 부재는 최종 Gate 9 전 해결 대상으로 기록.

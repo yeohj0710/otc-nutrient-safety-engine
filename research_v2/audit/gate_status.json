@@ -66,8 +66,11 @@
     },
     "9": {
       "status": "generation_guard_ready_awaiting_evidence_freeze",
-      "evidence": ["../../scripts/research/build_metrics_manifest.py"],
-      "reason": "thesis drafting is prohibited before evidence freeze"
+      "evidence": [
+        "../../scripts/research/build_metrics_manifest.py",
+        "audit/thesis_template_artifact.md"
+      ],
+      "reason": "thesis drafting is prohibited before evidence freeze; H-008 official format confirmation is open"
     },
     "10": {
       "status": "not_started",
