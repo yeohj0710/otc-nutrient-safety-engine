@@ -73,19 +73,22 @@ def main():
         styles[name].font.color.rgb = RGBColor(25, 35, 55)
 
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = p.add_run("졸업논문 연구 산출물\n"); r.bold = True; r.font.size = Pt(14)
-    r = p.add_run("PUBMED 단독 타당성 연구본"); r.bold = True; r.font.size = Pt(11); r.font.color.rgb = RGBColor(190, 70, 55)
-    doc.add_paragraph("\n")
-    p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = p.add_run(TITLE); r.bold = True; r.font.size = Pt(18)
-    p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    r = p.add_run(TITLE_EN); r.italic = True; r.font.size = Pt(11)
-    doc.add_paragraph("\n\n")
-    for line in ["성명  권혁찬", "학번  2021194024", "연세대학교 약학대학", "작성일  2026년 7월 10일"]:
-        p = doc.add_paragraph(line); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    doc.add_paragraph("\n")
-    p = doc.add_paragraph("주의: 본 문서는 PubMed 단독·초록 중심 타당성 연구이다. 다중 데이터베이스 체계적 문헌고찰, 임상 검증 도구 또는 진료 지침으로 해석할 수 없다.")
-    p.alignment = WD_ALIGN_PARAGRAPH.CENTER; p.runs[0].font.color.rgb = RGBColor(180, 55, 45); p.runs[0].bold = True
+    r = p.add_run("졸 업 논 문"); r.bold = True; r.font.size = Pt(18)
+    doc.add_paragraph("")
+    cover = doc.add_table(rows=8, cols=2); cover.style = "Table Grid"; cover.alignment = WD_TABLE_ALIGNMENT.CENTER
+    cover_data = [
+        ("연구 주제명", f"국문: {TITLE}\n영문: {TITLE_EN}"),
+        ("성 명", "권혁찬"), ("학 번", "2021194024"),
+        ("실습기간", "2026년 3월 3일 ~ 2026년 6월 19일"),
+        ("실습장소", "연세대학교 약학대학"), ("논문양식", "종설논문"),
+        ("담당교수", "장민정 교수님  (서명)"), ("제출일", "2026년 6월"),
+    ]
+    for row, (label, value) in zip(cover.rows, cover_data):
+        set_cell_text(row.cells[0], label, True); set_cell_text(row.cells[1], value)
+        shade(row.cells[0], "E7E6E6")
+    doc.add_paragraph("")
+    p = doc.add_paragraph("연세대학교 약학대학 전공심화실습(1)"); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    p.runs[0].bold = True; p.runs[0].font.size = Pt(12)
 
     page(doc); heading(doc, "국문초록")
     para(doc, f"본 연구는 일반의약품 또는 보충제 형태로 접할 수 있는 비타민 D, 비타민 B6, 철분, 마그네슘, 아연의 안전성 문헌을 PubMed에서 전량 회수하고, 원문 위치를 추적할 수 있는 규칙 초안을 생성할 수 있는지 평가하였다. 기관 구독 데이터베이스, 이중 선별, 전문 검토와 전문가 평가는 확보되지 않아 연구 범위를 PubMed 단독 타당성 연구로 사전에 축소하였다.")
@@ -93,6 +96,14 @@ def main():
     para(doc, "계산 선별은 최종 포함 판정이 아니라 우선순위 제안으로 제한하였다. 사전 seed 22건의 PubMed 초록에서 연구설계와 안전성 결과 신호를 확인하고 locator를 보존했다. 이 자료로 5개 설명형 규칙을 만들었으나 모두 draft_ai로 유지했으며 released 규칙은 0개였다. 독립 human gold set과 전문가 시나리오가 없어 AI 선별 재현율, 위험 탐지 민감도, critical false negative와 내용타당도는 평가하지 않았다.")
     para(doc, "결론적으로 전량 검색, 해시 계보, 중복 제거, seed 회수 검증과 초록 locator 연결은 재현 가능하게 구현되었다. 반면 전문 수준의 효과 추출, RoB, GRADE, 임상 규칙 출시와 성능 검증은 후속 사람 검토가 필요하다. 따라서 본 결과는 탐색 및 소프트웨어 타당성에 한정된다.")
     para(doc, "주요어: 일반의약품, 영양제, 안전성, PubMed, 비타민 D, 비타민 B6, 철분, 마그네슘, 아연")
+
+    heading(doc, "영문초록")
+    para(doc, "This study evaluated whether safety evidence for vitamin D, vitamin B6, oral iron, magnesium, and zinc could be retrieved in full from PubMed and linked to traceable draft rules. The scope was limited to a PubMed-only, abstract-based feasibility study. The five searches yielded 16,194 record occurrences. After removing 304 cross-node duplicates, 15,890 unique records remained. Revision of the K2-K5 search strategies improved retrieval of 22 prespecified seed articles from 15 of 22 to 22 of 22. Twenty-two seed abstracts were linked to PubMed locators, and five informational rules were retained as draft_ai. No rule was released. Because independent full-text review, risk-of-bias assessment, GRADE, expert review, and held-out scenario validation were unavailable, clinical performance was not evaluated. The results support technical reproducibility and evidence traceability, but not clinical validation.")
+    para(doc, "Keywords: over-the-counter products, dietary supplements, safety, PubMed, evidence traceability")
+
+    page(doc); heading(doc, "목차")
+    for item in ["국문초록", "영문초록", "1. 서론", "2. 연구 방법", "  2.1 연구설계와 범위", "  2.2 검색과 계보", "  2.3 중복 제거와 계산 선별", "  2.4 초록 근거와 규칙", "3. 연구 결과", "4. 고찰", "5. 결론", "6. 참고문헌", "부록"]:
+        doc.add_paragraph(item)
 
     page(doc); heading(doc, "1. 서론")
     para(doc, "고함량 영양성분은 처방 없이 접근하기 쉽지만 제품 간 중복 복용, 장기간 섭취, 기저 신장질환과 같은 조건에서 위해 양상이 달라질 수 있다. 단순한 ‘안전/위험’ 표시는 용량, 기간, 병용과 출처를 숨겨 실제 상담에 필요한 질문을 제공하지 못한다.")
@@ -144,7 +155,7 @@ def main():
     heading(doc, "5. 결론")
     para(doc, "권혁찬 연구용 PubMed 타당성 범위에서 5개 노드의 검색 결과를 전량 회수하고 해시 계보를 보존했다. 검색식 오류를 교정해 사전 seed 22건을 모두 회수했고, 15,890개 고유 레코드와 22개 초록 확인 근거, 5개 비출시 규칙 초안을 생성했다. 결과는 탐색과 구현 가능성을 지지하지만 임상 규칙의 정확도나 안전성을 검증하지 않는다. 다음 단계는 사람의 전문 판정과 독립 검증이며, 완료 전에는 draft_ai 상태를 유지해야 한다.")
 
-    heading(doc, "참고문헌")
+    heading(doc, "6. 참고문헌")
     for i, row in enumerate(evidence, 1):
         p = doc.add_paragraph(f"{i}. {row['title']} PubMed PMID: {row['pmid']}. {row['source_url']}")
         p.paragraph_format.left_indent = Cm(0.5); p.paragraph_format.first_line_indent = Cm(-0.5); p.paragraph_format.space_after = Pt(3)
@@ -170,7 +181,7 @@ def main():
         footer = section.footer.paragraphs[0]; footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
         run = footer.add_run("- ")
         fld = OxmlElement("w:fldSimple"); fld.set(qn("w:instr"), "PAGE"); footer._p.append(fld); footer.add_run(" -")
-    out = OUT / "권혁찬_졸업논문_PubMed_타당성연구.docx"
+    out = OUT / "권혁찬_졸업논문_학교서식_최종제출본.docx"
     doc.save(out)
     print(json.dumps({"docx": str(out), "evidence_references": len(evidence)}, ensure_ascii=False))
 
