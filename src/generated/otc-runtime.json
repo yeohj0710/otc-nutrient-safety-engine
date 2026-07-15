@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-14",
+  "generatedAt": "2026-07-15",
   "researchDirection": "korean_otc_product_safety",
   "releaseReady": false,
   "rulesReleased": 15,
@@ -66,6 +66,48 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-201110646-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 4.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 2~4회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-201110646-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 1.0,
+          "valueUnit": "캡슐/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1회 300mg",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-201110646-MAX-DAILY-ING-dexibuprofen",
+          "type": "maximum_daily_ingredient_amount",
+          "value": 1200.0,
+          "valueUnit": "mg",
+          "ingredientId": "ING-dexibuprofen",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 덱시부프로펜 1,200mg 상한",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -97,6 +139,48 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-197500016-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 4.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "upper_envelope_from_explicit_regimens",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 적응증별 허가 용법의 1일 투여 횟수 상한",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-197500016-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 3.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "upper_envelope_from_explicit_regimens",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 초회량 750mg",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-197500016-MAX-DAILY-ING-naproxen",
+          "type": "maximum_daily_ingredient_amount",
+          "value": 1250.0,
+          "valueUnit": "mg",
+          "ingredientId": "ING-naproxen",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 총용량 1,250mg 상한",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -129,6 +213,48 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-200610765-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 2.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "upper_envelope_from_explicit_regimens",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 1회 또는 5mg씩 2회 분할",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-200610765-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 1.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 10mg 또는 5mg씩 분할",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-200610765-MAX-DAILY-ING-cetirizine_hydrochloride",
+          "type": "maximum_daily_ingredient_amount",
+          "value": 10.0,
+          "valueUnit": "mg",
+          "ingredientId": "ING-cetirizine_hydrochloride",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 세티리진염산염 10mg",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -168,6 +294,65 @@
         "alcohol",
         "hepatic_disease"
       ],
+      "supportedRuleTypes": [
+        "age_restriction",
+        "alcohol",
+        "hepatic_disease",
+        "max_daily_dose",
+        "minimum_interval",
+        "urgent_referral"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-202106092-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 4.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3~4회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-202106092-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 2.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1회 1~2정",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-202106092-MAX-DAILY-ING-acetaminophen",
+          "type": "maximum_daily_ingredient_amount",
+          "value": 4000.0,
+          "valueUnit": "mg",
+          "ingredientId": "ING-acetaminophen",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 최대 4g(8정)",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-202106092-MIN-INTERVAL",
+          "type": "minimum_interval_hours",
+          "value": 4.0,
+          "valueUnit": "시간",
+          "derivationMethod": "explicit_lower_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 4~6시간 간격",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -200,6 +385,48 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose",
+        "minimum_interval"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-202200525-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 5.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 5회 상한",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-202200525-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 20.0,
+          "valueUnit": "mL/회",
+          "derivationMethod": "upper_envelope_from_explicit_regimens",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 연령·체중표의 1회 권장용량 상한 20mL",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-202200525-MIN-INTERVAL",
+          "type": "minimum_interval_hours",
+          "value": 4.0,
+          "valueUnit": "시간",
+          "derivationMethod": "explicit_lower_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 4~6시간 간격",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -235,6 +462,52 @@
         "gi_bleeding_ulcer",
         "pregnancy_lactation",
         "renal_disease"
+      ],
+      "supportedRuleTypes": [
+        "anticoagulant_antiplatelet",
+        "gi_bleeding_ulcer",
+        "max_daily_dose",
+        "pregnancy_lactation",
+        "renal_disease"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-198601920-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 4.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3~4회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-198601920-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 30.0,
+          "valueUnit": "mL/회",
+          "derivationMethod": "upper_envelope_from_explicit_regimens",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 성인 1회 이부프로펜 600mg 상한",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-198601920-MAX-DAILY-ING-ibuprofen",
+          "type": "maximum_daily_ingredient_amount",
+          "value": 3200.0,
+          "valueUnit": "mg",
+          "ingredientId": "ING-ibuprofen",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 이부프로펜 3,200mg 상한",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD"
+          }
+        }
       ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
@@ -343,6 +616,35 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-198700405-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 3.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-198700405-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 1.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1회 1정",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -476,6 +778,35 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-200300406-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 3.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200300406/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-200300406-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 1.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1회 1정",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200300406/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -583,6 +914,35 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-199900926-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 3.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199900926/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-199900926-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 1.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1회 1정",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199900926/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -651,6 +1011,35 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-199801026-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 3.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199801026/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-199801026-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 2.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "upper_envelope_from_explicit_regimens",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 성인 1회 1~2정",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199801026/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -755,6 +1144,38 @@
         "sedation_driving",
         "sedative_medication"
       ],
+      "supportedRuleTypes": [
+        "decongestant_hypertension",
+        "max_daily_dose",
+        "sedation_driving",
+        "sedative_medication"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-196800036-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 3.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-196800036-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 1.0,
+          "valueUnit": "병/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1회 30mL(1병)",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -816,6 +1237,35 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-199400202-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 3.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 3회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/UD"
+          }
+        },
+        {
+          "constraintId": "ADMIN-199400202-MAX-UNITS",
+          "type": "maximum_units_per_dose",
+          "value": 1.0,
+          "valueUnit": "정/회",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1회 1정",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
@@ -897,6 +1347,23 @@
         }
       ],
       "flags": [],
+      "supportedRuleTypes": [
+        "max_daily_dose"
+      ],
+      "administrationConstraints": [
+        {
+          "constraintId": "ADMIN-198400250-MAX-DOSES",
+          "type": "maximum_doses_per_day",
+          "value": 2.0,
+          "valueUnit": "회/일",
+          "derivationMethod": "explicit_upper_bound",
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "용법용량 PDF p.1 · 1일 1~2회",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/UD"
+          }
+        }
+      ],
       "evidence": {
         "sourceId": "MFDS-NEDRUG-DETAIL",
         "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",

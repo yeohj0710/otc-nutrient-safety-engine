@@ -552,57 +552,99 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 <strong>약을 담으면 결과가 시작돼요.</strong>
                 <p>한 제품만 담아도 용량·연령·질환 관련 조건을 확인할 수 있어요.</p>
               </div>
-            ) : orderedFindings.length === 0 ? (
-              <div className={styles.clearResult}>
-                <span aria-hidden="true">✓</span>
-                <div>
-                  <strong>정의된 위험 신호를 찾지 못했어요.</strong>
-                  <p>안전하다는 보장은 아닙니다. 포장과 허가사항을 따르고 증상이 계속되면 전문가와 상담하세요.</p>
-                </div>
-              </div>
             ) : (
               <>
-                <div className={styles.resultSummary} data-urgent={urgentCount > 0}>
-                  <span>{urgentCount > 0 ? "먼저 확인" : "주의 확인"}</span>
-                  <strong>{orderedFindings.length}개 항목이 있어요</strong>
-                  <p>
-                    {urgentCount > 0
-                      ? `이 중 ${urgentCount}개는 즉시 확인이 필요한 항목입니다.`
-                      : "아래 행동 안내와 근거를 차례로 확인하세요."}
-                  </p>
-                </div>
-                <div className={styles.findings}>
-                  {orderedFindings.map((finding, index) => (
-                    <article key={finding.findingId} data-severity={finding.severity}>
-                      <div className={styles.findingMeta}>
-                        <span>{finding.severity === "urgent" ? "즉시 확인" : finding.severity === "high" ? "높은 주의" : "주의"}</span>
-                        <b>{index + 1}</b>
+                {evaluation.inputIssues.length > 0 && (
+                  <div className={styles.inputNotice} role="alert">
+                    <span aria-hidden="true">!</span>
+                    <div>
+                      <strong>입력값을 확인하세요.</strong>
+                      <p>잘못된 값은 안전성 계산에서 제외했습니다.</p>
+                      <ul>
+                        {evaluation.inputIssues.map((issue) => (
+                          <li key={issue.issueId}>{issue.messageKo}</li>
+                        ))}
+                      </ul>
+                      <b>입력값을 고친 뒤 다시 확인하세요.</b>
+                    </div>
+                  </div>
+                )}
+
+                {evaluation.coverageGaps.length > 0 && (
+                  <div className={styles.coverageNotice}>
+                    <span aria-hidden="true">?</span>
+                    <div>
+                      <strong>일부 조건은 확인하지 못했어요.</strong>
+                      <p>기준이 연결된 항목만 판정했습니다. 미확인 항목은 제품 포장이나 전문가에게 확인하세요.</p>
+                      <ul>
+                        {evaluation.coverageGaps.map((gap) => (
+                          <li key={gap.gapId}>
+                            <b>{gap.titleKo}</b>
+                            <span>{gap.detailKo}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+
+                {orderedFindings.length === 0 &&
+                  evaluation.inputIssues.length === 0 &&
+                  evaluation.coverageGaps.length === 0 && (
+                    <div className={styles.clearResult}>
+                      <span aria-hidden="true">✓</span>
+                      <div>
+                        <strong>입력한 조건에서 정의된 위험 신호를 찾지 못했어요.</strong>
+                        <p>안전하다는 보장은 아닙니다. 포장과 허가사항을 따르고 증상이 계속되면 전문가와 상담하세요.</p>
                       </div>
-                      <h3>{finding.titleKo}</h3>
-                      <p>{finding.detailKo}</p>
-                      <div className={styles.nextAction}>
-                        <span>지금 할 일</span>
-                        <strong>{finding.nextActionKo}</strong>
-                      </div>
-                      <details>
-                        <summary>근거 원문 위치 보기</summary>
-                        <div>
-                          {finding.evidence.map((source) => (
-                            <a
-                              key={`${source.sourceId}-${source.locator}`}
-                              href={source.url}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              <span>{source.sourceId}</span>
-                              {source.locator}
-                            </a>
-                          ))}
-                        </div>
-                      </details>
-                    </article>
-                  ))}
-                </div>
+                    </div>
+                  )}
+
+                {orderedFindings.length > 0 && (
+                  <>
+                    <div className={styles.resultSummary} data-urgent={urgentCount > 0}>
+                      <span>{urgentCount > 0 ? "먼저 확인" : "주의 확인"}</span>
+                      <strong>{orderedFindings.length}개 항목이 있어요</strong>
+                      <p>
+                        {urgentCount > 0
+                          ? `이 중 ${urgentCount}개는 즉시 확인이 필요한 항목입니다.`
+                          : "아래 행동 안내와 근거를 차례로 확인하세요."}
+                      </p>
+                    </div>
+                    <div className={styles.findings}>
+                      {orderedFindings.map((finding, index) => (
+                        <article key={finding.findingId} data-severity={finding.severity}>
+                          <div className={styles.findingMeta}>
+                            <span>{finding.severity === "urgent" ? "즉시 확인" : finding.severity === "high" ? "높은 주의" : "주의"}</span>
+                            <b>{index + 1}</b>
+                          </div>
+                          <h3>{finding.titleKo}</h3>
+                          <p>{finding.detailKo}</p>
+                          <div className={styles.nextAction}>
+                            <span>지금 할 일</span>
+                            <strong>{finding.nextActionKo}</strong>
+                          </div>
+                          <details>
+                            <summary>근거 원문 위치 보기</summary>
+                            <div>
+                              {finding.evidence.map((source) => (
+                                <a
+                                  key={`${source.sourceId}-${source.locator}`}
+                                  href={source.url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  <span>{source.sourceId}</span>
+                                  {source.locator}
+                                </a>
+                              ))}
+                            </div>
+                          </details>
+                        </article>
+                      ))}
+                    </div>
+                  </>
+                )}
               </>
             )}
 
@@ -633,7 +675,15 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       {selected.length > 0 && (
         <a className={styles.mobileResultLink} href="#safety-result">
           <span>선택 {selected.length}개</span>
-          <strong>{orderedFindings.length > 0 ? `주의 ${orderedFindings.length}개 보기` : "점검 결과 보기"}</strong>
+          <strong>
+            {evaluation && evaluation.inputIssues.length > 0
+              ? `입력 오류 ${evaluation.inputIssues.length}개 보기`
+              : orderedFindings.length > 0
+                ? `주의 ${orderedFindings.length}개 보기`
+                : evaluation && evaluation.coverageGaps.length > 0
+                  ? `미확인 ${evaluation.coverageGaps.length}개 보기`
+                  : "점검 결과 보기"}
+          </strong>
         </a>
       )}
     </div>

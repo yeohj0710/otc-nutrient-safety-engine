@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0.0",
+  "status": "evaluated_fixed_development_cases_not_external_user_study",
+  "cases": 26,
+  "successes": 26,
+  "value": 1,
+  "cases_sha256": "3c87c95fed3abe5f2b7a23092c37e14513efb6e0e99a99c10d093a2df29a0abb",
+  "runtime_sha256": "2a810323bec96d4324f04fb72233c9bd54e881a0885a3d20d3ba1f93680429ea",
+  "results": [
+    {
+      "case_id": "SEARCH-001",
+      "case_type": "exact_authorized_name",
+      "query": "덱스피드연질캡슐(덱시부프로펜)",
+      "expected_item_sequence": "201110646",
+      "found_item_sequences": [
+        "201110646"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-002",
+      "case_type": "exact_authorized_name",
+      "query": "낙센정(나프록센)",
+      "expected_item_sequence": "197500016",
+      "found_item_sequences": [
+        "197500016"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-003",
+      "case_type": "exact_authorized_name",
+      "query": "지르텍정(세티리진염산염)",
+      "expected_item_sequence": "200610765",
+      "found_item_sequences": [
+        "200610765"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-004",
+      "case_type": "exact_authorized_name",
+      "query": "타이레놀정500밀리그람(아세트아미노펜)",
+      "expected_item_sequence": "202106092",
+      "found_item_sequences": [
+        "202106092"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-005",
+      "case_type": "exact_authorized_name",
+      "query": "어린이타이레놀현탁액(아세트아미노펜)",
+      "expected_item_sequence": "202200525",
+      "found_item_sequences": [
+        "202200525"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-006",
+      "case_type": "exact_authorized_name",
+      "query": "어린이부루펜시럽(이부프로펜)",
+      "expected_item_sequence": "198601920",
+      "found_item_sequences": [
+        "198601920"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-007",
+      "case_type": "exact_authorized_name",
+      "query": "베아제정",
+      "expected_item_sequence": "198700405",
+      "found_item_sequences": [
+        "198700405",
+        "200300406"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-008",
+      "case_type": "exact_authorized_name",
+      "query": "닥터베아제정",
+      "expected_item_sequence": "200300406",
+      "found_item_sequences": [
+        "200300406"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-009",
+      "case_type": "exact_authorized_name",
+      "query": "훼스탈골드정",
+      "expected_item_sequence": "199900926",
+      "found_item_sequences": [
+        "199900926"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-010",
+      "case_type": "exact_authorized_name",
+      "query": "훼스탈플러스정",
+      "expected_item_sequence": "199801026",
+      "found_item_sequences": [
+        "199801026"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-011",
+      "case_type": "exact_authorized_name",
+      "query": "판콜에이내복액",
+      "expected_item_sequence": "196800036",
+      "found_item_sequences": [
+        "196800036"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-012",
+      "case_type": "exact_authorized_name",
+      "query": "판피린티정",
+      "expected_item_sequence": "199400202",
+      "found_item_sequences": [
+        "199400202"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-013",
+      "case_type": "exact_authorized_name",
+      "query": "제일쿨파프",
+      "expected_item_sequence": "198400250",
+      "found_item_sequences": [
+        "198400250"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-014",
+      "case_type": "short_product_name",
+      "query": "덱스피드",
+      "expected_item_sequence": "201110646",
+      "found_item_sequences": [
+        "201110646"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-015",
+      "case_type": "short_product_name",
+      "query": "낙센",
+      "expected_item_sequence": "197500016",
+      "found_item_sequences": [
+        "197500016"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-016",
+      "case_type": "short_product_name",
+      "query": "지르텍",
+      "expected_item_sequence": "200610765",
+      "found_item_sequences": [
+        "200610765"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-017",
+      "case_type": "short_product_name",
+      "query": "타이레놀정500",
+      "expected_item_sequence": "202106092",
+      "found_item_sequences": [
+        "202106092"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-018",
+      "case_type": "short_product_name",
+      "query": "어린이타이레놀현탁액",
+      "expected_item_sequence": "202200525",
+      "found_item_sequences": [
+        "202200525"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-019",
+      "case_type": "short_product_name",
+      "query": "어린이부루펜",
+      "expected_item_sequence": "198601920",
+      "found_item_sequences": [
+        "198601920"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-020",
+      "case_type": "short_product_name",
+      "query": "베아제",
+      "expected_item_sequence": "198700405",
+      "found_item_sequences": [
+        "198700405",
+        "200300406"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-021",
+      "case_type": "short_product_name",
+      "query": "닥터베아제",
+      "expected_item_sequence": "200300406",
+      "found_item_sequences": [
+        "200300406"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-022",
+      "case_type": "short_product_name",
+      "query": "훼스탈골드",
+      "expected_item_sequence": "199900926",
+      "found_item_sequences": [
+        "199900926"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-023",
+      "case_type": "short_product_name",
+      "query": "훼스탈플러스",
+      "expected_item_sequence": "199801026",
+      "found_item_sequences": [
+        "199801026"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-024",
+      "case_type": "short_product_name",
+      "query": "판콜에이",
+      "expected_item_sequence": "196800036",
+      "found_item_sequences": [
+        "196800036"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-025",
+      "case_type": "short_product_name",
+      "query": "판피린티",
+      "expected_item_sequence": "199400202",
+      "found_item_sequences": [
+        "199400202"
+      ],
+      "success": true
+    },
+    {
+      "case_id": "SEARCH-026",
+      "case_type": "short_product_name",
+      "query": "제일쿨파프",
+      "expected_item_sequence": "198400250",
+      "found_item_sequences": [
+        "198400250"
+      ],
+      "success": true
+    }
+  ]
+}
