@@ -1,9 +1,7 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 
-import literatureCandidateData from "@/src/generated/literature-candidates.json";
-import { RuleExplorerClient } from "@/src/components/rule-explorer-client";
-import { getExplorerMetadata } from "@/src/lib/knowledge";
+import runtimeData from "@/src/generated/otc-runtime.json";
+import { OtcProductSafetyClient, type OtcRuntime } from "@/src/components/otc-product-safety-client";
 import { siteDescription, siteName } from "@/src/lib/site";
 
 export const metadata: Metadata = {
@@ -14,86 +12,63 @@ export const metadata: Metadata = {
   },
 };
 
-function formatCount(value: number) {
-  return value.toLocaleString("ko-KR");
-}
-
 export default function Home() {
-  const metadata = getExplorerMetadata();
-  const literatureSummary = literatureCandidateData.summary;
-  const highlights = [
-    ["검색 결과", formatCount(literatureSummary.latestPubMedHitCount)],
-    ["보조 검색", formatCount(literatureSummary.secondaryHitTotal)],
-    ["먼저 볼 문헌", formatCount(literatureSummary.priorityCandidateCount)],
-    ["함량 기준", formatCount(metadata.meta.safetyRuleCount)],
-  ];
-  const doseChecks = [
-    ["비타민 D + 칼슘", "4,000 IU/day 기준", "혈중 칼슘 증가"],
-    ["비타민 B6", "50 mg/day 이상", "신경 증상"],
-    ["철·아연·마그네슘", "동시 섭취 확인", "흡수 간섭"],
-  ];
-
   return (
-    <main className="min-h-screen bg-[#f5f7fb] px-5 py-8 text-[#191f28] sm:px-8">
-      <div className="mx-auto grid w-full max-w-6xl gap-12">
-        <section className="grid gap-10 py-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-center">
-          <div>
-            <p className="text-[0.95rem] font-bold text-[#3182f6]">
-              성분과 함량을 먼저 확인
-            </p>
-            <h1 className="mt-4 max-w-3xl break-keep text-[2.45rem] font-bold leading-tight md:text-[4.4rem]">
-              {siteName}
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#4e5968]">
-              {siteDescription}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="#explorer"
-                className="rounded-[0.5rem] bg-[#3182f6] px-5 py-3 text-sm font-bold text-white shadow-[0_8px_20px_rgba(49,130,246,0.25)]"
-              >
-                함량 판정하기
-              </Link>
-              <Link
-                href="/ingredients"
-                className="rounded-[0.5rem] bg-white px-5 py-3 text-sm font-bold text-[#4e5968]"
-              >
-                성분 근거 자료
-              </Link>
+    <main id="main-content" className="min-h-screen bg-[#f3f5f7] text-[#17223b]">
+      <section className="px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-11">
+        <div className="mx-auto max-w-[1320px]">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <div>
+              <p className="inline-flex min-h-7 items-center rounded-lg bg-[#e8f5f1] px-2.5 text-[11px] font-extrabold text-[#17604f]">
+                국내 OTC 근거 조회
+              </p>
+              <h1 className="mt-3 max-w-3xl break-keep text-[30px] font-extrabold leading-[1.25] tracking-[-0.035em] sm:text-[40px]">
+                같이 먹는 약, 한눈에 점검하세요
+              </h1>
+              <p className="mt-3 max-w-3xl break-keep text-[14px] font-medium leading-[1.65] text-[#667085] sm:text-[16px]">
+                제품명만 담으면 중복 성분·하루 입력량·복용 간격과 연령·질환·병용약 주의를 근거 원문까지 연결해 보여드려요.
+              </p>
+            </div>
+            <div className="flex max-w-xl flex-wrap gap-2 lg:justify-end" aria-label="시스템 데이터 현황">
+              <span className="inline-flex min-h-9 items-center rounded-lg border border-[#dce2e8] bg-white px-3 text-[11px] font-bold text-[#475467]">
+                허가 확인 제품 {runtimeData.products.length}개
+              </span>
+              <span className="inline-flex min-h-9 items-center rounded-lg border border-[#dce2e8] bg-white px-3 text-[11px] font-bold text-[#475467]">
+                근거 규칙 {runtimeData.rulesReleased}개
+              </span>
+              <span className="inline-flex min-h-9 items-center rounded-lg border border-[#eed7b7] bg-[#fff8ee] px-3 text-[11px] font-bold text-[#87520b]">
+                연구용 · 블라인드 독립평가 미완료
+              </span>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="rounded-[0.75rem] bg-white p-5 shadow-[0_18px_48px_rgba(2,32,71,0.08)]">
-            <p className="text-sm font-bold text-[#6b7684]">오늘 볼 항목</p>
-            <div className="mt-4 divide-y divide-[#edf1f7]">
-              {doseChecks.map(([name, limit, signal]) => (
-                <div key={name} className="py-4">
-                  <div className="flex items-center justify-between gap-4">
-                    <p className="font-bold">{name}</p>
-                    <p className="text-sm font-semibold text-[#3182f6]">
-                      {limit}
-                    </p>
-                  </div>
-                  <p className="mt-1 text-sm text-[#8b95a1]">{signal}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section id="checker" className="px-3 pb-8 sm:px-6 sm:pb-12">
+        <div className="mx-auto max-w-[1320px]">
+          <OtcProductSafetyClient runtime={runtimeData as OtcRuntime} />
+        </div>
+      </section>
 
-        <section className="grid gap-5 sm:grid-cols-4">
-          {highlights.map(([label, value]) => (
-            <div key={label}>
-              <p className="text-sm font-semibold text-[#6b7684]">{label}</p>
-              <p className="mt-2 text-3xl font-bold tracking-tight">{value}</p>
+      <section className="border-t border-[#e1e5ea] bg-white px-4 py-7 sm:px-6">
+        <div className="mx-auto grid max-w-[1320px] gap-5 sm:grid-cols-3 sm:gap-8">
+          {[
+            ["제품명부터 시작", "성분을 몰라도 제품을 검색해 함께 복용하는 조합을 만들 수 있어요."],
+            ["판정 기준은 고정", "AI가 위험 수준이나 용량 기준을 만들지 않고 공개된 결정론적 규칙만 사용해요."],
+            ["근거까지 바로 확인", "각 주의 항목에서 허가문서와 구체적인 원문 위치를 열어볼 수 있어요."],
+          ].map(([title, description], index) => (
+            <div key={title} className="flex gap-3">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#20324f] text-[10px] font-extrabold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <h2 className="text-[13px] font-extrabold text-[#17223b]">{title}</h2>
+                <p className="mt-1 break-keep text-[11px] font-medium leading-[1.6] text-[#667085]">{description}</p>
+              </div>
             </div>
           ))}
-        </section>
-
-        <section id="explorer" className="scroll-mt-6">
-          <RuleExplorerClient metadata={metadata} />
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 }

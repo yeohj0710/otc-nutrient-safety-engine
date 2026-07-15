@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: oklch(0.982 0.006 250);
+  --background: #f3f5f7;
   --foreground: oklch(0.22 0.024 255);
   --surface: oklch(1 0 0);
   --surface-elevated: oklch(0.994 0.003 250);
@@ -29,7 +29,7 @@
   --page-shell-max: 80rem;
   --page-shell-narrow-max: 48rem;
   --font-fallback-sans:
-    "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", "Noto Sans KR",
+    Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", "Noto Sans KR",
     sans-serif;
   --font-fallback-display: var(--font-fallback-sans);
   color-scheme: light;
@@ -61,7 +61,7 @@ body {
 
 body {
   color: var(--foreground);
-  font-family: var(--font-app-sans), var(--font-fallback-sans);
+  font-family: Pretendard, var(--font-app-sans), var(--font-fallback-sans);
   font-kerning: normal;
   line-height: 1.5;
   letter-spacing: 0;
@@ -378,25 +378,22 @@ details[open] > .collapsible-panel .collapsible-panel-body {
 
 .dose-explorer .surface-card,
 .dose-explorer .surface-card-strong {
-  border-color: transparent;
+  border-color: #dde3ec;
   background-color: #ffffff;
-  box-shadow: 0 18px 48px rgba(2, 32, 71, 0.08);
+  box-shadow: 0 6px 18px rgba(2, 32, 71, 0.06);
 }
 
 .dose-explorer > section:first-child {
-  border: 0;
+  border: 1px solid #dde3ec;
   border-radius: 0.75rem;
   background: #ffffff;
-  box-shadow: 0 18px 48px rgba(2, 32, 71, 0.08);
+  box-shadow: 0 8px 24px rgba(2, 32, 71, 0.07);
 }
 
-.dose-explorer .bg-white,
 .dose-explorer .bg-stone-50,
 .dose-explorer .bg-stone-50\/70,
 .dose-explorer .bg-stone-100,
-.dose-explorer .bg-slate-50 {
-  background-color: #ffffff;
-}
+.dose-explorer .bg-slate-50 { background-color: #f7f9fc; }
 
 .dose-explorer .bg-amber-50,
 .dose-explorer .bg-amber-50\/45 {
@@ -419,15 +416,7 @@ details[open] > .collapsible-panel .collapsible-panel-body {
 .dose-explorer .border-stone-200,
 .dose-explorer .border-stone-200\/80,
 .dose-explorer .border-slate-300,
-.dose-explorer .border-border-subtle {
-  border-color: transparent;
-}
-
-.dose-explorer label[class*="border"],
-.dose-explorer div[class*="border"],
-.dose-explorer section[class*="border"] {
-  border-color: transparent !important;
-}
+.dose-explorer .border-border-subtle { border-color: #e5e9f0; }
 
 .dose-explorer .rounded-full,
 .dose-explorer .rounded-\[1rem\],

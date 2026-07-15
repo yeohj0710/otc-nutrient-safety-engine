@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "lineage": "research_v3",
+  "releaseStatus": "draft_not_for_clinical_use",
+  "claimBoundary": "KDRI threshold developer prototype; no expert review or independent evaluation",
+  "rules": [
+    {
+      "id": "V3-DRAFT-KDRI-VD-UL",
+      "ingredientId": "vitamin_d",
+      "conditions": {
+        "age_min_years": 19,
+        "daily_total_ug_gt": 100
+      },
+      "exceptions": {},
+      "decisionLevel": "high",
+      "messageKo": "입력한 비타민 D 총량이 한국 성인 상한섭취량보다 높습니다.",
+      "nextActionKo": "제품별 비타민 D 함량과 하루 총량을 다시 확인하고 약사 또는 의사와 상담할 내용을 정리하세요.",
+      "sourceId": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "locator": "Vitamin book PDF p.12 (printed xii), Vitamin D row",
+      "reviewStatus": "released",
+      "version": "0.1.0"
+    },
+    {
+      "id": "V3-DRAFT-KDRI-B6-UL",
+      "ingredientId": "vitamin_b6",
+      "conditions": {
+        "age_min_years": 19,
+        "daily_total_mg_gt": 50
+      },
+      "exceptions": {},
+      "decisionLevel": "high",
+      "messageKo": "입력한 비타민 B6 총량이 한국 성인 상한섭취량보다 높습니다.",
+      "nextActionKo": "여러 제품의 비타민 B6를 합산했는지 확인하고 저림·감각저하가 있으면 의료진에게 알릴 내용을 정리하세요.",
+      "sourceId": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "locator": "Vitamin book PDF p.14 (printed xiv), Vitamin B6 row",
+      "reviewStatus": "released",
+      "version": "0.1.0"
+    },
+    {
+      "id": "V3-DRAFT-KDRI-MG-UL",
+      "ingredientId": "magnesium",
+      "conditions": {
+        "age_min_years": 19,
+        "non_food_daily_total_mg_gt": 350
+      },
+      "exceptions": {
+        "natural_food_magnesium_excluded": true
+      },
+      "decisionLevel": "high",
+      "messageKo": "보충제 등 식품 외 급원의 마그네슘 총량이 한국 성인 상한섭취량보다 높습니다.",
+      "nextActionKo": "자연식품이 아닌 제품에서 섭취하는 마그네슘만 다시 합산하고 제품 형태와 신장 기능 관련 상담 내용을 준비하세요.",
+      "sourceId": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "locator": "Mineral book PDF p.16 (printed xvi), Magnesium non-food-source UL column",
+      "reviewStatus": "released",
+      "version": "0.1.0"
+    },
+    {
+      "id": "V3-DRAFT-KDRI-FE-UL",
+      "ingredientId": "iron",
+      "conditions": {
+        "age_min_years": 19,
+        "daily_total_mg_gt": 45
+      },
+      "exceptions": {
+        "medically_supervised_treatment": "requires_separate_review"
+      },
+      "decisionLevel": "high",
+      "messageKo": "입력한 철 총량이 한국 성인 상한섭취량보다 높습니다.",
+      "nextActionKo": "원소 철 함량과 치료 목적·의료진 감독 여부를 확인하고 임의로 복용을 바꾸지 말고 상담 내용을 준비하세요.",
+      "sourceId": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "locator": "Mineral book PDF p.17 (printed xvii), Iron row",
+      "reviewStatus": "released",
+      "version": "0.1.0"
+    },
+    {
+      "id": "V3-DRAFT-KDRI-ZN-UL",
+      "ingredientId": "zinc",
+      "conditions": {
+        "age_min_years": 19,
+        "daily_total_mg_gt": 35
+      },
+      "exceptions": {},
+      "decisionLevel": "high",
+      "messageKo": "입력한 아연 총량이 한국 성인 상한섭취량보다 높습니다.",
+      "nextActionKo": "여러 제품의 원소 아연 함량과 복용 기간을 확인하고 장기 복용 시 구리 관련 상담 내용을 준비하세요.",
+      "sourceId": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "locator": "Mineral book PDF p.17 (printed xvii), Zinc row",
+      "reviewStatus": "released",
+      "version": "0.1.0"
+    },
+    {
+      "id": "V3-DRAFT-KDRI-CA-UL",
+      "ingredientId": "calcium",
+      "conditions": {
+        "age_min_years": 19,
+        "profile_thresholds_mg": {
+          "male_19_29": 3000,
+          "male_30_plus": 2500,
+          "female_19_29": 2500,
+          "female_30_plus": 2000
+        },
+        "daily_total_mg_gt_profile_threshold": true
+      },
+      "exceptions": {},
+      "decisionLevel": "high",
+      "messageKo": "입력한 칼슘 총량이 선택한 성별·연령의 한국 상한섭취량보다 높습니다.",
+      "nextActionKo": "식품과 모든 제품의 칼슘 총량을 다시 확인하고 연령·성별 기준과 결석 병력 관련 상담 내용을 준비하세요.",
+      "sourceId": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "locator": "Mineral book PDF p.16 (printed xvi), Calcium row",
+      "reviewStatus": "released",
+      "version": "0.1.0"
+    }
+  ]
+}

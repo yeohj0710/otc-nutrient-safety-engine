@@ -1,0 +1,927 @@
+{
+  "schemaVersion": "2.0.0",
+  "generatedAt": "2026-07-14",
+  "researchDirection": "korean_otc_product_safety",
+  "releaseReady": false,
+  "rulesReleased": 15,
+  "releasedRuleTypes": [
+    "duplicate_ingredient",
+    "duplicate_pharmacologic_class",
+    "max_daily_dose",
+    "minimum_interval",
+    "age_restriction",
+    "pregnancy_lactation",
+    "hepatic_disease",
+    "renal_disease",
+    "gi_bleeding_ulcer",
+    "sedation_driving",
+    "alcohol",
+    "anticoagulant_antiplatelet",
+    "sedative_medication",
+    "decongestant_hypertension",
+    "urgent_referral"
+  ],
+  "urgentReferralBindings": [
+    {
+      "itemSequence": "202106092",
+      "terms": [
+        "호흡곤란",
+        "온몸이 붉어짐",
+        "혈관부기",
+        "두드러기",
+        "천식발작",
+        "얼굴부기",
+        "저혈압",
+        "쇽",
+        "스티븐스-존슨",
+        "스티븐스 존슨",
+        "독성표피괴사",
+        "리엘 증후군"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "productId": "MFDS-201110646",
+      "itemSequence": "201110646",
+      "productName": "덱스피드연질캡슐(덱시부프로펜)",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "캡슐",
+      "ingredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "nameKo": "덱시부프로펜",
+          "amountPerUnit": 300.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "NSAID"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201110646"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201110646"
+      }
+    },
+    {
+      "productId": "MFDS-197500016",
+      "itemSequence": "197500016",
+      "productName": "낙센정(나프록센)",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-naproxen",
+          "nameKo": "나프록센",
+          "amountPerUnit": 250.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "NSAID"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197500016"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197500016"
+      }
+    },
+    {
+      "productId": "MFDS-200610765",
+      "itemSequence": "200610765",
+      "productName": "지르텍정(세티리진염산염)",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-cetirizine_hydrochloride",
+          "nameKo": "세티리진염산염",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "antihistamine",
+            "second_generation_antihistamine"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200610765"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200610765"
+      }
+    },
+    {
+      "productId": "MFDS-202106092",
+      "itemSequence": "202106092",
+      "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-acetaminophen",
+          "nameKo": "아세트아미노펜",
+          "amountPerUnit": 500.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "analgesic_antipyretic"
+          ],
+          "flags": [
+            "alcohol",
+            "hepatic_disease"
+          ],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202106092"
+          },
+          "maxDailyAmount": 4000.0,
+          "minimumIntervalHours": 4.0
+        }
+      ],
+      "flags": [
+        "alcohol",
+        "hepatic_disease"
+      ],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202106092"
+      },
+      "minimumAgeYears": 12.0
+    },
+    {
+      "productId": "MFDS-202200525",
+      "itemSequence": "202200525",
+      "productName": "어린이타이레놀현탁액(아세트아미노펜)",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "mL",
+      "ingredients": [
+        {
+          "ingredientId": "ING-acetaminophen",
+          "nameKo": "아세트아미노펜",
+          "amountPerUnit": 32.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "analgesic_antipyretic"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202200525"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202200525"
+      }
+    },
+    {
+      "productId": "MFDS-198601920",
+      "itemSequence": "198601920",
+      "productName": "어린이부루펜시럽(이부프로펜)",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "mL",
+      "ingredients": [
+        {
+          "ingredientId": "ING-ibuprofen",
+          "nameKo": "이부프로펜",
+          "amountPerUnit": 20.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "NSAID"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198601920"
+          }
+        }
+      ],
+      "flags": [
+        "anticoagulant_antiplatelet",
+        "gi_bleeding_ulcer",
+        "pregnancy_lactation",
+        "renal_disease"
+      ],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198601920"
+      }
+    },
+    {
+      "productId": "MFDS-198700405",
+      "itemSequence": "198700405",
+      "productName": "베아제정",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-mf-src-7ae387262216",
+          "nameKo": "디아스타제·프로테아제·셀룰라제",
+          "amountPerUnit": 50.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-a742c02533bc",
+          "nameKo": "리파제",
+          "amountPerUnit": 15.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-06cdde4eaaee",
+          "nameKo": "판프로신",
+          "amountPerUnit": 20.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-0546ff64775e",
+          "nameKo": "판셀라제",
+          "amountPerUnit": 30.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-484bf5816144",
+          "nameKo": "판크레아틴장용과립",
+          "amountPerUnit": 78.6,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-7ace07a0f45d",
+          "nameKo": "우르소데옥시콜산",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-5abce34aadf5",
+          "nameKo": "시메티콘",
+          "amountPerUnit": 40.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405"
+      }
+    },
+    {
+      "productId": "MFDS-200300406",
+      "itemSequence": "200300406",
+      "productName": "닥터베아제정",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-mf-src-7ae387262216",
+          "nameKo": "디아스타제·프로테아제·셀룰라제",
+          "amountPerUnit": 50.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-0546ff64775e",
+          "nameKo": "판셀라제",
+          "amountPerUnit": 30.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-a5c9920bea02",
+          "nameKo": "크리아제-PEG",
+          "amountPerUnit": 80.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-db4cde0b063f",
+          "nameKo": "디아스타제·프로테아제100",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-06cdde4eaaee",
+          "nameKo": "판프로신",
+          "amountPerUnit": 20.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-a742c02533bc",
+          "nameKo": "리파제",
+          "amountPerUnit": 30.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-ea4c014f0616",
+          "nameKo": "브로멜라인",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-7ace07a0f45d",
+          "nameKo": "우르소데옥시콜산",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-5abce34aadf5",
+          "nameKo": "시메티콘",
+          "amountPerUnit": 45.7,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406"
+      }
+    },
+    {
+      "productId": "MFDS-199900926",
+      "itemSequence": "199900926",
+      "productName": "훼스탈골드정",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-mf-src-8f38da8a73d0",
+          "nameKo": "판크레아틴",
+          "amountPerUnit": 150.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-7ae387262216",
+          "nameKo": "디아스타제·프로테아제·셀룰라제",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-d75c9c1aefc3",
+          "nameKo": "프로자임6",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-a742c02533bc",
+          "nameKo": "리파제",
+          "amountPerUnit": 15.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-d33c06bc01c8",
+          "nameKo": "셀룰라제",
+          "amountPerUnit": 9.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-7ace07a0f45d",
+          "nameKo": "우르소데옥시콜산",
+          "amountPerUnit": 20.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-5abce34aadf5",
+          "nameKo": "시메티콘",
+          "amountPerUnit": 60.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926"
+      }
+    },
+    {
+      "productId": "MFDS-199801026",
+      "itemSequence": "199801026",
+      "productName": "훼스탈플러스정",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-mf-src-8f38da8a73d0",
+          "nameKo": "판크레아틴",
+          "amountPerUnit": 315.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199801026"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-d33c06bc01c8",
+          "nameKo": "셀룰라제",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199801026"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-7ace07a0f45d",
+          "nameKo": "우르소데옥시콜산",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199801026"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-5abce34aadf5",
+          "nameKo": "시메티콘",
+          "amountPerUnit": 30.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199801026"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199801026"
+      }
+    },
+    {
+      "productId": "MFDS-196800036",
+      "itemSequence": "196800036",
+      "productName": "판콜에이내복액",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "병",
+      "ingredients": [
+        {
+          "ingredientId": "ING-acetaminophen",
+          "nameKo": "아세트아미노펜",
+          "amountPerUnit": 300.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "analgesic_antipyretic"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-cd3363b1ac1f",
+          "nameKo": "구아이페네신",
+          "amountPerUnit": 80.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-41c782105274",
+          "nameKo": "펜톡시베린시트르산염",
+          "amountPerUnit": 15.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-4b985f9d3bdb",
+          "nameKo": "페닐레프린염산염",
+          "amountPerUnit": 10.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036"
+          }
+        },
+        {
+          "ingredientId": "ING-chlorpheniramine_maleate",
+          "nameKo": "클로르페니라민말레산염",
+          "amountPerUnit": 2.5,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "antihistamine",
+            "first_generation_antihistamine",
+            "sedating_antihistamine"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-dc293e7de142",
+          "nameKo": "카페인무수물",
+          "amountPerUnit": 30.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036"
+          }
+        }
+      ],
+      "flags": [
+        "decongestant_hypertension",
+        "sedation_driving",
+        "sedative_medication"
+      ],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036"
+      }
+    },
+    {
+      "productId": "MFDS-199400202",
+      "itemSequence": "199400202",
+      "productName": "판피린티정",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "정",
+      "ingredients": [
+        {
+          "ingredientId": "ING-acetaminophen",
+          "nameKo": "아세트아미노펜",
+          "amountPerUnit": 300.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "analgesic_antipyretic"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400202"
+          }
+        },
+        {
+          "ingredientId": "ING-chlorpheniramine_maleate",
+          "nameKo": "클로르페니라민말레산염",
+          "amountPerUnit": 2.0,
+          "unit": "mg",
+          "pharmacologicClasses": [
+            "antihistamine",
+            "first_generation_antihistamine",
+            "sedating_antihistamine"
+          ],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400202"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-dc293e7de142",
+          "nameKo": "카페인무수물",
+          "amountPerUnit": 30.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400202"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400202"
+      }
+    },
+    {
+      "productId": "MFDS-198400250",
+      "itemSequence": "198400250",
+      "productName": "제일쿨파프",
+      "classification": "일반의약품",
+      "authorizationStatus": "active",
+      "doseUnitLabel": "매",
+      "ingredients": [
+        {
+          "ingredientId": "ING-mf-src-8bebf0ac75f4",
+          "nameKo": "살리실산메틸",
+          "amountPerUnit": 262.5,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198400250"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-76b6b5a5a31f",
+          "nameKo": "L-멘톨",
+          "amountPerUnit": 175.0,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198400250"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-25b653f7fbe2",
+          "nameKo": "dl-캄파",
+          "amountPerUnit": 122.5,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198400250"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-4a3225f1eb5d",
+          "nameKo": "박하유",
+          "amountPerUnit": 87.5,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198400250"
+          }
+        },
+        {
+          "ingredientId": "ING-mf-src-e2b868294a4f",
+          "nameKo": "티몰",
+          "amountPerUnit": 17.5,
+          "unit": "mg",
+          "pharmacologicClasses": [],
+          "flags": [],
+          "evidence": {
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "의약품상세정보 > 원료약품 및 분량",
+            "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198400250"
+          }
+        }
+      ],
+      "flags": [],
+      "evidence": {
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+        "url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198400250"
+      }
+    }
+  ],
+  "officialCandidates": [
+    {
+      "candidateId": "SAFE-OTC-02",
+      "productName": "타이레놀정160밀리그람(아세트아미노펜)",
+      "className": "해열진통제",
+      "status": "withdrawn"
+    },
+    {
+      "candidateId": "SAFE-OTC-03",
+      "productName": "어린이용타이레놀정80밀리그람(아세트아미노펜)",
+      "className": "해열진통제",
+      "status": "withdrawn"
+    },
+    {
+      "candidateId": "SAFE-OTC-13",
+      "productName": "신신파스아렉스",
+      "className": "외용 소염진통제",
+      "status": "package_variant_unresolved"
+    }
+  ]
+}
