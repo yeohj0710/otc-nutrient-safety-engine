@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.research/schemas/otc/source.schema.json",
+  "title": "OTC evidence source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "authority", "title", "source_type", "url", "retrieved_at", "sha256", "local_snapshot", "status"],
+  "properties": {
+    "source_id": {"type": "string", "minLength": 1},
+    "authority": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "source_type": {"enum": ["authorization_document", "official_dataset", "utilization_report", "production_supply_report", "peer_reviewed_article", "regulatory_guidance"]},
+    "url": {"type": "string", "format": "uri"},
+    "retrieved_at": {"type": "string", "format": "date"},
+    "sha256": {"type": "string", "pattern": "^[A-Fa-f0-9]{64}$"},
+    "local_snapshot": {"type": "string", "minLength": 1},
+    "status": {"enum": ["registered", "retrieved", "verified", "unavailable"]}
+  }
+}

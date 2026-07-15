@@ -1,0 +1,50 @@
+{
+  "status": "evaluated_codex_prefilled_external_human_confirmation",
+  "review_method": "codex_prefilled_external_human_confirmation",
+  "independent_blinding": false,
+  "scenarios_total": 13,
+  "scenarios_evaluated": 13,
+  "confusion_matrix": {
+    "tp": 11,
+    "tn": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  "sensitivity": {
+    "value": 1.0,
+    "ci95": [
+      0.7411670330319684,
+      1.0
+    ]
+  },
+  "specificity": {
+    "value": 1.0,
+    "ci95": [
+      0.34238022750665303,
+      1.0
+    ]
+  },
+  "positive_predictive_value": {
+    "value": 1.0,
+    "ci95": [
+      0.7411670330319684,
+      1.0
+    ]
+  },
+  "negative_predictive_value": {
+    "value": 1.0,
+    "ci95": [
+      0.34238022750665303,
+      1.0
+    ]
+  },
+  "accuracy": {
+    "value": 1.0,
+    "ci95": [
+      0.7719046276458016,
+      0.9999999999999999
+    ]
+  },
+  "critical_false_negatives": 0,
+  "performance_claim_allowed": false
+}

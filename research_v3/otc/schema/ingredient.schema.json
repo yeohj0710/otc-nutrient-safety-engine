@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.research/schemas/otc/ingredient.schema.json",
+  "title": "Normalized OTC ingredient",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ingredient_id", "preferred_name_ko", "preferred_name_en", "normalized_key", "pharmacologic_classes", "source_id", "source_locator", "status"],
+  "properties": {
+    "ingredient_id": {"type": "string", "minLength": 1},
+    "preferred_name_ko": {"type": "string", "minLength": 1},
+    "preferred_name_en": {"type": "string", "minLength": 1},
+    "normalized_key": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+    "pharmacologic_classes": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_locator": {"type": "string", "minLength": 1},
+    "status": {"enum": ["candidate", "verified", "rejected"]}
+  }
+}

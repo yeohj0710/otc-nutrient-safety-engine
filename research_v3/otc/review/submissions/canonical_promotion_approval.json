@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "reviewer_id": "CANONICAL-PROMOTION-001",
+  "authorize_canonical_document_promotion": true,
+  "accept_blinded_independent_evaluation_not_completed": true,
+  "claim_boundary": "codex_prefilled_external_human_confirmation_not_blinded_independent_evaluation",
+  "authorize_production_deployment": false,
+  "files": [
+    {
+      "source": "research_v3/thesis/권혁찬_졸업논문_OTC_작업본.docx",
+      "source_sha256": "BF48FBAF0CE61158DD89A48513D23CCBCA892433F40D8A6BCDDC380E01F073FF",
+      "target": "research_v3/thesis/권혁찬_졸업논문_최종본.docx"
+    },
+    {
+      "source": "research_v3/thesis/권혁찬_졸업논문_OTC_작업본.pdf",
+      "source_sha256": "285F71309E022FAC39F9280476D7453AB655DFBE7E14EFC6FEA7527CD48B28A7",
+      "target": "research_v3/thesis/권혁찬_졸업논문_최종본.pdf"
+    },
+    {
+      "source": "research_v3/protocol/권혁찬_OTC_연구계획서_작업본.docx",
+      "source_sha256": "B8D47A9F97921A8B1FAB06B813F82ED76B7C7E63B4EC75C8B200F0BB7AEA7ED4",
+      "target": "research_v3/protocol/권혁찬_OTC_연구계획서_최종본.docx"
+    },
+    {
+      "source": "research_v3/protocol/권혁찬_OTC_연구계획서_작업본.pdf",
+      "source_sha256": "A1EC7B48C60ACF0A585C36F8A1A4D5E38458397B6CB8A56A024BCFCF653C30E6",
+      "target": "research_v3/protocol/권혁찬_OTC_연구계획서_최종본.pdf"
+    }
+  ],
+  "approved_at": "2026-07-14T09:05:18.180Z"
+}

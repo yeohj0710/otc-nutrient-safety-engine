@@ -1,0 +1,7 @@
+source_id,authority,title,url,locator,evidence_role,retrieved_at,status
+SEL-MOHW-SAFE-OTC-2026,보건복지부,안전상비의약품 약국외 판매제도,https://www.mohw.go.kr/menu.es?mid=a10702040200,"주요 내용; 대상의약품; 안전상비의약품 약국외 판매 대상의약품 표; 최종수정일 2026-03-31",공적 지정 제품과 약효군 후보,2026-07-14,verified_web
+SEL-MFDS-SAFE-OTC-API,식품의약품안전처,안전상비의약품 정보,https://www.data.go.kr/data/15097208/openapi.do,"출력결과 PRDLST_NM/BSSH_NM/VLD_PRD_YMD/STRG_MTH_CONT; totalCount 13",공적 지정 목록 기계 대조,2026-07-14,registered_key_required
+SEL-MFDS-EASY-DRUG,식품의약품안전처,의약품개요정보(e약은요),https://www.data.go.kr/data/15075057/openapi.do,"서비스 설명: 일반의약품 중 공급실적이 있는 제품; 출력 품목기준코드·효능·사용법·주의사항·상호작용",공급실적 존재와 소비자용 안전정보 대조,2026-07-14,registered_key_required
+SEL-MFDS-AUTH-07,식품의약품안전처,의약품 제품 허가정보,https://www.data.go.kr/data/15095677/openapi.do,"getDrugPrdtPrmsnInq07; getDrugPrdtPrmsnDtlInq06; getDrugPrdtMcpnDtlInq07",현재 허가·주성분·함량 확인,2026-07-14,registered_key_required
+SEL-MFDS-PRODUCTION-IMPORT,식품의약품안전처,의약품 생산·수입실적현황,https://www.data.go.kr/data/15056880/openapi.do,"getMdcinPrdctnImportrstList02; 생산금액·수입금액·생산수입연도",생산·수입 규모를 이용한 대표성 보조 근거,2026-07-14,registered_key_required
+SEL-LAW-OTC-HIGH-CONSUMPTION,국가법령정보센터,일반의약품 다소비 성분 목록,https://www.law.go.kr/flDownload.do?bylClsCd=200201&flSeq=151824007,"별표 3; 1. 덱시부프로펜",덱시부프로펜 제품 확장 후보의 공적 다소비 성분 근거,2026-07-14,verified_pdf

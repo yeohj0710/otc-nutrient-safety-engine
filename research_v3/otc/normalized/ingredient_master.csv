@@ -1,0 +1,32 @@
+﻿ingredient_id,preferred_name_ko,preferred_name_en,normalized_key,pharmacologic_classes,source_id,source_locator,status
+ING-acetaminophen,아세트아미노펜,acetaminophen,acetaminophen,analgesic_antipyretic,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+ING-cetirizine_hydrochloride,세티리진염산염,cetirizine hydrochloride,cetirizine_hydrochloride,antihistamine;second_generation_antihistamine,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+ING-chlorpheniramine_maleate,클로르페니라민말레산염,chlorpheniramine maleate,chlorpheniramine_maleate,antihistamine;first_generation_antihistamine;sedating_antihistamine,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+ING-dexibuprofen,덱시부프로펜,dexibuprofen,dexibuprofen,NSAID,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+ING-ibuprofen,이부프로펜,ibuprofen,ibuprofen,NSAID,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+ING-mf-src-0546ff64775e,판셀라제,판셀라제,mf_src_0546ff64775e,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-06cdde4eaaee,판프로신,판프로신,mf_src_06cdde4eaaee,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,mf_src_25b653f7fbe2,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-41c782105274,펜톡시베린시트르산염,펜톡시베린시트르산염,mf_src_41c782105274,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-484bf5816144,판크레아틴장용과립,판크레아틴장용과립,mf_src_484bf5816144,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-4a3225f1eb5d,박하유,박하유,mf_src_4a3225f1eb5d,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-4b985f9d3bdb,페닐레프린염산염,페닐레프린염산염,mf_src_4b985f9d3bdb,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-5abce34aadf5,시메티콘,시메티콘,mf_src_5abce34aadf5,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,mf_src_76b6b5a5a31f,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-7ace07a0f45d,우르소데옥시콜산,우르소데옥시콜산,mf_src_7ace07a0f45d,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-7ae387262216,디아스타제·프로테아제·셀룰라제,디아스타제·프로테아제·셀룰라제,mf_src_7ae387262216,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-7b94fcb9d067,산화아연,산화아연,mf_src_7b94fcb9d067,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,mf_src_8bebf0ac75f4,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-8f38da8a73d0,판크레아틴,판크레아틴,mf_src_8f38da8a73d0,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-a5c9920bea02,크리아제-PEG,크리아제-PEG,mf_src_a5c9920bea02,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-a742c02533bc,리파제,리파제,mf_src_a742c02533bc,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),mf_src_a7ea13276326,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-cd3363b1ac1f,구아이페네신,구아이페네신,mf_src_cd3363b1ac1f,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,mf_src_d142ee358812,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-d33c06bc01c8,셀룰라제,셀룰라제,mf_src_d33c06bc01c8,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-d75c9c1aefc3,프로자임6,프로자임6,mf_src_d75c9c1aefc3,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-db4cde0b063f,디아스타제·프로테아제100,디아스타제·프로테아제100,mf_src_db4cde0b063f,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-dc293e7de142,카페인무수물,카페인무수물,mf_src_dc293e7de142,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-e2b868294a4f,티몰,티몰,mf_src_e2b868294a4f,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-mf-src-ea4c014f0616,브로멜라인,브로멜라인,mf_src_ea4c014f0616,unclassified,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+ING-naproxen,나프록센,naproxen,naproxen,NSAID,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified

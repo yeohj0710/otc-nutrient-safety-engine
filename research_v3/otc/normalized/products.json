@@ -1,0 +1,1298 @@
+[
+  {
+    "candidate_id": "EXP-OTC-01",
+    "product_id": "MFDS-201110646",
+    "item_seq": "201110646",
+    "product_name": "덱스피드연질캡슐(덱시부프로펜)",
+    "company_name": "(주)유한양행",
+    "otc_classification": "일반의약품",
+    "authorization_date": "2011-12-05",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "무색 내지 연청색의 투명한 내용물을 함유하는 청색 투명의 타원형 연질캡슐제",
+    "storage_method": "기밀용기, 실온(1～30℃)보관",
+    "valid_term": "제조일로부터 24 개월",
+    "package_unit": "10캡슐(10캡슐/PTP포장 x 1)",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=201110646",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:56:31.878369+00:00",
+    "raw_sha256": "6d3c6b5835050907dc46c7d52c8a53046b862eb50f3d9633edccc60b2b2e8612",
+    "ingredients": [
+      {
+        "source_name": "덱시부프로펜",
+        "quantity": "300",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1캡슐(1,000밀리그램) 중",
+        "ingredient_code": "M092057",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "EXP-OTC-02",
+    "product_id": "MFDS-197500016",
+    "item_seq": "197500016",
+    "product_name": "낙센정(나프록센)",
+    "company_name": "(주)종근당",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1975-04-29",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "미황색(연노랑의) 장방형 정제",
+    "storage_method": "기밀용기에 넣어 암소에 보관함",
+    "valid_term": "제조일로부터 60 개월",
+    "package_unit": "10정/PTP",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=197500016",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:56:31.878369+00:00",
+    "raw_sha256": "be639d8763e2c4e39e315d7fcf64941468a6352a3e98676a13fa2aead4f95a8a",
+    "ingredients": [
+      {
+        "source_name": "나프록센",
+        "quantity": "250",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(267 mg) 중",
+        "ingredient_code": "M050116",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "EXP-OTC-03",
+    "product_id": "MFDS-200610765",
+    "item_seq": "200610765",
+    "product_name": "지르텍정(세티리진염산염)",
+    "company_name": "한국유씨비제약(주)",
+    "otc_classification": "일반의약품",
+    "authorization_date": "2006-06-26",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "흰색의 장방형 필름코팅정",
+    "storage_method": "기밀용기, 실온(1~30°C)보관",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "10정(10정 * 1PTP), 100정(10정 * 10PTP)",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200610765",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:56:31.878369+00:00",
+    "raw_sha256": "c686f619afca4071f3ca1abbd42010f1417d4c1e26df20139188845afff9b9df",
+    "ingredients": [
+      {
+        "source_name": "세티리진염산염",
+        "quantity": "10",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(118.95밀리그램) 중 - 제조방법",
+        "ingredient_code": "M222857",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-01",
+    "product_id": "MFDS-202106092",
+    "item_seq": "202106092",
+    "product_name": "타이레놀정500밀리그람(아세트아미노펜)",
+    "company_name": "켄뷰코리아판매유한회사",
+    "otc_classification": "일반의약품",
+    "authorization_date": "2021-08-23",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "흰색의 장방형 필름코팅정제",
+    "storage_method": "밀폐용기, 실온보관(1-30℃)",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "블리스터 ) 10 정/상자(10정/PTP*1),8 정/상자(8정/PTP*1), 병) 30 정/병,110 정/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202106092",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:14:48.264374+00:00",
+    "raw_sha256": "a237267fc5082c2be65fbf756ffd07e206f461ef29926e6b9da720d39a502e55",
+    "ingredients": [
+      {
+        "source_name": "아세트아미노펜",
+        "quantity": "500",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(615.04 밀리그램) 중-",
+        "ingredient_code": "M040353",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-02",
+    "product_id": "MFDS-199402278",
+    "item_seq": "199402278",
+    "product_name": "타이레놀정160밀리그람(아세트아미노펜)",
+    "company_name": "(주)한국얀센",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1994-08-04",
+    "authorization_status": "withdrawn",
+    "cancellation_date": "2022-03-21",
+    "cancellation_reason": null,
+    "dosage_form": "백색의 장방형 정제",
+    "storage_method": "밀폐용기 실온보관",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "8정(8정*1PTP)/박스, 1000정/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199402278",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199402278/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199402278/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199402278/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "074d76cc32b83faf97c66ffb6f5a1307cc7a8a9fbfa926d1406a0b4936a033f7",
+    "ingredients": [
+      {
+        "source_name": "아세트아미노펜 과립",
+        "quantity": "177.78",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(250.0밀리그램) 중",
+        "ingredient_code": "M262287",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "excluded"
+  },
+  {
+    "candidate_id": "SAFE-OTC-03",
+    "product_id": "MFDS-199303109",
+    "item_seq": "199303109",
+    "product_name": "어린이용타이레놀정80밀리그람(아세트아미노펜)",
+    "company_name": "(주)한국얀센",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1993-09-24",
+    "authorization_status": "withdrawn",
+    "cancellation_date": "2022-03-21",
+    "cancellation_reason": null,
+    "dosage_form": "분홍색의 원형정제",
+    "storage_method": "밀폐용기 실온보관",
+    "valid_term": "제조일로부터 24 개월",
+    "package_unit": "10정(10정*1PTP)/박스, 1000정/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199303109",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199303109/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199303109/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199303109/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "b976ca4519cce82c773e98157846918bd7c2f8849be5f733fc77982aa20dc4ac",
+    "ingredients": [
+      {
+        "source_name": "아세트아미노펜 과립",
+        "quantity": "88.89",
+        "unit": "밀리그램",
+        "quantity_basis": "1정 (250mg) 중",
+        "ingredient_code": "M262287",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "excluded"
+  },
+  {
+    "candidate_id": "SAFE-OTC-04",
+    "product_id": "MFDS-202200525",
+    "item_seq": "202200525",
+    "product_name": "어린이타이레놀현탁액(아세트아미노펜)",
+    "company_name": "켄뷰코리아판매유한회사",
+    "otc_classification": "일반의약품",
+    "authorization_date": "2022-02-03",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "백색 내지 미백색의 체리향 현탁액",
+    "storage_method": "기밀용기, 실온(1-30°C)보관",
+    "valid_term": "제조일로부터 24 개월",
+    "package_unit": "100 밀리리터/병,500 밀리리터/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=202200525",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "c655d949a48c5ac1a1aa8409cc8109f5e127cf08882c2a115d4be6b943218e1f",
+    "ingredients": [
+      {
+        "source_name": "아세트아미노펜(미분화)",
+        "quantity": "3.2",
+        "unit": "그램",
+        "quantity_basis": "100밀리리터( ) 중-",
+        "ingredient_code": "M281939",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-05",
+    "product_id": "MFDS-198601920",
+    "item_seq": "198601920",
+    "product_name": "어린이부루펜시럽(이부프로펜)",
+    "company_name": "삼일제약(주)",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1986-08-14",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "오렌지 냄새를 가진 흰색 내지 연한노란색의 시럽성 현탁액",
+    "storage_method": "차광기밀용기, 실온(1~30℃) 보관",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "80밀리리터/병, 90밀리리터/병, 1000밀리리터/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198601920",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "ba9a60733b0c9e2b0f5fcaf4aab2dd3b67b6ae77439167b7106c8c2f54e81a4a",
+    "ingredients": [
+      {
+        "source_name": "이부프로펜",
+        "quantity": "2",
+        "unit": "그램",
+        "quantity_basis": "100mL 중",
+        "ingredient_code": "M051259",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-06",
+    "product_id": "MFDS-198700405",
+    "item_seq": "198700405",
+    "product_name": "베아제정",
+    "company_name": "(주)대웅제약",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1987-07-15",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "연녹색의 장방형 필름코팅정제이다.",
+    "storage_method": "기밀용기, 실온(1~30℃) 보관",
+    "valid_term": "제조일로부터 24 개월",
+    "package_unit": "3정/PTP, 10정/PTP, 100정/병, 500정/병 수출용 : 20정((10정/PTP)×2), 30정((10정/PTP)×3)",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198700405",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "1db074ef5f1e9712725902411f6dc2522547ef032fa77341579e2836ff1410cf",
+    "ingredients": [
+      {
+        "source_name": "디아스타제·프로테아제·셀룰라제",
+        "quantity": "50",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(537 밀리그램) 중-",
+        "ingredient_code": "M267745",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "리파제",
+        "quantity": "15",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(537 밀리그램) 중-",
+        "ingredient_code": "M050379",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "판프로신",
+        "quantity": "20",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(537 밀리그램) 중-",
+        "ingredient_code": "M247372",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "판셀라제",
+        "quantity": "30",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(537 밀리그램) 중-",
+        "ingredient_code": "M247370",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "판크레아틴장용과립",
+        "quantity": "78.6",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(537 밀리그램) 중-",
+        "ingredient_code": "M082071",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "우르소데옥시콜산",
+        "quantity": "10",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(537 밀리그램) 중-",
+        "ingredient_code": "M223167",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "시메티콘",
+        "quantity": "40",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(537 밀리그램) 중-",
+        "ingredient_code": "M223083",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-07",
+    "product_id": "MFDS-200300406",
+    "item_seq": "200300406",
+    "product_name": "닥터베아제정",
+    "company_name": "(주)대웅제약",
+    "otc_classification": "일반의약품",
+    "authorization_date": "2003-10-28",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "주황색의 장방형 필름코팅 정제",
+    "storage_method": "기밀용기, 실온(1-30℃)보관",
+    "valid_term": "제조일로부터 24 개월",
+    "package_unit": "3정/PTP, 10정/PTP, 30정/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200300406",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200300406/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200300406/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200300406/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "c150fb2717532d8784ab64f6420dcace2e7c95c9520b8445fd0586f6a28cefa7",
+    "ingredients": [
+      {
+        "source_name": "디아스타제·프로테아제·셀룰라제",
+        "quantity": "50.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M267745",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "판셀라제",
+        "quantity": "30.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M247370",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "크리아제-PEG",
+        "quantity": "80.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M090060",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "디아스타제·프로테아제100",
+        "quantity": "10.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M261920",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "판프로신",
+        "quantity": "20.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M247372",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "리파제",
+        "quantity": "30.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M050379",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "브로멜라인",
+        "quantity": "10.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M095415",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "우르소데옥시콜산",
+        "quantity": "10.00",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M223167",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "시메티콘",
+        "quantity": "45.70",
+        "unit": "밀리그램",
+        "quantity_basis": "1정(605 밀리그램) 중-",
+        "ingredient_code": "M223083",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-08",
+    "product_id": "MFDS-199900926",
+    "item_seq": "199900926",
+    "product_name": "훼스탈골드정",
+    "company_name": "(주)한독",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1999-10-02",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "흰색의 달걀형 장용성 필름코팅정",
+    "storage_method": "실온보관(30℃이하), 밀폐용기",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "6정(6정/PTP X 1), 30정/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199900926",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199900926/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199900926/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199900926/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "c30aa7b6b526fe802f28c9ec008ecab65b90032b027b9c738b88f0dd2c4cb308",
+    "ingredients": [
+      {
+        "source_name": "판크레아틴",
+        "quantity": "150",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(662mg) 중",
+        "ingredient_code": "M040678",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "디아스타제·프로테아제·셀룰라제",
+        "quantity": "10",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(662mg) 중",
+        "ingredient_code": "M267745",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "프로자임6",
+        "quantity": "10",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(662mg) 중",
+        "ingredient_code": "M084062",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "리파제",
+        "quantity": "15",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(662mg) 중",
+        "ingredient_code": "M050379",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "셀룰라제",
+        "quantity": "9",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(662mg) 중",
+        "ingredient_code": "M100297",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "우르소데옥시콜산",
+        "quantity": "20",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(662mg) 중",
+        "ingredient_code": "M223167",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "시메티콘",
+        "quantity": "60",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(662mg) 중",
+        "ingredient_code": "M223083",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-09",
+    "product_id": "MFDS-199801026",
+    "item_seq": "199801026",
+    "product_name": "훼스탈플러스정",
+    "company_name": "(주)한독",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1998-10-29",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "하얀색의 달걀형 장용성 필름코팅정",
+    "storage_method": "밀폐용기, 실온보관",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "6정(6정/PTP X 1), 10정(10정/PTP X 1), 20정(10정/PTP X 2), 100정(10정/PTP X 10), 100정/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199801026",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199801026/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199801026/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199801026/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "0b229eb63404b160e9c23c11e5fe3e2298521bf047adffafaf1dd3f80e415636",
+    "ingredients": [
+      {
+        "source_name": "판크레아틴",
+        "quantity": "315.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(616.8mg) 중",
+        "ingredient_code": "M040678",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "셀룰라제",
+        "quantity": "10.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(616.8mg) 중",
+        "ingredient_code": "M100297",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "우르소데옥시콜산",
+        "quantity": "10.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(616.8mg) 중",
+        "ingredient_code": "M223167",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "시메티콘",
+        "quantity": "30.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(616.8mg) 중",
+        "ingredient_code": "M223083",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-10",
+    "product_id": "MFDS-196800036",
+    "item_seq": "196800036",
+    "product_name": "판콜에이내복액",
+    "company_name": "동화약품(주)",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1968-08-27",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "미황색의 투명한 액제",
+    "storage_method": "기밀용기, 실온(1~30℃)보관",
+    "valid_term": "제조일로부터 24 개월",
+    "package_unit": "30mL/병 x 3, 30mL/병 x 5",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=196800036",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "db5e573da8c1e18a653de2a9bb794ad39d25f10ea8229255ad0eb09b4ecfd35b",
+    "ingredients": [
+      {
+        "source_name": "아세트아미노펜",
+        "quantity": "300.0",
+        "unit": "밀리그램",
+        "quantity_basis": "1병 (30mL) 중",
+        "ingredient_code": "M040353",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "구아이페네신",
+        "quantity": "80.0",
+        "unit": "밀리그램",
+        "quantity_basis": "1병 (30mL) 중",
+        "ingredient_code": "M050058",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "펜톡시베린시트르산염",
+        "quantity": "15.0",
+        "unit": "밀리그램",
+        "quantity_basis": "1병 (30mL) 중",
+        "ingredient_code": "M223287",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "페닐레프린염산염",
+        "quantity": "10.0",
+        "unit": "밀리그램",
+        "quantity_basis": "1병 (30mL) 중",
+        "ingredient_code": "M222724",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "클로르페니라민말레산염",
+        "quantity": "2.5",
+        "unit": "밀리그램",
+        "quantity_basis": "1병 (30mL) 중",
+        "ingredient_code": "M223211",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "카페인무수물",
+        "quantity": "30.0",
+        "unit": "밀리그램",
+        "quantity_basis": "1병 (30mL) 중",
+        "ingredient_code": "M223183",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-11",
+    "product_id": "MFDS-199400202",
+    "item_seq": "199400202",
+    "product_name": "판피린티정",
+    "company_name": "동아제약(주)",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1994-09-03",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "흰색의 장방형 정제",
+    "storage_method": "기밀용기,실온보관",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "3정(3정/PTP), 300정/병",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=199400202",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "c17a0a4163f7bb4ca3d0644e1f55b2c3dc97c00162aa9bf2cbbef97acb71b027",
+    "ingredients": [
+      {
+        "source_name": "아세트아미노펜",
+        "quantity": "300.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(589mg) 중",
+        "ingredient_code": "M040353",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "클로르페니라민말레산염",
+        "quantity": "2.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(589mg) 중",
+        "ingredient_code": "M223211",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "카페인무수물",
+        "quantity": "30.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1정(589mg) 중",
+        "ingredient_code": "M223183",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-12",
+    "product_id": "MFDS-198400250",
+    "item_seq": "198400250",
+    "product_name": "제일쿨파프",
+    "company_name": "제일헬스사이언스(주)",
+    "otc_classification": "일반의약품",
+    "authorization_date": "1984-03-16",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "이 약은 백색-담회백색의 약액을 폴리에스텔 필름에 도포하고(바르고) 부직포를 덮은 것으로 특이한 냄새가있는 카타플라스마제이다.",
+    "storage_method": "기밀용기 실온보관(1-30℃)보관",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "2매, 4매, 5매, 6매",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=198400250",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "5516872ac4539df6d870434e960554e9aeab3104f9b399732242cc9dc93cf060",
+    "ingredients": [
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "262.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "175.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "122.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "87.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "티몰",
+        "quantity": "17.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",
+        "ingredient_code": "M223254",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "262.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "175.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "122.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "87.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "티몰",
+        "quantity": "17.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",
+        "ingredient_code": "M223254",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "262.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "175.0",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "122.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "87.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "티몰",
+        "quantity": "17.5",
+        "unit": "밀리그램",
+        "quantity_basis": "이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",
+        "ingredient_code": "M223254",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  },
+  {
+    "candidate_id": "SAFE-OTC-13",
+    "product_id": "MFDS-200501321",
+    "item_seq": "200501321",
+    "product_name": "신신파스아렉스",
+    "company_name": "신신제약(주)",
+    "otc_classification": "일반의약품",
+    "authorization_date": "2005-01-19",
+    "authorization_status": "active",
+    "cancellation_date": null,
+    "cancellation_reason": null,
+    "dosage_form": "이 약은 백색의 부직포에 점착성물질을 도포(바르다)하고 고체면에 박리지를 덮은 것이다.",
+    "storage_method": "기밀용기, 실온(1-30℃)보관",
+    "valid_term": "제조일로부터 36 개월",
+    "package_unit": "1매 (4.7x7.0㎠)) 10 매/포,14 매/포, 1매 (7.0x10.0㎠)) 10 매/포,4 매/포,5 매/포, 1매 (10.0x14.0㎠)) 8 매/포,6 매/포,4 매/포,5 매/포, 1매 (7.06×15㎠)) 6 매/포, 1매 (6.157㎠)) 30 매/포,36 매/포,42 매/포,48 매/포, 1매 (4.909㎠)) 30 매/포,36 매/포,42 매/포,48 매/포",
+    "detail_url": "https://nedrug.mfds.go.kr/pbp/CCBBB01/getItemDetail?itemSeq=200501321",
+    "efficacy_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200501321/EE",
+    "dosage_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200501321/UD",
+    "precautions_pdf_url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200501321/NB",
+    "source_id": "MFDS-NEDRUG-DETAIL",
+    "source_locator": "의약품상세정보 > 기본정보; 원료약품 및 분량",
+    "retrieved_at_utc": "2026-07-14T02:10:14.255342+00:00",
+    "raw_sha256": "6e3cdc08a64090019a0926462f6b084939b60e4a5526f0073b5ec6067ad447fb",
+    "ingredients": [
+      {
+        "source_name": "L-멘톨",
+        "quantity": "4.00",
+        "unit": "그램",
+        "quantity_basis": " - (1) 1매 6,160㎠ 약 101.26g 중",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "2.00",
+        "unit": "그램",
+        "quantity_basis": " - (1) 1매 6,160㎠ 약 101.26g 중",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "4.00",
+        "unit": "그램",
+        "quantity_basis": " - (1) 1매 6,160㎠ 약 101.26g 중",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "1.50",
+        "unit": "그램",
+        "quantity_basis": " - (1) 1매 6,160㎠ 약 101.26g 중",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "quantity": "0.04",
+        "unit": "그램",
+        "quantity_basis": " - (1) 1매 6,160㎠ 약 101.26g 중",
+        "ingredient_code": "M050596",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "노닐산바닐릴아미드",
+        "quantity": "0.005",
+        "unit": "그램",
+        "quantity_basis": " - (1) 1매 6,160㎠ 약 101.26g 중",
+        "ingredient_code": "M200188",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "산화아연",
+        "quantity": "19.00",
+        "unit": "그램",
+        "quantity_basis": " - (1) 1매 6,160㎠ 약 101.26g 중",
+        "ingredient_code": "M243785",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "45.45",
+        "unit": "밀리그램",
+        "quantity_basis": " - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "22.73",
+        "unit": "밀리그램",
+        "quantity_basis": " - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "45.45",
+        "unit": "밀리그램",
+        "quantity_basis": " - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "17.05",
+        "unit": "밀리그램",
+        "quantity_basis": " - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "quantity": "0.45",
+        "unit": "밀리그램",
+        "quantity_basis": " - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",
+        "ingredient_code": "M050596",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "노닐산바닐릴아미드",
+        "quantity": "0.057",
+        "unit": "밀리그램",
+        "quantity_basis": " - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",
+        "ingredient_code": "M200188",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "산화아연",
+        "quantity": "215.91",
+        "unit": "밀리그램",
+        "quantity_basis": " - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",
+        "ingredient_code": "M243785",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "90.90",
+        "unit": "밀리그램",
+        "quantity_basis": " - (3) 1매 10×14㎠ 약 2,301.24mg 중",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "45.46",
+        "unit": "밀리그램",
+        "quantity_basis": " - (3) 1매 10×14㎠ 약 2,301.24mg 중",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "90.90",
+        "unit": "밀리그램",
+        "quantity_basis": " - (3) 1매 10×14㎠ 약 2,301.24mg 중",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "34.10",
+        "unit": "밀리그램",
+        "quantity_basis": " - (3) 1매 10×14㎠ 약 2,301.24mg 중",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "quantity": "0.90",
+        "unit": "밀리그램",
+        "quantity_basis": " - (3) 1매 10×14㎠ 약 2,301.24mg 중",
+        "ingredient_code": "M050596",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "노닐산바닐릴아미드",
+        "quantity": "0.114",
+        "unit": "밀리그램",
+        "quantity_basis": " - (3) 1매 10×14㎠ 약 2,301.24mg 중",
+        "ingredient_code": "M200188",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "산화아연",
+        "quantity": "431.82",
+        "unit": "밀리그램",
+        "quantity_basis": " - (3) 1매 10×14㎠ 약 2,301.24mg 중",
+        "ingredient_code": "M243785",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "21.36",
+        "unit": "밀리그램",
+        "quantity_basis": " - (4) 1매 4.7×7.0㎠ 약 540.82mg 중",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "10.68",
+        "unit": "밀리그램",
+        "quantity_basis": " - (4) 1매 4.7×7.0㎠ 약 540.82mg 중",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "21.36",
+        "unit": "밀리그램",
+        "quantity_basis": " - (4) 1매 4.7×7.0㎠ 약 540.82mg 중",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "8.01",
+        "unit": "밀리그램",
+        "quantity_basis": " - (4) 1매 4.7×7.0㎠ 약 540.82mg 중",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "quantity": "0.21",
+        "unit": "밀리그램",
+        "quantity_basis": " - (4) 1매 4.7×7.0㎠ 약 540.82mg 중",
+        "ingredient_code": "M050596",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "노닐산바닐릴아미드",
+        "quantity": "0.027",
+        "unit": "밀리그램",
+        "quantity_basis": " - (4) 1매 4.7×7.0㎠ 약 540.82mg 중",
+        "ingredient_code": "M200188",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "산화아연",
+        "quantity": "101.48",
+        "unit": "밀리그램",
+        "quantity_basis": " - (4) 1매 4.7×7.0㎠ 약 540.82mg 중",
+        "ingredient_code": "M243785",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "68.77",
+        "unit": "밀리그램",
+        "quantity_basis": " - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "34.38",
+        "unit": "밀리그램",
+        "quantity_basis": " - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "68.77",
+        "unit": "밀리그램",
+        "quantity_basis": " - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "25.79",
+        "unit": "밀리그램",
+        "quantity_basis": " - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "quantity": "0.69",
+        "unit": "밀리그램",
+        "quantity_basis": " - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",
+        "ingredient_code": "M050596",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "노닐산바닐릴아미드",
+        "quantity": "0.086",
+        "unit": "밀리그램",
+        "quantity_basis": " - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",
+        "ingredient_code": "M200188",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "산화아연",
+        "quantity": "326.64",
+        "unit": "밀리그램",
+        "quantity_basis": " - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",
+        "ingredient_code": "M243785",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "4.00",
+        "unit": "밀리그램",
+        "quantity_basis": " - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "2.00",
+        "unit": "밀리그램",
+        "quantity_basis": " - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "4.00",
+        "unit": "밀리그램",
+        "quantity_basis": " - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "1.50",
+        "unit": "밀리그램",
+        "quantity_basis": " - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "quantity": "0.04",
+        "unit": "밀리그램",
+        "quantity_basis": " - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",
+        "ingredient_code": "M050596",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "노닐산바닐릴아미드",
+        "quantity": "0.005",
+        "unit": "밀리그램",
+        "quantity_basis": " - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",
+        "ingredient_code": "M200188",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "산화아연",
+        "quantity": "18.99",
+        "unit": "밀리그램",
+        "quantity_basis": " - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",
+        "ingredient_code": "M243785",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "L-멘톨",
+        "quantity": "3.19",
+        "unit": "밀리그램",
+        "quantity_basis": " - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",
+        "ingredient_code": "M279284",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "박하유",
+        "quantity": "1.59",
+        "unit": "밀리그램",
+        "quantity_basis": " - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",
+        "ingredient_code": "M040200",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "살리실산메틸",
+        "quantity": "3.19",
+        "unit": "밀리그램",
+        "quantity_basis": " - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",
+        "ingredient_code": "M203279",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "dl-캄파",
+        "quantity": "1.20",
+        "unit": "밀리그램",
+        "quantity_basis": " - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",
+        "ingredient_code": "M204423",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "quantity": "0.03",
+        "unit": "밀리그램",
+        "quantity_basis": " - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",
+        "ingredient_code": "M050596",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "노닐산바닐릴아미드",
+        "quantity": "0.004",
+        "unit": "밀리그램",
+        "quantity_basis": " - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",
+        "ingredient_code": "M200188",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      },
+      {
+        "source_name": "산화아연",
+        "quantity": "15.14",
+        "unit": "밀리그램",
+        "quantity_basis": " - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",
+        "ingredient_code": "M243785",
+        "source_locator": "의약품상세정보 > 원료약품 및 분량"
+      }
+    ],
+    "status": "verified_from_source"
+  }
+]

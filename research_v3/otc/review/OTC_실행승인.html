@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>OTC 남은 실행 작업 승인</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f7f8fa;color:#191f28;font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif}main{max-width:720px;margin:auto;padding:56px 22px}h1{font-size:38px;line-height:1.3}.card{margin:20px 0;padding:24px;border-radius:16px;background:#fff}.card h2{margin-top:0}.card p,.card li{color:#4e5968;line-height:1.65}.notice{padding:16px;border-radius:12px;background:#fff4e5;color:#8b5a00;line-height:1.6}button{width:100%;height:60px;border:0;border-radius:14px;background:#3182f6;color:#fff;font-size:18px;font-weight:800}#done{display:none;padding:18px;border-radius:12px;background:#e8f3ff;color:#1b64da;font-weight:700}
+  </style>
+</head>
+<body><main>
+  <p style="color:#3182f6;font-weight:800">권혁찬 · 실행 승인</p>
+  <h1>지금 진행 가능한 남은 작업</h1>
+  <div class="notice">이 승인은 공개 production 배포나 canonical 최종 승격 승인이 아닙니다. 현재 작업본 상태와 release 관문을 유지합니다.</div>
+  <section class="card"><h2>승인 대상</h2><ul><li>비공개 preview 배포</li><li>preview 실제 브라우저 데스크톱·모바일 검증</li><li>G 드라이브 기존 파일을 etc에 백업</li><li>현재 OTC 작업본 패키지 동기화</li><li>동기화 후 파일 해시·문서 페이지 검증</li></ul></section>
+  <section class="card"><h2>승인 후에도 남는 연구 요건</h2><ul><li>자격 있는 약사·약학 전문가의 규칙 검토</li><li>Codex 예상안을 보지 않은 독립 시나리오 기준정답</li><li>그 기준정답을 이용한 성능과 critical false negative 평가</li></ul></section>
+  <p id="done">실행 승인이 저장되었습니다. Codex가 승인 파일을 확인해 작업을 진행합니다.</p>
+  <button id="approve">위 범위 전체 실행 승인</button>
+  <script>
+    document.getElementById('approve').onclick=()=>{const data={schema_version:'1.0.0',research_direction:'korean_otc_product_safety',approver_id:'권혁찬',approved_at:new Date().toISOString(),approved_actions:['private_preview_deployment','preview_desktop_mobile_browser_verification','g_drive_existing_outputs_backup','g_drive_working_package_sync','post_sync_hash_and_document_verification'],excluded_actions:['public_production_deployment','canonical_final_promotion','fabricated_pharmacist_review','non_blinded_labels_as_independent_evaluation']};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='otc_execution_approval_권혁찬.json';a.click();URL.revokeObjectURL(a.href);document.getElementById('done').style.display='block';document.getElementById('approve').disabled=true;document.getElementById('approve').textContent='승인 완료';};
+  </script>
+</main></body></html>

@@ -1,0 +1,72 @@
+{
+  "schema_version": "3.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "valid": true,
+  "required_counts": {
+    "후보 제품 16개": 16,
+    "분석 제품 13개": 13,
+    "분석 성분 28개": 28,
+    "계산 연결 47개": 47,
+    "복용 조건 32개": 32,
+    "released 규칙 15개": 15
+  },
+  "checks": [
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\otc_thesis_working.md",
+      "counts": {
+        "후보 제품 16개": true,
+        "분석 제품 13개": true,
+        "분석 성분 28개": true,
+        "계산 연결 47개": true,
+        "복용 조건 32개": true,
+        "released 규칙 15개": true
+      },
+      "claim_boundary": true,
+      "shinshin_exclusion": true,
+      "stale_claims": []
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\protocol\\otc_research_plan_working.md",
+      "counts": {
+        "후보 제품 16개": true,
+        "분석 제품 13개": true,
+        "분석 성분 28개": true,
+        "계산 연결 47개": true,
+        "복용 조건 32개": true,
+        "released 규칙 15개": true
+      },
+      "claim_boundary": true,
+      "shinshin_exclusion": true,
+      "stale_claims": []
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "counts": {
+        "후보 제품 16개": true,
+        "분석 제품 13개": true,
+        "분석 성분 28개": true,
+        "계산 연결 47개": true,
+        "복용 조건 32개": true,
+        "released 규칙 15개": true
+      },
+      "claim_boundary": true,
+      "shinshin_exclusion": true,
+      "stale_claims": []
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\README.md",
+      "counts": {
+        "후보 제품 16개": true,
+        "분석 제품 13개": true,
+        "분석 성분 28개": true,
+        "계산 연결 47개": true,
+        "복용 조건 32개": true,
+        "released 규칙 15개": true
+      },
+      "claim_boundary": true,
+      "shinshin_exclusion": true,
+      "stale_claims": []
+    }
+  ],
+  "errors": []
+}

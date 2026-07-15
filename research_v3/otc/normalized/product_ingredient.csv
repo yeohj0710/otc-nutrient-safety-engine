@@ -1,0 +1,107 @@
+﻿product_id,ingredient_id,ingredient_name_raw,ingredient_name_normalized,amount_per_unit,amount_unit,unit_basis,variant,selected_for_calculation,source_id,source_locator,normalization_status
+MFDS-201110646,ING-dexibuprofen,덱시부프로펜,덱시부프로펜,300,mg,"이 약 1캡슐(1,000밀리그램) 중",단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-197500016,ING-naproxen,나프록센,나프록센,250,mg,이 약 1정(267 mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-200610765,ING-cetirizine_hydrochloride,세티리진염산염,세티리진염산염,10,mg,이 약 1정(118.95밀리그램) 중 - 제조방법,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-202106092,ING-acetaminophen,아세트아미노펜,아세트아미노펜,500,mg,1정(615.04 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-202200525,ING-acetaminophen,아세트아미노펜(미분화),아세트아미노펜,3.2,g,100밀리리터( ) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-198601920,ING-ibuprofen,이부프로펜,이부프로펜,2,g,100mL 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-198700405,ING-mf-src-7ae387262216,디아스타제·프로테아제·셀룰라제,디아스타제·프로테아제·셀룰라제,50,mg,1정(537 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198700405,ING-mf-src-a742c02533bc,리파제,리파제,15,mg,1정(537 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198700405,ING-mf-src-06cdde4eaaee,판프로신,판프로신,20,mg,1정(537 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198700405,ING-mf-src-0546ff64775e,판셀라제,판셀라제,30,mg,1정(537 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198700405,ING-mf-src-484bf5816144,판크레아틴장용과립,판크레아틴장용과립,78.6,mg,1정(537 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198700405,ING-mf-src-7ace07a0f45d,우르소데옥시콜산,우르소데옥시콜산,10,mg,1정(537 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198700405,ING-mf-src-5abce34aadf5,시메티콘,시메티콘,40,mg,1정(537 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-7ae387262216,디아스타제·프로테아제·셀룰라제,디아스타제·프로테아제·셀룰라제,50.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-0546ff64775e,판셀라제,판셀라제,30.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-a5c9920bea02,크리아제-PEG,크리아제-PEG,80.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-db4cde0b063f,디아스타제·프로테아제100,디아스타제·프로테아제100,10.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-06cdde4eaaee,판프로신,판프로신,20.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-a742c02533bc,리파제,리파제,30.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-ea4c014f0616,브로멜라인,브로멜라인,10.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-7ace07a0f45d,우르소데옥시콜산,우르소데옥시콜산,10.00,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200300406,ING-mf-src-5abce34aadf5,시메티콘,시메티콘,45.70,mg,1정(605 밀리그램) 중-,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199900926,ING-mf-src-8f38da8a73d0,판크레아틴,판크레아틴,150,mg,이 약 1정(662mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199900926,ING-mf-src-7ae387262216,디아스타제·프로테아제·셀룰라제,디아스타제·프로테아제·셀룰라제,10,mg,이 약 1정(662mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199900926,ING-mf-src-d75c9c1aefc3,프로자임6,프로자임6,10,mg,이 약 1정(662mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199900926,ING-mf-src-a742c02533bc,리파제,리파제,15,mg,이 약 1정(662mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199900926,ING-mf-src-d33c06bc01c8,셀룰라제,셀룰라제,9,mg,이 약 1정(662mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199900926,ING-mf-src-7ace07a0f45d,우르소데옥시콜산,우르소데옥시콜산,20,mg,이 약 1정(662mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199900926,ING-mf-src-5abce34aadf5,시메티콘,시메티콘,60,mg,이 약 1정(662mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199801026,ING-mf-src-8f38da8a73d0,판크레아틴,판크레아틴,315.0,mg,이 약 1정(616.8mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199801026,ING-mf-src-d33c06bc01c8,셀룰라제,셀룰라제,10.0,mg,이 약 1정(616.8mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199801026,ING-mf-src-7ace07a0f45d,우르소데옥시콜산,우르소데옥시콜산,10.0,mg,이 약 1정(616.8mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199801026,ING-mf-src-5abce34aadf5,시메티콘,시메티콘,30.0,mg,이 약 1정(616.8mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-196800036,ING-acetaminophen,아세트아미노펜,아세트아미노펜,300.0,mg,1병 (30mL) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-196800036,ING-mf-src-cd3363b1ac1f,구아이페네신,구아이페네신,80.0,mg,1병 (30mL) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-196800036,ING-mf-src-41c782105274,펜톡시베린시트르산염,펜톡시베린시트르산염,15.0,mg,1병 (30mL) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-196800036,ING-mf-src-4b985f9d3bdb,페닐레프린염산염,페닐레프린염산염,10.0,mg,1병 (30mL) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-196800036,ING-chlorpheniramine_maleate,클로르페니라민말레산염,클로르페니라민말레산염,2.5,mg,1병 (30mL) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-196800036,ING-mf-src-dc293e7de142,카페인무수물,카페인무수물,30.0,mg,1병 (30mL) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-199400202,ING-acetaminophen,아세트아미노펜,아세트아미노펜,300.0,mg,이 약 1정(589mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-199400202,ING-chlorpheniramine_maleate,클로르페니라민말레산염,클로르페니라민말레산염,2.0,mg,이 약 1정(589mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,verified
+MFDS-199400202,ING-mf-src-dc293e7de142,카페인무수물,카페인무수물,30.0,mg,이 약 1정(589mg) 중,단일기준,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,262.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",내수용,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,175.0,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",내수용,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,122.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",내수용,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-4a3225f1eb5d,박하유,박하유,87.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",내수용,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-e2b868294a4f,티몰,티몰,17.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 내수용",내수용,true,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,262.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",수출용I,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,175.0,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",수출용I,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,122.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",수출용I,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-4a3225f1eb5d,박하유,박하유,87.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",수출용I,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-e2b868294a4f,티몰,티몰,17.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용I",수출용I,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,262.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",수출용II,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,175.0,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",수출용II,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,122.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",수출용II,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-4a3225f1eb5d,박하유,박하유,87.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",수출용II,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-198400250,ING-mf-src-e2b868294a4f,티몰,티몰,17.5,mg,"이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g) - 수출용II",수출용II,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,4.00,g," - (1) 1매 6,160㎠ 약 101.26g 중",규격-1,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-4a3225f1eb5d,박하유,박하유,2.00,g," - (1) 1매 6,160㎠ 약 101.26g 중",규격-1,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,4.00,g," - (1) 1매 6,160㎠ 약 101.26g 중",규격-1,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,1.50,g," - (1) 1매 6,160㎠ 약 101.26g 중",규격-1,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),0.04,g," - (1) 1매 6,160㎠ 약 101.26g 중",규격-1,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,0.005,g," - (1) 1매 6,160㎠ 약 101.26g 중",규격-1,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-7b94fcb9d067,산화아연,산화아연,19.00,g," - (1) 1매 6,160㎠ 약 101.26g 중",규격-1,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,45.45,mg," - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",규격-2,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-4a3225f1eb5d,박하유,박하유,22.73,mg," - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",규격-2,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,45.45,mg," - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",규격-2,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,17.05,mg," - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",규격-2,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),0.45,mg," - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",규격-2,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,0.057,mg," - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",규격-2,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-7b94fcb9d067,산화아연,산화아연,215.91,mg," - (2) 1매 10×7㎠ 약 1,150.62mg 중 ",규격-2,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,90.90,mg," - (3) 1매 10×14㎠ 약 2,301.24mg 중",규격-3,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-4a3225f1eb5d,박하유,박하유,45.46,mg," - (3) 1매 10×14㎠ 약 2,301.24mg 중",규격-3,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,90.90,mg," - (3) 1매 10×14㎠ 약 2,301.24mg 중",규격-3,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,34.10,mg," - (3) 1매 10×14㎠ 약 2,301.24mg 중",규격-3,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),0.90,mg," - (3) 1매 10×14㎠ 약 2,301.24mg 중",규격-3,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,0.114,mg," - (3) 1매 10×14㎠ 약 2,301.24mg 중",규격-3,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-7b94fcb9d067,산화아연,산화아연,431.82,mg," - (3) 1매 10×14㎠ 약 2,301.24mg 중",규격-3,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,21.36,mg, - (4) 1매 4.7×7.0㎠ 약 540.82mg 중,규격-4,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-4a3225f1eb5d,박하유,박하유,10.68,mg, - (4) 1매 4.7×7.0㎠ 약 540.82mg 중,규격-4,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,21.36,mg, - (4) 1매 4.7×7.0㎠ 약 540.82mg 중,규격-4,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,8.01,mg, - (4) 1매 4.7×7.0㎠ 약 540.82mg 중,규격-4,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),0.21,mg, - (4) 1매 4.7×7.0㎠ 약 540.82mg 중,규격-4,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,0.027,mg, - (4) 1매 4.7×7.0㎠ 약 540.82mg 중,규격-4,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-7b94fcb9d067,산화아연,산화아연,101.48,mg, - (4) 1매 4.7×7.0㎠ 약 540.82mg 중,규격-4,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,68.77,mg," - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",규격-5,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-4a3225f1eb5d,박하유,박하유,34.38,mg," - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",규격-5,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,68.77,mg," - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",규격-5,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,25.79,mg," - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",규격-5,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),0.69,mg," - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",규격-5,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,0.086,mg," - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",규격-5,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-7b94fcb9d067,산화아연,산화아연,326.64,mg," - (5) 1매 7.06×15㎠ 약 1,740.82㎎ 중",규격-5,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,4.00,mg," - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",규격-6,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-4a3225f1eb5d,박하유,박하유,2.00,mg," - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",규격-6,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,4.00,mg," - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",규격-6,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,1.50,mg," - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",규격-6,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),0.04,mg," - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",규격-6,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,0.005,mg," - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",규격-6,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-7b94fcb9d067,산화아연,산화아연,18.99,mg," - (6) 1매 (원지름 28mm, 6.157㎠, 101.21㎎) 중",규격-6,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-76b6b5a5a31f,L-멘톨,L-멘톨,3.19,mg," - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",규격-7,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-4a3225f1eb5d,박하유,박하유,1.59,mg," - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",규격-7,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-8bebf0ac75f4,살리실산메틸,살리실산메틸,3.19,mg," - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",규격-7,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-25b653f7fbe2,dl-캄파,dl-캄파,1.20,mg," - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",규격-7,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-a7ea13276326,니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),니코틴산벤질(피리딘-베타-카르복실산벤질에스테르),0.03,mg," - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",규격-7,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-d142ee358812,노닐산바닐릴아미드,노닐산바닐릴아미드,0.004,mg," - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",규격-7,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate
+MFDS-200501321,ING-mf-src-7b94fcb9d067,산화아연,산화아연,15.14,mg," - (7) 1매 (원지름 25mm, 4.909㎠, 80.69㎎) 중",규격-7,false,MFDS-NEDRUG-DETAIL,의약품상세정보 > 원료약품 및 분량,candidate

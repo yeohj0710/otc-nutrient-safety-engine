@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.research/schemas/otc/product_ingredient.schema.json",
+  "title": "OTC product ingredient amount",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["product_id", "ingredient_id", "ingredient_name_raw", "ingredient_name_normalized", "amount_per_unit", "amount_unit", "unit_basis", "source_id", "source_locator", "normalization_status"],
+  "properties": {
+    "product_id": {"type": "string", "minLength": 1},
+    "ingredient_id": {"type": "string", "minLength": 1},
+    "ingredient_name_raw": {"type": "string", "minLength": 1},
+    "ingredient_name_normalized": {"type": "string", "minLength": 1},
+    "amount_per_unit": {"type": "number", "exclusiveMinimum": 0},
+    "amount_unit": {"enum": ["mg", "g", "mcg", "mL", "IU", "%", "unit"]},
+    "unit_basis": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "source_locator": {"type": "string", "minLength": 1},
+    "normalization_status": {"enum": ["candidate", "verified", "rejected"]}
+  }
+}

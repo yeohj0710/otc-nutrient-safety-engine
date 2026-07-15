@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "verified_at": "2026-07-14T13:56:50.2918565+09:00",
+  "approval": {
+    "file": "research_v3/otc/review/submissions/execution_approval_권혁찬.json",
+    "sha256": "EFEC1973E3C3CC88480DD8D00713E406C8B0D694A8286B24772969E9A83F4243"
+  },
+  "deployment": {
+    "environment": "private_preview",
+    "production": false,
+    "deployment_id": "dpl_Hx86qtdzVR1uarHe1E6def22X1yf",
+    "url": "https://otc-nutrient-safety-engine-78hu2goev-yeohj0710s-projects.vercel.app",
+    "protected": true,
+    "status": "ready"
+  },
+  "browser_verification": {
+    "desktop": {
+      "passed": true,
+      "product_search": "타이레놀",
+      "selected_product": "타이레놀정500밀리그람(아세트아미노펜)",
+      "ingredient_loaded": "아세트아미노펜 500mg",
+      "release_gate_visible": true,
+      "console_errors": 0,
+      "screenshot": "research_v3/otc/etc/browser_qa/otc-preview-desktop.png",
+      "screenshot_sha256": "DB0F99380AABEDBB77D668CCE09E89C0DD9FD08D202F3CFCE3EA8C4A080C89EC"
+    },
+    "mobile": {
+      "passed": true,
+      "viewport": "390x844",
+      "client_width": 375,
+      "scroll_width": 375,
+      "horizontal_overflow": false,
+      "selected_product_visible": true,
+      "screenshot": "research_v3/otc/etc/browser_qa/otc-preview-mobile.png",
+      "screenshot_sha256": "6970F240DF890DEC35C3114A343AA3F61721B5335C8780E14D1CB84EAB99F30B"
+    }
+  },
+  "valid": true
+}

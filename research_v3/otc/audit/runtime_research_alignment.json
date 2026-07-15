@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "scope": "analysis_dataset_to_site_runtime",
+  "valid": true,
+  "counts": {
+    "analysis_products": 13,
+    "runtime_products": 13,
+    "analysis_product_ingredient_variant_rows": 57,
+    "selected_product_ingredient_bindings": 47,
+    "runtime_product_ingredient_bindings": 47,
+    "analysis_unique_ingredients": 28,
+    "runtime_unique_ingredients": 28,
+    "verified_administration_constraints": 32,
+    "runtime_administration_constraints": 32
+  },
+  "declared_unit_conversions": [
+    {
+      "item_sequence": "198601920",
+      "product_name": "어린이부루펜시럽",
+      "source": "2 g/100 mL",
+      "runtime": "20 mg/mL"
+    },
+    {
+      "item_sequence": "202200525",
+      "product_name": "어린이타이레놀현탁액",
+      "source": "3.2 g/100 mL",
+      "runtime": "32 mg/mL"
+    }
+  ],
+  "excluded_product_leaks": [],
+  "errors": []
+}

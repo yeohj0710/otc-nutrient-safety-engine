@@ -24,14 +24,14 @@ def test_runtime_uses_only_active_calculation_ready_products():
         assert "max_daily_dose" in product["supportedRuleTypes"]
 
 
-def test_runtime_preserves_withdrawn_and_ambiguous_statuses():
+def test_runtime_preserves_withdrawn_statuses_but_omits_analysis_exclusions():
     runtime = build()
     statuses = {row["candidateId"]: row["status"] for row in runtime["officialCandidates"]}
     assert statuses == {
         "SAFE-OTC-02": "withdrawn",
         "SAFE-OTC-03": "withdrawn",
-        "SAFE-OTC-13": "package_variant_unresolved",
     }
+    assert "SAFE-OTC-13" not in statuses
 
 
 def test_runtime_keeps_compound_ingredients_separate():

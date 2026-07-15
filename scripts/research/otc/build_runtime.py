@@ -103,6 +103,8 @@ def build() -> dict:
     for product in products:
         candidate = candidates[product["candidate_id"]]
         class_name = CLASS_NAMES.get(candidate["class_id"], candidate["class_id"])
+        if product.get("analysis_status") == "excluded":
+            continue
         if product["record_status"] != "verified_from_source":
             unresolved.append({
                 "candidateId": product["candidate_id"], "productName": product["product_name"],

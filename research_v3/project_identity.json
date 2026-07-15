@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "lineage": "research_v3",
+  "researcher": {
+    "name": "권혁찬",
+    "student_id": "2021194024",
+    "affiliation": "연세대학교 약학대학"
+  },
+  "protocol": {
+    "title_ko": "일반의약품형 고함량 영양성분의 함량 기준 안전성 평가와 개인맞춤 조회 도구 구축",
+    "sha256": "21FC2B391868EC5F337B8327F1A82108BBED6F097D32CE7E9F33CE3DE7879AA5",
+    "date": "2026-06-18"
+  },
+  "research_direction": "korean_otc_product_safety",
+  "direction_status": "active",
+  "prior_direction": {
+    "research_direction": "high_dose_nutrient_ingredient_safety",
+    "direction_status": "superseded",
+    "reason": "actual frequent OTC research direction confirmed by user",
+    "artifacts_preserved_in_place": true,
+    "metrics_reusable_as_otc_results": false
+  },
+  "otc_product_reorientation": "confirmed_by_latest_user_decision",
+  "released_rule_count": 0,
+  "clinical_release_allowed": false
+}

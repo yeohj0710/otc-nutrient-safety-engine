@@ -1,0 +1,30 @@
+{
+  "scenarioId": "IND-OTC-008",
+  "schemaVersion": "1.0.0",
+  "scenarioFamily": "acetaminophen_liver",
+  "critical": true,
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "202106092",
+      "unitsPerDose": 2,
+      "dosesPerDay": 4
+    }
+  ],
+  "userProfile": {
+    "ageYears": null,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": true,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  },
+  "referenceLabel": null,
+  "prediction": null,
+  "reviewStatus": "awaiting_independent_human_label"
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "inspected_at": "2026-07-15T18:17:45.7782700+09:00",
+  "method": "all_pages_rendered_and_visually_inspected_with_docx_accessibility_and_pdf_font_checks",
+  "valid": true,
+  "qa_source": "research_v3/otc/etc/document_qa/20260715_research_alignment/final_qa2",
+  "documents": [
+    {
+      "type": "thesis",
+      "docx": "research_v3/thesis/권혁찬_졸업논문_최종본.docx",
+      "pdf": "research_v3/thesis/권혁찬_졸업논문_최종본.pdf",
+      "pages_rendered": 20,
+      "pages_inspected": 20,
+      "page_size": "A4",
+      "accessibility_findings": {
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "pdf_fonts_embedded": true,
+      "pretendard_embedded": true,
+      "docx_sha256": "9ee25a5201d42cd46d259ae119ff2bc96ced1cf842baadad33379ed2e0c3bbf8",
+      "pdf_sha256": "5af324d2347013b0560b3e959aacc023b8dc0b8b3aa1c99f833f143fc4d4f714"
+    },
+    {
+      "type": "research_protocol",
+      "docx": "research_v3/protocol/권혁찬_OTC_연구계획서_최종본.docx",
+      "pdf": "research_v3/protocol/권혁찬_OTC_연구계획서_최종본.pdf",
+      "pages_rendered": 12,
+      "pages_inspected": 12,
+      "page_size": "A4",
+      "accessibility_findings": {
+        "high": 0,
+        "medium": 0,
+        "low": 0
+      },
+      "pdf_fonts_embedded": true,
+      "pretendard_embedded": true,
+      "docx_sha256": "379ea0a72543096212c6a0750d63b1ecf0a6edd5276e24b239dda2aaad55cd1f",
+      "pdf_sha256": "81078c51720c186865d3bae07f3e32dba2c9b323a255fef39215960812d68701"
+    }
+  ],
+  "checks": {
+    "all_pages_inspected": true,
+    "no_clipped_or_overlapping_content": true,
+    "heading_numbering_consistent": true,
+    "appendix_labels_consistent": true,
+    "korean_font_rendering_valid": true,
+    "independent_evaluation_boundary_preserved": true
+  }
+}

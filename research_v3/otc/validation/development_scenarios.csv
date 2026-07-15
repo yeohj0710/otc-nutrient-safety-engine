@@ -1,0 +1,14 @@
+scenario_id,scenario_family,description,expected_rule_types,critical,status
+DEV-OTC-001,duplicate_acetaminophen,아세트아미노펜 단일제와 아세트아미노펜 포함 종합감기약 선택,duplicate_ingredient,true,specification_only_awaiting_verified_products
+DEV-OTC-002,duplicate_nsaid,이부프로펜 제품과 덱시부프로펜 제품 선택,duplicate_pharmacologic_class,true,specification_only_awaiting_verified_products
+DEV-OTC-003,duplicate_nsaid,이부프로펜 제품과 나프록센 제품 선택,duplicate_pharmacologic_class,true,specification_only_awaiting_verified_products
+DEV-OTC-004,duplicate_antihistamine,항히스타민 포함 감기약과 알레르기약 선택,duplicate_ingredient;duplicate_pharmacologic_class,true,specification_only_awaiting_verified_products
+DEV-OTC-005,sedation_driving,진정성 항히스타민 제품 선택 후 운전 예정 입력,sedation_driving,true,specification_only_awaiting_verified_products
+DEV-OTC-006,nsaid_anticoagulant,NSAID 제품과 항응고제 병용 입력,anticoagulant_antiplatelet,true,specification_only_awaiting_verified_products
+DEV-OTC-007,decongestant_hypertension,고혈압 사용자가 비충혈제거제 포함 제품 선택,decongestant_hypertension,true,specification_only_awaiting_verified_products
+DEV-OTC-008,acetaminophen_liver,간질환 사용자가 아세트아미노펜 고용량 조건 입력,hepatic_disease;max_daily_dose,true,specification_only_awaiting_verified_products
+DEV-OTC-009,nsaid_kidney,신장질환 사용자가 NSAID 제품 선택,renal_disease,true,specification_only_awaiting_verified_products
+DEV-OTC-010,pediatric_adult_product,소아 연령에 성인용 제품 선택,age_restriction,true,specification_only_awaiting_verified_products
+DEV-OTC-011,minimum_interval,허가된 최소 복용 간격 전 재복용 입력,minimum_interval,true,specification_only_awaiting_verified_products
+DEV-OTC-012,normal_use,지원 제품 한 개를 허가 범위 내에서 선택,,false,specification_only_awaiting_verified_products
+DEV-OTC-013,unsupported_product,지원하지 않는 제품명 검색,,false,specification_only_awaiting_verified_products

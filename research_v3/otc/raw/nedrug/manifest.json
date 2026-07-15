@@ -1,0 +1,422 @@
+{
+  "retrieved_at_utc": "2026-07-14T02:56:31.878369+00:00",
+  "source": "MFDS NEDRUG",
+  "records": [
+    {
+      "candidate_id": "EXP-OTC-01",
+      "item_seq": "201110646",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\201110646\\detail.html",
+          "sha256": "6d3c6b5835050907dc46c7d52c8a53046b862eb50f3d9633edccc60b2b2e8612",
+          "bytes": 355867
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\201110646\\EE.pdf",
+          "sha256": "7105055660e591c75565b85dc21cf1a3e34179b361165804335e43efa52b6df1",
+          "bytes": 18731
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\201110646\\UD.pdf",
+          "sha256": "4cd4f68e2c3b4cb4653ca61b3707b379e2b55c7fdfafadc3cf8f3ec9e6d52f08",
+          "bytes": 13974
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\201110646\\NB.pdf",
+          "sha256": "1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394",
+          "bytes": 130778
+        }
+      ]
+    },
+    {
+      "candidate_id": "EXP-OTC-02",
+      "item_seq": "197500016",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\197500016\\detail.html",
+          "sha256": "be639d8763e2c4e39e315d7fcf64941468a6352a3e98676a13fa2aead4f95a8a",
+          "bytes": 272807
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\197500016\\EE.pdf",
+          "sha256": "f7624a71e89df74b7a1b2c201ec0d7571aa8b10031f0efcce752462cb0093ba1",
+          "bytes": 24195
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\197500016\\UD.pdf",
+          "sha256": "989b9ab7b54bbde65b3d441b208c18d5b5b3c6aeff972ac9e6ba87023ad32944",
+          "bytes": 33602
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\197500016\\NB.pdf",
+          "sha256": "26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6",
+          "bytes": 120165
+        }
+      ]
+    },
+    {
+      "candidate_id": "EXP-OTC-03",
+      "item_seq": "200610765",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200610765\\detail.html",
+          "sha256": "c686f619afca4071f3ca1abbd42010f1417d4c1e26df20139188845afff9b9df",
+          "bytes": 388651
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200610765\\EE.pdf",
+          "sha256": "856d37d61733a97812b070aecaaf0bb0310982f720126df4431efff01919586d",
+          "bytes": 16179
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200610765\\UD.pdf",
+          "sha256": "3a75d5a7f583d737489e3c4c2d8b41e21f5e434f9b3c9eebcdf39500fc00bb74",
+          "bytes": 36429
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200610765\\NB.pdf",
+          "sha256": "34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57",
+          "bytes": 87778
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-01",
+      "item_seq": "202106092",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202106092\\detail.html",
+          "sha256": "a237267fc5082c2be65fbf756ffd07e206f461ef29926e6b9da720d39a502e55",
+          "bytes": 377365
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202106092\\EE.pdf",
+          "sha256": "3bf9aa2b0786a4241b63e148a37af8c44ba45c6000c2cf54d164272ad79349d9",
+          "bytes": 16690
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202106092\\UD.pdf",
+          "sha256": "570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
+          "bytes": 17957
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202106092\\NB.pdf",
+          "sha256": "0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+          "bytes": 84196
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-02",
+      "item_seq": "199402278",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199402278\\detail.html",
+          "sha256": "074d76cc32b83faf97c66ffb6f5a1307cc7a8a9fbfa926d1406a0b4936a033f7",
+          "bytes": 433689
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199402278\\EE.pdf",
+          "sha256": "61d13cac7d20300b0d0b0e820244f474589f78f8abd5dd3c770ce422f48b9f17",
+          "bytes": 16690
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199402278\\UD.pdf",
+          "sha256": "b74c9daf75f50b69c4d50fdcfc0ebb20e81d772b50496ac46fa1e9e442f96510",
+          "bytes": 25341
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199402278\\NB.pdf",
+          "sha256": "da0d19031cb025975433df8866ee6f11fd1eb04809fa6796e8b13ebf6dd33147",
+          "bytes": 83552
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-03",
+      "item_seq": "199303109",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199303109\\detail.html",
+          "sha256": "b976ca4519cce82c773e98157846918bd7c2f8849be5f733fc77982aa20dc4ac",
+          "bytes": 429234
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199303109\\EE.pdf",
+          "sha256": "09c5dbb05be90f316aec41c6cbec613c398170cc5f4cbe58ee240a418fabbd7a",
+          "bytes": 16690
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199303109\\UD.pdf",
+          "sha256": "05d69501e029b3f7b48b75504000bab08989a664ea6932ad01c6447e788f10f0",
+          "bytes": 25332
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199303109\\NB.pdf",
+          "sha256": "43b1ab0c1067d64d06c910ff329b5a63a993c3c57e45025aa7246b3e91e1d9c2",
+          "bytes": 81920
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-04",
+      "item_seq": "202200525",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202200525\\detail.html",
+          "sha256": "c655d949a48c5ac1a1aa8409cc8109f5e127cf08882c2a115d4be6b943218e1f",
+          "bytes": 275031
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202200525\\EE.pdf",
+          "sha256": "5ece2d21eaf6df64389e5ea4e6019717250866cc5768275d5a7da27ccf7ed5ee",
+          "bytes": 16690
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202200525\\UD.pdf",
+          "sha256": "c1cc41edcfa122cf1d0f48546e702504e04a18fe11560d752e789b34dd354300",
+          "bytes": 25244
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\202200525\\NB.pdf",
+          "sha256": "5150a7cae99a092b9795b19c9fa1622f0ed1c1bcdd7f34613c0c4a09c0930d4b",
+          "bytes": 84086
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-05",
+      "item_seq": "198601920",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198601920\\detail.html",
+          "sha256": "ba9a60733b0c9e2b0f5fcaf4aab2dd3b67b6ae77439167b7106c8c2f54e81a4a",
+          "bytes": 197677
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198601920\\EE.pdf",
+          "sha256": "af316200ccdaad50f68286bd8b9408b98f0706f9ff6e7ccccebb2104c0118dda",
+          "bytes": 25459
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198601920\\UD.pdf",
+          "sha256": "32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a",
+          "bytes": 29964
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198601920\\NB.pdf",
+          "sha256": "56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+          "bytes": 121979
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-06",
+      "item_seq": "198700405",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198700405\\detail.html",
+          "sha256": "1db074ef5f1e9712725902411f6dc2522547ef032fa77341579e2836ff1410cf",
+          "bytes": 268543
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198700405\\EE.pdf",
+          "sha256": "cd0a59d5b33207cfda4cd716a21a63874d89c4af8889f2e187fa7e5dacfada09",
+          "bytes": 11158
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198700405\\UD.pdf",
+          "sha256": "44c605bd4719bdbea9bdf50372d62a1a338cd462276489358e228f2cb675ea7d",
+          "bytes": 9048
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198700405\\NB.pdf",
+          "sha256": "4c63fc46e5f4152d8a11a71ab4f595bc70c78b0e87b5c9911a15fbe96225b259",
+          "bytes": 40655
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-07",
+      "item_seq": "200300406",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200300406\\detail.html",
+          "sha256": "c150fb2717532d8784ab64f6420dcace2e7c95c9520b8445fd0586f6a28cefa7",
+          "bytes": 328136
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200300406\\EE.pdf",
+          "sha256": "1e4b26d896f14343f1f50df32daf1f7d7944803ab53861f8202c267b45e03740",
+          "bytes": 11158
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200300406\\UD.pdf",
+          "sha256": "19cfabcf1738b4a279f9692af4c151af9fbb1bf06ea16be2fda0cd36caf569e0",
+          "bytes": 9129
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200300406\\NB.pdf",
+          "sha256": "3494767aa2b6c942d791a02651b569d83a5f8e3a1b355ef88a93588f9da75780",
+          "bytes": 37254
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-08",
+      "item_seq": "199900926",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199900926\\detail.html",
+          "sha256": "c30aa7b6b526fe802f28c9ec008ecab65b90032b027b9c738b88f0dd2c4cb308",
+          "bytes": 348256
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199900926\\EE.pdf",
+          "sha256": "33839ca90fd6d6a118a3a4a38af0eacd9a28141babced712fcdb511271685d6c",
+          "bytes": 11158
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199900926\\UD.pdf",
+          "sha256": "7c7a6e8ca4b6ce34ce8e76a4f0c950571ef81e270bef2c96fb2ab5b052630c80",
+          "bytes": 10291
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199900926\\NB.pdf",
+          "sha256": "ece6da098d5f571c79c7c5024e806467ab7b3d1bb5f20b40f529d2a4e9cbe8e0",
+          "bytes": 40667
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-09",
+      "item_seq": "199801026",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199801026\\detail.html",
+          "sha256": "0b229eb63404b160e9c23c11e5fe3e2298521bf047adffafaf1dd3f80e415636",
+          "bytes": 657894
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199801026\\EE.pdf",
+          "sha256": "08cca66928aff11b64b0cd072719a1312ebfcac858e807e26885aa0347512ca7",
+          "bytes": 11158
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199801026\\UD.pdf",
+          "sha256": "c71c27f2e6cc95fdda0d723c926260f309c96cf7aafbc3b5887802ae6362e958",
+          "bytes": 12359
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199801026\\NB.pdf",
+          "sha256": "7f0c695c438573fb52b46f45a1f7eaaf1508349d05f75899e7ee72525998fde7",
+          "bytes": 31931
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-10",
+      "item_seq": "196800036",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\196800036\\detail.html",
+          "sha256": "db5e573da8c1e18a653de2a9bb794ad39d25f10ea8229255ad0eb09b4ecfd35b",
+          "bytes": 1133152
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\196800036\\EE.pdf",
+          "sha256": "99865f103df0b44f679e59dd2d01772ee586a3ca6d423d9a1e9f922af0e20bc0",
+          "bytes": 15865
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\196800036\\UD.pdf",
+          "sha256": "0aa1264c5f459b4614378fe9e259e7d60d9e2b8588a1c54673cc056555b876da",
+          "bytes": 9303
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\196800036\\NB.pdf",
+          "sha256": "4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
+          "bytes": 85137
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-11",
+      "item_seq": "199400202",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199400202\\detail.html",
+          "sha256": "c17a0a4163f7bb4ca3d0644e1f55b2c3dc97c00162aa9bf2cbbef97acb71b027",
+          "bytes": 1050019
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199400202\\EE.pdf",
+          "sha256": "cabbadc88f740c8b59e1d71308e0b2c092ceaed0c9797d3035c79cdcc82ff4a8",
+          "bytes": 12791
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199400202\\UD.pdf",
+          "sha256": "702c9270df46d2a78c22d6331abcb5affde3ccd2d14567bc8b07ae2b8f676d8a",
+          "bytes": 8832
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\199400202\\NB.pdf",
+          "sha256": "394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3",
+          "bytes": 83158
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-12",
+      "item_seq": "198400250",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198400250\\detail.html",
+          "sha256": "5516872ac4539df6d870434e960554e9aeab3104f9b399732242cc9dc93cf060",
+          "bytes": 294304
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198400250\\EE.pdf",
+          "sha256": "3942285a1997a8bd26e71cbcf246e4c761fd8ac04cab91e73cebccbc4b422c7f",
+          "bytes": 13769
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198400250\\UD.pdf",
+          "sha256": "9d42736581a6c048e0213c281b48f2963bee3eb7c39d73c49cb12cb7777e0118",
+          "bytes": 8774
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\198400250\\NB.pdf",
+          "sha256": "7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a",
+          "bytes": 44621
+        }
+      ]
+    },
+    {
+      "candidate_id": "SAFE-OTC-13",
+      "item_seq": "200501321",
+      "files": [
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200501321\\detail.html",
+          "sha256": "6e3cdc08a64090019a0926462f6b084939b60e4a5526f0073b5ec6067ad447fb",
+          "bytes": 525256
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200501321\\EE.pdf",
+          "sha256": "6bdedd5d2696684581ef4dfabc5ac7e8627b103db98f2765bb845e8124c17241",
+          "bytes": 13904
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200501321\\UD.pdf",
+          "sha256": "3971f6807612275c4072eb96203d297edc426ecdf870ea1917748fb6fe493b4e",
+          "bytes": 8849
+        },
+        {
+          "path": "research_v3\\otc\\raw\\nedrug\\200501321\\NB.pdf",
+          "sha256": "5dde7046aecf43f233d2a3372f79adde3ebd261a02dc03bb0b43de16a67f36fa",
+          "bytes": 56411
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "approver_id": "권혁찬",
+  "approved_at": "2026-07-14T04:48:54.862Z",
+  "approved_actions": [
+    "private_preview_deployment",
+    "preview_desktop_mobile_browser_verification",
+    "g_drive_existing_outputs_backup",
+    "g_drive_working_package_sync",
+    "post_sync_hash_and_document_verification"
+  ],
+  "excluded_actions": [
+    "public_production_deployment",
+    "canonical_final_promotion",
+    "fabricated_pharmacist_review",
+    "non_blinded_labels_as_independent_evaluation"
+  ]
+}

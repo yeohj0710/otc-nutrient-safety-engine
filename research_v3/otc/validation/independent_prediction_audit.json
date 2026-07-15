@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "prediction_mode": "deterministic_released_rules_only",
+  "scenarios": [
+    {
+      "scenarioId": "IND-OTC-001",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "age_restriction",
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-002",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-003",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-004",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-005",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "sedation_driving"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-006",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "anticoagulant_antiplatelet"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-007",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "decongestant_hypertension"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-008",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "age_restriction",
+        "hepatic_disease"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-009",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "renal_disease"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-010",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-011",
+      "prediction": "1",
+      "findingRuleTypes": [
+        "age_restriction",
+        "minimum_interval"
+      ]
+    },
+    {
+      "scenarioId": "IND-OTC-012",
+      "prediction": "0",
+      "findingRuleTypes": []
+    },
+    {
+      "scenarioId": "IND-OTC-013",
+      "prediction": "0",
+      "findingRuleTypes": []
+    }
+  ],
+  "runtime_sha256": "897c2d2a6c1175eff0e883e7f347d16c8d230aed5dabe0ca683451b56e5ed32a",
+  "case_payload_sha256": {
+    "IND-OTC-001": "42c7157721f8e1a341ab49b876d8e33235086ec1b2918c8232fb0282477d4407",
+    "IND-OTC-002": "63895224b71f33e60be8271ebd06fd1ebe359f8f8a9bd2e3a2deb73370664401",
+    "IND-OTC-003": "277c4c59c3d0bd93c9d305bfaec534f9322571b16680198bb9c6a88104f6c51f",
+    "IND-OTC-004": "71053f7846c80abd2c2819a8c2aec5f34c4e60e24dd29df1da525f1d2dd46829",
+    "IND-OTC-005": "6016c051c551a895301df4bbc9449758e63f81d3287f45e25c8370e4ef1c6def",
+    "IND-OTC-006": "1b19a8b70b769a030fd83f2e05d9c21da5dd10f503390d248757e0591cd571dc",
+    "IND-OTC-007": "eb7a1d3dd9f6065b60511ef06c621584eaa8f8f0ab881feb8c03041f39dc1512",
+    "IND-OTC-008": "d3273248cce2209d2d59db6f18996e3a99271433c7fa61d5b281e9bcc467516f",
+    "IND-OTC-009": "fc9bea8d3d5c2c134b4c0482da93c501d2e85c1d4c2a5d5e705bece5387e7a88",
+    "IND-OTC-010": "f7f3ad4ba88232ca309a964c4678edf0af42273d2777cc50c7308422f8c42253",
+    "IND-OTC-011": "ebc925e7e2b48a92c859aec82802acaa65e709589736e343dd1fbd09a3e45b0c",
+    "IND-OTC-012": "a73cf188603e0e2566d91c8fef2fa898383124d33353fbbc3e2a9d9f03c4e424",
+    "IND-OTC-013": "2fdcb74f539aeb9433911e8ad243e13e0760692681197e9914b17075c83f77f5"
+  }
+}

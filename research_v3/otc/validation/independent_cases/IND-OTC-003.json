@@ -1,0 +1,36 @@
+{
+  "scenarioId": "IND-OTC-003",
+  "schemaVersion": "1.0.0",
+  "scenarioFamily": "duplicate_nsaid",
+  "critical": true,
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "198601920",
+      "unitsPerDose": 10,
+      "dosesPerDay": 3
+    },
+    {
+      "inputType": "verified_product",
+      "itemSequence": "197500016",
+      "unitsPerDose": 1,
+      "dosesPerDay": 2
+    }
+  ],
+  "userProfile": {
+    "ageYears": null,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  },
+  "referenceLabel": null,
+  "prediction": null,
+  "reviewStatus": "awaiting_independent_human_label"
+}

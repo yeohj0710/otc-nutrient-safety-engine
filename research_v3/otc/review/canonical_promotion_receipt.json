@@ -1,0 +1,40 @@
+﻿{
+    "schema_version":  "1.0.0",
+    "research_direction":  "korean_otc_product_safety",
+    "approved_at":  "2026-07-14T09:05:18.180Z",
+    "submission":  "research_v3/otc/review/submissions/canonical_promotion_approval.json",
+    "submission_sha256":  "0C4A05E97CB11C3488B9AE7BBFE26C70E145C1A65F0BEA6D27B9A77F45212665",
+    "canonical_promoted":  true,
+    "production_deployed":  false,
+    "blind_independent_evaluation_completed":  false,
+    "limitation_accepted":  true,
+    "repo_backup":  "research_v3/otc/etc/canonical_promotion_backups/20260714_180617",
+    "g_drive_backup":  "03_최종산출물/etc/canonical_promotion_backups/20260714_180617",
+    "files":  [
+                  {
+                      "File":  "권혁찬_졸업논문_OTC_작업본.docx",
+                      "RepoMatch":  true,
+                      "GMatch":  true,
+                      "Hash":  "BF48FBAF0CE61158DD89A48513D23CCBCA892433F40D8A6BCDDC380E01F073FF"
+                  },
+                  {
+                      "File":  "권혁찬_졸업논문_OTC_작업본.pdf",
+                      "RepoMatch":  true,
+                      "GMatch":  true,
+                      "Hash":  "285F71309E022FAC39F9280476D7453AB655DFBE7E14EFC6FEA7527CD48B28A7"
+                  },
+                  {
+                      "File":  "권혁찬_OTC_연구계획서_작업본.docx",
+                      "RepoMatch":  true,
+                      "GMatch":  true,
+                      "Hash":  "B8D47A9F97921A8B1FAB06B813F82ED76B7C7E63B4EC75C8B200F0BB7AEA7ED4"
+                  },
+                  {
+                      "File":  "권혁찬_OTC_연구계획서_작업본.pdf",
+                      "RepoMatch":  true,
+                      "GMatch":  true,
+                      "Hash":  "A1EC7B48C60ACF0A585C36F8A1A4D5E38458397B6CB8A56A024BCFCF653C30E6"
+                  }
+              ],
+    "valid":  true
+}

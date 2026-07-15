@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "captured_at_utc": "2026-07-15T09:20:14.539748+00:00",
+  "status": "passed",
+  "results": {
+    "research_tests": {
+      "command": [
+        "C:\\dev\\otc-nutrient-safety-engine\\.venv-research\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/research",
+        "-q"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "passed": 106,
+      "failed": 0
+    },
+    "app_tests": {
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "test"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "passed": 53,
+      "test_files": 11
+    },
+    "lint": {
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "status": "passed"
+    },
+    "typecheck": {
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0,
+      "status": "passed"
+    },
+    "build": {
+      "command": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "static_paths_generated": 156
+    }
+  }
+}

@@ -1,0 +1,6 @@
+class_id,class_name_ko,scope_status,rationale,source_ids
+OTC-CLASS-ANALGESIC,해열진통제·NSAID,initial_core,"보건복지부 지정 목록에 아세트아미노펜 및 이부프로펜 제품군이 포함되며 중복·최대용량·간격·연령 규칙 평가에 직접 연결된다.",SEL-MOHW-SAFE-OTC-2026;SEL-MFDS-SAFE-OTC-API;SEL-MFDS-AUTH-07
+OTC-CLASS-COLD,종합감기약,initial_core,"보건복지부 지정 목록에 판콜에이내복액과 판피린티정이 포함되며 복합제 성분 분해와 중복 탐지에 필요하다.",SEL-MOHW-SAFE-OTC-2026;SEL-MFDS-SAFE-OTC-API;SEL-MFDS-AUTH-07
+OTC-CLASS-ANTIHISTAMINE,항히스타민제,pending_authorization_evidence,"목표 연구의 졸림·운전 및 복합감기약 중복 시나리오에 필요하나 공식 후보 제품과 공급 근거를 추가 확보해야 한다.",SEL-MFDS-EASY-DRUG;SEL-MFDS-AUTH-07
+OTC-CLASS-COUGH-DECONGESTANT,진해거담제·비충혈제거제,pending_authorization_evidence,"목표 연구의 고혈압·심혈관질환 및 복합감기약 시나리오에 필요하나 공식 후보 제품과 공급 근거를 추가 확보해야 한다.",SEL-MFDS-EASY-DRUG;SEL-MFDS-AUTH-07
+OTC-CLASS-GI,위장관 일반의약품,initial_core,"보건복지부 지정 목록에 소화제 4품목이 포함되어 공적 초기 후보군을 제공한다.",SEL-MOHW-SAFE-OTC-2026;SEL-MFDS-SAFE-OTC-API;SEL-MFDS-AUTH-07

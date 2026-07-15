@@ -1,0 +1,28 @@
+{
+  "scenarioId": "IND-OTC-013",
+  "schemaVersion": "1.0.0",
+  "scenarioFamily": "unsupported_product",
+  "critical": false,
+  "productInputs": [
+    {
+      "inputType": "product_search_query",
+      "productNameQuery": "지원 목록에 없는 임의 일반의약품"
+    }
+  ],
+  "userProfile": {
+    "ageYears": null,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  },
+  "referenceLabel": null,
+  "prediction": null,
+  "reviewStatus": "awaiting_independent_human_label"
+}

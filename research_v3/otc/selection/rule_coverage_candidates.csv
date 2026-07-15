@@ -1,0 +1,4 @@
+candidate_id,class_id,listed_product_name,item_sequence,candidate_basis,source_ids,candidate_status
+EXP-OTC-01,OTC-CLASS-ANALGESIC,덱스피드연질캡슐,201110646,법령상 일반의약품 다소비 성분인 덱시부프로펜의 동일 NSAID 중복 규칙 검증 후보,SEL-LAW-OTC-HIGH-CONSUMPTION;SEL-MFDS-AUTH-07,rule_coverage_candidate
+EXP-OTC-02,OTC-CLASS-ANALGESIC,낙센정(나프록센),197500016,사전 정의된 이부프로펜-나프록센 동일 NSAID 중복 시나리오 검증 후보,SEL-MFDS-AUTH-07,rule_coverage_candidate
+EXP-OTC-03,OTC-CLASS-ANTIHISTAMINE,지르텍정(세티리진염산염),200610765,감기약-알레르기약 항히스타민 중복 시나리오와 항히스타민 핵심군 검증 후보,SEL-MFDS-AUTH-07,rule_coverage_candidate

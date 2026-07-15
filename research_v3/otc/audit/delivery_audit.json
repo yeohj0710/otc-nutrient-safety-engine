@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "root": "C:\\dev\\otc-nutrient-safety-engine\\research_v3",
+  "errors": [
+    {
+      "code": "MISSING_ROOT_ITEM",
+      "path": "00_먼저_읽기.md"
+    },
+    {
+      "code": "MISSING_ROOT_ITEM",
+      "path": "01_논문"
+    },
+    {
+      "code": "MISSING_ROOT_ITEM",
+      "path": "02_핵심보고서"
+    },
+    {
+      "code": "MISSING_ROOT_ITEM",
+      "path": "03_연구데이터_research_v3"
+    },
+    {
+      "code": "MISSING_ROOT_ITEM",
+      "path": "04_재현코드"
+    },
+    {
+      "code": "MISSING_ROOT_ITEM",
+      "path": "05_웹사이트"
+    },
+    {
+      "code": "MISSING_ROOT_ITEM",
+      "path": "06_레퍼런스"
+    },
+    {
+      "code": "CANONICAL_FINAL_THESIS_MISSING",
+      "path": "01_논문\\권혁찬_졸업논문_최종본.docx"
+    },
+    {
+      "code": "CANONICAL_FINAL_THESIS_MISSING",
+      "path": "01_논문\\권혁찬_졸업논문_최종본.pdf"
+    },
+    {
+      "code": "LEGACY_ISOLATION_MISSING",
+      "path": "etc\\영양성분_구방향_20260713\\research_v2"
+    }
+  ],
+  "warnings": [],
+  "metrics_sha256": {},
+  "valid": false,
+  "release_ready": false
+}

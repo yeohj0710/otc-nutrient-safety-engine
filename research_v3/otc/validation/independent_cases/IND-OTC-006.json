@@ -1,0 +1,32 @@
+{
+  "scenarioId": "IND-OTC-006",
+  "schemaVersion": "1.0.0",
+  "scenarioFamily": "nsaid_anticoagulant",
+  "critical": true,
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "198601920",
+      "unitsPerDose": 10,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": null,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [
+      "와파린"
+    ],
+    "redFlagSymptoms": []
+  },
+  "referenceLabel": null,
+  "prediction": null,
+  "reviewStatus": "awaiting_independent_human_label"
+}

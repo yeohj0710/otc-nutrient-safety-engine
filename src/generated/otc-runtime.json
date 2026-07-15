@@ -1383,12 +1383,6 @@
       "productName": "어린이용타이레놀정80밀리그람(아세트아미노펜)",
       "className": "해열진통제",
       "status": "withdrawn"
-    },
-    {
-      "candidateId": "SAFE-OTC-13",
-      "productName": "신신파스아렉스",
-      "className": "외용 소염진통제",
-      "status": "package_variant_unresolved"
     }
   ]
 }

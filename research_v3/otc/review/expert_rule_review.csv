@@ -1,0 +1,17 @@
+﻿rule_id,decision,comment,reviewer_id,reviewer_role,reviewed_at,review_status,supports_release
+OTC-RULE-001,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-002,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-003,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-004,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-005,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-006,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-007,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-008,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-009,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-010,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-011,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-012,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-013,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-014,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-015,revise,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false
+OTC-RULE-016,approve,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z,human_expert_recorded_not_promoted,false

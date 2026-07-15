@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "complete": false,
+  "requirements": [
+    {
+      "requirement": "actual_korean_otc_products_and_authorizations",
+      "status": "achieved",
+      "evidence": {
+        "verified_products": 14
+      }
+    },
+    {
+      "requirement": "compound_ingredients_and_amounts_normalized",
+      "status": "achieved",
+      "evidence": {
+        "candidate_master_ingredients": 31,
+        "candidate_product_ingredient_variant_rows": 106,
+        "analysis_ingredients": 28,
+        "runtime_product_ingredient_bindings": 47,
+        "runtime_alignment": true
+      }
+    },
+    {
+      "requirement": "otc_selection_rationale",
+      "status": "achieved",
+      "evidence": {
+        "sources": 6
+      }
+    },
+    {
+      "requirement": "released_rules_source_locator_100_percent",
+      "status": "achieved",
+      "evidence": {
+        "status": "evaluated",
+        "value": 1.0,
+        "numerator": 15,
+        "denominator": 15
+      }
+    },
+    {
+      "requirement": "independent_evaluation_complete",
+      "status": "incomplete",
+      "evidence": {
+        "status": "evaluated_codex_prefilled_external_human_confirmation",
+        "value": 13,
+        "evaluated": 13,
+        "independent_blinding": false,
+        "performance_claim_allowed": false
+      }
+    },
+    {
+      "requirement": "critical_false_negative_reported",
+      "status": "achieved",
+      "evidence": {
+        "status": "evaluated_codex_prefilled_external_human_confirmation",
+        "value": 0
+      }
+    },
+    {
+      "requirement": "product_search_success_rate_reported",
+      "status": "achieved",
+      "evidence": {
+        "status": "evaluated_fixed_development_cases_not_external_user_study",
+        "value": 1,
+        "numerator": 26,
+        "denominator": 26
+      }
+    },
+    {
+      "requirement": "ingredient_normalization_accuracy_reported",
+      "status": "achieved",
+      "evidence": {
+        "status": "evaluated_human_locked_reference",
+        "value": 1.0,
+        "numerator": 31,
+        "denominator": 31,
+        "planned": 31
+      }
+    },
+    {
+      "requirement": "product_name_centered_site",
+      "status": "achieved",
+      "evidence": {
+        "analysis_products": 13,
+        "runtime_products": 13,
+        "runtime_alignment": true,
+        "browser_qa": true
+      }
+    },
+    {
+      "requirement": "documents_app_report_metrics_consistent",
+      "status": "achieved",
+      "evidence": {
+        "claim_consistency": true
+      }
+    },
+    {
+      "requirement": "tests_lint_typecheck_build_pass",
+      "status": "achieved",
+      "evidence": {
+        "research_tests": 106,
+        "app_tests": 53
+      }
+    },
+    {
+      "requirement": "docx_pdf_all_pages_visual_qa",
+      "status": "achieved",
+      "evidence": {
+        "audit": "research_v3/otc/audit/document_visual_qa.json",
+        "document_checks_passed": true
+      }
+    },
+    {
+      "requirement": "preview_browser_verified",
+      "status": "achieved",
+      "evidence": {
+        "audit": "research_v3/otc/audit/preview_deployment_verification.json",
+        "valid": true
+      }
+    },
+    {
+      "requirement": "g_drive_working_package_synced",
+      "status": "achieved",
+      "evidence": {
+        "audit": "research_v3/otc/audit/g_drive_working_sync_verification.json",
+        "valid": true
+      }
+    },
+    {
+      "requirement": "canonical_promotion",
+      "status": "achieved",
+      "evidence": {
+        "audit": "research_v3/otc/review/canonical_promotion_receipt.json",
+        "valid": true
+      }
+    },
+    {
+      "requirement": "no_cross_student_contamination",
+      "status": "achieved",
+      "evidence": {
+        "identity_audit_valid": true,
+        "findings": []
+      }
+    }
+  ],
+  "incomplete_requirements": [
+    "independent_evaluation_complete"
+  ],
+  "release_ready": false
+}

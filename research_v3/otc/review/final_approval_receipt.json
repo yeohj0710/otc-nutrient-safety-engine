@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "reviewer_id": "권혁찬",
+  "approved_at": "2026-07-14T04:29:32.444Z",
+  "submission": "research_v3/otc/review/submissions/final_approval_권혁찬.json",
+  "submission_sha256": "B5A2BA41B440D2E5D5F680CCA06BC3E0FFE67FA308F223EABAE9AC80D0464A62",
+  "confirmed_rule_recommendations": 16,
+  "confirmed_scenario_recommendations": 13,
+  "review_mode": "codex_recommendations_confirmed_by_human_not_blinded_independent_review",
+  "counts_as_pharmacist_expert_review": false,
+  "counts_as_blinded_independent_scenario_labeling": false,
+  "status": "researcher_confirmation_recorded"
+}

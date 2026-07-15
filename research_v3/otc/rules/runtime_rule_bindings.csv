@@ -1,0 +1,14 @@
+﻿rule_id,item_sequence,ingredient_id,max_daily_amount,minimum_interval_hours,minimum_age_years,maximum_continuous_days,flags,binding_status,supports_release,red_flag_terms
+OTC-RULE-003,202106092,ING-acetaminophen,4000,,,,,human_expert_verified,true,
+OTC-RULE-004,202106092,ING-acetaminophen,,4,,,,human_expert_verified,true,
+OTC-RULE-005,202106092,,,,12,,,human_expert_verified,true,
+OTC-RULE-006,198601920,,,,,,pregnancy_lactation,human_expert_verified,true,
+OTC-RULE-007,202106092,ING-acetaminophen,,,,,hepatic_disease,human_expert_verified,true,
+OTC-RULE-008,198601920,,,,,,renal_disease,human_expert_verified,true,
+OTC-RULE-009,198601920,,,,,,gi_bleeding_ulcer,human_expert_verified,true,
+OTC-RULE-010,196800036,,,,,,sedation_driving,human_expert_verified,true,
+OTC-RULE-011,202106092,ING-acetaminophen,,,,,alcohol,human_expert_verified,true,
+OTC-RULE-012,198601920,,,,,,anticoagulant_antiplatelet,human_expert_verified,true,
+OTC-RULE-013,196800036,,,,,,sedative_medication,human_expert_verified,true,
+OTC-RULE-014,196800036,,,,,,decongestant_hypertension,human_expert_verified,true,
+OTC-RULE-016,202106092,,,,,,,human_expert_verified,true,호흡곤란;온몸이 붉어짐;혈관부기;두드러기;천식발작;얼굴부기;저혈압;쇽;스티븐스-존슨;스티븐스 존슨;독성표피괴사;리엘 증후군

@@ -1,0 +1,266 @@
+{
+  "schema_version": "2.0.0",
+  "lineage": "research_v3",
+  "research_direction": "korean_otc_product_safety",
+  "generated_at_utc": "2026-07-15T09:23:18.728794+00:00",
+  "claim_boundary": "evidence_traceable_korean_otc_product_safety_research_working_state",
+  "prior_direction": {
+    "status": "superseded",
+    "metrics_included": false
+  },
+  "metrics": {
+    "selection_sources": {
+      "status": "registered_or_verified",
+      "value": 6
+    },
+    "representative_classes": {
+      "status": "mixed_initial_and_pending",
+      "value": 5
+    },
+    "official_designation_candidates": {
+      "status": "candidate_not_authorization_verified",
+      "value": 13
+    },
+    "products_total": {
+      "status": "authorization_candidate_master",
+      "value": 16
+    },
+    "products_verified_from_source": {
+      "status": "authorization_candidate_master",
+      "value": 14
+    },
+    "products_calculation_ready": {
+      "status": "analysis_included",
+      "value": 13
+    },
+    "ingredients_total": {
+      "status": "authorization_candidate_master",
+      "value": 31
+    },
+    "product_ingredient_rows": {
+      "status": "authorization_candidate_product_ingredient_variant_rows",
+      "value": 106
+    },
+    "analysis_products": {
+      "status": "site_aligned_analysis_set",
+      "value": 13
+    },
+    "analysis_ingredients": {
+      "status": "site_aligned_unique_ingredients",
+      "value": 28
+    },
+    "analysis_product_ingredient_variant_rows": {
+      "status": "analysis_products_all_authorized_variants",
+      "value": 57
+    },
+    "runtime_product_ingredient_bindings": {
+      "status": "selected_calculation_bindings",
+      "value": 47
+    },
+    "verified_administration_constraints": {
+      "status": "verified_from_authorization_source_not_separately_pharmacist_reviewed",
+      "value": 32
+    },
+    "analysis_exclusions": {
+      "status": "source_records_preserved",
+      "value": 1
+    },
+    "runtime_research_alignment": {
+      "status": "audited",
+      "value": true,
+      "audit": "research_v3/otc/audit/runtime_research_alignment.json"
+    },
+    "normalization_rejections": {
+      "status": "active_otc_only",
+      "value": 0
+    },
+    "rules_total": {
+      "status": "active_otc_only",
+      "value": 16
+    },
+    "rules_draft": {
+      "status": "not_expert_released",
+      "value": 1
+    },
+    "rules_released": {
+      "status": "active_otc_only",
+      "value": 15
+    },
+    "official_rule_evidence_candidates": {
+      "status": "codex_candidate_not_expert_verified",
+      "value": 360
+    },
+    "released_source_locator_rate": {
+      "status": "evaluated",
+      "value": 1.0,
+      "numerator": 15,
+      "denominator": 15
+    },
+    "development_scenarios": {
+      "status": "specification_only",
+      "value": 13
+    },
+    "independent_scenarios": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": 13,
+      "evaluated": 13,
+      "independent_blinding": false,
+      "performance_claim_allowed": false
+    },
+    "critical_false_negatives": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": 0
+    },
+    "sensitivity": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": 1.0
+    },
+    "sensitivity_ci95": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": [
+        0.7411670330319684,
+        1.0
+      ]
+    },
+    "specificity": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": 1.0
+    },
+    "specificity_ci95": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": [
+        0.34238022750665303,
+        1.0
+      ]
+    },
+    "positive_predictive_value": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": 1.0
+    },
+    "negative_predictive_value": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": 1.0
+    },
+    "accuracy": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": 1.0
+    },
+    "accuracy_ci95": {
+      "status": "evaluated_codex_prefilled_external_human_confirmation",
+      "value": [
+        0.7719046276458016,
+        0.9999999999999999
+      ]
+    },
+    "product_search_success_rate": {
+      "status": "evaluated_fixed_development_cases_not_external_user_study",
+      "value": 1,
+      "numerator": 26,
+      "denominator": 26
+    },
+    "ingredient_normalization_accuracy": {
+      "status": "evaluated_human_locked_reference",
+      "value": 1.0,
+      "numerator": 31,
+      "denominator": 31,
+      "planned": 31
+    },
+    "analysis_ingredient_normalization_accuracy": {
+      "status": "evaluated_human_locked_reference",
+      "value": 1.0,
+      "numerator": 28,
+      "denominator": 28,
+      "planned": 28
+    },
+    "runtime_products": {
+      "status": "verified_products_only",
+      "value": 13
+    },
+    "runtime_official_candidates": {
+      "status": "not_selectable",
+      "value": 2
+    },
+    "research_tests_passed": {
+      "status": "passed",
+      "value": 106
+    },
+    "app_tests_passed": {
+      "status": "passed",
+      "value": 53
+    },
+    "static_paths_generated": {
+      "status": "passed",
+      "value": 156
+    },
+    "lint_typecheck_build_passed": {
+      "status": "passed",
+      "value": true
+    },
+    "software_validation": {
+      "schema_version": "1.0.0",
+      "research_direction": "korean_otc_product_safety",
+      "captured_at_utc": "2026-07-15T09:20:14.539748+00:00",
+      "status": "passed",
+      "results": {
+        "research_tests": {
+          "command": [
+            "C:\\dev\\otc-nutrient-safety-engine\\.venv-research\\Scripts\\python.exe",
+            "-m",
+            "pytest",
+            "tests/research",
+            "-q"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "passed": 106,
+          "failed": 0
+        },
+        "app_tests": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "test"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "passed": 53,
+          "test_files": 11
+        },
+        "lint": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "run",
+            "lint"
+          ],
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "typecheck": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "run",
+            "typecheck"
+          ],
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "build": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "static_paths_generated": 156
+        }
+      }
+    }
+  },
+  "release_ready": false,
+  "release_blockers": [
+    "Codex 사전판정 외부 확인은 완료됐으나 블라인드 독립 평가는 아직 없음"
+  ],
+  "data_limitations": [
+    "신신파스아렉스는 4매 포장이 7×10㎠와 10×14㎠를 모두 가리켜 단일 규격을 결정할 수 없으므로 원문 자료만 보존하고 분석·사이트 대상에서 제외함"
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "schema_version": "2.0.0",
+  "scope": "otc_current_working_and_canonical_package",
+  "valid": true,
+  "release_ready": false,
+  "checks": [
+    {
+      "check": "products",
+      "status": "passed",
+      "detail": {
+        "total": 16,
+        "verified": 14
+      }
+    },
+    {
+      "check": "analysis_set",
+      "status": "passed",
+      "detail": {
+        "products": 13,
+        "exclusions": 1,
+        "selected_bindings": 47
+      }
+    },
+    {
+      "check": "candidate_master",
+      "status": "passed",
+      "detail": {
+        "ingredients": 31,
+        "variant_rows": 106
+      }
+    },
+    {
+      "check": "runtime_gate",
+      "status": "passed",
+      "detail": {
+        "products": 13,
+        "rules_released": 15,
+        "release_ready": false
+      }
+    },
+    {
+      "check": "runtime_research_alignment",
+      "status": "passed",
+      "detail": {
+        "schema_version": "1.0.0",
+        "research_direction": "korean_otc_product_safety",
+        "scope": "analysis_dataset_to_site_runtime",
+        "valid": true,
+        "counts": {
+          "analysis_products": 13,
+          "runtime_products": 13,
+          "analysis_product_ingredient_variant_rows": 57,
+          "selected_product_ingredient_bindings": 47,
+          "runtime_product_ingredient_bindings": 47,
+          "analysis_unique_ingredients": 28,
+          "runtime_unique_ingredients": 28,
+          "verified_administration_constraints": 32,
+          "runtime_administration_constraints": 32
+        },
+        "declared_unit_conversions": [
+          {
+            "item_sequence": "198601920",
+            "product_name": "어린이부루펜시럽",
+            "source": "2 g/100 mL",
+            "runtime": "20 mg/mL"
+          },
+          {
+            "item_sequence": "202200525",
+            "product_name": "어린이타이레놀현탁액",
+            "source": "3.2 g/100 mL",
+            "runtime": "32 mg/mL"
+          }
+        ],
+        "excluded_product_leaks": [],
+        "errors": []
+      }
+    },
+    {
+      "check": "rules",
+      "status": "passed",
+      "detail": {
+        "total": 16,
+        "released": 15,
+        "drafts": [
+          "OTC-RULE-015"
+        ]
+      }
+    },
+    {
+      "check": "rule_evidence",
+      "status": "passed",
+      "detail": {
+        "candidates": 360,
+        "rule_types": 16,
+        "shortlist": 48
+      }
+    },
+    {
+      "check": "runtime_rule_bindings",
+      "status": "passed",
+      "detail": {
+        "rows": 13,
+        "statuses": [
+          "human_expert_verified"
+        ]
+      }
+    },
+    {
+      "check": "independent_evaluation_boundary",
+      "status": "passed",
+      "detail": {
+        "cases": 13,
+        "payloads_unlabeled": true,
+        "review_method": "codex_prefilled_external_human_confirmation",
+        "independent_blinding": false,
+        "performance_claim_allowed": false
+      }
+    },
+    {
+      "check": "auxiliary_evaluation",
+      "status": "passed",
+      "detail": {
+        "product_search": [
+          26,
+          26
+        ],
+        "normalization": {
+          "status": "evaluated_human_locked_reference",
+          "value": 1.0,
+          "numerator": 31,
+          "denominator": 31,
+          "planned": 31
+        }
+      }
+    },
+    {
+      "check": "active_identity",
+      "status": "passed",
+      "detail": {
+        "schema_version": "1.0.0",
+        "scope": "active_otc_authored_and_structured_outputs_excluding_official_raw_text_audit_and_legacy",
+        "expected_identity": {
+          "researcher": "권혁찬",
+          "student_id": "2021194024"
+        },
+        "inspected_files": 75,
+        "identity_documents": {
+          "research_v3/reports/FINAL_RESEARCH_REPORT.md": {
+            "researcher_present": true,
+            "student_id_present": true
+          },
+          "research_v3/thesis/otc_thesis_working.md": {
+            "researcher_present": true,
+            "student_id_present": true
+          },
+          "research_v3/thesis/권혁찬_졸업논문_OTC_작업본.docx": {
+            "researcher_present": true,
+            "student_id_present": true
+          }
+        },
+        "cross_student_findings": [],
+        "valid": true
+      }
+    },
+    {
+      "check": "software_validation",
+      "status": "passed",
+      "detail": {
+        "research_tests": {
+          "command": [
+            "C:\\dev\\otc-nutrient-safety-engine\\.venv-research\\Scripts\\python.exe",
+            "-m",
+            "pytest",
+            "tests/research",
+            "-q"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "passed": 106,
+          "failed": 0
+        },
+        "app_tests": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "test"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "passed": 53,
+          "test_files": 11
+        },
+        "lint": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "run",
+            "lint"
+          ],
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "typecheck": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "run",
+            "typecheck"
+          ],
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "build": {
+          "command": [
+            "C:\\Program Files\\nodejs\\npm.cmd",
+            "run",
+            "build"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "static_paths_generated": 156
+        }
+      }
+    },
+    {
+      "check": "release_boundary",
+      "status": "passed",
+      "detail": {
+        "release_ready": false,
+        "release_blockers": [
+          "Codex 사전판정 외부 확인은 완료됐으나 블라인드 독립 평가는 아직 없음"
+        ]
+      }
+    },
+    {
+      "check": "raw_hashes_and_pdf_signatures",
+      "status": "passed",
+      "detail": {
+        "records": 16,
+        "errors": []
+      }
+    },
+    {
+      "check": "document_visual_qa",
+      "status": "passed",
+      "detail": {
+        "errors": [],
+        "documents": 2
+      }
+    },
+    {
+      "check": "browser_qa_artifacts",
+      "status": "passed",
+      "detail": [
+        "otc-verified-product-desktop.png",
+        "otc-verified-product-mobile.png",
+        "otc-rule-gate-mobile.png"
+      ]
+    },
+    {
+      "check": "human_review_workflow",
+      "status": "passed",
+      "detail": [
+        "OTC_통합검토.html",
+        "README.md",
+        "import_review_result.py"
+      ]
+    }
+  ]
+}

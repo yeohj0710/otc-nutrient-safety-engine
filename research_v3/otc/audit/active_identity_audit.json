@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "active_otc_authored_and_structured_outputs_excluding_official_raw_text_audit_and_legacy",
+  "expected_identity": {
+    "researcher": "권혁찬",
+    "student_id": "2021194024"
+  },
+  "inspected_files": 75,
+  "identity_documents": {
+    "research_v3/reports/FINAL_RESEARCH_REPORT.md": {
+      "researcher_present": true,
+      "student_id_present": true
+    },
+    "research_v3/thesis/otc_thesis_working.md": {
+      "researcher_present": true,
+      "student_id_present": true
+    },
+    "research_v3/thesis/권혁찬_졸업논문_OTC_작업본.docx": {
+      "researcher_present": true,
+      "student_id_present": true
+    }
+  },
+  "cross_student_findings": [],
+  "valid": true
+}

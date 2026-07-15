@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "output": "research_v3/otc/review/OTC_통합검토.html",
+  "counts": {
+    "official_candidates": 13,
+    "normalization_exceptions": 0,
+    "normalization_reference": 31,
+    "draft_rules": 16,
+    "official_evidence_candidates": 360,
+    "rule_evidence_shortlist": 48,
+    "runtime_rule_bindings": 13,
+    "independent_scenarios": 13
+  },
+  "human_decisions_prefilled": 0,
+  "independent_codex_recommendations_prefilled": 13
+}

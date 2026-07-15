@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "deployed_at": "2026-07-15T18:23:00+09:00",
+  "target": "production",
+  "status": "ready",
+  "deployment_id": "dpl_5FM8CPCKz3vmkawGkAVRH45bnubU",
+  "deployment_url": "https://otc-nutrient-safety-engine-43pd7rs9i-yeohj0710s-projects.vercel.app",
+  "production_alias": "https://otc-nutrient-safety-engine.vercel.app",
+  "inspector_url": "https://vercel.com/yeohj0710s-projects/otc-nutrient-safety-engine/5FM8CPCKz3vmkawGkAVRH45bnubU",
+  "remote_build": {
+    "status": "passed",
+    "static_paths_generated": 156
+  },
+  "research_release_ready": false,
+  "independent_evaluation_complete": "incomplete",
+  "performance_claim_allowed": false
+}

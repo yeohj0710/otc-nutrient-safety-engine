@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-07-14",
+  "sources": [
+    {
+      "source_id": "DATA-GO-KR-MFDS-DRUG-AUTH-07",
+      "authority": "식품의약품안전처",
+      "title": "의약품 제품 허가정보",
+      "source_type": "official_dataset",
+      "url": "https://www.data.go.kr/data/15095677/openapi.do",
+      "api_base_url": "https://apis.data.go.kr/1471000/DrugPrdtPrmsnInfoService07",
+      "endpoints": [
+        "getDrugPrdtPrmsnInq07",
+        "getDrugPrdtPrmsnDtlInq06",
+        "getDrugPrdtMcpnDtlInq07"
+      ],
+      "purpose": "품목·허가·주성분 상세정보 수집",
+      "access": "service_key_required",
+      "status": "registered"
+    },
+    {
+      "source_id": "DATA-GO-KR-MFDS-EASY-DRUG",
+      "authority": "식품의약품안전처",
+      "title": "의약품개요정보(e약은요)",
+      "source_type": "official_dataset",
+      "url": "https://www.data.go.kr/data/15075057/openapi.do",
+      "api_base_url": "https://apis.data.go.kr/1471000/DrbEasyDrugInfoService",
+      "endpoints": ["getDrbEasyDrugList"],
+      "purpose": "공급실적이 있는 일반의약품의 소비자용 효능·사용법·주의사항 대조",
+      "access": "service_key_required",
+      "status": "registered"
+    },
+    {
+      "source_id": "DATA-GO-KR-MFDS-PRODUCTION-IMPORT",
+      "authority": "식품의약품안전처",
+      "title": "의약품 생산·수입실적현황",
+      "source_type": "production_supply_report",
+      "url": "https://www.data.go.kr/data/15056880/openapi.do",
+      "api_base_url": "https://apis.data.go.kr/1471000/MdcinPrdctnImportAcmsltService02",
+      "endpoints": ["getMdcinPrdctnImportrstList02"],
+      "purpose": "생산금액·수입금액·연도 기반 대표성 보조",
+      "access": "service_key_required",
+      "status": "registered"
+    }
+  ]
+}

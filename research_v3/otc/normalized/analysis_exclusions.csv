@@ -1,0 +1,2 @@
+﻿candidate_id,product_id,item_sequence,product_name,exclusion_stage,exclusion_reason,source_id,source_locator,source_sha256,source_records_preserved
+SAFE-OTC-13,MFDS-200501321,200501321,신신파스아렉스,analysis_and_runtime,ambiguous_authorized_package_size,MFDS-NEDRUG-DETAIL,의약품상세정보 > 기본정보; 원료약품 및 분량,6e3cdc08a64090019a0926462f6b084939b60e4a5526f0073b5ec6067ad447fb,true

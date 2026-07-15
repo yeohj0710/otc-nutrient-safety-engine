@@ -1,0 +1,14 @@
+﻿scenario_id,scenario_family,case_payload_ref,critical,human_reference_label,human_reviewer_id,human_reviewed_at,prediction,status,review_method,predictions_exposed,independent_blinding
+IND-OTC-001,duplicate_acetaminophen,independent_cases/IND-OTC-001.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-002,duplicate_nsaid,independent_cases/IND-OTC-002.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-003,duplicate_nsaid,independent_cases/IND-OTC-003.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-004,duplicate_antihistamine,independent_cases/IND-OTC-004.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-005,sedation_driving,independent_cases/IND-OTC-005.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-006,nsaid_anticoagulant,independent_cases/IND-OTC-006.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-007,decongestant_hypertension,independent_cases/IND-OTC-007.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-008,acetaminophen_liver,independent_cases/IND-OTC-008.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-009,nsaid_kidney,independent_cases/IND-OTC-009.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-010,pediatric_adult_product,independent_cases/IND-OTC-010.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-011,minimum_interval,independent_cases/IND-OTC-011.json,true,1,EXT-INDEP-001,2026-07-14T07:32:14.985Z,1,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-012,normal_use,independent_cases/IND-OTC-012.json,false,0,EXT-INDEP-001,2026-07-14T07:32:14.985Z,0,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false
+IND-OTC-013,unsupported_product,independent_cases/IND-OTC-013.json,false,0,EXT-INDEP-001,2026-07-14T07:32:14.985Z,0,human_label_locked_prediction_recorded,codex_prefilled_external_human_confirmation,13,false

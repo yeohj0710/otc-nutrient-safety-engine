@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.research/schemas/otc/rule.schema.json",
+  "title": "Evidence-bound OTC safety rule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["rule_id", "rule_type", "status", "severity", "predicate", "message_ko", "next_action_ko", "source_id", "source_locator"],
+  "properties": {
+    "rule_id": {"type": "string", "minLength": 1},
+    "rule_type": {"enum": ["duplicate_ingredient", "duplicate_pharmacologic_class", "max_daily_dose", "minimum_interval", "age_restriction", "pregnancy_lactation", "hepatic_disease", "renal_disease", "gi_bleeding_ulcer", "sedation_driving", "alcohol", "anticoagulant_antiplatelet", "sedative_medication", "decongestant_hypertension", "maximum_duration", "urgent_referral"]},
+    "status": {"enum": ["draft", "released", "retired"]},
+    "severity": {"enum": ["information", "caution", "high", "urgent"]},
+    "predicate": {"type": "object", "minProperties": 1},
+    "message_ko": {"type": "string", "minLength": 1},
+    "next_action_ko": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string"},
+    "source_locator": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "released"}}, "required": ["status"]},
+      "then": {
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "source_locator": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  ]
+}

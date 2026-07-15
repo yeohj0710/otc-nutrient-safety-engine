@@ -1,0 +1,14 @@
+candidate_id,class_id,listed_product_name,listed_package,designation_source_id,candidate_status
+SAFE-OTC-01,OTC-CLASS-ANALGESIC,타이레놀정 500mg,8정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-02,OTC-CLASS-ANALGESIC,타이레놀정 160mg,8정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-03,OTC-CLASS-ANALGESIC,어린이용 타이레놀정 80mg,10정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-04,OTC-CLASS-ANALGESIC,어린이타이레놀현탁액,100ml,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-05,OTC-CLASS-ANALGESIC,어린이부루펜시럽,80ml,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-06,OTC-CLASS-GI,베아제정,3정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-07,OTC-CLASS-GI,닥터베아제정,3정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-08,OTC-CLASS-GI,훼스탈골드정,6정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-09,OTC-CLASS-GI,훼스탈플러스정,6정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-10,OTC-CLASS-COLD,판콜에이내복액,30ml×3병,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-11,OTC-CLASS-COLD,판피린티정,3정,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-12,OTC-CLASS-TOPICAL,제일쿨파프,4매,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate
+SAFE-OTC-13,OTC-CLASS-TOPICAL,신신파스아렉스,4매,SEL-MOHW-SAFE-OTC-2026,official_designation_candidate

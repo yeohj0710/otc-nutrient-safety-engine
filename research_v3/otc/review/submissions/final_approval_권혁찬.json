@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "reviewer_id": "권혁찬",
+  "review_mode": "codex_recommendations_confirmed_by_human_not_blinded_independent_review",
+  "rule_decisions": {
+    "OTC-RULE-001": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-002": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-003": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-004": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-005": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-006": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-007": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-008": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-009": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-010": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-011": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-012": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-013": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-014": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-015": {
+      "decision": "revise",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    },
+    "OTC-RULE-016": {
+      "decision": "approve",
+      "comment": "Codex 근거·문구·binding 검토안 확인"
+    }
+  },
+  "scenario_decisions": {
+    "IND-OTC-001": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-002": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-003": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-004": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-005": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-006": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-007": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-008": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-009": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-010": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-011": {
+      "decision": "1",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-012": {
+      "decision": "0",
+      "comment": "Codex 예상 기준정답 확인"
+    },
+    "IND-OTC-013": {
+      "decision": "0",
+      "comment": "Codex 예상 기준정답 확인"
+    }
+  },
+  "approved_at": "2026-07-14T04:29:32.444Z"
+}

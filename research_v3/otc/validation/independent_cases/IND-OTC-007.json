@@ -1,0 +1,30 @@
+{
+  "scenarioId": "IND-OTC-007",
+  "schemaVersion": "1.0.0",
+  "scenarioFamily": "decongestant_hypertension",
+  "critical": true,
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "196800036",
+      "unitsPerDose": 1,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": null,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": true,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  },
+  "referenceLabel": null,
+  "prediction": null,
+  "reviewStatus": "awaiting_independent_human_label"
+}

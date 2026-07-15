@@ -1,0 +1,313 @@
+{
+  "schema_version": "2.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "scope": "working_review_package_and_canonical_final_documents",
+  "synced_at": "2026-07-15T18:23:24.480907+09:00",
+  "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물",
+  "canonical_final_documents_synced": true,
+  "file_count": 43,
+  "files": [
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\review\\작업본_패키지_먼저읽기.md",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\00_먼저읽기.md",
+      "source_sha256": "1CB540942EBB5F321F99EA1913DEF48CEB35606F76BA0FDBC52B1DB6A8E63987",
+      "destination_sha256": "1CB540942EBB5F321F99EA1913DEF48CEB35606F76BA0FDBC52B1DB6A8E63987",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\권혁찬_졸업논문_OTC_작업본.docx",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\01_논문_작업본\\권혁찬_졸업논문_OTC_작업본.docx",
+      "source_sha256": "9EE25A5201D42CD46D259AE119FF2BC96CED1CF842BAADAD33379ED2E0C3BBF8",
+      "destination_sha256": "9EE25A5201D42CD46D259AE119FF2BC96CED1CF842BAADAD33379ED2E0C3BBF8",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\권혁찬_졸업논문_OTC_작업본.pdf",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\01_논문_작업본\\권혁찬_졸업논문_OTC_작업본.pdf",
+      "source_sha256": "5AF324D2347013B0560B3E959AACC023B8DC0B8B3AA1C99F833F143FC4D4F714",
+      "destination_sha256": "5AF324D2347013B0560B3E959AACC023B8DC0B8B3AA1C99F833F143FC4D4F714",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\otc_thesis_working.md",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\01_논문_작업본\\otc_thesis_working.md",
+      "source_sha256": "AE8613D50BCEB9975BCD1EB814B3DC19FBF6417EE2BEE70B928089C177DE3BE3",
+      "destination_sha256": "AE8613D50BCEB9975BCD1EB814B3DC19FBF6417EE2BEE70B928089C177DE3BE3",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\protocol\\권혁찬_OTC_연구계획서_작업본.docx",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\02_연구계획서_작업본\\권혁찬_OTC_연구계획서_작업본.docx",
+      "source_sha256": "379EA0A72543096212C6A0750D63B1ECF0A6EDD5276E24B239DDA2AAAD55CD1F",
+      "destination_sha256": "379EA0A72543096212C6A0750D63B1ECF0A6EDD5276E24B239DDA2AAAD55CD1F",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\protocol\\권혁찬_OTC_연구계획서_작업본.pdf",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\02_연구계획서_작업본\\권혁찬_OTC_연구계획서_작업본.pdf",
+      "source_sha256": "81078C51720C186865D3BAE07F3E32DBA2C9B323A255FEF39215960812D68701",
+      "destination_sha256": "81078C51720C186865D3BAE07F3E32DBA2C9B323A255FEF39215960812D68701",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\protocol\\otc_research_plan_working.md",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\02_연구계획서_작업본\\otc_research_plan_working.md",
+      "source_sha256": "F231B612779880492A2521B1D1E5EC7C7928608B45B1993950768B8981E7AEE7",
+      "destination_sha256": "F231B612779880492A2521B1D1E5EC7C7928608B45B1993950768B8981E7AEE7",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\FINAL_RESEARCH_REPORT.md",
+      "source_sha256": "4E15879EAB00F51411FB4BC9A7C95208BA9175C56A7FDC60516628821EBEA43E",
+      "destination_sha256": "4E15879EAB00F51411FB4BC9A7C95208BA9175C56A7FDC60516628821EBEA43E",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\metrics_manifest.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\metrics_manifest.json",
+      "source_sha256": "C12CDD7E38C453E5D0E389762225D734534AEBCB001B45B9A2A944B2BA270792",
+      "destination_sha256": "C12CDD7E38C453E5D0E389762225D734534AEBCB001B45B9A2A944B2BA270792",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\working_package_verification.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\working_package_verification.json",
+      "source_sha256": "683E70D11B2449BB0ACF9DB23C7E75CC93F975310B480C1AE6AADC720A284975",
+      "destination_sha256": "683E70D11B2449BB0ACF9DB23C7E75CC93F975310B480C1AE6AADC720A284975",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\active_identity_audit.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\active_identity_audit.json",
+      "source_sha256": "DE38EC3F8FABF4E71729D94F02B906A05B8E1583AB11B9B2701B33F7B8D27CD9",
+      "destination_sha256": "DE38EC3F8FABF4E71729D94F02B906A05B8E1583AB11B9B2701B33F7B8D27CD9",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\claim_consistency.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\claim_consistency.json",
+      "source_sha256": "B2298DA98D7F5CCCF6DAA29B6C56E0C4EC2965D178E9E105D0A8C5A3D707BB3D",
+      "destination_sha256": "B2298DA98D7F5CCCF6DAA29B6C56E0C4EC2965D178E9E105D0A8C5A3D707BB3D",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\review\\OTC_통합검토.html",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\OTC_통합검토.html",
+      "source_sha256": "A6CE25BBB3BF4C242F80E64D6332D9ED6E0D8AE3EC147A909ED2A1A8FB7D1BC0",
+      "destination_sha256": "A6CE25BBB3BF4C242F80E64D6332D9ED6E0D8AE3EC147A909ED2A1A8FB7D1BC0",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\review\\README.md",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\README.md",
+      "source_sha256": "825FFB816B20F7AC386040D55BE8D703235CFFF4414267FC16F945B8C908E7D8",
+      "destination_sha256": "825FFB816B20F7AC386040D55BE8D703235CFFF4414267FC16F945B8C908E7D8",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\review\\외부검토_안내.md",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\외부검토_안내.md",
+      "source_sha256": "6BDFDB19B624269D592F68DC9C3ADEAAD520B9BB33B06EAB8CEF511B56EA944F",
+      "destination_sha256": "6BDFDB19B624269D592F68DC9C3ADEAAD520B9BB33B06EAB8CEF511B56EA944F",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\review\\candidate_review.csv",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\candidate_review.csv",
+      "source_sha256": "F4EE486403B384176B009785EEEAD2E70136AC608C4709F637B518BCBC9066D1",
+      "destination_sha256": "F4EE486403B384176B009785EEEAD2E70136AC608C4709F637B518BCBC9066D1",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_scenarios.csv",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_scenarios.csv",
+      "source_sha256": "0E64E486AA788D01C7CD7A0116F9F9E9A85C8987528F5E76ACFB24A2A8D4B8A1",
+      "destination_sha256": "0E64E486AA788D01C7CD7A0116F9F9E9A85C8987528F5E76ACFB24A2A8D4B8A1",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\preview_deployment_verification.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\05_프리뷰검증\\preview_deployment_verification.json",
+      "source_sha256": "AEEEA6301D6AC285CE33D54133C626100F9EB688FA9CE312D3C72F15F7AA7E5F",
+      "destination_sha256": "AEEEA6301D6AC285CE33D54133C626100F9EB688FA9CE312D3C72F15F7AA7E5F",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\etc\\browser_qa\\otc-preview-desktop.png",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\05_프리뷰검증\\otc-preview-desktop.png",
+      "source_sha256": "DB0F99380AABEDBB77D668CCE09E89C0DD9FD08D202F3CFCE3EA8C4A080C89EC",
+      "destination_sha256": "DB0F99380AABEDBB77D668CCE09E89C0DD9FD08D202F3CFCE3EA8C4A080C89EC",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\etc\\browser_qa\\otc-preview-mobile.png",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\05_프리뷰검증\\otc-preview-mobile.png",
+      "source_sha256": "6970F240DF890DEC35C3114A343AA3F61721B5335C8780E14D1CB84EAB99F30B",
+      "destination_sha256": "6970F240DF890DEC35C3114A343AA3F61721B5335C8780E14D1CB84EAB99F30B",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-001.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-001.json",
+      "source_sha256": "42C7157721F8E1A341AB49B876D8E33235086EC1B2918C8232FB0282477D4407",
+      "destination_sha256": "42C7157721F8E1A341AB49B876D8E33235086EC1B2918C8232FB0282477D4407",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-002.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-002.json",
+      "source_sha256": "63895224B71F33E60BE8271EBD06FD1EBE359F8F8A9BD2E3A2DEB73370664401",
+      "destination_sha256": "63895224B71F33E60BE8271EBD06FD1EBE359F8F8A9BD2E3A2DEB73370664401",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-003.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-003.json",
+      "source_sha256": "277C4C59C3D0BD93C9D305BFAEC534F9322571B16680198BB9C6A88104F6C51F",
+      "destination_sha256": "277C4C59C3D0BD93C9D305BFAEC534F9322571B16680198BB9C6A88104F6C51F",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-004.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-004.json",
+      "source_sha256": "71053F7846C80ABD2C2819A8C2AEC5F34C4E60E24DD29DF1DA525F1D2DD46829",
+      "destination_sha256": "71053F7846C80ABD2C2819A8C2AEC5F34C4E60E24DD29DF1DA525F1D2DD46829",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-005.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-005.json",
+      "source_sha256": "6016C051C551A895301DF4BBC9449758E63F81D3287F45E25C8370E4EF1C6DEF",
+      "destination_sha256": "6016C051C551A895301DF4BBC9449758E63F81D3287F45E25C8370E4EF1C6DEF",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-006.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-006.json",
+      "source_sha256": "1B19A8B70B769A030FD83F2E05D9C21DA5DD10F503390D248757E0591CD571DC",
+      "destination_sha256": "1B19A8B70B769A030FD83F2E05D9C21DA5DD10F503390D248757E0591CD571DC",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-007.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-007.json",
+      "source_sha256": "EB7A1D3DD9F6065B60511EF06C621584EAA8F8F0AB881FEB8C03041F39DC1512",
+      "destination_sha256": "EB7A1D3DD9F6065B60511EF06C621584EAA8F8F0AB881FEB8C03041F39DC1512",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-008.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-008.json",
+      "source_sha256": "D3273248CCE2209D2D59DB6F18996E3A99271433C7FA61D5B281E9BCC467516F",
+      "destination_sha256": "D3273248CCE2209D2D59DB6F18996E3A99271433C7FA61D5B281E9BCC467516F",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-009.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-009.json",
+      "source_sha256": "FC9BEA8D3D5C2C134B4C0482DA93C501D2E85C1D4C2A5D5E705BECE5387E7A88",
+      "destination_sha256": "FC9BEA8D3D5C2C134B4C0482DA93C501D2E85C1D4C2A5D5E705BECE5387E7A88",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-010.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-010.json",
+      "source_sha256": "F7F3AD4BA88232CA309A964C4678EDF0AF42273D2777CC50C7308422F8C42253",
+      "destination_sha256": "F7F3AD4BA88232CA309A964C4678EDF0AF42273D2777CC50C7308422F8C42253",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-011.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-011.json",
+      "source_sha256": "EBC925E7E2B48A92C859AEC82802ACAA65E709589736E343DD1FBD09A3E45B0C",
+      "destination_sha256": "EBC925E7E2B48A92C859AEC82802ACAA65E709589736E343DD1FBD09A3E45B0C",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-012.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-012.json",
+      "source_sha256": "A73CF188603E0E2566D91C8FEF2FA898383124D33353FBBC3E2A9D9F03C4E424",
+      "destination_sha256": "A73CF188603E0E2566D91C8FEF2FA898383124D33353FBBC3E2A9D9F03C4E424",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\validation\\independent_cases\\IND-OTC-013.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\04_외부검토\\independent_cases\\IND-OTC-013.json",
+      "source_sha256": "2FDCB74F539AEB9433911E8AD243E13E0760692681197E9914B17075C83F77F5",
+      "destination_sha256": "2FDCB74F539AEB9433911E8AD243E13E0760692681197E9914B17075C83F77F5",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\GATE_0_10_REPORT.md",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\GATE_0_10_REPORT.md",
+      "source_sha256": "FACA29273C7944F8D300E27C29F95C97CF7721DA23C71201CC605B20E6E0A879",
+      "destination_sha256": "FACA29273C7944F8D300E27C29F95C97CF7721DA23C71201CC605B20E6E0A879",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\completion_audit.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\completion_audit.json",
+      "source_sha256": "23BD4E0A59F56C37C06657EC9F4F4E75933BCEA940E3164D53F05DCA58566822",
+      "destination_sha256": "23BD4E0A59F56C37C06657EC9F4F4E75933BCEA940E3164D53F05DCA58566822",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\document_visual_qa.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\document_visual_qa.json",
+      "source_sha256": "EAD913A944BBB15DFA753CE0ABAE5568493AB7B2126070EE361C8E1A7C30C5D7",
+      "destination_sha256": "EAD913A944BBB15DFA753CE0ABAE5568493AB7B2126070EE361C8E1A7C30C5D7",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\production_deployment_receipt.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\production_deployment_receipt.json",
+      "source_sha256": "C062E4843748208438DADA8E7D0A9B6FE9632EF3F502A2790C8B8DC03335E2BD",
+      "destination_sha256": "C062E4843748208438DADA8E7D0A9B6FE9632EF3F502A2790C8B8DC03335E2BD",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\runtime_research_alignment.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\runtime_research_alignment.json",
+      "source_sha256": "FEE212C805E32CB5DE529BB96C4767058930B81353184AFE4ECA895F7D3F3AE8",
+      "destination_sha256": "FEE212C805E32CB5DE529BB96C4767058930B81353184AFE4ECA895F7D3F3AE8",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\otc\\audit\\software_validation.json",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\07_OTC_작업본_외부검토패키지\\03_보고서_및_검증\\software_validation.json",
+      "source_sha256": "640B6A13AE9D00DD794711CA5B9ED4DC41EDB18E90307F3CB2E85039F9A025C5",
+      "destination_sha256": "640B6A13AE9D00DD794711CA5B9ED4DC41EDB18E90307F3CB2E85039F9A025C5",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\권혁찬_졸업논문_최종본.docx",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\01_논문_최종본\\권혁찬_졸업논문_최종본.docx",
+      "source_sha256": "9EE25A5201D42CD46D259AE119FF2BC96CED1CF842BAADAD33379ED2E0C3BBF8",
+      "destination_sha256": "9EE25A5201D42CD46D259AE119FF2BC96CED1CF842BAADAD33379ED2E0C3BBF8",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\권혁찬_졸업논문_최종본.pdf",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\01_논문_최종본\\권혁찬_졸업논문_최종본.pdf",
+      "source_sha256": "5AF324D2347013B0560B3E959AACC023B8DC0B8B3AA1C99F833F143FC4D4F714",
+      "destination_sha256": "5AF324D2347013B0560B3E959AACC023B8DC0B8B3AA1C99F833F143FC4D4F714",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\protocol\\권혁찬_OTC_연구계획서_최종본.docx",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\02_연구계획서_최종본\\권혁찬_OTC_연구계획서_최종본.docx",
+      "source_sha256": "379EA0A72543096212C6A0750D63B1ECF0A6EDD5276E24B239DDA2AAAD55CD1F",
+      "destination_sha256": "379EA0A72543096212C6A0750D63B1ECF0A6EDD5276E24B239DDA2AAAD55CD1F",
+      "match": true
+    },
+    {
+      "source": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\protocol\\권혁찬_OTC_연구계획서_최종본.pdf",
+      "destination": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\02_연구계획서_최종본\\권혁찬_OTC_연구계획서_최종본.pdf",
+      "source_sha256": "81078C51720C186865D3BAE07F3E32DBA2C9B323A255FEF39215960812D68701",
+      "destination_sha256": "81078C51720C186865D3BAE07F3E32DBA2C9B323A255FEF39215960812D68701",
+      "match": true
+    }
+  ],
+  "valid": true
+}
