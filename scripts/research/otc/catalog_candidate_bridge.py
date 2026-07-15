@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import io
 import json
 import re
 import unicodedata
@@ -35,7 +36,8 @@ INTERSECTION_FIELDS = [
     "match_method",
     "match_score",
     "match_margin",
-    "catalog_official_match_status",
+    "source_enrichment_match_status",
+    "mfds_promotion_evidence_complete",
     "review_status",
     "promotion_allowed",
 ]
@@ -52,19 +54,27 @@ CANDIDATE_FIELDS = [
     "screening_class",
     "screening_status",
     "candidate_reason",
-    "catalog_official_match_status",
+    "source_enrichment_match_status",
+    "mfds_promotion_evidence_complete",
     "required_next_step",
     "promotion_allowed",
 ]
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
-    with path.open(encoding="utf-8-sig", newline="") as handle:
-        return list(csv.DictReader(handle))
+    return read_csv_bytes(path.read_bytes())
+
+
+def read_csv_bytes(payload: bytes) -> list[dict[str, str]]:
+    return list(csv.DictReader(io.StringIO(payload.decode("utf-8-sig"), newline="")))
+
+
+def sha256_bytes(payload: bytes) -> str:
+    return hashlib.sha256(payload).hexdigest()
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    return sha256_bytes(path.read_bytes())
 
 
 def normalize_text(value: str) -> str:
@@ -97,10 +107,10 @@ def validate_catalog(catalog: list[dict[str, Any]]) -> None:
         seen.add(source_id)
 
 
-def validate_catalog_csv_equivalence(catalog: list[dict[str, Any]], catalog_csv_path: Path | None) -> bool | None:
-    if catalog_csv_path is None:
+def validate_catalog_csv_equivalence(catalog: list[dict[str, Any]], catalog_csv_payload: bytes | None) -> bool | None:
+    if catalog_csv_payload is None:
         return None
-    csv_rows = read_csv(catalog_csv_path)
+    csv_rows = read_csv_bytes(catalog_csv_payload)
     fields = ("id", "name", "capacity", "category")
     json_projection = [{field: str(row[field]) for field in fields} for row in catalog]
     csv_projection = [{field: str(row.get(field, "")) for field in fields} for row in csv_rows]
@@ -135,7 +145,9 @@ def duplicate_metadata(
         source_id: {
             "duplicate_group_id": str(queue_by_id[source_id].get("duplicate_group_id", "")),
             "duplicate_group_size": expected_sizes[source_id],
-            "official_match_status": str(queue_by_id[source_id].get("official_match_status", "pending")),
+            "source_enrichment_match_status": str(
+                queue_by_id[source_id].get("official_match_status", "pending")
+            ),
         }
         for source_id in expected_sizes
     }
@@ -201,17 +213,27 @@ def build_bridge(
     official_summary_path: Path | None = None,
     catalog_csv_path: Path | None = None,
 ) -> dict[str, Any]:
-    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
-    queue = json.loads(queue_path.read_text(encoding="utf-8"))
-    policy = json.loads(policy_path.read_text(encoding="utf-8"))
+    catalog_payload = catalog_path.read_bytes()
+    queue_payload = queue_path.read_bytes()
+    product_master_payload = product_master_path.read_bytes()
+    policy_payload = policy_path.read_bytes()
+    catalog_csv_payload = catalog_csv_path.read_bytes() if catalog_csv_path else None
+    official_summary_payload = (
+        official_summary_path.read_bytes()
+        if official_summary_path and official_summary_path.exists()
+        else None
+    )
+    catalog = json.loads(catalog_payload.decode("utf-8-sig"))
+    queue = json.loads(queue_payload.decode("utf-8-sig"))
+    policy = json.loads(policy_payload.decode("utf-8-sig"))
     if not isinstance(catalog, list) or not isinstance(queue, list):
         raise ValueError("catalog_schema_invalid:root:list_required")
     validate_catalog(catalog)
-    catalog_csv_equivalent = validate_catalog_csv_equivalence(catalog, catalog_csv_path)
+    catalog_csv_equivalent = validate_catalog_csv_equivalence(catalog, catalog_csv_payload)
     duplicate_by_id, duplicate_group_count, products_in_duplicate_groups = duplicate_metadata(catalog, queue)
 
     products = []
-    for row in read_csv(product_master_path):
+    for row in read_csv_bytes(product_master_payload):
         if row.get("analysis_status") != "included":
             continue
         products.append(
@@ -247,7 +269,10 @@ def build_bridge(
                 "match_method": method,
                 "match_score": f"{score:.4f}",
                 "match_margin": f"{margin:.4f}",
-                "catalog_official_match_status": str(source_meta["official_match_status"]),
+                "source_enrichment_match_status": str(
+                    source_meta["source_enrichment_match_status"]
+                ),
+                "mfds_promotion_evidence_complete": "false",
                 "review_status": "requires_official_match_review",
                 "promotion_allowed": "false",
             }
@@ -289,7 +314,10 @@ def build_bridge(
                 "screening_class": classification,
                 "screening_status": "candidate_requires_official_domain_and_item_match",
                 "candidate_reason": f"catalog_category_terminal_form_and_compatible_specification:{form_token}",
-                "catalog_official_match_status": str(source_meta["official_match_status"]),
+                "source_enrichment_match_status": str(
+                    source_meta["source_enrichment_match_status"]
+                ),
+                "mfds_promotion_evidence_complete": "false",
                 "required_next_step": "classify_source_domain_then_match_mfds_item_sequence_and_authorization",
                 "promotion_allowed": "false",
             }
@@ -299,16 +327,23 @@ def build_bridge(
     fuzzy_reviews.sort(key=lambda row: (-float(row["match_score"]), row["catalog_source_id"]))
     candidates.sort(key=lambda row: (row["catalog_category"], row["catalog_normalized_name"], row["catalog_source_id"]))
     official_summary: dict[str, Any] = {}
-    if official_summary_path and official_summary_path.exists():
-        official_summary = json.loads(official_summary_path.read_text(encoding="utf-8"))
+    if official_summary_payload is not None:
+        official_summary = json.loads(official_summary_payload.decode("utf-8-sig"))
 
     verification_counts = Counter(str(row["verification_status"]) for row in catalog)
+    source_enrichment_match_status_counts = Counter(
+        str(metadata["source_enrichment_match_status"])
+        for metadata in duplicate_by_id.values()
+    )
     summary = {
         "schema_version": "1.0.0",
         "research_direction": "korean_otc_product_safety",
         "source_role": "private_domestic_sales_sku_candidate_population_only",
         "source_product_count": len(catalog),
         "source_verification_status_counts": dict(sorted(verification_counts.items())),
+        "source_enrichment_match_status_counts": dict(
+            sorted(source_enrichment_match_status_counts.items())
+        ),
         "duplicate_group_count": duplicate_group_count,
         "products_in_duplicate_groups": products_in_duplicate_groups,
         "existing_analysis_product_count": len(products),
@@ -329,11 +364,11 @@ def build_bridge(
         "promotion_requirement": "MFDS source domain, item_sequence, authorization, ingredients, dosage, and DUR evidence must be confirmed before promotion",
         "provenance": {
             "catalog_dataset_id": "pharmacy-product-catalog/data/products.json",
-            "catalog_sha256": sha256(catalog_path),
+            "catalog_sha256": sha256_bytes(catalog_payload),
             "duplicate_queue_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.json",
-            "duplicate_queue_sha256": sha256(queue_path),
+            "duplicate_queue_sha256": sha256_bytes(queue_payload),
             "catalog_csv_dataset_id": "pharmacy-product-catalog/data/catalog.csv" if catalog_csv_path else None,
-            "catalog_csv_sha256": sha256(catalog_csv_path) if catalog_csv_path else None,
+            "catalog_csv_sha256": sha256_bytes(catalog_csv_payload) if catalog_csv_payload is not None else None,
             "source_recorded_dates": sorted({str(row.get("recorded_at", "")) for row in catalog if row.get("recorded_at")}),
         },
     }
@@ -344,6 +379,7 @@ def build_bridge(
         "source_schema_valid": True,
         "source_ids_unique": True,
         "source_duplicate_metadata_matches": True,
+        "source_enrichment_status_is_not_mfds_promotion_evidence": True,
         "catalog_csv_equivalent_to_json": catalog_csv_equivalent,
         "source_full_record_count": len(catalog),
         "source_full_records_copied": False,

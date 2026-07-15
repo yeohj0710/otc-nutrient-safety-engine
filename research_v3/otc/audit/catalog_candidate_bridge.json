@@ -5,6 +5,7 @@
   "source_schema_valid": true,
   "source_ids_unique": true,
   "source_duplicate_metadata_matches": true,
+  "source_enrichment_status_is_not_mfds_promotion_evidence": true,
   "catalog_csv_equivalent_to_json": true,
   "source_full_record_count": 776,
   "source_full_records_copied": false,
@@ -20,22 +21,22 @@
     {
       "path": "research_v3/otc/selection/catalog_existing_product_intersection.csv",
       "rows": 5,
-      "sha256": "aa5e8ee5bdd0413da279dea00e715b4c884683717739b67d14ed8a317b783731"
+      "sha256": "f130c6be6ee9a7f985a9e57ffc2654173e01a18ee6219321c57217c2091c030b"
     },
     {
       "path": "research_v3/otc/selection/catalog_fuzzy_match_review.csv",
       "rows": 2,
-      "sha256": "6902f832a9540bd91a3069ffb85a2d39f3c64e41869f50a4a5929361622fde23"
+      "sha256": "cf36e7a7b282ef6e6d95fdb14c835363e42dead7ab7d2d2a5bedc21731f4ebb0"
     },
     {
       "path": "research_v3/otc/selection/catalog_additional_otc_candidates.csv",
       "rows": 99,
-      "sha256": "2d3d9f269283f7045ddd810995551ea22d6abc8b0d89c1e52d069a814f7d2e72"
+      "sha256": "554cf0ea074b78854e7238448d0c001f0d8e8a4f9398f7cac813d2ea4b77afb4"
     },
     {
       "path": "research_v3/otc/selection/catalog_candidate_summary.json",
       "rows": 1,
-      "sha256": "5a450707131db916cdc7e8eac7084a46783566a497e9b4329e1c08677ca71477"
+      "sha256": "d68884bb85aa256d98710d79cadd8546e657782d0750a7ff82eef6919d75c647"
     }
   ]
 }

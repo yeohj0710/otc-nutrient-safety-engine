@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 from pathlib import Path
 
@@ -153,6 +154,7 @@ def test_bridge_matches_existing_products_without_promoting_them(tmp_path: Path)
     assert {row["match_method"] for row in result["fuzzy_reviews"]} == {"fuzzy_normalized_alias"}
     review_rows = result["intersections"] + result["fuzzy_reviews"]
     assert all(row["promotion_allowed"] == "false" for row in review_rows)
+    assert all(row["mfds_promotion_evidence_complete"] == "false" for row in review_rows)
     assert all(row["review_status"] == "requires_official_match_review" for row in review_rows)
 
 
@@ -164,6 +166,7 @@ def test_bridge_recomputes_duplicates_and_builds_screening_only_candidates(tmp_p
     assert {row["catalog_source_id"] for row in result["candidates"]} == {"SKU-003", "SKU-004"}
     assert all(row["screening_status"] == "candidate_requires_official_domain_and_item_match" for row in result["candidates"])
     assert all(row["promotion_allowed"] == "false" for row in result["candidates"])
+    assert all(row["mfds_promotion_evidence_complete"] == "false" for row in result["candidates"])
 
 
 def test_bridge_outputs_no_price_or_private_source_copy(tmp_path: Path) -> None:
@@ -235,3 +238,31 @@ def test_bridge_verifies_json_and_csv_are_the_same_catalog(tmp_path: Path) -> No
         assert str(exc) == "catalog_json_csv_mismatch"
     else:
         raise AssertionError("JSON/CSV mismatch must fail")
+
+
+def test_bridge_hashes_the_same_source_bytes_it_parses(tmp_path: Path, monkeypatch) -> None:
+    paths = fixture_paths(tmp_path)
+    catalog = json.loads(paths[0].read_text(encoding="utf-8"))
+    catalog_csv = tmp_path / "catalog.csv"
+    fields = ["id", "name", "capacity", "category"]
+    with catalog_csv.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows([{field: row[field] for field in fields} for row in catalog])
+
+    source_paths = {*paths, catalog_csv}
+    read_counts = {path: 0 for path in source_paths}
+    original_read_bytes = Path.read_bytes
+
+    def counted_read_bytes(path: Path) -> bytes:
+        if path in read_counts:
+            read_counts[path] += 1
+        return original_read_bytes(path)
+
+    monkeypatch.setattr(Path, "read_bytes", counted_read_bytes)
+    result = build_bridge(*paths, catalog_csv_path=catalog_csv)
+
+    assert all(count == 1 for count in read_counts.values())
+    assert result["summary"]["provenance"]["catalog_sha256"] == hashlib.sha256(
+        original_read_bytes(paths[0])
+    ).hexdigest()

@@ -60,6 +60,8 @@
 
 카탈로그 정규화 제품명이 기존 분석 제품의 제품명·제형 제거 별칭과 정확히 같은 판매 SKU만 담는다. 현재 5개 SKU가 기존 식약처 제품 4개와 이름 수준에서 교차한다. 제조사와 공식 품목코드를 카탈로그 출처에서 확인하지 못했으므로 모든 행은 `requires_official_match_review`, `promotion_allowed=false`다.
 
+`source_enrichment_match_status`는 외부 카탈로그 보강 큐가 기록한 상태다. `confirmed`여도 식약처 품목 허가와 DUR를 확인했다는 뜻이 아니다. 연구 승격 조건은 별도 필드 `mfds_promotion_evidence_complete=false`로 고정하며, 식약처 근거를 모두 확인한 뒤에만 바꿀 수 있다.
+
 ### `selection/catalog_fuzzy_match_review.csv`
 
 문자열 유사도 기준을 충족했지만 동일 제품으로 볼 수 없는 2개 SKU를 분리한다. 예를 들어 산제와 현탁액처럼 제형이 다른 이름 후보가 들어올 수 있으므로 교집합 수에 포함하지 않는다.

@@ -25,7 +25,7 @@
 .venv-research\Scripts\python.exe scripts/research/otc/catalog_candidate_bridge.py --catalog-root C:\dev\pharmacy-product-catalog
 ```
 
-이 명령은 외부 저장소의 `products.json`, `catalog.csv`와 `enrichment-queue.json`을 제자리에서 읽는다. 전체 원본과 가격은 복사하지 않는다. 결과는 정확 이름 교집합, fuzzy 검토 큐와 추가 screening 후보로 분리하며 모든 행을 `promotion_allowed=false`로 기록한다.
+이 명령은 외부 저장소의 `products.json`, `catalog.csv`와 `enrichment-queue.json`을 제자리에서 한 번씩 읽는다. 같은 바이트에서 파싱과 SHA-256 해시를 수행하므로 외부 보강 작업이 동시에 실행돼도 서로 다른 시점의 내용과 해시를 섞지 않는다. 전체 원본과 가격은 복사하지 않는다. 결과는 정확 이름 교집합, fuzzy 검토 큐와 추가 screening 후보로 분리하며 모든 행을 `mfds_promotion_evidence_complete=false`, `promotion_allowed=false`로 기록한다.
 
 재현 결과는 원본 776건, 중복 22그룹·46 SKU, 정확 이름 교집합 5 SKU·기존 분석 제품 4개, fuzzy 검토 2 SKU, 추가 screening 후보 99 SKU·97개 이름이다. 공공데이터 서비스 키가 없으면 `official_enrichment_status=blocked_missing_key`를 유지하고 제품 마스터와 런타임을 변경하지 않는다.
 

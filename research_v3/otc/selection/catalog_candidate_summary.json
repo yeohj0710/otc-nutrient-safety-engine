@@ -6,6 +6,10 @@
   "source_verification_status_counts": {
     "Firestore 원본 확인": 776
   },
+  "source_enrichment_match_status_counts": {
+    "confirmed": 139,
+    "pending": 637
+  },
   "duplicate_group_count": 22,
   "products_in_duplicate_groups": 46,
   "existing_analysis_product_count": 13,
@@ -32,7 +36,7 @@
     "catalog_dataset_id": "pharmacy-product-catalog/data/products.json",
     "catalog_sha256": "ca11f4e889570d10d7c446d448c193353a277a2b0511af1215c12fb946b23940",
     "duplicate_queue_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.json",
-    "duplicate_queue_sha256": "ed2c33ddaa5af3708406a247fd81f8db50f8624f30c1adbbf6e74b34e9b98088",
+    "duplicate_queue_sha256": "42201003ebe082e027f30a9d8c0d2e150a88889788d4f6ce519dfd833e9944a1",
     "catalog_csv_dataset_id": "pharmacy-product-catalog/data/catalog.csv",
     "catalog_csv_sha256": "8d1cac3acf8b76d942d8deb9026cb3569bfa692ebb983ed2d58b2057e1cbd16c",
     "source_recorded_dates": [
