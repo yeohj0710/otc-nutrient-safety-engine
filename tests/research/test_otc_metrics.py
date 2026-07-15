@@ -23,10 +23,16 @@ def test_active_metrics_exclude_superseded_nutrient_counts() -> None:
 
 def test_written_root_and_otc_manifests_match(tmp_path: Path) -> None:
     manifest = build()
-    write(manifest)
-    root_manifest = json.loads((ROOT / "research_v3" / "metrics_manifest.json").read_text(encoding="utf-8"))
-    otc_manifest = json.loads((ROOT / "research_v3" / "otc" / "metrics_manifest.json").read_text(encoding="utf-8"))
+    canonical_root = ROOT / "research_v3" / "metrics_manifest.json"
+    canonical_otc = ROOT / "research_v3" / "otc" / "metrics_manifest.json"
+    canonical_before = (canonical_root.read_bytes(), canonical_otc.read_bytes())
+    root_target = tmp_path / "research_v3" / "metrics_manifest.json"
+    otc_target = tmp_path / "research_v3" / "otc" / "metrics_manifest.json"
+    write(manifest, root_target=root_target, otc_target=otc_target)
+    root_manifest = json.loads(root_target.read_text(encoding="utf-8"))
+    otc_manifest = json.loads(otc_target.read_text(encoding="utf-8"))
     assert root_manifest == otc_manifest
+    assert (canonical_root.read_bytes(), canonical_otc.read_bytes()) == canonical_before
     assert root_manifest["metrics"]["products_verified_from_source"]["value"] == 14
     assert root_manifest["metrics"]["products_calculation_ready"]["value"] == 13
     assert root_manifest["metrics"]["analysis_products"]["value"] == 13

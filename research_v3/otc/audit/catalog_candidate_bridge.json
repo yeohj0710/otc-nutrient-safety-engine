@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "valid": true,
+  "source_schema_valid": true,
+  "source_ids_unique": true,
+  "source_duplicate_metadata_matches": true,
+  "catalog_csv_equivalent_to_json": true,
+  "source_full_record_count": 776,
+  "source_full_records_copied": false,
+  "price_fields_copied": false,
+  "official_match_required_before_promotion": true,
+  "fuzzy_reviews_separated_from_exact_intersection": true,
+  "official_enrichment_status": "blocked_missing_key",
+  "product_master_unchanged_by_bridge": true,
+  "runtime_unchanged_by_bridge": true,
+  "release_ready_changed_by_bridge": false,
+  "performance_claim_allowed_changed_by_bridge": false,
+  "outputs": [
+    {
+      "path": "research_v3/otc/selection/catalog_existing_product_intersection.csv",
+      "rows": 5,
+      "sha256": "aa5e8ee5bdd0413da279dea00e715b4c884683717739b67d14ed8a317b783731"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_fuzzy_match_review.csv",
+      "rows": 2,
+      "sha256": "6902f832a9540bd91a3069ffb85a2d39f3c64e41869f50a4a5929361622fde23"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_additional_otc_candidates.csv",
+      "rows": 99,
+      "sha256": "2d3d9f269283f7045ddd810995551ea22d6abc8b0d89c1e52d069a814f7d2e72"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_candidate_summary.json",
+      "rows": 1,
+      "sha256": "5a450707131db916cdc7e8eac7084a46783566a497e9b4329e1c08677ca71477"
+    }
+  ]
+}

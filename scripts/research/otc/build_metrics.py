@@ -143,10 +143,18 @@ def build() -> dict:
     }
 
 
-def write(manifest: dict) -> None:
+def write(
+    manifest: dict,
+    root_target: Path | None = None,
+    otc_target: Path | None = None,
+) -> None:
     payload = json.dumps(manifest, ensure_ascii=False, indent=2) + "\n"
-    (ROOT / "research_v3" / "metrics_manifest.json").write_text(payload, encoding="utf-8")
-    (OTC / "metrics_manifest.json").write_text(payload, encoding="utf-8")
+    root_target = root_target or ROOT / "research_v3" / "metrics_manifest.json"
+    otc_target = otc_target or OTC / "metrics_manifest.json"
+    root_target.parent.mkdir(parents=True, exist_ok=True)
+    otc_target.parent.mkdir(parents=True, exist_ok=True)
+    root_target.write_text(payload, encoding="utf-8")
+    otc_target.write_text(payload, encoding="utf-8")
 
 
 if __name__ == "__main__":

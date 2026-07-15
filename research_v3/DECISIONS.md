@@ -51,3 +51,7 @@ research_v2의 110개 규칙은 legacy 탐색 자료다. source·locator·사람
 ## D-013
 
 13개 시나리오의 외부 확인 결과는 `codex_prefilled_external_human_confirmation`이다. 평가자가 Codex 예상 답안을 볼 수 있었으므로 `independent_blinding=false`, `performance_claim_allowed=false`, `independent_evaluation_complete=incomplete`, `complete=false`, `release_ready=false`를 유지한다.
+
+## D-014
+
+2026-07-15 `C:\dev\pharmacy-product-catalog`의 776개 판매 SKU를 비공개 후보 모집단으로 연결하였다. 776건은 Firestore 원본 확인 상태지만 의약품 영역·품목코드·성분·용법과 DUR 공식 매칭은 0건이며 `DATA_GO_KR_SERVICE_KEY` 부재로 `blocked_missing_key`다. 따라서 가격과 전체 원본을 복사하지 않고 최소 파생 후보만 보존한다. 정확 이름 교집합 5 SKU는 기존 분석 제품 4개에 대한 검토 후보이고, fuzzy 2 SKU는 교집합에서 분리한다. 추가 99 SKU·97개 이름도 공식 매칭 전에는 제품 마스터, 런타임, 규칙, 논문 제품 수와 성능 지표에 합산하지 않는다.
