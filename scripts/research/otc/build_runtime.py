@@ -63,9 +63,42 @@ def build() -> dict:
     candidate_rows += rows(OTC / "selection" / "rule_coverage_candidates.csv")
     candidates = {row["candidate_id"]: row for row in candidate_rows}
     rules = rows(OTC / "rules" / "rules.csv")
+    catalog_summary = json.loads(
+        (OTC / "selection" / "catalog_health_kr_summary.json").read_text(encoding="utf-8")
+    )
+    if catalog_summary["runtime_promotion_allowed_count"] != 0:
+        raise ValueError("health.kr candidates cannot be promoted without MFDS evidence")
     released_rules = [rule for rule in rules if rule["status"] == "released"]
     released_rule_ids = {rule["rule_id"] for rule in released_rules}
     rule_types_by_id = {rule["rule_id"]: rule["rule_type"] for rule in released_rules}
+    primary_evidence_rows = [
+        row for row in rows(OTC / "rules" / "rule_evidence_shortlist.csv")
+        if row["rule_id"] in released_rule_ids
+        and row["recommendation"] == "recommended_primary"
+        and row["review_status"] == "human_expert_verified"
+        and row["supports_release"] == "true"
+    ]
+    primary_evidence_by_rule = {row["rule_id"]: row for row in primary_evidence_rows}
+    if set(primary_evidence_by_rule) != released_rule_ids:
+        raise ValueError("every released rule must have one human-verified primary evidence row")
+    if len(primary_evidence_rows) != len(primary_evidence_by_rule):
+        raise ValueError("released rule has duplicate primary evidence rows")
+    rule_evidence_by_type = {
+        rule["rule_type"]: [
+            {
+                "ruleId": rule["rule_id"],
+                "productName": primary_evidence_by_rule[rule["rule_id"]]["product_name"],
+                "itemSequence": primary_evidence_by_rule[rule["rule_id"]]["item_sequence"],
+                "sourceId": primary_evidence_by_rule[rule["rule_id"]]["source_id"],
+                "locator": primary_evidence_by_rule[rule["rule_id"]]["source_locator"],
+                "url": primary_evidence_by_rule[rule["rule_id"]]["source_url"],
+                "excerptKo": primary_evidence_by_rule[rule["rule_id"]]["evidence_text"],
+            }
+        ]
+        for rule in released_rules
+    }
+    if len(rule_evidence_by_type) != len(released_rules):
+        raise ValueError("released rule types must be unique in the runtime")
     bindings = [
         row for row in rows(OTC / "rules" / "runtime_rule_bindings.csv")
         if row["rule_id"] in released_rule_ids and row["supports_release"] == "true"
@@ -159,7 +192,8 @@ def build() -> dict:
         runtime_product = {
             "productId": product["product_id"], "itemSequence": product["item_sequence"],
             "productName": product["product_name"], "classification": "일반의약품",
-            "authorizationStatus": "active", "doseUnitLabel": dose_unit_label,
+            "authorizationStatus": "active", "therapeuticClass": class_name,
+            "doseUnitLabel": dose_unit_label,
             "ingredients": product_ingredients, "flags": product_flags,
             "supportedRuleTypes": sorted(supported_rule_types),
             "administrationConstraints": [
@@ -194,6 +228,14 @@ def build() -> dict:
         "schemaVersion": "2.0.0", "generatedAt": date.today().isoformat(),
         "researchDirection": "korean_otc_product_safety", "releaseReady": False,
         "rulesReleased": len(released_rules), "releasedRuleTypes": [rule["rule_type"] for rule in released_rules],
+        "ruleEvidenceByType": rule_evidence_by_type,
+        "catalogCoverage": {
+            "sourceSkuCount": catalog_summary["source_record_count"],
+            "healthKrConfirmedCount": catalog_summary["confirmed_count"],
+            "healthKrConfirmedUniqueProductCount": catalog_summary["confirmed_unique_official_product_count"],
+            "runtimePromotionAllowedCount": catalog_summary["runtime_promotion_allowed_count"],
+            "classificationCounts": catalog_summary["classification_counts"],
+        },
         "urgentReferralBindings": [
             {"itemSequence": binding["item_sequence"], "terms": [term for term in binding.get("red_flag_terms", "").split(";") if term]}
             for binding in bindings if binding.get("red_flag_terms")

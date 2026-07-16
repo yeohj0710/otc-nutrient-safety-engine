@@ -9,6 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[3]
 OTC = ROOT / "research_v3" / "otc"
 EXTRACTED = OTC / "extracted" / "nedrug"
+OVERRIDES = OTC / "rules" / "evidence_text_overrides.csv"
+PAGE_MANIFEST = EXTRACTED / "page_manifest.csv"
 
 PATTERNS = {
     "duplicate_ingredient": r"다른\s*(?:제품|의약품).{0,80}(?:함께|동시).{0,40}(?:복용|사용).{0,30}(?:안|말)",
@@ -32,6 +34,34 @@ PATTERNS = {
 
 def paragraphs(page: str) -> list[str]:
     return [re.sub(r"\s+", " ", value).strip() for value in re.split(r"(?:\r?\n){2,}", page) if value.strip()]
+
+
+def read_rows(path: Path) -> list[dict[str, str]]:
+    with path.open(encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
+
+
+def apply_evidence_text_overrides(output: list[dict[str, str | int]]) -> None:
+    candidates = {str(row["evidence_candidate_id"]): row for row in output}
+    source_hashes = {
+        (row["item_sequence"], row["document_type"]): row["pdf_sha256"]
+        for row in read_rows(PAGE_MANIFEST)
+    }
+    seen: set[str] = set()
+    for override in read_rows(OVERRIDES):
+        candidate_id = override["evidence_candidate_id"]
+        if candidate_id in seen:
+            raise ValueError(f"duplicate evidence text override: {candidate_id}")
+        seen.add(candidate_id)
+        candidate = candidates.get(candidate_id)
+        if candidate is None:
+            raise ValueError(f"evidence text override candidate missing: {candidate_id}")
+        source_hash = source_hashes.get(
+            (str(candidate["item_sequence"]), str(candidate["document_type"]))
+        )
+        if source_hash != override["source_sha256"]:
+            raise ValueError(f"evidence text override source hash mismatch: {candidate_id}")
+        candidate["evidence_text"] = override["evidence_text"]
 
 
 def build() -> list[dict[str, str | int]]:
@@ -58,6 +88,7 @@ def build() -> list[dict[str, str | int]]:
                                 "review_status": "codex_candidate_not_expert_verified",
                                 "supports_release": "false",
                             })
+    apply_evidence_text_overrides(output)
     return output
 
 

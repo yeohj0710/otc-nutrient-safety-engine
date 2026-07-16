@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-15",
+  "generatedAt": "2026-07-16",
   "researchDirection": "korean_otc_product_safety",
   "releaseReady": false,
   "rulesReleased": 15,
@@ -21,6 +21,188 @@
     "decongestant_hypertension",
     "urgent_referral"
   ],
+  "ruleEvidenceByType": {
+    "duplicate_ingredient": [
+      {
+        "ruleId": "OTC-RULE-001",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.1, 문단 12",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+        "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다."
+      }
+    ],
+    "duplicate_pharmacologic_class": [
+      {
+        "ruleId": "OTC-RULE-002",
+        "productName": "어린이부루펜시럽(이부프로펜)",
+        "itemSequence": "198601920",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.2, 문단 17",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+        "excerptKo": "2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다."
+      }
+    ],
+    "max_daily_dose": [
+      {
+        "ruleId": "OTC-RULE-003",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "용법용량 PDF p.1, 문단 4",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+        "excerptKo": "1일 최대 4그램 (8정)을 초과하여 복용하지 않는다."
+      }
+    ],
+    "minimum_interval": [
+      {
+        "ruleId": "OTC-RULE-004",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "용법용량 PDF p.1, 문단 3",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+        "excerptKo": "1회 1~2정씩 1일 3-4회 (4-6시간 마다) 필요시 복용한다."
+      }
+    ],
+    "age_restriction": [
+      {
+        "ruleId": "OTC-RULE-005",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "용법용량 PDF p.1, 문단 2",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+        "excerptKo": "만 12세 이상 소아 및 성인:"
+      }
+    ],
+    "pregnancy_lactation": [
+      {
+        "ruleId": "OTC-RULE-006",
+        "productName": "어린이부루펜시럽(이부프로펜)",
+        "itemSequence": "198601920",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.2, 문단 9",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+        "excerptKo": "11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다)"
+      }
+    ],
+    "hepatic_disease": [
+      {
+        "ruleId": "OTC-RULE-007",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.1, 문단 24",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+        "excerptKo": "1) 간장애 또는 그 병력이 있는 환자"
+      }
+    ],
+    "renal_disease": [
+      {
+        "ruleId": "OTC-RULE-008",
+        "productName": "어린이부루펜시럽(이부프로펜)",
+        "itemSequence": "198601920",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.3, 문단 2",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+        "excerptKo": "4) 신장장애 또는 그 병력이 있는 환자"
+      }
+    ],
+    "gi_bleeding_ulcer": [
+      {
+        "ruleId": "OTC-RULE-009",
+        "productName": "어린이부루펜시럽(이부프로펜)",
+        "itemSequence": "198601920",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.1, 문단 17",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+        "excerptKo": "3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다."
+      }
+    ],
+    "sedation_driving": [
+      {
+        "ruleId": "OTC-RULE-010",
+        "productName": "판콜에이내복액",
+        "itemSequence": "196800036",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.3, 문단 8",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+        "excerptKo": "4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것."
+      }
+    ],
+    "alcohol": [
+      {
+        "ruleId": "OTC-RULE-011",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.1, 문단 3",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+        "excerptKo": "1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열 진통제를 복용해야 할 경우 반드시 의사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 간손상이 유발될 수 있다."
+      }
+    ],
+    "anticoagulant_antiplatelet": [
+      {
+        "ruleId": "OTC-RULE-012",
+        "productName": "어린이부루펜시럽(이부프로펜)",
+        "itemSequence": "198601920",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.4, 문단 10",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+        "excerptKo": "5) 쿠마린계 항응혈제(와파린 등) (쿠마린계 항응혈제와 병용투여 시 그 작용을 증강시킬 수 있고, 중증의 위장관계 출혈의 위험이 높아질 수 있다.)"
+      }
+    ],
+    "sedative_medication": [
+      {
+        "ruleId": "OTC-RULE-013",
+        "productName": "판콜에이내복액",
+        "itemSequence": "196800036",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.1, 문단 20",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+        "excerptKo": "3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것. 진해(기침을 그치게 함)거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제를 함유하는 내복약(비염(코염)용 경구제, 멀미약, 알레르기용약)"
+      }
+    ],
+    "decongestant_hypertension": [
+      {
+        "ruleId": "OTC-RULE-014",
+        "productName": "판콜에이내복액",
+        "itemSequence": "196800036",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.2, 문단 4",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+        "excerptKo": "4. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의 할 것. … 4) 간장질환, 신장(콩팥)질환, 심장질환, 갑상선질환, 당뇨병, 고혈압, 위십이지장궤양, 녹내장(예: 눈의 통증, 눈이 침침함 등), 배뇨(소변을 눔)곤란 등이 있는 사람, 몸이 약한 사람 또는 고열이 있는 사람"
+      }
+    ],
+    "urgent_referral": [
+      {
+        "ruleId": "OTC-RULE-016",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.2, 문단 12-19",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+        "excerptKo": "복용을 즉각 중지하고 의사·치과의사·약사와 상의할 것. 쇽·아나필락시양 증상(호흡곤란·온몸이 붉어짐·혈관부기·두드러기), 천식발작, 얼굴부기·저혈압·쇽, 스티븐스-존슨 증후군·독성표피괴사용해 등"
+      }
+    ]
+  },
+  "catalogCoverage": {
+    "sourceSkuCount": 776,
+    "healthKrConfirmedCount": 369,
+    "healthKrConfirmedUniqueProductCount": 341,
+    "runtimePromotionAllowedCount": 0,
+    "classificationCounts": {
+      "analgesic_antiinflammatory": 53,
+      "anthelmintic": 4,
+      "antihistamine": 12,
+      "cold_respiratory": 27,
+      "gastrointestinal": 70,
+      "other_otc": 82,
+      "topical_or_local": 121
+    }
+  },
   "urgentReferralBindings": [
     {
       "itemSequence": "202106092",
@@ -47,6 +229,7 @@
       "productName": "덱스피드연질캡슐(덱시부프로펜)",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "해열진통제",
       "doseUnitLabel": "캡슐",
       "ingredients": [
         {
@@ -120,6 +303,7 @@
       "productName": "낙센정(나프록센)",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "해열진통제",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -193,6 +377,7 @@
       "productName": "지르텍정(세티리진염산염)",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "항히스타민제",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -267,6 +452,7 @@
       "productName": "타이레놀정500밀리그람(아세트아미노펜)",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "해열진통제",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -366,6 +552,7 @@
       "productName": "어린이타이레놀현탁액(아세트아미노펜)",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "해열진통제",
       "doseUnitLabel": "mL",
       "ingredients": [
         {
@@ -439,6 +626,7 @@
       "productName": "어린이부루펜시럽(이부프로펜)",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "해열진통제",
       "doseUnitLabel": "mL",
       "ingredients": [
         {
@@ -521,6 +709,7 @@
       "productName": "베아제정",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "위장관 일반의약품",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -657,6 +846,7 @@
       "productName": "닥터베아제정",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "위장관 일반의약품",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -819,6 +1009,7 @@
       "productName": "훼스탈골드정",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "위장관 일반의약품",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -955,6 +1146,7 @@
       "productName": "훼스탈플러스정",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "위장관 일반의약품",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -1052,6 +1244,7 @@
       "productName": "판콜에이내복액",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "종합감기약",
       "doseUnitLabel": "병",
       "ingredients": [
         {
@@ -1188,6 +1381,7 @@
       "productName": "판피린티정",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "종합감기약",
       "doseUnitLabel": "정",
       "ingredients": [
         {
@@ -1278,6 +1472,7 @@
       "productName": "제일쿨파프",
       "classification": "일반의약품",
       "authorizationStatus": "active",
+      "therapeuticClass": "외용 소염진통제",
       "doseUnitLabel": "매",
       "ingredients": [
         {

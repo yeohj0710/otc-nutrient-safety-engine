@@ -1,3 +1,5 @@
+import json
+
 from scripts.research.otc.build_runtime import build
 
 
@@ -6,9 +8,38 @@ def test_runtime_uses_only_active_calculation_ready_products():
     assert runtime["releaseReady"] is False
     assert runtime["rulesReleased"] == 15
     assert len(runtime["releasedRuleTypes"]) == 15
+    assert len(runtime["ruleEvidenceByType"]) == 15
+    assert runtime["ruleEvidenceByType"]["duplicate_ingredient"] == [
+        {
+            "ruleId": "OTC-RULE-001",
+            "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+            "itemSequence": "202106092",
+            "sourceId": "MFDS-NEDRUG-DETAIL",
+            "locator": "사용상의주의사항 PDF p.1, 문단 12",
+            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+            "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.",
+        }
+    ]
+    for evidence_rows in runtime["ruleEvidenceByType"].values():
+        assert len(evidence_rows) == 1
+        rule_evidence = evidence_rows[0]
+        assert rule_evidence["ruleId"].startswith("OTC-RULE-")
+        assert rule_evidence["productName"]
+        assert rule_evidence["itemSequence"].isdigit()
+        assert rule_evidence["excerptKo"].strip()
+        assert not rule_evidence["excerptKo"].rstrip().endswith(
+            ("이 약을", "반드시 의", "중증의 위", "비염(코")
+        )
     assert len(runtime["products"]) == 13
     assert all(product["authorizationStatus"] == "active" for product in runtime["products"])
     assert all(product["ingredients"] for product in runtime["products"])
+    assert {product["therapeuticClass"] for product in runtime["products"]} == {
+        "해열진통제",
+        "종합감기약",
+        "위장관 일반의약품",
+        "외용 소염진통제",
+        "항히스타민제",
+    }
     assert not {"MFDS-199402278", "MFDS-199303109", "MFDS-200501321"} & {
         product["productId"] for product in runtime["products"]
     }
@@ -22,6 +53,28 @@ def test_runtime_uses_only_active_calculation_ready_products():
         assert daily_frequency[0]["evidence"]["sourceId"] == "MFDS-NEDRUG-DETAIL"
         assert daily_frequency[0]["evidence"]["locator"]
         assert "max_daily_dose" in product["supportedRuleTypes"]
+
+
+def test_runtime_exposes_catalog_counts_without_private_records_or_prices():
+    runtime = build()
+    assert runtime["catalogCoverage"] == {
+        "sourceSkuCount": 776,
+        "healthKrConfirmedCount": 369,
+        "healthKrConfirmedUniqueProductCount": 341,
+        "runtimePromotionAllowedCount": 0,
+        "classificationCounts": {
+            "analgesic_antiinflammatory": 53,
+            "anthelmintic": 4,
+            "antihistamine": 12,
+            "cold_respiratory": 27,
+            "gastrointestinal": 70,
+            "other_otc": 82,
+            "topical_or_local": 121,
+        },
+    }
+    serialized = json.dumps(runtime, ensure_ascii=False).lower()
+    assert "retail_price" not in serialized
+    assert "price" not in serialized
 
 
 def test_runtime_preserves_withdrawn_statuses_but_omits_analysis_exclusions():

@@ -1,0 +1,3 @@
+﻿catalog_source_id,stable_official_key,official_item_seq,official_source_url,conflict_count,conflict_reasons
+20250812_104252,health.kr:A11ADDDDD0017,A11ADDDDD0017,https://health.kr/searchDrug/result_drug.asp?drug_cd=A11ADDDDD0017,1,"제형 충돌: 카탈로그 capsule, 약학정보원 liquid"
+20250812_114721,health.kr:A11ADDDDD0017,A11ADDDDD0017,https://health.kr/searchDrug/result_drug.asp?drug_cd=A11ADDDDD0017,1,"포장단위 불일치 가능성: 카탈로그 60바이알, 약학정보원 {([산제부]상부캡 228mg, [액제부] 8mL)/바이알}×30"

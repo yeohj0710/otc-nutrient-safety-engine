@@ -2,10 +2,14 @@ import { describe, expect, it } from "vitest";
 
 import {
   buildSelectedProducts,
+  quickChecks,
   searchRuntime,
   type OtcRuntime,
 } from "@/src/components/otc-product-safety-client";
+import { evaluateOtcSafety } from "@/src/lib/otc/engine";
+import { productsForTherapeuticClass } from "@/src/lib/otc/presentation";
 import type { OtcProduct } from "@/src/lib/otc/schema";
+import runtimeData from "@/src/generated/otc-runtime.json";
 
 const product = (productId: string, productName: string): OtcProduct => ({
   productId,
@@ -54,5 +58,40 @@ describe("product-name search flow", () => {
       { product: runtime.products[1], unitsPerDose: 1, dosesPerDay: 1 },
       { product: runtime.products[0], unitsPerDose: 1, dosesPerDay: 1 },
     ]);
+  });
+
+  it("keeps every MFDS-verified runtime product discoverable by therapeutic class", () => {
+    const fullRuntime = runtimeData as OtcRuntime;
+    expect(productsForTherapeuticClass(fullRuntime.products, "전체")).toHaveLength(13);
+    expect(new Set(fullRuntime.products.map((item) => item.therapeuticClass))).toEqual(
+      new Set(["해열진통제", "종합감기약", "위장관 일반의약품", "외용 소염진통제", "항히스타민제"]),
+    );
+  });
+
+  it("offers varied examples that produce the stated deterministic rule", () => {
+    const fullRuntime = runtimeData as OtcRuntime;
+    expect(quickChecks).toHaveLength(6);
+    for (const quickCheck of quickChecks) {
+      const selected = buildSelectedProducts(fullRuntime, quickCheck.productIds);
+      const profile = {
+        medications: [],
+        redFlagSymptoms: [],
+        ...quickCheck.profilePatch,
+      };
+      const result = evaluateOtcSafety(
+        selected,
+        profile,
+        new Set(fullRuntime.releasedRuleTypes),
+        fullRuntime.urgentReferralBindings ?? [],
+        fullRuntime.ruleEvidenceByType,
+      );
+      expect(result.findings.map((finding) => finding.ruleType), quickCheck.label).toContain(
+        quickCheck.expectedRuleType,
+      );
+      const matchedFinding = result.findings.find(
+        (finding) => finding.ruleType === quickCheck.expectedRuleType,
+      );
+      expect(matchedFinding?.ruleEvidence?.[0].excerptKo, quickCheck.label).toBeTruthy();
+    }
   });
 });

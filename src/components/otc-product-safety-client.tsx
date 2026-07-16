@@ -2,10 +2,22 @@
 
 import { useMemo, useState } from "react";
 
+import literatureData from "@/src/generated/otc-supporting-literature.json";
 import { evaluateOtcSafety } from "@/src/lib/otc/engine";
+import {
+  buildFindingContext,
+  formatEvidenceSource,
+  groupCoverageGaps,
+  literatureRelationLabel,
+  productsForTherapeuticClass,
+  ruleEvidenceForFinding,
+  supportingLiteratureForFinding,
+  type SupportingLiterature,
+} from "@/src/lib/otc/presentation";
 import { searchOtcProducts } from "@/src/lib/otc/search";
 import type {
   OtcProduct,
+  RuleEvidenceLink,
   SelectedProduct,
   UserProfile,
 } from "@/src/lib/otc/schema";
@@ -27,6 +39,14 @@ export type OtcRuntime = {
   rulesReleased: number;
   releasedRuleTypes: string[];
   urgentReferralBindings?: Array<{ itemSequence: string; terms: string[] }>;
+  ruleEvidenceByType?: Record<string, RuleEvidenceLink[]>;
+  catalogCoverage?: {
+    sourceSkuCount: number;
+    healthKrConfirmedCount: number;
+    healthKrConfirmedUniqueProductCount: number;
+    runtimePromotionAllowedCount: number;
+    classificationCounts: Record<string, number>;
+  };
   products: OtcProduct[];
   officialCandidates: OfficialCandidate[];
 };
@@ -49,28 +69,71 @@ const conditionOptions: Array<{ key: BooleanProfileKey; label: string }> = [
   { key: "pregnant", label: "임신 중" },
   { key: "lactating", label: "수유 중" },
   { key: "willDrive", label: "복용 후 운전" },
-  { key: "alcohol", label: "음주 예정" },
+  { key: "alcohol", label: "매일 3잔 이상 정기 음주" },
 ];
 
-const quickChecks = [
+export const quickChecks: Array<{
+  label: string;
+  description: string;
+  productIds: readonly string[];
+  profilePatch: Partial<UserProfile>;
+  expectedRuleType: string;
+}> = [
   {
     label: "감기약 + 해열제",
     description: "아세트아미노펜 중복 확인",
     productIds: ["MFDS-196800036", "MFDS-202106092"],
+    profilePatch: {},
+    expectedRuleType: "duplicate_ingredient",
   },
   {
     label: "소염진통제 2종",
     description: "NSAID 계열 중복 확인",
     productIds: ["MFDS-201110646", "MFDS-197500016"],
+    profilePatch: {},
+    expectedRuleType: "duplicate_pharmacologic_class",
   },
   {
     label: "감기약 + 알레르기약",
     description: "항히스타민 중복 확인",
     productIds: ["MFDS-196800036", "MFDS-200610765"],
+    profilePatch: {},
+    expectedRuleType: "duplicate_pharmacologic_class",
   },
-] as const;
+  {
+    label: "소화제 2종",
+    description: "시메티콘 등 중복 성분 확인",
+    productIds: ["MFDS-198700405", "MFDS-200300406"],
+    profilePatch: {},
+    expectedRuleType: "duplicate_ingredient",
+  },
+  {
+    label: "감기약 복용 후 운전",
+    description: "졸림·운전 주의 확인",
+    productIds: ["MFDS-196800036"],
+    profilePatch: { willDrive: true },
+    expectedRuleType: "sedation_driving",
+  },
+  {
+    label: "이부프로펜 + 와파린",
+    description: "항응고제 병용 주의 확인",
+    productIds: ["MFDS-198601920"],
+    profilePatch: { medications: ["와파린"] },
+    expectedRuleType: "anticoagulant_antiplatelet",
+  },
+];
 
 const initialProfile: UserProfile = { medications: [], redFlagSymptoms: [] };
+
+const catalogClassLabels: Record<string, string> = {
+  analgesic_antiinflammatory: "해열·소염진통",
+  anthelmintic: "구충제",
+  antihistamine: "항히스타민",
+  cold_respiratory: "감기·호흡기",
+  gastrointestinal: "위장관",
+  other_otc: "기타 OTC",
+  topical_or_local: "외용·국소",
+};
 
 const severityRank = {
   urgent: 4,
@@ -115,6 +178,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const [profile, setProfile] = useState<UserProfile>(initialProfile);
   const [medicationText, setMedicationText] = useState("");
   const [symptomText, setSymptomText] = useState("");
+  const [activeTherapeuticClass, setActiveTherapeuticClass] = useState("전체");
 
   const results = useMemo(() => searchRuntime(runtime, query), [runtime, query]);
   const releasedRuleTypes = useMemo(
@@ -129,12 +193,14 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             profile,
             releasedRuleTypes,
             runtime.urgentReferralBindings ?? [],
+            runtime.ruleEvidenceByType,
           )
         : null,
     [
       profile,
       releasedRuleTypes,
       runtime.rulesReleased,
+      runtime.ruleEvidenceByType,
       runtime.urgentReferralBindings,
       selected,
     ],
@@ -158,6 +224,49 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       ),
     [runtime.products],
   );
+  const productNamesById = useMemo(
+    () => new Map(runtime.products.map((product) => [product.productId, product.productName])),
+    [runtime.products],
+  );
+  const groupedCoverageGaps = useMemo(
+    () => groupCoverageGaps(evaluation?.coverageGaps ?? [], productNamesById),
+    [evaluation?.coverageGaps, productNamesById],
+  );
+  const therapeuticClasses = useMemo(
+    () => [
+      "전체",
+      ...new Set(
+        runtime.products
+          .map((product) => product.therapeuticClass)
+          .filter((value): value is NonNullable<typeof value> => Boolean(value)),
+      ),
+    ],
+    [runtime.products],
+  );
+  const shelfProducts = useMemo(
+    () => productsForTherapeuticClass(runtime.products, activeTherapeuticClass),
+    [activeTherapeuticClass, runtime.products],
+  );
+  const literatureByFinding = useMemo(
+    () =>
+      new Map(
+        orderedFindings.map((finding) => [
+          finding.findingId,
+          supportingLiteratureForFinding(
+            finding,
+            literatureData as SupportingLiterature[],
+            profile,
+          ),
+        ]),
+      ),
+    [orderedFindings, profile],
+  );
+  const findingsWithRuleEvidence = orderedFindings.filter(
+    (finding) => (finding.ruleEvidence?.length ?? 0) > 0,
+  ).length;
+  const findingsWithLiterature = [...literatureByFinding.values()].filter(
+    (papers) => papers.length > 0,
+  ).length;
 
   const selectedIds = new Set(selected.map((item) => item.product.productId));
   const activeConditionCount = conditionOptions.filter(({ key }) => profile[key]).length;
@@ -180,8 +289,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     );
   };
 
-  const applyQuickCheck = (productIds: readonly string[]) => {
-    setSelected(buildSelectedProducts(runtime, productIds));
+  const applyQuickCheck = (quickCheck: (typeof quickChecks)[number]) => {
+    const nextProfile = { ...initialProfile, ...quickCheck.profilePatch };
+    setSelected(buildSelectedProducts(runtime, quickCheck.productIds));
+    setProfile(nextProfile);
+    setMedicationText(nextProfile.medications.join(", "));
+    setSymptomText(nextProfile.redFlagSymptoms.join(", "));
     setQuery("");
   };
 
@@ -209,7 +322,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               key={quickCheck.label}
               type="button"
               className={styles.quickCheckButton}
-              onClick={() => applyQuickCheck(quickCheck.productIds)}
+              onClick={() => applyQuickCheck(quickCheck)}
             >
               <span>{quickCheck.label}</span>
               <small>{quickCheck.description}</small>
@@ -223,22 +336,46 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           <header className={styles.panelHeader}>
             <span className={styles.panelIndex}>1</span>
             <div>
-              <h2 id="medicine-heading">먹는 약 담기</h2>
+              <h2 id="medicine-heading">사용 중인 약 담기</h2>
               <p>제품명만 찾으면 성분과 함량을 자동으로 불러와요.</p>
             </div>
             <span className={styles.countBadge}>{selected.length}개</span>
           </header>
 
           <div className={styles.searchArea}>
+            {runtime.catalogCoverage && (
+              <div className={styles.catalogScope}>
+                <div>
+                  <span>판매 SKU {runtime.catalogCoverage.sourceSkuCount}건 선별</span>
+                  <span>약학정보원 연결 {runtime.catalogCoverage.healthKrConfirmedCount}건</span>
+                  <strong>지금 점검 가능 {runtime.products.length}개</strong>
+                </div>
+                <p>
+                  약학정보원 연결 제품은 연구 후보입니다. 식약처 허가 원문과 안전성 규칙까지 연결된 제품만 점검에 사용해요.
+                </p>
+                <details>
+                  <summary>연구 후보 {runtime.catalogCoverage.healthKrConfirmedCount}건의 약효군 분포</summary>
+                  <div>
+                    {Object.entries(runtime.catalogCoverage.classificationCounts).map(
+                      ([classId, count]) => (
+                        <span key={classId}>{catalogClassLabels[classId] ?? classId} {count}건</span>
+                      ),
+                    )}
+                  </div>
+                </details>
+              </div>
+            )}
             <label className={styles.searchBox}>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m21 21-4.35-4.35m1.35-5.15A6.5 6.5 0 1 1 5 11.5a6.5 6.5 0 0 1 13 0Z" />
               </svg>
               <span className="sr-only">일반의약품 제품명 검색</span>
               <input
+                name="otc-product-search"
+                type="search"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
-                placeholder="제품명을 검색하세요"
+                placeholder="제품명을 검색하세요…"
                 autoComplete="off"
               />
               {query && (
@@ -289,18 +426,42 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 )}
               </div>
             ) : (
-              <div className={styles.productShelf} aria-label="바로 선택할 수 있는 제품">
-                <span>바로 선택</span>
-                <div>
-                  {runtime.products.slice(0, 6).map((product) => (
+              <div className={styles.productShelf} aria-label="식약처 허가 확인 제품">
+                <div className={styles.productShelfHeader}>
+                  <span>허가 확인 제품 전체</span>
+                  <b>{shelfProducts.length}개</b>
+                </div>
+                <div className={styles.classFilters} aria-label="약효군 필터">
+                  {therapeuticClasses.map((therapeuticClass) => (
+                    <button
+                      key={therapeuticClass}
+                      type="button"
+                      aria-pressed={activeTherapeuticClass === therapeuticClass}
+                      onClick={() => setActiveTherapeuticClass(therapeuticClass)}
+                    >
+                      {therapeuticClass}
+                    </button>
+                  ))}
+                </div>
+                <div className={styles.productShelfGrid}>
+                  {shelfProducts.map((product) => (
                     <button
                       key={product.productId}
                       type="button"
                       onClick={() => addProduct(product)}
                       disabled={selectedIds.has(product.productId)}
                     >
-                      {product.productName.replace(/\([^)]*\)/g, "")}
-                      {selectedIds.has(product.productId) && <b>✓</b>}
+                      <span>{product.productName.replace(/\([^)]*\)/g, "")}</span>
+                      <small>
+                        {product.ingredients
+                          .slice(0, 2)
+                          .map((ingredient) => ingredient.nameKo)
+                          .join(" · ")}
+                        {product.ingredients.length > 2
+                          ? ` 외 ${product.ingredients.length - 2}개`
+                          : ""}
+                      </small>
+                      <b>{selectedIds.has(product.productId) ? "담김" : "+ 담기"}</b>
                     </button>
                   ))}
                 </div>
@@ -318,7 +479,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             {selected.length === 0 ? (
               <div className={styles.emptySelection}>
                 <span aria-hidden="true">+</span>
-                <p>함께 먹는 약을 1개 이상 담아주세요.</p>
+                <p>함께 사용하거나 복용하는 약을 1개 이상 담아주세요.</p>
               </div>
             ) : (
               <div className={styles.selectedList}>
@@ -353,6 +514,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         <span>한 번에</span>
                         <span className={styles.inputWithUnit}>
                           <input
+                            name={`${item.product.productId}-units-per-dose`}
                             type="number"
                             min="0.1"
                             step="0.1"
@@ -370,6 +532,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         <span>하루</span>
                         <span className={styles.inputWithUnit}>
                           <input
+                            name={`${item.product.productId}-doses-per-day`}
                             type="number"
                             min="1"
                             step="1"
@@ -387,11 +550,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         <span>지난 복용 후</span>
                         <span className={styles.inputWithUnit}>
                           <input
+                            name={`${item.product.productId}-hours-since-dose`}
                             type="number"
                             min="0"
                             step="0.5"
                             value={item.hoursSincePreviousDose ?? ""}
-                            placeholder="선택"
+                            placeholder="선택…"
                             onChange={(event) =>
                               updateSelected(index, {
                                 hoursSincePreviousDose: event.target.value
@@ -407,11 +571,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         <span>연속 복용</span>
                         <span className={styles.inputWithUnit}>
                           <input
+                            name={`${item.product.productId}-continuous-days`}
                             type="number"
                             min="1"
                             step="1"
                             value={item.continuousDays ?? ""}
-                            placeholder="선택"
+                            placeholder="선택…"
                             onChange={(event) =>
                               updateSelected(index, {
                                 continuousDays: event.target.value
@@ -446,11 +611,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               <span>나이 <small>선택</small></span>
               <span className={styles.inputWithUnit}>
                 <input
+                  name="age-years"
                   type="number"
                   min="0"
                   max="120"
                   value={profile.ageYears ?? ""}
-                  placeholder="예: 35"
+                  placeholder="예: 35…"
                   onChange={(event) =>
                     setProfile((value) => ({
                       ...value,
@@ -489,6 +655,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             <label className={styles.fieldLabel}>
               <span>복용 중인 다른 약 <small>선택</small></span>
               <textarea
+                name="other-medications"
                 value={medicationText}
                 rows={2}
                 onChange={(event) => {
@@ -501,13 +668,14 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                       .filter(Boolean),
                   }));
                 }}
-                placeholder="예: 와파린, 수면제 (쉼표로 구분)"
+                placeholder="예: 와파린, 수면제… (쉼표로 구분)"
               />
             </label>
 
             <label className={`${styles.fieldLabel} ${styles.alertField}`}>
               <span>지금 나타난 심한 증상 <small>선택</small></span>
               <textarea
+                name="red-flag-symptoms"
                 value={symptomText}
                 rows={2}
                 onChange={(event) => {
@@ -520,14 +688,14 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                       .filter(Boolean),
                   }));
                 }}
-                placeholder="예: 호흡곤란, 얼굴 부기"
+                placeholder="예: 호흡곤란, 얼굴 부기…"
               />
               <small>입력한 표현이 해당 제품의 허가상 긴급 증상과 일치할 때만 알려드려요.</small>
             </label>
           </div>
         </section>
 
-        <aside id="safety-result" className={`${styles.panel} ${styles.resultPanel}`} aria-labelledby="result-heading" aria-live="polite">
+        <aside id="safety-result" className={`${styles.panel} ${styles.resultPanel}`} aria-labelledby="result-heading">
           <header className={styles.panelHeader}>
             <span className={styles.panelIndex}>3</span>
             <div>
@@ -570,39 +738,24 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   </div>
                 )}
 
-                {evaluation.coverageGaps.length > 0 && (
-                  <div className={styles.coverageNotice}>
-                    <span aria-hidden="true">?</span>
-                    <div>
-                      <strong>일부 조건은 확인하지 못했어요.</strong>
-                      <p>기준이 연결된 항목만 판정했습니다. 미확인 항목은 제품 포장이나 전문가에게 확인하세요.</p>
-                      <ul>
-                        {evaluation.coverageGaps.map((gap) => (
-                          <li key={gap.gapId}>
-                            <b>{gap.titleKo}</b>
-                            <span>{gap.detailKo}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
-
                 {orderedFindings.length === 0 &&
-                  evaluation.inputIssues.length === 0 &&
-                  evaluation.coverageGaps.length === 0 && (
+                  evaluation.inputIssues.length === 0 && (
                     <div className={styles.clearResult}>
                       <span aria-hidden="true">✓</span>
                       <div>
-                        <strong>입력한 조건에서 정의된 위험 신호를 찾지 못했어요.</strong>
-                        <p>안전하다는 보장은 아닙니다. 포장과 허가사항을 따르고 증상이 계속되면 전문가와 상담하세요.</p>
+                        <strong>연결된 기준에서는 위험 신호를 찾지 못했어요.</strong>
+                        <p>
+                          {evaluation.coverageGaps.length > 0
+                            ? "아래 추가 확인 조건은 판정 범위 밖입니다. 포장과 허가사항도 함께 확인하세요."
+                            : "안전하다는 보장은 아닙니다. 포장과 허가사항을 따르고 증상이 계속되면 전문가와 상담하세요."}
+                        </p>
                       </div>
                     </div>
                   )}
 
                 {orderedFindings.length > 0 && (
                   <>
-                    <div className={styles.resultSummary} data-urgent={urgentCount > 0}>
+                    <div className={styles.resultSummary} data-urgent={urgentCount > 0} role="status" aria-live="polite" aria-atomic="true">
                       <span>{urgentCount > 0 ? "먼저 확인" : "주의 확인"}</span>
                       <strong>{orderedFindings.length}개 항목이 있어요</strong>
                       <p>
@@ -610,40 +763,217 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           ? `이 중 ${urgentCount}개는 즉시 확인이 필요한 항목입니다.`
                           : "아래 행동 안내와 근거를 차례로 확인하세요."}
                       </p>
+                      <small className={styles.summaryEvidence}>
+                        식약처 규칙 근거 {findingsWithRuleEvidence}/{orderedFindings.length} · 직접 연결 학술문헌 {findingsWithLiterature}/{orderedFindings.length}
+                      </small>
                     </div>
                     <div className={styles.findings}>
-                      {orderedFindings.map((finding, index) => (
-                        <article key={finding.findingId} data-severity={finding.severity}>
-                          <div className={styles.findingMeta}>
-                            <span>{finding.severity === "urgent" ? "즉시 확인" : finding.severity === "high" ? "높은 주의" : "주의"}</span>
-                            <b>{index + 1}</b>
-                          </div>
-                          <h3>{finding.titleKo}</h3>
-                          <p>{finding.detailKo}</p>
-                          <div className={styles.nextAction}>
-                            <span>지금 할 일</span>
-                            <strong>{finding.nextActionKo}</strong>
-                          </div>
-                          <details>
-                            <summary>근거 원문 위치 보기</summary>
-                            <div>
-                              {finding.evidence.map((source) => (
-                                <a
-                                  key={`${source.sourceId}-${source.locator}`}
-                                  href={source.url}
-                                  target="_blank"
-                                  rel="noreferrer"
-                                >
-                                  <span>{source.sourceId}</span>
-                                  {source.locator}
-                                </a>
-                              ))}
+                      {orderedFindings.map((finding, index) => {
+                        const supportingPapers = literatureByFinding.get(finding.findingId) ?? [];
+                        const ruleEvidence = finding.ruleEvidence ?? [];
+                        const ruleEvidenceDisplay = ruleEvidenceForFinding(
+                          finding,
+                          selected,
+                          ruleEvidence,
+                        );
+                        const primaryRuleEvidence = ruleEvidenceDisplay.evidence;
+                        const primaryPaper = supportingPapers[0];
+                        const findingContext = buildFindingContext(finding, selected);
+                        return (
+                          <article key={finding.findingId} data-severity={finding.severity}>
+                            <div className={styles.findingMeta}>
+                              <span>{finding.severity === "urgent" ? "즉시 확인" : finding.severity === "high" ? "높은 주의" : "주의"}</span>
+                              <b>{index + 1}</b>
                             </div>
-                          </details>
-                        </article>
-                      ))}
+                            <h3>{finding.titleKo}</h3>
+                            {finding.severity === "urgent" && (
+                              <div className={styles.nextAction}>
+                                <span>지금 할 일</span>
+                                <strong>{finding.nextActionKo}</strong>
+                              </div>
+                            )}
+                            <div className={styles.findingRationale}>
+                              <span>판정 이유</span>
+                              <p>{finding.detailKo}</p>
+                              <dl>
+                                <div>
+                                  <dt>판정 제품</dt>
+                                  <dd>{findingContext.productNames.join(", ")}</dd>
+                                </div>
+                                {findingContext.ingredientFacts.length > 0 && (
+                                  <div>
+                                    <dt>포함 성분·함량</dt>
+                                    <dd>{findingContext.ingredientFacts.join(", ")}</dd>
+                                  </div>
+                                )}
+                              </dl>
+                            </div>
+                            {primaryRuleEvidence && (
+                              <section className={styles.officialEvidencePreview} aria-label="판정에 사용한 식약처 허가 근거">
+                                <header>
+                                  <strong>
+                                    {ruleEvidenceDisplay.productMatch === "all"
+                                      ? "이 제품의 식약처 허가 원문"
+                                      : "규칙을 승인한 대표 허가 원문"}
+                                  </strong>
+                                  <span>
+                                    {ruleEvidenceDisplay.productMatch === "all"
+                                      ? "선택 제품과 직접 일치"
+                                      : ruleEvidenceDisplay.productMatch === "partial"
+                                        ? "선택 제품 중 일부와 일치 · 나머지 제품과 구분"
+                                        : "대표 제품 근거 · 현재 제품과 구분"}
+                                  </span>
+                                </header>
+                                <blockquote>{primaryRuleEvidence.excerptKo}</blockquote>
+                                <a href={primaryRuleEvidence.url} target="_blank" rel="noreferrer">
+                                  {primaryRuleEvidence.productName} · {primaryRuleEvidence.locator}
+                                </a>
+                                <div className={styles.productEvidencePreview}>
+                                  <strong>현재 제품·계산 원문 위치</strong>
+                                  {finding.evidence.slice(0, 2).map((source) => (
+                                    <a
+                                      key={`visible-product-${source.sourceId}-${source.locator}`}
+                                      href={source.url}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                    >
+                                      {formatEvidenceSource(source.sourceId)} · {source.locator}
+                                    </a>
+                                  ))}
+                                </div>
+                              </section>
+                            )}
+                            {primaryPaper ? (
+                              <section className={styles.literaturePreview} aria-label="이해를 돕는 직접 연결 학술문헌">
+                                <header>
+                                  <strong>{literatureRelationLabel(primaryPaper.evidenceRelation)}</strong>
+                                  <span>보조 근거 · 판정에는 미사용</span>
+                                </header>
+                                <a href={primaryPaper.url} target="_blank" rel="noreferrer">
+                                  {primaryPaper.title} (PMID {primaryPaper.pmid})
+                                </a>
+                                <p><strong>연구 결과</strong>{primaryPaper.keyFindingKo}</p>
+                                <p><strong>이 판정에 연결한 이유</strong>{primaryPaper.selectionReasonKo}</p>
+                                <p><strong>적용 한계</strong>{primaryPaper.limitationKo}</p>
+                                {supportingPapers.length > 1 && (
+                                  <small>아래 전체 근거에서 관련 논문 {supportingPapers.length}편을 모두 볼 수 있습니다.</small>
+                                )}
+                              </section>
+                            ) : (
+                              <div className={styles.literatureEmpty}>
+                                <strong>직접 연결된 학술문헌은 아직 없습니다.</strong>
+                                <p>이 판정은 식약처 허가 및 제품·계산 원문을 사용했습니다. 맞지 않는 논문을 억지로 연결하지 않았습니다.</p>
+                              </div>
+                            )}
+                            {finding.severity !== "urgent" && (
+                              <div className={styles.nextAction}>
+                                <span>지금 할 일</span>
+                                <strong>{finding.nextActionKo}</strong>
+                              </div>
+                            )}
+                            <div className={styles.evidenceCount}>
+                              <span>식약처 규칙 근거 {ruleEvidence.length}개</span>
+                              <span>제품·계산 원문 {finding.evidence.length}개</span>
+                              {supportingPapers.length > 0 && (
+                                <span>관련 학술문헌 {supportingPapers.length}편</span>
+                              )}
+                            </div>
+                            <details className={styles.evidenceDetails}>
+                              <summary>판정 근거와 관련 문헌 보기</summary>
+                              <div className={styles.evidencePanel}>
+                                {ruleEvidence.length > 0 && (
+                                  <section>
+                                    <div className={styles.evidenceSectionTitle}>
+                                      <strong>판정 규칙 근거</strong>
+                                      <span>전문가 검토 후 release된 허가 원문</span>
+                                    </div>
+                                    {ruleEvidence.map((source) => (
+                                      <a
+                                        className={styles.officialEvidenceLink}
+                                        key={`rule-${source.sourceId}-${source.locator}`}
+                                        href={source.url}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                      >
+                                        <strong>{formatEvidenceSource(source.sourceId)}</strong>
+                                        <span>{source.locator}</span>
+                                        <q>{source.excerptKo}</q>
+                                      </a>
+                                    ))}
+                                  </section>
+                                )}
+                                <section>
+                                  <div className={styles.evidenceSectionTitle}>
+                                    <strong>제품·계산 원문</strong>
+                                    <span>성분·함량·용법 확인에 사용</span>
+                                  </div>
+                                  {finding.evidence.map((source) => (
+                                    <a
+                                      className={styles.officialEvidenceLink}
+                                      key={`${source.sourceId}-${source.locator}`}
+                                      href={source.url}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                    >
+                                      <strong>{formatEvidenceSource(source.sourceId)}</strong>
+                                      <span>{source.locator}</span>
+                                    </a>
+                                  ))}
+                                </section>
+                                {supportingPapers.length > 0 && (
+                                  <section>
+                                    <div className={styles.evidenceSectionTitle}>
+                                      <strong>관련 학술문헌</strong>
+                                      <span>이해를 돕는 보조 근거 · 판정에는 미사용</span>
+                                    </div>
+                                    <div className={styles.literatureList}>
+                                      {supportingPapers.map((paper) => (
+                                        <div className={styles.literatureCard} key={paper.pmid}>
+                                          <div>
+                                            <span>{paper.publicationYear} · {paper.studyDesign} · {literatureRelationLabel(paper.evidenceRelation)}</span>
+                                            <b>PMID {paper.pmid}</b>
+                                          </div>
+                                          <a href={paper.url} target="_blank" rel="noreferrer">
+                                            {paper.title}
+                                          </a>
+                                          <p><strong>핵심 결과</strong>{paper.keyFindingKo}</p>
+                                          <p><strong>연결 이유</strong>{paper.selectionReasonKo}</p>
+                                          <p><strong>적용 한계</strong>{paper.limitationKo}</p>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </section>
+                                )}
+                              </div>
+                            </details>
+                          </article>
+                        );
+                      })}
                     </div>
                   </>
+                )}
+
+                {evaluation.coverageGaps.length > 0 && (
+                  <details className={styles.coverageDetails}>
+                    <summary>
+                      <span>추가로 확인할 조건</span>
+                      <b>{groupedCoverageGaps.length}종류 · {evaluation.coverageGaps.length}개 제품 조건</b>
+                    </summary>
+                    <div>
+                      <p>식약처 허가 기준이 현재 판정 규칙에 연결되지 않은 조건만 모았습니다.</p>
+                      <ul>
+                        {groupedCoverageGaps.map((gap) => (
+                          <li key={gap.groupId}>
+                            <strong>{gap.titleKo}</strong>
+                            <span>{gap.productNames.join(", ")}</span>
+                            {gap.profileDetailMessages.map((message) => (
+                              <small key={message}>{message}</small>
+                            ))}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </details>
                 )}
               </>
             )}
@@ -678,11 +1008,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           <strong>
             {evaluation && evaluation.inputIssues.length > 0
               ? `입력 오류 ${evaluation.inputIssues.length}개 보기`
-              : orderedFindings.length > 0
-                ? `주의 ${orderedFindings.length}개 보기`
-                : evaluation && evaluation.coverageGaps.length > 0
-                  ? `미확인 ${evaluation.coverageGaps.length}개 보기`
-                  : "점검 결과 보기"}
+                : orderedFindings.length > 0
+                  ? `주의 ${orderedFindings.length}개 보기`
+                  : evaluation && evaluation.coverageGaps.length > 0
+                    ? `추가 확인 ${groupedCoverageGaps.length}종류 보기`
+                    : "점검 결과 보기"}
           </strong>
         </a>
       )}

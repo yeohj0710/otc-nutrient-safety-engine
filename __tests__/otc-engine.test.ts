@@ -80,6 +80,38 @@ describe("deterministic OTC safety engine", () => {
     expect(result.findings.map((finding) => finding.ruleType)).toEqual(["duplicate_ingredient"]);
   });
 
+  it("keeps released-rule evidence separate from product calculation evidence", () => {
+    const same = ingredient("ING-test", "검증성분", []);
+    const ruleEvidence = {
+      duplicate_ingredient: [
+        {
+          ruleId: "OTC-RULE-001",
+          productName: "검증제품1",
+          itemSequence: "P1",
+          sourceId: "MFDS-NEDRUG-DETAIL",
+          locator: "사용상의주의사항 PDF p.1, 문단 12",
+          url: "https://example.test/rule",
+          excerptKo: "다른 제품과 함께 복용하지 않습니다.",
+        },
+      ],
+    };
+    const result = evaluateOtcSafety(
+      [
+        { product: product("P1", "검증제품1", [same]), unitsPerDose: 1, dosesPerDay: 1 },
+        { product: product("P2", "검증제품2", [same]), unitsPerDose: 1, dosesPerDay: 1 },
+      ],
+      profile(),
+      new Set(["duplicate_ingredient"]),
+      undefined,
+      ruleEvidence,
+    );
+    expect(result.findings[0].ruleEvidence).toEqual(ruleEvidence.duplicate_ingredient);
+    expect(result.findings[0].ruleEvidence?.[0].excerptKo).toBe(
+      "다른 제품과 함께 복용하지 않습니다.",
+    );
+    expect(result.findings[0].evidence).not.toEqual(ruleEvidence.duplicate_ingredient);
+  });
+
   it("detects interval, age, duration, disease, medication, driving, alcohol, and urgent conditions", () => {
     const flagged = ingredient("I1", "검증성분", [], ["sedation_driving", "alcohol", "renal_disease", "anticoagulant_antiplatelet"]);
     const p = {
@@ -95,6 +127,12 @@ describe("deterministic OTC safety engine", () => {
     const types = new Set(result.findings.map((finding) => finding.ruleType));
     expect(types).toEqual(new Set(["urgent_referral", "age_restriction", "alcohol", "anticoagulant_antiplatelet", "decongestant_hypertension", "maximum_duration", "minimum_interval", "renal_disease", "sedation_driving"]));
     expect(result.findings[0].severity).toBe("urgent");
+    expect(
+      result.findings.find((finding) => finding.ruleType === "alcohol")?.detailKo,
+    ).toContain("매일 3잔 이상 정기적으로 음주");
+    expect(
+      result.findings.find((finding) => finding.ruleType === "anticoagulant_antiplatelet")?.detailKo,
+    ).toContain("와파린");
     const strictestInterval = evaluateOtcSafety(
       [{ product: p, unitsPerDose: 1, dosesPerDay: 1, hoursSincePreviousDose: 5 }],
       profile(),

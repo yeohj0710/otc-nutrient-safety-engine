@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "valid": true,
+  "source_schema_valid": true,
+  "source_ids_unique": true,
+  "source_trio_counts_equal": true,
+  "public_sync_exact": true,
+  "csv_projection_equivalent": true,
+  "official_match_statuses_isolated": true,
+  "stable_identifier_required": true,
+  "name_similarity_not_used_as_identity": true,
+  "ingredient_groups_use_stable_codes_and_dosage_form": true,
+  "full_source_records_copied": false,
+  "price_values_copied": false,
+  "price_used_for_clinical_ranking": false,
+  "existing_research_invariants": {
+    "valid": true,
+    "expected": {
+      "product_master_records": 16,
+      "analysis_products": 13,
+      "runtime_products": 13,
+      "runtime_unique_ingredients": 28,
+      "runtime_product_ingredient_bindings": 47,
+      "runtime_administration_constraints": 32,
+      "rules_total": 16,
+      "rules_released": 15,
+      "complete": false,
+      "release_ready": false,
+      "independent_blinding": false,
+      "performance_claim_allowed": false
+    },
+    "observed": {
+      "product_master_records": 16,
+      "analysis_products": 13,
+      "runtime_products": 13,
+      "runtime_unique_ingredients": 28,
+      "runtime_product_ingredient_bindings": 47,
+      "runtime_administration_constraints": 32,
+      "rules_total": 16,
+      "rules_released": 15,
+      "complete": false,
+      "release_ready": false,
+      "independent_blinding": false,
+      "performance_claim_allowed": false
+    },
+    "runtime_research_alignment_valid": true,
+    "mismatches": {}
+  },
+  "catalog_runtime_promotion_attempted": false,
+  "release_ready_changed": false,
+  "safety_evaluation": {
+    "valid": true,
+    "decision_mode": "deterministic",
+    "scope": "catalog_research_candidate_screening_not_clinical_performance",
+    "performance_claim_allowed": false,
+    "checks": {
+      "confirmed_status_isolation": true,
+      "price_does_not_change_clinical_ranking": true,
+      "red_flag_returns_zero_candidates": true,
+      "red_flag_referral_preserved": true,
+      "pregnancy_dur_exclusion": true,
+      "age_dur_exclusion": true,
+      "senior_dur_exclusion": true,
+      "contraindication_exclusion": true,
+      "interaction_exclusion": true
+    },
+    "cases": {
+      "pregnancy_dur": 81,
+      "age_dur": 15,
+      "senior_dur": 13,
+      "contraindications": 30,
+      "interactions": 63,
+      "red_flags": 1,
+      "price_invariance": 1
+    }
+  },
+  "counts": {
+    "source_records": 776,
+    "confirmed": 369,
+    "research_search_usable": 369,
+    "runtime_promotion_allowed": 0,
+    "mapping_failures": 0,
+    "conflicts": 2
+  },
+  "provenance": {
+    "queue_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.json",
+    "queue_sha256": "de4e25b7df709a7381664f8da46c23d35addf1405bc9842bedfa19c18e3ec6fb",
+    "queue_bytes": 27416022,
+    "csv_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.csv",
+    "csv_sha256": "68126ef3a8d2d5bbade7eb3b6669af21c15034f0dd6365b6dcc7416b86aa6151",
+    "csv_bytes": 22292609,
+    "public_dataset_id": "pharmacy-product-catalog/public/data/enrichment-queue.json",
+    "public_sha256": "de4e25b7df709a7381664f8da46c23d35addf1405bc9842bedfa19c18e3ec6fb",
+    "public_bytes": 27416022,
+    "source_files_read_once": true,
+    "public_sync_exact": true,
+    "csv_projection_equivalent": true
+  },
+  "outputs": [
+    {
+      "path": "research_v3/otc/selection/catalog_health_kr_status_index.csv",
+      "rows": 776,
+      "sha256": "820f2a7d6417294add58d97eb6526f4253847da96152af8bccea87d7c7c08d7c"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_health_kr_research_candidates.csv",
+      "rows": 369,
+      "sha256": "a4707f88bd96724eeaed2944036849045899618e25f04723ae229157a22a5f14"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_health_kr_same_ingredient_groups.csv",
+      "rows": 264,
+      "sha256": "dde3c9b191f06aa641355891d4f76a864f3e377c3c755e9a92e29d62e7feca6f"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_health_kr_conflict_review.csv",
+      "rows": 2,
+      "sha256": "05d46b795545b1b2166a7def6aab52eff6407d8ea1041c67340628a1e1192830"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_health_kr_summary.json",
+      "rows": 1,
+      "sha256": "99d261a3c0e9af4fe66bbb5a69d5227c44bebe0b0f37a152ba57015757ed809c"
+    }
+  ]
+}

@@ -55,3 +55,11 @@ research_v2의 110개 규칙은 legacy 탐색 자료다. source·locator·사람
 ## D-014
 
 2026-07-15 `C:\dev\pharmacy-product-catalog`의 776개 판매 SKU를 비공개 후보 모집단으로 연결하였다. 776건은 Firestore 원본 확인 상태지만 의약품 영역·품목코드·성분·용법과 DUR 공식 매칭은 0건이며 `DATA_GO_KR_SERVICE_KEY` 부재로 `blocked_missing_key`다. 따라서 가격과 전체 원본을 복사하지 않고 최소 파생 후보만 보존한다. 정확 이름 교집합 5 SKU는 기존 분석 제품 4개에 대한 검토 후보이고, fuzzy 2 SKU는 교집합에서 분리한다. 추가 99 SKU·97개 이름도 공식 매칭 전에는 제품 마스터, 런타임, 규칙, 논문 제품 수와 성능 지표에 합산하지 않는다.
+
+## D-015
+
+2026-07-16 약학정보원 연결 자료를 별도 연구 입력 계층으로 추가하였다. 776건 중 `official_match_status=confirmed` 369건은 안정적인 약학정보원 제품 키, 제품 코드, 성분 코드, 제형과 출처 URL이 있어 연구용 검색·분류·후보 선별에 사용한다. `review_required` 82건, `not_found` 137건, `not_applicable` 188건은 자동 사용하지 않는다.
+
+약학정보원 확인은 식약처 품목 허가 검증을 대체하지 않는다. confirmed 369건도 `mfds_promotion_evidence_complete=false`, `runtime_promotion_allowed=false`로 유지한다. 기존 16개 제품 마스터, 13개 분석·사이트 제품, 15개 released 규칙과 독립평가 지표에는 합산하지 않는다. 판매 가격은 입력 스냅샷에서 결측률만 계산하며 검색 점수, 안전 제외, 동점 해소와 그룹 키에 사용하지 않는다.
+
+약학정보원 제품 코드와 기존 식약처 `item_sequence`가 정확히 같은 행은 0건이었다. 따라서 이름 유사도로 두 제품 체계를 병합하지 않았다. 매칭 근거의 충돌 2건은 source ID와 이유를 별도 검토 CSV에 남겼다.

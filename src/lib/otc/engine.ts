@@ -4,6 +4,7 @@ import type {
   EvidenceLink,
   OtcIngredient,
   OtcProduct,
+  RuleEvidenceLink,
   SafetyEvaluation,
   SafetyFinding,
   SafetyInputIssue,
@@ -12,7 +13,7 @@ import type {
   UrgentReferralBinding,
 } from "./schema";
 
-const uniqueEvidence = (links: EvidenceLink[]) =>
+const uniqueEvidence = <T extends EvidenceLink>(links: T[]): T[] =>
   [...new Map(links.map((link) => [`${link.sourceId}|${link.locator}`, link])).values()];
 
 const anticoagulantTerms = ["warfarin", "와파린", "apixaban", "아픽사반", "aspirin", "아스피린"];
@@ -25,6 +26,9 @@ const medicationsContain = (profile: UserProfile, terms: string[]) =>
 
 const medicationMatchesTerms = (medication: string, terms: string[]) =>
   terms.some((term) => medication.toLowerCase().includes(term));
+
+const matchingMedications = (profile: UserProfile, terms: string[]) =>
+  profile.medications.filter((medication) => medicationMatchesTerms(medication, terms));
 
 const symptomMatchesTerms = (symptom: string, terms: string[]) =>
   terms.some(
@@ -66,6 +70,7 @@ export function evaluateOtcSafety(
   profile: UserProfile,
   enabledRuleTypes?: ReadonlySet<string>,
   urgentReferralBindings?: UrgentReferralBinding[],
+  ruleEvidenceByType?: Record<string, RuleEvidenceLink[]>,
 ): SafetyEvaluation {
   const findings: SafetyFinding[] = [];
   const inputIssues: SafetyInputIssue[] = [];
@@ -368,25 +373,30 @@ export function evaluateOtcSafety(
       ...product.flags,
       ...product.ingredients.flatMap((ingredient) => ingredient.flags),
     ]);
-    const conditional: Array<[boolean, string, string, string]> = [
-      [Boolean((profile.pregnant || profile.lactating) && flags.has("pregnancy_lactation")), "pregnancy_lactation", "임신·수유 중 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요."],
-      [Boolean(profile.liverDisease && flags.has("hepatic_disease")), "hepatic_disease", "간질환 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요."],
-      [Boolean(profile.kidneyDisease && flags.has("renal_disease")), "renal_disease", "신장질환 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요."],
-      [Boolean(profile.giBleedingOrUlcer && flags.has("gi_bleeding_ulcer")), "gi_bleeding_ulcer", "위장관 출혈·궤양 위험을 확인하세요", "복용 전 의사 또는 약사와 상담하세요."],
-      [Boolean(profile.willDrive && flags.has("sedation_driving")), "sedation_driving", "졸림과 운전 주의를 확인하세요", "운전·기계 조작을 피하고 허가사항을 확인하세요."],
-      [Boolean(profile.alcohol && flags.has("alcohol")), "alcohol", "음주 병용 주의를 확인하세요", "음주 중 복용 전 약사 또는 의사와 상담하세요."],
-      [Boolean(profile.hypertensionOrCardiovascularDisease && flags.has("decongestant_hypertension")), "decongestant_hypertension", "비충혈제거제와 혈압 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요."],
-      [Boolean(medicationsContain(profile, anticoagulantTerms) && flags.has("anticoagulant_antiplatelet")), "anticoagulant_antiplatelet", "항응고제·항혈소판제 병용 주의를 확인하세요", "처방한 의료진 또는 약사와 상담하세요."],
-      [Boolean(medicationsContain(profile, sedativeTerms) && flags.has("sedative_medication")), "sedative_medication", "진정성 약물 병용 주의를 확인하세요", "복용 전 약사 또는 의사와 상담하세요."],
+    const pregnancyCondition = profile.pregnant && profile.lactating
+      ? "임신 중·수유 중"
+      : profile.pregnant
+        ? "임신 중"
+        : "수유 중";
+    const conditional: Array<[boolean, string, string, string, string]> = [
+      [Boolean((profile.pregnant || profile.lactating) && flags.has("pregnancy_lactation")), "pregnancy_lactation", "임신·수유 중 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", pregnancyCondition],
+      [Boolean(profile.liverDisease && flags.has("hepatic_disease")), "hepatic_disease", "간질환 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "간질환 또는 과거 간질환"],
+      [Boolean(profile.kidneyDisease && flags.has("renal_disease")), "renal_disease", "신장질환 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "신장질환 또는 과거 신장질환"],
+      [Boolean(profile.giBleedingOrUlcer && flags.has("gi_bleeding_ulcer")), "gi_bleeding_ulcer", "위장관 출혈·궤양 위험을 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "위장관 출혈·궤양"],
+      [Boolean(profile.willDrive && flags.has("sedation_driving")), "sedation_driving", "졸림과 운전 주의를 확인하세요", "운전·기계 조작을 피하고 허가사항을 확인하세요.", "복용 후 운전"],
+      [Boolean(profile.alcohol && flags.has("alcohol")), "alcohol", "정기적인 음주 관련 주의를 확인하세요", "복용 전 약사 또는 의사와 상담하세요.", "매일 3잔 이상 정기적으로 음주"],
+      [Boolean(profile.hypertensionOrCardiovascularDisease && flags.has("decongestant_hypertension")), "decongestant_hypertension", "비충혈제거제와 혈압 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "고혈압·심혈관질환"],
+      [Boolean(medicationsContain(profile, anticoagulantTerms) && flags.has("anticoagulant_antiplatelet")), "anticoagulant_antiplatelet", "항응고제·항혈소판제 병용 주의를 확인하세요", "처방한 의료진 또는 약사와 상담하세요.", `복용 중인 약: ${matchingMedications(profile, anticoagulantTerms).join(", ")}`],
+      [Boolean(medicationsContain(profile, sedativeTerms) && flags.has("sedative_medication")), "sedative_medication", "진정성 약물 병용 주의를 확인하세요", "복용 전 약사 또는 의사와 상담하세요.", `복용 중인 약: ${matchingMedications(profile, sedativeTerms).join(", ")}`],
     ];
-    for (const [matches, ruleType, title, action] of conditional) {
+    for (const [matches, ruleType, title, action, conditionDetail] of conditional) {
       if (!matches) continue;
       findings.push({
         findingId: `${ruleType}:${product.productId}`,
         ruleType,
         severity: "high",
         titleKo: title,
-        detailKo: `${product.productName}의 허가상 주의 조건과 입력 정보가 겹칩니다.`,
+        detailKo: `입력 조건(${conditionDetail})이 ${product.productName}의 허가상 주의 조건과 일치합니다.`,
         nextActionKo: action,
         productIds: [product.productId],
         ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
@@ -556,6 +566,10 @@ export function evaluateOtcSafety(
   const enabledFindings = enabledRuleTypes
     ? findings.filter((finding) => enabledRuleTypes.has(finding.ruleType))
     : findings;
+  for (const finding of enabledFindings) {
+    const ruleEvidence = uniqueEvidence(ruleEvidenceByType?.[finding.ruleType] ?? []);
+    if (ruleEvidence.length > 0) finding.ruleEvidence = ruleEvidence;
+  }
   enabledFindings.sort(
     (left, right) =>
       order[left.severity] - order[right.severity] ||

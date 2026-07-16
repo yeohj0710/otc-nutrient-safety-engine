@@ -6,6 +6,13 @@ export type EvidenceLink = {
   url: string;
 };
 
+export type RuleEvidenceLink = EvidenceLink & {
+  ruleId: string;
+  productName: string;
+  itemSequence: string;
+  excerptKo: string;
+};
+
 export type AdministrationConstraintType =
   | "maximum_units_per_dose"
   | "maximum_doses_per_day"
@@ -40,6 +47,12 @@ export type OtcProduct = {
   productName: string;
   classification: "일반의약품";
   authorizationStatus: "active";
+  therapeuticClass?:
+    | "해열진통제"
+    | "종합감기약"
+    | "위장관 일반의약품"
+    | "외용 소염진통제"
+    | "항히스타민제";
   doseUnitLabel: "정" | "캡슐" | "mL" | "병" | "매";
   ingredients: OtcIngredient[];
   administrationConstraints?: AdministrationConstraint[];
@@ -90,6 +103,7 @@ export type SafetyFinding = {
   referenceAmount?: number;
   unit?: string;
   evidence: EvidenceLink[];
+  ruleEvidence?: RuleEvidenceLink[];
 };
 
 export type SafetyInputIssue = {

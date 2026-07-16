@@ -9,7 +9,12 @@ const root = resolve(import.meta.dirname, "../../..");
 const casesPath = resolve(root, "research_v3/otc/validation/product_search_cases.csv");
 const runtimePath = resolve(root, "src/generated/otc-runtime.json");
 const outputPath = resolve(root, "research_v3/otc/validation/product_search_evaluation.json");
-const sha256 = (path: string) => createHash("sha256").update(readFileSync(path)).digest("hex");
+const canonicalText = (path: string) =>
+  readFileSync(path, "utf8")
+    .replace(/^\uFEFF/, "")
+    .replace(/\r\n?/g, "\n");
+const sha256 = (path: string) =>
+  createHash("sha256").update(canonicalText(path), "utf8").digest("hex");
 
 const lines = readFileSync(casesPath, "utf8").replace(/^\uFEFF/, "").trim().split(/\r?\n/);
 const fields = lines[0].split(",");

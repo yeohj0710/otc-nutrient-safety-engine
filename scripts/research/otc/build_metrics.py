@@ -51,6 +51,11 @@ def build() -> dict:
     software_validation = json_data(OTC / "audit" / "software_validation.json", {"status": "not_run"})
     preview_verification = json_data(OTC / "audit" / "preview_deployment_verification.json", {"valid": False})
     g_drive_sync = json_data(OTC / "audit" / "g_drive_working_sync_verification.json", {"valid": False})
+    catalog_health_kr = json_data(
+        OTC / "selection" / "catalog_health_kr_summary.json",
+        {"status_counts": {}, "missingness_confirmed": {}},
+    )
+    catalog_status_counts = catalog_health_kr.get("status_counts", {})
     released = [row for row in rules if row["status"] == "released"]
     released_linked = [row for row in released if row["source_id"].strip() and row["source_locator"].strip()]
     verified_products = [row for row in products if row.get("record_status") == "verified_from_source"]
@@ -131,6 +136,20 @@ def build() -> dict:
             "analysis_ingredient_normalization_accuracy": {"status": "evaluated_human_locked_reference" if len(analysis_normalization_reviewed) == len(analysis_normalization_reference) and analysis_normalization_reference else "not_evaluated_missing_human_reference", "value": len(analysis_normalization_correct) / len(analysis_normalization_reviewed) if analysis_normalization_reviewed else None, "numerator": len(analysis_normalization_correct), "denominator": len(analysis_normalization_reviewed), "planned": len(analysis_normalization_reference)},
             "runtime_products": {"status": "verified_products_only", "value": len(runtime.get("products", []))},
             "runtime_official_candidates": {"status": "not_selectable", "value": len(runtime.get("officialCandidates", []))},
+            "catalog_source_records": {"status": "private_sales_sku_research_population", "value": catalog_health_kr.get("source_record_count", 0)},
+            "catalog_health_kr_confirmed": {"status": "health_kr_confirmed_not_mfds_authorization", "value": catalog_health_kr.get("confirmed_count", 0)},
+            "catalog_health_kr_unique_official_products": {"status": "health_kr_stable_identity", "value": catalog_health_kr.get("confirmed_unique_official_product_count", 0)},
+            "catalog_health_kr_research_search_usable": {"status": "private_research_candidate_input", "value": catalog_health_kr.get("research_search_usable_count", 0)},
+            "catalog_health_kr_review_required": {"status": "excluded_unconfirmed", "value": catalog_status_counts.get("review_required", 0)},
+            "catalog_health_kr_not_found": {"status": "excluded_unconfirmed", "value": catalog_status_counts.get("not_found", 0)},
+            "catalog_health_kr_not_applicable": {"status": "excluded_unconfirmed", "value": catalog_status_counts.get("not_applicable", 0)},
+            "catalog_health_kr_duplicate_extra_links": {"status": "retail_sku_to_official_product_many_to_one", "value": catalog_health_kr.get("duplicate_extra_link_count", 0)},
+            "catalog_health_kr_ingredient_form_groups": {"status": "stable_ingredient_code_and_dosage_form", "value": catalog_health_kr.get("ingredient_form_group_count", 0)},
+            "catalog_health_kr_mapping_failures": {"status": "validated", "value": catalog_health_kr.get("mapping_failure_count", 0)},
+            "catalog_health_kr_conflicts": {"status": "preserved_for_review", "value": catalog_health_kr.get("conflict_entry_count", 0)},
+            "catalog_health_kr_existing_mfds_stable_identifier_overlaps": {"status": "exact_identifier_only_no_name_merge", "value": catalog_health_kr.get("existing_mfds_stable_identifier_overlap_count", 0)},
+            "catalog_health_kr_runtime_promotions": {"status": "not_promoted_requires_mfds_and_released_rules", "value": catalog_health_kr.get("runtime_promotion_allowed_count", 0)},
+            "catalog_health_kr_missingness": {"status": "descriptive_quality_only", "value": catalog_health_kr.get("missingness_confirmed", {})},
             "research_tests_passed": {"status": software_results.get("research_tests", {}).get("status", "not_run"), "value": software_results.get("research_tests", {}).get("passed")},
             "app_tests_passed": {"status": software_results.get("app_tests", {}).get("status", "not_run"), "value": software_results.get("app_tests", {}).get("passed")},
             "static_paths_generated": {"status": software_results.get("build", {}).get("status", "not_run"), "value": software_results.get("build", {}).get("static_paths_generated")},

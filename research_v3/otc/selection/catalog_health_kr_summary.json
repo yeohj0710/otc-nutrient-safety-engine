@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "generated_at_utc": "2026-07-16T07:55:13.427272+00:00",
+  "source_role": "private_health_kr_linked_sales_sku_research_input",
+  "source_record_count": 776,
+  "normal_import_count": 776,
+  "status_counts": {
+    "confirmed": 369,
+    "not_applicable": 188,
+    "not_found": 137,
+    "review_required": 82
+  },
+  "confirmed_count": 369,
+  "confirmed_unique_official_product_count": 341,
+  "research_search_usable_count": 369,
+  "research_search_usable_unique_official_product_count": 341,
+  "deterministic_screening_eligible_count": 369,
+  "runtime_promotion_allowed_count": 0,
+  "mapping_failure_count": 0,
+  "duplicate_official_product_group_count": 26,
+  "duplicate_linked_retail_sku_count": 54,
+  "duplicate_extra_link_count": 28,
+  "ingredient_form_group_count": 264,
+  "conflict_record_count": 2,
+  "conflict_entry_count": 2,
+  "existing_mfds_stable_identifier_overlap_count": 0,
+  "classification_counts": {
+    "analgesic_antiinflammatory": 53,
+    "anthelmintic": 4,
+    "antihistamine": 12,
+    "cold_respiratory": 27,
+    "gastrointestinal": 70,
+    "other_otc": 82,
+    "topical_or_local": 121
+  },
+  "missingness_confirmed": {
+    "retail_price": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "retail_specification": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "official_product_key": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "official_item_seq": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "standard_code_or_barcode": {
+      "present": 77,
+      "missing": 292,
+      "denominator": 369,
+      "missing_rate": 0.791328
+    },
+    "efficacy": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "dosage": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "active_ingredients": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "dosage_form": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "route": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "atc_code": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "kpic_atc": {
+      "present": 296,
+      "missing": 73,
+      "denominator": 369,
+      "missing_rate": 0.197832
+    },
+    "storage": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "valid_term": {
+      "present": 0,
+      "missing": 369,
+      "denominator": 369,
+      "missing_rate": 1.0
+    },
+    "insurance": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "precautions": {
+      "present": 369,
+      "missing": 0,
+      "denominator": 369,
+      "missing_rate": 0.0
+    },
+    "professional_precautions": {
+      "present": 0,
+      "missing": 369,
+      "denominator": 369,
+      "missing_rate": 1.0
+    },
+    "interactions": {
+      "present": 63,
+      "missing": 306,
+      "denominator": 369,
+      "missing_rate": 0.829268
+    },
+    "dur_contraindications": {
+      "present": 30,
+      "missing": 339,
+      "denominator": 369,
+      "missing_rate": 0.918699
+    },
+    "dur_age": {
+      "present": 15,
+      "missing": 354,
+      "denominator": 369,
+      "missing_rate": 0.95935
+    },
+    "dur_pregnancy": {
+      "present": 81,
+      "missing": 288,
+      "denominator": 369,
+      "missing_rate": 0.780488
+    },
+    "dur_senior": {
+      "present": 13,
+      "missing": 356,
+      "denominator": 369,
+      "missing_rate": 0.96477
+    },
+    "dur_max_dose": {
+      "present": 35,
+      "missing": 334,
+      "denominator": 369,
+      "missing_rate": 0.905149
+    },
+    "dur_max_period": {
+      "present": 16,
+      "missing": 353,
+      "denominator": 369,
+      "missing_rate": 0.95664
+    },
+    "dur_split_dosage": {
+      "present": 6,
+      "missing": 363,
+      "denominator": 369,
+      "missing_rate": 0.98374
+    },
+    "medication_guide": {
+      "present": 366,
+      "missing": 3,
+      "denominator": 369,
+      "missing_rate": 0.00813
+    },
+    "same_ingredient_products": {
+      "present": 259,
+      "missing": 110,
+      "denominator": 369,
+      "missing_rate": 0.298103
+    }
+  },
+  "candidate_rows_are_clinical_recommendations": false,
+  "source_enrichment_status_is_not_mfds_promotion_evidence": true,
+  "full_source_records_exported": false,
+  "price_values_exported": false,
+  "clinical_ranking_uses_price": false,
+  "provenance": {
+    "queue_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.json",
+    "queue_sha256": "de4e25b7df709a7381664f8da46c23d35addf1405bc9842bedfa19c18e3ec6fb",
+    "queue_bytes": 27416022,
+    "csv_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.csv",
+    "csv_sha256": "68126ef3a8d2d5bbade7eb3b6669af21c15034f0dd6365b6dcc7416b86aa6151",
+    "csv_bytes": 22292609,
+    "public_dataset_id": "pharmacy-product-catalog/public/data/enrichment-queue.json",
+    "public_sha256": "de4e25b7df709a7381664f8da46c23d35addf1405bc9842bedfa19c18e3ec6fb",
+    "public_bytes": 27416022,
+    "source_files_read_once": true,
+    "public_sync_exact": true,
+    "csv_projection_equivalent": true
+  }
+}

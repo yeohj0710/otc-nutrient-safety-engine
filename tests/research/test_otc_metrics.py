@@ -18,6 +18,8 @@ def test_active_metrics_exclude_superseded_nutrient_counts() -> None:
     assert manifest["metrics"]["official_designation_candidates"]["value"] == 13
     assert manifest["metrics"]["rules_released"]["value"] == 15
     assert manifest["metrics"]["released_source_locator_rate"]["value"] == 1.0
+    assert manifest["metrics"]["catalog_source_records"]["value"] == 776
+    assert manifest["metrics"]["catalog_health_kr_runtime_promotions"]["value"] == 0
     assert manifest["release_ready"] is False
 
 
@@ -43,6 +45,19 @@ def test_written_root_and_otc_manifests_match(tmp_path: Path) -> None:
     assert root_manifest["metrics"]["analysis_exclusions"]["value"] == 1
     assert root_manifest["metrics"]["runtime_research_alignment"]["value"] is True
     assert root_manifest["metrics"]["runtime_official_candidates"]["value"] == 2
+    catalog_summary = json.loads(
+        (ROOT / "research_v3" / "otc" / "selection" / "catalog_health_kr_summary.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert root_manifest["metrics"]["catalog_health_kr_confirmed"]["value"] == catalog_summary["confirmed_count"]
+    assert root_manifest["metrics"]["catalog_health_kr_research_search_usable"]["value"] == catalog_summary["research_search_usable_count"]
+    assert root_manifest["metrics"]["catalog_health_kr_review_required"]["value"] == catalog_summary["status_counts"]["review_required"]
+    assert root_manifest["metrics"]["catalog_health_kr_not_found"]["value"] == catalog_summary["status_counts"]["not_found"]
+    assert root_manifest["metrics"]["catalog_health_kr_not_applicable"]["value"] == catalog_summary["status_counts"]["not_applicable"]
+    assert root_manifest["metrics"]["catalog_health_kr_existing_mfds_stable_identifier_overlaps"]["value"] == catalog_summary["existing_mfds_stable_identifier_overlap_count"]
+    assert root_manifest["metrics"]["catalog_health_kr_missingness"]["value"] == catalog_summary["missingness_confirmed"]
+    assert root_manifest["metrics"]["catalog_health_kr_runtime_promotions"]["value"] == 0
     assert root_manifest["metrics"]["independent_scenarios"]["status"] == "evaluated_codex_prefilled_external_human_confirmation"
     assert root_manifest["metrics"]["independent_scenarios"]["performance_claim_allowed"] is False
     assert root_manifest["metrics"]["ingredient_normalization_accuracy"]["status"] == "evaluated_human_locked_reference"

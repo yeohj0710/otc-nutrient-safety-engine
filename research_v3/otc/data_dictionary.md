@@ -74,6 +74,36 @@
 
 원본 776건, 중복 22그룹·46 SKU, JSON/CSV 동일성, 원본 해시, 가격 미복사, 전체 원본 미복사와 산출물 해시를 검증한다. `DATA_GO_KR_SERVICE_KEY`가 없어 공식 보강 상태는 `blocked_missing_key`이며 공식 제품·공식 매칭 수는 0이다.
 
+## 약학정보원 연결 연구 입력 층
+
+약학정보원 연결 자료는 `C:\dev\pharmacy-product-catalog`에서 읽는다. 외부 원본은 읽기 전용이며 전체 JSON·CSV와 가격값을 OTC 저장소로 복사하지 않는다. `official_match_status=confirmed`만 연구 검색·분류·후보 선별에 사용한다. 이 상태는 식약처 허가 확인이나 안전성 런타임 승격을 뜻하지 않는다.
+
+### `selection/catalog_health_kr_status_index.csv`
+
+776개 판매 SKU의 source ID, 약학정보원 상태, 안정적인 공식 제품 키, 연구 사용 상태와 승격 금지 상태를 보존한다. `review_required`, `not_found`, `not_applicable` 행은 `research_use_status=excluded_unconfirmed`다. 가격과 약학정보원 본문은 포함하지 않는다.
+
+### `selection/catalog_health_kr_research_candidates.csv`
+
+confirmed이며 안정적인 제품 식별자, 일반의약품 코드, 성분 코드와 필수 연구 필드가 있는 행만 담는다. 제품명, 제조사, 출처 URL, 분류, 제형, 투여경로, ATC·KPIC, 성분·제형 그룹 ID와 안전 필드 존재 여부를 저장한다. 효능·용법·주의사항 원문과 가격값은 저장하지 않는다.
+
+`research_search_usable=true`는 연구 후보를 검색하고 분류할 수 있다는 뜻이다. 복용 추천이나 안전성 판정 허용 상태가 아니다. 모든 행은 `mfds_promotion_evidence_complete=false`, `runtime_promotion_allowed=false`다.
+
+### `selection/catalog_health_kr_same_ingredient_groups.csv`
+
+`official_additional_data.health_kr_raw.ingredient_details[].ingredient_code`의 정렬된 집합과 정규화 제형으로 그룹 ID를 만든다. 제품명 유사도와 가격은 그룹 키에 사용하지 않는다. 2026-07-16 스냅샷에는 264개 그룹이 있다.
+
+### `selection/catalog_health_kr_conflict_review.csv`
+
+약학정보원 매칭 근거에 충돌이 남은 행의 source ID, 안정적인 공식 제품 키, 제품 코드, 출처 URL과 충돌 이유만 보존한다. 효능·용법·주의사항 원문과 가격은 포함하지 않는다. 현재 2건은 자동 승격하지 않고 검토 대상으로 남긴다.
+
+### `selection/catalog_health_kr_summary.json`
+
+총 776건의 import 결과, 상태별 건수, 고유 공식 품목 수, 연구 검색 사용 가능 수, 중복 연결, 매핑 실패, 충돌, 분류와 confirmed 행의 주요 필드별 결측률을 기록한다. 외부 JSON·CSV·공개 동기화본의 SHA-256도 함께 저장한다.
+
+### `audit/catalog_health_kr_integration.json`
+
+세 원본의 행·식별자·상태 동일성, confirmed 격리, 안정적인 식별자, 성분·제형 그룹, 가격 비관여와 원문 미복사를 검사한다. 임신·연령·고령자 DUR, 금기, 상호작용 제외와 red flag 후보 0건·약사 또는 진료 의뢰도 결정론적으로 확인한다. 이 검증은 임상 성능 평가가 아니므로 `performance_claim_allowed=false`를 유지한다.
+
 ## 수치 용어
 
 - `product_ingredient_rows`: 후보 마스터의 제품-성분-규격 행 수
@@ -86,3 +116,5 @@
 기존 영양성분 검색·근거·규칙·시나리오·승인·성능 수치를 활성 OTC 테이블이나 metrics에 합치지 않는다. 비블라인드 외부 확인 결과를 블라인드 독립평가 또는 임상 성능 근거로 바꾸지 않는다.
 
 비공개 판매 SKU 후보 수, 가격, 카테고리 분류와 fuzzy 문자열 후보를 허가 검증 제품 수나 판매 순위로 바꾸어 쓰지 않는다. 공식 매칭이 없는 후보는 규칙 적용 대상이나 사이트 검색 대상으로 승격하지 않는다.
+
+약학정보원 confirmed 건수도 식약처 허가 검증 제품 수, released 규칙 수와 독립평가 분모에 합산하지 않는다. `review_required`, `not_found`, `not_applicable`는 정답 라벨이나 안전성 평가 기준으로 사용하지 않는다.
