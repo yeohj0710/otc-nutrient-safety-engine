@@ -523,7 +523,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             <div className={styles.sectionTitleRow}>
               <h3>선택한 약</h3>
               {selected.length > 0 && (
-                <button type="button" onClick={() => setSelected([])}>약만 모두 빼기</button>
+                <button type="button" onClick={() => setSelected([])}>담은 약 모두 비우기</button>
               )}
             </div>
             {selected.length === 0 ? (
@@ -796,7 +796,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             ) : !evaluation ? (
               <div className={styles.resultEmpty}>
                 <span>+</span>
-                <strong>약을 담으면 결과가 시작돼요.</strong>
+                <strong>약을 담으면 결과를 확인할 수 있어요.</strong>
                 <p>한 제품만 담아도 용량·연령·질환 관련 조건을 확인할 수 있어요.</p>
               </div>
             ) : (

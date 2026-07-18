@@ -304,6 +304,12 @@
   background: var(--workspace-soft);
   color: #667085;
   font-size: 20px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.searchBox > button:hover {
+  background: #e9edf2;
+  color: #475467;
 }
 
 .searchResults {
@@ -530,10 +536,17 @@
 .sectionTitleRow button {
   min-height: 30px;
   border: 0;
+  border-radius: 8px;
   background: transparent;
   color: var(--workspace-muted);
+  transition: background 0.15s ease, color 0.15s ease;
   font-size: 12px;
   font-weight: 650;
+}
+
+.sectionTitleRow button:hover {
+  background: #eef1f4;
+  color: #333d4b;
 }
 
 .emptySelection {
@@ -656,6 +669,12 @@
   background: #f2f4f7;
   color: #667085;
   font-size: 18px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.selectedCardHeader > button:hover {
+  background: #e9edf2;
+  color: #475467;
 }
 
 .doseGrid {
@@ -911,6 +930,12 @@
   color: var(--workspace-muted);
   font-size: 12px;
   font-weight: 700;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.resetButton:hover {
+  background: #eef1f4;
+  color: #333d4b;
 }
 
 .resultBody {

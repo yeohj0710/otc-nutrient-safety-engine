@@ -48,14 +48,21 @@ export function ResearchV3Explorer({ meta }: { meta: Meta }) {
     setAmount("125");
     setAge("30");
     setSex("female");
-    setResult(null);
+    setResult(
+      evaluateResearchV3Draft({
+        age: 30,
+        sex: "female",
+        ingredientId: "vitamin_d",
+        dailyTotalUg: 125,
+      }),
+    );
   }
 
   return (
     <main className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.header}>
-          <p className={styles.eyebrow}>연세대학교 약학대학 · 권혁찬 · research_v3</p>
+          <p className={styles.eyebrow}>연세대학교 약학대학 · 권혁찬 · 연구용 v3</p>
           <h1>하루 총량, 기준과 함께 확인해요</h1>
           <p>제품 라벨의 같은 성분을 모두 더한 뒤 입력하세요. 현재 화면은 전문가 검토 전 연구 초안입니다.</p>
         </header>
@@ -116,7 +123,13 @@ export function ResearchV3Explorer({ meta }: { meta: Meta }) {
           </section>
         )}
 
-        <footer className={styles.footer}>연구 계보 {meta.lineage} · {meta.releaseStatus} · 성능 주장 없음</footer>
+        <footer className={styles.footer}>
+          연구 계보 {meta.lineage === "research_v3" ? "연구용 v3" : meta.lineage} ·{" "}
+          {meta.releaseStatus === "draft_not_for_clinical_use"
+            ? "임상 사용 전 초안"
+            : meta.releaseStatus}{" "}
+          · 성능 주장 없음
+        </footer>
       </section>
     </main>
   );
