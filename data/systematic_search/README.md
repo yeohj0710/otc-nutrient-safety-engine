@@ -26,3 +26,8 @@
 1. `include_candidate`를 우선 full-text 또는 abstract 수준에서 재검토한다.
 2. `maybe_needs_manual_review`는 outcome이 숨겨져 있을 수 있으므로 title/abstract를 직접 확인한다.
 3. `evidence_extraction.csv`의 `dose`, `population`, `comparator`를 논문별로 수동 보강한다.
+
+## 260602 추가 산출물
+
+- `screening_priority_260602.csv`: 148개 PubMed 후보를 사람이 검토하기 쉽도록 high/medium/low/likely_exclude로 재정렬한 agent triage 초안.
+- `safety_rule_seed_260602.csv`: 성분별 안전성 규칙 초안 seed. 최종 의료 판단이 아니라 규칙 엔진으로 옮기기 전 검토용 구조화 표다.
