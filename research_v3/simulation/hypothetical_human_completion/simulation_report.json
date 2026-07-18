@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "status": "simulation_only",
+  "disclaimer": "SIMULATION ONLY: no human review, expert approval, adjudication, or screening occurred. These files must not be merged into authoritative research data or used for release claims.",
+  "source": "developer-authored scenarios and unreviewed packets",
+  "simulated_scenario_count": 12,
+  "simulated_expert_review_count": 6,
+  "simulated_press_review_count": 35,
+  "human_actions_completed": 0,
+  "released_rules": 0,
+  "performance_claim_allowed": false,
+  "release_ready": false
+}

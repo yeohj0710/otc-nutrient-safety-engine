@@ -1,3 +1,7 @@
 ﻿catalog_source_id,stable_official_key,official_item_seq,official_source_url,conflict_count,conflict_reasons
+20250812_103118,health.kr:2023113000002,2023113000002,https://health.kr/searchDrug/result_drug.asp?drug_cd=2023113000002,1,카탈로그에만 있는 앞 구분어: 제약
 20250812_104252,health.kr:A11ADDDDD0017,A11ADDDDD0017,https://health.kr/searchDrug/result_drug.asp?drug_cd=A11ADDDDD0017,1,"제형 충돌: 카탈로그 capsule, 약학정보원 liquid"
+20250812_112930,health.kr:A11AKP08F1055,A11AKP08F1055,https://health.kr/searchDrug/result_drug.asp?drug_cd=A11AKP08F1055,1,공식 제품에만 있는 앞 구분어: 경진
+20250812_113126,health.kr:2018111900009,2018111900009,https://health.kr/searchDrug/result_drug.asp?drug_cd=2018111900009,1,카탈로그명 중간 부분문자열만 일치: 콜대원|나잘
 20250812_114721,health.kr:A11ADDDDD0017,A11ADDDDD0017,https://health.kr/searchDrug/result_drug.asp?drug_cd=A11ADDDDD0017,1,"포장단위 불일치 가능성: 카탈로그 60바이알, 약학정보원 {([산제부]상부캡 228mg, [액제부] 8mL)/바이알}×30"
+20260129_113323,health.kr:2015121700002,2015121700002,https://health.kr/searchDrug/result_drug.asp?drug_cd=2015121700002,1,카탈로그에만 있는 구분어: b

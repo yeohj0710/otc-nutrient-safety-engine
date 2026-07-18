@@ -1,3 +1,2 @@
 ﻿catalog_source_id,catalog_name,catalog_specification,catalog_category,catalog_normalized_name,catalog_normalized_specification,duplicate_group_id,duplicate_group_size,existing_product_id,item_sequence,existing_product_name,match_method,match_score,match_margin,source_enrichment_match_status,mfds_promotion_evidence_complete,review_status,promotion_allowed
 20250812_113326,어린이 타이레놀산,12p,키즈,어린이타이레놀산,12p,,1,MFDS-202200525,202200525,어린이타이레놀현탁액(아세트아미노펜),fuzzy_normalized_alias,0.9333,0.5048,confirmed,false,requires_official_match_review,false
-20250812_113323,어린이타이레놀현탄액,100ml,키즈,어린이타이레놀현탄액,100ml,,1,MFDS-202200525,202200525,어린이타이레놀현탁액(아세트아미노펜),fuzzy_normalized_alias,0.9000,0.5250,confirmed,false,requires_official_match_review,false

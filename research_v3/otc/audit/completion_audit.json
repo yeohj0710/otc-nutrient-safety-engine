@@ -99,8 +99,8 @@
       "requirement": "tests_lint_typecheck_build_pass",
       "status": "achieved",
       "evidence": {
-        "research_tests": 136,
-        "app_tests": 66
+        "research_tests": 139,
+        "app_tests": 69
       }
     },
     {

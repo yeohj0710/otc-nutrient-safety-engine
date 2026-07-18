@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at_utc": "2026-07-13T12:35:57+00:00",
+  "checks": {
+    "research_tests": {
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "tests/research",
+        "-q"
+      ],
+      "exit_code": 0,
+      "output": "...................................                                      [100%]\n35 passed in 1.16s\n"
+    },
+    "app_tests": {
+      "command": [
+        "npm.cmd",
+        "test",
+        "--",
+        "--run"
+      ],
+      "exit_code": 0,
+      "output": "\n> otc-nutrient-safety-engine@0.1.0 test\n> npm run prepare:knowledge && vitest run --run\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n\n RUN  v4.1.10 C:/dev/otc-nutrient-safety-engine\n\n\n Test Files  8 passed (8)\n      Tests  39 passed (39)\n   Start at  21:35:38\n   Duration  769ms (transform 1.05s, setup 0ms, import 2.06s, tests 419ms, environment 1ms)\n\n"
+    },
+    "lint": {
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "output": "\n> otc-nutrient-safety-engine@0.1.0 lint\n> npm run prepare:knowledge && eslint .\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n"
+    },
+    "typecheck": {
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0,
+      "output": "\n> otc-nutrient-safety-engine@0.1.0 typecheck\n> npm run prepare:knowledge && tsc --noEmit\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n"
+    },
+    "production_build": {
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "output": "\n> otc-nutrient-safety-engine@0.1.0 build\n> npm run prepare:knowledge && next build\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n▲ Next.js 16.2.1 (Turbopack)\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 3.3s\n  Running TypeScript ...\n  Finished TypeScript in 3.3s ...\n  Collecting page data using 15 workers ...\n  Generating static pages using 15 workers (0/156) ...\n  Generating static pages using 15 workers (39/156) \n  Generating static pages using 15 workers (78/156) \n  Generating static pages using 15 workers (117/156) \n✓ Generating static pages using 15 workers (156/156) in 660ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ƒ /api/ai-explain\n├ ƒ /api/rules/query\n├ ○ /apple-icon\n├ ○ /icon\n├ ○ /ingredients\n├ ● /ingredients/[id]\n│ ├ /ingredients/multivitamin_multimineral\n│ ├ /ingredients/calcium\n│ ├ /ingredients/vitamin_b_complex\n│ └ [+14 more paths]\n├ ○ /manifest.webmanifest\n├ ○ /research-v3\n├ ○ /robots.txt\n├ ● /rules/[id]\n│ ├ /rules/RULE-VITA-UL-US-ADULT\n│ ├ /rules/RULE-VITA-PREGNANCY-HIGHDOSE\n│ ├ /rules/RULE-VITD-UL-US-ADULT\n│ └ [+65 more paths]\n├ ○ /sitemap.xml\n├ ○ /sources\n└ ● /sources/[id]\n  ├ /sources/SRC-EU-EFSA-UL-SUMMARY-2025\n  ├ /sources/SRC-US-ODS-VITAMIN-A\n  ├ /sources/SRC-US-ODS-VITAMIN-D\n  └ [+54 more paths]\n\n\n○  (Static)   prerendered as static content\n●  (SSG)      prerendered as static HTML (uses generateStaticParams)\nƒ  (Dynamic)  server-rendered on demand\n\n"
+    }
+  },
+  "summary": {
+    "research_tests_passed": 35,
+    "app_tests_passed": 39,
+    "static_paths_generated": 156,
+    "all_exit_codes_zero": true
+  },
+  "scope_note": "호환성·빌드 검증. 사람 전문 검토나 독립 임상 성능 평가가 아님."
+}

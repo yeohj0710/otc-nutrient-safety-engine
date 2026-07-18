@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": "2026-07-13T21:25:00+09:00",
+  "authority": "NIH Office of Dietary Supplements",
+  "automated_http_result": "HTTP 403 for six registered health-professional fact sheets",
+  "interactive_browser_result": {
+    "status": "blocked_by_cloudflare_human_verification",
+    "page_title_ko": "잠시만 기다리십시오…",
+    "visible_heading_ko": "보안 확인 수행 중",
+    "challenge_control": "사람인지 확인하십시오",
+    "direct_pdf_test": "https://ods.od.nih.gov/pdf/factsheets/VitaminD-HealthProfessional.pdf",
+    "direct_pdf_result": "same Cloudflare challenge",
+    "ray_id": "a1a4e491e8a7df13"
+  },
+  "official_index_observation": {
+    "status": "official pages discoverable and indexed",
+    "list_url": "https://ods.od.nih.gov/factsheets/list-all/",
+    "examples": [
+      "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/"
+    ],
+    "evidence_boundary": "Search-index text is not a locally preserved authoritative source file and is not assigned a local SHA-256."
+  },
+  "derived_text_capture": {
+    "status": "validated_6_of_6",
+    "method": "r.jina.ai read-only text proxy",
+    "manifest": "research_v3/sources/ods_web_text_manifest_20260713.json",
+    "artifact_type": "derived_web_text_not_original_html",
+    "evidence_boundary": "Supports reading and locator exploration only; does not prove preservation of NIH-served HTML or PDF bytes."
+  },
+  "registered_sources": [
+    "NIH_ODS_VITAMIN_D_HP",
+    "NIH_ODS_CALCIUM_HP",
+    "NIH_ODS_VITAMIN_B6_HP",
+    "NIH_ODS_MAGNESIUM_HP",
+    "NIH_ODS_IRON_HP",
+    "NIH_ODS_ZINC_HP"
+  ],
+  "review_status": "derived_text_preserved_direct_original_pending",
+  "release_effect": "No draft rule may be released using these sources until an authorized local copy, SHA-256, locator, and expert review are recorded.",
+  "human_action": "A human may complete the Cloudflare verification in a normal browser and save each official page or PDF, then register hashes and locators."
+}

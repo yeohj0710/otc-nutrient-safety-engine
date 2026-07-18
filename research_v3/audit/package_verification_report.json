@@ -1,0 +1,197 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-14T00:43:24+00:00",
+  "repo": "C:\\dev\\otc-nutrient-safety-engine",
+  "delivery_root": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물",
+  "checks": [
+    {
+      "name": "research_tests",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "tests/research",
+        "-q"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "...................................                                      [100%]\n35 passed in 1.29s\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "research_validator",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/validate_research_v3.py",
+        "--root",
+        "research_v3",
+        "--output",
+        "research_v3/audit/validation_report.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "source_validator",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/validate_research_v3_sources.py",
+        "--root",
+        "research_v3/sources",
+        "--output",
+        "research_v3/audit/source_validation_report.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "claim_validator",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/validate_research_v3_claims.py",
+        "--manifest",
+        "research_v3/metrics_manifest.json",
+        "--document",
+        "research_v3/reports/FINAL_RESEARCH_REPORT.md",
+        "--document",
+        "research_v3/thesis/thesis_draft_evidence_bound.md",
+        "--output",
+        "research_v3/audit/claim_consistency_report.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "expert_review_validator",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/validate_expert_rule_review.py",
+        "--packet",
+        "research_v3/rules/expert_rule_review_packet.csv",
+        "--output",
+        "research_v3/audit/expert_rule_review_validation.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "independent_evaluation",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/evaluate_research_v3_independent.py",
+        "--scenarios",
+        "research_v3/validation/independent_scenarios.csv",
+        "--predictions",
+        "research_v3/validation/independent_predictions.csv",
+        "--output",
+        "research_v3/validation/independent_results.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "codex_ai_review",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/build_codex_ai_reviews.py",
+        "--root",
+        "research_v3",
+        "--query-dir",
+        "research_v2/search/pubmed_queries"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "{\"schema_version\": \"1.0.0\", \"generated_at_utc\": \"2026-07-14T00:43:02+00:00\", \"reviewer_id\": \"codex_ai\", \"review_status\": \"ai_reviewed_not_human\", \"human_review_completed\": 0, \"expert_approval_completed\": 0, \"performance_claim_allowed\": false, \"release_ready\": false, \"title_abstract_full_queue\": {\"rows\": 15890, \"counts\": {\"ai_include_candidate\": 6106, \"ai_uncertain\": 9504, \"ai_exclude_candidate\": 280}, \"sha256\": \"0531fdc7b0abd486f4906e1efc73540eeab9e0d709e3eb68c44e9ed719d20f24\"}, \"priority_packet\": {\"rows\": 118, \"counts\": {\"ai_include_for_full_text\": 116, \"ai_uncertain\": 2}, \"sha256\": \"abac3b4d91282c39514cbfdc2ea2e5a1cfb3f4176799f98cd2e7ec70cae3584b\"}, \"draft_rules\": {\"rows\": 6, \"structurally_complete\": 6, \"sha256\": \"2bacc810ea204ccc5904bcb46a2ccba17a2da571fc69a667293c7e31c7e3814f\"}, \"search_strategies\": {\"rows\": 5, \"structural_pass\": 5, \"sha256\": \"eb9b80e33250f5eab0dd0825eef494baf4c123ec974eef4982da31c522b0c3dd\"}}\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "identity_audit",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/audit_research_v3_identity.py",
+        "--protocol",
+        "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\01_기준자료_연구계획서\\연구계획서_권혁찬_260618_자연문체.docx",
+        "--delivery-root",
+        "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물",
+        "--output",
+        "research_v3/audit/active_identity_audit_report.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "delivery_audit",
+      "command": [
+        "C:\\Users\\hjyeo\\AppData\\Local\\Programs\\Python\\Python314\\python.exe",
+        "scripts/research/audit_research_v3_delivery.py",
+        "--root",
+        "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물",
+        "--output",
+        "research_v3/audit/delivery_structure_report.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "",
+      "stderr_tail": ""
+    },
+    {
+      "name": "app_tests",
+      "command": [
+        "npm.cmd",
+        "test",
+        "--",
+        "--run"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "\n> otc-nutrient-safety-engine@0.1.0 test\n> npm run prepare:knowledge && vitest run --run\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n\n RUN  v4.1.10 C:/dev/otc-nutrient-safety-engine\n\n\n Test Files  8 passed (8)\n      Tests  39 passed (39)\n   Start at  09:43:05\n   Duration  854ms (transform 1.16s, setup 0ms, import 2.17s, tests 531ms, environment 1ms)\n\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "lint",
+      "command": [
+        "npm.cmd",
+        "run",
+        "lint"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "\n> otc-nutrient-safety-engine@0.1.0 lint\n> npm run prepare:knowledge && eslint .\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "\n> otc-nutrient-safety-engine@0.1.0 typecheck\n> npm run prepare:knowledge && tsc --noEmit\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "name": "production_build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "\n> otc-nutrient-safety-engine@0.1.0 build\n> npm run prepare:knowledge && next build\n\n\n> otc-nutrient-safety-engine@0.1.0 prepare:knowledge\n> tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts\n\nknowledge-index generated: 110 rules, 176 evidence chunks (172 verified, 0 inference, 4 pending)\nwrote C:\\dev\\otc-nutrient-safety-engine\\src\\generated\\literature-candidates.json\n▲ Next.js 16.2.1 (Turbopack)\n\n  Creating an optimized production build ...\n✓ Compiled successfully in 2.9s\n  Running TypeScript ...\n  Finished TypeScript in 3.3s ...\n  Collecting page data using 15 workers ...\n  Generating static pages using 15 workers (0/156) ...\n  Generating static pages using 15 workers (39/156) \n  Generating static pages using 15 workers (78/156) \n  Generating static pages using 15 workers (117/156) \n✓ Generating static pages using 15 workers (156/156) in 777ms\n  Finalizing page optimization ...\n\nRoute (app)\n┌ ○ /\n├ ○ /_not-found\n├ ƒ /api/ai-explain\n├ ƒ /api/rules/query\n├ ○ /apple-icon\n├ ○ /icon\n├ ○ /ingredients\n├ ● /ingredients/[id]\n│ ├ /ingredients/multivitamin_multimineral\n│ ├ /ingredients/calcium\n│ ├ /ingredients/vitamin_b_complex\n│ └ [+14 more paths]\n├ ○ /manifest.webmanifest\n├ ○ /research-v3\n├ ○ /robots.txt\n├ ● /rules/[id]\n│ ├ /rules/RULE-VITA-UL-US-ADULT\n│ ├ /rules/RULE-VITA-PREGNANCY-HIGHDOSE\n│ ├ /rules/RULE-VITD-UL-US-ADULT\n│ └ [+65 more paths]\n├ ○ /sitemap.xml\n├ ○ /sources\n└ ● /sources/[id]\n  ├ /sources/SRC-EU-EFSA-UL-SUMMARY-2025\n  ├ /sources/SRC-US-ODS-VITAMIN-A\n  ├ /sources/SRC-US-ODS-VITAMIN-D\n  └ [+54 more paths]\n\n\n○  (Static)   prerendered as static content\n●  (SSG)      prerendered as static HTML (uses generateStaticParams)\nƒ  (Dynamic)  server-rendered on demand\n\n",
+      "stderr_tail": ""
+    }
+  ],
+  "technical_checks_passed": true,
+  "technical_failures": [],
+  "release_audit_checks": [
+    "delivery_audit"
+  ],
+  "observed_release_check_failures": [],
+  "release_blockers": [
+    "release_governance_pending"
+  ],
+  "release_ready": false,
+  "interpretation": "Technical checks exclude explicitly classified release audits. Observed release-audit failures and human-review blockers still prevent release."
+}

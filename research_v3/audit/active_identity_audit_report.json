@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "expected_identity": {
+    "researcher": "권혁찬",
+    "student_id": "2021194024",
+    "protocol_sha256": "21FC2B391868EC5F337B8327F1A82108BBED6F097D32CE7E9F33CE3DE7879AA5",
+    "protocol_title": "일반의약품형 고함량 영양성분의 함량 기준 안전성 평가와 개인맞춤 조회 도구 구축"
+  },
+  "protocol": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\01_기준자료_연구계획서\\연구계획서_권혁찬_260618_자연문체.docx",
+  "delivery_root": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물",
+  "inspected_text_files": 208,
+  "checks": [
+    {
+      "check": "protocol_sha256",
+      "status": "pass",
+      "expected": "21FC2B391868EC5F337B8327F1A82108BBED6F097D32CE7E9F33CE3DE7879AA5",
+      "actual": "21FC2B391868EC5F337B8327F1A82108BBED6F097D32CE7E9F33CE3DE7879AA5"
+    },
+    {
+      "check": "protocol_title",
+      "status": "pass",
+      "expected": "일반의약품형 고함량 영양성분의 함량 기준 안전성 평가와 개인맞춤 조회 도구 구축"
+    },
+    {
+      "check": "protocol_researcher",
+      "status": "pass",
+      "expected": "권혁찬"
+    },
+    {
+      "check": "protocol_student_id",
+      "status": "human_action_required",
+      "expected": "2021194024",
+      "actual": "absent_or_blank"
+    },
+    {
+      "check": "cross_student_contamination",
+      "status": "pass",
+      "findings": [],
+      "audit_context_mentions_excluded": [
+        {
+          "path": "02_핵심보고서/package_verification_report.json",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/active_identity_audit_report.json",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/active_identity_audit_report.json",
+          "term": "항응고제 복용자 중심 연구"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/active_identity_audit_report.json",
+          "term": "신장 관련 고위험군 중심 연구"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/cross_student_contamination_report.md",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/delivery_structure_report.json",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/identity_audit_report.json",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/original_protocol_inventory.csv",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/package_verification_latest.json",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/package_verification_report.json",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/audit/research_identity.json",
+          "term": "여형준"
+        },
+        {
+          "path": "03_연구데이터_research_v3/REPRODUCE.md",
+          "term": "여형준"
+        },
+        {
+          "path": "04_재현코드/research_v3/REPRODUCE.md",
+          "term": "여형준"
+        },
+        {
+          "path": "04_재현코드/research_v3/scripts/audit_research_v3_identity.py",
+          "term": "여형준"
+        },
+        {
+          "path": "04_재현코드/research_v3/scripts/audit_research_v3_identity.py",
+          "term": "항응고제 복용자 중심 연구"
+        },
+        {
+          "path": "04_재현코드/research_v3/scripts/audit_research_v3_identity.py",
+          "term": "신장 관련 고위험군 중심 연구"
+        },
+        {
+          "path": "04_재현코드/research_v3/scripts/validate_research_v3_claims.py",
+          "term": "여형준"
+        },
+        {
+          "path": "04_재현코드/research_v3/tests/test_audit_research_v3_identity.py",
+          "term": "여형준"
+        }
+      ]
+    },
+    {
+      "check": "old_lineage_mentions",
+      "status": "pass",
+      "findings": [
+        "00_먼저_읽기.md",
+        "01_논문/권혁찬_졸업논문_최종본.docx",
+        "02_핵심보고서/CHANGELOG_RESEARCH.md",
+        "02_핵심보고서/gate_status.json",
+        "02_핵심보고서/package_verification_report.json",
+        "03_연구데이터_research_v3/DECISIONS.md",
+        "03_연구데이터_research_v3/README.md",
+        "03_연구데이터_research_v3/REPRODUCE.md",
+        "03_연구데이터_research_v3/audit/active_identity_audit_report.json",
+        "03_연구데이터_research_v3/audit/cross_student_contamination_report.md",
+        "03_연구데이터_research_v3/audit/identity_audit_report.json",
+        "03_연구데이터_research_v3/audit/original_protocol_inventory.csv",
+        "03_연구데이터_research_v3/audit/package_verification_latest.json",
+        "03_연구데이터_research_v3/audit/package_verification_report.json",
+        "03_연구데이터_research_v3/audit/pubmed_raw_integrity.json",
+        "03_연구데이터_research_v3/audit/research_v2_reuse_inventory.json",
+        "03_연구데이터_research_v3/search/provisional_pubmed_20260710/normalized/records.csv",
+        "03_연구데이터_research_v3/search/provisional_pubmed_20260710/preflight_report.json",
+        "03_연구데이터_research_v3/search/provisional_pubmed_20260710/search_run_log.csv",
+        "04_재현코드/research/build_abstract_evidence_shortlist.py",
+        "04_재현코드/research/build_draft_abstract_rules.py",
+        "04_재현코드/research/build_feasibility_metrics_manifest.py",
+        "04_재현코드/research/build_feasibility_screening.py",
+        "04_재현코드/research/build_metrics_manifest.py",
+        "04_재현코드/research/build_seed_evidence_map.py",
+        "04_재현코드/research/diagnose_seed_misses.py",
+        "04_재현코드/research/evaluate_seed_recall.py",
+        "04_재현코드/research/freeze_evidence.py",
+        "04_재현코드/research/generate_feasibility_thesis.py",
+        "04_재현코드/research/inventory_legacy.py",
+        "04_재현코드/research/pubmed_full_retrieval.py",
+        "04_재현코드/research/validate_human_adjudication.py",
+        "04_재현코드/research_v3/audit_research_v3_delivery.py",
+        "04_재현코드/research_v3/scripts/audit_research_v2_reuse.py",
+        "04_재현코드/research_v3/scripts/audit_research_v3_identity.py",
+        "04_재현코드/research_v3/scripts/verify_research_v3_package.py",
+        "04_재현코드/research_v3/tests/test_build_search_strategy_peer_review_packet.py",
+        "04_재현코드/validate_feasibility_release.py",
+        "04_재현코드/validate_release.py",
+        "05_웹사이트/SITE_RELEASE_20260712.md"
+      ],
+      "interpretation": "provenance references are allowed; active research lineage is checked separately"
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "human_or_review_required": 1,
+    "release_ready": false
+  }
+}

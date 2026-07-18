@@ -6,13 +6,14 @@
   "source_ids_unique": true,
   "source_duplicate_metadata_matches": true,
   "source_enrichment_status_is_not_mfds_promotion_evidence": true,
+  "app_fields_used_for_matching_or_display": false,
   "catalog_csv_equivalent_to_json": true,
   "source_full_record_count": 776,
   "source_full_records_copied": false,
   "price_fields_copied": false,
   "official_match_required_before_promotion": true,
   "fuzzy_reviews_separated_from_exact_intersection": true,
-  "official_enrichment_status": "blocked_missing_key",
+  "official_enrichment_status": "complete",
   "product_master_unchanged_by_bridge": true,
   "runtime_unchanged_by_bridge": true,
   "release_ready_changed_by_bridge": false,
@@ -20,23 +21,23 @@
   "outputs": [
     {
       "path": "research_v3/otc/selection/catalog_existing_product_intersection.csv",
-      "rows": 5,
-      "sha256": "f130c6be6ee9a7f985a9e57ffc2654173e01a18ee6219321c57217c2091c030b"
+      "rows": 6,
+      "sha256": "20dd506bc1d5ee83ed2c2231d2f00484f77dfbab63ab839e1528847af2012869"
     },
     {
       "path": "research_v3/otc/selection/catalog_fuzzy_match_review.csv",
-      "rows": 2,
-      "sha256": "cf36e7a7b282ef6e6d95fdb14c835363e42dead7ab7d2d2a5bedc21731f4ebb0"
+      "rows": 1,
+      "sha256": "553e4bd63aae3585afc81282fa4ea0767f2447e480a34688456e7fb6c5fb9d7d"
     },
     {
       "path": "research_v3/otc/selection/catalog_additional_otc_candidates.csv",
-      "rows": 99,
-      "sha256": "554cf0ea074b78854e7238448d0c001f0d8e8a4f9398f7cac813d2ea4b77afb4"
+      "rows": 111,
+      "sha256": "c225cb5f270c08f7db54078428d3d117515243f22e93a7bcb6e2522e7010b0da"
     },
     {
       "path": "research_v3/otc/selection/catalog_candidate_summary.json",
       "rows": 1,
-      "sha256": "d68884bb85aa256d98710d79cadd8546e657782d0750a7ff82eef6919d75c647"
+      "sha256": "be49ac85807d07d4914e52e8819d59f4b9697856b0b5e6b6583080c4ae95a228"
     }
   ]
 }

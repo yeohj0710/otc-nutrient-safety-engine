@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-13T12:23:13+00:00",
+  "claim_boundary": "Text snapshots support reading and locator checks; they are not direct NIH HTML originals.",
+  "records": [
+    {
+      "source_id": "NIH_ODS_VITAMIN_D_HP",
+      "official_url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "local_path": "C:/dev/otc-nutrient-safety-engine/research_v3/sources/raw/20260713/NIH_ODS_VITAMIN_D_HP.web_text.md",
+      "capture_method": "r.jina.ai read-only text proxy",
+      "artifact_type": "derived_web_text_not_original_html",
+      "bytes": 147961,
+      "sha256": "9d5b550dbd27a846168c6782e4ab4be61580bf3af10c1a391a66549d8aeca223",
+      "validation_passed": true
+    },
+    {
+      "source_id": "NIH_ODS_CALCIUM_HP",
+      "official_url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+      "local_path": "C:/dev/otc-nutrient-safety-engine/research_v3/sources/raw/20260713/NIH_ODS_CALCIUM_HP.web_text.md",
+      "capture_method": "r.jina.ai read-only text proxy",
+      "artifact_type": "derived_web_text_not_original_html",
+      "bytes": 101993,
+      "sha256": "c527c3312414fb17f534803b5660a8e685b19923b72bd6c826f863e77df8bbe3",
+      "validation_passed": true
+    },
+    {
+      "source_id": "NIH_ODS_VITAMIN_B6_HP",
+      "official_url": "https://ods.od.nih.gov/factsheets/VitaminB6-HealthProfessional/",
+      "local_path": "C:/dev/otc-nutrient-safety-engine/research_v3/sources/raw/20260713/NIH_ODS_VITAMIN_B6_HP.web_text.md",
+      "capture_method": "r.jina.ai read-only text proxy",
+      "artifact_type": "derived_web_text_not_original_html",
+      "bytes": 46799,
+      "sha256": "c1a26ad62612d9679b6052af824ce467db48d20dd5d648c49f5f987ce7157a40",
+      "validation_passed": true
+    },
+    {
+      "source_id": "NIH_ODS_MAGNESIUM_HP",
+      "official_url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "local_path": "C:/dev/otc-nutrient-safety-engine/research_v3/sources/raw/20260713/NIH_ODS_MAGNESIUM_HP.web_text.md",
+      "capture_method": "r.jina.ai read-only text proxy",
+      "artifact_type": "derived_web_text_not_original_html",
+      "bytes": 61968,
+      "sha256": "cd5da21df6e676b8393cb6172eded1664d59ea217b6404c6d2569291c8e76615",
+      "validation_passed": true
+    },
+    {
+      "source_id": "NIH_ODS_IRON_HP",
+      "official_url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
+      "local_path": "C:/dev/otc-nutrient-safety-engine/research_v3/sources/raw/20260713/NIH_ODS_IRON_HP.web_text.md",
+      "capture_method": "r.jina.ai read-only text proxy",
+      "artifact_type": "derived_web_text_not_original_html",
+      "bytes": 88177,
+      "sha256": "6083514e6e71f68ebd73fe373ac23c59ba2616b9eac13d381b03baf4abe91ab0",
+      "validation_passed": true
+    },
+    {
+      "source_id": "NIH_ODS_ZINC_HP",
+      "official_url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "local_path": "C:/dev/otc-nutrient-safety-engine/research_v3/sources/raw/20260713/NIH_ODS_ZINC_HP.web_text.md",
+      "capture_method": "r.jina.ai read-only text proxy",
+      "artifact_type": "derived_web_text_not_original_html",
+      "bytes": 90428,
+      "sha256": "e7d1d93318f1bf6dcee7b2a20bd92c6f34045b02839c0b821aff485ee179c54d",
+      "validation_passed": true
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "validated": 6
+  }
+}

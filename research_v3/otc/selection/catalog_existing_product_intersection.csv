@@ -1,6 +1,7 @@
 ﻿catalog_source_id,catalog_name,catalog_specification,catalog_category,catalog_normalized_name,catalog_normalized_specification,duplicate_group_id,duplicate_group_size,existing_product_id,item_sequence,existing_product_name,match_method,match_score,match_margin,source_enrichment_match_status,mfds_promotion_evidence_complete,review_status,promotion_allowed
-20250812_113334,어린이 부루펜시럽,90ml,호흡기,어린이부루펜시럽,90ml,,1,MFDS-198601920,198601920,어린이부루펜시럽(이부프로펜),exact_normalized_alias,1.0000,0.6000,pending,false,requires_official_match_review,false
-20250812_113914,훼스탈플러스,20정,소화기,훼스탈플러스,20정,dup-0022,2,MFDS-199801026,199801026,훼스탈플러스정,exact_normalized_alias,1.0000,0.4545,pending,false,requires_official_match_review,false
-20250812_113919,훼스탈플러스,100정,소화기,훼스탈플러스,100정,dup-0022,2,MFDS-199801026,199801026,훼스탈플러스정,exact_normalized_alias,1.0000,0.4545,pending,false,requires_official_match_review,false
-20250812_113921,훼스탈골드,30정,소화기,훼스탈골드,30정,,1,MFDS-199900926,199900926,훼스탈골드정,exact_normalized_alias,1.0000,0.4545,pending,false,requires_official_match_review,false
-20250812_114427,닥터베아제,10T,호흡기,닥터베아제,10t,,1,MFDS-200300406,200300406,닥터베아제정,exact_normalized_alias,1.0000,0.2500,pending,false,requires_official_match_review,false
+20250812_113334,어린이 부루펜시럽,90ml,호흡기,어린이부루펜시럽,90ml,,1,MFDS-198601920,198601920,어린이부루펜시럽(이부프로펜),exact_normalized_alias,1.0000,0.6000,confirmed,false,requires_official_match_review,false
+20250812_113914,훼스탈플러스,20정,소화기,훼스탈플러스,20정,dup-0029,2,MFDS-199801026,199801026,훼스탈플러스정,exact_normalized_alias,1.0000,0.4545,confirmed,false,requires_official_match_review,false
+20250812_113919,훼스탈플러스,100정,소화기,훼스탈플러스,100정,dup-0029,2,MFDS-199801026,199801026,훼스탈플러스정,exact_normalized_alias,1.0000,0.4545,confirmed,false,requires_official_match_review,false
+20250812_113921,훼스탈골드,30정,소화기,훼스탈골드,30정,,1,MFDS-199900926,199900926,훼스탈골드정,exact_normalized_alias,1.0000,0.4545,confirmed,false,requires_official_match_review,false
+20250812_114427,닥터베아제,10T,호흡기,닥터베아제,10t,,1,MFDS-200300406,200300406,닥터베아제정,exact_normalized_alias,1.0000,0.2500,confirmed,false,requires_official_match_review,false
+20250812_113323,어린이타이레놀현탁액,100mL,키즈,어린이타이레놀현탁액,100ml,,1,MFDS-202200525,202200525,어린이타이레놀현탁액(아세트아미노펜),exact_normalized_alias,1.0000,0.6250,confirmed,false,requires_official_match_review,false

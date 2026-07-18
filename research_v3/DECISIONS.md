@@ -58,8 +58,8 @@ research_v2의 110개 규칙은 legacy 탐색 자료다. source·locator·사람
 
 ## D-015
 
-2026-07-16 약학정보원 연결 자료를 별도 연구 입력 계층으로 추가하였다. 776건 중 `official_match_status=confirmed` 369건은 안정적인 약학정보원 제품 키, 제품 코드, 성분 코드, 제형과 출처 URL이 있어 연구용 검색·분류·후보 선별에 사용한다. `review_required` 82건, `not_found` 137건, `not_applicable` 188건은 자동 사용하지 않는다.
+2026-07-16 최신 정식 카탈로그와 portable v1 계약으로 약학정보원 입력 계층을 갱신하였다. 776건 중 `official_match_status=confirmed` 458건은 연구용 검색·분류·후보 선별에 사용한다. `official_item_seq` 기준 고유 약학정보원 품목은 413개이며, `review_required` 10건, `not_found` 11건, `not_applicable` 297건은 자동 사용하지 않는다.
 
-약학정보원 확인은 식약처 품목 허가 검증을 대체하지 않는다. confirmed 369건도 `mfds_promotion_evidence_complete=false`, `runtime_promotion_allowed=false`로 유지한다. 기존 16개 제품 마스터, 13개 분석·사이트 제품, 15개 released 규칙과 독립평가 지표에는 합산하지 않는다. 판매 가격은 입력 스냅샷에서 결측률만 계산하며 검색 점수, 안전 제외, 동점 해소와 그룹 키에 사용하지 않는다.
+약학정보원 확인은 식약처 품목 허가 검증을 대체하지 않는다. confirmed 458건도 `mfds_promotion_evidence_complete=false`, `runtime_promotion_allowed=false`로 유지한다. 기존 16개 제품 마스터, 13개 분석·사이트 제품, 15개 released 규칙과 독립평가 지표에는 합산하지 않는다. 판매 가격과 portable `ai_context`는 검색 점수, 안전 제외, 동점 해소와 그룹 키에 사용하지 않는다.
 
-약학정보원 제품 코드와 기존 식약처 `item_sequence`가 정확히 같은 행은 0건이었다. 따라서 이름 유사도로 두 제품 체계를 병합하지 않았다. 매칭 근거의 충돌 2건은 source ID와 이유를 별도 검토 CSV에 남겼다.
+약학정보원 제품 코드와 식약처 `item_sequence`는 서로 다른 식별자 체계다. 정확 공식 품목명·제조사·제형·포장·성분을 대조해 기존 16개 제품 중 4개를 연결했고, 어린이타이레놀현탁액 1개는 제조사 불일치와 식별자 교차표 부재 때문에 충돌로 분리했으며, 11개는 미연결로 남겼다. 이름 유사도만으로 두 제품 체계를 병합하지 않는다.

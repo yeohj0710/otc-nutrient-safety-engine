@@ -4,12 +4,15 @@
   "valid": true,
   "source_schema_valid": true,
   "source_ids_unique": true,
-  "source_trio_counts_equal": true,
-  "public_sync_exact": true,
+  "source_trio_counts_equal": null,
+  "portable_package_valid": true,
+  "public_sync_exact": null,
   "csv_projection_equivalent": true,
   "official_match_statuses_isolated": true,
   "stable_identifier_required": true,
   "name_similarity_not_used_as_identity": true,
+  "mfds_and_health_kr_identifier_namespaces_separated": true,
+  "app_fields_used_for_matching_or_display": false,
   "ingredient_groups_use_stable_codes_and_dosage_form": true,
   "full_source_records_copied": false,
   "price_values_copied": false,
@@ -66,62 +69,92 @@
       "interaction_exclusion": true
     },
     "cases": {
-      "pregnancy_dur": 81,
-      "age_dur": 15,
-      "senior_dur": 13,
-      "contraindications": 30,
-      "interactions": 63,
+      "pregnancy_dur": 98,
+      "age_dur": 16,
+      "senior_dur": 17,
+      "contraindications": 38,
+      "interactions": 75,
       "red_flags": 1,
       "price_invariance": 1
     }
   },
   "counts": {
     "source_records": 776,
-    "confirmed": 369,
-    "research_search_usable": 369,
+    "confirmed": 458,
+    "research_search_usable": 458,
     "runtime_promotion_allowed": 0,
     "mapping_failures": 0,
-    "conflicts": 2
+    "conflicts": 6,
+    "existing_research_product_rematch": {
+      "total": 16,
+      "success": 4,
+      "conflict": 1,
+      "unlinked": 11
+    },
+    "runtime_product_rematch": {
+      "total": 13,
+      "success": 4,
+      "conflict": 1,
+      "unlinked": 8
+    }
   },
   "provenance": {
     "queue_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.json",
-    "queue_sha256": "de4e25b7df709a7381664f8da46c23d35addf1405bc9842bedfa19c18e3ec6fb",
-    "queue_bytes": 27416022,
+    "queue_sha256": "318493aa2f71db8804748a09fa2915a13a8d6fc32b9a5e7939786845b5f3a41f",
+    "queue_bytes": 41654592,
     "csv_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.csv",
-    "csv_sha256": "68126ef3a8d2d5bbade7eb3b6669af21c15034f0dd6365b6dcc7416b86aa6151",
-    "csv_bytes": 22292609,
-    "public_dataset_id": "pharmacy-product-catalog/public/data/enrichment-queue.json",
-    "public_sha256": "de4e25b7df709a7381664f8da46c23d35addf1405bc9842bedfa19c18e3ec6fb",
-    "public_bytes": 27416022,
+    "csv_sha256": "9b56e97354f75432a2cceda8c45915cc1bea5385f20530a94d804f339b9d2098",
+    "csv_bytes": 34373801,
+    "public_dataset_id": null,
+    "public_sha256": null,
+    "public_bytes": null,
+    "portable_dataset_id": "pharmacy-product-catalog/data/portable/v1/products.json",
+    "portable_sha256": "e272ecafaae5546da4f142291f10065df3307d36391ef27e2128365e2279694e",
+    "portable_schema_sha256": "cb38edfd101f503620573358f2b6a823767197c310cade6febae4a5c6ba08c67",
+    "portable_manifest_sha256": "10a8061dd7fb42acc15ab34f9f9d5ebea25aba8170fc276bf94ea1b9a0f11ed4",
+    "corrections_sha256": "37b0d46c18a3c048134555193d7707cd0ce42c08a5f45a763dedd5a9304ffbba",
+    "portable_package_version": "pharmacy-product-catalog-v1",
+    "portable_schema_version": "1.0",
+    "approved_text_correction_count": 252,
     "source_files_read_once": true,
-    "public_sync_exact": true,
+    "public_sync_exact": null,
     "csv_projection_equivalent": true
   },
   "outputs": [
     {
       "path": "research_v3/otc/selection/catalog_health_kr_status_index.csv",
       "rows": 776,
-      "sha256": "820f2a7d6417294add58d97eb6526f4253847da96152af8bccea87d7c7c08d7c"
+      "sha256": "80b11ecd7fa7be50763fd0819934a48ddf572c31f1f3550171e4c9821f27d337"
     },
     {
       "path": "research_v3/otc/selection/catalog_health_kr_research_candidates.csv",
-      "rows": 369,
-      "sha256": "a4707f88bd96724eeaed2944036849045899618e25f04723ae229157a22a5f14"
+      "rows": 458,
+      "sha256": "ce0ddfad1e22df074685cc1e80abd2edc9a81f8b1e5df9cb30a8946182d63657"
     },
     {
       "path": "research_v3/otc/selection/catalog_health_kr_same_ingredient_groups.csv",
-      "rows": 264,
-      "sha256": "dde3c9b191f06aa641355891d4f76a864f3e377c3c755e9a92e29d62e7feca6f"
+      "rows": 306,
+      "sha256": "d7e424247f140b56da0cf4ac7e9a12293351b28d109c2ca4736dfc5a15ac128b"
     },
     {
       "path": "research_v3/otc/selection/catalog_health_kr_conflict_review.csv",
-      "rows": 2,
-      "sha256": "05d46b795545b1b2166a7def6aab52eff6407d8ea1041c67340628a1e1192830"
+      "rows": 6,
+      "sha256": "b9f1c2f5dadaabb12e640a949c2ab96f17f862f6698f0f8f9c2581e8b1cab5b1"
+    },
+    {
+      "path": "research_v3/otc/local/catalog_health_kr_official_products.json",
+      "rows": 413,
+      "sha256": "c247397c548139b4df20380cac30d7165b066ae1280acf40076d9871054dfc05"
+    },
+    {
+      "path": "research_v3/otc/selection/catalog_health_kr_existing_product_matches.csv",
+      "rows": 16,
+      "sha256": "a4a514213c50201b54309444a0e5172280684491de0817be5f9777a68028a6dc"
     },
     {
       "path": "research_v3/otc/selection/catalog_health_kr_summary.json",
       "rows": 1,
-      "sha256": "99d261a3c0e9af4fe66bbb5a69d5227c44bebe0b0f37a152ba57015757ed809c"
+      "sha256": "fc9a22671f69cbdb246bb81ebc98a2cc13213fca17fe3fad8a38712bd9b512bc"
     }
   ]
 }

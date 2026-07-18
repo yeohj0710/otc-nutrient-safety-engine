@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import literatureData from "@/src/generated/otc-supporting-literature.json";
 import { evaluateOtcSafety } from "@/src/lib/otc/engine";
@@ -31,6 +31,17 @@ type OfficialCandidate = {
   status: "authorization_pending" | "withdrawn" | "package_variant_unresolved";
 };
 
+type CatalogExistingMatch = {
+  itemSequence: string;
+  matchStatus: "success" | "conflict";
+  officialItemName: string;
+  officialManufacturer: string;
+  officialDosageForm: string;
+  retailDisplayLinks: string;
+  sourceUrl: string;
+  mfdsPromotionEvidenceComplete: false;
+};
+
 export type OtcRuntime = {
   schemaVersion: string;
   generatedAt: string;
@@ -46,7 +57,14 @@ export type OtcRuntime = {
     healthKrConfirmedUniqueProductCount: number;
     runtimePromotionAllowedCount: number;
     classificationCounts: Record<string, number>;
+    existingProductRematch?: {
+      total: number;
+      success: number;
+      conflict: number;
+      unlinked: number;
+    };
   };
+  catalogExistingMatches?: CatalogExistingMatch[];
   products: OtcProduct[];
   officialCandidates: OfficialCandidate[];
 };
@@ -179,6 +197,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const [medicationText, setMedicationText] = useState("");
   const [symptomText, setSymptomText] = useState("");
   const [activeTherapeuticClass, setActiveTherapeuticClass] = useState("전체");
+  const [isEvaluating, setIsEvaluating] = useState(false);
 
   const results = useMemo(() => searchRuntime(runtime, query), [runtime, query]);
   const releasedRuleTypes = useMemo(
@@ -205,6 +224,19 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       selected,
     ],
   );
+  useEffect(() => {
+    if (!evaluation) {
+      const clearStatus = window.setTimeout(() => setIsEvaluating(false), 0);
+      return () => window.clearTimeout(clearStatus);
+    }
+
+    const showStatus = window.setTimeout(() => setIsEvaluating(true), 0);
+    const hideStatus = window.setTimeout(() => setIsEvaluating(false), 460);
+    return () => {
+      window.clearTimeout(showStatus);
+      window.clearTimeout(hideStatus);
+    };
+  }, [evaluation]);
   const orderedFindings = useMemo(
     () =>
       [...(evaluation?.findings ?? [])].sort(
@@ -227,6 +259,16 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const productNamesById = useMemo(
     () => new Map(runtime.products.map((product) => [product.productId, product.productName])),
     [runtime.products],
+  );
+  const catalogMatchesByItemSequence = useMemo(
+    () =>
+      new Map(
+        (runtime.catalogExistingMatches ?? []).map((match) => [
+          match.itemSequence,
+          match,
+        ]),
+      ),
+    [runtime.catalogExistingMatches],
   );
   const groupedCoverageGaps = useMemo(
     () => groupCoverageGaps(evaluation?.coverageGaps ?? [], productNamesById),
@@ -323,15 +365,18 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               type="button"
               className={styles.quickCheckButton}
               onClick={() => applyQuickCheck(quickCheck)}
+              aria-label={`${quickCheck.label}: ${quickCheck.description}`}
+              title={quickCheck.description}
             >
               <span>{quickCheck.label}</span>
-              <small>{quickCheck.description}</small>
+              <b aria-hidden="true">→</b>
             </button>
           ))}
         </div>
       </div>
 
       <div className={styles.workspaceGrid}>
+        <div className={styles.inputColumn}>
         <section className={styles.panel} aria-labelledby="medicine-heading">
           <header className={styles.panelHeader}>
             <span className={styles.panelIndex}>1</span>
@@ -345,14 +390,17 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           <div className={styles.searchArea}>
             {runtime.catalogCoverage && (
               <div className={styles.catalogScope}>
-                <div>
-                  <span>판매 SKU {runtime.catalogCoverage.sourceSkuCount}건 선별</span>
-                  <span>약학정보원 연결 {runtime.catalogCoverage.healthKrConfirmedCount}건</span>
-                  <strong>지금 점검 가능 {runtime.products.length}개</strong>
-                </div>
-                <p>
+                <p className={styles.catalogSummary}>
+                  판매 SKU {runtime.catalogCoverage.sourceSkuCount}건 중 {runtime.catalogCoverage.healthKrConfirmedCount}건이 약학정보원 공식 품목 {runtime.catalogCoverage.healthKrConfirmedUniqueProductCount}개와 연결됐고, <strong>현재 {runtime.products.length}개 제품을 점검할 수 있어요.</strong>
+                </p>
+                <p className={styles.catalogDescription}>
                   약학정보원 연결 제품은 연구 후보입니다. 식약처 허가 원문과 안전성 규칙까지 연결된 제품만 점검에 사용해요.
                 </p>
+                {runtime.catalogCoverage.existingProductRematch && (
+                  <p className={styles.catalogRematchSummary}>
+                    기존 연구 제품 대조: {runtime.catalogCoverage.existingProductRematch.success}개 연결 · {runtime.catalogCoverage.existingProductRematch.conflict}개 충돌 검토 · {runtime.catalogCoverage.existingProductRematch.unlinked}개 미연결
+                  </p>
+                )}
                 <details>
                   <summary>연구 후보 {runtime.catalogCoverage.healthKrConfirmedCount}건의 약효군 분포</summary>
                   <div>
@@ -431,18 +479,20 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   <span>허가 확인 제품 전체</span>
                   <b>{shelfProducts.length}개</b>
                 </div>
-                <div className={styles.classFilters} aria-label="약효군 필터">
-                  {therapeuticClasses.map((therapeuticClass) => (
-                    <button
-                      key={therapeuticClass}
-                      type="button"
-                      aria-pressed={activeTherapeuticClass === therapeuticClass}
-                      onClick={() => setActiveTherapeuticClass(therapeuticClass)}
-                    >
-                      {therapeuticClass}
-                    </button>
-                  ))}
-                </div>
+                <label className={styles.classSelect}>
+                  <span>약효군</span>
+                  <select
+                    name="therapeutic-class"
+                    value={activeTherapeuticClass}
+                    onChange={(event) => setActiveTherapeuticClass(event.target.value)}
+                  >
+                    {therapeuticClasses.map((therapeuticClass) => (
+                      <option key={therapeuticClass} value={therapeuticClass}>
+                        {therapeuticClass}
+                      </option>
+                    ))}
+                  </select>
+                </label>
                 <div className={styles.productShelfGrid}>
                   {shelfProducts.map((product) => (
                     <button
@@ -496,6 +546,22 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                             )
                             .join(" · ")}
                         </small>
+                        {catalogMatchesByItemSequence.get(item.product.itemSequence) && (() => {
+                          const match = catalogMatchesByItemSequence.get(item.product.itemSequence)!;
+                          return (
+                            <div className={styles.catalogMatchLine}>
+                              <span data-status={match.matchStatus}>
+                                {match.matchStatus === "success" ? "약학정보원 품목 연결" : "연결 충돌 검토"}
+                              </span>
+                              <small>
+                                {match.officialItemName} · {match.officialManufacturer} · {match.officialDosageForm}
+                              </small>
+                              <a href={match.sourceUrl} target="_blank" rel="noreferrer">
+                                약학정보원 원문
+                              </a>
+                            </div>
+                          );
+                        })()}
                       </div>
                       <button
                         type="button"
@@ -694,8 +760,14 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             </label>
           </div>
         </section>
+        </div>
 
-        <aside id="safety-result" className={`${styles.panel} ${styles.resultPanel}`} aria-labelledby="result-heading">
+        <aside
+          id="safety-result"
+          className={`${styles.panel} ${styles.resultPanel}`}
+          aria-labelledby="result-heading"
+          aria-busy={isEvaluating}
+        >
           <header className={styles.panelHeader}>
             <span className={styles.panelIndex}>3</span>
             <div>
@@ -706,6 +778,13 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               <button type="button" className={styles.resetButton} onClick={resetAll}>초기화</button>
             )}
           </header>
+
+          {isEvaluating && evaluation && (
+            <div className={styles.calculationStatus} role="status" aria-live="polite">
+              <span className={styles.calculationSpinner} aria-hidden="true" />
+              <strong>성분과 복용 조건을 계산 중…</strong>
+            </div>
+          )}
 
           <div className={styles.resultBody}>
             {runtime.rulesReleased === 0 && selected.length > 0 ? (
@@ -756,13 +835,17 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 {orderedFindings.length > 0 && (
                   <>
                     <div className={styles.resultSummary} data-urgent={urgentCount > 0} role="status" aria-live="polite" aria-atomic="true">
-                      <span>{urgentCount > 0 ? "먼저 확인" : "주의 확인"}</span>
-                      <strong>{orderedFindings.length}개 항목이 있어요</strong>
-                      <p>
-                        {urgentCount > 0
-                          ? `이 중 ${urgentCount}개는 즉시 확인이 필요한 항목입니다.`
-                          : "아래 행동 안내와 근거를 차례로 확인하세요."}
-                      </p>
+                      <div className={styles.summaryTitle}>
+                        <span aria-hidden="true">{urgentCount > 0 ? "!" : "i"}</span>
+                        <div>
+                          <strong>{orderedFindings.length}개 주의 항목</strong>
+                          <p>
+                            {urgentCount > 0
+                              ? `이 중 ${urgentCount}개는 즉시 확인이 필요해요.`
+                              : "첫 항목부터 판정 이유와 근거를 확인하세요."}
+                          </p>
+                        </div>
+                      </div>
                       <small className={styles.summaryEvidence}>
                         식약처 규칙 근거 {findingsWithRuleEvidence}/{orderedFindings.length} · 직접 연결 학술문헌 {findingsWithLiterature}/{orderedFindings.length}
                       </small>
@@ -781,11 +864,20 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         const findingContext = buildFindingContext(finding, selected);
                         return (
                           <article key={finding.findingId} data-severity={finding.severity}>
-                            <div className={styles.findingMeta}>
-                              <span>{finding.severity === "urgent" ? "즉시 확인" : finding.severity === "high" ? "높은 주의" : "주의"}</span>
-                              <b>{index + 1}</b>
-                            </div>
-                            <h3>{finding.titleKo}</h3>
+                            <details
+                              className={styles.findingDisclosure}
+                              open={index === 0 || finding.severity === "urgent"}
+                            >
+                              <summary>
+                                <span className={styles.findingNumber}>{index + 1}</span>
+                                <span className={styles.findingSummaryCopy}>
+                                  <small>{finding.severity === "urgent" ? "즉시 확인" : finding.severity === "high" ? "높은 주의" : "주의"}</small>
+                                  <h3>{finding.titleKo}</h3>
+                                  <span>{finding.detailKo}</span>
+                                </span>
+                                <span className={styles.findingChevron} aria-hidden="true" />
+                              </summary>
+                              <div className={styles.findingContent}>
                             {finding.severity === "urgent" && (
                               <div className={styles.nextAction}>
                                 <span>지금 할 일</span>
@@ -828,19 +920,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                 <a href={primaryRuleEvidence.url} target="_blank" rel="noreferrer">
                                   {primaryRuleEvidence.productName} · {primaryRuleEvidence.locator}
                                 </a>
-                                <div className={styles.productEvidencePreview}>
-                                  <strong>현재 제품·계산 원문 위치</strong>
-                                  {finding.evidence.slice(0, 2).map((source) => (
-                                    <a
-                                      key={`visible-product-${source.sourceId}-${source.locator}`}
-                                      href={source.url}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                    >
-                                      {formatEvidenceSource(source.sourceId)} · {source.locator}
-                                    </a>
-                                  ))}
-                                </div>
                               </section>
                             )}
                             {primaryPaper ? (
@@ -871,15 +950,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                 <strong>{finding.nextActionKo}</strong>
                               </div>
                             )}
-                            <div className={styles.evidenceCount}>
-                              <span>식약처 규칙 근거 {ruleEvidence.length}개</span>
-                              <span>제품·계산 원문 {finding.evidence.length}개</span>
-                              {supportingPapers.length > 0 && (
-                                <span>관련 학술문헌 {supportingPapers.length}편</span>
-                              )}
-                            </div>
                             <details className={styles.evidenceDetails}>
-                              <summary>판정 근거와 관련 문헌 보기</summary>
+                              <summary>
+                                근거와 문헌 자세히 보기 · {ruleEvidence.length + finding.evidence.length}개 근거
+                                {supportingPapers.length > 0 ? ` · 논문 ${supportingPapers.length}편` : ""}
+                              </summary>
                               <div className={styles.evidencePanel}>
                                 {ruleEvidence.length > 0 && (
                                   <section>
@@ -944,6 +1019,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                     </div>
                                   </section>
                                 )}
+                              </div>
+                            </details>
                               </div>
                             </details>
                           </article>

@@ -66,7 +66,12 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 
 def read_csv_bytes(payload: bytes) -> list[dict[str, str]]:
-    return list(csv.DictReader(io.StringIO(payload.decode("utf-8-sig"), newline="")))
+    previous_limit = csv.field_size_limit()
+    try:
+        csv.field_size_limit(2_147_483_647)
+        return list(csv.DictReader(io.StringIO(payload.decode("utf-8-sig"), newline="")))
+    finally:
+        csv.field_size_limit(previous_limit)
 
 
 def sha256_bytes(payload: bytes) -> str:
@@ -214,7 +219,11 @@ def build_bridge(
     catalog_csv_path: Path | None = None,
 ) -> dict[str, Any]:
     catalog_payload = catalog_path.read_bytes()
-    queue_payload = queue_path.read_bytes()
+    queue_payload = (
+        catalog_payload
+        if catalog_path.resolve() == queue_path.resolve()
+        else queue_path.read_bytes()
+    )
     product_master_payload = product_master_path.read_bytes()
     policy_payload = policy_path.read_bytes()
     catalog_csv_payload = catalog_csv_path.read_bytes() if catalog_csv_path else None
@@ -259,8 +268,10 @@ def build_bridge(
                 "catalog_name": str(row["name"]),
                 "catalog_specification": str(row["capacity"]),
                 "catalog_category": str(row["category"]),
-                "catalog_normalized_name": normalize_text(str(row["name"])),
-                "catalog_normalized_specification": normalize_text(str(row["capacity"])),
+                "catalog_normalized_name": str(row.get("normalized_name") or "")
+                or normalize_text(str(row["name"])),
+                "catalog_normalized_specification": str(row.get("normalized_capacity") or "")
+                or normalize_text(str(row.get("specification") or row["capacity"])),
                 "duplicate_group_id": str(source_meta["duplicate_group_id"]),
                 "duplicate_group_size": str(source_meta["duplicate_group_size"]),
                 "existing_product_id": str(matched["product_id"]),
@@ -288,7 +299,7 @@ def build_bridge(
     for row in catalog:
         source_id = str(row["id"])
         category = str(row["category"])
-        normalized_name = normalize_text(str(row["name"]))
+        normalized_name = str(row.get("normalized_name") or "") or normalize_text(str(row["name"]))
         classification = screening_class(category, policy)
         classification_counts[classification] += 1
         form_token = matched_form_token(str(row["name"]), str(row["capacity"]), policy)
@@ -308,7 +319,8 @@ def build_bridge(
                 "catalog_specification": str(row["capacity"]),
                 "catalog_category": category,
                 "catalog_normalized_name": normalized_name,
-                "catalog_normalized_specification": normalize_text(str(row["capacity"])),
+                "catalog_normalized_specification": str(row.get("normalized_capacity") or "")
+                or normalize_text(str(row.get("specification") or row["capacity"])),
                 "duplicate_group_id": str(source_meta["duplicate_group_id"]),
                 "duplicate_group_size": str(source_meta["duplicate_group_size"]),
                 "screening_class": classification,
@@ -335,6 +347,18 @@ def build_bridge(
         str(metadata["source_enrichment_match_status"])
         for metadata in duplicate_by_id.values()
     )
+    confirmed_rows = [
+        row for row in queue if row.get("official_match_status") == "confirmed"
+    ]
+    official_statuses = {
+        "confirmed",
+        "review_required",
+        "not_found",
+        "not_applicable",
+    }
+    latest_official_status_complete = bool(queue) and all(
+        str(row.get("official_match_status", "")) in official_statuses for row in queue
+    )
     summary = {
         "schema_version": "1.0.0",
         "research_direction": "korean_otc_product_safety",
@@ -353,9 +377,22 @@ def build_bridge(
         "additional_screening_candidate_sku_count": len(candidates),
         "additional_screening_candidate_name_count": len({row["catalog_normalized_name"] for row in candidates}),
         "screening_classification_counts": dict(sorted(classification_counts.items())),
-        "official_enrichment_status": official_summary.get("status", "unknown"),
-        "official_product_count": official_summary.get("official_product_count", 0),
-        "processed_official_match_count": official_summary.get("processed_count", 0),
+        "official_enrichment_status": official_summary.get(
+            "status", "complete" if latest_official_status_complete else "unknown"
+        ),
+        "official_product_count": official_summary.get(
+            "official_product_count",
+            len(
+                {
+                    str(row.get("official_item_seq", ""))
+                    for row in confirmed_rows
+                    if row.get("official_item_seq")
+                }
+            ),
+        ),
+        "processed_official_match_count": official_summary.get(
+            "processed_count", len(queue) if latest_official_status_complete else 0
+        ),
         "price_fields_exported": False,
         "full_source_records_exported": False,
         "product_master_modified": False,
@@ -363,11 +400,15 @@ def build_bridge(
         "candidate_rows_are_otc_products": False,
         "promotion_requirement": "MFDS source domain, item_sequence, authorization, ingredients, dosage, and DUR evidence must be confirmed before promotion",
         "provenance": {
-            "catalog_dataset_id": "pharmacy-product-catalog/data/products.json",
+            "catalog_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.json",
             "catalog_sha256": sha256_bytes(catalog_payload),
             "duplicate_queue_dataset_id": "pharmacy-product-catalog/data/enrichment-queue.json",
             "duplicate_queue_sha256": sha256_bytes(queue_payload),
-            "catalog_csv_dataset_id": "pharmacy-product-catalog/data/catalog.csv" if catalog_csv_path else None,
+            "catalog_csv_dataset_id": (
+                f"pharmacy-product-catalog/data/{catalog_csv_path.name}"
+                if catalog_csv_path
+                else None
+            ),
             "catalog_csv_sha256": sha256_bytes(catalog_csv_payload) if catalog_csv_payload is not None else None,
             "source_recorded_dates": sorted({str(row.get("recorded_at", "")) for row in catalog if row.get("recorded_at")}),
         },
@@ -380,6 +421,7 @@ def build_bridge(
         "source_ids_unique": True,
         "source_duplicate_metadata_matches": True,
         "source_enrichment_status_is_not_mfds_promotion_evidence": True,
+        "app_fields_used_for_matching_or_display": False,
         "catalog_csv_equivalent_to_json": catalog_csv_equivalent,
         "source_full_record_count": len(catalog),
         "source_full_records_copied": False,
@@ -444,12 +486,12 @@ def main() -> int:
     parser.add_argument("--audit-output", type=Path, default=DEFAULT_AUDIT_OUTPUT)
     args = parser.parse_args()
     result = build_bridge(
-        args.catalog_root / "data" / "products.json",
+        args.catalog_root / "data" / "enrichment-queue.json",
         args.catalog_root / "data" / "enrichment-queue.json",
         args.product_master,
         args.policy,
-        args.catalog_root / "data" / "official-data-summary.json",
-        args.catalog_root / "data" / "catalog.csv",
+        None,
+        args.catalog_root / "data" / "enrichment-queue.csv",
     )
     write_bridge(result, args.selection_output, args.audit_output)
     print(

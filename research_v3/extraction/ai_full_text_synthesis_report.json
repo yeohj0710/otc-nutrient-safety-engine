@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "method": "deterministic_aggregation_of_codex_ai_passage_candidates",
+  "clinical_nodes": 5,
+  "candidate_passages": 326,
+  "draft_rules_linked": 6,
+  "candidate_rule_links": 60,
+  "released_rules_created": 0,
+  "human_verified_candidates": 0,
+  "expert_verified_links": 0,
+  "claim_boundary": "Navigation candidates only; links do not support thresholds, causality, or clinical recommendations."
+}

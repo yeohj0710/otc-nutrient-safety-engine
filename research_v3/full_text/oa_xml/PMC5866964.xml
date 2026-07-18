@@ -1,0 +1,554 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article article-type="research-article" xml:lang="en" dtd-version="1.4"><front><journal-meta><journal-id journal-id-type="nlm-ta">J Vet Intern Med</journal-id><journal-id journal-id-type="iso-abbrev">J. Vet. Intern. Med</journal-id><journal-id journal-id-type="pmc-domain-id">3812</journal-id><journal-id journal-id-type="pmc-domain">pheblackwell</journal-id><journal-id journal-id-type="publisher-id">JVIM</journal-id><journal-title-group><journal-title>Journal of Veterinary Internal Medicine</journal-title></journal-title-group><issn pub-type="ppub">0891-6640</issn><issn pub-type="epub">1939-1676</issn><custom-meta-group><custom-meta><meta-name>pmc-is-collection-domain</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-collection-title</meta-name><meta-value>Wiley - PMC COVID-19 Collection</meta-value></custom-meta></custom-meta-group></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC5866964</article-id><article-id pub-id-type="pmcid-ver">PMC5866964.2</article-id><article-id pub-id-type="pmcaid">5866964</article-id><article-id pub-id-type="pmcaiid">7166561</article-id><article-id pub-id-type="pmid">29424482</article-id><article-id pub-id-type="doi">10.1111/jvim.15040</article-id><article-id pub-id-type="publisher-id">JVIM15040</article-id><article-version article-version-type="pmc-version">2</article-version><article-categories><subj-group subj-group-type="overline"><subject>Standard Article</subject></subj-group><subj-group subj-group-type="heading"><subject>FOOD AND FIBER ANIMAL</subject><subj-group subj-group-type="heading"><subject>Standard Articles</subject></subj-group></subj-group></article-categories><title-group><article-title>Zinc Deficiency‐Like Syndrome in Fleckvieh Calves: Clinical and Pathological Findings and Differentiation from Bovine Hereditary Zinc Deficiency</article-title><alt-title alt-title-type="right-running-head">ZDL Syndrome in Fleckvieh Cattle</alt-title><alt-title alt-title-type="left-running-head">Langenmayer et al</alt-title></title-group><contrib-group><contrib id="jvim15040-cr-0001" contrib-type="author" corresp="yes"><name name-style="western"><surname>Langenmayer</surname><given-names initials="MC">M.C.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0001-7014-0277</contrib-id><xref ref-type="aff" rid="jvim15040-aff-0001">
+<sup>1</sup>
+</xref><xref ref-type="aff" rid="jvim15040-aff-0002">
+<sup>2</sup>
+</xref><address><email>martin.langenmayer@lmu.de</email></address></contrib><contrib id="jvim15040-cr-0002" contrib-type="author"><name name-style="western"><surname>Jung</surname><given-names initials="S">S.</given-names></name><xref ref-type="aff" rid="jvim15040-aff-0003">
+<sup>3</sup>
+</xref></contrib><contrib id="jvim15040-cr-0003" contrib-type="author"><name name-style="western"><surname>Majzoub‐Altweck</surname><given-names initials="M">M.</given-names></name><xref ref-type="aff" rid="jvim15040-aff-0001">
+<sup>1</sup>
+</xref></contrib><contrib id="jvim15040-cr-0004" contrib-type="author"><name name-style="western"><surname>Trefz</surname><given-names initials="FM">F.M.</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0002-9784-8889</contrib-id><xref ref-type="aff" rid="jvim15040-aff-0004">
+<sup>4</sup>
+</xref></contrib><contrib id="jvim15040-cr-0005" contrib-type="author"><name name-style="western"><surname>Seifert</surname><given-names initials="C">C.</given-names></name><xref ref-type="aff" rid="jvim15040-aff-0004">
+<sup>4</sup>
+</xref></contrib><contrib id="jvim15040-cr-0006" contrib-type="author"><name name-style="western"><surname>Knubben‐Schweizer</surname><given-names initials="G">G.</given-names></name><xref ref-type="aff" rid="jvim15040-aff-0004">
+<sup>4</sup>
+</xref></contrib><contrib id="jvim15040-cr-0007" contrib-type="author"><name name-style="western"><surname>Fries</surname><given-names initials="R">R.</given-names></name><xref ref-type="aff" rid="jvim15040-aff-0003">
+<sup>3</sup>
+</xref></contrib><contrib id="jvim15040-cr-0008" contrib-type="author"><name name-style="western"><surname>Hermanns</surname><given-names initials="W">W.</given-names></name><xref ref-type="aff" rid="jvim15040-aff-0001">
+<sup>1</sup>
+</xref></contrib><contrib id="jvim15040-cr-0009" contrib-type="author"><name name-style="western"><surname>Gollnick</surname><given-names initials="NS">N.S.</given-names></name><xref ref-type="aff" rid="jvim15040-aff-0004">
+<sup>4</sup>
+</xref></contrib></contrib-group><aff id="jvim15040-aff-0001">
+<label><sup>1</sup></label>
+<institution>Institute of Veterinary Pathology at the Centre for Clinical Veterinary Medicine, LMU Munich</institution>
+<city>Munich</city>
+<country country="DE">Germany</country>
+</aff><aff id="jvim15040-aff-0002">
+<label><sup>2</sup></label>
+<institution>Institute for Infectious Diseases and Zoonoses, LMU Munich</institution>
+<city>Munich</city>
+<country country="DE">Germany</country>
+</aff><aff id="jvim15040-aff-0003">
+<label><sup>3</sup></label>
+<institution>Chair of Animal Breeding, Technische Universität München</institution>
+<city>Freising‐Weihenstephan</city>
+<country country="DE">Germany</country>
+</aff><aff id="jvim15040-aff-0004">
+<label><sup>4</sup></label>
+<institution>Clinic for Ruminants with Ambulatory and Herd Health Services at the Centre for Clinical Veterinary Medicine, LMU Munich</institution>
+<city>Oberschleißheim</city>
+<country country="DE">Germany</country>
+</aff><author-notes><corresp id="correspondenceTo"><label>*</label>Corresponding author: M.C. Langenmayer, Institute for Infectious Diseases and Zoonoses, LMU Munich, Veterinärstraße 13, Munich 80539, Germany; e‐mail: <email>martin.langenmayer@lmu.de</email>.</corresp></author-notes><pub-date pub-type="epub"><day>09</day><month>2</month><year>2018</year></pub-date><pub-date pub-type="ppub"><season>Mar-Apr</season><year>2018</year></pub-date><volume>32</volume><issue>2</issue><issue-id pub-id-type="pmc-issue-id">356208</issue-id><issue-id pub-id-type="doi">10.1111/jvim.2018.32.issue-2</issue-id><fpage>853</fpage><lpage>859</lpage><history><date date-type="received"><day>19</day><month>7</month><year>2017</year></date><date date-type="rev-recd"><day>17</day><month>11</month><year>2017</year></date><date date-type="accepted"><day>14</day><month>12</month><year>2017</year></date></history><pub-history><event event-type="pmc-release"><date><day>19</day><month>04</month><year>2020</year></date></event><event event-type="pmc-live"><date><day>28</day><month>03</month><year>2018</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2020-04-22 00:35:52.197"><day>22</day><month>04</month><year>2020</year></date></event><event event-type="pmc-version" specific-use="live"><article-id pub-id-type="pmcaiid">5866964</article-id><article-id pub-id-type="doi">10.1111/jvim.15040</article-id><article-version>1</article-version><pub-date><day>09</day><month>02</month><year>2018</year></pub-date></event><event event-type="pmc-version" specific-use="live"><article-id pub-id-type="pmcaiid">7166561</article-id><article-id pub-id-type="doi">10.1111/jvim.15040</article-id><article-version>2</article-version><pub-date><day>09</day><month>02</month><year>2018</year></pub-date></event></pub-history><permissions><copyright-statement content-type="article-copyright">Copyright © 2018 The Authors. Journal of Veterinary Internal Medicine published by Wiley Periodicals, Inc. on behalf of the American College of Veterinary Internal Medicine.</copyright-statement><license license-type="creativeCommonsBy-nc"><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by-nc/4.0/">http://creativecommons.org/licenses/by-nc/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited and is not used for commercial purposes.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="JVIM-32-853.pdf"><?pdf-name JVIM-32-853.pdf?><?pdf-size 545506?><?pdf-md5 b6fd3ee608b576a677546d3a350ff48a?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:ffbc/7166561/b6fd3ee608b5/JVIM-32-853.pdf?></self-uri><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:JVIM-32-853.pdf"/><abstract><sec id="jvim15040-sec-0001"><title>Background</title><p>Zinc deficiency‐like (ZDL) syndrome is an inherited defect of Fleckvieh calves, with striking similarity to bovine hereditary zinc deficiency (BHZD). However, the causative mutation in a phospholipase D4 encoding gene (<italic toggle="yes">PLD4</italic>) shows no connection to zinc metabolism.</p></sec><sec id="jvim15040-sec-0002"><title>Objectives</title><p>To describe clinical signs, laboratory variables, and pathological findings of ZDL syndrome and their utility to differentiate ZDL from BHZD and infectious diseases with similar phenotype.</p></sec><sec id="jvim15040-sec-0003"><title>Animals</title><p>Nine hospitalized calves with crusting dermatitis and confirmed mutation in <italic toggle="yes">PLD4</italic> and medical records from 25 calves with crusting dermatitis or suspected zinc deficiency.</p></sec><sec id="jvim15040-sec-0004"><title>Methods</title><p>Prospective and retrospective case series.</p></sec><sec id="jvim15040-sec-0005"><title>Results</title><p>The 9 calves (age: 5–53 weeks) displayed a moderate to severe crusting dermatitis mainly on the head, ventrum, and joints. Respiratory and digestive tract inflammations were frequently observed. Zinc supplementation did not lead to remission of clinical signs in 4 calves. Laboratory variables revealed slight anemia in 8 calves, hypoalbuminemia in 6 calves, but reduced serum zinc concentrations in only 3 calves. Mucosal erosions/ulcerations were present in 7 calves and thymus atrophy or reduced thymic weights in 8 calves. Histologically, skin lesions were indistinguishable from BHZD. Retrospective analysis of medical records revealed the presence of this phenotype since 1988 and pedigree analysis revealed a common ancestor of several affected calves.</p></sec><sec id="jvim15040-sec-1001"><title>Conclusions and Clinical Importance</title><p>ZDL syndrome should be suspected in Fleckvieh calves with crusting dermatitis together with diarrhea or respiratory tract inflammations without response to oral zinc supplementation. Definite diagnosis requires molecular genetic confirmation of the <italic toggle="yes">PLD4</italic> mutation.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="jvim15040-kwd-0001">BHZD</kwd><kwd id="jvim15040-kwd-0002">Bovine</kwd><kwd id="jvim15040-kwd-0003">Genetic defect</kwd><kwd id="jvim15040-kwd-0004">PLD4</kwd><kwd id="jvim15040-kwd-0005">ZDL syndrome</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>Münchener Universitätsgesellschaft
+</funding-source></award-group><award-group id="funding-0002"><funding-source>BGF
+</funding-source></award-group></funding-group><counts><fig-count count="3"/><table-count count="2"/><page-count count="7"/><word-count count="5202"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>March/April 2018</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:5.8.0 mode:remove_FC converted:15.04.2020</meta-value></custom-meta></custom-meta-group></article-meta><notes><fn-group><fn id="jvim15040-note-0001"><p>This work was done at the Clinic for Ruminants with Ambulatory and Herd Health Services and the Institute of Veterinary Pathology at the Centre for Clinical Veterinary Medicine, LMU Munich. This study was supported, in part, by the Münchener Universitätsgesellschaft (MUG) and N.S. Gollnick was supported by the BGF research stipend provided by the federal state of Bavaria.</p></fn><fn id="jvim15040-note-1001"><p>Presented in part as an Abstract at the 2nd Joint European Congress of the ESVP, ESTP, and ECVP, Berlin, 27‐30 August 2014.</p></fn></fn-group></notes></front><body><def-list list-content="abbreviations" id="jvim15040-lp-0001"><title>Abbreviations</title><def-item><term id="jvim15040-li-0001">BHZD</term><def id="jvim15040-li-0002"><p>bovine hereditary zinc deficiency</p></def></def-item><def-item><term id="jvim15040-li-0003">BVD/MD</term><def id="jvim15040-li-0004"><p>bovine viral diarrhea/mucosal disease</p></def></def-item><def-item><term id="jvim15040-li-0005">FFPE</term><def id="jvim15040-li-0006"><p>formalin‐fixed paraffin‐embedded</p></def></def-item><def-item><term id="jvim15040-li-0007">HE</term><def id="jvim15040-li-0008"><p>hemalum‐eosin</p></def></def-item><def-item><term id="jvim15040-li-0009">MCF</term><def id="jvim15040-li-0010"><p>malignant catarrhal fever</p></def></def-item><def-item><term id="jvim15040-li-0011">MRCA</term><def id="jvim15040-li-0012"><p>most recent common ancestor</p></def></def-item><def-item><term id="jvim15040-li-0013">PLD</term><def id="jvim15040-li-0014"><p>phospholipase D</p></def></def-item><def-item><term id="jvim15040-li-0015">ZDL</term><def id="jvim15040-li-0016"><p>zinc deficiency‐like</p></def></def-item></def-list><p>In recent years, Bavarian Fleckvieh calves, displaying marked dyskeratotic dermatitis in combination with a history of recurring episodes of respiratory and enteric diseases, attracted attention. These animals showed a striking clinical similarity to calves affected by bovine hereditary zinc deficiency (BHZD), a keratinization disorder caused by a mutation in the <italic toggle="yes">SLC39A4</italic> gene.<xref rid="jvim15040-bib-0001" ref-type="ref">1</xref>, <xref rid="jvim15040-bib-0002" ref-type="ref">2</xref> However, a molecular genetic study we conducted on 7 of the affected Fleckvieh calves excluded <italic toggle="yes">SLC39A4</italic> as causative gene for the syndrome.<xref rid="jvim15040-bib-0003" ref-type="ref">3</xref> Genome‐wide resequencing of 1 affected calf identified a nonsense mutation (p.W215X) in a phospholipase D encoding gene (<italic toggle="yes">PLD4</italic>), located on bovine chromosome 21, as most likely polymorphism. The disease has an autosomal recessive mode of inheritance. A study on the progeny descending from carriers of the mutation showed a significant reduction of the survival rates (<italic toggle="yes">P</italic> = 2.97 × 10<sup>−8</sup>).<xref rid="jvim15040-bib-0003" ref-type="ref">3</xref> Because of the phenotypic similarity to BHZD the condition was named zinc deficiency‐like (ZDL) syndrome.</p><p>Knowledge about the PLD4 protein in mammal metabolic pathways is scarce. In mice, PLD4 was identified as an intracellular transmembrane glycoprotein with potential function in phagocytosis.<xref rid="jvim15040-bib-0004" ref-type="ref">4</xref>, <xref rid="jvim15040-bib-0005" ref-type="ref">5</xref> In humans, PLD4 variants are associated with systemic sclerosis and rheumatoid arthritis.<xref rid="jvim15040-bib-0006" ref-type="ref">6</xref>, <xref rid="jvim15040-bib-0007" ref-type="ref">7</xref>
+</p><p>Detailed description of clinical and pathological aspects of the ZDL syndrome in cattle might provide important guidance for future metabolomic studies connecting geno‐ and phenotypes of PLD4 associated diseases. Thus, the objectives of this study were the description of clinical and pathological alterations associated with the newly discovered <italic toggle="yes">PLD4</italic> mutation in Fleckvieh calves and the identification of key features to distinguish between the ZDL syndrome and BHZD. Furthermore, we conducted a retrospective analysis of medical records on unresolved clinical dermatitis cases to reveal the existence of this neglected gene defect within the Fleckvieh population in the past which highlights the importance of revelation of potential carrier descendants.</p><sec id="jvim15040-sec-0007"><title>Materials and Methods</title><sec id="jvim15040-sec-0008"><title>Clinical Case Series</title><p>A total of 9 Fleckvieh calves (8 purebred and 1 Fleckvieh calf with an Angus grand‐sire in the ancestral father line [according to owner]) admitted to the Clinic for Ruminants with Ambulatory and Herd Health Services between October 2009 and April 2015 were included. Inclusion criteria were typical zinc‐deficiency‐like skin alterations and a molecular genetic validation of the <italic toggle="yes">PLD4</italic>‐status by 5′‐exonuclease assay.<xref rid="jvim15040-bib-0003" ref-type="ref">3</xref> Two calves were monitored over several weeks, but 7 calves were euthanized within a few days after admission because of animal welfare reasons. A complete clinical examination was performed daily. Blood samples for laboratory analysis were routinely taken from the jugular vein for diagnostic purposes. Two calves were treated with oral zinc supplementation (Calf 2 = 480 mg and Calf 4 = 2,500 mg elementary zinc per day). These doses were within (Calf 2) and above (Calf 4) recommendations to treat BHZD.<xref rid="jvim15040-bib-0008" ref-type="ref">8</xref>
+</p><p>All affected animals descended from carrier matings, which happened by chance during normal breeding routine on Bavarian Fleckvieh farms. Animal husbandry and care were carried out in accordance with institutional and national guidelines. No ethical approval was required for this study.</p><p>Laboratory variables were determined as previously described.<xref rid="jvim15040-bib-0009" ref-type="ref">9</xref> In brief, serum chemistry variables and enzyme activities were determined with an automated analyzer system<xref ref-type="fn" rid="jvim15040-note-0008">1</xref> and a complete blood cell count was performed with a hematology analyzer (pocH‐100iV DIFF, Sysmex).</p><p>All calves were necropsied and tissue samples for histology were routinely processed, sectioned, and stained as previously described.<xref rid="jvim15040-bib-0010" ref-type="ref">10</xref>
+</p></sec><sec id="jvim15040-sec-0009"><title>Retrospective Analysis of Medical Records</title><p>Archive cases of Fleckvieh calves under the age of 8 months with a history of crusting dermatitis or suspected zinc deficiency were identified (1988–2008) and the histology reviewed. For genomic DNA isolation, 10 µm sections of these archival formalin‐fixed paraffin‐embedded (FFPE) tissue samples were deparaffinized 3 × 20 minutes in xylene and rehydrated in a graded ethanol series for 2 × 15 minutes. After, sections were incubated overnight in 1x PK‐buffer (20 mM Tris‐HCl, 4 mM EDTA, 100 mM NaCl), 10% SDS and 2 µL Proteinase K (20 mg/mL) at 56°C followed by phenol‐chloroform‐DNA‐extraction. For up‐concentration, DNA was alcohol‐precipitated and redissolved and diluted in 1× TE‐buffer. The published <italic toggle="yes">PLD4</italic>‐variant<xref rid="jvim15040-bib-0003" ref-type="ref">3</xref> was polymerase chain reaction (PCR)‐amplified with 2 separated primer‐systems resulting in a 244 and 426 bp fragment, respectively (1‐for: CCTCCTTCTCCCACCTGTAA/1‐rev: TTACAGACCTGCCTCCATCC and 2‐for: CTTGTCAGGTGCCCAGGT/2‐rev: TTACAGACCTGCCTCCATCC). Polymerase chain reaction products were enzymatically purified and sequencing reactions were done for both strands with BigDye Terminator v1.1 Cycle Sequencing Kit.<xref ref-type="fn" rid="jvim15040-note-0009">2</xref> Electrophoresis of purified sequencing reactions was performed on the ABI 3130xl Genetic Analyzer.<xref ref-type="fn" rid="jvim15040-note-0010">3</xref> The Phred/Phrap/Polyphred software suite<xref rid="jvim15040-bib-0011" ref-type="ref">11</xref>, <xref rid="jvim15040-bib-0012" ref-type="ref">12</xref>, <xref rid="jvim15040-bib-0013" ref-type="ref">13</xref> was used for base calling, sequence alignment, and polymorphism detection. Sequences were viewed with Consed.<xref rid="jvim15040-bib-0014" ref-type="ref">14</xref> To avoid false results because of DNA desamination, amplification reactions were performed repeatedly.</p></sec><sec id="jvim15040-sec-0010"><title>Pedigree Information</title><p>Pedigree information of archival and recent cases was provided by the Bavarian State Research Centre for Agriculture. Visual examination of the pedigrees gave the indication of a most recent common ancestor (MRCA) among the recent and former cases.</p></sec></sec><sec id="jvim15040-sec-0011"><title>Results</title><sec id="jvim15040-sec-0012"><title>Clinical Case Series</title><p>The study involved 2 female and 7 male calves. Calves were admitted at median 81 days of age (mean: 116 days; range: 37–372 days) and necropsied at median 90 days of age (mean: 122 days; range: 38–373 days). The owners observed first skin lesions at median age of 45 days (mean: 49 days; range: 21–95 days). Calves were presented with a history of recurrent diarrhea, fever, dyspnea, and runting. Calf 5 had a female twin, which deceased with 79 days (necropsy was not conducted). The twin's first skin lesions were detected on the head, best obvious around the muzzle and periorbital regions and on the ventrum. Calves 2, 4, 6, and 9 were PO supplemented with zinc before admission to the Clinic for Ruminants (elementary zinc per day: Calf 2: 480 mg for 21 days; Calf 4: 333 mg for 24 days and 2500 mg for 11 days; Calf 6: dosage unknown, treatment for 24 days; Calf 9: 10–16 mg for 150 days). However, zinc supplementation did not lead to amelioration of the clinical signs.</p><p>The results of the clinical examinations of Calves 1–9 are summarized in Table <xref rid="jvim15040-tbl-0001" ref-type="table">1</xref>. A moderate to severe exudative and crusting generalized dermatitis was present in all calves (Fig <xref rid="jvim15040-fig-0001" ref-type="fig">1</xref>a,b). Skin regions with mild lesions displayed loose flakes. In moderate to severely affected regions there were large plates with rhagades, consisting of crusts, keratin, and hair (Fig <xref rid="jvim15040-fig-0001" ref-type="fig">1</xref>c). Removal of single plates was not possible without injuring the epidermis. Moderate to severe lesions were predominantly localized on the head (around the muzzle, eyes, and on the forehead, Fig <xref rid="jvim15040-fig-0001" ref-type="fig">1</xref>b), ventrum (<italic toggle="yes">Regio sternalis</italic>, <italic toggle="yes">R. umbilicalis</italic>), joints (<italic toggle="yes">R. cubiti</italic>, <italic toggle="yes">R. carpi</italic>, <italic toggle="yes">R. genus/plicae lateralis</italic>, <italic toggle="yes">R. tarsi</italic>), and inguinal and axillary region. The peripheral lymph nodes were enlarged in all calves (Fig <xref rid="jvim15040-fig-0001" ref-type="fig">1</xref>d). Calves 1, 4, and 5 displayed interdigital small erosions. Several calves displayed mucosal lesions and excessive salivation, 5 calves displayed yellow plaques on their incisors. Calf 9 was infested by numerous <italic toggle="yes">Damalinia</italic>. Seven calves displayed signs of weakness: weight shifting from 1 hind leg to the other and sudden bending of knees (5 calves), constant muscle tremor (Calf 3), and inability to rise (Calf 1). Calves 3 and 5 were extremely exhausted, did not move after being placed in lateral recumbency and fell into deep sleep immediately. Additionally, Calf 3 was introverted and chewed idly during examination.</p><table-wrap id="jvim15040-tbl-0001" xml:lang="en" orientation="portrait" position="float"><label>Table 1</label><caption><p>Summary of clinical findings/diagnoses of 9 calves affected by zinc deficiency‐like syndrome.</p></caption><table frame="hsides" rules="groups"><col style="border-bottom:solid 1px #000000; border-right:solid 1px #000000" width="80pt" span="1"/><col style="border-bottom:solid 1px #000000; border-right:solid 1px #000000" width="80pt" span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Finding/Diagnosis</th><th align="center" valign="bottom" rowspan="1" colspan="1">Number of Calves</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Body condition</td><td align="left" valign="top" rowspan="1" colspan="1">Poor: 4/9; moderate: 5/9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Attitude</td><td align="left" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Pruritus</td><td align="center" valign="top" rowspan="1" colspan="1">2/9</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Bruxism</td><td align="center" valign="top" rowspan="1" colspan="1">3/9</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Behavior<xref ref-type="fn" rid="jvim15040-note-0002">a</xref>
+</td><td align="left" valign="top" rowspan="1" colspan="1">Score 1: 6/8; Score 2: 2/8<xref ref-type="fn" rid="jvim15040-note-0003">b</xref>
+</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Touch‐sensitivity<xref ref-type="fn" rid="jvim15040-note-0004">c</xref>
+</td><td align="left" valign="top" rowspan="1" colspan="1">Score 1: 1/8; Score 2: 4/8; Score 3: 3/8</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Posture<xref ref-type="fn" rid="jvim15040-note-0005">d</xref>
+</td><td align="left" valign="top" rowspan="1" colspan="1">Score 1: 1/9; Score 2: 7/9; Score 3: 1/9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Enlargement of lymphonodi cervicales superficiales et subiliaci</td><td align="center" valign="top" rowspan="1" colspan="1">9/9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Nasal discharge</td><td align="center" valign="top" rowspan="1" colspan="1">5/9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Stridor</td><td align="center" valign="top" rowspan="1" colspan="1">8/9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Coughing</td><td align="center" valign="top" rowspan="1" colspan="1">3/9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Diarrhea</td><td align="center" valign="top" rowspan="1" colspan="1">7/9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Fever (≥39.5°C)</td><td align="center" valign="top" rowspan="1" colspan="1">5/8</td></tr></tbody></table><table-wrap-foot><fn id="jvim15040-note-0002"><label>a</label><p>1: Approaches examiner voluntarily after some time, allows being gently touched and scratched. 2: Constantly moves away, seems frightened, avoids being touched.</p></fn><fn id="jvim15040-note-0003"><label>b</label><p>One calf from cow‐calf‐operation without regular handling.</p></fn><fn id="jvim15040-note-0004"><label>c</label><p>1: Normal. 2: Increased. 3: Highly sensitive to touch.</p></fn><fn id="jvim15040-note-0005"><label>d</label><p>1: Physiological. 2: Arched back, extremities placed under the center of the body. 3: Sternal recumbency, head up.</p></fn></table-wrap-foot></table-wrap><fig fig-type="Figure" xml:lang="en" id="jvim15040-fig-0001" orientation="portrait" position="float"><label>Figure 1</label><caption><p>Lesions of bovine zinc deficiency‐like syndrome: (<bold>a</bold>) Calf 9. Runting, ruffled hair coat and multifocal skin crusts. (<bold>b</bold>) Head, Calf 8. Severe crusting with rhagades in the perioral, perinasal, periorbital, and auricular regions. (<bold>c</bold>) Skin, Calf 1. Thick superficial plates with rhagades. (<bold>d</bold>) Superficial cervical lymph node, Calf 2. Increased size. Inset: Histology of popliteal lymph node, Calf 6. Lymphoid hyperplasia. Hemalum‐eosin (HE).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="nlm-graphic-1" position="float" orientation="portrait" xlink:href="JVIM-32-853-g001.jpg"><?image-name JVIM-32-853-g001.jpg?><?image-size 78255?><?image-md5 0e54a666224cd5bc1f01be35b27523b5?><?image-image-server-status NEVER_LOAD?><?image-original-height 359?><?image-original-width 535?><?image-scaled-height 359?><?image-scaled-width 535?><?image-cloudpmc-urn urn:cdn:blobs/ffbc/7166561/0e54a666224c/JVIM-32-853-g001.jpg?><?thumb-name JVIM-32-853-g001.gif?><?thumb-size 10672?><?thumb-md5 5c915bc1278756d423faac5d3df4bb4f?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 119?><?thumb-cloudpmc-urn urn:cdn:blobs/ffbc/7166561/5c915bc12787/JVIM-32-853-g001.gif?></graphic></fig><p>Laboratory variables are summarized in Table <xref rid="jvim15040-tbl-0002" ref-type="table">2</xref> (excluding Calf 7, where serum and blood were not investigated). Calves 1–8 presented slight anemia. Leukocytosis was present in 4 calves. Six calves displayed lowered serum albumin concentration and increased serum AST activity. Serum zinc concentrations were below the reference range in 3 calves, whereas the other 6 were within or above reference range. High zinc concentrations in Calves 2, 4, and 6 correlated with the oral zinc substitution. Because of the advanced course of the disease and lack of improvement, all calves were euthanized and submitted for necropsy.</p><table-wrap id="jvim15040-tbl-0002" xml:lang="en" orientation="portrait" position="float"><label>Table 2</label><caption><p>Laboratory findings of 8 calves affected by zinc deficiency‐like syndrome.</p></caption><table frame="hsides" rules="groups"><col style="border-bottom:solid 1px #000000; border-right:solid 1px #000000" width="80pt" span="1"/><col style="border-bottom:solid 1px #000000; border-right:solid 1px #000000" width="80pt" span="1"/><col style="border-bottom:solid 1px #000000; border-right:solid 1px #000000" width="80pt" span="1"/><col style="border-bottom:solid 1px #000000; border-right:solid 1px #000000" width="80pt" span="1"/><thead valign="bottom"><tr><th align="left" valign="bottom" rowspan="1" colspan="1"/><th align="center" valign="bottom" rowspan="1" colspan="1"/><th style="border-bottom:solid 1px #000000" colspan="2" align="center" valign="bottom" rowspan="1">Affected Calves</th></tr><tr style="border-bottom:solid 1px #000000"><th align="left" valign="bottom" rowspan="1" colspan="1">Variable (unit)</th><th align="center" valign="bottom" rowspan="1" colspan="1">Reference range</th><th align="center" valign="bottom" rowspan="1" colspan="1">Median</th><th align="center" valign="bottom" rowspan="1" colspan="1">Minimum–Maximum</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">RBCs (×10<sup>6</sup>/µL)</td><td align="center" valign="top" rowspan="1" colspan="1">5–8</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>8.68</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">7.09–9.33</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Hemoglobin (g/dL)</td><td align="center" valign="top" rowspan="1" colspan="1">10–14</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>7.5</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">4.9–11.4</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Hematocrit (%)</td><td align="center" valign="top" rowspan="1" colspan="1">30–36</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>26.25</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">18.9–34</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MCV (fL)</td><td align="center" valign="top" rowspan="1" colspan="1">40–60</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>29.9</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">26.7–38.3</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MCHC (g/dL)</td><td align="center" valign="top" rowspan="1" colspan="1">25.8–33.8</td><td align="center" valign="top" rowspan="1" colspan="1">29.6</td><td align="center" valign="top" rowspan="1" colspan="1">26.3–33.0</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">MCH (pg)</td><td align="center" valign="top" rowspan="1" colspan="1">14.5–22.6</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>9.0</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">7.2–12.7</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">WBCs (×10<sup>3</sup>/µL)</td><td align="center" valign="top" rowspan="1" colspan="1">4–10</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>12.7</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">4.3–44.6</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Urea (mmol/L)</td><td align="center" valign="top" rowspan="1" colspan="1">&lt;5.5</td><td align="center" valign="top" rowspan="1" colspan="1">4.4</td><td align="center" valign="top" rowspan="1" colspan="1">1.6–7.9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Creatinine (µmol/L)</td><td align="center" valign="top" rowspan="1" colspan="1">&lt;110</td><td align="center" valign="top" rowspan="1" colspan="1">40.3</td><td align="center" valign="top" rowspan="1" colspan="1">25.7–69.6</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Total bilirubin (µmol/L)</td><td align="center" valign="top" rowspan="1" colspan="1">&lt;8.5</td><td align="center" valign="top" rowspan="1" colspan="1">5.7</td><td align="center" valign="top" rowspan="1" colspan="1">1.7–12.6</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Total protein (g/L)</td><td align="center" valign="top" rowspan="1" colspan="1">55–70</td><td align="center" valign="top" rowspan="1" colspan="1">57.6</td><td align="center" valign="top" rowspan="1" colspan="1">51.2–69.9</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Albumin (g/L)</td><td align="center" valign="top" rowspan="1" colspan="1">30–40</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>29.1</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">23.8–32.3</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Globulin (g/L)</td><td align="center" valign="top" rowspan="1" colspan="1">10–40</td><td align="center" valign="top" rowspan="1" colspan="1">29.9</td><td align="center" valign="top" rowspan="1" colspan="1">21.8–45</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">AST (U/L)</td><td align="center" valign="top" rowspan="1" colspan="1">&lt;80</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>102.7</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">49.3–136.2</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">GGT (U/L)</td><td align="center" valign="top" rowspan="1" colspan="1">&lt;36</td><td align="center" valign="top" rowspan="1" colspan="1">16.2</td><td align="center" valign="top" rowspan="1" colspan="1">11.1–30.3</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">GLDH (U/L)</td><td align="center" valign="top" rowspan="1" colspan="1">&lt;16</td><td align="center" valign="top" rowspan="1" colspan="1">8.2</td><td align="center" valign="top" rowspan="1" colspan="1">2.9–37.5</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">CK (U/L)</td><td align="center" valign="top" rowspan="1" colspan="1">&lt;245</td><td align="center" valign="top" rowspan="1" colspan="1">206</td><td align="center" valign="top" rowspan="1" colspan="1">75–554</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Iron (µmol/L)</td><td align="center" valign="top" rowspan="1" colspan="1">12–44</td><td align="center" valign="top" rowspan="1" colspan="1">
+<bold>6.2</bold>
+</td><td align="center" valign="top" rowspan="1" colspan="1">3.2–18.7</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Copper (µmol/L)</td><td align="center" valign="top" rowspan="1" colspan="1">8–39</td><td align="center" valign="top" rowspan="1" colspan="1">8.2</td><td align="center" valign="top" rowspan="1" colspan="1">4.3–11.6</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Zinc (µmol/L)</td><td align="center" valign="top" rowspan="1" colspan="1">10–20</td><td align="center" valign="top" rowspan="1" colspan="1">11.7</td><td align="center" valign="top" rowspan="1" colspan="1">8.3–36.8</td></tr></tbody></table><table-wrap-foot><fn id="jvim15040-note-0006"><p>Values outside the reference range are highlighted.</p></fn><fn id="jvim15040-note-0007"><p>AST, aspartate transaminase; CK, creatine kinase; GGT, gamma‐glutamyl transferase; GLDH, glutamate dehydrogenase; MCH, mean corpuscular hemoglobin; MCHC, mean corpuscular hemoglobin concentration; MCV, mean corpuscular volume; RBC, red blood cell; WBC; white blood cell.</p></fn></table-wrap-foot></table-wrap><p>At necropsy, median body weight was 80 kg (mean: 86 kg; range: 55–120 kg). The major skin lesions, severe crusting with rhagades (Fig <xref rid="jvim15040-fig-0002" ref-type="fig">2</xref>a), of all calves were distributed multifocally with emphasis on above‐mentioned locations. The peripheral but also often multiple organ lymph nodes were massively enlarged. Seven calves had multiple erosions or ulcers of the oral mucosa with multifocal necrosis and blunting of buccal mucosal papillae (Fig <xref rid="jvim15040-fig-0002" ref-type="fig">2</xref>b). Calves additionally displayed enteritis (9/9), bronchopneumonia (7/9), and thymic atrophy (5/8; mean weight 46.8 g).</p><fig fig-type="Figure" xml:lang="en" id="jvim15040-fig-0002" orientation="portrait" position="float"><label>Figure 2</label><caption><p>Lesions of bovine zinc deficiency‐like syndrome: (<bold>a</bold>) skin section, Calf 1. Hyperemia, loss of discernible surface‐skin‐junction, hair glued together by crusts. (<bold>b</bold>) Buccal papillae, Calf 1. Blunting and multifocal ulceration. (<bold>c</bold>) Histology, skin, Calf 4. Multiple orthokeratotic and parakeratotic layers with serum lakes, dermal edema, and inflammation. HE. (<bold>d</bold>) Histology, oral mucosa, Calf 1. Multifocal suprabasilar apoptotic keratinocytes intermingled with macrophages and neutrophils. HE. Bars = 100 µm.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="nlm-graphic-3" position="float" orientation="portrait" xlink:href="JVIM-32-853-g002.jpg"><?image-name JVIM-32-853-g002.jpg?><?image-size 87507?><?image-md5 c24a6fbe38c0f42c9aa2f79711ad03d4?><?image-image-server-status NEVER_LOAD?><?image-original-height 357?><?image-original-width 535?><?image-scaled-height 357?><?image-scaled-width 535?><?image-cloudpmc-urn urn:cdn:blobs/ffbc/7166561/c24a6fbe38c0/JVIM-32-853-g002.jpg?><?thumb-name JVIM-32-853-g002.gif?><?thumb-size 10057?><?thumb-md5 d29aed6a9cd841ef0d6907c055b49f97?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 79?><?thumb-scaled-width 119?><?thumb-cloudpmc-urn urn:cdn:blobs/ffbc/7166561/d29aed6a9cd8/JVIM-32-853-g002.gif?></graphic></fig><p>Histologically, affected areas displayed diffuse severe serocellular crusting often with many colonies of cocci and <italic toggle="yes">Malassezia</italic>. There was diffuse severe laminated orthokeratotic hyperkeratosis and multifocal mild to moderate parakeratosis with many intracorneal serum lakes (Fig <xref rid="jvim15040-fig-0002" ref-type="fig">2</xref>c). The epidermis was multifocally hyperplastic, ulcerated, and displayed subcorneal and suprabasilar vesiculation. In some locations, multiple epidermal keratinocytes were apoptotic and few epidermal and follicular keratinocytes displayed clear cytoplasmic vacuolation. The dermal ridges displayed superficial edema and multifocal interface vacuolation in 8/9 calves. The dermal blood vessels were congested and surrounded by mixed‐cell inflammation, the lymphatics and sweat glands were dilated. The severity of skin lesions revealed by histological examination reflected the gross pattern with most severe lesions in skin sections of the head, ventrum, and joints.</p><p>Histologically, the mucosa of the oral cavity and muzzle was multifocally eroded or ulcerated with many infiltrating neutrophils and many suprabasilar apoptotic keratinocytes in the deep epithelial papillae (Fig <xref rid="jvim15040-fig-0002" ref-type="fig">2</xref>d).</p><p>The lymph nodes displayed increased cortical and paracortical areas, dilated sinuses, and increased sinusoidal neutrophils and macrophages. The thymus (examined in Calves 2–9) of 7 calves displayed a moderate to marked decrease in cortical size and cellularity resulting in a shifted corticomedullary ratio.</p><p>Interstitial nephritis was detected in 3 calves and suppurative rhinitis, suppurative tracheitis and vasculitis in 2 calves, each.</p><p>BVDV‐ and OHV2‐PCR of spleen was negative in 8/9 and 5/5 calves, respectively. Enteric Coronavirus was detected in 1/4 calves. <italic toggle="yes">Salmonella</italic> enrichment of intestines was negative in 5/5 calves. Bacterial lung culture revealed 1 calf with <italic toggle="yes">Mannheimia</italic> spp. and 1 with <italic toggle="yes">Pasteurella multocida</italic>.</p></sec><sec id="jvim15040-sec-0013"><title>Retrospective Analysis of Medical Records</title><p>Medical records of 25 Fleckvieh calves with crusting dermatitis or suspected zinc deficiency were identified in the archive of the Clinic for Ruminants. FFPE tissue samples from 13/25 calves were stored in the archive of the Institute of Veterinary Pathology. The 4 female and 9 male calves were between 5 weeks and 5 months old. Clinical signs/diagnoses in these 13 calves were remarkably similar to the recent cases and included poor to moderate body condition, similar skin lesions, lymph node enlargement, mucosal erosions, and inflammation and infections of the respiratory and digestive tract. Zinc deficiency was suspected in 9 calves and zinc has been supplemented in 5 calves but did not ameliorate the clinical signs. Twelve calves were BVDV negative, only 1 calf was antigen‐positive. Anemia and leukocytosis were present in 10 calves.</p><p>The postulated W215X‐variant in <italic toggle="yes">PLD4</italic> was re‐sequenced in all 13 FFPE‐samples. Sample age varied between 9 and 26 years, the oldest sample was from 1988, the youngest from 2005. Twelve animals were homozygous carriers of the nonsense mutation and 1 male Fleckvieh calf carried the wild‐type allele (sample from 1997, sample age 17 years). Retrospective histological evaluation of skin sections suspected ZDL‐syndrome in 10 cases, 2 cases were ambiguous and the wild‐type calf displayed sarcoptic mange in skin sections.</p></sec><sec id="jvim15040-sec-0014"><title>Pedigree Information</title><p>Pedigree analysis revealed familial relationships between the calves of the recent cases and those retrospectively analyzed. The MRCA of all calves with available pedigree information was identified and traced back until 1972 (Fig <xref rid="jvim15040-fig-0003" ref-type="fig">3</xref>).</p><fig fig-type="Figure" xml:lang="en" id="jvim15040-fig-0003" orientation="portrait" position="float"><label>Figure 3</label><caption><p>Pedigree of Fleckvieh calves with zinc deficiency‐like syndrome. Males are represented by squares and females by circles. The dotted line represents mating with and offspring from a different sire of the same dam. IDs 1–7 represent recent cases, IDs P1–11 represent archival cases. Homozygous affected and unaffected animals and heterozygous carriers were confirmed by molecular genetic analysis. Note that the last confirmed heterozygous carrier is Hartl (1972).</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" id="nlm-graphic-5" position="float" orientation="portrait" xlink:href="JVIM-32-853-g003.jpg"><?image-name JVIM-32-853-g003.jpg?><?image-size 37773?><?image-md5 130470b5e3f46d310489615f982a0929?><?image-image-server-status NEVER_LOAD?><?image-original-height 314?><?image-original-width 651?><?image-scaled-height 314?><?image-scaled-width 651?><?image-cloudpmc-urn urn:cdn:blobs/ffbc/7166561/130470b5e3f4/JVIM-32-853-g003.jpg?><?thumb-name JVIM-32-853-g003.gif?><?thumb-size 4207?><?thumb-md5 a433c03288a2976ff45c2523ff464601?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 165?><?thumb-cloudpmc-urn urn:cdn:blobs/ffbc/7166561/a433c03288a2/JVIM-32-853-g003.gif?></graphic></fig></sec></sec><sec id="jvim15040-sec-0015"><title>Discussion</title><p>Recently, German and international reports about ZDL syndrome increased the awareness of owners and veterinarians and led to an increased presentation of affected calves to veterinary clinics. The clinical presentation of ZDL syndrome is mainly characterized by crusting dermatitis on head, ventrum, and joints and is therefore strikingly similar to BHZD. Lesions further include mucosal ulcerations of upper digestive tract, inflammation of respiratory and digestive tracts, thymic atrophy, and lymphadenopathy. This study shows that this phenotype and the absence of treatment responses to zinc supplementation should alert the clinician about ZDL syndrome.</p><p>The age distribution and severity of clinical and pathological changes varied among these cases. The first detection of skin lesions was reported to be recognized by the farmers between the first and 19th week after birth. The time interval between recognition of clinical signs of skin disease and hospital admission ranged from 7 to 316 days. Calves were necropsied between 38 and 373 days after birth. As the affected calves carried the same genotype and showed a similar phenotype, other factors like individual predisposition, environmental or management factors might influence disease severity considerably and might provide an explanation for the marked age differences.</p><p>The predominantly mild microcytic, normochromic anemia, and mild hypoalbuminemia of the calves is very likely because of the chronic inflammatory state.<xref rid="jvim15040-bib-0015" ref-type="ref">15</xref>, <xref rid="jvim15040-bib-0016" ref-type="ref">16</xref>, <xref rid="jvim15040-bib-0017" ref-type="ref">17</xref> Leukocytosis reflects the severe inflammatory infiltration in skin, respiratory, or digestive tract. Decreased serum zinc concentrations can be associated with chronic inflammation as well. Additionally, the chronic enteritis and the catabolic state of the calves could be the cause of hypoalbuminemia. The concentrations of the trace elements copper and iron were below reference ranges in 3/7 and 4/5 calves, respectively. The low iron concentrations can be caused by the chronic inflammatory state or reduced alimentary uptake because of disease‐associated anorexia. However, the causes and connections of the metabolic disturbances in these calves are not known. As copper, iron, and zinc concentrations also have synergistic and antagonistic properties in physiological states, the reason for the observed concentration changes in this disease deserves further study.</p><p>The similarity of the ZDL phenotype to BHZD is striking, even though the genetic cause and affected breeds are clearly distinct.<xref rid="jvim15040-bib-0002" ref-type="ref">2</xref>, <xref rid="jvim15040-bib-0003" ref-type="ref">3</xref> Bovine hereditary zinc deficiency, first described in Holstein Friesian calves,<xref rid="jvim15040-bib-0001" ref-type="ref">1</xref> affects a variety of cattle breeds including Fleckvieh, Holstein Friesian, Shorthorn, and Angus.<xref rid="jvim15040-bib-0008" ref-type="ref">8</xref>, <xref rid="jvim15040-bib-0018" ref-type="ref">18</xref>, <xref rid="jvim15040-bib-0019" ref-type="ref">19</xref>
+</p><p>Bovine hereditary zinc deficiency‐affected calves show keratinization disorders, thymus hypoplasia, respiratory and digestive tract inflammations, oral mucosal ulcerations, impaired function of the immune system, and growth retardation as consequence of a malfunction of an intestinal zinc transporter.<xref rid="jvim15040-bib-0020" ref-type="ref">20</xref>, <xref rid="jvim15040-bib-0021" ref-type="ref">21</xref>, <xref rid="jvim15040-bib-0022" ref-type="ref">22</xref> In zinc deficiency in Holstein Friesian cattle, a splice‐site variant in the <italic toggle="yes">SLC39A4</italic> gene is the underlying mutation.<xref rid="jvim15040-bib-0002" ref-type="ref">2</xref> This gene encodes a zinc transporter which is crucial for intestinal zinc uptake.<xref rid="jvim15040-bib-0023" ref-type="ref">23</xref> In humans, several additional mutations in this gene are also responsible for an inherited zinc deficiency syndrome known as <italic toggle="yes">acrodermatitis enteropathica</italic>.<xref rid="jvim15040-bib-0024" ref-type="ref">24</xref>, <xref rid="jvim15040-bib-0025" ref-type="ref">25</xref>, <xref rid="jvim15040-bib-0026" ref-type="ref">26</xref>
+</p><p>Because of the malfunction of the intestinal zinc transporter, BHZD calves do respond to oral zinc supplementation.<xref rid="jvim15040-bib-0020" ref-type="ref">20</xref>, <xref rid="jvim15040-bib-0027" ref-type="ref">27</xref> In one study, clinical signs developed when plasma zinc concentration dropped below 0.5 ppm and a plasma zinc concentration of ∼1.0 ppm was maintained through oral supplementation to keep the animal without clinical signs.<xref rid="jvim15040-bib-0027" ref-type="ref">27</xref> In the present study, the zinc doses were within (Calf 2) and above (Calf 4) the range of published values used to alleviate or resolve clinical disease of zinc deficient calves.<xref rid="jvim15040-bib-0008" ref-type="ref">8</xref>, <xref rid="jvim15040-bib-0020" ref-type="ref">20</xref>, <xref rid="jvim15040-bib-0027" ref-type="ref">27</xref> In both calves, serum zinc concentrations responded to the treatment and were above the maintenance zinc concentrations of Machen et al.<xref rid="jvim15040-bib-0027" ref-type="ref">27</xref> Unfortunately, the exact dose given to Calf 6 is not known, however, serum zinc concentration was at the upper limit of the reference range and was also above the maintenance zinc concentration of Machen et al. Calf 9 was treated with 10–16 mg elementary zinc per day. This dose appears really low when compared to the other calves and its effects were probably minor (low serum zinc concentrations). Although serum zinc concentrations are not always useful to determine tissue zinc concentrations,<xref rid="jvim15040-bib-0028" ref-type="ref">28</xref> elevation after treatment indicates that intestinal uptake took place. In zinc‐treated BHZD calves, clinical signs improve after 1–3 weeks and completely resolve after 2–6 weeks.<xref rid="jvim15040-bib-0002" ref-type="ref">2</xref>, <xref rid="jvim15040-bib-0020" ref-type="ref">20</xref> However, the clinical signs observed in Calves 2, 4, and 6 did neither improve nor resolve, clearly separating this syndrome from BHZD clinically. Nonetheless, zinc supplementation might help the animal to survive longer, possibly because of positive effects of zinc on skin and immune system.<xref rid="jvim15040-bib-0029" ref-type="ref">29</xref>
+</p><p>Marked hypoplasia of the thymus with an average thymus weight of 18 g has been reported in 15 affected BHZD calves.<xref rid="jvim15040-bib-0030" ref-type="ref">30</xref> Thymus weights in this study revealed thymic atrophy, yet the thymus was readily identifiable and weighed nearly 3 times more than described in BHZD. Although thymus weight/body weight ratio was lower than published ratios,<xref rid="jvim15040-bib-0031" ref-type="ref">31</xref> gross and histologic examination could not support a finding of “marked hypoplasia.”</p><p>Bovine hereditary zinc deficiency occurs in various cattle breeds but has its primary incidence in Holstein Friesian calves,<xref rid="jvim15040-bib-0020" ref-type="ref">20</xref>, <xref rid="jvim15040-bib-0027" ref-type="ref">27</xref>, <xref rid="jvim15040-bib-0032" ref-type="ref">32</xref> unlike ZDL syndrome which has only been observed in Fleckvieh calves.</p><p>Differential diagnoses for ZDL syndrome include mange, acquired zinc deficiency, and ichthyosis. The mucosal lesions and lesions in the interdigital space should be differentiated from bovine viral diarrhea/mucosal disease (BVD/MD), malignant catarrhal fever (MCF), and blue tongue. In the medical records from 1988 to 2005, BVD/MD was the main differential diagnosis followed by zinc deficiency and to a small amount ichthyosis or MCF.</p><p>The gene <italic toggle="yes">PLD4</italic> encodes Phospholipase D4, which belongs to the PLD superfamily, comprising 6 members (PLD1–6) widely distributed in tissues of humans and animals.<xref rid="jvim15040-bib-0033" ref-type="ref">33</xref> PLD1 + 2 are well characterized phospholipid signaling enzymes, involved in cellular proliferation and vesicle trafficking.<xref rid="jvim15040-bib-0005" ref-type="ref">5</xref> Enzymes with PLD activity or phospholipase domains are further involved in keratinocyte metabolism or the keratinization process.<xref rid="jvim15040-bib-0034" ref-type="ref">34</xref>, <xref rid="jvim15040-bib-0035" ref-type="ref">35</xref>, <xref rid="jvim15040-bib-0036" ref-type="ref">36</xref> However, little is known about role and function of PLD4. Localized in the spleen and early microglia, a role in immunological pathways has been suggested.<xref rid="jvim15040-bib-0004" ref-type="ref">4</xref> Its enzymatic activity is still enigmatic and possible nonenzymatic functions are discussed.<xref rid="jvim15040-bib-0033" ref-type="ref">33</xref> There is considerable interspecies phenotypic variation between the few diseases and syndromes linked to PLD4 so far. Recent studies associated variants in PLD4 with systemic sclerosis and rheumatoid arthritis in the Japanese population.<xref rid="jvim15040-bib-0006" ref-type="ref">6</xref>, <xref rid="jvim15040-bib-0007" ref-type="ref">7</xref>, <xref rid="jvim15040-bib-0037" ref-type="ref">37</xref> Mice carrying a nonsense mutation in PLD4 manifest a phenotype with thin hair and small size that seems quite distinct from ZDL syndrome in calves.<xref rid="jvim15040-bib-0038" ref-type="ref">38</xref>, <xref rid="jvim15040-bib-0039" ref-type="ref">39</xref> These substantial differences between the species highlight the importance of different models, which allow investigation of PLD4 functions and its position within metabolic pathways.</p><p>Combining the available information and the present cases, the role of PLD4 in calves is very likely associated with immunological functions and keratinocyte differentiation. Infection of the respiratory and digestive tract and skin suggest some kind of immunosuppression. Regarding PLD4 and PLD function in microglia<xref rid="jvim15040-bib-0004" ref-type="ref">4</xref> and neutrophils,<xref rid="jvim15040-bib-0033" ref-type="ref">33</xref> respectively, the innate immune system is likely compromised. Hyper‐ and parakeratosis suggest a role of PLD4 in the keratinization process and differentiation of keratinocytes.</p><p>The gold standard to distinguish ZDL from BHZD is—of course—a genetic examination. Clinicians confronted with Fleckvieh calves displaying signs of zinc deficiency should be aware of ZDL and can differentiate ZDL from BHZD through unresponsiveness to oral zinc supplementation. However, lack of improvement or advanced cases should initiate a genetic examination to quickly identify ZDL calves. On pathological examination, dermal lesions together with thymic atrophy can indicate ZDL, but atrophy must be separated from disease‐ or age‐associated involution. Dermal histopathology is not helpful to distinguish between these 2 syndromes.</p></sec></body><back><ack id="jvim15040-sec-0019"><title>Acknowledgments</title><p>We acknowledge the excellent technical assistance of Ingrid Hartmann, Michaela Nützel, Doris Merl, and Heike Sperling. We thank the animal caretakers at the Clinic for Ruminants for their dedication and the owners of the calves and herd veterinarians for their support.</p><sec id="jvim15040-sec-0016" sec-type="COI-statement"><title>Conflict of Interest Declaration</title><p>Authors declare no conflict of interest.</p></sec><sec id="jvim15040-sec-0017"><title>Off‐Label Antimicrobial Declaration</title><p>Authors declare no off‐label use of antimicrobials.</p></sec><sec id="jvim15040-sec-0018"><title>Institutional Animal Care and Use Committee (IACUC) or Other Approval Declaration</title><p>Authors declare no IACUC or other approval was needed.</p></sec></ack><fn-group><title>Footnotes</title><fn id="jvim15040-note-0008"><label>1</label><p>Hitachi 912, Boehringer Mannheim, Mannheim, Germany</p></fn><fn id="jvim15040-note-0009"><label>2</label><p>Applied Biosystems, Foster, CA</p></fn><fn id="jvim15040-note-0010"><label>3</label><p>Applied Biosystems</p></fn></fn-group><ref-list content-type="cited-references"><title>References</title><ref id="jvim15040-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="jvim15040-cit-0001">
+<string-name name-style="western">
+<surname>MacPherson</surname>
+<given-names>EA</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Beattie</surname>
+<given-names>IS</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Young</surname>
+<given-names>GB.</given-names>
+</string-name>
+<article-title>An inherited defect in Friesian calves</article-title>. <source xml:lang="en">Nord Vet Med Suppl</source>
+<year>1964</year>;<volume>1</volume>:<fpage>533</fpage>–<lpage>540</lpage>.
+</mixed-citation></ref><ref id="jvim15040-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="jvim15040-cit-0002">
+<string-name name-style="western">
+<surname>Yuzbasiyan‐Gurkan</surname>
+<given-names>V</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Bartlett</surname>
+<given-names>E.</given-names>
+</string-name>
+<article-title>Identification of a unique splice site variant in SLC39A4 in bovine hereditary zinc deficiency, lethal trait A46: An animal model of acrodermatitis enteropathica</article-title>. <source xml:lang="en">Genomics</source>
+<year>2006</year>;<volume>88</volume>:<fpage>521</fpage>–<lpage>526</lpage>.
+<pub-id pub-id-type="pmid">16714095</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.ygeno.2006.03.018</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="jvim15040-cit-0003">
+<string-name name-style="western">
+<surname>Jung</surname>
+<given-names>S</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Pausch</surname>
+<given-names>H</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Langenmayer</surname>
+<given-names>MC</given-names>
+</string-name>, et al. <article-title>A nonsense mutation in <italic toggle="yes">PLD4</italic> is associated with a zinc deficiency‐like syndrome in Fleckvieh cattle</article-title>. <source xml:lang="en">BMC Genomics</source>
+<year>2014</year>;<volume>15</volume>:<fpage>623</fpage>.
+<pub-id pub-id-type="pmid">25052073</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/1471-2164-15-623</pub-id><pub-id pub-id-type="pmcid">PMC4117962</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="jvim15040-cit-0004">
+<string-name name-style="western">
+<surname>Otani</surname>
+<given-names>Y</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Yamaguchi</surname>
+<given-names>Y</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Sato</surname>
+<given-names>Y</given-names>
+</string-name>, et al. <article-title>PLD4 is involved in phagocytosis of microglia: Expression and localization changes of PLD4 are correlated with activation state of microglia</article-title>. <source xml:lang="en">PLoS One</source>
+<year>2011</year>;<volume>6</volume>:<fpage>e27544</fpage>.
+<pub-id pub-id-type="pmid">22102906</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1371/journal.pone.0027544</pub-id><pub-id pub-id-type="pmcid">PMC3216956</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="jvim15040-cit-0005">
+<string-name name-style="western">
+<surname>Yoshikawa</surname>
+<given-names>F</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Banno</surname>
+<given-names>Y</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Otani</surname>
+<given-names>Y</given-names>
+</string-name>, et al. <article-title>Phospholipase D family member 4, a transmembrane glycoprotein with no phospholipase D activity, expression in spleen and early postnatal microglia</article-title>. <source xml:lang="en">PLoS One</source>
+<year>2010</year>;<volume>5</volume>:<fpage>e13932</fpage>.
+<pub-id pub-id-type="pmid">21085684</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1371/journal.pone.0013932</pub-id><pub-id pub-id-type="pmcid">PMC2978679</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="jvim15040-cit-0006">
+<string-name name-style="western">
+<surname>Okada</surname>
+<given-names>Y</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Terao</surname>
+<given-names>C</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Ikari</surname>
+<given-names>K</given-names>
+</string-name>, et al. <article-title>Meta‐analysis identifies nine new loci associated with rheumatoid arthritis in the Japanese population</article-title>. <source xml:lang="en">Nat Genet</source>
+<year>2012</year>;<volume>44</volume>:<fpage>511</fpage>–<lpage>516</lpage>.
+<pub-id pub-id-type="pmid">22446963</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/ng.2231</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="jvim15040-cit-0007">
+<string-name name-style="western">
+<surname>Terao</surname>
+<given-names>C</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Ohmura</surname>
+<given-names>K</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Kawaguchi</surname>
+<given-names>Y</given-names>
+</string-name>, et al. <article-title>PLD4 as a novel susceptibility gene for systemic sclerosis in a Japanese population</article-title>. <source xml:lang="en">Arthritis Rheum</source>
+<year>2013</year>;<volume>65</volume>:<fpage>472</fpage>–<lpage>480</lpage>.
+<pub-id pub-id-type="pmid">23124809</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/art.37777</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0008"><label>8</label><mixed-citation publication-type="book" id="jvim15040-cit-0008">
+<string-name name-style="western">
+<surname>Dirksen</surname>
+<given-names>G</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Gründer</surname>
+<given-names>H‐D</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Stöber</surname>
+<given-names>M.</given-names>
+</string-name>
+<source xml:lang="en">Innere Medizin und Chirurgie des Rindes</source>, <edition designator="5">5th ed</edition>
+<publisher-loc>Stuttgart, Germany</publisher-loc>: <publisher-name>Parey</publisher-name>; <year>2006</year>.
+</mixed-citation></ref><ref id="jvim15040-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="jvim15040-cit-0009">
+<string-name name-style="western">
+<surname>Langenmayer</surname>
+<given-names>MC</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Scharr</surname>
+<given-names>JC</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Sauter‐Louis</surname>
+<given-names>C</given-names>
+</string-name>, et al. <article-title>Natural <italic toggle="yes">Besnoitia besnoiti</italic> infections in cattle: Hematological alterations and changes in serum chemistry and enzyme activities</article-title>. <source xml:lang="en">BMC Vet Res</source>
+<year>2015</year>;<volume>11</volume>:<fpage>32</fpage>.
+<pub-id pub-id-type="pmid">25880447</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12917-015-0326-8</pub-id><pub-id pub-id-type="pmcid">PMC4336505</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="jvim15040-cit-0010">
+<string-name name-style="western">
+<surname>Langenmayer</surname>
+<given-names>MC</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Gollnick</surname>
+<given-names>NS</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Majzoub‐Altweck</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Naturally acquired bovine besnoitiosis: Histological and immunohistochemical findings in acute, subacute, and chronic disease</article-title>. <source xml:lang="en">Vet Pathol</source>
+<year>2015</year>;<volume>52</volume>:<fpage>476</fpage>–<lpage>488</lpage>.
+<pub-id pub-id-type="pmid">25096291</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1177/0300985814541705</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="jvim15040-cit-0011">
+<string-name name-style="western">
+<surname>Ewing</surname>
+<given-names>B</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Green</surname>
+<given-names>P.</given-names>
+</string-name>
+<article-title>Base‐calling of automated sequencer traces using phred. II. Error probabilities</article-title>. <source xml:lang="en">Genome Res</source>
+<year>1998</year>;<volume>8</volume>:<fpage>186</fpage>–<lpage>194</lpage>.
+<pub-id pub-id-type="pmid">9521922</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="jvim15040-cit-0012">
+<string-name name-style="western">
+<surname>Ewing</surname>
+<given-names>B</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Hillier</surname>
+<given-names>L</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Wendl</surname>
+<given-names>MC</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Green</surname>
+<given-names>P.</given-names>
+</string-name>
+<article-title>Base‐calling of automated sequencer traces using phred. I. Accuracy assessment</article-title>. <source xml:lang="en">Genome Res</source>
+<year>1998</year>;<volume>8</volume>:<fpage>175</fpage>–<lpage>185</lpage>.
+<pub-id pub-id-type="pmid">9521921</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1101/gr.8.3.175</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="jvim15040-cit-0013">
+<string-name name-style="western">
+<surname>Nickerson</surname>
+<given-names>DA</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Tobe</surname>
+<given-names>VO</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Taylor</surname>
+<given-names>SL.</given-names>
+</string-name>
+<article-title>PolyPhred: Automating the detection and genotyping of single nucleotide substitutions using fluorescence‐based resequencing</article-title>. <source xml:lang="en">Nucleic Acids Res</source>
+<year>1997</year>;<volume>25</volume>:<fpage>2745</fpage>–<lpage>2751</lpage>.
+<pub-id pub-id-type="pmid">9207020</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/nar/25.14.2745</pub-id><pub-id pub-id-type="pmcid">PMC146817</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="jvim15040-cit-0014">
+<string-name name-style="western">
+<surname>Gordon</surname>
+<given-names>D</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Abajian</surname>
+<given-names>C</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Green</surname>
+<given-names>P.</given-names>
+</string-name>
+<article-title>Consed: A graphical tool for sequence finishing</article-title>. <source xml:lang="en">Genome Res</source>
+<year>1998</year>;<volume>8</volume>:<fpage>195</fpage>–<lpage>202</lpage>.
+<pub-id pub-id-type="pmid">9521923</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1101/gr.8.3.195</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0015"><label>15</label><mixed-citation publication-type="book" id="jvim15040-cit-0015">
+<string-name name-style="western">
+<surname>Stockham</surname>
+<given-names>SL</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Scott</surname>
+<given-names>MA.</given-names>
+</string-name>
+<chapter-title>Erythrocytes</chapter-title> In: <person-group person-group-type="editor"><name name-style="western"><surname>Stockham</surname><given-names>SL</given-names></name></person-group>, <person-group person-group-type="editor"><name name-style="western"><surname>Scott</surname><given-names>MA</given-names></name></person-group>, eds. <source xml:lang="en">Fundamentals of Veterinary Clinical Pathology</source>. <publisher-loc>Ames, IA</publisher-loc>: <publisher-name>Blackwell Publishing</publisher-name>; <year>2008</year>:<fpage>107</fpage>–<lpage>222</lpage>.
+</mixed-citation></ref><ref id="jvim15040-bib-0016"><label>16</label><mixed-citation publication-type="book" id="jvim15040-cit-0016">
+<string-name name-style="western">
+<surname>Stockham</surname>
+<given-names>SL</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Scott</surname>
+<given-names>MA.</given-names>
+</string-name>
+<chapter-title>Proteins</chapter-title> In: <person-group person-group-type="editor"><name name-style="western"><surname>Stockham</surname><given-names>SL</given-names></name></person-group>, <person-group person-group-type="editor"><name name-style="western"><surname>Scott</surname><given-names>MA</given-names></name></person-group>, eds. <source xml:lang="en">Fundamentals of Veterinary Clinical Pathology</source>. <publisher-loc>Ames, IA</publisher-loc>: <publisher-name>Blackwell Publishing</publisher-name>; <year>2008</year>:<fpage>369</fpage>–<lpage>414</lpage>.
+</mixed-citation></ref><ref id="jvim15040-bib-0017"><label>17</label><mixed-citation publication-type="book" id="jvim15040-cit-0017">
+<string-name name-style="western">
+<surname>Thrall</surname>
+<given-names>MA.</given-names>
+</string-name>
+<chapter-title>Classification of and diagnostic approach to anemia</chapter-title> In: <person-group person-group-type="editor"><name name-style="western"><surname>Thrall</surname><given-names>MA</given-names></name></person-group>, ed. <source xml:lang="en">Veterinary Hematology and Clinical Chemistry</source>. <publisher-loc>Philadelphia, PA</publisher-loc>: <publisher-name>Lippincott Williams &amp; Wilkins</publisher-name>; <year>2003</year>:<fpage>83</fpage>–<lpage>88</lpage>.
+</mixed-citation></ref><ref id="jvim15040-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="jvim15040-cit-0018">
+<string-name name-style="western">
+<surname>Schlerka</surname>
+<given-names>G</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Baumgartner</surname>
+<given-names>W.</given-names>
+</string-name>
+<article-title>Parakeratose bei einem Höhenfleckviehkalb</article-title>. <source xml:lang="en">Wien Tierärztl Mschr</source>
+<year>1976</year>;<volume>63</volume>:<fpage>19</fpage>–<lpage>22</lpage>.
+</mixed-citation></ref><ref id="jvim15040-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="jvim15040-cit-0019">
+<string-name name-style="western">
+<surname>Vogt</surname>
+<given-names>DW</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Carlton</surname>
+<given-names>CG</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Miller</surname>
+<given-names>RB.</given-names>
+</string-name>
+<article-title>Hereditary parakeratosis in shorthorn beef calves</article-title>. <source xml:lang="en">Am J Vet Res</source>
+<year>1988</year>;<volume>49</volume>:<fpage>120</fpage>–<lpage>121</lpage>.
+<pub-id pub-id-type="pmid">3354957</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="jvim15040-cit-0020">
+<string-name name-style="western">
+<surname>Stöber</surname>
+<given-names>M.</given-names>
+</string-name>
+<article-title>[Parakeratosis in black pied calves. 1. Clinical findings and etiology]</article-title>. <source xml:lang="en">Dtsch Tierärztl Wochenschr</source>
+<year>1971</year>;<volume>78</volume>:<fpage>257</fpage>–<lpage>265</lpage>.
+<pub-id pub-id-type="pmid">4930216</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="jvim15040-cit-0021">
+<string-name name-style="western">
+<surname>Trautwein</surname>
+<given-names>G.</given-names>
+</string-name>
+<article-title>[Parakeratosis in black pied calves. 2. Pathological findings]</article-title>. <source xml:lang="en">Dtsch Tierärztl Wochenschr</source>
+<year>1971</year>;<volume>78</volume>:<fpage>265</fpage>–<lpage>270</lpage>.
+<pub-id pub-id-type="pmid">4930217</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="jvim15040-cit-0022">
+<string-name name-style="western">
+<surname>Weismann</surname>
+<given-names>K</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Flagstad</surname>
+<given-names>T.</given-names>
+</string-name>
+<article-title>Hereditary zinc deficiency (Adema disease) in cattle, an animal parallel to acrodermatitis enteropathica</article-title>. <source xml:lang="en">Acta Dermatovener</source>
+<year>1976</year>;<volume>56</volume>:<fpage>151</fpage>–<lpage>154</lpage>.
+<pub-id pub-id-type="pmid">58525</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="jvim15040-cit-0023">
+<string-name name-style="western">
+<surname>Andrews</surname>
+<given-names>GK.</given-names>
+</string-name>
+<article-title>Regulation and function of Zip4, the acrodermatitis enteropathica gene</article-title>. <source xml:lang="en">Biochem Soc Trans</source>
+<year>2008</year>;<volume>36</volume>:<fpage>1242</fpage>–<lpage>1246</lpage>.
+<pub-id pub-id-type="pmid">19021533</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1042/BST0361242</pub-id><pub-id pub-id-type="pmcid">PMC2634863</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="jvim15040-cit-0024">
+<string-name name-style="western">
+<surname>Park</surname>
+<given-names>CH</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Lee</surname>
+<given-names>MJ</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Kim</surname>
+<given-names>HJ</given-names>
+</string-name>, et al. <article-title>Congenital zinc deficiency from mutations of the SLC39A4 gene as the genetic background of acrodermatitis enteropathica</article-title>. <source xml:lang="en">J Korean Med Sci</source>
+<year>2010</year>;<volume>25</volume>:<fpage>1818</fpage>–<lpage>1820</lpage>.
+<pub-id pub-id-type="pmid">21165302</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.3346/jkms.2010.25.12.1818</pub-id><pub-id pub-id-type="pmcid">PMC2995241</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="jvim15040-cit-0025">
+<string-name name-style="western">
+<surname>Wang</surname>
+<given-names>F</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Kim</surname>
+<given-names>BE</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Dufner‐Beattie</surname>
+<given-names>J</given-names>
+</string-name>, et al. <article-title>Acrodermatitis enteropathica mutations affect transport activity, localization and zinc‐responsive trafficking of the mouse ZIP4 zinc transporter</article-title>. <source xml:lang="en">Hum Mol Genet</source>
+<year>2004</year>;<volume>13</volume>:<fpage>563</fpage>–<lpage>571</lpage>.
+<pub-id pub-id-type="pmid">14709598</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/hmg/ddh049</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="jvim15040-cit-0026">
+<string-name name-style="western">
+<surname>Wang</surname>
+<given-names>K</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Pugh</surname>
+<given-names>EW</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Griffen</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>Homozygosity mapping places the acrodermatitis enteropathica gene on chromosomal region 8q24.3</article-title>. <source xml:lang="en">Am J Hum Genet</source>
+<year>2001</year>;<volume>68</volume>:<fpage>1055</fpage>–<lpage>1060</lpage>.
+<pub-id pub-id-type="pmid">11254458</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1086/319514</pub-id><pub-id pub-id-type="pmcid">PMC1275625</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="jvim15040-cit-0027">
+<string-name name-style="western">
+<surname>Machen</surname>
+<given-names>M</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Montgomery</surname>
+<given-names>T</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Holland</surname>
+<given-names>R</given-names>
+</string-name>, et al. <article-title>Bovine hereditary zinc deficiency: Lethal trait A 46</article-title>. <source xml:lang="en">J Vet Diagn Invest</source>
+<year>1996</year>;<volume>8</volume>:<fpage>219</fpage>–<lpage>227</lpage>.
+<pub-id pub-id-type="pmid">8744744</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1177/104063879600800212</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="jvim15040-cit-0028">
+<string-name name-style="western">
+<surname>Jeejeebhoy</surname>
+<given-names>K.</given-names>
+</string-name>
+<article-title>Zinc: An essential trace element for parenteral nutrition</article-title>. <source xml:lang="en">Gastroenterology</source>
+<year>2009</year>;<volume>137</volume>:<fpage>S7</fpage>–<lpage>S12</lpage>.
+<pub-id pub-id-type="pmid">19874952</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1053/j.gastro.2009.08.014</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="jvim15040-cit-0029">
+<string-name name-style="western">
+<surname>Prasad</surname>
+<given-names>AS.</given-names>
+</string-name>
+<article-title>Impact of the discovery of human zinc deficiency on health</article-title>. <source xml:lang="en">J Am Coll Nutr</source>
+<year>2009</year>;<volume>28</volume>:<fpage>257</fpage>–<lpage>265</lpage>.
+<pub-id pub-id-type="pmid">20150599</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1080/07315724.2009.10719780</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="jvim15040-cit-0030">
+<string-name name-style="western">
+<surname>Brummerstedt</surname>
+<given-names>E.</given-names>
+</string-name>
+<article-title>Animal model of human disease. Acrodermatitis enteropathica, zinc malabsorption</article-title>. <source xml:lang="en">Am J Pathol</source>
+<year>1977</year>;<volume>87</volume>:<fpage>725</fpage>–<lpage>728</lpage>.
+<pub-id pub-id-type="pmid">559415</pub-id><pub-id pub-id-type="pmcid">PMC2032138</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="jvim15040-cit-0031">
+<string-name name-style="western">
+<surname>Lubis</surname>
+<given-names>I</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Ladds</surname>
+<given-names>PW</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Reilly</surname>
+<given-names>LR.</given-names>
+</string-name>
+<article-title>Age associated morphological changes in the lymphoid system of tropical cattle</article-title>. <source xml:lang="en">Res Vet Sci</source>
+<year>1982</year>;<volume>32</volume>:<fpage>270</fpage>–<lpage>277</lpage>.
+<pub-id pub-id-type="pmid">7100643</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="jvim15040-cit-0032">
+<string-name name-style="western">
+<surname>Andresen</surname>
+<given-names>E</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Flagstad</surname>
+<given-names>T</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Basse</surname>
+<given-names>A</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Brummerstedt</surname>
+<given-names>E.</given-names>
+</string-name>
+<article-title>Evidence of a Lethal Trait, A 46, in black pied Danish cattle of Frisian descent</article-title>. <source xml:lang="en">Nord Vet Med</source>
+<year>1970</year>;<volume>22</volume>:<fpage>473</fpage>–<lpage>485</lpage>.
+</mixed-citation></ref><ref id="jvim15040-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="jvim15040-cit-0033">
+<string-name name-style="western">
+<surname>Frohman</surname>
+<given-names>MA.</given-names>
+</string-name>
+<article-title>The phospholipase D superfamily as therapeutic targets</article-title>. <source xml:lang="en">Trends Pharmacol Sci</source>
+<year>2015</year>;<volume>36</volume>:<fpage>137</fpage>–<lpage>144</lpage>.
+<pub-id pub-id-type="pmid">25661257</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.tips.2015.01.001</pub-id><pub-id pub-id-type="pmcid">PMC4355084</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="jvim15040-cit-0034">
+<string-name name-style="western">
+<surname>Arun</surname>
+<given-names>SN</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Xie</surname>
+<given-names>D</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Howard</surname>
+<given-names>AC</given-names>
+</string-name>, et al. <article-title>Cell wounding activates phospholipase D in primary mouse keratinocytes</article-title>. <source xml:lang="en">J Lipid Res</source>
+<year>2013</year>;<volume>54</volume>:<fpage>581</fpage>–<lpage>591</lpage>.
+<pub-id pub-id-type="pmid">23288946</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1194/jlr.M027060</pub-id><pub-id pub-id-type="pmcid">PMC3617934</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="jvim15040-cit-0035">
+<string-name name-style="western">
+<surname>Grall</surname>
+<given-names>A</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Guaguere</surname>
+<given-names>E</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Planchais</surname>
+<given-names>S</given-names>
+</string-name>, et al. <article-title>PNPLA1 mutations cause autosomal recessive congenital ichthyosis in golden retriever dogs and humans</article-title>. <source xml:lang="en">Nat Genet</source>
+<year>2012</year>;<volume>44</volume>:<fpage>140</fpage>–<lpage>147</lpage>.
+<pub-id pub-id-type="pmid">22246504</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/ng.1056</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="jvim15040-cit-0036">
+<string-name name-style="western">
+<surname>Bollinger Bollag</surname>
+<given-names>W</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Bollag</surname>
+<given-names>RJ.</given-names>
+</string-name>
+<article-title>1,25‐Dihydroxyvitamin D(3), phospholipase D and protein kinase C in keratinocyte differentiation</article-title>. <source xml:lang="en">Mol Cell Endocrinol</source>
+<year>2001</year>;<volume>177</volume>:<fpage>173</fpage>–<lpage>182</lpage>.
+<pub-id pub-id-type="pmid">11377832</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/s0303-7207(01)00440-3</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="jvim15040-cit-0037">
+<string-name name-style="western">
+<surname>Jin</surname>
+<given-names>J</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Chou</surname>
+<given-names>C</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Lima</surname>
+<given-names>M</given-names>
+</string-name>, et al. <article-title>Systemic sclerosis is a complex disease associated mainly with immune regulatory and inflammatory genes</article-title>. <source xml:lang="en">Open Rheumatol J</source>
+<year>2014</year>;<volume>8</volume>:<fpage>29</fpage>–<lpage>42</lpage>.
+<pub-id pub-id-type="pmid">25328554</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.2174/1874312901408010029</pub-id><pub-id pub-id-type="pmcid">PMC4200700</pub-id></mixed-citation></ref><ref id="jvim15040-bib-0038"><label>38</label><mixed-citation publication-type="miscellaneous" id="jvim15040-cit-0038">
+<string-name name-style="western">
+<surname>Harris</surname>
+<given-names>B</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Ward‐Bailey</surname>
+<given-names>PF</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Bergstrom</surname>
+<given-names>DE</given-names>
+</string-name>, et al. Thin hair with small size (thss) is a new recessive hair mutation on Chromosome 12. Available at: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.informatics.jax.org/reference/J:171492">http://www.informatics.jax.org/reference/J:171492</ext-link>. Accessed November 30, 2017.
+</mixed-citation></ref><ref id="jvim15040-bib-0039"><label>39</label><mixed-citation publication-type="miscellaneous" id="jvim15040-cit-0039">
+<string-name name-style="western">
+<surname>Harris</surname>
+<given-names>BS</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Fairfield</surname>
+<given-names>HE</given-names>
+</string-name>, 
+<string-name name-style="western">
+<surname>Gilbert</surname>
+<given-names>GJ</given-names>
+</string-name>, et al. Thin hair with small size is the first Pld4 mutant mouse. Available at: <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.informatics.jax.org/reference/J:179503">http://www.informatics.jax.org/reference/J:179503</ext-link>. Accessed November 30, 2017.
+</mixed-citation></ref></ref-list></back></article>

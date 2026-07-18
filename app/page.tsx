@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import runtimeData from "@/src/generated/otc-runtime.json";
+import supportingLiterature from "@/src/generated/otc-supporting-literature.json";
 import { OtcProductSafetyClient, type OtcRuntime } from "@/src/components/otc-product-safety-client";
 import { siteDescription, siteName } from "@/src/lib/site";
 
@@ -34,7 +35,13 @@ export default function Home() {
                 허가 확인 제품 {runtimeData.products.length}개
               </span>
               <span className="inline-flex min-h-10 items-center rounded-lg border border-[#dce2e8] bg-white px-3.5 text-[12px] font-bold text-[#475467]">
-                근거 규칙 {runtimeData.rulesReleased}개
+                판매 SKU {runtimeData.catalogCoverage.sourceSkuCount}건 선별
+              </span>
+              <span className="inline-flex min-h-10 items-center rounded-lg border border-[#dce2e8] bg-white px-3.5 text-[12px] font-bold text-[#475467]">
+                약학정보원 연결 {runtimeData.catalogCoverage.healthKrConfirmedCount}건
+              </span>
+              <span className="inline-flex min-h-10 items-center rounded-lg border border-[#dce2e8] bg-white px-3.5 text-[12px] font-bold text-[#475467]">
+                판정 규칙 {runtimeData.rulesReleased}개 · 보조 문헌 {supportingLiterature.length}편
               </span>
               <span className="inline-flex min-h-10 items-center rounded-lg border border-[#eed7b7] bg-[#fff8ee] px-3.5 text-[12px] font-bold text-[#87520b]">
                 연구용 · 블라인드 독립평가 미완료
@@ -55,7 +62,7 @@ export default function Home() {
           {[
             ["제품명부터 시작", "성분을 몰라도 제품을 검색해 함께 복용하는 조합을 만들 수 있어요."],
             ["판정 기준은 고정", "AI가 위험 수준이나 용량 기준을 만들지 않고 공개된 결정론적 규칙만 사용해요."],
-            ["근거까지 바로 확인", "각 주의 항목에서 허가문서와 구체적인 원문 위치를 열어볼 수 있어요."],
+            ["근거까지 바로 확인", "각 주의 항목에서 식약처 허가 원문과 판정에 맞는 학술문헌을 함께 볼 수 있어요."],
           ].map(([title, description], index) => (
             <div key={title} className="flex gap-3">
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#20324f] text-[10px] font-extrabold text-white">

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-13T12:29:01+00:00",
+  "input_evidence_rows": 326,
+  "rows_with_reported_statistics": 57,
+  "reported_statistics": 124,
+  "counts_by_type": {
+    "relative_effect_measure": 20,
+    "reported_percentage": 102,
+    "reported_fraction": 2
+  },
+  "output": "C:/dev/otc-nutrient-safety-engine/research_v3/extraction/quantitative_effects.csv",
+  "output_sha256": "1f9477268aa3ca7f59f1eefa15a755011a0a555e68f85e38d4b914e563d3b1e7",
+  "claim_boundary": "Exact reported statistics only. No causal interpretation, risk-of-bias judgment, pooling, or clinical conclusion; synthesis_eligible is false for every row."
+}

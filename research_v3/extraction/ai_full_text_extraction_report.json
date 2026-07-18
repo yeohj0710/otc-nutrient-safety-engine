@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "method": "deterministic_keyword_candidate_extraction_by_codex_ai",
+  "unique_sources_verified": 63,
+  "manifest_records_processed": 66,
+  "articles_with_candidates": 63,
+  "ai_evidence_candidates": 326,
+  "by_clinical_node": {
+    "K1": 63,
+    "K2": 45,
+    "K3": 80,
+    "K4": 65,
+    "K5": 73
+  },
+  "source_hash_mismatches": [],
+  "human_verified_candidates": 0,
+  "claim_boundary": "Candidate passages only; no causal, clinical, threshold, or expert conclusion is established."
+}

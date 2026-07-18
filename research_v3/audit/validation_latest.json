@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "RELEASE_GOVERNANCE_PENDING",
+      "message": "canonical 제출본 승격과 공개 운영 배포 승인이 완료되지 않음"
+    }
+  ],
+  "counts": {
+    "rules_total": 6,
+    "rules_released": 6,
+    "full_text_decisions": 63,
+    "independent_scenarios": 12,
+    "development_scenarios": 12
+  },
+  "valid": true,
+  "release_ready": false
+}

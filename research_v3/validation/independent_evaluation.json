@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0.0",
+  "status": "evaluated",
+  "scenario_count": 12,
+  "metrics": {
+    "confusion_matrix": {
+      "tp": 6,
+      "tn": 6,
+      "fp": 0,
+      "fn": 0,
+      "critical_false_negative": 0
+    },
+    "sensitivity": {
+      "value": 1.0,
+      "ci95_wilson": [
+        0.6096657120978346,
+        1.0
+      ]
+    },
+    "specificity": {
+      "value": 1.0,
+      "ci95_wilson": [
+        0.6096657120978346,
+        1.0
+      ]
+    },
+    "positive_predictive_value": {
+      "value": 1.0,
+      "ci95_wilson": [
+        0.6096657120978346,
+        1.0
+      ]
+    },
+    "negative_predictive_value": {
+      "value": 1.0,
+      "ci95_wilson": [
+        0.6096657120978346,
+        1.0
+      ]
+    },
+    "accuracy": {
+      "value": 1.0,
+      "ci95_wilson": [
+        0.7575059933447592,
+        1.0
+      ]
+    },
+    "exact_hazard_set_accuracy": {
+      "value": 1.0,
+      "ci95_wilson": [
+        0.7575059933447592,
+        1.0
+      ]
+    }
+  },
+  "performance_claim_allowed": true,
+  "rows": [
+    {
+      "scenario_id": "IND-001",
+      "gold_hazards": [
+        "V3-DRAFT-KDRI-VD-UL"
+      ],
+      "predicted_hazards": [
+        "V3-DRAFT-KDRI-VD-UL"
+      ],
+      "critical": true
+    },
+    {
+      "scenario_id": "IND-002",
+      "gold_hazards": [],
+      "predicted_hazards": [],
+      "critical": false
+    },
+    {
+      "scenario_id": "IND-003",
+      "gold_hazards": [
+        "V3-DRAFT-KDRI-B6-UL"
+      ],
+      "predicted_hazards": [
+        "V3-DRAFT-KDRI-B6-UL"
+      ],
+      "critical": true
+    },
+    {
+      "scenario_id": "IND-004",
+      "gold_hazards": [],
+      "predicted_hazards": [],
+      "critical": false
+    },
+    {
+      "scenario_id": "IND-005",
+      "gold_hazards": [
+        "V3-DRAFT-KDRI-MG-UL"
+      ],
+      "predicted_hazards": [
+        "V3-DRAFT-KDRI-MG-UL"
+      ],
+      "critical": true
+    },
+    {
+      "scenario_id": "IND-006",
+      "gold_hazards": [],
+      "predicted_hazards": [],
+      "critical": false
+    },
+    {
+      "scenario_id": "IND-007",
+      "gold_hazards": [
+        "V3-DRAFT-KDRI-FE-UL"
+      ],
+      "predicted_hazards": [
+        "V3-DRAFT-KDRI-FE-UL"
+      ],
+      "critical": true
+    },
+    {
+      "scenario_id": "IND-008",
+      "gold_hazards": [],
+      "predicted_hazards": [],
+      "critical": false
+    },
+    {
+      "scenario_id": "IND-009",
+      "gold_hazards": [
+        "V3-DRAFT-KDRI-ZN-UL"
+      ],
+      "predicted_hazards": [
+        "V3-DRAFT-KDRI-ZN-UL"
+      ],
+      "critical": true
+    },
+    {
+      "scenario_id": "IND-010",
+      "gold_hazards": [],
+      "predicted_hazards": [],
+      "critical": false
+    },
+    {
+      "scenario_id": "IND-011",
+      "gold_hazards": [
+        "V3-DRAFT-KDRI-CA-UL"
+      ],
+      "predicted_hazards": [
+        "V3-DRAFT-KDRI-CA-UL"
+      ],
+      "critical": true
+    },
+    {
+      "scenario_id": "IND-012",
+      "gold_hazards": [],
+      "predicted_hazards": [],
+      "critical": false
+    }
+  ]
+}

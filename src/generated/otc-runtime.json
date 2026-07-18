@@ -190,19 +190,77 @@
   },
   "catalogCoverage": {
     "sourceSkuCount": 776,
-    "healthKrConfirmedCount": 369,
-    "healthKrConfirmedUniqueProductCount": 341,
+    "healthKrConfirmedCount": 458,
+    "healthKrConfirmedUniqueProductCount": 413,
     "runtimePromotionAllowedCount": 0,
     "classificationCounts": {
-      "analgesic_antiinflammatory": 53,
+      "analgesic_antiinflammatory": 57,
       "anthelmintic": 4,
-      "antihistamine": 12,
-      "cold_respiratory": 27,
-      "gastrointestinal": 70,
-      "other_otc": 82,
-      "topical_or_local": 121
+      "antihistamine": 9,
+      "cold_respiratory": 18,
+      "gastrointestinal": 84,
+      "other_otc": 202,
+      "topical_or_local": 84
+    },
+    "existingProductRematch": {
+      "total": 16,
+      "success": 4,
+      "conflict": 1,
+      "unlinked": 11
     }
   },
+  "catalogExistingMatches": [
+    {
+      "itemSequence": "202200525",
+      "matchStatus": "conflict",
+      "officialItemName": "어린이타이레놀현탁액",
+      "officialManufacturer": "한국존슨앤드존슨판매",
+      "officialDosageForm": "현탁액",
+      "retailDisplayLinks": "어린이타이레놀현탁액 [100mL]",
+      "sourceUrl": "https://health.kr/searchDrug/result_drug.asp?drug_cd=2022020400007",
+      "mfdsPromotionEvidenceComplete": false
+    },
+    {
+      "itemSequence": "198601920",
+      "matchStatus": "success",
+      "officialItemName": "어린이부루펜시럽(80mL)",
+      "officialManufacturer": "삼일제약",
+      "officialDosageForm": "현탁액",
+      "retailDisplayLinks": "어린이 부루펜시럽 [90ml]",
+      "sourceUrl": "https://health.kr/searchDrug/result_drug.asp?drug_cd=A11A0500A0154",
+      "mfdsPromotionEvidenceComplete": false
+    },
+    {
+      "itemSequence": "200300406",
+      "matchStatus": "success",
+      "officialItemName": "닥터베아제정",
+      "officialManufacturer": "대웅제약",
+      "officialDosageForm": "정제",
+      "retailDisplayLinks": "닥터베아제 [10T]",
+      "sourceUrl": "https://health.kr/searchDrug/result_drug.asp?drug_cd=A11AOOOOO0816",
+      "mfdsPromotionEvidenceComplete": false
+    },
+    {
+      "itemSequence": "199900926",
+      "matchStatus": "success",
+      "officialItemName": "훼스탈골드정",
+      "officialManufacturer": "한독",
+      "officialDosageForm": "장용정",
+      "retailDisplayLinks": "훼스탈골드 [30정]",
+      "sourceUrl": "https://health.kr/searchDrug/result_drug.asp?drug_cd=A11A0740B0011",
+      "mfdsPromotionEvidenceComplete": false
+    },
+    {
+      "itemSequence": "199801026",
+      "matchStatus": "success",
+      "officialItemName": "훼스탈플러스정",
+      "officialManufacturer": "한독",
+      "officialDosageForm": "장용정",
+      "retailDisplayLinks": "훼스탈플러스 [20정] | 훼스탈플러스 [100정]",
+      "sourceUrl": "https://health.kr/searchDrug/result_drug.asp?drug_cd=A11A0740B0009",
+      "mfdsPromotionEvidenceComplete": false
+    }
+  ],
   "urgentReferralBindings": [
     {
       "itemSequence": "202106092",

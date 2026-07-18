@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "fetched_at_utc": "2026-07-13T01:31:22+00:00",
+  "registry_sha256": "9be80bcd6711274b6cdcf7da49dfd92762cdc61a601ce8c4d59a15f733491956",
+  "records": [
+    {
+      "source_id": "NIH_ODS_VITAMIN_D_HP",
+      "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "status": "failed",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "NIH_ODS_CALCIUM_HP",
+      "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+      "status": "failed",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "NIH_ODS_VITAMIN_B6_HP",
+      "url": "https://ods.od.nih.gov/factsheets/VitaminB6-HealthProfessional/",
+      "status": "failed",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "NIH_ODS_MAGNESIUM_HP",
+      "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "status": "failed",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "NIH_ODS_IRON_HP",
+      "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
+      "status": "failed",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "NIH_ODS_ZINC_HP",
+      "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "status": "failed",
+      "error": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "source_id": "EFSA_UL_SUMMARY_2024_06",
+      "url": "https://www.efsa.europa.eu/sites/default/files/assets/UL_Summary_tables.pdf",
+      "status": "fetched",
+      "final_url": "https://www.efsa.europa.eu/sites/default/files/2024-05/ul-summary-report.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\sources\\raw\\20260713\\EFSA_UL_SUMMARY_2024_06.pdf",
+      "bytes": 202841,
+      "sha256": "3d723ca33ef1bb850ac29b159f7a2676ec61379d880bafebc412dde85e35224e"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_NOTICE",
+      "url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=168",
+      "status": "fetched",
+      "final_url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=168",
+      "http_status": 200,
+      "content_type": "text/html",
+      "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\sources\\raw\\20260713\\KNS_KDRI_2025_NOTICE.html",
+      "bytes": 56541,
+      "sha256": "7257232ddd2fae0d68d71c1731e4d963a16ff6ef6ace302922492f8667205451"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_PUBLIC_MATERIALS",
+      "url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167",
+      "status": "fetched",
+      "final_url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167",
+      "http_status": 200,
+      "content_type": "text/html",
+      "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\sources\\raw\\20260713\\KNS_KDRI_2025_PUBLIC_MATERIALS.html",
+      "bytes": 56255,
+      "sha256": "d778457e359cb49d991d1a5b4dcd5e85929d752e074239d51b20f0fb2a6c6b53"
+    },
+    {
+      "source_id": "MFDS_HFF_STANDARD_2026_32",
+      "url": "https://www.law.go.kr/admRulLsInfoP.do?admRulSeq=2100000277832",
+      "status": "fetched",
+      "final_url": "https://www.law.go.kr/admRulLsInfoP.do?admRulSeq=2100000277832",
+      "http_status": 200,
+      "content_type": "text/html",
+      "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\sources\\raw\\20260713\\MFDS_HFF_STANDARD_2026_32.html",
+      "bytes": 77376,
+      "sha256": "9bf11197ccb0f9d92b9aa6ed3f85b2bde596b5a178e8deaceaadb3e0366ff155"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_SUMMARY_KO",
+      "url": "https://www.kns.or.kr/common/download.asp?filename=2025%20KDRI_%EC%9A%94%EC%95%BD%ED%91%9C_%EA%B5%AD%EB%AC%B8_2025.12.29.pdf&filerename=2025123102020340340.pdf&FileDir=FileRoom",
+      "status": "fetched",
+      "final_url": "https://www.kns.or.kr/common/download.asp?filename=2025%20KDRI_%EC%9A%94%EC%95%BD%ED%91%9C_%EA%B5%AD%EB%AC%B8_2025.12.29.pdf&filerename=2025123102020340340.pdf&FileDir=FileRoom",
+      "http_status": 200,
+      "content_type": "application/unknown",
+      "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\sources\\raw\\20260713\\KNS_KDRI_2025_SUMMARY_KO.pdf",
+      "bytes": 334383,
+      "sha256": "605ff8431ea7b6c465165bb5335aba580dcd4d56ba13a69583e62d163a7cc0c2"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "url": "https://www.kns.or.kr/common/download.asp?filename=2025%20KDRI_books_summary_corrected_f4.zip&filerename=20260317173290189018.zip&FileDir=FileRoom",
+      "status": "fetched",
+      "final_url": "https://www.kns.or.kr/common/download.asp?filename=2025%20KDRI_books_summary_corrected_f4.zip&filerename=20260317173290189018.zip&FileDir=FileRoom",
+      "http_status": 200,
+      "content_type": "application/unknown",
+      "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\sources\\raw\\20260713\\KNS_KDRI_2025_BOOKS_CORRECTED_F4.zip",
+      "bytes": 44386649,
+      "sha256": "26966013355039668bfc9eae799e86bd7ca45c27942ae5d10fb41c637913a6cb"
+    }
+  ],
+  "summary": {
+    "total": 12,
+    "fetched": 6,
+    "failed": 6
+  }
+}

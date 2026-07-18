@@ -1,11 +1,12 @@
 import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { searchOtcProducts } from "../../../src/lib/otc/search";
 import type { OtcProduct } from "../../../src/lib/otc/schema";
 
-const root = resolve(import.meta.dirname, "../../..");
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
 const casesPath = resolve(root, "research_v3/otc/validation/product_search_cases.csv");
 const runtimePath = resolve(root, "src/generated/otc-runtime.json");
 const outputPath = resolve(root, "research_v3/otc/validation/product_search_evaluation.json");

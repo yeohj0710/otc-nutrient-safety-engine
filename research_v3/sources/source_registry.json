@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "sources": [
+    {
+      "source_id": "NIH_ODS_VITAMIN_D_HP",
+      "organization": "NIH Office of Dietary Supplements",
+      "jurisdiction": "United States",
+      "title": "Vitamin D - Health Professional Fact Sheet",
+      "url": "https://ods.od.nih.gov/factsheets/VitaminD-HealthProfessional/",
+      "source_type": "government_fact_sheet",
+      "intended_use": "고용량 비타민 D 위해·상호작용·미국 DRI 보조 기준"
+    },
+    {
+      "source_id": "NIH_ODS_CALCIUM_HP",
+      "organization": "NIH Office of Dietary Supplements",
+      "jurisdiction": "United States",
+      "title": "Calcium - Health Professional Fact Sheet",
+      "url": "https://ods.od.nih.gov/factsheets/Calcium-HealthProfessional/",
+      "source_type": "government_fact_sheet",
+      "intended_use": "칼슘 위해·상호작용·미국 DRI 보조 기준"
+    },
+    {
+      "source_id": "NIH_ODS_VITAMIN_B6_HP",
+      "organization": "NIH Office of Dietary Supplements",
+      "jurisdiction": "United States",
+      "title": "Vitamin B6 - Health Professional Fact Sheet",
+      "url": "https://ods.od.nih.gov/factsheets/VitaminB6-HealthProfessional/",
+      "source_type": "government_fact_sheet",
+      "intended_use": "비타민 B6 신경병증·상호작용 보조 기준"
+    },
+    {
+      "source_id": "NIH_ODS_MAGNESIUM_HP",
+      "organization": "NIH Office of Dietary Supplements",
+      "jurisdiction": "United States",
+      "title": "Magnesium - Health Professional Fact Sheet",
+      "url": "https://ods.od.nih.gov/factsheets/Magnesium-HealthProfessional/",
+      "source_type": "government_fact_sheet",
+      "intended_use": "마그네슘 보충제 위해·상호작용 보조 기준"
+    },
+    {
+      "source_id": "NIH_ODS_IRON_HP",
+      "organization": "NIH Office of Dietary Supplements",
+      "jurisdiction": "United States",
+      "title": "Iron - Health Professional Fact Sheet",
+      "url": "https://ods.od.nih.gov/factsheets/Iron-HealthProfessional/",
+      "source_type": "government_fact_sheet",
+      "intended_use": "철 위해·상호작용·미국 DRI 보조 기준"
+    },
+    {
+      "source_id": "NIH_ODS_ZINC_HP",
+      "organization": "NIH Office of Dietary Supplements",
+      "jurisdiction": "United States",
+      "title": "Zinc - Health Professional Fact Sheet",
+      "url": "https://ods.od.nih.gov/factsheets/Zinc-HealthProfessional/",
+      "source_type": "government_fact_sheet",
+      "intended_use": "아연 위해·구리 결핍·상호작용 보조 기준"
+    },
+    {
+      "source_id": "EFSA_UL_SUMMARY_2024_06",
+      "organization": "European Food Safety Authority",
+      "jurisdiction": "European Union",
+      "title": "Summary of Tolerable Upper Intake Levels, version 10",
+      "url": "https://www.efsa.europa.eu/sites/default/files/assets/UL_Summary_tables.pdf",
+      "source_type": "authority_summary_pdf",
+      "intended_use": "유럽 UL·safe level 대조"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_NOTICE",
+      "organization": "한국영양학회·보건복지부",
+      "jurisdiction": "Republic of Korea",
+      "title": "2025 한국인 영양소 섭취기준 개정 보도자료",
+      "url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=168",
+      "source_type": "official_notice",
+      "intended_use": "2025 KDRI 존재·대상 영양소 확인; 상세 수치 원문 대체 불가"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_PUBLIC_MATERIALS",
+      "organization": "한국영양학회·보건복지부",
+      "jurisdiction": "Republic of Korea",
+      "title": "2025 KDRI 공개자료 및 정오표 안내",
+      "url": "https://www.kns.or.kr/fileroom/fileroom_view.asp?BoardID=Kdr&idx=167",
+      "source_type": "official_materials_page",
+      "intended_use": "2025 KDRI 최종 공개자료의 공식 배포 페이지와 정오표 상태 확인"
+    },
+    {
+      "source_id": "MFDS_HFF_STANDARD_2026_32",
+      "organization": "식품의약품안전처·국가법령정보센터",
+      "jurisdiction": "Republic of Korea",
+      "title": "건강기능식품의 기준 및 규격",
+      "url": "https://www.law.go.kr/admRulLsInfoP.do?admRulSeq=2100000277832",
+      "source_type": "current_administrative_rule",
+      "intended_use": "2026-04-13 시행 국내 건강기능식품 영양성분 기준·규격의 권위 원문"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_SUMMARY_KO",
+      "organization": "한국영양학회·보건복지부",
+      "jurisdiction": "Republic of Korea",
+      "title": "2025 KDRI 요약표 국문",
+      "url": "https://www.kns.or.kr/common/download.asp?filename=2025%20KDRI_%EC%9A%94%EC%95%BD%ED%91%9C_%EA%B5%AD%EB%AC%B8_2025.12.29.pdf&filerename=2025123102020340340.pdf&FileDir=FileRoom",
+      "output_extension": ".pdf",
+      "source_type": "official_summary_pdf",
+      "intended_use": "한국 성·연령별 영양소 섭취기준과 상한섭취량의 1차 기준표"
+    },
+    {
+      "source_id": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+      "organization": "한국영양학회·보건복지부",
+      "jurisdiction": "Republic of Korea",
+      "title": "2025 KDRI 책자·요약본 정오표 적용 f4",
+      "url": "https://www.kns.or.kr/common/download.asp?filename=2025%20KDRI_books_summary_corrected_f4.zip&filerename=20260317173290189018.zip&FileDir=FileRoom",
+      "output_extension": ".zip",
+      "source_type": "official_book_archive",
+      "intended_use": "2025 KDRI 상세 근거와 정오표 반영 원문"
+    }
+  ]
+}

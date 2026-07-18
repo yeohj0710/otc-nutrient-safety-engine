@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "archive_source_id": "KNS_KDRI_2025_BOOKS_CORRECTED_F4",
+  "archive_note": "공식 배포 페이지가 2026-03-16 3차 정오표 적용 f4로 표시한 묶음",
+  "files": [
+    {
+      "name": "2025 KDRI_정오표_1차(26.2.2)_2차(26.2.27)_3차(26.3.16).pdf",
+      "bytes": 472997,
+      "sha256": "185BA9670AA112F56C7A90F50F4CE0A1F5DAE7211050F74488B0C8F34F448CF5"
+    },
+    {
+      "name": "웹용_2025 KDRI-1권_에너지와 다량영양소.pdf",
+      "bytes": 10940841,
+      "sha256": "A0C8D2C03C2F94075C4A9C5E0976C0D17B2EE7E2C3EFB0549A834ACF7BCBECD3"
+    },
+    {
+      "name": "웹용_2025 KDRI-2권_비타민.pdf",
+      "bytes": 15471520,
+      "sha256": "18C99AEB0E748A2B28A53195BFDF82E54E32735C573D6E0C9E73E8A8556B90D1"
+    },
+    {
+      "name": "웹용_2025 KDRI-3권_무기질.pdf",
+      "bytes": 11993931,
+      "sha256": "E106CF17921A7C53830F3259040D68010A4391B7AFCF2D5EC61BABD0DFD508FD"
+    },
+    {
+      "name": "웹용_2025 KDRI-국문 요약본.pdf",
+      "bytes": 6885726,
+      "sha256": "5A5567ABEF1659C13AA4EC47EDB4A4571D2D18654362C431BB57C6764B42B74D"
+    },
+    {
+      "name": "웹용_2025 KDRI_영문요약본.pdf",
+      "bytes": 8603102,
+      "sha256": "5C0BF7E3FFC6AF5443CFDE2A4D6F66D96CE82BCA7E2D3581081908BD836636F2"
+    }
+  ],
+  "relevant_locators": [
+    "비타민 권 PDF p.12: 비타민 D 요약표",
+    "비타민 권 PDF p.14: 비타민 B6 요약표",
+    "무기질 권 PDF p.16: 칼슘·마그네슘 요약표",
+    "무기질 권 PDF p.17: 철·아연 요약표",
+    "정오표 PDF p.1: 관련 요약표 임계값 수정 없음 확인"
+  ]
+}

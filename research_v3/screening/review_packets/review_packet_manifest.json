@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "full_queue": {
+    "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\screening\\review_packets\\title_abstract_full_queue.csv",
+    "rows": 15890,
+    "sha256": "6aff288d5ca08e2b5b6d1c63fa77991f32aa5f31e83fe81b8394ad30eec7cebb",
+    "human_decisions_prefilled": 0
+  },
+  "priority_packet": {
+    "path": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\screening\\review_packets\\priority_118_review_packet.csv",
+    "rows": 118,
+    "sha256": "88f44de378fb0457523ef2ca49e210d421cc8d5ed46f079537df70c76ef84513",
+    "human_decisions_prefilled": 0
+  },
+  "warning": "computational_proposal is ordering metadata, not a human inclusion decision"
+}

@@ -1,0 +1,7 @@
+﻿review_item_id,rule_id,ai_structural_decision,missing_fields,source_locator_present,expert_approval_granted,reviewer_id,review_status,human_confirmation_required
+ERR-001,V3-DRAFT-KDRI-VD-UL,ai_structurally_complete,,true,false,codex_ai,ai_reviewed_not_human,true
+ERR-002,V3-DRAFT-KDRI-B6-UL,ai_structurally_complete,,true,false,codex_ai,ai_reviewed_not_human,true
+ERR-003,V3-DRAFT-KDRI-MG-UL,ai_structurally_complete,,true,false,codex_ai,ai_reviewed_not_human,true
+ERR-004,V3-DRAFT-KDRI-FE-UL,ai_structurally_complete,,true,false,codex_ai,ai_reviewed_not_human,true
+ERR-005,V3-DRAFT-KDRI-ZN-UL,ai_structurally_complete,,true,false,codex_ai,ai_reviewed_not_human,true
+ERR-006,V3-DRAFT-KDRI-CA-UL,ai_structurally_complete,,true,false,codex_ai,ai_reviewed_not_human,true

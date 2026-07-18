@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "NO_FULL_TEXT_REVIEW",
+      "message": "전문 판정 0건"
+    }
+  ],
+  "counts": {
+    "rules_total": 6,
+    "rules_released": 6,
+    "full_text_decisions": 0,
+    "independent_scenarios": 12,
+    "development_scenarios": 12
+  },
+  "valid": true,
+  "release_ready": false
+}

@@ -66,6 +66,9 @@ def build() -> dict:
     catalog_summary = json.loads(
         (OTC / "selection" / "catalog_health_kr_summary.json").read_text(encoding="utf-8")
     )
+    catalog_match_rows = rows(
+        OTC / "selection" / "catalog_health_kr_existing_product_matches.csv"
+    )
     if catalog_summary["runtime_promotion_allowed_count"] != 0:
         raise ValueError("health.kr candidates cannot be promoted without MFDS evidence")
     released_rules = [rule for rule in rules if rule["status"] == "released"]
@@ -235,7 +238,24 @@ def build() -> dict:
             "healthKrConfirmedUniqueProductCount": catalog_summary["confirmed_unique_official_product_count"],
             "runtimePromotionAllowedCount": catalog_summary["runtime_promotion_allowed_count"],
             "classificationCounts": catalog_summary["classification_counts"],
+            "existingProductRematch": catalog_summary[
+                "existing_research_product_rematch"
+            ],
         },
+        "catalogExistingMatches": [
+            {
+                "itemSequence": row["mfds_item_sequence"],
+                "matchStatus": row["match_status"],
+                "officialItemName": row["official_item_name"],
+                "officialManufacturer": row["official_manufacturer"],
+                "officialDosageForm": row["official_dosage_form"],
+                "retailDisplayLinks": row["retail_display_links"],
+                "sourceUrl": row["official_source_url"],
+                "mfdsPromotionEvidenceComplete": False,
+            }
+            for row in catalog_match_rows
+            if row["in_runtime"] == "true" and row["match_status"] in {"success", "conflict"}
+        ],
         "urgentReferralBindings": [
             {"itemSequence": binding["item_sequence"], "terms": [term for term in binding.get("red_flag_terms", "").split(";") if term]}
             for binding in bindings if binding.get("red_flag_terms")

@@ -2,7 +2,7 @@
   "schema_version": "2.0.0",
   "lineage": "research_v3",
   "research_direction": "korean_otc_product_safety",
-  "generated_at_utc": "2026-07-16T10:25:58.924859+00:00",
+  "generated_at_utc": "2026-07-16T14:28:08.858330+00:00",
   "claim_boundary": "evidence_traceable_korean_otc_product_safety_research_working_state",
   "prior_direction": {
     "status": "superseded",
@@ -186,35 +186,35 @@
     },
     "catalog_health_kr_confirmed": {
       "status": "health_kr_confirmed_not_mfds_authorization",
-      "value": 369
+      "value": 458
     },
     "catalog_health_kr_unique_official_products": {
       "status": "health_kr_stable_identity",
-      "value": 341
+      "value": 413
     },
     "catalog_health_kr_research_search_usable": {
       "status": "private_research_candidate_input",
-      "value": 369
+      "value": 458
     },
     "catalog_health_kr_review_required": {
       "status": "excluded_unconfirmed",
-      "value": 82
+      "value": 10
     },
     "catalog_health_kr_not_found": {
       "status": "excluded_unconfirmed",
-      "value": 137
+      "value": 11
     },
     "catalog_health_kr_not_applicable": {
       "status": "excluded_unconfirmed",
-      "value": 188
+      "value": 297
     },
     "catalog_health_kr_duplicate_extra_links": {
       "status": "retail_sku_to_official_product_many_to_one",
-      "value": 28
+      "value": 45
     },
     "catalog_health_kr_ingredient_form_groups": {
       "status": "stable_ingredient_code_and_dosage_form",
-      "value": 264
+      "value": 306
     },
     "catalog_health_kr_mapping_failures": {
       "status": "validated",
@@ -222,7 +222,7 @@
     },
     "catalog_health_kr_conflicts": {
       "status": "preserved_for_review",
-      "value": 2
+      "value": 6
     },
     "catalog_health_kr_existing_mfds_stable_identifier_overlaps": {
       "status": "exact_identifier_only_no_name_merge",
@@ -236,176 +236,176 @@
       "status": "descriptive_quality_only",
       "value": {
         "retail_price": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "retail_specification": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "official_product_key": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "official_item_seq": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
-        "standard_code_or_barcode": {
-          "present": 77,
-          "missing": 292,
-          "denominator": 369,
-          "missing_rate": 0.791328
+        "validated_standard_code_or_barcode": {
+          "present": 0,
+          "missing": 458,
+          "denominator": 458,
+          "missing_rate": 1.0
         },
         "efficacy": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "dosage": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "active_ingredients": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "dosage_form": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "route": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "atc_code": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "kpic_atc": {
-          "present": 296,
-          "missing": 73,
-          "denominator": 369,
-          "missing_rate": 0.197832
+          "present": 366,
+          "missing": 92,
+          "denominator": 458,
+          "missing_rate": 0.200873
         },
         "storage": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "valid_term": {
           "present": 0,
-          "missing": 369,
-          "denominator": 369,
+          "missing": 458,
+          "denominator": 458,
           "missing_rate": 1.0
         },
         "insurance": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "precautions": {
-          "present": 369,
+          "present": 458,
           "missing": 0,
-          "denominator": 369,
+          "denominator": 458,
           "missing_rate": 0.0
         },
         "professional_precautions": {
           "present": 0,
-          "missing": 369,
-          "denominator": 369,
+          "missing": 458,
+          "denominator": 458,
           "missing_rate": 1.0
         },
         "interactions": {
-          "present": 63,
-          "missing": 306,
-          "denominator": 369,
-          "missing_rate": 0.829268
+          "present": 75,
+          "missing": 383,
+          "denominator": 458,
+          "missing_rate": 0.836245
         },
         "dur_contraindications": {
-          "present": 30,
-          "missing": 339,
-          "denominator": 369,
-          "missing_rate": 0.918699
+          "present": 38,
+          "missing": 420,
+          "denominator": 458,
+          "missing_rate": 0.917031
         },
         "dur_age": {
-          "present": 15,
-          "missing": 354,
-          "denominator": 369,
-          "missing_rate": 0.95935
+          "present": 16,
+          "missing": 442,
+          "denominator": 458,
+          "missing_rate": 0.965066
         },
         "dur_pregnancy": {
-          "present": 81,
-          "missing": 288,
-          "denominator": 369,
-          "missing_rate": 0.780488
+          "present": 98,
+          "missing": 360,
+          "denominator": 458,
+          "missing_rate": 0.786026
         },
         "dur_senior": {
-          "present": 13,
-          "missing": 356,
-          "denominator": 369,
-          "missing_rate": 0.96477
+          "present": 17,
+          "missing": 441,
+          "denominator": 458,
+          "missing_rate": 0.962882
         },
         "dur_max_dose": {
-          "present": 35,
-          "missing": 334,
-          "denominator": 369,
-          "missing_rate": 0.905149
+          "present": 48,
+          "missing": 410,
+          "denominator": 458,
+          "missing_rate": 0.895197
         },
         "dur_max_period": {
-          "present": 16,
-          "missing": 353,
-          "denominator": 369,
-          "missing_rate": 0.95664
+          "present": 19,
+          "missing": 439,
+          "denominator": 458,
+          "missing_rate": 0.958515
         },
         "dur_split_dosage": {
-          "present": 6,
-          "missing": 363,
-          "denominator": 369,
-          "missing_rate": 0.98374
+          "present": 8,
+          "missing": 450,
+          "denominator": 458,
+          "missing_rate": 0.982533
         },
         "medication_guide": {
-          "present": 366,
+          "present": 455,
           "missing": 3,
-          "denominator": 369,
-          "missing_rate": 0.00813
+          "denominator": 458,
+          "missing_rate": 0.00655
         },
         "same_ingredient_products": {
-          "present": 259,
-          "missing": 110,
-          "denominator": 369,
-          "missing_rate": 0.298103
+          "present": 320,
+          "missing": 138,
+          "denominator": 458,
+          "missing_rate": 0.30131
         }
       }
     },
     "research_tests_passed": {
       "status": "passed",
-      "value": 136
+      "value": 139
     },
     "app_tests_passed": {
       "status": "passed",
-      "value": 66
+      "value": 69
     },
     "static_paths_generated": {
       "status": "passed",
@@ -418,7 +418,7 @@
     "software_validation": {
       "schema_version": "1.0.0",
       "research_direction": "korean_otc_product_safety",
-      "captured_at_utc": "2026-07-16T10:25:51.737514+00:00",
+      "captured_at_utc": "2026-07-16T14:27:52.980184+00:00",
       "status": "passed",
       "results": {
         "research_tests": {
@@ -431,7 +431,7 @@
           ],
           "exit_code": 0,
           "status": "passed",
-          "passed": 136,
+          "passed": 139,
           "failed": 0
         },
         "app_tests": {
@@ -441,8 +441,8 @@
           ],
           "exit_code": 0,
           "status": "passed",
-          "passed": 66,
-          "test_files": 12
+          "passed": 69,
+          "test_files": 13
         },
         "lint": {
           "command": [

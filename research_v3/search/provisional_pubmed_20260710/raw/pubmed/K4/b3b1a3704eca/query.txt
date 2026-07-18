@@ -1,0 +1,39 @@
+(
+  "Magnesium Compounds"[Mesh]
+  OR "Magnesium Oxide"[Mesh]
+  OR "Magnesium Hydroxide"[Mesh]
+  OR magnesium[tiab]
+  OR "magnesium supplement"[tiab]
+  OR "magnesium supplements"[tiab]
+  OR "magnesium oxide"[tiab]
+  OR "magnesium hydroxide"[tiab]
+  OR "magnesium citrate"[tiab]
+  OR "elemental magnesium"[tiab]
+)
+AND
+(
+  "Dietary Supplements"[Mesh]
+  OR supplement*[tiab]
+  OR laxative*[tiab]
+  OR cathartic*[tiab]
+  OR antacid*[tiab]
+  OR oral[tiab]
+  OR administer*[tiab]
+  OR taking[tiab]
+  OR receiving[tiab]
+  OR treatment[tiab]
+  OR intake[tiab]
+)
+AND
+(
+  "Diarrhea"[Mesh]
+  OR "Hypermagnesemia"[Mesh]
+  OR diarrhea[tiab]
+  OR diarrhoea[tiab]
+  OR hypermagnesem*[tiab]
+  OR hypermagnesaem*[tiab]
+  OR "renal insufficiency"[tiab]
+  OR "kidney failure"[tiab]
+  OR adverse[tiab]
+  OR toxic*[tiab]
+)

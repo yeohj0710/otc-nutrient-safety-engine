@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_count": 9,
+  "runs": [
+    {
+      "node_id": "K1",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K1\\raw_manifest.json",
+      "hit_count": 5697,
+      "exported_count": 5697,
+      "imported_count": 5697,
+      "raw_file_count": 33,
+      "failures": 0
+    },
+    {
+      "node_id": "K2",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K2\\cd801112724a\\raw_manifest.json",
+      "hit_count": 402,
+      "exported_count": 402,
+      "imported_count": 402,
+      "raw_file_count": 7,
+      "failures": 0
+    },
+    {
+      "node_id": "K2",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K2\\raw_manifest.json",
+      "hit_count": 387,
+      "exported_count": 387,
+      "imported_count": 387,
+      "raw_file_count": 6,
+      "failures": 0
+    },
+    {
+      "node_id": "K3",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K3\\e784727bd33a\\raw_manifest.json",
+      "hit_count": 3105,
+      "exported_count": 3105,
+      "imported_count": 3105,
+      "raw_file_count": 20,
+      "failures": 0
+    },
+    {
+      "node_id": "K3",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K3\\raw_manifest.json",
+      "hit_count": 1805,
+      "exported_count": 1805,
+      "imported_count": 1805,
+      "raw_file_count": 14,
+      "failures": 0
+    },
+    {
+      "node_id": "K4",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K4\\b3b1a3704eca\\raw_manifest.json",
+      "hit_count": 3742,
+      "exported_count": 3742,
+      "imported_count": 3742,
+      "raw_file_count": 23,
+      "failures": 0
+    },
+    {
+      "node_id": "K4",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K4\\raw_manifest.json",
+      "hit_count": 433,
+      "exported_count": 433,
+      "imported_count": 433,
+      "raw_file_count": 7,
+      "failures": 0
+    },
+    {
+      "node_id": "K5",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K5\\9e3801c2def0\\raw_manifest.json",
+      "hit_count": 3248,
+      "exported_count": 3248,
+      "imported_count": 3248,
+      "raw_file_count": 21,
+      "failures": 0
+    },
+    {
+      "node_id": "K5",
+      "manifest_path": "C:\\dev\\otc-nutrient-safety-engine\\research_v2\\search\\raw\\pubmed\\K5\\raw_manifest.json",
+      "hit_count": 1671,
+      "exported_count": 1671,
+      "imported_count": 1671,
+      "raw_file_count": 13,
+      "failures": 0
+    }
+  ],
+  "failures": [],
+  "valid": true
+}

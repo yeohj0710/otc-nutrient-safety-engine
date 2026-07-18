@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0.0",
+  "source_lineage": "research_v2",
+  "target_lineage": "research_v3",
+  "inventory": [
+    {
+      "artifact": "search_runs",
+      "path": "search/search_run_log.csv",
+      "sha256": "37b226de2983caac5068dd303de68c82ee33d25008267b46e357ec132107070b",
+      "row_count": 5,
+      "field_count": 17,
+      "reuse_status": "reusable_after_integrity_check",
+      "reason": "검색 계보·정규화·중복 제거 구조 재사용 가능"
+    },
+    {
+      "artifact": "normalized_records",
+      "path": "search/normalized/records.csv",
+      "sha256": "e8a7f47489578bc8f6f29f6b1bb81a79465837eabf035acd61c68cc8aca3a070",
+      "row_count": 16194,
+      "field_count": 20,
+      "reuse_status": "reusable_after_integrity_check",
+      "reason": "검색 계보·정규화·중복 제거 구조 재사용 가능"
+    },
+    {
+      "artifact": "dedup_log",
+      "path": "search/dedup_log.csv",
+      "sha256": "4dab0978323b14eaa55189c6f0215d2bd991116379a5a0cafd344d92b1ba1b7d",
+      "row_count": 304,
+      "field_count": 10,
+      "reuse_status": "reusable_after_integrity_check",
+      "reason": "검색 계보·정규화·중복 제거 구조 재사용 가능"
+    },
+    {
+      "artifact": "title_abstract_screening",
+      "path": "screening/title_abstract.csv",
+      "sha256": "5a920d9f2d996631f03666c91680bac08fda92576f7ac67afe880af4b1aaf5b5",
+      "row_count": 0,
+      "field_count": 10,
+      "reuse_status": "template_only",
+      "reason": "헤더만 존재하거나 행이 없음"
+    },
+    {
+      "artifact": "full_text_screening",
+      "path": "screening/full_text.csv",
+      "sha256": "6e14884661c596e1fec2a10bbc2d8c5a7a66df66bb596ee58118f974c09bdf11",
+      "row_count": 0,
+      "field_count": 11,
+      "reuse_status": "template_only",
+      "reason": "헤더만 존재하거나 행이 없음"
+    },
+    {
+      "artifact": "extraction",
+      "path": "extraction/extraction.csv",
+      "sha256": "3c87ed251326c3f1ae6773b78ff122e956fb8934ccbf212822094bdf5a8de14b",
+      "row_count": 0,
+      "field_count": 33,
+      "reuse_status": "template_only",
+      "reason": "헤더만 존재하거나 행이 없음"
+    },
+    {
+      "artifact": "source_quotes",
+      "path": "extraction/source_quotes.csv",
+      "sha256": "f62020673664b0befbc4306b90ab32025417ea7d31c3752db359592a737e45c1",
+      "row_count": 22,
+      "field_count": 6,
+      "reuse_status": "abstract_only_reusable",
+      "reason": "PubMed 초록 locator만 검증; 전문 근거로 승격 금지"
+    },
+    {
+      "artifact": "rules",
+      "path": "rules/rule_trace.csv",
+      "sha256": "49b7591de209aa9643cc88521b94caf4238ee98870d55b4f4d390617a313a60d",
+      "row_count": 5,
+      "field_count": 22,
+      "reuse_status": "draft_only",
+      "reason": "총 5개 중 released 0개; 사람 원문 검토 전 승격 금지"
+    },
+    {
+      "artifact": "scenarios",
+      "path": "validation/scenarios.csv",
+      "sha256": "25a5eebc937ee361aefa9b12cf7efba6f0c834f11674c521b4d5d26f7c7ba9ad",
+      "row_count": 0,
+      "field_count": 17,
+      "reuse_status": "template_only",
+      "reason": "헤더만 존재하거나 행이 없음"
+    },
+    {
+      "artifact": "expert_review",
+      "path": "validation/expert_review.csv",
+      "sha256": "1a2ca296bb0949e637f0c19d70cf058f3bfaefca38df8bff2f27c91fe9fc6f3e",
+      "row_count": 0,
+      "field_count": 12,
+      "reuse_status": "template_only",
+      "reason": "헤더만 존재하거나 행이 없음"
+    }
+  ],
+  "summary": {
+    "search_occurrences": 16194,
+    "dedup_pairs": 304,
+    "source_quotes": 22,
+    "released_rules": 0,
+    "human_title_abstract_decisions": 0,
+    "human_full_text_decisions": 0,
+    "expert_reviews": 0,
+    "evaluation_scenarios": 0
+  },
+  "decision": "검색 코드와 계보 구조만 우선 재사용; 결과·규칙·성능 수치는 v3로 자동 승격하지 않음"
+}

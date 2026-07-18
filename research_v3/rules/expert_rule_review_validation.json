@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "items": 6,
+  "completed": 6,
+  "approved": 6,
+  "errors": [],
+  "valid": true,
+  "all_reviewed": true,
+  "release_candidate_count": 6,
+  "release_ready": true
+}

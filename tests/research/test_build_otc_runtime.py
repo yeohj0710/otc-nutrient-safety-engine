@@ -59,22 +59,39 @@ def test_runtime_exposes_catalog_counts_without_private_records_or_prices():
     runtime = build()
     assert runtime["catalogCoverage"] == {
         "sourceSkuCount": 776,
-        "healthKrConfirmedCount": 369,
-        "healthKrConfirmedUniqueProductCount": 341,
+        "healthKrConfirmedCount": 458,
+        "healthKrConfirmedUniqueProductCount": 413,
         "runtimePromotionAllowedCount": 0,
         "classificationCounts": {
-            "analgesic_antiinflammatory": 53,
+            "analgesic_antiinflammatory": 57,
             "anthelmintic": 4,
-            "antihistamine": 12,
-            "cold_respiratory": 27,
-            "gastrointestinal": 70,
-            "other_otc": 82,
-            "topical_or_local": 121,
+            "antihistamine": 9,
+            "cold_respiratory": 18,
+            "gastrointestinal": 84,
+            "other_otc": 202,
+            "topical_or_local": 84,
+        },
+        "existingProductRematch": {
+            "total": 16,
+            "success": 4,
+            "conflict": 1,
+            "unlinked": 11,
         },
     }
+    assert len(runtime["catalogExistingMatches"]) == 5
+    assert {row["matchStatus"] for row in runtime["catalogExistingMatches"]} == {
+        "success",
+        "conflict",
+    }
+    assert all(row["sourceUrl"].startswith("https://") for row in runtime["catalogExistingMatches"])
+    assert all(row["mfdsPromotionEvidenceComplete"] is False for row in runtime["catalogExistingMatches"])
     serialized = json.dumps(runtime, ensure_ascii=False).lower()
     assert "retail_price" not in serialized
     assert "price" not in serialized
+    assert "catalog_source_id" not in serialized
+    assert "document_id" not in serialized
+    assert "app_name" not in serialized
+    assert "ai_context" not in serialized
 
 
 def test_runtime_preserves_withdrawn_statuses_but_omits_analysis_exclusions():

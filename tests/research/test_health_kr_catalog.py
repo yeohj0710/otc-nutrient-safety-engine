@@ -142,6 +142,92 @@ def write_source_trio(tmp_path: Path, rows: list[dict]) -> tuple[Path, Path, Pat
     return queue, csv_path, public
 
 
+def write_portable_package(
+    tmp_path: Path, rows: list[dict]
+) -> tuple[Path, Path, Path, Path]:
+    portable_rows = []
+    for row in rows:
+        medicine = None
+        if row.get("official_match_status") == "confirmed":
+            medicine = {
+                "identity": {
+                    "item_code": row.get("official_item_seq"),
+                    "item_name": row.get("official_item_name"),
+                    "manufacturer": row.get("official_manufacturer"),
+                    "dosage_form": row.get("official_dosage_form"),
+                    "pack_unit": row.get("official_pack_unit"),
+                    "route": row.get("official_route"),
+                    "atc_code": row.get("official_atc_code"),
+                },
+                "ingredients": {"active": row.get("official_active_ingredients", [])},
+                "storage": row.get("official_storage"),
+                "source": {
+                    "type": row.get("official_source_type"),
+                    "url": row.get("official_source_url"),
+                },
+                "content": {
+                    "schema_version": "1.0",
+                    "efficacy": {
+                        "text": row.get("official_efficacy", ""),
+                        "blocks": [{"type": "paragraph", "text": row.get("official_efficacy", "")}],
+                    },
+                    "dosage": {
+                        "text": row.get("official_dosage", ""),
+                        "blocks": [{"type": "paragraph", "text": row.get("official_dosage", "")}],
+                    },
+                    "precautions": {
+                        "text": row.get("official_precautions", ""),
+                        "blocks": [{"type": "paragraph", "text": row.get("official_precautions", "")}],
+                    },
+                },
+            }
+        portable_rows.append(
+            {
+                "schema_version": "1.0",
+                "product_id": row["id"],
+                "display": {
+                    "name": row["name"],
+                    "specification": row.get("specification") or row.get("capacity"),
+                    "category": row.get("category"),
+                    "price_krw": 999999,
+                },
+                "medicine": medicine,
+                "quality": {
+                    "official_match_status": row.get("official_match_status"),
+                    "official_content_status": row.get("official_content_status"),
+                },
+                "provenance": {},
+            }
+        )
+    portable_path = tmp_path / "portable-products.json"
+    schema_path = tmp_path / "portable-schema.json"
+    manifest_path = tmp_path / "portable-manifest.json"
+    corrections_path = tmp_path / "catalog-text-corrections.json"
+    portable_payload = json.dumps(portable_rows, ensure_ascii=False, indent=2).encode("utf-8")
+    portable_path.write_bytes(portable_payload)
+    schema_path.write_text(json.dumps({"type": "array"}), encoding="utf-8")
+    manifest_path.write_text(
+        json.dumps(
+            {
+                "package_version": "pharmacy-product-catalog-v1",
+                "schema_version": "1.0",
+                "product_count": len(rows),
+                "official_confirmed_count": sum(
+                    row.get("official_match_status") == "confirmed" for row in rows
+                ),
+                "files": {
+                    "products.json": {"sha256": hashlib.sha256(portable_payload).hexdigest()},
+                    "schema.json": {"sha256": hashlib.sha256(schema_path.read_bytes()).hexdigest()},
+                },
+            },
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+    corrections_path.write_text("[]", encoding="utf-8")
+    return portable_path, schema_path, manifest_path, corrections_path
+
+
 def test_confirmed_requires_stable_official_identity() -> None:
     row = fixture_row(official_product_key="")
     with pytest.raises(ValueError, match="confirmed_missing_stable_identity"):
@@ -187,6 +273,18 @@ def test_group_uses_ingredient_codes_and_dosage_form() -> None:
 def test_classification_uses_official_fields() -> None:
     row = fixture_row(official_category="해열, 진통, 소염제")
     assert classify_product(row) == "analgesic_antiinflammatory"
+
+
+def test_oral_product_is_not_classified_as_topical_from_efficacy_text_alone() -> None:
+    row = fixture_row(
+        official_category="비타민제",
+        official_route="경구",
+        official_dosage_form="정제",
+        official_atc_code="A11",
+        official_kpic_atc="비타민 및 영양제류",
+        official_efficacy="피부 색소침착 완화",
+    )
+    assert classify_product(row) == "other_otc"
 
 
 def test_red_flag_returns_no_candidates_and_referral() -> None:
@@ -354,3 +452,58 @@ def test_conflicts_are_written_to_a_minimal_review_queue(tmp_path: Path) -> None
             "conflict_reasons": "제형 불일치",
         }
     ]
+
+
+def test_latest_package_uses_corrected_display_fields_and_preserves_content_blocks(
+    tmp_path: Path,
+) -> None:
+    row = fixture_row(
+        source_id="corrected",
+        name="교정된 판매상품",
+        capacity="30정",
+        specification="30정",
+        normalized_name="교정된판매상품",
+        normalized_capacity="30정",
+        app_name="잘못된 OCR 상품명",
+        app_capacity="300정",
+    )
+    queue, csv_path, _ = write_source_trio(tmp_path, [row])
+    portable, schema, manifest, corrections = write_portable_package(tmp_path, [row])
+    result = build_import(
+        queue,
+        csv_path,
+        None,
+        portable_products_path=portable,
+        portable_schema_path=schema,
+        portable_manifest_path=manifest,
+        corrections_path=corrections,
+    )
+    assert result["candidates"][0]["retail_display_name"] == "교정된 판매상품"
+    assert result["candidates"][0]["retail_specification"] == "30정"
+    assert "잘못된 OCR 상품명" not in json.dumps(result, ensure_ascii=False)
+    assert result["official_products"][0]["content"]["schema_version"] == "1.0"
+    assert result["official_products"][0]["content"]["efficacy"]["blocks"][0]["type"] == "paragraph"
+    assert result["audit"]["app_fields_used_for_matching_or_display"] is False
+
+
+def test_latest_package_reports_official_entities_separately_from_retail_skus(
+    tmp_path: Path,
+) -> None:
+    first = fixture_row(source_id="sku-a", official_item_seq="H001", official_product_key="H001")
+    second = fixture_row(source_id="sku-b", official_item_seq="H001", official_product_key="H001")
+    queue, csv_path, _ = write_source_trio(tmp_path, [first, second])
+    portable, schema, manifest, corrections = write_portable_package(tmp_path, [first, second])
+    result = build_import(
+        queue,
+        csv_path,
+        None,
+        portable_products_path=portable,
+        portable_schema_path=schema,
+        portable_manifest_path=manifest,
+        corrections_path=corrections,
+    )
+    assert result["summary"]["confirmed_count"] == 2
+    assert result["summary"]["confirmed_unique_official_product_count"] == 1
+    assert result["summary"]["duplicate_official_product_group_count"] == 1
+    assert result["official_products"][0]["retail_sku_count"] == 2
+    assert result["summary"]["mfds_promotion_evidence_complete_count"] == 0

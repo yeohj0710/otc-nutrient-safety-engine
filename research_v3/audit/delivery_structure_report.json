@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "root": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물",
+  "errors": [],
+  "warnings": [],
+  "metrics_sha256": {
+    "02_핵심보고서\\metrics_manifest.json": "8eb7682bbcc52328e60ccd1bdadf5c6100641633674e4458c13275a7140410b5",
+    "03_연구데이터_research_v3\\metrics_manifest.json": "8eb7682bbcc52328e60ccd1bdadf5c6100641633674e4458c13275a7140410b5"
+  },
+  "valid": true,
+  "release_ready": true
+}

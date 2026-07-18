@@ -1,0 +1,6 @@
+﻿strategy_id,balanced_parentheses,mesh_present,title_abstract_terms_present,three_or_more_concept_blocks,date_or_language_limit_absent,ai_decision,reviewer_id,review_status,human_press_review_completed
+K1,true,true,true,true,true,ai_structural_pass,codex_ai,ai_reviewed_not_human,false
+K2,true,true,true,true,true,ai_structural_pass,codex_ai,ai_reviewed_not_human,false
+K3,true,true,true,true,true,ai_structural_pass,codex_ai,ai_reviewed_not_human,false
+K4,true,true,true,true,true,ai_structural_pass,codex_ai,ai_reviewed_not_human,false
+K5,true,true,true,true,true,ai_structural_pass,codex_ai,ai_reviewed_not_human,false

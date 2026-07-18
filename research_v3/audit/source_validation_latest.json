@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "errors": [],
+  "warnings": [
+    {
+      "code": "SOURCE_FETCH_FAILED",
+      "source_id": "NIH_ODS_VITAMIN_D_HP"
+    },
+    {
+      "code": "SOURCE_FETCH_FAILED",
+      "source_id": "NIH_ODS_CALCIUM_HP"
+    },
+    {
+      "code": "SOURCE_FETCH_FAILED",
+      "source_id": "NIH_ODS_VITAMIN_B6_HP"
+    },
+    {
+      "code": "SOURCE_FETCH_FAILED",
+      "source_id": "NIH_ODS_MAGNESIUM_HP"
+    },
+    {
+      "code": "SOURCE_FETCH_FAILED",
+      "source_id": "NIH_ODS_IRON_HP"
+    },
+    {
+      "code": "SOURCE_FETCH_FAILED",
+      "source_id": "NIH_ODS_ZINC_HP"
+    }
+  ],
+  "counts": {
+    "registered_sources": 12,
+    "fetched_sources": 6,
+    "normative_candidates": 14,
+    "kdri_archive_files": 6
+  },
+  "valid": true,
+  "release_ready": false
+}

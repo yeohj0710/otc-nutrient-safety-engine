@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "checks": [
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "search_occurrences",
+      "value": 16194,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "unique_pmids",
+      "value": 15890,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "dedup_candidates",
+      "value": 304,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "normative_candidates",
+      "value": 14,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "rules_total",
+      "value": 6,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "development_scenarios",
+      "value": 12,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "research_tests_passed",
+      "value": 35,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "app_tests_passed",
+      "value": 39,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\reports\\FINAL_RESEARCH_REPORT.md",
+      "metric": "static_paths_generated",
+      "value": 156,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "search_occurrences",
+      "value": 16194,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "unique_pmids",
+      "value": 15890,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "dedup_candidates",
+      "value": 304,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "normative_candidates",
+      "value": 14,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "rules_total",
+      "value": 6,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "development_scenarios",
+      "value": 12,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "research_tests_passed",
+      "value": 35,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "app_tests_passed",
+      "value": 39,
+      "present": true
+    },
+    {
+      "document": "C:\\dev\\otc-nutrient-safety-engine\\research_v3\\thesis\\thesis_draft_evidence_bound.md",
+      "metric": "static_paths_generated",
+      "value": 156,
+      "present": true
+    }
+  ],
+  "errors": [],
+  "valid": true
+}

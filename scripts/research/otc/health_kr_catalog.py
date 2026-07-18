@@ -152,7 +152,10 @@ def research_use_status(record: dict[str, Any]) -> str:
         != HEALTH_KR_GENERAL_OTC_DRUG_CLASS_CODE
     ):
         return "excluded_not_general_otc"
-    if record.get("official_content_status") != "complete":
+    if record.get("official_content_status") not in {
+        "complete",
+        "normalized_from_upstream_cache",
+    }:
         return "excluded_incomplete_content"
     if any(not nonempty(record.get(field)) for field in RESEARCH_REQUIRED_FIELDS):
         return "excluded_missing_required_field"
@@ -171,6 +174,31 @@ def ingredient_form_group_id(record: dict[str, Any]) -> str:
 
 
 def classify_product(record: dict[str, Any]) -> str:
+    route_form_category = normalize_text(
+        " ".join(
+            str(record.get(field, ""))
+            for field in (
+                "official_route",
+                "official_dosage_form",
+                "official_category",
+            )
+        )
+    )
+    topical_tokens = (
+        "외용",
+        "피부",
+        "안과",
+        "이비",
+        "치과",
+        "구강",
+        "점안",
+        "연고",
+        "크림",
+        "파프",
+        "카타플라스마",
+    )
+    if any(normalize_text(token) in route_form_category for token in topical_tokens):
+        return "topical_or_local"
     text = normalize_text(
         " ".join(
             str(record.get(field, ""))
@@ -190,7 +218,6 @@ def classify_product(record: dict[str, Any]) -> str:
         ("gastrointestinal", ("소화", "제산", "하제", "완장", "지사", "정장", "위장")),
         ("anthelmintic", ("구충",)),
         ("motion_sickness", ("멀미",)),
-        ("topical_or_local", ("외용", "피부", "안과", "이비", "치과", "구강", "점안")),
     )
     for classification, tokens in rules:
         if any(normalize_text(token) in text for token in tokens):

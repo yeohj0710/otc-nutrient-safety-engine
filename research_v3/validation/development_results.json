@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "development_scenarios_only",
+  "rules_status": "draft",
+  "scenario_count": 12,
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "scenario_id": "DEV-VD-001",
+      "expected": [
+        "V3-DRAFT-KDRI-VD-UL"
+      ],
+      "actual": [
+        "V3-DRAFT-KDRI-VD-UL"
+      ],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-VD-002",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-B6-001",
+      "expected": [
+        "V3-DRAFT-KDRI-B6-UL"
+      ],
+      "actual": [
+        "V3-DRAFT-KDRI-B6-UL"
+      ],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-B6-002",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-MG-001",
+      "expected": [
+        "V3-DRAFT-KDRI-MG-UL"
+      ],
+      "actual": [
+        "V3-DRAFT-KDRI-MG-UL"
+      ],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-MG-002",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-FE-001",
+      "expected": [
+        "V3-DRAFT-KDRI-FE-UL"
+      ],
+      "actual": [
+        "V3-DRAFT-KDRI-FE-UL"
+      ],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-FE-002",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-ZN-001",
+      "expected": [
+        "V3-DRAFT-KDRI-ZN-UL"
+      ],
+      "actual": [
+        "V3-DRAFT-KDRI-ZN-UL"
+      ],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-ZN-002",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-CA-001",
+      "expected": [
+        "V3-DRAFT-KDRI-CA-UL"
+      ],
+      "actual": [
+        "V3-DRAFT-KDRI-CA-UL"
+      ],
+      "passed": true
+    },
+    {
+      "scenario_id": "DEV-CA-002",
+      "expected": [],
+      "actual": [],
+      "passed": true
+    }
+  ],
+  "performance_claim_allowed": false
+}

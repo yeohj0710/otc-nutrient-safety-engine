@@ -50,3 +50,6 @@ next-env.d.ts
 
 # search pipeline local browser session
 data/systematic_search/.browser/
+
+# private, reproducible local catalog detail index
+/research_v3/otc/local/

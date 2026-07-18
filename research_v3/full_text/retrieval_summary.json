@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "requested": 116,
+  "retrieved_open_access_xml": 48,
+  "retrieved_public_pmc_html": 18,
+  "no_pmc_open_access_identifier": 48,
+  "retrieval_failed": 2,
+  "human_full_text_reviews": 0
+}

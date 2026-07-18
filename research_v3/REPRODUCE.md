@@ -25,9 +25,9 @@
 .venv-research\Scripts\python.exe scripts/research/otc/catalog_candidate_bridge.py --catalog-root C:\dev\pharmacy-product-catalog
 ```
 
-이 명령은 외부 저장소의 `products.json`, `catalog.csv`와 `enrichment-queue.json`을 제자리에서 한 번씩 읽는다. 같은 바이트에서 파싱과 SHA-256 해시를 수행하므로 외부 보강 작업이 동시에 실행돼도 서로 다른 시점의 내용과 해시를 섞지 않는다. 전체 원본과 가격은 복사하지 않는다. 결과는 정확 이름 교집합, fuzzy 검토 큐와 추가 screening 후보로 분리하며 모든 행을 `mfds_promotion_evidence_complete=false`, `promotion_allowed=false`로 기록한다.
+이 명령은 최신 `data/enrichment-queue.json`과 `data/enrichment-queue.csv`를 제자리에서 한 번씩 읽는다. 교정된 `name`, `capacity`, `specification`, `normalized_name`, `normalized_capacity`만 표시·검색·후보 정규화에 사용하고 `app_*` 원문은 사용하지 않는다. 같은 바이트에서 파싱과 SHA-256 해시를 수행하며 전체 원본과 가격은 복사하지 않는다.
 
-재현 결과는 원본 776건, 중복 22그룹·46 SKU, 정확 이름 교집합 5 SKU·기존 분석 제품 4개, fuzzy 검토 2 SKU, 추가 screening 후보 99 SKU·97개 이름이다. 공공데이터 서비스 키가 없으면 식약처 보강 상태 `official_enrichment_status=blocked_missing_key`를 유지한다. 약학정보원 연결 상태와 식약처 허가 검증 상태는 별개다.
+재현 결과는 원본 776건, 교정 이름 기준 중복 29그룹·59 SKU, 정확 이름 교집합 6 SKU·기존 분석 제품 5개, fuzzy 검토 1 SKU, 추가 screening 후보 111 SKU·108개 이름이다. 이 이름 기반 결과는 선별용이며 약학정보원 연결이나 식약처 허가 검증을 뜻하지 않는다.
 
 ## 2-2. 약학정보원 연결 자료 import
 
@@ -35,11 +35,11 @@
 .venv-research\Scripts\python.exe scripts/research/otc/import_health_kr_catalog.py --catalog-root C:\dev\pharmacy-product-catalog
 ```
 
-이 명령은 `data/enrichment-queue.json`, `data/enrichment-queue.csv`, `public/data/enrichment-queue.json`을 각각 바이트로 한 번 읽는다. 세 파일의 행·식별자·상태가 일치하는지 확인하고, 같은 바이트에서 SHA-256을 계산한다.
+이 명령은 정식 JSON·CSV, `catalog-text-corrections.json`, portable v1의 `products.json`, `schema.json`, `manifest.json`을 각각 바이트로 한 번 읽는다. 정식 JSON과 CSV의 행·식별자·상태, portable의 제품 ID·교정 표시값·상태·manifest 해시를 교차 검사한다. portable의 가격과 `ai_context`는 연구 입력으로 가져오지 않는다.
 
-2026-07-16 스냅샷은 776건을 정상 import했다. `confirmed` 369건은 연구용 검색·분류·후보 선별에 사용할 수 있고, 고유 공식 품목은 341개다. `review_required` 82건, `not_found` 137건, `not_applicable` 188건은 연구 후보에서 제외한다. 성분 코드와 제형으로 264개 그룹을 만들었다.
+2026-07-16 최신 스냅샷은 776건을 정상 import했다. `confirmed` 458건은 연구용 검색·분류·후보 선별에 사용할 수 있고, `official_item_seq` 기준 고유 약학정보원 품목은 413개다. `review_required` 10건, `not_found` 11건, `not_applicable` 297건은 연구 후보에서 제외한다. 성분 코드와 제형으로 306개 그룹을 만들었다.
 
-출력 CSV에는 가격, 효능·효과 원문, 용법·용량 원문, 주의사항 원문과 `official_additional_data`를 복사하지 않는다. import는 기존 식약처 제품 마스터, 13개 사이트 런타임, released 규칙과 성능 지표를 변경하지 않는다. 모든 약학정보원 후보는 `mfds_promotion_evidence_complete=false`, `runtime_promotion_allowed=false`다.
+출력 CSV에는 가격, 이미지, 효능·효과 원문, 용법·용량 원문, 주의사항 원문과 `official_additional_data`를 복사하지 않는다. 구조화 원문은 로컬 공식 품목 JSON에서 문단·표 구조를 보존하고 출처 URL로 연결한다. 기존 제품 16개 재매칭은 성공 4·충돌 1·미연결 11이며, 런타임 13개는 성공 4·충돌 1·미연결 8이다. 이 재매칭은 승격이 아니므로 모든 카탈로그 후보는 `mfds_promotion_evidence_complete=false`, `runtime_promotion_allowed=false`다.
 
 ## 2-3. 보조 학술문헌 인덱스 생성
 
