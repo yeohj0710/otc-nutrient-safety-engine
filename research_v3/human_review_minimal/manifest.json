@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-07-13",
+  "generator": "Codex AI",
+  "release_ready": false,
+  "claim_mode": "ai_assisted_evidence_map_priority_review",
+  "counts": {
+    "approval_items": 4,
+    "press_items": 35,
+    "priority_records": 118,
+    "rule_items": 6,
+    "independent_scenarios": 12
+  },
+  "human_prefill_counts": {
+    "approval_decisions": 0,
+    "press_ratings": 0,
+    "priority_decisions": 0,
+    "rule_decisions": 0,
+    "independent_gold_labels": 0
+  },
+  "files": [
+    {
+      "name": "00_읽기_가이드.md",
+      "bytes": 1197,
+      "sha256": "ee9982c0821f8e29f385c429818899ca0982e4d4920956b14bd174f051a54856"
+    },
+    {
+      "name": "01_연구_제출_승인서.csv",
+      "bytes": 450,
+      "sha256": "ea802dc7d99726e8ade49f5d50f6e3b6d5b470c2f1ea8b36c467513cb0903b20"
+    },
+    {
+      "name": "02_PRESS_검색전략_검토.csv",
+      "bytes": 5057,
+      "sha256": "0e15381ef09484f5c290c3e59ca44d5c04e62838754a65ee487f81ce0404aa36"
+    },
+    {
+      "name": "03_우선문헌_118건_검토.csv",
+      "bytes": 65053,
+      "sha256": "88f44de378fb0457523ef2ca49e210d421cc8d5ed46f079537df70c76ef84513"
+    },
+    {
+      "name": "04_규칙_6건_검토.csv",
+      "bytes": 4889,
+      "sha256": "4996841f968077e09eec7a684c8b1363e1daa81a808503c089e2ddb452f4365a"
+    },
+    {
+      "name": "05_독립시나리오_12건_확정.csv",
+      "bytes": 2442,
+      "sha256": "417f8dc17af53db153dce9a7bd10d38d2d0ed647f29e5de95f01bddfe8606849"
+    },
+    {
+      "name": "사람_최소검토_가이드.docx",
+      "bytes": 41554,
+      "sha256": "471e1b7e47c2ce0dadb32896d045ab313e7d0b3999389809f2a910e4206fef5d"
+    }
+  ],
+  "review_wizard": {
+    "name": "연구_승인_마법사.html",
+    "bytes": 500905,
+    "sha256": "d1c020392507f5802c57502a90f27ed36611b8e8c5c2a47b2a8f76b6d97842af",
+    "embedded_items": 238,
+    "external_dependencies": 0
+  }
+}

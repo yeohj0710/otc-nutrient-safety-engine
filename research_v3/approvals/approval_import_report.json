@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "source_path": "C:\\Users\\hjyeo\\Downloads\\권혁찬_연구검토결과 (5).json",
+  "source_sha256": "6eec8fa7a707e8c7b51fc6f85850ad0d88062c28135b4f0d1b768952eae4a343",
+  "overall_status": "completed",
+  "completed_at": "2026-07-13T11:55:14.404Z",
+  "exported_at": "2026-07-13T11:55:14.410Z",
+  "decision_counts": {
+    "approval": 4,
+    "rules": 6,
+    "press": 35,
+    "literature": 118,
+    "scenarios": 12,
+    "fulltext": 63
+  },
+  "advisor_approval_count": 4,
+  "advisor_name": "장민정",
+  "advisor_approval_complete": true,
+  "human_press_review_count": 35,
+  "human_title_abstract_decision_count": 118,
+  "human_full_text_decision_count": 63,
+  "human_verified_evidence_candidate_count": 326,
+  "human_expert_rule_approval_count": 6,
+  "human_literature_review_count": 118,
+  "independent_human_scenario_count": 12,
+  "reviewer_summary": [
+    {
+      "section": "approval",
+      "reviewer_id": "장민정",
+      "reviewer_role": "지도교수",
+      "review_kind": "",
+      "count": 4
+    },
+    {
+      "section": "fulltext",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "count": 63
+    },
+    {
+      "section": "literature",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "count": 118
+    },
+    {
+      "section": "press",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "count": 35
+    },
+    {
+      "section": "rules",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "약사·전문가",
+      "review_kind": "human_review",
+      "count": 6
+    },
+    {
+      "section": "scenarios",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "count": 12
+    }
+  ],
+  "interpretation": "Advisor approvals and explicit human confirmations are accepted as human review. Codex recommendations remain separately identified by review_kind and prefill_source."
+}

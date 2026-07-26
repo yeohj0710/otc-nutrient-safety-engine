@@ -1,0 +1,2235 @@
+{
+  "schema_version": "1.0.0",
+  "started_at": "2026-07-13T11:54:35.493Z",
+  "updated_at": "2026-07-13T11:55:14.404Z",
+  "overall_status": "completed",
+  "reviewers": {
+    "전문 검토자": {
+      "name": "권혁찬",
+      "role": "전문 검토자",
+      "last_seen_at": "2026-07-13T11:55:14.403Z"
+    }
+  },
+  "decisions": {
+    "approval:APP-01": {
+      "decision": "approve",
+      "reviewer_id": "장민정",
+      "reviewer_role": "지도교수",
+      "reviewed_at": "2026-07-13T08:35:37.861Z",
+      "status": "completed"
+    },
+    "approval:APP-02": {
+      "decision": "approve",
+      "reviewer_id": "장민정",
+      "reviewer_role": "지도교수",
+      "reviewed_at": "2026-07-13T08:35:38.976Z",
+      "status": "completed"
+    },
+    "approval:APP-03": {
+      "decision": "approve",
+      "reviewer_id": "장민정",
+      "reviewer_role": "지도교수",
+      "reviewed_at": "2026-07-13T08:35:40.052Z",
+      "status": "completed"
+    },
+    "approval:APP-04": {
+      "decision": "approve",
+      "reviewer_id": "장민정",
+      "reviewer_role": "지도교수",
+      "reviewed_at": "2026-07-13T08:35:41.707Z",
+      "status": "completed"
+    },
+    "rules:ERR-001": {
+      "decision": "approve",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "약사·전문가",
+      "reviewed_at": "2026-07-13T11:18:51.426Z",
+      "review_kind": "human_review",
+      "status": "completed"
+    },
+    "rules:ERR-002": {
+      "decision": "approve",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "약사·전문가",
+      "reviewed_at": "2026-07-13T11:18:52.606Z",
+      "review_kind": "human_review",
+      "status": "completed"
+    },
+    "rules:ERR-003": {
+      "decision": "approve",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "약사·전문가",
+      "reviewed_at": "2026-07-13T11:18:53.298Z",
+      "review_kind": "human_review",
+      "status": "completed"
+    },
+    "rules:ERR-004": {
+      "decision": "approve",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "약사·전문가",
+      "reviewed_at": "2026-07-13T11:18:53.932Z",
+      "review_kind": "human_review",
+      "status": "completed"
+    },
+    "rules:ERR-005": {
+      "decision": "approve",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "약사·전문가",
+      "reviewed_at": "2026-07-13T11:18:54.628Z",
+      "review_kind": "human_review",
+      "status": "completed"
+    },
+    "rules:ERR-006": {
+      "decision": "approve",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "약사·전문가",
+      "reviewed_at": "2026-07-13T11:18:56.043Z",
+      "review_kind": "human_review",
+      "status": "completed"
+    },
+    "press:PRESS-K1-01": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:27.395Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K1-02": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:27.621Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K1-03": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:27.793Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K1-04": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:27.950Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K1-05": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:28.113Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K1-06": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:28.286Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K1-07": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:28.444Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K2-01": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:28.602Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K2-02": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:28.777Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K2-03": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:28.963Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K2-04": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:29.162Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K2-05": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:30.342Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K2-06": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:30.473Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K2-07": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:30.681Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K3-01": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:30.772Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K3-02": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:30.865Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K3-03": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.064Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K3-04": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.142Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K3-05": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.261Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K3-06": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.339Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K3-07": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.459Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K4-01": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.540Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K4-02": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.660Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K4-03": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.744Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K4-04": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.859Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K4-05": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:31.942Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K4-06": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.060Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K4-07": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.146Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K5-01": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.266Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K5-02": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.351Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K5-03": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.471Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K5-04": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.556Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K5-05": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.675Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K5-06": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.758Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "press:PRESS-K5-07": {
+      "rating": "yes",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "검색전략 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.877Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-22422535": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:32.962Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-24937025": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:33.080Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-27765695": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:33.376Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-30180273": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:33.513Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-31005969": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:33.607Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-36744416": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:33.743Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-38589121": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:33.861Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-38787821": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:33.998Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-38892507": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:34.122Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-39300483": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:34.261Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-39413318": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:34.383Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-39747809": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:34.516Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-39886277": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:34.632Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40083990": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:34.726Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40466630": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:38.443Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40499784": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:38.563Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40551736": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:38.688Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40616189": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:38.799Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40775686": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:38.937Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40891477": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.029Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-40944226": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.178Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-41159913": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.295Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-41758568": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.433Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-41950523": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.534Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K1-42303801": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.683Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-23647723": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.796Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-24813907": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:39.924Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-30838307": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.013Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-33619867": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.158Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-34931740": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.251Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-35279367": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.376Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-35819060": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.491Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-35919449": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.639Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-36367997": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.700Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-36381744": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.728Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-36608063": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.906Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-37207271": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:40.994Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-37231628": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.141Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-37447150": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.228Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-37697258": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.376Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-39134879": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.469Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-39747809": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.629Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-39994116": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.729Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-40853095": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.881Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-41522532": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:41.993Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-41539356": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.128Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K2-6308447": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.218Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-23252877": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.361Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-24899360": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.456Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-25700159": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.591Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-35852713": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.682Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-36822986": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.820Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-37010569": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:42.905Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-37971571": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.033Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-37979057": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.111Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-38476079": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.248Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-38545733": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.341Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-38641845": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.473Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-39114275": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.554Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-39449947": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.685Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-39494607": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.780Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-39509998": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.905Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-39670550": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:43.996Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-40050333": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.140Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-40073039": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.233Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-40224710": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.364Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-40382392": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.451Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-40542094": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.579Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-40841680": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.693Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-41562674": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.812Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K3-42078226": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:44.925Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-27565970": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.015Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-29360138": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.137Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-29557685": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.267Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-29988705": {
+      "decision": "uncertain",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.386Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-30136128": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.499Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-30805197": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.592Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-31105568": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.741Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-31498421": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.846Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-32956536": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:45.992Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-33052033": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:46.082Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-33275278": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:46.244Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-33452957": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:46.365Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-35280833": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:46.490Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-37487817": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:46.590Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-38452708": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:46.759Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-38608850": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:46.858Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-39138715": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.021Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-39218658": {
+      "decision": "uncertain",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.108Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-40272825": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.263Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-40944226": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.369Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-41286042": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.515Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-42106847": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.617Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K4-42117212": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.770Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-2407097": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:47.874Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-29424482": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.023Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-29930370": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.134Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-30779870": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.285Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-31694979": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.388Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-31910279": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.549Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-32075071": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.673Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-33166742": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.823Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-34061438": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:48.945Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-34564844": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.065Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-34999679": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.189Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-35365361": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.312Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-35397572": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.424Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-37051178": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.549Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-37640593": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.652Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-37736439": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.778Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-38846187": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:49.883Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-39641338": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:50.019Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-40083990": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:50.121Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-40334186": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:50.252Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-40623863": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:50.348Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-40944226": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:50.474Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-41294920": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:50.570Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "literature:EV-K5-42033762": {
+      "decision": "include_candidate",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "문헌 검토자",
+      "reviewed_at": "2026-07-13T11:26:50.703Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "scenarios:IND-001": {
+      "label": "warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:50.807Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-002": {
+      "label": "no_warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:50.961Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-003": {
+      "label": "warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:51.072Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-004": {
+      "label": "no_warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:51.222Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-005": {
+      "label": "warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:51.326Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-006": {
+      "label": "no_warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:51.471Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-007": {
+      "label": "warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:51.665Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-008": {
+      "label": "no_warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:51.783Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-009": {
+      "label": "warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:51.901Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-010": {
+      "label": "no_warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:52.024Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-011": {
+      "label": "warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:52.125Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "scenarios:IND-012": {
+      "label": "no_warning",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "독립 평가자",
+      "reviewed_at": "2026-07-13T11:26:52.274Z",
+      "review_kind": "human_confirmation_of_codex_recommendation",
+      "locked_before_test": true
+    },
+    "fulltext:PMC10068214": {
+      "decision": "include",
+      "locator": "PMC10068214, Results > Secondary endpoints, Par12; PMC10068214, Discussion, Par14; PMC10068214, Introduction, Par3; PMC10068214, Discussion, Par18; PMC10068214, Introduction, Par2",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:05.358Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC10189633": {
+      "decision": "include",
+      "locator": "PMC10189633, Introduction > Context of the assessment, p12; PMC10189633, Assessment > Hazard characterisation > Selection of the critical effect and the reference point, p230; PMC10189633, Assessment > Hazard characterisation > Selection of the critical effect and the reference point, p228; PMC10189633, Assessment > Hazard identification > Peripheral neuropathy > Evidence from human studies relating vitamin B6 intake to neuropathy > Prospective cohort study, p116; PMC10189633, Assessment > Hazard identification > Peripheral neuropathy > Evidence from human studies relating vitamin B6 intake to neuropathy > Nutrivigilance data, p126",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:05.590Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC10343656": {
+      "decision": "include",
+      "locator": "PMC10343656, 3. Results > 3.2. Neuropathy due to B6 Deficiency, p29; PMC10343656, 4. Conclusions, p52; PMC10343656, 4. Conclusions, p51; PMC10343656, 3. Results > 3.3. Neuropathy due to B6 Toxicity, p36; PMC10343656, 3. Results > 3.3. Neuropathy due to B6 Toxicity, p35",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:05.741Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC10494335": {
+      "decision": "include",
+      "locator": "PMC10494335, Discussion, Par33; PMC10494335, Introduction, Par10; PMC10494335, Materials and methods > Study protocol > Sample size, Par21; PMC10494335, Materials and methods > Study protocol > Grouping, treatment, and follow-up, Par17; PMC10494335, Introduction, Par9",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:05.904Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC10509448": {
+      "decision": "include",
+      "locator": "PMC10509448, Setting and shortcomings of the 1997 UL for Mg, p0050; PMC10509448, Introduction, p0020; PMC10509448, Recent and needed evidence for re-evaluating the UL for Mg > Methods, p0085; PMC10509448, Recent and needed evidence for re-evaluating the UL for Mg > Methods, p0100; PMC10509448, Recent and needed evidence for re-evaluating the UL for Mg > Methods, p0080",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:06.088Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC10510946": {
+      "decision": "include",
+      "locator": "PMC10510946, Conclusions, p14; PMC10510946, Case presentation, p6; PMC10510946, Introduction, p1; PMC10510946, Discussion, p9; PMC10510946, Discussion, p12",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:06.286Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11027386": {
+      "decision": "include",
+      "locator": "PMC11027386, Background {6a and 6B}, Par5; PMC11027386, Methods/design {8} > Statistical plan > Methods for additional analyses (e.g. subgroup analyses) {20b}, Par48; PMC11027386, Methods/design {8} > Procedure for unblinding if needed {17b}, Par29; PMC11027386, Methods/design {8} > Outcome measures {12}, Par40; PMC11027386, Methods/design {8} > Eligibility criteria {10}, Par25",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:06.462Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11125479": {
+      "decision": "include",
+      "locator": "PMC11125479, 4 Discussion, p14; PMC11125479, 3 Results > 3.5 Safety outcomes, p13; PMC11125479, 1 Introduction, p2; PMC11125479, 2 Materials and methods > 2.2 Data extraction, p6; PMC11125479, 1 Introduction, p3",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:06.634Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11155223": {
+      "decision": "include",
+      "locator": "PMC11155223, Introduction, p3; PMC11155223, Introduction, p1; PMC11155223, Discussion, p9; PMC11155223, Discussion, p11; PMC11155223, Conclusions, p13",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:06.806Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11174535": {
+      "decision": "include",
+      "locator": "PMC11174535, 4. Discussion, p36; PMC11174535, 1. Introduction, p6; PMC11174535, 4. Discussion, p35; PMC11174535, 4. Discussion, p32; PMC11174535, 3. Results > 3.4. Adverse Events, p31",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:06.966Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11304700": {
+      "decision": "include",
+      "locator": "PMC11304700, Introduction, p0045; PMC11304700, Introduction, p0035; PMC11304700, Discussion, p0175; PMC11304700, Introduction, p0040; PMC11304700, Body, p0010",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:07.115Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11414195": {
+      "decision": "include",
+      "locator": "PMC11414195, Methods/design > Safety procedures, Par46; PMC11414195, Background > Pediatric investigations to date, Par34; PMC11414195, Background > Pediatric investigations to date, Par33; PMC11414195, Methods/design > Intervention and controls, Par42; PMC11414195, Background > Current vitamin D supplementation guidelines, Par32",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:07.266Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11458663": {
+      "decision": "include",
+      "locator": "PMC11458663, Discussion, Par33; PMC11458663, Introduction, Par5; PMC11458663, Discussion, Par32; PMC11458663, Conclusion, Par34; PMC11458663, Discussion, Par30",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:07.412Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11501097": {
+      "decision": "include",
+      "locator": "PMC11501097, Materials and methods, p24; PMC11501097, Results, p37; PMC11501097, Discussion, p48; PMC11501097, Discussion, p42; PMC11501097, Materials and methods, p22",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:08.974Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11622351": {
+      "decision": "include",
+      "locator": "PMC11622351, DISCUSSION, p58; PMC11622351, RESULTS > Effect estimates > Vomiting, p47; PMC11622351, DISCUSSION, p57; PMC11622351, RESULTS > Comparison 3: High dose vs low dose zinc supplementation > Effect estimates, p56; PMC11622351, RESULTS > Comparison 3: High dose vs low dose zinc supplementation > Risk of bias, p55",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.094Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11639052": {
+      "decision": "include",
+      "locator": "PMC11639052, Oral iron therapy, html-p62; PMC11639052, Comparison 5: Oral iron supplementation versus placebo or no treatment, html-p295; PMC11639052, Important outcomes, html-p93; PMC11639052, Why it is important to do this review, html-p70; PMC11639052, Implications for research, html-p357",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.178Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11646675": {
+      "decision": "include",
+      "locator": "PMC11646675, Discussion > Conclusion, p42; PMC11646675, Materials and methods > Assessments, p12; PMC11646675, Results > Patient demographics, intolerance development and treatment discontinuation, p21; PMC11646675, Results > Intolerance data at baseline and within 3 months of iron replacement in study groups, p25; PMC11646675, Results > Intolerance data at baseline and within 3 months of iron replacement in study groups, p23",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.280Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11775356": {
+      "decision": "include",
+      "locator": "PMC11775356, Results, html-p5; PMC11775356, Discussion, html-p38; PMC11775356, Limitations, html-p43",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.395Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11885599": {
+      "decision": "include",
+      "locator": "PMC11885599, Methods > Nutritional intervention, Par50; PMC11885599, Discussion, Par36; PMC11885599, Methods > Nutritional intervention, Par45; PMC11885599, Introduction, Par8; PMC11885599, Methods > Nutritional intervention, Par48",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.469Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11902287": {
+      "decision": "include",
+      "locator": "PMC11902287, Materials and methods > Statistical analysis, p28; PMC11902287, Results > Adverse events, p36; PMC11902287, Materials and methods > Protocol, p13; PMC11902287, Materials and methods > Outcomes, p21; PMC11902287, Discussion, p40",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.591Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11903805": {
+      "decision": "include",
+      "locator": "PMC11903805, Discussion, p0350; PMC11903805, Ethics approval and written informed consent, p0380; PMC11903805, Discussion, p0330; PMC11903805, Introduction, p0020; PMC11903805, Materials and methods > Study settings, p0065; PMC11903805, Results > Safety and adverse effect, p0290",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.684Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC11992272": {
+      "decision": "include",
+      "locator": "PMC11992272, Introduction, html-p5; PMC11992272, Abstract, html-p3; PMC11992272, Discussion, html-p27; PMC11992272, Trial Participants and Eligibility Criteria, html-p8; PMC11992272, Randomisation and Study Intervention, html-p9",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.794Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12022858": {
+      "decision": "include",
+      "locator": "PMC12022858, Discussion, html-p49; PMC12022858, Figure 2. Cisplatin-Associated Acute Kidney Injury (CP-AKI) or Death in Intravenous Magnesium−Treated (IV Mg) vs Nontreated Patients., html-p44; PMC12022858, Methods, html-p27; PMC12022858, Introduction, html-p23; PMC12022858, Discussion, html-p47",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.881Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12058182": {
+      "decision": "include",
+      "locator": "PMC12058182, Discussion, p28; PMC12058182, Results > Secondary outcome > Treatment-associated adverse event rates., p20; PMC12058182, Materials and methods > Synthesis methods, p11; PMC12058182, Introduction, p3; PMC12058182, Supporting information, p31",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:09.994Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12085664": {
+      "decision": "include",
+      "locator": "PMC12085664, Discussion, Par19; PMC12085664, Materials and methods > Clinical, Par7; PMC12085664, Discussion, Par18; PMC12085664, Results > Study design and demographics, Par10; PMC12085664, Introduction, Par5",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.086Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12183072": {
+      "decision": "include",
+      "locator": "PMC12183072, Human health > Bone health > Osteoporosis management, p23; PMC12183072, Conclusion, p114; PMC12183072, Human health > Vitamin D and cystic fibrosis, p75; PMC12183072, Human health > Cardiovascular health, p32; PMC12183072, Human health > Bone health > Bone development and maintenance, p14",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.200Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12193742": {
+      "decision": "include",
+      "locator": "PMC12193742, Discussion, p27; PMC12193742, Discussion, p20; PMC12193742, Results, p19; PMC12193742, Methods, p6; PMC12193742, Discussion, p26",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.295Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12226867": {
+      "decision": "include",
+      "locator": "PMC12226867, Introduction, Par6; PMC12226867, Conclusion, Par33; PMC12226867, Results > Respiratory, Par18; PMC12226867, Results > Cardiology, Par17; PMC12226867, Results, Par13",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.409Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12330119": {
+      "decision": "include",
+      "locator": "PMC12330119, Discussion and conclusions, Par13; PMC12330119, Case presentation, Par7; PMC12330119, Background, Par4; PMC12330119, Case presentation, Par8; PMC12330119, Background, Par6",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.514Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12372323": {
+      "decision": "include",
+      "locator": "PMC12372323, Introduction, Par9; PMC12372323, Results > Adverse effects of the iron supplementation, Par38; PMC12372323, Discussion, Par46; PMC12372323, Introduction, Par11; PMC12372323, Discussion, Par50",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.587Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12376311": {
+      "decision": "include",
+      "locator": "PMC12376311, Introduction, p5; PMC12376311, Discussion, p25; PMC12376311, Discussion, p39; PMC12376311, Introduction, p6; PMC12376311, Introduction, p4",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.696Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12430086": {
+      "decision": "include",
+      "locator": "PMC12430086, 4. Discussion > 4.5. Limitations, p48; PMC12430086, 4. Discussion > 4.1. Magnesium > 4.1.2. Protective Role of Magnesium in Chemotherapy-Induced Hepatotoxicity, p32; PMC12430086, 2. Materials and Methods, p16; PMC12430086, 4. Discussion > 4.1. Magnesium > 4.1.1. Protective Role of Magnesium in Chemotherapy-Induced Nephrotoxicity, p31; PMC12430086, 5. Conclusions, p52; PMC12430086, 3. Results > 3.2. The Role of Micronutrients in Chemotherapy-Induced Toxicity, p27; PMC12430086, 3. Results > 3.1. Chemotherapy-Induced Toxicity per System, p23; PMC12430086, 1. Introduction, p1",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.843Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12644863": {
+      "decision": "include",
+      "locator": "PMC12644863, Discussion, Par49; PMC12644863, Methods > Statistical analysis, Par24; PMC12644863, Introduction, Par18; PMC12644863, Results > Risk factors for CDDP-induced nephrotoxicity, Par38; PMC12644863, Discussion, Par43",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:10.954Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12651211": {
+      "decision": "include",
+      "locator": "PMC12651211, 7. Intervention Strategies > 7.1. Zinc Supplementation, p44; PMC12651211, 8. Risk Factors and Barriers to Zinc Intervention > 8.3. Supplementation Acceptance and Compliance Issues, p52; PMC12651211, 9. Conclusions, p55; PMC12651211, 7. Intervention Strategies > 7.1. Zinc Supplementation, p43; PMC12651211, 5. Zinc Dosage and Administration During Diarrhea > 5.2. Duration and Formulation Types, p37",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.082Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12811114": {
+      "decision": "include",
+      "locator": "PMC12811114, Discussion > Efficacy of liposomal iron intervention, Par47; PMC12811114, Results > Compliance and adverse effects, Par40; PMC12811114, Methods > Study groups and intervention, Par29; PMC12811114, Methods > Study groups and intervention, Par30; PMC12811114, Discussion > Prevalence of iron deficiency anemia and non-anemic iron deficiency, Par42",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.178Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12821660": {
+      "decision": "include",
+      "locator": "PMC12821660, 1. Background, p2; PMC12821660, 4. Discussion, p19; PMC12821660, 3. Results, p13; PMC12821660, 2. Materials and Methods, p8; PMC12821660, 2. Materials and Methods, p5",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.300Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC12908652": {
+      "decision": "include",
+      "locator": "PMC12908652, Treatment and Response Assessment, html-p14; PMC12908652, Patients and Methods:, html-p5; PMC12908652, Treatment Tolerability, html-p32; PMC12908652, Introduction, html-p11; PMC12908652, Discussion, html-p38",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.400Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC13134476": {
+      "decision": "include",
+      "locator": "PMC13134476, Review, p30; PMC13134476, Review, p42; PMC13134476, Introduction and background, p4; PMC13134476, Introduction and background, p2; PMC13134476, Review, p36",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.553Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC13325581": {
+      "decision": "include",
+      "locator": "PMC13325581, Fig. 3., html-p50; PMC13325581, Dietary patterns modify metal–IVF associations, html-p64; PMC13325581, Conclusions, html-p9; PMC13325581, Strengths and limitations, html-p69; PMC13325581, Fig. 3., html-p48",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.653Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC4082414": {
+      "decision": "include",
+      "locator": "PMC4082414, Results and discussion, p12; PMC4082414, Methods > Gastrointestinal symptom questionnaire, p4; PMC4082414, Results and discussion, p13; PMC4082414, Conclusions, p15; PMC4082414, Background, p3",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.778Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC4209182": {
+      "decision": "include",
+      "locator": "PMC4209182, Introduction, html-p13; PMC4209182, Discussion, html-p62; PMC4209182, Introduction, html-p11; PMC4209182, Discussion, html-p50; PMC4209182, Introduction, html-p15",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:11.881Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC4336293": {
+      "decision": "include",
+      "locator": "PMC4336293, Methods > Selection and data extraction, p10; PMC4336293, Introduction, p2; PMC4336293, Results > Individual gastrointestinal symptoms reported, p23; PMC4336293, Discussion, p29; PMC4336293, Results > Study characteristics, p16",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.009Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC5866964": {
+      "decision": "include",
+      "locator": "PMC5866964, Results > Retrospective Analysis of Medical Records, p27; PMC5866964, Results > Clinical Case Series, p20; PMC5866964, Discussion, p32",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.095Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6361089": {
+      "decision": "include",
+      "locator": "PMC6361089, Introduction, html-p5; PMC6361089, Discussion, html-p16; PMC6361089, Discussion, html-p17; PMC6361089, Abstract, html-p3; PMC6361089, Table 1., html-p24",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.225Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6373027": {
+      "decision": "include",
+      "locator": "PMC6373027, Results > Risk factors for the development of hypermagnesemia, Par25; PMC6373027, Conclusions, Par35; PMC6373027, Discussion, Par28; PMC6373027, Methods > Patients and data collection, Par21; PMC6373027, Discussion, Par30",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.317Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6380771": {
+      "decision": "include",
+      "locator": "PMC6380771, Description of the condition, html-p32; PMC6380771, Types of outcome measures, html-p54; PMC6380771, Description of the condition, html-p31; PMC6380771, Types of participants, html-p48; PMC6380771, Overall completeness and applicability of evidence, html-p177",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.466Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6384168": {
+      "decision": "include",
+      "locator": "PMC6384168, l‐dopa Iatrogenic Effect: Biochemical Considerations, html-p32; PMC6384168, PNP and Oral l‐dopa, html-p18; PMC6384168, Discussion, html-p30; PMC6384168, The Role of Genetic Factors, html-p38; PMC6384168, Small Fibers Neuropathy in PD Patients Treated With LCIG, html-p27",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.560Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6491191": {
+      "decision": "include",
+      "locator": "PMC6491191, Other aspects of radiotherapy delivery, html-p34; PMC6491191, Selection criteria, html-p6; PMC6491191, Main results, html-p9; PMC6491191, Description of the intervention, html-p22; PMC6491191, Data extraction and analysis, html-p540",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.703Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6499034": {
+      "decision": "include",
+      "locator": "PMC6499034, Discussion > Adverse Events of Magnesium Sulfate Use and Classification of Intensity, p37; PMC6499034, Discussion > Intravenous Dose of Magnesium Sulfate Most Frequently Used in Induction of General Anesthesia and Sedation, p43; PMC6499034, Discussion > Adverse Events of Magnesium Sulfate Use and Classification of Intensity, p33; PMC6499034, Results, p17; PMC6499034, Results, p16",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.816Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6953350": {
+      "decision": "include",
+      "locator": "PMC6953350, Incomplete outcome data, html-p109; PMC6953350, Summary of main results, html-p150; PMC6953350, Summary of main results, html-p151; PMC6953350, Selective reporting, html-p114; PMC6953350, Selective reporting, html-p112",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:12.946Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC6990807": {
+      "decision": "include",
+      "locator": "PMC6990807, Discussion, html-p83; PMC6990807, Results, html-p24; PMC6990807, Procedures, html-p36; PMC6990807, Discussion, html-p79; PMC6990807, Table 4. Couple-Based Secondary Outcomes., html-p78",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.053Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC7071347": {
+      "decision": "include",
+      "locator": "PMC7071347, 1. Introduction > 1.2. Current Strategies and Interventions, p6; PMC7071347, 3. Results > 3.7. Multiple Micronutrient Supplementation Versus Iron Folic Acid Supplementation > 3.7.1. Child Health and Developmental Outcomes, p53; PMC7071347, 3. Results, p22; PMC7071347, 4. Discussion, p69; PMC7071347, 4. Discussion, p66",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.181Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC7704399": {
+      "decision": "include",
+      "locator": "PMC7704399, Discussion, p0170; PMC7704399, Results > Circulating methylglyoxal, magnesium, and their interaction are strongly associated with DSPN, p0150; PMC7704399, Results > The neuroprotective effect of magnesium results from intracellular reduction of methylglyoxal production, p0160; PMC7704399, Results > Magnesium supplementations prevents neurite degeneration in DRGs resulting from downregulation of mitochondrial activity, p0165; PMC7704399, Results > Magnesium prevents methylglyoxal-mediated neurotoxicity, p0155",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.291Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC8094171": {
+      "decision": "include",
+      "locator": "PMC8094171, Magnesium versus placebo, html-p137; PMC8094171, Adverse events, html-p161; PMC8094171, Magnesium versus other treatments, html-p148; PMC8094171, Why it is important to do this review, html-p23; PMC8094171, Summary of findings 1. Magnesium for idiopathic rest cramps (largely older adults)., html-p93",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.400Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC8094374": {
+      "decision": "include",
+      "locator": "PMC8094374, Description of the intervention, html-p31; PMC8094374, Why it is important to do this review, html-p35; PMC8094374, Why it is important to do this review, html-p33; PMC8094374, Overall completeness and applicability of evidence, html-p179; PMC8094374, Other potential sources of bias, html-p125",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.514Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC8356361": {
+      "decision": "include",
+      "locator": "PMC8356361, PUBLISHED NOTES > Characteristics of studies > Characteristics of studies awaiting classification > Characteristics of ongoing studies, p558; PMC8356361, PUBLISHED NOTES > Characteristics of studies > Characteristics of studies awaiting classification > Characteristics of ongoing studies, p557; PMC8356361, PUBLISHED NOTES > Characteristics of studies > Characteristics of included studies, p305; PMC8356361, DATA AND ANALYSES, p573; PMC8356361, RESULTS > Participants, p111",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.635Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC8464655": {
+      "decision": "include",
+      "locator": "PMC8464655, Infants (aged 6 to 23 months) (13 reviews), html-p168; PMC8464655, Supplementation, html-p43; PMC8464655, Preschool and school‐aged children (aged 2 to 10 years), html-p314; PMC8464655, Pregnant women of reproductive age (aged 15 to 49 years) (23 reviews), html-p256; PMC8464655, Non‐pregnant women of reproductive age (aged 19 to 49 years), html-p320",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.732Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC8860108": {
+      "decision": "include",
+      "locator": "PMC8860108, INTRODUCTION, p1; PMC8860108, RESULTS, p40; PMC8860108, INTRODUCTION, p2; PMC8860108, DISCUSSION, p61; PMC8860108, MATERIALS AND METHODS > Randomization, p15",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.872Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC8994895": {
+      "decision": "include",
+      "locator": "PMC8994895, Background, Par19; PMC8994895, Results > Safety and tolerability, Par50; PMC8994895, Results > Patient disposition and baseline characteristics, Par37; PMC8994895, Conclusions, Par58; PMC8994895, Results > Patient disposition and baseline characteristics, Par36",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:13.972Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC9339724": {
+      "decision": "include",
+      "locator": "PMC9339724, Introduction, p7; PMC9339724, Discussion, p31; PMC9339724, Introduction, p4; PMC9339724, Discussion, p46; PMC9339724, Discussion, p42",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:14.098Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC9649334": {
+      "decision": "include",
+      "locator": "PMC9649334, Case presentation, p5; PMC9649334, Discussion, p10; PMC9649334, Introduction, p1; PMC9649334, Discussion, p7; PMC9649334, Discussion, p9",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:14.188Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC9899558": {
+      "decision": "include",
+      "locator": "PMC9899558, Plain language summary, html-p25; PMC9899558, Main results, html-p12; PMC9899558, Vitamin D versus placebo: all eligible trials, html-p138; PMC9899558, Why it is important to do this review, html-p35; PMC9899558, Selective reporting, html-p101",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:14.316Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    },
+    "fulltext:PMC9928634": {
+      "decision": "include",
+      "locator": "PMC9928634, Neuropathy Assessment, html-p19; PMC9928634, DISCUSSION, html-p43; PMC9928634, DISCUSSION, html-p39; PMC9928634, TABLE 1., html-p26; PMC9928634, Neuropathy Assessment, html-p18",
+      "prefill_source": "codex_recommendation_pending_human_confirmation",
+      "status": "completed",
+      "reviewer_id": "권혁찬",
+      "reviewer_role": "전문 검토자",
+      "reviewed_at": "2026-07-13T11:55:14.403Z",
+      "review_kind": "human_confirmation_of_codex_recommendation"
+    }
+  },
+  "cursor": 234,
+  "completed_at": "2026-07-13T11:55:14.404Z",
+  "auto_exported_at": "2026-07-13T11:55:14.404Z",
+  "researcher": {
+    "name": "권혁찬",
+    "student_id": "2021194024",
+    "affiliation": "연세대학교 약학대학"
+  },
+  "exported_at": "2026-07-13T11:55:14.410Z",
+  "required_counts": {
+    "approval": 4,
+    "press": 35,
+    "literature": 118,
+    "rules": 6,
+    "scenarios": 12,
+    "fulltext": 63
+  }
+}

@@ -1,0 +1,13 @@
+﻿scenario_id,scenario_type,input_json,gold_hazards_json,critical,adjudicator_id,adjudicated_at,locked_before_test,source_note,notes
+IND-001,threshold_above,"{""age"":30,""ingredient"":""vitamin_d"",""daily_total_ug"":101}",,true,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-002,threshold_boundary,"{""age"":30,""ingredient"":""vitamin_d"",""daily_total_ug"":100}",,false,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-003,threshold_above,"{""age"":30,""ingredient"":""vitamin_b6"",""daily_total_mg"":51}",,true,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-004,threshold_boundary,"{""age"":30,""ingredient"":""vitamin_b6"",""daily_total_mg"":50}",,false,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-005,threshold_above,"{""age"":30,""ingredient"":""magnesium"",""non_food_daily_total_mg"":351}",,true,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-006,scope_guard,"{""age"":30,""ingredient"":""magnesium"",""food_daily_mg"":500,""non_food_daily_total_mg"":0}",,false,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-007,threshold_above,"{""age"":30,""ingredient"":""iron"",""daily_total_mg"":46}",,true,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-008,threshold_boundary,"{""age"":30,""ingredient"":""iron"",""daily_total_mg"":45}",,false,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-009,threshold_above,"{""age"":30,""ingredient"":""zinc"",""daily_total_mg"":36}",,true,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-010,threshold_boundary,"{""age"":30,""ingredient"":""zinc"",""daily_total_mg"":35}",,false,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-011,profile_above,"{""age"":35,""sex"":""female"",""ingredient"":""calcium"",""daily_total_mg"":2001}",,true,,,false,input scaffold copied from development scenario; gold label intentionally blank,
+IND-012,profile_boundary,"{""age"":35,""sex"":""female"",""ingredient"":""calcium"",""daily_total_mg"":2000}",,false,,,false,input scaffold copied from development scenario; gold label intentionally blank,
