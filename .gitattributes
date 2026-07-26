@@ -1,0 +1,2 @@
+# 원시 PubMed 응답은 SHA-256 재현성을 위해 줄바꿈을 변환하지 않는다.
+research_v3/otc/literature/searches/**/*.xml -text

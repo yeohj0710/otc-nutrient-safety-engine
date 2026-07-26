@@ -1,0 +1,28 @@
+{
+  "question_id": "OTC-LIT-Q04-DIGESTIVE",
+  "run_id": "20260726T164207Z",
+  "status": "complete",
+  "query": "((((pancreatin[tiab] OR pancrelipase[tiab] OR \"digestive enzyme\"[tiab] OR \"fungal diastase\"[tiab] OR bromelain[tiab] OR \"Simethicone\"[Mesh] OR simethicone[tiab] OR \"Ursodeoxycholic Acid\"[Mesh] OR ursodeoxycholic[tiab]) AND (oral[tiab] OR dyspepsia[tiab] OR gastrointestinal[tiab] OR \"pancreatic insufficiency\"[tiab])) AND (\"Drug-Related Side Effects and Adverse Reactions\"[Mesh] OR \"adverse effect\"[tiab] OR \"adverse effects\"[tiab] OR safety[Title] OR allergy[tiab] OR bleeding[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])) AND Humans[Mesh] AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+  "query_sha256": "57ef66989d5084ca819cdf24cc45da1f094e1c47b1eeac6d9838042ef25b2b34",
+  "hit_count": 104,
+  "fetched_count": 104,
+  "translated_query": "(\"pancreatin\"[Title/Abstract] OR \"pancrelipase\"[Title/Abstract] OR \"digestive enzyme\"[Title/Abstract] OR \"fungal diastase\"[Title/Abstract] OR \"bromelain\"[Title/Abstract] OR \"Simethicone\"[MeSH Terms] OR \"Simethicone\"[Title/Abstract] OR \"Ursodeoxycholic Acid\"[MeSH Terms] OR \"ursodeoxycholic\"[Title/Abstract]) AND (\"oral\"[Title/Abstract] OR \"dyspepsia\"[Title/Abstract] OR \"gastrointestinal\"[Title/Abstract] OR \"pancreatic insufficiency\"[Title/Abstract]) AND (\"Drug-Related Side Effects and Adverse Reactions\"[MeSH Terms] OR \"adverse effect\"[Title/Abstract] OR \"adverse effects\"[Title/Abstract] OR \"safety\"[Title] OR \"allergy\"[Title/Abstract] OR \"bleeding\"[Title/Abstract] OR \"drug interaction\"[Title/Abstract] OR \"drug interactions\"[Title/Abstract]) AND \"humans\"[MeSH Terms] AND 2000/01/01:3000/12/31[Date - Publication]",
+  "esearch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%28%28pancreatin%5Btiab%5D+OR+pancrelipase%5Btiab%5D+OR+%22digestive+enzyme%22%5Btiab%5D+OR+%22fungal+diastase%22%5Btiab%5D+OR+bromelain%5Btiab%5D+OR+%22Simethicone%22%5BMesh%5D+OR+simethicone%5Btiab%5D+OR+%22Ursodeoxycholic+Acid%22%5BMesh%5D+OR+ursodeoxycholic%5Btiab%5D%29+AND+%28oral%5Btiab%5D+OR+dyspepsia%5Btiab%5D+OR+gastrointestinal%5Btiab%5D+OR+%22pancreatic+insufficiency%22%5Btiab%5D%29%29+AND+%28%22Drug-Related+Side+Effects+and+Adverse+Reactions%22%5BMesh%5D+OR+%22adverse+effect%22%5Btiab%5D+OR+%22adverse+effects%22%5Btiab%5D+OR+safety%5BTitle%5D+OR+allergy%5Btiab%5D+OR+bleeding%5Btiab%5D+OR+%22drug+interaction%22%5Btiab%5D+OR+%22drug+interactions%22%5Btiab%5D%29%29+AND+Humans%5BMesh%5D+AND+%28%222000%2F01%2F01%22%5BDate+-+Publication%5D+%3A+%223000%22%5BDate+-+Publication%5D%29%29&retmax=0&usehistory=y&retmode=xml&tool=otc_safety_v40&email=yeohj0710%40yonsei.ac.kr",
+  "esearch_requested_at_utc": "2026-07-26T16:42:10.520674+00:00",
+  "efetch_batch_size": 500,
+  "requests": [
+    {
+      "file": "efetch_0001.xml",
+      "requested_at_utc": "2026-07-26T16:42:49.201726+00:00",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&query_key=1&WebEnv=MCID_6a6638e2f2de91969e069c39&retstart=0&retmax=500&rettype=abstract&retmode=xml&tool=otc_safety_v40&email=yeohj0710%40yonsei.ac.kr",
+      "bytes": 1610587,
+      "sha256": "3f2484d88d253dd7d6d554994df27a060ced605a87e9736b6ac80bb311b5a823",
+      "parsed_records": 104
+    }
+  ],
+  "total_hits_all_questions": 5742,
+  "total_hit_limit": 10000,
+  "rate_limit_requests_per_second": 3,
+  "tool": "otc_safety_v40",
+  "email": "yeohj0710@yonsei.ac.kr"
+}

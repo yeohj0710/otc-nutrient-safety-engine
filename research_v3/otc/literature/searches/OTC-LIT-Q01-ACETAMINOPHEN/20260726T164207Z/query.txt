@@ -1,0 +1,1 @@
+(("Acetaminophen"[Mesh] OR acetaminophen[tiab] OR paracetamol[tiab]) AND ("Drug Overdose"[Mesh] OR overdose[tiab] OR hepatotox*[tiab] OR "liver injury"[tiab] OR alcohol*[tiab] OR "dosing interval"[tiab] OR "daily dose"[tiab]) AND Humans[Mesh] AND ("2010/01/01"[Date - Publication] : "3000"[Date - Publication]))

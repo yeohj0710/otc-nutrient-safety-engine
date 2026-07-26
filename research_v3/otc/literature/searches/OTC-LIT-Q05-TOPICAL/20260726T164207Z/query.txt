@@ -1,0 +1,1 @@
+((("Methyl Salicylate"[Mesh] OR "methyl salicylate"[tiab] OR menthol[tiab] OR camphor[tiab] OR "peppermint oil"[tiab] OR thymol[tiab]) AND (poison*[tiab] OR toxic*[tiab] OR adverse[tiab] OR dermal[tiab] OR child*[tiab] OR anticoag*[tiab] OR bleeding[tiab])) AND Humans[Mesh] AND ("2000/01/01"[Date - Publication] : "3000"[Date - Publication]))

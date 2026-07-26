@@ -1,0 +1,470 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-26T16:42:03.804750+00:00",
+  "execution_mode": "agent_local",
+  "database": "PubMed",
+  "human_decisions": 0,
+  "legacy_query_inputs_used": false,
+  "prompt": "You are designing the literature layer for a Korean OTC safety engine.\nInputs: the 28 ingredients selected for calculation from MFDS-authorized product records; the rule_type and scope of all 16 active rules; PubMed as the only literature database; the required JSON schema.\nDo not read or reuse legacy nutrient-search queries or legacy result counts.\nCreate 3-6 grouped ingredient-by-harm questions. Every selected ingredient and every rule type must be represented. For each question give P, I, C, O, S, a narrow PubMed query using MeSH and title/abstract terms, and the derivation rationale. The literature can support an evidence claim but cannot override MFDS authorization facts or deterministic engine decisions. Keep factual authorization claims separate from literature evidence claims.\n",
+  "prompt_sha256": "2ea152bb42f8b472406883a470e149d11b9b9fa6b58dd9908f294928959ac414",
+  "input_snapshot": {
+    "products": [
+      {
+        "product_id": "MFDS-201110646",
+        "product_name": "덱스피드연질캡슐(덱시부프로펜)"
+      },
+      {
+        "product_id": "MFDS-197500016",
+        "product_name": "낙센정(나프록센)"
+      },
+      {
+        "product_id": "MFDS-200610765",
+        "product_name": "지르텍정(세티리진염산염)"
+      },
+      {
+        "product_id": "MFDS-202106092",
+        "product_name": "타이레놀정500밀리그람(아세트아미노펜)"
+      },
+      {
+        "product_id": "MFDS-202200525",
+        "product_name": "어린이타이레놀현탁액(아세트아미노펜)"
+      },
+      {
+        "product_id": "MFDS-198601920",
+        "product_name": "어린이부루펜시럽(이부프로펜)"
+      },
+      {
+        "product_id": "MFDS-198700405",
+        "product_name": "베아제정"
+      },
+      {
+        "product_id": "MFDS-200300406",
+        "product_name": "닥터베아제정"
+      },
+      {
+        "product_id": "MFDS-199900926",
+        "product_name": "훼스탈골드정"
+      },
+      {
+        "product_id": "MFDS-199801026",
+        "product_name": "훼스탈플러스정"
+      },
+      {
+        "product_id": "MFDS-196800036",
+        "product_name": "판콜에이내복액"
+      },
+      {
+        "product_id": "MFDS-199400202",
+        "product_name": "판피린티정"
+      },
+      {
+        "product_id": "MFDS-198400250",
+        "product_name": "제일쿨파프"
+      }
+    ],
+    "ingredients": [
+      {
+        "ingredient_id": "ING-acetaminophen",
+        "preferred_name_ko": "아세트아미노펜",
+        "preferred_name_en": "acetaminophen"
+      },
+      {
+        "ingredient_id": "ING-cetirizine_hydrochloride",
+        "preferred_name_ko": "세티리진염산염",
+        "preferred_name_en": "cetirizine hydrochloride"
+      },
+      {
+        "ingredient_id": "ING-chlorpheniramine_maleate",
+        "preferred_name_ko": "클로르페니라민말레산염",
+        "preferred_name_en": "chlorpheniramine maleate"
+      },
+      {
+        "ingredient_id": "ING-dexibuprofen",
+        "preferred_name_ko": "덱시부프로펜",
+        "preferred_name_en": "dexibuprofen"
+      },
+      {
+        "ingredient_id": "ING-ibuprofen",
+        "preferred_name_ko": "이부프로펜",
+        "preferred_name_en": "ibuprofen"
+      },
+      {
+        "ingredient_id": "ING-mf-src-0546ff64775e",
+        "preferred_name_ko": "판셀라제",
+        "preferred_name_en": "판셀라제"
+      },
+      {
+        "ingredient_id": "ING-mf-src-06cdde4eaaee",
+        "preferred_name_ko": "판프로신",
+        "preferred_name_en": "판프로신"
+      },
+      {
+        "ingredient_id": "ING-mf-src-25b653f7fbe2",
+        "preferred_name_ko": "dl-캄파",
+        "preferred_name_en": "dl-캄파"
+      },
+      {
+        "ingredient_id": "ING-mf-src-41c782105274",
+        "preferred_name_ko": "펜톡시베린시트르산염",
+        "preferred_name_en": "펜톡시베린시트르산염"
+      },
+      {
+        "ingredient_id": "ING-mf-src-484bf5816144",
+        "preferred_name_ko": "판크레아틴장용과립",
+        "preferred_name_en": "판크레아틴장용과립"
+      },
+      {
+        "ingredient_id": "ING-mf-src-4a3225f1eb5d",
+        "preferred_name_ko": "박하유",
+        "preferred_name_en": "박하유"
+      },
+      {
+        "ingredient_id": "ING-mf-src-4b985f9d3bdb",
+        "preferred_name_ko": "페닐레프린염산염",
+        "preferred_name_en": "페닐레프린염산염"
+      },
+      {
+        "ingredient_id": "ING-mf-src-5abce34aadf5",
+        "preferred_name_ko": "시메티콘",
+        "preferred_name_en": "시메티콘"
+      },
+      {
+        "ingredient_id": "ING-mf-src-76b6b5a5a31f",
+        "preferred_name_ko": "L-멘톨",
+        "preferred_name_en": "L-멘톨"
+      },
+      {
+        "ingredient_id": "ING-mf-src-7ace07a0f45d",
+        "preferred_name_ko": "우르소데옥시콜산",
+        "preferred_name_en": "우르소데옥시콜산"
+      },
+      {
+        "ingredient_id": "ING-mf-src-7ae387262216",
+        "preferred_name_ko": "디아스타제·프로테아제·셀룰라제",
+        "preferred_name_en": "디아스타제·프로테아제·셀룰라제"
+      },
+      {
+        "ingredient_id": "ING-mf-src-8bebf0ac75f4",
+        "preferred_name_ko": "살리실산메틸",
+        "preferred_name_en": "살리실산메틸"
+      },
+      {
+        "ingredient_id": "ING-mf-src-8f38da8a73d0",
+        "preferred_name_ko": "판크레아틴",
+        "preferred_name_en": "판크레아틴"
+      },
+      {
+        "ingredient_id": "ING-mf-src-a5c9920bea02",
+        "preferred_name_ko": "크리아제-PEG",
+        "preferred_name_en": "크리아제-PEG"
+      },
+      {
+        "ingredient_id": "ING-mf-src-a742c02533bc",
+        "preferred_name_ko": "리파제",
+        "preferred_name_en": "리파제"
+      },
+      {
+        "ingredient_id": "ING-mf-src-cd3363b1ac1f",
+        "preferred_name_ko": "구아이페네신",
+        "preferred_name_en": "구아이페네신"
+      },
+      {
+        "ingredient_id": "ING-mf-src-d33c06bc01c8",
+        "preferred_name_ko": "셀룰라제",
+        "preferred_name_en": "셀룰라제"
+      },
+      {
+        "ingredient_id": "ING-mf-src-d75c9c1aefc3",
+        "preferred_name_ko": "프로자임6",
+        "preferred_name_en": "프로자임6"
+      },
+      {
+        "ingredient_id": "ING-mf-src-db4cde0b063f",
+        "preferred_name_ko": "디아스타제·프로테아제100",
+        "preferred_name_en": "디아스타제·프로테아제100"
+      },
+      {
+        "ingredient_id": "ING-mf-src-dc293e7de142",
+        "preferred_name_ko": "카페인무수물",
+        "preferred_name_en": "카페인무수물"
+      },
+      {
+        "ingredient_id": "ING-mf-src-e2b868294a4f",
+        "preferred_name_ko": "티몰",
+        "preferred_name_en": "티몰"
+      },
+      {
+        "ingredient_id": "ING-mf-src-ea4c014f0616",
+        "preferred_name_ko": "브로멜라인",
+        "preferred_name_en": "브로멜라인"
+      },
+      {
+        "ingredient_id": "ING-naproxen",
+        "preferred_name_ko": "나프록센",
+        "preferred_name_en": "naproxen"
+      }
+    ],
+    "rules": [
+      {
+        "rule_id": "OTC-RULE-001",
+        "rule_type": "duplicate_ingredient",
+        "scope": "acetaminophen_containing_selected_products"
+      },
+      {
+        "rule_id": "OTC-RULE-002",
+        "rule_type": "duplicate_pharmacologic_class",
+        "scope": "ibuprofen_and_other_NSAIDs"
+      },
+      {
+        "rule_id": "OTC-RULE-003",
+        "rule_type": "max_daily_dose",
+        "scope": "acetaminophen_tylenol500_age_12_plus"
+      },
+      {
+        "rule_id": "OTC-RULE-004",
+        "rule_type": "minimum_interval",
+        "scope": "tylenol500_age_12_plus"
+      },
+      {
+        "rule_id": "OTC-RULE-005",
+        "rule_type": "age_restriction",
+        "scope": "tylenol500_minimum_age_12"
+      },
+      {
+        "rule_id": "OTC-RULE-006",
+        "rule_type": "pregnancy_lactation",
+        "scope": "ibuprofen_pregnancy_lactation"
+      },
+      {
+        "rule_id": "OTC-RULE-007",
+        "rule_type": "hepatic_disease",
+        "scope": "acetaminophen_liver_disease"
+      },
+      {
+        "rule_id": "OTC-RULE-008",
+        "rule_type": "renal_disease",
+        "scope": "ibuprofen_kidney_disease"
+      },
+      {
+        "rule_id": "OTC-RULE-009",
+        "rule_type": "gi_bleeding_ulcer",
+        "scope": "ibuprofen_gi_bleeding_or_ulcer"
+      },
+      {
+        "rule_id": "OTC-RULE-010",
+        "rule_type": "sedation_driving",
+        "scope": "pancol_a_driving"
+      },
+      {
+        "rule_id": "OTC-RULE-011",
+        "rule_type": "alcohol",
+        "scope": "acetaminophen_regular_alcohol_use"
+      },
+      {
+        "rule_id": "OTC-RULE-012",
+        "rule_type": "anticoagulant_antiplatelet",
+        "scope": "ibuprofen_warfarin_or_coumarin_anticoagulant"
+      },
+      {
+        "rule_id": "OTC-RULE-013",
+        "rule_type": "sedative_medication",
+        "scope": "pancol_a_sedative_or_overlapping_cold_medicine"
+      },
+      {
+        "rule_id": "OTC-RULE-014",
+        "rule_type": "decongestant_hypertension",
+        "scope": "pancol_a_phenylephrine_hypertension"
+      },
+      {
+        "rule_id": "OTC-RULE-015",
+        "rule_type": "maximum_duration",
+        "scope": "pancol_a_continuous_use"
+      },
+      {
+        "rule_id": "OTC-RULE-016",
+        "rule_type": "urgent_referral",
+        "scope": "tylenol500_stop_and_consult_symptoms"
+      }
+    ],
+    "source_hashes": {
+      "research_v3/otc/normalized/product_master.csv": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc",
+      "research_v3/otc/normalized/ingredient_master.csv": "6925c5ac1236bbd6ebd3a53e5a58f853b849c3efccefa2d03ddb798689fae737",
+      "research_v3/otc/normalized/product_ingredient.csv": "83ed4b53483c5e3e6b9296defce1548504f6b81bcd7aa59e42142a440fb6580e",
+      "research_v3/otc/rules/rules.csv": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a"
+    }
+  },
+  "input_sha256": "317e7fbd23004ab39bc7590934150a675c51739692778b4916c89516f0b1efb2",
+  "questions": [
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "title_ko": "아세트아미노펜 용량·간격·간질환·음주 관련 위해",
+      "ingredient_ids": [
+        "ING-acetaminophen"
+      ],
+      "rule_types": [
+        "duplicate_ingredient",
+        "max_daily_dose",
+        "minimum_interval",
+        "age_restriction",
+        "hepatic_disease",
+        "alcohol",
+        "urgent_referral"
+      ],
+      "picos": {
+        "population": "아세트아미노펜을 사용하는 성인 또는 소아",
+        "intervention_or_exposure": "중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출",
+        "comparator": "권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용",
+        "outcomes": "간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성",
+        "study_design": "사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석"
+      },
+      "query": "((\"Acetaminophen\"[Mesh] OR acetaminophen[tiab] OR paracetamol[tiab]) AND (\"Drug Overdose\"[Mesh] OR overdose[tiab] OR hepatotox*[tiab] OR \"liver injury\"[tiab] OR alcohol*[tiab] OR \"dosing interval\"[tiab] OR \"daily dose\"[tiab]) AND Humans[Mesh] AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+      "planning_expected_hit_range": [
+        500,
+        2500
+      ],
+      "derivation_rationale_ko": "허가원문에서 산출하는 용량·간격 사실과 별개로 과량, 간질환, 음주가 위해와 연관되는지 설명할 문헌을 찾는다.",
+      "observed_hit_count": 2709,
+      "observed_run_id": "20260726T164207Z"
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "title_ko": "이부프로펜·덱시부프로펜·나프록센의 중복과 주요 위해",
+      "ingredient_ids": [
+        "ING-dexibuprofen",
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "rule_types": [
+        "duplicate_pharmacologic_class",
+        "pregnancy_lactation",
+        "renal_disease",
+        "gi_bleeding_ulcer",
+        "anticoagulant_antiplatelet"
+      ],
+      "picos": {
+        "population": "이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람",
+        "intervention_or_exposure": "NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용",
+        "comparator": "단일 NSAID 사용 또는 해당 위험 요인이 없는 사용",
+        "outcomes": "위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응",
+        "study_design": "사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석"
+      },
+      "query": "(((\"Ibuprofen\"[Mesh] OR ibuprofen[tiab] OR dexibuprofen[tiab] OR \"Naproxen\"[Mesh] OR naproxen[tiab]) AND (\"Gastrointestinal Hemorrhage\"[Mesh] OR \"Peptic Ulcer\"[Mesh] OR \"Kidney Diseases\"[Mesh] OR renal[tiab] OR pregnancy[tiab] OR anticoag*[tiab] OR antiplatelet*[tiab] OR \"drug interaction\"[tiab])) AND Humans[Mesh] AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+      "planning_expected_hit_range": [
+        800,
+        3500
+      ],
+      "derivation_rationale_ko": "세 NSAID를 한 계열로 묶고 규칙이 다루는 위장관·신장·임신·항응고 위험을 동시에 포착한다.",
+      "observed_hit_count": 683,
+      "observed_run_id": "20260726T164207Z"
+    },
+    {
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "title_ko": "감기·알레르기 복합성분의 진정·운전·혈압·병용 위해",
+      "ingredient_ids": [
+        "ING-cetirizine_hydrochloride",
+        "ING-chlorpheniramine_maleate",
+        "ING-mf-src-41c782105274",
+        "ING-mf-src-4b985f9d3bdb",
+        "ING-mf-src-cd3363b1ac1f",
+        "ING-mf-src-dc293e7de142"
+      ],
+      "rule_types": [
+        "sedation_driving",
+        "sedative_medication",
+        "decongestant_hypertension",
+        "maximum_duration"
+      ],
+      "picos": {
+        "population": "항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람",
+        "intervention_or_exposure": "클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출",
+        "comparator": "비진정성 대안, 비노출 또는 위험 병용이 없는 사용",
+        "outcomes": "졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해",
+        "study_design": "사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰"
+      },
+      "query": "(((\"Chlorpheniramine\"[Mesh] OR chlorpheniramine[tiab] OR \"Cetirizine\"[Mesh] OR cetirizine[tiab] OR \"Phenylephrine\"[Mesh] OR phenylephrine[tiab] OR pentoxyverine[tiab] OR guaifenesin[tiab] OR caffeine[tiab]) AND (sedat*[tiab] OR drows*[tiab] OR driving[tiab] OR psychomotor[tiab] OR hypertension[tiab] OR cardiovascular[tiab] OR \"drug interaction\"[tiab])) AND Humans[Mesh] AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+      "planning_expected_hit_range": [
+        300,
+        1800
+      ],
+      "derivation_rationale_ko": "판콜에이와 판피린티, 지르텍의 실제 복합성분에서 운전·진정제·고혈압 규칙을 설명할 문헌을 찾는다.",
+      "observed_hit_count": 1533,
+      "observed_run_id": "20260726T164207Z"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "title_ko": "소화효소·담즙산·가스제거 성분 복합 사용의 안전성",
+      "ingredient_ids": [
+        "ING-mf-src-0546ff64775e",
+        "ING-mf-src-06cdde4eaaee",
+        "ING-mf-src-484bf5816144",
+        "ING-mf-src-5abce34aadf5",
+        "ING-mf-src-7ace07a0f45d",
+        "ING-mf-src-7ae387262216",
+        "ING-mf-src-8f38da8a73d0",
+        "ING-mf-src-a5c9920bea02",
+        "ING-mf-src-a742c02533bc",
+        "ING-mf-src-d33c06bc01c8",
+        "ING-mf-src-d75c9c1aefc3",
+        "ING-mf-src-db4cde0b063f",
+        "ING-mf-src-ea4c014f0616"
+      ],
+      "rule_types": [
+        "duplicate_ingredient",
+        "maximum_duration"
+      ],
+      "picos": {
+        "population": "소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람",
+        "intervention_or_exposure": "판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출",
+        "comparator": "비노출, 위약 또는 더 짧은 사용",
+        "outcomes": "이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성",
+        "study_design": "사람 대상 임상시험, 관찰연구와 체계적 문헌고찰"
+      },
+      "query": "((((pancreatin[tiab] OR pancrelipase[tiab] OR \"digestive enzyme\"[tiab] OR \"fungal diastase\"[tiab] OR bromelain[tiab] OR \"Simethicone\"[Mesh] OR simethicone[tiab] OR \"Ursodeoxycholic Acid\"[Mesh] OR ursodeoxycholic[tiab]) AND (oral[tiab] OR dyspepsia[tiab] OR gastrointestinal[tiab] OR \"pancreatic insufficiency\"[tiab])) AND (\"Drug-Related Side Effects and Adverse Reactions\"[Mesh] OR \"adverse effect\"[tiab] OR \"adverse effects\"[tiab] OR safety[Title] OR allergy[tiab] OR bleeding[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])) AND Humans[Mesh] AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+      "planning_expected_hit_range": [
+        100,
+        1500
+      ],
+      "derivation_rationale_ko": "베아제·닥터베아제·훼스탈 제품군의 실제 13개 소화 관련 성분을 일반명 묶음으로 검색한다.",
+      "observed_hit_count": 104,
+      "observed_run_id": "20260726T164207Z"
+    },
+    {
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "title_ko": "살리실산메틸·멘톨·캄파 등 외용 복합성분의 위해",
+      "ingredient_ids": [
+        "ING-mf-src-25b653f7fbe2",
+        "ING-mf-src-4a3225f1eb5d",
+        "ING-mf-src-76b6b5a5a31f",
+        "ING-mf-src-8bebf0ac75f4",
+        "ING-mf-src-e2b868294a4f"
+      ],
+      "rule_types": [
+        "age_restriction",
+        "anticoagulant_antiplatelet",
+        "urgent_referral"
+      ],
+      "picos": {
+        "population": "살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람",
+        "intervention_or_exposure": "외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용",
+        "comparator": "권장 외용 사용 또는 비노출",
+        "outcomes": "전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험",
+        "study_design": "사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰"
+      },
+      "query": "(((\"Methyl Salicylate\"[Mesh] OR \"methyl salicylate\"[tiab] OR menthol[tiab] OR camphor[tiab] OR \"peppermint oil\"[tiab] OR thymol[tiab]) AND (poison*[tiab] OR toxic*[tiab] OR adverse[tiab] OR dermal[tiab] OR child*[tiab] OR anticoag*[tiab] OR bleeding[tiab])) AND Humans[Mesh] AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+      "planning_expected_hit_range": [
+        100,
+        1200
+      ],
+      "derivation_rationale_ko": "제일쿨파프의 실제 외용 성분에 대해 소아·과량·상호작용 위해를 설명할 문헌을 찾는다.",
+      "observed_hit_count": 713,
+      "observed_run_id": "20260726T164207Z"
+    }
+  ],
+  "last_search": {
+    "run_id": "20260726T164207Z",
+    "total_hits_before_deduplication": 5742,
+    "unique_pmids": 5724,
+    "evidence_map_sha256": "5b0bcc9f47a98a4caa7a24599962ac5d5bcc372fd8edb29bfd67a4b1af78786c",
+    "corpus_input_sha256": "3ba217aa90db7755d08d5c2d63705dd063a2b4d10eb692112a95c18490688a10"
+  }
+}

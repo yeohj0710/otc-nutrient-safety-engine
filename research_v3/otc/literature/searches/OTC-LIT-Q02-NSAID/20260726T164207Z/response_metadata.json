@@ -1,0 +1,36 @@
+{
+  "question_id": "OTC-LIT-Q02-NSAID",
+  "run_id": "20260726T164207Z",
+  "status": "complete",
+  "query": "(((\"Ibuprofen\"[Mesh] OR ibuprofen[tiab] OR dexibuprofen[tiab] OR \"Naproxen\"[Mesh] OR naproxen[tiab]) AND (\"Gastrointestinal Hemorrhage\"[Mesh] OR \"Peptic Ulcer\"[Mesh] OR \"Kidney Diseases\"[Mesh] OR renal[tiab] OR pregnancy[tiab] OR anticoag*[tiab] OR antiplatelet*[tiab] OR \"drug interaction\"[tiab])) AND Humans[Mesh] AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+  "query_sha256": "1675e6c6cd3ce0d291fcb6686762460664dfe5348d906a79482be7f1771b279d",
+  "hit_count": 683,
+  "fetched_count": 683,
+  "translated_query": "(\"Ibuprofen\"[MeSH Terms] OR \"Ibuprofen\"[Title/Abstract] OR \"dexibuprofen\"[Title/Abstract] OR \"Naproxen\"[MeSH Terms] OR \"Naproxen\"[Title/Abstract]) AND (\"Gastrointestinal Hemorrhage\"[MeSH Terms] OR \"Peptic Ulcer\"[MeSH Terms] OR \"Kidney Diseases\"[MeSH Terms] OR \"renal\"[Title/Abstract] OR \"pregnancy\"[Title/Abstract] OR \"anticoag*\"[Title/Abstract] OR \"antiplatelet*\"[Title/Abstract] OR \"drug interaction\"[Title/Abstract]) AND \"humans\"[MeSH Terms] AND 2010/01/01:3000/12/31[Date - Publication]",
+  "esearch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%28%22Ibuprofen%22%5BMesh%5D+OR+ibuprofen%5Btiab%5D+OR+dexibuprofen%5Btiab%5D+OR+%22Naproxen%22%5BMesh%5D+OR+naproxen%5Btiab%5D%29+AND+%28%22Gastrointestinal+Hemorrhage%22%5BMesh%5D+OR+%22Peptic+Ulcer%22%5BMesh%5D+OR+%22Kidney+Diseases%22%5BMesh%5D+OR+renal%5Btiab%5D+OR+pregnancy%5Btiab%5D+OR+anticoag%2A%5Btiab%5D+OR+antiplatelet%2A%5Btiab%5D+OR+%22drug+interaction%22%5Btiab%5D%29%29+AND+Humans%5BMesh%5D+AND+%28%222010%2F01%2F01%22%5BDate+-+Publication%5D+%3A+%223000%22%5BDate+-+Publication%5D%29%29&retmax=0&usehistory=y&retmode=xml&tool=otc_safety_v40&email=yeohj0710%40yonsei.ac.kr",
+  "esearch_requested_at_utc": "2026-07-26T16:42:09.059811+00:00",
+  "efetch_batch_size": 500,
+  "requests": [
+    {
+      "file": "efetch_0001.xml",
+      "requested_at_utc": "2026-07-26T16:42:31.686261+00:00",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&query_key=1&WebEnv=MCID_6a6638e114dba0ec65013a79&retstart=0&retmax=500&rettype=abstract&retmode=xml&tool=otc_safety_v40&email=yeohj0710%40yonsei.ac.kr",
+      "bytes": 8580576,
+      "sha256": "de68e4a5341b395ff71c2d70219dc8091faf29aef5a1f49d834a11cd98da0a43",
+      "parsed_records": 500
+    },
+    {
+      "file": "efetch_0002.xml",
+      "requested_at_utc": "2026-07-26T16:42:35.463877+00:00",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&query_key=1&WebEnv=MCID_6a6638e114dba0ec65013a79&retstart=500&retmax=500&rettype=abstract&retmode=xml&tool=otc_safety_v40&email=yeohj0710%40yonsei.ac.kr",
+      "bytes": 1910381,
+      "sha256": "6c3d0bea417c8439b2cc235d4e9dfd2dcc7acec584f18233beba8bd3c11e759a",
+      "parsed_records": 183
+    }
+  ],
+  "total_hits_all_questions": 5742,
+  "total_hit_limit": 10000,
+  "rate_limit_requests_per_second": 3,
+  "tool": "otc_safety_v40",
+  "email": "yeohj0710@yonsei.ac.kr"
+}

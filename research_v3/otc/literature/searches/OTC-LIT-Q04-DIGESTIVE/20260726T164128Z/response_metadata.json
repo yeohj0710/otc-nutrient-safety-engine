@@ -1,0 +1,13 @@
+{
+  "question_id": "OTC-LIT-Q04-DIGESTIVE",
+  "run_id": "20260726T164128Z",
+  "status": "counted_not_fetched_total_limit_exceeded",
+  "query": "(((pancreatin[tiab] OR pancrelipase[tiab] OR \"digestive enzyme\"[tiab] OR diastase[tiab] OR protease[tiab] OR cellulase[tiab] OR lipase[tiab] OR bromelain[tiab] OR \"Simethicone\"[Mesh] OR simethicone[tiab] OR \"Ursodeoxycholic Acid\"[Mesh] OR ursodeoxycholic[tiab]) AND (safety[tiab] OR adverse[tiab] OR allergy[tiab] OR bleeding[tiab] OR \"drug interaction\"[tiab] OR long-term[tiab])) AND Humans[Mesh] AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication]))",
+  "query_sha256": "373030adfdc6abecea8cef74201b9a4c03752e4dca8a0c054ff8fc401211ac9c",
+  "hit_count": 7781,
+  "translated_query": "(\"pancreatin\"[Title/Abstract] OR \"pancrelipase\"[Title/Abstract] OR \"digestive enzyme\"[Title/Abstract] OR \"diastase\"[Title/Abstract] OR \"protease\"[Title/Abstract] OR \"cellulase\"[Title/Abstract] OR \"lipase\"[Title/Abstract] OR \"bromelain\"[Title/Abstract] OR \"Simethicone\"[MeSH Terms] OR \"Simethicone\"[Title/Abstract] OR \"Ursodeoxycholic Acid\"[MeSH Terms] OR \"ursodeoxycholic\"[Title/Abstract]) AND (\"safety\"[Title/Abstract] OR \"adverse\"[Title/Abstract] OR \"allergy\"[Title/Abstract] OR \"bleeding\"[Title/Abstract] OR \"drug interaction\"[Title/Abstract] OR \"long-term\"[Title/Abstract]) AND \"humans\"[MeSH Terms] AND 2000/01/01:3000/12/31[Date - Publication]",
+  "esearch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%28pancreatin%5Btiab%5D+OR+pancrelipase%5Btiab%5D+OR+%22digestive+enzyme%22%5Btiab%5D+OR+diastase%5Btiab%5D+OR+protease%5Btiab%5D+OR+cellulase%5Btiab%5D+OR+lipase%5Btiab%5D+OR+bromelain%5Btiab%5D+OR+%22Simethicone%22%5BMesh%5D+OR+simethicone%5Btiab%5D+OR+%22Ursodeoxycholic+Acid%22%5BMesh%5D+OR+ursodeoxycholic%5Btiab%5D%29+AND+%28safety%5Btiab%5D+OR+adverse%5Btiab%5D+OR+allergy%5Btiab%5D+OR+bleeding%5Btiab%5D+OR+%22drug+interaction%22%5Btiab%5D+OR+long-term%5Btiab%5D%29%29+AND+Humans%5BMesh%5D+AND+%28%222000%2F01%2F01%22%5BDate+-+Publication%5D+%3A+%223000%22%5BDate+-+Publication%5D%29%29&retmax=0&usehistory=y&retmode=xml&tool=otc_safety_v40&email=yeohj0710%40yonsei.ac.kr",
+  "esearch_requested_at_utc": "2026-07-26T16:41:30.752292+00:00",
+  "total_hits_all_questions": 13419,
+  "total_hit_limit": 10000
+}
