@@ -1,66 +1,43 @@
-# OTC Nutrient Safety Rule Explorer
+# 국내 일반의약품 안전성 조회 연구
 
-생성/전환 시각: 2026-06-01
+이 저장소는 국내 일반의약품을 제품명으로 입력해 중복 성분, 최대용량, 복용 간격, 연령, 질환과 병용약 위험 신호를 찾는 연구용 시스템이다.
 
-## 목적
+## 두 근거층
 
-이 프로젝트는 일반의약품과 건강기능식품의 경계에 있는 고함량 영양성분을 대상으로, 성분·용량·복용 약물·질환 조건에 따른 안전성 근거를 조회하는 Next.js 앱입니다.
+- 식약처 허가원문은 제품, 성분, 함량, 복용 조건과 규칙 판정을 결정한다.
+- PubMed 문헌은 위해 연관성을 설명하는 참고 근거다. 문헌은 허가 판정을 바꾸지 않는다.
 
-기존 `nutrition-safety-engine`의 기술 구조를 재사용하지만, 연구 질문은 환자군/질환 중심이 아니라 성분 중심으로 분리합니다.
+현재 허가원문 분석 집합은 제품 13개, 성분 28개, 계산 연결 47개, 복용 조건 32개다. released 규칙 15개는 source와 locator를 가진다.
 
-- 기존 연구: 항응고제 복용자 및 신장 관련 고위험군에서의 영양소 보충제 안전성
-- 권혁찬 연구: 일반의약품형 고함량 영양성분 복용자를 위한 성분 중심 안전성 근거 매핑
+## v4.0 상태
 
-## 연구 주제
+AI가 PICOS 질문 5개를 만들고 PubMed에서 고유 PMID 5,724개를 수집했다. 로컬 AI 선별은 300행(5.24%)까지 끝났다. 전체 선별과 AI 참조표준·맹검평가가 미완료이므로 `complete=false`, `performance_claim_allowed=false`, `release_ready=false`다.
 
-국문: 일반의약품형 고함량 영양성분의 안전성 근거 매핑과 개인맞춤 조회 시스템 구축
+## 주요 경로
 
-영문: Development of an Ingredient-Centered Evidence Mapping and Personalized Query System for Safety Evaluation of Over-the-Counter Nutrient Preparations
+- 허가원문 연구 데이터: `research_v3/otc/`
+- AI PICOS: `research_v3/otc/literature/picos/picos_definition.json`
+- PubMed 코퍼스: `research_v3/otc/literature/evidence_map.csv`
+- AI 선별 체크포인트: `research_v3/otc/literature/screening/`
+- 규칙: `research_v3/otc/rules/rules.csv`
+- 실행 보고서: `research_v3/logs/v40_run_report.json`
 
-## 1차 타겟
+## 코드와 배포
 
-| 타겟 | 성분 예시 | 주요 안전성 outcome | 차별점 |
-| --- | --- | --- | --- |
-| 지용성 비타민·칼슘 고함량 축 | vitamin D, calcium, vitamin A/E/K | hypercalcemia, hypercalciuria, nephrolithiasis, toxicity | 성분·용량 중심 |
-| B군 복합제 축 | vitamin B6, B12, benfotiamine, B-complex | neuropathy, neurotoxicity, high-dose exposure | 일반의약품성 고함량 제제 중심 |
-| 미네랄 보충제 축 | iron, magnesium, calcium, zinc | constipation, diarrhea, absorption interaction, overdose | OTC/건기식 중복 성분 중심 |
-
-## 구현 구조
-
-- 웹앱: Next.js 16, React 19
-- 결정적 규칙 엔진: `src/lib/safety-engine/`
-- 근거 데이터: `data/knowledge_pack.json`
-- 검색 pipeline: `tools/search_pipeline/`
-- 권혁찬 검색 결과: `data/systematic_search/`
-- 연구 문서: `docs/research_plan_260601.md`, `docs/search_strategy_260601.md`, `docs/lab_briefing_260601.md`
-
-## 배포
-
-https://otc-nutrient-safety-engine.vercel.app
-
-## GitHub
-
-https://github.com/yeohj0710/otc-nutrient-safety-engine
-
-## 검색 pipeline 실행
-
-```bash
-python -m tools.search_pipeline.cli init
-python -m tools.search_pipeline.cli pubmed --target high_dose_vitd_calcium --query "..."
-python -m tools.search_pipeline.cli pubmed --target b6_bcomplex_neuropathy --query "..."
-python -m tools.search_pipeline.cli pubmed --target mineral_gi_interaction --query "..."
-python -m tools.search_pipeline.cli dedup
-```
+- GitHub: https://github.com/yeohj0710/otc-nutrient-safety-engine
+- 기존 공개 주소: https://otc-nutrient-safety-engine.vercel.app
+- 이번 실행에서는 사이트를 변경·검증·배포하지 않았다.
 
 ## 검증 명령
 
-```bash
-npm run prepare:knowledge
+```powershell
+.\.venv-research\Scripts\python.exe -m pytest tests\research -q
 npm run typecheck
-npm run test
+npm run lint
+npm test
 npm run build
 ```
 
-## 안전 제한
+배포는 별도 승인 범위다. 이 실행에서는 배포하지 않는다.
 
-이 앱은 의학적 진단 또는 복약 결정을 대체하지 않습니다. 문헌과 공공자료 근거를 추적 가능한 형태로 보여주는 연구용 prototype이며, 최종 복용 판단은 의료진 상담을 전제로 합니다.
+이 시스템은 연구용 프로토타입이며 의료진의 진단이나 복약 결정을 대체하지 않는다.

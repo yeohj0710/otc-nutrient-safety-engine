@@ -2,7 +2,7 @@
   "schema_version": "2.0.0",
   "lineage": "research_v3",
   "research_direction": "korean_otc_product_safety",
-  "generated_at_utc": "2026-07-16T14:28:08.858330+00:00",
+  "generated_at_utc": "2026-07-26T23:13:45.842675+00:00",
   "claim_boundary": "evidence_traceable_korean_otc_product_safety_research_working_state",
   "prior_direction": {
     "status": "superseded",
@@ -477,9 +477,36 @@
   },
   "release_ready": false,
   "release_blockers": [
-    "Codex 사전판정 외부 확인은 완료됐으나 블라인드 독립 평가는 아직 없음"
+    "Codex 사전판정 외부 확인은 완료됐으나 블라인드 독립 평가는 아직 없음",
+    "v4.0 AI 문헌 선별·AI 참조표준·규칙엔진 맹검 독립평가 미완료"
   ],
   "data_limitations": [
     "신신파스아렉스는 4매 포장이 7×10㎠와 10×14㎠를 모두 가리켜 단일 규격을 결정할 수 없으므로 원문 자료만 보존하고 분석·사이트 대상에서 제외함"
-  ]
+  ],
+  "literature_layer": {
+    "lineage": "research_v3_otc_v4_ai_literature",
+    "status": "partial",
+    "ai_picos_questions": 5,
+    "pubmed_hits_before_deduplication": 5742,
+    "corpus_rows": 5724,
+    "abstract_rows": 5424,
+    "title_only_rows": 300,
+    "ai_screened_rows": 300,
+    "screening_coverage": 0.05241090146750524,
+    "screening_distribution": {
+      "deprioritize": 270,
+      "retain": 13,
+      "uncertain": 17
+    },
+    "screening_run_complete": false,
+    "ai_reference": null,
+    "blind_engine_evaluation": null,
+    "performance_claim_allowed": false,
+    "complete": false,
+    "evidence_paths": {
+      "picos": "research_v3/otc/literature/picos/picos_definition.json",
+      "corpus": "research_v3/otc/literature/evidence_map.csv",
+      "screening": "research_v3/otc/literature/screening/screening_manifest.json"
+    }
+  }
 }

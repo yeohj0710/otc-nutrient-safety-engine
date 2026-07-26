@@ -1,50 +1,49 @@
-# Project Map
+# Project map
 
-권혁찬 연구용 repo 진입 지도입니다.
+## 사용자 화면
 
-## 앱
-
-- `app/page.tsx`: 메인 조회 화면
-- `app/sources/page.tsx`: 출처 브라우저
+- `app/page.tsx`: 제품명 중심 조회 화면
+- `app/sources/page.tsx`: 허가원문 출처 브라우저
 - `app/rules/[id]/page.tsx`: 규칙 상세
+- `src/components/rule-explorer-client.tsx`: 제품 선택과 입력 폼
+- `src/components/rule-card.tsx`: 위험 신호와 근거 카드
 - `src/lib/site.ts`: 사이트명과 설명
-- `src/components/rule-explorer-client.tsx`: 입력 폼, 예시, 결과 필터
 
-## 엔진
+## 결정 엔진
 
-- `src/lib/safety-engine/index.ts`: 결정적 규칙 엔진
-- `src/lib/knowledge/index.ts`: knowledge index loader
-- `src/lib/knowledge/normalize.ts`: 원본 데이터를 runtime index로 정규화
-- `src/types/knowledge.ts`: Zod schema와 핵심 타입
+- `src/lib/safety-engine/index.ts`: 허가원문 기반 결정 규칙
+- `src/lib/knowledge/index.ts`: 런타임 지식 인덱스 로더
+- `src/lib/knowledge/normalize.ts`: 연구 데이터를 런타임 구조로 변환
+- `src/types/knowledge.ts`: Zod 스키마와 핵심 타입
 
-## 데이터
+## 연구 데이터
 
-- `data/knowledge_pack.json`: 기존 탐색 근거 pack. 권혁찬 연구에서는 scoping data로만 사용
-- `data/systematic_search/search_runs.csv`: 새 PubMed 검색 로그
-- `data/systematic_search/retrieved_records.csv`: 후보 문헌 목록
-- `data/systematic_search/screening_log.csv`: title/abstract screening 결과
-- `data/systematic_search/evidence_extraction.csv`: 근거 추출 표
+- `research_v3/otc/normalized/`: 제품 13개, 성분 28개, 계산 연결 47개
+- `research_v3/otc/rules/`: 전체 규칙 16개, released 15개
+- `research_v3/otc/literature/picos/`: AI 자율 PICOS 질문
+- `research_v3/otc/literature/searches/`: PubMed 원시 XML, 메타데이터와 SHA-256
+- `research_v3/otc/literature/evidence_map.csv`: 고유 PMID 5,724개 코퍼스
+- `research_v3/otc/literature/screening/`: 로컬 AI 선별 체크포인트와 부분 매니페스트
 
-## 검색 pipeline
+## 보존 계보와 런타임 산출물
 
-- `tools/search_pipeline/cli.py`: 검색 CLI
-- `tools/search_pipeline/pubmed_adapter.py`: PubMed API 호출
-- `tools/search_pipeline/storage.py`: CSV 저장
-- `tools/search_pipeline/dedup.py`: 중복 표시
+- `data/knowledge_pack.json`: 이전 영양성분 탐색 자료. 활성 OTC 성과에 합산하지 않음
+- `data/systematic_search/`: 이전 검색 파이프라인 산출물
+- `src/generated/knowledge-index.json`: 현재 Next.js 런타임 인덱스
 
-## 연구 문서
+## 실행 스크립트
 
-- `docs/research_plan_260601.md`
-- `docs/search_strategy_260601.md`
-- `docs/lab_briefing_260601.md`
-- `docs/systematic_review_learning_notes.md`
-- `docs/pico_automation_review.md`
+- `tools/v40_literature_pipeline.py`: PICOS 생성, ESearch, EFetch와 코퍼스 정규화
+- `tools/screen_v40_literature_local.py`: 로컬 Qwen 선별과 append-only 체크포인트
+- `tools/build_v40_reporting.py`: 논문·문서·지표 재생성
+- `tools/search_pipeline/`: 보존된 Python 검색 파이프라인
 
-## 작업 후 확인
+## 검증
 
-```bash
-npm run prepare:knowledge
+```powershell
+.\.venv-research\Scripts\python.exe -m pytest tests\research -q
 npm run typecheck
-npm run test
+npm run lint
+npm test
 npm run build
 ```
