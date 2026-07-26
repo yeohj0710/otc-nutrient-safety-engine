@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-26T16:34:13.899954+00:00",
+  "frozen_tag": "v3-otc-frozen",
+  "frozen_commit": "418827248a6f2988dd10d10349eb5c03eee76546",
+  "artifact_count": 24,
+  "artifacts": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 2627,
+      "sha256": "ac28caca0af837505443d99c203679b8c7126c5186456b834d8dc344d29da632"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2830,
+      "sha256": "adb8e38f51b9902c9707ea864f91326ef94290d7ee4c33614f3fd9712a3c9235"
+    },
+    {
+      "path": "research_v3/DECISIONS.md",
+      "bytes": 6502,
+      "sha256": "2b82e217c5d3437548bb658d0a959bce25e92e5e3d7b6c7530d3989072359487"
+    },
+    {
+      "path": "research_v3/HUMAN_ACTION_REQUIRED.md",
+      "bytes": 3571,
+      "sha256": "5f1e2655b604b00f506e1ff0ad04f7709ccbef6a8d4fe60284cf3c423ab275c4"
+    },
+    {
+      "path": "research_v3/approvals/advisor_approvals.csv",
+      "bytes": 319,
+      "sha256": "d4fd8a0108d7c22130703d321b053d492105c36669d7a1d25ab5e7b8dfde5cc5"
+    },
+    {
+      "path": "research_v3/approvals/approval_import_report.json",
+      "bytes": 2234,
+      "sha256": "f68f43206bbef1e0b06b7eabd2fd267cd0f39da43c95fc8fa170b8aac3f9421f"
+    },
+    {
+      "path": "research_v3/approvals/review_wizard_result.json",
+      "bytes": 105270,
+      "sha256": "6eec8fa7a707e8c7b51fc6f85850ad0d88062c28135b4f0d1b768952eae4a343"
+    },
+    {
+      "path": "research_v3/human_review_minimal/expert_rule_review_html_manifest.json",
+      "bytes": 317,
+      "sha256": "b172ebf6be27a7431eb7777ad5f39277f8187e7278c27bae1b64970ed5e3b896"
+    },
+    {
+      "path": "research_v3/human_review_minimal/independent_scenario_review_html_manifest.json",
+      "bytes": 241,
+      "sha256": "8223c2bbadc18dcbaf3c7489c4e63ea05b68c3195170191d0232af568b674101"
+    },
+    {
+      "path": "research_v3/human_review_minimal/manifest.json",
+      "bytes": 1878,
+      "sha256": "be05e65d522ca1fb5538ef0a87dd4a73fd9dec1974c1def189e43b09fae68368"
+    },
+    {
+      "path": "research_v3/metrics_manifest.json",
+      "bytes": 13075,
+      "sha256": "cee713d801ad2abc5de940ef84411479461d1d8b2529f51666f20020367e395b"
+    },
+    {
+      "path": "research_v3/otc/audit/completion_audit.json",
+      "bytes": 3917,
+      "sha256": "3f236ff2613e0e9dbc7b4ae2ce61cc51fea2508ff19011f82e32360fcdc0f08e"
+    },
+    {
+      "path": "research_v3/otc/metrics_manifest.json",
+      "bytes": 13075,
+      "sha256": "cee713d801ad2abc5de940ef84411479461d1d8b2529f51666f20020367e395b"
+    },
+    {
+      "path": "research_v3/otc/normalized/administration_constraints.csv",
+      "bytes": 10325,
+      "sha256": "88b33b109e602527655e814f794bc19f7a5166553fd6c701f92bd7e53f49b669"
+    },
+    {
+      "path": "research_v3/otc/normalized/analysis_exclusions.csv",
+      "bytes": 416,
+      "sha256": "54e360f3b50bca4486b1904a69bd43736aed79446267117920529864a6a5cfa5"
+    },
+    {
+      "path": "research_v3/otc/normalized/ingredient_master.csv",
+      "bytes": 5564,
+      "sha256": "e4f0fe786d11a6e8870b6ddfc3c48fcd7174d10ccfec2baac12c1756c7a1545a"
+    },
+    {
+      "path": "research_v3/otc/normalized/product_ingredient.csv",
+      "bytes": 24758,
+      "sha256": "0df01ea231278762dd3992066a3545fac303d28e06a820e22b4f74c1b54a7e70"
+    },
+    {
+      "path": "research_v3/otc/normalized/product_master.csv",
+      "bytes": 8683,
+      "sha256": "93e8f21b00e5e2ee8963777fa04aba7b0e5cf46f2a9d68172db65576c25bf99b"
+    },
+    {
+      "path": "research_v3/otc/rules/rules.csv",
+      "bytes": 5596,
+      "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e"
+    },
+    {
+      "path": "research_v3/otc/rules/supporting_literature.csv",
+      "bytes": 11535,
+      "sha256": "6a11873f40c521258882b0aa95d2aeb49a237a8638a3a69464bca7855ce3ff5a"
+    },
+    {
+      "path": "research_v3/otc/validation/independent_scenarios.csv",
+      "bytes": 2869,
+      "sha256": "7b1df37aef73b4a54d7e997bb435fd2a778efd2575e67c5852851fc363dc3004"
+    },
+    {
+      "path": "research_v3/project_identity.json",
+      "bytes": 961,
+      "sha256": "678555ba7c32954aca956357e02c49900fbb0233501f857b17c9f9c48fe98486"
+    },
+    {
+      "path": "research_v3/screening/full_text.csv",
+      "bytes": 23642,
+      "sha256": "47739856154e6d4ebaf189913f0909ca152bd0e5422300e82d281acfffc0baf8"
+    },
+    {
+      "path": "research_v3/screening/title_abstract.csv",
+      "bytes": 11039,
+      "sha256": "fc237a21a7735c3f25ccc3b44eb9177ed60069657da018367a86c0df8de28170"
+    }
+  ]
+}
