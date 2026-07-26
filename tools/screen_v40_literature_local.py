@@ -222,6 +222,7 @@ def write_results_and_manifest(
     batches: list[dict[str, Any]],
     torch_version: str,
     transformers_version: str,
+    micro_batch_size: int = MICRO_BATCH_SIZE,
 ) -> dict[str, Any]:
     decisions = flatten_decisions(batches)
     coverage = validate_coverage([row["record_id"] for row in corpus], decisions)
@@ -270,7 +271,7 @@ def write_results_and_manifest(
             "completed_batches_micro_batch_size": 16,
             "completed_batches_max_input_tokens": 1536,
             "completed_batches_max_new_tokens": 32,
-            "resume_micro_batch_size": MICRO_BATCH_SIZE,
+            "resume_micro_batch_size": micro_batch_size,
             "resume_max_input_tokens": MAX_INPUT_TOKENS,
             "resume_max_new_tokens": MAX_NEW_TOKENS,
             "deterministic_decoding": True,
@@ -295,6 +296,9 @@ def write_results_and_manifest(
                 "batch_id": batch["batch_id"],
                 "requested_rows": batch["requested_rows"],
                 "returned_rows": batch["returned_rows"],
+                "micro_batch_size": batch.get("micro_batch_size"),
+                "max_input_tokens": batch.get("max_input_tokens"),
+                "max_new_tokens": batch.get("max_new_tokens"),
                 "batch_sha256": batch["batch_sha256"],
             }
             for batch in batches
@@ -303,7 +307,7 @@ def write_results_and_manifest(
         "partial_reason": (
             None
             if coverage["coverage"] == 1.0 and not coverage["missing_ids"]
-            else "07:50 종료 전환 규칙에 따라 선별을 중단하고 필수 문서·동기화·보고서 작성으로 전환"
+            else "AI 전량 선별 실행 중"
         ),
     }
     MANIFEST_PATH.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -330,11 +334,15 @@ def run(max_batches: int | None = None, micro_batch_size: int = MICRO_BATCH_SIZE
     if max_batches == 0:
         torch_version = batches[-1].get("torch_version", "") if batches else ""
         transformers_version = batches[-1].get("transformers_version", "") if batches else ""
-        return write_results_and_manifest(corpus, batches, torch_version, transformers_version)
+        return write_results_and_manifest(
+            corpus, batches, torch_version, transformers_version, micro_batch_size
+        )
     if not missing_rows:
         torch_version = batches[-1].get("torch_version", "") if batches else ""
         transformers_version = batches[-1].get("transformers_version", "") if batches else ""
-        return write_results_and_manifest(corpus, batches, torch_version, transformers_version)
+        return write_results_and_manifest(
+            corpus, batches, torch_version, transformers_version, micro_batch_size
+        )
 
     model, tokenizer, torch_version, transformers_version = load_model()
     batches_done = 0
@@ -375,6 +383,9 @@ def run(max_batches: int | None = None, micro_batch_size: int = MICRO_BATCH_SIZE
             "created_at_utc": utc_now(),
             "requested_rows": len(rows),
             "returned_rows": len(batch_decisions),
+            "micro_batch_size": micro_batch_size,
+            "max_input_tokens": MAX_INPUT_TOKENS,
+            "max_new_tokens": MAX_NEW_TOKENS,
             "torch_version": torch_version,
             "transformers_version": transformers_version,
             "decisions": batch_decisions,
@@ -388,7 +399,9 @@ def run(max_batches: int | None = None, micro_batch_size: int = MICRO_BATCH_SIZE
                 [row["record_id"] for row in corpus], flatten_decisions(batches)
             )
 
-    manifest = write_results_and_manifest(corpus, batches, torch_version, transformers_version)
+    manifest = write_results_and_manifest(
+        corpus, batches, torch_version, transformers_version, micro_batch_size
+    )
     print(
         json.dumps(
             {

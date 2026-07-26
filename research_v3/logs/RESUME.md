@@ -1,6 +1,6 @@
 # v4.0 실행 재개 기록
 
-최종 갱신: 2026-07-27 08:18 +09:00
+최종 갱신: 2026-07-27 08:31 +09:00
 
 ## 완료
 
@@ -9,9 +9,10 @@
 
 ## 부분 완료
 
-- P2: 로컬 `Qwen/Qwen2.5-3B-Instruct`로 3개 배치 300행을 판정했다. 전체 5,724행 중 5,424행이 남았다.
+- P2: 로컬 `Qwen/Qwen2.5-3B-Instruct`로 10개 배치 1,000행을 판정했다. 전체 5,724행 중 4,724행이 남았다.
 - 프롬프트는 고정됐고 체크포인트는 append-only다. 완료된 판정은 수정하지 않는다.
-- 07:50 종료 전환 규칙 때문에 이번 실행에서는 선별을 중단했다.
+- 사용자가 시간 제한 축소를 해제했으므로 P2 100% 완료까지 계속한다.
+- 32행 마이크로배치, 입력 1,280토큰, 출력 20토큰 설정은 새 700행에서 안정적으로 동작했다.
 
 ## 미실행
 
@@ -29,7 +30,7 @@
 ## 재개 명령
 
 ```powershell
-.\.venv-research\Scripts\python.exe -X utf8 tools\screen_v40_literature_local.py --max-batches 10 --micro-batch-size 16
+.\.venv-research\Scripts\python.exe -X utf8 tools\screen_v40_literature_local.py --max-batches 10 --micro-batch-size 32
 ```
 
 10개 배치마다 체크포인트와 매니페스트를 검증한 뒤 커밋한다. P2 `coverage=1.0`과 `run_complete=true` 전에는 P3를 시작하지 않는다.
