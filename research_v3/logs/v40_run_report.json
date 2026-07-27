@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-07-27T13:31:55+09:00",
+  "generated_at": "2026-07-27T13:34:09+09:00",
   "language": "ko",
   "phases": {
     "P2": {
@@ -29,7 +29,7 @@
     },
     "P5": {
       "status": "complete",
-      "ended_at": "2026-07-27T13:31:55+09:00",
+      "ended_at": "2026-07-27T13:34:09+09:00",
       "evidence_path": "research_v3/logs/v40_run_report.json"
     }
   },
@@ -280,9 +280,9 @@
     "deployment": "production",
     "deployment_detail": {
       "deployed": true,
-      "deployment_id": "dpl_7YHbb65wJSYpSrHEVRspLB69FYYe",
+      "deployment_id": "dpl_A1YDFPUijJCXWnVKdojUxP4pEZvn",
       "public_url": "https://otc-nutrient-safety-engine.vercel.app",
-      "git_commit": "0c151915f6e200cefa52d21f4bc60066384e4b23",
+      "git_commit": "282f12a6a007c2dde972e887ddd592e89da69654",
       "http_status": {
         "/": 200,
         "/research-v3": 200,
@@ -300,7 +300,7 @@
     "git_push": {
       "remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
       "branch": "main",
-      "head_commit": "0c151915f6e200cefa52d21f4bc60066384e4b23"
+      "head_commit": "282f12a6a007c2dde972e887ddd592e89da69654"
     }
   },
   "thesis": {
@@ -383,8 +383,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "63236cd5bfec24d5c89565224b46f4a7fcc69ce201e536d07b983abea6eae0e7",
-      "target_sha256": "63236cd5bfec24d5c89565224b46f4a7fcc69ce201e536d07b983abea6eae0e7",
+      "source_sha256": "9a1c3f4f27f14933f4b4f9adef4adb91d5283bac3efb4f8b04455fed42a889de",
+      "target_sha256": "9a1c3f4f27f14933f4b4f9adef4adb91d5283bac3efb4f8b04455fed42a889de",
       "bytes": 17784
     },
     {
@@ -413,8 +413,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "b8d217384ff5311d69c2bd2a57c470e96dcebb108783fb2707f43a41306eba7b",
-      "target_sha256": "b8d217384ff5311d69c2bd2a57c470e96dcebb108783fb2707f43a41306eba7b",
+      "source_sha256": "d104667c5a50263dc4e4f22fd9acc9a491c409922af7e912223896a3386d6712",
+      "target_sha256": "d104667c5a50263dc4e4f22fd9acc9a491c409922af7e912223896a3386d6712",
       "bytes": 4474
     },
     {
@@ -423,8 +423,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "e68e6aad1515312e280bafdaa92d83c4a0b6e27d68f0a88ff8d2b370cd56b11c",
-      "target_sha256": "e68e6aad1515312e280bafdaa92d83c4a0b6e27d68f0a88ff8d2b370cd56b11c",
+      "source_sha256": "a19a3536fe5a19996f5994a20bbfe41ff145dcc28f842d154fd24081c47f7f4f",
+      "target_sha256": "a19a3536fe5a19996f5994a20bbfe41ff145dcc28f842d154fd24081c47f7f4f",
       "bytes": 47744
     },
     {
@@ -433,8 +433,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "aecba16d493c4a831ed3503a815917d0e512eee72dfd5fc7b062d23973bfeb07",
-      "target_sha256": "aecba16d493c4a831ed3503a815917d0e512eee72dfd5fc7b062d23973bfeb07",
+      "source_sha256": "41bc6252925e24db3b506e53f73632558a97dc43e73672e1d1c767e119db06d5",
+      "target_sha256": "41bc6252925e24db3b506e53f73632558a97dc43e73672e1d1c767e119db06d5",
       "bytes": 336936
     },
     {
@@ -453,8 +453,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "3525fcae858f600b2713c6e186ad056f76c3502df732f852562222d76dce855a",
-      "target_sha256": "3525fcae858f600b2713c6e186ad056f76c3502df732f852562222d76dce855a",
+      "source_sha256": "b3c4bba210c5b9003f23745b30bea9fc80cdeaaae1dc795901e85e42792f38a9",
+      "target_sha256": "b3c4bba210c5b9003f23745b30bea9fc80cdeaaae1dc795901e85e42792f38a9",
       "bytes": 21643
     }
   ],

@@ -1,15 +1,14 @@
 {
   "schema_version": "2.0.0",
   "research_direction": "korean_otc_product_safety",
-  "recorded_at_utc": "2026-07-27T04:29:33.957533+00:00",
+  "recorded_at_utc": "2026-07-27T04:33:48.365738+00:00",
   "deployed": true,
-  "deployment_id": "dpl_7YHbb65wJSYpSrHEVRspLB69FYYe",
+  "deployment_id": "dpl_A1YDFPUijJCXWnVKdojUxP4pEZvn",
   "target": "production",
   "ready_state": "READY",
   "public_url": "https://otc-nutrient-safety-engine.vercel.app",
-  "deployment_url": "https://otc-nutrient-safety-engine-iktdk54gr-yeohj0710s-projects.vercel.app",
-  "inspector_url": "https://vercel.com/yeohj0710s-projects/otc-nutrient-safety-engine/7YHbb65wJSYpSrHEVRspLB69FYYe",
-  "git_commit": "0c151915f6e200cefa52d21f4bc60066384e4b23",
+  "inspector_url": "https://vercel.com/yeohj0710s-projects/otc-nutrient-safety-engine/A1YDFPUijJCXWnVKdojUxP4pEZvn",
+  "git_commit": "282f12a6a007c2dde972e887ddd592e89da69654",
   "git_remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
   "authorized_by_ko": "사용자가 이번 세션에서 배포와 push 를 명시적으로 지시했다.",
   "verification": {
@@ -36,8 +35,8 @@
   },
   "release_ready_note_ko": "사이트 배포는 연구 상태 플래그 release_ready 와 별개다. release_ready 는 임상 배포 승인 절차를 뜻하며 그 절차는 수행되지 않았으므로 false 를 유지한다.",
   "previous_receipt": {
-    "deployment_id": "dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
-    "recorded_at_utc": "2026-07-27T04:21:01.751083+00:00"
+    "deployment_id": "dpl_7YHbb65wJSYpSrHEVRspLB69FYYe",
+    "recorded_at_utc": "2026-07-27T04:29:33.957533+00:00"
   },
-  "redeploy_reason_ko": "문서·보고서 커밋 이후 배포 커밋과 HEAD 를 일치시키기 위해 다시 배포했다."
+  "redeploy_reason_ko": "저장소 HEAD 와 배포 커밋을 일치시키기 위해 문서 커밋 뒤 다시 배포했다."
 }
