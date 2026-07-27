@@ -56,3 +56,4 @@ data/systematic_search/.browser/
 
 # private, reproducible local catalog detail index
 /research_v3/otc/local/
+research_v3/otc/literature/screening/cards/
