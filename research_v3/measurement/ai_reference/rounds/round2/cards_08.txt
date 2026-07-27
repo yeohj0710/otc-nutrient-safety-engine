@@ -1,0 +1,152 @@
+===== AI REFERENCE ROUND 2 / CHUNK 8 (20 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R2-281] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Acute kidney injury in patients admitted to a liver intensive therapy unit with paracetamol-induced hepatotoxicity.
+  ABSTRACT: BACKGROUND: Paracetamol overdose can cause acute kidney injury (AKI) independent of its hepatotoxic effects. We aimed to determine the prevalence of AKI (AKI Network definition) in those with paracetamol-induced hepatotoxicity, identify factors associated with development, assess impact on the outcomes of patient survival and length of stay and determine the proportion of patients recovering renal function (estimated glomerular filtration rate > 60 mL/min) by the time of hospital discharge or transfer out. METHODS: Between 2000 and 2007, patients admitted to a tertiary referral liver intensive therapy unit (LITU) with paracetamol-induced hepatotoxicity were identified from a prospectively maintained database and evaluated. RESULTS: Those receiving a liver transplant were excluded (n = 54), leaving 302 patients. Renal function remained normal in 21%, the remainder developing AKI (Stages 1 …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acute Kidney Injury; Adult; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Creatinine; Female; Follow-Up Studies; Glomerular Filtration Rate; Hospital Mortality; Humans; Intensive Care Units; Length of Stay; Male
+
+[R2-282] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=yes
+  TITLE: Toxic Ingestion of Acetaminophen and Acetylsalicylic Acid in a Parturient at 33 Weeks Gestation: A Case Report.
+  ABSTRACT: The anesthetic management of toxic ingestion during pregnancy requires concomitant concerns for both mother and fetus. We describe the management of a parturient at 33 weeks of gestation after a suicide attempt by ingestion of acetaminophen (APAP) and acetylsalicylic acid (ASA). Timing of toxin ingestion must be determined, prompt antidote administration prioritized, and hepatotoxicity-induced hematologic impairment anticipated. Fetal exposure to toxins must also be minimized. The use of point-of-care rotational thromboelastometry in conjunction with standard coagulation testing in such cases facilitates consideration of neuraxial anesthesia and determination of risk for postpartum hemorrhage.
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adult; Aspirin; Cesarean Section; Charcoal; Drug Overdose; Female; Fetal Heart; Humans; Point-of-Care Systems; Pregnancy; Pregnancy Trimester, Third; Suicide, Attempted
+
+[R2-283] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: No need to change treatment of early presenting patients with acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Antioxidants; Humans
+
+[R2-284] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Cytokine and autoantibody patterns in acute liver failure.
+  ABSTRACT: The mechanisms of idiosyncratic drug-induced liver injury (IDILI) are still a matter of dispute. Some of the characteristics of reactions that have been classed as metabolic idiosyncrasy could also be those of an immune-mediated reaction with an autoimmune component. Many auto-immune reactions appear to be mediated by T(H)17 cells, which are in part characterized by the production of interleukin (IL)-17. To test the involvement of T(H)17 cells in IDILI, we quantified a number of cytokines, chemokines, and autoantibodies in the serum of 39 patients with acute liver failure (ALF) due to IDILI and compared the values with those from 21 patients with acetaminophen-induced ALF and 10 patients with viral hepatitis-induced ALF. The IL-17 levels were elevated in 60% of patients with IDILI, but also in a similar number of patients with acetaminophen-induced ALF and occasionally in patients with v …
+  TYPES: Comparative Study;Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Autoantibodies; Cytokines; Diagnosis, Differential; Hepatitis, Viral, Human; Humans; Liver Failure, Acute; Th17 Cells
+
+[R2-285] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=no
+  TITLE: Response to Letter to the Editor: External validation of the paracetamol-aminotransferase multiplication product to predict hepatotoxicity from paracetamol overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Alanine Transaminase; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Clinical Enzyme Tests; Decision Support Techniques; Female; Humans; Male
+
+[R2-286] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Acute liver failure in a term neonate after repeated paracetamol administration.
+  ABSTRACT: OBJECTIVE: Severe hepatotoxicity caused by paracetamol is rare in neonates. We report a case of paracetamol-induced acute liver failure in a term neonate. CASE DESCRIPTION: A 26-day-old boy was admitted with intestinal bleeding, shock signs, slight liver enlargement, coagulopathy, metabolic acidosis (pH=7.21; bicarbonate: 7.1 mEq/L), hypoglycemia (18 mg/dL), increased serum aminotransferase activity (AST=4,039 IU/L; ALT=1,087 IU/L) and hyperbilirubinemia (total: 9.57 mg/dL; direct: 6.18 mg/dL) after receiving oral paracetamol (10 mg/kg/dose every 4 hours) for three consecutive days (total dose around 180 mg/kg; serum concentration 36-48 hours after the last dose of 77 µg/ mL). Apart from supportive measures, the patient was successfully treated with intravenous N-acetylcysteine infusion during 11 consecutive days, and was discharged on day 34. The follow-up revealed full recovery of clin …
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Antipyretics; Humans; Infant, Newborn; Liver Failure, Acute; Male
+
+[R2-287] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=no
+  TITLE: Potential adjunct treatment for high-risk acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Benzoquinones; Chemical and Drug Induced Liver Injury; Cytochrome P-450 CYP2E1 Inhibitors; Drug Overdose; Fomepizole; Humans; Imines; Liver; Pyrazoles
+
+[R2-288] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Retinal microcirculation in association with caffeinated and alcoholic drinks in subjects at increased cardiovascular risk.
+  ABSTRACT: OBJECTIVES: The association of caffeinated and alcoholic drinks with microcirculation is poorly investigated. The aim of the study was to investigate the associations of daily consumption of caffeinated and alcoholic drinks with retinal vessel calibers. METHODS: In consecutive adults at increased risk but free of CVD and diabetes mellitus, (n=181, age: 51.32±12.42 y, 51.4% women), we determined CRAE, CRVE and AVR, respectively. Daily consumption of caffeinated and alcoholic drinks was assessed through 24 h recalls. RESULTS: After adjustment for potential confounders: (i) caffeine was positively associated with CRVE (b=0.177, P=.006 for left, b=0.208, P=.002 for right eye, respectively) (ii) decaffeinated coffee was positively associated with CRAE (b=0.141, P=.035 for left eye) and negatively associated with CRVE (b=-0.234, P<.001 for left, b=-0.189, P=.006 for right eye, respectively). R …
+  TYPES: Journal Article
+  MESH: Adult; Aged; Alcohol Drinking; Arterioles; Caffeine; Cardiovascular Diseases; Coffee; Female; Humans; Male; Microcirculation; Middle Aged; Retinal Vessels; Risk Factors
+
+[R2-289] OTC-LIT-Q02-NSAID | 2013 | abstract=yes
+  TITLE: [Caffeine in analgesics--myth or medicine?].
+  ABSTRACT: Caffeine as an analgesic adiuvant has been discussed for many years. In a recent Cochrane review based on 19 studies with a total of 7238 patients, caffeine enhanced the efficacy of paracetamol, ibuprofen or aspirin with a number needed to treat (NNT) of about 16, comparable to the effect of doubling the dose of the primary analgesic, reported by other authors. Analgesia by caffeine is best explained by antagonism at adenosine receptors. Recent studies confirmed a favourable tolerability profile of caffeine when consumed in "normal" quantities (e.g. 300 mg or about 3 cups of coffee per day), including possible cardiovascular risks, effects on bone density, and exposure in pregnancy. Beneficial effects are known,e.g.,in Parkinson's disease and liver cirrhosis and fibrosis. Caffeine remains an analgesic adiuvant with a favourable risk-benefit balance.
+  TYPES: English Abstract;Journal Article;Review
+  MESH: Adjuvants, Pharmaceutic; Analgesics; Caffeine; Dose-Response Relationship, Drug; Drug Combinations; Drug Synergism; Humans; Pain Measurement; Treatment Outcome
+
+[R2-290] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Gestational intermittent hypoxia induces endothelial dysfunction and hypertension in pregnant rats: role of endothelin type B receptor†.
+  ABSTRACT: Obstructive sleep apnea is a recognized risk factor for gestational hypertension, yet the exact mechanism behind this association remains unclear. Here, we tested the hypothesis that intermittent hypoxia, a hallmark of obstructive sleep apnea, induces gestational hypertension through perturbed endothelin-1 signaling. Pregnant Sprague-Dawley rats were subjected to normoxia (control), mild intermittent hypoxia (10.5% O2), or severe intermittent hypoxia (6.5% O2) from gestational days 10-21. Blood pressure was monitored. Plasma was collected and mesenteric arteries were isolated for myograph and protein analyses. The mild and severe intermittent hypoxia groups demonstrated elevated blood pressure, reduced plasma nitrate/nitrite, and unchanged endothelin-1 levels compared to the control group. Western blot analysis revealed decreased expression of endothelin type B receptor and phosphorylate …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural
+  MESH: Animals; Endothelin-1; Endothelins; Endothelium, Vascular; Female; Humans; Hypertension, Pregnancy-Induced; Hypoxia; Mesenteric Arteries; Nitrates; Nitric Oxide; Nitric Oxide Synthase Type III; Nitrites; Pregnancy
+
+[R2-291] OTC-LIT-Q05-TOPICAL | 2023 | abstract=yes
+  TITLE: Comparison of skin decontamination strategies in the initial operational response following chemical exposures.
+  ABSTRACT: In mass casualty incidents including hazardous chemical skin exposure, decontamination is the primary intervention to avoid systemic uptake of the toxic compound. The protocol needs to be both simple and efficient to enable a rapid response and avoid delay of patient management. In the present study, decontamination strategies included in the initial operational response were evaluated following human skin exposure in vitro to four different contaminants. Results demonstrated that the efficacy of selected decontamination procedures was highly dependent on the chemical contaminant used. Dry removal of the sulfur mustard simulant methyl salicylate prior to wet decontamination was found beneficial compared to wet decontamination alone. Rapidly initiated wet decontamination was more efficient compared to dry and wet removal of the industrial chemical 2-butoxyethanol and the nerve agent tabun …
+  TYPES: Journal Article
+  MESH: Chemical Warfare Agents; Decontamination; Humans; Mass Casualty Incidents; Mustard Gas; Nerve Agents; Skin
+
+[R2-292] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Augmenting the sensitivity for hepatotoxicity prediction in acute paracetamol overdose: combining psi (ψ) parameter and paracetamol concentration aminotransferase activity multiplication product.
+  ABSTRACT: INTRODUCTION: While factors like high serum paracetamol (acetaminophen) concentration and delayed acetylcysteine treatment increase hepatotoxicity risk, existing predictive tools, such as the paracetamol concentration aminotransferase activity multiplication product and the psi (ψ) parameter, lack definitive accuracy. This study evaluated the paracetamol psi parameter multiplication product addition against the psi parameter and the paracetamol concentration aminotransferase activity multiplication product for predicting hepatotoxicity following an acute paracetamol overdose. METHODS: A retrospective analysis of patients with acute paracetamol overdose from January 2007 to December 2016 was conducted. The paracetamol psi parameter multiplication product addition, calculated by summing the psi parameter (mmol/L × h) and the paracetamol concentration aminotransferase activity multiplicatio …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adolescent; Adult; Alanine Transaminase; Analgesics, Non-Narcotic; Aspartate Aminotransferases; Chemical and Drug Induced Liver Injury; Drug Overdose; Female; Humans; Liver Function Tests; Male; Middle Aged
+
+[R2-293] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Pathophysiological relevance of proteomics investigations of drug-induced hepatotoxicity in HepG2 cells.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Amiodarone; Chemical and Drug Induced Liver Injury; Cyclosporine; Gene Expression Regulation; Hep G2 Cells; Hepatocytes; Humans; Proteomics
+
+[R2-294] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=no
+  TITLE: Paracetamol for pain in adults.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acetaminophen; Drug Overdose; Humans; Osteoarthritis, Knee; Pain; Practice Guidelines as Topic
+
+[R2-295] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Population pharmacokinetics of immediate-release and modified-release paracetamol and its major metabolites in a supratherapeutic dosing study.
+  ABSTRACT: OBJECTIVES: Overdose with paracetamol modified-release (MR) formulation, a bilayer tablet containing 69% slow-release component, has been increasing since its introduction to the market. However, little evidence exists for the management of MR paracetamol overdose. We aimed to develop a population pharmacokinetic (PK) model for immediate-release (IR) and MR paracetamol and its major metabolism, and quantitatively understand the formulation difference in toxicity assessment based on the nomogram line. METHODS: Data from a cross-over study design in nine healthy volunteers administered a single supratherapeutic oral dose (80 mg/kg) of either IR and MR paracetamol were available from a published study. Plasma concentrations for paracetamol and its metabolites glucuronide (APAPG) and sulfate conjugate (APAPS) for both formulations were measured and analysed with population pharmacokinetic (P …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Biological Availability; Cross-Over Studies; Delayed-Action Preparations; Drug Overdose; Humans; Tablets
+
+[R2-296] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=yes
+  TITLE: Assessment of Pharmacokinetic Interactions Between Obeticholic Acid and Caffeine, Midazolam, Warfarin, Dextromethorphan, Omeprazole, Rosuvastatin, and Digoxin in Phase 1 Studies in Healthy Subjects.
+  ABSTRACT: INTRODUCTION: Obeticholic acid (OCA), a potent and selective farnesoid X receptor agonist, is indicated for the treatment of primary biliary cholangitis (PBC). We investigated the potential drug-drug interaction effect of OCA on metabolic CYP450 enzymes and drug transporters. METHODS: Five phase 1 single-center, open-label, fixed-sequence, inpatient studies were conducted in healthy adult subjects to evaluate the effect of oral daily doses of 10 or 25 mg OCA on single-dose plasma pharmacokinetics of specific probe substrates for enzymes CYP1A2 (caffeine, R-warfarin), CYP3A (midazolam, R-warfarin), CYP2C9 (S-warfarin), CYP2D6 (dextromethorphan), CYP2C19 (omeprazole), and drug transporters, BCRP/OATP1B1/OATP1B3 (rosuvastatin), and P-gp (digoxin). RESULTS: OCA showed no substantial suppression/inhibition of S-warfarin, digoxin, and dextromethorphan and weak interactions with caffeine, omepr …
+  TYPES: Journal Article
+  MESH: Adult; Aged; Aged, 80 and over; Caffeine; Chenodeoxycholic Acid; Cholangitis; Cytochrome P-450 Enzyme System; Dextromethorphan; Digoxin; Drug Interactions; Female; Healthy Volunteers; Humans; Male
+
+[R2-297] OTC-LIT-Q05-TOPICAL | 2020 | abstract=yes
+  TITLE: Antimicrobial activity and toxicity of glass ionomer cement containing an essential oil.
+  ABSTRACT: The aim of this study was to evaluate the antimicrobial activity and toxicity of glass ionomer cement (GIC) modified with 5-methyl-2-(1-methylethyl)phenol (thymol) against Streptococcus mutans in silico and in vitro. The antimicrobial activity of thymol on GIC modified with concentrations of 2% (GIC-2) and 4% (GIC-4) was evaluated in a model of planktonic cell biofilm using agar diffusion test, minimum inhibitory concentration (MIC), minimum bactericidal concentration (MBC), dynamic biofilm (continuous flow cell parallel), and bacterial kinetics. Conventional GIC (GIC-0) was used as a control. Thymol toxicity was evaluated in Artemia salina and in silico using Osiris® software. Differences between groups were estimated by analysis of variance, followed by Tukey post hoc test, with a 5% significance level. The results of the agar diffusion test between groups were not significantly differ …
+  TYPES: Journal Article
+  MESH: Anti-Infective Agents; Biofilms; Glass Ionomer Cements; Humans; Materials Testing; Oils, Volatile; Streptococcus mutans
+
+[R2-298] OTC-LIT-Q05-TOPICAL | 2025 | abstract=yes
+  TITLE: Peppermint and menthol: a review on their biochemistry, pharmacological activities, clinical applications, and safety considerations.
+  ABSTRACT: In this manuscript, we conducted a comprehensive review of the diverse effects of peppermint on human health and explored the potential underlying mechanisms. Peppermint contains three main groups of phytochemical constituents, including essential oils (mainly menthol), flavonoids (such as hesperidin, eriodictyol, naringenin, quercetin, myricetin, and kaempferol), and nonflavonoid phenolcarboxylic acids. Peppermint exhibits antimicrobial, antioxidant, anti-inflammatory, immunomodulatory, anti-cancer, anti-aging, and analgesic properties and may be effective in treating various disorders, including gastrointestinal disorders (e.g., irritable bowel syndrome, dyspepsia, constipation, functional gastrointestinal disorders, nausea/vomiting, and gallbladder stones). In addition, peppermint has therapeutic benefits for psychological and cognitive health, dental health, urinary retention, skin a …
+  TYPES: Journal Article;Review
+  MESH: Anti-Infective Agents; Anti-Inflammatory Agents; Antioxidants; Flavonoids; Humans; Mentha piperita; Menthol; Oils, Volatile; Phytochemicals; Plant Extracts
+
+[R2-299] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Four-hour acetaminophen concentration estimation after ingested dose based on pharmacokinetic models.
+  ABSTRACT: INTRODUCTION: The United Kingdom has recently changed the indications for N-acetylcysteine treatment for acetaminophen intoxication. Any ingestion over 75 mg/kg is now referred to the hospital. A model based on pharmacokinetic parameters was developed to predict 4-h acetaminophen concentration for this and other ingested doses. METHODOLOGY: EMBASE and Medline were searched to obtain values for volume of distribution, absorption, and elimination constants and bioavailability for acetaminophen. Four-hour concentrations were calculated for ingestion doses currently recommended for hospital referral in different countries. Calculated plasma concentrations at 4 h for several doses were plotted against the Rumack-Matthew and the United Kingdom treatment lines. RESULTS: Six articles were used for the calculations (4 adult and 2 pediatric). In order to achieve a 4-h acetaminophen concentration o …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adult; Age Factors; Antidotes; Child; Drug Overdose; Humans; Models, Biological; Referral and Consultation; Time Factors; Tissue Distribution; United Kingdom
+
+[R2-300] OTC-LIT-Q01-ACETAMINOPHEN | 2025 | abstract=yes
+  TITLE: FMO3 exacerbates hepatic endoplasmic reticulum stress in drug-induced liver injury by inhibiting CREB3/P4HB axis and activating TMAO-mediated PERK pathway.
+  ABSTRACT: AIMS: The primary objective of this study is to elucidate the role of FMO3, an important enzyme in drug metabolism, and its metabolites in Drug-induced liver injury (DILI). MATERIALS AND METHODS: We overexpressed hepatic FMO3 in mice by injecting AAV8 to examine their liver morphology under acetaminophen (APAP) or monocrotaline (MCT) treatment. We also detected the metabolite TMAO of FMO3 in patients and mice with DILI, and further verified its regulatory effects on the endoplasmic reticulum stress pathway in hepatocytes through in vivo and in vitro experiments. KEY FINDINGS: We found that FMO3 is upregulated in patients and male mice with DILI and overexpression of hepatic FMO3 exacerbates APAP or MCT-induced acute liver injury in mice. Mechanistically, FMO3 binds to endoplasmic reticulum (ER) stress-related transcription factor CREB3 (cAMP response element-binding protein 3) and inhibi …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Animals; Chemical and Drug Induced Liver Injury; Cyclic AMP Response Element-Binding Protein; Endoplasmic Reticulum Stress; Female; Hepatocytes; Humans; Liver; Male; Methylamines; Mice; Mice, Inbred C57BL; Oxygenases

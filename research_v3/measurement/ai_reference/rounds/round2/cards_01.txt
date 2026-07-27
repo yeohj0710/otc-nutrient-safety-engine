@@ -1,0 +1,272 @@
+===== AI REFERENCE ROUND 2 / CHUNK 1 (40 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R2-001] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=yes
+  TITLE: A monolithic 3D-0D coupled closed-loop model of the heart and the vascular system: Experiment-based parameter estimation for patient-specific cardiac mechanics.
+  ABSTRACT: A model for patient-specific cardiac mechanics simulation is introduced, incorporating a 3-dimensional finite element model of the ventricular part of the heart, which is coupled to a reduced-order 0-dimensional closed-loop vascular system, heart valve, and atrial chamber model. The ventricles are modeled by a nonlinear orthotropic passive material law. The electrical activation is mimicked by a prescribed parameterized active stress acting along a generic muscle fiber orientation. Our activation function is constructed such that the start of ventricular contraction and relaxation as well as the active stress curve's slope are parameterized. The imaging-based patient-specific ventricular model is prestressed to low end-diastolic pressure to account for the imaged, stressed configuration. Visco-elastic Robin boundary conditions are applied to the heart base and the epicardium to account f …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Animals; Calibration; Cardiovascular System; Computer Simulation; Elasticity; Finite Element Analysis; Heart; Heart Atria; Heart Valves; Humans; Imaging, Three-Dimensional; Least-Squares Analysis; Models, Cardiovascular; Nonlinear Dynamics
+
+[R2-002] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=yes
+  TITLE: Prevalence of Nonopioid and Opioid Prescriptions Among Commercially Insured Patients with Chronic Pain.
+  ABSTRACT: Objective The increased use of opioids to treat chronic pain in the past 20 years has led to a drastic increase in opioid prescribing in the United States. The Centers for Disease Control and Prevention's (CDC's) Guideline for Prescribing Opioids for Chronic Pain recommends the use of nonopioid therapy as the preferred treatment for chronic pain. This study analyzes the prevalence of nonopioid prescribing among commercially insured patients with chronic pain. Design Data from the 2014 IBM® MarketScan® databases representing claims for commercially insured patients were used. International Classification of Diseases, Ninth Revision, codes were used to identify patients with chronic pain. Nonopioid prescriptions included nonsteroidal anti-inflammatory drugs (NSAIDs), analgesics/antipyretics (e.g., acetaminophen), anticonvulsants, and antidepressant medications. The prevalence of nonopioid …
+  TYPES: Journal Article
+  MESH: Adult; Age Factors; Aged; Aged, 80 and over; Analgesics, Non-Narcotic; Analgesics, Opioid; Anti-Inflammatory Agents, Non-Steroidal; Chronic Pain; Cross-Sectional Studies; Depressive Disorder; Drug Prescriptions; Female; Guidelines as Topic; Humans
+
+[R2-003] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Protective effect of Woodfordia fruticosa flowers against acetaminophen-induced hepatic toxicity in rats.
+  ABSTRACT: CONTEXT: The flowers of Woodfordia fruticosa Kurz. (Lythraceae) are commonly used for the treatment of several ailments which includes rheumatism, leucorrhea, menorrhagia, asthma, liver disorder, and inflammatory conditions. OBJECTIVE: To evaluate the hepatoprotective property of Woodfordia fruticosa flowers against acetaminophen-induced hepatic injury in rats. MATERIAL AND METHODS: Acetaminophen (3 g/kg bw)-induced hepatotoxicity study was carried out by observing the effect of methanol extract of Woodfordia fruticosa flowers (400 and 600 mg/kg, bw) on some serum marker enzymes, albumin, blood urea nitrogen levels as well as liver total protein, nonenzymetic glutathione reduced content, and enzymatic antioxidant glutathione peroxidase, with histopathological evidence. RESULTS AND DISCUSSION: Pretreatment of rats with methanol extract of Woodfordia fruticosa flowers effectively prevented …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Animals; Antioxidants; Chemical and Drug Induced Liver Injury; Female; Flowers; Humans; Liver; Liver Diseases; Liver Function Tests; Male; Phytotherapy; Plant Extracts
+
+[R2-004] OTC-LIT-Q04-DIGESTIVE | 2007 | abstract=yes
+  TITLE: A large-scale, multicentre, double-blind trial of ursodeoxycholic acid in patients with chronic hepatitis C.
+  ABSTRACT: BACKGROUND: Combined pegylated interferon and ribavirin has improved chronic hepatitis C (CH-C) therapy; however, sustained virological response is achieved in only about half of the patients with a 1b genotype infection. We assessed oral ursodeoxycholic acid (UDCA) on serum biomarkers as a possible treatment for interferon non-responders. METHODS: CH-C patients with elevated alanine aminotransferase (ALT) were assigned randomly to 150 (n = 199), 600 (n = 200) or 900 mg/day (n = 197) UDCA intake for 24 weeks. Changes in ALT, aspartate aminotransferase (AST) and gamma-glutamyl transpeptidase (GGT) were assessed. This study is registered at ClinicalTrial.gov, identifier NCT00200343. RESULTS: ALT, AST and GGT decreased at week 4 and then remained constant during drug administration. The median changes (150, 600 and 900 mg/day, respectively) were: ALT, -15.3, -29.2 and -36.2%; AST, -13.6, -2 …
+  TYPES: Journal Article;Multicenter Study;Randomized Controlled Trial
+  MESH: Adult; Aged; Alanine Transaminase; Aspartate Aminotransferases; Bile Acids and Salts; Biomarkers; Cholagogues and Choleretics; Dose-Response Relationship, Drug; Double-Blind Method; Female; Hepacivirus; Hepatitis C, Chronic; Humans; Male
+
+[R2-005] OTC-LIT-Q05-TOPICAL | 2026 | abstract=yes
+  TITLE: Topical non-steroidal anti-inflammatory drug use for pediatric acute musculoskeletal pain: a scoping review.
+  ABSTRACT: OBJECTIVE: Topical non-steroidal anti-inflammatory drugs (NSAIDs) effectively treat acute musculoskeletal pain in adults, but evidence in children is limited. This scoping review aims to summarize current evidence for use in children and identify literature gaps to inform future research. METHODS: We conducted a scoping review following Preferred Reporting Items for Systematic Reviews and Meta-analyses extension for Scoping Reviews guidelines. Our electronic search included published studies across six databases, grey literature, and unpublished or ongoing trials. Studies involving children (< 18 years) with acute musculoskeletal pain treated with topical NSAIDs in Emergency Department (ED), urgent care, or ambulatory settings were included. We extracted data on study methodology, participant characteristics, clinical outcomes, adverse events, and rescue analgesia use. We performed criti …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't;Scoping Review
+  MESH: Acute Pain; Administration, Topical; Adolescent; Anti-Inflammatory Agents, Non-Steroidal; Child; Humans; Musculoskeletal Pain; Pain Measurement
+
+[R2-006] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=no
+  TITLE: Immobilised UGT1A9 may be used to treat paracetamol overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Benzoquinones; Drug Overdose; Enzymes, Immobilized; Glucuronosyltransferase; Hepatocytes; Humans; Imines; Liver, Artificial; UDP-Glucuronosyltransferase 1A9
+
+[R2-007] OTC-LIT-Q03-COLD-ALLERGY | 2014 | abstract=yes
+  TITLE: [Sleep disorders among physicians on shift work].
+  ABSTRACT: Sleep disorders in physicians who perform shift work can result in increased risks of health problems that negatively impact performance and patient safety. Even those who cope well with shift work are likely to suffer from sleep disorders. The aim of this manuscript is to discuss possible causes, contributing factors and consequences of sleep disorders in physicians and to identify measures that can improve adaptation to shift work and treatment strategies for shift work-associated sleep disorders. The risk factors that influence the development of sleep disorders in physicians are numerous and include genetic factors (15 % of the population), age (> 50 years), undiagnosed sleep apnea,, alcohol abuse as well as multiple stress factors inherent in clinical duties (including shift work), research, teaching and family obligations. Several studies have reported an increased risk for medical …
+  TYPES: English Abstract;Journal Article;Review
+  MESH: Humans; Physicians; Sleep Deprivation; Sleep Disorders, Circadian Rhythm; Sleep Wake Disorders; Work Schedule Tolerance
+
+[R2-008] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Arterial baroreflex control of sympathetic nerve activity and heart rate in patients with type 2 diabetes.
+  ABSTRACT: Despite greater blood pressure reactivity to acute cardiovascular stressors and a higher prevalence of hypertension in type 2 diabetes (T2D) patients, limited information is available regarding arterial baroreflex (ABR) control in T2D. We hypothesized that ABR control of muscle sympathetic nerve activity (MSNA) and heart rate (HR) are attenuated in T2D patients. Seventeen T2D patients (50 ± 2 yr; 31 ± 1 kg/m2), 9 weight-matched controls (WM-CON, 46 ± 2 yr; 32 ± 2 kg/m2) and 10 lean controls (Lean-CON, 49 ± 3 yr; 23 ± 1 kg/m2), underwent bolus infusions of sodium nitroprusside (100 μg) followed 60 s later by phenylephrine (150 μg) and weighted linear regression performed. No group differences in overall sympathetic baroreflex gain were observed (T2D: -2.5 ± 0.3 vs. WM-CON: -2.6 ± 0.2 vs. Lean-CON: -2.7 ± 0.4 arbitrary units·beat·mmHg-1, P > 0.05) or in sympathetic baroreflex gain when der …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Adult; Arteries; Baroreflex; Blood Pressure; Case-Control Studies; Diabetes Mellitus, Type 2; Female; Heart Rate; Humans; Linear Models; Male; Middle Aged; Muscle, Skeletal; Nitroprusside
+
+[R2-009] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=no
+  TITLE: The changing face of paracetamol toxicity and new regimens for an old antidote acetylcysteine.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Drug Overdose; Humans
+
+[R2-010] OTC-LIT-Q03-COLD-ALLERGY | 2025 | abstract=yes
+  TITLE: Theacrine as a novel ergogenic aid: impact on canoe sprint performance.
+  ABSTRACT: BACKGROUND: Caffeine is a popular ergogenic aid in high-intensity sports, but it can cause side effects like cardiovascular stress and tolerance buildup. Theacrine, a structurally similar purine alkaloid, may offer comparable performance benefits with fewer adverse effects. This study aimed to assess the acute effects of theacrine, caffeine, and their combination on performance and physiological responses in elite canoe sprint athletes. METHODS: Twenty highly trained male canoe sprint athletes participated in a randomized, double-blind, placebo-controlled, crossover trial with four conditions: placebo (P), caffeine (K), theacrine (T), and a combination of caffeine and theacrine (KT). Each participant completed a 500-meter time trial and a 30-second Wingate Anaerobic Test (WAnT) on a kayak ergometer under each condition. Primary outcomes included race time, power output, muscle oxygen sat …
+  TYPES: Journal Article;Randomized Controlled Trial
+  MESH: Adult; Athletic Performance; Caffeine; Cross-Over Studies; Double-Blind Method; Exercise Test; Hemoglobins; Humans; Male; Oxygen Consumption; Oxygen Saturation; Performance-Enhancing Substances; Uric Acid; Young Adult
+
+[R2-011] OTC-LIT-Q03-COLD-ALLERGY | 2018 | abstract=yes
+  TITLE: Interindividual Differences in Caffeine Metabolism and Factors Driving Caffeine Consumption.
+  ABSTRACT: Most individuals adjust their caffeine intake according to the objective and subjective effects induced by the methylxanthine. However, to reach the desired effects, the quantity of caffeine consumed varies largely among individuals. It has been known for decades that the metabolism, clearance, and pharmacokinetics of caffeine is affected by many factors such as age, sex and hormones, liver disease, obesity, smoking, and diet. Caffeine also interacts with many medications. All these factors will be reviewed in the present document and discussed in light of the most recent data concerning the genetic variability affecting caffeine levels and effects at the pharmacokinetic and pharmacodynamic levels that both critically drive the level of caffeine consumption. The pharmacokinetics of caffeine are highly variable among individuals due to a polymorphism at the level of the CYP1A2 isoform of …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't;Review
+  MESH: Animals; Biological Variation, Individual; Caffeine; Coffee; Cytochrome P-450 Enzyme System; Drug Interactions; Humans; Pharmaceutical Preparations; Polymorphism, Genetic; Tissue Distribution
+
+[R2-012] OTC-LIT-Q01-ACETAMINOPHEN | 2026 | abstract=yes
+  TITLE: Targeted Degradation of Prolyl Hydroxylase Domain Enzyme 1 (PHD1) as a Novel Therapeutic Strategy for Acetaminophen-Induced Acute Liver Injury.
+  ABSTRACT: Prolyl hydroxylase domain enzyme 1 (PHD1) is a key regulator of hypoxic adaptation and metabolic homeostasis, playing an important role in tissue damage and repair. To enable precise pharmacological interrogation of PHD1 function, we developed the first PHD1 degrader using proteolysis-targeting chimera (PROTAC) technology. Our lead compound, SH-26, a cereblon (CRBN)-recruiting PROTAC, induced PHD1 degradation in a concentration-, time-, and ubiquitin-proteasome system (UPS)-dependent manner across multiple cell lines. In an acetaminophen (APAP)-induced acute liver injury (ALI) model, SH-26 demonstrated protective effects, attenuating hepatic inflammation and necrosis without detectable cytotoxicity. Mechanistically, SH-26-mediated PHD1 degradation attenuated APAP-triggered reactive oxygen species (ROS) accumulation, mitochondrial dysfunction, and NLRP3 inflammasome activation, leading to …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Animals; Chemical and Drug Induced Liver Injury; Humans; Hypoxia-Inducible Factor-Proline Dioxygenases; Male; Mice; Mice, Inbred C57BL; Procollagen-Proline Dioxygenase; Proteolysis; Proteolysis Targeting Chimera; Reactive Oxygen Species
+
+[R2-013] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=no
+  TITLE: Treating acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Humans
+
+[R2-014] OTC-LIT-Q01-ACETAMINOPHEN | 2018 | abstract=yes
+  TITLE: N-Acetylcysteine for the Treatment of Psychiatric Disorders: A Review of Current Evidence.
+  ABSTRACT: N-acetylcysteine, a sulphur-containing amino acid for the treatment of paracetamol overdose and chronic obstructive pulmonary disease, is a widely available off-the-shelf oral antioxidant supplement in many countries. With the potential to modulate several neurological pathways, including glutamate dysregulation, oxidative stress, and inflammation that can be beneficial to the brain functions, N-acetylcysteine is being explored as an adjunctive therapy for many psychiatric conditions. This narrative review synthesises and presents the current evidence from systematic reviews, meta-analyses, and latest clinical trials on N-acetylcysteine for addiction and substance abuse, schizophrenia, obsessive-compulsive and related disorders, and mood disorders. Good evidence exists to support the use of N-acetylcysteine as an adjunct treatment to reduce the total and negative symptoms of schizophreni …
+  TYPES: Journal Article;Meta-Analysis;Systematic Review
+  MESH: Acetylcysteine; Administration, Oral; Humans; Mental Disorders
+
+[R2-015] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Coffee substitutes: A review of the technology, characteristics, application, and future perspective.
+  ABSTRACT: Despite being one of the most frequently consumed beverages worldwide, there are concerns that excessive consumption of coffee can have adverse effects, especially concerning the addictive and stimulating effects of the alkaloid caffeine, which contributes to coffee's popularity. It is known to increase the risk of hypertension and heart rate among predisposed individuals, adversely affecting the nervous system. Even though they differ in nature from those found in coffee, coffee substitutes can be considered economically and health-wise as a favorable alternative to natural coffee brews. This review summarizes the state-of-the-art varieties of plants used as coffee substitutes and discusses their production technology, chemical composition, nutritional properties, health benefits, economic challenges, and rationale for choosing the plant as a substitute for coffee. Various instant produ …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't;Review
+  MESH: Caffeine; Coffee; Humans; Taste
+
+[R2-016] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Acute, dose-response effects of guayusa leaf extract on mood, cognitive and motor-cognitive performance, and blood pressure, heart rate, and ventricular repolarization.
+  ABSTRACT: PURPOSE: We conducted a randomized, double-blind, placebo-controlled crossover trial in young adults to examine the dose-dependent (600 mg versus 1200 mg), acute effects of consumption of an Ilex guayusa tea extract (GLE) on mood, cognitive and motor-cognitive performance, as well as its acute cardiovascular effects. METHODS: Twenty-five adults (mean ± SD, age = 28 ± 7 y; 9 M/16 F) completed familiarization and then three randomly ordered experimental visits where they consumed either 600 mg (GLE600) or 1200 mg (GLE1200) GLE or placebo (PLA). Following supplement consumption, participants completed a mood state survey, assessments of perceived jitteriness, energy, and focus, and neurocognitive and motor-cognitive testing. Blood pressure (BP), heart rate, and QT interval length were determined before and after supplementation. RESULTS: GLE600 significantly improved total mood disturbance …
+  TYPES: Journal Article;Randomized Controlled Trial
+  MESH: Adult; Affect; Blood Pressure; Cognition; Cross-Over Studies; Dietary Supplements; Dose-Response Relationship, Drug; Double-Blind Method; Female; Heart Rate; Humans; Male; Plant Extracts; Plant Leaves
+
+[R2-017] OTC-LIT-Q03-COLD-ALLERGY | 2015 | abstract=yes
+  TITLE: Cerebral klotho protein as a humoral factor for maintenance of baroreflex.
+  ABSTRACT: The klotho protein produced by the choroid plexus is known as a humoral factor in central nervous system. Many hormones affecting the baroreflex sensitivity have been introduced in the brain. However, role of klotho in the baroreflex sensitivity is still unknown. Recently, mutations in the klotho gene have been linked to cardiovascular diseases in both animals and human subjects. Also, silencing of brain klotho has been reported to enhance cold-induced elevation of blood pressure. Thus, we investigated the role of klotho in maintenance of central cardiovascular reflex sensitivity. Male Wistar Kyoto (WKY) rats and spontaneously hypertensive rats (SHRs) were used. Either klotho shRNA or scramble shRNA was also ICV-infused into the brains of WKY rats to investigate the role of klotho in brain. Recombinant klotho or rat IgG was infused into the cerebral paraventricle (ICV) of SHRs for furthe …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Animals; Baroreflex; Gene Silencing; Glucuronidase; Humans; Klotho Proteins; Male; Medulla Oblongata; Rats; Rats, Inbred SHR; Rats, Inbred WKY
+
+[R2-018] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=yes
+  TITLE: The Standardization of Outpatient Procedure (STOP) Narcotics: A Prospective Health Systems Intervention to Reduce Opioid Use in Ambulatory Breast Surgery.
+  ABSTRACT: BACKGROUND: During the past 15 years, opioid-related overdose death rates for women have increased 471%. Many surgeons provide opioid prescriptions well in excess of what patients actually use. This study assessed a health systems intervention to control pain adequately while reducing opioid prescriptions in ambulatory breast surgery. METHODS: This prospective non-inferiority study included women 18-75 years of age undergoing elective ambulatory general surgical breast procedures. Pre- and postintervention groups were compared, separated by implementation of a multi-pronged, opioid-sparing strategy consisting of patient education, health care provider education and perioperative multimodal analgesic strategies. The primary outcome was average pain during the first 7 postoperative days on a numeric rating scale of 0-10. The secondary outcomes included medication use and prescription renew …
+  TYPES: Journal Article
+  MESH: Adolescent; Adult; Aged; Ambulatory Surgical Procedures; Breast Neoplasms; Female; Follow-Up Studies; Humans; Mastectomy; Middle Aged; Narcotics; Opioid-Related Disorders; Postoperative Pain; Prognosis
+
+[R2-019] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Pathophysiological relevance of neutrophils in acetaminophen hepatotoxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acute-Phase Reaction; Animals; Chemokines; DNA, Mitochondrial; Female; Humans; Liver; Liver Failure, Acute; Male; Neutrophils; Receptors, Formyl Peptide
+
+[R2-020] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Demographics of suicide victims in Sweden in relation to their blood-alcohol concentration and the circumstances and manner of death.
+  ABSTRACT: Specimens of blood and other body fluids were obtained at autopsy from all deaths in Sweden classified as suicide covering a 10-year period (N=11,441 cases). The mean age (+/-standard deviation, SD) of the victims was 51.3+/-18.8 years with a clear predominance of males 71% (mean age 51.3+/-18.8 years) compared with 29% females (mean age 51.4+/-18.9 years). The concentration of ethanol in blood samples was determined in duplicate by headspace gas chromatography and a mean blood-alcohol concentration (BAC) of 0.1g/L (10mg/100mL) was the cut-off used to identify ethanol positive cases. The suicides were coded (ICD-9) as self-poisonings (N=2462, 22%), hanging (N=4474, 39%), asphyxia by gas (N=509, 4.4%), drowning (N=803, 7.0%), gun shot (N=1307, 11.4%), fall from height (N=632, 5.5%), self-inflicted cuts or sharp-force injury (N=363, 3.1%) and miscellaneous ways (N=891, 7.8%). On average 34 …
+  TYPES: Journal Article
+  MESH: Adolescent; Adult; Age Distribution; Aged; Aged, 80 and over; Asphyxia; Central Nervous System Depressants; Child; Chromatography, Gas; Drowning; Ethanol; Female; Forensic Toxicology; Humans
+
+[R2-021] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Changes of attention-related brain activity over 6 months after acute organophosphate pesticide poisoning: a prospective follow-up study.
+  ABSTRACT: CONTEXT: Ingestion of organophosphate (OP) pesticides is a common method of self-harm in developing countries. Apart from acute cholinergic effects, limited evidence implicates OP poisoning in long-term neurocognitive deficits. However, prospective neurophysiological evidence of long-term deficits is scarce in humans. We aimed to determine long-term cognitive changes of acute OP pesticide self-poisoning in a prospective follow-up study, using event-related potentials (ERPs), an electroencephalographic index of cognitive functioning. METHODS: We recruited 203 patients (147 men) hospitalised with OP pesticide ingestion (OP group; all had significant erythrocyte cholinesterase inhibition) and 50 patients (23 men) with paracetamol overdose (control group) as a means of self-harm. We recorded their ERPs and behavioural performance in a selective attention task at three post-exposure time poin …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Attention; Brain; Follow-Up Studies; Humans; Male; Organophosphate Poisoning; Organophosphates; Pesticides; Prospective Studies
+
+[R2-022] OTC-LIT-Q05-TOPICAL | 2026 | abstract=yes
+  TITLE: Ligustrum sinense Lour.: Essential Oil Compositions, Biological Activities, and In Silico Studies-A First Record.
+  ABSTRACT: The current study first describes the gas chromatography-mass spectrometry (GC-MS) chemical analysis of essential oils from Ligustrum sinense (the family Oleaceae). Linalool (5.0%), cis-phytol (5.1%), methyl salicylate (5.4%), and germacrene B (7.9%) dominated in the twig essential oil. Methyl salicylate (5.5%), linalool (7.4%), and germacrene B (14.2%) were the major compounds in the leaf essential oil, whereas cis-phytol (5.8%), linalool (6.9%), and germacrene B (17.2%) were characteristic compounds in the flower essential oil. L. sinense essential oils (IC50 208.09-245.39 µg/mL) are comparable to the standard acarbose (IC50 241.76 µg/mL) in α-glucosidase inhibitory activity. The leaf essential oil (IC50 4.51 µg/mL) is much better than the standard ascorbic acid (IC50 13.64 µg/mL) in DPPH radical scavenging. The studied essential oils also exhibited xanthine oxidase inhibitory, anti-in …
+  TYPES: Journal Article
+  MESH: Anti-Bacterial Agents; Antioxidants; Biphenyl Compounds; Gas Chromatography-Mass Spectrometry; Glycoside Hydrolase Inhibitors; Humans; Ligustrum; Microbial Sensitivity Tests; Molecular Docking Simulation; Oils, Volatile; Plant Leaves; Protein Tyrosine Phosphatase, Non-Receptor Type 1; Structure-Activity Relationship; alpha-Glucosidases
+
+[R2-023] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=yes
+  TITLE: Management of poisoning in adults.
+  ABSTRACT: Nurses play a key role in the care of patients presenting with poisoning. Assessment and management of such patients can be challenging, especially if they are intoxicated, have co-ingested other agents or their mental health is compromised. In addition, some nurses may be unfamiliar with current management guidelines. This article outlines a number of protocols and initiatives aimed at improving consistency in the management of patients following an overdose. The article focuses on paracetamol poisoning, the most common overdose presentation in the UK. This article was updated on May 7 2013 to include current UK guidelines for management of paracetamol overdose, which changed in September 2012 following a review by the Commission on Human Medicines. In addition, the authors published recently an article in this journal that discussed the assessment and management of patients who present …
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adult; Critical Pathways; Drug Overdose; Female; Humans; Middle Aged; Triage
+
+[R2-024] OTC-LIT-Q01-ACETAMINOPHEN | 2025 | abstract=yes
+  TITLE: Two chromatographic methods for analyzing paracetamol in spiked human plasma with its toxic metabolite, N-acetyl parabenzoquinone imine and its antidote, N-acetyl-L-cysteine.
+  ABSTRACT: Acetaminophen, also known as paracetamol (APAP), is a highly utilized pharmaceutical agent on a global scale, particularly in the field of pediatrics. Regrettably, an overdose of APAP, resulting from the predominant oxidation, has the potential to trigger acute liver injury. The study's goal was to find an easy, accurate, and selective way to measure APAP, N-acetyl para benzoquinone imine (NAPQI) (an APAP metabolite that is harmful), and N-acetyl-L-cysteine (NAC) (an antidote). Two different chromatographic methods were used. The HPTLC method, which used silica gel 60 F254 as a stationary phase and a developing liquid made up of methanol, ethyl acetate, and glacial acetic acid (8:2:0.2, v/v/v) and a UV detection at 254 nm. The HPLC method was developed using a mobile phase consisting of water, methanol, and formic acid in a proportion of (70:30:0.15, v/v/v). The stationary phase used in …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Antidotes; Benzoquinones; Chromatography, High Pressure Liquid; Chromatography, Thin Layer; Humans; Imines; Reproducibility of Results
+
+[R2-025] OTC-LIT-Q04-DIGESTIVE | 2007 | abstract=yes
+  TITLE: Kasai portoenterostomy: 12-year experience with a novel adjuvant therapy regimen.
+  ABSTRACT: AIM: The role of adjuvant therapy with corticosteroids and choleretics after Kasai portoenterostomy for biliary atresia (BA) remains uncertain. Experience with a novel postoperative adjuvant therapy regimen is reported. METHODS: Between 1994 and 2006, 71 infants with BA were referred. Four died from uncorrectable congenital heart disease/cardiorespiratory failure without undergoing portoenterostomy, 7 underwent primary liver transplantation (3 referred > or = 19 weeks of age), and 60 underwent portoenterostomy at a median of 51 (10-104) days. Of these, 55 (92%) had type 3 BA and 6 had the BA splenic malformation syndrome. Fifty (83%) received the following adjuvant therapy beginning on postoperative day 5: oral dexamethasone 0.3 mg/kg bd for 5 days, 0.2 mg/kg bd for 5 days, and 0.1 mg/kg bd for 5 days together with oral ursodeoxycholic acid 5 mg/kg bd and phenobarbitone 5 mg/kg nocte, bo …
+  TYPES: Journal Article;Multicenter Study;Randomized Controlled Trial
+  MESH: Biliary Atresia; Chemotherapy, Adjuvant; Cholagogues and Choleretics; Dexamethasone; Double-Blind Method; Glucocorticoids; Humans; Infant; Portoenterostomy, Hepatic; Survival Analysis; Ursodeoxycholic Acid
+
+[R2-026] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=yes
+  TITLE: Benzyl alcohol protects against acetaminophen hepatotoxicity by inhibiting cytochrome P450 enzymes but causes mitochondrial dysfunction and cell death at higher doses.
+  ABSTRACT: Acetaminophen (APAP) hepatotoxicity is a serious public health problem in western countries. Current treatment options for APAP poisoning are limited and novel therapeutic intervention strategies are needed. A recent publication suggested that benzyl alcohol (BA) protects against APAP hepatotoxicity and could serve as a promising antidote for APAP poisoning. To assess the protective mechanisms of BA, C56Bl/6J mice were treated with 400 mg/kg APAP and/or 270 mg/kg BA. APAP alone caused extensive liver injury at 6 h and 24 h post-APAP. This injury was attenuated by BA co-treatment. Assessment of protein adduct formation demonstrated that BA inhibits APAP metabolic activation. In support of this, in vitro experiments also showed that BA dose-dependently inhibits cytochrome P450 activities. Correlating with the hepatoprotection of BA, APAP-induced oxidant stress and mitochondrial dysfunction …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Anesthetics, Local; Animals; Benzyl Alcohol; Chemical and Drug Induced Liver Injury; Cytochrome P-450 Enzyme System; Gene Expression Regulation, Enzymologic; Hepatocytes; Humans; Male; Mice; Mice, Inbred C57BL; Mitochondria, Liver
+
+[R2-027] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=yes
+  TITLE: A Case Report of a Severe, Unusually Delayed Anaphylactoid Reaction to Intravenous N-Acetylcysteine During Treatment of Acute Acetaminophen Toxicity in an Adolescent.
+  ABSTRACT: INTRODUCTION: Anaphylactoid reactions are well-documented adverse events associated with the intravenous administration of N-acetylcysteine (NAC) in patients with acetaminophen overdose. Most reactions are mild, occurring within the first 1-5 hours of initiation. This report presents the case of an adolescent with a delayed, life-threatening anaphylactoid reaction 24.5 hours after starting NAC, where discontinuing NAC could have resulted in fulminant hepatic failure (FHF) and death. CASE REPORT: A 17-year-old previously healthy female presented with nausea, vomiting, and abdominal pain 10 hours after an acute acetaminophen ingestion. Her 11-hour serum acetaminophen concentration was above the treatment line (149 μg/mL), and she had elevated transaminases (AST = 202 U/L, ALT = 284 U/L). She was treated with intravenous NAC, which was suspended for 3 hours after she developed an apparent l …
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adolescent; Adrenal Cortex Hormones; Analgesics, Non-Narcotic; Anaphylaxis; Antidotes; Drug Hypersensitivity; Drug Overdose; Female; Histamine Antagonists; Humans; Infusions, Intravenous; Severity of Illness Index
+
+[R2-028] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Zebrafish as model organisms for studying drug-induced liver injury.
+  ABSTRACT: Drug-induced liver injury (DILI) is a major challenge in clinical medicine and drug development. New models are needed for predicting which potential therapeutic compounds will cause DILI in humans, and new markers and mediators of DILI still need to be identified. This review highlights the strengths and weaknesses of using zebrafish as a high-throughput in vivo model for studying DILI. Although the zebrafish liver architecture is different from that of the mammalian liver, the main physiological processes remain similar. Zebrafish metabolize drugs using similar pathways to those in humans; they possess a wide range of cytochrome P450 enzymes that enable metabolic reactions including hydroxylation, conjugation, oxidation, demethylation and de-ethylation. Following exposure to a range of hepatotoxic drugs, the zebrafish liver develops histological patterns of injury comparable to those o …
+  TYPES: Journal Article;Review
+  MESH: Animals; Biomarkers; Chemical and Drug Induced Liver Injury; Cytochrome P-450 Enzyme System; Disease Models, Animal; Drug Discovery; Humans; Liver; Mice; Phenotype; Zebrafish
+
+[R2-029] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Sleep physiology, pathophysiology, and sleep hygiene.
+  ABSTRACT: Despite sleep's fundamental role in maintaining and improving physical and mental health, many people get less than the recommended amount of sleep or suffer from sleeping disorders. This review highlights sleep's instrumental biological functions, various sleep problems, and sleep hygiene and lifestyle interventions that can help improve sleep quality. Quality sleep allows for improved cardiovascular health, mental health, cognition, memory consolidation, immunity, reproductive health, and hormone regulation. Sleep disorders, such as insomnia, sleep apnea, and circadian-rhythm-disorders, or disrupted sleep from lifestyle choices, environmental conditions, or other medical issues can lead to significant morbidity and can contribute to or exacerbate medical and psychiatric conditions. The best treatment for long-term sleep improvement is proper sleep hygiene through behavior and sleep hab …
+  TYPES: Journal Article;Review
+  MESH: Exercise; Humans; Mental Health; Sleep; Sleep Hygiene; Sleep Initiation and Maintenance Disorders
+
+[R2-030] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=no
+  TITLE: Emerging efforts for discovering new biomarkers of liver disease and hepatotoxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acetaminophen; Biomarkers; Chemical and Drug Induced Liver Injury; Humans; Liver Diseases; Metabolomics
+
+[R2-031] OTC-LIT-Q02-NSAID | 2020 | abstract=no
+  TITLE: Drugs for Migraine.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acupuncture Therapy; Adult; Analgesics; Anti-Inflammatory Agents, Non-Steroidal; Antiemetics; Calcitonin Gene-Related Peptide Receptor Antagonists; Drug Interactions; Ergot Alkaloids; Female; Humans; Migraine Disorders; Pregnancy; Serotonin 5-HT1 Receptor Antagonists; Tryptamines
+
+[R2-032] OTC-LIT-Q05-TOPICAL | 2018 | abstract=yes
+  TITLE: Clonidine Overdose in a Toddler Due to Accidental Ingestion of a Compounding Cream.
+  ABSTRACT: A 22-month-old girl without any significant medical history accidentally consumed a small amount of a therapeutic compounding cream that contained camphor, gabapentin, clonidine, ketoprofen, and lidocaine. Upon presentation to the emergency department, the child exhibited immediate onset of altered mental status with wide fluctuation in her vital signs, which included intermittent apnea requiring bag-valve mask assistance and endotracheal intubation. Serum laboratory analysis measured a clonidine level of 2.6 ng/mL and undetectable camphor, gabapentin, and ketoprofen levels. While on mechanical ventilation, the patient exhibited hypothermia, bradycardia, and hypotension; all of which responded to supportive care. After approximately 12 hours in the intensive care unit, the patient was successfully extubated and remained asymptomatic. This unique case of a patient with brief, unintentiona …
+  TYPES: Case Reports;Journal Article
+  MESH: Adrenergic alpha-2 Receptor Agonists; Clonidine; Drug Compounding; Drug Overdose; Female; Fluid Therapy; Humans; Infant; Ointments; Respiration, Artificial
+
+[R2-033] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=no
+  TITLE: Pulmonary hypertension in a patient with subarachnoid hemorrhage.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Letter
+  MESH: Cardiotonic Agents; Coronary Angiography; Echocardiography; Embolization, Therapeutic; Humans; Hypertension, Pulmonary; Male; Middle Aged; Milrinone; Phenylephrine; Subarachnoid Hemorrhage; Treatment Outcome
+
+[R2-034] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=yes
+  TITLE: A review of the Ghana National Health Insurance Scheme claims database: possibilities and limits for drug utilization research.
+  ABSTRACT: BACKGROUND: There are inadequate data on prescribed drug utilization in Sub-Saharan Africa (SSA). Drug utilization research (DUR) in this region is hampered by lack of access to databases that capture prescribed drug utilization such as health insurance claims, electronic medical records and disease registries. The primary objective of this MiniReview was to describe the content of the NHIS claims database in the context of the health care system in Ghana. We will also review the possibilities and limitations of analysing this novel database for drug utilization research (DUR) in Ghana. METHODS: We reviewed the history, composition of the database, coverage and health systems in Ghana. To demonstrate the application of the NHIS claims database for DUR, we reviewed the NHIS' drug formulary (NHIS medicines' list), assessed and quantified the utilization of the top 25 most commonly prescrib …
+  TYPES: Evaluation Study;Journal Article;Review
+  MESH: Databases, Factual; Drug Prescriptions; Drug Utilization Review; Ghana; Humans; Insurance Claim Review; National Health Programs
+
+[R2-035] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=yes
+  TITLE: Resolution of norfloxacin-induced acute liver failure after N-acetylcysteine therapy: further support for the use of NAC in drug-induced ALF?
+  ABSTRACT: Liver injury due to idiosyncratic drug reactions can be difficult to diagnose and may lead to acute liver failure (ALF), which has a high mortality rate. N-acetylcysteine (NAC) is effective treatment for paracetamol toxicity, but its role in non-paracetamol drug-induced ALF is controversial. We report on the use of a validated bedside tool to establish causality for drug-induced liver injury (DILI) and describe the first case of resolution of norfloxacin-induced ALF after NAC therapy. NAC is easy to administer and generally has a good safety profile. We discuss the evidence to support the use of NAC in ALF secondary to DILI and possibilities for further clinical research in this field.
+  TYPES: Case Reports;Journal Article
+  MESH: Acetylcysteine; Aged; Anti-Bacterial Agents; Chemical and Drug Induced Liver Injury; Female; Humans; Liver; Liver Failure, Acute; Norfloxacin
+
+[R2-036] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=no
+  TITLE: Phenylephrine Infusion: Driving a Wedge in Our Practice of Left Uterine Displacement?
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Editorial
+  MESH: Blood Pressure; Female; Humans; Phenylephrine; Urogenital Abnormalities; Uterus
+
+[R2-037] OTC-LIT-Q03-COLD-ALLERGY | 2021 | abstract=yes
+  TITLE: Acute Effects of Caffeine Intake on Psychological Responses and High-Intensity Exercise Performance.
+  ABSTRACT: OBJECTIVE: The aim of this study was to investigate the effects of caffeine supplementation on: (i) psychological responses of subjective vitality and mood; (ii) performance through a Wingate test; and (iii) rate of perceived exertion (RPE) reported after a Wingate test. METHODS: Fifteen male participants (22.60 ± 2.16 years) ingested 6 mg·kg-1 of caffeine or placebo (sucrose) supplementation in two experimental sessions. After 60 min from supplement intake, participants fulfilled two questionnaires, which measured subjective vitality and mood state, respectively. Subsequently, participants' performance was assessed through a Wingate test, which was followed by measurements of RPE at general, muscular, or cardiovascular level. RESULTS: Caffeine supplementation increased some components of mood, as assessed by profile of mood states (POMS) (tension and vigor dimensions) and subjective vit …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Caffeine; Cross-Over Studies; Double-Blind Method; Exercise; Exercise Test; Humans; Male; Physical Exertion
+
+[R2-038] OTC-LIT-Q01-ACETAMINOPHEN | 2018 | abstract=yes
+  TITLE: Co-ingestion of aspirin and acetaminophen promoting fulminant liver failure: A critical review of Reye syndrome in the current perspective at the dawn of the 21st century.
+  ABSTRACT: In the paediatric population, there is some evidence of possible interaction, synergism, and co-toxicity of aspirin and acetaminophen. The toxicity of salicylates such as aspirin in this population is well known and documented, specifically in the form of Reye syndrome. The possible toxic synergism with aspirin and acetaminophen, however, is not previously described; though case reports suggest such co-toxicities with low levels of aspirin and other compounds can exist. In vitro studies into mechanistic processes of salicylate toxicity propose that there is a bi-directional link and potentiation with glutathione (GSH) depletion and salicylate toxicity. Data may suggest a plausible explanation for salicylate and acetaminophen toxic synergism. Further studies investigating this potential toxic synergism are warranted. Given the lack of awareness in the clinical community about potential to …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Aspirin; Child; Drug Interactions; Drug Therapy, Combination; Humans; Liver Failure, Acute; Reye Syndrome
+
+[R2-039] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=no
+  TITLE: A 17-Year-Old Female With Respiratory Depression as a Result of Opioid Overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article;Review
+  MESH: Acetaminophen; Adolescent; Air Ambulances; Analgesics, Opioid; Drug Combinations; Drug Overdose; Extracorporeal Membrane Oxygenation; Female; Humans; Hydrocodone; Patient Transfer; Respiration, Artificial; Respiratory Insufficiency
+
+[R2-040] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: [Toxicity of analgesics in the family doctor practice].
+  ABSTRACT: Analgesic usage without any consultation with a physician is very common in Poland. It increases the risk of occurrence of the harmful effect or harmful interaction with other medicaments taken by the patient. The abuse of painkillers applies not only to opioid but also to nonopioid analgesics. The largest group of commonly available medicaments are NSAIDs. The most frequent undesirable effect of NSAIDs' is dyspepsia. Among the most dangerous, and very often the ones without any symptoms, are gastric and duodenum ulceration for which the bleeding and perforation may be the first manifestation. Each non steroidal anti-inflammatory drug taken in large doses can be a cause of analgesic nephropathy. Its deceitful course can delay the diagnosis leading to chronic kidney failure. A complex supplements, that include central acting substances, increase the risk of kidney damage, as well as physi …
+  TYPES: English Abstract;Journal Article;Review
+  MESH: Anti-Inflammatory Agents, Non-Steroidal; Drug Interactions; Drug Overdose; Duodenal Ulcer; Dyspepsia; Family Practice; Heart Failure; Humans; Kidney Diseases; Poland; Practice Patterns, Physicians'; Prescriptions; Stomach Ulcer

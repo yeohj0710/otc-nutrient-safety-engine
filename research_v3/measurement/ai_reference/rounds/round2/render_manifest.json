@@ -1,0 +1,52 @@
+{
+  "round": 2,
+  "seed": 20260727002,
+  "rows": 300,
+  "chunk_rows": 40,
+  "abstract_chars": 900,
+  "mesh_terms": 14,
+  "chunks": [
+    {
+      "chunk": 1,
+      "rows": 40,
+      "path": "cards_01.txt"
+    },
+    {
+      "chunk": 2,
+      "rows": 40,
+      "path": "cards_02.txt"
+    },
+    {
+      "chunk": 3,
+      "rows": 40,
+      "path": "cards_03.txt"
+    },
+    {
+      "chunk": 4,
+      "rows": 40,
+      "path": "cards_04.txt"
+    },
+    {
+      "chunk": 5,
+      "rows": 40,
+      "path": "cards_05.txt"
+    },
+    {
+      "chunk": 6,
+      "rows": 40,
+      "path": "cards_06.txt"
+    },
+    {
+      "chunk": 7,
+      "rows": 40,
+      "path": "cards_07.txt"
+    },
+    {
+      "chunk": 8,
+      "rows": 20,
+      "path": "cards_08.txt"
+    }
+  ],
+  "rendered_at_utc": "2026-07-27T02:12:11.136030+00:00",
+  "note_ko": "카드에는 별칭만 노출하며 record_id·PMID·P2 판정은 포함하지 않는다."
+}

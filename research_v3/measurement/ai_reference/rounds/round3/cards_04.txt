@@ -1,0 +1,272 @@
+===== AI REFERENCE ROUND 3 / CHUNK 4 (40 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R3-121] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Preventing paracetamol overdose in children: do we really need a 500 mg/5mL preparation?
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Drug Overdose; Drug Packaging; Humans; India
+
+[R3-122] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=yes
+  TITLE: A monolithic 3D-0D coupled closed-loop model of the heart and the vascular system: Experiment-based parameter estimation for patient-specific cardiac mechanics.
+  ABSTRACT: A model for patient-specific cardiac mechanics simulation is introduced, incorporating a 3-dimensional finite element model of the ventricular part of the heart, which is coupled to a reduced-order 0-dimensional closed-loop vascular system, heart valve, and atrial chamber model. The ventricles are modeled by a nonlinear orthotropic passive material law. The electrical activation is mimicked by a prescribed parameterized active stress acting along a generic muscle fiber orientation. Our activation function is constructed such that the start of ventricular contraction and relaxation as well as the active stress curve's slope are parameterized. The imaging-based patient-specific ventricular model is prestressed to low end-diastolic pressure to account for the imaged, stressed configuration. Visco-elastic Robin boundary conditions are applied to the heart base and the epicardium to account f …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Animals; Calibration; Cardiovascular System; Computer Simulation; Elasticity; Finite Element Analysis; Heart; Heart Atria; Heart Valves; Humans; Imaging, Three-Dimensional; Least-Squares Analysis; Models, Cardiovascular; Nonlinear Dynamics
+
+[R3-123] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=yes
+  TITLE: "Weak" opioid analgesics. Codeine, dihydrocodeine and tramadol: no less risky than morphine.
+  ABSTRACT: So-called weak opioid analgesics are often used to treat severe pain, or when paracetamol or a nonsteroidal anti-inflammatory drug (NSAID) proves inadequate. But are weak opioids any more effective than paracetamol or NSAIDs on nociceptive pain, and are they better tolerated than morphine? To answer these questions, we conducted a review of literature using the standard Prescrire methodology. The potency of codeine and tramadol is strongly influenced by the cytochrome P450 isoenzyme CYP2D6 genotype, which varies widely from one person to another. This explains reports of overdosing or underdosing after administration of standard doses of the two drugs. The potency of morphine and that of buprenorphine, an opioid receptor agonist-antagonist, appears to be independent of CYP2D6 activity. All "weak" opioids can have the same dose-dependent adverse effects as morphine. There is no evidence t …
+  TYPES: Journal Article;Review
+  MESH: Analgesics, Opioid; Anti-Inflammatory Agents, Non-Steroidal; Chronic Pain; Codeine; Dose-Response Relationship, Drug; Humans; Morphine; Respiration; Tramadol
+
+[R3-124] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=no
+  TITLE: Immobilised UGT1A9 may be used to treat paracetamol overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Benzoquinones; Drug Overdose; Enzymes, Immobilized; Glucuronosyltransferase; Hepatocytes; Humans; Imines; Liver, Artificial; UDP-Glucuronosyltransferase 1A9
+
+[R3-125] OTC-LIT-Q02-NSAID | 2011 | abstract=yes
+  TITLE: Explaining the acetaminophen-ibuprofen analgesic interaction using a response surface model.
+  ABSTRACT: BACKGROUND: The value of acetaminophen-ibuprofen combination therapy over single therapy is uncertain in acute pediatric pain management. A model describing the interaction between these two drugs would be useful both for understanding current literature and for future study design. METHODS: Published pooled time-effect profiles in adults given combination or single therapy after dental extraction were used to construct an interaction model. Pain was measured using pain intensity differences (PRID, 0-10) from zero to eight hours postoperatively. Pharmacodynamic parameter estimates were assumed the same in adults as children. Pediatric pharmacokinetic estimates were scaled using allometric theory. Curve fitting was performed using nonlinear mixed effects models. RESULTS: Pooled data were available in adults given eight single and multiple dose combinations as well as placebo. The ibuprofe …
+  TYPES: Journal Article;Randomized Controlled Trial;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Analgesics, Non-Narcotic; Child; Computer Simulation; Dose-Response Relationship, Drug; Double-Blind Method; Drug Combinations; Drug Interactions; Humans; Ibuprofen; Models, Biological; Pain Management; Pain Measurement
+
+[R3-126] OTC-LIT-Q05-TOPICAL | 2000 | abstract=yes
+  TITLE: Potentiation of warfarin anticoagulation associated with topical methyl salicylate.
+  ABSTRACT: OBJECTIVE: To report a case of international normalized ratio (INR) elevation resulting from the administration of topical methyl salicylate in a patient whose INR was previously stable while she received warfarin anticoagulation. CASE SUMMARY: A 22-year-old white woman presented with an INR of 12.2 after applying a topical pain-relieving gel to her knees daily for eight days. The potentiation of the warfarin anticoagulation was attributed to the low-dose methyl salicylate contained in the product. DISCUSSION: Methyl salicylate is systemically absorbed through the skin in measurable amounts, and may increase warfarin action by affecting vitamin K metabolism or by displacing warfarin from protein-binding sites. While several investigators have reported this interaction with use of high-dose methyl salicylate, this case indicates that a significant interaction can occur with the use of low …
+  TYPES: Case Reports;Journal Article
+  MESH: Administration, Topical; Adult; Anticoagulants; Drug Synergism; Female; Fixatives; Hemorrhage; Humans; International Normalized Ratio; Ointments; Salicylates; Warfarin
+
+[R3-127] OTC-LIT-Q03-COLD-ALLERGY | 2021 | abstract=yes
+  TITLE: Acute Effects of Caffeine Intake on Psychological Responses and High-Intensity Exercise Performance.
+  ABSTRACT: OBJECTIVE: The aim of this study was to investigate the effects of caffeine supplementation on: (i) psychological responses of subjective vitality and mood; (ii) performance through a Wingate test; and (iii) rate of perceived exertion (RPE) reported after a Wingate test. METHODS: Fifteen male participants (22.60 ± 2.16 years) ingested 6 mg·kg-1 of caffeine or placebo (sucrose) supplementation in two experimental sessions. After 60 min from supplement intake, participants fulfilled two questionnaires, which measured subjective vitality and mood state, respectively. Subsequently, participants' performance was assessed through a Wingate test, which was followed by measurements of RPE at general, muscular, or cardiovascular level. RESULTS: Caffeine supplementation increased some components of mood, as assessed by profile of mood states (POMS) (tension and vigor dimensions) and subjective vit …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Caffeine; Cross-Over Studies; Double-Blind Method; Exercise; Exercise Test; Humans; Male; Physical Exertion
+
+[R3-128] OTC-LIT-Q05-TOPICAL | 2023 | abstract=yes
+  TITLE: Device and liquid characteristics used with sweet, menthol/mint, and tobacco ENDS liquid flavors: The population-based VAPER study.
+  ABSTRACT: INTRODUCTION: Electronic nicotine delivery system (ENDS) device and liquid characteristics (e.g., wattage, nicotine concentration) are diverse and important in determining product appeal, aerosol volume/nicotine levels, and toxicity. Little is known about how device and liquid characteristics vary by flavor; we address this gap to identify potential regulatory implications. METHODS: Data are from a longitudinal cohort study (Waves 2 and 3; December 2020-December 2021) of adult (≥21 years) U.S. ENDS users (≥5 days of use/week). Participants (n = 1809) reported on and submitted photos of their most used device and liquid. Participants were categorized into flavor groups of high prevalence in our sample and in prior literature: sweet, menthol/mint, or tobacco. Participants using liquids without nicotine or flavors other than sweet, menthol/mint, or tobacco were excluded (n = 320). Data were …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural
+  MESH: Adult; Electronic Nicotine Delivery Systems; Flavoring Agents; Humans; Longitudinal Studies; Menthol; Nicotine; Smokers; Tobacco Products
+
+[R3-129] OTC-LIT-Q03-COLD-ALLERGY | 2018 | abstract=yes
+  TITLE: Effects of a Fixed-Dose Co-Formulation of Daclatasvir, Asunaprevir, and Beclabuvir on the Pharmacokinetics of a Cocktail of Cytochrome P450 and Drug Transporter Substrates in Healthy Subjects.
+  ABSTRACT: BACKGROUND: A fixed-dose combination of daclatasvir (DCV; hepatitis C virus NS5A inhibitor), asunaprevir (ASV; non-structural protein 3 inhibitor), and beclabuvir (BCV; non-structural protein 5B inhibitor) is approved in Japan for hepatitis C virus genotype 1. OBJECTIVE: The objective of this study was to assess the combination's drug-drug interaction potential in vivo using a validated cocktail of eight cytochrome P450 (CYP) and transporter probes. METHODS: We conducted an open-label single-sequence study in healthy adults (n = 20) given single-dose caffeine (CYP1A2 substrate), metoprolol (CYP2D6), flurbiprofen (CYP2C9), montelukast (CYP2C8), omeprazole (CYP2C19), midazolam (CYP3A4), digoxin (P-glycoprotein), and pravastatin (organic anion-transporting polypeptide), alone or with steady-state twice-daily DCV/ASV/BCV 30/200/75 mg (with or without additional BCV 75 mg to adjust for higher …
+  TYPES: Clinical Trial;Journal Article
+  MESH: Adolescent; Adult; Benzazepines; Carbamates; Cytochrome P-450 Enzyme System; Drug Combinations; Female; Healthy Volunteers; Humans; Imidazoles; Indoles; Isoquinolines; Male; Middle Aged
+
+[R3-130] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=no
+  TITLE: Treating acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Humans
+
+[R3-131] OTC-LIT-Q05-TOPICAL | 2016 | abstract=yes
+  TITLE: Optimization of antifungal activity of Aeollanthus heliotropioides oliv essential oil and Time Kill Kinetic Assay.
+  ABSTRACT: OBJECTIVE: The limitations encountered in the management of fungal infections are due to the resistance, high toxicity, and overuse of conventional antifungal drugs. For bringing solutions, the antifungal activity of Aeollanthus heliotropioides essential oil will be evaluated and optimized. MATERIAL AND METHODS: The aerial parts of A. heliotropioides were harvested and essential oil extracted by hydrodistillation. The chemical composition was determined using gas chromatography and gas chromatography coupled with mass spectrometry and nuclear magnetic resonance. The sensitivity of fungal strains was determined using broth microdilution method. The fungicidal parameters were checked by viability assay using methylene blue dye. The Fractional Inhibitory Concentration Index was determined according the two-dimensional checkboard methods. The efficiency of the simulated optimum concentration …
+  TYPES: Journal Article
+  MESH: Antifungal Agents; Calibration; Drug Resistance, Fungal; Fungi; Gas Chromatography-Mass Spectrometry; Humans; Kinetics; Lamiaceae; Microbial Sensitivity Tests; Mycoses; Oils, Volatile; Plant Oils
+
+[R3-132] OTC-LIT-Q02-NSAID | 2018 | abstract=no
+  TITLE: Tissue Isn't the Issue.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Adult; Humans; Hydronephrosis; Leg; Leukocytosis; Lymphadenopathy; Male; Naproxen; Pain; Sarcoidosis; Tomography, X-Ray Computed
+
+[R3-133] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=yes
+  TITLE: Coffee consumption and disease correlations.
+  ABSTRACT: Coffee is one of the most widely consumed beverages in the world. It has primarily consumed due to its stimulant effect and unique taste since the ancient times. Afterwards, its consumption has been historically associated with a lower risk of some diseases such as type 2 diabetes mellitus, obesity, cardiovascular disease and some type of cancer and thus it has also consumed due to health benefits. It contains many bioactive compounds such as caffeine, chlorogenic acids and diterpenoid alcohols which have so far been associated with many potential health benefits. For example, caffeine reduces risk of developing neurodegenerative disease and chlorogenic acids (CGA) and diterpene alcohols have many health benefits such as antioxidant and chemo-preventive. Coffee also have harmful effects. For example, diterpenoid alcohols increases serum homocysteine and cholesterol levels and thus it has …
+  TYPES: Journal Article;Review
+  MESH: Caffeine; Cardiovascular Diseases; Chlorogenic Acid; Coffee; Diabetes Mellitus, Type 2; Diterpenes; Dose-Response Relationship, Drug; Health Promotion; Humans; Neoplasms; Neurodegenerative Diseases; Obesity
+
+[R3-134] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: [Impact of risk factors for osteoporosis on bone mineral density in perimenopausal women of the City of Querétaro, México].
+  ABSTRACT: It is essential to evaluate osteoporosis risk factors, mainly the modifiable, like the lifestyle, in Mexican women in order to prevent it, since it is a serious public health problem. We studied 805 women (35-55 years old) in the City of Queretaro, México. We obtained: personal data, family history, habits, such as smoking, alcohol, caffeine (coffee and soft drink of cola) and physical activity. Participants complete the questionnaire on 19 risk factors for osteoporosis (International Osteoporosis Foundation) one of them with risk. We evaluated: body mass index (BMI), cardiovascular risk and corporal complexion. Bone densitometry was performed in two diagnostic regions: lumbar spine and total hip and participants were classified as normal bone mass density (BMD), low BMD and osteoporosis. The prevalence of osteoporosis was 7% and of low BMD was 34%, predominantly in the lumbar region and …
+  TYPES: Comparative Study;English Abstract;Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Absorptiometry, Photon; Adult; Bone Density; Cross-Sectional Studies; Female; Humans; Mexico; Middle Aged; Osteoporosis; Perimenopause; Prevalence; Risk Factors
+
+[R3-135] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: MARSIPAN and the deadly triad: management of malnourished patients.
+  ABSTRACT: A 44-year-old gentleman was admitted with a deliberate overdose of olanzapine, paracetamol and bisoprolol. On admission, he was hypothermic, bradycardic and hypotensive and his body mass index was 12 kg/m(2). Problems identified on admission included polypharmacy overdose, risk of refeeding syndrome and sepsis. Despite careful reintroduction of feeding and generous electrolyte replacement, he developed persistent hypophosphataemia, hypokalaemia and a marked transaminitis. Several days later, he was noted to be hypothermic and hypoglycaemic. No increase in white cell count or C reactive protein was noted and his clinical appearance was otherwise unremarkable. Nevertheless, given these signs he was started on broad spectrum antibiotics for possible sepsis, which was subsequently confirmed on chest radiograph in addition to a further finding of likely aspergilloma on a later chest CT. His m …
+  TYPES: Case Reports;Journal Article
+  MESH: Adult; Anorexia Nervosa; Humans; Male; Malnutrition
+
+[R3-136] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Transcutaneous spinal cord stimulation and its impact on cardiovascular autonomic regulation after spinal cord injury.
+  ABSTRACT: Individuals with spinal cord injury (SCI) have significant dysfunction in cardiovascular autonomic regulation. Although recent findings postulate that spinal cord stimulation improves autonomic regulation, limited scope of past methods have tested only above level sympathetic activation, leaving significant uncertainty. To identify whether transcutaneous spinal cord stimulation improves cardiovascular autonomic regulation, two pairs of well-matched individuals with and without high thoracic, complete SCI were recruited. Baseline autonomic regulation was characterized with multiple tests of sympathoinhibition and above/below injury level sympathoexcitation. At three subsequent visits, testing was repeated with the addition submotor threshold transcutaneous spinal cord stimulation at three previously advocated frequencies. Uninjured controls demonstrated no autonomic deficits at baseline a …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Autonomic Dysreflexia; Blood Pressure; Cardiovascular System; Humans; Spinal Cord; Spinal Cord Injuries; Spinal Cord Stimulation
+
+[R3-137] OTC-LIT-Q05-TOPICAL | 2005 | abstract=yes
+  TITLE: Acute lung injury after peppermint oil injection.
+  ABSTRACT: UNLABELLED: We describe a case of acute lung injury following IV injection of peppermint oil. An 18-yr-old woman injected the oil and developed fulminant pulmonary edema requiring ventilator support. Within 4 h after injection her arterial oxygen tension was 8.1 kPa (60 mm Hg) at an inspired oxygen fraction (F(IO2)) of 0.7 (P/F ratio: 85) despite a positive end expiratory pressure (PEEP) of 20 mbar, therefore meeting criteria for acute respiratory distress syndrome (ARDS). Mean pulmonary artery pressures and pulmonary artery wedge pressures were within normal limits throughout the case (<25 mm Hg and <10 mm Hg, respectively). Ventilation with high PEEP and diuresis resulted in a P/F ratio of 265 after 24 h. The patient was successfully weaned from the ventilator on the 9th day. This report is the first description of the sequelae of IV peppermint oil injection. The injection resulted in …
+  TYPES: Case Reports;Journal Article
+  MESH: Adolescent; Female; Humans; Injections, Intravenous; Mentha piperita; Plant Oils; Pulmonary Edema; Respiratory Distress Syndrome
+
+[R3-138] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Assessment of the clinical use of intravenous and oral N-acetylcysteine in the treatment of acute acetaminophen poisoning in children: a retrospective review.
+  ABSTRACT: BACKGROUND: N-acetylcysteine (NAC) is the most effective therapy for acetaminophen (APAP) toxicity and is currently available for oral and intravenous (IV) administration. Although both routes are effective, use of the IV formulation has been increasing since becoming available in the United States in 2004, raising questions about cost/benefit comparisons between the 2 formulations. Decreased length of treatment and hospital stay have been used to justify the use of IV NAC; however, some patients may receive extended therapy of either NAC regimen. OBJECTIVE: This retrospective review assessed the clinical use of oral and IV NAC in pediatric patients with APAP intoxication from June 1, 2004 through May 31, 2008. METHODS: Electronic medical charts for patients aged ≤21 years were identified with International Classification of Diseases, Ninth Revision (ICD-9) codes for APAP overdose. Descr …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Acetylcysteine; Acute Disease; Administration, Oral; Child; Clinical Trials as Topic; Databases, Factual; Drug Utilization Review; Humans; Injections, Intravenous; Medical Records; Poisoning; Retrospective Studies; Time Factors
+
+[R3-139] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Hepatocyte-based in vitro model for assessment of drug-induced cholestasis.
+  ABSTRACT: Early detection of drug-induced cholestasis remains a challenge during drug development. We have developed and validated a biorelevant sandwich-cultured hepatocytes- (SCH) based model that can identify compounds causing cholestasis by altering bile acid disposition. Human and rat SCH were exposed (24-48h) to known cholestatic and/or hepatotoxic compounds, in the presence or in the absence of a concentrated mixture of bile acids (BAs). Urea assay was used to assess (compromised) hepatocyte functionality at the end of the incubations. The cholestatic potential of the compounds was expressed by calculating a drug-induced cholestasis index (DICI), reflecting the relative residual urea formation by hepatocytes co-incubated with BAs and test compound as compared to hepatocytes treated with test compound alone. Compounds with clinical reports of cholestasis, including cyclosporin A, troglitazon …
+  TYPES: Journal Article
+  MESH: Animals; Cells, Cultured; Cholestasis; Dose-Response Relationship, Drug; Hepatocytes; Humans; Rats; Xenobiotics
+
+[R3-140] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: Re: Remien et al.: mathematical modeling of liver injury and dysfunction after acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Chemical and Drug Induced Liver Injury; Humans; Models, Biological; Models, Statistical
+
+[R3-141] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: Damage-associated molecular patterns: their impact on the liver and beyond during acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Editorial
+  MESH: Acute-Phase Reaction; Animals; Chemokines; DNA, Mitochondrial; Female; Humans; Liver; Liver Failure, Acute; Male; Neutrophils; Receptors, Formyl Peptide
+
+[R3-142] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=no
+  TITLE: Advanced directives and suicidal behaviour. "If in doubt treat" is not as easy as it sounds.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Drug Overdose; Humans; Mental Competency; Mental Disorders; Treatment Refusal
+
+[R3-143] OTC-LIT-Q02-NSAID | 2018 | abstract=no
+  TITLE: The Case | Severe hypokalemia and metabolic acidosis.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Acidosis; Acidosis, Renal Tubular; Adult; Analgesics, Non-Narcotic; Biomarkers; Humans; Hypokalemia; Ibuprofen; Male; Severity of Illness Index; Treatment Outcome
+
+[R3-144] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: No need to change treatment of early presenting patients with acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Antioxidants; Humans
+
+[R3-145] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=yes
+  TITLE: Intravenous acetaminophen (at 15 mg/kg/dose every 6 hours) in critically ill preterm neonates with patent ductus arteriosus: A prospective study.
+  ABSTRACT: WHAT IS KNOWN AND OBJECTIVES: Acetaminophen has been increasingly used in treating patent ductus arteriosus (PDA) in preterm neonates. Variations were observed in the dosing regimen of acetaminophen across the studies. There is hardly any data available for a relatively higher dose of intravenous acetaminophen (15 mg/kg/dose every 6 hours) in the preterm population. We present here the results of a prospective study with this dose of intravenous acetaminophen for treating PDA in critically ill preterm neonates. METHODS: Preterm neonates (≤37 weeks of gestational age) with haemodynamically significant PDA were enrolled. Intravenous acetaminophen at 15 mg/kg/dose every 6 hours was administered. Echocardiographic monitoring, liver and renal function tests were carried out. Standard definitions were adhered for defining acute kidney injury (AKI) and hepatotoxicity. RESULTS: Fifty-five neonat …
+  TYPES: Journal Article;Observational Study
+  MESH: Acetaminophen; Acute Kidney Injury; Administration, Intravenous; Birth Weight; Chemical and Drug Induced Liver Injury; Dose-Response Relationship, Drug; Ductus Arteriosus, Patent; Gestational Age; Humans; Infant, Extremely Premature; Infant, Newborn; Infant, Premature; Kidney Function Tests; Liver Function Tests
+
+[R3-146] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=no
+  TITLE: Phenylephrine Infusion: Driving a Wedge in Our Practice of Left Uterine Displacement?
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Editorial
+  MESH: Blood Pressure; Female; Humans; Phenylephrine; Urogenital Abnormalities; Uterus
+
+[R3-147] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Authors' response to Dr Reiter.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Drug Overdose; Female; Hospitalization; Humans; Male; Multiple Organ Failure
+
+[R3-148] OTC-LIT-Q03-COLD-ALLERGY | 2012 | abstract=yes
+  TITLE: Different cardiovascular protective effects of quercetin administered orally or intraperitoneally in spontaneously hypertensive rats.
+  ABSTRACT: We tested whether the administration procedure of quercetin affects its metabolite profile and antihypertensive activity. Spontaneously hypertensive rats (SHR) were randomly assigned to four experimental treatments: (1) 1 mL of 1% methylcellulose by oral gavage and 2% DMSO i.p. (control group); (2) 10 mg kg⁻¹ quercetin by oral gavage once daily and 2% DMSO i.p.; (3) 10 mg kg⁻¹ quercetin by oral gavage divided in two daily doses (5 + 5 at 12 h intervals) and 2% DMSO i.p.; (4) 1 mL of 1% methylcellulose by oral gavage and 10 mg kg⁻¹ quercetin i.p. injection. Rats were treated daily for 5 weeks. Single dose and two daily doses, in a long-term oral treatment were equally efficient, both restoring the impaired aortic endothelium-dependent vasodilatation and reducing mesenteric contractile response to phenylephrine, systolic blood pressure, heart rate, and heart and kidney hypertrophy. Attenua …
+  TYPES: Comparative Study;Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Administration, Oral; Animals; Antihypertensive Agents; Blood Pressure; Cardiovascular System; Dose-Response Relationship, Drug; Drug Administration Schedule; Gene Expression; Heart Rate; Humans; Hypertension; Injections, Intraperitoneal; Male; Protective Agents
+
+[R3-149] OTC-LIT-Q02-NSAID | 2010 | abstract=yes
+  TITLE: Clinical trial: the incidence of NSAID-associated endoscopic gastric ulcers in patients treated with PN 400 (naproxen plus esomeprazole magnesium) vs. enteric-coated naproxen alone.
+  ABSTRACT: BACKGROUND: Gastroprotective co-therapy may reduce the risk of nonsteroidal anti-inflammatory drug (NSAID)-associated gastric ulcers, but adherence is suboptimal. AIM: To compare the incidence of gastric ulcers with PN 400 [enteric-coated (EC) naproxen 500 mg and immediate-release esomeprazole 20 mg], or EC naproxen. METHODS: Two randomized, double-blind, multicentre studies (PN400-301, PN400-302). Patients [stratified by low-dose aspirin (< or =325 mg) use] aged > or =50 years or 18-49 years with a history of ulcer, received PN 400 BID (301, n = 218; 302, n = 210) or EC naproxen 500 mg BID (301, n = 216; 302, n = 210) for 6 months. The primary endpoint was the cumulative incidence of endoscopic gastric ulcers. RESULTS: The cumulative incidence of gastric ulcers was significantly lower with PN 400 vs. EC naproxen (301: 4.1% vs. 23.1%, P < 0.001; 302: 7.1% vs. 24.3%, P < 0.001). PN 400 wa …
+  TYPES: Journal Article;Multicenter Study;Randomized Controlled Trial;Research Support, Non-U.S. Gov't
+  MESH: Adolescent; Adult; Anti-Inflammatory Agents, Non-Steroidal; Double-Blind Method; Esomeprazole; Humans; Incidence; Magnesium; Middle Aged; Naproxen; Osteoarthritis; Stomach Ulcer; Tablets, Enteric-Coated; Treatment Outcome
+
+[R3-150] OTC-LIT-Q05-TOPICAL | 2018 | abstract=yes
+  TITLE: Clonidine Overdose in a Toddler Due to Accidental Ingestion of a Compounding Cream.
+  ABSTRACT: A 22-month-old girl without any significant medical history accidentally consumed a small amount of a therapeutic compounding cream that contained camphor, gabapentin, clonidine, ketoprofen, and lidocaine. Upon presentation to the emergency department, the child exhibited immediate onset of altered mental status with wide fluctuation in her vital signs, which included intermittent apnea requiring bag-valve mask assistance and endotracheal intubation. Serum laboratory analysis measured a clonidine level of 2.6 ng/mL and undetectable camphor, gabapentin, and ketoprofen levels. While on mechanical ventilation, the patient exhibited hypothermia, bradycardia, and hypotension; all of which responded to supportive care. After approximately 12 hours in the intensive care unit, the patient was successfully extubated and remained asymptomatic. This unique case of a patient with brief, unintentiona …
+  TYPES: Case Reports;Journal Article
+  MESH: Adrenergic alpha-2 Receptor Agonists; Clonidine; Drug Compounding; Drug Overdose; Female; Fluid Therapy; Humans; Infant; Ointments; Respiration, Artificial
+
+[R3-151] OTC-LIT-Q02-NSAID | 2010 | abstract=yes
+  TITLE: Treatment of patent ductus arteriosus: indomethacin or ibuprofen?
+  ABSTRACT: We compared ibuprofen and indomethacin for the treatment of patent ductus arteriosus (PDA) in preterm infants. A retrospective comparative study was conducted at a pediatric tertiary center in preterm infants diagnosed with PDA. Infants born from January 2000 to June 2003 were treated with indomethacin, whereas infants born from July 2003 to November 2005 were treated with ibuprofen. The two treatment groups were compared. Demographic data and clinical, laboratory, and outcome data were collected from the medical files. Seventy-three infants were included in the ibuprofen group and 46 in the indomethacin group. No significant difference in efficacy was found between indomethacin and ibuprofen. Compared with ibuprofen, indomethacin treatment was associated with significantly higher mean creatinine levels and a higher percent of infants with creatinine >1.2 mg/dL, hyponatremia <120 mmol/L, …
+  TYPES: Comparative Study;Journal Article
+  MESH: Cyclooxygenase Inhibitors; Ductus Arteriosus, Patent; Female; Humans; Ibuprofen; Indomethacin; Infant, Newborn; Infant, Premature; Male; Premature Birth; Retrospective Studies; Treatment Outcome
+
+[R3-152] OTC-LIT-Q03-COLD-ALLERGY | 2021 | abstract=yes
+  TITLE: Spectroscopic interaction studies of H2 receptor antagonists with levocetirizine.
+  ABSTRACT: Patients with allergic rhinitis may also suffer abdominal pain, gastritis or peptic ulcer. In this condition patient may use levocetirizine with famotidine or ranitidine. These drugs have potential to interact with another drug and form complex. The aim of the present study is to evaluate the possible drug drug interaction with each other which may cause increase or decrease of therapeutic effects. For this purpose, validity of Beer Lambert law was checked, lone availability of famotidine (20gm), ranitidine (150gm) and levocetirizine (5mg) were studied in pH simulated to gastric juice (pH 1), pH 4, pH 7.4 and in pH 9 and finally percent availabilities of these drugs were calculated with the help of simultaneous equation. Results showed high percentage of levocetirizine in all pH as 300.32%, 514.41%, 173.38% and 220.68% in presence of famotidine but very low availability of famotidine as …
+  TYPES: Journal Article
+  MESH: Biological Availability; Cetirizine; Drug Interactions; Famotidine; Histamine H1 Antagonists, Non-Sedating; Histamine H2 Antagonists; Humans; Hydrogen-Ion Concentration; In Vitro Techniques; Ranitidine
+
+[R3-153] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=yes
+  TITLE: Systematic review of topical vasoconstrictors in endoscopic sinus surgery.
+  ABSTRACT: OBJECTIVE: The objective of this study is to systematically review the literature and examine the safety for the use of topical vasoconstrictors in endoscopic sinus surgery. STUDY DESIGN: Systematic review clinical trials. METHOD: A systematic literature search was performed in MEDLINE, EMBASE, The Cochrane Library, and National Guideline Clearinghouse, and references in the selected articles. RESULTS: The search criteria captured 42 manuscripts with relevant titles. A systematic review on the topical use of phenylephrine was found; however, no other systematic review, meta-analyses, or clinical guidelines were identified. Six randomized clinical trials or comparative studies, as well as multiple case reports and review articles were also identified. The literature supports the safety of oxymetazoline and epinephrine when used judiciously in carefully selected patients undergoing endosco …
+  TYPES: Journal Article;Systematic Review
+  MESH: Administration, Topical; Clinical Trials as Topic; Endoscopy; Humans; Otorhinolaryngologic Surgical Procedures; Paranasal Sinuses; Phenylephrine; Vasoconstrictor Agents
+
+[R3-154] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: Caffeine and cognitive decline in elderly women at high vascular risk.
+  ABSTRACT: BACKGROUND: Persons with vascular disorders are at higher risk of cognitive decline. OBJECTIVE: To determine whether caffeine may be associated with cognitive decline reduction in elderly at high vascular risk. METHODS: We included 2,475 women aged 65+ years in the Women's Antioxidant Cardiovascular Study, a randomized trial of antioxidants and B vitamins for cardiovascular disease secondary prevention. We ascertained regular caffeine intake at baseline (1995-1996) using a validated 116 item-food frequency questionnaire. From 1998-2000 to 2005-2006, we administered four telephone cognitive assessments at two-year intervals evaluating global cognition, verbal memory, and category fluency. The primary outcome was the change in global cognitive score, which was the average of the z-scores of all tests. We used generalized linear models for repeated measures that were adjusted for various so …
+  TYPES: Journal Article;Randomized Controlled Trial;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Aged; Aging; Caffeine; Central Nervous System Stimulants; Cerebrovascular Disorders; Cognition; Cognition Disorders; Cohort Studies; Dietary Supplements; Disease Progression; Female; Humans; Linear Models; Longitudinal Studies
+
+[R3-155] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=no
+  TITLE: Comment on Fomepizole as an adjunctive treatment in severe acetaminophen ingestions.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Antidotes; Drug Overdose; Eating; Fomepizole; Humans
+
+[R3-156] OTC-LIT-Q03-COLD-ALLERGY | 2025 | abstract=yes
+  TITLE: Impact of insomnia: Cultural and societal aspects from a European survey.
+  ABSTRACT: OBJECTIVES: This European study explored the cultural and societal aspects of chronic insomnia by means of a survey undertaken in France, Germany, Italy, Spain, and the United Kingdom. The primary objectives were to understand the impact of insomnia on the daily lives of patients, both personally and professionally, and to evaluate the patients' perceptions and coping strategies thus identifying cultural differences in the management of this disorder. METHODS: Based on online panels targeting insomnia sufferers, the survey included 755 patients aged 35 to 65 years with moderate to severe insomnia for at least three months, occurring at least three times per week (DSM-5 criteria for insomnia disorder, ISI score 15-28). Topics covered included the impact of insomnia on daily life, strategies for coping and managing insomnia, and patients' perceptions and views of insomnia. RESULTS: A total …
+  TYPES: Journal Article
+  MESH: Adaptation, Psychological; Adult; Aged; Cross-Cultural Comparison; Culture; Europe; Female; Humans; Male; Middle Aged; Quality of Life; Sleep Initiation and Maintenance Disorders; Surveys and Questionnaires
+
+[R3-157] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Gestational intermittent hypoxia induces endothelial dysfunction and hypertension in pregnant rats: role of endothelin type B receptor†.
+  ABSTRACT: Obstructive sleep apnea is a recognized risk factor for gestational hypertension, yet the exact mechanism behind this association remains unclear. Here, we tested the hypothesis that intermittent hypoxia, a hallmark of obstructive sleep apnea, induces gestational hypertension through perturbed endothelin-1 signaling. Pregnant Sprague-Dawley rats were subjected to normoxia (control), mild intermittent hypoxia (10.5% O2), or severe intermittent hypoxia (6.5% O2) from gestational days 10-21. Blood pressure was monitored. Plasma was collected and mesenteric arteries were isolated for myograph and protein analyses. The mild and severe intermittent hypoxia groups demonstrated elevated blood pressure, reduced plasma nitrate/nitrite, and unchanged endothelin-1 levels compared to the control group. Western blot analysis revealed decreased expression of endothelin type B receptor and phosphorylate …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural
+  MESH: Animals; Endothelin-1; Endothelins; Endothelium, Vascular; Female; Humans; Hypertension, Pregnancy-Induced; Hypoxia; Mesenteric Arteries; Nitrates; Nitric Oxide; Nitric Oxide Synthase Type III; Nitrites; Pregnancy
+
+[R3-158] OTC-LIT-Q01-ACETAMINOPHEN | 2017 | abstract=yes
+  TITLE: NMI and IFP35 serve as proinflammatory DAMPs during cellular infection and injury.
+  ABSTRACT: Damage-associated molecular patterns (DAMP) trigger innate immune response and exacerbate inflammation to combat infection and cellular damage. Identifying DAMPs and revealing their functions are thus of crucial importance. Here we report that two molecules, N-myc and STAT interactor (NMI) and interferon-induced protein 35 (IFP35) act as DAMPs and are released by activated macrophages during lipopolysaccharide-induced septic shock or acetaminophen-induced liver injury. We show that extracellular NMI and IFP35 activate macrophages to release proinflammatory cytokines by activating nuclear factor-κB through the Toll-like receptor 4 pathway. In addition, the serum levels of NMI are increased in patients who succumbed to severe inflammation. NMI deficiency reduces inflammatory responses and mortality in mouse models of sepsis and liver injury. We therefore propose that extracellular NMI and …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Alarmins; Animals; Cell Line; Chemical and Drug Induced Liver Injury; Cytokines; Humans; Inflammation; Intraabdominal Infections; Intracellular Signaling Peptides and Proteins; Lipopolysaccharides; Macrophages; Mice; NF-kappa B
+
+[R3-159] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Sleep physiology, pathophysiology, and sleep hygiene.
+  ABSTRACT: Despite sleep's fundamental role in maintaining and improving physical and mental health, many people get less than the recommended amount of sleep or suffer from sleeping disorders. This review highlights sleep's instrumental biological functions, various sleep problems, and sleep hygiene and lifestyle interventions that can help improve sleep quality. Quality sleep allows for improved cardiovascular health, mental health, cognition, memory consolidation, immunity, reproductive health, and hormone regulation. Sleep disorders, such as insomnia, sleep apnea, and circadian-rhythm-disorders, or disrupted sleep from lifestyle choices, environmental conditions, or other medical issues can lead to significant morbidity and can contribute to or exacerbate medical and psychiatric conditions. The best treatment for long-term sleep improvement is proper sleep hygiene through behavior and sleep hab …
+  TYPES: Journal Article;Review
+  MESH: Exercise; Humans; Mental Health; Sleep; Sleep Hygiene; Sleep Initiation and Maintenance Disorders
+
+[R3-160] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Plasma metabolomic characterization of premature ovarian insufficiency.
+  ABSTRACT: BACKGROUND: Premature ovarian insufficiency (POI) patients are predisposed to metabolic disturbances, including in lipid metabolism and glucose metabolism, and metabolic disorders appear to be a prerequisite of the typical long-term complications of POI, such as cardiovascular diseases or osteoporosis. However, the metabolic changes underlying the development of POI and its subsequent complications are incompletely understood, and there are few studies characterizing the disturbed metabolome in POI patients. The aim of this study was to characterize the plasma metabolome in POI by using ultrahigh-performance liquid chromatography-mass spectrometry (UHPLC-MS/MS) metabolomics and to evaluate whether these disturbances identified in the plasma metabolome relate to ovarian reserve and have diagnostic value in POI. METHODS: This observational study recruited 30 POI patients and 30 age- and bo …
+  TYPES: Journal Article;Observational Study
+  MESH: Female; Humans; Menopause, Premature; Menstrual Cycle; Metabolome; Metabolomics; Primary Ovarian Insufficiency; Tandem Mass Spectrometry

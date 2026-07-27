@@ -1,0 +1,272 @@
+===== AI REFERENCE ROUND 2 / CHUNK 4 (40 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R2-121] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=yes
+  TITLE: Comparison of Intermittent Intravenous Boluses of Phenylephrine and Norepinephrine to Prevent and Treat Spinal-Induced Hypotension in Cesarean Deliveries: Randomized Controlled Trial.
+  ABSTRACT: BACKGROUND: Phenylephrine (PE) is currently the vasopressor of choice to prevent and treat spinal-induced hypotension at cesarean delivery (CD). However, its use is often associated with reflex bradycardia. Norepinephrine (NE) has been put forward as an alternative vasopressor during CD due to its ability to treat hypotension while maintaining heart rate (HR). Recent studies have focused on the role of NE used as an infusion with favorable results compared to PE. No studies have compared equipotent bolus doses of PE and NE at CD. We hypothesized that when used in equipotent doses as an intermittent bolus regimen to prevent and treat spinal-induced hypotension, NE would result in a reduction in the incidence of bradycardia compared to PE. METHODS: This was a double-blind, randomized clinical trial of women undergoing elective CD under spinal anesthesia. Women were randomized to receive ei …
+  TYPES: Comparative Study;Journal Article;Randomized Controlled Trial
+  MESH: Anesthesia, Obstetrical; Anesthesia, Spinal; Bradycardia; Cesarean Section; Female; Humans; Hypotension; Norepinephrine; Phenylephrine; Pregnancy
+
+[R2-122] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=yes
+  TITLE: Ferroptosis and Acetaminophen Hepatotoxicity: Are We Going Down Another Rabbit Hole?
+  ABSTRACT: Acetaminophen (APAP) hepatotoxicity is the most frequent cause of acute liver failure in the US. The mechanisms of APAP-induced liver injury have been under extensive investigations for decades, and many key events of this necrotic cell death are known today. Initially, two opposing hypotheses for cell death were proposed: reactive metabolite and protein adduct formation versus reactive oxygen and lipid peroxidation (LPO). In the end, both mechanisms were reconciled, and it is now generally accepted that the toxicity starts with formation of reactive metabolites that, after glutathione depletion, bind to cellular proteins, especially on mitochondria. This results in a mitochondrial oxidant stress, which requires amplification through a mitogen-activated protein kinase cascade, leading ultimately to enough reactive oxygen and peroxynitrite formation to trigger the mitochondrial membrane p …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Review
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Animals; Chemical and Drug Induced Liver Injury; Ferroptosis; Humans; Oxidative Stress
+
+[R2-123] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Rosmarinic acid alleviates acetaminophen-induced hepatotoxicity by targeting Nrf2 and NEK7-NLRP3 signaling pathway.
+  ABSTRACT: Rosmarinic acid (RA) is a natural polyphenol with various biological activities, such as anti-oxidative, anti-fibrotic, and hepatoprotective properties. The objective of this study was to investigate the protective effect of RA against acetaminophen (APAP)-induced hepatotoxicity (AILI) and explore the underlying mechanisms. Kunming mice were treated with RA (20, 40, or 80 mg/kg, i.g) for 7d, followed by an intraperitoneal injection of APAP (500 mg/kg). The liver injury was evaluated by serum biochemical and liver histopathological examinations. Human HepG2 cells were pre-treated with RA (20, 40, or 80 μmol/L) and then incubated with APAP (25 mmol/L) for 24 h. The MTT assay, wound healing assay, transwell migration assay, flow cytometry, and western blotting were employed to further evaluate RA's protective effects on AILI and explore the mechanisms. The results indicated that RA pre-trea …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Animals; Chemical and Drug Induced Liver Injury; Cinnamates; Depsides; Humans; Liver; Mice; NF-E2-Related Factor 2; NIMA-Related Kinases; NLR Family, Pyrin Domain-Containing 3 Protein; Oxidative Stress; Reactive Oxygen Species; Rosmarinic Acid
+
+[R2-124] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=yes
+  TITLE: Patient-reported triggers of paroxysmal atrial fibrillation.
+  ABSTRACT: BACKGROUND: Triggers for discrete atrial fibrillation (AF) events remain poorly studied and incompletely characterized. OBJECTIVE: The purpose of this study was to describe common triggers for AF and their relationships with patient characteristics. METHODS: We invited symptomatic, paroxysmal AF patients enrolled in the Health eHeart Study and through the patient-centered advocacy organization StopAfib.org to complete a questionnaire regarding their AF triggers and cardiovascular risk factors. RESULTS: Of 1295 participants with symptomatic AF, 957 (74%) reported triggers for episodes of AF. In comparison to participants without triggers and after multivariate adjustment, those reporting triggers had a 71% lower odds of congestive heart failure (odds ratio [OR] 0.29; 95% confidence interval [CI] 0.14-0.60; P = .001) and a >2-fold greater odds of a family history of AF (OR 2.04; 95% CI 1.2 …
+  TYPES: Journal Article;Randomized Controlled Trial;Research Support, Non-U.S. Gov't
+  MESH: Age Factors; Aged; Atrial Fibrillation; Comorbidity; Dehydration; Diet; Exercise; Female; Humans; Male; Middle Aged; Posture; Risk Factors; Sex Factors
+
+[R2-125] OTC-LIT-Q05-TOPICAL | 2000 | abstract=yes
+  TITLE: Adverse effects of herbal drugs in dermatology.
+  ABSTRACT: Herbal treatments are becoming increasingly popular, and are often used for dermatological conditions. Thus dermatologists should know about their potential to cause adverse events. This review is aimed at addressing this area in a semisystematic fashion. Some agents, particularly Chinese herbal creams, have been shown repeatedly to be adulterated with corticosteroids. Virtually all herbal remedies can cause allergic reactions and several can be responsible for photosensitization. Some herbal medicines, in particular Ayurvedic remedies, contain arsenic or mercury that can produce typical skin lesions. Other popular remedies that can cause dermatological side-effects include St John's Wort, kava, aloe vera, eucalyptus, camphor, henna and yohimbine. Finally, there are some herbal treatments used specifically for dermatological conditions, e.g. Chinese oral herbal remedies for atopic eczema …
+  TYPES: Journal Article;Review
+  MESH: Complementary Therapies; Drug Contamination; Drug Eruptions; Drugs, Chinese Herbal; Female; Humans; Middle Aged; Phytotherapy; Skin Diseases
+
+[R2-126] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Characterization of acetaminophen overdose-related emergency department visits and hospitalizations in the United States.
+  ABSTRACT: PURPOSE: To estimate the number of acetaminophen overdose-related emergency department (ED) visits and hospitalizations in the United States, characterize these by intentionality, age, and gender, and compare the strengths and limitations of the utilized databases. METHODS: We used data from the National Hospital Ambulatory Medical Care Survey (NHAMCS) and the National Electronic Injury Surveillance System (NEISS) to estimate the number of relevant ED visits in the United States between 2000 and 2007, and the National Hospital Discharge Survey (NHDS) to estimate the number of relevant hospitalizations in the United States between 1991 and 2006. National estimates and their standard errors were calculated using information provided in each database. We used the standard United States population in 2000 to calculate age-adjusted rates. RESULTS: We estimate an annual average of 44,348 (NHAM …
+  TYPES: Comparative Study;Journal Article
+  MESH: Acetaminophen; Adolescent; Adult; Adverse Drug Reaction Reporting Systems; Analgesics, Non-Narcotic; Child; Databases, Factual; Emergency Service, Hospital; Female; Health Care Surveys; Hospitalization; Humans; Male; Population Surveillance
+
+[R2-127] OTC-LIT-Q05-TOPICAL | 2006 | abstract=yes
+  TITLE: Treatment of rosacea with herbal ingredients.
+  ABSTRACT: Since rosacea is a chronic disease and many patients find prescription therapies unsatisfactory, they frequently turn to herbal ingredients for relief of their persistent facial redness. The most useful and frequently used herbal compounds include licorice, feverfew, green tea, oatmeal, lavender, chamomile, tea tree oil, and camphor oil. The utility of most of these herbs is based on their purported anti-inflammatory properties. Some of these herbs have proven effects, many have potential benefits, and some may aggravate rosacea. Due to the fact that many patients fail to inform their physicians about their use of herbal ingredients, dermatologists should be aware of what patients may be using and be able to advise them about the efficacy of these ingredients or the potential for adverse effects.
+  TYPES: Journal Article;Review
+  MESH: Avena; Camphor; Chamomile; Glycyrrhiza; Humans; Lavandula; Phytotherapy; Rosacea; Tanacetum parthenium
+
+[R2-128] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=yes
+  TITLE: Cetirizine versus diphenhydramine in the prevention of chemotherapy-related hypersensitivity reactions.
+  ABSTRACT: OBJECTIVE: This study evaluated the role of cetirizine compared to diphenhydramine as premedications for patients receiving paclitaxel, cetuximab, and rituximab infusions. Historically, diphenhydramine has been linked with more sedation in comparison to cetirizine; however, it is unknown if cetirizine can replace diphenhydramine in the prevention of hypersensitivity reactions in patients receiving chemotherapy. METHODS: This is a retrospective study designed to assess infusion reactions occurring in patients receiving diphenhydramine or cetirizine premedication for rituximab, paclitaxel, or cetuximab therapies. Infusion reactions were defined as various symptoms such as flushing, itching, alterations in heart rate and blood pressure, and dyspnea plus the clinical setting of a concurrent or very recent infusion. RESULTS: A total of 207 patients were evaluated in this study with 83 patient …
+  TYPES: Comparative Study;Journal Article
+  MESH: Aged; Antineoplastic Agents, Immunological; Antineoplastic Agents, Phytogenic; Cetirizine; Cetuximab; Diphenhydramine; Drug Hypersensitivity; Female; Histamine H1 Antagonists, Non-Sedating; Humans; Infusions, Intravenous; Male; Middle Aged; Paclitaxel
+
+[R2-129] OTC-LIT-Q01-ACETAMINOPHEN | 2017 | abstract=yes
+  TITLE: A population-based study of risk perceptions of paracetamol use among Swedes-with a special focus on young adults.
+  ABSTRACT: PURPOSE: The purpose of this study was to investigate risk perceptions of paracetamol use, with a special focus on young adults. METHODS: A web survey was sent to a representative sample (n = 5838) of the Swedish adult population. Altogether, 3120 persons answered the full questionnaire. Risk perceptions of paracetamol use in relation to sex, age, and education were determined using logistic regression. RESULTS: Most respondents (70.5%) reported use of paracetamol in the 3 months prior to the study; the highest proportion was found among those aged 18 to 25 years (75.8%). Nine in 10 were over-the-counter (OTC) paracetamol users. A total of 14.2% thought paracetamol is completely harmless to use while 54.3% indicated risks associated with use even when following the dosing instructions. One third disagreed that it is less risky to use paracetamol compared with nonsteroidal antiinflammator …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Adolescent; Adult; Age Factors; Aged; Analgesics, Non-Narcotic; Female; Humans; Male; Middle Aged; Nonprescription Drugs; Perception; Population Surveillance; Risk Factors
+
+[R2-130] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: Damage-associated molecular patterns: their impact on the liver and beyond during acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Editorial
+  MESH: Acute-Phase Reaction; Animals; Chemokines; DNA, Mitochondrial; Female; Humans; Liver; Liver Failure, Acute; Male; Neutrophils; Receptors, Formyl Peptide
+
+[R2-131] OTC-LIT-Q05-TOPICAL | 2013 | abstract=yes
+  TITLE: Sensitivity of human dental pulp cells to eighteen chemical agents used for endodontic treatments in dentistry.
+  ABSTRACT: To determine the adverse effects against human dental pulp tissue, the sensitivity of human dental pulp cells (D824 cells) to 18 chemical agents used for endodontic treatments in dentistry was examined. The cytotoxicity, as determined by a decrease in colony-forming ability of cells treated with the chemical agents, increased as the concentration increased. As a quantitative measure of the cytotoxic effect, LC(50), the concentration which induces a 50% lethality, was extrapolated from the concentration-response curves. The rank of the chemical agents according to their cytotoxic effect (LC(50)) was sodium arsenite > formaldehyde > hydrogen peroxide > zinc oxide > thymol ≈ iodoform ≈ eugenol > guaiacol > ethylenediaminetetraacetic acid ≈ iodine > procaine > lidocaine ≈ chloramphenicol ≈ m-cresol > calcium hydroxide ≈ sodium hypochlorite ≈ phenol ≈ p-phenolsulfonic acid. To compare the cyt …
+  TYPES: Comparative Study;Journal Article
+  MESH: Alkaline Phosphatase; Anti-Infective Agents; Apoptosis; Cells, Cultured; Collagen Type I; Colony-Forming Units Assay; Dental Pulp; Dentin; Estrogen Receptor alpha; Extracellular Matrix Proteins; Female; Gene Expression Profiling; Humans; Lethal Dose 50
+
+[R2-132] OTC-LIT-Q02-NSAID | 2013 | abstract=yes
+  TITLE: Effectiveness and safety of indomethacin versus ibuprofen for the treatment of patent ductus arteriosus in preterm infants.
+  ABSTRACT: OBJECTIVE: To compare the incidence of medical closure of patent ductus arteriosus (PDA) and adverse events (acute renal dysfunction, necrotizing enterocolitis, spontaneous intestinal perforation, and gastrointestinal bleeding) between preterm infants who received indomethacin and ibuprofen for the treatment of PDA. STUDY DESIGN: A retrospective comparative effectiveness evaluation study was conducted on preterm infants (≤32 weeks) who received indomethacin or ibuprofen for treatment of symptomatic PDA. RESULTS: Of the 124 eligible infants, 54 received indomethacin and 70 received ibuprofen. The overall incidence of medical PDA closure with indomethacin was 37/54 (68.5%) as compared with 42/70 (60%) in the ibuprofen group (p = 0.32). The proportion of infants with surgical PDA ligation was similar between the two groups (18.5% in both the groups). There was no difference in the incidence …
+  TYPES: Comparative Study;Journal Article
+  MESH: Anti-Inflammatory Agents, Non-Steroidal; Ductus Arteriosus, Patent; Enterocolitis, Necrotizing; Female; Gastrointestinal Hemorrhage; Humans; Ibuprofen; Indomethacin; Infant, Newborn; Infant, Premature; Infant, Premature, Diseases; Intestinal Perforation; Male; Renal Insufficiency
+
+[R2-133] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Triggers for Preeclampsia Onset: a Case-Crossover Study.
+  ABSTRACT: BACKGROUND: Risk factors for preeclampsia are well established, whereas, the triggers associated with timing of preeclampsia onset are not. The aim of this study was to establish whether recent infection or other triggers were associated with timing of preeclampsia onset. METHODS: We used a case-crossover design with preeclampsia cases serving as their own controls. Women with singleton pregnancies of ≥20 weeks gestation presenting at three hospitals were eligible for inclusion. Exposures to potential triggers were identified via guided questionnaire. Infective episodes included symptoms lasting >24 h. Preeclampsia was defined as hypertension (BP ≥140 mmHg and/or ≥90 mmHg) and proteinuria (protein/creatinine ratio ≥30 mg/mmol). Conditional logistic regression was used to compare the odds of exposure to potential triggers in the case windows (1-7 days preceding diagnosis of preeclampsia) …
+  TYPES: Clinical Trial;Journal Article;Multicenter Study;Research Support, Non-U.S. Gov't
+  MESH: Acute Disease; Adolescent; Adult; Age Distribution; Alcohol Drinking; Caffeine; Central Nervous System Stimulants; Cross-Over Studies; Female; Food; Humans; Maternal Age; Middle Aged; New South Wales
+
+[R2-134] OTC-LIT-Q05-TOPICAL | 2021 | abstract=yes
+  TITLE: Effects of E-Cigarette Refill Liquid Flavorings with and without Nicotine on Human Retinal Pigment Epithelial Cells: A Preliminary Study.
+  ABSTRACT: Smoking is an etiologic factor for age-related macular degeneration (AMD). Although cigarette smoke has been extensively researched for retinal pigment epithelial (RPE) cell degeneration, the potential for adverse effects on the retinal epithelium following exposure to flavored e-cigarette refill liquid has never been explored. In this preliminary study, we have examined the effects of 20 e-liquids (10 different flavored nicotine-free and 10 nicotine-rich e-liquids) used in e-cigarettes on the metabolic activity, membrane integrity, and mitochondrial membrane potential of RPE cells. Our results showed that of the flavors studied over the concentration range: 0.5, 1, and 2% v/v for a duration of 48 h, cinnamon was the most toxic and menthol was the second most toxic, while other flavors showed lesser or no cytotoxicity. The presence of nicotine augmented cytotoxicity for cinnamon, menthol …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Electronic Nicotine Delivery Systems; Epithelial Cells; Flavoring Agents; Humans; Nicotine; Retinal Pigments
+
+[R2-135] OTC-LIT-Q03-COLD-ALLERGY | 2025 | abstract=yes
+  TITLE: Role of Ciliary Neurotrophic Factor in Angiotensin II-Induced Hypertension.
+  ABSTRACT: BACKGROUND: Ciliary neurotrophic factor (CNTF), mainly known for its neuroprotective properties, belongs to the IL-6 (interleukin-6) cytokine family. In contrast to IL-6, the effects of CNTF on the vasculature have not been explored. Here, we examined the role of CNTF in AngII (angiotensin II)-induced hypertension. METHODS: Hypertension was chronically induced with AngII (1000 ng/kg per minute, osmotic mini-pumps, 14 days) in CNTF-knockout and wild-type mice (with or without nephrectomy and 1% NaCl drinking water). Blood pressure was measured by tail-cuff and radiotelemetry. Effects of CNTF on vascular function and the JAK2/STAT3 pathway were measured in vivo, in the isolated perfused kidney, and in mouse and human vascular smooth muscle cells. RESULTS: At baseline, systolic blood pressure was similar between both groups. During AngII infusion, blood pressure increase was significantly a …
+  TYPES: Journal Article
+  MESH: Angiotensin II; Animals; Blood Pressure; Ciliary Neurotrophic Factor; Disease Models, Animal; Humans; Hypertension; Janus Kinase 2; Kidney; Male; Mice; Mice, Inbred C57BL; Mice, Knockout; Muscle, Smooth, Vascular
+
+[R2-136] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=yes
+  TITLE: Acetaminophen concentrations prior to 4 hours of ingestion: impact on diagnostic decision-making and treatment.
+  ABSTRACT: BACKGROUND: Consensus recommendations for acute acetaminophen exposure include plotting an acetaminophen concentration at ≥ 4 h post ingestion on the Rumack-Matthew nomogram to determine the need for acetylcysteine treatment. We studied the frequency of acetaminophen concentrations drawn within 4 h post ingestion and whether the Rumack-Matthew nomogram was properly used in making acetylcysteine treatment decisions. METHODS: This was a retrospective, observational case series at three regional poison centers of acute acetaminophen exposures between 1/1/13 and 12/31/13. Cases were analyzed for demographics, timing of acetaminophen concentrations, and application of the Rumack-Matthew nomogram in acetylcysteine initiation or termination. RESULTS: 1,123 cases of acute acetaminophen exposure were reviewed. Of 520 acute acetaminophen exposure cases presenting < 4 h post ingestion, 323 (62%) ha …
+  TYPES: Journal Article;Multicenter Study;Observational Study;Research Support, N.I.H., Extramural
+  MESH: Acetaminophen; Acetylcysteine; Adolescent; Adult; Analgesics, Non-Narcotic; Child; Decision Making; Dose-Response Relationship, Drug; Drug Overdose; Female; Humans; Male; Retrospective Studies; Toxicity Tests, Acute
+
+[R2-137] OTC-LIT-Q04-DIGESTIVE | 2020 | abstract=yes
+  TITLE: [Treatment of postprandial discomfort syndrome in the elderly: a multi-centered prospective randomized controlled clinical study].
+  ABSTRACT: Objective: To evaluate the efficacy and safety of Oryz-Aspergillus enzyme and pancreatin tablets (Combizym(®)) in the treatment of postprandial distress syndrome (PDS) in the elderly, compared with gastrointestinal motility drugs. Methods: A prospective randomized controlled trial was designed and registered in the China Clinical Trials Registry (ChiCTR-IPR-16008185). The elderly patients with PDS were randomly divided into three groups, including Mosapride group with Mosapride citrate tablets 5 mg 3 times per day for 2 weeks; Combizym(®) group with Combizym tablets 244 mg 3 times per day for 2 weeks; combined treatment group with both drugs and same doses for 2 weeks. The modified Nepean dyspepsia index (NDSI) score, discomfort intensity score and PDS score were calculated on patients before treatment, at the end of first and second week of treatment, as well as 4 weeks after treatment …
+  TYPES: Journal Article;Multicenter Study;Randomized Controlled Trial
+  MESH: Aged; Aged, 80 and over; Asian People; Benzamides; China; Drug Combinations; Dyspepsia; Female; Gastrointestinal Agents; Gastrointestinal Motility; Glycoside Hydrolases; Humans; Male; Middle Aged
+
+[R2-138] OTC-LIT-Q01-ACETAMINOPHEN | 2023 | abstract=no
+  TITLE: Comment: Comparison of 2-Bag Versus 3-Bag N-Acetylcysteine Regimens for Pediatric Acetaminophen Toxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Child; Drug Overdose; Humans
+
+[R2-139] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Preventing paracetamol overdose in children: do we really need a 500 mg/5mL preparation?
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Drug Overdose; Drug Packaging; Humans; India
+
+[R2-140] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Don't overlook psychological care in paracetamol overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Adult; Analgesics, Non-Narcotic; Drug Overdose; Female; Humans; Male; Patient-Centered Care
+
+[R2-141] OTC-LIT-Q02-NSAID | 2019 | abstract=no
+  TITLE: Upper gastrointestinal bleeding due to overdose of selective serotonin reuptake inhibitors and nonsteroidal anti-inflammatory drugs.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Abdominal Pain; Adult; Anti-Inflammatory Agents, Non-Steroidal; Depressive Disorder; Desvenlafaxine Succinate; Drug Synergism; Duloxetine Hydrochloride; Duodenal Ulcer; Gastrointestinal Hemorrhage; Gastroscopy; Humans; Male; Melena; Methimazole
+
+[R2-142] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=no
+  TITLE: Treatment of paracetamol overdose--authors' reply.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Alanine Transaminase; Antiemetics; Female; Humans; Male; Ondansetron; Vomiting
+
+[R2-143] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Energy Drinks and Their Impact on the Cardiovascular System: Potential Mechanisms.
+  ABSTRACT: Globally, the popularity of energy drinks is steadily increasing. Scientific interest in their effects on cardiovascular and cerebrovascular systems in humans is also expanding and with it comes a growing number of case reports of adverse events associated with energy drinks. The vast majority of studies carried out in the general population report effects on blood pressure and heart rate. However, inconsistencies in the current literature render it difficult to draw firm conclusions with regard to the effects of energy drinks on cardiovascular and cerebrovascular variables. These inconsistencies are due, in part, to differences in methodologies, volume of drink ingested, and duration of postconsumption measurements, as well as subject variables during the test. Recent well-controlled, randomized crossover studies that used continuous beat-to-beat measurements provide evidence that cardi …
+  TYPES: Journal Article;Review
+  MESH: Blood Pressure; Caffeine; Cardiovascular System; Dietary Sucrose; Energy Drinks; Glucuronates; Heart Rate; Humans; Taurine
+
+[R2-144] OTC-LIT-Q03-COLD-ALLERGY | 2022 | abstract=yes
+  TITLE: Caffeine consumption and mortality in populations with different weight statuses: An analysis of NHANES 1999-2014.
+  ABSTRACT: OBJECTIVES: The association between caffeine consumption and mortality in different weight statuses is unclear. This study aimed to explore the effects of caffeine consumption on mortality in different weight statuses. METHODS: Data from the National Health and Nutrition Examination Survey (1999-2014) was used in this study. We used multivariable Cox proportional hazards models with appropriate sampling weight to assess the association of caffeine intake with mortality in different weight statuses. RESULTS: A total of 37 211 participants were included in our study. Multivariate-adjusted analyses showed that moderate caffeine consumption was associated with decreased all-cause mortality in total participants (hazard ratio: 0.61; 95% confidence interval [CI], 0.42-0.89). In subsequent analyses, a significant association was found between moderate caffeine consumption and all-cause mortalit …
+  TYPES: Journal Article
+  MESH: Adult; Caffeine; Coffee; Humans; Nutrition Surveys; Overweight; Proportional Hazards Models; Risk Factors
+
+[R2-145] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Hepatocellular liver injury in hospitalized patients affected by COVID-19: Presence of different risk factors at different time points.
+  ABSTRACT: BACKGROUND: Prevalence and clinical impact of increased liver function tests in patients affected by Coronavirus disease 2019 (COVID-19) is controversial. AIMS: This observational study evaluates the prevalence of transaminases elevation in hospitalized patients affected by COVID-19 and investigates the presence of factors associated with hepatocellular injury and with mortality. METHODS: Data of 292 adult patients with confirmed COVID-19 admitted to the Ente Ospedaliero Cantonale (Switzerland) were retrospectively analyzed. RESULTS: Transaminases were increased in about one-third of patients on hospital admission and two-thirds of patients during the hospital stay. On hospital admission, transaminases were more commonly elevated in younger patients, who also reported elevated C reactive protein and a higher degree of respiratory failure. Independent factors associated with abnormal tran …
+  TYPES: Journal Article;Observational Study
+  MESH: Adult; COVID-19; Carcinoma, Hepatocellular; Hospital Mortality; Hospitalization; Humans; Liver Neoplasms; Retrospective Studies; Risk Factors; SARS-CoV-2; Transaminases
+
+[R2-146] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Electrocardiographic predictors of adverse cardiovascular events in suspected poisoning.
+  ABSTRACT: Poisoning is the second leading cause of injury-related fatality in the USA and the leading cause of cardiac arrest in victims under 40 years of age. The study objective was to define the electrocardiographic (ECG) predictors of adverse cardiovascular events (ACVE) complicating suspected acute poisoning (SAP). This was a case-control study in adults at three tertiary-care hospitals and one regional Poison Control Center. We compared 34 cases of SAP complicated by ACVE to 101 consecutive control patients with uncomplicated SAP. The initial ECG was analyzed for rhythm, intervals, QT dispersion, ischemia, and infarction. ECGs were interpreted by a cardiologist, blinded to study hypothesis and case data. Subjects were 48% male, with mean age 42 +/- 19 years. In addition to clinical suspicion of poisoning in 100% of patients, routine toxicology screens were positive in 77%, most commonly for …
+  TYPES: Journal Article
+  MESH: Adult; Aged; Arrhythmias, Cardiac; Cardiomyopathies; Cardiovascular Diseases; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Electrocardiography; Emergency Medical Services; Female; Heart Arrest; Humans; Long QT Syndrome; Male
+
+[R2-147] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Reliability of history of acetaminophen ingestion in intentional drug overdose patients.
+  ABSTRACT: The objective of this study was to determine the reliability of denial of acetaminophen ingestion in intentional drug overdose patients. All intentional drug overdose patients admitted to an emergency department who were able to provide a history were included. A detailed history was obtained on names, timing and number of medications ingested, and serum acetaminophen was assayed. Multidrug ingestion was defined as the reporting of ≥2 medications. Patients were considered 'reliable' if they reported acetaminophen ingestion and had detectable acetaminophen levels or the other way around. Validity parameters of acetaminophen history were assessed by sensitivity, specificity and positive and negative predictive values. A total of 154 patients were included. History was significantly more reliable in patients who denied ingestion of acetaminophen (n = 107) compared with patients who reported …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Adolescent; Adult; Aged; Aged, 80 and over; Analgesics, Non-Narcotic; Child; Drug Overdose; Emergency Service, Hospital; Female; Humans; Israel; Male; Medical History Taking
+
+[R2-148] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: Acetaminophen and acetylcysteine dose and duration: past, present and future.
+  ABSTRACT: Acetylcysteine has been utilized successfully in the treatment of acetaminophen overdose since the 1970s. Although prospective trials as to efficacy and safety of acetylcysteine were conducted, there were no randomized controlled trials. This commentary addresses the reasons for this, and the background to choice of dose of acetylcysteine utilized in the oral and IV dosing regimens. Nomograms to predict possible hepatotoxicity based upon time of ingestion of acetaminophen were developed from a relatively arbitrary definition of toxicity as an aspartate aminotransferase/alanine aminotransferase (ALT/AST) greater than 1000 IU/L. While these have proved generally useful, patients still continue to develop hepatic damage after acetaminophen overdose, particularly if they present late after ingestion. The optimum management of these patients remains unclear, and one area of uncertainty is the …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Acetylcysteine; Drug Overdose; Humans; Multicenter Studies as Topic; United States; United States Food and Drug Administration
+
+[R2-149] OTC-LIT-Q03-COLD-ALLERGY | 2015 | abstract=yes
+  TITLE: Posterior reversible encephalopathy syndrome with thalamic involvement during vasopressor treatment of vertebrobasilar vasospasm after subarachnoid hemorrhage.
+  ABSTRACT: Hemodynamic augmentation is the primary medical intervention employed to reverse neurological deficits associated with vasospasm and delayed cerebral ischemia following aneurysmal subarachnoid hemorrhage. Failure to improve despite induced hypertension (IH) may raise concern for persistent hypoperfusion and prompt even more aggressive blood pressure augmentation. However, posterior reversible encephalopathy syndrome (PRES) is a hyperperfusion syndrome reported as a rare complication of IH that may confound this picture. We report a case of PRES with prominent thalamic involvement and impaired level of consciousness secondary to blood pressure augmentation for the treatment of symptomatic vertebrobasilar vasospasm. Recognition of this syndrome in distinction to worsening ischemia is particularly critical, as normalization of blood pressure should lead to rapid clinical improvement.
+  TYPES: Case Reports;Journal Article
+  MESH: Humans; Intracranial Aneurysm; Magnetic Resonance Imaging; Male; Middle Aged; Phenylephrine; Posterior Leukoencephalopathy Syndrome; Subarachnoid Hemorrhage; Thalamus; Tomography, X-Ray Computed; Vasoconstrictor Agents; Vasodilator Agents; Vasospasm, Intracranial; Verapamil
+
+[R2-150] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=yes
+  TITLE: The modern pharmacology of paracetamol: therapeutic actions, mechanism of action, metabolism, toxicity and recent pharmacological findings.
+  ABSTRACT: Paracetamol is used worldwide for its analgesic and antipyretic actions. It has a spectrum of action similar to that of NSAIDs and resembles particularly the COX-2 selective inhibitors. Paracetamol is, on average, a weaker analgesic than NSAIDs or COX-2 selective inhibitors but is often preferred because of its better tolerance. Despite the similarities to NSAIDs, the mode of action of paracetamol has been uncertain, but it is now generally accepted that it inhibits COX-1 and COX-2 through metabolism by the peroxidase function of these isoenzymes. This results in inhibition of phenoxyl radical formation from a critical tyrosine residue essential for the cyclooxygenase activity of COX-1 and COX-2 and prostaglandin (PG) synthesis. Paracetamol shows selectivity for inhibition of the synthesis of PGs and related factors when low levels of arachidonic acid and peroxides are available but conv …
+  TYPES: Comparative Study;Journal Article;Review
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Animals; Anti-Inflammatory Agents, Non-Steroidal; Cyclooxygenase 1; Cyclooxygenase 2; Cyclooxygenase Inhibitors; Humans; Inflammation
+
+[R2-151] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=yes
+  TITLE: Danish emergency nurses' attitudes towards self-harm – a cross-sectional study.
+  ABSTRACT: AIM: The aim of this study was to examine Danish emergency nurses' attitudes toward people hospitalized after an acetaminophen poisoning. Furthermore, the study examined the relationship between attitudes and factors such as age, gender, and education on self-harm. METHODS: A cross-sectional design was applied. Nurses from seven emergency departments (EDs) in a region in Denmark were asked to complete the Danish version of Attitudes towards Deliberate Self-Harm Questionnaire (ADSHQ). RESULTS: Of the 254 eligible nurses working in the ED, 122 returned the questionnaires, leaving the response rate at 48%. Results show that the emergency nurses generally held positive attitudes toward patients with acetaminophen poisoning. Nurses with longer ED experience held more positive attitudes, and women scored significantly higher than men on the whole scale. Only 19% of the respondents had received …
+  TYPES: Journal Article
+  MESH: Adult; Attitude of Health Personnel; Cross-Sectional Studies; Denmark; Emergency Nursing; Female; Humans; Male; Middle Aged; Netherlands; Nurse-Patient Relations; Nurses; Self-Injurious Behavior; Surveys and Questionnaires
+
+[R2-152] OTC-LIT-Q03-COLD-ALLERGY | 2022 | abstract=yes
+  TITLE: Interventions associated with brown adipose tissue activation and the impact on energy expenditure and weight loss: A systematic review.
+  ABSTRACT: BACKGROUND: Brown adipose tissue (BAT) plays a role in modulating energy expenditure. People with obesity have been shown to have reduced activation of BAT. Agents such as β-agonists, capsinoids, thyroid hormone, sildenafil, caffeine, or cold exposure may lead to activation of BAT in humans, potentially modulating metabolism to promote weight loss. METHODS: We systematically searched electronic databases for clinical trials testing the effect of these agents and cold exposure on energy expenditure/thermogenesis and the extent to which they may impact weight loss in adults. RESULTS: A total of 695 studies from PubMed, Web of Science, and Medline electronic databases were identified. After the removal of duplicates and further evaluation, 47 clinical trials were analyzed. We observed significant heterogeneity in the duration of interventions and the metrics utilized to estimate thermogenes …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Systematic Review
+  MESH: Adipose Tissue, Brown; Adult; Energy Metabolism; Humans; Obesity; Thermogenesis; Weight Loss
+
+[R2-153] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=yes
+  TITLE: Coffee consumption and disease correlations.
+  ABSTRACT: Coffee is one of the most widely consumed beverages in the world. It has primarily consumed due to its stimulant effect and unique taste since the ancient times. Afterwards, its consumption has been historically associated with a lower risk of some diseases such as type 2 diabetes mellitus, obesity, cardiovascular disease and some type of cancer and thus it has also consumed due to health benefits. It contains many bioactive compounds such as caffeine, chlorogenic acids and diterpenoid alcohols which have so far been associated with many potential health benefits. For example, caffeine reduces risk of developing neurodegenerative disease and chlorogenic acids (CGA) and diterpene alcohols have many health benefits such as antioxidant and chemo-preventive. Coffee also have harmful effects. For example, diterpenoid alcohols increases serum homocysteine and cholesterol levels and thus it has …
+  TYPES: Journal Article;Review
+  MESH: Caffeine; Cardiovascular Diseases; Chlorogenic Acid; Coffee; Diabetes Mellitus, Type 2; Diterpenes; Dose-Response Relationship, Drug; Health Promotion; Humans; Neoplasms; Neurodegenerative Diseases; Obesity
+
+[R2-154] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Awareness, acceptability and application of paracetamol overdose management guidelines in a New Zealand emergency department.
+  ABSTRACT: AIM: To measure emergency physicians' awareness, acceptance, access to and application of the Australasian Paracetamol Overdose Guidelines. METHODS: A retrospective record review of 100 consecutive presentations with the complaint of paracetamol overdose to the Dunedin Hospital Emergency Department, New Zealand, from 1 December 2011 to 31 December 2012, with: comparison of management to that recommended by the Guidelines, analysis of access to both an Internet poisons information resource and the New Zealand National Poisons Centre, survey of clinical staff opinion of the Guidelines and, comparison of actual and recommended management costs at commercial laboratory rates and with application of the WHO-CHOICE unit cost estimates for service delivery. RESULTS: Response rate to the survey was 92.9% with 96.2% of responders aware of or accessing the Guidelines when managing paracetamol over …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Adolescent; Adult; Aged; Analgesics, Non-Narcotic; Attitude of Health Personnel; Child; Child, Preschool; Clinical Competence; Drug Overdose; Emergency Service, Hospital; Female; Guideline Adherence; Health Care Surveys
+
+[R2-155] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Regular use of paracetamol and risk of liver cancer: a prospective cohort study.
+  ABSTRACT: BACKGROUND: Paracetamol induces hepatotoxicity and subsequent liver injury, which may increase the risk of liver cancer, but epidemiological evidence remains unclear. We conducted this study to evaluate the association between paracetamol use and the risk of liver cancer. METHODS: This prospective study included 464,244 participants free of cancer diagnosis from the UK Biobank. Incident liver cancer was identified through linkage to cancer and death registries and the National Health Service Central Register using the International Classification of Diseases (ICD)-10 codes (C22). An overlap-weighted Cox proportional hazards model was utilized to calculate the hazard ratio (HR) and 95% confidence interval (CI) for the risk of liver cancer associated with paracetamol use. The number needed to harm (NNH) was calculated at 10 years of follow-up. RESULTS: During a median of 12.6 years of foll …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Humans; Liver Neoplasms; Prospective Studies; Risk Factors; State Medicine
+
+[R2-156] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: Mechanistic biomarkers in acute liver injury: are we there yet?
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Editorial
+  MESH: Acetaminophen; Chemical and Drug Induced Liver Injury; Female; HMGB1 Protein; Humans; Keratin-18; Male
+
+[R2-157] OTC-LIT-Q03-COLD-ALLERGY | 2010 | abstract=yes
+  TITLE: Coffee, nutritional status, and renal artery resistive index.
+  ABSTRACT: BACKGROUND: The relationship between nutrition and atherosclerosis is known, even dissociated from protein malnutrition. Cardiovascular impact of several nutrients is known; among them the action of coffee is still debated and cardiovascular effect of caffeine has been investigated without definite results. OBJECTIVE: The aim of this study is to investigate whether coffee habits, and/or quantity of coffee consumption, have any relationship with renal resistive index (RRI), a hallmark of arterial stiffness (AS). The relationship of AS with nutritional status assessed by body composition and serum albumin, insulin resistance (assessed by HOMA), and renal function assessed by glomerular filtration rate (GFR) is concurrently investigated. METHODS: This study was done with 221 consecutive patients, without diabetes, cancer, liver, renal, and heart disease, referred for clinical noninvasive as …
+  TYPES: Journal Article
+  MESH: Aged; Body Composition; Coffee; Elasticity; Electric Impedance; Feeding Behavior; Female; Glomerular Filtration Rate; Hemorheology; Humans; Insulin Resistance; Male; Middle Aged; Nutritional Status
+
+[R2-158] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=no
+  TITLE: Comparison of Prothrombin Time and Aspartate Aminotransferase in Predicting Hepatotoxicity After Acetaminophen Overdose: a Response.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Aspartate Aminotransferases; Chemical and Drug Induced Liver Injury; Drug Overdose; Humans; Prothrombin Time
+
+[R2-159] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=yes
+  TITLE: Modulation of human embryonic stem cell-derived cardiomyocyte growth: a testbed for studying human cardiac hypertrophy?
+  ABSTRACT: Human embryonic stem cell-derived cardiomyocytes (hESC-CM) are being developed for tissue repair and as a model system for cardiac physiology and pathophysiology. However, the signaling requirements of their growth have not yet been fully characterized. We showed that hESC-CM retain their capacity for increase in size in long-term culture. Exposing hESC-CM to hypertrophic stimuli such as equiaxial cyclic stretch, angiotensin II, and phenylephrine (PE) increased cell size and volume, percentage of hESC-CM with organized sarcomeres, levels of ANF, and cytoskeletal assembly. PE effects on cell size were separable from those on cell cycle. Changes in cell size by PE were completely inhibited by p38-MAPK, calcineurin/FKBP, and mTOR blockers. p38-MAPK and calcineurin were also implicated in basal cell growth. Inhibitors of ERK, JNK, and CaMK II partially reduced PE effects; PKG or GSK3β inhibi …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Angiotensin II; Cardiomegaly; Cell Cycle; Cell Differentiation; Cell Line; Cell Proliferation; Cell Size; Cells, Cultured; Embryonic Stem Cells; Gene Expression Regulation; Humans; MAP Kinase Kinase 3; Myocytes, Cardiac; Phenylephrine
+
+[R2-160] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Non-canonical BIM-regulated energy metabolism determines drug-induced liver necrosis.
+  ABSTRACT: Paracetamol (acetaminophen, APAP) overdose severely damages mitochondria and triggers several apoptotic processes in hepatocytes, but the final outcome is fulminant necrotic cell death, resulting in acute liver failure and mortality. Here, we studied this switch of cell death modes and demonstrate a non-canonical role of the apoptosis-regulating BCL-2 homolog BIM/Bcl2l11 in promoting necrosis by regulating cellular bioenergetics. BIM deficiency enhanced total ATP production and shifted the bioenergetic profile towards glycolysis, resulting in persistent protection from APAP-induced liver injury. Modulation of glucose levels and deletion of Mitofusins confirmed that severe APAP toxicity occurs only in cells dependent on oxidative phosphorylation. Glycolytic hepatocytes maintained elevated ATP levels and reduced ROS, which enabled lysosomal recycling of damaged mitochondria by mitophagy. T …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adenosine Triphosphate; Bcl-2-Like Protein 11; Chemical and Drug Induced Liver Injury; Energy Metabolism; Hepatocytes; Humans; Liver; Mitochondria, Liver; Necrosis; Oxidative Stress

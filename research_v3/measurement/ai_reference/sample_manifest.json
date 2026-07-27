@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-27T02:08:36.586436+00:00",
+  "purpose_ko": "P3-A 독립 AI 참조표준용 층화 무작위 표본",
+  "frame_source": "research_v3/otc/literature/screening/checkpoints.jsonl",
+  "frame_source_sha256": "3ac843001562508f981976fefcc99866d474204477248bb3f058ae2822590910",
+  "corpus_source": "research_v3/otc/literature/evidence_map.csv",
+  "corpus_source_sha256": "5b0bcc9f47a98a4caa7a24599962ac5d5bcc372fd8edb29bfd67a4b1af78786c",
+  "stratification_variable_ko": "P2 근거 형태(evidence_basis) × P2 판정(decision)",
+  "sample_size": 300,
+  "sample_seed": 20260727,
+  "stratum_floor": 20,
+  "allocation_rule_ko": "층별 최소 20건(프레임이 작으면 전수) 배정 후 잔여를 프레임 크기 비례 배분",
+  "corpus_rows": 5724,
+  "strata": [
+    {
+      "stratum": "title_abstract|deprioritize",
+      "frame_size": 3339,
+      "sample_size": 127,
+      "weight": 26.291338582677167,
+      "sampling_fraction": 0.03803533992213237
+    },
+    {
+      "stratum": "title_abstract|retain",
+      "frame_size": 2043,
+      "sample_size": 85,
+      "weight": 24.03529411764706,
+      "sampling_fraction": 0.041605482134116495
+    },
+    {
+      "stratum": "title_abstract|uncertain",
+      "frame_size": 42,
+      "sample_size": 21,
+      "weight": 2.0,
+      "sampling_fraction": 0.5
+    },
+    {
+      "stratum": "title_only|deprioritize",
+      "frame_size": 84,
+      "sample_size": 22,
+      "weight": 3.8181818181818183,
+      "sampling_fraction": 0.2619047619047619
+    },
+    {
+      "stratum": "title_only|retain",
+      "frame_size": 197,
+      "sample_size": 26,
+      "weight": 7.576923076923077,
+      "sampling_fraction": 0.1319796954314721
+    },
+    {
+      "stratum": "title_only|uncertain",
+      "frame_size": 19,
+      "sample_size": 19,
+      "weight": 1.0,
+      "sampling_fraction": 1.0
+    }
+  ],
+  "blind_sample_path": "research_v3/measurement/ai_reference/blind_sample.jsonl",
+  "blind_sample_sha256": "119294a23e2720f5bdcd06700d59a9e3d1639b752d5d644a326f745ead152291",
+  "blind_sample_excluded_fields": [
+    "decision",
+    "confidence",
+    "reason_codes",
+    "batch_id",
+    "screener",
+    "status"
+  ],
+  "round_seeds": {
+    "1": 20260727001,
+    "2": 20260727002,
+    "3": 20260727003
+  }
+}

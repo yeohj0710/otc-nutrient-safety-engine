@@ -1,0 +1,272 @@
+===== AI REFERENCE ROUND 1 / CHUNK 7 (40 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R1-241] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: Protective effect of fucoidan against acetaminophen-induced liver injury.
+  ABSTRACT: Fucoidan, a sulfated polysaccharide extracted from various brown seaweeds, possesses a wide range of pharmacological properties. In this study, we investigated the protective effect of fucoidan on acetaminophen-induced acute liver injury in rats. Liver injury was induced by administration of acetaminophen (800 mg/kg, i.p.) and fucoidan was administered (100 mg kg, p.o.) 2 h before and after acetaminophen administration. After 24 h, co-treatment of fucoidan ameliorated liver damage and cell death induced by acetaminophen. Acetaminophen induced the overexpression of CYP2E1, one of the metabolizing enzymes of acetaminophen, but cotreatment with fucoidan suppressed its increased expression of CYP2E1. Fucoidan also reduced the hepatic apoptosis induced by acetaminophen exposure as shown in the protein expression of Bax, Bcl-2, and cleaved caspase-3. The anti-oxidative effect of fucoidan was o …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Animals; Anti-Inflammatory Agents; Antioxidants; Apoptosis; Apoptosis Regulatory Proteins; Cell Line; Chemical and Drug Induced Liver Injury; Cytochrome P-450 CYP2E1; Cytoprotection; Disease Models, Animal; Dose-Response Relationship, Drug; Hepatocytes; Humans
+
+[R1-242] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=yes
+  TITLE: Benzyl alcohol protects against acetaminophen hepatotoxicity by inhibiting cytochrome P450 enzymes but causes mitochondrial dysfunction and cell death at higher doses.
+  ABSTRACT: Acetaminophen (APAP) hepatotoxicity is a serious public health problem in western countries. Current treatment options for APAP poisoning are limited and novel therapeutic intervention strategies are needed. A recent publication suggested that benzyl alcohol (BA) protects against APAP hepatotoxicity and could serve as a promising antidote for APAP poisoning. To assess the protective mechanisms of BA, C56Bl/6J mice were treated with 400 mg/kg APAP and/or 270 mg/kg BA. APAP alone caused extensive liver injury at 6 h and 24 h post-APAP. This injury was attenuated by BA co-treatment. Assessment of protein adduct formation demonstrated that BA inhibits APAP metabolic activation. In support of this, in vitro experiments also showed that BA dose-dependently inhibits cytochrome P450 activities. Correlating with the hepatoprotection of BA, APAP-induced oxidant stress and mitochondrial dysfunction …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Anesthetics, Local; Animals; Benzyl Alcohol; Chemical and Drug Induced Liver Injury; Cytochrome P-450 Enzyme System; Gene Expression Regulation, Enzymologic; Hepatocytes; Humans; Male; Mice; Mice, Inbred C57BL; Mitochondria, Liver
+
+[R1-243] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Transcutaneous spinal cord stimulation and its impact on cardiovascular autonomic regulation after spinal cord injury.
+  ABSTRACT: Individuals with spinal cord injury (SCI) have significant dysfunction in cardiovascular autonomic regulation. Although recent findings postulate that spinal cord stimulation improves autonomic regulation, limited scope of past methods have tested only above level sympathetic activation, leaving significant uncertainty. To identify whether transcutaneous spinal cord stimulation improves cardiovascular autonomic regulation, two pairs of well-matched individuals with and without high thoracic, complete SCI were recruited. Baseline autonomic regulation was characterized with multiple tests of sympathoinhibition and above/below injury level sympathoexcitation. At three subsequent visits, testing was repeated with the addition submotor threshold transcutaneous spinal cord stimulation at three previously advocated frequencies. Uninjured controls demonstrated no autonomic deficits at baseline a …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Autonomic Dysreflexia; Blood Pressure; Cardiovascular System; Humans; Spinal Cord; Spinal Cord Injuries; Spinal Cord Stimulation
+
+[R1-244] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: Acetaminophen and acetylcysteine dose and duration: past, present and future.
+  ABSTRACT: Acetylcysteine has been utilized successfully in the treatment of acetaminophen overdose since the 1970s. Although prospective trials as to efficacy and safety of acetylcysteine were conducted, there were no randomized controlled trials. This commentary addresses the reasons for this, and the background to choice of dose of acetylcysteine utilized in the oral and IV dosing regimens. Nomograms to predict possible hepatotoxicity based upon time of ingestion of acetaminophen were developed from a relatively arbitrary definition of toxicity as an aspartate aminotransferase/alanine aminotransferase (ALT/AST) greater than 1000 IU/L. While these have proved generally useful, patients still continue to develop hepatic damage after acetaminophen overdose, particularly if they present late after ingestion. The optimum management of these patients remains unclear, and one area of uncertainty is the …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Acetylcysteine; Drug Overdose; Humans; Multicenter Studies as Topic; United States; United States Food and Drug Administration
+
+[R1-245] OTC-LIT-Q02-NSAID | 2014 | abstract=yes
+  TITLE: Acute kidney injury is independently associated with higher mortality after cardiac surgery.
+  ABSTRACT: OBJECTIVES: To investigate the incidence of acute kidney injury after cardiac surgery and its association with mortality in a patient population receiving ibuprofen and gentamicin perioperatively. DESIGN: Retrospective study with Cox regression analysis to control for possible preoperative, intraoperative and postoperative confounders. SETTING: University hospital-based single-center study. PARTICIPANTS: All patients who underwent coronary artery bypass grafting ± valve surgery during 2012. INTERVENTIONS: None. MEASUREMENT AND MAIN RESULTS: Acute surgery within 24 hours of coronary angiography, previous nephrectomy, preoperative sCr >2.26 mg/dL and selective cerebral perfusion during cardiopulmonary bypass were used as exclusion criteria. Acute kidney injury was defined, using the Acute Kidney Injury Network (AKIN) criteria. Six hundred eight patients were included in the study. Mean age …
+  TYPES: Journal Article
+  MESH: Acute Kidney Injury; Aged; Analgesics, Non-Narcotic; Analysis of Variance; Anti-Bacterial Agents; Cardiac Surgical Procedures; Cohort Studies; Female; Gentamicins; Humans; Ibuprofen; Incidence; Male; Postoperative Complications
+
+[R1-246] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: Pre-weaning growth hormone treatment reverses hypertension and endothelial dysfunction in adult male offspring of mothers undernourished during pregnancy.
+  ABSTRACT: Maternal undernutrition results in elevated blood pressure (BP) and endothelial dysfunction in adult offspring. However, few studies have investigated interventions during early life to ameliorate the programming of hypertension and vascular disorders. We have utilised a model of maternal undernutrition to examine the effects of pre-weaning growth hormone (GH) treatment on BP and vascular function in adulthood. Female Sprague-Dawley rats were fed either a standard control diet (CON) or 50% of CON intake throughout pregnancy (UN). From neonatal day 3 until weaning (day 21), CON and UN pups received either saline (CON-S, UN-S) or GH (2.5 ug/g/day)(CON-GH, UN-GH). All dams were fed ad libitum throughout lactation. Male offspring were fed a standard diet until the end of the study. Systolic blood pressure (SBP) was measured at day 150 by tail cuff plethysmography. At day 160, intact mesenter …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetylcholine; Adult; Animals; Apamin; Blood Pressure; Carbenoxolone; Female; Growth Hormone; Humans; Hypertension; Male; Malnutrition; Mesenteric Arteries; NG-Nitroarginine Methyl Ester
+
+[R1-247] OTC-LIT-Q02-NSAID | 2013 | abstract=yes
+  TITLE: Effectiveness and safety of indomethacin versus ibuprofen for the treatment of patent ductus arteriosus in preterm infants.
+  ABSTRACT: OBJECTIVE: To compare the incidence of medical closure of patent ductus arteriosus (PDA) and adverse events (acute renal dysfunction, necrotizing enterocolitis, spontaneous intestinal perforation, and gastrointestinal bleeding) between preterm infants who received indomethacin and ibuprofen for the treatment of PDA. STUDY DESIGN: A retrospective comparative effectiveness evaluation study was conducted on preterm infants (≤32 weeks) who received indomethacin or ibuprofen for treatment of symptomatic PDA. RESULTS: Of the 124 eligible infants, 54 received indomethacin and 70 received ibuprofen. The overall incidence of medical PDA closure with indomethacin was 37/54 (68.5%) as compared with 42/70 (60%) in the ibuprofen group (p = 0.32). The proportion of infants with surgical PDA ligation was similar between the two groups (18.5% in both the groups). There was no difference in the incidence …
+  TYPES: Comparative Study;Journal Article
+  MESH: Anti-Inflammatory Agents, Non-Steroidal; Ductus Arteriosus, Patent; Enterocolitis, Necrotizing; Female; Gastrointestinal Hemorrhage; Humans; Ibuprofen; Indomethacin; Infant, Newborn; Infant, Premature; Infant, Premature, Diseases; Intestinal Perforation; Male; Renal Insufficiency
+
+[R1-248] OTC-LIT-Q02-NSAID | 2012 | abstract=yes
+  TITLE: Nocturnal leg cramps.
+  ABSTRACT: Up to 60 percent of adults report that they have had nocturnal leg cramps. The recurrent, painful tightening usually occurs in the calf muscles and can cause severe insomnia. The exact mechanism is unknown, but the cramps are probably caused by muscle fatigue and nerve dysfunction rather than electrolyte or other abnormalities. Nocturnal leg cramps are associated with vascular disease, lumbar canal stenosis, cirrhosis, hemodialysis, pregnancy, and other medical conditions. Medications that are strongly associated with leg cramps include intravenous iron sucrose, conjugated estrogens, raloxifene, naproxen, and teriparatide. A history and physical examination are usually sufficient to differentiate nocturnal leg cramps from other conditions, such as restless legs syndrome, claudication, myositis, and peripheral neuropathy. Laboratory evaluation and specialized testing usually are unnecessa …
+  TYPES: Journal Article;Review
+  MESH: Adult; Diagnosis, Differential; Humans; Restless Legs Syndrome; Sleep-Wake Transition Disorders
+
+[R1-249] OTC-LIT-Q04-DIGESTIVE | 2006 | abstract=yes
+  TITLE: [Ursodeoxycholic acid, S-adenosyl-L-methionine and their combinations in the treatment of gestational intrahepatic cholestasis (ICP)].
+  ABSTRACT: UNLABELLED: SEATING: Department of Obstet. Gynecol., 2nd Medical School Charles University and Teaching Hospital Motol, Prague, Institute of Haematology and Blood Transfusion Prague, Department of Clin. Bioch. General Teaching Hospital and 1st Medical School, Charles University Prague, Czech Republic. AIM OF THE STUDY: To compare the efficacy of the monotherapy with ursodeoxycholic acid and S- adenosyl-L-methione with combined effect of both drugs in the treatment in pregnant women with intrahepatic cholestasis of pregnancy. METHODOLOGY: All women with singleton pregnancy at <36 weeks of gestation with moderate or severe form of ICP during January 1999 to June 2005 were enrolled. All were randomly assigned oral ursodeoxycholic acid (UDCA) 3 x 250 mg daily or 500mg S-adenosyl-L-methione (SAMe) twice daily in slow running infusion for twelve days ongoing oral 500 mg twice daily until deliv …
+  TYPES: Comparative Study;English Abstract;Journal Article;Randomized Controlled Trial;Research Support, Non-U.S. Gov't
+  MESH: Adult; Cholestasis, Intrahepatic; Drug Therapy, Combination; Female; Humans; Pregnancy; Pregnancy Complications; Pregnancy Outcome; S-Adenosylmethionine; Ursodeoxycholic Acid
+
+[R1-250] OTC-LIT-Q05-TOPICAL | 2014 | abstract=yes
+  TITLE: Medication management of irritable bowel syndrome.
+  ABSTRACT: BACKGROUND: Irritable bowel syndrome (IBS) is a complex syndrome that is difficult to manage. Here we present the evidence supporting medication treatments for specific IBS symptoms, discuss evidence-based management of IBS with medications including dose regimens and adverse effects and review progress on research for new IBS treatments. SUMMARY: Currently, there is evidence to support improvements in specific IBS symptoms following treatment with loperamide, psyllium, bran, lubiprostone, linaclotide, amitriptyline, trimipramine, desipramine, citalopram, fluoxetine, paroxetine, dicyclomine, peppermint oil, rifaximin, ketotifen, pregabalin, gabapentin and octreotide and there are many new medications being investigated for the treatment of IBS. Key Message: Of the medications with demonstrated improvements for IBS symptoms, rifaximin, lubiprostone, linaclotide, fiber supplementation and …
+  TYPES: Journal Article;Review
+  MESH: Drugs, Investigational; Evidence-Based Medicine; Humans; Irritable Bowel Syndrome
+
+[R1-251] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Comment on "Cyclophilin A is a damage-associated molecular pattern molecule that mediates acetaminophen-induced liver injury".
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Animals; Chemical and Drug Induced Liver Injury; Cyclophilin A; Humans
+
+[R1-252] OTC-LIT-Q01-ACETAMINOPHEN | 2023 | abstract=yes
+  TITLE: Large paracetamol overdose-Higher dose acetylcysteine is required.
+  ABSTRACT: Paracetamol poisoning continues to be a worldwide problem and, despite the availability of an effective antidote, acetylcysteine (NAC), the optimal way to use this antidote, particularly following very large doses of paracetamol, has not been established. Recent case series have shown an increased toxicity from high doses of paracetamol, even in those receiving prompt NAC therapy, particularly in patients above the 300 mg/L nomogram treatment line. Clinical trial evidence supporting shorter NAC dosing now allows the possibility for intensifying treatment without the risk of very high rates of ADRs. New biomarkers also show the possibility of early identification of patients at risk of liver injury who might also benefit from increased intensity treatment. This article discusses these data and proposes a logical therapy for increasing NAC dosing which now requires clinical trial testing.
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Chemical and Drug Induced Liver Injury; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Humans
+
+[R1-253] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Developing consumer-centered, nonprescription drug labeling a study in acetaminophen.
+  ABSTRACT: BACKGROUND: In the U.S., acetaminophen overdose has surpassed viral hepatitis as the leading cause of acute liver failure, and misuse contributes to more than 30,000 hospitalizations annually. Half to two thirds of acetaminophen overdoses are unintentional, suggesting the root cause is likely poor understanding of medication labeling or failure to recognize the consequences of exceeding the recommended maximum daily dosage. PURPOSE: Elicit subject feedback about active ingredient and dosing information on over-the-counter (OTC) acetaminophen and elicit feedback on proposed plain-language text and icons. METHODS: Six focus groups, preceded by individual interviews, were conducted in April 2010 among 45 adults in two cities from two clinics and an adult basic education center. The individual interviews evaluated knowledge of OTC pain relievers, attention to product label information and li …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Aged; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Community Participation; Drug Labeling; Drug Overdose; Female; Focus Groups; Health Knowledge, Attitudes, Practice; Health Literacy; Humans; Male
+
+[R1-254] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Assessment of the clinical use of intravenous and oral N-acetylcysteine in the treatment of acute acetaminophen poisoning in children: a retrospective review.
+  ABSTRACT: BACKGROUND: N-acetylcysteine (NAC) is the most effective therapy for acetaminophen (APAP) toxicity and is currently available for oral and intravenous (IV) administration. Although both routes are effective, use of the IV formulation has been increasing since becoming available in the United States in 2004, raising questions about cost/benefit comparisons between the 2 formulations. Decreased length of treatment and hospital stay have been used to justify the use of IV NAC; however, some patients may receive extended therapy of either NAC regimen. OBJECTIVE: This retrospective review assessed the clinical use of oral and IV NAC in pediatric patients with APAP intoxication from June 1, 2004 through May 31, 2008. METHODS: Electronic medical charts for patients aged ≤21 years were identified with International Classification of Diseases, Ninth Revision (ICD-9) codes for APAP overdose. Descr …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Acetylcysteine; Acute Disease; Administration, Oral; Child; Clinical Trials as Topic; Databases, Factual; Drug Utilization Review; Humans; Injections, Intravenous; Medical Records; Poisoning; Retrospective Studies; Time Factors
+
+[R1-255] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=no
+  TITLE: Protection against acetaminophen-induced liver injury with MG53: Muscle-liver axis and necroptosis.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter;Research Support, N.I.H., Extramural
+  MESH: Acetaminophen; Chemical and Drug Induced Liver Injury; Chemical and Drug Induced Liver Injury, Chronic; Humans; Liver; Muscles; Necroptosis
+
+[R1-256] OTC-LIT-Q03-COLD-ALLERGY | 2015 | abstract=yes
+  TITLE: Crossover study of the effect of coffee consumption on simulated laparoscopy skills.
+  ABSTRACT: AIMS: To observe the effect of caffeine on performing laparoscopic skills in novices in a simulated setting. BACKGROUND: Coffee is consumed almost ubiquitously by surgeons not just as a stimulant but also socially in the well-rested individual. It's therefore worth investigating its potentially negative effect on performance of surgical skills as it is known that coffee has psychomotor effects. METHODS: This is a single-blind crossover study in which 31 novices were tested under three different conditions: decaffeinated, 100 mg caffeine and 200 mg caffeine. Candidates were asked to perform 3 repetitions of task 3, 6, 7 and 8 using the Lap Mentor™ (Simbionix(®)). Outcomes measured were completion time, accuracy, number of movements and total path length. The candidates were crossed over to the other caffeine doses on a different day. RESULTS: 20 candidates completed the study, mean age 21 …
+  TYPES: Journal Article
+  MESH: Adult; Caffeine; Central Nervous System Stimulants; Clinical Competence; Coffee; Cross-Over Studies; Dose-Response Relationship, Drug; Female; Humans; Laparoscopy; Male; Psychomotor Performance; Single-Blind Method
+
+[R1-257] OTC-LIT-Q05-TOPICAL | 2004 | abstract=yes
+  TITLE: Endocrine activity and developmental toxicity of cosmetic UV filters--an update.
+  ABSTRACT: UV filters represent a new class of endocrine active chemicals. In vitro, 8/9 chemicals showed estrogenic (MCF-7 cells), and 2/9 antiandrogenic activity (MDA-kb2 cells). Six/nine filters (benzophenone (Bp)-1, Bp-2, Bp-3, 3-benzylidene camphor (3-BC), 4-methylbenzylidene camphor (4-MBC), octyl-methoxycinnamate (OMC)) increased uterine weight in immature rats. 3-Benzylidene camphor and 4-MBC displaced 16alpha125I-estradiol from human estrogen receptor (ER)beta, not ERalpha. Developmental toxicity of 4-MBC (0.7-47 mg/kg body weight/day) and 3-BC (0.24-7 mg/kg), administered in chow was investigated in Long Evans (LE) rats. Weight gain of pregnant rats was reduced only by 3-BC, early postnatal survival rate and thymus weight by both compounds at higher doses. 4-Methylbenzylidene camphor and 3-BC delayed male puberty, and dose-dependently affected reproductive organ weights of adult male and …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Animals; Cosmetics; Endocrine Glands; Female; Fetus; Filtration; Gene Expression Regulation; Humans; Male; Rats; Rats, Long-Evans; Receptors, Estrogen; Sunscreening Agents; Ultraviolet Rays
+
+[R1-258] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: A retrospective study of traffic offenses associated with driving under the influence of drugs in China.
+  ABSTRACT: OBJECTIVE: This study aimed to investigate the prevalence and pattern of traffic offenses associated with driving under the influence of drugs (DUID) in 31 provinces of mainland China. METHODS: Traffic offenses were extracted from the nationally representative court file disclosure website. Drivers convicted of traffic offenses associated with DUID were included. The monthly percentage change (MPC) in rates was estimated by fitting negative binomial regression models to assess the time trends. Moran's I was used to determine the correlations of DUID-related rates among surrounding provinces. RESULTS: In total, 896 individuals convicted of DUID offenses were identified (April 2007 to March 2022). Of these, 769 individuals were involved in traffic crashes, and they killed 629 people. Regarding the types of drugs, 638 used amphetamine-type stimulants (ATS; methamphetamine, 3,4-methylenediox …
+  TYPES: Journal Article
+  MESH: Accidents, Traffic; Amphetamine; Analgesics, Opioid; Automobile Driving; Driving Under the Influence; Humans; Ketamine; Retrospective Studies; Substance Abuse Detection; Substance-Related Disorders
+
+[R1-259] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Influences of different vasopressors on stroke volume variation and pulse pressure variation.
+  ABSTRACT: Pulse pressure variation (PPV) and stroke volume variation (SVV) during mechanical ventilation have been shown to be effective parameters to predict preload responsiveness. Although induced hypertension decreases PPV and SVV, the influences of different vasopressors on PPV and SVV are unknown. 94 patients undergoing elective otologic surgery were randomly divided into three groups: Group P (patients were given phenylephrine), Group D (patients were given dopamine), Group E (patients were given ephedrine). When surgery was ongoing and the circulation state was stable, patients were given the vasopressor to increase the systolic arterial pressure (SAP) to the pre-calculated levels: low level, 10 % < ΔSAP ≤ 20 %; medium level, 20 % < ΔSAP ≤ 30 %; high level, 30 % < ΔSAP ≤ 40 %. When invasive arterial pressure reached the target value, PPV, SVV and other parameters were recorded. Dopamine de …
+  TYPES: Comparative Study;Journal Article;Randomized Controlled Trial
+  MESH: Adolescent; Adult; Blood Pressure; Dopamine; Dose-Response Relationship, Drug; Ephedrine; Female; Humans; Male; Middle Aged; Monitoring, Intraoperative; Phenylephrine; Reproducibility of Results; Sensitivity and Specificity
+
+[R1-260] OTC-LIT-Q05-TOPICAL | 2002 | abstract=yes
+  TITLE: [Cosmetovigilance: a French pharmacovigilance system for cosmetics developed by the French health products safety agency. A proposal for the future].
+  ABSTRACT: Since 1999, the French health products safety agency (Afssaps) has been responsible for the safety of cosmetic products. Attempts are underway to set up a French post-marketing surveillance system for cosmetics and a working group specially in charge of setting this up has been created. The "cosmetovigilance" system has the three following objectives: public health concerns about "at risk" ingredients in cosmetic products: animal derivatives, glycol ethers, aluminium, camphor, etc; notification of adverse reactions: creation of standard reporting forms of adverse reactions; follow-up of laboratory quality controls: emergency and routine controls. The "cosmetovigilance" system is not only restricted to the study of adverse reactions occurring with cosmetic products. It will also address public health issues about ingredients and will rely on laboratory controls. The aim of the "cosmetovig …
+  TYPES: English Abstract;Journal Article
+  MESH: Cosmetics; France; Government Agencies; Humans; Product Surveillance, Postmarketing
+
+[R1-261] OTC-LIT-Q03-COLD-ALLERGY | 2022 | abstract=yes
+  TITLE: Interventions associated with brown adipose tissue activation and the impact on energy expenditure and weight loss: A systematic review.
+  ABSTRACT: BACKGROUND: Brown adipose tissue (BAT) plays a role in modulating energy expenditure. People with obesity have been shown to have reduced activation of BAT. Agents such as β-agonists, capsinoids, thyroid hormone, sildenafil, caffeine, or cold exposure may lead to activation of BAT in humans, potentially modulating metabolism to promote weight loss. METHODS: We systematically searched electronic databases for clinical trials testing the effect of these agents and cold exposure on energy expenditure/thermogenesis and the extent to which they may impact weight loss in adults. RESULTS: A total of 695 studies from PubMed, Web of Science, and Medline electronic databases were identified. After the removal of duplicates and further evaluation, 47 clinical trials were analyzed. We observed significant heterogeneity in the duration of interventions and the metrics utilized to estimate thermogenes …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Systematic Review
+  MESH: Adipose Tissue, Brown; Adult; Energy Metabolism; Humans; Obesity; Thermogenesis; Weight Loss
+
+[R1-262] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=no
+  TITLE: Emerging efforts for discovering new biomarkers of liver disease and hepatotoxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acetaminophen; Biomarkers; Chemical and Drug Induced Liver Injury; Humans; Liver Diseases; Metabolomics
+
+[R1-263] OTC-LIT-Q01-ACETAMINOPHEN | 2017 | abstract=no
+  TITLE: Response to Consumer Healthcare Products Association letter to "Trend in rates of acetaminophen-related adverse events in the United States".
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Drug Overdose; Humans; United States
+
+[R1-264] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=no
+  TITLE: "Massive acetaminophen ingestion with early metabolic acidosis and coma: treatment with iv nac and continuous venovenous hemodiafiltration" by Wiegand et al., Clin Toxicol (Phila) 48:156-159.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Acidosis; Analgesics, Non-Narcotic; Coma; Drug Overdose; Half-Life; Hemodiafiltration; Humans
+
+[R1-265] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: The efficacy and safety of acetaminophen use following liver resection: a systematic review.
+  ABSTRACT: PURPOSE: Acetaminophen is commonly used for post-operative analgesia following liver resection. It is metabolised by the liver and appropriate administration and dosage is in question in in patients undergoing hepatectomy. A systematic review was conducted to investigate safety and efficacy of acetaminophen use. METHODS: MEDLINE, EMBASE, PubMed, Web of Science, and Google Scholar were searched for instances of toxicity, liver dysfunction, and analgesic efficacy in patients undergoing hepatectomy. RESULTS: Two randomised controlled trials and four prospective observational studies were included. The studies were of moderate quality. Four studies investigated post-operative levels of acetaminophen and its urinary metabolites, finding no evidence of toxicity. One study noted that glutathione levels decreased but not to clinically deficient levels. Administration of acetaminophen plus morphi …
+  TYPES: Journal Article;Systematic Review
+  MESH: Acetaminophen; Adult; Analgesics, Opioid; Hepatectomy; Humans; Liver; Morphine; Observational Studies as Topic; Pain; Postoperative Pain
+
+[R1-266] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: MARSIPAN and the deadly triad: management of malnourished patients.
+  ABSTRACT: A 44-year-old gentleman was admitted with a deliberate overdose of olanzapine, paracetamol and bisoprolol. On admission, he was hypothermic, bradycardic and hypotensive and his body mass index was 12 kg/m(2). Problems identified on admission included polypharmacy overdose, risk of refeeding syndrome and sepsis. Despite careful reintroduction of feeding and generous electrolyte replacement, he developed persistent hypophosphataemia, hypokalaemia and a marked transaminitis. Several days later, he was noted to be hypothermic and hypoglycaemic. No increase in white cell count or C reactive protein was noted and his clinical appearance was otherwise unremarkable. Nevertheless, given these signs he was started on broad spectrum antibiotics for possible sepsis, which was subsequently confirmed on chest radiograph in addition to a further finding of likely aspergilloma on a later chest CT. His m …
+  TYPES: Case Reports;Journal Article
+  MESH: Adult; Anorexia Nervosa; Humans; Male; Malnutrition
+
+[R1-267] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Non-canonical BIM-regulated energy metabolism determines drug-induced liver necrosis.
+  ABSTRACT: Paracetamol (acetaminophen, APAP) overdose severely damages mitochondria and triggers several apoptotic processes in hepatocytes, but the final outcome is fulminant necrotic cell death, resulting in acute liver failure and mortality. Here, we studied this switch of cell death modes and demonstrate a non-canonical role of the apoptosis-regulating BCL-2 homolog BIM/Bcl2l11 in promoting necrosis by regulating cellular bioenergetics. BIM deficiency enhanced total ATP production and shifted the bioenergetic profile towards glycolysis, resulting in persistent protection from APAP-induced liver injury. Modulation of glucose levels and deletion of Mitofusins confirmed that severe APAP toxicity occurs only in cells dependent on oxidative phosphorylation. Glycolytic hepatocytes maintained elevated ATP levels and reduced ROS, which enabled lysosomal recycling of damaged mitochondria by mitophagy. T …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adenosine Triphosphate; Bcl-2-Like Protein 11; Chemical and Drug Induced Liver Injury; Energy Metabolism; Hepatocytes; Humans; Liver; Mitochondria, Liver; Necrosis; Oxidative Stress
+
+[R1-268] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: No need to change treatment of early presenting patients with acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Antioxidants; Humans
+
+[R1-269] OTC-LIT-Q02-NSAID | 2026 | abstract=yes
+  TITLE: Differential Analysis of Neonatal Adverse Drug Events from Intrauterine and Extrauterine Exposure: Insights into Administration Routes Using the FAERS Database.
+  ABSTRACT: OBJECTIVE: This study aimed to systematically characterize the features and drug distribution of neonatal adverse drug reactions using data from the FAERS, with a focus on exposure-specific patterns and stratified analyses by sex and clinical outcomes. METHODS: Reports submitted to FAERS from the first quarter of 2004 to the fourth quarter of 2024 were utilized. Patients experienced the ADR at an age of no more than 28 days. Four quantitative disproportionality analysis methods, including ROR, PRR, BCPNN, and MGPS, were used to detect signals of adverse drug events. RESULTS: A total of 15,456 neonatal cases exposed to the target drugs were included, yielding 60,611 adverse event reports, 95.45% of which were classified as serious. The median time to onset of ADRs was 264 days for intrauterine drug exposure, compared to 1-3 days for extrauterine exposure. The most affected SOCs were injur …
+  TYPES: Journal Article
+  MESH: Adverse Drug Reaction Reporting Systems; Databases, Factual; Drug Administration Routes; Drug-Related Side Effects and Adverse Reactions; Female; Germany; Humans; Infant, Newborn; Infant, Newborn, Diseases; Male; Pregnancy; Prenatal Exposure Delayed Effects
+
+[R1-270] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: [Impact of risk factors for osteoporosis on bone mineral density in perimenopausal women of the City of Querétaro, México].
+  ABSTRACT: It is essential to evaluate osteoporosis risk factors, mainly the modifiable, like the lifestyle, in Mexican women in order to prevent it, since it is a serious public health problem. We studied 805 women (35-55 years old) in the City of Queretaro, México. We obtained: personal data, family history, habits, such as smoking, alcohol, caffeine (coffee and soft drink of cola) and physical activity. Participants complete the questionnaire on 19 risk factors for osteoporosis (International Osteoporosis Foundation) one of them with risk. We evaluated: body mass index (BMI), cardiovascular risk and corporal complexion. Bone densitometry was performed in two diagnostic regions: lumbar spine and total hip and participants were classified as normal bone mass density (BMD), low BMD and osteoporosis. The prevalence of osteoporosis was 7% and of low BMD was 34%, predominantly in the lumbar region and …
+  TYPES: Comparative Study;English Abstract;Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Absorptiometry, Photon; Adult; Bone Density; Cross-Sectional Studies; Female; Humans; Mexico; Middle Aged; Osteoporosis; Perimenopause; Prevalence; Risk Factors
+
+[R1-271] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=no
+  TITLE: Should the Dosage Cap Be Used in Patients Greater than 100 kg Receiving N-acetylcysteine for Acetaminophen Toxicity?
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Drug-Related Side Effects and Adverse Reactions; Humans
+
+[R1-272] OTC-LIT-Q03-COLD-ALLERGY | 2020 | abstract=yes
+  TITLE: Use of Remifentanil for Open in utero Fetal Myelomeningocele Repair Maintains Uterine Relaxation with Reduced Volatile Anesthetic Concentration.
+  ABSTRACT: INTRODUCTION: Open fetal repair of myelomeningocele (MMC) is an option for prenatally diagnosed spina bifida. Historically, high-dose volatile anesthetic was used for uterine relaxation but is associated with fetal cardiovascular depression. We examined the impact of administering a supplemental remifentanil infusion on the concentration of inhaled anesthetic required for intraoperative uterine relaxation. METHODS: We retrospectively analyzed 22 consecutive patients who underwent open fetal MMC repair with desflurane anesthesia from 2014 to 2018. The anesthetic protocol was modified to include high-dose opioid with remifentanil in 2016. We examined intraoperative end-tidal desflurane concentrations, vasopressor use, incidence of umbilical artery Doppler abnormalities, and incidence of preterm labor and delivery. RESULTS: Patients (n = 11) who received desflurane and remifentanil (Des/Rem …
+  TYPES: Journal Article
+  MESH: Anesthetics, Inhalation; Fetus; Humans; Infant, Newborn; Meningomyelocele; Remifentanil; Retrospective Studies
+
+[R1-273] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Reliability of the reported ingested dose for predicting the requirement of N-acetylcysteine in paracetamol overdose patients.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Chemical and Drug Induced Liver Injury; Female; Humans; Male
+
+[R1-274] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Detection of acetaminophen-cysteine adducts in cases of indeterminate liver failure is not diagnostic of intentional overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Chemical and Drug Induced Liver Injury; Cysteine; Drug Overdose; Humans; Liver Failure, Acute
+
+[R1-275] OTC-LIT-Q02-NSAID | 2018 | abstract=no
+  TITLE: Tissue Isn't the Issue.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Adult; Humans; Hydronephrosis; Leg; Leukocytosis; Lymphadenopathy; Male; Naproxen; Pain; Sarcoidosis; Tomography, X-Ray Computed
+
+[R1-276] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Changes of attention-related brain activity over 6 months after acute organophosphate pesticide poisoning: a prospective follow-up study.
+  ABSTRACT: CONTEXT: Ingestion of organophosphate (OP) pesticides is a common method of self-harm in developing countries. Apart from acute cholinergic effects, limited evidence implicates OP poisoning in long-term neurocognitive deficits. However, prospective neurophysiological evidence of long-term deficits is scarce in humans. We aimed to determine long-term cognitive changes of acute OP pesticide self-poisoning in a prospective follow-up study, using event-related potentials (ERPs), an electroencephalographic index of cognitive functioning. METHODS: We recruited 203 patients (147 men) hospitalised with OP pesticide ingestion (OP group; all had significant erythrocyte cholinesterase inhibition) and 50 patients (23 men) with paracetamol overdose (control group) as a means of self-harm. We recorded their ERPs and behavioural performance in a selective attention task at three post-exposure time poin …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Attention; Brain; Follow-Up Studies; Humans; Male; Organophosphate Poisoning; Organophosphates; Pesticides; Prospective Studies
+
+[R1-277] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=yes
+  TITLE: Toxic Ingestion of Acetaminophen and Acetylsalicylic Acid in a Parturient at 33 Weeks Gestation: A Case Report.
+  ABSTRACT: The anesthetic management of toxic ingestion during pregnancy requires concomitant concerns for both mother and fetus. We describe the management of a parturient at 33 weeks of gestation after a suicide attempt by ingestion of acetaminophen (APAP) and acetylsalicylic acid (ASA). Timing of toxin ingestion must be determined, prompt antidote administration prioritized, and hepatotoxicity-induced hematologic impairment anticipated. Fetal exposure to toxins must also be minimized. The use of point-of-care rotational thromboelastometry in conjunction with standard coagulation testing in such cases facilitates consideration of neuraxial anesthesia and determination of risk for postpartum hemorrhage.
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adult; Aspirin; Cesarean Section; Charcoal; Drug Overdose; Female; Fetal Heart; Humans; Point-of-Care Systems; Pregnancy; Pregnancy Trimester, Third; Suicide, Attempted
+
+[R1-278] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=yes
+  TITLE: The modern pharmacology of paracetamol: therapeutic actions, mechanism of action, metabolism, toxicity and recent pharmacological findings.
+  ABSTRACT: Paracetamol is used worldwide for its analgesic and antipyretic actions. It has a spectrum of action similar to that of NSAIDs and resembles particularly the COX-2 selective inhibitors. Paracetamol is, on average, a weaker analgesic than NSAIDs or COX-2 selective inhibitors but is often preferred because of its better tolerance. Despite the similarities to NSAIDs, the mode of action of paracetamol has been uncertain, but it is now generally accepted that it inhibits COX-1 and COX-2 through metabolism by the peroxidase function of these isoenzymes. This results in inhibition of phenoxyl radical formation from a critical tyrosine residue essential for the cyclooxygenase activity of COX-1 and COX-2 and prostaglandin (PG) synthesis. Paracetamol shows selectivity for inhibition of the synthesis of PGs and related factors when low levels of arachidonic acid and peroxides are available but conv …
+  TYPES: Comparative Study;Journal Article;Review
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Animals; Anti-Inflammatory Agents, Non-Steroidal; Cyclooxygenase 1; Cyclooxygenase 2; Cyclooxygenase Inhibitors; Humans; Inflammation
+
+[R1-279] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Acute kidney injury in patients admitted to a liver intensive therapy unit with paracetamol-induced hepatotoxicity.
+  ABSTRACT: BACKGROUND: Paracetamol overdose can cause acute kidney injury (AKI) independent of its hepatotoxic effects. We aimed to determine the prevalence of AKI (AKI Network definition) in those with paracetamol-induced hepatotoxicity, identify factors associated with development, assess impact on the outcomes of patient survival and length of stay and determine the proportion of patients recovering renal function (estimated glomerular filtration rate > 60 mL/min) by the time of hospital discharge or transfer out. METHODS: Between 2000 and 2007, patients admitted to a tertiary referral liver intensive therapy unit (LITU) with paracetamol-induced hepatotoxicity were identified from a prospectively maintained database and evaluated. RESULTS: Those receiving a liver transplant were excluded (n = 54), leaving 302 patients. Renal function remained normal in 21%, the remainder developing AKI (Stages 1 …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acute Kidney Injury; Adult; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Creatinine; Female; Follow-Up Studies; Glomerular Filtration Rate; Hospital Mortality; Humans; Intensive Care Units; Length of Stay; Male
+
+[R1-280] OTC-LIT-Q05-TOPICAL | 2016 | abstract=yes
+  TITLE: Optimization of antifungal activity of Aeollanthus heliotropioides oliv essential oil and Time Kill Kinetic Assay.
+  ABSTRACT: OBJECTIVE: The limitations encountered in the management of fungal infections are due to the resistance, high toxicity, and overuse of conventional antifungal drugs. For bringing solutions, the antifungal activity of Aeollanthus heliotropioides essential oil will be evaluated and optimized. MATERIAL AND METHODS: The aerial parts of A. heliotropioides were harvested and essential oil extracted by hydrodistillation. The chemical composition was determined using gas chromatography and gas chromatography coupled with mass spectrometry and nuclear magnetic resonance. The sensitivity of fungal strains was determined using broth microdilution method. The fungicidal parameters were checked by viability assay using methylene blue dye. The Fractional Inhibitory Concentration Index was determined according the two-dimensional checkboard methods. The efficiency of the simulated optimum concentration …
+  TYPES: Journal Article
+  MESH: Antifungal Agents; Calibration; Drug Resistance, Fungal; Fungi; Gas Chromatography-Mass Spectrometry; Humans; Kinetics; Lamiaceae; Microbial Sensitivity Tests; Mycoses; Oils, Volatile; Plant Oils

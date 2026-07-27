@@ -1,0 +1,272 @@
+===== AI REFERENCE ROUND 1 / CHUNK 2 (40 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R1-041] OTC-LIT-Q03-COLD-ALLERGY | 2018 | abstract=yes
+  TITLE: Caffeine and Arrhythmias: Time to Grind the Data.
+  ABSTRACT: The interaction between arrhythmia episodes and certain lifestyle factors such as obesity and alcohol is well established. There is significant public and professional interest in the role of caffeinated beverages such as coffee, tea, and energy drinks in cardiovascular health. However, many widely held beliefs are not supported by evidence. This study provides a comprehensive review of the impact of caffeinated beverages on cardiac rhythm.
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't;Review
+  MESH: Arrhythmias, Cardiac; Caffeine; Central Nervous System Stimulants; Coffee; Energy Drinks; Humans; Myocardial Contraction; Tea
+
+[R1-042] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=no
+  TITLE: Phenylephrine Infusion: Driving a Wedge in Our Practice of Left Uterine Displacement?
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Editorial
+  MESH: Blood Pressure; Female; Humans; Phenylephrine; Urogenital Abnormalities; Uterus
+
+[R1-043] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Intrinsic versus idiosyncratic drug-induced hepatotoxicity--two villains or one?
+  ABSTRACT: "Intrinsic" and "idiosyncratic" drug-induced liver injury reactions are commonly thought to arise by different modes of action. Intrinsic toxicity is reproducible in animals and occurs dose-dependently at sublethal doses. Environmental and genetic sensitivity factors can influence the toxicity of intrinsic hepatotoxicants. Among these is inflammatory stress. For example, exposure of mice to inflammatory bacterial lipopolysaccharide (LPS) causes a leftward shift in the dose-response relationship for acetaminophen hepatotoxicity; that is, acetaminophen toxicity is enhanced by LPS-induced inflammatory stress. Idiosyncratic reactions present themselves very differently than intrinsic ones; they happen in a minority of patients, with variable time of onset and no obvious relationship to drug dose, and they are not reproducible in usual animal tests. Although these characteristics seem to dist …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural
+  MESH: Animals; Chemical and Drug Induced Liver Injury; Disease Models, Animal; Dose-Response Relationship, Drug; Drug-Related Side Effects and Adverse Reactions; Humans; Inflammation; Liver
+
+[R1-044] OTC-LIT-Q02-NSAID | 2017 | abstract=no
+  TITLE: Short-course high-dose ibuprofen causing both early and delayed jejunal perforations in a non-smoking man.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Abdominal Pain; Anti-Inflammatory Agents, Non-Steroidal; Back Pain; Humans; Ibuprofen; Intestinal Perforation; Jejunal Diseases; Male; Middle Aged; Stomach Ulcer; Time Factors; Treatment Outcome
+
+[R1-045] OTC-LIT-Q01-ACETAMINOPHEN | 2018 | abstract=yes
+  TITLE: Dissecting the molecular pathophysiology of drug-induced liver injury.
+  ABSTRACT: Drug-induced liver injury (DILI) has become a major topic in the field of Hepatology and Gastroenterology. DILI can be clinically divided into three phenotypes: hepatocytic, cholestatic and mixed. Although the clinical manifestations of DILI are variable and the pathogenesis complicated, recent insights using improved preclinical models, have allowed a better understanding of the mechanisms that trigger liver damage. In this review, we will discuss the pathophysiological mechanisms underlying DILI. The toxicity of the drug eventually induces hepatocellular damage through multiple molecular pathways, including direct hepatic toxicity and innate and adaptive immune responses. Drugs or their metabolites, such as the common analgesic, acetaminophen, can cause direct hepatic toxicity through accumulation of reactive oxygen species and mitochondrial dysfunction. The innate and adaptive immune …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Adaptive Immunity; Analgesics, Non-Narcotic; Animals; Apoptosis; Chemical and Drug Induced Liver Injury; Cholestasis; Hepatocytes; Humans; Immunity, Innate; Liver; Signal Transduction
+
+[R1-046] OTC-LIT-Q01-ACETAMINOPHEN | 2017 | abstract=yes
+  TITLE: Engineered fibroblast growth factor 19 protects from acetaminophen-induced liver injury and stimulates aged liver regeneration in mice.
+  ABSTRACT: The liver displays a remarkable regenerative capacity triggered upon tissue injury or resection. However, liver regeneration can be overwhelmed by excessive parenchymal destruction or diminished by pre-existing conditions hampering repair. Fibroblast growth factor 19 (FGF19, rodent FGF15) is an enterokine that regulates liver bile acid and lipid metabolism, and stimulates hepatocellular protein synthesis and proliferation. FGF19/15 is also important for liver regeneration after partial hepatectomy (PH). Therefore recombinant FGF19 would be an ideal molecule to stimulate liver regeneration, but its applicability may be curtailed by its short half-life. We developed a chimaeric molecule termed Fibapo in which FGF19 is covalently coupled to apolipoprotein A-I. Fibapo retains FGF19 biological activities but has significantly increased half-life and hepatotropism. Here we evaluated the pro-re …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Animals; Apolipoprotein A-I; Chemical and Drug Induced Liver Injury; Fibroblast Growth Factors; Gene Expression Regulation; Genetic Engineering; Humans; Lipid Metabolism; Liver Regeneration; Mice
+
+[R1-047] OTC-LIT-Q05-TOPICAL | 2023 | abstract=yes
+  TITLE: Device and liquid characteristics used with sweet, menthol/mint, and tobacco ENDS liquid flavors: The population-based VAPER study.
+  ABSTRACT: INTRODUCTION: Electronic nicotine delivery system (ENDS) device and liquid characteristics (e.g., wattage, nicotine concentration) are diverse and important in determining product appeal, aerosol volume/nicotine levels, and toxicity. Little is known about how device and liquid characteristics vary by flavor; we address this gap to identify potential regulatory implications. METHODS: Data are from a longitudinal cohort study (Waves 2 and 3; December 2020-December 2021) of adult (≥21 years) U.S. ENDS users (≥5 days of use/week). Participants (n = 1809) reported on and submitted photos of their most used device and liquid. Participants were categorized into flavor groups of high prevalence in our sample and in prior literature: sweet, menthol/mint, or tobacco. Participants using liquids without nicotine or flavors other than sweet, menthol/mint, or tobacco were excluded (n = 320). Data were …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural
+  MESH: Adult; Electronic Nicotine Delivery Systems; Flavoring Agents; Humans; Longitudinal Studies; Menthol; Nicotine; Smokers; Tobacco Products
+
+[R1-048] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: Cardiovascular anesthetic complications and treatment in oral surgery.
+  ABSTRACT: Perioperative hypertension is a common problem. If hypertension is left untreated in patients at risk, infarctions and stroke are possible. There are limited choices of antihypertensive agents for the office. Aggressive antihypertensive therapy is not indicated because most of the episodes seen in the office are hypertensive urgencies and not emergencies. Hypotension is usually managed by decreasing the depth of anesthesia, intravenous fluids, and then vasopressors, typically ephedrine or phenylephrine. Consider treatment of hypotension whenever the mean arterial pressure decreases less than 60 mm Hg.
+  TYPES: Journal Article;Review
+  MESH: Adrenergic beta-Antagonists; Anesthesia, Dental; Antihypertensive Agents; Calcium Channel Blockers; Humans; Hypertension; Hypotension; Intraoperative Complications; Oral Surgical Procedures; Postoperative Complications; Vasodilator Agents
+
+[R1-049] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=no
+  TITLE: Alcohol, Fasting, and Therapeutic Dosing of Acetaminophen: A Perfect Storm.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Editorial
+  MESH: Acetaminophen; Chemical and Drug Induced Liver Injury; Ethanol; Fasting; Humans
+
+[R1-050] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=no
+  TITLE: Pulmonary hypertension in a patient with subarachnoid hemorrhage.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Letter
+  MESH: Cardiotonic Agents; Coronary Angiography; Echocardiography; Embolization, Therapeutic; Humans; Hypertension, Pulmonary; Male; Middle Aged; Milrinone; Phenylephrine; Subarachnoid Hemorrhage; Treatment Outcome
+
+[R1-051] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: International society of sports nutrition position stand: energy drinks and energy shots.
+  ABSTRACT: Position Statement: The International Society of Sports Nutrition (ISSN) bases the following position stand on a critical analysis of the literature regarding the effects of energy drink (ED) or energy shot (ES) consumption on acute exercise performance, metabolism, and cognition, along with synergistic exercise-related performance outcomes and training adaptations. The following 13 points constitute the consensus of the Society and have been approved by the Research Committee of the Society: Energy drinks (ED) commonly contain caffeine, taurine, ginseng, guarana, carnitine, choline, B vitamins (vitamins B1, B2, B3, B5, B6, B9, and B12), vitamin C, vitamin A (beta carotene), vitamin D, electrolytes (sodium, potassium, magnesium, and calcium), sugars (nutritive and non-nutritive sweeteners), tyrosine, and L-theanine, with prevalence for each ingredient ranging from 1.3 to 100%. Energy dri …
+  TYPES: Journal Article;Review
+  MESH: Adolescent; Ascorbic Acid; Caffeine; Child; Energy Drinks; Female; Humans; Nutrients; Pregnancy; Vitamins
+
+[R1-052] OTC-LIT-Q02-NSAID | 2021 | abstract=yes
+  TITLE: Therapeutic monitoring of mycophenolic acid in renal transplanted patients by a validated HPLC method.
+  ABSTRACT: INTRODUCTION: Mycophenolate mofetil and its active metabolite mycophenolic acid are routinely used as immunosuppressant drugs in solid organ transplantation in a fixed daily dose regimen in association with cyclosporine, tacrolimus and steroids. Therapeutic drug monitoring for mycophenolic acid concentration has been suggested to optimize outcomes by reducing rejection and drug related toxicities in clinical renal transplantation. AIM: To determine the predose concentration of mycophenolic acid in renal transplanted patients by a validated proposed high-performance liquid chromatography (HPLC) method and to estimate the interindividual variability based on the therapeutic target. MATERIALS AND METHODS: An HPLC method combined with protein precipitation has been validated for mycophenolic acid determination in the human plasma obtained from 21 renal transplant recipients. HPLC analysis wa …
+  TYPES: Journal Article
+  MESH: Acetonitriles; Chromatography, High Pressure Liquid; Humans; Immunosuppressive Agents; Kidney Transplantation; Mycophenolic Acid
+
+[R1-053] OTC-LIT-Q02-NSAID | 2011 | abstract=no
+  TITLE: Life-threatening hypokalaemia associated with ibuprofen-induced renal tubular acidosis.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acidosis, Renal Tubular; Analgesics, Opioid; Anti-Inflammatory Agents, Non-Steroidal; Codeine; Drug Combinations; Humans; Hypokalemia; Ibuprofen; Opioid-Related Disorders
+
+[R1-054] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Demographics of suicide victims in Sweden in relation to their blood-alcohol concentration and the circumstances and manner of death.
+  ABSTRACT: Specimens of blood and other body fluids were obtained at autopsy from all deaths in Sweden classified as suicide covering a 10-year period (N=11,441 cases). The mean age (+/-standard deviation, SD) of the victims was 51.3+/-18.8 years with a clear predominance of males 71% (mean age 51.3+/-18.8 years) compared with 29% females (mean age 51.4+/-18.9 years). The concentration of ethanol in blood samples was determined in duplicate by headspace gas chromatography and a mean blood-alcohol concentration (BAC) of 0.1g/L (10mg/100mL) was the cut-off used to identify ethanol positive cases. The suicides were coded (ICD-9) as self-poisonings (N=2462, 22%), hanging (N=4474, 39%), asphyxia by gas (N=509, 4.4%), drowning (N=803, 7.0%), gun shot (N=1307, 11.4%), fall from height (N=632, 5.5%), self-inflicted cuts or sharp-force injury (N=363, 3.1%) and miscellaneous ways (N=891, 7.8%). On average 34 …
+  TYPES: Journal Article
+  MESH: Adolescent; Adult; Age Distribution; Aged; Aged, 80 and over; Asphyxia; Central Nervous System Depressants; Child; Chromatography, Gas; Drowning; Ethanol; Female; Forensic Toxicology; Humans
+
+[R1-055] OTC-LIT-Q01-ACETAMINOPHEN | 2026 | abstract=yes
+  TITLE: Clinical impact of fomepizole as an adjunct therapy in high-risk acetaminophen overdose.
+  ABSTRACT: INTRODUCTION: The objectives of this study were to characterize and compare clinical outcomes in patients with high-risk acetaminophen overdose who received fomepizole as an adjunct to N-acetylcysteine treatment to those who received N-acetylcysteine only. MATERIAL AND METHODS: This was a retrospective cohort study of patients reported to four United States poison control centers between January 2018 and December 2022. Patients with high-risk acetaminophen ingestion-defined as a serum concentration ≥ 300 μg/mL at 4 h or more post-ingestion, or a multiplication product (acetaminophen concentration in mcg/mL multiplied by either aspartate aminotransferase in units per liter or alanine aminotransferase in units per liter) ≥10,000-upon admission who received N-acetylcysteine were included. Exclusion criteria included documented history of pre-existing liver disease, insufficient case details …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adult; Antidotes; Drug Overdose; Drug Therapy, Combination; Female; Fomepizole; Humans; Male; Middle Aged; Poison Control Centers; Retrospective Studies; United States
+
+[R1-056] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Clinically relevant therapeutic approaches against acetaminophen hepatotoxicity and acute liver failure.
+  ABSTRACT: Liver injury and acute liver failure caused by an acetaminophen (APAP) overdose is a significant clinical problem in western countries. With the introduction of the mouse model of APAP hepatotoxicity in the 1970 s, fundamental mechanisms of cell death were discovered. This included the recognition that part of the APAP dose is metabolized by cytochrome P450 generating a reactive metabolite that is detoxified by glutathione. After the partial depletion of glutathione, the reactive metabolite will covalently bind to sulfhydryl groups of proteins, which is the initiating event of the toxicity. This insight led to the introduction of N-acetyl-L-cysteine, a glutathione precursor, as antidote against APAP overdose in the clinic. Despite substantial progress in our understanding of the pathomechanisms over the last decades viable new antidotes only emerged recently. This review will discuss the …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't;Review
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Animals; Antidotes; Chemical and Drug Induced Liver Injury; Humans; Liver Failure, Acute
+
+[R1-057] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Spell out 'acetaminophen' for patients' sake, group says.
+  ABSTRACT: (초록 없음)
+  TYPES: News
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Drug Combinations; Drug Labeling; Drug Overdose; Drug Prescriptions; Humans; Pharmacists; United States; United States Food and Drug Administration
+
+[R1-058] OTC-LIT-Q05-TOPICAL | 2018 | abstract=yes
+  TITLE: Clonidine Overdose in a Toddler Due to Accidental Ingestion of a Compounding Cream.
+  ABSTRACT: A 22-month-old girl without any significant medical history accidentally consumed a small amount of a therapeutic compounding cream that contained camphor, gabapentin, clonidine, ketoprofen, and lidocaine. Upon presentation to the emergency department, the child exhibited immediate onset of altered mental status with wide fluctuation in her vital signs, which included intermittent apnea requiring bag-valve mask assistance and endotracheal intubation. Serum laboratory analysis measured a clonidine level of 2.6 ng/mL and undetectable camphor, gabapentin, and ketoprofen levels. While on mechanical ventilation, the patient exhibited hypothermia, bradycardia, and hypotension; all of which responded to supportive care. After approximately 12 hours in the intensive care unit, the patient was successfully extubated and remained asymptomatic. This unique case of a patient with brief, unintentiona …
+  TYPES: Case Reports;Journal Article
+  MESH: Adrenergic alpha-2 Receptor Agonists; Clonidine; Drug Compounding; Drug Overdose; Female; Fluid Therapy; Humans; Infant; Ointments; Respiration, Artificial
+
+[R1-059] OTC-LIT-Q02-NSAID | 2011 | abstract=yes
+  TITLE: Explaining the acetaminophen-ibuprofen analgesic interaction using a response surface model.
+  ABSTRACT: BACKGROUND: The value of acetaminophen-ibuprofen combination therapy over single therapy is uncertain in acute pediatric pain management. A model describing the interaction between these two drugs would be useful both for understanding current literature and for future study design. METHODS: Published pooled time-effect profiles in adults given combination or single therapy after dental extraction were used to construct an interaction model. Pain was measured using pain intensity differences (PRID, 0-10) from zero to eight hours postoperatively. Pharmacodynamic parameter estimates were assumed the same in adults as children. Pediatric pharmacokinetic estimates were scaled using allometric theory. Curve fitting was performed using nonlinear mixed effects models. RESULTS: Pooled data were available in adults given eight single and multiple dose combinations as well as placebo. The ibuprofe …
+  TYPES: Journal Article;Randomized Controlled Trial;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Analgesics, Non-Narcotic; Child; Computer Simulation; Dose-Response Relationship, Drug; Double-Blind Method; Drug Combinations; Drug Interactions; Humans; Ibuprofen; Models, Biological; Pain Management; Pain Measurement
+
+[R1-060] OTC-LIT-Q02-NSAID | 2019 | abstract=no
+  TITLE: Upper gastrointestinal bleeding due to overdose of selective serotonin reuptake inhibitors and nonsteroidal anti-inflammatory drugs.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Abdominal Pain; Adult; Anti-Inflammatory Agents, Non-Steroidal; Depressive Disorder; Desvenlafaxine Succinate; Drug Synergism; Duloxetine Hydrochloride; Duodenal Ulcer; Gastrointestinal Hemorrhage; Gastroscopy; Humans; Male; Melena; Methimazole
+
+[R1-061] OTC-LIT-Q05-TOPICAL | 2017 | abstract=yes
+  TITLE: Skin Irritation and Sensitization Potential of Fixed-Dose Combination of Diclofenac 1% and Menthol 3% Topical Gel: Results of Two Phase I Patch Studies.
+  ABSTRACT: Phase I, randomized, controlled patch studies were conducted to evaluate skin sensitization and irritation potential of a new gel formulation containing 1% diclofenac and 3% menthol as a fixed-combination product.In study A, healthy volunteers were exposed to 4 test patches containing 1% diclofenac+3% menthol, diclofenac, menthol, or placebo gels during an induction (nine 48 to 72-h applications) and challenge phase (one 48-h application). Some subjects were re-challenged to evaluate suspected sensitization. Study B participants underwent 21 consecutive 24-h patch applications of the 4 treatments from study A, 0.2% sodium lauryl sulfate (positive control), 0.9% saline, and a marketed gel (1% diclofenac, Voltaren). Application sites were visually scored by blinded observers for skin sensitization/irritation.In study A, 77% of participants showed minimal erythema and signs of glazing and p …
+  TYPES: Clinical Trial, Phase I;Journal Article;Randomized Controlled Trial
+  MESH: Administration, Cutaneous; Adolescent; Adult; Aged; Aged, 80 and over; Anti-Inflammatory Agents, Non-Steroidal; Antipruritics; Dermatitis, Allergic Contact; Dermatitis, Irritant; Diclofenac; Drug Combinations; Female; Gels; Humans
+
+[R1-062] OTC-LIT-Q03-COLD-ALLERGY | 2025 | abstract=yes
+  TITLE: Role of Ciliary Neurotrophic Factor in Angiotensin II-Induced Hypertension.
+  ABSTRACT: BACKGROUND: Ciliary neurotrophic factor (CNTF), mainly known for its neuroprotective properties, belongs to the IL-6 (interleukin-6) cytokine family. In contrast to IL-6, the effects of CNTF on the vasculature have not been explored. Here, we examined the role of CNTF in AngII (angiotensin II)-induced hypertension. METHODS: Hypertension was chronically induced with AngII (1000 ng/kg per minute, osmotic mini-pumps, 14 days) in CNTF-knockout and wild-type mice (with or without nephrectomy and 1% NaCl drinking water). Blood pressure was measured by tail-cuff and radiotelemetry. Effects of CNTF on vascular function and the JAK2/STAT3 pathway were measured in vivo, in the isolated perfused kidney, and in mouse and human vascular smooth muscle cells. RESULTS: At baseline, systolic blood pressure was similar between both groups. During AngII infusion, blood pressure increase was significantly a …
+  TYPES: Journal Article
+  MESH: Angiotensin II; Animals; Blood Pressure; Ciliary Neurotrophic Factor; Disease Models, Animal; Humans; Hypertension; Janus Kinase 2; Kidney; Male; Mice; Mice, Inbred C57BL; Mice, Knockout; Muscle, Smooth, Vascular
+
+[R1-063] OTC-LIT-Q05-TOPICAL | 2024 | abstract=yes
+  TITLE: Nutraceuticals and Pain Disorders of the Gut-Brain Interaction in Infants and Children: A Narrative Review and Practical Insights.
+  ABSTRACT: Different nutraceuticals are often considered by parents of infants and children with abdominal pain and disorders of the gut-brain interaction. Herb extracts and natural compounds have long been used in traditional medicine, but clinical pediatric trials are very limited. This narrative review based on relevant studies identified through a search of the literature in Pubmed and Medline updated to October 2023 focused on the effect of nutraceuticals in infantile colic, functional abdominal pain, and irritable bowel syndrome in children and adolescents. Significant reductions in colic episodes and crying time were reported in two studies on fennel (seeds oil or tea), in three studies on different multiple herbal extracts (all including fennel), in one study on Mentha piperita, and in at least two double-blind randomized controlled studies on Lactobacillus reuteri DSM 17938 and Bifidobacte …
+  TYPES: Journal Article;Review
+  MESH: Abdominal Pain; Adolescent; Bifidobacterium animalis; Brain; Child; Colic; Dietary Supplements; Humans; Infant; Irritable Bowel Syndrome; Limosilactobacillus reuteri; Probiotics; Randomized Controlled Trials as Topic; Treatment Outcome
+
+[R1-064] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=no
+  TITLE: Guidance on acetylcysteine for paracetamol ingestion needs review.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics; Antidotes; Drug Overdose; Health Services Needs and Demand; Humans; Practice Guidelines as Topic; United Kingdom
+
+[R1-065] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: Commentary: SOFA scores and staggered paracetamol overdose prognostication.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Journal Article
+  MESH: APACHE; Acetaminophen; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Female; Humans; Liver Failure, Acute; Male; Multiple Organ Failure
+
+[R1-066] OTC-LIT-Q02-NSAID | 2010 | abstract=yes
+  TITLE: Prevalence and typology of potential drug interactions occurring in primary care patients.
+  ABSTRACT: PURPOSE: To investigate the prevalence and types of potential drug interactions in primary care patients to detect risky prescriptions as an essential condition to design intervention policies leading to an improvement in patient safety. METHODS: Cross-sectional descriptive study. SETTING: Two areas in Spain comprising 715,661 inhabitants. PATIENTS: 430,525 subjects with electronic medical records and assigned to a family doctor regularly updating them. RESULTS: On a random day, 29.4% of the population was taking medication. Of these, 73.9% were at risk of suffering interactions, and these were found in 20.6% of them. The amount of interactions was higher among people with chronic conditions, the elderly, females and polymedicated patients. From the total of interactions, 55.1% belonged to the highest clinical relevance 'A' level, and 28.3% should have been avoided. The active ingredient …
+  TYPES: Journal Article
+  MESH: Age Factors; Aged; Chronic Disease; Cross-Sectional Studies; Drug Interactions; Drug-Related Side Effects and Adverse Reactions; Female; Humans; Male; Medication Errors; Middle Aged; Pharmaceutical Preparations; Polypharmacy; Practice Patterns, Physicians'
+
+[R1-067] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=yes
+  TITLE: Risk Factors for Posterior Subcapsular Cataract in Retinitis Pigmentosa.
+  ABSTRACT: PURPOSE: Posterior subcapsular cataract (PSC) is a frequent complication in patients with retinitis pigmentosa (RP). The risk factors for PSC formation in RP are largely unknown. The purpose of this study was to investigate the risk factors for PSC. METHODS: We retrospectively studied a total of 322 eyes of 173 patients who were diagnosed with typical RP. We considered the following possible risk factors for PSC: age, sex, hypertension, diabetes mellitus, high myopia, asthma, history of steroid intake, and aqueous flare. Aqueous flare values were measured consecutively in 2012 and 2013 using a laser flare cell meter. The lens including PSC was examined with a slit lamp after dilation with tropicamide 1% and phenylephrine 2.5%. RESULTS: The geometric mean values of aqueous flare and mean values of visual acuity were significantly higher for the RP patients with PSC compared to those witho …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Aqueous Humor; Cataract; Electroretinography; Female; Humans; Incidence; Japan; Male; Middle Aged; Ophthalmoscopy; Photometry; Posterior Capsule of the Lens; Retinitis Pigmentosa; Retrospective Studies
+
+[R1-068] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=no
+  TITLE: A 17-Year-Old Female With Respiratory Depression as a Result of Opioid Overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article;Review
+  MESH: Acetaminophen; Adolescent; Air Ambulances; Analgesics, Opioid; Drug Combinations; Drug Overdose; Extracorporeal Membrane Oxygenation; Female; Humans; Hydrocodone; Patient Transfer; Respiration, Artificial; Respiratory Insufficiency
+
+[R1-069] OTC-LIT-Q01-ACETAMINOPHEN | 2023 | abstract=no
+  TITLE: Comment: Comparison of 2-Bag Versus 3-Bag N-Acetylcysteine Regimens for Pediatric Acetaminophen Toxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Child; Drug Overdose; Humans
+
+[R1-070] OTC-LIT-Q02-NSAID | 2011 | abstract=no
+  TITLE: Quiz Page October 2011: An under-recognized cause of CKD.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Acidosis; Amines; Anorexia Nervosa; Anti-Inflammatory Agents, Non-Steroidal; Chronic Disease; Creatinine; Cyclohexanecarboxylic Acids; False Negative Reactions; Female; Fluid Therapy; Gabapentin; Glomerulosclerosis, Focal Segmental; Humans; Hypokalemia
+
+[R1-071] OTC-LIT-Q01-ACETAMINOPHEN | 2020 | abstract=yes
+  TITLE: Methemoglobinemia associated with massive acetaminophen ingestion: a case series.
+  ABSTRACT: Background: Acetaminophen is a common pharmaceutical ingestion reported to US poison centers. In overdose, toxic metabolites are known to cause hepato- and nephrotoxicity. While G6PD deficiency may be a risk factor for methemoglobin production in the setting of acetaminophen overdose, it is rarely reported in patients who do not have this condition.Methods: We present two cases of methemoglobinemia following massive acetaminophen ingestion with no known history of G6PD deficiency or other substances known to induce methemoglobinemia. The two cases had peak methemoglobin measurements of 32% and 12% respectively, and both were treated with methylene blue.Discussion: A number of mechanisms may be involved in production of methemoglobin in the setting of massive acetaminophen ingestion including NAPQI-induced oxidation, depletion of glutathione stores, and production of oxidant-metabolites i …
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Drug Overdose; Fatal Outcome; Female; Humans; Male; Methemoglobin; Methemoglobinemia; Methylene Blue; Middle Aged; Treatment Outcome
+
+[R1-072] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=yes
+  TITLE: The Standardization of Outpatient Procedure (STOP) Narcotics: A Prospective Health Systems Intervention to Reduce Opioid Use in Ambulatory Breast Surgery.
+  ABSTRACT: BACKGROUND: During the past 15 years, opioid-related overdose death rates for women have increased 471%. Many surgeons provide opioid prescriptions well in excess of what patients actually use. This study assessed a health systems intervention to control pain adequately while reducing opioid prescriptions in ambulatory breast surgery. METHODS: This prospective non-inferiority study included women 18-75 years of age undergoing elective ambulatory general surgical breast procedures. Pre- and postintervention groups were compared, separated by implementation of a multi-pronged, opioid-sparing strategy consisting of patient education, health care provider education and perioperative multimodal analgesic strategies. The primary outcome was average pain during the first 7 postoperative days on a numeric rating scale of 0-10. The secondary outcomes included medication use and prescription renew …
+  TYPES: Journal Article
+  MESH: Adolescent; Adult; Aged; Ambulatory Surgical Procedures; Breast Neoplasms; Female; Follow-Up Studies; Humans; Mastectomy; Middle Aged; Narcotics; Opioid-Related Disorders; Postoperative Pain; Prognosis
+
+[R1-073] OTC-LIT-Q02-NSAID | 2016 | abstract=yes
+  TITLE: Efficacy and safety of intravenous paracetamol in comparison to ibuprofen for the treatment of patent ductus arteriosus in preterm infants: study protocol for a randomized control trial.
+  ABSTRACT: BACKGROUND: Patent ductus arteriosus (PDA) is one of most common complications in preterm infants. Although ibuprofen represents the first choice for the closure of PDA, this treatment can cause severe gastrointestinal and adverse renal effects and worsen platelet function. The successful closure of the PDA with paracetamol has been recently reported in several preterm infants, and the safety of paracetamol for this use has been suggested by the available data. METHODS/DESIGN: We present the design of a randomized, multicenter, controlled study, whose aim is to assess the effectiveness and safety of intravenous paracetamol in comparison to intravenous ibuprofen for the treatment of PDA in preterm infants. A total of 110 infants born at 25(+0) to 31(+6) weeks of gestational age will be enrolled and randomized to receive paracetamol or ibuprofen (55 patients per group) starting at 24-72 h …
+  TYPES: Comparative Study;Journal Article;Multicenter Study;Randomized Controlled Trial;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Anti-Inflammatory Agents, Non-Steroidal; Clinical Protocols; Ductus Arteriosus, Patent; Gestational Age; Humans; Ibuprofen; Infant, Extremely Premature; Infant, Newborn; Infant, Premature; Infusions, Intravenous; Italy; Prospective Studies
+
+[R1-074] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Dietary sources, health benefits, and risks of caffeine.
+  ABSTRACT: Dietary intake of caffeine has significantly increased in recent years, and beneficial and harmful effects of caffeine have been extensively studied. This paper reviews antioxidant and anti-inflammatory activities of caffeine as well as its protective effects on cardiovascular diseases, obesity, diabetes mellitus, cancers, and neurodegenerative and liver diseases. In addition, we summarize the side effects of long-term or excessive caffeine consumption on sleep, migraine, intraocular pressure, pregnant women, children, and adolescents. The health benefits of caffeine depend on the amount of caffeine intake and the physical condition of consumers. Moderate intake of caffeine helps to prevent and modulate several diseases. However, the long-term or over-consumption of caffeine can lead to addiction, insomnia, migraine, and other side effects. In addition, children, adolescents, pregnant wo …
+  TYPES: Journal Article;Review
+  MESH: Adolescent; Caffeine; Child; Diabetes Mellitus; Diet; Female; Humans; Migraine Disorders; Obesity; Pregnancy
+
+[R1-075] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=no
+  TITLE: In this December issue.
+  ABSTRACT: (초록 없음)
+  TYPES: Editorial;Introductory Journal Article
+  MESH: Acetaminophen; Alcohol Drinking; Analgesics, Non-Narcotic; Clinical Competence; Drug Overdose; Emergency Medical Dispatch; Emergency Service, Hospital; Emergency Treatment; Humans; Patient Care Team; Sweating, Gustatory; Terminal Care
+
+[R1-076] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Toxin-Induced Liver Injury and Extracorporeal Treatment of Liver Failure.
+  ABSTRACT: Poisoning with a large variety of drugs and naturally occurring toxins may result in acute liver injury and failure. Drug-induced liver injury is a major cause of liver failure nationwide, and it is likely that nephrologists will be involved in treating patients with these conditions. A number of xenobiotics resulting in liver toxicity may cause acute kidney injury or other organ injury as well. Most agents causing drug- or toxin-induced liver failure lack specific therapies, although a few xenobiotics such as acetaminophen have effective antidotal therapies if administered prior to development of hepatotoxicity. The nephrologist should be aware that extracorporeal treatment of liver failure associated with drugs and toxins may be indicated, including therapies conventionally performed by nephrologists (hemodialysis, continuous kidney replacement therapy), therapies occasionally performe …
+  TYPES: Journal Article;Review
+  MESH: Chemical and Drug Induced Liver Injury; Extracorporeal Membrane Oxygenation; Humans; Liver Failure; Liver Failure, Acute; Plasma Exchange; Renal Dialysis; Xenobiotics
+
+[R1-077] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=no
+  TITLE: The changing face of paracetamol toxicity and new regimens for an old antidote acetylcysteine.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Drug Overdose; Humans
+
+[R1-078] OTC-LIT-Q03-COLD-ALLERGY | 2021 | abstract=yes
+  TITLE: Multiplex Analysis of 230 Medications and 30 Illicit Compounds in Dried Blood Spots and Urine.
+  ABSTRACT: Drugs of abuse and medication reconciliation testing can benefit from analysis methods capable of detecting a broader range of drug classes and analytes. Mass spectrometry analysis of a wide variety of commonly prescribed medications and over-the-counter drugs per sample also allows for application of a drug-drug interaction (DDI) algorithm to detect adverse drug reactions. In order to prevent adulteration of commonly collected clinical samples such as urine, dried blood spots (DBS) present a reliable alternative. A novel method is described for qualitative and quantitative multiplex analysis of 230 parent drugs, 30 illicit drugs and 43 confirmatory metabolites by HPLC-MS-MS This method is applicable to DBS specimens collected by volumetric absorptive microsamplers and confirmable in urine specimens. A patient cohort (n = 67) providing simultaneous urine specimens and DBS resulted in 100 …
+  TYPES: Journal Article
+  MESH: Chromatography, High Pressure Liquid; Dried Blood Spot Testing; Humans; Illicit Drugs; Substance Abuse Detection; Tandem Mass Spectrometry
+
+[R1-079] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=no
+  TITLE: Potential adjunct treatment for high-risk acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Benzoquinones; Chemical and Drug Induced Liver Injury; Cytochrome P-450 CYP2E1 Inhibitors; Drug Overdose; Fomepizole; Humans; Imines; Liver; Pyrazoles
+
+[R1-080] OTC-LIT-Q05-TOPICAL | 2012 | abstract=yes
+  TITLE: Effects of thymol on B16-F10 melanoma cells.
+  ABSTRACT: Aromatic monoterpene, thymol, shows several beneficial activities, such as an antioxidative effect. However, the mechanism of its toxicity remains to be fully defined. In preliminary studies, thymol was characterized as a melanin formation inhibitor in an enzymatic system; however, thymol showed moderate cytotoxicity but not an antimelanogenic effect on B16-F10 melanoma cells. Thymol exhibited cytotoxicity, with an IC(50) value of 400 μM (60.09 μg/mL). This moderate toxic effect was suppressed with the addition of vitamin C and vitamin D, and 20 and 40% of cell viability was increased, respectively. Subsequently, the treatment of L-cysteine on thymol-treated melanoma cells reversed the toxic effect of thymol. Moreover, a significant oxidative stress condition was observed when B16 melanoma cells were cultured with thymol. In conclusion, the antioxidant actions of thymol generate a stable …
+  TYPES: Journal Article
+  MESH: Animals; Antioxidants; Cell Line, Tumor; Cell Survival; Humans; Melanins; Melanoma, Experimental; Mice; Plant Extracts; Thymol; Thymus Plant

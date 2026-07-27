@@ -1,0 +1,152 @@
+===== AI REFERENCE ROUND 1 / CHUNK 8 (20 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R1-281] OTC-LIT-Q02-NSAID | 2020 | abstract=yes
+  TITLE: Pain during medical abortion in early pregnancy in teenage and adult women.
+  ABSTRACT: INTRODUCTION: Women experience pain during medical abortion, yet optimal pain management remains unclear. We studied the pain experience and need of analgesics during early medical abortion (≤63 days of gestation) among teenage and adult women. We also assessed predictive factors of severe pain. MATERIAL AND METHODS: We recruited 140 primigravid women: 60 teenagers and 80 adult women aged between 25 and 35 years old. The group of teenagers included 19 women under the age of 18 years old (minors). The abortion was performed with mifepristone (200 mg) followed by vaginal misoprostol (800 μg), mainly self-administered at home for adults. Minors were hospitalized during misoprostol administration. Pain medication consisted of ibuprofen 600 mg and paracetamol 1000 mg, first doses taken simultaneously with misoprostol and repeated, if needed, up to three times daily. Additional opiates (mainly …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Abortifacient Agents, Nonsteroidal; Abortion, Induced; Acetaminophen; Adolescent; Adult; Analgesics; Drug Therapy, Combination; Drug Utilization Review; Female; Humans; Ibuprofen; Misoprostol; Oxycodone; Pain
+
+[R1-282] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Acute liver failure in a term neonate after repeated paracetamol administration.
+  ABSTRACT: OBJECTIVE: Severe hepatotoxicity caused by paracetamol is rare in neonates. We report a case of paracetamol-induced acute liver failure in a term neonate. CASE DESCRIPTION: A 26-day-old boy was admitted with intestinal bleeding, shock signs, slight liver enlargement, coagulopathy, metabolic acidosis (pH=7.21; bicarbonate: 7.1 mEq/L), hypoglycemia (18 mg/dL), increased serum aminotransferase activity (AST=4,039 IU/L; ALT=1,087 IU/L) and hyperbilirubinemia (total: 9.57 mg/dL; direct: 6.18 mg/dL) after receiving oral paracetamol (10 mg/kg/dose every 4 hours) for three consecutive days (total dose around 180 mg/kg; serum concentration 36-48 hours after the last dose of 77 µg/ mL). Apart from supportive measures, the patient was successfully treated with intravenous N-acetylcysteine infusion during 11 consecutive days, and was discharged on day 34. The follow-up revealed full recovery of clin …
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Antipyretics; Humans; Infant, Newborn; Liver Failure, Acute; Male
+
+[R1-283] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Acute, dose-response effects of guayusa leaf extract on mood, cognitive and motor-cognitive performance, and blood pressure, heart rate, and ventricular repolarization.
+  ABSTRACT: PURPOSE: We conducted a randomized, double-blind, placebo-controlled crossover trial in young adults to examine the dose-dependent (600 mg versus 1200 mg), acute effects of consumption of an Ilex guayusa tea extract (GLE) on mood, cognitive and motor-cognitive performance, as well as its acute cardiovascular effects. METHODS: Twenty-five adults (mean ± SD, age = 28 ± 7 y; 9 M/16 F) completed familiarization and then three randomly ordered experimental visits where they consumed either 600 mg (GLE600) or 1200 mg (GLE1200) GLE or placebo (PLA). Following supplement consumption, participants completed a mood state survey, assessments of perceived jitteriness, energy, and focus, and neurocognitive and motor-cognitive testing. Blood pressure (BP), heart rate, and QT interval length were determined before and after supplementation. RESULTS: GLE600 significantly improved total mood disturbance …
+  TYPES: Journal Article;Randomized Controlled Trial
+  MESH: Adult; Affect; Blood Pressure; Cognition; Cross-Over Studies; Dietary Supplements; Dose-Response Relationship, Drug; Double-Blind Method; Female; Heart Rate; Humans; Male; Plant Extracts; Plant Leaves
+
+[R1-284] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Fomepizole use reported to United States Poison Centers from 2010 to 2021.
+  ABSTRACT: BACKGROUND: The diagnosis of toxic alcohol poisoning is often based on clinical presentation and nonspecific surrogate laboratory studies due to limited testing availability. Fomepizole is the recommended antidote and often administered empirically. The objective of this study is to identify substances that mimic toxic alcohols and compare key clinical factors between toxic alcohol and non-toxic alcohol exposures when fomepizole was administered. METHODS: This study was a retrospective evaluation using the National Poison Data System from January 1, 2010 through December 31, 2021. Exposures were included if fomepizole was administered. Toxic alcohol exposures had ethylene glycol or methanol as a coded substance. For exposures not coded as a toxic alcohol, the first substance was described. Paracetamol (acetaminophen) exposures from 2020 and 2021 were excluded. RESULTS: Fomepizole was rep …
+  TYPES: Journal Article
+  MESH: Antidotes; Ethanol; Ethylene Glycol; Fomepizole; Humans; Male; Methanol; Poisoning; Poisons; Pyrazoles; Renal Dialysis; Retrospective Studies; United States
+
+[R1-285] OTC-LIT-Q05-TOPICAL | 2020 | abstract=no
+  TITLE: Drugs for Irritable Bowel Syndrome.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Constipation; Diarrhea; Gastrointestinal Agents; Humans; Irritable Bowel Syndrome
+
+[R1-286] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Sleep physiology, pathophysiology, and sleep hygiene.
+  ABSTRACT: Despite sleep's fundamental role in maintaining and improving physical and mental health, many people get less than the recommended amount of sleep or suffer from sleeping disorders. This review highlights sleep's instrumental biological functions, various sleep problems, and sleep hygiene and lifestyle interventions that can help improve sleep quality. Quality sleep allows for improved cardiovascular health, mental health, cognition, memory consolidation, immunity, reproductive health, and hormone regulation. Sleep disorders, such as insomnia, sleep apnea, and circadian-rhythm-disorders, or disrupted sleep from lifestyle choices, environmental conditions, or other medical issues can lead to significant morbidity and can contribute to or exacerbate medical and psychiatric conditions. The best treatment for long-term sleep improvement is proper sleep hygiene through behavior and sleep hab …
+  TYPES: Journal Article;Review
+  MESH: Exercise; Humans; Mental Health; Sleep; Sleep Hygiene; Sleep Initiation and Maintenance Disorders
+
+[R1-287] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Pathophysiological relevance of neutrophils in acetaminophen hepatotoxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acute-Phase Reaction; Animals; Chemokines; DNA, Mitochondrial; Female; Humans; Liver; Liver Failure, Acute; Male; Neutrophils; Receptors, Formyl Peptide
+
+[R1-288] OTC-LIT-Q03-COLD-ALLERGY | 2025 | abstract=yes
+  TITLE: Exploring the evolving frontiers of sleep deprivation research in the post-COVID-19 era.
+  ABSTRACT: Sleep deprivation research (SDR) has undergone substantial transformations in the aftermath of the COVID-19 pandemic. This comprehensive study explores the SDR's evolving trends, hotspots, and conceptual structure in the post-COVID-19 era. Using bibliometric analysis with VOSviewer and Bibliometrix software, we examined the SDR publications from January 2020 to December 2023. Core sources were identified using Bradford law, and a dataset of 4578 English-based data-driven studies was retrieved from the Scopus database. Our analysis revealed a remarkable annual growth rate of 37.92% in SDR from 2020 to 2023, indicating a heightened research focus in this domain. Among prolific authors, Shao emerged as a key contributor, while Sleep ranked prominently as a leading publication venue. The United States and China have emerged as the most impactful countries for advancing SDR research. Uncoveri …
+  TYPES: Journal Article
+  MESH: Bibliometrics; Biomedical Research; COVID-19; Humans; Pandemics; SARS-CoV-2; Sleep Deprivation
+
+[R1-289] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=no
+  TITLE: Emerging novel therapies against paracetamol (acetaminophen) hepatotoxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Animals; Antidotes; Antipyretics; Chemical and Drug Induced Liver Injury; Drug Overdose; Humans
+
+[R1-290] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=yes
+  TITLE: Modulation of human embryonic stem cell-derived cardiomyocyte growth: a testbed for studying human cardiac hypertrophy?
+  ABSTRACT: Human embryonic stem cell-derived cardiomyocytes (hESC-CM) are being developed for tissue repair and as a model system for cardiac physiology and pathophysiology. However, the signaling requirements of their growth have not yet been fully characterized. We showed that hESC-CM retain their capacity for increase in size in long-term culture. Exposing hESC-CM to hypertrophic stimuli such as equiaxial cyclic stretch, angiotensin II, and phenylephrine (PE) increased cell size and volume, percentage of hESC-CM with organized sarcomeres, levels of ANF, and cytoskeletal assembly. PE effects on cell size were separable from those on cell cycle. Changes in cell size by PE were completely inhibited by p38-MAPK, calcineurin/FKBP, and mTOR blockers. p38-MAPK and calcineurin were also implicated in basal cell growth. Inhibitors of ERK, JNK, and CaMK II partially reduced PE effects; PKG or GSK3β inhibi …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Angiotensin II; Cardiomegaly; Cell Cycle; Cell Differentiation; Cell Line; Cell Proliferation; Cell Size; Cells, Cultured; Embryonic Stem Cells; Gene Expression Regulation; Humans; MAP Kinase Kinase 3; Myocytes, Cardiac; Phenylephrine
+
+[R1-291] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=yes
+  TITLE: Transplantation for acute liver failure in patients exposed to NSAIDs or paracetamol (acetaminophen): the multinational case-population SALT study.
+  ABSTRACT: BACKGROUND: Most NSAIDs are thought to be able to cause hepatic injury and acute liver failure (ALF), but the event rates of those leading to transplantation (ALFT) remain uncertain. OBJECTIVES: The aim of the study was to estimate population event rates for NSAID-associated ALFT METHODS: This was a case-population study of ALFT in 57 eligible liver transplant centres in seven countries (France, Greece, Ireland, Italy, The Netherlands, Portugal and the UK). Cases were all adults registered from 2005 to 2007 for a liver transplant following ALFT without identified clinical aetiology, exposed to an NSAID or paracetamol (acetaminophen) within 30 days before the onset of clinical symptoms. NSAID and paracetamol population exposures were assessed using national sales data from Intercontinental Marketing Services (IMS). Risk was estimated as the rate of ALFT per million treatment-years (MTY). …
+  TYPES: Journal Article;Multicenter Study;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Analgesics, Non-Narcotic; Anti-Inflammatory Agents, Non-Steroidal; Chemical and Drug Induced Liver Injury; Female; Humans; Liver Transplantation; Male
+
+[R1-292] OTC-LIT-Q05-TOPICAL | 2025 | abstract=yes
+  TITLE: Seasonal Variation in Essential Oil Composition and Bioactivity of Three Ocimum Species from Nepal.
+  ABSTRACT: The plants from the Ocimum genus, belonging to the Labiatae family, serve as important bioresources of essential oils (EOs) rich in biologically active secondary metabolites, widely used in medicine, food, and cosmetics. This study explored the volatile composition, enantiomeric distribution, and in vitro biological activities of EOs from three Ocimum species native to Nepal: O. tenuiflorum L., O. basilicum L., and O. americanum L. EOs were extracted via hydro-distillation and analyzed using gas chromatography-mass spectrometry (GC-MS) for chemical profiling and chiral GC-MS for enantiomeric composition. Hierarchical cluster analysis was performed for major chemotypes. Antioxidant activity was assessed using DPPH and ABTS assays. Antimicrobial efficacy was evaluated using the microbroth dilution method, and cytotoxicity was tested on NIH-3T3 (normal) and MCF-7 (breast cancer) cell lines …
+  TYPES: Journal Article
+  MESH: Animals; Anti-Infective Agents; Antioxidants; Gas Chromatography-Mass Spectrometry; Humans; MCF-7 Cells; Mice; Microbial Sensitivity Tests; NIH 3T3 Cells; Nepal; Ocimum; Oils, Volatile; Plant Oils; Seasons
+
+[R1-293] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=yes
+  TITLE: "Weak" opioid analgesics. Codeine, dihydrocodeine and tramadol: no less risky than morphine.
+  ABSTRACT: So-called weak opioid analgesics are often used to treat severe pain, or when paracetamol or a nonsteroidal anti-inflammatory drug (NSAID) proves inadequate. But are weak opioids any more effective than paracetamol or NSAIDs on nociceptive pain, and are they better tolerated than morphine? To answer these questions, we conducted a review of literature using the standard Prescrire methodology. The potency of codeine and tramadol is strongly influenced by the cytochrome P450 isoenzyme CYP2D6 genotype, which varies widely from one person to another. This explains reports of overdosing or underdosing after administration of standard doses of the two drugs. The potency of morphine and that of buprenorphine, an opioid receptor agonist-antagonist, appears to be independent of CYP2D6 activity. All "weak" opioids can have the same dose-dependent adverse effects as morphine. There is no evidence t …
+  TYPES: Journal Article;Review
+  MESH: Analgesics, Opioid; Anti-Inflammatory Agents, Non-Steroidal; Chronic Pain; Codeine; Dose-Response Relationship, Drug; Humans; Morphine; Respiration; Tramadol
+
+[R1-294] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=no
+  TITLE: Treatment of paracetamol overdose--authors' reply.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Alanine Transaminase; Antiemetics; Female; Humans; Male; Ondansetron; Vomiting
+
+[R1-295] OTC-LIT-Q01-ACETAMINOPHEN | 2020 | abstract=yes
+  TITLE: Abnormal liver function tests predict transfer to intensive care unit and death in COVID-19.
+  ABSTRACT: BACKGROUND: The pandemic of coronavirus disease 2019 (COVID-19) has emerged as a relevant threat for humans worldwide. Abnormality in liver function tests (LFTs) has been commonly observed in patients with COVID-19, but there is controversy on its clinical significance. The aim of this study was to assess the prevalence, the characteristics and the clinical impact of abnormal LFTs in hospitalized, non-critically ill patients with COVID-19. METHODS: In this multicentre, retrospective study, we collected data about 565 inpatients with COVID-19. Data on LFTs were collected at admission and every 7 ± 2 days during the hospitalization. The primary outcome was a composite endpoint of death or transfer to intensive care unit (ICU). RESULTS: Upon admission 329 patients (58%) had LFTs abnormality. Patients with abnormal LFTs had more severe inflammation and higher degree of organ dysfunction than …
+  TYPES: Journal Article;Multicenter Study
+  MESH: Acetaminophen; Antibodies, Monoclonal, Humanized; Antipyretics; Antiviral Agents; COVID-19; Critical Care; Female; Humans; Intensive Care Units; Italy; Liver Diseases; Liver Function Tests; Male; Middle Aged
+
+[R1-296] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=no
+  TITLE: Reply to: "Protection against acetaminophen-induced liver injury with MG53: Muscle-liver axis and necroptosis".
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Chemical and Drug Induced Liver Injury; Chemical and Drug Induced Liver Injury, Chronic; Humans; Liver; Muscles; Necroptosis
+
+[R1-297] OTC-LIT-Q05-TOPICAL | 2000 | abstract=yes
+  TITLE: Potentiation of warfarin anticoagulation associated with topical methyl salicylate.
+  ABSTRACT: OBJECTIVE: To report a case of international normalized ratio (INR) elevation resulting from the administration of topical methyl salicylate in a patient whose INR was previously stable while she received warfarin anticoagulation. CASE SUMMARY: A 22-year-old white woman presented with an INR of 12.2 after applying a topical pain-relieving gel to her knees daily for eight days. The potentiation of the warfarin anticoagulation was attributed to the low-dose methyl salicylate contained in the product. DISCUSSION: Methyl salicylate is systemically absorbed through the skin in measurable amounts, and may increase warfarin action by affecting vitamin K metabolism or by displacing warfarin from protein-binding sites. While several investigators have reported this interaction with use of high-dose methyl salicylate, this case indicates that a significant interaction can occur with the use of low …
+  TYPES: Case Reports;Journal Article
+  MESH: Administration, Topical; Adult; Anticoagulants; Drug Synergism; Female; Fixatives; Hemorrhage; Humans; International Normalized Ratio; Ointments; Salicylates; Warfarin
+
+[R1-298] OTC-LIT-Q01-ACETAMINOPHEN | 2023 | abstract=no
+  TITLE: An intravenous paracetamol overdose in an eight-day-old neonate.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Humans; Infant, Newborn
+
+[R1-299] OTC-LIT-Q01-ACETAMINOPHEN | 2026 | abstract=yes
+  TITLE: Visualizing hypochlorous acid as a key oxidative stress biomarker in drug-induced liver injury with a red-emitting probe.
+  ABSTRACT: Drug-induced liver injury (DILI) is a common form of hepatotoxicity resulting from adverse drug reactions. Extensive studies indicate that reactive oxygen species (ROS) levels undergo significant alterations during the progression of DILI. Among various ROS, hypochlorous acid (HClO)-produced in substantial amounts during oxidative stress in liver injury-has emerged as a potential biomarker for DILI. In this work, we developed a fluorescent probe based on a benzopyran-derived fluorophore with diaminomaleonitrile as the HClO-specific recognition unit. Upon reaction with HClO, the probe emits intense red fluorescence. It demonstrates favorable sensing properties, including a fast response time (1 min), a low detection limit (26.7 nM), high selectivity toward HClO, good stability under physiological pH conditions, and low cytotoxicity. The probe enables quantitative detection of HClO within …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Animals; Biomarkers; Chemical and Drug Induced Liver Injury; Fluorescent Chemosensor Compounds; Fluorescent Dyes; Hep G2 Cells; Humans; Hypochlorous Acid; Mice; Oxidative Stress; Spectrometry, Fluorescence; Zebrafish
+
+[R1-300] OTC-LIT-Q04-DIGESTIVE | 2007 | abstract=yes
+  TITLE: Kasai portoenterostomy: 12-year experience with a novel adjuvant therapy regimen.
+  ABSTRACT: AIM: The role of adjuvant therapy with corticosteroids and choleretics after Kasai portoenterostomy for biliary atresia (BA) remains uncertain. Experience with a novel postoperative adjuvant therapy regimen is reported. METHODS: Between 1994 and 2006, 71 infants with BA were referred. Four died from uncorrectable congenital heart disease/cardiorespiratory failure without undergoing portoenterostomy, 7 underwent primary liver transplantation (3 referred > or = 19 weeks of age), and 60 underwent portoenterostomy at a median of 51 (10-104) days. Of these, 55 (92%) had type 3 BA and 6 had the BA splenic malformation syndrome. Fifty (83%) received the following adjuvant therapy beginning on postoperative day 5: oral dexamethasone 0.3 mg/kg bd for 5 days, 0.2 mg/kg bd for 5 days, and 0.1 mg/kg bd for 5 days together with oral ursodeoxycholic acid 5 mg/kg bd and phenobarbitone 5 mg/kg nocte, bo …
+  TYPES: Journal Article;Multicenter Study;Randomized Controlled Trial
+  MESH: Biliary Atresia; Chemotherapy, Adjuvant; Cholagogues and Choleretics; Dexamethasone; Double-Blind Method; Glucocorticoids; Humans; Infant; Portoenterostomy, Hepatic; Survival Analysis; Ursodeoxycholic Acid

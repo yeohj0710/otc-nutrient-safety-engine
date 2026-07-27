@@ -1,0 +1,152 @@
+===== AI REFERENCE ROUND 3 / CHUNK 8 (20 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R3-281] OTC-LIT-Q01-ACETAMINOPHEN | 2018 | abstract=yes
+  TITLE: Co-ingestion of aspirin and acetaminophen promoting fulminant liver failure: A critical review of Reye syndrome in the current perspective at the dawn of the 21st century.
+  ABSTRACT: In the paediatric population, there is some evidence of possible interaction, synergism, and co-toxicity of aspirin and acetaminophen. The toxicity of salicylates such as aspirin in this population is well known and documented, specifically in the form of Reye syndrome. The possible toxic synergism with aspirin and acetaminophen, however, is not previously described; though case reports suggest such co-toxicities with low levels of aspirin and other compounds can exist. In vitro studies into mechanistic processes of salicylate toxicity propose that there is a bi-directional link and potentiation with glutathione (GSH) depletion and salicylate toxicity. Data may suggest a plausible explanation for salicylate and acetaminophen toxic synergism. Further studies investigating this potential toxic synergism are warranted. Given the lack of awareness in the clinical community about potential to …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Aspirin; Child; Drug Interactions; Drug Therapy, Combination; Humans; Liver Failure, Acute; Reye Syndrome
+
+[R3-282] OTC-LIT-Q01-ACETAMINOPHEN | 2018 | abstract=yes
+  TITLE: N-Acetylcysteine for the Treatment of Psychiatric Disorders: A Review of Current Evidence.
+  ABSTRACT: N-acetylcysteine, a sulphur-containing amino acid for the treatment of paracetamol overdose and chronic obstructive pulmonary disease, is a widely available off-the-shelf oral antioxidant supplement in many countries. With the potential to modulate several neurological pathways, including glutamate dysregulation, oxidative stress, and inflammation that can be beneficial to the brain functions, N-acetylcysteine is being explored as an adjunctive therapy for many psychiatric conditions. This narrative review synthesises and presents the current evidence from systematic reviews, meta-analyses, and latest clinical trials on N-acetylcysteine for addiction and substance abuse, schizophrenia, obsessive-compulsive and related disorders, and mood disorders. Good evidence exists to support the use of N-acetylcysteine as an adjunct treatment to reduce the total and negative symptoms of schizophreni …
+  TYPES: Journal Article;Meta-Analysis;Systematic Review
+  MESH: Acetylcysteine; Administration, Oral; Humans; Mental Disorders
+
+[R3-283] OTC-LIT-Q03-COLD-ALLERGY | 2010 | abstract=yes
+  TITLE: Prevalence and incidence of hypertension in adolescent girls.
+  ABSTRACT: OBJECTIVE: To estimate the prevalence and incidence of hypertension and prehypertension and associated factors in adolescent girls. STUDY DESIGN: A total of 2368 girls (49% Caucasian, 51% African-American) aged 9 or 10 years enrolled in the National Heart, Lung, and Blood Institute Growth and Health Study had blood pressure, height, and weight measured at annual visits through age 18 to 19 years. Prevalence and incidence of hypertension and prehypertension were calculated. RESULTS: On the basis of 2 visits, hypertension prevalence was approximately 1% to 2% in African-American girls and 0.5% in Caucasian girls. Incidence in 8 years was 5.0% and 2.1%, respectively. Obese girls had higher prevalence (approximately 6-fold higher) and incidence (approximately 2- to 3-fold higher) compared with girls of normal weight. Similar patterns were found for prehypertension, except that prehypertensio …
+  TYPES: Journal Article
+  MESH: Adolescent; Female; Humans; Hypertension; Incidence; Prevalence
+
+[R3-284] OTC-LIT-Q02-NSAID | 2019 | abstract=no
+  TITLE: Upper gastrointestinal bleeding due to overdose of selective serotonin reuptake inhibitors and nonsteroidal anti-inflammatory drugs.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Abdominal Pain; Adult; Anti-Inflammatory Agents, Non-Steroidal; Depressive Disorder; Desvenlafaxine Succinate; Drug Synergism; Duloxetine Hydrochloride; Duodenal Ulcer; Gastrointestinal Hemorrhage; Gastroscopy; Humans; Male; Melena; Methimazole
+
+[R3-285] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=yes
+  TITLE: Artificial sweeteners, caffeine, and alcohol intoxication in bar patrons.
+  ABSTRACT: BACKGROUND: Previous laboratory research on alcohol absorption has found that substitution of artificially sweetened alcohol mixers for sucrose-based mixers has a marked effect on the rate of gastric emptying, resulting in elevated blood alcohol concentrations. Studies conducted in natural drinking settings, such as bars, have indicated that caffeine ingestion while drinking is associated with higher levels of intoxication. To our knowledge, research has not examined the effects of alcohol mixers that contain both an artificial sweetener and caffeine, that is, diet cola. Therefore, we assessed the event-specific association between diet cola consumption and alcohol intoxication in bar patrons. We sought to determine whether putative increases in blood alcohol, produced by accelerated gastric emptying following diet cola consumption, as identified in the laboratory, also appear in a natur …
+  TYPES: Journal Article
+  MESH: Adult; Alcohol Drinking; Alcoholic Intoxication; Beverages; Breath Tests; Caffeine; Central Nervous System Stimulants; Databases, Factual; Energy Drinks; Ethanol; Female; Gastric Emptying; Humans; Interview, Psychological
+
+[R3-286] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: Preventability of adverse drug events involving multiple drugs using publicly available clinical decision support tools.
+  ABSTRACT: PURPOSE: The results of a retrospective evaluation of the frequency and preventability of adverse drug events (ADEs) involving multiple drugs among hospital inpatients are reported. METHODS: Data collected in a previous cohort study of 180 actual ADEs and 552 potential ADEs (PADEs) at six community hospitals in Massachusetts were analyzed to determine the frequency and types of multiple-drug ADEs and the extent to which the ADEs might have been prevented using publicly available clinical decision-support (CDS) knowledge bases. None of the hospitals had a computerized prescriber-order-entry system at the time of data collection (January 2005-August 2006). RESULTS: A total of 17 ADEs (rate, 1.4 per 100 admissions) and 146 PADEs (rate, 12.2 per 100 admissions) involving multiple drugs were identified. The documented events were related to drug duplication (n = 126), drug-drug interaction (n …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural
+  MESH: Cohort Studies; Decision Support Systems, Clinical; Drug Interactions; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Hospitals, Community; Humans; Massachusetts; Medication Errors; Pharmaceutical Preparations; Retrospective Studies
+
+[R3-287] OTC-LIT-Q01-ACETAMINOPHEN | 2018 | abstract=yes
+  TITLE: Dissecting the molecular pathophysiology of drug-induced liver injury.
+  ABSTRACT: Drug-induced liver injury (DILI) has become a major topic in the field of Hepatology and Gastroenterology. DILI can be clinically divided into three phenotypes: hepatocytic, cholestatic and mixed. Although the clinical manifestations of DILI are variable and the pathogenesis complicated, recent insights using improved preclinical models, have allowed a better understanding of the mechanisms that trigger liver damage. In this review, we will discuss the pathophysiological mechanisms underlying DILI. The toxicity of the drug eventually induces hepatocellular damage through multiple molecular pathways, including direct hepatic toxicity and innate and adaptive immune responses. Drugs or their metabolites, such as the common analgesic, acetaminophen, can cause direct hepatic toxicity through accumulation of reactive oxygen species and mitochondrial dysfunction. The innate and adaptive immune …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Adaptive Immunity; Analgesics, Non-Narcotic; Animals; Apoptosis; Chemical and Drug Induced Liver Injury; Cholestasis; Hepatocytes; Humans; Immunity, Innate; Liver; Signal Transduction
+
+[R3-288] OTC-LIT-Q03-COLD-ALLERGY | 2021 | abstract=yes
+  TITLE: Caffeine as a Factor Influencing the Functioning of the Human Body-Friend or Foe?
+  ABSTRACT: Nowadays, caffeine is one of the most commonly consumed substances, which presents in many plants and products. It has both positive and negative effects on the human body, and its activity concerns a variety of systems including the central nervous system, immune system, digestive system, respiratory system, urinary tract, etc. These effects are dependent on quantity, the type of product in which caffeine is contained, and also on the individual differences among people (sex, age, diet etc.). The main aim of this review was to collect, present, and analyze the available information including the latest discoveries on the impact of caffeine on human health and the functioning of human body systems, taking into account the role of caffeine in individual disease entities. We present both the positive and negative sides of caffeine consumption and the healing properties of this purine alkal …
+  TYPES: Journal Article;Review
+  MESH: Adolescent; Adult; Analgesics; Animals; Antioxidants; Caffeine; Cardiovascular System; Central Nervous System Stimulants; Child; Digestive System; Humans; Immune System; Mental Disorders; Neurodegenerative Diseases
+
+[R3-289] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Pathophysiological relevance of neutrophils in acetaminophen hepatotoxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acute-Phase Reaction; Animals; Chemokines; DNA, Mitochondrial; Female; Humans; Liver; Liver Failure, Acute; Male; Neutrophils; Receptors, Formyl Peptide
+
+[R3-290] OTC-LIT-Q01-ACETAMINOPHEN | 2020 | abstract=yes
+  TITLE: Methemoglobinemia associated with massive acetaminophen ingestion: a case series.
+  ABSTRACT: Background: Acetaminophen is a common pharmaceutical ingestion reported to US poison centers. In overdose, toxic metabolites are known to cause hepato- and nephrotoxicity. While G6PD deficiency may be a risk factor for methemoglobin production in the setting of acetaminophen overdose, it is rarely reported in patients who do not have this condition.Methods: We present two cases of methemoglobinemia following massive acetaminophen ingestion with no known history of G6PD deficiency or other substances known to induce methemoglobinemia. The two cases had peak methemoglobin measurements of 32% and 12% respectively, and both were treated with methylene blue.Discussion: A number of mechanisms may be involved in production of methemoglobin in the setting of massive acetaminophen ingestion including NAPQI-induced oxidation, depletion of glutathione stores, and production of oxidant-metabolites i …
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Drug Overdose; Fatal Outcome; Female; Humans; Male; Methemoglobin; Methemoglobinemia; Methylene Blue; Middle Aged; Treatment Outcome
+
+[R3-291] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=yes
+  TITLE: Acetaminophen concentrations prior to 4 hours of ingestion: impact on diagnostic decision-making and treatment.
+  ABSTRACT: BACKGROUND: Consensus recommendations for acute acetaminophen exposure include plotting an acetaminophen concentration at ≥ 4 h post ingestion on the Rumack-Matthew nomogram to determine the need for acetylcysteine treatment. We studied the frequency of acetaminophen concentrations drawn within 4 h post ingestion and whether the Rumack-Matthew nomogram was properly used in making acetylcysteine treatment decisions. METHODS: This was a retrospective, observational case series at three regional poison centers of acute acetaminophen exposures between 1/1/13 and 12/31/13. Cases were analyzed for demographics, timing of acetaminophen concentrations, and application of the Rumack-Matthew nomogram in acetylcysteine initiation or termination. RESULTS: 1,123 cases of acute acetaminophen exposure were reviewed. Of 520 acute acetaminophen exposure cases presenting < 4 h post ingestion, 323 (62%) ha …
+  TYPES: Journal Article;Multicenter Study;Observational Study;Research Support, N.I.H., Extramural
+  MESH: Acetaminophen; Acetylcysteine; Adolescent; Adult; Analgesics, Non-Narcotic; Child; Decision Making; Dose-Response Relationship, Drug; Drug Overdose; Female; Humans; Male; Retrospective Studies; Toxicity Tests, Acute
+
+[R3-292] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=no
+  TITLE: "Massive acetaminophen ingestion with early metabolic acidosis and coma: treatment with iv nac and continuous venovenous hemodiafiltration" by Wiegand et al., Clin Toxicol (Phila) 48:156-159.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Acidosis; Analgesics, Non-Narcotic; Coma; Drug Overdose; Half-Life; Hemodiafiltration; Humans
+
+[R3-293] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Reliability of history of acetaminophen ingestion in intentional drug overdose patients.
+  ABSTRACT: The objective of this study was to determine the reliability of denial of acetaminophen ingestion in intentional drug overdose patients. All intentional drug overdose patients admitted to an emergency department who were able to provide a history were included. A detailed history was obtained on names, timing and number of medications ingested, and serum acetaminophen was assayed. Multidrug ingestion was defined as the reporting of ≥2 medications. Patients were considered 'reliable' if they reported acetaminophen ingestion and had detectable acetaminophen levels or the other way around. Validity parameters of acetaminophen history were assessed by sensitivity, specificity and positive and negative predictive values. A total of 154 patients were included. History was significantly more reliable in patients who denied ingestion of acetaminophen (n = 107) compared with patients who reported …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Adolescent; Adult; Aged; Aged, 80 and over; Analgesics, Non-Narcotic; Child; Drug Overdose; Emergency Service, Hospital; Female; Humans; Israel; Male; Medical History Taking
+
+[R3-294] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Retinal microcirculation in association with caffeinated and alcoholic drinks in subjects at increased cardiovascular risk.
+  ABSTRACT: OBJECTIVES: The association of caffeinated and alcoholic drinks with microcirculation is poorly investigated. The aim of the study was to investigate the associations of daily consumption of caffeinated and alcoholic drinks with retinal vessel calibers. METHODS: In consecutive adults at increased risk but free of CVD and diabetes mellitus, (n=181, age: 51.32±12.42 y, 51.4% women), we determined CRAE, CRVE and AVR, respectively. Daily consumption of caffeinated and alcoholic drinks was assessed through 24 h recalls. RESULTS: After adjustment for potential confounders: (i) caffeine was positively associated with CRVE (b=0.177, P=.006 for left, b=0.208, P=.002 for right eye, respectively) (ii) decaffeinated coffee was positively associated with CRAE (b=0.141, P=.035 for left eye) and negatively associated with CRVE (b=-0.234, P<.001 for left, b=-0.189, P=.006 for right eye, respectively). R …
+  TYPES: Journal Article
+  MESH: Adult; Aged; Alcohol Drinking; Arterioles; Caffeine; Cardiovascular Diseases; Coffee; Female; Humans; Male; Microcirculation; Middle Aged; Retinal Vessels; Risk Factors
+
+[R3-295] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=yes
+  TITLE: Comparison of Intermittent Intravenous Boluses of Phenylephrine and Norepinephrine to Prevent and Treat Spinal-Induced Hypotension in Cesarean Deliveries: Randomized Controlled Trial.
+  ABSTRACT: BACKGROUND: Phenylephrine (PE) is currently the vasopressor of choice to prevent and treat spinal-induced hypotension at cesarean delivery (CD). However, its use is often associated with reflex bradycardia. Norepinephrine (NE) has been put forward as an alternative vasopressor during CD due to its ability to treat hypotension while maintaining heart rate (HR). Recent studies have focused on the role of NE used as an infusion with favorable results compared to PE. No studies have compared equipotent bolus doses of PE and NE at CD. We hypothesized that when used in equipotent doses as an intermittent bolus regimen to prevent and treat spinal-induced hypotension, NE would result in a reduction in the incidence of bradycardia compared to PE. METHODS: This was a double-blind, randomized clinical trial of women undergoing elective CD under spinal anesthesia. Women were randomized to receive ei …
+  TYPES: Comparative Study;Journal Article;Randomized Controlled Trial
+  MESH: Anesthesia, Obstetrical; Anesthesia, Spinal; Bradycardia; Cesarean Section; Female; Humans; Hypotension; Norepinephrine; Phenylephrine; Pregnancy
+
+[R3-296] OTC-LIT-Q03-COLD-ALLERGY | 2025 | abstract=yes
+  TITLE: Comparative effects of caffeine, beta-alanine, and their combination on mechanical, physiological, and perceptual responses to upper-body superset resistance training.
+  ABSTRACT: Caffeine and beta-alanine are widely used in multi-ingredient pre-workout supplements believed to enhance resistance training, but their specific role in driving this effect remains unclear. The current study employed a randomized, triple-blinded, placebo-controlled and crossover experimental design to explore the acute effects of caffeine (200 mg), beta-alanine (3 g), or their combination (200 mg caffeine and 3 g beta-alanine; C+B-A) administered 30 min prior to resistance training (RT) on mechanical, physiological, and perceptual variables. Twenty-one young resistance-trained males (age = 23.5 ± 4.5 years, body mass = 82.1 ± 10.2 kg) visited the laboratory on six occasions: one familiarization session, one preliminary testing session for load determination, and four experimental sessions which differed only in supplementation condition and involved four supersets of bench press and ben …
+  TYPES: Journal Article;Randomized Controlled Trial
+  MESH: Adult; Caffeine; Cross-Over Studies; Dietary Supplements; Humans; Male; Muscle, Skeletal; Resistance Training; Young Adult; beta-Alanine
+
+[R3-297] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Why not formulate an acetaminophen tablet containing N-acetylcysteine to prevent poisoning?
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Chemistry, Pharmaceutical; Delayed-Action Preparations; Drug Combinations; Drug Overdose; Humans; Nonprescription Drugs; Poisoning; Tablets
+
+[R3-298] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Triggers for Preeclampsia Onset: a Case-Crossover Study.
+  ABSTRACT: BACKGROUND: Risk factors for preeclampsia are well established, whereas, the triggers associated with timing of preeclampsia onset are not. The aim of this study was to establish whether recent infection or other triggers were associated with timing of preeclampsia onset. METHODS: We used a case-crossover design with preeclampsia cases serving as their own controls. Women with singleton pregnancies of ≥20 weeks gestation presenting at three hospitals were eligible for inclusion. Exposures to potential triggers were identified via guided questionnaire. Infective episodes included symptoms lasting >24 h. Preeclampsia was defined as hypertension (BP ≥140 mmHg and/or ≥90 mmHg) and proteinuria (protein/creatinine ratio ≥30 mg/mmol). Conditional logistic regression was used to compare the odds of exposure to potential triggers in the case windows (1-7 days preceding diagnosis of preeclampsia) …
+  TYPES: Clinical Trial;Journal Article;Multicenter Study;Research Support, Non-U.S. Gov't
+  MESH: Acute Disease; Adolescent; Adult; Age Distribution; Alcohol Drinking; Caffeine; Central Nervous System Stimulants; Cross-Over Studies; Female; Food; Humans; Maternal Age; Middle Aged; New South Wales
+
+[R3-299] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Effects of Dietary Supplementation of a Microalgae Extract Containing Fucoxanthin Combined with Guarana on Cognitive Function and Gaming Performance.
+  ABSTRACT: BACKGROUND: Esports competitive gaming requires selective visual attention, memory, quick judgment, and an ability to sustain psychomotor performance over time. Fucoxanthin is a carotenoid, found in specific microalgae varieties such as Phaeodactylum tricornutum (PT), that has been purported to possess nootropic and neuroprotective effects through its anti-inflammatory and antioxidant properties. This study evaluated whether acute and 30-day supplementation of an extract of PT from microalgae combined with guarana (a natural source of caffeine) affects cognitive function in gamers. MATERIALS AND METHODS: In a double-blind, placebo-controlled manner, 61 experienced gamers (21.7 ± 4.1 years, 73 ± 13 kg) were randomly assigned to ingest a placebo (PL), a low-dose (LD) supplement containing 440 mg of PT extract including 1% fucoxanthin +500 mg of guarana containing 40-44 mg caffeine (MicroPh …
+  TYPES: Journal Article;Randomized Controlled Trial
+  MESH: Caffeine; Cognition; Dietary Supplements; Double-Blind Method; Humans; Microalgae; Paullinia; Video Games; Xanthophylls
+
+[R3-300] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=no
+  TITLE: Paracetamol for pain in adults.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acetaminophen; Drug Overdose; Humans; Osteoarthritis, Knee; Pain; Practice Guidelines as Topic

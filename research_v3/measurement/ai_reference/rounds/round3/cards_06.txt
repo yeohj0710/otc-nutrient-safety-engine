@@ -1,0 +1,272 @@
+===== AI REFERENCE ROUND 3 / CHUNK 6 (40 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R3-201] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Characterization of acetaminophen overdose-related emergency department visits and hospitalizations in the United States.
+  ABSTRACT: PURPOSE: To estimate the number of acetaminophen overdose-related emergency department (ED) visits and hospitalizations in the United States, characterize these by intentionality, age, and gender, and compare the strengths and limitations of the utilized databases. METHODS: We used data from the National Hospital Ambulatory Medical Care Survey (NHAMCS) and the National Electronic Injury Surveillance System (NEISS) to estimate the number of relevant ED visits in the United States between 2000 and 2007, and the National Hospital Discharge Survey (NHDS) to estimate the number of relevant hospitalizations in the United States between 1991 and 2006. National estimates and their standard errors were calculated using information provided in each database. We used the standard United States population in 2000 to calculate age-adjusted rates. RESULTS: We estimate an annual average of 44,348 (NHAM …
+  TYPES: Comparative Study;Journal Article
+  MESH: Acetaminophen; Adolescent; Adult; Adverse Drug Reaction Reporting Systems; Analgesics, Non-Narcotic; Child; Databases, Factual; Emergency Service, Hospital; Female; Health Care Surveys; Hospitalization; Humans; Male; Population Surveillance
+
+[R3-202] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Augmenting the sensitivity for hepatotoxicity prediction in acute paracetamol overdose: combining psi (ψ) parameter and paracetamol concentration aminotransferase activity multiplication product.
+  ABSTRACT: INTRODUCTION: While factors like high serum paracetamol (acetaminophen) concentration and delayed acetylcysteine treatment increase hepatotoxicity risk, existing predictive tools, such as the paracetamol concentration aminotransferase activity multiplication product and the psi (ψ) parameter, lack definitive accuracy. This study evaluated the paracetamol psi parameter multiplication product addition against the psi parameter and the paracetamol concentration aminotransferase activity multiplication product for predicting hepatotoxicity following an acute paracetamol overdose. METHODS: A retrospective analysis of patients with acute paracetamol overdose from January 2007 to December 2016 was conducted. The paracetamol psi parameter multiplication product addition, calculated by summing the psi parameter (mmol/L × h) and the paracetamol concentration aminotransferase activity multiplicatio …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Adolescent; Adult; Alanine Transaminase; Analgesics, Non-Narcotic; Aspartate Aminotransferases; Chemical and Drug Induced Liver Injury; Drug Overdose; Female; Humans; Liver Function Tests; Male; Middle Aged
+
+[R3-203] OTC-LIT-Q05-TOPICAL | 2026 | abstract=yes
+  TITLE: Topical non-steroidal anti-inflammatory drug use for pediatric acute musculoskeletal pain: a scoping review.
+  ABSTRACT: OBJECTIVE: Topical non-steroidal anti-inflammatory drugs (NSAIDs) effectively treat acute musculoskeletal pain in adults, but evidence in children is limited. This scoping review aims to summarize current evidence for use in children and identify literature gaps to inform future research. METHODS: We conducted a scoping review following Preferred Reporting Items for Systematic Reviews and Meta-analyses extension for Scoping Reviews guidelines. Our electronic search included published studies across six databases, grey literature, and unpublished or ongoing trials. Studies involving children (< 18 years) with acute musculoskeletal pain treated with topical NSAIDs in Emergency Department (ED), urgent care, or ambulatory settings were included. We extracted data on study methodology, participant characteristics, clinical outcomes, adverse events, and rescue analgesia use. We performed criti …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't;Scoping Review
+  MESH: Acute Pain; Administration, Topical; Adolescent; Anti-Inflammatory Agents, Non-Steroidal; Child; Humans; Musculoskeletal Pain; Pain Measurement
+
+[R3-204] OTC-LIT-Q05-TOPICAL | 2023 | abstract=yes
+  TITLE: Comparison of skin decontamination strategies in the initial operational response following chemical exposures.
+  ABSTRACT: In mass casualty incidents including hazardous chemical skin exposure, decontamination is the primary intervention to avoid systemic uptake of the toxic compound. The protocol needs to be both simple and efficient to enable a rapid response and avoid delay of patient management. In the present study, decontamination strategies included in the initial operational response were evaluated following human skin exposure in vitro to four different contaminants. Results demonstrated that the efficacy of selected decontamination procedures was highly dependent on the chemical contaminant used. Dry removal of the sulfur mustard simulant methyl salicylate prior to wet decontamination was found beneficial compared to wet decontamination alone. Rapidly initiated wet decontamination was more efficient compared to dry and wet removal of the industrial chemical 2-butoxyethanol and the nerve agent tabun …
+  TYPES: Journal Article
+  MESH: Chemical Warfare Agents; Decontamination; Humans; Mass Casualty Incidents; Mustard Gas; Nerve Agents; Skin
+
+[R3-205] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: Blacks have a greater sensitivity to α1-adrenoceptor-mediated venoconstriction compared with whites.
+  ABSTRACT: Blacks have increased hemodynamic responses to both physiological and pharmacological adrenergic stimulation compared with whites, and this may contribute to the greater prevalence of hypertension in this ethnic group. A small study suggested enhanced α1-adrenoreceptor-mediated arterial vasoconstriction in the forearm vasculature of blacks compared with whites, but it is unknown whether this reflects a generalized vascular phenomenon. The objective of this study was to examine the hypothesis that there are ethnic differences in venous α1-adrenoreceptor responsiveness. Using a linear variable differential transformer, we measured local dorsal hand vein responses to increasing doses of the selective α1-adrenoreceptor agonist, phenylephrine, in 106 subjects (64 whites and 42 blacks). There was wide interindividual variability in responses to phenylephrine. The dose that produced 50% of maxi …
+  TYPES: Comparative Study;Journal Article;Research Support, N.I.H., Extramural
+  MESH: Adolescent; Adrenergic alpha-1 Receptor Agonists; Adult; Black People; Black or African American; Female; Hand; Humans; Hypertension; Male; Middle Aged; Phenylephrine; Prevalence; Reference Values
+
+[R3-206] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: N-acetylcysteine (NAC) in neurological disorders: mechanisms of action and therapeutic opportunities.
+  ABSTRACT: BACKGROUND: There is an expanding field of research investigating the benefits of medicines with multiple mechanisms of action across neurological disorders. N-acetylcysteine (NAC), widely known as an antidote to acetaminophen overdose, is now emerging as treatment of vascular and nonvascular neurological disorders. NAC as a precursor to the antioxidant glutathione modulates glutamatergic, neurotrophic, and inflammatory pathways. AIM AND DISCUSSION: Most NAC studies up to date have been carried out in animal models of various neurological disorders with only a few studies completed in humans. In psychiatry, NAC has been tested in over 20 clinical trials as an adjunctive treatment; however, this topic is beyond the scope of this review. Herein, we discuss NAC molecular, intracellular, and systemic effects, focusing on its potential applications in neurodegenerative diseases including spin …
+  TYPES: Journal Article;Review
+  MESH: Acetylcysteine; Animals; Free Radical Scavengers; Humans; Nervous System Diseases
+
+[R3-207] OTC-LIT-Q03-COLD-ALLERGY | 2026 | abstract=yes
+  TITLE: Time of day influences caffeine's effects on exercise-induced haemostatic responses in sedentary young men: a randomized crossover trial.
+  ABSTRACT: BACKGROUND: Caffeine, a performance-enhancing substance, affects haemostasis. However, the interplay between caffeine, exercise, and circadian rhythms on haemostatic responses remains unclear. This study aimed to investigate the effects of acute caffeine intake on exercise-induced haemostatic responses in sedentary young men at different times of day. METHODS: Thirty caffeine-naïve sedentary men completed a randomized, double-blind, placebo-controlled crossover study. Each participant performed 4 combined exercise sessions-2 at 07:00 and 2 at 18:00-after ingestion of either caffeine or a placebo. Blood samples were collected pre-exercise, post-exercise, and after 60 minutes of recovery. RESULTS: Across all conditions, exercise elicited increases in platelet aggregation, thrombin generation, tPA activity, and clot lysis time. PAI-1 activity was unchanged post-exercise but declined during …
+  TYPES: Journal Article;Randomized Controlled Trial
+  MESH: Adult; Caffeine; Circadian Rhythm; Cross-Over Studies; Double-Blind Method; Exercise; Hemostasis; Humans; Male; Plasminogen Activator Inhibitor 1; Platelet Aggregation; Sedentary Behavior; Thrombin; Time Factors
+
+[R3-208] OTC-LIT-Q02-NSAID | 2011 | abstract=no
+  TITLE: Quiz Page October 2011: An under-recognized cause of CKD.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Acidosis; Amines; Anorexia Nervosa; Anti-Inflammatory Agents, Non-Steroidal; Chronic Disease; Creatinine; Cyclohexanecarboxylic Acids; False Negative Reactions; Female; Fluid Therapy; Gabapentin; Glomerulosclerosis, Focal Segmental; Humans; Hypokalemia
+
+[R3-209] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: Commentary: SOFA scores and staggered paracetamol overdose prognostication.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Journal Article
+  MESH: APACHE; Acetaminophen; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Female; Humans; Liver Failure, Acute; Male; Multiple Organ Failure
+
+[R3-210] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: The Toxicology Investigators Consortium Case Registry--the 2011 experience.
+  ABSTRACT: In 2010, the American College of Medical Toxicology established its Case Registry, the Toxicology Investigators Consortium (ToxIC). ToxIC is a prospective registry, which exclusively compiles suspected and confirmed toxic exposure cases cared for at the bedside by medical toxicologists at its participating sites. The Registry aims to fulfill two important gaps in the field: a real-time toxicosurveillance system to identify current poisoning trends and a powerful research tool in toxicology. ToxIC allows extraction of information from medical records making it the most robust multicenter database on chemical toxicities in existence. All cases seen by medical toxicologists at participating institutions were entered in a database. Information characterizing patients entered in 2011 was tabulated. 2010 data was also included so that cumulative total numbers could be described as well. The cu …
+  TYPES: Journal Article;Multicenter Study;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Adolescent; Adult; Aged; Analgesics, Non-Narcotic; Analgesics, Opioid; Antidepressive Agents; Child; Child, Preschool; Databases, Factual; Drug Overdose; Emergency Service, Hospital; Female
+
+[R3-211] OTC-LIT-Q03-COLD-ALLERGY | 2022 | abstract=yes
+  TITLE: Caffeine consumption and mortality in populations with different weight statuses: An analysis of NHANES 1999-2014.
+  ABSTRACT: OBJECTIVES: The association between caffeine consumption and mortality in different weight statuses is unclear. This study aimed to explore the effects of caffeine consumption on mortality in different weight statuses. METHODS: Data from the National Health and Nutrition Examination Survey (1999-2014) was used in this study. We used multivariable Cox proportional hazards models with appropriate sampling weight to assess the association of caffeine intake with mortality in different weight statuses. RESULTS: A total of 37 211 participants were included in our study. Multivariate-adjusted analyses showed that moderate caffeine consumption was associated with decreased all-cause mortality in total participants (hazard ratio: 0.61; 95% confidence interval [CI], 0.42-0.89). In subsequent analyses, a significant association was found between moderate caffeine consumption and all-cause mortalit …
+  TYPES: Journal Article
+  MESH: Adult; Caffeine; Coffee; Humans; Nutrition Surveys; Overweight; Proportional Hazards Models; Risk Factors
+
+[R3-212] OTC-LIT-Q01-ACETAMINOPHEN | 2023 | abstract=no
+  TITLE: Comment: Comparison of 2-Bag Versus 3-Bag N-Acetylcysteine Regimens for Pediatric Acetaminophen Toxicity.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Child; Drug Overdose; Humans
+
+[R3-213] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: The association between N-acetylcysteine treatment and hepatic healing in patients with non-acetaminophen-induced liver injury in pediatric intensive care: A single-center retrospective study.
+  ABSTRACT: OBJECTIVE: The aim of this study was to determine the association between the use of intravenous N-acetylcysteine (NAC) and hepatic healing in pediatric intensive care unit (PICU) patients with non-acetaminophen-induced hepatic injury, except for acute liver failure. METHODS: The data of patients who received intravenous NAC as adjuvant therapy for transaminase levels more than sixfold normal values during their PICU stay between 2010 and 2014 were retrospectively collected from the medical records database. The patients who did not receive NAC with elevated transaminase levels during their PICU stay between 2014 and 2018 were also collected as the standard of care (SOC) cohort. RESULTS: More than 50% of the liver injuries were secondary to acute hypoxia, hypotension, sepsis, and inflammation. The median number of elevated transaminase period (ETP) days of the NAC and SOC groups were 5 ( …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Child; Critical Care; Female; Humans; Liver Failure, Acute; Male; Retrospective Studies; Transaminases; Treatment Outcome
+
+[R3-214] OTC-LIT-Q03-COLD-ALLERGY | 2022 | abstract=yes
+  TITLE: The association between caffeine exposure during pregnancy and risk of gestational hypertension/preeclampsia: A meta-analysis and systematical review.
+  ABSTRACT: BACKGROUND: The potential effect of caffeine exposure during pregnancy on gestational hypertension (GH)/preeclampsia has attracted attention but remains unclear. METHODS: A systematic literature search of PubMed, Embase, and Cochrane Library databases was performed until March 2022. Observational studies assessing the association between caffeine exposure during pregnancy and the risk of GH/preeclampsia were included. The study protocol was registered in PROSPERO: CRD42022322387. RESULTS: Ten studies involving 114 984 pregnant women (2548 diagnosed with GH and 2473 diagnosed with preeclampsia) were included. Comparing caffeine exposure with noncaffeine exposure, no significant association was found between caffeine exposure during pregnancy and the risk of GH (odds ratio [OR] = 0.99, 95% confidence interval [CI]: 0.90-1.08, p = 0.800) and preeclampsia (OR = 1.13, 95% CI: 0.97-1.31, p = 0 …
+  TYPES: Journal Article;Meta-Analysis;Systematic Review
+  MESH: Caffeine; Female; Humans; Hypertension, Pregnancy-Induced; Odds Ratio; Pre-Eclampsia; Pregnancy
+
+[R3-215] OTC-LIT-Q04-DIGESTIVE | 2007 | abstract=yes
+  TITLE: A large-scale, multicentre, double-blind trial of ursodeoxycholic acid in patients with chronic hepatitis C.
+  ABSTRACT: BACKGROUND: Combined pegylated interferon and ribavirin has improved chronic hepatitis C (CH-C) therapy; however, sustained virological response is achieved in only about half of the patients with a 1b genotype infection. We assessed oral ursodeoxycholic acid (UDCA) on serum biomarkers as a possible treatment for interferon non-responders. METHODS: CH-C patients with elevated alanine aminotransferase (ALT) were assigned randomly to 150 (n = 199), 600 (n = 200) or 900 mg/day (n = 197) UDCA intake for 24 weeks. Changes in ALT, aspartate aminotransferase (AST) and gamma-glutamyl transpeptidase (GGT) were assessed. This study is registered at ClinicalTrial.gov, identifier NCT00200343. RESULTS: ALT, AST and GGT decreased at week 4 and then remained constant during drug administration. The median changes (150, 600 and 900 mg/day, respectively) were: ALT, -15.3, -29.2 and -36.2%; AST, -13.6, -2 …
+  TYPES: Journal Article;Multicenter Study;Randomized Controlled Trial
+  MESH: Adult; Aged; Alanine Transaminase; Aspartate Aminotransferases; Bile Acids and Salts; Biomarkers; Cholagogues and Choleretics; Dose-Response Relationship, Drug; Double-Blind Method; Female; Hepacivirus; Hepatitis C, Chronic; Humans; Male
+
+[R3-216] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Comment on "Cyclophilin A is a damage-associated molecular pattern molecule that mediates acetaminophen-induced liver injury".
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Animals; Chemical and Drug Induced Liver Injury; Cyclophilin A; Humans
+
+[R3-217] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=yes
+  TITLE: Cetirizine versus diphenhydramine in the prevention of chemotherapy-related hypersensitivity reactions.
+  ABSTRACT: OBJECTIVE: This study evaluated the role of cetirizine compared to diphenhydramine as premedications for patients receiving paclitaxel, cetuximab, and rituximab infusions. Historically, diphenhydramine has been linked with more sedation in comparison to cetirizine; however, it is unknown if cetirizine can replace diphenhydramine in the prevention of hypersensitivity reactions in patients receiving chemotherapy. METHODS: This is a retrospective study designed to assess infusion reactions occurring in patients receiving diphenhydramine or cetirizine premedication for rituximab, paclitaxel, or cetuximab therapies. Infusion reactions were defined as various symptoms such as flushing, itching, alterations in heart rate and blood pressure, and dyspnea plus the clinical setting of a concurrent or very recent infusion. RESULTS: A total of 207 patients were evaluated in this study with 83 patient …
+  TYPES: Comparative Study;Journal Article
+  MESH: Aged; Antineoplastic Agents, Immunological; Antineoplastic Agents, Phytogenic; Cetirizine; Cetuximab; Diphenhydramine; Drug Hypersensitivity; Female; Histamine H1 Antagonists, Non-Sedating; Humans; Infusions, Intravenous; Male; Middle Aged; Paclitaxel
+
+[R3-218] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Consumption of Coffee, Tea, and Caffeine at Midlife, and the Risk of Physical Frailty in Late Life.
+  ABSTRACT: OBJECTIVES: Our study evaluated the prospective association between the consumption of caffeine-containing beverages at midlife and the risk of physical frailty at late life within a population-based cohort of Chinese adults living in Singapore over a follow-up period of 20 years. DESIGN: Prospective cohort study. SETTING AND PARTICIPANTS: We used data from 12,583 participants from the baseline and third follow-up interviews of the Singapore Chinese Health Study (SCHS). Participants had a mean age of 53 years at baseline (1993-1998), and a mean age of 73 years during the third follow-up (2014-2017). METHODS: At baseline, habitual consumption of caffeine-containing beverages was evaluated using a validated semi-quantitative food-frequency questionnaire. During the third follow-up, physical frailty was assessed using the modified Cardiovascular Health Study phenotype. RESULTS: Compared wit …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Adult; Aged; Caffeine; Coffee; Frailty; Hand Strength; Humans; Middle Aged; Prospective Studies; Risk Factors; Tea
+
+[R3-219] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: The efficacy and safety of acetaminophen use following liver resection: a systematic review.
+  ABSTRACT: PURPOSE: Acetaminophen is commonly used for post-operative analgesia following liver resection. It is metabolised by the liver and appropriate administration and dosage is in question in in patients undergoing hepatectomy. A systematic review was conducted to investigate safety and efficacy of acetaminophen use. METHODS: MEDLINE, EMBASE, PubMed, Web of Science, and Google Scholar were searched for instances of toxicity, liver dysfunction, and analgesic efficacy in patients undergoing hepatectomy. RESULTS: Two randomised controlled trials and four prospective observational studies were included. The studies were of moderate quality. Four studies investigated post-operative levels of acetaminophen and its urinary metabolites, finding no evidence of toxicity. One study noted that glutathione levels decreased but not to clinically deficient levels. Administration of acetaminophen plus morphi …
+  TYPES: Journal Article;Systematic Review
+  MESH: Acetaminophen; Adult; Analgesics, Opioid; Hepatectomy; Humans; Liver; Morphine; Observational Studies as Topic; Pain; Postoperative Pain
+
+[R3-220] OTC-LIT-Q05-TOPICAL | 2014 | abstract=yes
+  TITLE: Efficacy of spraying l-menthol solution during endoscopic treatment of early gastric cancer: a phase III, multicenter, randomized, double-blind, placebo-controlled study.
+  ABSTRACT: BACKGROUND: The topical antispasmodic agent l-menthol is useful for inhibiting gastric peristalsis during diagnostic upper gastrointestinal endoscopy. However, it remains unclear whether l-menthol is similarly effective during therapeutic endoscopy, thereby improving treatment outcomes in a clinical setting. METHODS: A total of 83 patients scheduled to undergo endoscopic treatment at 8 Japanese referral centers were randomly assigned to receive l-menthol or placebo. The degree of gastric peristalsis (peristaltic score: grade 1-5) was assessed by an independent committee. The primary outcome was the proportion of subjects in whom no or mild peristalsis (grade 1 or 2) was maintained throughout endoscopic treatment. Secondary outcomes were the duration of sustained response and the incidence of adverse drug reactions. RESULTS: The proportion of patients with no or mild peristalsis was signi …
+  TYPES: Clinical Trial, Phase III;Journal Article;Multicenter Study;Randomized Controlled Trial
+  MESH: Aged; Aged, 80 and over; Double-Blind Method; Endoscopy, Gastrointestinal; Female; Gastric Mucosa; Humans; Japan; Male; Menthol; Middle Aged; Peristalsis; Stomach Neoplasms; Treatment Outcome
+
+[R3-221] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=yes
+  TITLE: Transplantation for acute liver failure in patients exposed to NSAIDs or paracetamol (acetaminophen): the multinational case-population SALT study.
+  ABSTRACT: BACKGROUND: Most NSAIDs are thought to be able to cause hepatic injury and acute liver failure (ALF), but the event rates of those leading to transplantation (ALFT) remain uncertain. OBJECTIVES: The aim of the study was to estimate population event rates for NSAID-associated ALFT METHODS: This was a case-population study of ALFT in 57 eligible liver transplant centres in seven countries (France, Greece, Ireland, Italy, The Netherlands, Portugal and the UK). Cases were all adults registered from 2005 to 2007 for a liver transplant following ALFT without identified clinical aetiology, exposed to an NSAID or paracetamol (acetaminophen) within 30 days before the onset of clinical symptoms. NSAID and paracetamol population exposures were assessed using national sales data from Intercontinental Marketing Services (IMS). Risk was estimated as the rate of ALFT per million treatment-years (MTY). …
+  TYPES: Journal Article;Multicenter Study;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Analgesics, Non-Narcotic; Anti-Inflammatory Agents, Non-Steroidal; Chemical and Drug Induced Liver Injury; Female; Humans; Liver Transplantation; Male
+
+[R3-222] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=no
+  TITLE: Guidance on acetylcysteine for paracetamol ingestion needs review.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics; Antidotes; Drug Overdose; Health Services Needs and Demand; Humans; Practice Guidelines as Topic; United Kingdom
+
+[R3-223] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: What are the factors associated with the length of hospital stay after acetaminophen overdose?
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Drug Overdose; Female; Humans; Length of Stay; Male
+
+[R3-224] OTC-LIT-Q01-ACETAMINOPHEN | 2017 | abstract=yes
+  TITLE: Acrolein scavengers, cysteamine and N-benzylhydroxylamine, reduces the mouse liver damage after acetaminophen overdose.
+  ABSTRACT: Our previous study suggested that the highly toxic α,β-unsaturated aldehyde acrolein, a byproduct of oxidative stress, plays a major role in acetaminophen-induced liver injury. In this study, to determine the involvement of acrolein in the liver injury and to identify novel therapeutic options for the liver damage, we examined two putative acrolein scavengers, a thiol compound cysteamine and a hydroxylamine N-benzylhydroxylamine, in cell culture and in mice. Our results showed that cysteamine and N-benzylhydroxylamine effectively prevented the cell toxicity of acrolein in vitro and acetaminophen-induced liver injury in vivo, which suggested that acrolein is involved in the liver damage, and these two drugs can be potential therapeutic options for this condition.
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acrolein; Animals; Cell Line, Tumor; Chemical and Drug Induced Liver Injury; Cysteamine; Drug Overdose; Humans; Hydroxylamines; Liver; Mice; Mice, Inbred C57BL; Oxidative Stress; Reactive Oxygen Species
+
+[R3-225] OTC-LIT-Q01-ACETAMINOPHEN | 2016 | abstract=no
+  TITLE: Potential adjunct treatment for high-risk acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Benzoquinones; Chemical and Drug Induced Liver Injury; Cytochrome P-450 CYP2E1 Inhibitors; Drug Overdose; Fomepizole; Humans; Imines; Liver; Pyrazoles
+
+[R3-226] OTC-LIT-Q05-TOPICAL | 2024 | abstract=yes
+  TITLE: Development of a self-microemulsifying drug delivery system to deliver delamanid via a pressurized metered dose inhaler for treatment of multi-drug resistant pulmonary tuberculosis.
+  ABSTRACT: Tuberculosis (TB) is a serious health issue that contributes to millions of deaths throughout the world and increases the threat of serious pulmonary infections in patients with respiratory illness. Delamanid is a novel drug approved in 2014 to deal with multi-drug resistant TB (MDR-TB). Despite its high efficiency in TB treatment, delamanid poses delivery challenges due to poor water solubility leading to inadequate absorption upon oral administration. This study involves the development of novel formulation-based pressurized metered dose inhalers (pMDIs) containing self-microemulsifying mixtures of delamanid for efficient delivery to the lungs. To identify the appropriate self-microemulsifying formulations, ternary diagrams were plotted using different combinations of surfactant to co-surfactant ratios (1:1, 2:1, and 3:1). The combinations used Cremophor RH40, Poly Ethylene Glycol 400 …
+  TYPES: Journal Article
+  MESH: Biological Availability; Drug Delivery Systems; Emulsions; Humans; Lung; Metered Dose Inhalers; Nitroimidazoles; Oxazoles; Solubility; Surface-Active Agents; Tuberculosis, Multidrug-Resistant; Tuberculosis, Pulmonary
+
+[R3-227] OTC-LIT-Q05-TOPICAL | 2026 | abstract=yes
+  TITLE: Ligustrum sinense Lour.: Essential Oil Compositions, Biological Activities, and In Silico Studies-A First Record.
+  ABSTRACT: The current study first describes the gas chromatography-mass spectrometry (GC-MS) chemical analysis of essential oils from Ligustrum sinense (the family Oleaceae). Linalool (5.0%), cis-phytol (5.1%), methyl salicylate (5.4%), and germacrene B (7.9%) dominated in the twig essential oil. Methyl salicylate (5.5%), linalool (7.4%), and germacrene B (14.2%) were the major compounds in the leaf essential oil, whereas cis-phytol (5.8%), linalool (6.9%), and germacrene B (17.2%) were characteristic compounds in the flower essential oil. L. sinense essential oils (IC50 208.09-245.39 µg/mL) are comparable to the standard acarbose (IC50 241.76 µg/mL) in α-glucosidase inhibitory activity. The leaf essential oil (IC50 4.51 µg/mL) is much better than the standard ascorbic acid (IC50 13.64 µg/mL) in DPPH radical scavenging. The studied essential oils also exhibited xanthine oxidase inhibitory, anti-in …
+  TYPES: Journal Article
+  MESH: Anti-Bacterial Agents; Antioxidants; Biphenyl Compounds; Gas Chromatography-Mass Spectrometry; Glycoside Hydrolase Inhibitors; Humans; Ligustrum; Microbial Sensitivity Tests; Molecular Docking Simulation; Oils, Volatile; Plant Leaves; Protein Tyrosine Phosphatase, Non-Receptor Type 1; Structure-Activity Relationship; alpha-Glucosidases
+
+[R3-228] OTC-LIT-Q05-TOPICAL | 2002 | abstract=yes
+  TITLE: [Cosmetovigilance: a French pharmacovigilance system for cosmetics developed by the French health products safety agency. A proposal for the future].
+  ABSTRACT: Since 1999, the French health products safety agency (Afssaps) has been responsible for the safety of cosmetic products. Attempts are underway to set up a French post-marketing surveillance system for cosmetics and a working group specially in charge of setting this up has been created. The "cosmetovigilance" system has the three following objectives: public health concerns about "at risk" ingredients in cosmetic products: animal derivatives, glycol ethers, aluminium, camphor, etc; notification of adverse reactions: creation of standard reporting forms of adverse reactions; follow-up of laboratory quality controls: emergency and routine controls. The "cosmetovigilance" system is not only restricted to the study of adverse reactions occurring with cosmetic products. It will also address public health issues about ingredients and will rely on laboratory controls. The aim of the "cosmetovig …
+  TYPES: English Abstract;Journal Article
+  MESH: Cosmetics; France; Government Agencies; Humans; Product Surveillance, Postmarketing
+
+[R3-229] OTC-LIT-Q01-ACETAMINOPHEN | 2026 | abstract=yes
+  TITLE: Targeted Degradation of Prolyl Hydroxylase Domain Enzyme 1 (PHD1) as a Novel Therapeutic Strategy for Acetaminophen-Induced Acute Liver Injury.
+  ABSTRACT: Prolyl hydroxylase domain enzyme 1 (PHD1) is a key regulator of hypoxic adaptation and metabolic homeostasis, playing an important role in tissue damage and repair. To enable precise pharmacological interrogation of PHD1 function, we developed the first PHD1 degrader using proteolysis-targeting chimera (PROTAC) technology. Our lead compound, SH-26, a cereblon (CRBN)-recruiting PROTAC, induced PHD1 degradation in a concentration-, time-, and ubiquitin-proteasome system (UPS)-dependent manner across multiple cell lines. In an acetaminophen (APAP)-induced acute liver injury (ALI) model, SH-26 demonstrated protective effects, attenuating hepatic inflammation and necrosis without detectable cytotoxicity. Mechanistically, SH-26-mediated PHD1 degradation attenuated APAP-triggered reactive oxygen species (ROS) accumulation, mitochondrial dysfunction, and NLRP3 inflammasome activation, leading to …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Animals; Chemical and Drug Induced Liver Injury; Humans; Hypoxia-Inducible Factor-Proline Dioxygenases; Male; Mice; Mice, Inbred C57BL; Procollagen-Proline Dioxygenase; Proteolysis; Proteolysis Targeting Chimera; Reactive Oxygen Species
+
+[R3-230] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: Window of opportunity: flexion myelopathy after drug overdose.
+  ABSTRACT: BACKGROUND: Cervical and thoracic flexion myelopathy are uncommon causes of spinal cord injury that can lead to irreversible paralysis, autonomic dysfunction, and death. To the authors' knowledge, this report is the first to describe the natural history of flexion myelopathy and the simultaneous occurrence of cervical and thoracic flexion myelopathy in the setting of drug overdose. OBJECTIVES: To report the association of cervical and thoracic flexion myelopathy and drug overdose; to describe the subacute natural history of flexion myelopathy in the setting of drug overdose; to emphasize the need for first responders to document positioning of unresponsive individuals; and to suggest careful neurological examination and early spinal cord imaging in appropriately identified patients at risk of flexion myelopathy. CASE REPORT: We describe the case of a 34-year-old woman who developed flexi …
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Adult; Analgesics, Non-Narcotic; Antipsychotic Agents; Chloral Hydrate; Dibenzothiazepines; Drug Combinations; Drug Overdose; Female; Humans; Hypnotics and Sedatives; Magnetic Resonance Imaging; Neck; Oxycodone
+
+[R3-231] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=no
+  TITLE: Pulmonary hypertension in a patient with subarachnoid hemorrhage.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Letter
+  MESH: Cardiotonic Agents; Coronary Angiography; Echocardiography; Embolization, Therapeutic; Humans; Hypertension, Pulmonary; Male; Middle Aged; Milrinone; Phenylephrine; Subarachnoid Hemorrhage; Treatment Outcome
+
+[R3-232] OTC-LIT-Q02-NSAID | 2021 | abstract=yes
+  TITLE: Therapeutic monitoring of mycophenolic acid in renal transplanted patients by a validated HPLC method.
+  ABSTRACT: INTRODUCTION: Mycophenolate mofetil and its active metabolite mycophenolic acid are routinely used as immunosuppressant drugs in solid organ transplantation in a fixed daily dose regimen in association with cyclosporine, tacrolimus and steroids. Therapeutic drug monitoring for mycophenolic acid concentration has been suggested to optimize outcomes by reducing rejection and drug related toxicities in clinical renal transplantation. AIM: To determine the predose concentration of mycophenolic acid in renal transplanted patients by a validated proposed high-performance liquid chromatography (HPLC) method and to estimate the interindividual variability based on the therapeutic target. MATERIALS AND METHODS: An HPLC method combined with protein precipitation has been validated for mycophenolic acid determination in the human plasma obtained from 21 renal transplant recipients. HPLC analysis wa …
+  TYPES: Journal Article
+  MESH: Acetonitriles; Chromatography, High Pressure Liquid; Humans; Immunosuppressive Agents; Kidney Transplantation; Mycophenolic Acid
+
+[R3-233] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: Cardiovascular anesthetic complications and treatment in oral surgery.
+  ABSTRACT: Perioperative hypertension is a common problem. If hypertension is left untreated in patients at risk, infarctions and stroke are possible. There are limited choices of antihypertensive agents for the office. Aggressive antihypertensive therapy is not indicated because most of the episodes seen in the office are hypertensive urgencies and not emergencies. Hypotension is usually managed by decreasing the depth of anesthesia, intravenous fluids, and then vasopressors, typically ephedrine or phenylephrine. Consider treatment of hypotension whenever the mean arterial pressure decreases less than 60 mm Hg.
+  TYPES: Journal Article;Review
+  MESH: Adrenergic beta-Antagonists; Anesthesia, Dental; Antihypertensive Agents; Calcium Channel Blockers; Humans; Hypertension; Hypotension; Intraoperative Complications; Oral Surgical Procedures; Postoperative Complications; Vasodilator Agents
+
+[R3-234] OTC-LIT-Q03-COLD-ALLERGY | 2015 | abstract=yes
+  TITLE: Crossover study of the effect of coffee consumption on simulated laparoscopy skills.
+  ABSTRACT: AIMS: To observe the effect of caffeine on performing laparoscopic skills in novices in a simulated setting. BACKGROUND: Coffee is consumed almost ubiquitously by surgeons not just as a stimulant but also socially in the well-rested individual. It's therefore worth investigating its potentially negative effect on performance of surgical skills as it is known that coffee has psychomotor effects. METHODS: This is a single-blind crossover study in which 31 novices were tested under three different conditions: decaffeinated, 100 mg caffeine and 200 mg caffeine. Candidates were asked to perform 3 repetitions of task 3, 6, 7 and 8 using the Lap Mentor™ (Simbionix(®)). Outcomes measured were completion time, accuracy, number of movements and total path length. The candidates were crossed over to the other caffeine doses on a different day. RESULTS: 20 candidates completed the study, mean age 21 …
+  TYPES: Journal Article
+  MESH: Adult; Caffeine; Central Nervous System Stimulants; Clinical Competence; Coffee; Cross-Over Studies; Dose-Response Relationship, Drug; Female; Humans; Laparoscopy; Male; Psychomotor Performance; Single-Blind Method
+
+[R3-235] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=no
+  TITLE: [Treatment of paracetamol poisoning to revision].
+  ABSTRACT: (초록 없음)
+  TYPES: Editorial
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Drug Overdose; Humans; Poisoning; Practice Guidelines as Topic
+
+[R3-236] OTC-LIT-Q03-COLD-ALLERGY | 2024 | abstract=yes
+  TITLE: Coffee substitutes: A review of the technology, characteristics, application, and future perspective.
+  ABSTRACT: Despite being one of the most frequently consumed beverages worldwide, there are concerns that excessive consumption of coffee can have adverse effects, especially concerning the addictive and stimulating effects of the alkaloid caffeine, which contributes to coffee's popularity. It is known to increase the risk of hypertension and heart rate among predisposed individuals, adversely affecting the nervous system. Even though they differ in nature from those found in coffee, coffee substitutes can be considered economically and health-wise as a favorable alternative to natural coffee brews. This review summarizes the state-of-the-art varieties of plants used as coffee substitutes and discusses their production technology, chemical composition, nutritional properties, health benefits, economic challenges, and rationale for choosing the plant as a substitute for coffee. Various instant produ …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't;Review
+  MESH: Caffeine; Coffee; Humans; Taste
+
+[R3-237] OTC-LIT-Q01-ACETAMINOPHEN | 2019 | abstract=yes
+  TITLE: Prevalence of Nonopioid and Opioid Prescriptions Among Commercially Insured Patients with Chronic Pain.
+  ABSTRACT: Objective The increased use of opioids to treat chronic pain in the past 20 years has led to a drastic increase in opioid prescribing in the United States. The Centers for Disease Control and Prevention's (CDC's) Guideline for Prescribing Opioids for Chronic Pain recommends the use of nonopioid therapy as the preferred treatment for chronic pain. This study analyzes the prevalence of nonopioid prescribing among commercially insured patients with chronic pain. Design Data from the 2014 IBM® MarketScan® databases representing claims for commercially insured patients were used. International Classification of Diseases, Ninth Revision, codes were used to identify patients with chronic pain. Nonopioid prescriptions included nonsteroidal anti-inflammatory drugs (NSAIDs), analgesics/antipyretics (e.g., acetaminophen), anticonvulsants, and antidepressant medications. The prevalence of nonopioid …
+  TYPES: Journal Article
+  MESH: Adult; Age Factors; Aged; Aged, 80 and over; Analgesics, Non-Narcotic; Analgesics, Opioid; Anti-Inflammatory Agents, Non-Steroidal; Chronic Pain; Cross-Sectional Studies; Depressive Disorder; Drug Prescriptions; Female; Guidelines as Topic; Humans
+
+[R3-238] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Zebrafish as model organisms for studying drug-induced liver injury.
+  ABSTRACT: Drug-induced liver injury (DILI) is a major challenge in clinical medicine and drug development. New models are needed for predicting which potential therapeutic compounds will cause DILI in humans, and new markers and mediators of DILI still need to be identified. This review highlights the strengths and weaknesses of using zebrafish as a high-throughput in vivo model for studying DILI. Although the zebrafish liver architecture is different from that of the mammalian liver, the main physiological processes remain similar. Zebrafish metabolize drugs using similar pathways to those in humans; they possess a wide range of cytochrome P450 enzymes that enable metabolic reactions including hydroxylation, conjugation, oxidation, demethylation and de-ethylation. Following exposure to a range of hepatotoxic drugs, the zebrafish liver develops histological patterns of injury comparable to those o …
+  TYPES: Journal Article;Review
+  MESH: Animals; Biomarkers; Chemical and Drug Induced Liver Injury; Cytochrome P-450 Enzyme System; Disease Models, Animal; Drug Discovery; Humans; Liver; Mice; Phenotype; Zebrafish
+
+[R3-239] OTC-LIT-Q03-COLD-ALLERGY | 2019 | abstract=no
+  TITLE: Caffeinated beverages and cardiovascular disease.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Beverages; Cardiovascular Diseases; Coffee; Humans
+
+[R3-240] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Short-Term Safety of Repeated Acetaminophen Use in Patients With Compensated Cirrhosis.
+  ABSTRACT: Current guidelines recommend restricting acetaminophen (APAP) use in patients with cirrhosis, but evidence to support that recommendation is lacking. Prior studies focused on pharmacokinetics (PK) of APAP in cirrhosis but did not rigorously examine clinical outcomes, sensitive biomarkers of liver damage, or serum APAP-protein adducts, which are a specific marker of toxic bioactivation. Hence, the goal of this pilot study was to test the effects of regularly scheduled APAP dosing in a well-defined compensated cirrhosis group compared to control subjects without cirrhosis, using the abovementioned outcomes. After a 2-week washout, 12 subjects with and 12 subjects without cirrhosis received 650 mg APAP twice per day (1.3 g/day) for 4 days, followed by 650 mg on the morning of day 5. Patients were assessed in-person at study initiation (day 1) and on days 3 and 5. APAP-protein adducts and bo …
+  TYPES: Controlled Clinical Trial;Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Alanine Transaminase; Analgesics, Non-Narcotic; Biomarkers; Drug Administration Schedule; Female; Glutamate Dehydrogenase; HMGB1 Protein; Humans; Keratin-18; Liver Cirrhosis; Male; Middle Aged

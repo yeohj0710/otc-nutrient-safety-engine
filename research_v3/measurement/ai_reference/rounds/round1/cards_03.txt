@@ -1,0 +1,272 @@
+===== AI REFERENCE ROUND 1 / CHUNK 3 (40 rows) =====
+----- 질문별 PICOS 정의 -----
+OTC-LIT-Q01-ACETAMINOPHEN
+  Q-P: 아세트아미노펜을 사용하는 성인 또는 소아
+  Q-I: 중복 복용, 고용량, 짧은 복용 간격, 음주 또는 간질환이 동반된 아세트아미노펜 노출
+  Q-C: 권장 용량·간격 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 간손상, 과량복용 독성, 중대한 이상반응과 응급평가 필요성
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q02-NSAID
+  Q-P: 이부프로펜, 덱시부프로펜 또는 나프록센을 사용하는 사람
+  Q-I: NSAID 중복, 임신·수유, 신장질환, 위장관 궤양·출혈 또는 항응고·항혈소판제 병용
+  Q-C: 단일 NSAID 사용 또는 해당 위험 요인이 없는 사용
+  Q-O: 위장관 출혈, 신장 이상, 임신 관련 위해와 출혈성 이상반응
+  Q-S: 사람 대상 관찰연구, 임상시험, 체계적 문헌고찰과 메타분석
+OTC-LIT-Q03-COLD-ALLERGY
+  Q-P: 항히스타민제, 비충혈제거제, 진해거담제 또는 카페인이 포함된 일반의약품을 사용하는 사람
+  Q-I: 클로르페니라민·세티리진·페닐레프린·펜톡시베린·구아이페네신·카페인 단독 또는 복합 노출
+  Q-C: 비진정성 대안, 비노출 또는 위험 병용이 없는 사용
+  Q-O: 졸림과 운전 수행, 진정제 상호작용, 혈압·심혈관 이상과 지속 사용 위해
+  Q-S: 사람 대상 약물역학·운전수행 연구, 임상시험, 체계적 문헌고찰
+OTC-LIT-Q04-DIGESTIVE
+  Q-P: 소화효소, 시메티콘, 우르소데옥시콜산 또는 브로멜라인 함유 제품을 사용하는 사람
+  Q-I: 판크레아틴·디아스타제·프로테아제·셀룰라제·리파제·브로멜라인·시메티콘·우르소데옥시콜산 단독 또는 복합 노출
+  Q-C: 비노출, 위약 또는 더 짧은 사용
+  Q-O: 이상반응, 알레르기, 출혈성 상호작용과 장기·중복 사용 안전성
+  Q-S: 사람 대상 임상시험, 관찰연구와 체계적 문헌고찰
+OTC-LIT-Q05-TOPICAL
+  Q-P: 살리실산메틸, 멘톨, 캄파, 박하유 또는 티몰 외용제를 사용하는 사람
+  Q-I: 외용 복합성분의 반복·과량 사용, 소아 노출 또는 항응고제 병용
+  Q-C: 권장 외용 사용 또는 비노출
+  Q-O: 전신 살리실산 독성, 피부 이상반응, 소아 중독과 출혈 위험
+  Q-S: 사람 대상 독성·약물감시·관찰연구와 체계적 문헌고찰
+----- 카드 -----
+[R1-081] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: When is research clinical advice? Interpreting an exploratory study of paracetamol overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Chemical and Drug Induced Liver Injury; Female; Humans; Male
+
+[R1-082] OTC-LIT-Q01-ACETAMINOPHEN | 2020 | abstract=yes
+  TITLE: Acetaminophen-Induced Liver Injury Alters Expression and Activities of Cytochrome P450 Enzymes in an Age-Dependent Manner in Mouse Liver.
+  ABSTRACT: Drug-induced liver injury (DILI) is a global medical problem. The risk of DILI is often related to expression and activities of drug-metabolizing enzymes, especially cytochrome P450s (P450s). However, changes on expression and activities of P450s after DILI have not been determined. The aim of this study is to fill this knowledge gap. Acetaminophen (APAP) was used as a model drug to induce DILI in C57BL/6J mice at different ages of days 10 (infant), 22 (child), and 60 (adult). DILI was assessed by levels of alanine aminotransferase and aspartate aminotransferase in plasma with a confirmation by H&E staining on liver tissue sections. The expression of selected P450s at mRNA and protein levels was measured by real-time polymerase chain reaction and liquid chromatography-tandem mass spectrometry, respectively. The activities of these P450s were determined by the formation of metabolites fro …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Age Factors; Animals; Chemical and Drug Induced Liver Injury; Child; Cytochrome P-450 Enzyme System; Disease Models, Animal; Dose-Response Relationship, Drug; Female; Gene Expression Regulation, Enzymologic; Humans; Infant; Liver
+
+[R1-083] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Consumption of Coffee, Tea, and Caffeine at Midlife, and the Risk of Physical Frailty in Late Life.
+  ABSTRACT: OBJECTIVES: Our study evaluated the prospective association between the consumption of caffeine-containing beverages at midlife and the risk of physical frailty at late life within a population-based cohort of Chinese adults living in Singapore over a follow-up period of 20 years. DESIGN: Prospective cohort study. SETTING AND PARTICIPANTS: We used data from 12,583 participants from the baseline and third follow-up interviews of the Singapore Chinese Health Study (SCHS). Participants had a mean age of 53 years at baseline (1993-1998), and a mean age of 73 years during the third follow-up (2014-2017). METHODS: At baseline, habitual consumption of caffeine-containing beverages was evaluated using a validated semi-quantitative food-frequency questionnaire. During the third follow-up, physical frailty was assessed using the modified Cardiovascular Health Study phenotype. RESULTS: Compared wit …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Adult; Aged; Caffeine; Coffee; Frailty; Hand Strength; Humans; Middle Aged; Prospective Studies; Risk Factors; Tea
+
+[R1-084] OTC-LIT-Q03-COLD-ALLERGY | 2017 | abstract=yes
+  TITLE: A monolithic 3D-0D coupled closed-loop model of the heart and the vascular system: Experiment-based parameter estimation for patient-specific cardiac mechanics.
+  ABSTRACT: A model for patient-specific cardiac mechanics simulation is introduced, incorporating a 3-dimensional finite element model of the ventricular part of the heart, which is coupled to a reduced-order 0-dimensional closed-loop vascular system, heart valve, and atrial chamber model. The ventricles are modeled by a nonlinear orthotropic passive material law. The electrical activation is mimicked by a prescribed parameterized active stress acting along a generic muscle fiber orientation. Our activation function is constructed such that the start of ventricular contraction and relaxation as well as the active stress curve's slope are parameterized. The imaging-based patient-specific ventricular model is prestressed to low end-diastolic pressure to account for the imaged, stressed configuration. Visco-elastic Robin boundary conditions are applied to the heart base and the epicardium to account f …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Animals; Calibration; Cardiovascular System; Computer Simulation; Elasticity; Finite Element Analysis; Heart; Heart Atria; Heart Valves; Humans; Imaging, Three-Dimensional; Least-Squares Analysis; Models, Cardiovascular; Nonlinear Dynamics
+
+[R1-085] OTC-LIT-Q03-COLD-ALLERGY | 2026 | abstract=yes
+  TITLE: Assessing the Potential Clinical Drug-Drug Interactions Between D-1553 (Garsorasib) and CYP450 Enzymes/Transporters via a Cocktail Approach.
+  ABSTRACT: PURPOSE: This Phase I drug-drug interaction study in healthy Chinese male subjects evaluated: (1) the perpetrator effects of D-1553 (garsorasib) on cytochrome P450 enzymes (CYP3A4, CYP1A2), hepatic (OATP1B1/1B3), renal uptake transporters (OAT1/3), and efflux transporter P-glycoprotein (P-gp); and (2) the victim potential with itraconazole (200 mg daily) or omeprazole (20 mg daily). METHODS: The study comprised three cohorts. Cohort 1 received D-1553 tablets (400 mg twice daily) co-administered with a cocktail of probe substrates: midazolam, caffeine, rosuvastatin, furosemide, and digoxin. Cohort 2 received D-1553 co-administered with the strong CYP3A4 and P-gp inhibitor itraconazole. Cohort 3 received D-1553 co-administered with the proton-pump inhibitor omeprazole. A total of 45 healthy male subjects were enrolled in the study, and 44 subjects were included in the safety and pharmacoki …
+  TYPES: Clinical Trial, Phase I;Journal Article
+  MESH: ATP Binding Cassette Transporter, Subfamily B, Member 1; Adult; Area Under Curve; Caffeine; Cytochrome P-450 Enzyme System; Digoxin; Drug Interactions; Furosemide; Humans; Itraconazole; Male; Midazolam; Omeprazole; Rosuvastatin Calcium
+
+[R1-086] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Population pharmacokinetics of immediate-release and modified-release paracetamol and its major metabolites in a supratherapeutic dosing study.
+  ABSTRACT: OBJECTIVES: Overdose with paracetamol modified-release (MR) formulation, a bilayer tablet containing 69% slow-release component, has been increasing since its introduction to the market. However, little evidence exists for the management of MR paracetamol overdose. We aimed to develop a population pharmacokinetic (PK) model for immediate-release (IR) and MR paracetamol and its major metabolism, and quantitatively understand the formulation difference in toxicity assessment based on the nomogram line. METHODS: Data from a cross-over study design in nine healthy volunteers administered a single supratherapeutic oral dose (80 mg/kg) of either IR and MR paracetamol were available from a published study. Plasma concentrations for paracetamol and its metabolites glucuronide (APAPG) and sulfate conjugate (APAPS) for both formulations were measured and analysed with population pharmacokinetic (P …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Biological Availability; Cross-Over Studies; Delayed-Action Preparations; Drug Overdose; Humans; Tablets
+
+[R1-087] OTC-LIT-Q03-COLD-ALLERGY | 2018 | abstract=yes
+  TITLE: Postdural Puncture Headache Treated With Epidural Blood Patch and Subsequent Resolution of Atypical Odontalgia: A Case Report.
+  ABSTRACT: A 37-year-old gravida 5 para 4 with gestational hypertension underwent uneventful repeat cesarean delivery and tubal ligation under combined spinal-epidural anesthesia. On postoperative day 3, she developed a postural headache, unrelieved by caffeine, ibuprofen, and hydration. On postoperative day 8, she returned to the hospital for treatment. An epidural blood patch was administered, providing immediate and complete relief of her headache and bilateral upper and lower dental pain, which she noted arising concomitantly with her headache. We suspect bilateral traction on cranial nerve V2 and V3, secondary to intracranial hypotension after dural puncture, as the cause of her pain.
+  TYPES: Case Reports;Journal Article
+  MESH: Adult; Anesthesia, Epidural; Blood Patch, Epidural; Female; Humans; Intracranial Hypotension; Post-Dural Puncture Headache; Pregnancy; Toothache
+
+[R1-088] OTC-LIT-Q03-COLD-ALLERGY | 2010 | abstract=yes
+  TITLE: Coffee, nutritional status, and renal artery resistive index.
+  ABSTRACT: BACKGROUND: The relationship between nutrition and atherosclerosis is known, even dissociated from protein malnutrition. Cardiovascular impact of several nutrients is known; among them the action of coffee is still debated and cardiovascular effect of caffeine has been investigated without definite results. OBJECTIVE: The aim of this study is to investigate whether coffee habits, and/or quantity of coffee consumption, have any relationship with renal resistive index (RRI), a hallmark of arterial stiffness (AS). The relationship of AS with nutritional status assessed by body composition and serum albumin, insulin resistance (assessed by HOMA), and renal function assessed by glomerular filtration rate (GFR) is concurrently investigated. METHODS: This study was done with 221 consecutive patients, without diabetes, cancer, liver, renal, and heart disease, referred for clinical noninvasive as …
+  TYPES: Journal Article
+  MESH: Aged; Body Composition; Coffee; Elasticity; Electric Impedance; Feeding Behavior; Female; Glomerular Filtration Rate; Hemorheology; Humans; Insulin Resistance; Male; Middle Aged; Nutritional Status
+
+[R1-089] OTC-LIT-Q01-ACETAMINOPHEN | 2017 | abstract=yes
+  TITLE: Placental Abruption With Delayed Fetal Compromise in Maternal Acetaminophen Toxicity.
+  ABSTRACT: BACKGROUND: After maternal acetaminophen overdose, fetal fulminant liver failure, stillbirth, neonatal death, or preterm delivery may occur. CASE: A 27-year-old woman, gravida 2 para 1, presented at 28 weeks of gestation after unintentional acetaminophen overdose. Four days after ingestion, her laboratory values worsened, including serum aspartate aminotransferase of 5,460 units/L, alanine aminotransferase of 4,936 units/L, and international normalized ratio of 2.9. On day 6 after ingestion, fetal monitoring showed minimal variability with repetitive variable and late decelerations, which prompted cesarean delivery when a hematoma was noted on the maternal placental surface, consistent with placental abruption. The neonate showed no evidence of hepatic dysfunction. Review of the literature suggests that maternal acetaminophen overdose in the second and third trimester is associated with …
+  TYPES: Case Reports;Journal Article
+  MESH: Abruptio Placentae; Acetaminophen; Adult; Analgesics, Non-Narcotic; Cesarean Section; Diagnosis, Differential; Drug Overdose; Female; Fetal Monitoring; Humans; Infant, Newborn; Pregnancy; Pregnancy Trimester, Third; Prenatal Diagnosis
+
+[R1-090] OTC-LIT-Q03-COLD-ALLERGY | 2020 | abstract=yes
+  TITLE: [Arterial hypertension in the newborn].
+  ABSTRACT: Multiple factors contribute to the blood pressure of a neonate: gestational age, birth weight, postmenstrual age and maternal factors are the most significant contributors. Common causes of neonatal hypertension are bronchopulmonary dysplasia, renal disease and history of umbilical arterial catheter placement. Other important factors that contribute to neonatal hypertension are medications (inotropic drugs, caffeine) and fluid management. Depending on the clinical situation and the severity of the hypertension, treatment can be given with intravenous or oral medications. Available data suggest that long-term outcomes are usually good, with resolution of hypertension in most infants. However, hypertensive neonates as well as normotensive premature neonates may be at increased risk for the development of hypertension in the future.
+  TYPES: Journal Article
+  MESH: Blood Pressure; Bronchopulmonary Dysplasia; Gestational Age; Humans; Hypertension; Infant; Infant, Newborn; Infant, Premature
+
+[R1-091] OTC-LIT-Q01-ACETAMINOPHEN | 2021 | abstract=no
+  TITLE: Comment on "The changing face of paracetamol toxicity and new regimens for an old antidote acetylcysteine".
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Drug Overdose; Humans
+
+[R1-092] OTC-LIT-Q05-TOPICAL | 2013 | abstract=yes
+  TITLE: Sensitivity of human dental pulp cells to eighteen chemical agents used for endodontic treatments in dentistry.
+  ABSTRACT: To determine the adverse effects against human dental pulp tissue, the sensitivity of human dental pulp cells (D824 cells) to 18 chemical agents used for endodontic treatments in dentistry was examined. The cytotoxicity, as determined by a decrease in colony-forming ability of cells treated with the chemical agents, increased as the concentration increased. As a quantitative measure of the cytotoxic effect, LC(50), the concentration which induces a 50% lethality, was extrapolated from the concentration-response curves. The rank of the chemical agents according to their cytotoxic effect (LC(50)) was sodium arsenite > formaldehyde > hydrogen peroxide > zinc oxide > thymol ≈ iodoform ≈ eugenol > guaiacol > ethylenediaminetetraacetic acid ≈ iodine > procaine > lidocaine ≈ chloramphenicol ≈ m-cresol > calcium hydroxide ≈ sodium hypochlorite ≈ phenol ≈ p-phenolsulfonic acid. To compare the cyt …
+  TYPES: Comparative Study;Journal Article
+  MESH: Alkaline Phosphatase; Anti-Infective Agents; Apoptosis; Cells, Cultured; Collagen Type I; Colony-Forming Units Assay; Dental Pulp; Dentin; Estrogen Receptor alpha; Extracellular Matrix Proteins; Female; Gene Expression Profiling; Humans; Lethal Dose 50
+
+[R1-093] OTC-LIT-Q02-NSAID | 2016 | abstract=no
+  TITLE: Minimal-change disease and interstitial nephritis secondary to non-steroidal anti-inflammatory drugs (naproxen).
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Letter
+  MESH: Anti-Inflammatory Agents, Non-Steroidal; Female; Humans; Middle Aged; Naproxen; Nephritis, Interstitial; Nephrosis, Lipoid
+
+[R1-094] OTC-LIT-Q05-TOPICAL | 2005 | abstract=yes
+  TITLE: Acute lung injury after peppermint oil injection.
+  ABSTRACT: UNLABELLED: We describe a case of acute lung injury following IV injection of peppermint oil. An 18-yr-old woman injected the oil and developed fulminant pulmonary edema requiring ventilator support. Within 4 h after injection her arterial oxygen tension was 8.1 kPa (60 mm Hg) at an inspired oxygen fraction (F(IO2)) of 0.7 (P/F ratio: 85) despite a positive end expiratory pressure (PEEP) of 20 mbar, therefore meeting criteria for acute respiratory distress syndrome (ARDS). Mean pulmonary artery pressures and pulmonary artery wedge pressures were within normal limits throughout the case (<25 mm Hg and <10 mm Hg, respectively). Ventilation with high PEEP and diuresis resulted in a P/F ratio of 265 after 24 h. The patient was successfully weaned from the ventilator on the 9th day. This report is the first description of the sequelae of IV peppermint oil injection. The injection resulted in …
+  TYPES: Case Reports;Journal Article
+  MESH: Adolescent; Female; Humans; Injections, Intravenous; Mentha piperita; Plant Oils; Pulmonary Edema; Respiratory Distress Syndrome
+
+[R1-095] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Electrocardiographic predictors of adverse cardiovascular events in suspected poisoning.
+  ABSTRACT: Poisoning is the second leading cause of injury-related fatality in the USA and the leading cause of cardiac arrest in victims under 40 years of age. The study objective was to define the electrocardiographic (ECG) predictors of adverse cardiovascular events (ACVE) complicating suspected acute poisoning (SAP). This was a case-control study in adults at three tertiary-care hospitals and one regional Poison Control Center. We compared 34 cases of SAP complicated by ACVE to 101 consecutive control patients with uncomplicated SAP. The initial ECG was analyzed for rhythm, intervals, QT dispersion, ischemia, and infarction. ECGs were interpreted by a cardiologist, blinded to study hypothesis and case data. Subjects were 48% male, with mean age 42 +/- 19 years. In addition to clinical suspicion of poisoning in 100% of patients, routine toxicology screens were positive in 77%, most commonly for …
+  TYPES: Journal Article
+  MESH: Adult; Aged; Arrhythmias, Cardiac; Cardiomyopathies; Cardiovascular Diseases; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Electrocardiography; Emergency Medical Services; Female; Heart Arrest; Humans; Long QT Syndrome; Male
+
+[R1-096] OTC-LIT-Q01-ACETAMINOPHEN | 2015 | abstract=no
+  TITLE: Immobilised UGT1A9 may be used to treat paracetamol overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Benzoquinones; Drug Overdose; Enzymes, Immobilized; Glucuronosyltransferase; Hepatocytes; Humans; Imines; Liver, Artificial; UDP-Glucuronosyltransferase 1A9
+
+[R1-097] OTC-LIT-Q05-TOPICAL | 2026 | abstract=yes
+  TITLE: Ligustrum sinense Lour.: Essential Oil Compositions, Biological Activities, and In Silico Studies-A First Record.
+  ABSTRACT: The current study first describes the gas chromatography-mass spectrometry (GC-MS) chemical analysis of essential oils from Ligustrum sinense (the family Oleaceae). Linalool (5.0%), cis-phytol (5.1%), methyl salicylate (5.4%), and germacrene B (7.9%) dominated in the twig essential oil. Methyl salicylate (5.5%), linalool (7.4%), and germacrene B (14.2%) were the major compounds in the leaf essential oil, whereas cis-phytol (5.8%), linalool (6.9%), and germacrene B (17.2%) were characteristic compounds in the flower essential oil. L. sinense essential oils (IC50 208.09-245.39 µg/mL) are comparable to the standard acarbose (IC50 241.76 µg/mL) in α-glucosidase inhibitory activity. The leaf essential oil (IC50 4.51 µg/mL) is much better than the standard ascorbic acid (IC50 13.64 µg/mL) in DPPH radical scavenging. The studied essential oils also exhibited xanthine oxidase inhibitory, anti-in …
+  TYPES: Journal Article
+  MESH: Anti-Bacterial Agents; Antioxidants; Biphenyl Compounds; Gas Chromatography-Mass Spectrometry; Glycoside Hydrolase Inhibitors; Humans; Ligustrum; Microbial Sensitivity Tests; Molecular Docking Simulation; Oils, Volatile; Plant Leaves; Protein Tyrosine Phosphatase, Non-Receptor Type 1; Structure-Activity Relationship; alpha-Glucosidases
+
+[R1-098] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Hepatocellular liver injury in hospitalized patients affected by COVID-19: Presence of different risk factors at different time points.
+  ABSTRACT: BACKGROUND: Prevalence and clinical impact of increased liver function tests in patients affected by Coronavirus disease 2019 (COVID-19) is controversial. AIMS: This observational study evaluates the prevalence of transaminases elevation in hospitalized patients affected by COVID-19 and investigates the presence of factors associated with hepatocellular injury and with mortality. METHODS: Data of 292 adult patients with confirmed COVID-19 admitted to the Ente Ospedaliero Cantonale (Switzerland) were retrospectively analyzed. RESULTS: Transaminases were increased in about one-third of patients on hospital admission and two-thirds of patients during the hospital stay. On hospital admission, transaminases were more commonly elevated in younger patients, who also reported elevated C reactive protein and a higher degree of respiratory failure. Independent factors associated with abnormal tran …
+  TYPES: Journal Article;Observational Study
+  MESH: Adult; COVID-19; Carcinoma, Hepatocellular; Hospital Mortality; Hospitalization; Humans; Liver Neoplasms; Retrospective Studies; Risk Factors; SARS-CoV-2; Transaminases
+
+[R1-099] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=yes
+  TITLE: The Toxicology Investigators Consortium Case Registry--the 2011 experience.
+  ABSTRACT: In 2010, the American College of Medical Toxicology established its Case Registry, the Toxicology Investigators Consortium (ToxIC). ToxIC is a prospective registry, which exclusively compiles suspected and confirmed toxic exposure cases cared for at the bedside by medical toxicologists at its participating sites. The Registry aims to fulfill two important gaps in the field: a real-time toxicosurveillance system to identify current poisoning trends and a powerful research tool in toxicology. ToxIC allows extraction of information from medical records making it the most robust multicenter database on chemical toxicities in existence. All cases seen by medical toxicologists at participating institutions were entered in a database. Information characterizing patients entered in 2011 was tabulated. 2010 data was also included so that cumulative total numbers could be described as well. The cu …
+  TYPES: Journal Article;Multicenter Study;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Acetylcysteine; Adolescent; Adult; Aged; Analgesics, Non-Narcotic; Analgesics, Opioid; Antidepressive Agents; Child; Child, Preschool; Databases, Factual; Drug Overdose; Emergency Service, Hospital; Female
+
+[R1-100] OTC-LIT-Q01-ACETAMINOPHEN | 2012 | abstract=no
+  TITLE: Comment on "Dental pain as a risk factor for accidental acetaminophen overdose: a case-control study".
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Drug Overdose; Female; Humans; Male
+
+[R1-101] OTC-LIT-Q05-TOPICAL | 2024 | abstract=yes
+  TITLE: Development of a self-microemulsifying drug delivery system to deliver delamanid via a pressurized metered dose inhaler for treatment of multi-drug resistant pulmonary tuberculosis.
+  ABSTRACT: Tuberculosis (TB) is a serious health issue that contributes to millions of deaths throughout the world and increases the threat of serious pulmonary infections in patients with respiratory illness. Delamanid is a novel drug approved in 2014 to deal with multi-drug resistant TB (MDR-TB). Despite its high efficiency in TB treatment, delamanid poses delivery challenges due to poor water solubility leading to inadequate absorption upon oral administration. This study involves the development of novel formulation-based pressurized metered dose inhalers (pMDIs) containing self-microemulsifying mixtures of delamanid for efficient delivery to the lungs. To identify the appropriate self-microemulsifying formulations, ternary diagrams were plotted using different combinations of surfactant to co-surfactant ratios (1:1, 2:1, and 3:1). The combinations used Cremophor RH40, Poly Ethylene Glycol 400 …
+  TYPES: Journal Article
+  MESH: Biological Availability; Drug Delivery Systems; Emulsions; Humans; Lung; Metered Dose Inhalers; Nitroimidazoles; Oxazoles; Solubility; Surface-Active Agents; Tuberculosis, Multidrug-Resistant; Tuberculosis, Pulmonary
+
+[R1-102] OTC-LIT-Q03-COLD-ALLERGY | 2023 | abstract=yes
+  TITLE: Plasma metabolomic characterization of premature ovarian insufficiency.
+  ABSTRACT: BACKGROUND: Premature ovarian insufficiency (POI) patients are predisposed to metabolic disturbances, including in lipid metabolism and glucose metabolism, and metabolic disorders appear to be a prerequisite of the typical long-term complications of POI, such as cardiovascular diseases or osteoporosis. However, the metabolic changes underlying the development of POI and its subsequent complications are incompletely understood, and there are few studies characterizing the disturbed metabolome in POI patients. The aim of this study was to characterize the plasma metabolome in POI by using ultrahigh-performance liquid chromatography-mass spectrometry (UHPLC-MS/MS) metabolomics and to evaluate whether these disturbances identified in the plasma metabolome relate to ovarian reserve and have diagnostic value in POI. METHODS: This observational study recruited 30 POI patients and 30 age- and bo …
+  TYPES: Journal Article;Observational Study
+  MESH: Female; Humans; Menopause, Premature; Menstrual Cycle; Metabolome; Metabolomics; Primary Ovarian Insufficiency; Tandem Mass Spectrometry
+
+[R1-103] OTC-LIT-Q01-ACETAMINOPHEN | 2014 | abstract=yes
+  TITLE: Zebrafish as model organisms for studying drug-induced liver injury.
+  ABSTRACT: Drug-induced liver injury (DILI) is a major challenge in clinical medicine and drug development. New models are needed for predicting which potential therapeutic compounds will cause DILI in humans, and new markers and mediators of DILI still need to be identified. This review highlights the strengths and weaknesses of using zebrafish as a high-throughput in vivo model for studying DILI. Although the zebrafish liver architecture is different from that of the mammalian liver, the main physiological processes remain similar. Zebrafish metabolize drugs using similar pathways to those in humans; they possess a wide range of cytochrome P450 enzymes that enable metabolic reactions including hydroxylation, conjugation, oxidation, demethylation and de-ethylation. Following exposure to a range of hepatotoxic drugs, the zebrafish liver develops histological patterns of injury comparable to those o …
+  TYPES: Journal Article;Review
+  MESH: Animals; Biomarkers; Chemical and Drug Induced Liver Injury; Cytochrome P-450 Enzyme System; Disease Models, Animal; Drug Discovery; Humans; Liver; Mice; Phenotype; Zebrafish
+
+[R1-104] OTC-LIT-Q02-NSAID | 2024 | abstract=yes
+  TITLE: Thermal effects and drugs competition on the palmitate binding capacity of human serum albumin.
+  ABSTRACT: Human serum albumin (HSA) is the most abundant plasma protein of the circulatory system. It is a multidomain, multifunctional protein that, combining diverse affinities and wide specificity, binds, stores, and transports a variety of biological compounds, pharmacores, and fatty acids. HSA is finding increasing uses in drug-delivery due to its ability to carry functionalized ligands and prodrugs. All this raises the question of competition for binding sites occupancy in case of multiple ligands, which in turn influences the protein structure/dynamic/function relationship and also has an impact on the biomedical applications. In this work, the effects of interactive binding of palmitic acid (PA), warfarin (War) and ibuprofen (Ibu) on the thermal stability of HSA were studied using DSC, ATR-FTIR, and EPR. PA is a high-affinity physiological ligand, while the two drugs are widely used for th …
+  TYPES: Journal Article;Research Support, Non-U.S. Gov't
+  MESH: Binding Sites; Binding, Competitive; Humans; Ibuprofen; Ligands; Palmitic Acid; Protein Binding; Protein Stability; Serum Albumin, Human; Temperature; Warfarin
+
+[R1-105] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: Short-Term Safety of Repeated Acetaminophen Use in Patients With Compensated Cirrhosis.
+  ABSTRACT: Current guidelines recommend restricting acetaminophen (APAP) use in patients with cirrhosis, but evidence to support that recommendation is lacking. Prior studies focused on pharmacokinetics (PK) of APAP in cirrhosis but did not rigorously examine clinical outcomes, sensitive biomarkers of liver damage, or serum APAP-protein adducts, which are a specific marker of toxic bioactivation. Hence, the goal of this pilot study was to test the effects of regularly scheduled APAP dosing in a well-defined compensated cirrhosis group compared to control subjects without cirrhosis, using the abovementioned outcomes. After a 2-week washout, 12 subjects with and 12 subjects without cirrhosis received 650 mg APAP twice per day (1.3 g/day) for 4 days, followed by 650 mg on the morning of day 5. Patients were assessed in-person at study initiation (day 1) and on days 3 and 5. APAP-protein adducts and bo …
+  TYPES: Controlled Clinical Trial;Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Acetaminophen; Adult; Alanine Transaminase; Analgesics, Non-Narcotic; Biomarkers; Drug Administration Schedule; Female; Glutamate Dehydrogenase; HMGB1 Protein; Humans; Keratin-18; Liver Cirrhosis; Male; Middle Aged
+
+[R1-106] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Liver injury caused by drugs: an update.
+  ABSTRACT: Although severe idiosyncratic drug-induced liver injury (DILI) is a rare event, it has a large impact on the fate of affected patients and the incriminated drug. Hepatic metabolism of drugs, which occurs in the generation of chemically reactive metabolites in critical amounts, seems to underlie most instances of DILI. Genetic polymorphisms in activating and detoxifying enzymes determine, in part, the extent of cellular stress. A cascade of events, where the pathogenetic relevance of single steps is likely to vary from drug to drug, leads to the disturbance of cellular homeostasis, to mitochondrial dysfunction, to the activation of cell death promoting pathways and the release of drug-modified macromolecules and/or danger signals that initiate an innate and/or adaptive immune response. The patient's response to the initial drug-induced cellular dysfunction determines whether adaptation to …
+  TYPES: Journal Article;Review
+  MESH: Acetaminophen; Adaptive Immunity; Analgesics, Non-Narcotic; Antitubercular Agents; Apoptosis; Chemical and Drug Induced Liver Injury; Cytochrome Reductases; Diclofenac; Drug-Related Side Effects and Adverse Reactions; Enzyme Induction; Genetic Predisposition to Disease; Genome-Wide Association Study; Homeostasis; Humans
+
+[R1-107] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=yes
+  TITLE: Artificial sweeteners, caffeine, and alcohol intoxication in bar patrons.
+  ABSTRACT: BACKGROUND: Previous laboratory research on alcohol absorption has found that substitution of artificially sweetened alcohol mixers for sucrose-based mixers has a marked effect on the rate of gastric emptying, resulting in elevated blood alcohol concentrations. Studies conducted in natural drinking settings, such as bars, have indicated that caffeine ingestion while drinking is associated with higher levels of intoxication. To our knowledge, research has not examined the effects of alcohol mixers that contain both an artificial sweetener and caffeine, that is, diet cola. Therefore, we assessed the event-specific association between diet cola consumption and alcohol intoxication in bar patrons. We sought to determine whether putative increases in blood alcohol, produced by accelerated gastric emptying following diet cola consumption, as identified in the laboratory, also appear in a natur …
+  TYPES: Journal Article
+  MESH: Adult; Alcohol Drinking; Alcoholic Intoxication; Beverages; Breath Tests; Caffeine; Central Nervous System Stimulants; Databases, Factual; Energy Drinks; Ethanol; Female; Gastric Emptying; Humans; Interview, Psychological
+
+[R1-108] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=yes
+  TITLE: The association between N-acetylcysteine treatment and hepatic healing in patients with non-acetaminophen-induced liver injury in pediatric intensive care: A single-center retrospective study.
+  ABSTRACT: OBJECTIVE: The aim of this study was to determine the association between the use of intravenous N-acetylcysteine (NAC) and hepatic healing in pediatric intensive care unit (PICU) patients with non-acetaminophen-induced hepatic injury, except for acute liver failure. METHODS: The data of patients who received intravenous NAC as adjuvant therapy for transaminase levels more than sixfold normal values during their PICU stay between 2010 and 2014 were retrospectively collected from the medical records database. The patients who did not receive NAC with elevated transaminase levels during their PICU stay between 2014 and 2018 were also collected as the standard of care (SOC) cohort. RESULTS: More than 50% of the liver injuries were secondary to acute hypoxia, hypotension, sepsis, and inflammation. The median number of elevated transaminase period (ETP) days of the NAC and SOC groups were 5 ( …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Child; Critical Care; Female; Humans; Liver Failure, Acute; Male; Retrospective Studies; Transaminases; Treatment Outcome
+
+[R1-109] OTC-LIT-Q03-COLD-ALLERGY | 2013 | abstract=yes
+  TITLE: Caffeine and cognitive decline in elderly women at high vascular risk.
+  ABSTRACT: BACKGROUND: Persons with vascular disorders are at higher risk of cognitive decline. OBJECTIVE: To determine whether caffeine may be associated with cognitive decline reduction in elderly at high vascular risk. METHODS: We included 2,475 women aged 65+ years in the Women's Antioxidant Cardiovascular Study, a randomized trial of antioxidants and B vitamins for cardiovascular disease secondary prevention. We ascertained regular caffeine intake at baseline (1995-1996) using a validated 116 item-food frequency questionnaire. From 1998-2000 to 2005-2006, we administered four telephone cognitive assessments at two-year intervals evaluating global cognition, verbal memory, and category fluency. The primary outcome was the change in global cognitive score, which was the average of the z-scores of all tests. We used generalized linear models for repeated measures that were adjusted for various so …
+  TYPES: Journal Article;Randomized Controlled Trial;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Aged; Aging; Caffeine; Central Nervous System Stimulants; Cerebrovascular Disorders; Cognition; Cognition Disorders; Cohort Studies; Dietary Supplements; Disease Progression; Female; Humans; Linear Models; Longitudinal Studies
+
+[R1-110] OTC-LIT-Q01-ACETAMINOPHEN | 2018 | abstract=no
+  TITLE: Fetal Outcomes in Intentional Over-the-Counter Medication Overdoses in Pregnancy.
+  ABSTRACT: (초록 없음)
+  TYPES: Case Reports;Journal Article
+  MESH: Acetaminophen; Adult; Aspirin; Diphenhydramine; Drug Overdose; Female; Humans; Infant, Newborn; Male; Mental Disorders; Pregnancy; Pregnancy Complications; Pregnancy Outcome; Stillbirth
+
+[R1-111] OTC-LIT-Q01-ACETAMINOPHEN | 2010 | abstract=yes
+  TITLE: Drug-induced liver injury caused by the histrelin (Vantus) subcutaneous implant.
+  ABSTRACT: Drug-induced liver injury (DILI) is the leading cause of acute hepatic failure in the United States. Up to 13% of acute liver failure cases occur due to drugs other than acetaminophen. This clinical diagnosis, made after other causes of liver injury have been excluded, requires establishing a causal relationship between drug exposure and liver injury. The case of a patient with liver injury following a subcutaneous histrelin (Vantus) implant as therapy for advanced prostate cancer is presented.
+  TYPES: Case Reports;Journal Article
+  MESH: Aged; Antineoplastic Agents, Hormonal; Chemical and Drug Induced Liver Injury; Drug Implants; Gonadotropin-Releasing Hormone; Humans; Male
+
+[R1-112] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Why not formulate an acetaminophen tablet containing N-acetylcysteine to prevent poisoning?
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Acetylcysteine; Analgesics, Non-Narcotic; Antidotes; Chemistry, Pharmaceutical; Delayed-Action Preparations; Drug Combinations; Drug Overdose; Humans; Nonprescription Drugs; Poisoning; Tablets
+
+[R1-113] OTC-LIT-Q03-COLD-ALLERGY | 2016 | abstract=yes
+  TITLE: Retinal microcirculation in association with caffeinated and alcoholic drinks in subjects at increased cardiovascular risk.
+  ABSTRACT: OBJECTIVES: The association of caffeinated and alcoholic drinks with microcirculation is poorly investigated. The aim of the study was to investigate the associations of daily consumption of caffeinated and alcoholic drinks with retinal vessel calibers. METHODS: In consecutive adults at increased risk but free of CVD and diabetes mellitus, (n=181, age: 51.32±12.42 y, 51.4% women), we determined CRAE, CRVE and AVR, respectively. Daily consumption of caffeinated and alcoholic drinks was assessed through 24 h recalls. RESULTS: After adjustment for potential confounders: (i) caffeine was positively associated with CRVE (b=0.177, P=.006 for left, b=0.208, P=.002 for right eye, respectively) (ii) decaffeinated coffee was positively associated with CRAE (b=0.141, P=.035 for left eye) and negatively associated with CRVE (b=-0.234, P<.001 for left, b=-0.189, P=.006 for right eye, respectively). R …
+  TYPES: Journal Article
+  MESH: Adult; Aged; Alcohol Drinking; Arterioles; Caffeine; Cardiovascular Diseases; Coffee; Female; Humans; Male; Microcirculation; Middle Aged; Retinal Vessels; Risk Factors
+
+[R1-114] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=yes
+  TITLE: Reliability of history of acetaminophen ingestion in intentional drug overdose patients.
+  ABSTRACT: The objective of this study was to determine the reliability of denial of acetaminophen ingestion in intentional drug overdose patients. All intentional drug overdose patients admitted to an emergency department who were able to provide a history were included. A detailed history was obtained on names, timing and number of medications ingested, and serum acetaminophen was assayed. Multidrug ingestion was defined as the reporting of ≥2 medications. Patients were considered 'reliable' if they reported acetaminophen ingestion and had detectable acetaminophen levels or the other way around. Validity parameters of acetaminophen history were assessed by sensitivity, specificity and positive and negative predictive values. A total of 154 patients were included. History was significantly more reliable in patients who denied ingestion of acetaminophen (n = 107) compared with patients who reported …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Adolescent; Adult; Aged; Aged, 80 and over; Analgesics, Non-Narcotic; Child; Drug Overdose; Emergency Service, Hospital; Female; Humans; Israel; Male; Medical History Taking
+
+[R1-115] OTC-LIT-Q01-ACETAMINOPHEN | 2024 | abstract=yes
+  TITLE: Screening of Multitarget Compounds against Acetaminophen Hepatic Toxicity Using In Silico, In Vitro, and In Vivo Approaches.
+  ABSTRACT: Combination therapy and multitarget drugs have recently attracted much attention as promising tools to fight against many challenging diseases and, thus, represent a new research focus area. The aim of the current project was to screen multitarget compounds and to study their individual and combined effects on acetaminophen-induced liver injury. In this study, 2 of the best hepatoprotective multitargeting compounds were selected from a pool of 40 major compounds present in Curcuma longa and Cinnamomum zeylanicum by using molecular docking, ADMET profiling, and Pfizer's rule of five. The two selected compounds, quercetin and curcumin, showed a high binding affinity for the CYP2E1 enzyme, MAPK, and TLR4 receptors that contribute to liver injury. The candidates caused the decreased viability of cancer cell lines (HepG2 and Huh7) but showed no effect on a normal cell line (Vero). Examination …
+  TYPES: Journal Article
+  MESH: Acetaminophen; Curcumin; Hepatitis; Humans; Molecular Docking Simulation; Quercetin
+
+[R1-116] OTC-LIT-Q01-ACETAMINOPHEN | 2013 | abstract=no
+  TITLE: Preventing paracetamol overdose in children: do we really need a 500 mg/5mL preparation?
+  ABSTRACT: (초록 없음)
+  TYPES: Letter
+  MESH: Acetaminophen; Drug Overdose; Drug Packaging; Humans; India
+
+[R1-117] OTC-LIT-Q01-ACETAMINOPHEN | 2022 | abstract=no
+  TITLE: Treating acetaminophen overdose.
+  ABSTRACT: (초록 없음)
+  TYPES: Journal Article
+  MESH: Acetaminophen; Analgesics, Non-Narcotic; Chemical and Drug Induced Liver Injury; Drug Overdose; Drug-Related Side Effects and Adverse Reactions; Humans
+
+[R1-118] OTC-LIT-Q03-COLD-ALLERGY | 2011 | abstract=yes
+  TITLE: Systematic review of topical vasoconstrictors in endoscopic sinus surgery.
+  ABSTRACT: OBJECTIVE: The objective of this study is to systematically review the literature and examine the safety for the use of topical vasoconstrictors in endoscopic sinus surgery. STUDY DESIGN: Systematic review clinical trials. METHOD: A systematic literature search was performed in MEDLINE, EMBASE, The Cochrane Library, and National Guideline Clearinghouse, and references in the selected articles. RESULTS: The search criteria captured 42 manuscripts with relevant titles. A systematic review on the topical use of phenylephrine was found; however, no other systematic review, meta-analyses, or clinical guidelines were identified. Six randomized clinical trials or comparative studies, as well as multiple case reports and review articles were also identified. The literature supports the safety of oxymetazoline and epinephrine when used judiciously in carefully selected patients undergoing endosco …
+  TYPES: Journal Article;Systematic Review
+  MESH: Administration, Topical; Clinical Trials as Topic; Endoscopy; Humans; Otorhinolaryngologic Surgical Procedures; Paranasal Sinuses; Phenylephrine; Vasoconstrictor Agents
+
+[R1-119] OTC-LIT-Q01-ACETAMINOPHEN | 2011 | abstract=no
+  TITLE: Pathophysiological relevance of proteomics investigations of drug-induced hepatotoxicity in HepG2 cells.
+  ABSTRACT: (초록 없음)
+  TYPES: Comment;Letter
+  MESH: Acetaminophen; Amiodarone; Chemical and Drug Induced Liver Injury; Cyclosporine; Gene Expression Regulation; Hep G2 Cells; Hepatocytes; Humans; Proteomics
+
+[R1-120] OTC-LIT-Q03-COLD-ALLERGY | 2021 | abstract=yes
+  TITLE: Volume of Distribution is Unaffected by Metabolic Drug-Drug Interactions.
+  ABSTRACT: INTRODUCTION: It has been recognized that significant transporter interactions result in volume of distribution changes in addition to potential changes in clearance. For drugs that are not clinically significant transporter substrates, it is expected that drug-drug interactions would not result in any changes in volume of distribution. METHODS: An evaluation of this hypothesis proceeded via an extensive analysis of published intravenous metabolic drug-drug interactions, based on clinically recommended index substrates and inhibitors of major cytochrome P450 (CYP) isoforms. RESULTS: Seventy-two metabolic drug interaction studies were identified where volume of distribution at steady-state (Vss) values were available for the CYP index substrates caffeine (CYP1A2), metoprolol (CYP2D6), midazolam (CYP3A4), theophylline (CYP1A2), and tolbutamide (CYP2C9). Changes in exposure (area under the …
+  TYPES: Journal Article;Research Support, N.I.H., Extramural;Research Support, Non-U.S. Gov't
+  MESH: Area Under Curve; Cytochrome P-450 CYP3A; Drug Interactions; Humans; Midazolam; Pharmaceutical Preparations
