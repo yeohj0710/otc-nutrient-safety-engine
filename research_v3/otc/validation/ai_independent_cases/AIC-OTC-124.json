@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-124",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "gi_bleeding_ulcer",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "200610765",
+      "unitsPerDose": 1,
+      "dosesPerDay": 1
+    }
+  ],
+  "userProfile": {
+    "ageYears": 50,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": true,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

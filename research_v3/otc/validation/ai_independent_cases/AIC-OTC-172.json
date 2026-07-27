@@ -1,0 +1,28 @@
+{
+  "caseId": "AIC-OTC-172",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "sedative_medication",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "199400202",
+      "unitsPerDose": 1,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": 41,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [
+      "디아제팜"
+    ],
+    "redFlagSymptoms": []
+  }
+}

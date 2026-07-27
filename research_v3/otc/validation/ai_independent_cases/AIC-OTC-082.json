@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-082",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "pregnancy_lactation",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "198400250",
+      "unitsPerDose": 1,
+      "dosesPerDay": 2
+    }
+  ],
+  "userProfile": {
+    "ageYears": 33,
+    "pregnant": true,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

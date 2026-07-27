@@ -1,0 +1,1414 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-27T02:38:07.976596+00:00",
+  "purpose_ko": "P3-B 규칙엔진 AI 맹검 독립평가용 무라벨 사례",
+  "generator": "tools/ai_independent_cases.py",
+  "label_fields_present": false,
+  "prediction_fields_present": false,
+  "note_ko": "사례 파일에는 정답 라벨과 엔진 예측을 넣지 않는다. 규칙 유형별로 발동 조건을 설정한 사례와 설정하지 않은 사례를 같은 수로 만들었으나 어느 쪽인지는 사례 파일과 매니페스트 어디에도 표시하지 않는다.",
+  "source_files": {
+    "product_master.csv": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc",
+    "product_ingredient.csv": "83ed4b53483c5e3e6b9296defce1548504f6b81bcd7aa59e42142a440fb6580e",
+    "administration_constraints.csv": "88b33b109e602527655e814f794bc19f7a5166553fd6c701f92bd7e53f49b669"
+  },
+  "rules_csv_sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
+  "analysis_products": [
+    "196800036",
+    "197500016",
+    "198400250",
+    "198601920",
+    "198700405",
+    "199400202",
+    "199801026",
+    "199900926",
+    "200300406",
+    "200610765",
+    "201110646",
+    "202106092",
+    "202200525"
+  ],
+  "excluded_product_ko": "신신파스아렉스(200501321)는 분석·런타임에서 제외한다.",
+  "rule_types": [
+    "duplicate_ingredient",
+    "duplicate_pharmacologic_class",
+    "max_daily_dose",
+    "minimum_interval",
+    "age_restriction",
+    "pregnancy_lactation",
+    "hepatic_disease",
+    "renal_disease",
+    "gi_bleeding_ulcer",
+    "sedation_driving",
+    "alcohol",
+    "anticoagulant_antiplatelet",
+    "sedative_medication",
+    "decongestant_hypertension",
+    "maximum_duration",
+    "urgent_referral"
+  ],
+  "cases_total": 224,
+  "cases_per_rule_type": {
+    "age_restriction": 14,
+    "alcohol": 14,
+    "anticoagulant_antiplatelet": 14,
+    "decongestant_hypertension": 14,
+    "duplicate_ingredient": 14,
+    "duplicate_pharmacologic_class": 14,
+    "gi_bleeding_ulcer": 14,
+    "hepatic_disease": 14,
+    "max_daily_dose": 14,
+    "maximum_duration": 14,
+    "minimum_interval": 14,
+    "pregnancy_lactation": 14,
+    "renal_disease": 14,
+    "sedation_driving": 14,
+    "sedative_medication": 14,
+    "urgent_referral": 14
+  },
+  "cases": [
+    {
+      "case_id": "AIC-OTC-001",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-001.json",
+      "sha256": "6ea742cbd9601e2c18c9a3b71eaef3b7aa6cb28536bc1704fd871d30f78b41e9"
+    },
+    {
+      "case_id": "AIC-OTC-002",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-002.json",
+      "sha256": "a20afd28f88c8a4b1a94a86059519d9f147ef3dff935ebeb0d01023117a29c29"
+    },
+    {
+      "case_id": "AIC-OTC-003",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-003.json",
+      "sha256": "6c1be01f7df8f2dddfd12fc9a1e4c7e0b6c538e142daae2cbec799e433a306c1"
+    },
+    {
+      "case_id": "AIC-OTC-004",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-004.json",
+      "sha256": "a7eaf1530762bfd2a61ca6c21cf042ce99ff5c0b43428754b09f578fd32e06ae"
+    },
+    {
+      "case_id": "AIC-OTC-005",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-005.json",
+      "sha256": "16495df439e5d28ca290b5cc90a276cab96858926dc3b16b737db82f35ac35a6"
+    },
+    {
+      "case_id": "AIC-OTC-006",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-006.json",
+      "sha256": "8734ab87d8295edd558ac9a95ce879d5f2c8dea854569a35f627d31c94df2d40"
+    },
+    {
+      "case_id": "AIC-OTC-007",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-007.json",
+      "sha256": "33a93101fc29546c2ac530a9bb5379d534ae4057d431b7327e20974110000af0"
+    },
+    {
+      "case_id": "AIC-OTC-008",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-008.json",
+      "sha256": "c1e194fe976c0e6552080825f763728a2f286d7d623aa2e6cda4907e1abc8e23"
+    },
+    {
+      "case_id": "AIC-OTC-009",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-009.json",
+      "sha256": "4f351be32d0c976b1ca907a228a0c74a540c6ca6f5d9deadf14ada17a8b94138"
+    },
+    {
+      "case_id": "AIC-OTC-010",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-010.json",
+      "sha256": "ad2e37abc3ea864a7acd16e1928b2b2959672fc18cdb52c7ad882e1ad13629b0"
+    },
+    {
+      "case_id": "AIC-OTC-011",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-011.json",
+      "sha256": "c97666e9f557c61559768b771a54477b3156877019c1e2b759023680ef0565cf"
+    },
+    {
+      "case_id": "AIC-OTC-012",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-012.json",
+      "sha256": "e0ad15448b41600c38ddce7115b3288efc478fd5da890e72d3ecd4d01cc3f186"
+    },
+    {
+      "case_id": "AIC-OTC-013",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-013.json",
+      "sha256": "0e6568628f95e532b60337591a8487314923bab9583183e217406cbba102ba2a"
+    },
+    {
+      "case_id": "AIC-OTC-014",
+      "target_rule_type": "duplicate_ingredient",
+      "path": "AIC-OTC-014.json",
+      "sha256": "518b387622c6faeafb7862ae8c7777518971168c253afd4e0497cd8a54790270"
+    },
+    {
+      "case_id": "AIC-OTC-015",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-015.json",
+      "sha256": "8400b5b8cbdc18c8e258534d87a5dfbfe90276a663ff309bc2e58d433068c51f"
+    },
+    {
+      "case_id": "AIC-OTC-016",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-016.json",
+      "sha256": "0f70b0bcd92fbfee33accd5c2719e3b2a52883c93f3cc10104299e381521dd4c"
+    },
+    {
+      "case_id": "AIC-OTC-017",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-017.json",
+      "sha256": "66a5f9f8793b2ee3814464b37f5b41d444862358b26ac008920c17f60cc68255"
+    },
+    {
+      "case_id": "AIC-OTC-018",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-018.json",
+      "sha256": "63acde90c77aafb3bcfe35c2fe9c8a3ac7c8a9e80481c32d5328950809968ed7"
+    },
+    {
+      "case_id": "AIC-OTC-019",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-019.json",
+      "sha256": "ebbfb31f4e90569f5bdc06b06039c365916c486dcdd09143263470a974f41bba"
+    },
+    {
+      "case_id": "AIC-OTC-020",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-020.json",
+      "sha256": "08464a45e8ad5e3036dd25b2bbfd988139c6c6ab1d84a5c9101cc47a4d407d73"
+    },
+    {
+      "case_id": "AIC-OTC-021",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-021.json",
+      "sha256": "5ed1486ee17e86136d55c7d49f1bdee701cee5464f303f8ad87cea153d12c597"
+    },
+    {
+      "case_id": "AIC-OTC-022",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-022.json",
+      "sha256": "13d51c8c4877ae89940543284d495349227345a3008bc0e749d56fb396710e47"
+    },
+    {
+      "case_id": "AIC-OTC-023",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-023.json",
+      "sha256": "c53bb8a4ac8eacc66426cb24862f7a6a0d8c3e9bd6f73d1064c82440b4b5553c"
+    },
+    {
+      "case_id": "AIC-OTC-024",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-024.json",
+      "sha256": "a18d02d39c542b5845defde066190fc826bc04b9e537b4e7590f2cdc85d09f95"
+    },
+    {
+      "case_id": "AIC-OTC-025",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-025.json",
+      "sha256": "e6ad2ea19a2d08d63bc3646148e958c7eff0d2783b57141fec3b096a1080be01"
+    },
+    {
+      "case_id": "AIC-OTC-026",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-026.json",
+      "sha256": "06ca0d7ee3a255feef21b5e487593def99dc75ea7c4f87e549c210a57c502ca2"
+    },
+    {
+      "case_id": "AIC-OTC-027",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-027.json",
+      "sha256": "0d6ba86b95ce9e88dbdad495deb769d21f338332183d0b9b1ded40a9efc9ae0c"
+    },
+    {
+      "case_id": "AIC-OTC-028",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "path": "AIC-OTC-028.json",
+      "sha256": "b99918cfe7b42c40c0756b8dc604016c4ba2e7e390f4b2471413e26e116f0dae"
+    },
+    {
+      "case_id": "AIC-OTC-029",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-029.json",
+      "sha256": "9ce7322ee0fe3f5c09d7fb22f424efcbd8918af353c5b571bd5fb5107f46e953"
+    },
+    {
+      "case_id": "AIC-OTC-030",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-030.json",
+      "sha256": "8479666251c6118071064cf085162e45d073be5775fb573f1c6dd004517abe88"
+    },
+    {
+      "case_id": "AIC-OTC-031",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-031.json",
+      "sha256": "652b5fb573e5437d9ab034b223baab4b3fb7bd5ec8ac9b89c3214fa314a13713"
+    },
+    {
+      "case_id": "AIC-OTC-032",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-032.json",
+      "sha256": "58db04a2a5b7f730b7e0af40452ef18838c2f141ceea2f90beb2a290fe8f3ade"
+    },
+    {
+      "case_id": "AIC-OTC-033",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-033.json",
+      "sha256": "9e7ebeaa24b72240fe2d71f151e21f692a878007676dfcf145b12d4b7ef49970"
+    },
+    {
+      "case_id": "AIC-OTC-034",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-034.json",
+      "sha256": "7500923c813b3a379ed8c173eb582f0a93485e46bea18d5ad3e19339a22a90d2"
+    },
+    {
+      "case_id": "AIC-OTC-035",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-035.json",
+      "sha256": "65d3c792227bdbe274180e07a5c4d2d6f390e57c8f008529d255fd5162868087"
+    },
+    {
+      "case_id": "AIC-OTC-036",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-036.json",
+      "sha256": "1f82df6de809b80c7c66f2c0961072f66cc6d5fe4e6ea7198f18019859dec57e"
+    },
+    {
+      "case_id": "AIC-OTC-037",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-037.json",
+      "sha256": "dc42a19271fdf3e08fadf22391cd650e0c51e62d9376c6c456209f3ec323ef46"
+    },
+    {
+      "case_id": "AIC-OTC-038",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-038.json",
+      "sha256": "4ed81087ba2812400e2a69dadda6cb78f5ec5812db70e5a8bb8c23e9b2acc57d"
+    },
+    {
+      "case_id": "AIC-OTC-039",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-039.json",
+      "sha256": "22aed5f19f7708fa780e96ab0e864e51a01cbed60d3919886ccf073e6fc66ee1"
+    },
+    {
+      "case_id": "AIC-OTC-040",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-040.json",
+      "sha256": "a769a2b30b3dd36dcddf3963c8319530a6ee8865aa929167c6591577c78829c1"
+    },
+    {
+      "case_id": "AIC-OTC-041",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-041.json",
+      "sha256": "72a4f143d8025c8d46779abf6b20cc146f0c3658582a39391a4a812e6fea92f7"
+    },
+    {
+      "case_id": "AIC-OTC-042",
+      "target_rule_type": "max_daily_dose",
+      "path": "AIC-OTC-042.json",
+      "sha256": "8f3f82e88ab5ea6ecd96efbe56a5d10c862f541ff7a5601e4cbecaa600aa0269"
+    },
+    {
+      "case_id": "AIC-OTC-043",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-043.json",
+      "sha256": "e2bb166eddeaae04840450440ef1754135742fc0c4b52d103f21e244b0ac0349"
+    },
+    {
+      "case_id": "AIC-OTC-044",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-044.json",
+      "sha256": "0ea705679e5c5108df477c298115913be3f17d7cba082537ebfc0a0a337748e9"
+    },
+    {
+      "case_id": "AIC-OTC-045",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-045.json",
+      "sha256": "bc9cfc6687cf4c96e3eaa24644e904905e3b6cf93b8eb97b5127b7f54602552b"
+    },
+    {
+      "case_id": "AIC-OTC-046",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-046.json",
+      "sha256": "7bdcf10cea20403aa5fe4569309d4b2e82bb94ccbc3e2217aa19e949d127b487"
+    },
+    {
+      "case_id": "AIC-OTC-047",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-047.json",
+      "sha256": "46d19b62a3b35a3774a3c9b25dac060b16721106e5f5181364099887eeadf6d0"
+    },
+    {
+      "case_id": "AIC-OTC-048",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-048.json",
+      "sha256": "2abec00010d846058fd8d529e9ac87fa9abdc957401e130970f71b4f8472bccf"
+    },
+    {
+      "case_id": "AIC-OTC-049",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-049.json",
+      "sha256": "80663f47bde061b187f63a2a6b82295e5f937086f5ec9a3e99085976deb7f89a"
+    },
+    {
+      "case_id": "AIC-OTC-050",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-050.json",
+      "sha256": "63d14344debd97e7890dd945c5c1dbf376e87709703efbf8f74e251b160d3fc4"
+    },
+    {
+      "case_id": "AIC-OTC-051",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-051.json",
+      "sha256": "e14e916802bc7828323a102e770fadf66a9fc9ca8d7b682fee787eda0c7f4f9a"
+    },
+    {
+      "case_id": "AIC-OTC-052",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-052.json",
+      "sha256": "3b332133c47b6c9725027e01473dc5ce8c95f0a230c4a5b34e43e21ec7ac4432"
+    },
+    {
+      "case_id": "AIC-OTC-053",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-053.json",
+      "sha256": "3d3195757072cb04636efc47c476c9458aa7efae110f9ab1a48f9078f6c0c94c"
+    },
+    {
+      "case_id": "AIC-OTC-054",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-054.json",
+      "sha256": "6a5c546cb69e4b70ffa28a732aeabee5ebfac22e242e354f0221b6c42c27ce8c"
+    },
+    {
+      "case_id": "AIC-OTC-055",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-055.json",
+      "sha256": "32e33525cee210882e792659a155b814223723f95874a53948c11209a4401bf1"
+    },
+    {
+      "case_id": "AIC-OTC-056",
+      "target_rule_type": "minimum_interval",
+      "path": "AIC-OTC-056.json",
+      "sha256": "5818889c28e6884a233275e3d6596e8ee57295a3e52ecdd1466d338c70f6dcfd"
+    },
+    {
+      "case_id": "AIC-OTC-057",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-057.json",
+      "sha256": "0a1062f3fa9b1e39fee52f93e7b43a7c36d79db5f8f213dce67fc80480c4d3f7"
+    },
+    {
+      "case_id": "AIC-OTC-058",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-058.json",
+      "sha256": "155c3fa84d15485b81e3b40bc78ada3bc0d3ef7e3cbdb253d6764b33add63fda"
+    },
+    {
+      "case_id": "AIC-OTC-059",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-059.json",
+      "sha256": "f2edbe316ea0ac6ca71be4437d34fdd0fbcc086f35547ab07263201c9d5e4e8e"
+    },
+    {
+      "case_id": "AIC-OTC-060",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-060.json",
+      "sha256": "ee3c74e99b62eaa7823d88d2351218b3bfe7db6c3c0b245456b9f6e1bf7128a2"
+    },
+    {
+      "case_id": "AIC-OTC-061",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-061.json",
+      "sha256": "812071631d025a7f19786fef6f1ac0f28283a2a78b644713d7156fc2fe04ab7b"
+    },
+    {
+      "case_id": "AIC-OTC-062",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-062.json",
+      "sha256": "7df95f6b34f4a08ccdb7d36b316c8b67ed6e91ad8cc487d49e688118f0863278"
+    },
+    {
+      "case_id": "AIC-OTC-063",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-063.json",
+      "sha256": "662ef773368525ed51921744aeb01753351015dfb15e7722a0de6099f34203e4"
+    },
+    {
+      "case_id": "AIC-OTC-064",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-064.json",
+      "sha256": "41d941ac8b13f103b70277747d99d7c38383fd4ac302fca602c3ab6a2763a58b"
+    },
+    {
+      "case_id": "AIC-OTC-065",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-065.json",
+      "sha256": "b355cf9bce3f4415fc7058c620bf4c16372274639ab27921181bccbb7586b108"
+    },
+    {
+      "case_id": "AIC-OTC-066",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-066.json",
+      "sha256": "cc22422172aa6c1e93b6cfa2552bc688a2e67f70ddf7af839d75e54d4ea2d794"
+    },
+    {
+      "case_id": "AIC-OTC-067",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-067.json",
+      "sha256": "32457d12a8880aea4d6f6f5e70acb05ad876f7e499474ef2b176b24f956daf13"
+    },
+    {
+      "case_id": "AIC-OTC-068",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-068.json",
+      "sha256": "5d2a6ee465d729ade32a20a5b6401652f8105d48c9758c908e27d55ecab8faa3"
+    },
+    {
+      "case_id": "AIC-OTC-069",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-069.json",
+      "sha256": "c747d53de06e817fe6000074204cf91cdfd595786b48a43ca187d82692016614"
+    },
+    {
+      "case_id": "AIC-OTC-070",
+      "target_rule_type": "age_restriction",
+      "path": "AIC-OTC-070.json",
+      "sha256": "6aa7c736edd3a973e21b1df6bd394a6c8a050c1c2e0557a5eaa974fd1ab589ac"
+    },
+    {
+      "case_id": "AIC-OTC-071",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-071.json",
+      "sha256": "5afe05a144109160ac5570209e67c67e90d8d61ed7ac7ff5ba4a3cf8968f18f5"
+    },
+    {
+      "case_id": "AIC-OTC-072",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-072.json",
+      "sha256": "66ebe5117c2d300a9c7f39737612d630498e77bf158a2c356ea883d5517d4118"
+    },
+    {
+      "case_id": "AIC-OTC-073",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-073.json",
+      "sha256": "b0a9b5062b7a3d3a742c4ba6e4571da70d2c30d69fafa9a3222968b9a24a97e3"
+    },
+    {
+      "case_id": "AIC-OTC-074",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-074.json",
+      "sha256": "e2ce3baf4af59faa33f6857586369b45cc8d7590f34b52bbe7188d2d213fb8e7"
+    },
+    {
+      "case_id": "AIC-OTC-075",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-075.json",
+      "sha256": "49be8899454d4217ef6a13fba74b99ae994e6352d4cec4a0f3cb3942c244660c"
+    },
+    {
+      "case_id": "AIC-OTC-076",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-076.json",
+      "sha256": "c5cda19223cedcc1b08d72f6bfdfcbff80c3483fd6e4821af1cafb0a2e71725e"
+    },
+    {
+      "case_id": "AIC-OTC-077",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-077.json",
+      "sha256": "e6363e80e845dcb5606f8374861a3a15c1ad31d83dceeb372549217afaf1607b"
+    },
+    {
+      "case_id": "AIC-OTC-078",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-078.json",
+      "sha256": "36df7b4624bc883700d893f79dfddb31f02fc0c648780af4c2cb4b009c478aa0"
+    },
+    {
+      "case_id": "AIC-OTC-079",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-079.json",
+      "sha256": "e371eb7415ef35d8dfe536eea8535d290c2036ef905ab5aa31b475cc34a0f589"
+    },
+    {
+      "case_id": "AIC-OTC-080",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-080.json",
+      "sha256": "3cea1e0197711edf1cb1fc74a6740708849799a9c9b25f9452f7cbda4929711c"
+    },
+    {
+      "case_id": "AIC-OTC-081",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-081.json",
+      "sha256": "cacf9d49a0f21def4ef6e3c8f413332f69e77e26350c79ad5d969c7972443c61"
+    },
+    {
+      "case_id": "AIC-OTC-082",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-082.json",
+      "sha256": "7438677e734db4978d753b9e56d4cd38e0a6e745c99bb45607eb69b76a95316b"
+    },
+    {
+      "case_id": "AIC-OTC-083",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-083.json",
+      "sha256": "84e6d528be6d4f650f057ad11766d8744103fec6948f5970ddcf0b3c53fdc0cb"
+    },
+    {
+      "case_id": "AIC-OTC-084",
+      "target_rule_type": "pregnancy_lactation",
+      "path": "AIC-OTC-084.json",
+      "sha256": "8dfecb7c4d486eb65bf05ac7830ca8a0aa6f4ef690a703526c2af9a9309ffc97"
+    },
+    {
+      "case_id": "AIC-OTC-085",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-085.json",
+      "sha256": "58ee313af3ddbc9f79205bca39c9d21aed7526b6b0cc9975e6d71922e9d2341c"
+    },
+    {
+      "case_id": "AIC-OTC-086",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-086.json",
+      "sha256": "5251b4ca19aa6d81791d60d951fe430b51ec7b30dae7883afcfe15bda6ddf064"
+    },
+    {
+      "case_id": "AIC-OTC-087",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-087.json",
+      "sha256": "f997b45b34834bc0ec4bdf8c8be51dedc18f4aff79821b0664fd98f79ba0d5bc"
+    },
+    {
+      "case_id": "AIC-OTC-088",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-088.json",
+      "sha256": "8f7e69ae482dd53eb9740fe7aa82b630161eb12cea2baa4fcef74aa2b6a6164b"
+    },
+    {
+      "case_id": "AIC-OTC-089",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-089.json",
+      "sha256": "7993e1ec4117b13341ccabed33a810e86b4edb051dcf3f9fd65807aee6506194"
+    },
+    {
+      "case_id": "AIC-OTC-090",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-090.json",
+      "sha256": "e9f3fe5a3db7077df854810f41df2f1b0331dbb41b51d134be184d923a433fa7"
+    },
+    {
+      "case_id": "AIC-OTC-091",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-091.json",
+      "sha256": "8175ff86eecc1193a4491cd5ae987662ffc8e0368c6e12f787d13f5d7fa933b3"
+    },
+    {
+      "case_id": "AIC-OTC-092",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-092.json",
+      "sha256": "90732915e86b6f935744a661696cea50a550926e06e38e86544537f7258891d7"
+    },
+    {
+      "case_id": "AIC-OTC-093",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-093.json",
+      "sha256": "f3822cf77cba77b9c2b3cd1c671d3b4e3d1d6d706122666493c1ee375ea2aa52"
+    },
+    {
+      "case_id": "AIC-OTC-094",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-094.json",
+      "sha256": "b91201f27301e46567c74883409a028f5e2329d503a8bc6467f4cdd48c6abd0d"
+    },
+    {
+      "case_id": "AIC-OTC-095",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-095.json",
+      "sha256": "bcd0f2600e2b3951c646f9bb95a2f6eff9fd4db7dcdcfaf405378b920f2a8a51"
+    },
+    {
+      "case_id": "AIC-OTC-096",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-096.json",
+      "sha256": "80f77a041a4d8cb182952a44a9000e20c6ef28776aa8ea97773bf64996c965f1"
+    },
+    {
+      "case_id": "AIC-OTC-097",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-097.json",
+      "sha256": "043c81ca18687080eb2e2c0a637075f22362b7e62448dbbd94bb9931dacc2a17"
+    },
+    {
+      "case_id": "AIC-OTC-098",
+      "target_rule_type": "hepatic_disease",
+      "path": "AIC-OTC-098.json",
+      "sha256": "199519713a400ad296da51dcaef5db145320962f5a7c075b49908c92020d23bb"
+    },
+    {
+      "case_id": "AIC-OTC-099",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-099.json",
+      "sha256": "b30e80661c119efc2c6c20f90de9ffc318d791ce8d46e90c2ededdb784f4e2b3"
+    },
+    {
+      "case_id": "AIC-OTC-100",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-100.json",
+      "sha256": "2ef74e2f0a4aadf89c8129d3b71c92fed0e06e97b047da25a69b70bdf15993ea"
+    },
+    {
+      "case_id": "AIC-OTC-101",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-101.json",
+      "sha256": "a41cbf198d59c3c18dcef57a7855b217ede09a1610537b6711a52be8a8c3919a"
+    },
+    {
+      "case_id": "AIC-OTC-102",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-102.json",
+      "sha256": "82e43eb0abca3ece8279bfbd68d5b3564725fc4e9a982d1c2153946b0f571af0"
+    },
+    {
+      "case_id": "AIC-OTC-103",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-103.json",
+      "sha256": "baaa023d30be013dc1a7b08b55a7915df91fc1b4677538c5ef00b19001655f10"
+    },
+    {
+      "case_id": "AIC-OTC-104",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-104.json",
+      "sha256": "8f7e0cba764de497c4a2a68094ad6c8b9ff85d33ea961463486a3f615e38d987"
+    },
+    {
+      "case_id": "AIC-OTC-105",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-105.json",
+      "sha256": "02c8e9da547fc03bcd899e50fc0cfaaafab009817796652601f6d5ac0ead7546"
+    },
+    {
+      "case_id": "AIC-OTC-106",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-106.json",
+      "sha256": "2501b6c6b59f3720a08cd2fcdb61407b81e9c81eda2a85861fd6b7c74d4bdca0"
+    },
+    {
+      "case_id": "AIC-OTC-107",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-107.json",
+      "sha256": "bf0765f7dbfe0ba6d43b63c1ee4e0463b3855a329d656d5a52a9353d32720ec7"
+    },
+    {
+      "case_id": "AIC-OTC-108",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-108.json",
+      "sha256": "769817e64f5d6ed171c51cbe8bbd71dcbf026e5b626cb91333c11e340e9def38"
+    },
+    {
+      "case_id": "AIC-OTC-109",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-109.json",
+      "sha256": "afd1772ec2037f79e268f1e55a5bea94db5e80a07894d767be720534126017d9"
+    },
+    {
+      "case_id": "AIC-OTC-110",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-110.json",
+      "sha256": "0b68a0c6edba9e34246b2e327a63d29494f5da47d80bfd678a614d815004bbf1"
+    },
+    {
+      "case_id": "AIC-OTC-111",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-111.json",
+      "sha256": "d2e609a6b66409cd08db46fd5bb1e3fae79b01f35c27276515425a511e1b9c4d"
+    },
+    {
+      "case_id": "AIC-OTC-112",
+      "target_rule_type": "renal_disease",
+      "path": "AIC-OTC-112.json",
+      "sha256": "60443107ca5e040e3710cfdeebaf3227356b06b904184bfed454592d1ee80852"
+    },
+    {
+      "case_id": "AIC-OTC-113",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-113.json",
+      "sha256": "0cf57a74012ee8e453b651655db5939c2baf35cc6c05b3f060d7f37165349032"
+    },
+    {
+      "case_id": "AIC-OTC-114",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-114.json",
+      "sha256": "4755754aa05f8aa7f95b6e2dbab68d0eb45d9f40623d821f3cdf46ea378f9490"
+    },
+    {
+      "case_id": "AIC-OTC-115",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-115.json",
+      "sha256": "b8824245b9bcc219bb1e3279b05576b52c3c5980059bdea307d42419e84e5120"
+    },
+    {
+      "case_id": "AIC-OTC-116",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-116.json",
+      "sha256": "e8bfa22184425c1954034b53b442787d21e31dde02ab645fa64b778160d87420"
+    },
+    {
+      "case_id": "AIC-OTC-117",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-117.json",
+      "sha256": "22f9e24b55973e006eb72eaff12d812aa71267a50d792d8de83ce1d351a57e14"
+    },
+    {
+      "case_id": "AIC-OTC-118",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-118.json",
+      "sha256": "46dcbc528c7b86fd14d61ed07de4de64e1e0660ee9d95793528c08a822b75146"
+    },
+    {
+      "case_id": "AIC-OTC-119",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-119.json",
+      "sha256": "235dba3e40365b3c12c47efa1214c790ba7777f15c2be1510dbe7b5a568e2de6"
+    },
+    {
+      "case_id": "AIC-OTC-120",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-120.json",
+      "sha256": "89c024800ca55b356e7e8b469694a53fc0ef1a50dd3a71e9e1203023df4c37a5"
+    },
+    {
+      "case_id": "AIC-OTC-121",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-121.json",
+      "sha256": "cb2e0104bac75362d151ac062bb6471ce457e5a0cd3307b85a4a76ba8dd7e573"
+    },
+    {
+      "case_id": "AIC-OTC-122",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-122.json",
+      "sha256": "c3bce29f76076185efaa193e3d350315b4b93cee0be00d2de6c0d5ddc813a531"
+    },
+    {
+      "case_id": "AIC-OTC-123",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-123.json",
+      "sha256": "357afb816a0497df70ebe8f6be2243bd6063a8047921c0feea4f4e5a03d9bb5f"
+    },
+    {
+      "case_id": "AIC-OTC-124",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-124.json",
+      "sha256": "86da4b9ded2b1fe5d7ebdcce215fe783b9c10a3100f365fd5bd34f1bcf96e42d"
+    },
+    {
+      "case_id": "AIC-OTC-125",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-125.json",
+      "sha256": "b30e039e0eec33f8e534532b7422bcadf78201a471bcdac67f633ee916adf2a7"
+    },
+    {
+      "case_id": "AIC-OTC-126",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "path": "AIC-OTC-126.json",
+      "sha256": "6b2c7dffae87c92be5ebf1d274d59323b873f5a0268778fd18525b27f72f60e1"
+    },
+    {
+      "case_id": "AIC-OTC-127",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-127.json",
+      "sha256": "29cd96a2a92f3710a771171b4f0138ffd85823b76b989c22534331aa7f784f22"
+    },
+    {
+      "case_id": "AIC-OTC-128",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-128.json",
+      "sha256": "ea9cf24edff59575fbe420a80956bb95548b4c5448f67c5abdb566426d800f51"
+    },
+    {
+      "case_id": "AIC-OTC-129",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-129.json",
+      "sha256": "a682ba1a18d1e6156538bf641f39a2445e64bfb2da794fb203e68ea0d67f30bf"
+    },
+    {
+      "case_id": "AIC-OTC-130",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-130.json",
+      "sha256": "6b2269acef835a3a2097e50e10a25b23a197a04a7bdbfccccf904cd8e218eec8"
+    },
+    {
+      "case_id": "AIC-OTC-131",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-131.json",
+      "sha256": "57740322e645afcd20bf8b2cf4caf55f0c39f1eb1a14bedc2378052ae1f9dd60"
+    },
+    {
+      "case_id": "AIC-OTC-132",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-132.json",
+      "sha256": "5eae6442417836bb8bf9cb418f16b73ce133341cb785069aa234dafd4962683c"
+    },
+    {
+      "case_id": "AIC-OTC-133",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-133.json",
+      "sha256": "a1551f8c1a6e20d3a9cd608844adc209820492ad34870f8fd3867f4f306a126d"
+    },
+    {
+      "case_id": "AIC-OTC-134",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-134.json",
+      "sha256": "c6e9d915311ce566c167f6a26d67b3cf2f29df953b71c841e32dd1bc58b8bbd8"
+    },
+    {
+      "case_id": "AIC-OTC-135",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-135.json",
+      "sha256": "34ff0e1d2cb1dc38957c394c60d409d86c210790d86400efd7ced7a227bceaec"
+    },
+    {
+      "case_id": "AIC-OTC-136",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-136.json",
+      "sha256": "82e9a3cbb43229520cd67d756aad1f098d09f9800e9eb18d3503abddcb2f3515"
+    },
+    {
+      "case_id": "AIC-OTC-137",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-137.json",
+      "sha256": "7f79411463da5816f3e8e32737130180cc9c82a20daaa9014a2c0d6f17be9730"
+    },
+    {
+      "case_id": "AIC-OTC-138",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-138.json",
+      "sha256": "58343b458a6df77715a69355f9d2ce38fdde376e895a7093b4126a18db6d8652"
+    },
+    {
+      "case_id": "AIC-OTC-139",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-139.json",
+      "sha256": "9b5478da14696e60849ba1727cc94e441c899bdb86226cd2d760989ff781feb3"
+    },
+    {
+      "case_id": "AIC-OTC-140",
+      "target_rule_type": "sedation_driving",
+      "path": "AIC-OTC-140.json",
+      "sha256": "72fef81ea3ae561230ae9dc95587b5216bbcc35f83e359791193daad03d53d9c"
+    },
+    {
+      "case_id": "AIC-OTC-141",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-141.json",
+      "sha256": "be8e4e2a4b6ea73e507ce6a5befdc1bca872f4069a5ab54d7939b5cf492f93d6"
+    },
+    {
+      "case_id": "AIC-OTC-142",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-142.json",
+      "sha256": "36a562b61f3333853d01458747ae38abaeb9937184e6a46ed6d2a87b559dcf3a"
+    },
+    {
+      "case_id": "AIC-OTC-143",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-143.json",
+      "sha256": "fda0ed1b6c74231e8f0f0f8147da7c82ca6f0dd1266b20197439723bc28cbc0e"
+    },
+    {
+      "case_id": "AIC-OTC-144",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-144.json",
+      "sha256": "76a963356bf6a301e2d1e6ecbbafff469848fb7d25569e0de66ca2d4f73095aa"
+    },
+    {
+      "case_id": "AIC-OTC-145",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-145.json",
+      "sha256": "e19c1705f60fad35c5033f4d302776ae9445367da1c497f882d31145e05e397f"
+    },
+    {
+      "case_id": "AIC-OTC-146",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-146.json",
+      "sha256": "f0908e4f5638366d1657e8b7a6802f3073c0333e1700c3278d3ca757b1568c58"
+    },
+    {
+      "case_id": "AIC-OTC-147",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-147.json",
+      "sha256": "2ec036e9656a285a2e1cc06537d8ce9c605be85e144257f3a1fc18437edc862f"
+    },
+    {
+      "case_id": "AIC-OTC-148",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-148.json",
+      "sha256": "c2d781a6a05f1c7feebfc831ee885788ee27aa8a4d698676ff3e2202cceea180"
+    },
+    {
+      "case_id": "AIC-OTC-149",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-149.json",
+      "sha256": "f27c87de8ae6b0dd4b4badf4704b4b32b8e91193f1fc4c5b3f79337ee5c91f08"
+    },
+    {
+      "case_id": "AIC-OTC-150",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-150.json",
+      "sha256": "545fdc9a6e84071cda1fec55e67c6ea2e5d16b7221d264928914ef1f3336b087"
+    },
+    {
+      "case_id": "AIC-OTC-151",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-151.json",
+      "sha256": "144824549e8bda22b4d0e39bbab5633098df1f6e6801397882b44d116a19a5e8"
+    },
+    {
+      "case_id": "AIC-OTC-152",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-152.json",
+      "sha256": "8e6730e49928843bf06c954280d85065677178c370b9415469174b7ccab89db2"
+    },
+    {
+      "case_id": "AIC-OTC-153",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-153.json",
+      "sha256": "230581c9c2c3c70a0b1fc8a05dd7c95fb5995df85eb56ce72b042cd48eefed87"
+    },
+    {
+      "case_id": "AIC-OTC-154",
+      "target_rule_type": "alcohol",
+      "path": "AIC-OTC-154.json",
+      "sha256": "f1c63b97f9f204c03362d8bd0f71d407423c83e7b9fe3d7bfcffc251ce230f42"
+    },
+    {
+      "case_id": "AIC-OTC-155",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-155.json",
+      "sha256": "6ef92f2b2e3f782c933177ea0f444f1cacc66e73366f15ea14c0977a7b2951d1"
+    },
+    {
+      "case_id": "AIC-OTC-156",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-156.json",
+      "sha256": "d51c5b09a958f6e364c1416c578a8f1ee7c23327b7baf7d0942841114f027efe"
+    },
+    {
+      "case_id": "AIC-OTC-157",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-157.json",
+      "sha256": "bbab9820f8a08f1655caadf8ded0e2669516ac6b6c312838545ba049d66cb12f"
+    },
+    {
+      "case_id": "AIC-OTC-158",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-158.json",
+      "sha256": "5fa8a0c3377e6a66406393b2f73afa059b78f33806a5f3b3c097cf2e594923de"
+    },
+    {
+      "case_id": "AIC-OTC-159",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-159.json",
+      "sha256": "1f7dfbe0adbe338bc5d2fe5124d9c4993022072af0ff4008bd8c7c4725a2fc51"
+    },
+    {
+      "case_id": "AIC-OTC-160",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-160.json",
+      "sha256": "b707072a615ffbf144e1029e6202b6ac86d3b5ae08a75fa054df50f7b93def59"
+    },
+    {
+      "case_id": "AIC-OTC-161",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-161.json",
+      "sha256": "6a317075b9aa181dabc31e2fe22de1c320f01a5535a901ce39a2b8da37181501"
+    },
+    {
+      "case_id": "AIC-OTC-162",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-162.json",
+      "sha256": "6c07473a3bb055f42c180758ef8ba4c1a8c8ba13c151a3bb7d2376f4dfed7513"
+    },
+    {
+      "case_id": "AIC-OTC-163",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-163.json",
+      "sha256": "93b108854b2b583240c8b1de700a9b042a0126d27f1f662579062a3bc226af5d"
+    },
+    {
+      "case_id": "AIC-OTC-164",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-164.json",
+      "sha256": "caa28c7c9dbc58d73f70f7bc34e72061ea037009531b2bd27fbc40f453e6e02b"
+    },
+    {
+      "case_id": "AIC-OTC-165",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-165.json",
+      "sha256": "cfed9d0dbeffe10049ec82cac55648664dd1e414f70aecb1fca154b830fa25b1"
+    },
+    {
+      "case_id": "AIC-OTC-166",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-166.json",
+      "sha256": "5313ecfc410f65854909d6aaabeade93d37239b8c421d1336457d86d211bd63d"
+    },
+    {
+      "case_id": "AIC-OTC-167",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-167.json",
+      "sha256": "dd4eb5d98e89e9b73120c068447a838507ed03b6e4c285e67f336fbad94db195"
+    },
+    {
+      "case_id": "AIC-OTC-168",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "path": "AIC-OTC-168.json",
+      "sha256": "ed7cc9b7e18c97b35a823f9929c22ea8ba0035d574a5f594a86fa0fe12e2e0bb"
+    },
+    {
+      "case_id": "AIC-OTC-169",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-169.json",
+      "sha256": "1b989ac1b9eacfe47d46f179b38f7cbb6258f2043a64a81764985f879b6f93db"
+    },
+    {
+      "case_id": "AIC-OTC-170",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-170.json",
+      "sha256": "844641b14b64375a8b523b9654f3e19d5756f5c13458510fff4cda42c5ed13be"
+    },
+    {
+      "case_id": "AIC-OTC-171",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-171.json",
+      "sha256": "465710989294bec128faaed13c1f82085054065756ae89b1cd43f1e2d49f89be"
+    },
+    {
+      "case_id": "AIC-OTC-172",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-172.json",
+      "sha256": "d227130ce4d51eeb46f2448ab8b7148587342cbd1a7121dc628c64f52117ae82"
+    },
+    {
+      "case_id": "AIC-OTC-173",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-173.json",
+      "sha256": "6a06366b643fc110f0e4d49c45051b44a431841fd9fc41dc70ed91b172f47741"
+    },
+    {
+      "case_id": "AIC-OTC-174",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-174.json",
+      "sha256": "6fa0f0bf33766e376856ec3b4acc3ae2cc708a45864062977a222ccd70b2e6c3"
+    },
+    {
+      "case_id": "AIC-OTC-175",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-175.json",
+      "sha256": "8bac1d873fd3ee0c7336099a02d9716c6becf4b824349e8254fe51a284647c1c"
+    },
+    {
+      "case_id": "AIC-OTC-176",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-176.json",
+      "sha256": "591790fd6e3f63fcdc26a6d0cdd7b74340a6bf59d9ed611c123fe98c326ec760"
+    },
+    {
+      "case_id": "AIC-OTC-177",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-177.json",
+      "sha256": "67b27a2a2c771d01b89cf580fd157d0787e78e9d2fc428cd4cdb632367fc140d"
+    },
+    {
+      "case_id": "AIC-OTC-178",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-178.json",
+      "sha256": "29ea0268900a8390b90afd378d93203a06fd0d4395ee920ff17902119a58ab78"
+    },
+    {
+      "case_id": "AIC-OTC-179",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-179.json",
+      "sha256": "85edae1e9b758d6418befc862e7b089ca683589af94f27822256cac662aa9c9e"
+    },
+    {
+      "case_id": "AIC-OTC-180",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-180.json",
+      "sha256": "f99321505cf9576d545569356e4a1d8ca2381361e8c411bad11eff30ba7959fd"
+    },
+    {
+      "case_id": "AIC-OTC-181",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-181.json",
+      "sha256": "474ed88f3c97e35a800c9ddbf131746188533bef3b6bcb9d6d3c8993a0f16b5e"
+    },
+    {
+      "case_id": "AIC-OTC-182",
+      "target_rule_type": "sedative_medication",
+      "path": "AIC-OTC-182.json",
+      "sha256": "f9e6df0e803eb4fc59553bda4400de471c5fc417ea35168de4174c33870edb4c"
+    },
+    {
+      "case_id": "AIC-OTC-183",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-183.json",
+      "sha256": "48bbabc57d0f95681bb3179751a99e4de11ab9ed7d802c6f201e0828241d9c77"
+    },
+    {
+      "case_id": "AIC-OTC-184",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-184.json",
+      "sha256": "2a27d71cc30268a4cf2f90afffa2460fa79fa28f611bdfd0464ab4aee6b622a3"
+    },
+    {
+      "case_id": "AIC-OTC-185",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-185.json",
+      "sha256": "1006b3f18a60a64cdef62c2d4a34ac14aea31a4b593a5b1b18615720216262ab"
+    },
+    {
+      "case_id": "AIC-OTC-186",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-186.json",
+      "sha256": "24c883f479296ce61878dbbb9eb0c652e59a14491a7888fc5ff2f7aff29dd498"
+    },
+    {
+      "case_id": "AIC-OTC-187",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-187.json",
+      "sha256": "b0467a93cfe0bc46774a2cf710deecf10318a9e2aecc7052ecd5045b633981a1"
+    },
+    {
+      "case_id": "AIC-OTC-188",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-188.json",
+      "sha256": "895d33f2bff874cdef8aaa44f212484956dfdce665c450760526e41c2a5d215c"
+    },
+    {
+      "case_id": "AIC-OTC-189",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-189.json",
+      "sha256": "d939fa14c16a1ba8c8f40ea2e0040312b31fa31ee6f2e459b4fe454d69090a95"
+    },
+    {
+      "case_id": "AIC-OTC-190",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-190.json",
+      "sha256": "78e1bd0ea5aafde8031e82c15af30b60f4cf0e82fb533fcd647b3a761c215a7b"
+    },
+    {
+      "case_id": "AIC-OTC-191",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-191.json",
+      "sha256": "936790e8495464ca506dc2e720ef4dda01c52f8d496da92798f61f6080e71a2f"
+    },
+    {
+      "case_id": "AIC-OTC-192",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-192.json",
+      "sha256": "866f44232c94fb0675fb7f30758a31db4a9226276bca57016d19ff5fb243714d"
+    },
+    {
+      "case_id": "AIC-OTC-193",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-193.json",
+      "sha256": "1165587cb1b6c659090dd2a1963e48582eabf2a7e5725c96fb564ee1fd33e664"
+    },
+    {
+      "case_id": "AIC-OTC-194",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-194.json",
+      "sha256": "31c1990ae19038ced5560d1c78dbf0e6aa868081d4b38b289bfbdab64980990f"
+    },
+    {
+      "case_id": "AIC-OTC-195",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-195.json",
+      "sha256": "557221c77648d556162d1bce4c080f6e85cf88cf827eb840fc7fd05122766a4c"
+    },
+    {
+      "case_id": "AIC-OTC-196",
+      "target_rule_type": "decongestant_hypertension",
+      "path": "AIC-OTC-196.json",
+      "sha256": "dd4d8934903569c8d20e9fee23ffb5ebc227f2e6f0d807f15b31c77904dd26ef"
+    },
+    {
+      "case_id": "AIC-OTC-197",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-197.json",
+      "sha256": "8a1bd08ec13b896b6e0f69f29a4c7278a16841cd20d9c942e5696ee880d092f6"
+    },
+    {
+      "case_id": "AIC-OTC-198",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-198.json",
+      "sha256": "0fef04bdf7443e7e8a97e6ef19f5018f1813ac718dfcfc33ce898b3710d8181b"
+    },
+    {
+      "case_id": "AIC-OTC-199",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-199.json",
+      "sha256": "0000c01f8442a951f682931bdd9f39aa6bb829dfa7f9714dc5325df8de6bb406"
+    },
+    {
+      "case_id": "AIC-OTC-200",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-200.json",
+      "sha256": "2534e71701410fcaebe6cb8d6a06f5c125578402c5275144515263f94f4c5034"
+    },
+    {
+      "case_id": "AIC-OTC-201",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-201.json",
+      "sha256": "cc5058b3eeff41731df65980f33ef1aafc671d7befc4cd89634e340822d0bfe3"
+    },
+    {
+      "case_id": "AIC-OTC-202",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-202.json",
+      "sha256": "5ad1284cb9f10a9f395a548308bc0cc8aaf94de263222c331d6ec89a0b89fef9"
+    },
+    {
+      "case_id": "AIC-OTC-203",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-203.json",
+      "sha256": "72f773257c184683221967ddc98ecf6f92c15ecbb8bdabf07750975186ee0e44"
+    },
+    {
+      "case_id": "AIC-OTC-204",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-204.json",
+      "sha256": "bc9e5daf88a5c93a9a6cfaa6c3c151996899b16f8dc54e40e86c9265f01fa7ac"
+    },
+    {
+      "case_id": "AIC-OTC-205",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-205.json",
+      "sha256": "4a7b70af5845a73660c78a77babbbf8d0e176e817cc946dcda37ee4421647125"
+    },
+    {
+      "case_id": "AIC-OTC-206",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-206.json",
+      "sha256": "7bfa2c81073712f79392cf58de9417f12aa8cf66a66a01e637a0022966b79b6a"
+    },
+    {
+      "case_id": "AIC-OTC-207",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-207.json",
+      "sha256": "c553a471714d9814149159894f95b2b3a2b968b900f159824554ab08867eb7be"
+    },
+    {
+      "case_id": "AIC-OTC-208",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-208.json",
+      "sha256": "ea5fe6d7e69e302abb7e8fba9ff589d66e9344b3f6e25052318a1fad750048ed"
+    },
+    {
+      "case_id": "AIC-OTC-209",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-209.json",
+      "sha256": "3cbc9390b9275bb52c1fafd090d4f4c884f588faa85e7f901eb94e2b8e08af72"
+    },
+    {
+      "case_id": "AIC-OTC-210",
+      "target_rule_type": "maximum_duration",
+      "path": "AIC-OTC-210.json",
+      "sha256": "9c2e072f154d7fc6fea2256c8c216b84b66a4cad9ce853090c7e99ec08fde9d9"
+    },
+    {
+      "case_id": "AIC-OTC-211",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-211.json",
+      "sha256": "335584bc5aea1ce4a149391a0fd1d639b4f49a853e28d5f07fce38a9a2d3a938"
+    },
+    {
+      "case_id": "AIC-OTC-212",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-212.json",
+      "sha256": "baa4a8ed6a329c689d34333852e40f0820211a680b31e565e99e9a2164452b36"
+    },
+    {
+      "case_id": "AIC-OTC-213",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-213.json",
+      "sha256": "dc9dd2741d05c5abb7dfc312a4834500947b0312c38b1bbab44d31120ac25dd0"
+    },
+    {
+      "case_id": "AIC-OTC-214",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-214.json",
+      "sha256": "04cc16a7463d2af6338da99f42c4ec6b0f5c096333a38ba7c96ce3187b2421d6"
+    },
+    {
+      "case_id": "AIC-OTC-215",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-215.json",
+      "sha256": "45d919f5e0229d7845bec8d428806c7639b4307e9278d869d564f7f386c43c06"
+    },
+    {
+      "case_id": "AIC-OTC-216",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-216.json",
+      "sha256": "94059374dfbb780ce70a22ece3a51a09a78f0285dbeb3197d22937dc3bffa538"
+    },
+    {
+      "case_id": "AIC-OTC-217",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-217.json",
+      "sha256": "7c4884b708107bb04eced941d3725c8cc481cd114eea737bf62dc34a11b1046a"
+    },
+    {
+      "case_id": "AIC-OTC-218",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-218.json",
+      "sha256": "1aa0e257e063b0d5fd30b9e3db2671468b2834002a8e677e26c9599641f2b7ab"
+    },
+    {
+      "case_id": "AIC-OTC-219",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-219.json",
+      "sha256": "800614dd27a20685499b2abf3eda8cf5137103e0ee9122e556df5fdbbacacb83"
+    },
+    {
+      "case_id": "AIC-OTC-220",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-220.json",
+      "sha256": "48cddc24bb318d0e4ba5ddc992551e9851d854e0a810062a151c804ec242c17b"
+    },
+    {
+      "case_id": "AIC-OTC-221",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-221.json",
+      "sha256": "5f5df8a4df924fc71db0d33bd9792f3c7d9f0f5e72b786ed386c8ecac394f810"
+    },
+    {
+      "case_id": "AIC-OTC-222",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-222.json",
+      "sha256": "9379efd762fd217b1b35f86cdf3fa779a6c3cbea7abded98694a064ae4f067cb"
+    },
+    {
+      "case_id": "AIC-OTC-223",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-223.json",
+      "sha256": "5e77db2ff20b71d5ebb2e31ab83bbb05a3ab8aeefe7ad366d7e818093794c883"
+    },
+    {
+      "case_id": "AIC-OTC-224",
+      "target_rule_type": "urgent_referral",
+      "path": "AIC-OTC-224.json",
+      "sha256": "60cbe1cd72a730872c1b2daf059b2ad25d14bf188d6083d4baccb78da27f1cd1"
+    }
+  ]
+}

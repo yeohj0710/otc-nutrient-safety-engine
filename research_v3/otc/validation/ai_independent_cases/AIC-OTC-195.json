@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-195",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "decongestant_hypertension",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "198700405",
+      "unitsPerDose": 1,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": 57,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": true,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

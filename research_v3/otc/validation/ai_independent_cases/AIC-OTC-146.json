@@ -1,0 +1,32 @@
+{
+  "caseId": "AIC-OTC-146",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "alcohol",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "202106092",
+      "unitsPerDose": 1,
+      "dosesPerDay": 3
+    },
+    {
+      "inputType": "verified_product",
+      "itemSequence": "196800036",
+      "unitsPerDose": 1,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": 44,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": true,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

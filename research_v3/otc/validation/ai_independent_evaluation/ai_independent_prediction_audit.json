@@ -1,0 +1,1864 @@
+{
+  "schema_version": "1.0.0",
+  "research_direction": "korean_otc_product_safety",
+  "prediction_mode": "deterministic_released_rules_only",
+  "purpose_ko": "P3-B AI 맹검 독립평가의 엔진 예측 기록. 잠금 파일 해시를 검증한 뒤에만 예측했다.",
+  "predicted_at_utc": "2026-07-27T03:06:26.301Z",
+  "verified_lock_sha256": "bbf6d28c9cd306d642c83a99926643839f7f1bc53056b88bfd1f40565f379c03",
+  "locked_at_utc": "2026-07-27T03:05:13.587995+00:00",
+  "runtime_sha256": "d64d9d1a6490ed4fbe9ea406f7a49dd187ddd72496c9566401257b41f016e183",
+  "rules_released": 15,
+  "releasedRuleTypes": [
+    "age_restriction",
+    "alcohol",
+    "anticoagulant_antiplatelet",
+    "decongestant_hypertension",
+    "duplicate_ingredient",
+    "duplicate_pharmacologic_class",
+    "gi_bleeding_ulcer",
+    "hepatic_disease",
+    "max_daily_dose",
+    "minimum_interval",
+    "pregnancy_lactation",
+    "renal_disease",
+    "sedation_driving",
+    "sedative_medication",
+    "urgent_referral"
+  ],
+  "cases_total": 237,
+  "engine_positive_count": 82,
+  "reference_labels_read": false,
+  "human_labels_read": false,
+  "cases": [
+    {
+      "caseId": "AIC-OTC-001",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-002",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-003",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-004",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-005",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-006",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-007",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-008",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-009",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-010",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-011",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-012",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-013",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-014",
+      "track": "generated",
+      "targetRuleType": "duplicate_ingredient",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-015",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-016",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-017",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-018",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-019",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-020",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-021",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-022",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-023",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-024",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-025",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-026",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-027",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-028",
+      "track": "generated",
+      "targetRuleType": "duplicate_pharmacologic_class",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-029",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "max_daily_dose"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-030",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "max_daily_dose"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-031",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "max_daily_dose"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-032",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "max_daily_dose"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-033",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "max_daily_dose"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-034",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient",
+        "max_daily_dose"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-035",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient",
+        "max_daily_dose"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-036",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-037",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-038",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-039",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-040",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-041",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-042",
+      "track": "generated",
+      "targetRuleType": "max_daily_dose",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-043",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-044",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-045",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-046",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-047",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-048",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-049",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-050",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-051",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-052",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-053",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-054",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-055",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-056",
+      "track": "generated",
+      "targetRuleType": "minimum_interval",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-057",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-058",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-059",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-060",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-061",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-062",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-063",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-064",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-065",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-066",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-067",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-068",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-069",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-070",
+      "track": "generated",
+      "targetRuleType": "age_restriction",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-071",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "pregnancy_lactation"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-072",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-073",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-074",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "pregnancy_lactation"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-075",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-076",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-077",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-078",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-079",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-080",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-081",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-082",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-083",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-084",
+      "track": "generated",
+      "targetRuleType": "pregnancy_lactation",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-085",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "hepatic_disease"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-086",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-087",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-088",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-089",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "hepatic_disease"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-090",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-091",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "hepatic_disease"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-092",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-093",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-094",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-095",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-096",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-097",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-098",
+      "track": "generated",
+      "targetRuleType": "hepatic_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-099",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-100",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-101",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "renal_disease"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-102",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-103",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-104",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "renal_disease"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-105",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-106",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-107",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-108",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-109",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-110",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-111",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-112",
+      "track": "generated",
+      "targetRuleType": "renal_disease",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-113",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-114",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-115",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "gi_bleeding_ulcer"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-116",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-117",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-118",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-119",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "gi_bleeding_ulcer"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-120",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-121",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-122",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-123",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-124",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-125",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-126",
+      "track": "generated",
+      "targetRuleType": "gi_bleeding_ulcer",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-127",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "sedation_driving"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-128",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-129",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-130",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient",
+        "sedation_driving"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-131",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-132",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class",
+        "sedation_driving"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-133",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-134",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-135",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-136",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-137",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-138",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-139",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-140",
+      "track": "generated",
+      "targetRuleType": "sedation_driving",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-141",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "alcohol"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-142",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-143",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-144",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "alcohol"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-145",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-146",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "alcohol",
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-147",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-148",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-149",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-150",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-151",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-152",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-153",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-154",
+      "track": "generated",
+      "targetRuleType": "alcohol",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-155",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-156",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-157",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "anticoagulant_antiplatelet"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-158",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-159",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-160",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-161",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-162",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-163",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-164",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-165",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-166",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-167",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-168",
+      "track": "generated",
+      "targetRuleType": "anticoagulant_antiplatelet",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-169",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-170",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-171",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-172",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-173",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-174",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-175",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-176",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-177",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-178",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-179",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-180",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-181",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-182",
+      "track": "generated",
+      "targetRuleType": "sedative_medication",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-183",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-184",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-185",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension",
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-186",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension",
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-187",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-188",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-189",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-190",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-191",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-192",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-193",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-194",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-195",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-196",
+      "track": "generated",
+      "targetRuleType": "decongestant_hypertension",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-197",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-198",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-199",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-200",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-201",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-202",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-203",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-204",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-205",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-206",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-207",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-208",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-209",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-210",
+      "track": "generated",
+      "targetRuleType": "maximum_duration",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-211",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "urgent_referral"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-212",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "urgent_referral"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-213",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "urgent_referral"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-214",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "urgent_referral"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-215",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "urgent_referral"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-216",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "urgent_referral"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-217",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "urgent_referral"
+      ]
+    },
+    {
+      "caseId": "AIC-OTC-218",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-219",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-220",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-221",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-222",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-223",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "AIC-OTC-224",
+      "track": "generated",
+      "targetRuleType": "urgent_referral",
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "IND-OTC-001",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_ingredient"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-002",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-003",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-004",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "duplicate_pharmacologic_class"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-005",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "sedation_driving"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-006",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "anticoagulant_antiplatelet"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-007",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "decongestant_hypertension"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-008",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "hepatic_disease"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-009",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "renal_disease"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-010",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "age_restriction"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-011",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": true,
+      "findingRuleTypes": [
+        "minimum_interval"
+      ]
+    },
+    {
+      "caseId": "IND-OTC-012",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": false,
+      "findingRuleTypes": []
+    },
+    {
+      "caseId": "IND-OTC-013",
+      "track": "legacy_reevaluation",
+      "targetRuleType": null,
+      "enginePositive": false,
+      "findingRuleTypes": []
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "caseId": "AIC-OTC-161",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "anticoagulant_antiplatelet",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "198601920",
+      "unitsPerDose": 15,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": 67,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [
+      "쿠마딘"
+    ],
+    "redFlagSymptoms": []
+  }
+}

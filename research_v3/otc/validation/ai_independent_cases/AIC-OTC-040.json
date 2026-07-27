@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-040",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "max_daily_dose",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "202106092",
+      "unitsPerDose": 2,
+      "dosesPerDay": 2
+    }
+  ],
+  "userProfile": {
+    "ageYears": 30,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

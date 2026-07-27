@@ -1,0 +1,6222 @@
+{
+  "schema_version": "1.0.0",
+  "created_at_utc": "2026-07-27T03:05:13.587995+00:00",
+  "purpose_ko": "P3-B AI 참조 라벨 잠금본. 이 파일이 만들어진 뒤에만 엔진 예측을 연결한다.",
+  "human_decisions": 0,
+  "local_language_model_used": false,
+  "external_llm_api_used": false,
+  "subagents_used": false,
+  "engine_predictions_read_before_lock": false,
+  "composite_label_rule_ko": "1) E 또는 T 가 N 이면 no_warning. 2) E=Y 이고 T=Y 이면 warning. 3) 그 외(E 또는 T 가 U)는 uncertain. E 는 규칙 유형이 겨냥하는 성분·조합 노출의 존재, T 는 발동 조건(사용자 조건 또는 허가 수량 기준 초과)의 충족을 뜻한다.",
+  "round_seeds": {
+    "1": 20260727101,
+    "2": 20260727102,
+    "3": 20260727103
+  },
+  "round_label_sha256": {
+    "1": "1641fb8c604604cadeb5a0fb448a531b0ee8ecddc5db34dda54a9df531c5d401",
+    "2": "2287430e1ca807979ce153011fde1b981ca8a4747f5f45a39341df720e866753",
+    "3": "b79d1872f390093010ccc4f7569801aab91b5a6712cbc662cb626f8241b96c54"
+  },
+  "inter_round": {
+    "pairwise": [
+      {
+        "rounds": "1-2",
+        "agreement": 1.0,
+        "cohen_kappa": 1.0
+      },
+      {
+        "rounds": "1-3",
+        "agreement": 1.0,
+        "cohen_kappa": 1.0
+      },
+      {
+        "rounds": "2-3",
+        "agreement": 1.0,
+        "cohen_kappa": 1.0
+      }
+    ],
+    "mean_pairwise_agreement": 1.0,
+    "unresolved_rows": 0,
+    "interpretation_ko": "동일 평가자가 같은 명시적 규칙을 재적용한 결과이므로 판정 안정성이지 평가자 간 신뢰도가 아니다."
+  },
+  "label_distribution": {
+    "no_warning": 98,
+    "uncertain": 14,
+    "warning": 125
+  },
+  "cases_total": 237,
+  "blinding_compromised_cases": {
+    "case_ids": [
+      "IND-OTC-001",
+      "IND-OTC-002"
+    ],
+    "count": 2,
+    "reason_ko": "사례 생성 단계에서 independent_scenarios.csv 앞 2행의 human_reference_label 과 기존 prediction 이 평가자에게 노출됐다. 노출 이후에는 잠금 전까지 해당 파일을 다시 열지 않았으나, 이 2건은 맹검이 성립하지 않으므로 모든 1차 지표에서 제외하고 별도 보고한다.",
+    "excluded_from_primary": true
+  },
+  "labels": [
+    {
+      "case_id": "AIC-OTC-001",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-002",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-003",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-004",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-005",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-006",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-007",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-008",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-009",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-010",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-011",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-012",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-013",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-014",
+      "track": "generated",
+      "target_rule_type": "duplicate_ingredient",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-015",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-016",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-017",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-018",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-019",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-020",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-021",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-022",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-023",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-024",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-025",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-026",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-027",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-028",
+      "track": "generated",
+      "target_rule_type": "duplicate_pharmacologic_class",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "N"
+        },
+        "2": {
+          "E": "N",
+          "T": "N"
+        },
+        "3": {
+          "E": "N",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-029",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-030",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-031",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-032",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-033",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-034",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-035",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-036",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-037",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-038",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-039",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-040",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-041",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-042",
+      "track": "generated",
+      "target_rule_type": "max_daily_dose",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-043",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-044",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-045",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-046",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-047",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-048",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-049",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-050",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-051",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-052",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-053",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-054",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-055",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-056",
+      "track": "generated",
+      "target_rule_type": "minimum_interval",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-057",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-058",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-059",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-060",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-061",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-062",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-063",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-064",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-065",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-066",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-067",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-068",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-069",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-070",
+      "track": "generated",
+      "target_rule_type": "age_restriction",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-071",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-072",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-073",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-074",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-075",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-076",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-077",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-078",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-079",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-080",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-081",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-082",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-083",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-084",
+      "track": "generated",
+      "target_rule_type": "pregnancy_lactation",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-085",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-086",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-087",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-088",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-089",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-090",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-091",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-092",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-093",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-094",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-095",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-096",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-097",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-098",
+      "track": "generated",
+      "target_rule_type": "hepatic_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-099",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-100",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-101",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-102",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-103",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-104",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-105",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-106",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-107",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-108",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-109",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-110",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-111",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-112",
+      "track": "generated",
+      "target_rule_type": "renal_disease",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-113",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-114",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-115",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-116",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-117",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-118",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-119",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-120",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-121",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-122",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-123",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-124",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-125",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-126",
+      "track": "generated",
+      "target_rule_type": "gi_bleeding_ulcer",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-127",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-128",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-129",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-130",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-131",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-132",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-133",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-134",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-135",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-136",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-137",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-138",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-139",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-140",
+      "track": "generated",
+      "target_rule_type": "sedation_driving",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-141",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-142",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-143",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-144",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-145",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-146",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-147",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-148",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-149",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-150",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-151",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-152",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-153",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-154",
+      "track": "generated",
+      "target_rule_type": "alcohol",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-155",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-156",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-157",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-158",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-159",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-160",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-161",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-162",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-163",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-164",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-165",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-166",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-167",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-168",
+      "track": "generated",
+      "target_rule_type": "anticoagulant_antiplatelet",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-169",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-170",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-171",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-172",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-173",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-174",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-175",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-176",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-177",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-178",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-179",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-180",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-181",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-182",
+      "track": "generated",
+      "target_rule_type": "sedative_medication",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-183",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-184",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-185",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-186",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-187",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-188",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-189",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-190",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-191",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-192",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-193",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-194",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-195",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-196",
+      "track": "generated",
+      "target_rule_type": "decongestant_hypertension",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "N",
+          "T": "Y"
+        },
+        "2": {
+          "E": "N",
+          "T": "Y"
+        },
+        "3": {
+          "E": "N",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-197",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-198",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-199",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-200",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-201",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-202",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-203",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-204",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-205",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-206",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-207",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-208",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-209",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-210",
+      "track": "generated",
+      "target_rule_type": "maximum_duration",
+      "round_labels": [
+        "uncertain",
+        "uncertain",
+        "uncertain"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "U"
+        },
+        "2": {
+          "E": "Y",
+          "T": "U"
+        },
+        "3": {
+          "E": "Y",
+          "T": "U"
+        }
+      },
+      "ai_reference_label": "uncertain",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-211",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-212",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-213",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-214",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-215",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-216",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-217",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-218",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-219",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-220",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-221",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-222",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-223",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "AIC-OTC-224",
+      "track": "generated",
+      "target_rule_type": "urgent_referral",
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-001",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": true
+    },
+    {
+      "case_id": "IND-OTC-002",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": true
+    },
+    {
+      "case_id": "IND-OTC-003",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-004",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-005",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-006",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-007",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-008",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-009",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-010",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-011",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "warning",
+        "warning",
+        "warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "2": {
+          "E": "Y",
+          "T": "Y"
+        },
+        "3": {
+          "E": "Y",
+          "T": "Y"
+        }
+      },
+      "ai_reference_label": "warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-012",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "Y",
+          "T": "N"
+        },
+        "2": {
+          "E": "Y",
+          "T": "N"
+        },
+        "3": {
+          "E": "Y",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    },
+    {
+      "case_id": "IND-OTC-013",
+      "track": "legacy_reevaluation",
+      "target_rule_type": null,
+      "round_labels": [
+        "no_warning",
+        "no_warning",
+        "no_warning"
+      ],
+      "round_elements": {
+        "1": {
+          "E": "U",
+          "T": "N"
+        },
+        "2": {
+          "E": "U",
+          "T": "N"
+        },
+        "3": {
+          "E": "U",
+          "T": "N"
+        }
+      },
+      "ai_reference_label": "no_warning",
+      "blinding_compromised": false
+    }
+  ]
+}

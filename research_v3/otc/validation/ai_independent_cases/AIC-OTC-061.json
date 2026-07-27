@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-061",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "age_restriction",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "202106092",
+      "unitsPerDose": 1,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": 6,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

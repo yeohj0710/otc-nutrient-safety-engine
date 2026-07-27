@@ -1,0 +1,28 @@
+{
+  "caseId": "AIC-OTC-175",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "sedative_medication",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "200610765",
+      "unitsPerDose": 1,
+      "dosesPerDay": 1
+    }
+  ],
+  "userProfile": {
+    "ageYears": 41,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [
+      "졸피뎀"
+    ],
+    "redFlagSymptoms": []
+  }
+}

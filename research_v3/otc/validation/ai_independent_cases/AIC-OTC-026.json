@@ -1,0 +1,32 @@
+{
+  "caseId": "AIC-OTC-026",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "duplicate_pharmacologic_class",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "197500016",
+      "unitsPerDose": 1,
+      "dosesPerDay": 2
+    },
+    {
+      "inputType": "verified_product",
+      "itemSequence": "200610765",
+      "unitsPerDose": 1,
+      "dosesPerDay": 1
+    }
+  ],
+  "userProfile": {
+    "ageYears": 35,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

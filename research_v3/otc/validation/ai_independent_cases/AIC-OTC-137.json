@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-137",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "sedation_driving",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "202106092",
+      "unitsPerDose": 1,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": 34,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": true,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

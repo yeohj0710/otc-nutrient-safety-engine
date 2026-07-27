@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-111",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "renal_disease",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "198400250",
+      "unitsPerDose": 1,
+      "dosesPerDay": 2
+    }
+  ],
+  "userProfile": {
+    "ageYears": 57,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": false,
+    "kidneyDisease": true,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}

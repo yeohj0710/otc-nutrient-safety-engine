@@ -1,0 +1,26 @@
+{
+  "caseId": "AIC-OTC-088",
+  "schemaVersion": "1.0.0",
+  "targetRuleType": "hepatic_disease",
+  "productInputs": [
+    {
+      "inputType": "verified_product",
+      "itemSequence": "202200525",
+      "unitsPerDose": 10,
+      "dosesPerDay": 3
+    }
+  ],
+  "userProfile": {
+    "ageYears": 48,
+    "pregnant": false,
+    "lactating": false,
+    "liverDisease": true,
+    "kidneyDisease": false,
+    "giBleedingOrUlcer": false,
+    "hypertensionOrCardiovascularDisease": false,
+    "willDrive": false,
+    "alcohol": false,
+    "medications": [],
+    "redFlagSymptoms": []
+  }
+}
