@@ -101,6 +101,7 @@ def build_report() -> dict[str, Any]:
     completion_path = ROOT / "research_v3/otc/audit/completion_audit.json"
     software_path = ROOT / "research_v3/otc/audit/software_validation.json"
     alignment_path = ROOT / "research_v3/otc/audit/runtime_research_alignment.json"
+    deployment_path = ROOT / "research_v3/otc/audit/production_deployment_receipt.json"
     thesis_docx = ROOT / "research_v3/thesis/권혁찬_졸업논문_최종본.docx"
     thesis_pdf = ROOT / "research_v3/thesis/권혁찬_졸업논문_최종본.pdf"
     presentation_path = ROOT / "research_v3/reports/발표원고_v4.0.md"
@@ -115,6 +116,7 @@ def build_report() -> dict[str, Any]:
     completion = read_json(completion_path)
     software = read_json(software_path)["results"]
     alignment = read_json(alignment_path)
+    deployment = read_json(deployment_path) if deployment_path.is_file() else {"deployed": False}
     metrics = read_json(metrics_path)["metrics"]
     flags = completion["status_flags"]
 
@@ -330,8 +332,23 @@ def build_report() -> dict[str, Any]:
             "build": software["build"]["status"],
             "static_paths_generated": software["build"]["static_paths_generated"],
             "consistency_audit": {"valid": alignment["valid"], **alignment["counts"]},
-            "deployment": "not_run",
-            "deployment_reason": "배포 금지 유지",
+            "deployment": "production" if deployment.get("deployed") else "not_run",
+            "deployment_detail": {
+                "deployed": bool(deployment.get("deployed")),
+                "deployment_id": deployment.get("deployment_id"),
+                "public_url": deployment.get("public_url"),
+                "git_commit": deployment.get("git_commit"),
+                "http_status": (deployment.get("verification") or {}).get("http_status"),
+                "console_errors": (deployment.get("verification") or {}).get("console_errors"),
+                "authorized_by_ko": deployment.get("authorized_by_ko"),
+                "release_ready_note_ko": deployment.get("release_ready_note_ko"),
+                "evidence_path": rel(deployment_path) if deployment_path.is_file() else None,
+            },
+            "git_push": {
+                "remote": deployment.get("git_remote"),
+                "branch": "main",
+                "head_commit": deployment.get("git_commit"),
+            },
         },
         "thesis": {
             "docx_path": rel(thesis_docx),

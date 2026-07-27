@@ -45,7 +45,9 @@ AI 참조표준 대비 재현도라는 점, 분류기와 참조표준의 부분�
 
 ## 검증
 
-연구 시험 192개와 앱 시험 70개가 통과했고 lint·타입 검사·빌드도 통과했습니다. 정적 경로는 156개입니다. 이번 실행에서 배포하지 않았습니다.
+연구 시험 192개와 앱 시험 73개가 통과했고 lint·타입 검사·빌드도 통과했습니다. 정적 경로는 156개입니다.
+
+사용자 지시로 production 에 배포했습니다. 공개 주소는 https://otc-nutrient-safety-engine.vercel.app 이고 배포 ID 는 dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9 입니다. 사이트 배포는 연구 상태 플래그 release_ready 와 별개이며, release_ready 는 임상 배포 승인 절차를 뜻하므로 false 를 유지합니다.
 
 ## 공식 문서 위치
 

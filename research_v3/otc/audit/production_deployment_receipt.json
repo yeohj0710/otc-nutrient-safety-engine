@@ -1,18 +1,38 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "2.0.0",
   "research_direction": "korean_otc_product_safety",
-  "deployed_at": "2026-07-15T18:23:00+09:00",
+  "recorded_at_utc": "2026-07-27T04:21:01.751083+00:00",
+  "deployed": true,
+  "deployment_id": "dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
   "target": "production",
-  "status": "ready",
-  "deployment_id": "dpl_5FM8CPCKz3vmkawGkAVRH45bnubU",
-  "deployment_url": "https://otc-nutrient-safety-engine-43pd7rs9i-yeohj0710s-projects.vercel.app",
-  "production_alias": "https://otc-nutrient-safety-engine.vercel.app",
-  "inspector_url": "https://vercel.com/yeohj0710s-projects/otc-nutrient-safety-engine/5FM8CPCKz3vmkawGkAVRH45bnubU",
-  "remote_build": {
-    "status": "passed",
-    "static_paths_generated": 156
+  "ready_state": "READY",
+  "public_url": "https://otc-nutrient-safety-engine.vercel.app",
+  "deployment_url": "https://otc-nutrient-safety-engine-kd85g75i5-yeohj0710s-projects.vercel.app",
+  "inspector_url": "https://vercel.com/yeohj0710s-projects/otc-nutrient-safety-engine/HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
+  "git_commit": "c86e20157df2f4ca75d72ddad1f6e5915c12bd6f",
+  "git_remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
+  "authorized_by_ko": "사용자가 이번 세션에서 배포와 push 를 명시적으로 지시했다.",
+  "verification": {
+    "http_status": {
+      "/": 200,
+      "/research-v3": 200,
+      "/sources": 200,
+      "/rules/RULE-VITA-UL-US-ADULT": 200
+    },
+    "bundle_contains_literature_disclaimer": true,
+    "bundle_contains_authority_label": true,
+    "bundle_contains_conflict_label": true,
+    "bundle_contains_v40_pmids": [
+      "30306812",
+      "39714827",
+      "26999510",
+      "40579172",
+      "23747192"
+    ],
+    "console_errors": 0
   },
-  "research_release_ready": false,
-  "independent_evaluation_complete": "incomplete",
-  "performance_claim_allowed": false
+  "release_ready_note_ko": "사이트 배포는 연구 상태 플래그 release_ready 와 별개다. release_ready 는 임상 배포 승인 절차를 뜻하며 그 절차는 수행되지 않았으므로 false 를 유지한다.",
+  "previous_receipt": {
+    "deployment_id": "dpl_5FM8CPCKz3vmkawGkAVRH45bnubU"
+  }
 }

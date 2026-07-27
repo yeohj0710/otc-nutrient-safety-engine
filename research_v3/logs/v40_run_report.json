@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-07-27T12:56:40+09:00",
+  "generated_at": "2026-07-27T13:26:53+09:00",
   "language": "ko",
   "phases": {
     "P2": {
@@ -29,7 +29,7 @@
     },
     "P5": {
       "status": "complete",
-      "ended_at": "2026-07-27T12:56:40+09:00",
+      "ended_at": "2026-07-27T13:26:53+09:00",
       "evidence_path": "research_v3/logs/v40_run_report.json"
     }
   },
@@ -260,7 +260,7 @@
   "site": {
     "status": "complete",
     "tests": 192,
-    "app_tests": 70,
+    "app_tests": 73,
     "typecheck": "passed",
     "lint": "passed",
     "build": "passed",
@@ -277,8 +277,28 @@
       "verified_administration_constraints": 32,
       "runtime_administration_constraints": 32
     },
-    "deployment": "not_run",
-    "deployment_reason": "배포 금지 유지"
+    "deployment": "production",
+    "deployment_detail": {
+      "deployed": true,
+      "deployment_id": "dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
+      "public_url": "https://otc-nutrient-safety-engine.vercel.app",
+      "git_commit": "c86e20157df2f4ca75d72ddad1f6e5915c12bd6f",
+      "http_status": {
+        "/": 200,
+        "/research-v3": 200,
+        "/sources": 200,
+        "/rules/RULE-VITA-UL-US-ADULT": 200
+      },
+      "console_errors": 0,
+      "authorized_by_ko": "사용자가 이번 세션에서 배포와 push 를 명시적으로 지시했다.",
+      "release_ready_note_ko": "사이트 배포는 연구 상태 플래그 release_ready 와 별개다. release_ready 는 임상 배포 승인 절차를 뜻하며 그 절차는 수행되지 않았으므로 false 를 유지한다.",
+      "evidence_path": "research_v3/otc/audit/production_deployment_receipt.json"
+    },
+    "git_push": {
+      "remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
+      "branch": "main",
+      "head_commit": "c86e20157df2f4ca75d72ddad1f6e5915c12bd6f"
+    }
   },
   "thesis": {
     "docx_path": "research_v3/thesis/권혁찬_졸업논문_최종본.docx",
@@ -360,8 +380,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "24093cad6311c2b2fb5ef176b62e149c204eb3afc7f0b398b06947ba2390dacc",
-      "target_sha256": "24093cad6311c2b2fb5ef176b62e149c204eb3afc7f0b398b06947ba2390dacc",
+      "source_sha256": "7b9da8178eb9f98ee90802a5a6a7415b16fb96394eaba66cf0772a0986fee0b2",
+      "target_sha256": "7b9da8178eb9f98ee90802a5a6a7415b16fb96394eaba66cf0772a0986fee0b2",
       "bytes": 17784
     },
     {
@@ -390,9 +410,9 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "56a324a2f41e9073b79e3be87c7ef8e2041153356acef90658117a5e9050cec5",
-      "target_sha256": "56a324a2f41e9073b79e3be87c7ef8e2041153356acef90658117a5e9050cec5",
-      "bytes": 4173
+      "source_sha256": "46011bd168366d3aa3948f206751df288a3479ee155023353516335f94bbf1fb",
+      "target_sha256": "46011bd168366d3aa3948f206751df288a3479ee155023353516335f94bbf1fb",
+      "bytes": 4474
     },
     {
       "source": "research_v3/thesis/권혁찬_졸업논문_최종본.docx",
@@ -400,8 +420,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "256e7a2692ff21e7348affde2fe530ebd6a6e4fe6a3cec02812c245e3a0774f0",
-      "target_sha256": "256e7a2692ff21e7348affde2fe530ebd6a6e4fe6a3cec02812c245e3a0774f0",
+      "source_sha256": "b014a46d8710d7cf153da5445cfaeea951b0ccc7698300f43987d4ca9eeb2f84",
+      "target_sha256": "b014a46d8710d7cf153da5445cfaeea951b0ccc7698300f43987d4ca9eeb2f84",
       "bytes": 47744
     },
     {
@@ -410,8 +430,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "10e4244cb894877c5d4f0ed0e38cc6cdd295b8d25164045c9692d040ffdb0793",
-      "target_sha256": "10e4244cb894877c5d4f0ed0e38cc6cdd295b8d25164045c9692d040ffdb0793",
+      "source_sha256": "2f8f16b4fc4049ee6bd8ed1b6251de752918821579451801da7b805e0a2ea6e8",
+      "target_sha256": "2f8f16b4fc4049ee6bd8ed1b6251de752918821579451801da7b805e0a2ea6e8",
       "bytes": 336936
     },
     {
@@ -430,9 +450,9 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "525c5057689c3ba411b1d3a19e84d41471204b2a4a47ea49ffa948852740d7e9",
-      "target_sha256": "525c5057689c3ba411b1d3a19e84d41471204b2a4a47ea49ffa948852740d7e9",
-      "bytes": 20537
+      "source_sha256": "2f8cbb626138ad7e3baf0c1b10f2cd9434405615e342dbcabf651b5dd253a93a",
+      "target_sha256": "2f8cbb626138ad7e3baf0c1b10f2cd9434405615e342dbcabf651b5dd253a93a",
+      "bytes": 21554
     }
   ],
   "closure": {

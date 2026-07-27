@@ -26,6 +26,7 @@ AI_REFERENCE_PATH = ROOT / "research_v3/measurement/screener_vs_ai_reference.jso
 BLIND_EVAL_PATH = ROOT / "research_v3/otc/validation/ai_independent_evaluation.json"
 LINK_MANIFEST_PATH = ROOT / "research_v3/otc/rules/literature_link_manifest.json"
 COMPLETION_AUDIT_PATH = ROOT / "research_v3/otc/audit/completion_audit.json"
+DEPLOYMENT_RECEIPT_PATH = ROOT / "research_v3/otc/audit/production_deployment_receipt.json"
 THESIS_DIR = ROOT / "research_v3/thesis"
 THESIS_DOCX = THESIS_DIR / "권혁찬_졸업논문_최종본.docx"
 REPORTS_DIR = ROOT / "research_v3/reports"
@@ -69,6 +70,27 @@ def num(value: float | None, digits: int = 4) -> str:
     return "null" if value is None else f"{value:.{digits}f}"
 
 
+def deployment_sentence(metrics: dict[str, Any], polite: bool = False) -> str:
+    """배포 여부를 영수증에서 읽어 한 문장으로 만든다. 추정하지 않는다.
+
+    문서마다 문체가 다르므로 평서체와 존댓말을 따로 낸다.
+    """
+    if not metrics["deployed"]:
+        return "이번 실행에서는 배포하지 않았습니다." if polite else "이번 실행에서는 배포하지 않았다."
+    if polite:
+        return (
+            f"사용자 지시로 production 에 배포했습니다. 공개 주소는 {metrics['public_url']} 이고 "
+            f"배포 ID 는 {metrics['deployment_id']} 입니다. 사이트 배포는 연구 상태 플래그 "
+            "release_ready 와 별개이며, release_ready 는 임상 배포 승인 절차를 뜻하므로 "
+            "false 를 유지합니다."
+        )
+    return (
+        f"사용자 지시로 production 에 배포했다. 공개 주소는 {metrics['public_url']} 이고 "
+        f"배포 ID 는 {metrics['deployment_id']} 다. 사이트 배포는 연구 상태 플래그 "
+        "release_ready 와 별개이며 release_ready 는 임상 배포 승인 절차를 뜻하므로 false 를 유지한다."
+    )
+
+
 def collect_metrics() -> dict[str, Any]:
     """모든 수치를 매니페스트에서 읽는다. 문서에 숫자를 하드코딩하지 않는다."""
     picos = read_json(PICOS_PATH)
@@ -80,6 +102,9 @@ def collect_metrics() -> dict[str, Any]:
     blind = read_json(BLIND_EVAL_PATH)
     links = read_json(LINK_MANIFEST_PATH)
     completion = read_json(COMPLETION_AUDIT_PATH)
+    deployment = (
+        read_json(DEPLOYMENT_RECEIPT_PATH) if DEPLOYMENT_RECEIPT_PATH.exists() else {"deployed": False}
+    )
 
     primary = blind["primary_analysis"]
     ref_primary = reference["primary_analysis"]
@@ -173,6 +198,11 @@ def collect_metrics() -> dict[str, Any]:
         "flag_blinding_ai": flags["independent_blinding_ai"]["value"],
         "flag_blinding_human": flags["independent_blinding"]["value"],
         "flag_performance_claim": flags["performance_claim_allowed"]["value"],
+        # 사이트 배포 여부. 연구 상태 플래그 release_ready 와 별개다.
+        "deployed": bool(deployment.get("deployed")),
+        "deployment_id": deployment.get("deployment_id"),
+        "public_url": deployment.get("public_url"),
+        "deployment_commit": deployment.get("git_commit"),
     }
 
 
@@ -825,7 +855,9 @@ AI 참조표준 대비 재현도라는 점, 분류기와 참조표준의 부분�
 
 ## 검증
 
-연구 시험 {metrics['research_tests']}개와 앱 시험 {metrics['app_tests']}개가 통과했고 lint·타입 검사·빌드도 통과했습니다. 정적 경로는 {metrics['static_paths']}개입니다. 이번 실행에서 배포하지 않았습니다.
+연구 시험 {metrics['research_tests']}개와 앱 시험 {metrics['app_tests']}개가 통과했고 lint·타입 검사·빌드도 통과했습니다. 정적 경로는 {metrics['static_paths']}개입니다.
+
+{deployment_sentence(metrics, polite=True)}
 
 ## 공식 문서 위치
 
@@ -870,8 +902,8 @@ AI가 PICOS 질문 {metrics['questions']}개를 만들고 PubMed에서 고유 PM
 ## 코드와 배포
 
 - GitHub: https://github.com/yeohj0710/otc-nutrient-safety-engine
-- 기존 공개 주소: https://otc-nutrient-safety-engine.vercel.app
-- 이번 실행에서는 배포하지 않았다.
+- 공개 주소: https://otc-nutrient-safety-engine.vercel.app
+- {deployment_sentence(metrics)}
 
 ## 검증 명령
 
@@ -883,7 +915,7 @@ npm test
 npm run build
 ```
 
-최근 실행에서 연구 시험 {metrics['research_tests']}개, 앱 시험 {metrics['app_tests']}개가 통과했고 정적 경로 {metrics['static_paths']}개를 생성했다. 배포는 별도 승인 범위다.
+최근 실행에서 연구 시험 {metrics['research_tests']}개, 앱 시험 {metrics['app_tests']}개가 통과했고 정적 경로 {metrics['static_paths']}개를 생성했다.
 
 이 시스템은 연구용 프로토타입이며 의료진의 진단이나 복약 결정을 대체하지 않는다.
 """
