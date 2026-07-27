@@ -1,0 +1,875 @@
+{
+  "schema_version": "2.0.0",
+  "updated_at_utc": "2026-07-27T02:03:06.141843+00:00",
+  "screener": "agent_direct",
+  "execution_mode": "agent_direct_judgment",
+  "local_language_model_used": false,
+  "external_llm_api_used": false,
+  "subagents_used": false,
+  "human_decisions": 0,
+  "prompt_path": "research_v3/otc/literature/prompts/agent_screening_prompt.md",
+  "prompt_sha256": "58186692d7cd2241b4342578babe6d87615f762bafbcda2445d20f96330c3a60",
+  "input_path": "research_v3/otc/literature/evidence_map.csv",
+  "input_sha256": "5b0bcc9f47a98a4caa7a24599962ac5d5bcc372fd8edb29bfd67a4b1af78786c",
+  "corpus_declared_input_sha256": "3ba217aa90db7755d08d5c2d63705dd063a2b4d10eb692112a95c18490688a10",
+  "checkpoint_path": "research_v3/otc/literature/screening/checkpoints.jsonl",
+  "checkpoint_sha256": "3ac843001562508f981976fefcc99866d474204477248bb3f058ae2822590910",
+  "batch_size": 50,
+  "card_render": {
+    "abstract_chars": 600,
+    "mesh_terms": 12,
+    "note_ko": "판정 카드는 제목 전문, 초록 앞 600자, 게재유형, MeSH 상위 12개를 제시한다."
+  },
+  "corpus_rows": 5724,
+  "classified_rows": 5724,
+  "coverage": 1.0,
+  "missing_ids": [],
+  "duplicated_ids": [],
+  "decision_distribution": {
+    "deprioritize": 3423,
+    "retain": 2240,
+    "uncertain": 61
+  },
+  "confidence_distribution": {
+    "high": 3103,
+    "low": 415,
+    "medium": 2206
+  },
+  "evidence_basis_distribution": {
+    "title_abstract": 5424,
+    "title_only": 300
+  },
+  "decision_by_evidence_basis": {
+    "title_abstract|deprioritize": 3339,
+    "title_abstract|retain": 2043,
+    "title_abstract|uncertain": 42,
+    "title_only|deprioritize": 84,
+    "title_only|retain": 197,
+    "title_only|uncertain": 19
+  },
+  "reason_code_distribution": {
+    "animal_or_in_vitro_only": 1289,
+    "case_report_relevant": 222,
+    "exposure_only": 188,
+    "exposure_outcome_class_level": 333,
+    "exposure_outcome_direct": 1710,
+    "insufficient_detail": 45,
+    "mechanism_or_assay_only": 443,
+    "off_topic": 1211,
+    "population_mismatch": 53,
+    "route_or_formulation_mismatch": 183,
+    "title_only_insufficient": 46,
+    "title_only_probable_off_topic": 57,
+    "title_only_probable_relevant": 197
+  },
+  "batch_count": 115,
+  "batches": [
+    {
+      "batch_id": "AGT-B0001",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "f6acbf227f0421811645ef36bc9c56164c5fd84f9ac2d18dca7bfdb55252ab96",
+      "decisions_sha256": "88349a21914990a7319f6f4af5806e3136d48e31db119e4fc4b5746786d4973f"
+    },
+    {
+      "batch_id": "AGT-B0002",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "6a5af21653fcf8428b6645e7323f2b1324159b74bbab05b19e0f9987102613fa",
+      "decisions_sha256": "8f1622f2d55aa86dad0d9ae25b599d46d799f3c0109c3f9073b0a10aff4eade8"
+    },
+    {
+      "batch_id": "AGT-B0003",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "11e2d4a59bc14b8accf10b850b3dc1bd394b9d40c7bb96090dd8a90dec8c326d",
+      "decisions_sha256": "dc06ba86a9cd76b8ee58d0cba3e276de0bfedc1b1a172ba09029ea3c1cd766e3"
+    },
+    {
+      "batch_id": "AGT-B0004",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "25bbe1ee20a9f1b342aec8b4c3da3fc0a74315fb73e8c0106a61c320804c2e1f",
+      "decisions_sha256": "f71e3c0854c4708aa63521d3be26ee80345e574eddd3b762e3208e02f0a62695"
+    },
+    {
+      "batch_id": "AGT-B0005",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "3308a575e16f990c5feae2e329af963927432e5d56e2624a7cb9635a479f154c",
+      "decisions_sha256": "ae4494d6dc21da35d51480a5be975c3bcd8131f1fa6abc63c4c122563d0a14e6"
+    },
+    {
+      "batch_id": "AGT-B0006",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "f780e4086b1bd6f52e324330012f360747732ac95de025cac1cfeda91e607612",
+      "decisions_sha256": "8152201de574adad0919da4bf56f1189b6b9321abe66b8c833bfff501f3f8842"
+    },
+    {
+      "batch_id": "AGT-B0007",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "882bb263c7675520f8096cc74905a9786e2a71ebcf1567a20777d12db1b1fb11",
+      "decisions_sha256": "38baaf3fec5405011cf74d369c8249bfad5966bfdcbcef2dd65285edf5f363e8"
+    },
+    {
+      "batch_id": "AGT-B0008",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "42f9a4a93e141b3a12ee94958c7b1379857256e68254f14e16146bfe56302dca",
+      "decisions_sha256": "b336400ce6f3339ba73e78ea080d43154d0a49f198abf29fff0e91fa891ceaa5"
+    },
+    {
+      "batch_id": "AGT-B0009",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "6b4eb031812169f5f63d5349f1aeb5fd05162b73cf743cff0527769e64296359",
+      "decisions_sha256": "63ffe2202ea7dceac2bc2268998b0efc3cca1bf51741be4f1ee03abf194f1daa"
+    },
+    {
+      "batch_id": "AGT-B0010",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "58afae3cd93df3c2e54cc2fd24f27ef155c6cc79794c87454020eee09cdd671b",
+      "decisions_sha256": "95610723a002d0d41d7d5e88382bc36e133d45ddcd96cbcf8af5ba9fbd0daa2c"
+    },
+    {
+      "batch_id": "AGT-B0011",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "fd2122202a421299817085de3c1a32b840f90766405c3aaaaba81b7e3b66ddbf",
+      "decisions_sha256": "4ed6048bba03e6524d90fc9d91454ca7978c86a689087ffc164be9f287fd0ccb"
+    },
+    {
+      "batch_id": "AGT-B0012",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "fca59fa1c09a9458ded32dbc4c5c34431c442013c11440a9e5b3982d37d2a6bc",
+      "decisions_sha256": "3a9617c552b8735195639e979849ee73a1de077d6ce9c637b24854a17bc66d91"
+    },
+    {
+      "batch_id": "AGT-B0013",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "aa3b3133361104c5a0cd80cb513919ece195b354ac3451852560558a4cf5d401",
+      "decisions_sha256": "2ba269e75cacc86a71f3343a4e6e82a9f6264b5b8d3eb99e6d943ebf9e734f86"
+    },
+    {
+      "batch_id": "AGT-B0014",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "42d3861ba87eef6c5e6ed504fad2a883358b156636efa9ac0b52c4e46ed69dba",
+      "decisions_sha256": "f1a0ec48d02d0439038a0c01647730c9e40f3475cfa7d25d196a83ef09bdc884"
+    },
+    {
+      "batch_id": "AGT-B0015",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "4810f42773f9fd59b999c157c0093fa466c6b0332fd4bbeffc17fda7d186681e",
+      "decisions_sha256": "de16a65275c734aa75890b91ed624988f5d2746a75a67796da896030dcc71a03"
+    },
+    {
+      "batch_id": "AGT-B0016",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "01c8279916aa70ea64e3da76bcd45505869eafd9587352412ffcad1e037cf3bb",
+      "decisions_sha256": "f4aafbe4b617ecad7ae41e1f1ee48bc2e490ce08db7f6ea78aa9a0cc1d8fa2f0"
+    },
+    {
+      "batch_id": "AGT-B0017",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "600e686b257de9415847bc35ff413bdeb30858db166c7484ac42d01e2a8763c5",
+      "decisions_sha256": "afa2bcc78c84a9173d4ba654bda72afe21e25aec18397516b55b35a8f4b85042"
+    },
+    {
+      "batch_id": "AGT-B0018",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "ea300aaf9df0e78869f6fcfe2535f6285d8b90f0b098ef755bbabce6cd1d966e",
+      "decisions_sha256": "da68b17cde7d8f4ece823f53049dc4b13d4d35eada291e8589e1693bb37a420a"
+    },
+    {
+      "batch_id": "AGT-B0019",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "f2cb2568a3d902c7ca7eaa0cac9c4f517c42a28d3d545d91c4872f73cb87fa55",
+      "decisions_sha256": "b8a8d175abf25384e2271086efb82a35dd09dcb9008e35da2279055b3debba99"
+    },
+    {
+      "batch_id": "AGT-B0020",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "639946556d834c12384f45e69acd1932d312e50f3b32d17e162ade1d73f80a05",
+      "decisions_sha256": "9463c18a8cfb1107f072b9907143787ec41c9c6c01482a0ac427763d142575ab"
+    },
+    {
+      "batch_id": "AGT-B0021",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "e49debf43679573da67ee42b6f5b5a923cc5c5e53ea40b9da38124190fbf0a56",
+      "decisions_sha256": "399c8c11cbad67db76a35b6f932ca170183a2a52ef16e1362846316db2e0ef58"
+    },
+    {
+      "batch_id": "AGT-B0022",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "77b3b70b31e305bd702f52751adf521862811e93dc5d74c6b24e8bd71906955d",
+      "decisions_sha256": "ffaa31f37b3d31559f379a6aaedf08f6defc87ff126730cb85b38cd4478f6dce"
+    },
+    {
+      "batch_id": "AGT-B0023",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "ccbc009326214f8e9d648f51a0579ef647f68d61750566fb8b766930227b6482",
+      "decisions_sha256": "a8cb0a347f0b7fcda1f35fd2aca3e4651264fe397ae846d91cc55d378805efb9"
+    },
+    {
+      "batch_id": "AGT-B0024",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "82daabcb98266f62c7b744d181069e3479ab58a5c9502fc6f401eae8b4f73660",
+      "decisions_sha256": "9b9ef324c604a5b5e7109ffb9430efcc9631ae6f597ed6ae705f3a869312a3f6"
+    },
+    {
+      "batch_id": "AGT-B0025",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "a2ae84dc6a8aafaee6ca3cdef5256ed78a515a4ec314f46f62929aad7e1f82aa",
+      "decisions_sha256": "4f494caa44324ab451671ce7fd01c75f0d20077ac181faa2ddd8abb8553c9c6b"
+    },
+    {
+      "batch_id": "AGT-B0026",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "cefc40262e8889a9563394ee5a4ade3649d32a09ca913e4a3a6572dbef45716a",
+      "decisions_sha256": "85d753251d12a67027490d0010e6e0abe3b6466323ef9f9bc30e4942b48437ae"
+    },
+    {
+      "batch_id": "AGT-B0027",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "349dc95fddd78418b08e48ea8172ea438e3f9d03bad45624a2fcb205485b08cf",
+      "decisions_sha256": "bf32cd8ce1ed45786b7c158b937e8ed43739be83ca39b01ce399b0091cafda72"
+    },
+    {
+      "batch_id": "AGT-B0028",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "27d52a876180e13eb598e110189b6be125ccb080c39c4d6f19b5884c48a87994",
+      "decisions_sha256": "564a396c722d16ec6cf457f614b8b8d2197a367616003f9ad810fddeb80204e5"
+    },
+    {
+      "batch_id": "AGT-B0029",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "fef165c5949412785b7733a5c8f3657a78a039ac14651039a80f121959b507c4",
+      "decisions_sha256": "677bfe389c0968dbba397bbe0b01fbb441bbbd81b40658a1497280e894d7874c"
+    },
+    {
+      "batch_id": "AGT-B0030",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "9d294c85a174150d54f752ebde192d13bf40ea51fedb15ee3d6b60580e73ad68",
+      "decisions_sha256": "309026e21c5f5a551691b2797f431939111a809d7d2297ea653c90fe9c77768c"
+    },
+    {
+      "batch_id": "AGT-B0031",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "43ef957c3a225e71463cf4c330349a4412b34c9741c2796003dffa275a796907",
+      "decisions_sha256": "f9523e095d867965c47f8986f49bb6ea463fb7f4872f16fcc57facdef57e1ae1"
+    },
+    {
+      "batch_id": "AGT-B0032",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "a3022bdd09089addc8996195f06f4e8f3c207faae8e3f97bc5f30c6d8e897295",
+      "decisions_sha256": "1024d669655fe80d06812d4f0f39436c5c8c19f6c39001c509699d7f27f5d49b"
+    },
+    {
+      "batch_id": "AGT-B0033",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "30db54619cf8e26e55a11d453597f29175dff8b63d0c368940638a013737d38b",
+      "decisions_sha256": "738fcaf3af0892b0ca842d4fdf8cdf547544c4b0a7606911d312ed6d4a7cc4ae"
+    },
+    {
+      "batch_id": "AGT-B0034",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "9059343bddcc109e2e9dd32b88119db39b1d13526d1393e9f960083977438a95",
+      "decisions_sha256": "30ce9d85e9aba26b53cc69320ee12d7bc240b353a949489f53aa2d0bc8cb5890"
+    },
+    {
+      "batch_id": "AGT-B0035",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "36ec7c6e1d80769adb639b1241434c110e31785f117eafd36bc8392486bee6a7",
+      "decisions_sha256": "30d22601c9ab267b321bdb2a7c61f6adbcc9c645357b676f57682df25d12f3b3"
+    },
+    {
+      "batch_id": "AGT-B0036",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "4b958237246f890938ee7d9d3b1bc025a24363bbae61ab88e9b00a8e49e5f53b",
+      "decisions_sha256": "c79bf094d6ea6f0be83384701a6b57ee497cbc08a20aaabc09d952aa1bed5ac4"
+    },
+    {
+      "batch_id": "AGT-B0037",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "c5ee85c9f7777bb68be3b8e8034e7243973d76372600bf7f0174147f3a9e205c",
+      "decisions_sha256": "b3ae3759544492186e42ba5ea8e44acb60a48306eeccf95abcbf1cbf4e42a91f"
+    },
+    {
+      "batch_id": "AGT-B0038",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "891f3ab848d80c0d860cf0b2b447dbc0ecd55dfe7232b11347d8399d27b3b032",
+      "decisions_sha256": "b70d6f545172f137739e26f65c9612addcaddd3fa7f4357d01ebccb2fe3767a8"
+    },
+    {
+      "batch_id": "AGT-B0039",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "9659254804547260f6e154a3f49049136ba8da7707758b047b0742bed8584401",
+      "decisions_sha256": "9552f62f1e554f70f3fd472009733aa77366f3d3219731f63025ad66a71e94bb"
+    },
+    {
+      "batch_id": "AGT-B0040",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "a1e0def6f28e57a820e43ebebae3985acd7bc90b828336224c1bc4c219e7c37a",
+      "decisions_sha256": "36ce6eb66bfe250b471b78a53ca422ab7b53a2b3125a211d693a607e03bbf404"
+    },
+    {
+      "batch_id": "AGT-B0041",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "4f8fa5417d37f0badfe3b9269645ae8b3e2e4eeadddadd4e984f44db8eb0cb42",
+      "decisions_sha256": "4b4dee64de3e12a3839d4838cfcc072d387ec6f8b11c3400c6c979760d0d932c"
+    },
+    {
+      "batch_id": "AGT-B0042",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "199de9f9b6c41dd9eeece99bae49488595adcc9ae8c380038918d20466897bda",
+      "decisions_sha256": "54fc2b29879efc6c25fe017992b0c83d961f4da3cdb7679501cd9b3689d9944e"
+    },
+    {
+      "batch_id": "AGT-B0043",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "5e297b1fce9a358a302fa7583e10ab26745ab914a0fa1ce272122dc9555e11f5",
+      "decisions_sha256": "a4d69243859d97ea9b1ca5e514b49034c498e7eeddc09d2b5a6ed0f5b7aecca0"
+    },
+    {
+      "batch_id": "AGT-B0044",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "c15fd76f390fcb9e07d9bcd97fb6e8dbe877200715428f9f052cacd737660b8d",
+      "decisions_sha256": "a7060d3072ca2b55efc68f365994c618afc59164cdf7512c6dac95f038b9bcbd"
+    },
+    {
+      "batch_id": "AGT-B0045",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "aca0315b5eb176417178cfc89bf59ab09bd23b71c19ba0034f001f19e30e032a",
+      "decisions_sha256": "d629c5a2fa071d83b0c7ef7ee2ff8bbe020e252d890d949d64f90d80df25b389"
+    },
+    {
+      "batch_id": "AGT-B0046",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "ce36b4a8d8263da3590d34dad103cd5a1a92507c11a7e80e1c8044cee0b94a68",
+      "decisions_sha256": "22f3aede9d987938cb4bd275f85a61295e262a808c08617051f4b966ca61ebce"
+    },
+    {
+      "batch_id": "AGT-B0047",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "f316ed30f18a5bb6b4937da82dbadaaeda29ea98fe6664cf44d3fa1c142c933a",
+      "decisions_sha256": "a1e6c61853ac1a8fba5599f5387e8004cdd29f64530c5bf76a76a07b1b031952"
+    },
+    {
+      "batch_id": "AGT-B0048",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "05d7e9dc44757548c4cc1036b0d79ae55b8b4d7173af641eaecd3d98db6fdcbf",
+      "decisions_sha256": "5dedc6d784fa8dc978a57b064e0e20a7eedd9b62f1989a6c5b3afecdcfd81eaf"
+    },
+    {
+      "batch_id": "AGT-B0049",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "ac97514638c278c245c075946e189ad9996fd94011f1caa9ca08f976680d88be",
+      "decisions_sha256": "0c092812049d213b9c170fd2446d7d60e017a434db2cfcf3524f357572c09fb4"
+    },
+    {
+      "batch_id": "AGT-B0050",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "347a72ba5cf85b983c851598005280975b5db99f7e19c95f10ac8b3dbf45d2ca",
+      "decisions_sha256": "66f87332886e2dc5c3592014c0fb3b3d4e728b26f48f0215be359ac1736e98e4"
+    },
+    {
+      "batch_id": "AGT-B0051",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "0476a456e18b7923c22c571d27d2ff22286c2b435ca00b4619688b1fc1da5700",
+      "decisions_sha256": "c6631b7085ce58f6629a77603a0b8e8ee4d74a955b4b53c3439de982fa44eb88"
+    },
+    {
+      "batch_id": "AGT-B0052",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "12799a24a18fc9c2a4eb92aeec4368bb679b74adcd0b40cbd591a6cb7ba795c5",
+      "decisions_sha256": "a9e56a02e38df772caa2b70f109263879db8b78f25d6d2a370272774750c66bf"
+    },
+    {
+      "batch_id": "AGT-B0053",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "ac640a9052a0a82ec5ac4c2b7459dda45baefc1ae187cb695b58b8318977eb69",
+      "decisions_sha256": "b9212e517bf81dc44e9b414dcee2388179c717b1d92febfdff1d126bca0f4c9a"
+    },
+    {
+      "batch_id": "AGT-B0054",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "e806262f66278f581927ec649c13e2428c81ad8ac7a97eb76833c0ccc92684cc",
+      "decisions_sha256": "282dede2def54849c3414c5404e1eadb02b6090a78efc67798541452663d3634"
+    },
+    {
+      "batch_id": "AGT-B0055",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "5017ac543400d1968080e4aa81b50bde8503cc09b9f9bc631f8897f14750a2ae",
+      "decisions_sha256": "ed1acfba9324fa12024ff796960cdf16b18abef582ce9b3453df01dc0e10b965"
+    },
+    {
+      "batch_id": "AGT-B0056",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "0bfd447bb149f432fdff4282776e591a8344343f2c3418399635a26baa0c31c6",
+      "decisions_sha256": "142ccfb31ae2a4850955f7ac3c2b3441a2297cafd499f26fb9fb564a4d6a2370"
+    },
+    {
+      "batch_id": "AGT-B0057",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "f1e66c6e1c252bfc3a94446a87ca9210e42708c0e3ef8cbc6b98341c76d9d388",
+      "decisions_sha256": "d2c74a066418116b3657101872b4150777032e28d7ae241d3e4835c3e937853c"
+    },
+    {
+      "batch_id": "AGT-B0058",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "cd5bcaea1216daf80c1b0c4a2855ffcbcdb48f78f76f48707326056364c15281",
+      "decisions_sha256": "516c8e2581e550c1bae963bdea36b36056ed19f85b090535a54f7a3ca905ea41"
+    },
+    {
+      "batch_id": "AGT-B0059",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "7262b9232be61e23020a9e539046fc79feb42f958e3b1e9febcfcc4bd828c990",
+      "decisions_sha256": "0d2c374e9e718cdfdf64a49f3a5cf02a93dec3d9bb5bb0a89f2c5c56668fb0b0"
+    },
+    {
+      "batch_id": "AGT-B0060",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "05ab3d80284e4eba47a8ac40b07aa236d4e1263ef91c4981f376bb3931613239",
+      "decisions_sha256": "b70010292dd3e439801abfb2950acfc1e9684c713fc37ed4ddf884edfe99786a"
+    },
+    {
+      "batch_id": "AGT-B0061",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "47a0acd6510a42b0ca937e8577a25518fe6731b46a70b32e8f6ae70184473044",
+      "decisions_sha256": "f90e6cbd4a4eaaefebed5cc1818b6036ae8d8021f5c074dd76a87d0da554422e"
+    },
+    {
+      "batch_id": "AGT-B0062",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "4b319ccb773cec221f38e7b6939e2b77868aa021ce577f75dc49d7c8c8640521",
+      "decisions_sha256": "cf7195425d712644c6d4e0b014cbea5e334894279301d5b014deb5c7f4fadde6"
+    },
+    {
+      "batch_id": "AGT-B0063",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "1601124ceed2e6ec9ad393b63aa0c4f0ede600cbf23b95876e3a24039ab6d5f1",
+      "decisions_sha256": "b8d281644507db36e784aa16814b4273751e9b7ed88e2d40cddb891ee1f26a91"
+    },
+    {
+      "batch_id": "AGT-B0064",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "865f19a0784204d1e670968dcf79090b6b37f8d1b36b5964cad18551231c4e2a",
+      "decisions_sha256": "90379340cd57c0545262ded4af34d38b484b354b0357521ed24d87057f63db9c"
+    },
+    {
+      "batch_id": "AGT-B0065",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "aca89a4fa4398214fed053bb0d425914709f145d6e3ef20c0b747b133208c3fa",
+      "decisions_sha256": "cea9dcf7c71ab2560055063512d40aa24e9d9bfd5866b78b5a79c01a363edc95"
+    },
+    {
+      "batch_id": "AGT-B0066",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "00a65550bb6300e27284f2fd8eda5f488dc182f75fe481a7c671f008d8fc7dde",
+      "decisions_sha256": "e3a17f4932cde200fce0fe030b25b75741c3a2fe04bad302650ca2b3d2646499"
+    },
+    {
+      "batch_id": "AGT-B0067",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "19fe276654baff15baf919fc7ae6b69a40721047ee36132db30b61f8b8903d17",
+      "decisions_sha256": "f09dca136ced7c64ae3c96e1debfbbb5d95d8566f911353770c91736883e5e45"
+    },
+    {
+      "batch_id": "AGT-B0068",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "870265fa869bdaee4c359fea88ffaffa43894d5497417b40318aca0ac81f7075",
+      "decisions_sha256": "58cc88351b33b7f8e151da8191abe2a91ae2d1f02cab334efe0bb8be4b6d2d57"
+    },
+    {
+      "batch_id": "AGT-B0069",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "e966e665b367431cd4e85cec65a3ab7aa5171165d5961a52e44e2452e3264330",
+      "decisions_sha256": "6fdd5057593e4a3d44179183a2fb9e93504cb55b189c333d36575f0b6cce8c71"
+    },
+    {
+      "batch_id": "AGT-B0070",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "c7611b72dfd9171f2709bbfa16893d1311bcb64e2b181b5aaf781c48bbe5a809",
+      "decisions_sha256": "3c661e84694ac5476fab7833b9bbaf84cb8b9ef9989cc3528c515d77e68f14fa"
+    },
+    {
+      "batch_id": "AGT-B0071",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "2f25dfd7ebb2a3ee71c036d188494aad91addd1d6ccee2a7af0eed07511f7402",
+      "decisions_sha256": "b76852359170db20945f42b194daafeaa857d86a930b2e7581834662cf003cd5"
+    },
+    {
+      "batch_id": "AGT-B0072",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "6b52df09ef304767e52c2c47e8d549e9964c6b0e5b48761eae50df64c50982f7",
+      "decisions_sha256": "a44bc878583e2bd4969a07ed111dc3487ea8898363dd44b27853186f7cd5aba3"
+    },
+    {
+      "batch_id": "AGT-B0073",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "e13a1d3f335cd28fa445cc77780fed3258316ff3f29abecfcb88ff9341088de4",
+      "decisions_sha256": "6adeff8119f6c513fe3e58b796c72e1a86fb81a2fee211d119655c86abb3596b"
+    },
+    {
+      "batch_id": "AGT-B0074",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "708b75fa4c38bff1b78de709d547024587ee8bb5ef21eaa3297a26cdb5157e33",
+      "decisions_sha256": "4aa27be0b3b6e211c9f28e2943547475b0ebd539a2f518510d82785269577d1f"
+    },
+    {
+      "batch_id": "AGT-B0075",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "06908d5efdc0d315e7e38cd3b8628b3ee7464396338ab1d36f266e07386d0198",
+      "decisions_sha256": "c7b71460417e70ec05875317a45d9cc76a5076111e94aa1f19bde4911db4995f"
+    },
+    {
+      "batch_id": "AGT-B0076",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "aa0ee9ee90f9dfaff280eb622588d06e74dff11e652bd112226c7e1041f39647",
+      "decisions_sha256": "e70e515bf3b67f48755f8f84f30800ad261bd2043723538374ccd095670bee9d"
+    },
+    {
+      "batch_id": "AGT-B0077",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "dbe194c4505a23c7c588af4ad5a5bd74afdb70a344d78796bd96d6244f51b722",
+      "decisions_sha256": "88247851784bc7cc3e06b981f0bc40998a2bff03bee230918d2ad3445c003277"
+    },
+    {
+      "batch_id": "AGT-B0078",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "46a7c6e857bda51b9ed24cabe1d92132e94cd4bb025aea8f7ad4a677cd738edb",
+      "decisions_sha256": "af1f66d47176335e11afce95843a340ed53dc20d10072a130944964ff9caf136"
+    },
+    {
+      "batch_id": "AGT-B0079",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "64b142ab5cdd00907cd750e2c6f7ce643585e720b03ba137fe6a7686c070dee3",
+      "decisions_sha256": "c562a0f11b6e96d5eb1568dce153543ba1a8231d249f3330f6e07898b7c180c5"
+    },
+    {
+      "batch_id": "AGT-B0080",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "59b7302f574bded0bed8fede7a15a0e5d98945c184c5f6e8601c8adcc8adae15",
+      "decisions_sha256": "d77be3a1272a1a9c23071f70695336abd178dcf963319df0b78db78cd7d2eea4"
+    },
+    {
+      "batch_id": "AGT-B0081",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "c80cff77b207804462ec2eb990dfbe40b62998295fea5f83eb37456b7e912ae1",
+      "decisions_sha256": "bba14cf7e024931c5b6ceb07a24955113ca55606348950f8c3938901d91f5415"
+    },
+    {
+      "batch_id": "AGT-B0082",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "d7c0c07625c2d3d54b4ef28bbccc2b1c430bca8a9196bb578da8e507d664a65f",
+      "decisions_sha256": "25bb014c4d4d57e19d058c50467217cf7a88a6773d095cb647e33d2ba09ba2c7"
+    },
+    {
+      "batch_id": "AGT-B0083",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "8ff4fcc9ca5606834ad6ce3835dea8c567c8a27d70f9ba85cea2b7a4a592ae0d",
+      "decisions_sha256": "0b8c46ac9a9f9116036d2c938f4bb431b8eaed8cc25e9ccfbf2751669b37fc4d"
+    },
+    {
+      "batch_id": "AGT-B0084",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "448f7eecf4ca4d05d8355ceb89412774c4b30d6a3470c80e06c04292d890adc6",
+      "decisions_sha256": "07b3eff396f1ae74fab2860d68ef36423d284afe4fb6da919d597218ac85f132"
+    },
+    {
+      "batch_id": "AGT-B0085",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "981a726596d2c44c4a6d6cb1faf174bebfc1648be57961b8d9778e3920870202",
+      "decisions_sha256": "a088ed8e174ed002a3abc45ff94a776eddefe989fbd3ee2fc014b6672871fc9c"
+    },
+    {
+      "batch_id": "AGT-B0086",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "c82ba94a336fb3a93734c12195ccf7310a796f78dddc90d90c78510e801ff844",
+      "decisions_sha256": "0d4c2d195bcdcaeda11859b8483530553924dff07f9584d933ac3af9439c1b4a"
+    },
+    {
+      "batch_id": "AGT-B0087",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "ba196761e43cb2269a5abc94c0264f8400157b06da1850d77267f08f19e27420",
+      "decisions_sha256": "1fae2e622dfcfbc0e95ee2413717c0721be58a95a4ec1e024a6d8a4e1592894f"
+    },
+    {
+      "batch_id": "AGT-B0088",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "72f1e9b2b3f1da4dac30b03bf70d775ead2c48a76adee63a23406688988282e0",
+      "decisions_sha256": "805dd6f99b50d57d8cb854a8391498cad61f1274c887f788b5fc7b678ecaa2fc"
+    },
+    {
+      "batch_id": "AGT-B0089",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "2c562635b41068c5be74c81283c2f3bccb22501c885371d1b10c159223345a0d",
+      "decisions_sha256": "633ea620b051df403da1272d0e4d046cec09465ef18fab5d10d7ea2311af5df7"
+    },
+    {
+      "batch_id": "AGT-B0090",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "94b1c4fc8675e1bed3cacf1c4b9dd2607ede56a5ba80394db8bd78f0b8434b5e",
+      "decisions_sha256": "b233065d5611d6bef0bb7957035496af72297967c86dd4b64cf9656cd078c64d"
+    },
+    {
+      "batch_id": "AGT-B0091",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "1730afc32cea32b33693119d8724240eb8be66bfc1d3336260b084cdadace1a4",
+      "decisions_sha256": "d4db857c16e409f01bb3e8f5bcdd51bd4653c2ee9d427bbca3d9e7e6ee1d132a"
+    },
+    {
+      "batch_id": "AGT-B0092",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "b8ee900a21df8b59cb9c1526edaceec4838daf07811db2a0b569e090851fad24",
+      "decisions_sha256": "fce0b4558da19cf3600675e1ebf4df14fe47e5682bc4a1b1386bbef39054056b"
+    },
+    {
+      "batch_id": "AGT-B0093",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "4862f969ea7cfec8c6316e40c48d5c551876d3a02e9fac7b958d5aa618544aff",
+      "decisions_sha256": "7f0e1cc1076828d68837f423503721f895e75d59efe309169637d82e9c20a4af"
+    },
+    {
+      "batch_id": "AGT-B0094",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "9f3589035e5c9fb9b80254f65651e78d61b3ca8488ee42cf6ee130f712564754",
+      "decisions_sha256": "3a4c9cc78892d5b4d03fba4df16ca8de3a1d5733f6983f61a2095a16b6a755a3"
+    },
+    {
+      "batch_id": "AGT-B0095",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "bd4ef53bae92ff403b2e534e25e2e7692bd9b3194cd718b5a4547d31b09a537c",
+      "decisions_sha256": "f452f8480f2668ee9e05796cdc1eb12b6801803dc10bb45c725ec8d22160e4da"
+    },
+    {
+      "batch_id": "AGT-B0096",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "db810a989e4472b2d1a4909bbc43680af507f33a394cc9f0344a6d7b56d68dbf",
+      "decisions_sha256": "2ddac731da9423942a2ca4fa2e1e06e3e7d33d866b3ed2b9c1f8f3abda5b17e3"
+    },
+    {
+      "batch_id": "AGT-B0097",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "72a45a8eb24532f98d1eda6a11f2b4a3835b9cd0b2fa908efab147967e9b4376",
+      "decisions_sha256": "59d68bc4b315787325a040806e4219c3b0ef1e4e141150579c5e6c1191c2d0e9"
+    },
+    {
+      "batch_id": "AGT-B0098",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "e1792aa66f6f50cca6d8c3565985dbc534b9d938539c3fa7052833aa742ea8d7",
+      "decisions_sha256": "debf5b7d5ee8dd69fbcc2d67b9754605ec049c82587a198e5217d2f0584b52d4"
+    },
+    {
+      "batch_id": "AGT-B0099",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "7880b9df970e671845272ddee7adb0781757a58d663bea4c3eb4dece759e3f18",
+      "decisions_sha256": "44ef0dcfaacbde7d4c67ae159c885d5f3ea9a72fda42793f6f21680d6aaf7fda"
+    },
+    {
+      "batch_id": "AGT-B0100",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "4268451975f5b4a5a56985fa67baea9929086eff03280bc4f6691fc5624ebe2f",
+      "decisions_sha256": "b9b1925c8dd2579fd44a048ae9e19cad5b775bb04b0d5d3bfca5ae2d62c913d0"
+    },
+    {
+      "batch_id": "AGT-B0101",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "a30f3176ff1845cfac89e48814c90c1d04b0e894eb8f2454ba2b42b8eee2b5ca",
+      "decisions_sha256": "21b306479e87f96e33ba6d04e7786551263c334a2eb336539a9ec6dac451e9f4"
+    },
+    {
+      "batch_id": "AGT-B0102",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "be9c52855a4572e5557be011d0645737d55caa39c953691937db0c68b5ba0b33",
+      "decisions_sha256": "3fc2e7e2dd062db154bf0e48153976e25cb4972687fe405fc283e9431d75887d"
+    },
+    {
+      "batch_id": "AGT-B0103",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "772ef439b59da88dd358c4a0534f1059982a6ccb3c7ba93ebcba1874c0db965e",
+      "decisions_sha256": "974cc222660bc7b72b9996c58ac4c54c5e45f84349455969d47ef7a32cab7673"
+    },
+    {
+      "batch_id": "AGT-B0104",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "d5b4441100d14cf6ed71e427a8ca0e7fda3e10f9231d3eb036c49b891f3493da",
+      "decisions_sha256": "062e15c45365303ee74b5f288ea0de700050ed3f0dc411ee87f86fb4479c63ae"
+    },
+    {
+      "batch_id": "AGT-B0105",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "42a6cf71c6e06be9fe4467f26f0faec23d048374f8c33652fe35e36e870c0fb6",
+      "decisions_sha256": "641f3e7d4da7733566ab131150c3037545c73b55e456341b755a0f1a8f0a21f5"
+    },
+    {
+      "batch_id": "AGT-B0106",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "f61f0bb6dc5f33bb23328ad4c10a2ce77212f1f29dca497ede38691450b09c8e",
+      "decisions_sha256": "51144aea508ac048feb73d60de791e8da80d161aaae372504e73154f54964ce3"
+    },
+    {
+      "batch_id": "AGT-B0107",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "9f2bc6c47fc230413a08f4023d0e0df72f21a81bb3e41aff62d5abe2a354fdd3",
+      "decisions_sha256": "dd475dd6e7068a60cba1eed89809141f0e49a30c94096c28ae6e8a70908e5848"
+    },
+    {
+      "batch_id": "AGT-B0108",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "d8548b187fdeef6ded9c45e0dc0c300d016ebde387122bfdd96ad14c2106185d",
+      "decisions_sha256": "6d2ba83f942ca6fc66e6280cb93a2741e44b4ce2aa91d5e29a1cc4ab11fc0ef1"
+    },
+    {
+      "batch_id": "AGT-B0109",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "d73d4225a5342e3e78790ee7d670750a2e7b305000ae5ddb5c83126f05aa8587",
+      "decisions_sha256": "0fd47af57521c6df21ab4b85ef1d9f5c55673425738ab145ab02039968d599a7"
+    },
+    {
+      "batch_id": "AGT-B0110",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "dc12ceea575d17d1c4f289173d08db229e58bd901419d1a7c2dd9daf43bdc35e",
+      "decisions_sha256": "ede8d059e5d09aa75c2cf158fad20e1ddfca29ff760888b4b84729e925074e81"
+    },
+    {
+      "batch_id": "AGT-B0111",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "beffbbc53e4b29ea561c349777f57217cb31ff08187fc926a91a9ce4e2a45cec",
+      "decisions_sha256": "edb21d20137f913ccaf89b40f37466a25aacb73704da163b9fd6f4de37f77fc4"
+    },
+    {
+      "batch_id": "AGT-B0112",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "d722a3d495a13c46930a3146b805920903fcf7aaa40fb49e9087b498b851a1ce",
+      "decisions_sha256": "0730c60938d24a13a8db2760aec7d77df901f77b40bbe6b5e8fdfbe3d313f2eb"
+    },
+    {
+      "batch_id": "AGT-B0113",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "d94495eaa683e2351af7261f65a9f601de180141574788365fe4144d85a17e1a",
+      "decisions_sha256": "a8b87882b40d704e60730775d44d28ed7f535b3f1ec3977b7da3455763378c24"
+    },
+    {
+      "batch_id": "AGT-B0114",
+      "requested_rows": 50,
+      "returned_rows": 50,
+      "batch_sha256": "4c0d83978c5bf690cb529dc61af6e02393d048478e9afe98c545edd6815854ed",
+      "decisions_sha256": "4aa7f4f33aaea87619fde591246fcd08aa270906ab8423b47b623114ce3c03a4"
+    },
+    {
+      "batch_id": "AGT-B0115",
+      "requested_rows": 24,
+      "returned_rows": 24,
+      "batch_sha256": "c06d4920e9f4410c25f47503b260182e00ebe59d9b7001ada441a304bc775685",
+      "decisions_sha256": "7d2603c4b808dbe7d81af4ee15f4743a5bd540a6b5a6f6b06f445737a3456b99"
+    }
+  ],
+  "run_complete": true,
+  "partial_reason": null
+}
