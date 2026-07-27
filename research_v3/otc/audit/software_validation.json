@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_direction": "korean_otc_product_safety",
-  "captured_at_utc": "2026-07-16T14:27:52.980184+00:00",
+  "captured_at_utc": "2026-07-27T03:37:54.316543+00:00",
   "status": "passed",
   "results": {
     "research_tests": {
@@ -14,7 +14,7 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "passed": 139,
+      "passed": 192,
       "failed": 0
     },
     "app_tests": {
@@ -24,7 +24,7 @@
       ],
       "exit_code": 0,
       "status": "passed",
-      "passed": 69,
+      "passed": 70,
       "test_files": 13
     },
     "lint": {

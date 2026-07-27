@@ -1,295 +1,838 @@
 [
   {
-    "pmid": "26149538",
-    "doi": "10.1002/pds.3830",
-    "title": "Patterns of acetaminophen medication use associated with exceeding the recommended maximum daily dose",
-    "publicationYear": 2015,
-    "studyDesign": "7일 약물일지 기반 관찰연구",
-    "evidenceRelation": "supports_caution",
+    "pmid": "20178131",
+    "doi": "10.1002/art.27412",
+    "title": "Variability among nonsteroidal antiinflammatory drugs in risk of upper gastrointestinal bleeding.",
+    "journal": "Arthritis and rheumatism",
+    "publicationYear": 2010,
+    "studyDesign": "관찰연구 체계적 문헌고찰·메타분석",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/20178131/",
     "ruleTypes": [
-      "duplicate_ingredient",
-      "max_daily_dose",
-      "minimum_interval"
+      "gi_bleeding_ulcer"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-012",
+        "ruleId": "OTC-RULE-009",
+        "ruleType": "gi_bleeding_ulcer",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:6",
+        "locatorQuoteEn": "RESULTS: The RR of upper GI bleeding/perforation was 4.50 (95% confidence interval [95% CI] 3.82-5.31) for traditional NSAIDs and 1.88 (95% CI 0.96-3.71) for coxibs.",
+        "keyFindingKo": "상부 위장관 출혈·천공의 상대위험은 전통적 NSAID에서 4.50이었습니다.",
+        "selectionReasonKo": "NSAID의 위장관 출혈 위험 크기를 메타분석 수치로 제시합니다.",
+        "limitationKo": "관찰연구 메타분석이며 개인의 절대 위험을 정하지 않습니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-ibuprofen",
+      "ING-dexibuprofen",
+      "ING-naproxen"
+    ],
+    "profileConditions": [
+      "giBleedingOrUlcer"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "상부 위장관 출혈·천공의 상대위험은 전통적 NSAID에서 4.50이었습니다.",
+    "selectionReasonKo": "NSAID의 위장관 출혈 위험 크기를 메타분석 수치로 제시합니다.",
+    "limitationKo": "관찰연구 메타분석이며 개인의 절대 위험을 정하지 않습니다."
+  },
+  {
+    "pmid": "21370947",
+    "doi": "10.3109/15563650.2011.554839",
+    "title": "Clinical course of repeated supratherapeutic ingestion of acetaminophen.",
+    "journal": "Clinical toxicology (Philadelphia, Pa.)",
+    "publicationYear": 2011,
+    "studyDesign": "다기관 후향 차트 검토",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/21370947/",
+    "ruleTypes": [
+      "maximum_duration"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-018",
+        "ruleId": "OTC-RULE-015",
+        "ruleType": "maximum_duration",
+        "ruleReleased": false,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:4",
+        "locatorQuoteEn": "For this analysis, we included all subjects coded as RSTIs, defined as ingestions of greater than 4 g of APAP per 24 h over a period longer than 8 h.",
+        "keyFindingKo": "반복 초과 복용은 24시간에 아세트아미노펜 4 g을 넘는 양을 8시간보다 긴 기간에 걸쳐 먹은 경우로 정의되었습니다.",
+        "selectionReasonKo": "연속 복용 기간이 길어질 때의 위험을 정의 수준에서 설명하며, 허가원문에 일수 기준이 없다는 점과 대비됩니다.",
+        "limitationKo": "N-아세틸시스테인 치료 환자의 후향 차트 검토라 일반 복용자 집단이 아닙니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
     ],
     "ingredientIds": [
       "ING-acetaminophen"
     ],
     "profileConditions": [],
-    "keyFindingKo": "아세트아미노펜 사용일의 3.1%에서 4 g을 넘었고, 초과일의 92%에는 1회량 초과·이른 재복용·여러 아세트아미노펜 제품의 동시 사용 중 하나 이상이 있었습니다.",
-    "selectionReasonKo": "중복 제품·하루 총량·복용 간격 판정이 실제 과량 사용과 어떻게 연결되는지 설명합니다.",
-    "limitationKo": "미국 패널의 자기기록 관찰연구이므로 국내 제품 허가 기준이나 개인의 인과관계를 정하지 않습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/26149538/"
+    "doseInputConditions": [
+      "continuousDays"
+    ],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "반복 초과 복용은 24시간에 아세트아미노펜 4 g을 넘는 양을 8시간보다 긴 기간에 걸쳐 먹은 경우로 정의되었습니다.",
+    "selectionReasonKo": "연속 복용 기간이 길어질 때의 위험을 정의 수준에서 설명하며, 허가원문에 일수 기준이 없다는 점과 대비됩니다.",
+    "limitationKo": "N-아세틸시스테인 치료 환자의 후향 차트 검토라 일반 복용자 집단이 아닙니다."
   },
   {
-    "pmid": "15103437",
-    "doi": "10.1007/s00228-004-0761-0",
-    "title": "Association between concomitant use of several systemic NSAIDs and an excess risk of adverse drug reaction. A case/non-case study from the French Pharmacovigilance system database",
-    "publicationYear": 2004,
-    "studyDesign": "약물감시 자발보고 case/non-case 연구",
-    "evidenceRelation": "supports_caution",
+    "pmid": "22106945",
+    "doi": "10.1111/j.1365-2125.2011.04067.x",
+    "title": "Staggered overdose pattern and delay to hospital presentation are associated with adverse outcomes following paracetamol-induced hepatotoxicity.",
+    "journal": "British journal of clinical pharmacology",
+    "publicationYear": 2012,
+    "studyDesign": "단일기관 코호트 연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22106945/",
     "ruleTypes": [
-      "duplicate_pharmacologic_class",
-      "renal_disease",
-      "gi_bleeding_ulcer"
+      "maximum_duration"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-019",
+        "ruleId": "OTC-RULE-015",
+        "ruleType": "maximum_duration",
+        "ruleReleased": false,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:11",
+        "locatorQuoteEn": "These patients are at increased risk of developing multi-organ failure and should be considered for early transfer to specialist liver centres.",
+        "keyFindingKo": "나누어 복용한 과량 환자는 다발성 장기부전 위험이 커서 전문 간센터로 조기 이송을 고려해야 한다고 보고되었습니다.",
+        "selectionReasonKo": "한 번에 많이 먹는 것보다 나누어 오래 먹는 양상이 더 나쁠 수 있다는 점을 보여 줍니다.",
+        "limitationKo": "영국 단일기관 코호트이며 중증 간손상으로 입원한 환자만 대상입니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
     ],
     "ingredientIds": [
-      "ING-dexibuprofen",
-      "ING-ibuprofen",
-      "ING-naproxen"
+      "ING-acetaminophen"
     ],
     "profileConditions": [],
-    "keyFindingKo": "54,583건의 자발보고에서 두 가지 이상 전신 NSAID가 보고된 경우 간손상·급성신부전·위장관 출혈의 보고 오즈가 한 가지 NSAID보다 높아지는 경향이 확인됐습니다.",
-    "selectionReasonKo": "서로 다른 NSAID를 함께 복용하지 않도록 경고하는 규칙의 임상적 배경을 설명합니다.",
-    "limitationKo": "자발보고 자료는 보고 편향이 있고 발생률이나 인과관계를 직접 추정할 수 없습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/15103437/"
+    "doseInputConditions": [
+      "continuousDays"
+    ],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "나누어 복용한 과량 환자는 다발성 장기부전 위험이 커서 전문 간센터로 조기 이송을 고려해야 한다고 보고되었습니다.",
+    "selectionReasonKo": "한 번에 많이 먹는 것보다 나누어 오래 먹는 양상이 더 나쁠 수 있다는 점을 보여 줍니다.",
+    "limitationKo": "영국 단일기관 코호트이며 중증 간손상으로 입원한 환자만 대상입니다."
   },
   {
-    "pmid": "15049392",
-    "doi": "10.1016/S1081-1206(10)61566-9",
-    "title": "Antihistamines and driving ability: evidence from on-the-road driving studies during normal traffic",
-    "publicationYear": 2004,
-    "studyDesign": "실제 도로 주행시험 16건의 체계적 문헌고찰",
-    "evidenceRelation": "supports_caution",
+    "pmid": "22617049",
+    "doi": "10.1258/jrsm.2012.110330",
+    "title": "Proposed MHRA changes to UK children's paracetamol dosing recommendations: modelling study.",
+    "journal": "Journal of the Royal Society of Medicine",
+    "publicationYear": 2012,
+    "studyDesign": "용법 모델링 비교연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22617049/",
     "ruleTypes": [
-      "sedation_driving",
+      "age_restriction"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-008",
+        "ruleId": "OTC-RULE-005",
+        "ruleType": "age_restriction",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:7",
+        "locatorQuoteEn": "RESULTS: With the current product dosing instructions, underweight children are at risk of receiving approximately two times the recommended single and cumulative daily dose of paracetamol, particularly at age 1 year and 6 years.",
+        "keyFindingKo": "기존 제품 표기 용법으로는 저체중 소아가 권장 1회량·1일 총량의 약 두 배를 받을 위험이 있었고 1세와 6세에서 특히 두드러졌습니다.",
+        "selectionReasonKo": "연령 기준만으로 용량을 정할 때 생기는 오차를 보여 주므로 연령 제한 경고를 설명합니다.",
+        "limitationKo": "영국 제품 표기를 대상으로 한 모델링 연구이며 실제 복용 결과를 관찰하지 않았습니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [
+      "ageYears"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "기존 제품 표기 용법으로는 저체중 소아가 권장 1회량·1일 총량의 약 두 배를 받을 위험이 있었고 1세와 6세에서 특히 두드러졌습니다.",
+    "selectionReasonKo": "연령 기준만으로 용량을 정할 때 생기는 오차를 보여 주므로 연령 제한 경고를 설명합니다.",
+    "limitationKo": "영국 제품 표기를 대상으로 한 모델링 연구이며 실제 복용 결과를 관찰하지 않았습니다."
+  },
+  {
+    "pmid": "23747192",
+    "doi": "10.1016/j.legalmed.2013.04.002",
+    "title": "Accidental death of elderly persons under the influence of chlorpheniramine.",
+    "journal": "Legal medicine (Tokyo, Japan)",
+    "publicationYear": 2013,
+    "studyDesign": "부검 증례보고 2건",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23747192/",
+    "ruleTypes": [
       "sedative_medication"
     ],
-    "ingredientIds": [
-      "ING-chlorpheniramine_maleate",
-      "ING-cetirizine_hydrochloride"
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-016",
+        "ruleId": "OTC-RULE-013",
+        "ruleType": "sedative_medication",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:16",
+        "locatorQuoteEn": "This overdose would have been compounded by anti-histamine-induced drowsiness.",
+        "keyFindingKo": "이 사망 사례의 과량 복용은 항히스타민으로 인한 졸음이 겹쳐 악화되었을 것으로 판단되었습니다.",
+        "selectionReasonKo": "클로르페니라민 함유 감기약의 졸음이 다른 진정 요인과 겹칠 때의 위험을 보여 줍니다.",
+        "limitationKo": "부검 2건의 증례보고라 근거 수준이 낮고 인과관계를 일반화할 수 없습니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
     ],
-    "profileConditions": [],
-    "keyFindingKo": "1세대 항히스타민제는 일회 및 반복 투여 뒤 실제 도로 주행 수행을 유의하게 저하시켰고 일부 2세대 약물도 용량과 측정 시점에 따라 영향을 보였습니다.",
-    "selectionReasonKo": "감기약·알레르기약의 졸림 및 운전 주의가 왜 필요한지 설명합니다.",
-    "limitationKo": "검토된 개별 약물과 용량이 국내 제품의 성분·용량과 모두 같지는 않으므로 제품 허가사항을 대체하지 않습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/15049392/"
-  },
-  {
-    "pmid": "32455439",
-    "doi": "10.1055/s-0040-1710592",
-    "title": "Risk of Bleeding with Exposure to Warfarin and Nonsteroidal Anti-Inflammatory Drugs: A Systematic Review and Meta-Analysis",
-    "publicationYear": 2020,
-    "studyDesign": "11개 연구의 체계적 문헌고찰 및 메타분석",
+    "ingredientIds": [
+      "ING-chlorpheniramine_maleate"
+    ],
+    "profileConditions": [
+      "medications"
+    ],
+    "doseInputConditions": [],
     "evidenceRelation": "supports_caution",
-    "ruleTypes": [
-      "anticoagulant_antiplatelet",
-      "gi_bleeding_ulcer"
-    ],
-    "ingredientIds": [
-      "ING-dexibuprofen",
-      "ING-ibuprofen",
-      "ING-naproxen"
-    ],
-    "profileConditions": [],
-    "keyFindingKo": "와파린과 NSAID를 함께 사용한 경우 와파린 단독보다 위장관 출혈 오즈가 1.98배, 일반 출혈 오즈가 1.58배 높았습니다.",
-    "selectionReasonKo": "NSAID와 와파린 병용 시 출혈 주의의 정량적 배경을 제공합니다.",
-    "limitationKo": "포함 연구가 관찰연구 중심이고 NSAID 종류·용량별 위험을 국내 개별 제품에 그대로 적용할 수 없습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/32455439/"
+    "keyFindingKo": "이 사망 사례의 과량 복용은 항히스타민으로 인한 졸음이 겹쳐 악화되었을 것으로 판단되었습니다.",
+    "selectionReasonKo": "클로르페니라민 함유 감기약의 졸음이 다른 진정 요인과 겹칠 때의 위험을 보여 줍니다.",
+    "limitationKo": "부검 2건의 증례보고라 근거 수준이 낮고 인과관계를 일반화할 수 없습니다."
   },
   {
-    "pmid": "26159260",
-    "doi": "10.1159/000374090",
-    "title": "Acetaminophen: Dose-Dependent Drug Hepatotoxicity and Acute Liver Failure in Patients",
+    "pmid": "26022219",
+    "doi": "10.1007/s00228-015-1876-1",
+    "title": "Potential cardiovascular adverse events when phenylephrine is combined with paracetamol: simulation and narrative review.",
+    "journal": "European journal of clinical pharmacology",
     "publicationYear": 2015,
-    "studyDesign": "기전 및 임상 근거 문헌고찰",
-    "evidenceRelation": "supports_mechanism",
-    "ruleTypes": [
-      "max_daily_dose"
-    ],
-    "ingredientIds": [
-      "ING-acetaminophen"
-    ],
-    "profileConditions": [],
-    "keyFindingKo": "아세트아미노펜은 치료 용량에서는 대체로 안전하지만 의도적·비의도적 과량 복용 뒤 심한 간손상과 급성간부전을 일으킬 수 있는 용량 의존성 독성을 보입니다.",
-    "selectionReasonKo": "하루 총량 상한을 확인해야 하는 독성학적 배경을 설명합니다.",
-    "limitationKo": "문헌고찰은 기존 간질환 환자의 개인별 안전 용량을 산출하지 않으며 국내 허가 최대용량을 대체하지 않습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
+    "studyDesign": "시뮬레이션·서술적 종설",
+    "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/26159260/"
-  },
-  {
-    "pmid": "39412516",
-    "doi": "10.2478/rjim-2024-0029",
-    "title": "Non-steroidal anti-inflammatory drugs: what is the actual risk of chronic kidney disease? A systematic review and meta-analysis",
-    "publicationYear": 2025,
-    "studyDesign": "40개 연구 1757118명의 체계적 문헌고찰 및 메타분석",
-    "evidenceRelation": "supports_caution",
-    "ruleTypes": [
-      "renal_disease"
-    ],
-    "ingredientIds": [
-      "ING-dexibuprofen",
-      "ING-ibuprofen",
-      "ING-naproxen"
-    ],
-    "profileConditions": [],
-    "keyFindingKo": "장기간 NSAID 사용은 만성콩팥병의 발생 및 진행과 유의한 연관을 보였고 기존 만성콩팥병이 있는 사람에서 위험이 더 중요했습니다.",
-    "selectionReasonKo": "신장질환이 있을 때 NSAID 복용 전 전문가 확인이 필요한 배경을 설명합니다.",
-    "limitationKo": "장기 사용 연구를 묶은 결과이므로 단회 OTC 복용의 절대위험을 직접 제시하지 않습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/39412516/"
-  },
-  {
-    "pmid": "22851428",
-    "doi": "10.1002/j.1875-9114.2012.01122.x",
-    "title": "Effect of therapeutic doses of acetaminophen (up to 4 g/day) on serum alanine aminotransferase levels in subjects consuming ethanol: systematic review and meta-analysis of randomized controlled trials",
-    "publicationYear": 2012,
-    "studyDesign": "무작위 위약대조시험 6편의 체계적 문헌고찰 및 5편 메타분석",
-    "evidenceRelation": "contextualizes_uncertainty",
-    "ruleTypes": [
-      "alcohol"
-    ],
-    "ingredientIds": [
-      "ING-acetaminophen"
-    ],
-    "profileConditions": [],
-    "keyFindingKo": "에탄올을 섭취한 참가자에게 아세트아미노펜을 최대 4 g/일까지 단기간 투여한 시험에서 4일째 ALT 변화는 위약과 차이가 없었고 간부전이나 사망은 보고되지 않았습니다.",
-    "selectionReasonKo": "음주와 아세트아미노펜이 언제나 간손상을 일으킨다고 과장하지 않으면서 개인의 음주 패턴과 복용량을 확인해야 하는 이유를 설명합니다.",
-    "limitationKo": "단기간 시험과 검사수치 중심 결과라 지속적인 과음·영양불량·기존 간질환·최대용량 초과 상황의 위험을 판단하지 못합니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/22851428/"
-  },
-  {
-    "pmid": "3511825",
-    "doi": "10.7326/0003-4819-104-3-399",
-    "title": "Acetaminophen hepatotoxicity in alcoholics. A therapeutic misadventure",
-    "publicationYear": 1986,
-    "studyDesign": "만성 알코올 사용자 사례 6명과 문헌 사례 19명의 사례군·문헌고찰",
-    "evidenceRelation": "supports_caution",
-    "ruleTypes": [
-      "alcohol"
-    ],
-    "ingredientIds": [
-      "ING-acetaminophen"
-    ],
-    "profileConditions": [],
-    "keyFindingKo": "만성 알코올 사용자가 겉보기에 중등도 용량의 아세트아미노펜을 복용한 뒤 심한 간손상을 보인 25건을 기술했습니다.",
-    "selectionReasonKo": "정기적인 과음과 영양불량 상황에서 허가사항이 복용 전 상담을 요구하는 임상적 배경을 설명합니다.",
-    "limitationKo": "오래된 사례보고 중심 자료이며 실제 복용량·동시 복용·영양 상태가 불완전해 일회 음주의 위험이나 발생률을 계산하지 못합니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/3511825/"
-  },
-  {
-    "pmid": "31206302",
-    "doi": "10.1080/15360288.2019.1611692",
-    "title": "A Systematic Review of the Evidence Behind Use of Reduced Doses of Acetaminophen in Chronic Liver Disease",
-    "publicationYear": 2018,
-    "studyDesign": "12개 연구와 4개 초록의 체계적 문헌고찰",
-    "evidenceRelation": "contextualizes_uncertainty",
-    "ruleTypes": [
-      "hepatic_disease"
-    ],
-    "ingredientIds": [
-      "ING-acetaminophen"
-    ],
-    "profileConditions": [],
-    "keyFindingKo": "간질환 환자의 아세트아미노펜 감량 기준을 뒷받침하는 근거의 확실성은 낮았고 보상성 간기능장애에서는 환자별 요인을 평가해야 한다고 결론냈습니다.",
-    "selectionReasonKo": "사이트가 간질환만으로 개인의 안전 용량을 임의로 정하지 않고 추가 확인을 요구하는 이유를 설명합니다.",
-    "limitationKo": "소규모 약동학 연구가 대부분이며 비보상성 간경변이나 급성 간손상에 일반화하거나 특정 감량 수치를 확정할 수 없습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/31206302/"
-  },
-  {
-    "pmid": "17264159",
-    "doi": "10.1345/aph.1H679",
-    "title": "Efficacy and safety of oral phenylephrine: systematic review and meta-analysis",
-    "publicationYear": 2007,
-    "studyDesign": "경구 페닐레프린 단일제 무작위 위약대조시험의 체계적 문헌고찰 및 메타분석",
-    "evidenceRelation": "contextualizes_uncertainty",
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26022219/",
     "ruleTypes": [
       "decongestant_hypertension"
     ],
-    "ingredientIds": [
-      "ING-mf-src-4b985f9d3bdb"
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-017",
+        "ruleId": "OTC-RULE-014",
+        "ruleType": "decongestant_hypertension",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:14",
+        "locatorQuoteEn": "CONCLUSIONS: Combination paracetamol phenylephrine oral therapy has potential to increase blood pressure more than phenylephrine alone in those with cardiovascular compromise.",
+        "keyFindingKo": "페닐레프린과 파라세타몰 경구 복합요법은 심혈관 여력이 낮은 사람에서 페닐레프린 단독보다 혈압을 더 올릴 수 있습니다.",
+        "selectionReasonKo": "판콜에이내복액처럼 페닐레프린과 아세트아미노펜이 함께 든 제품에서 고혈압 주의가 필요한 이유를 설명합니다.",
+        "limitationKo": "시뮬레이션과 서술적 종설이며 실제 환자 대상 임상 결과가 아닙니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
     ],
-    "profileConditions": [],
-    "keyFindingKo": "25 mg 이하 경구 페닐레프린에서 심박수나 혈압의 일관된 변화는 확인되지 않았고 비처방 비충혈제거 효과를 뒷받침하는 근거도 충분하지 않았습니다.",
-    "selectionReasonKo": "판콜에이의 경구 페닐레프린과 성분·투여경로가 일치하며 고혈압 환자의 개인 위험을 현재 연구로 확정할 수 없는 이유를 설명합니다.",
-    "limitationKo": "오래된 미출판 자료 비중이 높고 고혈압 환자·복합 감기약·심혈관 사건을 직접 평가하지 않았습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/17264159/"
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [
+      "hypertensionOrCardiovascularDisease"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "페닐레프린과 파라세타몰 경구 복합요법은 심혈관 여력이 낮은 사람에서 페닐레프린 단독보다 혈압을 더 올릴 수 있습니다.",
+    "selectionReasonKo": "판콜에이내복액처럼 페닐레프린과 아세트아미노펜이 함께 든 제품에서 고혈압 주의가 필요한 이유를 설명합니다.",
+    "limitationKo": "시뮬레이션과 서술적 종설이며 실제 환자 대상 임상 결과가 아닙니다."
   },
   {
-    "pmid": "16638921",
-    "doi": "10.1345/aph.1G428",
-    "title": "Nonsteroidal antiinflammatory drugs during third trimester and the risk of premature closure of the ductus arteriosus: a meta-analysis",
-    "publicationYear": 2006,
-    "studyDesign": "8개 연구 438명의 체계적 문헌고찰 및 메타분석",
+    "pmid": "26149538",
+    "doi": "10.1002/pds.3830",
+    "title": "Patterns of acetaminophen medication use associated with exceeding the recommended maximum daily dose.",
+    "journal": "Pharmacoepidemiology and drug safety",
+    "publicationYear": 2015,
+    "studyDesign": "7일 약물일지 기반 관찰연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26149538/",
+    "ruleTypes": [
+      "duplicate_ingredient",
+      "max_daily_dose"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-002",
+        "ruleId": "OTC-RULE-001",
+        "ruleType": "duplicate_ingredient",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:8",
+        "locatorQuoteEn": "As expected, days when intake exceeded 4 g were almost always (92%) marked by deviations from label directions-exceeding the one-time dose, re-dosing too soon, and concomitant use of multiple acetaminophen medications.",
+        "keyFindingKo": "하루 4 g을 넘긴 날의 92%에는 1회량 초과, 너무 이른 재복용, 아세트아미노펜 제품 동시 사용 중 하나 이상이 있었습니다.",
+        "selectionReasonKo": "중복 복용이 단독으로 일어나지 않고 용량·간격 이탈과 함께 나타난다는 점을 보여 줍니다.",
+        "limitationKo": "미국 성인 패널의 7일 자기기록 관찰연구이며 인과관계를 확인한 연구가 아닙니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      },
+      {
+        "linkId": "OTC-LIT-LINK-005",
+        "ruleId": "OTC-RULE-003",
+        "ruleType": "max_daily_dose",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:7",
+        "locatorQuoteEn": "RESULTS: Acetaminophen intake exceeded 4 g on 3.1% of usage days; median intake on those days was 5.5 g.",
+        "keyFindingKo": "아세트아미노펜 섭취가 4 g을 넘은 날은 전체 사용일의 3.1%였고 그런 날의 중앙 섭취량은 5.5 g이었습니다.",
+        "selectionReasonKo": "허가 상한 초과가 드물지 않으며 초과 시 상한을 크게 웃돈다는 점을 수치로 보여 줍니다.",
+        "limitationKo": "미국 성인 패널 관찰연구이며 국내 제품·허가 기준과 다릅니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [],
+    "doseInputConditions": [],
     "evidenceRelation": "supports_caution",
+    "keyFindingKo": "하루 4 g을 넘긴 날의 92%에는 1회량 초과, 너무 이른 재복용, 아세트아미노펜 제품 동시 사용 중 하나 이상이 있었습니다.",
+    "selectionReasonKo": "중복 복용이 단독으로 일어나지 않고 용량·간격 이탈과 함께 나타난다는 점을 보여 줍니다.",
+    "limitationKo": "미국 성인 패널의 7일 자기기록 관찰연구이며 인과관계를 확인한 연구가 아닙니다."
+  },
+  {
+    "pmid": "26460177",
+    "doi": "10.1111/bcp.12802",
+    "title": "Can paracetamol (acetaminophen) be administered to patients with liver impairment?",
+    "journal": "British journal of clinical pharmacology",
+    "publicationYear": 2016,
+    "studyDesign": "서술적 종설",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26460177/",
+    "ruleTypes": [
+      "hepatic_disease"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-010",
+        "ruleId": "OTC-RULE-007",
+        "ruleType": "hepatic_disease",
+        "ruleReleased": true,
+        "evidenceRelation": "contextualizes_uncertainty",
+        "locator": "abstract:sentence:2",
+        "locatorQuoteEn": "Fulminant hepatic failure has been a well documented consequence of paracetamol overdose since its introduction, while short and long term use have both been associated with elevation of liver transaminases, a surrogate marker for acute liver injury.",
+        "keyFindingKo": "파라세타몰 과량은 전격간부전으로 이어질 수 있고, 단기·장기 사용 모두 간효소 상승과 연관되어 보고되었습니다.",
+        "selectionReasonKo": "간질환자에서 아세트아미노펜 사용을 제한해 온 근거와 그 불확실성을 함께 설명합니다.",
+        "limitationKo": "종설이며 만성 간질환자 대상 권고를 확정하지 않았습니다.",
+        "authorizationAlignment": "conflict",
+        "authorizationNoteKo": "같은 초록은 과소용량이 오히려 효과를 못 내게 할 수 있다고 적어 무조건적 제한에 이의를 답니다. 허가원문의 간장애 주의를 그대로 두고 이 견해차를 conflict 로 보존합니다."
+      }
+    ],
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [
+      "liverDisease"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "contextualizes_uncertainty",
+    "keyFindingKo": "파라세타몰 과량은 전격간부전으로 이어질 수 있고, 단기·장기 사용 모두 간효소 상승과 연관되어 보고되었습니다.",
+    "selectionReasonKo": "간질환자에서 아세트아미노펜 사용을 제한해 온 근거와 그 불확실성을 함께 설명합니다.",
+    "limitationKo": "종설이며 만성 간질환자 대상 권고를 확정하지 않았습니다."
+  },
+  {
+    "pmid": "26739516",
+    "doi": "10.1016/j.phrs.2015.12.026",
+    "title": "Risk of gastrointestinal complications associated to NSAIDs, low-dose aspirin and their combinations: Results of a pharmacovigilance reporting system.",
+    "journal": "Pharmacological research",
+    "publicationYear": 2016,
+    "studyDesign": "자발보고 약물감시 자료 case/non-case 분석",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26739516/",
+    "ruleTypes": [
+      "duplicate_pharmacologic_class"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-003",
+        "ruleId": "OTC-RULE-002",
+        "ruleType": "duplicate_pharmacologic_class",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:13",
+        "locatorQuoteEn": "The highest associations were found for the combined use of NSAIDs and/or LDA, whilst the lowest associations were for their respective monotherapy.",
+        "keyFindingKo": "위장관 이상반응과의 연관성은 NSAID와 저용량 아스피린을 함께 쓴 경우에 가장 높았고 각각 단독 사용에서 가장 낮았습니다.",
+        "selectionReasonKo": "같은 계열을 겹쳐 쓰는 것이 단독 사용보다 위험 신호가 크다는 점을 설명합니다.",
+        "limitationKo": "이탈리아 자발보고 자료의 보고오즈비여서 발생률이 아니며 보고 편향이 있습니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-ibuprofen",
+      "ING-dexibuprofen",
+      "ING-naproxen"
+    ],
+    "profileConditions": [],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "위장관 이상반응과의 연관성은 NSAID와 저용량 아스피린을 함께 쓴 경우에 가장 높았고 각각 단독 사용에서 가장 낮았습니다.",
+    "selectionReasonKo": "같은 계열을 겹쳐 쓰는 것이 단독 사용보다 위험 신호가 크다는 점을 설명합니다.",
+    "limitationKo": "이탈리아 자발보고 자료의 보고오즈비여서 발생률이 아니며 보고 편향이 있습니다."
+  },
+  {
+    "pmid": "26999510",
+    "doi": "10.1002/hup.2524",
+    "title": "A simulated car-driving study on the effects of acute administration of levocetirizine, fexofenadine, and diphenhydramine in healthy Japanese volunteers.",
+    "journal": "Human psychopharmacology",
+    "publicationYear": 2016,
+    "studyDesign": "이중눈가림 무작위배정 교차시험",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/26999510/",
+    "ruleTypes": [
+      "sedation_driving"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-013",
+        "ruleId": "OTC-RULE-010",
+        "ruleType": "sedation_driving",
+        "ruleReleased": true,
+        "evidenceRelation": "contextualizes_uncertainty",
+        "locator": "abstract:sentence:10",
+        "locatorQuoteEn": "CONCLUSIONS: Levocetirizine and fexofenadine did not impair psychomotor performance in subjects performing simulated car-driving tasks, while diphenhydramine did impair psychomotor performance in the subjects.",
+        "keyFindingKo": "레보세티리진과 펙소페나딘은 모의 운전 과제에서 정신운동 수행을 떨어뜨리지 않았고 디펜히드라민은 떨어뜨렸습니다.",
+        "selectionReasonKo": "졸림 유발 정도가 항히스타민 세대에 따라 다르다는 점을 보여 줍니다.",
+        "limitationKo": "건강한 일본인 대상 단회 투여 무작위배정 시험이며 실제 도로 주행이 아닙니다.",
+        "authorizationAlignment": "conflict",
+        "authorizationNoteKo": "허가원문은 세티리진 제품에도 운전 시 용량 초과 금지와 졸음 가능성을 적습니다. 이 연구는 2세대 항히스타민의 수행 저하를 관찰하지 못했으므로 허가 문구와 어긋나며, 허가 판정을 바꾸지 않고 conflict 로 보존합니다."
+      }
+    ],
+    "ingredientIds": [
+      "ING-cetirizine_hydrochloride",
+      "ING-chlorpheniramine_maleate"
+    ],
+    "profileConditions": [
+      "willDrive"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "contextualizes_uncertainty",
+    "keyFindingKo": "레보세티리진과 펙소페나딘은 모의 운전 과제에서 정신운동 수행을 떨어뜨리지 않았고 디펜히드라민은 떨어뜨렸습니다.",
+    "selectionReasonKo": "졸림 유발 정도가 항히스타민 세대에 따라 다르다는 점을 보여 줍니다.",
+    "limitationKo": "건강한 일본인 대상 단회 투여 무작위배정 시험이며 실제 도로 주행이 아닙니다."
+  },
+  {
+    "pmid": "29516533",
+    "doi": "10.1111/bcp.13551",
+    "title": "Prevalence of exceeding maximum daily dose of paracetamol, and seasonal variations in cold-flu season.",
+    "journal": "British journal of clinical pharmacology",
+    "publicationYear": 2018,
+    "studyDesign": "7일 약물일지 기반 관찰연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29516533/",
+    "ruleTypes": [
+      "max_daily_dose"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-004",
+        "ruleId": "OTC-RULE-003",
+        "ruleType": "max_daily_dose",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:10",
+        "locatorQuoteEn": "CONCLUSIONS: Paracetamol use and over-dosing increases in CFS, primarily due to increased use of over-the-counter combinations treating upper respiratory cold/flu symptoms.",
+        "keyFindingKo": "감기·독감 시즌에 파라세타몰 사용과 과량 복용이 늘었고, 주된 이유는 상기도 증상용 일반의약품 복합제 사용 증가였습니다.",
+        "selectionReasonKo": "종합감기약과 해열진통제를 함께 쓸 때 하루 총량이 넘어가는 경로를 보여 줍니다.",
+        "limitationKo": "미국 온라인 패널의 자기기록이며 국내 허가 상한 자체를 정하지 않습니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "감기·독감 시즌에 파라세타몰 사용과 과량 복용이 늘었고, 주된 이유는 상기도 증상용 일반의약품 복합제 사용 증가였습니다.",
+    "selectionReasonKo": "종합감기약과 해열진통제를 함께 쓸 때 하루 총량이 넘어가는 경로를 보여 줍니다.",
+    "limitationKo": "미국 온라인 패널의 자기기록이며 국내 허가 상한 자체를 정하지 않습니다."
+  },
+  {
+    "pmid": "30030041",
+    "doi": "10.1016/j.japh.2018.05.012",
+    "title": "Exceeding the maximum daily dose of acetaminophen with use of different single-ingredient OTC formulations.",
+    "journal": "Journal of the American Pharmacists Association : JAPhA",
+    "publicationYear": 2018,
+    "studyDesign": "다년도 약물일지 기반 관찰연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30030041/",
+    "ruleTypes": [
+      "minimum_interval"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-006",
+        "ruleId": "OTC-RULE-004",
+        "ruleType": "minimum_interval",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:7",
+        "locatorQuoteEn": "Users of 650-mg ER formulations were significantly less likely to know their dosing interval of 8 hours (33% vs. 49%; P < 0.0001) and more likely to redose too soon (26% vs. 10%; P < 0.0001) and to use other acetaminophen medications concomitantly (14% vs. 7%; P < 0.0001).",
+        "keyFindingKo": "650 mg 서방정 사용자는 8시간 복용 간격을 아는 비율이 낮았고 너무 이른 재복용이 더 잦았습니다.",
+        "selectionReasonKo": "복용 간격을 모르면 재복용이 앞당겨진다는 연결을 보여 주므로 최소 간격 경고의 배경입니다.",
+        "limitationKo": "미국 성인 자기기록 관찰연구이고 대상 제형이 국내 허가 제형과 다릅니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [],
+    "doseInputConditions": [
+      "hoursSincePreviousDose"
+    ],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "650 mg 서방정 사용자는 8시간 복용 간격을 아는 비율이 낮았고 너무 이른 재복용이 더 잦았습니다.",
+    "selectionReasonKo": "복용 간격을 모르면 재복용이 앞당겨진다는 연결을 보여 주므로 최소 간격 경고의 배경입니다.",
+    "limitationKo": "미국 성인 자기기록 관찰연구이고 대상 제형이 국내 허가 제형과 다릅니다."
+  },
+  {
+    "pmid": "30306812",
+    "doi": "10.1080/15563650.2018.1517879",
+    "title": "Poison center exposures due to therapeutic misuse of nonprescription acetaminophen-containing combination products in the United States 2007-2016.",
+    "journal": "Clinical toxicology (Philadelphia, Pa.)",
+    "publicationYear": 2019,
+    "studyDesign": "중독관리센터 신고 자료 후향 관찰연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30306812/",
+    "ruleTypes": [
+      "duplicate_ingredient"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-001",
+        "ruleId": "OTC-RULE-001",
+        "ruleType": "duplicate_ingredient",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:10",
+        "locatorQuoteEn": "More than one acetaminophen-containing product was involved in 24.8% of exposures.",
+        "keyFindingKo": "미국 중독관리센터에 접수된 아세트아미노펜 복합제 치료적 오용 사례의 24.8%에서 아세트아미노펜 함유 제품이 두 개 이상 함께 쓰였습니다.",
+        "selectionReasonKo": "같은 성분이 여러 제품에 겹치는 상황이 실제로 과량 노출로 이어진다는 것을 보여 주므로 성분 중복 경고의 배경 설명에 씁니다.",
+        "limitationKo": "미국 중독관리센터 신고 자료라서 국내 복용 실태나 개인의 위험도를 정하지 않습니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "미국 중독관리센터에 접수된 아세트아미노펜 복합제 치료적 오용 사례의 24.8%에서 아세트아미노펜 함유 제품이 두 개 이상 함께 쓰였습니다.",
+    "selectionReasonKo": "같은 성분이 여러 제품에 겹치는 상황이 실제로 과량 노출로 이어진다는 것을 보여 주므로 성분 중복 경고의 배경 설명에 씁니다.",
+    "limitationKo": "미국 중독관리센터 신고 자료라서 국내 복용 실태나 개인의 위험도를 정하지 않습니다."
+  },
+  {
+    "pmid": "33333080",
+    "doi": "10.1016/j.jtbi.2020.110559",
+    "title": "The role of alcohol consumption on acetaminophen induced liver injury: Implications from a mathematical model.",
+    "journal": "Journal of theoretical biology",
+    "publicationYear": 2021,
+    "studyDesign": "수학적 모델링 연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33333080/",
+    "ruleTypes": [
+      "alcohol"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-014",
+        "ruleId": "OTC-RULE-011",
+        "ruleType": "alcohol",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_mechanism",
+        "locator": "abstract:sentence:3",
+        "locatorQuoteEn": "Chronic alcoholism may potentiate APAP hepatotoxicity and this increased risk of APAP toxicity is observed when APAP is ingested even shortly after alcohol is cleared from the body.",
+        "keyFindingKo": "만성 음주는 아세트아미노펜 간독성을 강화할 수 있고, 알코올이 체내에서 빠진 직후에 복용해도 위험이 올라가는 것으로 관찰됩니다.",
+        "selectionReasonKo": "음주와 아세트아미노펜을 함께 쓸 때 주의하는 이유를 대사 기전으로 설명합니다.",
+        "limitationKo": "수학적 모델링 연구이며 임상시험으로 확인한 결과가 아닙니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-acetaminophen"
+    ],
+    "profileConditions": [
+      "alcohol"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_mechanism",
+    "keyFindingKo": "만성 음주는 아세트아미노펜 간독성을 강화할 수 있고, 알코올이 체내에서 빠진 직후에 복용해도 위험이 올라가는 것으로 관찰됩니다.",
+    "selectionReasonKo": "음주와 아세트아미노펜을 함께 쓸 때 주의하는 이유를 대사 기전으로 설명합니다.",
+    "limitationKo": "수학적 모델링 연구이며 임상시험으로 확인한 결과가 아닙니다."
+  },
+  {
+    "pmid": "33662136",
+    "doi": "10.1001/jamanetworkopen.2021.0775",
+    "title": "Association of Ibuprofen Prescription With Acute Kidney Injury Among Hospitalized Children in China.",
+    "journal": "JAMA network open",
+    "publicationYear": 2021,
+    "studyDesign": "다기관 후향 코호트 연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33662136/",
+    "ruleTypes": [
+      "renal_disease"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-011",
+        "ruleId": "OTC-RULE-008",
+        "ruleType": "renal_disease",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:14",
+        "locatorQuoteEn": "Ibuprofen use was associated with a greater hazard in children who had chronic kidney disease vs those without (HR, 2.31 [95% CI, 1.73-3.10] vs 1.19 [95% CI, 1.09-1.29]), required intensive care vs those without this need (HR, 1.47 [95% CI, 1.24-1.75] vs 1.18 [95% CI, 1.07-1.29]), or were older vs younger (>10 years and >1 year to 10 years vs 1 month to 1 year) (HR, 1.64 [95% CI, 1.32-2.05]; 1.36 [95% CI, 1.23-1.52] vs 0.99 [95% CI, 0.86-1.13]).",
+        "keyFindingKo": "이부프로펜 사용은 만성콩팥병이 있는 소아에서 없는 소아보다 급성신손상 위험이 더 크게 나타났습니다.",
+        "selectionReasonKo": "기존 신장질환이 있을 때 NSAID의 신손상 위험이 커진다는 점을 직접 보여 줍니다.",
+        "limitationKo": "중국 입원 소아 코호트라 국내 외래 자가 복용 상황과 다릅니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-ibuprofen",
+      "ING-dexibuprofen",
+      "ING-naproxen"
+    ],
+    "profileConditions": [
+      "kidneyDisease"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "이부프로펜 사용은 만성콩팥병이 있는 소아에서 없는 소아보다 급성신손상 위험이 더 크게 나타났습니다.",
+    "selectionReasonKo": "기존 신장질환이 있을 때 NSAID의 신손상 위험이 커진다는 점을 직접 보여 줍니다.",
+    "limitationKo": "중국 입원 소아 코호트라 국내 외래 자가 복용 상황과 다릅니다."
+  },
+  {
+    "pmid": "39551938",
+    "doi": "10.1093/eurheartj/ehae736",
+    "title": "Bleeding risk using non-steroidal anti-inflammatory drugs with anticoagulants after venous thromboembolism: a nationwide Danish study.",
+    "journal": "European heart journal",
+    "publicationYear": 2025,
+    "studyDesign": "전국 코호트 연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39551938/",
+    "ruleTypes": [
+      "anticoagulant_antiplatelet"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-015",
+        "ruleId": "OTC-RULE-012",
+        "ruleType": "anticoagulant_antiplatelet",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:8",
+        "locatorQuoteEn": "CONCLUSIONS: Patients treated with oral anticoagulants for VTE had a more than two-fold increased bleeding rate when using NSAIDs.",
+        "keyFindingKo": "정맥혈전색전증으로 경구 항응고제를 쓰는 환자가 NSAID를 함께 복용하면 출혈 발생률이 두 배 이상이었습니다.",
+        "selectionReasonKo": "항응고제 복용자에서 NSAID 병용 시 출혈 위험이 커진다는 점을 대규모 코호트로 보여 줍니다.",
+        "limitationKo": "덴마크 처방 코호트이며 정맥혈전색전증 환자 집단이라 일반 일반의약품 사용자와 다릅니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
+    ],
+    "ingredientIds": [
+      "ING-ibuprofen",
+      "ING-dexibuprofen",
+      "ING-naproxen"
+    ],
+    "profileConditions": [
+      "medications"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "정맥혈전색전증으로 경구 항응고제를 쓰는 환자가 NSAID를 함께 복용하면 출혈 발생률이 두 배 이상이었습니다.",
+    "selectionReasonKo": "항응고제 복용자에서 NSAID 병용 시 출혈 위험이 커진다는 점을 대규모 코호트로 보여 줍니다.",
+    "limitationKo": "덴마크 처방 코호트이며 정맥혈전색전증 환자 집단이라 일반 일반의약품 사용자와 다릅니다."
+  },
+  {
+    "pmid": "39714827",
+    "doi": "10.1001/jamapediatrics.2024.4409",
+    "title": "Gestational Exposure to Nonsteroidal Anti-Inflammatory Drugs and Risk of Chronic Kidney Disease in Childhood.",
+    "journal": "JAMA pediatrics",
+    "publicationYear": 2025,
+    "studyDesign": "전국 출생 코호트 연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39714827/",
     "ruleTypes": [
       "pregnancy_lactation"
     ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-009",
+        "ruleId": "OTC-RULE-006",
+        "ruleType": "pregnancy_lactation",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:16",
+        "locatorQuoteEn": "However, the findings underscore the need for caution when prescribing NSAIDs during pregnancy, particularly indomethacin and ketorolac in the first trimester, mefenamic acid and diclofenac in the second trimester, and ibuprofen in the third trimester, to ensure the safety of the offspring's kidneys.",
+        "keyFindingKo": "임신 중 NSAID 처방에는 주의가 필요하며, 특히 3분기 이부프로펜에서 소아 만성콩팥병 위험이 높게 나타났습니다.",
+        "selectionReasonKo": "임신 중 NSAID 노출과 태아 신장 결과를 대규모 코호트로 다룬 자료라 임신 경고의 배경입니다.",
+        "limitationKo": "대만 처방 자료 기반 코호트이며 일반의약품 자가 복용이 아니라 처방 노출을 봤습니다.",
+        "authorizationAlignment": "conflict",
+        "authorizationNoteKo": "같은 초록의 결론 앞 문장(문장 15)은 형제 비교에서는 위험 증가가 뚜렷하지 않았다고 적습니다. 허가원문은 임신 말기 투여를 제한하므로 문헌이 허가 판정을 완화하지 않도록 conflict 로 보존합니다."
+      }
+    ],
     "ingredientIds": [
-      "ING-dexibuprofen",
       "ING-ibuprofen",
+      "ING-dexibuprofen",
       "ING-naproxen"
     ],
     "profileConditions": [
       "pregnant"
     ],
-    "keyFindingKo": "임신 3분기 NSAID 노출군에서 태아 동맥관 수축·폐쇄 오즈가 대조군보다 높았습니다(OR 15.04, 95% CI 3.29–68.68).",
-    "selectionReasonKo": "이부프로펜 허가사항의 임신 말기 태아 동맥관 조기 폐쇄 경고를 NSAID 계열 임상 근거로 설명합니다.",
-    "limitationKo": "포함 자료는 주로 인도메타신을 조산 억제 목적으로 사용한 연구이며 경구 OTC 이부프로펜 단기 복용의 절대위험이나 수유 위험을 계산하지 못합니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/16638921/"
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "임신 중 NSAID 처방에는 주의가 필요하며, 특히 3분기 이부프로펜에서 소아 만성콩팥병 위험이 높게 나타났습니다.",
+    "selectionReasonKo": "임신 중 NSAID 노출과 태아 신장 결과를 대규모 코호트로 다룬 자료라 임신 경고의 배경입니다.",
+    "limitationKo": "대만 처방 자료 기반 코호트이며 일반의약품 자가 복용이 아니라 처방 노출을 봤습니다."
   },
   {
-    "pmid": "30661313",
-    "doi": "10.4168/aair.2019.11.2.212",
-    "title": "Phenotypes of Severe Cutaneous Adverse Reactions Caused by Nonsteroidal Anti-inflammatory Drugs",
-    "publicationYear": 2019,
-    "studyDesign": "국내 27개 대학병원 중증 피부 이상반응 등록자료 후향 연구",
-    "evidenceRelation": "supports_caution",
+    "pmid": "40579172",
+    "doi": "10.1093/ced/llaf278",
+    "title": "Drug-induced Stevens-Johnson syndrome and toxic epidermal necrolysis: a 10-year retrospective study of 103 cases.",
+    "journal": "Clinical and experimental dermatology",
+    "publicationYear": 2025,
+    "studyDesign": "단일기관 10년 후향 연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40579172/",
     "ruleTypes": [
       "urgent_referral"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-020",
+        "ruleId": "OTC-RULE-016",
+        "ruleType": "urgent_referral",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:1",
+        "locatorQuoteEn": "BACKGROUND: Stevens-Johnson syndrome (SJS) and toxic epidermal necrolysis (TEN) are rare, life-threatening conditions with high mortality, most frequently caused by drugs.",
+        "keyFindingKo": "스티븐스-존슨 증후군과 독성표피괴사융해증은 드물지만 치명률이 높은 생명을 위협하는 상태이며 대부분 약물이 원인입니다.",
+        "selectionReasonKo": "즉시 상담·진료가 필요한 중대 이상 증상 경고가 어떤 상태를 겨냥하는지 설명합니다.",
+        "limitationKo": "중국 3차병원 10년 후향 연구이며 일반의약품 사용자에서의 발생률을 알려 주지 않습니다.",
+        "authorizationAlignment": "consistent",
+        "authorizationNoteKo": ""
+      }
     ],
     "ingredientIds": [
       "ING-acetaminophen",
       "ING-ibuprofen"
     ],
-    "profileConditions": [],
-    "keyFindingKo": "NSAID 관련 중증 피부 이상반응 170건에는 SJS 85건·TEN 32건·SJS/TEN 중첩 17건·DRESS 36건이 포함됐고 아세트아미노펜 관련 사례는 38건이었습니다.",
-    "selectionReasonKo": "심한 피부·점막 증상이 나타날 때 복용을 중단하고 즉시 진료해야 하는 허가 경고의 임상적 배경을 설명합니다.",
-    "limitationKo": "사용자 수 분모가 없는 후향 등록자료라 발생률이나 확정 인과관계를 계산하지 못하고 감염 초기 증상에 따른 역인과 가능성이 있습니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/30661313/"
+    "profileConditions": [
+      "redFlagSymptoms"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "스티븐스-존슨 증후군과 독성표피괴사융해증은 드물지만 치명률이 높은 생명을 위협하는 상태이며 대부분 약물이 원인입니다.",
+    "selectionReasonKo": "즉시 상담·진료가 필요한 중대 이상 증상 경고가 어떤 상태를 겨냥하는지 설명합니다.",
+    "limitationKo": "중국 3차병원 10년 후향 연구이며 일반의약품 사용자에서의 발생률을 알려 주지 않습니다."
   },
   {
-    "pmid": "1834002",
-    "doi": "10.7326/0003-4819-115-10-787",
-    "title": "Risk for serious gastrointestinal complications related to use of nonsteroidal anti-inflammatory drugs. A meta-analysis",
-    "publicationYear": 1991,
-    "studyDesign": "16개 환자-대조군·코호트 연구의 메타분석",
-    "evidenceRelation": "supports_caution",
+    "pmid": "41803773",
+    "doi": "10.1186/s12889-026-26610-2",
+    "title": "Unintentional paediatric paracetamol overdose: a retrospective observational study of dosing errors reported to an Australian Poisons Information Centre.",
+    "journal": "BMC public health",
+    "publicationYear": 2026,
+    "studyDesign": "중독정보센터 자료 후향 관찰연구",
+    "evidenceAuthority": "literature_explanatory_only",
+    "supportsRuleRelease": false,
+    "reviewStatus": "agent_curated_from_v40_retained_corpus",
+    "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41803773/",
     "ruleTypes": [
-      "gi_bleeding_ulcer"
+      "age_restriction"
+    ],
+    "ruleLinks": [
+      {
+        "linkId": "OTC-LIT-LINK-007",
+        "ruleId": "OTC-RULE-005",
+        "ruleType": "age_restriction",
+        "ruleReleased": true,
+        "evidenceRelation": "supports_caution",
+        "locator": "abstract:sentence:11",
+        "locatorQuoteEn": "A communication error between caregivers and strength/formulation selection errors were the most frequently cited reasons for error.",
+        "keyFindingKo": "소아 파라세타몰 투약 오류의 가장 흔한 원인은 보호자 간 의사소통 착오와 함량·제형 선택 오류였습니다.",
+        "selectionReasonKo": "연령·제형이 맞지 않는 제품을 고르는 것이 실제 오류의 주된 경로임을 보여 줍니다.",
+        "limitationKo": "호주 중독정보센터 신고 자료의 후향 관찰연구이며 12세 미만만 대상입니다.",
+        "authorizationAlignment": "conflict",
+        "authorizationNoteKo": "같은 초록의 결론(문장 15)은 소아 투약 오류가 간독성·사망으로 이어지는 경우는 드물다고 적어, 연령 기준을 두는 허가 문구보다 결과 심각도를 낮게 봅니다. 허가원문의 연령 기준을 그대로 두고 이 견해차를 지우지 않고 함께 보존합니다."
+      }
     ],
     "ingredientIds": [
-      "ING-dexibuprofen",
-      "ING-ibuprofen",
-      "ING-naproxen"
+      "ING-acetaminophen"
     ],
-    "profileConditions": [],
-    "keyFindingKo": "NSAID 사용자의 중대한 위장관계 이상사건 오즈는 비사용자보다 2.74배였고, 이전 위장관계 사건이 있는 사람의 후속 또는 미분류 사건 상대위험은 4.76이었습니다.",
-    "selectionReasonKo": "위장관 출혈·궤양 병력을 입력했을 때 NSAID 복용 전 추가 확인이 필요한 이유를 직접 설명합니다.",
-    "limitationKo": "1975~1990년 연구의 요약값으로 제품·용량별 차이와 현재 국내 OTC 단기 복용의 절대위험을 계산하지 못합니다.",
-    "reviewStatus": "codex_curated_supporting_not_rule_release_evidence",
-    "supportsRuleRelease": false,
-    "url": "https://pubmed.ncbi.nlm.nih.gov/1834002/"
+    "profileConditions": [
+      "ageYears"
+    ],
+    "doseInputConditions": [],
+    "evidenceRelation": "supports_caution",
+    "keyFindingKo": "소아 파라세타몰 투약 오류의 가장 흔한 원인은 보호자 간 의사소통 착오와 함량·제형 선택 오류였습니다.",
+    "selectionReasonKo": "연령·제형이 맞지 않는 제품을 고르는 것이 실제 오류의 주된 경로임을 보여 줍니다.",
+    "limitationKo": "호주 중독정보센터 신고 자료의 후향 관찰연구이며 12세 미만만 대상입니다."
   }
 ]

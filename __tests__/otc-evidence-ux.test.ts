@@ -192,10 +192,10 @@ describe("OTC evidence presentation", () => {
 
   it("matches supporting papers by rule and ingredient without changing the finding", () => {
     const finding: SafetyFinding = {
-      findingId: "sedation-driving:P1",
-      ruleType: "sedation_driving",
+      findingId: "sedative-medication:P1",
+      ruleType: "sedative_medication",
       severity: "high",
-      titleKo: "졸림과 운전 주의를 확인하세요",
+      titleKo: "진정 작용이 겹칩니다",
       detailKo: "검증 상세",
       nextActionKo: "상담하세요.",
       productIds: ["P1"],
@@ -205,9 +205,11 @@ describe("OTC evidence presentation", () => {
     const matched = supportingLiteratureForFinding(
       finding,
       literatureData as SupportingLiterature[],
+      { medications: ["졸피뎀"], redFlagSymptoms: [] },
     );
-    expect(matched.map((item) => item.pmid)).toContain("15049392");
-    expect(matched.map((item) => item.pmid)).not.toContain("15103437");
+    expect(matched.map((item) => item.pmid)).toContain("23747192");
+    // 다른 규칙 유형에 붙은 문헌은 이 판정으로 넘어오지 않는다.
+    expect(matched.map((item) => item.pmid)).not.toContain("20178131");
     expect(finding.evidence).toEqual([]);
   });
 
@@ -235,29 +237,30 @@ describe("OTC evidence presentation", () => {
       redFlagSymptoms: [],
     });
 
-    expect(lactationOnly.map((paper) => paper.pmid)).not.toContain("16638921");
-    expect(pregnancy.map((paper) => paper.pmid)).toContain("16638921");
+    expect(lactationOnly.map((paper) => paper.pmid)).not.toContain("39714827");
+    expect(pregnancy.map((paper) => paper.pmid)).toContain("39714827");
   });
 
   it("shows the most rule-specific paper first", () => {
     const finding: SafetyFinding = {
-      findingId: "renal:P1",
-      ruleType: "renal_disease",
+      findingId: "max-daily-dose:P1",
+      ruleType: "max_daily_dose",
       severity: "high",
-      titleKo: "신장질환 주의",
+      titleKo: "하루 최대량 초과",
       detailKo: "검증 상세",
       nextActionKo: "상담하세요.",
       productIds: ["P1"],
-      ingredientIds: ["ING-ibuprofen"],
+      ingredientIds: ["ING-acetaminophen"],
       evidence: [],
     };
 
-    expect(
-      supportingLiteratureForFinding(
-        finding,
-        literatureData as SupportingLiterature[],
-      )[0].pmid,
-    ).toBe("39412516");
+    const matched = supportingLiteratureForFinding(
+      finding,
+      literatureData as SupportingLiterature[],
+    );
+    // 29516533 은 이 규칙 하나에만, 26149538 은 두 규칙에 연결돼 있다.
+    expect(matched[0].pmid).toBe("29516533");
+    expect(matched.map((paper) => paper.pmid)).toContain("26149538");
   });
 
   it("keeps every paper traceable and explicitly outside rule release evidence", () => {
@@ -277,7 +280,34 @@ describe("OTC evidence presentation", () => {
         "supports_mechanism",
       ]).toContain(paper.evidenceRelation);
       expect(paper.supportsRuleRelease).toBe(false);
-      expect(paper.reviewStatus).toBe("codex_curated_supporting_not_rule_release_evidence");
+      expect(paper.reviewStatus).toBe("agent_curated_from_v40_retained_corpus");
+      // 문헌은 설명용이라는 사실과 면책 문구가 데이터에 함께 붙어 있어야 한다.
+      expect(paper.evidenceAuthority).toBe("literature_explanatory_only");
+      expect(paper.disclaimerKo).toBe(
+        "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
+      );
+      expect(paper.ruleLinks.length).toBeGreaterThan(0);
+      for (const link of paper.ruleLinks) {
+        // 모든 연결은 초록의 문장 단위 locator 와 원문 인용을 가진다.
+        expect(link.locator).toMatch(/^abstract:sentence:\d+$/);
+        expect(link.locatorQuoteEn.length).toBeGreaterThan(20);
+        expect(["consistent", "conflict"]).toContain(link.authorizationAlignment);
+        if (link.authorizationAlignment === "conflict") {
+          expect(link.authorizationNoteKo.length).toBeGreaterThan(10);
+        }
+      }
     }
+  });
+
+  it("covers all 16 rules and preserves authorization conflicts", () => {
+    const papers = literatureData as SupportingLiterature[];
+    const links = papers.flatMap((paper) => paper.ruleLinks);
+    expect(new Set(links.map((link) => link.ruleId)).size).toBe(16);
+    // 허가원문과 어긋나는 문헌을 지우지 않고 conflict 로 남긴다.
+    expect(
+      links.filter((link) => link.authorizationAlignment === "conflict").length,
+    ).toBeGreaterThan(0);
+    // 문헌이 규칙을 배포시키는 일은 없다.
+    expect(papers.every((paper) => paper.supportsRuleRelease === false)).toBe(true);
   });
 });

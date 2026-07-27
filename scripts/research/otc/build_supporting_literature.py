@@ -1,16 +1,38 @@
+"""규칙↔문헌 연결표를 사이트 런타임 JSON 으로 굽는다.
+
+입력은 `research_v3/otc/rules/supporting_literature.csv` (규칙 1건 × 논문 1편 = 1행)이고,
+출력은 논문 단위로 묶은 `src/generated/otc-supporting-literature.json` 이다.
+
+문헌은 판정 권한이 없다. 모든 행의 `supports_rule_release` 는 false 여야 하며, 규칙 배포
+근거는 `rules.csv` 의 `source_id`·`source_locator`(허가원문)만이다. 이 스크립트는 그 경계를
+검증하고, locator 가 가리키는 초록 문장이 실제 초록과 같은지도 다시 확인한다.
+"""
+
 from __future__ import annotations
 
 import csv
 import json
 import re
+import sys
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[3]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from tools.literature_locator import parse_locator, sentence_at  # noqa: E402
+
 SOURCE = ROOT / "research_v3" / "otc" / "rules" / "supporting_literature.csv"
 TARGET = ROOT / "src" / "generated" / "otc-supporting-literature.json"
 RULES = ROOT / "research_v3" / "otc" / "rules" / "rules.csv"
-REVIEW_STATUS = "codex_curated_supporting_not_rule_release_evidence"
+EVIDENCE_MAP = ROOT / "research_v3" / "otc" / "literature" / "evidence_map.csv"
+
+REVIEW_STATUS = "agent_curated_from_v40_retained_corpus"
+EVIDENCE_AUTHORITY = "literature_explanatory_only"
+DISCLAIMER_KO = "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다."
+EVIDENCE_RELATIONS = {"supports_caution", "contextualizes_uncertainty", "supports_mechanism"}
+AUTHORIZATION_ALIGNMENTS = {"consistent", "conflict"}
+# 사용자 프로파일 축. 판정 카드에서 문헌을 걸러내는 데 쓴다.
 PROFILE_CONDITIONS = {
     "pregnant",
     "lactating",
@@ -20,7 +42,12 @@ PROFILE_CONDITIONS = {
     "hypertensionOrCardiovascularDisease",
     "willDrive",
     "alcohol",
+    "medications",
+    "ageYears",
+    "redFlagSymptoms",
 }
+# 복용 입력 축. 프로파일이 아니라 제품 입력이라 필터에 쓰지 않고 표시만 한다.
+DOSE_INPUT_CONDITIONS = {"hoursSincePreviousDose", "continuousDays"}
 
 
 def _rows(path: Path) -> list[dict[str, str]]:
@@ -29,68 +56,121 @@ def _rows(path: Path) -> list[dict[str, str]]:
 
 
 def build() -> list[dict]:
-    released_rule_types = {
-        row["rule_type"] for row in _rows(RULES) if row["status"] == "released"
-    }
-    papers: list[dict] = []
-    seen_pmids: set[str] = set()
+    rule_rows = _rows(RULES)
+    rule_types_by_id = {row["rule_id"]: row["rule_type"] for row in rule_rows}
+    released_rule_types = {row["rule_type"] for row in rule_rows if row["status"] == "released"}
+    abstracts = {row["pmid"]: row["abstract"] for row in _rows(EVIDENCE_MAP)}
+
+    papers: dict[str, dict] = {}
+    seen_links: set[str] = set()
     for row in _rows(SOURCE):
+        link_id = row["link_id"]
+        if link_id in seen_links:
+            raise ValueError(f"duplicate link_id: {link_id}")
+        seen_links.add(link_id)
+
         pmid = row["pmid"].strip()
         if not re.fullmatch(r"\d{7,8}", pmid):
             raise ValueError(f"invalid PMID: {pmid}")
-        if pmid in seen_pmids:
-            raise ValueError(f"duplicate PMID: {pmid}")
-        seen_pmids.add(pmid)
-        rule_types = [value for value in row["rule_types"].split(";") if value]
-        unknown_rule_types = set(rule_types) - released_rule_types
-        if unknown_rule_types:
-            raise ValueError(f"unknown or unreleased rule types for PMID {pmid}: {sorted(unknown_rule_types)}")
+        if rule_types_by_id.get(row["rule_id"]) != row["rule_type"]:
+            raise ValueError(f"{link_id}: rule_id/rule_type mismatch with rules.csv")
         if row["review_status"] != REVIEW_STATUS:
-            raise ValueError(f"invalid review status for PMID {pmid}")
+            raise ValueError(f"{link_id}: invalid review status")
         if row["supports_rule_release"].lower() != "false":
-            raise ValueError(f"supporting literature cannot release a rule: {pmid}")
-        expected_url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
-        if row["url"] != expected_url:
-            raise ValueError(f"non-PubMed URL for PMID {pmid}")
-        evidence_relation = row["evidence_relation"]
-        if evidence_relation not in {
-            "supports_caution",
-            "contextualizes_uncertainty",
-            "supports_mechanism",
-        }:
-            raise ValueError(f"invalid evidence relation for PMID {pmid}: {evidence_relation}")
-        profile_conditions = [
-            value for value in (row.get("profile_conditions") or "").split(";") if value
-        ]
-        unknown_profile_conditions = set(profile_conditions) - PROFILE_CONDITIONS
-        if unknown_profile_conditions:
-            raise ValueError(
-                f"invalid profile conditions for PMID {pmid}: {sorted(unknown_profile_conditions)}"
-            )
+            raise ValueError(f"{link_id}: supporting literature cannot release a rule")
+        if row["evidence_authority"] != EVIDENCE_AUTHORITY:
+            raise ValueError(f"{link_id}: literature must stay explanatory only")
+        if row["evidence_relation"] not in EVIDENCE_RELATIONS:
+            raise ValueError(f"{link_id}: invalid evidence relation {row['evidence_relation']}")
+        if row["authorization_alignment"] not in AUTHORIZATION_ALIGNMENTS:
+            raise ValueError(f"{link_id}: invalid authorization alignment")
+        if row["url"] != f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/":
+            raise ValueError(f"{link_id}: non-PubMed URL")
+
+        abstract = abstracts.get(pmid)
+        if abstract is None:
+            raise ValueError(f"{link_id}: PMID {pmid} is outside the v4.0 search corpus")
+        quote = sentence_at(abstract, parse_locator(row["locator"]))
+        if quote != row["locator_quote_en"]:
+            raise ValueError(f"{link_id}: locator quote does not match the abstract sentence")
+
+        declared = [v for v in row["profile_conditions"].split(";") if v]
+        unknown = set(declared) - PROFILE_CONDITIONS - DOSE_INPUT_CONDITIONS
+        if unknown:
+            raise ValueError(f"{link_id}: unobserved personalization axis {sorted(unknown)}")
+        profile_conditions = [v for v in declared if v in PROFILE_CONDITIONS]
+        dose_input_conditions = [v for v in declared if v in DOSE_INPUT_CONDITIONS]
+
         required = ["doi", "title", "study_design", "key_finding_ko", "selection_reason_ko", "limitation_ko"]
         missing = [field for field in required if not row[field].strip()]
         if missing:
-            raise ValueError(f"missing fields for PMID {pmid}: {missing}")
-        papers.append(
+            raise ValueError(f"{link_id}: missing fields {missing}")
+
+        paper = papers.setdefault(
+            pmid,
             {
                 "pmid": pmid,
                 "doi": row["doi"],
                 "title": row["title"],
+                "journal": row["journal"],
                 "publicationYear": int(row["publication_year"]),
                 "studyDesign": row["study_design"],
-                "evidenceRelation": evidence_relation,
-                "ruleTypes": rule_types,
-                "ingredientIds": [value for value in row["ingredient_ids"].split(";") if value],
-                "profileConditions": profile_conditions,
+                "evidenceAuthority": EVIDENCE_AUTHORITY,
+                "supportsRuleRelease": False,
+                "reviewStatus": REVIEW_STATUS,
+                "disclaimerKo": DISCLAIMER_KO,
+                "url": row["url"],
+                "ruleTypes": [],
+                "ruleLinks": [],
+                "ingredientIds": [],
+                "profileConditions": [],
+                "doseInputConditions": [],
+            },
+        )
+        if row["rule_type"] not in paper["ruleTypes"]:
+            paper["ruleTypes"].append(row["rule_type"])
+        paper["ruleLinks"].append(
+            {
+                "linkId": link_id,
+                "ruleId": row["rule_id"],
+                "ruleType": row["rule_type"],
+                "ruleReleased": row["rule_type"] in released_rule_types,
+                "evidenceRelation": row["evidence_relation"],
+                "locator": row["locator"],
+                "locatorQuoteEn": row["locator_quote_en"],
                 "keyFindingKo": row["key_finding_ko"],
                 "selectionReasonKo": row["selection_reason_ko"],
                 "limitationKo": row["limitation_ko"],
-                "reviewStatus": row["review_status"],
-                "supportsRuleRelease": False,
-                "url": row["url"],
+                "authorizationAlignment": row["authorization_alignment"],
+                "authorizationNoteKo": row["authorization_note_ko"],
             }
         )
-    return papers
+        for ingredient_id in (v for v in row["ingredient_ids"].split(";") if v):
+            if ingredient_id not in paper["ingredientIds"]:
+                paper["ingredientIds"].append(ingredient_id)
+        for condition in profile_conditions:
+            if condition not in paper["profileConditions"]:
+                paper["profileConditions"].append(condition)
+        for condition in dose_input_conditions:
+            if condition not in paper["doseInputConditions"]:
+                paper["doseInputConditions"].append(condition)
+
+    linked_rule_ids = {
+        link["ruleId"] for paper in papers.values() for link in paper["ruleLinks"]
+    }
+    missing_rules = sorted({row["rule_id"] for row in rule_rows} - linked_rule_ids)
+    if missing_rules:
+        raise ValueError(f"rules without literature link: {missing_rules}")
+
+    # 판정 카드가 첫 문헌을 고를 때 쓰는 대표 필드. 링크 중 첫 번째를 승격한다.
+    for paper in papers.values():
+        primary = paper["ruleLinks"][0]
+        paper["evidenceRelation"] = primary["evidenceRelation"]
+        paper["keyFindingKo"] = primary["keyFindingKo"]
+        paper["selectionReasonKo"] = primary["selectionReasonKo"]
+        paper["limitationKo"] = primary["limitationKo"]
+
+    return sorted(papers.values(), key=lambda item: item["pmid"])
 
 
 def write(target: Path = TARGET) -> Path:
@@ -105,7 +185,8 @@ def write(target: Path = TARGET) -> Path:
 def main() -> int:
     papers = build()
     write()
-    print(f"supporting_literature={len(papers)} target={TARGET}")
+    links = sum(len(paper["ruleLinks"]) for paper in papers)
+    print(f"supporting_literature papers={len(papers)} links={links} target={TARGET}")
     return 0
 
 

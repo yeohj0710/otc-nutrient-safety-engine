@@ -1952,3 +1952,41 @@
     transition: none;
   }
 }
+
+.literatureDisclaimer {
+  margin: 6px 0 0;
+  border-radius: 6px;
+  background: #edf5f2;
+  padding: 6px 8px;
+  color: #3d6459;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.literatureLocator {
+  margin: 6px 0 0;
+  color: #5b6b76;
+  font-size: 10px;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.literatureLocator strong,
+.literatureConflict strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 10px;
+}
+
+.literatureConflict {
+  margin: 6px 0 0;
+  border-left: 3px solid #c98a2e;
+  background: #fdf6e9;
+  padding: 6px 8px;
+  color: #7a5310;
+  font-size: 10px;
+  line-height: 1.65;
+  word-break: keep-all;
+}

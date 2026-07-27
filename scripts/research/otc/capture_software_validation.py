@@ -13,13 +13,22 @@ AUDIT = ROOT / "research_v3" / "otc" / "audit"
 LOGS = ROOT / "research_v3" / "otc" / "etc" / "software_validation"
 
 
+# vitest 는 색상 코드를 섞어 출력하므로 숫자를 뽑기 전에 걷어낸다. 이걸 빼면
+# app_tests 개수가 계속 None 이 되고 매니페스트에는 직전 실행의 낡은 값이 남는다.
+ANSI = re.compile(r"\x1b\[[0-9;]*[A-Za-z]")
+
+
+def strip_ansi(text: str) -> str:
+    return ANSI.sub("", text)
+
+
 def count(pattern: str, text: str) -> int | None:
-    match = re.search(pattern, text)
+    match = re.search(pattern, strip_ansi(text))
     return int(match.group(1)) if match else None
 
 
 def last_count(pattern: str, text: str) -> int | None:
-    matches = re.findall(pattern, text)
+    matches = re.findall(pattern, strip_ansi(text))
     return int(matches[-1]) if matches else None
 
 
@@ -85,6 +94,9 @@ def main() -> int:
     }
     AUDIT.mkdir(parents=True, exist_ok=True)
     (AUDIT / "software_validation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # 방금 끝난 실행의 값으로 매니페스트를 다시 굽는다. 이 호출이 없으면 매니페스트가
+    # 항상 직전 실행 결과를 들고 있어 앱 시험 개수가 한 회차씩 밀린다.
+    subprocess.run([python, str(ROOT / "scripts" / "research" / "otc" / "build_metrics.py")], cwd=ROOT, check=True)
     print(json.dumps({"status": report["status"], "results": {name: result["status"] for name, result in results.items()}}, ensure_ascii=False))
     return 0 if passed else 1
 

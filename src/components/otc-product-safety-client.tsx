@@ -847,7 +847,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         </div>
                       </div>
                       <small className={styles.summaryEvidence}>
-                        식약처 규칙 근거 {findingsWithRuleEvidence}/{orderedFindings.length} · 직접 연결 학술문헌 {findingsWithLiterature}/{orderedFindings.length}
+                        판정 근거(식약처 허가원문) {findingsWithRuleEvidence}/{orderedFindings.length} · 참고 문헌 {findingsWithLiterature}/{orderedFindings.length}
                       </small>
                     </div>
                     <div className={styles.findings}>
@@ -861,6 +861,10 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         );
                         const primaryRuleEvidence = ruleEvidenceDisplay.evidence;
                         const primaryPaper = supportingPapers[0];
+                        // 문헌은 여러 규칙에 연결될 수 있으므로 이 판정에 해당하는 링크만 고른다.
+                        const primaryLink = primaryPaper?.ruleLinks.find(
+                          (link) => link.ruleType === finding.ruleType,
+                        );
                         const findingContext = buildFindingContext(finding, selected);
                         return (
                           <article key={finding.findingId} data-severity={finding.severity}>
@@ -923,25 +927,34 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                               </section>
                             )}
                             {primaryPaper ? (
-                              <section className={styles.literaturePreview} aria-label="이해를 돕는 직접 연결 학술문헌">
+                              <section className={styles.literaturePreview} aria-label="참고 문헌 · 판정 근거 아님">
                                 <header>
-                                  <strong>{literatureRelationLabel(primaryPaper.evidenceRelation)}</strong>
-                                  <span>보조 근거 · 판정에는 미사용</span>
+                                  <strong>참고 문헌 · {literatureRelationLabel(primaryPaper.evidenceRelation)}</strong>
+                                  <span>판정 근거 아님</span>
                                 </header>
+                                <p className={styles.literatureDisclaimer}>
+                                  {primaryPaper.disclaimerKo}
+                                </p>
                                 <a href={primaryPaper.url} target="_blank" rel="noreferrer">
                                   {primaryPaper.title} (PMID {primaryPaper.pmid})
                                 </a>
                                 <p><strong>연구 결과</strong>{primaryPaper.keyFindingKo}</p>
                                 <p><strong>이 판정에 연결한 이유</strong>{primaryPaper.selectionReasonKo}</p>
                                 <p><strong>적용 한계</strong>{primaryPaper.limitationKo}</p>
+                                {primaryLink?.authorizationAlignment === "conflict" && (
+                                  <p className={styles.literatureConflict}>
+                                    <strong>허가원문과 다른 점</strong>
+                                    {primaryLink.authorizationNoteKo}
+                                  </p>
+                                )}
                                 {supportingPapers.length > 1 && (
-                                  <small>아래 전체 근거에서 관련 논문 {supportingPapers.length}편을 모두 볼 수 있습니다.</small>
+                                  <small>아래 전체 근거에서 관련 문헌 {supportingPapers.length}편을 모두 볼 수 있습니다.</small>
                                 )}
                               </section>
                             ) : (
                               <div className={styles.literatureEmpty}>
-                                <strong>직접 연결된 학술문헌은 아직 없습니다.</strong>
-                                <p>이 판정은 식약처 허가 및 제품·계산 원문을 사용했습니다. 맞지 않는 논문을 억지로 연결하지 않았습니다.</p>
+                                <strong>직접 연결된 참고 문헌은 아직 없습니다.</strong>
+                                <p>이 판정은 식약처 허가 및 제품·계산 원문을 사용했습니다. 맞지 않는 문헌을 억지로 연결하지 않았습니다.</p>
                               </div>
                             )}
                             {finding.severity !== "urgent" && (
@@ -998,24 +1011,44 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                 {supportingPapers.length > 0 && (
                                   <section>
                                     <div className={styles.evidenceSectionTitle}>
-                                      <strong>관련 학술문헌</strong>
-                                      <span>이해를 돕는 보조 근거 · 판정에는 미사용</span>
+                                      <strong>참고 문헌</strong>
+                                      <span>판정 근거 아님 · 이해를 돕는 설명용</span>
                                     </div>
+                                    <p className={styles.literatureDisclaimer}>
+                                      참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.
+                                    </p>
                                     <div className={styles.literatureList}>
-                                      {supportingPapers.map((paper) => (
+                                      {supportingPapers.map((paper) => {
+                                        const link = paper.ruleLinks.find(
+                                          (item) => item.ruleType === finding.ruleType,
+                                        );
+                                        return (
                                         <div className={styles.literatureCard} key={paper.pmid}>
                                           <div>
-                                            <span>{paper.publicationYear} · {paper.studyDesign} · {literatureRelationLabel(paper.evidenceRelation)}</span>
+                                            <span>{paper.publicationYear} · {paper.studyDesign} · {literatureRelationLabel(link?.evidenceRelation ?? paper.evidenceRelation)}</span>
                                             <b>PMID {paper.pmid}</b>
                                           </div>
                                           <a href={paper.url} target="_blank" rel="noreferrer">
                                             {paper.title}
                                           </a>
-                                          <p><strong>핵심 결과</strong>{paper.keyFindingKo}</p>
-                                          <p><strong>연결 이유</strong>{paper.selectionReasonKo}</p>
-                                          <p><strong>적용 한계</strong>{paper.limitationKo}</p>
+                                          <p><strong>핵심 결과</strong>{link?.keyFindingKo ?? paper.keyFindingKo}</p>
+                                          <p><strong>연결 이유</strong>{link?.selectionReasonKo ?? paper.selectionReasonKo}</p>
+                                          <p><strong>적용 한계</strong>{link?.limitationKo ?? paper.limitationKo}</p>
+                                          {link && (
+                                            <p className={styles.literatureLocator}>
+                                              <strong>인용 위치</strong>
+                                              {link.locator} · <q>{link.locatorQuoteEn}</q>
+                                            </p>
+                                          )}
+                                          {link?.authorizationAlignment === "conflict" && (
+                                            <p className={styles.literatureConflict}>
+                                              <strong>허가원문과 다른 점</strong>
+                                              {link.authorizationNoteKo}
+                                            </p>
+                                          )}
                                         </div>
-                                      ))}
+                                        );
+                                      })}
                                     </div>
                                   </section>
                                 )}

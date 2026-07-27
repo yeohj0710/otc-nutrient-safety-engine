@@ -2,7 +2,7 @@
   "schema_version": "2.0.0",
   "lineage": "research_v3",
   "research_direction": "korean_otc_product_safety",
-  "generated_at_utc": "2026-07-27T03:14:22.398838+00:00",
+  "generated_at_utc": "2026-07-27T03:37:54.394268+00:00",
   "claim_boundary": "evidence_traceable_korean_otc_product_safety_research_working_state",
   "prior_direction": {
     "status": "superseded",
@@ -453,11 +453,11 @@
     },
     "research_tests_passed": {
       "status": "passed",
-      "value": 139
+      "value": 192
     },
     "app_tests_passed": {
       "status": "passed",
-      "value": 69
+      "value": 70
     },
     "static_paths_generated": {
       "status": "passed",
@@ -470,7 +470,7 @@
     "software_validation": {
       "schema_version": "1.0.0",
       "research_direction": "korean_otc_product_safety",
-      "captured_at_utc": "2026-07-16T14:27:52.980184+00:00",
+      "captured_at_utc": "2026-07-27T03:37:54.316543+00:00",
       "status": "passed",
       "results": {
         "research_tests": {
@@ -483,7 +483,7 @@
           ],
           "exit_code": 0,
           "status": "passed",
-          "passed": 139,
+          "passed": 192,
           "failed": 0
         },
         "app_tests": {
@@ -493,7 +493,7 @@
           ],
           "exit_code": 0,
           "status": "passed",
-          "passed": 69,
+          "passed": 70,
           "test_files": 13
         },
         "lint": {

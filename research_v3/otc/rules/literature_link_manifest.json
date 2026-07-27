@@ -1,0 +1,336 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-27T03:34:07.169035+00:00",
+  "phase": "P4",
+  "purpose_ko": "규칙별 문헌 근거 연결 현황과 검증 결과",
+  "authority_separation_ko": "규칙 판정 권한은 허가원문(rules.csv 의 source_id·source_locator)에만 있다. 문헌은 설명용이며 supports_rule_release 는 전부 false 다. 두 근거는 서로 다른 파일·컬럼에 남기고 합치지 않는다.",
+  "rules_total": 16,
+  "rules_with_literature": 16,
+  "rules_without_literature": [],
+  "links_total": 20,
+  "links_by_rule": {
+    "OTC-RULE-001": 2,
+    "OTC-RULE-002": 1,
+    "OTC-RULE-003": 2,
+    "OTC-RULE-004": 1,
+    "OTC-RULE-005": 2,
+    "OTC-RULE-006": 1,
+    "OTC-RULE-007": 1,
+    "OTC-RULE-008": 1,
+    "OTC-RULE-009": 1,
+    "OTC-RULE-010": 1,
+    "OTC-RULE-011": 1,
+    "OTC-RULE-012": 1,
+    "OTC-RULE-013": 1,
+    "OTC-RULE-014": 1,
+    "OTC-RULE-015": 2,
+    "OTC-RULE-016": 1
+  },
+  "unique_pmids": 19,
+  "evidence_relation_counts": {
+    "contextualizes_uncertainty": 2,
+    "supports_caution": 17,
+    "supports_mechanism": 1
+  },
+  "authorization_alignment_counts": {
+    "conflict": 4,
+    "consistent": 16
+  },
+  "conflicts": [
+    {
+      "link_id": "OTC-LIT-LINK-007",
+      "rule_id": "OTC-RULE-005",
+      "pmid": "41803773"
+    },
+    {
+      "link_id": "OTC-LIT-LINK-009",
+      "rule_id": "OTC-RULE-006",
+      "pmid": "39714827"
+    },
+    {
+      "link_id": "OTC-LIT-LINK-010",
+      "rule_id": "OTC-RULE-007",
+      "pmid": "26460177"
+    },
+    {
+      "link_id": "OTC-LIT-LINK-013",
+      "rule_id": "OTC-RULE-010",
+      "pmid": "26999510"
+    }
+  ],
+  "personalization_axis": {
+    "note_ko": "제품명 → 성분 → 문헌 축. 분석 대상 13개 제품의 실제 성분 결합에서만 뻗어 나가며 관찰되지 않은 축은 만들지 않는다.",
+    "by_product": {
+      "낙센정(나프록센)": {
+        "product_id": "MFDS-197500016",
+        "ingredient_ids": [
+          "ING-naproxen"
+        ],
+        "pmids": [
+          "20178131",
+          "26739516",
+          "33662136",
+          "39551938",
+          "39714827"
+        ]
+      },
+      "닥터베아제정": {
+        "product_id": "MFDS-200300406",
+        "ingredient_ids": [],
+        "pmids": []
+      },
+      "덱스피드연질캡슐(덱시부프로펜)": {
+        "product_id": "MFDS-201110646",
+        "ingredient_ids": [
+          "ING-dexibuprofen"
+        ],
+        "pmids": [
+          "20178131",
+          "26739516",
+          "33662136",
+          "39551938",
+          "39714827"
+        ]
+      },
+      "베아제정": {
+        "product_id": "MFDS-198700405",
+        "ingredient_ids": [],
+        "pmids": []
+      },
+      "어린이부루펜시럽(이부프로펜)": {
+        "product_id": "MFDS-198601920",
+        "ingredient_ids": [
+          "ING-ibuprofen"
+        ],
+        "pmids": [
+          "20178131",
+          "26739516",
+          "33662136",
+          "39551938",
+          "39714827",
+          "40579172"
+        ]
+      },
+      "어린이타이레놀현탁액(아세트아미노펜)": {
+        "product_id": "MFDS-202200525",
+        "ingredient_ids": [
+          "ING-acetaminophen"
+        ],
+        "pmids": [
+          "21370947",
+          "22106945",
+          "22617049",
+          "26022219",
+          "26149538",
+          "26460177",
+          "29516533",
+          "30030041",
+          "30306812",
+          "33333080",
+          "40579172",
+          "41803773"
+        ]
+      },
+      "제일쿨파프": {
+        "product_id": "MFDS-198400250",
+        "ingredient_ids": [],
+        "pmids": []
+      },
+      "지르텍정(세티리진염산염)": {
+        "product_id": "MFDS-200610765",
+        "ingredient_ids": [
+          "ING-cetirizine_hydrochloride"
+        ],
+        "pmids": [
+          "26999510"
+        ]
+      },
+      "타이레놀정500밀리그람(아세트아미노펜)": {
+        "product_id": "MFDS-202106092",
+        "ingredient_ids": [
+          "ING-acetaminophen"
+        ],
+        "pmids": [
+          "21370947",
+          "22106945",
+          "22617049",
+          "26022219",
+          "26149538",
+          "26460177",
+          "29516533",
+          "30030041",
+          "30306812",
+          "33333080",
+          "40579172",
+          "41803773"
+        ]
+      },
+      "판콜에이내복액": {
+        "product_id": "MFDS-196800036",
+        "ingredient_ids": [
+          "ING-acetaminophen",
+          "ING-chlorpheniramine_maleate"
+        ],
+        "pmids": [
+          "21370947",
+          "22106945",
+          "22617049",
+          "23747192",
+          "26022219",
+          "26149538",
+          "26460177",
+          "26999510",
+          "29516533",
+          "30030041",
+          "30306812",
+          "33333080",
+          "40579172",
+          "41803773"
+        ]
+      },
+      "판피린티정": {
+        "product_id": "MFDS-199400202",
+        "ingredient_ids": [
+          "ING-acetaminophen",
+          "ING-chlorpheniramine_maleate"
+        ],
+        "pmids": [
+          "21370947",
+          "22106945",
+          "22617049",
+          "23747192",
+          "26022219",
+          "26149538",
+          "26460177",
+          "26999510",
+          "29516533",
+          "30030041",
+          "30306812",
+          "33333080",
+          "40579172",
+          "41803773"
+        ]
+      },
+      "훼스탈골드정": {
+        "product_id": "MFDS-199900926",
+        "ingredient_ids": [],
+        "pmids": []
+      },
+      "훼스탈플러스정": {
+        "product_id": "MFDS-199801026",
+        "ingredient_ids": [],
+        "pmids": []
+      }
+    },
+    "products_with_literature": 8,
+    "products_total": 13,
+    "products_without_literature": [
+      "닥터베아제정",
+      "베아제정",
+      "제일쿨파프",
+      "훼스탈골드정",
+      "훼스탈플러스정"
+    ],
+    "coverage_gap_note_ko": "문헌이 붙지 않은 제품은 소화효소제 4종과 외용 첩부제 1종이다. v4.0 검색 코퍼스에서 소화기 질문(OTC-LIT-Q04)의 retain 이 27건뿐이고 그중 국내 일반의약품 소화효소제 조합을 다룬 문헌이 없었기 때문이다. 억지로 맞지 않는 문헌을 붙이지 않고 공백으로 남긴다. 이 제품들의 판정은 허가원문만으로 이뤄진다.",
+    "by_ingredient": {
+      "ING-acetaminophen": [
+        "21370947",
+        "22106945",
+        "22617049",
+        "26022219",
+        "26149538",
+        "26460177",
+        "29516533",
+        "30030041",
+        "30306812",
+        "33333080",
+        "40579172",
+        "41803773"
+      ],
+      "ING-cetirizine_hydrochloride": [
+        "26999510"
+      ],
+      "ING-chlorpheniramine_maleate": [
+        "23747192",
+        "26999510"
+      ],
+      "ING-dexibuprofen": [
+        "20178131",
+        "26739516",
+        "33662136",
+        "39551938",
+        "39714827"
+      ],
+      "ING-ibuprofen": [
+        "20178131",
+        "26739516",
+        "33662136",
+        "39551938",
+        "39714827",
+        "40579172"
+      ],
+      "ING-naproxen": [
+        "20178131",
+        "26739516",
+        "33662136",
+        "39551938",
+        "39714827"
+      ]
+    },
+    "by_profile_condition": {
+      "ageYears": [
+        "22617049",
+        "41803773"
+      ],
+      "alcohol": [
+        "33333080"
+      ],
+      "continuousDays": [
+        "21370947",
+        "22106945"
+      ],
+      "giBleedingOrUlcer": [
+        "20178131"
+      ],
+      "hoursSincePreviousDose": [
+        "30030041"
+      ],
+      "hypertensionOrCardiovascularDisease": [
+        "26022219"
+      ],
+      "kidneyDisease": [
+        "33662136"
+      ],
+      "liverDisease": [
+        "26460177"
+      ],
+      "medications": [
+        "23747192",
+        "39551938"
+      ],
+      "pregnant": [
+        "39714827"
+      ],
+      "redFlagSymptoms": [
+        "40579172"
+      ],
+      "willDrive": [
+        "26999510"
+      ]
+    }
+  },
+  "corpus": {
+    "evidence_map_rows": 5724,
+    "screening_retained": 2240
+  },
+  "input_sha256": {
+    "supporting_literature.csv": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
+    "rules.csv": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
+    "evidence_map.csv": "5b0bcc9f47a98a4caa7a24599962ac5d5bcc372fd8edb29bfd67a4b1af78786c"
+  },
+  "validation": {
+    "errors": [],
+    "locator_check": "every quote matched its abstract sentence"
+  },
+  "output_sha256": "f5365ebbd631213d98e26852b87da04a4aa3ead22f6115025a018979f7dc4190"
+}

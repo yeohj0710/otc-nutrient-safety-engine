@@ -12,25 +12,50 @@ export type LiteratureEvidenceRelation =
   | "contextualizes_uncertainty"
   | "supports_mechanism";
 
-export type LiteratureProfileCondition = Exclude<
-  keyof UserProfile,
-  "ageYears" | "medications" | "redFlagSymptoms"
->;
+export type LiteratureProfileCondition = keyof UserProfile;
+
+/** 복용 입력 축. 사용자 프로파일이 아니라 제품 입력이라 문헌 필터에 쓰지 않고 표시만 한다. */
+export type LiteratureDoseInputCondition = "hoursSincePreviousDose" | "continuousDays";
+
+/** 허가원문 판정과 문헌이 갈리는 지점. 어느 한쪽을 지우지 않고 그대로 보존한다. */
+export type LiteratureAuthorizationAlignment = "consistent" | "conflict";
+
+export type SupportingLiteratureRuleLink = {
+  linkId: string;
+  ruleId: string;
+  ruleType: string;
+  ruleReleased: boolean;
+  evidenceRelation: LiteratureEvidenceRelation;
+  /** 초록의 문장 단위 locator. 예: abstract:sentence:6 */
+  locator: string;
+  locatorQuoteEn: string;
+  keyFindingKo: string;
+  selectionReasonKo: string;
+  limitationKo: string;
+  authorizationAlignment: LiteratureAuthorizationAlignment;
+  authorizationNoteKo: string;
+};
 
 export type SupportingLiterature = {
   pmid: string;
   doi: string;
   title: string;
+  journal: string;
   publicationYear: number;
   studyDesign: string;
   evidenceRelation: LiteratureEvidenceRelation;
+  /** 문헌은 설명용 근거일 뿐 판정 권한이 없다. */
+  evidenceAuthority: "literature_explanatory_only";
+  disclaimerKo: string;
   ruleTypes: string[];
+  ruleLinks: SupportingLiteratureRuleLink[];
   ingredientIds: string[];
   profileConditions: LiteratureProfileCondition[];
+  doseInputConditions: LiteratureDoseInputCondition[];
   keyFindingKo: string;
   selectionReasonKo: string;
   limitationKo: string;
-  reviewStatus: "codex_curated_supporting_not_rule_release_evidence";
+  reviewStatus: "agent_curated_from_v40_retained_corpus";
   supportsRuleRelease: false;
   url: string;
 };
