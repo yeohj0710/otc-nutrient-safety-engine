@@ -30,7 +30,7 @@ AI가 PICOS 질문 5개를 만들고 PubMed에서 고유 PMID 5,724개를 수집
 
 - GitHub: https://github.com/yeohj0710/otc-nutrient-safety-engine
 - 공개 주소: https://otc-nutrient-safety-engine.vercel.app
-- 사용자 지시로 production 에 배포했다. 공개 주소는 https://otc-nutrient-safety-engine.vercel.app 이고 배포 ID 는 dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9 다. 사이트 배포는 연구 상태 플래그 release_ready 와 별개이며 release_ready 는 임상 배포 승인 절차를 뜻하므로 false 를 유지한다.
+- 사용자 지시로 production 에 배포했다. 공개 주소는 https://otc-nutrient-safety-engine.vercel.app 이고 배포 ID 는 dpl_7YHbb65wJSYpSrHEVRspLB69FYYe 다. 사이트 배포는 연구 상태 플래그 release_ready 와 별개이며 release_ready 는 임상 배포 승인 절차를 뜻하므로 false 를 유지한다.
 
 ## 검증 명령
 

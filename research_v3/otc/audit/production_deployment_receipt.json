@@ -1,15 +1,15 @@
 {
   "schema_version": "2.0.0",
   "research_direction": "korean_otc_product_safety",
-  "recorded_at_utc": "2026-07-27T04:21:01.751083+00:00",
+  "recorded_at_utc": "2026-07-27T04:29:33.957533+00:00",
   "deployed": true,
-  "deployment_id": "dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
+  "deployment_id": "dpl_7YHbb65wJSYpSrHEVRspLB69FYYe",
   "target": "production",
   "ready_state": "READY",
   "public_url": "https://otc-nutrient-safety-engine.vercel.app",
-  "deployment_url": "https://otc-nutrient-safety-engine-kd85g75i5-yeohj0710s-projects.vercel.app",
-  "inspector_url": "https://vercel.com/yeohj0710s-projects/otc-nutrient-safety-engine/HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
-  "git_commit": "c86e20157df2f4ca75d72ddad1f6e5915c12bd6f",
+  "deployment_url": "https://otc-nutrient-safety-engine-iktdk54gr-yeohj0710s-projects.vercel.app",
+  "inspector_url": "https://vercel.com/yeohj0710s-projects/otc-nutrient-safety-engine/7YHbb65wJSYpSrHEVRspLB69FYYe",
+  "git_commit": "0c151915f6e200cefa52d21f4bc60066384e4b23",
   "git_remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
   "authorized_by_ko": "사용자가 이번 세션에서 배포와 push 를 명시적으로 지시했다.",
   "verification": {
@@ -17,7 +17,10 @@
       "/": 200,
       "/research-v3": 200,
       "/sources": 200,
-      "/rules/RULE-VITA-UL-US-ADULT": 200
+      "/ingredients": 200,
+      "/rules/RULE-VITA-UL-US-ADULT": 200,
+      "/sitemap.xml": 200,
+      "/robots.txt": 200
     },
     "bundle_contains_literature_disclaimer": true,
     "bundle_contains_authority_label": true,
@@ -33,6 +36,8 @@
   },
   "release_ready_note_ko": "사이트 배포는 연구 상태 플래그 release_ready 와 별개다. release_ready 는 임상 배포 승인 절차를 뜻하며 그 절차는 수행되지 않았으므로 false 를 유지한다.",
   "previous_receipt": {
-    "deployment_id": "dpl_5FM8CPCKz3vmkawGkAVRH45bnubU"
-  }
+    "deployment_id": "dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
+    "recorded_at_utc": "2026-07-27T04:21:01.751083+00:00"
+  },
+  "redeploy_reason_ko": "문서·보고서 커밋 이후 배포 커밋과 HEAD 를 일치시키기 위해 다시 배포했다."
 }

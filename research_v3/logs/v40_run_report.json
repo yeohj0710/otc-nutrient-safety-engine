@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-07-27T13:26:53+09:00",
+  "generated_at": "2026-07-27T13:31:55+09:00",
   "language": "ko",
   "phases": {
     "P2": {
@@ -29,7 +29,7 @@
     },
     "P5": {
       "status": "complete",
-      "ended_at": "2026-07-27T13:26:53+09:00",
+      "ended_at": "2026-07-27T13:31:55+09:00",
       "evidence_path": "research_v3/logs/v40_run_report.json"
     }
   },
@@ -280,14 +280,17 @@
     "deployment": "production",
     "deployment_detail": {
       "deployed": true,
-      "deployment_id": "dpl_HMaDTKgkxYzRrt1pTzjCSfPS3Ti9",
+      "deployment_id": "dpl_7YHbb65wJSYpSrHEVRspLB69FYYe",
       "public_url": "https://otc-nutrient-safety-engine.vercel.app",
-      "git_commit": "c86e20157df2f4ca75d72ddad1f6e5915c12bd6f",
+      "git_commit": "0c151915f6e200cefa52d21f4bc60066384e4b23",
       "http_status": {
         "/": 200,
         "/research-v3": 200,
         "/sources": 200,
-        "/rules/RULE-VITA-UL-US-ADULT": 200
+        "/ingredients": 200,
+        "/rules/RULE-VITA-UL-US-ADULT": 200,
+        "/sitemap.xml": 200,
+        "/robots.txt": 200
       },
       "console_errors": 0,
       "authorized_by_ko": "사용자가 이번 세션에서 배포와 push 를 명시적으로 지시했다.",
@@ -297,7 +300,7 @@
     "git_push": {
       "remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
       "branch": "main",
-      "head_commit": "c86e20157df2f4ca75d72ddad1f6e5915c12bd6f"
+      "head_commit": "0c151915f6e200cefa52d21f4bc60066384e4b23"
     }
   },
   "thesis": {
@@ -380,8 +383,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "7b9da8178eb9f98ee90802a5a6a7415b16fb96394eaba66cf0772a0986fee0b2",
-      "target_sha256": "7b9da8178eb9f98ee90802a5a6a7415b16fb96394eaba66cf0772a0986fee0b2",
+      "source_sha256": "63236cd5bfec24d5c89565224b46f4a7fcc69ce201e536d07b983abea6eae0e7",
+      "target_sha256": "63236cd5bfec24d5c89565224b46f4a7fcc69ce201e536d07b983abea6eae0e7",
       "bytes": 17784
     },
     {
@@ -410,8 +413,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "46011bd168366d3aa3948f206751df288a3479ee155023353516335f94bbf1fb",
-      "target_sha256": "46011bd168366d3aa3948f206751df288a3479ee155023353516335f94bbf1fb",
+      "source_sha256": "b8d217384ff5311d69c2bd2a57c470e96dcebb108783fb2707f43a41306eba7b",
+      "target_sha256": "b8d217384ff5311d69c2bd2a57c470e96dcebb108783fb2707f43a41306eba7b",
       "bytes": 4474
     },
     {
@@ -420,8 +423,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "b014a46d8710d7cf153da5445cfaeea951b0ccc7698300f43987d4ca9eeb2f84",
-      "target_sha256": "b014a46d8710d7cf153da5445cfaeea951b0ccc7698300f43987d4ca9eeb2f84",
+      "source_sha256": "e68e6aad1515312e280bafdaa92d83c4a0b6e27d68f0a88ff8d2b370cd56b11c",
+      "target_sha256": "e68e6aad1515312e280bafdaa92d83c4a0b6e27d68f0a88ff8d2b370cd56b11c",
       "bytes": 47744
     },
     {
@@ -430,8 +433,8 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "2f8f16b4fc4049ee6bd8ed1b6251de752918821579451801da7b805e0a2ea6e8",
-      "target_sha256": "2f8f16b4fc4049ee6bd8ed1b6251de752918821579451801da7b805e0a2ea6e8",
+      "source_sha256": "aecba16d493c4a831ed3503a815917d0e512eee72dfd5fc7b062d23973bfeb07",
+      "target_sha256": "aecba16d493c4a831ed3503a815917d0e512eee72dfd5fc7b062d23973bfeb07",
       "bytes": 336936
     },
     {
@@ -450,9 +453,9 @@
       "copied": true,
       "sha256_match_verified": true,
       "target_existed": true,
-      "source_sha256": "2f8cbb626138ad7e3baf0c1b10f2cd9434405615e342dbcabf651b5dd253a93a",
-      "target_sha256": "2f8cbb626138ad7e3baf0c1b10f2cd9434405615e342dbcabf651b5dd253a93a",
-      "bytes": 21554
+      "source_sha256": "3525fcae858f600b2713c6e186ad056f76c3502df732f852562222d76dce855a",
+      "target_sha256": "3525fcae858f600b2713c6e186ad056f76c3502df732f852562222d76dce855a",
+      "bytes": 21643
     }
   ],
   "closure": {
