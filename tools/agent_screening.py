@@ -136,18 +136,15 @@ def _card_for(row: dict[str, str], corpus_row: dict[str, str], ordinal: int) -> 
 def cmd_render(args: argparse.Namespace) -> int:
     corpus = {row["record_id"]: row for row in load_corpus()}
     CARD_DIR.mkdir(parents=True, exist_ok=True)
-    out_parts: list[str] = []
     for bid in args.batch_ids:
         path = BATCH_DIR / f"{bid}.json"
         body = json.loads(path.read_text(encoding="utf-8"))
-        out_parts.append(f"===== BATCH {bid} ({len(body['rows'])} rows) =====")
+        out_parts = [f"===== BATCH {bid} ({len(body['rows'])} rows) ====="]
         for i, row in enumerate(body["rows"], start=1):
             out_parts.append(_card_for(row, corpus[row["record_id"]], i))
-        out_parts.append("")
-    name = f"{args.batch_ids[0]}__{args.batch_ids[-1]}.txt"
-    target = CARD_DIR / name
-    target.write_text("\n".join(out_parts) + "\n", encoding="utf-8")
-    print(str(target.relative_to(ROOT)))
+        target = CARD_DIR / f"{bid}.txt"
+        target.write_text("\n".join(out_parts) + "\n", encoding="utf-8")
+        print(str(target.relative_to(ROOT)).replace("\\", "/"))
     return 0
 
 
