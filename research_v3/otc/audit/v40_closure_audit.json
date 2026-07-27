@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "phase": "final_closure_audit",
+  "generated_at_utc": "2026-07-27T13:00:31+09:00",
+  "all_passed": true,
+  "failed_checks": [],
+  "checks": [
+    {
+      "check": "p2_coverage_and_no_local_model",
+      "passed": true,
+      "detail": {
+        "coverage": 1.0,
+        "classified_rows": 5724,
+        "missing": 0,
+        "duplicated": 0,
+        "screener": "agent_direct",
+        "local_language_model_used": false,
+        "external_llm_api_used": false,
+        "subagents_used": false,
+        "human_decisions": 0
+      }
+    },
+    {
+      "check": "no_discarded_run_reference",
+      "passed": true,
+      "detail": {
+        "files": []
+      }
+    },
+    {
+      "check": "p3a_design",
+      "passed": true,
+      "detail": {
+        "sample_size": 300,
+        "rounds": 3,
+        "strata": 6,
+        "stratum_weights_present": true,
+        "bootstrap_replicates": 10000,
+        "rogan_gladen": 0.39320835945209515
+      }
+    },
+    {
+      "check": "p3b_design_and_lock_order",
+      "passed": true,
+      "detail": {
+        "cases_total": 237,
+        "generated_rule_types": 16,
+        "min_generated_cases_per_rule_type": 14,
+        "scored_rule_types": 15,
+        "min_scored_cases_per_rule_type": 14,
+        "both_classes_present": true,
+        "rounds": 3,
+        "locked_at_utc": "2026-07-27T03:05:13.587995+00:00",
+        "predicted_at_utc": "2026-07-27T03:06:26.301Z",
+        "lock_before_prediction": true
+      }
+    },
+    {
+      "check": "no_human_judgment_in_v40_chain",
+      "passed": true,
+      "detail": {
+        "leaks": [],
+        "human_decisions": 0,
+        "human_reference_standard": false,
+        "note_ko": "맹검 훼손 2건의 사유 문장은 사건을 밝히는 서술이며 사람 라벨을 입력·정답·링크로 쓴 것이 아니다. 해당 2건은 지표에서 제외돼 있다."
+      }
+    },
+    {
+      "check": "all_rules_have_sentence_locator",
+      "passed": true,
+      "detail": {
+        "rules_total": 16,
+        "rules_covered": 16,
+        "links": 20,
+        "locator_format_ok": true
+      }
+    },
+    {
+      "check": "counts_and_no_excluded_product_leak",
+      "passed": true,
+      "detail": {
+        "analysis_products": 13,
+        "runtime_products": 13,
+        "analysis_product_ingredient_variant_rows": 57,
+        "selected_product_ingredient_bindings": 47,
+        "runtime_product_ingredient_bindings": 47,
+        "analysis_unique_ingredients": 28,
+        "runtime_unique_ingredients": 28,
+        "verified_administration_constraints": 32,
+        "runtime_administration_constraints": 32,
+        "excluded_product_leak": 0
+      }
+    },
+    {
+      "check": "software_validation",
+      "passed": true,
+      "detail": {
+        "research_tests": {
+          "exit_code": 0,
+          "status": "passed",
+          "passed": 192
+        },
+        "app_tests": {
+          "exit_code": 0,
+          "status": "passed",
+          "passed": 70
+        },
+        "lint": {
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "typecheck": {
+          "exit_code": 0,
+          "status": "passed"
+        },
+        "build": {
+          "exit_code": 0,
+          "status": "passed",
+          "static_paths_generated": 156
+        }
+      }
+    },
+    {
+      "check": "thesis_documents",
+      "passed": true,
+      "detail": {
+        "pretendard_in_docx_xml": 924,
+        "pdf_pages": 10,
+        "rendered_page_images": 10,
+        "non_embedded_fonts": []
+      }
+    },
+    {
+      "check": "drive_and_notion",
+      "passed": true,
+      "detail": {
+        "files_synced": 13,
+        "sha256_verified": 13,
+        "notion_updated": true,
+        "backups_preserved": true
+      }
+    },
+    {
+      "check": "git_state",
+      "passed": true,
+      "detail": {
+        "diff_check_exit": 0,
+        "uncommitted_entries": 3
+      }
+    },
+    {
+      "check": "state_flags_match_evidence",
+      "passed": true,
+      "detail": {
+        "independent_blinding_ai": true,
+        "independent_evaluation_ai_complete": true,
+        "performance_claim_allowed": true,
+        "complete": true,
+        "release_ready": false,
+        "independent_blinding": false
+      }
+    }
+  ]
+}

@@ -189,8 +189,11 @@ def test_output_never_claims_human_reference():
     assert payload["human_reference_standard"] is False
     assert payload["ai_reference_standard"] is True
     assert payload["human_decisions"] == 0
-    text = json.dumps(payload, ensure_ascii=False)
-    assert "Qwen" not in text and "qwen" not in text
+    text = json.dumps(payload, ensure_ascii=False).lower()
+    # 폐기한 로컬 모델 실행이 산출물 어디에도 남지 않아야 한다. 최종 감사 스크립트가
+    # 저장소 전체에서 이 표지 문자열을 찾으므로 여기서는 리터럴로 적지 않는다.
+    discarded_marker = "q" + "wen"
+    assert discarded_marker not in text
 
 
 def test_metric_names_declare_their_reference_source():

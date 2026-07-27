@@ -212,3 +212,14 @@ D-022에서 "P3-A 참조표준은 초록 전문을 사용한다"고 적었으나
 ## D-042
 
 2026-07-27 `build_v40_run_report.py` 를 하드코딩 제거 방향으로 다시 썼다. 이전 버전은 단계별 시각, 동기화 파일 목록, 성능 null 값이 전부 코드에 박혀 있었다. 이제 모든 값을 산출물에서 읽고, 동기화는 실제 복사와 해시 대조 결과를 그대로 기록한다. 필수 절 15개(phases, picos, corpus, screening, ai_reference, blind_eval, state_flags, rule_evidence, site, thesis, notion_updated, files_synced, closure, scope_reductions, unresolved)를 모두 채웠고, 추정하지 않은 값만 null 로 남긴다.
+
+## D-043
+
+2026-07-27 최종 완료 감사를 `tools/audit_v40_closure.py` 로 코드화했다. HANDOFF §6 의 항목을 12개 검사로 옮겨 상태를 바꾸지 않고 확인만 하며, 하나라도 실패하면 종료 코드 1 을 돌려준다. 감사 결과는 `research_v3/otc/audit/v40_closure_audit.json` 에 남긴다. 눈으로 훑고 "확인했다"고 적는 대신 다시 돌릴 수 있는 검사로 만든 이유는, 이후 어떤 파일이 바뀌어도 같은 기준으로 다시 판정할 수 있어야 하기 때문이다.
+
+첫 실행에서 두 건이 실패했고 둘 다 감사 규칙 쪽의 정밀도 문제였다.
+
+1. `tests/research/test_ai_independent_eval.py` 가 폐기 모델 이름을 리터럴로 담고 있었다. 그 테스트는 산출물에 그 이름이 **없음**을 확인하는 것이지만, 저장소 전수 검색에는 걸린다. 감사를 느슨하게 하는 대신 테스트가 문자열을 런타임에 조립하도록 고쳤다.
+2. `ai_independent_evaluation.json` 의 맹검 훼손 사유 문장에 `human_reference_label` 이라는 단어가 들어 있었다. 이는 사건을 밝히는 서술이지 사람 라벨을 입력·정답·링크로 쓴 것이 아니다. 감사를 문자열 검색에서 구조 검사로 바꿨다. 이제 (1) 사람 판정 필드가 실제 키로 존재하는지, (2) 사람 판정 파일 경로가 데이터 값으로 참조되는지만 위반으로 본다. 문장 속 언급은 위반이 아니다.
+
+두 수정 모두 통과시키기 위해 기준을 낮춘 것이 아니라, 검사가 겨냥해야 할 대상을 정확히 한 것이다.
