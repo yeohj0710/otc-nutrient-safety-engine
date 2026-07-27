@@ -38,5 +38,6 @@
     "deployment_id": "dpl_7YHbb65wJSYpSrHEVRspLB69FYYe",
     "recorded_at_utc": "2026-07-27T04:29:33.957533+00:00"
   },
-  "redeploy_reason_ko": "저장소 HEAD 와 배포 커밋을 일치시키기 위해 문서 커밋 뒤 다시 배포했다."
+  "redeploy_reason_ko": "저장소 HEAD 와 배포 커밋을 일치시키기 위해 문서 커밋 뒤 다시 배포했다.",
+  "git_commit_note_ko": "git_commit 은 배포한 시점의 커밋이다. 이 영수증을 기록하는 커밋은 그보다 뒤에 오므로 저장소 HEAD 와 한 커밋 차이가 날 수 있다. 그 차이는 문서·기록 파일뿐이며 사이트 입력(src, app, public, package.json, next.config)은 포함하지 않는다."
 }
