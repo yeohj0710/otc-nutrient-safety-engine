@@ -63,7 +63,17 @@ def test_written_root_and_otc_manifests_match(tmp_path: Path) -> None:
     assert root_manifest["metrics"]["ingredient_normalization_accuracy"]["status"] == "evaluated_human_locked_reference"
     assert root_manifest["metrics"]["analysis_ingredient_normalization_accuracy"]["numerator"] == 28
     assert root_manifest["metrics"]["analysis_ingredient_normalization_accuracy"]["denominator"] == 28
-    assert len(root_manifest["data_limitations"]) == 1
+    # 사람 평가 축과 AI 평가 축이 같은 매니페스트 안에서 분리돼 있어야 한다.
+    ai_cases = root_manifest["metrics"]["ai_independent_cases"]
+    assert ai_cases["independent_blinding_ai"] is True
+    assert ai_cases["independent_blinding"] is False
+    assert ai_cases["ai_reference_standard"] is True
+    assert ai_cases["human_reference_standard"] is False
+    assert root_manifest["metrics"]["sensitivity_vs_ai_reference"]["value"] is not None
+    assert root_manifest["release_blockers"] == []
+    # 신신파스아렉스 제외 + AI 평가자 독립성 한계, 두 가지를 모두 남긴다.
+    assert len(root_manifest["data_limitations"]) == 2
+    assert any("AI 평가자" in item for item in root_manifest["data_limitations"])
 
 
 def test_documents_use_site_aligned_counts_and_claim_boundary() -> None:

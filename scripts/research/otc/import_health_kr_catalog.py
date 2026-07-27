@@ -157,7 +157,10 @@ EXPECTED_EXISTING_RESEARCH_BOUNDARY = {
     "runtime_administration_constraints": 32,
     "rules_total": 16,
     "rules_released": 15,
-    "complete": False,
+    # P3-B(AI 맹검 독립평가) 이후 완료 조건이 충족돼 complete 는 True 다. 배포 승인과
+    # 사람 블라인드 평가는 여전히 없으므로 나머지 셋은 False 를 유지한다. 아래 두 값은
+    # 사람 평가 파일(independent_evaluation.json)에서 읽으므로 AI 평가와 섞이지 않는다.
+    "complete": True,
     "release_ready": False,
     "independent_blinding": False,
     "performance_claim_allowed": False,

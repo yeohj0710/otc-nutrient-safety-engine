@@ -21,6 +21,7 @@
     "metrics_reusable_as_otc_results": false
   },
   "otc_product_reorientation": "confirmed_by_latest_user_decision",
-  "released_rule_count": 0,
-  "clinical_release_allowed": false
+  "released_rule_count": 15,
+  "clinical_release_allowed": false,
+  "released_rule_count_source": "research_v3/otc/rules/rules.csv (status=released)"
 }

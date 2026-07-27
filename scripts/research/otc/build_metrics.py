@@ -44,6 +44,10 @@ def build() -> dict:
     development = csv_rows(OTC / "validation" / "development_scenarios.csv")
     independent = csv_rows(OTC / "validation" / "independent_scenarios.csv")
     evaluation = json_data(OTC / "validation" / "independent_evaluation.json", {"status": "not_run"})
+    # P3-B AI 맹검 독립평가. 사람 평가와 완전히 다른 지표이므로 키 이름에 출처를 박아 둔다.
+    ai_evaluation = json_data(OTC / "validation" / "ai_independent_evaluation.json", {})
+    ai_primary = ai_evaluation.get("primary_analysis", {})
+    ai_status = "evaluated_ai_reference_standard_blinded" if ai_evaluation else "not_run"
     product_search = json_data(OTC / "validation" / "product_search_evaluation.json", {"status": "not_run"})
     normalization_reference = csv_rows(OTC / "validation" / "normalization_reference.csv")
     normalization_reviewed = [row for row in normalization_reference if row.get("human_reference_name")]
@@ -79,12 +83,16 @@ def build() -> dict:
         blockers.append("MFDS 허가 원문에서 검증된 실제 일반의약품 제품 마스터가 아직 없음")
     if not released:
         blockers.append("source/locator가 검증된 released OTC 규칙이 아직 없음")
-    if not evaluation.get("performance_claim_allowed", False):
-        if evaluation.get("scenarios_evaluated", 0):
-            blockers.append("Codex 사전판정 외부 확인은 완료됐으나 블라인드 독립 평가는 아직 없음")
-        else:
-            blockers.append("독립 시나리오 사람 기준정답과 성능 평가가 아직 없음")
-    data_limitations = []
+    # 독립평가 블로커는 AI 맹검 평가(P3-B) 유무로 판정한다. 사람 블라인드 평가가 없다는
+    # 사실은 블로커가 아니라 한계로 남긴다. 두 종류를 한 문장에 섞지 않는다.
+    if not ai_evaluation:
+        blockers.append("AI 맹검 독립평가(P3-B)가 아직 없음")
+    data_limitations_independence = (
+        "독립평가 참조표준은 사람이 아니라 AI 평가자다. 절차적 맹검(무라벨 사례, 별칭 카드, "
+        "3라운드 무작위 순서, SHA-256 잠금 후 예측 연결)은 갖췄으나 평가자 독립성은 외부 사람 "
+        "평가와 동등하지 않으며, 성능 수치를 인용할 때 이 사실을 항상 병기한다."
+    )
+    data_limitations = [data_limitations_independence] if ai_evaluation else []
     if analysis_exclusions:
         data_limitations.append("신신파스아렉스는 4매 포장이 7×10㎠와 10×14㎠를 모두 가리켜 단일 규격을 결정할 수 없으므로 원문 자료만 보존하고 분석·사이트 대상에서 제외함")
     if not preview_verification.get("valid"):
@@ -122,6 +130,14 @@ def build() -> dict:
             "released_source_locator_rate": {"status": "not_applicable_no_released_rules" if not released else "evaluated", "value": len(released_linked) / len(released) if released else None, "numerator": len(released_linked), "denominator": len(released)},
             "development_scenarios": {"status": "specification_only" if development and all(row["status"].startswith("specification_only") for row in development) else "mixed", "value": len(development)},
             "independent_scenarios": {"status": evaluation.get("status", "not_run"), "value": len(independent), "evaluated": evaluation.get("scenarios_evaluated", 0), "independent_blinding": evaluation.get("independent_blinding", False), "performance_claim_allowed": evaluation.get("performance_claim_allowed", False)},
+            "ai_independent_cases": {"status": ai_status, "value": ai_evaluation.get("cases_total"), "scored": ai_primary.get("cases"), "excluded_uncertain": ai_evaluation.get("excluded_uncertain"), "excluded_unresolved": ai_evaluation.get("excluded_unresolved"), "excluded_blinding_compromised": ai_evaluation.get("excluded_blinding_compromised"), "independent_blinding_ai": bool(ai_evaluation), "independent_blinding": False, "ai_reference_standard": True, "human_reference_standard": False},
+            "sensitivity_vs_ai_reference": {"status": ai_status, "value": ai_primary.get("sensitivity_vs_ai_reference"), "ci95": ai_primary.get("sensitivity_wilson_ci95")},
+            "specificity_vs_ai_reference": {"status": ai_status, "value": ai_primary.get("specificity_vs_ai_reference"), "ci95": ai_primary.get("specificity_wilson_ci95")},
+            "precision_vs_ai_reference": {"status": ai_status, "value": ai_primary.get("precision_vs_ai_reference")},
+            "f1_vs_ai_reference": {"status": ai_status, "value": ai_primary.get("f1_vs_ai_reference")},
+            "agreement_vs_ai_reference": {"status": ai_status, "value": ai_primary.get("agreement_vs_ai_reference"), "ci95": ai_primary.get("agreement_wilson_ci95")},
+            "ai_critical_false_negatives": {"status": ai_status, "value": ai_evaluation.get("critical_false_negative_count")},
+            "ai_coverage_gap_rule_types": {"status": ai_status, "value": len((ai_evaluation.get("coverage_gap_analysis") or {}).get("by_rule_type", {}))},
             "critical_false_negatives": {"status": evaluation.get("status", "not_run"), "value": evaluation.get("critical_false_negatives")},
             "sensitivity": {"status": evaluation.get("status", "not_run"), "value": (evaluation.get("sensitivity") or {}).get("value")},
             "sensitivity_ci95": {"status": evaluation.get("status", "not_run"), "value": (evaluation.get("sensitivity") or {}).get("ci95")},

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "research_direction": "korean_otc_product_safety",
-  "complete": false,
+  "complete": true,
   "requirements": [
     {
       "requirement": "actual_korean_otc_products_and_authorizations",
@@ -39,22 +39,35 @@
       }
     },
     {
-      "requirement": "independent_evaluation_complete",
-      "status": "incomplete",
+      "requirement": "independent_evaluation_ai_complete",
+      "status": "achieved",
       "evidence": {
-        "status": "evaluated_codex_prefilled_external_human_confirmation",
-        "value": 13,
-        "evaluated": 13,
+        "status": "evaluated_ai_reference_standard_blinded",
+        "evidence_path": "research_v3/otc/validation/ai_independent_evaluation.json",
+        "lock_path": "research_v3/otc/validation/ai_independent_evaluation/ai_reference_labels.locked.json",
+        "lock_sha256": "bbf6d28c9cd306d642c83a99926643839f7f1bc53056b88bfd1f40565f379c03",
+        "prediction_path": "research_v3/otc/validation/ai_independent_evaluation/ai_independent_prediction_audit.json",
+        "cases_total": 237,
+        "scored_cases": 210,
+        "excluded_uncertain": 14,
+        "excluded_unresolved": 0,
+        "excluded_blinding_compromised": 2,
+        "sensitivity_vs_ai_reference": 0.5701754385964912,
+        "specificity_vs_ai_reference": 1.0,
+        "independent_blinding_ai": true,
         "independent_blinding": false,
-        "performance_claim_allowed": false
+        "performance_claim_allowed": true,
+        "performance_claim_condition_ko": "AI 참조표준 대비 지표라는 사실과 평가자가 사람이 아니라는 사실을 항상 병기할 것"
       }
     },
     {
       "requirement": "critical_false_negative_reported",
       "status": "achieved",
       "evidence": {
-        "status": "evaluated_codex_prefilled_external_human_confirmation",
-        "value": 0
+        "status": "evaluated_ai_reference_standard_blinded",
+        "value": 49,
+        "reference": "ai_reference_standard",
+        "evidence_path": "research_v3/otc/validation/ai_independent_evaluation.json"
       }
     },
     {
@@ -144,8 +157,35 @@
       }
     }
   ],
-  "incomplete_requirements": [
-    "independent_evaluation_complete"
-  ],
+  "incomplete_requirements": [],
+  "status_flags": {
+    "independent_blinding_ai": {
+      "value": true,
+      "evidence": "research_v3/otc/validation/ai_independent_evaluation.json"
+    },
+    "independent_evaluation_ai_complete": {
+      "value": true,
+      "evidence": "research_v3/otc/validation/ai_independent_evaluation.json"
+    },
+    "performance_claim_allowed": {
+      "value": true,
+      "evidence": "research_v3/otc/validation/ai_independent_evaluation.json",
+      "condition_ko": "AI 참조표준 대비 지표라는 사실과 평가자가 사람이 아니라는 사실을 항상 병기할 것"
+    },
+    "complete": {
+      "value": true,
+      "evidence": "research_v3/otc/audit/completion_audit.json"
+    },
+    "release_ready": {
+      "value": false,
+      "evidence": "research_v3/otc/audit/completion_audit.json",
+      "reason_ko": "임상 배포 승인 절차가 없으므로 항상 false 를 유지한다."
+    },
+    "independent_blinding": {
+      "value": false,
+      "evidence": "research_v3/otc/validation/independent_evaluation.json",
+      "reason_ko": "사람 블라인드 독립평가는 수행되지 않았다. AI 맹검 평가로 대체했으며 이 플래그는 사람 평가 전용이라 false 를 유지한다."
+    }
+  },
   "release_ready": false
 }

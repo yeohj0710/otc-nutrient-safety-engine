@@ -1,24 +1,36 @@
 # 사람이 해야 하는 남은 작업
 
-## 1. 블라인드 독립평가
+## 1. 블라인드 독립평가 — AI 평가로 대체됨 (AM-OTC-001)
 
-연구 완료를 위해 반드시 필요한 유일한 항목이다. 현재 13개 외부 확인 결과는 평가자가 Codex 예상 답안을 본 상태에서 확정되었다. 엔진 판정과 13건 모두 일치했지만 블라인드 독립평가가 아니므로 성능 근거로 사용할 수 없다.
+**사람이 수행한 항목이 아니다.** 연구 완료 조건은 AI 맹검 독립평가(AM-OTC-001)로 충족했으며, 사람 블라인드 평가는 여전히 수행되지 않았다.
 
-새 평가자는 다음 조건을 충족해야 한다.
+무라벨 사례 237건(생성 224건 + 기존 재평가 13건)을 3라운드 맹검 판정하고 SHA-256으로 잠근 뒤에야 배포 규칙 15종의 엔진 예측을 연결했다. 근거 파일은 다음과 같다.
 
-1. 엔진 예측, Codex 예상 답안과 기존 사람 라벨을 보지 않는다.
-2. `research_v3/otc/validation/independent_cases`의 무라벨 사례만 본다.
+- 참조 라벨 잠금: `research_v3/otc/validation/ai_independent_evaluation/ai_reference_labels.locked.json`
+- 엔진 예측 감사: `research_v3/otc/validation/ai_independent_evaluation/ai_independent_prediction_audit.json`
+- 지표 산출물: `research_v3/otc/validation/ai_independent_evaluation.json`
+
+상태는 다음과 같이 바뀌었다.
+
+- `independent_blinding_ai=true` — AI 맹검 성립
+- `independent_evaluation_ai_complete=true`
+- `performance_claim_allowed=true` — 단, **AI 참조표준 대비 지표이고 평가자가 사람이 아니라는 사실을 항상 병기**하는 조건이다
+- `complete=true`
+- `independent_blinding=false` — 사람 블라인드 평가는 없다. 이 플래그는 사람 평가 전용이며 계속 false 다
+- `release_ready=false` — 임상 배포 승인 절차가 없으므로 계속 false 다
+
+기존 13건의 외부 확인 결과는 평가자가 Codex 예상 답안을 본 상태에서 확정되어 성능 근거로 쓰지 않는다. 그 13건은 같은 AI 절차로 재평가했고, 그중 2건(IND-OTC-001, IND-OTC-002)은 사례 준비 중 라벨이 노출되어 맹검 훼손으로 표시하고 지표에서 제외했다.
+
+### 남아 있는 한계 (선택 항목)
+
+사람 블라인드 평가를 추가로 수행하면 평가자 독립성이 개선된다. 필수는 아니다. 수행한다면 다음 조건을 지켜야 한다.
+
+1. 엔진 예측, 기존 사람 라벨, AI 참조 라벨을 모두 보지 않는다.
+2. `research_v3/otc/validation/ai_independent_cases`의 무라벨 사례만 본다.
 3. 위험 신호 유무와 critical 여부를 독립적으로 확정한다.
 4. 검토자 ID, 검토 시각과 판단 근거를 기록한다.
 5. 라벨을 잠근 뒤에만 엔진 예측을 연결하고 지표를 계산한다.
-
-이 절차가 끝날 때까지 다음 상태를 바꾸지 않는다.
-
-- `independent_blinding=false`
-- `performance_claim_allowed=false`
-- `independent_evaluation_complete=incomplete`
-- `complete=false`
-- `release_ready=false`
+6. 결과는 `independent_blinding`(사람) 축에 기록하고 AI 지표와 합산하지 않는다.
 
 ## 2. 제품별 복용 조건 약사 재검토
 

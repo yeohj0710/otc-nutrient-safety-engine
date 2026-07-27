@@ -141,3 +141,19 @@ D-022에서 "P3-A 참조표준은 초록 전문을 사용한다"고 적었으나
 ## D-031
 
 2026-07-27 맹검 훼손 2건(IND-OTC-001, IND-OTC-002)을 모든 1차 지표에서 제외한다. 사례 생성 단계에서 `independent_scenarios.csv` 앞 2행을 확인하다가 그 행의 `human_reference_label` 과 기존 `prediction` 이 평가자에게 노출됐다. 이후 잠금 전까지 해당 파일을 다시 열지 않았고 판정은 카드만 보고 수행했지만, 노출 사실 자체는 되돌릴 수 없다. 잠금 파일에 `blinding_compromised` 플래그로 남기고 산출물에서 사유와 함께 별도 보고한다. 그 결과 legacy 재평가는 13건이 아니라 11건으로 계산된다.
+
+## D-032
+
+2026-07-27 P3-C 상태 갱신을 완료한다. 플래그와 근거 파일은 `research_v3/otc/audit/completion_audit.json` 의 `status_flags` 에 함께 기록한다.
+
+- `independent_blinding_ai=true`, `independent_evaluation_ai_complete=true`, `performance_claim_allowed=true`, `complete=true` — 근거는 `research_v3/otc/validation/ai_independent_evaluation.json`
+- `independent_blinding=false` — 사람 블라인드 평가는 수행되지 않았다. 이 플래그는 사람 평가 전용이며 AI 평가로 채우지 않는다
+- `release_ready=false` — 임상 배포 승인 절차가 없으므로 유지
+
+`performance_claim_allowed=true` 는 무조건적 허용이 아니라 "AI 참조표준 대비 지표이고 평가자가 사람이 아니라는 사실을 항상 병기한다"는 조건부 허용이며, 그 조건문을 플래그 옆에 함께 저장한다. 완료 판정 로직도 사람 평가 파일이 아니라 AI 평가 파일에서 읽도록 `audit_completion.py` 를 고쳤고, 잠금 해시 일치와 잠금 시각 < 예측 시각을 다시 확인한 뒤에만 `achieved` 가 되도록 했다.
+
+메트릭 매니페스트에는 `sensitivity_vs_ai_reference` 처럼 출처를 이름에 박은 키로 추가하고, 기존 사람 축(`independent_scenarios`)은 그대로 둔 채 합산하지 않는다. 배포 블로커는 0건이 됐지만 평가자 독립성 한계는 `data_limitations` 에 남긴다.
+
+`project_identity.json` 의 `released_rule_count` 를 0에서 15로 고쳤다. 값의 출처(`rules.csv` 의 status=released)도 같은 파일에 적어 다음에 다시 어긋나지 않게 했다.
+
+`import_health_kr_catalog.py` 의 기존 연구 경계 상수에서 `complete` 기대값을 False에서 True로 바꿨다. 이 상수는 카탈로그 가져오기가 기존 연구 상태를 오염시키지 않았는지 확인하는 용도이므로 실제 상태를 따라가야 한다. `independent_blinding` 과 `performance_claim_allowed` 는 사람 평가 파일에서 읽으므로 False 그대로 둔다.
