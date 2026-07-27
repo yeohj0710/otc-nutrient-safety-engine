@@ -1,52 +1,36 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-07-27T08:18:28+09:00",
+  "generated_at": "2026-07-27T12:56:40+09:00",
   "language": "ko",
   "phases": {
-    "P0": {
-      "status": "complete",
-      "started_at": "2026-07-27T01:30:00+09:00",
-      "ended_at": "2026-07-27T01:35:00+09:00",
-      "elapsed_minutes": 5
-    },
-    "P1": {
-      "status": "complete",
-      "started_at": "2026-07-27T01:35:00+09:00",
-      "ended_at": "2026-07-27T01:47:00+09:00",
-      "elapsed_minutes": 12
-    },
     "P2": {
-      "status": "partial",
-      "started_at": "2026-07-27T01:47:00+09:00",
-      "ended_at": "2026-07-27T07:58:00+09:00",
-      "elapsed_minutes": 371,
-      "cutoff_decision_at": "2026-07-27T07:50:00+09:00"
+      "status": "complete",
+      "coverage": 1.0,
+      "evidence_path": "research_v3/otc/literature/screening/screening_manifest.json"
     },
-    "P3": {
-      "status": "not_run",
-      "started_at": null,
-      "ended_at": null,
-      "elapsed_minutes": null,
-      "reason": "P2 coverage가 1.0이 아니어서 시작하지 않음"
+    "P3-A": {
+      "status": "complete",
+      "sample_size": 300,
+      "evidence_path": "research_v3/measurement/screener_vs_ai_reference.json"
+    },
+    "P3-B": {
+      "status": "complete",
+      "cases": 237,
+      "evidence_path": "research_v3/otc/validation/ai_independent_evaluation.json"
+    },
+    "P3-C": {
+      "status": "complete",
+      "evidence_path": "research_v3/otc/audit/completion_audit.json"
     },
     "P4": {
-      "status": "not_run",
-      "started_at": null,
-      "ended_at": null,
-      "elapsed_minutes": null,
-      "reason": "07:50 종료 전환 규칙 적용"
+      "status": "complete",
+      "rules_with_literature": 16,
+      "evidence_path": "research_v3/otc/rules/literature_link_manifest.json"
     },
     "P5": {
-      "status": "complete_with_partial_research_state",
-      "started_at": "2026-07-27T07:58:00+09:00",
-      "ended_at": "2026-07-27T08:18:28+09:00",
-      "elapsed_minutes": 20
-    },
-    "g_drive_sync_and_report": {
       "status": "complete",
-      "started_at": "2026-07-27T08:16:00+09:00",
-      "ended_at": "2026-07-27T08:18:28+09:00",
-      "elapsed_minutes": 2
+      "ended_at": "2026-07-27T12:56:40+09:00",
+      "evidence_path": "research_v3/logs/v40_run_report.json"
     }
   },
   "picos": {
@@ -61,59 +45,164 @@
     "with_abstract": 5424,
     "title_only": 300,
     "input_sha256": "5b0bcc9f47a98a4caa7a24599962ac5d5bcc372fd8edb29bfd67a4b1af78786c",
-    "raw_response_checksum_files_verified": 25,
     "evidence_path": "research_v3/otc/literature/evidence_map.csv"
   },
   "screening": {
-    "status": "partial",
-    "coverage": 0.05241090146750524,
-    "classified_rows": 300,
-    "remaining_rows": 5424,
+    "status": "complete",
+    "coverage": 1.0,
+    "classified_rows": 5724,
+    "remaining_rows": 0,
     "decision_distribution": {
-      "deprioritize": 270,
-      "retain": 13,
-      "uncertain": 17
+      "deprioritize": 3423,
+      "retain": 2240,
+      "uncertain": 61
     },
     "evidence_basis_distribution": {
-      "title_abstract": 296,
-      "title_only": 4
+      "title_abstract": 5424,
+      "title_only": 300
     },
-    "prompt_sha256": "fb7e0b495d6c58538f66641c07425447dd012c1c3e8b4da2b186f155474d3e76",
-    "execution_mode": "local_gpu",
-    "model": {
-      "id": "Qwen/Qwen2.5-3B-Instruct",
-      "revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1"
-    },
-    "batch_size": 100,
+    "prompt_sha256": "58186692d7cd2241b4342578babe6d87615f762bafbcda2445d20f96330c3a60",
+    "screener": "agent_direct",
+    "execution_mode": "agent_direct_judgment",
+    "local_language_model_used": false,
+    "external_llm_api_used": false,
+    "subagents_used": false,
+    "human_decisions": 0,
+    "batch_count": 115,
+    "batch_size": 50,
     "append_only_checkpoint": true,
-    "run_complete": false,
-    "partial_reason": "07:50 종료 전환 규칙에 따라 선별을 중단하고 필수 문서·동기화·보고서 작성으로 전환",
+    "missing_ids": 0,
+    "duplicated_ids": 0,
+    "run_complete": true,
     "evidence_path": "research_v3/otc/literature/screening/screening_manifest.json"
   },
   "ai_reference": {
-    "status": "not_run",
-    "sample_size": null,
-    "unresolved": null,
-    "inter_round_agreement": null,
-    "sensitivity_vs_ai_reference": null,
-    "specificity_vs_ai_reference": null,
-    "precision_vs_ai_reference": null,
-    "f1_vs_ai_reference": null,
-    "calibrated_estimate": null,
-    "calibrated_estimate_95_ci": null,
-    "evidence_path": null
+    "status": "complete",
+    "sample_size": 300,
+    "strata": 6,
+    "scored_rows": 255,
+    "excluded_uncertain": 45,
+    "unresolved": 0,
+    "inter_round_agreement": 1.0,
+    "inter_round_interpretation_ko": "라운드 간 일치도와 κ 는 동일 평가자가 동일한 명시적 규칙을 재적용했을 때의 판정 안정성을 나타낸다. 서로 다른 평가자 사이의 신뢰도(inter-rater reliability)가 아니므로 사람 이중검토의 κ 와 같은 의미로 해석하면 안 된다. 값이 1에 가깝다는 사실은 규칙이 결정론적으로 적용됐다는 뜻이지 판정이 옳다는 근거가 아니다.",
+    "sensitivity_vs_ai_reference": 0.8481634574517406,
+    "specificity_vs_ai_reference": 0.9046958371850029,
+    "precision_vs_ai_reference": 0.8487234243912868,
+    "f1_vs_ai_reference": 0.8484433485279144,
+    "agreement_vs_ai_reference": 0.8828370624478781,
+    "calibrated_estimate": 2250.7246495037925,
+    "calibrated_estimate_95_ci": [
+      2014.3730084086194,
+      2492.9735088032057
+    ],
+    "prompt_sha256": "a163cf06e85f6979ae29af3f15e21b25b13f304812d986877894abd9d9068387",
+    "evidence_path": "research_v3/measurement/screener_vs_ai_reference.json"
   },
   "blind_eval": {
-    "status": "not_run",
-    "case_count": null,
-    "unresolved": null,
-    "sensitivity": null,
-    "specificity": null,
-    "f1": null,
-    "critical_false_negatives": null,
-    "by_rule_type": null,
-    "legacy_13_case_recheck_comparison": null,
-    "evidence_path": null
+    "status": "complete",
+    "case_count": 237,
+    "scored_cases": 210,
+    "excluded_uncertain": 14,
+    "excluded_blinding_compromised": 2,
+    "unresolved": 0,
+    "inter_round_agreement": 1.0,
+    "sensitivity_vs_ai_reference": 0.5701754385964912,
+    "specificity_vs_ai_reference": 1.0,
+    "precision_vs_ai_reference": 1.0,
+    "f1_vs_ai_reference": 0.7262569832402235,
+    "false_positive": 0,
+    "false_negative": 49,
+    "critical_false_negatives": 49,
+    "by_rule_type": {
+      "age_restriction": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 1.0,
+        "false_negative": 0
+      },
+      "alcohol": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.375,
+        "false_negative": 5
+      },
+      "anticoagulant_antiplatelet": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.14285714285714285,
+        "false_negative": 6
+      },
+      "decongestant_hypertension": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 1.0,
+        "false_negative": 0
+      },
+      "duplicate_ingredient": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 1.0,
+        "false_negative": 0
+      },
+      "duplicate_pharmacologic_class": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 1.0,
+        "false_negative": 0
+      },
+      "gi_bleeding_ulcer": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.25,
+        "false_negative": 6
+      },
+      "hepatic_disease": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.375,
+        "false_negative": 5
+      },
+      "max_daily_dose": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 1.0,
+        "false_negative": 0
+      },
+      "minimum_interval": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 1.0,
+        "false_negative": 0
+      },
+      "pregnancy_lactation": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.18181818181818182,
+        "false_negative": 9
+      },
+      "renal_disease": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.25,
+        "false_negative": 6
+      },
+      "sedation_driving": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.375,
+        "false_negative": 5
+      },
+      "sedative_medication": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 0.0,
+        "false_negative": 7
+      },
+      "urgent_referral": {
+        "cases": 14,
+        "sensitivity_vs_ai_reference": 1.0,
+        "false_negative": 0
+      }
+    },
+    "coverage_gap_rule_types": 8,
+    "legacy_13_case_recheck_comparison": {
+      "note_ko": "기존 13건을 같은 AI 절차로 재평가했다. 그중 2건은 사례 준비 중 라벨이 노출돼 맹검 훼손으로 제외했고 나머지 11건을 채점했다.",
+      "cases": 11,
+      "true_positive": 9,
+      "false_positive": 0,
+      "false_negative": 0,
+      "true_negative": 2
+    },
+    "lock_sha256": "bbf6d28c9cd306d642c83a99926643839f7f1bc53056b88bfd1f40565f379c03",
+    "locked_at_utc": "2026-07-27T03:05:13.587995+00:00",
+    "predicted_at_utc": "2026-07-27T03:06:26.301Z",
+    "evidence_path": "research_v3/otc/validation/ai_independent_evaluation.json"
   },
   "state_flags": {
     "amendment_adopted": {
@@ -122,33 +211,33 @@
     },
     "independent_blinding": {
       "value": false,
-      "reason": "사람 맹검을 뜻하며 이번 v4.0 체인에서 사용하지 않음",
-      "evidence_path": "research_v3/protocol/protocol-v4.0-full-ai.md"
+      "reason": "사람 블라인드 독립평가는 수행되지 않았다. AI 맹검 평가로 대체했으며 이 플래그는 사람 평가 전용이라 false 를 유지한다.",
+      "evidence_path": "research_v3/otc/validation/independent_evaluation.json"
     },
     "independent_blinding_ai": {
-      "value": false,
-      "reason": "AI 맹검 독립평가 미실행",
-      "evidence_path": null
+      "value": true,
+      "reason": "무라벨 사례·별칭 카드·라운드 무작위 순서·잠금 후 예측 연결로 절차적 맹검을 구현",
+      "evidence_path": "research_v3/otc/validation/ai_independent_evaluation.json"
     },
     "independent_evaluation_ai_complete": {
-      "value": false,
-      "reason": "P3 미실행",
-      "evidence_path": null
+      "value": true,
+      "reason": "P3-B 완료",
+      "evidence_path": "research_v3/otc/validation/ai_independent_evaluation.json"
     },
     "performance_claim_allowed": {
-      "value": false,
-      "reason": "AI 참조표준과 맹검평가가 없음",
-      "evidence_path": "research_v3/otc/literature/screening/screening_manifest.json"
+      "value": true,
+      "reason": "AI 참조표준 대비 지표라는 사실과 평가자가 사람이 아니라는 사실을 항상 병기할 것",
+      "evidence_path": "research_v3/otc/validation/ai_independent_evaluation.json"
     },
     "complete": {
-      "value": false,
-      "reason": "P2, P3, P4 미완료",
-      "evidence_path": "research_v3/otc/literature/screening/screening_manifest.json"
+      "value": true,
+      "reason": "필수 요건 전부 achieved",
+      "evidence_path": "research_v3/otc/audit/completion_audit.json"
     },
     "release_ready": {
       "value": false,
-      "reason": "연구 종결과 배포 게이트를 통과하지 않음",
-      "evidence_path": "research_v3/metrics_manifest.json"
+      "reason": "임상 배포 승인 절차가 없으므로 항상 false 를 유지한다.",
+      "evidence_path": "research_v3/otc/audit/completion_audit.json"
     },
     "human_judgment_used": {
       "value": false,
@@ -157,164 +246,241 @@
     }
   },
   "rule_evidence": {
+    "status": "complete",
     "rule_types_total": 16,
     "rules_released": 15,
-    "rules_with_v40_literature_evidence": null,
-    "new_literature_connections_this_run": 0,
-    "conflict_count": null,
-    "status": "not_run",
-    "reason": "P4 문장 locator 연결과 conflict 감사를 실행하지 않음"
+    "rules_with_v40_literature_evidence": 16,
+    "new_literature_connections_this_run": 20,
+    "unique_pmids": 19,
+    "conflict_count": 4,
+    "locator_rule_ko": "모든 연결은 abstract:sentence:N 과 해당 문장의 원문 인용을 함께 저장한다",
+    "authority_separation_ko": "규칙 판정 권한은 허가원문(rules.csv 의 source_id·source_locator)에만 있다. 문헌은 설명용이며 supports_rule_release 는 전부 false 다. 두 근거는 서로 다른 파일·컬럼에 남기고 합치지 않는다.",
+    "evidence_path": "research_v3/otc/rules/literature_link_manifest.json"
   },
   "site": {
-    "status": "not_run",
-    "tests": null,
-    "typecheck": null,
-    "lint": null,
-    "build": null,
-    "consistency_audit": null,
+    "status": "complete",
+    "tests": 192,
+    "app_tests": 70,
+    "typecheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "static_paths_generated": 156,
+    "consistency_audit": {
+      "valid": true,
+      "analysis_products": 13,
+      "runtime_products": 13,
+      "analysis_product_ingredient_variant_rows": 57,
+      "selected_product_ingredient_bindings": 47,
+      "runtime_product_ingredient_bindings": 47,
+      "analysis_unique_ingredients": 28,
+      "runtime_unique_ingredients": 28,
+      "verified_administration_constraints": 32,
+      "runtime_administration_constraints": 32
+    },
     "deployment": "not_run",
-    "reason": "P4를 시작하지 않았고 배포 금지를 유지함"
+    "deployment_reason": "배포 금지 유지"
   },
   "thesis": {
     "docx_path": "research_v3/thesis/권혁찬_졸업논문_최종본.docx",
     "pdf_path": "research_v3/thesis/권혁찬_졸업논문_최종본.pdf",
-    "page_count": 7,
+    "page_count": 10,
     "render_checked_all_pages": true,
     "pretendard_verified_in_docx_xml": true,
     "pretendard_embedded_in_pdf": true,
+    "page_images": "research_v3/otc/etc/document_qa/thesis_v40_pages",
     "backup_paths": [
       "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\01_논문_최종본\\권혁찬_졸업논문_최종본_v3백업.docx",
       "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\01_논문_최종본\\권혁찬_졸업논문_최종본_v3백업.pdf",
       "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\metrics_manifest_v3백업.json"
-    ]
+    ],
+    "backups_preserved": true
   },
   "notion_updated": {
     "value": true,
-    "reason": "지정 페이지의 현재 상태 절을 v4.0 부분 실행 결과로 갱신하고 하위 페이지 4개 보존을 재확인함",
-    "url": "https://app.notion.com/p/3723b1f9b9ae802b9561d4487802e046"
+    "url": "https://app.notion.com/p/3723b1f9b9ae802b9561d4487802e046",
+    "method": "Notion MCP update_content 로 상단 '현재 상태' 절만 교체",
+    "verified_by_refetch": true,
+    "preserved_ko": "[대체됨] 절 5개와 하위 페이지 4개를 그대로 유지했다",
+    "source_draft": "research_v3/reports/notion_update.md"
   },
   "files_synced": [
     {
       "source": "research_v3/otc/literature/picos/picos_definition.json",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\picos_definition.json",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "e418d78ad033aff9a25e6aa886f087428dff32e1ce8d9a4e490ca824c6f7a0e4",
+      "target_sha256": "e418d78ad033aff9a25e6aa886f087428dff32e1ce8d9a4e490ca824c6f7a0e4",
+      "bytes": 20658
+    },
+    {
+      "source": "research_v3/measurement/screener_vs_ai_reference.json",
+      "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\screener_vs_ai_reference.json",
+      "copied": true,
+      "sha256_match_verified": true,
+      "target_existed": true,
+      "source_sha256": "fabe52a2126640a51a4e5d3ede1324c23981a8d40c6f97a78ef0e3420f586b4e",
+      "target_sha256": "fabe52a2126640a51a4e5d3ede1324c23981a8d40c6f97a78ef0e3420f586b4e",
+      "bytes": 322044
+    },
+    {
+      "source": "research_v3/otc/validation/ai_independent_evaluation.json",
+      "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\ai_independent_evaluation.json",
+      "copied": true,
+      "sha256_match_verified": true,
+      "target_existed": true,
+      "source_sha256": "00b1652120af44c256f104a30b7f314d6d5a193fb29d93be8b2de0b3903acb23",
+      "target_sha256": "00b1652120af44c256f104a30b7f314d6d5a193fb29d93be8b2de0b3903acb23",
+      "bytes": 115102
     },
     {
       "source": "research_v3/otc/rules/supporting_literature.csv",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\supporting_literature.csv",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
+      "target_sha256": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
+      "bytes": 23879
+    },
+    {
+      "source": "research_v3/otc/rules/literature_link_manifest.json",
+      "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\literature_link_manifest.json",
+      "copied": true,
+      "sha256_match_verified": true,
+      "target_existed": true,
+      "source_sha256": "a83203bcf7b8840a15683eef979b1cd14b0daa82c70b24138dff199987d55e5d",
+      "target_sha256": "a83203bcf7b8840a15683eef979b1cd14b0daa82c70b24138dff199987d55e5d",
+      "bytes": 8889
     },
     {
       "source": "research_v3/metrics_manifest.json",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\metrics_manifest.json",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "24093cad6311c2b2fb5ef176b62e149c204eb3afc7f0b398b06947ba2390dacc",
+      "target_sha256": "24093cad6311c2b2fb5ef176b62e149c204eb3afc7f0b398b06947ba2390dacc",
+      "bytes": 17784
     },
     {
       "source": "research_v3/protocol/amendments.csv",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\amendments.csv",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "eb5d593e8874e305b95a078f6c58e761930e33ec068cbb73b25161c5dee27c91",
+      "target_sha256": "eb5d593e8874e305b95a078f6c58e761930e33ec068cbb73b25161c5dee27c91",
+      "bytes": 1020
     },
     {
       "source": "research_v3/protocol/protocol-v4.0-full-ai.md",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\protocol-v4.0-full-ai.md",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "513180714f3d16f210f7a0331c520c7d3779dcf6c7479a091a5571e1b46c7f2c",
+      "target_sha256": "513180714f3d16f210f7a0331c520c7d3779dcf6c7479a091a5571e1b46c7f2c",
+      "bytes": 5298
     },
     {
       "source": "research_v3/reports/notion_update.md",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\notion_update.md",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "56a324a2f41e9073b79e3be87c7ef8e2041153356acef90658117a5e9050cec5",
+      "target_sha256": "56a324a2f41e9073b79e3be87c7ef8e2041153356acef90658117a5e9050cec5",
+      "bytes": 4173
     },
     {
       "source": "research_v3/thesis/권혁찬_졸업논문_최종본.docx",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\01_논문_최종본\\권혁찬_졸업논문_최종본.docx",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "256e7a2692ff21e7348affde2fe530ebd6a6e4fe6a3cec02812c245e3a0774f0",
+      "target_sha256": "256e7a2692ff21e7348affde2fe530ebd6a6e4fe6a3cec02812c245e3a0774f0",
+      "bytes": 47744
     },
     {
       "source": "research_v3/thesis/권혁찬_졸업논문_최종본.pdf",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\01_논문_최종본\\권혁찬_졸업논문_최종본.pdf",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "10e4244cb894877c5d4f0ed0e38cc6cdd295b8d25164045c9692d040ffdb0793",
+      "target_sha256": "10e4244cb894877c5d4f0ed0e38cc6cdd295b8d25164045c9692d040ffdb0793",
+      "bytes": 336936
     },
     {
       "source": "research_v3/reports/발표원고_v4.0.md",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\04_발표자료\\발표원고_v4.0.md",
+      "copied": true,
       "sha256_match_verified": true,
-      "verification": "원본·복사본 SHA-256 일치"
+      "target_existed": true,
+      "source_sha256": "faef7297e6cefd7941ef9173cc3329c2399e9a18824e1e1e094c0bf570c16c31",
+      "target_sha256": "faef7297e6cefd7941ef9173cc3329c2399e9a18824e1e1e094c0bf570c16c31",
+      "bytes": 4499
     },
     {
       "source": "research_v3/logs/v40_run_report.json",
       "target": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\03_최종산출물\\03_연구데이터_research_v3\\v40_run_report.json",
-      "sha256_match_verified": null,
-      "verification": "보고서 생성 뒤 복사하고 JSON 파싱으로 확인"
+      "copied": true,
+      "sha256_match_verified": true,
+      "target_existed": true,
+      "source_sha256": "525c5057689c3ba411b1d3a19e84d41471204b2a4a47ea49ffa948852740d7e9",
+      "target_sha256": "525c5057689c3ba411b1d3a19e84d41471204b2a4a47ea49ffa948852740d7e9",
+      "bytes": 20537
     }
   ],
   "closure": {
-    "research_complete": false,
-    "blocking_reasons": [
-      "AI 문헌 선별이 300/5,724행으로 coverage=1.0 미달",
-      "AI 참조표준 미생성",
-      "규칙엔진 AI 맹검 독립평가 미실행",
-      "규칙별 문장 locator와 conflict 감사 미실행",
-      "사이트 테스트·빌드·정합성 감사 미실행"
-    ]
+    "research_complete": true,
+    "release_ready": false,
+    "blocking_reasons": [],
+    "performance_claim_condition_ko": "AI 참조표준 대비 지표라는 사실과 평가자가 사람이 아니라는 사실을 항상 병기할 것"
   },
   "scope_reductions": [
     {
-      "item": "P2 AI 선별",
-      "planned": "5,724행 100%",
-      "actual": "300행",
-      "reason": "07:50 종료 전환 규칙"
+      "item": "사람 블라인드 독립평가",
+      "planned": "선택 항목",
+      "actual": "미실행",
+      "reason": "AI 맹검 평가(AM-OTC-001)로 대체했고 사람 평가는 연구 완료 조건이 아니다"
     },
     {
-      "item": "P3 AI 참조표준·맹검평가",
-      "planned": "실행",
-      "actual": "미실행",
-      "reason": "P2 완료 게이트 미충족"
+      "item": "문헌이 연결된 제품",
+      "planned": "13개",
+      "actual": "8개",
+      "reason": "문헌이 붙지 않은 제품은 소화효소제 4종과 외용 첩부제 1종이다. v4.0 검색 코퍼스에서 소화기 질문(OTC-LIT-Q04)의 retain 이 27건뿐이고 그중 국내 일반의약품 소화효소제 조합을 다룬 문헌이 없었기 때문이다. 억지로 맞지 않는 문헌을 붙이지 않고 공백으로 남긴다. 이 제품들의 판정은 허가원문만으로 이뤄진다."
     },
     {
-      "item": "P4 문헌 locator·사이트",
-      "planned": "실행",
-      "actual": "미실행",
-      "reason": "07:50 종료 전환 규칙"
+      "item": "maximum_duration 규칙 채점",
+      "planned": "14건",
+      "actual": "0건",
+      "reason": "허가원문에 연속 복용 일수 기준이 없어 참조표준이 전부 uncertain 으로 판정"
     }
   ],
   "unresolved": [
     {
-      "item": "남은 문헌 선별",
-      "value": 5424,
-      "reason": "이번 실행 시간 내 처리하지 못함"
+      "item": "규칙 바인딩 커버리지 공백",
+      "value": 49,
+      "reason": "허가원문에 같은 주의가 적혀 있으나 규칙이 대표 제품 하나에만 묶여 있어 다른 제품에서 발동하지 않는다. 판정 논리가 아니라 바인딩 범위의 문제다."
     },
     {
-      "item": "screener_vs_ai_reference.json",
+      "item": "사람 참조표준",
       "value": null,
-      "reason": "P3-A 미실행으로 파일을 생성하지 않음"
+      "reason": "모든 지표가 AI 참조표준 대비 값이며 절대적 진실 대비 정확도가 아니다"
     },
     {
-      "item": "ai_independent_evaluation.json",
-      "value": null,
-      "reason": "P3-B 미실행으로 파일을 생성하지 않음"
+      "item": "복용 조건 약사 재검토",
+      "value": 32,
+      "reason": "허가원문 검증까지만 완료됐고 별도 약사 재검토는 선택 항목이다"
     },
     {
-      "item": "AI 참조표준 대비 성능 지표",
+      "item": "자료원 확장",
       "value": null,
-      "reason": "참조표준이 없음"
-    },
-    {
-      "item": "규칙별 v4.0 문헌 locator와 conflict 수",
-      "value": null,
-      "reason": "P4 미실행"
-    },
-    {
-      "item": "사이트 검증 결과",
-      "value": null,
-      "reason": "이번 실행에서 사이트를 변경하거나 검증하지 않음"
+      "reason": "PubMed 단일 자료원이며 Embase 등은 사용하지 않았다"
     }
   ]
 }

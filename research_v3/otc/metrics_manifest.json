@@ -2,7 +2,7 @@
   "schema_version": "2.0.0",
   "lineage": "research_v3",
   "research_direction": "korean_otc_product_safety",
-  "generated_at_utc": "2026-07-27T03:37:54.394268+00:00",
+  "generated_at_utc": "2026-07-27T03:52:41.168199+00:00",
   "claim_boundary": "evidence_traceable_korean_otc_product_safety_research_working_state",
   "prior_direction": {
     "status": "superseded",
@@ -532,5 +532,67 @@
   "data_limitations": [
     "독립평가 참조표준은 사람이 아니라 AI 평가자다. 절차적 맹검(무라벨 사례, 별칭 카드, 3라운드 무작위 순서, SHA-256 잠금 후 예측 연결)은 갖췄으나 평가자 독립성은 외부 사람 평가와 동등하지 않으며, 성능 수치를 인용할 때 이 사실을 항상 병기한다.",
     "신신파스아렉스는 4매 포장이 7×10㎠와 10×14㎠를 모두 가리켜 단일 규격을 결정할 수 없으므로 원문 자료만 보존하고 분석·사이트 대상에서 제외함"
-  ]
+  ],
+  "literature_layer": {
+    "lineage": "research_v3_otc_v4_ai_literature",
+    "status": "complete",
+    "ai_picos_questions": 5,
+    "pubmed_hits_before_deduplication": 5742,
+    "corpus_rows": 5724,
+    "abstract_rows": 5424,
+    "title_only_rows": 300,
+    "ai_screened_rows": 5724,
+    "screening_coverage": 1.0,
+    "screening_distribution": {
+      "deprioritize": 3423,
+      "retain": 2240,
+      "uncertain": 61
+    },
+    "screening_run_complete": true,
+    "screener": "agent_direct",
+    "human_decisions": 0,
+    "ai_reference": {
+      "sample_size": 300,
+      "strata": 6,
+      "sensitivity_vs_ai_reference": 0.8481634574517406,
+      "specificity_vs_ai_reference": 0.9046958371850029,
+      "precision_vs_ai_reference": 0.8487234243912868,
+      "f1_vs_ai_reference": 0.8484433485279144,
+      "agreement_vs_ai_reference": 0.8828370624478781,
+      "corrected_prevalence": 0.39320835945209515
+    },
+    "blind_engine_evaluation": {
+      "cases_total": 237,
+      "scored_cases": 210,
+      "sensitivity_vs_ai_reference": 0.5701754385964912,
+      "specificity_vs_ai_reference": 1.0,
+      "precision_vs_ai_reference": 1.0,
+      "f1_vs_ai_reference": 0.7262569832402235,
+      "false_positive": 0,
+      "false_negative": 49,
+      "coverage_gap_rule_types": 8,
+      "lock_sha256": "bbf6d28c9cd306d642c83a99926643839f7f1bc53056b88bfd1f40565f379c03"
+    },
+    "rule_literature_links": {
+      "rules_total": 16,
+      "rules_with_literature": 16,
+      "links_total": 20,
+      "unique_pmids": 19,
+      "preserved_conflicts": 4
+    },
+    "ai_reference_standard": true,
+    "human_reference_standard": false,
+    "performance_claim_allowed": true,
+    "performance_claim_condition_ko": "AI 참조표준 대비 지표라는 사실과 평가자가 사람이 아니라는 사실을 항상 병기할 것",
+    "complete": true,
+    "release_ready": false,
+    "evidence_paths": {
+      "picos": "research_v3/otc/literature/picos/picos_definition.json",
+      "corpus": "research_v3/otc/literature/evidence_map.csv",
+      "screening": "research_v3/otc/literature/screening/screening_manifest.json",
+      "ai_reference": "research_v3/measurement/screener_vs_ai_reference.json",
+      "blind_evaluation": "research_v3/otc/validation/ai_independent_evaluation.json",
+      "literature_links": "research_v3/otc/rules/literature_link_manifest.json"
+    }
+  }
 }
