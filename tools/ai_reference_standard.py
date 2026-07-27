@@ -768,6 +768,12 @@ def cmd_finalize(_: argparse.Namespace) -> int:
             "unanimous_rate": unanimous / len(combined),
             "unresolved_rows": len(unresolved),
             "unresolved_record_ids": [row["record_id"] for row in unresolved],
+            "interpretation_ko": (
+                "라운드 간 일치도와 κ 는 동일 평가자가 동일한 명시적 규칙을 재적용했을 때의 "
+                "판정 안정성을 나타낸다. 서로 다른 평가자 사이의 신뢰도(inter-rater reliability)가 "
+                "아니므로 사람 이중검토의 κ 와 같은 의미로 해석하면 안 된다. 값이 1에 가깝다는 "
+                "사실은 규칙이 결정론적으로 적용됐다는 뜻이지 판정이 옳다는 근거가 아니다."
+            ),
         },
         "ai_reference_label_distribution": dict(sorted(reference_distribution.items())),
         "screener_by_reference": {
