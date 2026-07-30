@@ -1,0 +1,540 @@
+{
+  "schema_version": "1.0.0",
+  "arm": "screening_ai_reference_v50",
+  "generated_at_utc": "2026-07-30T07:33:32.394444+00:00",
+  "reference_type": "frozen_prompt_ai_reference",
+  "human_reference_rows": 0,
+  "independent_blinding": false,
+  "independent_blinding_ai": true,
+  "release_ready": false,
+  "labels_locked_before_truth_open": true,
+  "lock": {
+    "locked_at_utc": "2026-07-30T07:19:24.842781+00:00",
+    "scored_labels_sha256": "a1cf7ba97a96186c93a3c6e62d02d868547220fa29c2d150858ff12262cb5cc4",
+    "truth_opened_before_lock": false
+  },
+  "design": {
+    "seed": "20260730-v50-scoring-arm",
+    "rank_function": "SHA-256(seed|question_id|record_id) ascending",
+    "population_N": 43207,
+    "sample_n": 894,
+    "sampling_strata": 33,
+    "population_N_sum_asserted": true,
+    "weights": "probability stratum N_h/n_h; census stratum 1",
+    "bootstrap_draws": 10000,
+    "bootstrap_census_handling": "census strata held fixed; probability strata resampled within stratum"
+  },
+  "layers": {
+    "overall": {
+      "sample_n": 894,
+      "estimated_population_N": 43207.0,
+      "probability_sample_n": 798,
+      "census_n": 96,
+      "weighted_metrics": {
+        "sensitivity_vs_ai_reference": 0.46924310776942385,
+        "specificity_vs_ai_reference": 0.9584482830533825,
+        "precision_vs_ai_reference": 0.7156705349907497,
+        "f1_vs_ai_reference": 0.5668319679327656,
+        "agreement_vs_ai_reference": 0.8692847041110544,
+        "cohen_kappa_vs_ai_reference_weighted": 0.49327672329891975
+      },
+      "stratified_bootstrap_95_ci": {
+        "sensitivity_vs_ai_reference": [
+          0.4028602339181288,
+          0.5357698412698412
+        ],
+        "specificity_vs_ai_reference": [
+          0.9381266497643407,
+          0.9765919667276421
+        ],
+        "precision_vs_ai_reference": [
+          0.6207768406492131,
+          0.8190064578404692
+        ],
+        "f1_vs_ai_reference": [
+          0.5003591836340966,
+          0.6288247078709104
+        ],
+        "agreement_vs_ai_reference": [
+          0.8487299511653206,
+          0.8882895437264674
+        ],
+        "cohen_kappa_vs_ai_reference_weighted": [
+          0.4206454520755525,
+          0.5628098763435017
+        ]
+      },
+      "stratified_bootstrap_design": {
+        "draws": 10000,
+        "seed": "20260730-v50-scoring-bootstrap|overall",
+        "census_strata_fixed": true,
+        "probability_strata_resampled": 21,
+        "census_strata_fixed_count": 12,
+        "interval_collapsed_to_point": false
+      },
+      "wilson_95_ci_unweighted_sample": {
+        "sensitivity_vs_ai_reference": [
+          0.5035813594533357,
+          0.605161140993027
+        ],
+        "specificity_vs_ai_reference": [
+          0.8282688318396255,
+          0.8872994210343156
+        ],
+        "precision_vs_ai_reference": [
+          0.6767025457981962,
+          0.780699300730966
+        ],
+        "agreement_vs_ai_reference": [
+          0.7061580777718592,
+          0.7638580880602386
+        ]
+      },
+      "raw_binary_confusion": {
+        "tp": 202,
+        "tn": 456,
+        "fp": 74,
+        "fn": 162
+      },
+      "weighted_binary_confusion": {
+        "tp": 3695.2894736842095,
+        "tn": 33863.89473684217,
+        "fp": 1468.1052631578932,
+        "fn": 4179.710526315783
+      },
+      "raw_three_label_matrix": {
+        "retain": {
+          "retain": 202.0,
+          "deprioritize": 155.0,
+          "uncertain": 7.0
+        },
+        "deprioritize": {
+          "retain": 20.0,
+          "deprioritize": 363.0,
+          "uncertain": 4.0
+        },
+        "uncertain": {
+          "retain": 54.0,
+          "deprioritize": 66.0,
+          "uncertain": 23.0
+        }
+      },
+      "weighted_three_label_matrix": {
+        "retain": {
+          "retain": 3695.2894736842095,
+          "deprioritize": 4007.2105263157828,
+          "uncertain": 172.5
+        },
+        "deprioritize": {
+          "retain": 1318.315789473684,
+          "deprioritize": 33461.92105263165,
+          "uncertain": 184.76315789473685
+        },
+        "uncertain": {
+          "retain": 149.78947368421058,
+          "deprioritize": 154.6315789473685,
+          "uncertain": 62.57894736842104
+        }
+      }
+    },
+    "classifier": {
+      "sample_n": 380,
+      "estimated_population_N": 38207.0,
+      "probability_sample_n": 342,
+      "census_n": 38,
+      "weighted_metrics": {
+        "sensitivity_vs_ai_reference": 0.41698829534176673,
+        "specificity_vs_ai_reference": 0.9622421636963145,
+        "precision_vs_ai_reference": 0.700672348986182,
+        "f1_vs_ai_reference": 0.5228280513939777,
+        "agreement_vs_ai_reference": 0.8668830319051484,
+        "cohen_kappa_vs_ai_reference_weighted": 0.4520594401318321
+      },
+      "stratified_bootstrap_95_ci": {
+        "sensitivity_vs_ai_reference": [
+          0.34107313048409743,
+          0.4929390034499596
+        ],
+        "specificity_vs_ai_reference": [
+          0.9392011352727576,
+          0.9825084519387286
+        ],
+        "precision_vs_ai_reference": [
+          0.5805646746171205,
+          0.8351098322591548
+        ],
+        "f1_vs_ai_reference": [
+          0.44217042765377174,
+          0.6008825192013112
+        ],
+        "agreement_vs_ai_reference": [
+          0.8436259613490503,
+          0.888431869745555
+        ],
+        "cohen_kappa_vs_ai_reference_weighted": [
+          0.3628243160888995,
+          0.5391499177897914
+        ]
+      },
+      "stratified_bootstrap_design": {
+        "draws": 10000,
+        "seed": "20260730-v50-scoring-bootstrap|classifier",
+        "census_strata_fixed": true,
+        "probability_strata_resampled": 9,
+        "census_strata_fixed_count": 1,
+        "interval_collapsed_to_point": false
+      },
+      "wilson_95_ci_unweighted_sample": {
+        "sensitivity_vs_ai_reference": [
+          0.3380027495052009,
+          0.47627846660295653
+        ],
+        "specificity_vs_ai_reference": [
+          0.8993192942010715,
+          0.9673683639608608
+        ],
+        "precision_vs_ai_reference": [
+          0.7898824415232533,
+          0.9287472584780776
+        ],
+        "agreement_vs_ai_reference": [
+          0.6250087684890888,
+          0.7188832133868499
+        ]
+      },
+      "raw_binary_confusion": {
+        "tp": 77,
+        "tn": 179,
+        "fp": 11,
+        "fn": 113
+      },
+      "weighted_binary_confusion": {
+        "tp": 2786.315789473679,
+        "tn": 30334.684210526306,
+        "fp": 1190.3157894736844,
+        "fn": 3895.6842105263067
+      },
+      "raw_three_label_matrix": {
+        "retain": {
+          "retain": 77.0,
+          "deprioritize": 109.0,
+          "uncertain": 4.0
+        },
+        "deprioritize": {
+          "retain": 11.0,
+          "deprioritize": 178.0,
+          "uncertain": 1.0
+        },
+        "uncertain": {
+          "retain": 0.0,
+          "deprioritize": 0.0,
+          "uncertain": 0.0
+        }
+      },
+      "weighted_three_label_matrix": {
+        "retain": {
+          "retain": 2786.315789473679,
+          "deprioritize": 3743.0263157894656,
+          "uncertain": 152.65789473684208
+        },
+        "deprioritize": {
+          "retain": 1190.3157894736844,
+          "deprioritize": 30223.05263157894,
+          "uncertain": 111.63157894736842
+        },
+        "uncertain": {
+          "retain": 0.0,
+          "deprioritize": 0.0,
+          "uncertain": 0.0
+        }
+      }
+    },
+    "adjudicated": {
+      "sample_n": 514,
+      "estimated_population_N": 5000.0,
+      "probability_sample_n": 456,
+      "census_n": 58,
+      "weighted_metrics": {
+        "sensitivity_vs_ai_reference": 0.7619226187850178,
+        "specificity_vs_ai_reference": 0.9270319218060912,
+        "precision_vs_ai_reference": 0.7659267800518881,
+        "f1_vs_ai_reference": 0.7639194524001723,
+        "agreement_vs_ai_reference": 0.887636842105263,
+        "cohen_kappa_vs_ai_reference_weighted": 0.639286089223598
+      },
+      "stratified_bootstrap_95_ci": {
+        "sensitivity_vs_ai_reference": [
+          0.6883338112674817,
+          0.8301716151233067
+        ],
+        "specificity_vs_ai_reference": [
+          0.9000864059281378,
+          0.9502998285706384
+        ],
+        "precision_vs_ai_reference": [
+          0.7011074535448133,
+          0.8297659926919461
+        ],
+        "f1_vs_ai_reference": [
+          0.7078397533261115,
+          0.8151074871596057
+        ],
+        "agreement_vs_ai_reference": [
+          0.8606417105263157,
+          0.9121392105263156
+        ],
+        "cohen_kappa_vs_ai_reference_weighted": [
+          0.57241196877383,
+          0.7012429349506941
+        ]
+      },
+      "stratified_bootstrap_design": {
+        "draws": 10000,
+        "seed": "20260730-v50-scoring-bootstrap|adjudicated",
+        "census_strata_fixed": true,
+        "probability_strata_resampled": 12,
+        "census_strata_fixed_count": 11,
+        "interval_collapsed_to_point": false
+      },
+      "wilson_95_ci_unweighted_sample": {
+        "sensitivity_vs_ai_reference": [
+          0.6474001935910172,
+          0.7799467282345949
+        ],
+        "specificity_vs_ai_reference": [
+          0.7699720155701626,
+          0.8524078473293732
+        ],
+        "precision_vs_ai_reference": [
+          0.5947151541604071,
+          0.7284683765588246
+        ],
+        "agreement_vs_ai_reference": [
+          0.7443913011546327,
+          0.8156256597515706
+        ]
+      },
+      "raw_binary_confusion": {
+        "tp": 125,
+        "tn": 277,
+        "fp": 63,
+        "fn": 49
+      },
+      "weighted_binary_confusion": {
+        "tp": 908.9736842105258,
+        "tn": 3529.2105263157814,
+        "fp": 277.78947368421046,
+        "fn": 284.02631578947376
+      },
+      "raw_three_label_matrix": {
+        "retain": {
+          "retain": 125.0,
+          "deprioritize": 46.0,
+          "uncertain": 3.0
+        },
+        "deprioritize": {
+          "retain": 9.0,
+          "deprioritize": 185.0,
+          "uncertain": 3.0
+        },
+        "uncertain": {
+          "retain": 54.0,
+          "deprioritize": 66.0,
+          "uncertain": 23.0
+        }
+      },
+      "weighted_three_label_matrix": {
+        "retain": {
+          "retain": 908.9736842105258,
+          "deprioritize": 264.184210526316,
+          "uncertain": 19.842105263157894
+        },
+        "deprioritize": {
+          "retain": 128.0,
+          "deprioritize": 3238.8684210526267,
+          "uncertain": 73.13157894736841
+        },
+        "uncertain": {
+          "retain": 149.78947368421058,
+          "deprioritize": 154.6315789473685,
+          "uncertain": 62.57894736842104
+        }
+      }
+    }
+  },
+  "question_agreement": {
+    "OTC-LIT-Q01-ACETAMINOPHEN": {
+      "sample_n": 191,
+      "estimated_population_N": 9259.0,
+      "exact_three_label_agreement_vs_ai_reference_weighted": 0.808490743003962,
+      "binary_agreement_vs_ai_reference_weighted": 0.8142404829440488,
+      "raw_disagreements": 58
+    },
+    "OTC-LIT-Q02-NSAID": {
+      "sample_n": 194,
+      "estimated_population_N": 6448.0,
+      "exact_three_label_agreement_vs_ai_reference_weighted": 0.7076041530625571,
+      "binary_agreement_vs_ai_reference_weighted": 0.7189826302729527,
+      "raw_disagreements": 73
+    },
+    "OTC-LIT-Q03-COLD-ALLERGY": {
+      "sample_n": 178,
+      "estimated_population_N": 5669.0,
+      "exact_three_label_agreement_vs_ai_reference_weighted": 0.8707002998765214,
+      "binary_agreement_vs_ai_reference_weighted": 0.8928614533334571,
+      "raw_disagreements": 57
+    },
+    "OTC-LIT-Q04-DIGESTIVE": {
+      "sample_n": 194,
+      "estimated_population_N": 21314.0,
+      "exact_three_label_agreement_vs_ai_reference_weighted": 0.9270111564921499,
+      "binary_agreement_vs_ai_reference_weighted": 0.9309127185985985,
+      "raw_disagreements": 89
+    },
+    "OTC-LIT-Q05-TOPICAL": {
+      "sample_n": 137,
+      "estimated_population_N": 517.0,
+      "exact_three_label_agreement_vs_ai_reference_weighted": 0.922681461875191,
+      "binary_agreement_vs_ai_reference_weighted": 0.9304184057823475,
+      "raw_disagreements": 29
+    }
+  },
+  "disagreements": {
+    "raw_total": 306,
+    "raw_by_direction": {
+      "deprioritize->retain": 20,
+      "deprioritize->uncertain": 4,
+      "retain->deprioritize": 155,
+      "retain->uncertain": 7,
+      "uncertain->deprioritize": 66,
+      "uncertain->retain": 54
+    },
+    "design_weighted_by_direction": {
+      "deprioritize->retain": 1318.315789473684,
+      "deprioritize->uncertain": 184.76315789473685,
+      "retain->deprioritize": 4007.2105263157828,
+      "retain->uncertain": 172.5,
+      "uncertain->deprioritize": 154.6315789473685,
+      "uncertain->retain": 149.78947368421058
+    }
+  },
+  "focus_classifier_unadjudicated_retain": {
+    "sample_n": 190,
+    "estimated_population_N": 6682.0,
+    "probability_sample_n": 152,
+    "census_n": 38,
+    "weighted_metrics": {
+      "sensitivity_vs_ai_reference": 0.41698829534176673,
+      "specificity_vs_ai_reference": null,
+      "precision_vs_ai_reference": 1.0,
+      "f1_vs_ai_reference": 0.588555737139935,
+      "agreement_vs_ai_reference": 0.41698829534176673,
+      "cohen_kappa_vs_ai_reference_weighted": 0.0
+    },
+    "stratified_bootstrap_95_ci": {
+      "sensitivity_vs_ai_reference": [
+        0.3405571133760774,
+        0.493407563918776
+      ],
+      "specificity_vs_ai_reference": null,
+      "precision_vs_ai_reference": [
+        1.0,
+        1.0
+      ],
+      "f1_vs_ai_reference": [
+        0.5080829603970363,
+        0.6607808555924604
+      ],
+      "agreement_vs_ai_reference": [
+        0.3405571133760774,
+        0.493407563918776
+      ],
+      "cohen_kappa_vs_ai_reference_weighted": [
+        -1.0383363637085623e-16,
+        1.0394386051258535e-16
+      ]
+    },
+    "stratified_bootstrap_design": {
+      "draws": 10000,
+      "seed": "20260730-v50-scoring-bootstrap|classifier_unadjudicated_retain",
+      "census_strata_fixed": true,
+      "probability_strata_resampled": 4,
+      "census_strata_fixed_count": 1,
+      "interval_collapsed_to_point": false
+    },
+    "wilson_95_ci_unweighted_sample": {
+      "sensitivity_vs_ai_reference": [
+        0.3380027495052009,
+        0.47627846660295653
+      ],
+      "specificity_vs_ai_reference": null,
+      "precision_vs_ai_reference": [
+        0.9524815747175658,
+        0.9999999999999999
+      ],
+      "agreement_vs_ai_reference": [
+        0.3380027495052009,
+        0.47627846660295653
+      ]
+    },
+    "raw_binary_confusion": {
+      "tp": 77,
+      "tn": 0,
+      "fp": 0,
+      "fn": 113
+    },
+    "weighted_binary_confusion": {
+      "tp": 2786.315789473679,
+      "tn": 0.0,
+      "fp": 0.0,
+      "fn": 3895.6842105263067
+    },
+    "raw_three_label_matrix": {
+      "retain": {
+        "retain": 77.0,
+        "deprioritize": 109.0,
+        "uncertain": 4.0
+      },
+      "deprioritize": {
+        "retain": 0.0,
+        "deprioritize": 0.0,
+        "uncertain": 0.0
+      },
+      "uncertain": {
+        "retain": 0.0,
+        "deprioritize": 0.0,
+        "uncertain": 0.0
+      }
+    },
+    "weighted_three_label_matrix": {
+      "retain": {
+        "retain": 2786.315789473679,
+        "deprioritize": 3743.0263157894656,
+        "uncertain": 152.65789473684208
+      },
+      "deprioritize": {
+        "retain": 0.0,
+        "deprioritize": 0.0,
+        "uncertain": 0.0
+      },
+      "uncertain": {
+        "retain": 0.0,
+        "deprioritize": 0.0,
+        "uncertain": 0.0
+      }
+    },
+    "population_N": 6682,
+    "interpretation": {
+      "supported": "The probability sample estimates agreement with a newly blinded AI scoring pass for the 6,682 final retain rows that did not receive v5.0 semantic adjudication.",
+      "not_supported": "It does not establish agreement with a human reference, a clinical conclusion, or the error rate of every unreviewed row."
+    }
+  },
+  "rogan_gladen": {
+    "status": "algebraic_identity_not_independent_correction",
+    "formula_value": 0.1195036622964358,
+    "design_weighted_scorer_retain_prevalence": 0.11950366229643568,
+    "absolute_difference": 1.249000902703301e-16,
+    "interpretation": "Reference-label strata reconstruct the reference population totals. Estimating both error parameters from the same sample makes the Rogan-Gladen expression reduce algebraically to the scorer retain prevalence. It is not an independent cross-check; external validation parameters would be required."
+  },
+  "permanent_v50_limitation": "The v5.0 re-adjudication executor, model, execution time, and pre-question receipt were not recorded and cannot be reconstructed retrospectively. This scoring arm does not repair that separate provenance gap."
+}

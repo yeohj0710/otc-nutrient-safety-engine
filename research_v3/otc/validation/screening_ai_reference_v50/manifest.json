@@ -1,0 +1,669 @@
+{
+  "schema_version": "1.0.0",
+  "track": "v5.0",
+  "arm": "screening_ai_reference_v50",
+  "status": "prepared_for_blinded_scoring",
+  "created_at_utc": "2026-07-30T06:52:30.147596+00:00",
+  "seed": "20260730-v50-scoring-arm",
+  "human_reference_rows": 0,
+  "independent_blinding": false,
+  "independent_blinding_ai": null,
+  "independent_blinding_ai_status": "pending_label_lock",
+  "release_ready": false,
+  "local_language_model_used": false,
+  "external_llm_api_used": false,
+  "design": {
+    "seed": "20260730-v50-scoring-arm",
+    "rank_function": "SHA-256(seed|question_id|record_id) ascending",
+    "partition_axes": [
+      "final_label",
+      "adjudication_status",
+      "question_id"
+    ],
+    "forced_census_rule": "classifier invariant failures are separate census substrata",
+    "per_probability_stratum_target": 38,
+    "partition_is_exhaustive": true,
+    "partition_is_mutually_exclusive": true,
+    "population_total": 43207,
+    "sample_total": 894,
+    "base_strata": {
+      "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize",
+        "population_N": 818,
+        "invariant_failure_census_N": 1,
+        "probability_population_N": 817,
+        "sample_n": 39
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain": {
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain",
+        "population_N": 448,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 448,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain": {
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain",
+        "population_N": 134,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 134,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize",
+        "population_N": 5491,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 5491,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain": {
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain",
+        "population_N": 2368,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 2368,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|deprioritize",
+        "population_N": 591,
+        "invariant_failure_census_N": 3,
+        "probability_population_N": 588,
+        "sample_n": 41
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|retain": {
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain",
+        "population_N": 499,
+        "invariant_failure_census_N": 1,
+        "probability_population_N": 498,
+        "sample_n": 39
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|uncertain": {
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain",
+        "population_N": 110,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 110,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q02-NSAID|classifier|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize",
+        "population_N": 3324,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 3324,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q02-NSAID|classifier|retain": {
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain",
+        "population_N": 1924,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 1924,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize",
+        "population_N": 479,
+        "invariant_failure_census_N": 2,
+        "probability_population_N": 477,
+        "sample_n": 40
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain": {
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain",
+        "population_N": 98,
+        "invariant_failure_census_N": 1,
+        "probability_population_N": 97,
+        "sample_n": 39
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain": {
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain",
+        "population_N": 23,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 23,
+        "sample_n": 23
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|classifier|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|deprioritize",
+        "population_N": 4242,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 4242,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain": {
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain",
+        "population_N": 827,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 827,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q04-DIGESTIVE|adjudicated|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|deprioritize",
+        "population_N": 1374,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 1374,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain": {
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain",
+        "population_N": 132,
+        "invariant_failure_census_N": 4,
+        "probability_population_N": 128,
+        "sample_n": 42
+      },
+      "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain": {
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain",
+        "population_N": 94,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 94,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q04-DIGESTIVE|classifier|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|deprioritize",
+        "population_N": 18189,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 18189,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q04-DIGESTIVE|classifier|retain": {
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain",
+        "population_N": 1525,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 1525,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize",
+        "population_N": 178,
+        "invariant_failure_census_N": 1,
+        "probability_population_N": 177,
+        "sample_n": 39
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|retain": {
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|retain",
+        "population_N": 16,
+        "invariant_failure_census_N": 2,
+        "probability_population_N": 14,
+        "sample_n": 16
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain": {
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain",
+        "population_N": 6,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 6,
+        "sample_n": 6
+      },
+      "OTC-LIT-Q05-TOPICAL|classifier|deprioritize": {
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|deprioritize",
+        "population_N": 279,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 279,
+        "sample_n": 38
+      },
+      "OTC-LIT-Q05-TOPICAL|classifier|retain": {
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain",
+        "population_N": 38,
+        "invariant_failure_census_N": 0,
+        "probability_population_N": 38,
+        "sample_n": 38
+      }
+    },
+    "strata": {
+      "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": true,
+        "population_N": 1,
+        "sample_n": 1,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 817,
+        "sample_n": 38,
+        "census": false,
+        "weight": 21.5
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain",
+        "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 448,
+        "sample_n": 38,
+        "census": false,
+        "weight": 11.789473684210526
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain",
+        "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "adjudication_status": "adjudicated",
+        "final_label": "uncertain",
+        "invariant_failure_census": false,
+        "population_N": 134,
+        "sample_n": 38,
+        "census": false,
+        "weight": 3.526315789473684
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize",
+        "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "adjudication_status": "classifier",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 5491,
+        "sample_n": 38,
+        "census": false,
+        "weight": 144.5
+      },
+      "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain",
+        "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "adjudication_status": "classifier",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 2368,
+        "sample_n": 38,
+        "census": false,
+        "weight": 62.31578947368421
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|deprioritize|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|deprioritize|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q02-NSAID",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": true,
+        "population_N": 3,
+        "sample_n": 3,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q02-NSAID",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 588,
+        "sample_n": 38,
+        "census": false,
+        "weight": 15.473684210526315
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|retain|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain",
+        "question_id": "OTC-LIT-Q02-NSAID",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": true,
+        "population_N": 1,
+        "sample_n": 1,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain",
+        "question_id": "OTC-LIT-Q02-NSAID",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 498,
+        "sample_n": 38,
+        "census": false,
+        "weight": 13.105263157894736
+      },
+      "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain",
+        "question_id": "OTC-LIT-Q02-NSAID",
+        "adjudication_status": "adjudicated",
+        "final_label": "uncertain",
+        "invariant_failure_census": false,
+        "population_N": 110,
+        "sample_n": 38,
+        "census": false,
+        "weight": 2.8947368421052633
+      },
+      "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize",
+        "question_id": "OTC-LIT-Q02-NSAID",
+        "adjudication_status": "classifier",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 3324,
+        "sample_n": 38,
+        "census": false,
+        "weight": 87.47368421052632
+      },
+      "OTC-LIT-Q02-NSAID|classifier|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain",
+        "question_id": "OTC-LIT-Q02-NSAID",
+        "adjudication_status": "classifier",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 1924,
+        "sample_n": 38,
+        "census": false,
+        "weight": 50.63157894736842
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": true,
+        "population_N": 2,
+        "sample_n": 2,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 477,
+        "sample_n": 38,
+        "census": false,
+        "weight": 12.552631578947368
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain",
+        "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": true,
+        "population_N": 1,
+        "sample_n": 1,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain",
+        "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 97,
+        "sample_n": 38,
+        "census": false,
+        "weight": 2.5526315789473686
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain",
+        "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "adjudication_status": "adjudicated",
+        "final_label": "uncertain",
+        "invariant_failure_census": false,
+        "population_N": 23,
+        "sample_n": 23,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|classifier|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|deprioritize",
+        "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "adjudication_status": "classifier",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 4242,
+        "sample_n": 38,
+        "census": false,
+        "weight": 111.63157894736842
+      },
+      "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain",
+        "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "adjudication_status": "classifier",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 827,
+        "sample_n": 38,
+        "census": false,
+        "weight": 21.763157894736842
+      },
+      "OTC-LIT-Q04-DIGESTIVE|adjudicated|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q04-DIGESTIVE",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 1374,
+        "sample_n": 38,
+        "census": false,
+        "weight": 36.1578947368421
+      },
+      "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain",
+        "question_id": "OTC-LIT-Q04-DIGESTIVE",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": true,
+        "population_N": 4,
+        "sample_n": 4,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain",
+        "question_id": "OTC-LIT-Q04-DIGESTIVE",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 128,
+        "sample_n": 38,
+        "census": false,
+        "weight": 3.3684210526315788
+      },
+      "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain",
+        "question_id": "OTC-LIT-Q04-DIGESTIVE",
+        "adjudication_status": "adjudicated",
+        "final_label": "uncertain",
+        "invariant_failure_census": false,
+        "population_N": 94,
+        "sample_n": 38,
+        "census": false,
+        "weight": 2.473684210526316
+      },
+      "OTC-LIT-Q04-DIGESTIVE|classifier|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|deprioritize",
+        "question_id": "OTC-LIT-Q04-DIGESTIVE",
+        "adjudication_status": "classifier",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 18189,
+        "sample_n": 38,
+        "census": false,
+        "weight": 478.6578947368421
+      },
+      "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain",
+        "question_id": "OTC-LIT-Q04-DIGESTIVE",
+        "adjudication_status": "classifier",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 1525,
+        "sample_n": 38,
+        "census": false,
+        "weight": 40.13157894736842
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q05-TOPICAL",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": true,
+        "population_N": 1,
+        "sample_n": 1,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize",
+        "question_id": "OTC-LIT-Q05-TOPICAL",
+        "adjudication_status": "adjudicated",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 177,
+        "sample_n": 38,
+        "census": false,
+        "weight": 4.657894736842105
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|retain|invariant_failure_census": {
+        "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|retain|invariant_failure_census",
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|retain",
+        "question_id": "OTC-LIT-Q05-TOPICAL",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": true,
+        "population_N": 2,
+        "sample_n": 2,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|retain",
+        "question_id": "OTC-LIT-Q05-TOPICAL",
+        "adjudication_status": "adjudicated",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 14,
+        "sample_n": 14,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability",
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain",
+        "question_id": "OTC-LIT-Q05-TOPICAL",
+        "adjudication_status": "adjudicated",
+        "final_label": "uncertain",
+        "invariant_failure_census": false,
+        "population_N": 6,
+        "sample_n": 6,
+        "census": true,
+        "weight": 1.0
+      },
+      "OTC-LIT-Q05-TOPICAL|classifier|deprioritize|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|deprioritize|probability",
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|deprioritize",
+        "question_id": "OTC-LIT-Q05-TOPICAL",
+        "adjudication_status": "classifier",
+        "final_label": "deprioritize",
+        "invariant_failure_census": false,
+        "population_N": 279,
+        "sample_n": 38,
+        "census": false,
+        "weight": 7.342105263157895
+      },
+      "OTC-LIT-Q05-TOPICAL|classifier|retain|probability": {
+        "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+        "base_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain",
+        "question_id": "OTC-LIT-Q05-TOPICAL",
+        "adjudication_status": "classifier",
+        "final_label": "retain",
+        "invariant_failure_census": false,
+        "population_N": 38,
+        "sample_n": 38,
+        "census": true,
+        "weight": 1.0
+      }
+    }
+  },
+  "card_stats": {
+    "cards": 894,
+    "abstract_present": 675,
+    "abstract_absent": 219,
+    "mesh_present": 788,
+    "mesh_absent": 106
+  },
+  "blinding_check": {
+    "checked_cards": 894,
+    "allowed_fields": [
+      "record_id",
+      "question_id",
+      "title",
+      "abstract",
+      "publication_types",
+      "mesh_terms"
+    ],
+    "forbidden_keys": [
+      "adjudication_label",
+      "adjudication_status",
+      "base_stratum_id",
+      "classifier_label",
+      "confidence",
+      "decision",
+      "evidence_basis",
+      "final_label",
+      "invariant_failure",
+      "label_source",
+      "reason_codes",
+      "sampling_stratum_id",
+      "selected_for_adjudication",
+      "selection_reason",
+      "weight"
+    ],
+    "passed": true,
+    "problems": []
+  },
+  "artifacts": {
+    "blinded_cards": {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/blinded_cards.json",
+      "sha256": "d59d8b9ce0c74ea7ef84663c1618b603a2cfe246d9fb04a997b0cad88a5e4458",
+      "rows": 894
+    },
+    "v50_truth_sealed": {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/v50_truth_sealed.json",
+      "sha256": "29146e3baac3f0b0060c9408c0a85c9e799026e8abbbf9e411b34272da768ced",
+      "rows": 894,
+      "opened_before_lock": false
+    }
+  },
+  "source_hashes": {
+    "classifier_decisions.csv": "ad0873b6db69cc63cac49c0f454a020c2ba86836592b652c89427ec5460c6db4",
+    "decisions.csv": "4db33044de6f806ac61ffcf04b198f7b2d0d3bacd2b2b9dffa4440188e37b9b1",
+    "semantic_adjudications.json": "e46cb0935ea1f708b469d21179248584db2952b9f1a67da8b76f6dc50580a9a8",
+    "classifier_validation.json": "8e8cbbb3ba107228bf3af4b9de2856b42a40448d51fb3ddf750ac8629e198445",
+    "evidence_map.csv": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+    "frozen_semantic_adjudication_prompt.md": "ec551409a899db199463680210ac05dbe08cd4851fccfdb2754a92010ad50176"
+  },
+  "runtime_context": {
+    "codex_thread_id": "019fb1be-807c-7982-a5e1-8a3692028ba8",
+    "agent_path": "/root",
+    "provider": "OpenAI",
+    "model": "GPT-5 (Codex; exact deployment identifier not exposed)"
+  }
+}

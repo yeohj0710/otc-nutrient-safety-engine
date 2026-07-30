@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "event": "blinded_scoring_started",
+  "started_at_utc": "2026-07-30T06:55:11.090387+00:00",
+  "executor": {
+    "agent_path": "/root",
+    "codex_thread_id": "019fb1be-807c-7982-a5e1-8a3692028ba8",
+    "provider": "OpenAI",
+    "model": "GPT-5 (Codex; exact deployment identifier not exposed)"
+  },
+  "scoring_criteria": "frozen_semantic_adjudication_prompt.md unchanged",
+  "frozen_prompt_sha256": "ec551409a899db199463680210ac05dbe08cd4851fccfdb2754a92010ad50176",
+  "blinded_cards_sha256": "d59d8b9ce0c74ea7ef84663c1618b603a2cfe246d9fb04a997b0cad88a5e4458",
+  "manifest_sha256": "bd023608780966f977f717256ad190f402fe20c6950201495e236d2b8af77965",
+  "manifest_truth_sha256_only": "29146e3baac3f0b0060c9408c0a85c9e799026e8abbbf9e411b34272da768ced",
+  "truth_file_opened_before_start": false,
+  "local_language_model_used": false,
+  "external_llm_api_used": false,
+  "subagents_used": false,
+  "independent_blinding": false,
+  "release_ready": false
+}

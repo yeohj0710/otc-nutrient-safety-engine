@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "arm": "screening_ai_reference_v50",
+  "status": "completed",
+  "generated_at_utc": "2026-07-30T07:33:32.394444+00:00",
+  "human_reference_rows": 0,
+  "independent_blinding": false,
+  "independent_blinding_ai": true,
+  "release_ready": false,
+  "local_language_model_used": false,
+  "external_llm_api_used": false,
+  "lock": {
+    "locked_at_utc": "2026-07-30T07:19:24.842781+00:00",
+    "scored_labels_sha256": "a1cf7ba97a96186c93a3c6e62d02d868547220fa29c2d150858ff12262cb5cc4",
+    "truth_opened_before_lock": false
+  },
+  "files": {
+    "research_v3/otc/synthesis/screener_vs_ai_reference_v50.json": "c1b836c7e08a7d259e5ac4c48d7ccfb9e1fb58603b2ad5bfdd0a02af25ae00cb",
+    "research_v3/logs/v50_scoring_report.json": "c1b836c7e08a7d259e5ac4c48d7ccfb9e1fb58603b2ad5bfdd0a02af25ae00cb",
+    "research_v3/logs/v50_SCORING_FINAL.md": "28d926778fab967151d0f809447c2a5a8d34a24f486d7f8ae3d6f8a769347f21",
+    "research_v3/otc/validation/screening_ai_reference_v50/disagreements.json": "192e21a1bd4faa035b6605599b676341c5b1f7c53b8f9aeffa1431889a65964e",
+    "research_v3/otc/validation/screening_ai_reference_v50/blinded_cards.json": "d59d8b9ce0c74ea7ef84663c1618b603a2cfe246d9fb04a997b0cad88a5e4458",
+    "research_v3/otc/validation/screening_ai_reference_v50/scoring_execution_receipt.json": "689bf6d0d6ac53ccf4686af18db3cec5fe39faeabb6c0643af980b87527510c2",
+    "research_v3/otc/validation/screening_ai_reference_v50/scored_labels_locked.json": "a1cf7ba97a96186c93a3c6e62d02d868547220fa29c2d150858ff12262cb5cc4",
+    "research_v3/otc/validation/screening_ai_reference_v50/lock_receipt.json": "2b9091daafdf3a10ec74beefe09956fcfc0265c83a7a04633840dc942a15b104",
+    "research_v3/otc/validation/screening_ai_reference_v50/v50_truth_sealed.json": "29146e3baac3f0b0060c9408c0a85c9e799026e8abbbf9e411b34272da768ced",
+    "research_v3/otc/validation/screening_ai_reference_v50/SCORER_RUBRIC.md": "a3409d061681111415cb0d5a9cc48183fac9abce141ce901117e7c831770c093",
+    "tools/v50_scoring/sample_and_build_cards.py": "0f5b41c1834416d42be754e87e4041d9c30c7e903f6d532de2efce43ee49f65a",
+    "tools/v50_scoring/scoring_harness.py": "335e7f30ecbc16b1ce3abaca4dd9b23ec40377ad5139efec2c777b71be9920a5",
+    "tools/v50_scoring/compare_and_report.py": "3d0d1e8d1b84c2508fcb1014dc397c7efe4555aa9bee1578c3aed1d01c6205f4"
+  }
+}

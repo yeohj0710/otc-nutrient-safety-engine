@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "event": "scoring_labels_locked",
+  "scoring_started_at_utc": "2026-07-30T06:55:11.090387+00:00",
+  "locked_at_utc": "2026-07-30T07:19:24.842781+00:00",
+  "executor": {
+    "agent_path": "/root",
+    "codex_thread_id": "019fb1be-807c-7982-a5e1-8a3692028ba8",
+    "provider": "OpenAI",
+    "model": "GPT-5 (Codex; exact deployment identifier not exposed)"
+  },
+  "scored_rows": 894,
+  "scored_labels_sha256": "a1cf7ba97a96186c93a3c6e62d02d868547220fa29c2d150858ff12262cb5cc4",
+  "blinded_cards_sha256": "d59d8b9ce0c74ea7ef84663c1618b603a2cfe246d9fb04a997b0cad88a5e4458",
+  "frozen_prompt_sha256": "ec551409a899db199463680210ac05dbe08cd4851fccfdb2754a92010ad50176",
+  "round_files": [
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_001.json",
+      "sha256": "1c2028a947e5fdc8082c1dae6902d139181267b1e678246b5d0e7e336759c0e8",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T06:59:22.103931+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_002.json",
+      "sha256": "17413a7de06ef217aee7425418192799c737c044fb4d8f95a0c0f07f9d43fe68",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:00:40.671416+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_003.json",
+      "sha256": "fe6d18a2cf08f3bcbcdda5dc98abf5cb02a9b1ee6f248a8c8da5b797f9e09313",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:01:59.442911+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_004.json",
+      "sha256": "f87d14d63679e4359db70dc2a5cf6b2a9e74673339edf9842b4c57bd39f9f253",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:03:04.838525+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_005.json",
+      "sha256": "2741d40a0d30bd68eba8a8a2b8373198f86d3dcb50b5b88f5473563e8be0a51e",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:04:59.511934+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_006.json",
+      "sha256": "fb80204cfaea48db6425ff3bbfbfdb1d8d828417ebbc220aa5d44a6fbeb10c74",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:04:59.512934+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_007.json",
+      "sha256": "828e592fedafb9cab03d18353b450df65d391a713828c052b7d48d4c890e8376",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:06:41.269515+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_008.json",
+      "sha256": "e9efcf73f5fa6bad3fb08e9f8be04372baf8b54d91fe4a76b26d8ec7353a8ead",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:06:41.270518+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_009.json",
+      "sha256": "a616ab2c36a138c24de28ba631b4cb947be9e1c266bd7d9b7626402becdcbdd6",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:09:19.659783+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_010.json",
+      "sha256": "826b2c10f05ea61d414bf4b511c2d878575e15f48bac5a0c013c9a1bbad44177",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:18:40.471177+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_011.json",
+      "sha256": "2cad33b6fa52ae3ea4cf334d173c0032eb5f20671ae1d75f423fce73602476d1",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:17:33.051403+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_012.json",
+      "sha256": "fcacbddcecf5851c426599b6953672d9920478d2e56efb41a347451e6996a81a",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:11:04.626002+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_013.json",
+      "sha256": "3773d724ec9468d3b23efc7183d329272857bb14b2dc9a056c5a3e4abd2ed044",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:11:04.626002+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_014.json",
+      "sha256": "e8a836c9604d807df8377e365b048a978fa0ca908a44d9342aaefc3c1413f666",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:11:04.627002+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_015.json",
+      "sha256": "63d74b07ccdd0ff10bc22602fb759361239e7df56627f65441778eed51d0fb18",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:18:40.472178+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_016.json",
+      "sha256": "1dfe3506e1c2c36694f5e8beadae772d492d27f8ef3185f9c563cfadc0cd3fab",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:12:25.901942+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_017.json",
+      "sha256": "889ecfe8753b90486a77968be354a276586b7c844e7a732667e4ac0dda287bea",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:12:25.902942+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_018.json",
+      "sha256": "2bd2bcb1baea9f71bc2b2c1c860a2f1212bf4357136c74f4037b958e9249e454",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:12:25.902942+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_019.json",
+      "sha256": "d3072803a8588ec2e7eca6aef4dda6439a888eb6c13c45b7d94ee8dbc0887500",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:17:33.052402+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_020.json",
+      "sha256": "6f38ec6566285b6a6f9e1ed9a15083bdca5e60925e6ad1f99b0858c89fb442d0",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:13:50.913034+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_021.json",
+      "sha256": "85297e2c197c6ded028e3b505e506cd86d03451af364ecf58f7303c8b6c891fb",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:13:50.914035+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_022.json",
+      "sha256": "ba4f0ea70b0489067fee1e4acad01c383e0aa50b708a50312ae9da159c7d7498",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:13:50.915035+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_023.json",
+      "sha256": "177835f22de5598c59beadf407bdf4b6e60084ac0271acfb94b4c8f19396c51c",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:17:33.053403+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_024.json",
+      "sha256": "c0ecbe36ebcc9ef2138a6c6f7cc0cb06db0889f5000b5f66e43dd454fde5de2f",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:19:08.419014+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_025.json",
+      "sha256": "77a5dbda0e6b27c83e55652fccb1f3a341aa23938c4ef614466e1707817746cd",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:15:14.701636+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_026.json",
+      "sha256": "5f8683177231e367dd81381b034388f8cfe39bc7be6d071f7bdb8e5e48b929e9",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:15:14.702637+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_027.json",
+      "sha256": "e2a3b2476b7a25fab3db26d9147d2be3261165222c2a8f97de1a59bfb4b021dc",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:19:08.420015+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_028.json",
+      "sha256": "9e91bf3a233989068e7c4af58ed02af6dcddf69b82bff4bb9be3edbac2a2f229",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:19:08.421015+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_029.json",
+      "sha256": "445f19eac99a2ad45644e2a0d427bce980400684d56ce494bab78c755db9b420",
+      "rows": 30,
+      "mtime_utc": "2026-07-30T07:16:16.970227+00:00"
+    },
+    {
+      "path": "research_v3/otc/validation/screening_ai_reference_v50/rounds/round_030.json",
+      "sha256": "f81f299d6ad6ad661f1b12b16b7b9ea5d8067e8ec7adda831bd7990759fd4893",
+      "rows": 24,
+      "mtime_utc": "2026-07-30T07:19:08.422015+00:00"
+    }
+  ],
+  "round_inventory_sha256": "80c9c76bd05aeedfc047f930f92171fb414842b011cd7e8c68d79b3f96d94452",
+  "truth_opened_before_lock": false,
+  "truth_may_be_opened_after_utc": "2026-07-30T07:19:24.842781+00:00",
+  "independent_blinding": false,
+  "independent_blinding_ai": true,
+  "release_ready": false,
+  "local_language_model_used": false,
+  "external_llm_api_used": false,
+  "subagents_used": false
+}

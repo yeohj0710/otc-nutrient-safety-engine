@@ -30,6 +30,9 @@
 - `research_v3/measurement/ai_reference/`: 층화 표본 300건과 라운드별 판정
 - `research_v3/otc/validation/ai_independent_cases/`: 무라벨 사례
 - `research_v3/otc/validation/ai_independent_evaluation/`: 라운드 카드, 잠금 라벨, 예측 감사
+- `research_v3/otc/literature/v5/`: v5.0 MECIR 검색, 분류기 선별, semantic adjudication과 최종 결정
+- `research_v3/otc/validation/screening_ai_reference_v50/`: 43,207건 완전분할 표본 설계, 맹검 카드, 잠금 라벨과 영수증
+- `research_v3/otc/synthesis/screener_vs_ai_reference_v50.json`: v5.0 채점 arm의 설계가중 비교 결과
 
 ## 보존 계보
 
@@ -49,6 +52,7 @@
 - `tools/build_rule_literature_links.py`: 문헌 링크 검증과 매니페스트
 - `tools/build_v40_reporting.py`: 논문·문서·지표 재생성
 - `tools/build_v40_run_report.py`: 실행 보고서 생성
+- `tools/v50_scoring/`: v5.0 완전분할 층화 표본, 채점 하네스, 잠금 후 비교 보고
 - `tools/search_pipeline/`: 보존된 Python 검색 파이프라인
 
 ## 검증
@@ -61,4 +65,4 @@ npm test
 npm run build
 ```
 
-최근 실행: 연구 시험 192개, 앱 시험 73개 통과, 정적 경로 156개.
+최근 실행: 연구 시험 202개, 앱 시험 73개 통과, 정적 경로 156개.

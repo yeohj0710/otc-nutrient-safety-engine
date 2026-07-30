@@ -1,0 +1,2761 @@
+{
+  "schema_version": "1.0.0",
+  "arm": "screening_ai_reference_v50",
+  "generated_at_utc": "2026-07-30T07:33:32.394444+00:00",
+  "rows": [
+    {
+      "record_id": "PMID-20057401",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-21059752",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-21189277",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-21619394",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-21946975",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|probability",
+      "weight": 21.5
+    },
+    {
+      "record_id": "PMID-22537903",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-22768461",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-22939915",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-23071076",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-23359241",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-23440827",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-23912070",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-23946031",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24060762",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24219106",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24232263",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24314316",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24519283",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24528544",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-24683607",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24737263",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-24842249",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-25196876",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-25238251",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-25654146",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-25728567",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-25778933",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize|probability",
+      "weight": 144.5
+    },
+    {
+      "record_id": "PMID-25815859",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-25885382",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain|probability",
+      "weight": 11.789473684210526
+    },
+    {
+      "record_id": "PMID-27099532",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|probability",
+      "weight": 21.5
+    },
+    {
+      "record_id": "PMID-28550997",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize|probability",
+      "weight": 144.5
+    },
+    {
+      "record_id": "PMID-28583670",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-28700092",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain|probability",
+      "weight": 11.789473684210526
+    },
+    {
+      "record_id": "PMID-28990430",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-29659043",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-29682868",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize|probability",
+      "weight": 144.5
+    },
+    {
+      "record_id": "PMID-29979803",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|deprioritize|probability",
+      "weight": 144.5
+    },
+    {
+      "record_id": "PMID-31162352",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-31752003",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-31840297",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|probability",
+      "weight": 21.5
+    },
+    {
+      "record_id": "PMID-34167797",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-34242925",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-34808266",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|probability",
+      "weight": 21.5
+    },
+    {
+      "record_id": "PMID-34855740",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-35134049",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-35634881",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-35645068",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-37130725",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-37696075",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-37790027",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain|probability",
+      "weight": 11.789473684210526
+    },
+    {
+      "record_id": "PMID-38807022",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-39384309",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-39701936",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|classifier|retain|probability",
+      "weight": 62.31578947368421
+    },
+    {
+      "record_id": "PMID-40167265",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-40289817",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-41021328",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|uncertain|probability",
+      "weight": 3.526315789473684
+    },
+    {
+      "record_id": "PMID-41243384",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|retain|probability",
+      "weight": 11.789473684210526
+    },
+    {
+      "record_id": "PMID-41712811",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q01-ACETAMINOPHEN|adjudicated|deprioritize|probability",
+      "weight": 21.5
+    },
+    {
+      "record_id": "PMID-20194144",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+      "weight": 87.47368421052632
+    },
+    {
+      "record_id": "PMID-21449125",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|deprioritize|probability",
+      "weight": 15.473684210526315
+    },
+    {
+      "record_id": "PMID-21816021",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-22046660",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-22083684",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-22575067",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-22695897",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-22801999",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|deprioritize|probability",
+      "weight": 15.473684210526315
+    },
+    {
+      "record_id": "PMID-23156542",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-23156552",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-23295090",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-23423366",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-23423367",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-23423371",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-23508666",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-23531076",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-23633322",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-23961572",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-24502866",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-25162275",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-25440919",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+      "weight": 87.47368421052632
+    },
+    {
+      "record_id": "PMID-25444489",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-26288292",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-26292445",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-26330204",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-26339081",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-26369678",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-26463652",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-26750125",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-27156604",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-27639805",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+      "weight": 87.47368421052632
+    },
+    {
+      "record_id": "PMID-27929224",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-28940240",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-28990177",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-29145684",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-29694457",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-29698506",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+      "weight": 87.47368421052632
+    },
+    {
+      "record_id": "PMID-30012319",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-30044766",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-30730662",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-31135877",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-31999665",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-32003478",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+      "weight": 87.47368421052632
+    },
+    {
+      "record_id": "PMID-32594175",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-32599705",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-32892486",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-33075389",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-33525313",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-33546818",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-33974712",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-34155326",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-35146976",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-35279359",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-35295217",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-35486323",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-35503238",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-35848000",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-36009000",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-36292481",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-36318970",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-37243704",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-37577875",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+      "weight": 87.47368421052632
+    },
+    {
+      "record_id": "PMID-38255980",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-38684379",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-38965156",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-39042213",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|retain|probability",
+      "weight": 50.63157894736842
+    },
+    {
+      "record_id": "PMID-39282774",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-39880325",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-40198642",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-40550244",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|uncertain|probability",
+      "weight": 2.8947368421052633
+    },
+    {
+      "record_id": "PMID-41187022",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|classifier|deprioritize|probability",
+      "weight": 87.47368421052632
+    },
+    {
+      "record_id": "PMID-41801032",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-42097327",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q02-NSAID|adjudicated|retain|probability",
+      "weight": 13.105263157894736
+    },
+    {
+      "record_id": "PMID-20080382",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-20479624",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-20708878",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-21394957",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-21466503",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-22469912",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-22541984",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-22733603",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-22925399",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-23238705",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-23327149",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-23948924",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-23975567",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-24247227",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-24526791",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-25774772",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-26065137",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|deprioritize|probability",
+      "weight": 111.63157894736842
+    },
+    {
+      "record_id": "PMID-26319535",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-26735966",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-26976463",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-27037512",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-28810101",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-28940476",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-29557005",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-29706359",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-30298476",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-30648202",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-31030902",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-31088749",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-31128936",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-31350566",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-31638842",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-31923478",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-32304164",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-32946870",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-33939649",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-34496461",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|retain|probability",
+      "weight": 2.5526315789473686
+    },
+    {
+      "record_id": "PMID-34622780",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-35011837",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-35153411",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-35228984",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|deprioritize|probability",
+      "weight": 12.552631578947368
+    },
+    {
+      "record_id": "PMID-35353162",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-35412016",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-35960948",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-36082424",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-36138510",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-36794584",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-38476203",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-38519197",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-38706814",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-39077603",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-40263917",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-40405438",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-40610001",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-40635160",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-40865637",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-41775370",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q03-COLD-ALLERGY|classifier|retain|probability",
+      "weight": 21.763157894736842
+    },
+    {
+      "record_id": "PMID-10941964",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-11003638",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-11434634",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-11705591",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-11721764",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-11774966",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-11808951",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-12200355",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-12368170",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-14560505",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-14660836",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-14968573",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-14999696",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-15375335",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-16313328",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-16356455",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-16758083",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-17510043",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-17692000",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-18164257",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-18318437",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-18336948",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-19209287",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-19244596",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-19404009",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-19469771",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-19530642",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|deprioritize|probability",
+      "weight": 36.1578947368421
+    },
+    {
+      "record_id": "PMID-19714717",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-20105585",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-20415841",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-21225024",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-21862443",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-22122771",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-22364262",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-22404405",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-22864259",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-22964716",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-23562789",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-23635844",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-26045661",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-26087640",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-26148263",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-26705893",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-26709820",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-27435324",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-28657944",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-28795206",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-28843947",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-28853202",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-28902790",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-29170072",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-29176494",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-29426089",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-30170405",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-31296159",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-31378393",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-31523886",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-31540004",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-31600084",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-31932473",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-32123836",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-32222826",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-32247283",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-32874063",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-32915500",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-32942866",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-32953638",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-33126288",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-33180817",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-33364858",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-33428478",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-33435904",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-33539847",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-33669566",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-33765904",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-33915089",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-35208884",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|retain|probability",
+      "weight": 3.3684210526315788
+    },
+    {
+      "record_id": "PMID-37025490",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-37701337",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-38564150",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-38704503",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-38898064",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-39735663",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "uncertain",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-39899765",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-39960305",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-40200180",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|adjudicated|uncertain|probability",
+      "weight": 2.473684210526316
+    },
+    {
+      "record_id": "PMID-40785313",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-42284645",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-42285879",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q04-DIGESTIVE|classifier|retain|probability",
+      "weight": 40.13157894736842
+    },
+    {
+      "record_id": "PMID-11978142",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-12412883",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-12602340",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-12689545",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-12870876",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-15342616",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-16835130",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize|probability",
+      "weight": 4.657894736842105
+    },
+    {
+      "record_id": "PMID-17111480",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-18029526",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-19333158",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-19666773",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "uncertain",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|uncertain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-22612478",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-22954121",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-23207345",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-23444177",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-24914426",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-24979686",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-25557557",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize|probability",
+      "weight": 4.657894736842105
+    },
+    {
+      "record_id": "PMID-28133878",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-28722879",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-29535234",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-30015223",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-30295443",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "adjudicated",
+      "ai_reference_decision": "deprioritize",
+      "scoring_decision": "retain",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|adjudicated|deprioritize|probability",
+      "weight": 4.657894736842105
+    },
+    {
+      "record_id": "PMID-30374904",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-31433141",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-31478634",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-32365395",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-32929686",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    },
+    {
+      "record_id": "PMID-35923051",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "adjudication_status": "classifier",
+      "ai_reference_decision": "retain",
+      "scoring_decision": "deprioritize",
+      "sampling_stratum_id": "OTC-LIT-Q05-TOPICAL|classifier|retain|probability",
+      "weight": 1.0
+    }
+  ]
+}
