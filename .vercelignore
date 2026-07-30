@@ -18,7 +18,21 @@ __pycache__
 # src/generated/ 에 미리 만들어 두고 커밋한다.
 research_v3
 
-# research_v2 는 project_identity.json 한 파일만 남긴다.
+# research_v2 는 빌드가 읽는 두 파일만 남긴다.
 # `dir/*` + `!dir/file` 형태여야 부정이 먹는다(`dir/` 로 쓰면 안 된다).
+#   - project_identity.json : scripts/build-literature-candidates.ts
+#   - thesis/metrics_manifest.json : etc/ 의 보관용 tsx 가 import 하는데 tsc 가
+#     프로젝트 전체를 검사하므로 없으면 빌드가 깨진다. etc/ 를 빼도 안전하도록
+#     둘 다 남긴다.
 research_v2/*
 !research_v2/project_identity.json
+!research_v2/thesis
+research_v2/thesis/*
+!research_v2/thesis/metrics_manifest.json
+
+# etc/ 는 재편 전 보관용 코드다. 런타임에 쓰이지 않지만 .tsx 가 있어 tsc 검사 대상이
+# 되고, 그 안에서 research_v2 를 import 한다. 배포에서 통째로 뺀다.
+etc
+
+# 실행 패키지 문서도 런타임과 무관하다.
+execution_package
