@@ -1,0 +1,24 @@
+.env
+.env.*
+!.env.example
+coverage
+tmp
+output
+.venv
+__pycache__
+
+# 연구 원자료는 배포 업로드에서 뺀다. 전부 올리면 약 2.1GB 라 업로드가 중단된다.
+#
+# 빌드(`npm run prepare:knowledge && next build`)가 실제로 읽는 것은 아래 둘뿐이다.
+#   - data/ : source_registry·ingredients·evidence_chunks·safety_rules·knowledge_pack
+#             (src/lib/knowledge/normalize.ts) 와 data/systematic_search
+#             (scripts/build-literature-candidates.ts)
+#   - research_v2/project_identity.json (scripts/build-literature-candidates.ts)
+# 나머지 연구 산출물은 런타임에 쓰이지 않는다. 사이트가 쓰는 값은 전부
+# src/generated/ 에 미리 만들어 두고 커밋한다.
+research_v3
+
+# research_v2 는 project_identity.json 한 파일만 남긴다.
+# `dir/*` + `!dir/file` 형태여야 부정이 먹는다(`dir/` 로 쓰면 안 된다).
+research_v2/*
+!research_v2/project_identity.json
