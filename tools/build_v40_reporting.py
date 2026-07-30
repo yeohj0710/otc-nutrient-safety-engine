@@ -947,6 +947,14 @@ Before exploring the repo from scratch, check `docs/project_map.md`.
 - The active question is Korean OTC product-name safety lookup.
 - MFDS authorization records are the deterministic authority for product, ingredient, amount, administration constraints, and rule decisions.
 - PubMed is a separate AI-selected literature layer. It supports evidence claims but cannot override authorization facts or released rule logic.
+- The literature layer covers 9 of the 16 rules with 10 links. The other 7 rules
+  (`OTC-RULE-003` max_daily_dose, `009` gi_bleeding_ulcer, `010` sedation_driving,
+  `011` alcohol, `013` sedative_medication, `015` maximum_duration, `016` urgent_referral)
+  have no linked literature because their supporting papers were published before the
+  v5.0 search window opened on 2022-01-01 — 8 of the 9 unverified papers are from
+  2010–2021. This is a search-window gap, not a screening failure. Report it as a
+  result; do not describe the literature layer as the study's contribution
+  (see `research_v3/protocol/amendments.csv` AM-OTC-003).
 - Keep authorization evidence and literature evidence in separate fields. Preserve conflicts as `conflict`.
 - Every rule-to-literature link needs a sentence-level locator (`abstract:sentence:N`) plus the quoted sentence. `scripts/research/otc/build_supporting_literature.py` re-checks the quote against the corpus abstract on every build.
 - New literature artifacts belong only under `research_v3/otc/literature/`. Do not modify `research_v3/search/provisional_pubmed_20260710/`.
