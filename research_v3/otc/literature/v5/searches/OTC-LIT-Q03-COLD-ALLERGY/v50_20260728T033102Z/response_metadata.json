@@ -1,0 +1,270 @@
+{
+  "schema_version": "5.0.0",
+  "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+  "run_id": "v50_20260728T033102Z",
+  "started_at_utc": "2026-07-28T03:32:52.229357+00:00",
+  "completed_at_utc": "2026-07-28T03:33:35.310062+00:00",
+  "phase_a_probe_count": 5670,
+  "phase_b_base_count": 5670,
+  "change_since_probe": 0,
+  "query_sha256": "a60c6fc7f53df5a4aaf21164f3d42c1f3a22ddb686f77ba4038afe5f27eaeddd",
+  "segmentation": "none",
+  "segments": [
+    {
+      "label": "base",
+      "query_sha256": "a60c6fc7f53df5a4aaf21164f3d42c1f3a22ddb686f77ba4038afe5f27eaeddd",
+      "count": 5670,
+      "warnings": [
+        "\"Scott-Tussin\"[tiab]"
+      ],
+      "raw_path": "base_esearch.xml",
+      "raw_sha256": "18886ef70593c2bc8b951bb74f7670c0838664b2bb5459f950f8177aa0a4ccff"
+    }
+  ],
+  "segment_count_sum": 5670,
+  "parsed_records": 5670,
+  "unique_pmids": 5670,
+  "efetch_batch_size": 500,
+  "efetch_calls": 12,
+  "esearch_calls": 1,
+  "raw_xml_file_count": 13,
+  "raw_xml_checksums": {
+    "base_esearch.xml": "18886ef70593c2bc8b951bb74f7670c0838664b2bb5459f950f8177aa0a4ccff",
+    "efetch/001_base_0001.xml": "79c76582bafaf5d1482197b5f2005d007174940af2de6f308c62641430d7d4e8",
+    "efetch/001_base_0002.xml": "6c5166146eaa01094a0fc3566510219b580ac9f4f3659db956e6de5b1dc33ed3",
+    "efetch/001_base_0003.xml": "d542b37a09f21cb49c2f80466f1130e4a895ca298752f2abf2a462b482146392",
+    "efetch/001_base_0004.xml": "a90982714f82ca8bd75a40e3b6956e84e9fa7be29e299668b21b3a15209ee13c",
+    "efetch/001_base_0005.xml": "a5896551f8f305ad6555c4a962d43d8a857b41a777f5d07bcdbedbb8783559bf",
+    "efetch/001_base_0006.xml": "f82ae915f8110bb86aae50d596980dfeecb2cb95502c57eaaecba6a111ddb0b4",
+    "efetch/001_base_0007.xml": "fe44304097f11bc7d085df946b35e4f613a7338b19172ef12dccd6ab38efafd6",
+    "efetch/001_base_0008.xml": "51026071d90dec76d3006d139fdca16cb525ccc11d73873cd57b50ebff64356e",
+    "efetch/001_base_0009.xml": "1138dff14737083f59104fe6794220a82e389a2ad785bf56f930ca28a4a4614c",
+    "efetch/001_base_0010.xml": "03a98ba8c9cc71cca60cb08cd995ffbfd50d4f69cfbcd66d35c4882a3ee91caf",
+    "efetch/001_base_0011.xml": "f88f4d18777886c87864705d847b62f7b93a405c20a884de25024465a938b80e",
+    "efetch/001_base_0012.xml": "d8c3dffca73b3cc6ab1b7ad529eef20fee124a707a060bb032d63d193f94e6e7"
+  },
+  "responses": [
+    {
+      "request_type": "esearch:base",
+      "requested_at_utc": "2026-07-28T03:32:52.229382+00:00",
+      "completed_at_utc": "2026-07-28T03:32:52.854074+00:00",
+      "status_code": 200,
+      "response_bytes": 4364,
+      "response_sha256": "18886ef70593c2bc8b951bb74f7670c0838664b2bb5459f950f8177aa0a4ccff",
+      "relative_path": "base_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "((\"Automobile Driving\"[Mesh] OR \"Hypertension\"[Mesh] OR \"Hypnotics and Sedatives\"[Mesh] OR \"Central Nervous System Depressants\"[Mesh] OR driver*[tiab] OR driving[tiab] OR \"motor vehicle operator\"[tiab] OR \"motor vehicle operators\"[tiab] OR \"machine operator\"[tiab] OR \"machine operators\"[tiab] OR \"operating machinery\"[tiab] OR hypertens*[tiab] OR \"high blood pressure\"[tiab] OR \"sedative medication\"[tiab] OR \"sedative medications\"[tiab] OR \"hypnotic use\"[tiab] OR \"benzodiazepine use\"[tiab] OR \"CNS depressant use\"[tiab] OR \"tranquilizer use\"[tiab] OR \"tranquillizer use\"[tiab] OR \"opioid use\"[tiab]) AND (\"Chlorpheniramine\"[Mesh] OR \"Cetirizine\"[Mesh] OR \"Phenylephrine\"[Mesh] OR \"Caffeine\"[Mesh] OR \"Carbetapentane\"[Supplementary Concept] OR \"Expectorants\"[Mesh] OR \"Nasal Decongestants\"[Mesh] OR \"Antitussive Agents\"[Mesh] OR \"Xanthines\"[Mesh] OR chlorpheniramine[tiab] OR chlorphenamine[tiab] OR \"chlorpheniramine maleate\"[tiab] OR \"chlorphenamine maleate\"[tiab] OR (CPM[tiab] AND antihistamine*[tiab]) OR (CTM[tiab] AND antihistamine*[tiab]) OR Piriton[tiab] OR \"Chlor-Trimeton\"[tiab] OR cetirizine[tiab] OR \"cetirizine hydrochloride\"[tiab] OR Zyrtec[tiab] OR Reactine[tiab] OR phenylephrine[tiab] OR phenylephrin*[tiab] OR \"phenylephrine hydrochloride\"[tiab] OR \"phenylephrine HCl\"[tiab] OR metaoxedrin[tiab] OR metasympatol[tiab] OR metasynephrine[tiab] OR \"meta-synephrine\"[tiab] OR \"m-synephrine\"[tiab] OR \"Neo-Synephrine\"[tiab] OR neosynephrine[tiab] OR Mezaton[tiab] OR pentoxyverine[tiab] OR pentoxyverin*[tiab] OR pentoxiverin*[tiab] OR carbetapentane[tiab] OR carbetapentan*[tiab] OR \"pentoxyverine citrate\"[tiab] OR \"carbetapentane citrate\"[tiab] OR Toclase[tiab] OR guaifenes*[tiab] OR guaiphenes*[tiab] OR guaiphenezine[tiab] OR \"glycerol guaiacolate\"[tiab] OR \"glyceryl guaiacolate\"[tiab] OR \"guaiacol glyceryl ether\"[tiab] OR \"glyceryl guaiacolate ether\"[tiab] OR Mucinex[tiab] OR Humibid[tiab] OR \"Scott-Tussin\"[tiab] OR (GGE[tiab] AND (guaifenesin[tiab] OR \"glyceryl guaiacolate\"[tiab])) OR caffein*[tiab] OR \"anhydrous caffeine\"[tiab] OR \"caffeine anhydrous\"[tiab] OR \"1,3,7-trimethylxanthine\"[tiab] OR trimethylxanthin*[tiab] OR methyltheobromine[tiab] OR guaranine[tiab] OR theine[tiab] OR thein[tiab] OR coffein*[tiab] OR Coffeinum[tiab] OR NoDoz[tiab] OR Vivarin[tiab] OR (CAF[tiab] AND (caffeine[tiab] OR \"anhydrous caffeine\"[tiab])) OR antihistamine*[tiab] OR \"H1 receptor antagonists\"[tiab] OR \"first-generation antihistamines\"[tiab] OR \"second-generation antihistamines\"[tiab] OR decongestant*[tiab] OR sympathomimetic*[tiab] OR antitussiv*[tiab] OR expectorant*[tiab] OR methylxanthin*[tiab] OR \"cold medicine\"[tiab] OR \"cold medicines\"[tiab] OR pancold*[tiab] OR Panpyrin*[tiab])) AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "efetch:base:1",
+      "requested_at_utc": "2026-07-28T03:32:52.854210+00:00",
+      "completed_at_utc": "2026-07-28T03:32:58.970184+00:00",
+      "status_code": 200,
+      "response_bytes": 11514524,
+      "response_sha256": "79c76582bafaf5d1482197b5f2005d007174940af2de6f308c62641430d7d4e8",
+      "relative_path": "efetch/001_base_0001.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 0,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:2",
+      "requested_at_utc": "2026-07-28T03:32:59.167469+00:00",
+      "completed_at_utc": "2026-07-28T03:33:02.542339+00:00",
+      "status_code": 200,
+      "response_bytes": 11834463,
+      "response_sha256": "6c5166146eaa01094a0fc3566510219b580ac9f4f3659db956e6de5b1dc33ed3",
+      "relative_path": "efetch/001_base_0002.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:3",
+      "requested_at_utc": "2026-07-28T03:33:02.753180+00:00",
+      "completed_at_utc": "2026-07-28T03:33:06.556336+00:00",
+      "status_code": 200,
+      "response_bytes": 10055001,
+      "response_sha256": "d542b37a09f21cb49c2f80466f1130e4a895ca298752f2abf2a462b482146392",
+      "relative_path": "efetch/001_base_0003.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:4",
+      "requested_at_utc": "2026-07-28T03:33:06.753176+00:00",
+      "completed_at_utc": "2026-07-28T03:33:11.039500+00:00",
+      "status_code": 200,
+      "response_bytes": 10364724,
+      "response_sha256": "a90982714f82ca8bd75a40e3b6956e84e9fa7be29e299668b21b3a15209ee13c",
+      "relative_path": "efetch/001_base_0004.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:5",
+      "requested_at_utc": "2026-07-28T03:33:11.171825+00:00",
+      "completed_at_utc": "2026-07-28T03:33:14.627042+00:00",
+      "status_code": 200,
+      "response_bytes": 8982231,
+      "response_sha256": "a5896551f8f305ad6555c4a962d43d8a857b41a777f5d07bcdbedbb8783559bf",
+      "relative_path": "efetch/001_base_0005.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:6",
+      "requested_at_utc": "2026-07-28T03:33:14.760454+00:00",
+      "completed_at_utc": "2026-07-28T03:33:18.210427+00:00",
+      "status_code": 200,
+      "response_bytes": 8498739,
+      "response_sha256": "f82ae915f8110bb86aae50d596980dfeecb2cb95502c57eaaecba6a111ddb0b4",
+      "relative_path": "efetch/001_base_0006.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:7",
+      "requested_at_utc": "2026-07-28T03:33:18.397590+00:00",
+      "completed_at_utc": "2026-07-28T03:33:21.508448+00:00",
+      "status_code": 200,
+      "response_bytes": 7813152,
+      "response_sha256": "fe44304097f11bc7d085df946b35e4f613a7338b19172ef12dccd6ab38efafd6",
+      "relative_path": "efetch/001_base_0007.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:8",
+      "requested_at_utc": "2026-07-28T03:33:21.689467+00:00",
+      "completed_at_utc": "2026-07-28T03:33:24.397789+00:00",
+      "status_code": 200,
+      "response_bytes": 7097789,
+      "response_sha256": "51026071d90dec76d3006d139fdca16cb525ccc11d73873cd57b50ebff64356e",
+      "relative_path": "efetch/001_base_0008.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:9",
+      "requested_at_utc": "2026-07-28T03:33:24.512108+00:00",
+      "completed_at_utc": "2026-07-28T03:33:27.106436+00:00",
+      "status_code": 200,
+      "response_bytes": 6424121,
+      "response_sha256": "1138dff14737083f59104fe6794220a82e389a2ad785bf56f930ca28a4a4614c",
+      "relative_path": "efetch/001_base_0009.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:10",
+      "requested_at_utc": "2026-07-28T03:33:27.217001+00:00",
+      "completed_at_utc": "2026-07-28T03:33:30.186586+00:00",
+      "status_code": 200,
+      "response_bytes": 6397063,
+      "response_sha256": "03a98ba8c9cc71cca60cb08cd995ffbfd50d4f69cfbcd66d35c4882a3ee91caf",
+      "relative_path": "efetch/001_base_0010.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:11",
+      "requested_at_utc": "2026-07-28T03:33:30.363739+00:00",
+      "completed_at_utc": "2026-07-28T03:33:33.141871+00:00",
+      "status_code": 200,
+      "response_bytes": 5859992,
+      "response_sha256": "f88f4d18777886c87864705d847b62f7b93a405c20a884de25024465a938b80e",
+      "relative_path": "efetch/001_base_0011.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:12",
+      "requested_at_utc": "2026-07-28T03:33:33.234906+00:00",
+      "completed_at_utc": "2026-07-28T03:33:35.220355+00:00",
+      "status_code": 200,
+      "response_bytes": 2062260,
+      "response_sha256": "d8c3dffca73b3cc6ab1b7ad529eef20fee124a707a060bb032d63d193f94e6e7",
+      "relative_path": "efetch/001_base_0012.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5500,
+        "retmax": 170,
+        "retmode": "xml"
+      }
+    }
+  ],
+  "status": "complete"
+}

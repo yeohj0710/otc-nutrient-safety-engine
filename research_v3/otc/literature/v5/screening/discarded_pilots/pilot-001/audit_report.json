@@ -1,0 +1,105 @@
+{
+  "audit_scope": {
+    "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+    "snapshot_rows": 1200,
+    "snapshot_batches": 6,
+    "sample_rows": 150,
+    "sampling": {
+      "retain_evenly_spaced": 80,
+      "uncertain": {
+        "abstract": 15,
+        "title_only": 15
+      },
+      "deprioritize_reason_stratified": 40
+    },
+    "human_reference_inputs_used": false
+  },
+  "errors": {
+    "label_errors": {
+      "retain": 18,
+      "uncertain": 23,
+      "deprioritize": 6,
+      "total": 47
+    },
+    "reason_only_errors": {
+      "retain": 10,
+      "uncertain": 0,
+      "deprioritize": 11,
+      "total": 21
+    },
+    "total_findings": 68,
+    "note": "The sample was stratified; 47/150 is not a population error-rate estimate."
+  },
+  "systematic_failure_modes": [
+    "attribution of another drug, surgery, or efficacy result to acetaminophen",
+    "IV-only formulation retained despite the OTC route rule",
+    "title and MeSH co-mention treated as sufficient attribution",
+    "retain_kind=maybe instability after attributable harm was accepted",
+    "exact acetaminophen exposure mislabeled as class-level evidence",
+    "reviews incorrectly tagged as case reports",
+    "APAP automatic-positive-airway-pressure acronym collision",
+    "reason-code instability across exposure, outcome, route, and off-topic"
+  ],
+  "known_label_error_pmids": {
+    "retain_to_uncertain": [
+      "20461991",
+      "21189276",
+      "21189278",
+      "21696021",
+      "22568925",
+      "22664763"
+    ],
+    "retain_to_deprioritize": [
+      "20676066",
+      "20969503",
+      "21116816",
+      "21344260",
+      "21353105",
+      "21586623",
+      "21915939",
+      "21986980",
+      "22179455",
+      "22271694",
+      "22354127",
+      "22638604"
+    ],
+    "uncertain_to_retain": [
+      "19779704",
+      "20193831",
+      "20197596",
+      "20332167",
+      "20456332",
+      "20805751",
+      "20935107",
+      "21135993",
+      "21477658",
+      "22149359",
+      "22352734",
+      "22730906",
+      "20227233"
+    ],
+    "uncertain_to_deprioritize": [
+      "20071472",
+      "21811632",
+      "22186009",
+      "20860264",
+      "21210596",
+      "21385733",
+      "22021566",
+      "22458031",
+      "22546155",
+      "22729522"
+    ],
+    "deprioritize_to_retain": [
+      "20492543",
+      "20179054"
+    ],
+    "deprioritize_to_uncertain": [
+      "20447712",
+      "21294782",
+      "21793979",
+      "22266143"
+    ]
+  },
+  "conclusion": "discard_all_pilot_decisions_and_restart_Q01_from_row_zero"
+}

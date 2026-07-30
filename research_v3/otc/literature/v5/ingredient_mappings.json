@@ -1,0 +1,306 @@
+{
+  "schema_version": "5.0.0",
+  "mapping_date": "2026-07-28",
+  "source_hashes": {
+    "research_v3/otc/normalized/ingredient_master.csv": "6925c5ac1236bbd6ebd3a53e5a58f853b849c3efccefa2d03ddb798689fae737",
+    "research_v3/otc/normalized/product_ingredient.csv": "83ed4b53483c5e3e6b9296defce1548504f6b81bcd7aa59e42142a440fb6580e",
+    "research_v3/otc/normalized/analysis_exclusions.csv": "08d30264f6be6225a2761f1699f33f48a20efa5705db2782c64537fac9a6729f"
+  },
+  "selection_reconciliation": {
+    "ingredient_master_rows": 31,
+    "selected_for_calculation_unique_ingredients": 28,
+    "picos_assigned_unique_ingredients": 28,
+    "explanation_ko": "ingredient_master.csv에는 31개가 있으나 3개는 분석·런타임 제외 제품인 신신파스아렉스에만 속한다. 프로토콜이 동결한 5개 질문은 selected_for_calculation=true인 28개를 배정하므로 v5도 같은 28개를 검색한다.",
+    "outside_frozen_scope": [
+      {"ingredient_id": "ING-mf-src-7b94fcb9d067", "preferred_name_ko": "산화아연", "reason": "신신파스아렉스 전용; product excluded for ambiguous authorized package size"},
+      {"ingredient_id": "ING-mf-src-a7ea13276326", "preferred_name_ko": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)", "reason": "신신파스아렉스 전용; product excluded for ambiguous authorized package size"},
+      {"ingredient_id": "ING-mf-src-d142ee358812", "preferred_name_ko": "노닐산바닐릴아미드", "reason": "신신파스아렉스 전용; product excluded for ambiguous authorized package size"}
+    ]
+  },
+  "mappings": [
+    {
+      "ingredient_id": "ING-acetaminophen",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "preferred_name_ko": "아세트아미노펜",
+      "entity_en": "acetaminophen / paracetamol",
+      "mapping_status": "exact",
+      "inn_status": "paracetamol is INN; acetaminophen is USAN",
+      "query_evidence": ["\"Acetaminophen\"[Mesh]", "acetaminophen[tiab]", "paracetamol[tiab]", "APAP[tiab]", "Tylenol[tiab]"],
+      "sources": ["research_v3/otc/normalized/ingredient_master.csv", "https://meshb.nlm.nih.gov/record/ui?ui=D000082"]
+    },
+    {
+      "ingredient_id": "ING-dexibuprofen",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "preferred_name_ko": "덱시부프로펜",
+      "entity_en": "dexibuprofen / S(+)-ibuprofen",
+      "mapping_status": "exact",
+      "inn_status": "dexibuprofen is the active S-enantiomer of ibuprofen",
+      "query_evidence": ["dexibuprofen[tiab]", "\"S-ibuprofen\"[tiab]", "Seractil[tiab]", "Dexpeed[tiab]"],
+      "sources": ["research_v3/otc/normalized/ingredient_master.csv", "https://pubchem.ncbi.nlm.nih.gov/compound/Dexibuprofen"]
+    },
+    {
+      "ingredient_id": "ING-ibuprofen",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "preferred_name_ko": "이부프로펜",
+      "entity_en": "ibuprofen",
+      "mapping_status": "exact",
+      "inn_status": "INN/USAN",
+      "query_evidence": ["\"Ibuprofen\"[Mesh]", "ibuprofen[tiab]", "Advil[tiab]", "Brufen[tiab]"],
+      "sources": ["research_v3/otc/normalized/ingredient_master.csv", "https://meshb.nlm.nih.gov/record/ui?ui=D007052"]
+    },
+    {
+      "ingredient_id": "ING-naproxen",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "preferred_name_ko": "나프록센",
+      "entity_en": "naproxen",
+      "mapping_status": "exact",
+      "inn_status": "INN/USAN",
+      "query_evidence": ["\"Naproxen\"[Mesh]", "naproxen[tiab]", "\"naproxen sodium\"[tiab]", "Naxen[tiab]"],
+      "sources": ["research_v3/otc/normalized/ingredient_master.csv", "https://meshb.nlm.nih.gov/record/ui?ui=D009288"]
+    },
+    {
+      "ingredient_id": "ING-cetirizine_hydrochloride",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "preferred_name_ko": "세티리진염산염",
+      "entity_en": "cetirizine hydrochloride",
+      "mapping_status": "exact_salt",
+      "inn_status": "cetirizine hydrochloride; MeSH indexes the active moiety",
+      "query_evidence": ["\"Cetirizine\"[Mesh]", "cetirizine[tiab]", "\"cetirizine hydrochloride\"[tiab]", "Zyrtec[tiab]"],
+      "sources": ["research_v3/otc/normalized/ingredient_master.csv", "https://meshb.nlm.nih.gov/record/ui?ui=D017367"]
+    },
+    {
+      "ingredient_id": "ING-chlorpheniramine_maleate",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "preferred_name_ko": "클로르페니라민말레산염",
+      "entity_en": "chlorpheniramine maleate / chlorphenamine maleate",
+      "mapping_status": "exact_salt",
+      "inn_status": "chlorphenamine is the INN spelling; chlorpheniramine is USAN",
+      "query_evidence": ["\"Chlorpheniramine\"[Mesh]", "chlorpheniramine[tiab]", "chlorphenamine[tiab]", "Piriton[tiab]"],
+      "sources": ["research_v3/otc/normalized/ingredient_master.csv", "https://meshb.nlm.nih.gov/record/ui?ui=D002708"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-41c782105274",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "preferred_name_ko": "펜톡시베린시트르산염",
+      "entity_en": "pentoxyverine citrate / carbetapentane citrate",
+      "mapping_status": "exact_salt",
+      "inn_status": "pentoxyverine is INN; carbetapentane is the US legacy name",
+      "query_evidence": ["\"Carbetapentane\"[Supplementary Concept]", "pentoxyverine[tiab]", "carbetapentane[tiab]", "pentoxyverin*[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/196800036/detail.html:921", "https://meshb.nlm.nih.gov/record/ui?ui=C018861", "https://pubchem.ncbi.nlm.nih.gov/compound/90010", "https://www.dong-wha.co.kr/english/product/content.asp?b=20&s=21&t_idx=324"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-4b985f9d3bdb",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "preferred_name_ko": "페닐레프린염산염",
+      "entity_en": "phenylephrine hydrochloride",
+      "mapping_status": "exact_salt",
+      "inn_status": "phenylephrine hydrochloride",
+      "query_evidence": ["\"Phenylephrine\"[Mesh]", "phenylephrine[tiab]", "phenylephrin*[tiab]", "metaoxedrin[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/196800036/detail.html:935", "https://meshb.nlm.nih.gov/record/ui?ui=D010656", "https://pubchem.ncbi.nlm.nih.gov/compound/5284443", "https://www.dong-wha.co.kr/english/product/content.asp?b=20&s=21&t_idx=324"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-cd3363b1ac1f",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "preferred_name_ko": "구아이페네신",
+      "entity_en": "guaifenesin",
+      "mapping_status": "exact",
+      "inn_status": "INN/USAN; guaiphenesin is an obsolete British spelling",
+      "query_evidence": ["guaifenes*[tiab]", "guaiphenes*[tiab]", "\"guaiacol glyceryl ether\"[tiab]", "Mucinex[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/196800036/detail.html:911", "https://meshb.nlm.nih.gov/record/ui?ui=D006140", "https://pubchem.ncbi.nlm.nih.gov/compound/3516", "https://www.tga.gov.au/products/medicines/labelling-and-advertising/medicines-and-biologicals-labelling-and-packaging/labelling-requirements-international-harmonisation-ingredient-names-project/updating-medicine-ingredient-names-list-affected-ingredients"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-dc293e7de142",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "preferred_name_ko": "카페인무수물",
+      "entity_en": "anhydrous caffeine / caffeine anhydrous",
+      "mapping_status": "exact_form",
+      "inn_status": "caffeine; anhydrous form distinguished from citrate and monohydrate",
+      "query_evidence": ["\"Caffeine\"[Mesh]", "caffein*[tiab]", "\"anhydrous caffeine\"[tiab]", "\"1,3,7-trimethylxanthine\"[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/196800036/detail.html:967", "research_v3/otc/raw/nedrug/199400202/detail.html:928", "https://meshb.nlm.nih.gov/record/ui?ui=D002110", "https://pubchem.ncbi.nlm.nih.gov/compound/2519", "https://www.dapharm.com/en/brand/product/PANT3"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-0546ff64775e",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "판셀라제",
+      "entity_en": "Pancellase / Pancellase SS; Trichoderma viride mixed cellulase preparation",
+      "mapping_status": "preparation_level",
+      "inn_status": "no single WHO INN",
+      "query_evidence": ["Pancellase[tiab]", "cellulase*[tiab]", "endoglucanase*[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/198700405/detail.html:937", "https://iubmb.qmul.ac.uk/enzyme/EC3/2/1/4.html", "https://nifds.go.kr/nhmi/download.do?flgrpNo=3526&sn=1"],
+      "limitation": "The proprietary term has no PubMed indexed phrase; enzyme-class terms provide the retrieval bridge."
+    },
+    {
+      "ingredient_id": "ING-mf-src-06cdde4eaaee",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "판프로신",
+      "entity_en": "Panprosin / Panprosin SS; fungal protease preparation",
+      "mapping_status": "preparation_level",
+      "inn_status": "no single WHO INN or verified single EC",
+      "query_evidence": ["Panprosin[tiab]", "protease*[tiab]", "proteinase*[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/198700405/detail.html:923", "https://verification.fda.gov.ph/drug_productsview.php?registration_number=DRP-5607&showdetail=", "https://nifds.go.kr/nhmi/download.do?flgrpNo=3526&sn=1"],
+      "limitation": "Do not substitute a specific aspergillopepsin without evidence."
+    },
+    {
+      "ingredient_id": "ING-mf-src-484bf5816144",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "판크레아틴장용과립",
+      "entity_en": "pancreatin enteric-coated granules",
+      "mapping_status": "exact_form",
+      "inn_status": "pancreatin dosage form; pancrelipase/PERT are class-level bridges, not exact synonyms",
+      "query_evidence": ["pancreatin[tiab]", "\"enteric-coated pancreatin\"[tiab]", "pancrelipase[tiab]", "PERT[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/198700405/detail.html:951", "https://www.ncbi.nlm.nih.gov/mesh/68020799", "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2012/022542Orig1s000MedR.pdf"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-5abce34aadf5",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "시메티콘",
+      "entity_en": "simethicone / simeticone",
+      "mapping_status": "exact",
+      "inn_status": "simethicone USAN; simeticone INN/British spelling",
+      "query_evidence": ["\"Simethicone\"[Mesh]", "simethicone[tiab]", "simeticone[tiab]", "\"activated dimeticone\"[tiab]"],
+      "sources": ["https://meshb.nlm.nih.gov/record/ui?ui=D012841", "https://pubchem.ncbi.nlm.nih.gov/substance/134990626"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-7ace07a0f45d",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "우르소데옥시콜산",
+      "entity_en": "ursodeoxycholic acid / ursodiol / UDCA",
+      "mapping_status": "exact",
+      "inn_status": "ursodeoxycholic acid is INN; ursodiol is USAN",
+      "query_evidence": ["\"Ursodeoxycholic Acid\"[Mesh]", "ursodeoxycholic[tiab]", "ursodiol[tiab]", "UDCA[tiab]"],
+      "sources": ["https://meshb.nlm.nih.gov/record/ui?ui=D014580", "https://pubchem.ncbi.nlm.nih.gov/compound/Ursodeoxycholic-acid"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-7ae387262216",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "디아스타제·프로테아제·셀룰라제",
+      "entity_en": "diastase-protease-cellulase / Biodiastase multi-enzyme preparation",
+      "mapping_status": "standardized_multi_enzyme_preparation",
+      "inn_status": "no single INN",
+      "query_evidence": ["diastase[tiab]", "protease*[tiab]", "cellulase*[tiab]", "\"Biodiastase 2000\"[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/200300406/detail.html:895", "https://staticnedrug.mfds.go.kr/resources/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%95%BD%EC%A0%84_%EC%A0%9C11%EA%B0%9C%EC%A0%95%EC%97%90_%EB%94%B0%EB%A5%B8_%EC%9E%90%EC%A3%BC%EB%AC%BB%EB%8A%94_%EC%A7%88%EC%9D%91%EB%8B%B5%EC%A7%91.pdf"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-8f38da8a73d0",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "판크레아틴",
+      "entity_en": "pancreatin",
+      "mapping_status": "exact_mixture",
+      "inn_status": "pharmacopoeial pancreatic enzyme mixture; CAS 8049-47-6",
+      "query_evidence": ["\"Pancreatin\"[Mesh]", "pancreatin[tiab]", "\"pancreatic extracts\"[tiab]", "Panzytrat[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/199900926/detail.html:902", "https://meshb.nlm.nih.gov/record/ui?ui=D010194", "https://pmc.ncbi.nlm.nih.gov/articles/PMC3132852/"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-a5c9920bea02",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "크리아제-PEG",
+      "entity_en": "Crease-PEG proprietary multi-enzyme preparation",
+      "mapping_status": "partial_preparation_level",
+      "inn_status": "single INN mapping impossible; origin and single EC not established",
+      "query_evidence": ["\"Crease-PEG\"[tiab]", "amylase*[tiab]", "protease*[tiab]", "lipase*[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/200300406/detail.html:923", "https://men.daewoong.co.kr/kr/custom/faq"],
+      "limitation": "PEG must not be expanded to polyethylene glycol; the PubMed proprietary phrase is unindexed."
+    },
+    {
+      "ingredient_id": "ING-mf-src-a742c02533bc",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "리파제",
+      "entity_en": "lipase enzyme class",
+      "mapping_status": "class_level",
+      "inn_status": "source organism and isoenzyme unresolved",
+      "query_evidence": ["\"Lipase\"[Mesh]", "lipase*[tiab]", "\"triacylglycerol lipase\"[tiab]", "\"Lipase II\"[tiab]"],
+      "sources": ["https://meshb.nlm.nih.gov/record/ui?ui=D008049", "research_v3/otc/raw/nedrug/199900926/detail.html:958"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-d33c06bc01c8",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "셀룰라제",
+      "entity_en": "cellulase enzyme class",
+      "mapping_status": "class_level",
+      "inn_status": "source organism and isoenzyme unresolved",
+      "query_evidence": ["\"Cellulase\"[Mesh]", "\"Cellulases\"[Mesh]", "cellulase*[tiab]", "endoglucanase*[tiab]"],
+      "sources": ["https://meshb.nlm.nih.gov/record/ui?ui=D002480", "https://meshb.nlm.nih.gov/record/ui?ui=D044602"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-d75c9c1aefc3",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "프로자임6",
+      "entity_en": "Prozyme 6; Aspergillus melleus protease preparation / oryzin class",
+      "mapping_status": "preparation_and_enzyme_class",
+      "inn_status": "no single INN; class bridge EC 3.4.21.63",
+      "query_evidence": ["\"Prozyme 6\"[tiab]", "oryzin[tiab]", "\"Aspergillus melleus protease\"[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/199900926/detail.html:930", "https://iubmb.qmul.ac.uk/enzyme/EC3/4/21/63.html", "https://pubmed.ncbi.nlm.nih.gov/5715521/"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-db4cde0b063f",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "디아스타제·프로테아제100",
+      "entity_en": "diastase-protease 100 / Dizet 100",
+      "mapping_status": "standardized_multi_enzyme_preparation",
+      "inn_status": "no single INN; KP preparation from Bacillus subtilis culture",
+      "query_evidence": ["diastase[tiab]", "protease*[tiab]", "\"Dizet 100\"[tiab]"],
+      "sources": ["https://staticnedrug.mfds.go.kr/resources/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%95%BD%EC%A0%84%28%EC%A0%9C2017-21%ED%98%B8%29.pdf", "https://staticnedrug.mfds.go.kr/resources/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%95%BD%EC%A0%84_%EC%A0%9C11%EA%B0%9C%EC%A0%95%EC%97%90_%EB%94%B0%EB%A5%B8_%EC%9E%90%EC%A3%BC%EB%AC%BB%EB%8A%94_%EC%A7%88%EC%9D%91%EB%8B%B5%EC%A7%91.pdf"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-ea4c014f0616",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "preferred_name_ko": "브로멜라인",
+      "entity_en": "bromelain / bromelains",
+      "mapping_status": "exact_enzyme_mixture",
+      "inn_status": "pineapple protease mixture, not a single molecule",
+      "query_evidence": ["\"Bromelains\"[Mesh]", "bromelain*[tiab]", "bromelin*[tiab]", "ananase[tiab]"],
+      "sources": ["https://meshb.nlm.nih.gov/record/ui?ui=D001963", "https://pubchem.ncbi.nlm.nih.gov/compound/Bromelain"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-25b653f7fbe2",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "preferred_name_ko": "dl-캄파",
+      "entity_en": "DL-camphor / racemic synthetic camphor",
+      "mapping_status": "exact_racemate",
+      "inn_status": "racemic (1RS,4RS) entity; do not substitute D-camphor",
+      "query_evidence": ["\"Camphor\"[Mesh]", "camphor*[tiab]", "\"dl-camphor\"[tiab]", "\"racemic camphor\"[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/198400250/detail.html:911", "https://precision.fda.gov/uniisearch/srs/unii/5tjd82a1et", "https://meshb.nlm.nih.gov/record/ui?ui=D002164"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-4a3225f1eb5d",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "preferred_name_ko": "박하유",
+      "entity_en": "Mentha Oil / cornmint oil from Mentha arvensis var. piperascens (accepted Mentha canadensis)",
+      "mapping_status": "exact_pharmacopoeial_plant_oil",
+      "inn_status": "KP Mentha Oil; not peppermint oil from Mentha × piperita",
+      "query_evidence": ["\"Mentha\"[Mesh:noexp]", "\"Mentha oil\"[tiab]", "\"Mentha arvensis oil\"[tiab]", "cornmint[tiab]", "\"Japanese mint oil\"[tiab]"],
+      "sources": ["https://www.mfds.go.kr/brd/m_211/down.do?brd_id=data0005&seq=14975&data_tp=A&file_seq=8", "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:450311-1", "https://www.ema.europa.eu/en/documents/position/draft-postition-paper-use-herbal-medicinal-products-containing-pulegone-and-menthofuran_en.pdf"],
+      "correction_ko": "v4의 peppermint oil 매핑을 사용하지 않았다. 대한민국약전의 Mentha Oil 실체로 수정했다."
+    },
+    {
+      "ingredient_id": "ING-mf-src-76b6b5a5a31f",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "preferred_name_ko": "L-멘톨",
+      "entity_en": "L-menthol / levomenthol / (-)-menthol",
+      "mapping_status": "exact_stereoisomer",
+      "inn_status": "(1R,2S,5R)-menthol; distinct from DL-menthol and other stereoisomers",
+      "query_evidence": ["\"Menthol\"[Mesh]", "menthol*[tiab]", "levomenthol[tiab]", "\"L-menthol\"[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/198400250/detail.html:897", "https://precision.fda.gov/uniisearch/srs/unii/bz1r15mtk7", "https://meshb.nlm.nih.gov/record/ui?ui=D008610"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-8bebf0ac75f4",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "preferred_name_ko": "살리실산메틸",
+      "entity_en": "methyl salicylate / methyl 2-hydroxybenzoate",
+      "mapping_status": "exact",
+      "inn_status": "NLM Supplementary Concept C033069, not a MeSH Descriptor",
+      "query_evidence": ["\"Methyl Salicylate\"[Supplementary Concept]", "\"methyl salicylat*\"[tiab]", "\"oil of wintergreen\"[tiab]"],
+      "sources": ["research_v3/otc/raw/nedrug/198400250/detail.html:883", "https://precision.fda.gov/uniisearch/srs/unii/lav5u5022y", "https://meshb.nlm.nih.gov/record/ui?ui=C033069"]
+    },
+    {
+      "ingredient_id": "ING-mf-src-e2b868294a4f",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "preferred_name_ko": "티몰",
+      "entity_en": "thymol / 5-methyl-2-(propan-2-yl)phenol",
+      "mapping_status": "exact",
+      "inn_status": "Thymol; CAS 89-83-8",
+      "query_evidence": ["\"Thymol\"[Mesh]", "thymol[tiab]", "\"2-isopropyl-5-methylphenol\"[tiab]", "\"thymic acid\"[tiab]"],
+      "sources": ["https://www.mfds.go.kr/brd/m_211/down.do?brd_id=data0005&seq=14975&data_tp=A&file_seq=6", "https://meshb.nlm.nih.gov/record/ui?ui=D013943", "https://pubchem.ncbi.nlm.nih.gov/compound/6989"]
+    }
+  ]
+}

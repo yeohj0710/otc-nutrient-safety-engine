@@ -1,0 +1,1077 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at_utc": "2026-07-29T14:36:59.284475+00:00",
+  "validation_scope": "classifier_output_contract_and_ai_authored_real_record_invariants",
+  "semantic_classifier_function_preserved": false,
+  "semantic_classifier_function_note": "light_screening_pipeline.py contains prepare, output validation, and ingest logic but no callable semantic classify function; semantic checks therefore compare immutable outputs with AI-authored expectations.",
+  "ai_reference_standard": "codex_ai_authored_invariant_expectations",
+  "human_reference_rows": 0,
+  "independent_blinding": false,
+  "independent_blinding_ai": false,
+  "release_ready": false,
+  "classifier_layer": {
+    "path": "research_v3/otc/literature/v5/screening/classifier_decisions.csv",
+    "sha256": "ad0873b6db69cc63cac49c0f454a020c2ba86836592b652c89427ec5460c6db4",
+    "rows": 43207,
+    "decision_distribution": {
+      "deprioritize": 33683,
+      "retain": 7278,
+      "uncertain": 2246
+    }
+  },
+  "format_contract": {
+    "batch_count": 182,
+    "row_count": 43207,
+    "expected_batch_count": 182,
+    "expected_row_count": 43207,
+    "passed": true,
+    "checks": [
+      "input_output_row_count",
+      "record_question_key_and_order",
+      "six_field_output_schema",
+      "decision_reason_confidence_enums",
+      "evidence_basis_matches_abstract_presence",
+      "title_only_confidence_is_low"
+    ]
+  },
+  "required_categories": [
+    "assigned_ingredient_match",
+    "assigned_ingredient_mismatch",
+    "class_exposure",
+    "exposure_without_outcome",
+    "human_exposure",
+    "no_abstract",
+    "outcome_without_exposure",
+    "preclinical_only",
+    "q04_oral_digestive_enzyme_safety",
+    "q05_topical_pediatric_exposure"
+  ],
+  "covered_categories": [
+    "assigned_ingredient_match",
+    "assigned_ingredient_mismatch",
+    "class_exposure",
+    "exposure_without_outcome",
+    "formulation_only",
+    "human_exposure",
+    "no_abstract",
+    "outcome_without_exposure",
+    "preclinical_only",
+    "q04_oral_digestive_enzyme_safety",
+    "q05_topical_pediatric_exposure",
+    "route_mismatch"
+  ],
+  "case_sampling": {
+    "method": "purposefully_selected_boundary_non_probability_sample",
+    "random_sample": false,
+    "corpus_performance_inference_allowed": false,
+    "note_ko": "42건은 필수 경계 유형과 알려진 오분류 후보를 의도적으로 포함한 비확률 표본이므로 전체 코퍼스 성능을 추정하지 않는다."
+  },
+  "case_count": 42,
+  "pass_count": 27,
+  "fail_count": 15,
+  "agreement_vs_ai_reference": 0.6428571428571429,
+  "cases": [
+    {
+      "case_id": "INV-001",
+      "record_id": "PMID-22752270",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "deprioritize",
+      "categories": [
+        "preclinical_only",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "acetaminophen 간독성과 enalapril 효과를 생쥐에서만 평가해 사람 안전성 근거가 아니다.",
+      "title": "Effects of treatment with enalapril on hepatotoxicity induced by acetaminophen in mice.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "animal_term_present",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-002",
+      "record_id": "PMID-21787682",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "deprioritize",
+      "categories": [
+        "preclinical_only",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "acetaminophen은 Wistar rat에만 투여됐고 사람 결과가 없다.",
+      "title": "Elevated serum neopterin levels in acetaminophen-induced liver injury.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-003",
+      "record_id": "PMID-22005020",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "deprioritize",
+      "categories": [
+        "preclinical_only",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "ibuprofen 등 노출과 발달 결과를 임신 rat과 새끼에서만 평가했다.",
+      "title": "Developmental outcome after exposure to cyclooxygenase inhibitors during pregnancy and lactation.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-004",
+      "record_id": "PMID-22449385",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected": "deprioritize",
+      "categories": [
+        "preclinical_only",
+        "class_exposure"
+      ],
+      "rationale_ko": "H1 항히스타민 계열의 수면 유발 결과를 rat에서만 평가했다.",
+      "title": "First and second generation H₁ histamine receptor antagonists produce different sleep-inducing profiles in rats.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "animal_term_present",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-005",
+      "record_id": "PMID-16436655",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "deprioritize",
+      "categories": [
+        "preclinical_only",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "UDCA의 담도 상피 보호 효과를 rat model에서만 평가했다.",
+      "title": "Ca2+-dependent cytoprotective effects of ursodeoxycholic and tauroursodeoxycholic acid on the biliary epithelium in a rat model of cholestasis and loss of bile ducts.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "design_signal",
+        "animal_term_present"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-006",
+      "record_id": "PMID-19815612",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "retain",
+      "categories": [
+        "human_exposure",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "사람 paracetamol 과량복용과 귀속 가능한 급성 신부전 증례군이다.",
+      "title": "Delayed onset of acute renal failure after significant paracetamol overdose: A case series.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-007",
+      "record_id": "PMID-24445686",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "retain",
+      "categories": [
+        "human_exposure",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "소아 ibuprofen 병용 노출과 급성 신손상 신호를 분석했다.",
+      "title": "Association between an excess risk of acute kidney injury and concomitant use of ibuprofen and acetaminophen in children, retrospective analysis of a spontaneous reporting system.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-008",
+      "record_id": "PMID-24395298",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected": "retain",
+      "categories": [
+        "human_exposure",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "사람 cetirizine과 alcohol 병용의 정신운동 결과를 무작위 교차시험에서 측정했다.",
+      "title": "Psychomotor and subjective effects of bilastine, hydroxyzine, and cetirizine, in combination with alcohol: a randomized, double-blind, crossover, and positive-controlled and placebo-controlled Phase I clinical trials.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-009",
+      "record_id": "PMID-19779704",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "retain",
+      "categories": [
+        "human_exposure",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "사람 사후자료에서 warfarin과 paracetamol 병용의 유해 상호작용을 평가했다.",
+      "title": "Adverse interaction of warfarin and paracetamol: evidence from a post-mortem study.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-010",
+      "record_id": "PMID-19779704",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "deprioritize",
+      "categories": [
+        "assigned_ingredient_mismatch",
+        "outcome_without_exposure"
+      ],
+      "rationale_ko": "실제 귀속 노출은 paracetamol이며 NSAID는 연구 배경으로만 언급된다.",
+      "title": "Adverse interaction of warfarin and paracetamol: evidence from a post-mortem study.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-011",
+      "record_id": "PMID-20227026",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "retain",
+      "categories": [
+        "class_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "사람 NSAID 계열 노출과 상부 위장관 이상반응을 직접 다룬다.",
+      "title": "Adverse effects of non-steroidal anti-inflammatory drugs (NSAIDs, aspirin and coxibs) on upper gastrointestinal tract.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-012",
+      "record_id": "PMID-20227026",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "deprioritize",
+      "categories": [
+        "assigned_ingredient_mismatch",
+        "route_mismatch"
+      ],
+      "rationale_ko": "전신 NSAID 연구이며 Q05의 외용 counterirritant 노출이 아니다.",
+      "title": "Adverse effects of non-steroidal anti-inflammatory drugs (NSAIDs, aspirin and coxibs) on upper gastrointestinal tract.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-013",
+      "record_id": "PMID-10601046",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "uncertain",
+      "categories": [
+        "no_abstract",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "UDCA 노출 가능성은 보이지만 제목만으로 사람 안전성 결과를 확정할 수 없다.",
+      "title": "UDCA, PBC and biochemistry: what does normal mean?",
+      "has_abstract": false,
+      "observed_decision": "uncertain",
+      "observed_reason_codes": [
+        "exposure",
+        "insufficient_abstract"
+      ],
+      "observed_confidence": "low",
+      "observed_evidence_basis": "title_only",
+      "passed": true
+    },
+    {
+      "case_id": "INV-014",
+      "record_id": "PMID-19959976",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "retain",
+      "categories": [
+        "no_abstract",
+        "human_exposure",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "제목만으로 acetaminophen 과량복용이라는 사람 안전성 문제가 명확하다.",
+      "title": "Is acetaminophen safe? Accidental overdoses are common, but avoidable.",
+      "has_abstract": false,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "low",
+      "observed_evidence_basis": "title_only",
+      "passed": true
+    },
+    {
+      "case_id": "INV-015",
+      "record_id": "PMID-26631399",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "retain",
+      "categories": [
+        "no_abstract",
+        "human_exposure",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "제목에 ibuprofen-aspirin 상호작용과 치명적 혈전 결과가 명시됐다.",
+      "title": "Fatal Thrombosis of a Flow Diverter due to Ibuprofen-related Antagonization of Acetylsalicylic Acid.",
+      "has_abstract": false,
+      "observed_decision": "uncertain",
+      "observed_reason_codes": [
+        "exposure",
+        "insufficient_abstract"
+      ],
+      "observed_confidence": "low",
+      "observed_evidence_basis": "title_only",
+      "passed": false
+    },
+    {
+      "case_id": "INV-016",
+      "record_id": "PMID-37248974",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "deprioritize",
+      "categories": [
+        "assigned_ingredient_mismatch",
+        "outcome_without_exposure"
+      ],
+      "rationale_ko": "drug-induced liver injury 결과를 다루지만 acetaminophen 노출이 없다.",
+      "title": "[Ferroptosis and drug-induced liver injury].",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "outcome",
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-017",
+      "record_id": "PMID-23187061",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "deprioritize",
+      "categories": [
+        "assigned_ingredient_mismatch",
+        "outcome_without_exposure"
+      ],
+      "rationale_ko": "실제 원인 노출은 acetaminophen 과량복용이고 NSAID 노출은 없다.",
+      "title": "Successful outcome of transplant of kidneys recovered from a brain-dead liver transplant recipient: case report.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-018",
+      "record_id": "PMID-22406651",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected": "deprioritize",
+      "categories": [
+        "assigned_ingredient_mismatch",
+        "outcome_without_exposure"
+      ],
+      "rationale_ko": "opioid 중독 증례이며 Q03 배정 성분 또는 계열 노출이 없다.",
+      "title": "Suspected opioid overdose case resolved by CYP2D6 genotyping.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-019",
+      "record_id": "PMID-19781895",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "deprioritize",
+      "categories": [
+        "exposure_without_outcome",
+        "assigned_ingredient_match"
+      ],
+      "rationale_ko": "acetaminophen 해열 효능을 측정했으며 귀속 가능한 안전성 결과가 없다.",
+      "title": "Acetaminophen has limited antipyretic activity in critically ill patients.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-020",
+      "record_id": "PMID-23397664",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "deprioritize",
+      "categories": [
+        "exposure_without_outcome",
+        "route_mismatch"
+      ],
+      "rationale_ko": "정맥 ketorolac 약동학 연구로 경구 안전성 결과가 없다.",
+      "title": "Paracetamol and ketorolac pharmacokinetics and metabolism at delivery and during postpartum.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-021",
+      "record_id": "PMID-23973502",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected": "deprioritize",
+      "categories": [
+        "exposure_without_outcome",
+        "assigned_ingredient_mismatch"
+      ],
+      "rationale_ko": "caffeine은 영양 섭취 측정치일 뿐 caffeine 귀속 안전성 결과가 없다.",
+      "title": "Nutrition and eating behavior in patients with chronic pain receiving long-term opioid therapy.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-022",
+      "record_id": "PMID-33560089",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "deprioritize",
+      "categories": [
+        "exposure_without_outcome",
+        "q04_oral_digestive_enzyme_safety"
+      ],
+      "rationale_ko": "사람 경구 pancrelipase 노출은 있으나 효능·증상 결과만 있고 안전성 결과가 없다.",
+      "title": "Effect of Pancrelipase Therapy on Exocrine Pancreatic Insufficiency Symptoms and Coefficient of Fat Absorption Associated With Chronic Pancreatitis.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome"
+      ],
+      "observed_confidence": "medium",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-023",
+      "record_id": "PMID-37694700",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "deprioritize",
+      "categories": [
+        "exposure_without_outcome",
+        "q05_topical_pediatric_exposure"
+      ],
+      "rationale_ko": "신생아에게 menthol ointment를 쓴 관행은 보고하지만 귀속 안전성 결과는 분석하지 않는다.",
+      "title": "Helping babies survive: Thermal and umbilical cord care practices for neonates in Ado-Ekiti, Southern Nigeria.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-024",
+      "record_id": "PMID-18823646",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "retain",
+      "categories": [
+        "class_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "사람 NSAID 계열의 궤양·심혈관·고혈압·신부전 이상반응을 다룬다.",
+      "title": "Nonsteroidal anti-inflammatory drugs: adverse effects and their prevention.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-025",
+      "record_id": "PMID-20565458",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected": "retain",
+      "categories": [
+        "class_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "경구 H1 항히스타민 계열과 lorazepam 병용의 중추신경 결과를 사람에게서 측정했다.",
+      "title": "Rupatadine does not potentiate the CNS depressant effects of lorazepam: randomized, double-blind, crossover, repeated dose, placebo-controlled study.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-026",
+      "record_id": "PMID-24098516",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected": "retain",
+      "categories": [
+        "class_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "성인의 진정성 H1 항히스타민 오남용과 의존을 직접 조사했다.",
+      "title": "Misuse and dependence on non-prescription codeine analgesics or sedative H1 antihistamines by adults: a cross-sectional investigation in France.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-027",
+      "record_id": "PMID-10950038",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "retain",
+      "categories": [
+        "q04_oral_digestive_enzyme_safety",
+        "human_exposure"
+      ],
+      "rationale_ko": "소아·성인 cystic fibrosis 환자에게 pancrelipase를 투여하고 safety와 tolerance를 평가했다.",
+      "title": "A comparison of the efficacy and tolerance of pancrelipase and placebo in the treatment of steatorrhea in cystic fibrosis patients with clinical exocrine pancreatic insufficiency.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-028",
+      "record_id": "PMID-10644326",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "retain",
+      "categories": [
+        "q04_oral_digestive_enzyme_safety",
+        "human_exposure"
+      ],
+      "rationale_ko": "사람의 경구 pancreatic enzyme 과다 사용과 fibrosing colonopathy가 직접 연결된다.",
+      "title": "Fibrosing colonopathy in an adult owing to over use of pancreatic enzyme supplements.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-029",
+      "record_id": "PMID-21197074",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "retain",
+      "categories": [
+        "q04_oral_digestive_enzyme_safety",
+        "human_exposure"
+      ],
+      "rationale_ko": "사람 pancrelipase 무작위시험이 이상반응을 명시적으로 관찰했다.",
+      "title": "Efficacy and Safety of a New Formulation of Pancrelipase (Ultrase MT20) in the Treatment of Malabsorption in Exocrine Pancreatic Insufficiency in Cystic Fibrosis.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-030",
+      "record_id": "PMID-23383603",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "retain",
+      "categories": [
+        "q04_oral_digestive_enzyme_safety",
+        "human_exposure"
+      ],
+      "rationale_ko": "경구 pancreatin 시험과 1년 연장 연구가 치료 후 이상반응과 중단을 보고했다.",
+      "title": "Randomised clinical trial: a 1-week, double-blind, placebo-controlled study of pancreatin 25 000 Ph. Eur. minimicrospheres (Creon 25000 MMS) for pancreatic exocrine insufficiency after pancreatic surgery, with a 1-year open-label extension.",
+      "has_abstract": true,
+      "observed_decision": "uncertain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "insufficient_abstract"
+      ],
+      "observed_confidence": "medium",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-031",
+      "record_id": "PMID-18787288",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "deprioritize",
+      "categories": [
+        "no_abstract",
+        "assigned_ingredient_mismatch",
+        "outcome_without_exposure"
+      ],
+      "rationale_ko": "제목이 pancreatic enzyme 보충 노출이 없었다고 명시한다.",
+      "title": "Fibrosing colonopathy in absence of pancreatic enzyme supplementation in one adult patient with cystic fibrosis.",
+      "has_abstract": false,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "low",
+      "observed_evidence_basis": "title_only",
+      "passed": true
+    },
+    {
+      "case_id": "INV-032",
+      "record_id": "PMID-21418260",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected": "retain",
+      "categories": [
+        "q04_oral_digestive_enzyme_safety",
+        "human_exposure"
+      ],
+      "rationale_ko": "6개월 경구 pancrelipase 연구가 치료 관련 이상반응을 보고했다.",
+      "title": "A 6-month, open-label clinical trial of pancrelipase delayed-release capsules (Creon) in patients with exocrine pancreatic insufficiency due to chronic pancreatitis or pancreatic surgery.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-033",
+      "record_id": "PMID-15219304",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "retain",
+      "categories": [
+        "q05_topical_pediatric_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "비처방 외용 camphor 제품에 대한 toddler 노출과 중독 위험을 다룬다.",
+      "title": "Are one or two dangerous? Camphor exposure in toddlers.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-034",
+      "record_id": "PMID-10881777",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "retain",
+      "categories": [
+        "q05_topical_pediatric_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "2개월 영아에게 camphor 피부 제품을 사용한 뒤 간독성이 나타나고 중단 후 호전됐다.",
+      "title": "Camphor hepatotoxicity.",
+      "has_abstract": true,
+      "observed_decision": "uncertain",
+      "observed_reason_codes": [
+        "exposure",
+        "insufficient_abstract"
+      ],
+      "observed_confidence": "medium",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-035",
+      "record_id": "PMID-33245023",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "retain",
+      "categories": [
+        "q05_topical_pediatric_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "소아 599명의 topical salicylate 제품 노출과 독성 징후·입원 결과를 보고했다.",
+      "title": "Risk of toxicity from pediatric topical salicylate ingestions.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    },
+    {
+      "case_id": "INV-036",
+      "record_id": "PMID-19403490",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "retain",
+      "categories": [
+        "q05_topical_pediatric_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "반복 피부 도포를 포함한 소아 camphor 중독·경련 군집이다.",
+      "title": "A cluster of children with seizures caused by camphor poisoning.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-037",
+      "record_id": "PMID-18029526",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "retain",
+      "categories": [
+        "q05_topical_pediatric_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "보호자가 camphor를 복부에 마사지한 뒤 소아에게 status epilepticus가 발생했다.",
+      "title": "Anti-flatulence treatment and status epilepticus: a case of camphor intoxication.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "exposure",
+        "outcome",
+        "human_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-038",
+      "record_id": "PMID-28491925",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "retain",
+      "categories": [
+        "q05_topical_pediatric_exposure",
+        "human_exposure"
+      ],
+      "rationale_ko": "영아 국소 camphor 노출에서 관찰된 무위해 결과를 해석할 수 있다.",
+      "title": "No Camphor Toxicity in Cambodian Infants.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-039",
+      "record_id": "PMID-30741813",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected": "deprioritize",
+      "categories": [
+        "route_mismatch",
+        "exposure_without_outcome"
+      ],
+      "rationale_ko": "수술 전 정맥 acetaminophen 효능 시험으로 Q01의 IV-only 제외 조건에 해당한다.",
+      "title": "Intravenous Acetaminophen Before Pelvic Organ Prolapse Repair: A Randomized Controlled Trial.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-040",
+      "record_id": "PMID-30660018",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected": "deprioritize",
+      "categories": [
+        "route_mismatch",
+        "human_exposure"
+      ],
+      "rationale_ko": "NSAID를 점안제로만 투여해 Q02의 경구 또는 경로 미상 범위 밖이다.",
+      "title": "Inhibition of platelet function after ocular administration of non-steroidal anti-inflammatory drugs.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "exposure",
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-041",
+      "record_id": "PMID-28986120",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "deprioritize",
+      "categories": [
+        "route_mismatch",
+        "assigned_ingredient_mismatch"
+      ],
+      "rationale_ko": "소아 경구 aspirin 유발시험이며 외용 counterirritant 노출이 아니다.",
+      "title": "Acetyl Salicylic Acid Challenge in Children with Hypersensitivity Reactions to Nonsteroidal Anti-Inflammatory Drugs Differentiates Between Cross-Intolerant and Selective Responders.",
+      "has_abstract": true,
+      "observed_decision": "deprioritize",
+      "observed_reason_codes": [
+        "off_topic"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": true
+    },
+    {
+      "case_id": "INV-042",
+      "record_id": "PMID-35168221",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected": "deprioritize",
+      "categories": [
+        "formulation_only",
+        "exposure_without_outcome"
+      ],
+      "rationale_ko": "menthol은 전달체 성분이고 실제 연구 노출·결과는 folate와 iron이다.",
+      "title": "Phospholipid and menthol based nanovesicle impregnated transdermal patch for nutraceutical delivery to diminish folate and iron deficiency.",
+      "has_abstract": true,
+      "observed_decision": "retain",
+      "observed_reason_codes": [
+        "population",
+        "exposure",
+        "outcome",
+        "human_signal",
+        "design_signal"
+      ],
+      "observed_confidence": "high",
+      "observed_evidence_basis": "abstract",
+      "passed": false
+    }
+  ],
+  "uncertain_comparison": {
+    "comparison_unit": "classifier_output_row",
+    "v4_0": {
+      "classifier_output_rows": 5724,
+      "uncertain": 61,
+      "uncertain_rate": 0.010656883298392733,
+      "abstract_rows": 5424,
+      "abstract_uncertain": 42,
+      "abstract_uncertain_rate": 0.007743362831858407,
+      "title_only_rows": 300,
+      "title_only_uncertain": 19,
+      "title_only_uncertain_rate": 0.06333333333333334
+    },
+    "v5_0_classifier_layer": {
+      "classifier_output_rows": 43207,
+      "uncertain": 2246,
+      "uncertain_rate": 0.05198231768000555,
+      "abstract_rows": 41512,
+      "abstract_uncertain": 2046,
+      "abstract_uncertain_rate": 0.04928695317016766,
+      "title_only_rows": 1695,
+      "title_only_uncertain": 200,
+      "title_only_uncertain_rate": 0.11799410029498525,
+      "uncertain_with_abstract_share": 0.9109528049866429,
+      "uncertain_abstract_length_median": 1687.0,
+      "uncertain_abstract_at_least_180_chars": 2043,
+      "uncertain_abstract_at_least_600_chars": 2014,
+      "questions": {
+        "OTC-LIT-Q01-ACETAMINOPHEN": {
+          "rows": 9259,
+          "uncertain": 670,
+          "uncertain_rate": 0.07236202613673183
+        },
+        "OTC-LIT-Q02-NSAID": {
+          "rows": 6448,
+          "uncertain": 664,
+          "uncertain_rate": 0.10297766749379653
+        },
+        "OTC-LIT-Q03-COLD-ALLERGY": {
+          "rows": 5669,
+          "uncertain": 368,
+          "uncertain_rate": 0.06491444699241489
+        },
+        "OTC-LIT-Q04-DIGESTIVE": {
+          "rows": 21314,
+          "uncertain": 534,
+          "uncertain_rate": 0.025053955146851836
+        },
+        "OTC-LIT-Q05-TOPICAL": {
+          "rows": 517,
+          "uncertain": 10,
+          "uncertain_rate": 0.019342359767891684
+        }
+      }
+    },
+    "difference": {
+      "uncertain_rate_percentage_point_change": 4.132543438161282,
+      "uncertain_rate_ratio": 4.87781617049757
+    },
+    "cause_findings_ko": [
+      "v5는 P AND I 확장 검색으로 분류기 출력 행이 5,724개에서 43,207개로 늘었고, v5 uncertain의 대부분은 새로 유입된 저정밀도 코퍼스에서 발생했다.",
+      "v5 uncertain 2,246건 중 2,046건은 초록이 있다. 초록 보유 uncertain의 99% 이상이 180자 이상이므로 초록 부재나 짧은 초록만으로 증가를 설명할 수 없다.",
+      "v5의 insufficient_abstract 코드는 초록 부재와 의미상 정보 부족을 합친다. 결정적 경량 규칙이 노출·결과 귀속을 확정하지 못한 충분히 긴 초록도 uncertain으로 남겼다.",
+      "v4는 에이전트가 저작·감사한 결정적 분류기와 더 세분된 사유 코드 체계를 사용했고 v5는 재현 가능한 의미 분류 함수가 보존되지 않았다. 규칙 차이와 코퍼스 확대가 함께 uncertain 비율을 높였다.",
+      "사람 참조표준은 0건이므로 이 비교는 선별 성능을 뜻하지 않는다."
+    ]
+  },
+  "limitations": [
+    "The semantic expectations were authored by Codex and are not a human reference standard.",
+    "The historical semantic classifier implementation is not preserved as a callable function.",
+    "The 42 cases are a purposefully selected boundary/non-probability sample; agreement_vs_ai_reference is not a corpus performance estimate.",
+    "Failed invariant cases are recorded for adjudication and do not mutate the classifier layer."
+  ],
+  "source_hashes": {
+    "evidence_map.csv": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+    "classifier_decisions.csv": "ad0873b6db69cc63cac49c0f454a020c2ba86836592b652c89427ec5460c6db4",
+    "light_screening_pipeline.py": "8899a12625a0a49622b43c5858a1bcbd42b3851cccdb705fe3ca606fe0b40751",
+    "v4_screening_manifest.json": "9bf8040087703d5e46c3594cc565b6d0c94d679840ecffbd0621bcbd7f2a7338",
+    "v4_evidence_map.csv": "5b0bcc9f47a98a4caa7a24599962ac5d5bcc372fd8edb29bfd67a4b1af78786c",
+    "v4_checkpoints.jsonl": "3ac843001562508f981976fefcc99866d474204477248bb3f058ae2822590910"
+  }
+}

@@ -1,0 +1,634 @@
+{
+  "question_id": "OTC-LIT-Q04-DIGESTIVE",
+  "prepared_at_utc": "2026-07-28T08:57:36.257990+00:00",
+  "batch_size": 240,
+  "row_count": 21314,
+  "prompt_path": "research_v3/otc/literature/v5/prompts/frozen_light_screening_prompt.md",
+  "prompt_sha256": "657ffe195f3e04362b8465659eebf6388c4cc426237e8f86e844a544797d3cab",
+  "evidence_map_sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+  "batches": [
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B001.jsonl",
+      "row_count": 240,
+      "input_sha256": "d0f47b555af92cac2ff99abcbcec87b6fcc68aa0f09bc037458a2bcc4301b267"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B002.jsonl",
+      "row_count": 240,
+      "input_sha256": "80eac982bc4eebc306ea61bbc1f92e6d0327001b00f3d182ad00bdc6544b9754"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B003.jsonl",
+      "row_count": 240,
+      "input_sha256": "666b28e35a0ac83744cdca2c47fed3ea2a12b19031b270291f99b2584374aa91"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B004",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B004.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B004.jsonl",
+      "row_count": 240,
+      "input_sha256": "477290d4f91ae45fca1e634d51fe46440fd9bc6b7f29e5333ddb701c4b32ac35"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B005",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B005.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B005.jsonl",
+      "row_count": 240,
+      "input_sha256": "6309a788395aafec02f9bf21d64e7efe62e66a61415fd397c467d6c162115035"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B006",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B006.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B006.jsonl",
+      "row_count": 240,
+      "input_sha256": "600f885883e70ae2f761f3058e119b9c0893237f16af6088f4b8f6b744b39289"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B007",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B007.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B007.jsonl",
+      "row_count": 240,
+      "input_sha256": "964ecfa3a5395a45b2fe4885ec54d3ddd276a7beb6c9af36054f760ad34afd81"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B008",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B008.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B008.jsonl",
+      "row_count": 240,
+      "input_sha256": "20d7b45caff83d96180a8297bf1e67569f74a78a9fba772853d36932f6847ddf"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B009",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B009.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B009.jsonl",
+      "row_count": 240,
+      "input_sha256": "5e5e8dce0e8df6185c3f058b328f2837014d64eda66c020238239c89860aee68"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B010",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B010.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B010.jsonl",
+      "row_count": 240,
+      "input_sha256": "f0f3e4f97a4f16f2b158492dcb702192632ab1a18b380d3e38a9467f0799c157"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B011",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B011.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B011.jsonl",
+      "row_count": 240,
+      "input_sha256": "fac8225c2bf63da2a6fcefba9b6b8324c0d0702cf80ac60170eedc7a8fb6d936"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B012",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B012.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B012.jsonl",
+      "row_count": 240,
+      "input_sha256": "702b7e93d9ba46e50b73b4ace3d432d3aa9735e823492539d88e9bfc08c28d6b"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B013",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B013.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B013.jsonl",
+      "row_count": 240,
+      "input_sha256": "077af6486851d050d434d3c653228f5a26146ae78151f8355fdbbecde329797b"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B014",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B014.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B014.jsonl",
+      "row_count": 240,
+      "input_sha256": "4fbfd86985408530edc323cfc7df7890b6d1884c42a666b792094b07293fe3e9"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B015",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B015.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B015.jsonl",
+      "row_count": 240,
+      "input_sha256": "1e306d723816be0d4a5742d843790c89b7b5aa85b9d90b754d9608139a2f2f4a"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B016",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B016.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B016.jsonl",
+      "row_count": 240,
+      "input_sha256": "6ff644bfe1440766486ca6f7a452904614feff8cb2720253153e87ed5f69c5fb"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B017",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B017.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B017.jsonl",
+      "row_count": 240,
+      "input_sha256": "3487ee675efb423ad12da89f5d9af1f1d1761a2708877a4b8dc9cd4e65d3298e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B018",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B018.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B018.jsonl",
+      "row_count": 240,
+      "input_sha256": "76eeedf1637c6e190de0d4de5afc368f923470dd4166b1d8c767ef670d748843"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B019",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B019.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B019.jsonl",
+      "row_count": 240,
+      "input_sha256": "07e3e2b8ac791e1eaf90885b8ab91e483da63748335f05c1fdefda356d583546"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B020",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B020.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B020.jsonl",
+      "row_count": 240,
+      "input_sha256": "a495d28f8090ed6251f6d49d38672bcff4a796715f9c7d05ee01b6ad3badf49e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B021",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B021.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B021.jsonl",
+      "row_count": 240,
+      "input_sha256": "9ad1fd3a82294cea2366e56eea9dd2861eeddf1a1acd5f300d40e320e6e7a21a"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B022",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B022.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B022.jsonl",
+      "row_count": 240,
+      "input_sha256": "752a45cf347d9a79f9f1fc7f7327b64a050415d41be53bf520723276f5b76458"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B023",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B023.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B023.jsonl",
+      "row_count": 240,
+      "input_sha256": "e1f305e56d3cbc21ec206d1c8dc7c8ca7202060ea0263cc592bcc42501236a0a"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B024",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B024.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B024.jsonl",
+      "row_count": 240,
+      "input_sha256": "d4d557a087e02f56985ffc3295100c988cc024dc2fe78b27895aebe951c4e019"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B025",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B025.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B025.jsonl",
+      "row_count": 240,
+      "input_sha256": "79c3561c2845f93f7a0671a0cc156b216e4622f74a725f84e33d35e466ea233a"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B026",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B026.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B026.jsonl",
+      "row_count": 240,
+      "input_sha256": "6ed43bf15666dabc2174db2de3e22403dfdf50a6bdbbde235bdbffe843aef477"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B027",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B027.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B027.jsonl",
+      "row_count": 240,
+      "input_sha256": "7789c7207133cd663b7f58291fb56de070685b7c343767894aa3e2e588a85791"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B028",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B028.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B028.jsonl",
+      "row_count": 240,
+      "input_sha256": "d4ae855d4d597750de6deea3c3112683d08d5143155d592a25065a1ef878772f"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B029",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B029.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B029.jsonl",
+      "row_count": 240,
+      "input_sha256": "cc8238483c7d35a2504ddf4ae9cb09e3c5cb529bd724abef6b904a94851dddea"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B030",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B030.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B030.jsonl",
+      "row_count": 240,
+      "input_sha256": "cdd6c249982fc8b006265303c650665b987e672e3441f010625648eefe7ba41e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B031",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B031.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B031.jsonl",
+      "row_count": 240,
+      "input_sha256": "b1a0a8841248a058b5958cc18aee987c64211efd6b4d57e157e5d680319824cb"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B032",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B032.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B032.jsonl",
+      "row_count": 240,
+      "input_sha256": "c7743a17a9db75f6beeedbbf7a326f9b24a53844a6b9d164dff53e0626e9d112"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B033",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B033.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B033.jsonl",
+      "row_count": 240,
+      "input_sha256": "e1ade91c61425886078acf2ed4d3da8d47362808cbc382137ebceb624bbe3da1"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B034",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B034.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B034.jsonl",
+      "row_count": 240,
+      "input_sha256": "2494713c67e6da3e8187dea1eaf94b0d943290f5c58781b22c415acc884b8ff6"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B035",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B035.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B035.jsonl",
+      "row_count": 240,
+      "input_sha256": "d6f93ee1bc5d3d723071abe2d63784185fe66249dd7cc77f064cb495763b4a60"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B036",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B036.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B036.jsonl",
+      "row_count": 240,
+      "input_sha256": "143195f237514b2b4d7fa8f8becd7546fb4a576dcd196894de824c548ed5bbd6"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B037",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B037.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B037.jsonl",
+      "row_count": 240,
+      "input_sha256": "401727b4a3ffd1eb0dc8de90a143da8dd2270463a5857c05c57f0e7f945a6232"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B038",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B038.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B038.jsonl",
+      "row_count": 240,
+      "input_sha256": "3737b68c74498de0ad39dcb64676d65287f87cc62eac075d0bfc1ce23150228e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B039",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B039.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B039.jsonl",
+      "row_count": 240,
+      "input_sha256": "b366b6074250b5c37f4514195cee28daa7bbaf10c1b54f6457bb830088e89dfb"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B040",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B040.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B040.jsonl",
+      "row_count": 240,
+      "input_sha256": "597ebe4c2ba0cba3035009da4bc04a937ce086d83cd7b27e1b407c4fc50db361"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B041",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B041.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B041.jsonl",
+      "row_count": 240,
+      "input_sha256": "93060002ba4f03ae9ebc426c7c9f18d04c965d2583b90d2b9a7429129c5e2149"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B042",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B042.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B042.jsonl",
+      "row_count": 240,
+      "input_sha256": "2bbd72a55cb935fe2932834f5f62b60ede96c25d3fd6b1c333b7aa989cbea8ce"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B043",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B043.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B043.jsonl",
+      "row_count": 240,
+      "input_sha256": "37889c61a96252b72f952917c0ef69de4b2b228cd272ac7479f170881c4620ee"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B044",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B044.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B044.jsonl",
+      "row_count": 240,
+      "input_sha256": "7d035767d5cdf7cd7cfd6d59ce1dac2e1435c56d0dcb1a494a08b982611da33f"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B045",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B045.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B045.jsonl",
+      "row_count": 240,
+      "input_sha256": "e79c24f12e0b6e873173f5521f157641f12994225370780bf4f55eb3f9247145"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B046",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B046.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B046.jsonl",
+      "row_count": 240,
+      "input_sha256": "257df44c41489195b7abdf305914547191f3a42afc55698e2320d2a05d2f6ea5"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B047",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B047.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B047.jsonl",
+      "row_count": 240,
+      "input_sha256": "f8db9556888b01ec945adc003d5a3483dce67a864a1efdaf6882a41de08d6a36"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B048",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B048.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B048.jsonl",
+      "row_count": 240,
+      "input_sha256": "0055637320474014f969a67649ff2845708cdf471d434bcde84744cccad5771f"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B049",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B049.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B049.jsonl",
+      "row_count": 240,
+      "input_sha256": "64905d862e9983f7506caddc750c832b82d64ea2b6846a0bd93d44d1f141c2a5"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B050",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B050.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B050.jsonl",
+      "row_count": 240,
+      "input_sha256": "e19cb808d06f17071a137d82937a78161ce44d7fe9fed94e92fcb35df76019d7"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B051",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B051.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B051.jsonl",
+      "row_count": 240,
+      "input_sha256": "b7e0aaaf56eaa844802ad20edf4606ea590779bf48cf17cf386878a5287bc509"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B052",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B052.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B052.jsonl",
+      "row_count": 240,
+      "input_sha256": "b51ebe9aa66b36e5a4340cb1574f91db9267c3fe622e0d6313c5188fd544375e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B053",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B053.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B053.jsonl",
+      "row_count": 240,
+      "input_sha256": "925c17d97982cc1393e1d1887eb0c03f877ffb8b638e1fcfbfa8cdf8c43e4a5d"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B054",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B054.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B054.jsonl",
+      "row_count": 240,
+      "input_sha256": "63d9d48a9aa1ab1d9157bbb16e49547c8d1b8315711b7c4b72af265daf026ef6"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B055",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B055.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B055.jsonl",
+      "row_count": 240,
+      "input_sha256": "d418bdc97b04b4cc94f95f8bb85640bd072b8b15413bf03cf6166d6371a170ed"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B056",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B056.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B056.jsonl",
+      "row_count": 240,
+      "input_sha256": "9a1842363e869d8dfe2ee2126bfbfc98f85893601f1fadfa8d196cdff2b6b512"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B057",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B057.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B057.jsonl",
+      "row_count": 240,
+      "input_sha256": "b745ca6f79396ad376ccfca8df48e9ea5c1508b670b1a89c1e0a7fa290101dc4"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B058",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B058.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B058.jsonl",
+      "row_count": 240,
+      "input_sha256": "086ef0f920fc70416b0d25e30f7efac9fee6ab39cd19bab63260751cc1de31f3"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B059",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B059.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B059.jsonl",
+      "row_count": 240,
+      "input_sha256": "436c40d5a0113b2373200148fe038e08b8a06a1c55f62880b8a50463c30354f2"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B060",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B060.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B060.jsonl",
+      "row_count": 240,
+      "input_sha256": "862c9b779fd43c6fcec73d3143c25aa76be03cf2f59b37f4ace666e950a56d23"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B061",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B061.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B061.jsonl",
+      "row_count": 240,
+      "input_sha256": "f3b28cbaac65fdd21981db2afe0420cb154362f05e37d1f7180f11eec05ba097"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B062",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B062.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B062.jsonl",
+      "row_count": 240,
+      "input_sha256": "659d036a631e57fdb294c5f9d9b9256feb6274d13a3ad1bdceae52c067013527"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B063",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B063.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B063.jsonl",
+      "row_count": 240,
+      "input_sha256": "e8b3bad21fe3796cad5231a717e6866dc586f0c36afd704be55194e72f336f0c"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B064",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B064.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B064.jsonl",
+      "row_count": 240,
+      "input_sha256": "3b4b848b36243ca49c751d474fc14dd19894e26852addded0f897ad2345b63be"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B065",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B065.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B065.jsonl",
+      "row_count": 240,
+      "input_sha256": "13801c4efdcc38d5a8899e0d70bc474ba2eef3435367b47a891e37a51ccbf2ae"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B066",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B066.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B066.jsonl",
+      "row_count": 240,
+      "input_sha256": "9cf0dbdb7f4631c605783bef12eb3ec8c5ce4b8f3c172848a5c601f5d07b0077"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B067",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B067.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B067.jsonl",
+      "row_count": 240,
+      "input_sha256": "39ea225cdada812bb3786093c54354ed161de8e77830dbff4c81eacf3fc4de97"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B068",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B068.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B068.jsonl",
+      "row_count": 240,
+      "input_sha256": "47908d49ff98c2da9d1fe9b12ec315b4c4fec1ec8a080b59a24ab93b0976d972"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B069",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B069.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B069.jsonl",
+      "row_count": 240,
+      "input_sha256": "33ae0f553a4c7786248922b480c3007fac71084dad4f95bb88111dd62aa9fe76"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B070",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B070.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B070.jsonl",
+      "row_count": 240,
+      "input_sha256": "9b53d25a20350c0f8a40997dbf75193fa2d20f2974896fd6a284649cd9bbf28e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B071",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B071.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B071.jsonl",
+      "row_count": 240,
+      "input_sha256": "2dc749c4d1d67c307fa946f23553cdb5d4a61bb1faa60fc4bd342e84f4a68ac2"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B072",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B072.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B072.jsonl",
+      "row_count": 240,
+      "input_sha256": "35c069bc36e0a748522d8d2394f9eeceff8cbb9fa7c10860dc37490f60f8ed4e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B073",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B073.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B073.jsonl",
+      "row_count": 240,
+      "input_sha256": "de8980177fd4baa27d6a7d54a56891cffa708f2842b8ea3f5480644197cb5768"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B074",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B074.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B074.jsonl",
+      "row_count": 240,
+      "input_sha256": "5c3cbb1155f27c179c8b44e2200f0658ee94c898347c4570df2b144c5ccd1d36"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B075",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B075.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B075.jsonl",
+      "row_count": 240,
+      "input_sha256": "396a229b6c17dc4119f2f6993c5db113947addb6d840f14da93deb1f46f347bf"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B076",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B076.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B076.jsonl",
+      "row_count": 240,
+      "input_sha256": "ca6ec67a90126c96f73d8c9cbfbd961d0665289626bdd66414df2ce377791168"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B077",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B077.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B077.jsonl",
+      "row_count": 240,
+      "input_sha256": "a3124d7d06ac9865bedb3ba6d113cf4ae4b75de7d64ae39927afd54788bcda1c"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B078",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B078.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B078.jsonl",
+      "row_count": 240,
+      "input_sha256": "462a96c1b051b505a9dfe447b9f52cb12d2af7826051784dff8b01cc21adbd7a"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B079",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B079.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B079.jsonl",
+      "row_count": 240,
+      "input_sha256": "79e87b58d3c5ac3f637425212776c029e0dc752327d488443a1718945e6b2a7b"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B080",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B080.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B080.jsonl",
+      "row_count": 240,
+      "input_sha256": "63594585d068e6cd6e0b8befcd5c429d98e56d55893a1aeb11cb1a175524b7d8"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B081",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B081.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B081.jsonl",
+      "row_count": 240,
+      "input_sha256": "71723e72d1a3f76e213bc13882d9f3480b930575abd332c1517405608807d186"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B082",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B082.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B082.jsonl",
+      "row_count": 240,
+      "input_sha256": "d89aa79d0246c465fd66d4a1ba1c05939f61f01050b179bfc0e3ffab6d8d6d03"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B083",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B083.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B083.jsonl",
+      "row_count": 240,
+      "input_sha256": "9e4c2b9bd88f5f1f0c68bfc8125c387d0ef6d3133d1166f5432d571b15ebda0c"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B084",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B084.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B084.jsonl",
+      "row_count": 240,
+      "input_sha256": "def4a5527f611e49eb4ae35738483fa65f387cf4a2f0f8d0bc1a781e788e0ece"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B085",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B085.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B085.jsonl",
+      "row_count": 240,
+      "input_sha256": "af3567823196d277c9e2740b484ceb7d69347a5b66513b4f46e8d64c13539ac1"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B086",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B086.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B086.jsonl",
+      "row_count": 240,
+      "input_sha256": "f21d24bd68803860b8e281095d400b525baf6fa20c959e1769e77d495294426b"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B087",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B087.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B087.jsonl",
+      "row_count": 240,
+      "input_sha256": "9f6ca312cff5cd8d4b12f59dab758664201882aaca9dfbe4201c949497d8597a"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B088",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B088.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B088.jsonl",
+      "row_count": 240,
+      "input_sha256": "5c3d57954a654c7c5b7fb0a74b2d8b827a1abe2a807cd46f6829e675542f2396"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-B089",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B089.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-B089.jsonl",
+      "row_count": 194,
+      "input_sha256": "c317ffcda5a7772f77dad5802d3940352370faf81370bb62d4d82337fb7b2563"
+    }
+  ]
+}

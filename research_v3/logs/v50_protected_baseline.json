@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at_utc": "2026-07-28T03:01:07.4028138Z",
+  "repository_root": "C:/dev/otc-nutrient-safety-engine",
+  "git": {
+    "branch": "main",
+    "head": "83bb13dbcbbfca67fc7060ed4abf6bb0cd5c8fbb",
+    "preexisting_status_short": [
+      " M research_v3/otc/audit/v40_closure_audit.json",
+      "?? research_v3/protocol/protocol-v5.0-mecir-search.md"
+    ],
+    "preexisting_dirty_files": [
+      {
+        "path": "research_v3/otc/audit/v40_closure_audit.json",
+        "sha256": "bcc8f2d9630013cc4d2873789a6c1a33f368d9b84947df0ed0de3a9bf5f6bb34",
+        "bytes": 4422,
+        "ownership": "preexisting_user_change"
+      },
+      {
+        "path": "research_v3/protocol/protocol-v5.0-mecir-search.md",
+        "sha256": "f977e7799519c0f0780eae5b8e0d942daf68c5c0d9bdab0782a9616b51b71a55",
+        "bytes": 10346,
+        "ownership": "preexisting_user_file"
+      }
+    ]
+  },
+  "protected_paths": [
+    {
+      "path": "research_v3/otc/normalized",
+      "tracked_files": 6,
+      "bytes": 106669,
+      "aggregate_sha256": "a3d5534c28dd19ee91df9d22af8c445b378ff688b0638fd6dc9c0ff58eb99e11",
+      "head_tree": "87f83968e800a1f81595606efbfd7e32ff55e495"
+    },
+    {
+      "path": "research_v3/otc/rules",
+      "tracked_files": 8,
+      "bytes": 216793,
+      "aggregate_sha256": "e72efb3f9885aca0f05c19532793a920e45b888a376eb90a7c1fea1be178fba9",
+      "head_tree": "285d0d899c8584279f54cd1346248642beec6e86"
+    },
+    {
+      "path": "research_v3/otc/literature (excluding v5)",
+      "tracked_files": 299,
+      "bytes": 127374633,
+      "aggregate_sha256": "f3015debecaadb1355034067645cb22da5b3e62764901cc5634aeaabe9e4a169",
+      "head_tree": "0b3c7a974cbc651781276844f8b6092961c2b852"
+    },
+    {
+      "path": "research_v3/search/provisional_pubmed_20260710",
+      "tracked_files": 121,
+      "bytes": 277171882,
+      "aggregate_sha256": "8d755dba34787109680943e01c4914fc8f0d861c1ff99aec5d5508777424d8eb",
+      "head_tree": "96bf6c8afaa11cda8ff200453b97502ca3951031"
+    }
+  ],
+  "combined_protected": {
+    "tracked_files": 434,
+    "bytes": 404869977,
+    "aggregate_sha256": "c41436d8ff2e78844fa8aae63bd3d20d17fa17fc9d6dde1b58765a42269499e2"
+  },
+  "protected_git_status_was_clean": true,
+  "v5_directory_existed": false
+}

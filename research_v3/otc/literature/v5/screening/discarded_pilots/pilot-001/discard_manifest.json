@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0.0",
+  "pilot_id": "pilot-001",
+  "status": "discarded",
+  "discarded_at_utc": "2026-07-28T06:33:32.309798+00:00",
+  "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+  "processed_screening_units": 3000,
+  "unique_record_ids": 3000,
+  "decision_distribution": {
+    "retain": 279,
+    "deprioritize": 2519,
+    "uncertain": 202
+  },
+  "evidence_basis_distribution": {
+    "abstract": 2770,
+    "title_only": 230
+  },
+  "prompt_sha256": "796d75bd8744296737f32d5821c6635bbbdbb42d4abe0f5d9bbe3a3492a7da54",
+  "screening_code_sha256": "cc5175076cd5c6c6895de0d53849c9d7d1d0f3a65be08d612c54eda56e17107f",
+  "checkpoint_sha256": "0dbde2aa58ba2b1f8e5c84e04ab8f643c7d6f77619853eedf4060e3dd9ce7caa",
+  "batch_log_sha256": "d73b93e07c88633f7d79dcf50ddbe0d9a250a90594050386f920b404bf93e4f6",
+  "started_at_utc": "2026-07-28T06:01:17.404186+00:00",
+  "last_completed_batch_at_utc": "2026-07-28T06:23:03.280954+00:00",
+  "aborted_prepared_batch_started_at_utc": "2026-07-28T06:23:03.296608+00:00",
+  "discard_reason": "systematic attribution, route, title-only, retain-kind, and reason-code failures",
+  "formal_use_allowed": false,
+  "restart_requirement": "restart Q01 from the first screening unit under a new frozen prompt hash",
+  "audit_report": "audit_report.json",
+  "archived_files": {
+    ".screen_v50.lock": {
+      "bytes": 1,
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    },
+    "agent_screening_prompt_v50.frozen.md": {
+      "bytes": 16485,
+      "sha256": "796d75bd8744296737f32d5821c6635bbbdbb42d4abe0f5d9bbe3a3492a7da54"
+    },
+    "batches.jsonl": {
+      "bytes": 339831,
+      "sha256": "d73b93e07c88633f7d79dcf50ddbe0d9a250a90594050386f920b404bf93e4f6"
+    },
+    "checkpoints.jsonl": {
+      "bytes": 14330176,
+      "sha256": "0dbde2aa58ba2b1f8e5c84e04ab8f643c7d6f77619853eedf4060e3dd9ce7caa"
+    },
+    "prompt_lock.json": {
+      "bytes": 17548,
+      "sha256": "2747638e8adee1dbba8ef2eb6d3ff7cf3b2097892b3af10ed42ad62afb369c7c"
+    },
+    "screen_v50.pilot-001.py": {
+      "bytes": 107705,
+      "sha256": "cc5175076cd5c6c6895de0d53849c9d7d1d0f3a65be08d612c54eda56e17107f"
+    },
+    "screening_smoke_test.json": {
+      "bytes": 31583,
+      "sha256": "454144f2499994acd84a33f5bbb4de6ffe968652ca5569b1e21d8b20d656148c"
+    },
+    "audit_report.json": {
+      "bytes": 2621,
+      "sha256": "6d1783d04b81c1192b52135e9be2e5e85d99775ddb72c495ef059ec1a88919c6"
+    }
+  }
+}

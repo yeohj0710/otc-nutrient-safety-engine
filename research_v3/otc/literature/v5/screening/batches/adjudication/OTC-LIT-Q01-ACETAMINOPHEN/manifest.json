@@ -1,0 +1,67 @@
+{
+  "schema_version": "5.0.0",
+  "layer": "semantic_adjudication_input",
+  "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+  "processing_index": 1,
+  "batch_size": 200,
+  "row_count": 1400,
+  "batch_count": 7,
+  "prompt_path": "research_v3/otc/literature/v5/prompts/frozen_semantic_adjudication_prompt.md",
+  "prompt_sha256": "ec551409a899db199463680210ac05dbe08cd4851fccfdb2754a92010ad50176",
+  "classifier_decisions_path": "research_v3/otc/literature/v5/screening/classifier_decisions.csv",
+  "classifier_decisions_sha256": "ad0873b6db69cc63cac49c0f454a020c2ba86836592b652c89427ec5460c6db4",
+  "evidence_map_path": "research_v3/otc/literature/v5/evidence_map.csv",
+  "evidence_map_sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+  "classifier_fields_excluded_from_inputs": true,
+  "batches": [
+    {
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B001.jsonl",
+      "row_count": 200,
+      "input_sha256": "797b83586b7e37619d84d1bae8df6fda149c1be0503ad6e6b4c93809c40d076f"
+    },
+    {
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B002.jsonl",
+      "row_count": 200,
+      "input_sha256": "f7f1a8a20bc55656699956b937896383297b16590c426b49d9f946386d8cc1c8"
+    },
+    {
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B003.jsonl",
+      "row_count": 200,
+      "input_sha256": "cf5badfefa850c81f432c1841f74d113344ba5af4de783686ce9f9e201e7cebd"
+    },
+    {
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B004",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B004.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B004.jsonl",
+      "row_count": 200,
+      "input_sha256": "c4c608bb42368f83b66245aacaa3c70d73409c64151a3c0d17c762f8e354aa75"
+    },
+    {
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B005",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B005.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B005.jsonl",
+      "row_count": 200,
+      "input_sha256": "d89e0e7b6e3643be1b41cfdb807f572f0df4ea0623f5230cdb2dd804e739dbee"
+    },
+    {
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B006",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B006.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B006.jsonl",
+      "row_count": 200,
+      "input_sha256": "3a59bbd5dd3015af2dc2fb90489ad578d72328173b40af114be86f99dafa5650"
+    },
+    {
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B007",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B007.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B007.jsonl",
+      "row_count": 200,
+      "input_sha256": "6a25433bc5cfe9143927f2fc5a1e5e4f45c5467791caccb7210d62b8f32c3600"
+    }
+  ]
+}

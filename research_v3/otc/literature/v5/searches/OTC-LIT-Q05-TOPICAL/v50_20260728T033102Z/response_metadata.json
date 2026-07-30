@@ -1,0 +1,113 @@
+{
+  "schema_version": "5.0.0",
+  "question_id": "OTC-LIT-Q05-TOPICAL",
+  "run_id": "v50_20260728T033102Z",
+  "started_at_utc": "2026-07-28T03:40:15.985518+00:00",
+  "completed_at_utc": "2026-07-28T03:40:20.626902+00:00",
+  "phase_a_probe_count": 517,
+  "phase_b_base_count": 517,
+  "change_since_probe": 0,
+  "query_sha256": "cd8809e67bd42f477d9621e8e0188bce5c5ee1259b6d6927556fdaeb624c187d",
+  "segmentation": "none",
+  "segments": [
+    {
+      "label": "base",
+      "query_sha256": "cd8809e67bd42f477d9621e8e0188bce5c5ee1259b6d6927556fdaeb624c187d",
+      "count": 517,
+      "warnings": [
+        "\"salicylic acid methyl ester\"[tiab]",
+        "\"methyl o-hydroxybenzoate\"[tiab]",
+        "\"menthyl alcohol\"[tiab]",
+        "\"peppermint camphor\"[tiab]",
+        "\"synthetic camphor\"[tiab]",
+        "\"bornan-2-one\"[tiab]",
+        "\"gum camphor\"[tiab]",
+        "\"Mentha arvensis oil\"[tiab]",
+        "\"Mentha arvensis leaf oil\"[tiab]",
+        "\"Mentha arvensis flower oil\"[tiab]",
+        "\"Mentha arvensis essential oil\"[tiab]",
+        "\"Mentha canadensis oil\"[tiab]",
+        "\"corn mint oil\"[tiab]",
+        "\"field mint oil\"[tiab]",
+        "\"wild mint oil\"[tiab]",
+        "\"Oleum Menthae Japonicae\"[tiab]",
+        "\"partly dementholised mint oil\"[tiab]",
+        "\"partly dementholized mint oil\"[tiab]",
+        "\"6-isopropyl-m-cresol\"[tiab]",
+        "\"3-p-cymenol\"[tiab]",
+        "\"p-cymen-3-ol\"[tiab]",
+        "\"thyme camphor\"[tiab]",
+        "\"Jeil Cool Pap\"[tiab]",
+        "\"Cool Pap Cataplasma\"[tiab]"
+      ],
+      "raw_path": "base_esearch.xml",
+      "raw_sha256": "2a80ef0b7856cf51153d5a42cb9403b593972961ae6f6c459462d37cdf8b82f9"
+    }
+  ],
+  "segment_count_sum": 517,
+  "parsed_records": 517,
+  "unique_pmids": 517,
+  "efetch_batch_size": 500,
+  "efetch_calls": 2,
+  "esearch_calls": 1,
+  "raw_xml_file_count": 3,
+  "raw_xml_checksums": {
+    "base_esearch.xml": "2a80ef0b7856cf51153d5a42cb9403b593972961ae6f6c459462d37cdf8b82f9",
+    "efetch/001_base_0001.xml": "7524683b81f36181248ff3927d7a339bb0bcb2acae2a0a41d6e16f883ff1e929",
+    "efetch/001_base_0002.xml": "54ecc8361aae3b7911312dea1d505ed057993adcc6328c360bc4f0f2fc8d4340"
+  },
+  "responses": [
+    {
+      "request_type": "esearch:base",
+      "requested_at_utc": "2026-07-28T03:40:15.985545+00:00",
+      "completed_at_utc": "2026-07-28T03:40:17.112331+00:00",
+      "status_code": 200,
+      "response_bytes": 5321,
+      "response_sha256": "2a80ef0b7856cf51153d5a42cb9403b593972961ae6f6c459462d37cdf8b82f9",
+      "relative_path": "base_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "((\"Child\"[Mesh] OR \"Infant\"[Mesh] OR \"Adolescent\"[Mesh] OR \"Anticoagulants\"[Mesh] OR \"Platelet Aggregation Inhibitors\"[Mesh] OR child*[tiab] OR pediatric*[tiab] OR paediatric*[tiab] OR infant*[tiab] OR toddler*[tiab] OR adolescent*[tiab] OR anticoagulant*[tiab] OR antiplatelet*[tiab] OR warfarin[tiab] OR coumarin*[tiab] OR \"direct oral anticoagulant\"[tiab] OR \"direct oral anticoagulants\"[tiab] OR DOAC[tiab] OR DOACs[tiab] OR \"aspirin use\"[tiab]) AND ((\"Methyl Salicylate\"[Supplementary Concept] OR \"Menthol\"[Mesh] OR \"Camphor\"[Mesh] OR \"Thymol\"[Mesh] OR (\"Mentha\"[Mesh:noexp] AND (\"Plant Oils\"[Mesh] OR \"Oils, Volatile\"[Mesh])) OR \"Salicylates\"[Mesh] OR \"methyl salicylate\"[tiab] OR \"methyl salicylat*\"[tiab] OR methylsalicylat*[tiab] OR \"oil of wintergreen\"[tiab] OR \"wintergreen oil\"[tiab] OR \"methyl 2-hydroxybenzoate\"[tiab] OR \"2-hydroxybenzoic acid methyl ester\"[tiab] OR \"salicylic acid methyl ester\"[tiab] OR \"methyl o-hydroxybenzoate\"[tiab] OR \"gaultheria oil\"[tiab] OR \"sweet birch oil\"[tiab] OR menthol*[tiab] OR levomenthol[tiab] OR levomentholum[tiab] OR \"L-menthol\"[tiab] OR \"(-)-menthol\"[tiab] OR \"l menthol\"[tiab] OR \"2-isopropyl-5-methylcyclohexanol\"[tiab] OR \"menthyl alcohol\"[tiab] OR \"p-menthan-3-ol\"[tiab] OR hexahydrothymol[tiab] OR \"peppermint camphor\"[tiab] OR camphor*[tiab] OR \"dl-camphor\"[tiab] OR \"DL camphor\"[tiab] OR \"racemic camphor\"[tiab] OR \"synthetic camphor\"[tiab] OR \"bornan-2-one\"[tiab] OR \"2-bornanone\"[tiab] OR \"1,7,7-trimethylbicyclo[2.2.1]heptan-2-one\"[tiab] OR \"2-camphanone\"[tiab] OR \"gum camphor\"[tiab] OR camphora[tiab] OR \"Mentha oil\"[tiab] OR \"Mentha arvensis oil\"[tiab] OR \"Mentha arvensis leaf oil\"[tiab] OR \"Mentha arvensis flower oil\"[tiab] OR \"Mentha arvensis essential oil\"[tiab] OR \"Mentha canadensis oil\"[tiab] OR cornmint[tiab] OR \"corn mint oil\"[tiab] OR \"Japanese mint oil\"[tiab] OR \"field mint oil\"[tiab] OR \"wild mint oil\"[tiab] OR \"Oleum Menthae Japonicae\"[tiab] OR \"partly dementholised mint oil\"[tiab] OR \"partly dementholized mint oil\"[tiab] OR thymol[tiab] OR thymolum[tiab] OR \"5-methyl-2-(propan-2-yl)phenol\"[tiab] OR \"5-methyl-2-(1-methylethyl)phenol\"[tiab] OR \"2-isopropyl-5-methylphenol\"[tiab] OR \"6-isopropyl-m-cresol\"[tiab] OR \"3-p-cymenol\"[tiab] OR \"p-cymen-3-ol\"[tiab] OR \"3-hydroxy-p-cymene\"[tiab] OR \"thymic acid\"[tiab] OR \"thyme camphor\"[tiab] OR \"Jeil Cool Pap\"[tiab] OR \"Cool Pap Cataplasma\"[tiab] OR Salonpas[tiab] OR \"Tiger Balm\"[tiab] OR \"Vicks VapoRub\"[tiab] OR counterirritant*[tiab]) AND (\"Administration, Topical\"[Mesh] OR \"Administration, Cutaneous\"[Mesh] OR \"Transdermal Patch\"[Mesh] OR topical*[tiab] OR dermal*[tiab] OR cutaneous[tiab] OR transdermal*[tiab] OR patch*[tiab] OR plaster*[tiab] OR poultice*[tiab] OR cataplasm*[tiab] OR liniment*[tiab] OR ointment*[tiab] OR balm*[tiab] OR cream*[tiab] OR gel*[tiab] OR overdos*[tiab] OR overuse[tiab] OR \"excessive use\"[tiab] OR \"repeated use\"[tiab] OR \"repeated application\"[tiab]))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "efetch:base:1",
+      "requested_at_utc": "2026-07-28T03:40:17.112479+00:00",
+      "completed_at_utc": "2026-07-28T03:40:20.006397+00:00",
+      "status_code": 200,
+      "response_bytes": 5430663,
+      "response_sha256": "7524683b81f36181248ff3927d7a339bb0bcb2acae2a0a41d6e16f883ff1e929",
+      "relative_path": "efetch/001_base_0001.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 0,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:base:2",
+      "requested_at_utc": "2026-07-28T03:40:20.093523+00:00",
+      "completed_at_utc": "2026-07-28T03:40:20.620113+00:00",
+      "status_code": 200,
+      "response_bytes": 123543,
+      "response_sha256": "54ecc8361aae3b7911312dea1d505ed057993adcc6328c360bc4f0f2fc8d4340",
+      "relative_path": "efetch/001_base_0002.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 500,
+        "retmax": 17,
+        "retmode": "xml"
+      }
+    }
+  ],
+  "status": "complete"
+}

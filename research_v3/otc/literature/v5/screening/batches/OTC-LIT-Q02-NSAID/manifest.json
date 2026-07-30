@@ -1,0 +1,200 @@
+{
+  "question_id": "OTC-LIT-Q02-NSAID",
+  "prepared_at_utc": "2026-07-28T08:49:38.552035+00:00",
+  "batch_size": 240,
+  "row_count": 6448,
+  "prompt_path": "research_v3/otc/literature/v5/prompts/frozen_light_screening_prompt.md",
+  "prompt_sha256": "657ffe195f3e04362b8465659eebf6388c4cc426237e8f86e844a544797d3cab",
+  "evidence_map_sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+  "batches": [
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B001.jsonl",
+      "row_count": 240,
+      "input_sha256": "82deba24af8fe3496f8d533695afeeada72f2d2dfd72aa5fdbd1682edabfd033"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B002.jsonl",
+      "row_count": 240,
+      "input_sha256": "2ba773c352bba602295699faec86e22aa3dc0ad71870683fdccbad9cf17c7b0b"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B003.jsonl",
+      "row_count": 240,
+      "input_sha256": "95b336fa0c99e90077dae205aed8ea9ea2cc7e676498ccba8b35a19c6aeed3ad"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B004",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B004.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B004.jsonl",
+      "row_count": 240,
+      "input_sha256": "fefe601922b7aa0442f186ace8d8fe7e9051bfb454d48d974353949ed972b5b0"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B005",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B005.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B005.jsonl",
+      "row_count": 240,
+      "input_sha256": "00db05d185fee2ba7ce9d795a01735014e3c9c9ac4e68e069533d6d4321f4df6"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B006",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B006.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B006.jsonl",
+      "row_count": 240,
+      "input_sha256": "1ea2ed7d8378a4016b8a4dc3b2cf57ba54b3bedea4861caafab221a85cfa9d7b"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B007",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B007.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B007.jsonl",
+      "row_count": 240,
+      "input_sha256": "fd6cf7f6b05042228b623e91acb29fcc6ccc52e2039c10813ce1c6e6fec1c9ad"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B008",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B008.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B008.jsonl",
+      "row_count": 240,
+      "input_sha256": "520f455abd96838b12a7284276c72730fc5c7360862b1a97ed84c7b28de0b679"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B009",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B009.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B009.jsonl",
+      "row_count": 240,
+      "input_sha256": "d8a52ddb420c54867c83522802c1997d98e3fa9ef912939c9ee2da9f0254eef0"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B010",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B010.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B010.jsonl",
+      "row_count": 240,
+      "input_sha256": "f0eba69c85b83369b47b64aee0aa81107125023f783227a799dea3a57d1e7132"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B011",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B011.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B011.jsonl",
+      "row_count": 240,
+      "input_sha256": "c697462533d6a38dcb9d6ad47ce7e8a61b1ea93e9dedb2a104ad24c0915e0232"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B012",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B012.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B012.jsonl",
+      "row_count": 240,
+      "input_sha256": "e6292bcca89ee3d709cbb2f0991fea0d60af70f793272f034f120ed4bc249885"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B013",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B013.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B013.jsonl",
+      "row_count": 240,
+      "input_sha256": "3ae8bdcbe0dd8a2e3eb6f86a8a11634d0a5632926e6f03410a672e844342aa2d"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B014",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B014.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B014.jsonl",
+      "row_count": 240,
+      "input_sha256": "23cc2ca395e73be70bb619e3a57a480a351fffe561415dd25da8dd438658dbfd"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B015",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B015.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B015.jsonl",
+      "row_count": 240,
+      "input_sha256": "e15a1b0fa73abaf3e1f4ac2774ca2f0e0e3b8d5c80fa3e31518fc96ad88f7a04"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B016",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B016.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B016.jsonl",
+      "row_count": 240,
+      "input_sha256": "6f45322ce1198ecac9dd96fdcf868e4773a5f2c589c2ba33ecb69fb4c4ecc271"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B017",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B017.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B017.jsonl",
+      "row_count": 240,
+      "input_sha256": "8154f301e79be9e0e9502c21622f432732d547d7ee0abbdcef5d3ba8000da835"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B018",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B018.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B018.jsonl",
+      "row_count": 240,
+      "input_sha256": "cbdf8d12e93e9d526f7101f737280976a19c75561c0272908128667a82a3165c"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B019",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B019.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B019.jsonl",
+      "row_count": 240,
+      "input_sha256": "efb69d0935f4886efc9291b67004ec186f7b0e1d63f5dd1eaa8e7c3580f9cc68"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B020",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B020.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B020.jsonl",
+      "row_count": 240,
+      "input_sha256": "005fedfae9f9b4a5e59e428e2f8462fe04832ea35c2897a04354dd1a5d91aad1"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B021",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B021.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B021.jsonl",
+      "row_count": 240,
+      "input_sha256": "dbf52bf2fe282edfd2fca62e0d967900b6b7387c5376d97ab394d5bf2e11025d"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B022",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B022.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B022.jsonl",
+      "row_count": 240,
+      "input_sha256": "b0718b514b6e2af8df2c80ee31543ab6c8eb52d34720700e198a71e7a66da3b1"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B023",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B023.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B023.jsonl",
+      "row_count": 240,
+      "input_sha256": "ba97352a0512fc8e0f1c4e3829f7fea2df18a86eec03fad4a9dca1a86e98c78d"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B024",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B024.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B024.jsonl",
+      "row_count": 240,
+      "input_sha256": "dc679f64eba7f9fb1009547667ed8cc86df851ad4842766b1ca3209a00cabe53"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B025",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B025.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B025.jsonl",
+      "row_count": 240,
+      "input_sha256": "e2204f7e285e3188080ef8ae87a8eb41f3e69f3cb72533d349e8609991044866"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B026",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B026.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B026.jsonl",
+      "row_count": 240,
+      "input_sha256": "0435d930f6b1f8b60c8b13d1ebe3bc07c04166b379b7bd7cce5663fc3a09fbd3"
+    },
+    {
+      "batch_id": "OTC-LIT-Q02-NSAID-B027",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B027.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-B027.jsonl",
+      "row_count": 208,
+      "input_sha256": "2bdee52e67dbae4003556fdc4a1bb315320d5b9f98fde6bfeb1c9399871ac0ba"
+    }
+  ]
+}

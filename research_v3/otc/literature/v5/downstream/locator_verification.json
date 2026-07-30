@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.1.0",
+  "checked_at_utc": "2026-07-29T17:41:41.016765+00:00",
+  "status": "pass",
+  "method": "original_build_supporting_literature_build_function_read_only",
+  "check_scope": {
+    "rule_scope": "emitted_link_rule_ids_only",
+    "emitted_rule_ids": [
+      "OTC-RULE-001",
+      "OTC-RULE-002",
+      "OTC-RULE-004",
+      "OTC-RULE-005",
+      "OTC-RULE-006",
+      "OTC-RULE-007",
+      "OTC-RULE-008",
+      "OTC-RULE-012",
+      "OTC-RULE-014"
+    ],
+    "reason": "The v5 no-invention policy permits unresolved rules; the original builder's global all-rule guard is scoped to emitted rules while every emitted link retains the original checks."
+  },
+  "original_script": {
+    "path": "scripts/research/otc/build_supporting_literature.py",
+    "sha256": "733a88f201f4f95de642ea3162d13b1072270df23e987fb52686e704485bd47a",
+    "function": "build"
+  },
+  "inputs": {
+    "supporting_literature": {
+      "path": "research_v3/otc/literature/v5/downstream/supporting_literature.csv",
+      "sha256": "c1be8df49cbcb226103899428115ec91e763a5bc2c6704e687f21c3c76f1d73c",
+      "link_rows": 10
+    },
+    "evidence_map": {
+      "path": "research_v3/otc/literature/v5/evidence_map.csv",
+      "sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649"
+    },
+    "canonical_rules": {
+      "path": "research_v3/otc/rules/rules.csv",
+      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
+      "canonical_rule_count": 16,
+      "emitted_rule_count": 9
+    },
+    "downstream_manifest": {
+      "path": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json",
+      "sha256": "f74325d2c3dc8121ce7c638cabd15a47fff3cecaa875f109c45d24a87da1f2fe"
+    },
+    "final_decisions": {
+      "path": "research_v3/otc/literature/v5/screening/decisions.csv",
+      "sha256": "4db33044de6f806ac61ffcf04b198f7b2d0d3bacd2b2b9dffa4440188e37b9b1",
+      "rows": 43207
+    },
+    "adjudication_manifest": {
+      "path": "research_v3/otc/literature/v5/screening/adjudication_manifest.json",
+      "sha256": "c62ae08cc128fe3294277753ef70666bd80df693fc453743a6c591ecd57c0ed5",
+      "adjudicated_rows": 5000
+    },
+    "v4_candidate_links": {
+      "path": "research_v3/otc/rules/supporting_literature.csv",
+      "sha256": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
+      "candidate_rows": 20
+    },
+    "query_definitions": {
+      "path": "research_v3/otc/literature/v5/query_definitions.json",
+      "sha256": "f33744e0ea873da4715967cbbe907088c80192a35ca3b902fab2904c397efc88",
+      "mapping_field": "questions[].rule_types",
+      "question_count": 5
+    },
+    "site_output": {
+      "path": "src/generated/otc-supporting-literature.json",
+      "sha256_before_original_builder_import": "ef06f0de0046a917a4fd7708158d39cf39ad482f850d1a06ea669fc729caeeed",
+      "sha256_after_read_only_check": "ef06f0de0046a917a4fd7708158d39cf39ad482f850d1a06ea669fc729caeeed"
+    }
+  },
+  "checks": {
+    "locator_quote_exact_match_for_every_link": true,
+    "literature_authority_boundary": true,
+    "rule_and_relation_contract": true,
+    "distinct_papers": 10,
+    "site_output_unchanged": true,
+    "site_output_hash_captured_before_original_builder_import": true,
+    "nonzero_link_set": true,
+    "rules_and_query_source_hashes_match_downstream_manifest": true
+  },
+  "independent_blinding": false,
+  "release_ready": false
+}

@@ -1,0 +1,900 @@
+{
+  "synthetic_only": true,
+  "model_provenance_sha256": "e8d97b433866bd6ac1f1ba4dce5aa7294de497a1b31b48674171963eae01ce13",
+  "abstract_examples": [
+    {
+      "record_id": "SYNTH-RETAIN",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct",
+        "case_report_relevant"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 38,
+      "abstract_retained_tokens": 38,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "SYNTH-EFFICACY",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "exposure_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "exposure_only",
+      "fused_output": "use",
+      "fused_output_token_id": 30616,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=no",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "no"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 41,
+      "abstract_retained_tokens": 41,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "SYNTH-OUTCOME-ONLY",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "outcome_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "outcome_only",
+      "fused_output": "outcome",
+      "fused_output_token_id": 75733,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=no;harm_outcome_present=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "no",
+        "harm_outcome_present": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 31,
+      "abstract_retained_tokens": 31,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "SYNTH-INVITRO",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "animal_or_in_vitro_only"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "animal_or_in_vitro_only",
+      "fused_output": "animal",
+      "fused_output_token_id": 41415,
+      "stage_path": "preclinical_only=yes",
+      "stage_outputs": {
+        "preclinical_only": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 38,
+      "abstract_retained_tokens": 38,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "SYNTH-LONG-PK",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "exposure_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "exposure_only",
+      "fused_output": "use",
+      "fused_output_token_id": 30616,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=no",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "no"
+      },
+      "input_truncated": true,
+      "abstract_original_tokens": 3341,
+      "abstract_retained_tokens": 506,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "preserve_metadata_and_abstract_head_tail"
+    },
+    {
+      "record_id": "SYNTH-TITLE-ONLY",
+      "decision": "uncertain",
+      "reason_codes": [
+        "title_only_insufficient"
+      ],
+      "confidence": "low",
+      "evidence_basis": "title_only",
+      "inference_key": "title_uncertain",
+      "fused_output": "maybe",
+      "fused_output_token_id": 9454,
+      "stage_path": "title_attributable_harm=maybe;title_question_exposure=yes",
+      "stage_outputs": {
+        "title_attributable_harm": "maybe",
+        "title_question_exposure": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 0,
+      "abstract_retained_tokens": 0,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    }
+  ],
+  "long_input_test": {
+    "original_tokens": 3341,
+    "retained_tokens": 506,
+    "strategy": "preserve_metadata_and_abstract_head_tail"
+  },
+  "q04_boundary_examples": [
+    {
+      "record_id": "SYNTH-Q04-IN-VITRO",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "animal_or_in_vitro_only"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "animal_or_in_vitro_only",
+      "fused_output": "animal",
+      "fused_output_token_id": 41415,
+      "stage_path": "preclinical_only=yes",
+      "stage_outputs": {
+        "preclinical_only": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 15,
+      "abstract_retained_tokens": 15,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "SYNTH-Q04-ORAL-SAFETY",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 19,
+      "abstract_retained_tokens": 19,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    }
+  ],
+  "q05_boundary_example": {
+    "record_id": "SYNTH-Q05-CHILD-INGESTION",
+    "decision": "retain",
+    "reason_codes": [
+      "exposure_outcome_direct",
+      "case_report_relevant"
+    ],
+    "confidence": "high",
+    "evidence_basis": "abstract",
+    "inference_key": "retain_direct_high",
+    "fused_output": "direct",
+    "fused_output_token_id": 16027,
+    "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+    "stage_outputs": {
+      "preclinical_only": "no",
+      "question_exposure_model": "yes",
+      "question_exposure": "yes",
+      "route_mismatch": "no",
+      "attributable_human_harm": "yes",
+      "retain_kind_model": "direct",
+      "retain_kind": "direct"
+    },
+    "input_truncated": false,
+    "abstract_original_tokens": 28,
+    "abstract_retained_tokens": 28,
+    "max_input_tokens": 1024,
+    "truncation_strategy": "none"
+  },
+  "adversarial_examples": [
+    {
+      "record_id": "ADV-Q01-NO-AE",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=class;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "class",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 16,
+      "abstract_retained_tokens": 16,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q01-NOT-ASSESSED",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected_inference_key": "exposure_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "exposure_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "exposure_only",
+      "fused_output": "use",
+      "fused_output_token_id": 30616,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=no",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "no"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 24,
+      "abstract_retained_tokens": 24,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q01-CO-MENTION",
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "expected_inference_key": "exposure_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "exposure_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "exposure_only",
+      "fused_output": "use",
+      "fused_output_token_id": 30616,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=no",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "no"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 36,
+      "abstract_retained_tokens": 36,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q02-DIRECT",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 22,
+      "abstract_retained_tokens": 22,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q02-CLASS",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected_inference_key": "retain_class_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_class_level"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_class_high",
+      "fused_output": "class",
+      "fused_output_token_id": 1957,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=class",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "class"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 28,
+      "abstract_retained_tokens": 28,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q02-EXPOSURE",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected_inference_key": "exposure_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "exposure_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "exposure_only",
+      "fused_output": "use",
+      "fused_output_token_id": 30616,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=no",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "no"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 22,
+      "abstract_retained_tokens": 22,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q02-OUTCOME",
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "expected_inference_key": "outcome_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "outcome_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "outcome_only",
+      "fused_output": "outcome",
+      "fused_output_token_id": 75733,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=no;harm_outcome_present=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "no",
+        "harm_outcome_present": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 34,
+      "abstract_retained_tokens": 34,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q03-DRIVING",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 22,
+      "abstract_retained_tokens": 22,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q03-CLASS",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected_inference_key": "retain_class_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_class_level"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_class_high",
+      "fused_output": "class",
+      "fused_output_token_id": 1957,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=class;retain_kind=class",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "class",
+        "retain_kind": "class"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 33,
+      "abstract_retained_tokens": 33,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q03-NO-AE",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 15,
+      "abstract_retained_tokens": 15,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q03-PK",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected_inference_key": "exposure_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "exposure_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "exposure_only",
+      "fused_output": "use",
+      "fused_output_token_id": 30616,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=yes;route_mismatch=no;attributable_human_harm=no",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "no"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 24,
+      "abstract_retained_tokens": 24,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q03-OUTCOME",
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "expected_inference_key": "outcome_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "outcome_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "outcome_only",
+      "fused_output": "outcome",
+      "fused_output_token_id": 75733,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=no;harm_outcome_present=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "no",
+        "harm_outcome_present": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 28,
+      "abstract_retained_tokens": 28,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q04-BIOMARKER",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected_inference_key": "outcome_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "outcome_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "outcome_only",
+      "fused_output": "outcome",
+      "fused_output_token_id": 75733,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=no;harm_outcome_present=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "no",
+        "harm_outcome_present": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 19,
+      "abstract_retained_tokens": 19,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q04-HIV",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected_inference_key": "outcome_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "outcome_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "outcome_only",
+      "fused_output": "outcome",
+      "fused_output_token_id": 75733,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=no;harm_outcome_present=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "no",
+        "harm_outcome_present": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 18,
+      "abstract_retained_tokens": 18,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q04-CLASS",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 25,
+      "abstract_retained_tokens": 25,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q04-INHALED",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected_inference_key": "route_mismatch",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "route_or_formulation_mismatch"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "route_mismatch",
+      "fused_output": "route",
+      "fused_output_token_id": 29185,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=yes;route_mismatch=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "yes",
+        "route_mismatch": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 18,
+      "abstract_retained_tokens": 18,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q04-IV",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected_inference_key": "route_mismatch",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "route_or_formulation_mismatch"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "route_mismatch",
+      "fused_output": "route",
+      "fused_output_token_id": 29185,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=yes;route_mismatch=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "yes",
+        "route_mismatch": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 17,
+      "abstract_retained_tokens": 17,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q04-BROMELAIN",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 18,
+      "abstract_retained_tokens": 18,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q04-ORLISTAT",
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "expected_inference_key": "outcome_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "outcome_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "outcome_only",
+      "fused_output": "outcome",
+      "fused_output_token_id": 75733,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=no;harm_outcome_present=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "no",
+        "harm_outcome_present": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 24,
+      "abstract_retained_tokens": 24,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q05-SALICYLATE",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 21,
+      "abstract_retained_tokens": 21,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q05-MOTHBALL",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected_inference_key": "route_mismatch",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "route_or_formulation_mismatch"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "route_mismatch",
+      "fused_output": "route",
+      "fused_output_token_id": 29185,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=yes;route_mismatch=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "yes",
+        "route_mismatch": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 18,
+      "abstract_retained_tokens": 18,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q05-PEPPERMINT",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected_inference_key": "route_mismatch",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "route_or_formulation_mismatch"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "route_mismatch",
+      "fused_output": "route",
+      "fused_output_token_id": 29185,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=yes;route_mismatch=yes",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "yes",
+        "route_mismatch": "yes"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 32,
+      "abstract_retained_tokens": 32,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q05-EFFICACY",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected_inference_key": "exposure_only",
+      "decision": "deprioritize",
+      "reason_codes": [
+        "exposure_only"
+      ],
+      "confidence": "medium",
+      "evidence_basis": "abstract",
+      "inference_key": "exposure_only",
+      "fused_output": "use",
+      "fused_output_token_id": 30616,
+      "stage_path": "preclinical_only=no;question_exposure_model=no;question_exposure=yes;route_mismatch=no;attributable_human_harm=no",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "no",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "no"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 19,
+      "abstract_retained_tokens": 19,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    },
+    {
+      "record_id": "ADV-Q05-CORNMINT",
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "expected_inference_key": "retain_direct_high",
+      "decision": "retain",
+      "reason_codes": [
+        "exposure_outcome_direct"
+      ],
+      "confidence": "high",
+      "evidence_basis": "abstract",
+      "inference_key": "retain_direct_high",
+      "fused_output": "direct",
+      "fused_output_token_id": 16027,
+      "stage_path": "preclinical_only=no;question_exposure_model=yes;question_exposure=yes;route_mismatch=no;attributable_human_harm=yes;retain_kind_model=direct;retain_kind=direct",
+      "stage_outputs": {
+        "preclinical_only": "no",
+        "question_exposure_model": "yes",
+        "question_exposure": "yes",
+        "route_mismatch": "no",
+        "attributable_human_harm": "yes",
+        "retain_kind_model": "direct",
+        "retain_kind": "direct"
+      },
+      "input_truncated": false,
+      "abstract_original_tokens": 23,
+      "abstract_retained_tokens": 23,
+      "max_input_tokens": 1024,
+      "truncation_strategy": "none"
+    }
+  ],
+  "adversarial_example_count": 24,
+  "passed": true,
+  "prompt_sha256": "796d75bd8744296737f32d5821c6635bbbdbb42d4abe0f5d9bbe3a3492a7da54",
+  "screening_code_sha256": "cc5175076cd5c6c6895de0d53849c9d7d1d0f3a65be08d612c54eda56e17107f",
+  "smoke_result_sha256": "91ce8fa85e0efbdb4502dc84c05685917f75658d02e8374376ade76be8b4fded"
+}

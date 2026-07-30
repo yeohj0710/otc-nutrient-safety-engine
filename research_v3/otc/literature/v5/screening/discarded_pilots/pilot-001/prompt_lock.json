@@ -1,0 +1,691 @@
+{
+  "schema_version": "1.0.0",
+  "frozen_at_utc": "2026-07-28T06:00:19.331437+00:00",
+  "source_path": "research_v3/otc/literature/v5/prompts/agent_screening_prompt_v50.md",
+  "frozen_path": "research_v3/otc/literature/v5/screening/agent_screening_prompt_v50.frozen.md",
+  "prompt_sha256": "796d75bd8744296737f32d5821c6635bbbdbb42d4abe0f5d9bbe3a3492a7da54",
+  "decision_vocabulary": [
+    "deprioritize",
+    "retain",
+    "uncertain"
+  ],
+  "reason_code_vocabulary": [
+    "animal_or_in_vitro_only",
+    "case_report_relevant",
+    "exposure_only",
+    "exposure_outcome_class_level",
+    "exposure_outcome_direct",
+    "insufficient_detail",
+    "mechanism_or_assay_only",
+    "off_topic",
+    "outcome_only",
+    "population_mismatch",
+    "route_or_formulation_mismatch",
+    "title_only_insufficient",
+    "title_only_probable_off_topic",
+    "title_only_probable_relevant"
+  ],
+  "confidence_vocabulary": [
+    "high",
+    "low",
+    "medium"
+  ],
+  "evidence_basis_vocabulary": [
+    "abstract",
+    "title_only"
+  ],
+  "execution_mode": "local_semantic_llm_7b_multipass_one_token_v1",
+  "machine_inference_contract_sha256": "0932373473e42b0c57eb83327bc6db4430c01caa945a507492fea9cad2b8bae0",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "quantization_config": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_use_double_quant": true
+  },
+  "generation_config": {
+    "strategy": "batched_multipass_one_token_masked_argmax",
+    "do_sample": false,
+    "num_beams": 1,
+    "use_cache": false,
+    "max_new_tokens": 1,
+    "decision_rule": "argmax_over_stage_allowed_final_logits",
+    "tie_break": "declared_option_order",
+    "max_input_tokens": 1024,
+    "truncation_strategy": "preserve_metadata_and_abstract_head_tail",
+    "multipass_stage_options": {
+      "preclinical_only": [
+        "yes",
+        "no"
+      ],
+      "question_exposure": [
+        "yes",
+        "no"
+      ],
+      "route_mismatch": [
+        "yes",
+        "no"
+      ],
+      "attributable_human_harm": [
+        "yes",
+        "no"
+      ],
+      "harm_outcome_present": [
+        "yes",
+        "no"
+      ],
+      "retain_kind": [
+        "direct",
+        "class",
+        "maybe"
+      ],
+      "mechanism_only": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "title_attributable_harm": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "title_question_exposure": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "nonretain_reason": [
+        "use",
+        "method",
+        "route",
+        "population",
+        "outcome",
+        "other",
+        "maybe"
+      ],
+      "title_only": [
+        "retain",
+        "maybe",
+        "other"
+      ]
+    },
+    "multipass_output_surfaces": {
+      "preclinical_only": {
+        "yes": "Animal",
+        "no": "Clinical"
+      },
+      "question_exposure": {
+        "yes": "Yes",
+        "no": "No"
+      },
+      "route_mismatch": {
+        "yes": "Wrong",
+        "no": "Correct",
+        "maybe": "Maybe"
+      },
+      "attributable_human_harm": {
+        "yes": "reported",
+        "no": "missing",
+        "maybe": "unknown"
+      },
+      "harm_outcome_present": {
+        "yes": "reported",
+        "no": "missing",
+        "maybe": "unknown"
+      },
+      "retain_kind": {
+        "direct": "Direct",
+        "class": "Class",
+        "maybe": "Maybe"
+      },
+      "mechanism_only": {
+        "yes": "Yes",
+        "no": "No",
+        "maybe": "Maybe"
+      },
+      "title_attributable_harm": {
+        "yes": "reported",
+        "no": "missing",
+        "maybe": "unknown"
+      },
+      "title_question_exposure": {
+        "yes": "Yes",
+        "no": "No",
+        "maybe": "Maybe"
+      },
+      "nonretain_reason": {
+        "use": "Use",
+        "method": "Method",
+        "route": "Route",
+        "population": "Population",
+        "outcome": "Outcome",
+        "other": "Other",
+        "maybe": "Maybe"
+      },
+      "title_only": {
+        "retain": "Include",
+        "maybe": "Maybe",
+        "other": "Other"
+      }
+    },
+    "stage_output_token_ids": {
+      "preclinical_only": {
+        "yes": 41415,
+        "no": 95730
+      },
+      "question_exposure": {
+        "yes": 9454,
+        "no": 2753
+      },
+      "route_mismatch": {
+        "yes": 29185,
+        "no": 33092
+      },
+      "attributable_human_harm": {
+        "yes": 75733,
+        "no": 30616
+      },
+      "harm_outcome_present": {
+        "yes": 75733,
+        "no": 30616
+      },
+      "retain_kind": {
+        "direct": 16027,
+        "class": 1957,
+        "maybe": 21390
+      },
+      "mechanism_only": {
+        "yes": 9454,
+        "no": 2753,
+        "maybe": 21390
+      },
+      "title_attributable_harm": {
+        "yes": 75733,
+        "no": 30616,
+        "maybe": 16088
+      },
+      "title_question_exposure": {
+        "yes": 9454,
+        "no": 2753,
+        "maybe": 21390
+      },
+      "nonretain_reason": {
+        "use": 10253,
+        "method": 3523,
+        "route": 4899,
+        "population": 53371,
+        "outcome": 73380,
+        "other": 11409,
+        "maybe": 21390
+      },
+      "title_only": {
+        "retain": 22283,
+        "maybe": 21390,
+        "other": 11409
+      }
+    },
+    "stage_output_token_ids_sha256": "ec0c5dacd3fdc34f7939f991d0120f5cb877bc9c74a57690c55ddbfab44631a4",
+    "eos_token_id": 151645,
+    "pad_token_id": 151643
+  },
+  "model_config_file_hashes": {
+    "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+    "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+    "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+  },
+  "tokenizer_file_hashes": {
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "model_provenance": {
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "local_files_only": true,
+    "snapshot_path": "C:\\Users\\hjyeo\\.cache\\huggingface\\hub\\models--Qwen--Qwen2.5-7B-Instruct\\snapshots\\a09a35458c702b33eeacc393d103063234e8bc28",
+    "quantization_config": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_use_double_quant": true
+    },
+    "quantization_config_sha256": "b21db7d27edda742bbf0d1d9dd7d0a58f72368668d4efc2d02ecb294bf8c4cef",
+    "generation_config": {
+      "strategy": "batched_multipass_one_token_masked_argmax",
+      "do_sample": false,
+      "num_beams": 1,
+      "use_cache": false,
+      "max_new_tokens": 1,
+      "decision_rule": "argmax_over_stage_allowed_final_logits",
+      "tie_break": "declared_option_order",
+      "max_input_tokens": 1024,
+      "truncation_strategy": "preserve_metadata_and_abstract_head_tail",
+      "multipass_stage_options": {
+        "preclinical_only": [
+          "yes",
+          "no"
+        ],
+        "question_exposure": [
+          "yes",
+          "no"
+        ],
+        "route_mismatch": [
+          "yes",
+          "no"
+        ],
+        "attributable_human_harm": [
+          "yes",
+          "no"
+        ],
+        "harm_outcome_present": [
+          "yes",
+          "no"
+        ],
+        "retain_kind": [
+          "direct",
+          "class",
+          "maybe"
+        ],
+        "mechanism_only": [
+          "yes",
+          "no",
+          "maybe"
+        ],
+        "title_attributable_harm": [
+          "yes",
+          "no",
+          "maybe"
+        ],
+        "title_question_exposure": [
+          "yes",
+          "no",
+          "maybe"
+        ],
+        "nonretain_reason": [
+          "use",
+          "method",
+          "route",
+          "population",
+          "outcome",
+          "other",
+          "maybe"
+        ],
+        "title_only": [
+          "retain",
+          "maybe",
+          "other"
+        ]
+      },
+      "multipass_output_surfaces": {
+        "preclinical_only": {
+          "yes": "Animal",
+          "no": "Clinical"
+        },
+        "question_exposure": {
+          "yes": "Yes",
+          "no": "No"
+        },
+        "route_mismatch": {
+          "yes": "Wrong",
+          "no": "Correct",
+          "maybe": "Maybe"
+        },
+        "attributable_human_harm": {
+          "yes": "reported",
+          "no": "missing",
+          "maybe": "unknown"
+        },
+        "harm_outcome_present": {
+          "yes": "reported",
+          "no": "missing",
+          "maybe": "unknown"
+        },
+        "retain_kind": {
+          "direct": "Direct",
+          "class": "Class",
+          "maybe": "Maybe"
+        },
+        "mechanism_only": {
+          "yes": "Yes",
+          "no": "No",
+          "maybe": "Maybe"
+        },
+        "title_attributable_harm": {
+          "yes": "reported",
+          "no": "missing",
+          "maybe": "unknown"
+        },
+        "title_question_exposure": {
+          "yes": "Yes",
+          "no": "No",
+          "maybe": "Maybe"
+        },
+        "nonretain_reason": {
+          "use": "Use",
+          "method": "Method",
+          "route": "Route",
+          "population": "Population",
+          "outcome": "Outcome",
+          "other": "Other",
+          "maybe": "Maybe"
+        },
+        "title_only": {
+          "retain": "Include",
+          "maybe": "Maybe",
+          "other": "Other"
+        }
+      },
+      "stage_output_token_ids": {
+        "preclinical_only": {
+          "yes": 41415,
+          "no": 95730
+        },
+        "question_exposure": {
+          "yes": 9454,
+          "no": 2753
+        },
+        "route_mismatch": {
+          "yes": 29185,
+          "no": 33092
+        },
+        "attributable_human_harm": {
+          "yes": 75733,
+          "no": 30616
+        },
+        "harm_outcome_present": {
+          "yes": 75733,
+          "no": 30616
+        },
+        "retain_kind": {
+          "direct": 16027,
+          "class": 1957,
+          "maybe": 21390
+        },
+        "mechanism_only": {
+          "yes": 9454,
+          "no": 2753,
+          "maybe": 21390
+        },
+        "title_attributable_harm": {
+          "yes": 75733,
+          "no": 30616,
+          "maybe": 16088
+        },
+        "title_question_exposure": {
+          "yes": 9454,
+          "no": 2753,
+          "maybe": 21390
+        },
+        "nonretain_reason": {
+          "use": 10253,
+          "method": 3523,
+          "route": 4899,
+          "population": 53371,
+          "outcome": 73380,
+          "other": 11409,
+          "maybe": 21390
+        },
+        "title_only": {
+          "retain": 22283,
+          "maybe": 21390,
+          "other": 11409
+        }
+      },
+      "stage_output_token_ids_sha256": "ec0c5dacd3fdc34f7939f991d0120f5cb877bc9c74a57690c55ddbfab44631a4",
+      "eos_token_id": 151645,
+      "pad_token_id": 151643
+    },
+    "generation_config_sha256": "cfe5399979641bc3cfb790f29ad65293b5d87db219e85ba64a088db643dd447d",
+    "model_config_file_hashes": {
+      "config.json": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+      "generation_config.json": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+      "model.safetensors.index.json": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028"
+    },
+    "model_config_files_sha256": "4377e7f8030177c4b580ffbd2c3e2cf497d56fd6e2e1774443bdd50b1a90f4a9",
+    "tokenizer_file_hashes": {
+      "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "tokenizer_files_sha256": "9e3c11a4a87d85a72b6f2d1e4b29ab88532f72d03189b6fa2793da735a2d98aa",
+    "fused_path_token_ids": {
+      "abstract": {
+        "retain_direct_high": [
+          2152,
+          9834,
+          9834,
+          2118
+        ],
+        "retain_direct_medium": [
+          2152,
+          9834,
+          9834,
+          4363
+        ],
+        "retain_class_high": [
+          2152,
+          9834,
+          9834,
+          536
+        ],
+        "retain_class_medium": [
+          2152,
+          9834,
+          9834,
+          11051
+        ],
+        "exposure_only": [
+          2152,
+          9834,
+          902,
+          990
+        ],
+        "outcome_only": [
+          2152,
+          902,
+          9834,
+          15274
+        ],
+        "off_topic": [
+          2152,
+          902,
+          902,
+          1008
+        ],
+        "animal_or_in_vitro_only": [
+          9693,
+          9864
+        ],
+        "mechanism_or_assay_only": [
+          2152,
+          9834,
+          902,
+          1714
+        ],
+        "route_mismatch": [
+          2152,
+          9834,
+          902,
+          6021
+        ],
+        "population_mismatch": [
+          2152,
+          9834,
+          902,
+          7042
+        ],
+        "uncertain_medium": [
+          36760,
+          7196
+        ],
+        "uncertain_low": [
+          36760,
+          9788
+        ]
+      },
+      "title_only": {
+        "title_retain": [
+          55372
+        ],
+        "title_uncertain": [
+          36760
+        ],
+        "title_off_topic": [
+          1575
+        ]
+      }
+    },
+    "fused_path_tries": {
+      "abstract": {
+        "9693": {
+          "9864": {
+            "$canonical_key": "animal_or_in_vitro_only"
+          }
+        },
+        "2152": {
+          "9834": {
+            "902": {
+              "990": {
+                "$canonical_key": "exposure_only"
+              },
+              "1714": {
+                "$canonical_key": "mechanism_or_assay_only"
+              },
+              "7042": {
+                "$canonical_key": "population_mismatch"
+              },
+              "6021": {
+                "$canonical_key": "route_mismatch"
+              }
+            },
+            "9834": {
+              "536": {
+                "$canonical_key": "retain_class_high"
+              },
+              "11051": {
+                "$canonical_key": "retain_class_medium"
+              },
+              "2118": {
+                "$canonical_key": "retain_direct_high"
+              },
+              "4363": {
+                "$canonical_key": "retain_direct_medium"
+              }
+            }
+          },
+          "902": {
+            "902": {
+              "1008": {
+                "$canonical_key": "off_topic"
+              }
+            },
+            "9834": {
+              "15274": {
+                "$canonical_key": "outcome_only"
+              }
+            }
+          }
+        },
+        "36760": {
+          "9788": {
+            "$canonical_key": "uncertain_low"
+          },
+          "7196": {
+            "$canonical_key": "uncertain_medium"
+          }
+        }
+      },
+      "title_only": {
+        "1575": {
+          "$canonical_key": "title_off_topic"
+        },
+        "55372": {
+          "$canonical_key": "title_retain"
+        },
+        "36760": {
+          "$canonical_key": "title_uncertain"
+        }
+      }
+    },
+    "fused_path_tries_sha256": "621afe8f032d849cb40bf65412da7cc9daea833e42597e0b91462af510fc6578",
+    "stage_output_token_ids": {
+      "preclinical_only": {
+        "yes": 41415,
+        "no": 95730
+      },
+      "question_exposure": {
+        "yes": 9454,
+        "no": 2753
+      },
+      "route_mismatch": {
+        "yes": 29185,
+        "no": 33092
+      },
+      "attributable_human_harm": {
+        "yes": 75733,
+        "no": 30616
+      },
+      "harm_outcome_present": {
+        "yes": 75733,
+        "no": 30616
+      },
+      "retain_kind": {
+        "direct": 16027,
+        "class": 1957,
+        "maybe": 21390
+      },
+      "mechanism_only": {
+        "yes": 9454,
+        "no": 2753,
+        "maybe": 21390
+      },
+      "title_attributable_harm": {
+        "yes": 75733,
+        "no": 30616,
+        "maybe": 16088
+      },
+      "title_question_exposure": {
+        "yes": 9454,
+        "no": 2753,
+        "maybe": 21390
+      },
+      "nonretain_reason": {
+        "use": 10253,
+        "method": 3523,
+        "route": 4899,
+        "population": 53371,
+        "outcome": 73380,
+        "other": 11409,
+        "maybe": 21390
+      },
+      "title_only": {
+        "retain": 22283,
+        "maybe": 21390,
+        "other": 11409
+      }
+    },
+    "stage_output_token_ids_sha256": "ec0c5dacd3fdc34f7939f991d0120f5cb877bc9c74a57690c55ddbfab44631a4",
+    "software": {
+      "python": "3.14.2",
+      "torch": "2.10.0+cu130",
+      "transformers": "4.56.2",
+      "bitsandbytes": "0.49.2",
+      "huggingface_hub": "0.36.2"
+    },
+    "cuda": {
+      "available": true,
+      "device_name": "NVIDIA GeForce RTX 5070 Ti",
+      "device_capability": [
+        12,
+        0
+      ],
+      "bfloat16_supported": true
+    },
+    "model_provenance_sha256": "e8d97b433866bd6ac1f1ba4dce5aa7294de497a1b31b48674171963eae01ce13"
+  },
+  "model_provenance_sha256": "e8d97b433866bd6ac1f1ba4dce5aa7294de497a1b31b48674171963eae01ce13",
+  "human_decisions": 0
+}

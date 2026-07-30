@@ -1,0 +1,247 @@
+{
+  "schema_version": "5.0.0",
+  "phase": "B",
+  "status": "complete",
+  "started_at_utc": "2026-07-28T03:49:22.256330+00:00",
+  "completed_at_utc": "2026-07-28T03:49:36.478416+00:00",
+  "run_id": "v50_20260728T033102Z",
+  "source_database": "PubMed",
+  "retrieval_method": "NCBI ESearch history plus EFetch; publication-date segmentation above 9,999 results",
+  "deduplication_rule": "normalized DOI; when DOI is absent, whitespace-normalized exact title; PMID only when DOI and title are both absent",
+  "query_definitions_path": "research_v3/otc/literature/v5/query_definitions.json",
+  "query_definitions_sha256": "f33744e0ea873da4715967cbbe907088c80192a35ca3b902fab2904c397efc88",
+  "probe_report_path": "research_v3/otc/literature/v5/probe_report.json",
+  "probe_report_sha256": "4d6f3c1e36bb7727e31642abfe3c661cf1393c956800e6f12a9e3a38038e1929",
+  "questions": [
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "run_id": "v50_20260728T033102Z",
+      "run_path": "research_v3/otc/literature/v5/searches/OTC-LIT-Q01-ACETAMINOPHEN/v50_20260728T033102Z",
+      "query_sha256": "0bab0733496ac4fb5e1b846e7526489c571c8e576216f78006e100a6a5bd2eec",
+      "phase_a_probe_count": 9264,
+      "phase_b_base_count": 9264,
+      "change_since_probe": 0,
+      "segmentation": "none",
+      "segment_count_sum": 9264,
+      "raw_parsed_records": 9264,
+      "unique_pmids": 9264,
+      "raw_xml_file_count": 20,
+      "checksum_manifest_sha256": "070a72677db40d14e563807eed4f59e60fddc54f901d88e84ecd2f2705ed6a0f",
+      "response_metadata_sha256": "0f6d62161e1f24fb97a2f19ecdc3d9e50f71ab81e485de7aaeb5fd862b36432c",
+      "efetch_calls": 19,
+      "esearch_calls": 1,
+      "status": "complete",
+      "resumed_from_verified_raw": true,
+      "canonical_membership_rows": 9259
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "run_id": "v50_20260728T033102Z",
+      "run_path": "research_v3/otc/literature/v5/searches/OTC-LIT-Q02-NSAID/v50_20260728T033102Z",
+      "query_sha256": "87340fc07ef18791392e946077606536b15399e62f6f5dc5f08ee55b2ea62c95",
+      "phase_a_probe_count": 6456,
+      "phase_b_base_count": 6456,
+      "change_since_probe": 0,
+      "segmentation": "none",
+      "segment_count_sum": 6456,
+      "raw_parsed_records": 6456,
+      "unique_pmids": 6456,
+      "raw_xml_file_count": 14,
+      "checksum_manifest_sha256": "c0c3156cc2aa8514f82b76ba6d6192ff97ad90e5d0aefea67f881cde5e5e630a",
+      "response_metadata_sha256": "693a446cc6bf9ab3dbdb5e4d09554b9737485f5a9d020be96e95e55d59d9b403",
+      "efetch_calls": 13,
+      "esearch_calls": 1,
+      "status": "complete",
+      "resumed_from_verified_raw": true,
+      "canonical_membership_rows": 6448
+    },
+    {
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "run_id": "v50_20260728T033102Z",
+      "run_path": "research_v3/otc/literature/v5/searches/OTC-LIT-Q03-COLD-ALLERGY/v50_20260728T033102Z",
+      "query_sha256": "a60c6fc7f53df5a4aaf21164f3d42c1f3a22ddb686f77ba4038afe5f27eaeddd",
+      "phase_a_probe_count": 5670,
+      "phase_b_base_count": 5670,
+      "change_since_probe": 0,
+      "segmentation": "none",
+      "segment_count_sum": 5670,
+      "raw_parsed_records": 5670,
+      "unique_pmids": 5670,
+      "raw_xml_file_count": 13,
+      "checksum_manifest_sha256": "427eb090d8612d9664daeede43766cc935226e71ed737b7eac11d861d41c88dd",
+      "response_metadata_sha256": "f091939911983a697307299bb4f3e940b56ce18c05fcb0d1a22457702f09bbde",
+      "efetch_calls": 12,
+      "esearch_calls": 1,
+      "status": "complete",
+      "resumed_from_verified_raw": true,
+      "canonical_membership_rows": 5669
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "run_id": "v50_20260728T033102Z",
+      "run_path": "research_v3/otc/literature/v5/searches/OTC-LIT-Q04-DIGESTIVE/v50_20260728T033102Z",
+      "query_sha256": "5b2d7d28fcc06835cabb48fe229c24a495724804bcc10cf177d1c52c0569e82c",
+      "phase_a_probe_count": 21342,
+      "phase_b_base_count": 21342,
+      "change_since_probe": 0,
+      "segmentation": "non_overlapping_entrez_date_binary_intervals",
+      "segment_count_sum": 21342,
+      "raw_parsed_records": 21342,
+      "unique_pmids": 21342,
+      "raw_xml_file_count": 55,
+      "checksum_manifest_sha256": "c6395fcb6c172abdb9f42bb99c191a2f0f91e40d3135d926d41d90e73669c3dd",
+      "response_metadata_sha256": "28ddbe67dbe31e2f45064ea484d30e85cdcd994e012a31ddb871c55ee4143643",
+      "efetch_calls": 44,
+      "esearch_calls": 11,
+      "status": "complete",
+      "resumed_from_verified_raw": true,
+      "canonical_membership_rows": 21314
+    },
+    {
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "run_id": "v50_20260728T033102Z",
+      "run_path": "research_v3/otc/literature/v5/searches/OTC-LIT-Q05-TOPICAL/v50_20260728T033102Z",
+      "query_sha256": "cd8809e67bd42f477d9621e8e0188bce5c5ee1259b6d6927556fdaeb624c187d",
+      "phase_a_probe_count": 517,
+      "phase_b_base_count": 517,
+      "change_since_probe": 0,
+      "segmentation": "none",
+      "segment_count_sum": 517,
+      "raw_parsed_records": 517,
+      "unique_pmids": 517,
+      "raw_xml_file_count": 3,
+      "checksum_manifest_sha256": "d287bf8c019b48ebad7acba9fb88a52408192eb0aec7467f939283a472764996",
+      "response_metadata_sha256": "91963d2eafd205aa0d85d93610ba0c36a9b5e057f0ac0b47774047a502685926",
+      "efetch_calls": 2,
+      "esearch_calls": 1,
+      "status": "complete",
+      "resumed_from_verified_raw": true,
+      "canonical_membership_rows": 517
+    }
+  ],
+  "totals": {
+    "phase_a_probe_hits_before_cross_question_deduplication": 43249,
+    "phase_b_hits_before_cross_question_deduplication": 43249,
+    "question_membership_units_after_bibliographic_deduplication": 43207,
+    "evidence_map_rows_unique_papers": 42822,
+    "unique_pmids": 42865,
+    "esearch_calls": 15,
+    "efetch_calls": 90,
+    "raw_xml_files": 105
+  },
+  "per_question_membership_rows": {
+    "OTC-LIT-Q01-ACETAMINOPHEN": 9259,
+    "OTC-LIT-Q02-NSAID": 6448,
+    "OTC-LIT-Q03-COLD-ALLERGY": 5669,
+    "OTC-LIT-Q04-DIGESTIVE": 21314,
+    "OTC-LIT-Q05-TOPICAL": 517
+  },
+  "cross_question_overlap_patterns": [
+    {
+      "question_ids": [
+        "OTC-LIT-Q01-ACETAMINOPHEN",
+        "OTC-LIT-Q02-NSAID"
+      ],
+      "paper_count": 221
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q01-ACETAMINOPHEN",
+        "OTC-LIT-Q02-NSAID",
+        "OTC-LIT-Q03-COLD-ALLERGY"
+      ],
+      "paper_count": 3
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q01-ACETAMINOPHEN",
+        "OTC-LIT-Q02-NSAID",
+        "OTC-LIT-Q05-TOPICAL"
+      ],
+      "paper_count": 3
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q01-ACETAMINOPHEN",
+        "OTC-LIT-Q03-COLD-ALLERGY"
+      ],
+      "paper_count": 16
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q01-ACETAMINOPHEN",
+        "OTC-LIT-Q04-DIGESTIVE"
+      ],
+      "paper_count": 62
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q01-ACETAMINOPHEN",
+        "OTC-LIT-Q05-TOPICAL"
+      ],
+      "paper_count": 16
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q02-NSAID",
+        "OTC-LIT-Q03-COLD-ALLERGY"
+      ],
+      "paper_count": 27
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q02-NSAID",
+        "OTC-LIT-Q04-DIGESTIVE"
+      ],
+      "paper_count": 7
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q02-NSAID",
+        "OTC-LIT-Q05-TOPICAL"
+      ],
+      "paper_count": 20
+    },
+    {
+      "question_ids": [
+        "OTC-LIT-Q03-COLD-ALLERGY",
+        "OTC-LIT-Q04-DIGESTIVE"
+      ],
+      "paper_count": 4
+    }
+  ],
+  "deduplication": {
+    "input_membership_records": 43249,
+    "unique_papers": 42822,
+    "records_removed_by_cross_question_or_bibliographic_deduplication": 427,
+    "multi_member_deduplication_groups": 407,
+    "doi_keyed_papers": 39750,
+    "title_keyed_papers_without_doi": 3045,
+    "pmid_fallback_papers_without_doi_or_title": 27
+  },
+  "evidence_map": {
+    "path": "research_v3/otc/literature/v5/evidence_map.csv",
+    "sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+    "rows": 42822,
+    "columns": [
+      "record_id",
+      "pmid",
+      "all_pmids",
+      "title",
+      "abstract",
+      "has_abstract",
+      "journal",
+      "publication_year",
+      "doi",
+      "publication_types",
+      "mesh_terms",
+      "question_ids",
+      "search_run_ids",
+      "source_database",
+      "deduplication_key",
+      "input_sha256"
+    ]
+  },
+  "independent_blinding": false,
+  "release_ready": false
+}

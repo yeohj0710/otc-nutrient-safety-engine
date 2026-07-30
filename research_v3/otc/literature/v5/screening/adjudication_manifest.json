@@ -1,0 +1,565 @@
+{
+  "schema_version": "5.0.0",
+  "run_complete": true,
+  "processing_order": [
+    "OTC-LIT-Q01-ACETAMINOPHEN",
+    "OTC-LIT-Q02-NSAID",
+    "OTC-LIT-Q03-COLD-ALLERGY",
+    "OTC-LIT-Q04-DIGESTIVE",
+    "OTC-LIT-Q05-TOPICAL"
+  ],
+  "counts": {
+    "classifier_rows": 43207,
+    "selected_rows": 5000,
+    "adjudicated_rows": 5000,
+    "unadjudicated_classifier_rows": 38207,
+    "compiled_decision_rows": 43207
+  },
+  "layers": {
+    "classifier": {
+      "path": "research_v3/otc/literature/v5/screening/classifier_decisions.csv",
+      "sha256": "ad0873b6db69cc63cac49c0f454a020c2ba86836592b652c89427ec5460c6db4",
+      "immutable": true,
+      "row_count": 43207
+    },
+    "semantic_adjudication": {
+      "path": "research_v3/otc/literature/v5/screening/semantic_adjudications.json",
+      "sha256": "e46cb0935ea1f708b469d21179248584db2952b9f1a67da8b76f6dc50580a9a8",
+      "row_count": 5000
+    },
+    "compiled_decisions": {
+      "path": "research_v3/otc/literature/v5/screening/decisions.csv",
+      "sha256": "4db33044de6f806ac61ffcf04b198f7b2d0d3bacd2b2b9dffa4440188e37b9b1",
+      "row_count": 43207,
+      "adjudication_labels_applied": true
+    }
+  },
+  "layer_distributions": {
+    "classifier_all": {
+      "retain": 7278,
+      "deprioritize": 33683,
+      "uncertain": 2246
+    },
+    "classifier_selected": {
+      "retain": 596,
+      "deprioritize": 2158,
+      "uncertain": 2246
+    },
+    "semantic_adjudication": {
+      "retain": 1193,
+      "deprioritize": 3440,
+      "uncertain": 367
+    },
+    "compiled_decisions": {
+      "retain": 7875,
+      "deprioritize": 34965,
+      "uncertain": 367
+    }
+  },
+  "disagreement": {
+    "count": 2787,
+    "rate": 0.5574,
+    "denominator": 5000
+  },
+  "movement_matrix": {
+    "retain": {
+      "retain": 301,
+      "deprioritize": 184,
+      "uncertain": 111
+    },
+    "deprioritize": {
+      "retain": 166,
+      "deprioritize": 1824,
+      "uncertain": 168
+    },
+    "uncertain": {
+      "retain": 726,
+      "deprioritize": 1432,
+      "uncertain": 88
+    }
+  },
+  "per_question": {
+    "OTC-LIT-Q01-ACETAMINOPHEN": {
+      "classifier_rows": 9259,
+      "selected_rows": 1400,
+      "adjudicated_rows": 1400,
+      "compiled_decision_rows": 9259,
+      "classifier_all_distribution": {
+        "retain": 2652,
+        "deprioritize": 5937,
+        "uncertain": 670
+      },
+      "classifier_selected_distribution": {
+        "retain": 284,
+        "deprioritize": 446,
+        "uncertain": 670
+      },
+      "adjudication_distribution": {
+        "retain": 448,
+        "deprioritize": 818,
+        "uncertain": 134
+      },
+      "compiled_decisions_distribution": {
+        "retain": 2816,
+        "deprioritize": 6309,
+        "uncertain": 134
+      },
+      "disagreement_count": 831,
+      "disagreement_rate": 0.5935714285714285,
+      "movement_matrix": {
+        "retain": {
+          "retain": 148,
+          "deprioritize": 74,
+          "uncertain": 62
+        },
+        "deprioritize": {
+          "retain": 41,
+          "deprioritize": 377,
+          "uncertain": 28
+        },
+        "uncertain": {
+          "retain": 259,
+          "deprioritize": 367,
+          "uncertain": 44
+        }
+      },
+      "batch_count": 7
+    },
+    "OTC-LIT-Q02-NSAID": {
+      "classifier_rows": 6448,
+      "selected_rows": 1200,
+      "adjudicated_rows": 1200,
+      "compiled_decision_rows": 6448,
+      "classifier_all_distribution": {
+        "retain": 2122,
+        "deprioritize": 3662,
+        "uncertain": 664
+      },
+      "classifier_selected_distribution": {
+        "retain": 198,
+        "deprioritize": 338,
+        "uncertain": 664
+      },
+      "adjudication_distribution": {
+        "retain": 499,
+        "deprioritize": 591,
+        "uncertain": 110
+      },
+      "compiled_decisions_distribution": {
+        "retain": 2423,
+        "deprioritize": 3915,
+        "uncertain": 110
+      },
+      "disagreement_count": 847,
+      "disagreement_rate": 0.7058333333333333,
+      "movement_matrix": {
+        "retain": {
+          "retain": 117,
+          "deprioritize": 48,
+          "uncertain": 33
+        },
+        "deprioritize": {
+          "retain": 53,
+          "deprioritize": 222,
+          "uncertain": 63
+        },
+        "uncertain": {
+          "retain": 329,
+          "deprioritize": 321,
+          "uncertain": 14
+        }
+      },
+      "batch_count": 6
+    },
+    "OTC-LIT-Q03-COLD-ALLERGY": {
+      "classifier_rows": 5669,
+      "selected_rows": 600,
+      "adjudicated_rows": 600,
+      "compiled_decision_rows": 5669,
+      "classifier_all_distribution": {
+        "retain": 859,
+        "deprioritize": 4442,
+        "uncertain": 368
+      },
+      "classifier_selected_distribution": {
+        "retain": 32,
+        "deprioritize": 200,
+        "uncertain": 368
+      },
+      "adjudication_distribution": {
+        "retain": 98,
+        "deprioritize": 479,
+        "uncertain": 23
+      },
+      "compiled_decisions_distribution": {
+        "retain": 925,
+        "deprioritize": 4721,
+        "uncertain": 23
+      },
+      "disagreement_count": 413,
+      "disagreement_rate": 0.6883333333333334,
+      "movement_matrix": {
+        "retain": {
+          "retain": 19,
+          "deprioritize": 12,
+          "uncertain": 1
+        },
+        "deprioritize": {
+          "retain": 18,
+          "deprioritize": 164,
+          "uncertain": 18
+        },
+        "uncertain": {
+          "retain": 61,
+          "deprioritize": 303,
+          "uncertain": 4
+        }
+      },
+      "batch_count": 3
+    },
+    "OTC-LIT-Q04-DIGESTIVE": {
+      "classifier_rows": 21314,
+      "selected_rows": 1600,
+      "adjudicated_rows": 1600,
+      "compiled_decision_rows": 21314,
+      "classifier_all_distribution": {
+        "retain": 1583,
+        "deprioritize": 19197,
+        "uncertain": 534
+      },
+      "classifier_selected_distribution": {
+        "retain": 58,
+        "deprioritize": 1008,
+        "uncertain": 534
+      },
+      "adjudication_distribution": {
+        "retain": 132,
+        "deprioritize": 1374,
+        "uncertain": 94
+      },
+      "compiled_decisions_distribution": {
+        "retain": 1657,
+        "deprioritize": 19563,
+        "uncertain": 94
+      },
+      "disagreement_count": 667,
+      "disagreement_rate": 0.416875,
+      "movement_matrix": {
+        "retain": {
+          "retain": 8,
+          "deprioritize": 36,
+          "uncertain": 14
+        },
+        "deprioritize": {
+          "retain": 49,
+          "deprioritize": 902,
+          "uncertain": 57
+        },
+        "uncertain": {
+          "retain": 75,
+          "deprioritize": 436,
+          "uncertain": 23
+        }
+      },
+      "batch_count": 8
+    },
+    "OTC-LIT-Q05-TOPICAL": {
+      "classifier_rows": 517,
+      "selected_rows": 200,
+      "adjudicated_rows": 200,
+      "compiled_decision_rows": 517,
+      "classifier_all_distribution": {
+        "retain": 62,
+        "deprioritize": 445,
+        "uncertain": 10
+      },
+      "classifier_selected_distribution": {
+        "retain": 24,
+        "deprioritize": 166,
+        "uncertain": 10
+      },
+      "adjudication_distribution": {
+        "retain": 16,
+        "deprioritize": 178,
+        "uncertain": 6
+      },
+      "compiled_decisions_distribution": {
+        "retain": 54,
+        "deprioritize": 457,
+        "uncertain": 6
+      },
+      "disagreement_count": 29,
+      "disagreement_rate": 0.145,
+      "movement_matrix": {
+        "retain": {
+          "retain": 9,
+          "deprioritize": 14,
+          "uncertain": 1
+        },
+        "deprioritize": {
+          "retain": 5,
+          "deprioritize": 159,
+          "uncertain": 2
+        },
+        "uncertain": {
+          "retain": 2,
+          "deprioritize": 5,
+          "uncertain": 3
+        }
+      },
+      "batch_count": 1
+    }
+  },
+  "batch_hashes": [
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B001.jsonl",
+      "row_count": 200,
+      "input_sha256": "797b83586b7e37619d84d1bae8df6fda149c1be0503ad6e6b4c93809c40d076f",
+      "output_sha256": "1910af9acaed9ab82c3c321c3813f87bb110155e5d4dbdfcd07542b2fc001df3"
+    },
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B002.jsonl",
+      "row_count": 200,
+      "input_sha256": "f7f1a8a20bc55656699956b937896383297b16590c426b49d9f946386d8cc1c8",
+      "output_sha256": "b7f33a74f0637be5ab90aec300433bb07d12bddc3696cd995d888e8fb296021f"
+    },
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B003.jsonl",
+      "row_count": 200,
+      "input_sha256": "cf5badfefa850c81f432c1841f74d113344ba5af4de783686ce9f9e201e7cebd",
+      "output_sha256": "781c66ae46fb5c10c014e8f48f335dc2df78f2c89ae41023998b3f321532de9d"
+    },
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B004",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B004.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B004.jsonl",
+      "row_count": 200,
+      "input_sha256": "c4c608bb42368f83b66245aacaa3c70d73409c64151a3c0d17c762f8e354aa75",
+      "output_sha256": "481fed8ed053ab3174430821807b03d6b8d1ea53525c4d6b54b85d67efb445e7"
+    },
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B005",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B005.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B005.jsonl",
+      "row_count": 200,
+      "input_sha256": "d89e0e7b6e3643be1b41cfdb807f572f0df4ea0623f5230cdb2dd804e739dbee",
+      "output_sha256": "acb0a513f79ae4fc8f74aec031292c2880f946b83954a7f481767d4929d4a1df"
+    },
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B006",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B006.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B006.jsonl",
+      "row_count": 200,
+      "input_sha256": "3a59bbd5dd3015af2dc2fb90489ad578d72328173b40af114be86f99dafa5650",
+      "output_sha256": "a2589f8d2cabcb32051d136daccb73a09e5aaea9f4549d452eb94dc0c42f9c17"
+    },
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "batch_id": "OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B007",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B007.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q01-ACETAMINOPHEN/OTC-LIT-Q01-ACETAMINOPHEN-ADJ-B007.jsonl",
+      "row_count": 200,
+      "input_sha256": "6a25433bc5cfe9143927f2fc5a1e5e4f45c5467791caccb7210d62b8f32c3600",
+      "output_sha256": "7c1da2696bdbd0af500b1a5852680987d674eee73582ce89ef397560e75caed9"
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "batch_id": "OTC-LIT-Q02-NSAID-ADJ-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B001.jsonl",
+      "row_count": 200,
+      "input_sha256": "09be5721a2799fd7dea3141b8c178e042cbeb109daf39d9dcb0fe2efc06045aa",
+      "output_sha256": "35ea312d05ebc17759e350bae98d990974d84eb001478c00845bd4097693e2f1"
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "batch_id": "OTC-LIT-Q02-NSAID-ADJ-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B002.jsonl",
+      "row_count": 200,
+      "input_sha256": "dc21a79b8e21bbe3076d361a1bc768211b34ed7ded3812f4fa2df95c05b4b12b",
+      "output_sha256": "dc078cc891dd93b6ebd02b0548ffa1ed854ee672fc07c299facd67a05523af6c"
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "batch_id": "OTC-LIT-Q02-NSAID-ADJ-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B003.jsonl",
+      "row_count": 200,
+      "input_sha256": "0857f8cba2c8521d3db3640ac85143d93fc11c469d8297ac6c39a0be061ea6d5",
+      "output_sha256": "aff849596901f2b655c9c1b8ea80a49fb24054d39a5d142451bcffe62ced4fda"
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "batch_id": "OTC-LIT-Q02-NSAID-ADJ-B004",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B004.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B004.jsonl",
+      "row_count": 200,
+      "input_sha256": "0ec68567df6b7d989ada9b746e6422f17cb5e78c80e3f69801f19bb67beea0ba",
+      "output_sha256": "edd50c8d8371817e65fc1f568f161b77fbe19b5b595ee9ae2a01a440ed8878a3"
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "batch_id": "OTC-LIT-Q02-NSAID-ADJ-B005",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B005.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B005.jsonl",
+      "row_count": 200,
+      "input_sha256": "386d822de5b980686c5ba19e502fdf88a5b83b2631aeb6faa63c377ecc8bc09a",
+      "output_sha256": "e8dfafc51c4eba3e521293005be22ef13cadc2144fcaf2c6a5f73401c86b53fe"
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "batch_id": "OTC-LIT-Q02-NSAID-ADJ-B006",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B006.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q02-NSAID/OTC-LIT-Q02-NSAID-ADJ-B006.jsonl",
+      "row_count": 200,
+      "input_sha256": "f85f12e2044dc52f85e79ae5f569a31a3a239dd80ca8ddbd67dc95e876012f7d",
+      "output_sha256": "6ea41f05687b545b69827fb5833cd42742c78b8da2eb46e60a6fb80c40fbe88b"
+    },
+    {
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "batch_id": "OTC-LIT-Q03-COLD-ALLERGY-ADJ-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q03-COLD-ALLERGY/OTC-LIT-Q03-COLD-ALLERGY-ADJ-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q03-COLD-ALLERGY/OTC-LIT-Q03-COLD-ALLERGY-ADJ-B001.jsonl",
+      "row_count": 200,
+      "input_sha256": "ad1009a5592ff5bf29996fb9742ed155a3d6686e24449f2545473e16d59fc960",
+      "output_sha256": "76d1ea9d2819b772a8dcf787363b171ab92dccd1207827d086404085e9b98a37"
+    },
+    {
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "batch_id": "OTC-LIT-Q03-COLD-ALLERGY-ADJ-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q03-COLD-ALLERGY/OTC-LIT-Q03-COLD-ALLERGY-ADJ-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q03-COLD-ALLERGY/OTC-LIT-Q03-COLD-ALLERGY-ADJ-B002.jsonl",
+      "row_count": 200,
+      "input_sha256": "ec8375a009a88f9314b9d3d64effbe07a6ef13a22eaf915aa4ed4aa8c698b007",
+      "output_sha256": "5dea01889658568f6851df7ba0bb0cd0fa82d343dcd51f3306d9591950831219"
+    },
+    {
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "batch_id": "OTC-LIT-Q03-COLD-ALLERGY-ADJ-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q03-COLD-ALLERGY/OTC-LIT-Q03-COLD-ALLERGY-ADJ-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q03-COLD-ALLERGY/OTC-LIT-Q03-COLD-ALLERGY-ADJ-B003.jsonl",
+      "row_count": 200,
+      "input_sha256": "7542f299d155a7f0f5d162fe18f3207997a52a7b7417c0061524e9a573c5d526",
+      "output_sha256": "946d30744dc01b3f80dd613826d086f95921219b72d7cfe5d00b10008d7787f1"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B001.jsonl",
+      "row_count": 200,
+      "input_sha256": "707213d0db1308a350e277266b372f584747cc671bba3106823dd094d54a79d8",
+      "output_sha256": "fc9a24446b5682d9438aa6d556fa2dcc067446ce3d4f5d0e49a3077d681ac856"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B002.jsonl",
+      "row_count": 200,
+      "input_sha256": "2a81f74494b7b11630ae5c0b28afab3bd01b4e8662169fc6b3fd947a8aaa5ae2",
+      "output_sha256": "6ef9ed30ad60eb4981df45d1b1c789d5c8c887546f575ce0f8c3784d0c6223aa"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B003.jsonl",
+      "row_count": 200,
+      "input_sha256": "ff158f0a88f0b5abfb1f895231bb7d48d5dafe141e449f94c3abdc931078c358",
+      "output_sha256": "9c3a2d2c2f985e6a4a44cc636005334b2b2ee5446a6c91612319de9898ecd98a"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B004",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B004.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B004.jsonl",
+      "row_count": 200,
+      "input_sha256": "846ce1a78bdaecc39844a946996130244bf401a1253c4813c503b8d1e249752c",
+      "output_sha256": "bdedd5fcdc376ce433b73c7242c93eb9a5c1f7331343ea7025d95d4a09e1633e"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B005",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B005.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B005.jsonl",
+      "row_count": 200,
+      "input_sha256": "4cefcf022f8fdf8604dcbdbadc15f477cd08772f6380174d46e8e532d7e44d45",
+      "output_sha256": "97b00f4fffa8432d4221244be573cfdeda60baa0cc91d67eb26e13987e00f7da"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B006",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B006.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B006.jsonl",
+      "row_count": 200,
+      "input_sha256": "a9936b374b05f327ca42cdb13627c2bd76503ab45fb1b55bb372a3eebc3d776e",
+      "output_sha256": "d79f3cc1fee31ccbcf4e697bbd6174613721ad8d25e749b1682d71bb44bd4540"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B007",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B007.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B007.jsonl",
+      "row_count": 200,
+      "input_sha256": "78ef5a103fa3e1e411cbcc7e6c0890fd87da6e868a71648802320faff845fc45",
+      "output_sha256": "8c30e8682cb8c54b6c076120b58e8f1c95249476fe579ec77eccfeb20a949155"
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B008",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B008.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B008.jsonl",
+      "row_count": 200,
+      "input_sha256": "ab2e7fb6552093263dcee9e6c14cf4486b1493e56baf8e59a28d4ffac9f48dcf",
+      "output_sha256": "43088e841679321d355e49cbb0dd3d878db65e9020ac45d50b130a36a22926fe"
+    },
+    {
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "batch_id": "OTC-LIT-Q05-TOPICAL-ADJ-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q05-TOPICAL/OTC-LIT-Q05-TOPICAL-ADJ-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q05-TOPICAL/OTC-LIT-Q05-TOPICAL-ADJ-B001.jsonl",
+      "row_count": 200,
+      "input_sha256": "a953fed17fc1ba92e490dce0ae7230a82e422237e92a88cf8bf750807d8eefbf",
+      "output_sha256": "85a297c2f21df9adac85d489324abeabdd738fcd2f85ed4847162da15160df03"
+    }
+  ],
+  "hashes": {
+    "prompt_sha256": "ec551409a899db199463680210ac05dbe08cd4851fccfdb2754a92010ad50176",
+    "evidence_map_sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+    "classifier_decisions_sha256": "ad0873b6db69cc63cac49c0f454a020c2ba86836592b652c89427ec5460c6db4",
+    "adjudication_selection_sha256": "505a63c314c8aadff51298c2df1ce23a76fc6c8f0b5fefe9cc61de8834c5b7c7",
+    "semantic_adjudications_sha256": "e46cb0935ea1f708b469d21179248584db2952b9f1a67da8b76f6dc50580a9a8",
+    "decisions_csv_sha256": "4db33044de6f806ac61ffcf04b198f7b2d0d3bacd2b2b9dffa4440188e37b9b1",
+    "contract_check_status_sha256": {
+      "OTC-LIT-Q01-ACETAMINOPHEN": "daaa950e21a2321da0f6633459192b4ada025c08fa00ef805c4aba1f83867f9c",
+      "OTC-LIT-Q02-NSAID": "2cfae7662884ef87dbdd7033d5a7dcc6f0543139d354e183174159d384e66ca3",
+      "OTC-LIT-Q03-COLD-ALLERGY": "e18c97f9b47759ababbbc8dd8f90a55d4f57fb47772b2e41655b52b36b252ddf",
+      "OTC-LIT-Q04-DIGESTIVE": "abf0a54d5cf31fc62ac8d9d797604744caaf87a756d2e72784538fc610d07494",
+      "OTC-LIT-Q05-TOPICAL": "c0f71d22a5a6964969eeb74e2f01375f05d16ccedea8e263450c64f7fbef5cb9"
+    },
+    "classifier_validation_sha256": "8e8cbbb3ba107228bf3af4b9de2856b42a40448d51fb3ddf750ac8629e198445"
+  },
+  "classifier_decisions_unchanged": true,
+  "adjudication_input_blinded_to_classifier_labels": true,
+  "agent_identity_recorded": false,
+  "specific_agent_attribution_supported": false,
+  "execution_receipts_recorded": false,
+  "question_sequence_receipt_recorded": false,
+  "independent_blinding_ai": false,
+  "independent_blinding": false,
+  "release_ready": false
+}

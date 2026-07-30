@@ -29,7 +29,12 @@ Before exploring the repo from scratch, check `docs/project_map.md`.
 - New literature artifacts belong only under `research_v3/otc/literature/`. Do not modify `research_v3/search/provisional_pubmed_20260710/`.
 - Human judgment files are preserved legacy inputs and must not enter the v4.0 chain: `research_v3/screening/`, `research_v3/human_review_minimal/`, expert review artifacts, and `human_reference_label`.
 - AI-reference metrics must name their source: `sensitivity_vs_ai_reference`, `specificity_vs_ai_reference`, `agreement_vs_ai_reference`, `ai_reference_standard`, `ai_cross_checked`. Never write a bare "민감도".
-- `independent_blinding` means human blinding and remains false. AI blinding uses `independent_blinding_ai`, which is true.
+- `independent_blinding` means human blinding and remains false. AI blinding uses
+  `independent_blinding_ai`, and its value is **per layer, not global**. v4.0 literature
+  screening: true, evidenced by `research_v3/otc/validation/ai_independent_evaluation.json`.
+  The v5.0 semantic adjudication selection: **false** — it was recorded true with no
+  execution receipt and was corrected by `V50-PC-001` (see `research_v3/logs/DECISIONS_v50.md`).
+  Do not restate this flag as globally true; cite the layer.
 - `release_ready` remains false. Do not deploy from this workflow.
 - v4.0 screening is complete: 5,724/5,724 rows, coverage 1.0, human decisions 0. Performance may be cited only alongside the fact that the reference standard is an AI evaluator.
 - Do not delete `tools/search_pipeline/embase_adapter.py`.

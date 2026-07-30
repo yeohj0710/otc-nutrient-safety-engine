@@ -1,0 +1,74 @@
+{
+  "schema_version": "5.0.0",
+  "layer": "semantic_adjudication_input",
+  "question_id": "OTC-LIT-Q04-DIGESTIVE",
+  "processing_index": 4,
+  "batch_size": 200,
+  "row_count": 1600,
+  "batch_count": 8,
+  "prompt_path": "research_v3/otc/literature/v5/prompts/frozen_semantic_adjudication_prompt.md",
+  "prompt_sha256": "ec551409a899db199463680210ac05dbe08cd4851fccfdb2754a92010ad50176",
+  "classifier_decisions_path": "research_v3/otc/literature/v5/screening/classifier_decisions.csv",
+  "classifier_decisions_sha256": "ad0873b6db69cc63cac49c0f454a020c2ba86836592b652c89427ec5460c6db4",
+  "evidence_map_path": "research_v3/otc/literature/v5/evidence_map.csv",
+  "evidence_map_sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+  "classifier_fields_excluded_from_inputs": true,
+  "batches": [
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B001",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B001.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B001.jsonl",
+      "row_count": 200,
+      "input_sha256": "707213d0db1308a350e277266b372f584747cc671bba3106823dd094d54a79d8"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B002",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B002.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B002.jsonl",
+      "row_count": 200,
+      "input_sha256": "2a81f74494b7b11630ae5c0b28afab3bd01b4e8662169fc6b3fd947a8aaa5ae2"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B003",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B003.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B003.jsonl",
+      "row_count": 200,
+      "input_sha256": "ff158f0a88f0b5abfb1f895231bb7d48d5dafe141e449f94c3abdc931078c358"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B004",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B004.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B004.jsonl",
+      "row_count": 200,
+      "input_sha256": "846ce1a78bdaecc39844a946996130244bf401a1253c4813c503b8d1e249752c"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B005",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B005.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B005.jsonl",
+      "row_count": 200,
+      "input_sha256": "4cefcf022f8fdf8604dcbdbadc15f477cd08772f6380174d46e8e532d7e44d45"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B006",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B006.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B006.jsonl",
+      "row_count": 200,
+      "input_sha256": "a9936b374b05f327ca42cdb13627c2bd76503ab45fb1b55bb372a3eebc3d776e"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B007",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B007.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B007.jsonl",
+      "row_count": 200,
+      "input_sha256": "78ef5a103fa3e1e411cbcc7e6c0890fd87da6e868a71648802320faff845fc45"
+    },
+    {
+      "batch_id": "OTC-LIT-Q04-DIGESTIVE-ADJ-B008",
+      "input_path": "research_v3/otc/literature/v5/screening/batches/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B008.jsonl",
+      "output_path": "research_v3/otc/literature/v5/screening/agent_outputs/adjudication/OTC-LIT-Q04-DIGESTIVE/OTC-LIT-Q04-DIGESTIVE-ADJ-B008.jsonl",
+      "row_count": 200,
+      "input_sha256": "ab2e7fb6552093263dcee9e6c14cf4486b1493e56baf8e59a28d4ffac9f48dcf"
+    }
+  ]
+}

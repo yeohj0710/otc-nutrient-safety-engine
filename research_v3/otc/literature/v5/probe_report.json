@@ -1,0 +1,3857 @@
+{
+  "schema_version": "5.0.0",
+  "phase": "A",
+  "status": "complete",
+  "database": "PubMed",
+  "method": "NCBI ESearch retmax=0 count-only; EFetch calls=0",
+  "started_at_utc": "2026-07-28T03:19:37.732099+00:00",
+  "completed_at_utc": "2026-07-28T03:19:42.138434+00:00",
+  "query_definitions_path": "research_v3/otc/literature/v5/query_definitions.json",
+  "query_definitions_sha256": "f33744e0ea873da4715967cbbe907088c80192a35ca3b902fab2904c397efc88",
+  "ingredient_mappings_path": "research_v3/otc/literature/v5/ingredient_mappings.json",
+  "ingredient_mappings_sha256": "3d23fb46ba212836e8681927f561ea4224fbbdc8d76e0f08fb91e14f8fdd6076",
+  "selected_ingredient_count": 28,
+  "selected_ingredients_in_queries": [
+    "ING-acetaminophen",
+    "ING-cetirizine_hydrochloride",
+    "ING-chlorpheniramine_maleate",
+    "ING-dexibuprofen",
+    "ING-ibuprofen",
+    "ING-mf-src-0546ff64775e",
+    "ING-mf-src-06cdde4eaaee",
+    "ING-mf-src-25b653f7fbe2",
+    "ING-mf-src-41c782105274",
+    "ING-mf-src-484bf5816144",
+    "ING-mf-src-4a3225f1eb5d",
+    "ING-mf-src-4b985f9d3bdb",
+    "ING-mf-src-5abce34aadf5",
+    "ING-mf-src-76b6b5a5a31f",
+    "ING-mf-src-7ace07a0f45d",
+    "ING-mf-src-7ae387262216",
+    "ING-mf-src-8bebf0ac75f4",
+    "ING-mf-src-8f38da8a73d0",
+    "ING-mf-src-a5c9920bea02",
+    "ING-mf-src-a742c02533bc",
+    "ING-mf-src-cd3363b1ac1f",
+    "ING-mf-src-d33c06bc01c8",
+    "ING-mf-src-d75c9c1aefc3",
+    "ING-mf-src-db4cde0b063f",
+    "ING-mf-src-dc293e7de142",
+    "ING-mf-src-e2b868294a4f",
+    "ING-mf-src-ea4c014f0616",
+    "ING-naproxen"
+  ],
+  "missing_selected_ingredients": [],
+  "ingredient_master_reconciliation": {
+    "ingredient_master_rows": 31,
+    "selected_for_calculation_unique_ingredients": 28,
+    "picos_assigned_unique_ingredients": 28,
+    "explanation_ko": "ingredient_master.csv에는 31개가 있으나 3개는 분석·런타임 제외 제품인 신신파스아렉스에만 속한다. 프로토콜이 동결한 5개 질문은 selected_for_calculation=true인 28개를 배정하므로 v5도 같은 28개를 검색한다.",
+    "outside_frozen_scope": [
+      {
+        "ingredient_id": "ING-mf-src-7b94fcb9d067",
+        "preferred_name_ko": "산화아연",
+        "reason": "신신파스아렉스 전용; product excluded for ambiguous authorized package size"
+      },
+      {
+        "ingredient_id": "ING-mf-src-a7ea13276326",
+        "preferred_name_ko": "니코틴산벤질(피리딘-베타-카르복실산벤질에스테르)",
+        "reason": "신신파스아렉스 전용; product excluded for ambiguous authorized package size"
+      },
+      {
+        "ingredient_id": "ING-mf-src-d142ee358812",
+        "preferred_name_ko": "노닐산바닐릴아미드",
+        "reason": "신신파스아렉스 전용; product excluded for ambiguous authorized package size"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "title_ko": "아세트아미노펜 용량·간격·간질환·음주 관련 위해",
+      "query": "((\"Liver Diseases\"[Mesh] OR \"Hepatic Insufficiency\"[Mesh] OR \"Alcohol Drinking\"[Mesh] OR \"Alcoholism\"[Mesh] OR \"Child\"[Mesh] OR \"Adolescent\"[Mesh] OR \"Aged\"[Mesh] OR \"liver disease\"[tiab] OR \"hepatic disease\"[tiab] OR \"hepatic impairment\"[tiab] OR \"liver impairment\"[tiab] OR \"chronic liver disease\"[tiab] OR cirrhosis[tiab] OR \"alcohol use\"[tiab] OR \"alcohol drinking\"[tiab] OR \"alcohol consumption\"[tiab] OR alcoholic*[tiab] OR pediatric*[tiab] OR paediatric*[tiab] OR child*[tiab] OR adolescent*[tiab] OR \"older adult\"[tiab] OR \"older adults\"[tiab] OR elder*[tiab] OR geriatric*[tiab]) AND (\"Acetaminophen\"[Mesh] OR acetaminophen[tiab] OR paracetamol[tiab] OR APAP[tiab] OR \"N-acetyl-p-aminophenol\"[tiab] OR \"N-acetyl-para-aminophenol\"[tiab] OR \"N-(4-hydroxyphenyl)acetamide\"[tiab] OR \"4-hydroxyacetanilide\"[tiab] OR \"p-hydroxyacetanilide\"[tiab] OR \"para-hydroxyacetanilide\"[tiab] OR acetamidophenol[tiab] OR acetylaminophenol[tiab] OR Tylenol[tiab] OR Panadol[tiab] OR Calpol[tiab] OR Ofirmev[tiab] OR Perfalgan[tiab] OR Datril[tiab] OR Mapap[tiab] OR Tempra[tiab] OR Feverall[tiab] OR Acamol[tiab] OR Crocin[tiab] OR Paramol[tiab] OR Tylex[tiab] OR \"Children's Tylenol\"[tiab] OR \"anilide analgesics\"[tiab] OR para-aminophenol*[tiab] OR (\"Acetaminophen\"[Mesh] AND \"Drug Overdose\"[Mesh]) OR (acetaminophen[tiab] AND overdos*[tiab]) OR (paracetamol[tiab] AND overdos*[tiab]) OR (APAP[tiab] AND overdos*[tiab]) OR (acetaminophen[tiab] AND supratherapeutic[tiab]) OR (paracetamol[tiab] AND supratherapeutic[tiab]) OR (acetaminophen[tiab] AND (duplicate*[tiab] OR concomitant*[tiab])) OR (paracetamol[tiab] AND (duplicate*[tiab] OR concomitant*[tiab])) OR (acetaminophen[tiab] AND \"dosing interval\"[tiab]) OR (paracetamol[tiab] AND \"dosing interval\"[tiab]) OR (acetaminophen[tiab] AND \"daily dose\"[tiab]) OR (paracetamol[tiab] AND \"daily dose\"[tiab]) OR \"high-dose acetaminophen\"[tiab] OR \"high-dose paracetamol\"[tiab])) AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "query_sha256": "0bab0733496ac4fb5e1b846e7526489c571c8e576216f78006e100a6a5bd2eec",
+      "executed_at_utc": "2026-07-28T03:19:37.732176+00:00",
+      "hit_count": 9264,
+      "v4_hit_count": 2709,
+      "change_from_v4": {
+        "absolute": 6555,
+        "ratio": 3.4197120708748616
+      },
+      "ingredient_ids": [
+        "ING-acetaminophen"
+      ],
+      "rule_types": [
+        "duplicate_ingredient",
+        "max_daily_dose",
+        "minimum_interval",
+        "age_restriction",
+        "hepatic_disease",
+        "alcohol",
+        "urgent_referral"
+      ],
+      "block_structure": "P AND I; overdose, duplicate dosing, dose and interval remain inside I",
+      "term_counts": {
+        "P": 25,
+        "I": 42,
+        "O_removed": 5
+      },
+      "term_classification": [
+        {
+          "term": "\"Liver Diseases\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Hepatic Insufficiency\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Alcohol Drinking\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Alcoholism\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Child\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Adolescent\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Aged\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"liver disease\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"hepatic disease\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"hepatic impairment\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"liver impairment\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"chronic liver disease\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "cirrhosis[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"alcohol use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"alcohol drinking\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"alcohol consumption\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "alcoholic*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "pediatric*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "paediatric*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "child*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "adolescent*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"older adult\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"older adults\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "elder*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "geriatric*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Acetaminophen\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "acetaminophen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "paracetamol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "APAP[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"N-acetyl-p-aminophenol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"N-acetyl-para-aminophenol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"N-(4-hydroxyphenyl)acetamide\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"4-hydroxyacetanilide\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"p-hydroxyacetanilide\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"para-hydroxyacetanilide\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "acetamidophenol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "acetylaminophenol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Tylenol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Panadol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Calpol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Ofirmev[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Perfalgan[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Datril[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Mapap[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Tempra[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Feverall[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Acamol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Crocin[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Paramol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "Tylex[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"Children's Tylenol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"anilide analgesics\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "para-aminophenol*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(\"Acetaminophen\"[Mesh] AND \"Drug Overdose\"[Mesh])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(acetaminophen[tiab] AND overdos*[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(paracetamol[tiab] AND overdos*[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(APAP[tiab] AND overdos*[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(acetaminophen[tiab] AND supratherapeutic[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(paracetamol[tiab] AND supratherapeutic[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(acetaminophen[tiab] AND (duplicate*[tiab] OR concomitant*[tiab]))",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(paracetamol[tiab] AND (duplicate*[tiab] OR concomitant*[tiab]))",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(acetaminophen[tiab] AND \"dosing interval\"[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(paracetamol[tiab] AND \"dosing interval\"[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(acetaminophen[tiab] AND \"daily dose\"[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "(paracetamol[tiab] AND \"daily dose\"[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"high-dose acetaminophen\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "\"high-dose paracetamol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_exposure"
+        },
+        {
+          "term": "hepatotox*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "\"liver injury\"[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "toxicity[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "\"adverse reaction\"[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "death*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        }
+      ],
+      "esearch": {
+        "count": 9264,
+        "query_translation": "(\"Liver Diseases\"[MeSH Terms] OR \"Hepatic Insufficiency\"[MeSH Terms] OR \"Alcohol Drinking\"[MeSH Terms] OR \"Alcoholism\"[MeSH Terms] OR \"Child\"[MeSH Terms] OR \"Adolescent\"[MeSH Terms] OR \"Aged\"[MeSH Terms] OR \"liver disease\"[Title/Abstract] OR \"hepatic disease\"[Title/Abstract] OR \"hepatic impairment\"[Title/Abstract] OR \"liver impairment\"[Title/Abstract] OR \"chronic liver disease\"[Title/Abstract] OR \"cirrhosis\"[Title/Abstract] OR \"alcohol use\"[Title/Abstract] OR \"Alcohol Drinking\"[Title/Abstract] OR \"alcohol consumption\"[Title/Abstract] OR \"alcoholic*\"[Title/Abstract] OR \"pediatric*\"[Title/Abstract] OR \"paediatric*\"[Title/Abstract] OR \"child*\"[Title/Abstract] OR \"adolescent*\"[Title/Abstract] OR \"older adult\"[Title/Abstract] OR \"older adults\"[Title/Abstract] OR \"elder*\"[Title/Abstract] OR \"geriatric*\"[Title/Abstract]) AND (\"Acetaminophen\"[MeSH Terms] OR \"Acetaminophen\"[Title/Abstract] OR \"paracetamol\"[Title/Abstract] OR \"APAP\"[Title/Abstract] OR \"N-acetyl-p-aminophenol\"[Title/Abstract] OR \"N-acetyl-para-aminophenol\"[Title/Abstract] OR \"n 4 hydroxyphenyl acetamide\"[Title/Abstract] OR \"4-hydroxyacetanilide\"[Title/Abstract] OR \"p-hydroxyacetanilide\"[Title/Abstract] OR \"para-hydroxyacetanilide\"[Title/Abstract] OR \"acetamidophenol\"[Title/Abstract] OR \"acetylaminophenol\"[Title/Abstract] OR \"Tylenol\"[Title/Abstract] OR \"Panadol\"[Title/Abstract] OR \"Calpol\"[Title/Abstract] OR \"Ofirmev\"[Title/Abstract] OR \"Perfalgan\"[Title/Abstract] OR \"Datril\"[Title/Abstract] OR \"Mapap\"[Title/Abstract] OR \"Tempra\"[Title/Abstract] OR \"Feverall\"[Title/Abstract] OR \"Acamol\"[Title/Abstract] OR \"Crocin\"[Title/Abstract] OR \"Paramol\"[Title/Abstract] OR \"Tylex\"[Title/Abstract] OR \"Children's Tylenol\"[Title/Abstract] OR \"anilide analgesics\"[Title/Abstract] OR \"para aminophenol*\"[Title/Abstract] OR (\"Acetaminophen\"[MeSH Terms] AND \"Drug Overdose\"[MeSH Terms]) OR (\"Acetaminophen\"[Title/Abstract] AND \"overdos*\"[Title/Abstract]) OR (\"paracetamol\"[Title/Abstract] AND \"overdos*\"[Title/Abstract]) OR (\"APAP\"[Title/Abstract] AND \"overdos*\"[Title/Abstract]) OR (\"Acetaminophen\"[Title/Abstract] AND \"supratherapeutic\"[Title/Abstract]) OR (\"paracetamol\"[Title/Abstract] AND \"supratherapeutic\"[Title/Abstract]) OR (\"Acetaminophen\"[Title/Abstract] AND (\"duplicate*\"[Title/Abstract] OR \"concomitant*\"[Title/Abstract])) OR (\"paracetamol\"[Title/Abstract] AND (\"duplicate*\"[Title/Abstract] OR \"concomitant*\"[Title/Abstract])) OR (\"Acetaminophen\"[Title/Abstract] AND \"dosing interval\"[Title/Abstract]) OR (\"paracetamol\"[Title/Abstract] AND \"dosing interval\"[Title/Abstract]) OR (\"Acetaminophen\"[Title/Abstract] AND \"daily dose\"[Title/Abstract]) OR (\"paracetamol\"[Title/Abstract] AND \"daily dose\"[Title/Abstract]) OR \"high-dose acetaminophen\"[Title/Abstract] OR \"high-dose paracetamol\"[Title/Abstract]) AND 2010/01/01:3000/12/31[Date - Publication]",
+        "warninglist": null,
+        "errorlist": null,
+        "response_sha256": "54831d7a25496d53d7f34256ec325607f0d21e8e657d442dc75ca7c355928e7a",
+        "http_status": 200
+      },
+      "protocol_section_3_self_check": [
+        {
+          "rule": 1,
+          "requirement_ko": "P AND I 두 개념 블록만 사용하고 C·O 블록을 결합하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 2,
+          "requirement_ko": "모든 후보 용어를 P/I/O로 분류하고 O 용어를 삭제함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 3,
+          "requirement_ko": "AND Humans[Mesh]를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 4,
+          "requirement_ko": "연구설계 필터를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 5,
+          "requirement_ko": "언어·출판유형 제한을 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 6,
+          "requirement_ko": "v4와 같은 날짜 시작점만 유지함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 7,
+          "requirement_ko": "P와 I에 MeSH와 자유어를 병렬 사용함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 8,
+          "requirement_ko": "자유어 범위는 [tiab] 이상임",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 9,
+          "requirement_ko": "I에 서로 다른 용어 25개 이상과 배정 성분 전부를 포함함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 10,
+          "requirement_ko": "절단어 600개 변형 상한 경고가 없음",
+          "status": "pass",
+          "evidence": {
+            "truncation_messages": []
+          }
+        }
+      ],
+      "all_rules_pass": true
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "title_ko": "이부프로펜·덱시부프로펜·나프록센의 중복과 주요 위해",
+      "query": "((\"Pregnancy\"[Mesh] OR \"Breast Feeding\"[Mesh] OR \"Renal Insufficiency\"[Mesh] OR \"Kidney Diseases\"[Mesh] OR (\"Peptic Ulcer\"[Mesh] AND (histor*[tiab] OR previous[tiab] OR prior[tiab])) OR \"Anticoagulants\"[Mesh] OR \"Platelet Aggregation Inhibitors\"[Mesh] OR pregnan*[tiab] OR lactat*[tiab] OR breastfeed*[tiab] OR \"breast feeding\"[tiab] OR \"renal disease\"[tiab] OR \"kidney disease\"[tiab] OR \"renal impairment\"[tiab] OR \"kidney impairment\"[tiab] OR \"chronic kidney disease\"[tiab] OR \"peptic ulcer history\"[tiab] OR (peptic[tiab] AND ulcer*[tiab] AND histor*[tiab]) OR anticoagulant*[tiab] OR antiplatelet*[tiab] OR warfarin[tiab] OR coumarin*[tiab] OR \"direct oral anticoagulant\"[tiab] OR \"direct oral anticoagulants\"[tiab] OR DOAC[tiab] OR DOACs[tiab] OR \"aspirin use\"[tiab]) AND (\"Ibuprofen\"[Mesh] OR \"Naproxen\"[Mesh] OR \"Anti-Inflammatory Agents, Non-Steroidal\"[Mesh] OR ibuprofen[tiab] OR dexibuprofen[tiab] OR (dexibuprofen[tiab] AND trometamol[tiab]) OR \"S-ibuprofen\"[tiab] OR \"(S)-ibuprofen\"[tiab] OR \"2-(4-isobutylphenyl)propionic acid\"[tiab] OR naproxen[tiab] OR \"naproxen sodium\"[tiab] OR \"S-naproxen\"[tiab] OR \"(S)-naproxen\"[tiab] OR \"(+)-naproxen\"[tiab] OR \"6-methoxy-alpha-methyl-2-naphthaleneacetic acid\"[tiab] OR NSAID*[tiab] OR \"nonsteroidal anti-inflammatory drug\"[tiab] OR \"nonsteroidal anti-inflammatory drugs\"[tiab] OR \"non-steroidal anti-inflammatory drug\"[tiab] OR \"non-steroidal anti-inflammatory drugs\"[tiab] OR \"propionic acid derivative\"[tiab] OR \"propionic acid derivatives\"[tiab] OR \"arylpropionic acid derivatives\"[tiab] OR \"2-arylpropionic acid\"[tiab] OR Advil[tiab] OR Motrin[tiab] OR Nurofen[tiab] OR Brufen[tiab] OR Caldolor[tiab] OR Ibufen[tiab] OR Seractil[tiab] OR Deltaran[tiab] OR Aleve[tiab] OR Naprosyn[tiab] OR Anaprox[tiab] OR Flanax[tiab] OR Synflex[tiab] OR Naxen[tiab] OR Dexpeed[tiab] OR (ibuprofen[tiab] AND naproxen[tiab]) OR (NSAID*[tiab] AND (concomitant*[tiab] OR concurrent*[tiab] OR duplicate*[tiab] OR multiple[tiab])) OR (ibuprofen[tiab] AND dexibuprofen[tiab]))) AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "query_sha256": "87340fc07ef18791392e946077606536b15399e62f6f5dc5f08ee55b2ea62c95",
+      "executed_at_utc": "2026-07-28T03:19:38.788603+00:00",
+      "hit_count": 6456,
+      "v4_hit_count": 683,
+      "change_from_v4": {
+        "absolute": 5773,
+        "ratio": 9.452415812591507
+      },
+      "ingredient_ids": [
+        "ING-dexibuprofen",
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "rule_types": [
+        "duplicate_pharmacologic_class",
+        "pregnancy_lactation",
+        "renal_disease",
+        "gi_bleeding_ulcer",
+        "anticoagulant_antiplatelet"
+      ],
+      "block_structure": "P AND I; pregnancy, lactation, kidney disease, ulcer history and anticoagulant use are P",
+      "term_counts": {
+        "P": 27,
+        "I": 42,
+        "O_removed": 7
+      },
+      "term_classification": [
+        {
+          "term": "\"Pregnancy\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Breast Feeding\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Renal Insufficiency\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Kidney Diseases\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "(\"Peptic Ulcer\"[Mesh] AND (histor*[tiab] OR previous[tiab] OR prior[tiab]))",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Anticoagulants\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Platelet Aggregation Inhibitors\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "pregnan*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "lactat*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "breastfeed*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"breast feeding\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"renal disease\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"kidney disease\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"renal impairment\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"kidney impairment\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"chronic kidney disease\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"peptic ulcer history\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "(peptic[tiab] AND ulcer*[tiab] AND histor*[tiab])",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "anticoagulant*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "antiplatelet*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "warfarin[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "coumarin*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"direct oral anticoagulant\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"direct oral anticoagulants\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "DOAC[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "DOACs[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"aspirin use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Ibuprofen\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"Naproxen\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"Anti-Inflammatory Agents, Non-Steroidal\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "ibuprofen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "dexibuprofen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "(dexibuprofen[tiab] AND trometamol[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"S-ibuprofen\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"(S)-ibuprofen\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"2-(4-isobutylphenyl)propionic acid\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "naproxen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"naproxen sodium\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"S-naproxen\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"(S)-naproxen\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"(+)-naproxen\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"6-methoxy-alpha-methyl-2-naphthaleneacetic acid\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "NSAID*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"nonsteroidal anti-inflammatory drug\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"nonsteroidal anti-inflammatory drugs\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"non-steroidal anti-inflammatory drug\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"non-steroidal anti-inflammatory drugs\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"propionic acid derivative\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"propionic acid derivatives\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"arylpropionic acid derivatives\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"2-arylpropionic acid\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Advil[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Motrin[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Nurofen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Brufen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Caldolor[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Ibufen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Seractil[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Deltaran[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Aleve[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Naprosyn[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Anaprox[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Flanax[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Synflex[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Naxen[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "Dexpeed[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "(ibuprofen[tiab] AND naproxen[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "(NSAID*[tiab] AND (concomitant*[tiab] OR concurrent*[tiab] OR duplicate*[tiab] OR multiple[tiab]))",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "(ibuprofen[tiab] AND dexibuprofen[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_coexposure"
+        },
+        {
+          "term": "\"Gastrointestinal Hemorrhage\"[Mesh]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "bleed*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "hemorrhag*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "haemorrhag*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "toxicity[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "\"adverse reaction\"[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "death*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        }
+      ],
+      "esearch": {
+        "count": 6456,
+        "query_translation": "(\"Pregnancy\"[MeSH Terms] OR \"Breast Feeding\"[MeSH Terms] OR \"Renal Insufficiency\"[MeSH Terms] OR \"Kidney Diseases\"[MeSH Terms] OR (\"Peptic Ulcer\"[MeSH Terms] AND (\"histor*\"[Title/Abstract] OR \"previous\"[Title/Abstract] OR \"prior\"[Title/Abstract])) OR \"Anticoagulants\"[MeSH Terms] OR \"Platelet Aggregation Inhibitors\"[MeSH Terms] OR \"pregnan*\"[Title/Abstract] OR \"lactat*\"[Title/Abstract] OR \"breastfeed*\"[Title/Abstract] OR \"Breast Feeding\"[Title/Abstract] OR \"renal disease\"[Title/Abstract] OR \"kidney disease\"[Title/Abstract] OR \"renal impairment\"[Title/Abstract] OR \"kidney impairment\"[Title/Abstract] OR \"chronic kidney disease\"[Title/Abstract] OR \"peptic ulcer history\"[Title/Abstract] OR (\"peptic\"[Title/Abstract] AND \"ulcer*\"[Title/Abstract] AND \"histor*\"[Title/Abstract]) OR \"anticoagulant*\"[Title/Abstract] OR \"antiplatelet*\"[Title/Abstract] OR \"warfarin\"[Title/Abstract] OR \"coumarin*\"[Title/Abstract] OR \"direct oral anticoagulant\"[Title/Abstract] OR \"direct oral anticoagulants\"[Title/Abstract] OR \"DOAC\"[Title/Abstract] OR \"DOACs\"[Title/Abstract] OR \"aspirin use\"[Title/Abstract]) AND (\"Ibuprofen\"[MeSH Terms] OR \"Naproxen\"[MeSH Terms] OR \"anti inflammatory agents, non steroidal\"[MeSH Terms] OR \"Ibuprofen\"[Title/Abstract] OR \"dexibuprofen\"[Title/Abstract] OR (\"dexibuprofen\"[Title/Abstract] AND \"trometamol\"[Title/Abstract]) OR \"S-ibuprofen\"[Title/Abstract] OR \"S-ibuprofen\"[Title/Abstract] OR \"2 4 isobutylphenyl propionic acid\"[Title/Abstract] OR \"Naproxen\"[Title/Abstract] OR \"naproxen sodium\"[Title/Abstract] OR \"S-naproxen\"[Title/Abstract] OR \"S-naproxen\"[Title/Abstract] OR \"Naproxen\"[Title/Abstract] OR \"6-methoxy-alpha-methyl-2-naphthaleneacetic acid\"[Title/Abstract] OR \"nsaid*\"[Title/Abstract] OR \"nonsteroidal anti-inflammatory drug\"[Title/Abstract] OR \"nonsteroidal anti-inflammatory drugs\"[Title/Abstract] OR \"non-steroidal anti-inflammatory drug\"[Title/Abstract] OR \"non-steroidal anti-inflammatory drugs\"[Title/Abstract] OR \"propionic acid derivative\"[Title/Abstract] OR \"propionic acid derivatives\"[Title/Abstract] OR \"arylpropionic acid derivatives\"[Title/Abstract] OR \"2-arylpropionic acid\"[Title/Abstract] OR \"Advil\"[Title/Abstract] OR \"Motrin\"[Title/Abstract] OR \"Nurofen\"[Title/Abstract] OR \"Brufen\"[Title/Abstract] OR \"Caldolor\"[Title/Abstract] OR \"Ibufen\"[Title/Abstract] OR \"Seractil\"[Title/Abstract] OR \"Deltaran\"[Title/Abstract] OR \"Aleve\"[Title/Abstract] OR \"Naprosyn\"[Title/Abstract] OR \"Anaprox\"[Title/Abstract] OR \"Flanax\"[Title/Abstract] OR \"Synflex\"[Title/Abstract] OR \"Naxen\"[Title/Abstract] OR (\"Ibuprofen\"[Title/Abstract] AND \"Naproxen\"[Title/Abstract]) OR (\"nsaid*\"[Title/Abstract] AND (\"concomitant*\"[Title/Abstract] OR \"concurrent*\"[Title/Abstract] OR \"duplicate*\"[Title/Abstract] OR \"multiple\"[Title/Abstract])) OR (\"Ibuprofen\"[Title/Abstract] AND \"dexibuprofen\"[Title/Abstract])) AND 2010/01/01:3000/12/31[Date - Publication]",
+        "warninglist": null,
+        "errorlist": {
+          "phrasesnotfound": [
+            "Dexpeed"
+          ],
+          "fieldsnotfound": []
+        },
+        "response_sha256": "dddc13014e7f9e47f26ee7621645c4c86b3583da822bfe249b7e61d6feb336d6",
+        "http_status": 200
+      },
+      "protocol_section_3_self_check": [
+        {
+          "rule": 1,
+          "requirement_ko": "P AND I 두 개념 블록만 사용하고 C·O 블록을 결합하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 2,
+          "requirement_ko": "모든 후보 용어를 P/I/O로 분류하고 O 용어를 삭제함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 3,
+          "requirement_ko": "AND Humans[Mesh]를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 4,
+          "requirement_ko": "연구설계 필터를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 5,
+          "requirement_ko": "언어·출판유형 제한을 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 6,
+          "requirement_ko": "v4와 같은 날짜 시작점만 유지함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 7,
+          "requirement_ko": "P와 I에 MeSH와 자유어를 병렬 사용함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 8,
+          "requirement_ko": "자유어 범위는 [tiab] 이상임",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 9,
+          "requirement_ko": "I에 서로 다른 용어 25개 이상과 배정 성분 전부를 포함함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 10,
+          "requirement_ko": "절단어 600개 변형 상한 경고가 없음",
+          "status": "pass",
+          "evidence": {
+            "truncation_messages": []
+          }
+        }
+      ],
+      "all_rules_pass": true
+    },
+    {
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "title_ko": "감기·알레르기 복합성분의 진정·운전·혈압·병용 위해",
+      "query": "((\"Automobile Driving\"[Mesh] OR \"Hypertension\"[Mesh] OR \"Hypnotics and Sedatives\"[Mesh] OR \"Central Nervous System Depressants\"[Mesh] OR driver*[tiab] OR driving[tiab] OR \"motor vehicle operator\"[tiab] OR \"motor vehicle operators\"[tiab] OR \"machine operator\"[tiab] OR \"machine operators\"[tiab] OR \"operating machinery\"[tiab] OR hypertens*[tiab] OR \"high blood pressure\"[tiab] OR \"sedative medication\"[tiab] OR \"sedative medications\"[tiab] OR \"hypnotic use\"[tiab] OR \"benzodiazepine use\"[tiab] OR \"CNS depressant use\"[tiab] OR \"tranquilizer use\"[tiab] OR \"tranquillizer use\"[tiab] OR \"opioid use\"[tiab]) AND (\"Chlorpheniramine\"[Mesh] OR \"Cetirizine\"[Mesh] OR \"Phenylephrine\"[Mesh] OR \"Caffeine\"[Mesh] OR \"Carbetapentane\"[Supplementary Concept] OR \"Expectorants\"[Mesh] OR \"Nasal Decongestants\"[Mesh] OR \"Antitussive Agents\"[Mesh] OR \"Xanthines\"[Mesh] OR chlorpheniramine[tiab] OR chlorphenamine[tiab] OR \"chlorpheniramine maleate\"[tiab] OR \"chlorphenamine maleate\"[tiab] OR (CPM[tiab] AND antihistamine*[tiab]) OR (CTM[tiab] AND antihistamine*[tiab]) OR Piriton[tiab] OR \"Chlor-Trimeton\"[tiab] OR cetirizine[tiab] OR \"cetirizine hydrochloride\"[tiab] OR Zyrtec[tiab] OR Reactine[tiab] OR phenylephrine[tiab] OR phenylephrin*[tiab] OR \"phenylephrine hydrochloride\"[tiab] OR \"phenylephrine HCl\"[tiab] OR metaoxedrin[tiab] OR metasympatol[tiab] OR metasynephrine[tiab] OR \"meta-synephrine\"[tiab] OR \"m-synephrine\"[tiab] OR \"Neo-Synephrine\"[tiab] OR neosynephrine[tiab] OR Mezaton[tiab] OR pentoxyverine[tiab] OR pentoxyverin*[tiab] OR pentoxiverin*[tiab] OR carbetapentane[tiab] OR carbetapentan*[tiab] OR \"pentoxyverine citrate\"[tiab] OR \"carbetapentane citrate\"[tiab] OR Toclase[tiab] OR guaifenes*[tiab] OR guaiphenes*[tiab] OR guaiphenezine[tiab] OR \"glycerol guaiacolate\"[tiab] OR \"glyceryl guaiacolate\"[tiab] OR \"guaiacol glyceryl ether\"[tiab] OR \"glyceryl guaiacolate ether\"[tiab] OR Mucinex[tiab] OR Humibid[tiab] OR \"Scott-Tussin\"[tiab] OR (GGE[tiab] AND (guaifenesin[tiab] OR \"glyceryl guaiacolate\"[tiab])) OR caffein*[tiab] OR \"anhydrous caffeine\"[tiab] OR \"caffeine anhydrous\"[tiab] OR \"1,3,7-trimethylxanthine\"[tiab] OR trimethylxanthin*[tiab] OR methyltheobromine[tiab] OR guaranine[tiab] OR theine[tiab] OR thein[tiab] OR coffein*[tiab] OR Coffeinum[tiab] OR NoDoz[tiab] OR Vivarin[tiab] OR (CAF[tiab] AND (caffeine[tiab] OR \"anhydrous caffeine\"[tiab])) OR antihistamine*[tiab] OR \"H1 receptor antagonists\"[tiab] OR \"first-generation antihistamines\"[tiab] OR \"second-generation antihistamines\"[tiab] OR decongestant*[tiab] OR sympathomimetic*[tiab] OR antitussiv*[tiab] OR expectorant*[tiab] OR methylxanthin*[tiab] OR \"cold medicine\"[tiab] OR \"cold medicines\"[tiab] OR pancold*[tiab] OR Panpyrin*[tiab])) AND (\"2010/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "query_sha256": "a60c6fc7f53df5a4aaf21164f3d42c1f3a22ddb686f77ba4038afe5f27eaeddd",
+      "executed_at_utc": "2026-07-28T03:19:39.731648+00:00",
+      "hit_count": 5670,
+      "v4_hit_count": 1533,
+      "change_from_v4": {
+        "absolute": 4137,
+        "ratio": 3.6986301369863015
+      },
+      "ingredient_ids": [
+        "ING-cetirizine_hydrochloride",
+        "ING-chlorpheniramine_maleate",
+        "ING-mf-src-41c782105274",
+        "ING-mf-src-4b985f9d3bdb",
+        "ING-mf-src-cd3363b1ac1f",
+        "ING-mf-src-dc293e7de142"
+      ],
+      "rule_types": [
+        "sedation_driving",
+        "sedative_medication",
+        "decongestant_hypertension",
+        "maximum_duration"
+      ],
+      "block_structure": "P AND I; driving, hypertension and concomitant sedative-medication use are P",
+      "term_counts": {
+        "P": 21,
+        "I": 79,
+        "O_removed": 7
+      },
+      "term_classification": [
+        {
+          "term": "\"Automobile Driving\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Hypertension\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Hypnotics and Sedatives\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Central Nervous System Depressants\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "driver*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "driving[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"motor vehicle operator\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"motor vehicle operators\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"machine operator\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"machine operators\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"operating machinery\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "hypertens*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"high blood pressure\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"sedative medication\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"sedative medications\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"hypnotic use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"benzodiazepine use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"CNS depressant use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"tranquilizer use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"tranquillizer use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"opioid use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Chlorpheniramine\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Cetirizine\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Phenylephrine\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Caffeine\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Carbetapentane\"[Supplementary Concept]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Expectorants\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Nasal Decongestants\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Antitussive Agents\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Xanthines\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "chlorpheniramine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "chlorphenamine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"chlorpheniramine maleate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"chlorphenamine maleate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "(CPM[tiab] AND antihistamine*[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "(CTM[tiab] AND antihistamine*[tiab])",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Piriton[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Chlor-Trimeton\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "cetirizine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"cetirizine hydrochloride\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Zyrtec[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Reactine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "phenylephrine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "phenylephrin*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"phenylephrine hydrochloride\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"phenylephrine HCl\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "metaoxedrin[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "metasympatol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "metasynephrine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"meta-synephrine\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"m-synephrine\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Neo-Synephrine\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "neosynephrine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Mezaton[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "pentoxyverine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "pentoxyverin*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "pentoxiverin*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "carbetapentane[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "carbetapentan*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"pentoxyverine citrate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"carbetapentane citrate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Toclase[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "guaifenes*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "guaiphenes*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "guaiphenezine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"glycerol guaiacolate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"glyceryl guaiacolate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"guaiacol glyceryl ether\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"glyceryl guaiacolate ether\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Mucinex[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Humibid[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"Scott-Tussin\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "(GGE[tiab] AND (guaifenesin[tiab] OR \"glyceryl guaiacolate\"[tiab]))",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "caffein*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"anhydrous caffeine\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"caffeine anhydrous\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"1,3,7-trimethylxanthine\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "trimethylxanthin*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "methyltheobromine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "guaranine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "theine[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "thein[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "coffein*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Coffeinum[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "NoDoz[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Vivarin[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "(CAF[tiab] AND (caffeine[tiab] OR \"anhydrous caffeine\"[tiab]))",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "antihistamine*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"H1 receptor antagonists\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"first-generation antihistamines\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"second-generation antihistamines\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "decongestant*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "sympathomimetic*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "antitussiv*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "expectorant*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "methylxanthin*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"cold medicine\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "\"cold medicines\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "pancold*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "Panpyrin*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_class_and_combination"
+        },
+        {
+          "term": "sedat*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "drows*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "somnolen*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "psychomotor[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "cardiovascular[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "\"adverse reaction\"[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "death*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        }
+      ],
+      "esearch": {
+        "count": 5670,
+        "query_translation": "(\"Automobile Driving\"[MeSH Terms] OR \"Hypertension\"[MeSH Terms] OR \"Hypnotics and Sedatives\"[MeSH Terms] OR \"Central Nervous System Depressants\"[MeSH Terms] OR \"driver*\"[Title/Abstract] OR \"driving\"[Title/Abstract] OR \"motor vehicle operator\"[Title/Abstract] OR \"motor vehicle operators\"[Title/Abstract] OR \"machine operator\"[Title/Abstract] OR \"machine operators\"[Title/Abstract] OR \"operating machinery\"[Title/Abstract] OR \"hypertens*\"[Title/Abstract] OR \"high blood pressure\"[Title/Abstract] OR \"sedative medication\"[Title/Abstract] OR \"sedative medications\"[Title/Abstract] OR \"hypnotic use\"[Title/Abstract] OR \"benzodiazepine use\"[Title/Abstract] OR \"CNS depressant use\"[Title/Abstract] OR \"tranquilizer use\"[Title/Abstract] OR \"tranquillizer use\"[Title/Abstract] OR \"opioid use\"[Title/Abstract]) AND (\"Chlorpheniramine\"[MeSH Terms] OR \"Cetirizine\"[MeSH Terms] OR \"Phenylephrine\"[MeSH Terms] OR \"Caffeine\"[MeSH Terms] OR \"Carbetapentane\"[Supplementary Concept] OR \"Expectorants\"[MeSH Terms] OR \"Nasal Decongestants\"[MeSH Terms] OR \"Antitussive Agents\"[MeSH Terms] OR \"Xanthines\"[MeSH Terms] OR \"Chlorpheniramine\"[Title/Abstract] OR \"chlorphenamine\"[Title/Abstract] OR \"chlorpheniramine maleate\"[Title/Abstract] OR \"chlorphenamine maleate\"[Title/Abstract] OR (\"CPM\"[Title/Abstract] AND \"antihistamine*\"[Title/Abstract]) OR (\"CTM\"[Title/Abstract] AND \"antihistamine*\"[Title/Abstract]) OR \"Piriton\"[Title/Abstract] OR \"Chlor-Trimeton\"[Title/Abstract] OR \"Cetirizine\"[Title/Abstract] OR \"cetirizine hydrochloride\"[Title/Abstract] OR \"Zyrtec\"[Title/Abstract] OR \"Reactine\"[Title/Abstract] OR \"Phenylephrine\"[Title/Abstract] OR \"phenylephrin*\"[Title/Abstract] OR \"phenylephrine hydrochloride\"[Title/Abstract] OR \"phenylephrine HCl\"[Title/Abstract] OR \"metaoxedrin\"[Title/Abstract] OR \"metasympatol\"[Title/Abstract] OR \"metasynephrine\"[Title/Abstract] OR \"meta-synephrine\"[Title/Abstract] OR \"m-synephrine\"[Title/Abstract] OR \"Neo-Synephrine\"[Title/Abstract] OR \"neosynephrine\"[Title/Abstract] OR \"Mezaton\"[Title/Abstract] OR \"pentoxyverine\"[Title/Abstract] OR \"pentoxyverin*\"[Title/Abstract] OR \"pentoxiverin*\"[Title/Abstract] OR \"Carbetapentane\"[Title/Abstract] OR \"carbetapentan*\"[Title/Abstract] OR \"pentoxyverine citrate\"[Title/Abstract] OR \"carbetapentane citrate\"[Title/Abstract] OR \"Toclase\"[Title/Abstract] OR \"guaifenes*\"[Title/Abstract] OR \"guaiphenes*\"[Title/Abstract] OR \"guaiphenezine\"[Title/Abstract] OR \"glycerol guaiacolate\"[Title/Abstract] OR \"glyceryl guaiacolate\"[Title/Abstract] OR \"guaiacol glyceryl ether\"[Title/Abstract] OR \"glyceryl guaiacolate ether\"[Title/Abstract] OR \"Mucinex\"[Title/Abstract] OR \"Humibid\"[Title/Abstract] OR (\"GGE\"[Title/Abstract] AND (\"guaifenesin\"[Title/Abstract] OR \"glyceryl guaiacolate\"[Title/Abstract])) OR \"caffein*\"[Title/Abstract] OR \"anhydrous caffeine\"[Title/Abstract] OR \"caffeine anhydrous\"[Title/Abstract] OR \"1,3,7-trimethylxanthine\"[Title/Abstract] OR \"trimethylxanthin*\"[Title/Abstract] OR \"methyltheobromine\"[Title/Abstract] OR \"guaranine\"[Title/Abstract] OR \"theine\"[Title/Abstract] OR \"thein\"[Title/Abstract] OR \"coffein*\"[Title/Abstract] OR \"Coffeinum\"[Title/Abstract] OR \"NoDoz\"[Title/Abstract] OR \"Vivarin\"[Title/Abstract] OR (\"CAF\"[Title/Abstract] AND (\"Caffeine\"[Title/Abstract] OR \"anhydrous caffeine\"[Title/Abstract])) OR \"antihistamine*\"[Title/Abstract] OR \"H1 receptor antagonists\"[Title/Abstract] OR \"first-generation antihistamines\"[Title/Abstract] OR \"second-generation antihistamines\"[Title/Abstract] OR \"decongestant*\"[Title/Abstract] OR \"sympathomimetic*\"[Title/Abstract] OR \"antitussiv*\"[Title/Abstract] OR \"expectorant*\"[Title/Abstract] OR \"methylxanthin*\"[Title/Abstract] OR \"cold medicine\"[Title/Abstract] OR \"cold medicines\"[Title/Abstract]) AND 2010/01/01:3000/12/31[Date - Publication]",
+        "warninglist": {
+          "phrasesignored": [],
+          "quotedphrasesnotfound": [
+            "\"Scott-Tussin\"[tiab]"
+          ],
+          "outputmessages": []
+        },
+        "errorlist": {
+          "phrasesnotfound": [
+            "pancold*",
+            "Panpyrin*"
+          ],
+          "fieldsnotfound": []
+        },
+        "response_sha256": "aa5e762cfb35e9ec570b67112debf03c23eaaa58ea13b2daf1c88656ae2726fd",
+        "http_status": 200
+      },
+      "protocol_section_3_self_check": [
+        {
+          "rule": 1,
+          "requirement_ko": "P AND I 두 개념 블록만 사용하고 C·O 블록을 결합하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 2,
+          "requirement_ko": "모든 후보 용어를 P/I/O로 분류하고 O 용어를 삭제함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 3,
+          "requirement_ko": "AND Humans[Mesh]를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 4,
+          "requirement_ko": "연구설계 필터를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 5,
+          "requirement_ko": "언어·출판유형 제한을 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 6,
+          "requirement_ko": "v4와 같은 날짜 시작점만 유지함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 7,
+          "requirement_ko": "P와 I에 MeSH와 자유어를 병렬 사용함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 8,
+          "requirement_ko": "자유어 범위는 [tiab] 이상임",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 9,
+          "requirement_ko": "I에 서로 다른 용어 25개 이상과 배정 성분 전부를 포함함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 10,
+          "requirement_ko": "절단어 600개 변형 상한 경고가 없음",
+          "status": "pass",
+          "evidence": {
+            "truncation_messages": []
+          }
+        }
+      ],
+      "all_rules_pass": true
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "title_ko": "소화효소·담즙산·가스제거 성분 복합 사용의 안전성",
+      "query": "((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "query_sha256": "5b2d7d28fcc06835cabb48fe229c24a495724804bcc10cf177d1c52c0569e82c",
+      "executed_at_utc": "2026-07-28T03:19:40.593893+00:00",
+      "hit_count": 21342,
+      "v4_hit_count": 104,
+      "change_from_v4": {
+        "absolute": 21238,
+        "ratio": 205.21153846153845
+      },
+      "ingredient_ids": [
+        "ING-mf-src-0546ff64775e",
+        "ING-mf-src-06cdde4eaaee",
+        "ING-mf-src-484bf5816144",
+        "ING-mf-src-5abce34aadf5",
+        "ING-mf-src-7ace07a0f45d",
+        "ING-mf-src-7ae387262216",
+        "ING-mf-src-8f38da8a73d0",
+        "ING-mf-src-a5c9920bea02",
+        "ING-mf-src-a742c02533bc",
+        "ING-mf-src-d33c06bc01c8",
+        "ING-mf-src-d75c9c1aefc3",
+        "ING-mf-src-db4cde0b063f",
+        "ING-mf-src-ea4c014f0616"
+      ],
+      "rule_types": [
+        "duplicate_ingredient",
+        "maximum_duration"
+      ],
+      "block_structure": "P AND I; broad enzyme class terms are paired with administration/form/exposure terms inside I",
+      "term_counts": {
+        "P": 37,
+        "I": 109,
+        "O_removed": 8
+      },
+      "term_classification": [
+        {
+          "term": "\"Dyspepsia\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Exocrine Pancreatic Insufficiency\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Digestive System Diseases\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Malabsorption Syndromes\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Cystic Fibrosis\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Pancreatitis, Chronic\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Cholestasis\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Liver Cirrhosis, Biliary\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Flatulence\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Colic\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "dyspepsia[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "indigestion[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "maldigestion[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"pancreatic insufficiency\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"exocrine pancreatic insufficiency\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "EPI[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"digestive disorder\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"digestive disorders\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"gastrointestinal disorder\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"gastrointestinal disorders\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"digestive symptom\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"digestive symptoms\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "malabsorption[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"chronic pancreatitis\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"cystic fibrosis\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "postgastrectom*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"primary biliary cholangitis\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"primary biliary cirrhosis\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "PBC[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "cholestasis[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"biliary disease\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"biliary diseases\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "gallstone*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "cholelithiasis[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "flatulence[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "bloating[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"infantile colic\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Pancreatin\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Pancrelipase\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Simethicone\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Ursodeoxycholic Acid\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Bromelains\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "pancreatin[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "pancrelipase[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "pancrealipase[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreatic extract\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreatic extracts\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreas extract\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreatic enzyme\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreatic enzymes\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreatic enzyme preparation\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreatic enzyme preparations\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pancreatic enzyme replacement therapy\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "PERT[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"enteric-coated pancreatin\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"enteric coated pancreatin\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Creon[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Zenpep[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Pancreaze[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Pertzye[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Ultresa[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Panzytrat[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "bromelain*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "bromelin*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "ananase[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pineapple enzyme\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"pineapple protease\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"stem bromelain\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"fruit bromelain\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "simethicone[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "simeticone[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"activated dimeticone\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"activated dimethicone\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Antifoam A\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Phazyme[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Disflatyl[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "ursodeoxycholic[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"ursodeoxycholic acid\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"ursodesoxycholic acid\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "ursodiol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "UDCA[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "ursodeoxychol*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "ursodesoxychol*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "ursodeoxycholate*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"sodium ursodeoxycholate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"ursacholic acid\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Actigall[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Ursofalk[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Destolit[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Delursan[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Pancellase[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Panprosin[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Crease-PEG\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Crease PEG\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Prozyme 6\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Prozyme-6\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "oryzin[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Biodiastase 2000\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Biodiastase 2000 III\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Dizet 100\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Cellulase AP3\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Lipase II\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Bearse[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Doctor Bearse\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Festal Gold\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Festal Plus\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "direct_ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Amylases\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"Peptide Hydrolases\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"Cellulase\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"Cellulases\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"Lipase\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "diastase[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"fungal diastase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"taka-diastase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "amylase*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "protease*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "proteinase*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "peptidase*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "cellulase*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "endoglucanase*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"endo-1,4-beta-D-glucanase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"fungal cellulase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "lipase*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"triacylglycerol lipase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"triglyceride lipase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"Aspergillus melleus protease\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"Aspergillus alkaline proteinase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"diastase protease cellulase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"diastase-protease-cellulase\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"diastase protease 100\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"diastase-protease 100\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "enzyme_name_or_class"
+        },
+        {
+          "term": "\"Administration, Oral\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "oral[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "orally[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "tablet*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "capsule*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "granule*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "supplement*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "preparation*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "therap*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "replacement[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "enteric*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "\"digestive enzyme\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "\"digestive enzymes\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "\"drug interaction\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "\"drug interactions\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "administration_form_or_combination_exposure"
+        },
+        {
+          "term": "\"Drug-Related Side Effects and Adverse Reactions\"[Mesh]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "\"adverse effect\"[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "\"adverse effects\"[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "safety[Title]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "allergy[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "bleeding[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "toxicity[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "death*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        }
+      ],
+      "esearch": {
+        "count": 21342,
+        "query_translation": "(\"Dyspepsia\"[MeSH Terms] OR \"Exocrine Pancreatic Insufficiency\"[MeSH Terms] OR \"Digestive System Diseases\"[MeSH Terms] OR \"Malabsorption Syndromes\"[MeSH Terms] OR \"Cystic Fibrosis\"[MeSH Terms] OR \"pancreatitis, chronic\"[MeSH Terms] OR \"Cholestasis\"[MeSH Terms] OR \"liver cirrhosis, biliary\"[MeSH Terms] OR \"Flatulence\"[MeSH Terms] OR \"Colic\"[MeSH Terms] OR \"Dyspepsia\"[Title/Abstract] OR \"indigestion\"[Title/Abstract] OR \"maldigestion\"[Title/Abstract] OR \"pancreatic insufficiency\"[Title/Abstract] OR \"Exocrine Pancreatic Insufficiency\"[Title/Abstract] OR \"EPI\"[Title/Abstract] OR \"digestive disorder\"[Title/Abstract] OR \"digestive disorders\"[Title/Abstract] OR \"gastrointestinal disorder\"[Title/Abstract] OR \"gastrointestinal disorders\"[Title/Abstract] OR \"digestive symptom\"[Title/Abstract] OR \"digestive symptoms\"[Title/Abstract] OR \"malabsorption\"[Title/Abstract] OR \"chronic pancreatitis\"[Title/Abstract] OR \"Cystic Fibrosis\"[Title/Abstract] OR \"postgastrectom*\"[Title/Abstract] OR \"primary biliary cholangitis\"[Title/Abstract] OR \"primary biliary cirrhosis\"[Title/Abstract] OR \"PBC\"[Title/Abstract] OR \"Cholestasis\"[Title/Abstract] OR \"biliary disease\"[Title/Abstract] OR \"biliary diseases\"[Title/Abstract] OR \"gallstone*\"[Title/Abstract] OR \"cholelithiasis\"[Title/Abstract] OR \"Flatulence\"[Title/Abstract] OR \"bloating\"[Title/Abstract] OR \"infantile colic\"[Title/Abstract]) AND (\"Pancreatin\"[MeSH Terms] OR \"Pancrelipase\"[MeSH Terms] OR \"Simethicone\"[MeSH Terms] OR \"Ursodeoxycholic Acid\"[MeSH Terms] OR \"Bromelains\"[MeSH Terms] OR \"Pancreatin\"[Title/Abstract] OR \"Pancrelipase\"[Title/Abstract] OR \"pancrealipase\"[Title/Abstract] OR \"pancreatic extract\"[Title/Abstract] OR \"pancreatic extracts\"[Title/Abstract] OR \"pancreas extract\"[Title/Abstract] OR \"pancreatic enzyme\"[Title/Abstract] OR \"pancreatic enzymes\"[Title/Abstract] OR \"pancreatic enzyme preparation\"[Title/Abstract] OR \"pancreatic enzyme preparations\"[Title/Abstract] OR \"pancreatic enzyme replacement therapy\"[Title/Abstract] OR \"PERT\"[Title/Abstract] OR \"enteric-coated pancreatin\"[Title/Abstract] OR \"enteric-coated pancreatin\"[Title/Abstract] OR \"Creon\"[Title/Abstract] OR \"Zenpep\"[Title/Abstract] OR \"Pancreaze\"[Title/Abstract] OR \"Pertzye\"[Title/Abstract] OR \"Ultresa\"[Title/Abstract] OR \"Panzytrat\"[Title/Abstract] OR \"bromelain*\"[Title/Abstract] OR \"bromelin*\"[Title/Abstract] OR \"ananase\"[Title/Abstract] OR \"pineapple enzyme\"[Title/Abstract] OR \"pineapple protease\"[Title/Abstract] OR \"stem bromelain\"[Title/Abstract] OR \"fruit bromelain\"[Title/Abstract] OR \"Simethicone\"[Title/Abstract] OR \"simeticone\"[Title/Abstract] OR \"activated dimeticone\"[Title/Abstract] OR \"activated dimethicone\"[Title/Abstract] OR \"Antifoam A\"[Title/Abstract] OR \"Phazyme\"[Title/Abstract] OR \"Disflatyl\"[Title/Abstract] OR \"ursodeoxycholic\"[Title/Abstract] OR \"Ursodeoxycholic Acid\"[Title/Abstract] OR \"ursodesoxycholic acid\"[Title/Abstract] OR \"ursodiol\"[Title/Abstract] OR \"UDCA\"[Title/Abstract] OR \"ursodeoxychol*\"[Title/Abstract] OR \"ursodesoxychol*\"[Title/Abstract] OR \"ursodeoxycholate*\"[Title/Abstract] OR \"sodium ursodeoxycholate\"[Title/Abstract] OR \"ursacholic acid\"[Title/Abstract] OR \"Actigall\"[Title/Abstract] OR \"Ursofalk\"[Title/Abstract] OR \"Destolit\"[Title/Abstract] OR \"Delursan\"[Title/Abstract] OR \"oryzin\"[Title/Abstract] OR \"Cellulase AP3\"[Title/Abstract] OR \"Lipase II\"[Title/Abstract] OR \"Bearse\"[Title/Abstract] OR ((\"Amylases\"[MeSH Terms] OR \"Peptide Hydrolases\"[MeSH Terms] OR \"Cellulase\"[MeSH Terms] OR \"Cellulases\"[MeSH Terms] OR \"Lipase\"[MeSH Terms] OR \"diastase\"[Title/Abstract] OR \"fungal diastase\"[Title/Abstract] OR \"taka-diastase\"[Title/Abstract] OR \"amylase*\"[Title/Abstract] OR \"protease*\"[Title/Abstract] OR \"proteinase*\"[Title/Abstract] OR \"peptidase*\"[Title/Abstract] OR \"cellulase*\"[Title/Abstract] OR \"endoglucanase*\"[Title/Abstract] OR \"endo-1,4-beta-D-glucanase\"[Title/Abstract] OR \"fungal cellulase\"[Title/Abstract] OR \"lipase*\"[Title/Abstract] OR \"triacylglycerol lipase\"[Title/Abstract] OR \"triglyceride lipase\"[Title/Abstract]) AND (\"administration, oral\"[MeSH Terms] OR \"oral\"[Title/Abstract] OR \"orally\"[Title/Abstract] OR \"tablet*\"[Title/Abstract] OR \"capsule*\"[Title/Abstract] OR \"granule*\"[Title/Abstract] OR \"supplement*\"[Title/Abstract] OR \"preparation*\"[Title/Abstract] OR \"therap*\"[Title/Abstract] OR \"replacement\"[Title/Abstract] OR \"enteric*\"[Title/Abstract] OR \"digestive enzyme\"[Title/Abstract] OR \"digestive enzymes\"[Title/Abstract] OR \"drug interaction\"[Title/Abstract] OR \"drug interactions\"[Title/Abstract]))) AND 2000/01/01:3000/12/31[Date - Publication]",
+        "warninglist": {
+          "phrasesignored": [],
+          "quotedphrasesnotfound": [
+            "\"Crease-PEG\"[tiab]",
+            "\"Crease PEG\"[tiab]",
+            "\"Prozyme 6\"[tiab]",
+            "\"Prozyme-6\"[tiab]",
+            "\"Biodiastase 2000\"[tiab]",
+            "\"Biodiastase 2000 III\"[tiab]",
+            "\"Dizet 100\"[tiab]",
+            "\"Doctor Bearse\"[tiab]",
+            "\"Festal Gold\"[tiab]",
+            "\"Festal Plus\"[tiab]",
+            "\"Aspergillus melleus protease\"[tiab]",
+            "\"Aspergillus alkaline proteinase\"[tiab]",
+            "\"diastase protease cellulase\"[tiab]",
+            "\"diastase-protease-cellulase\"[tiab]",
+            "\"diastase protease 100\"[tiab]",
+            "\"diastase-protease 100\"[tiab]"
+          ],
+          "outputmessages": []
+        },
+        "errorlist": {
+          "phrasesnotfound": [
+            "Pancellase",
+            "Panprosin"
+          ],
+          "fieldsnotfound": []
+        },
+        "response_sha256": "50b97b8a98272b0c9ad71981d64d27dcd0830363bfb3d271b12f5a61e71170d5",
+        "http_status": 200
+      },
+      "protocol_section_3_self_check": [
+        {
+          "rule": 1,
+          "requirement_ko": "P AND I 두 개념 블록만 사용하고 C·O 블록을 결합하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 2,
+          "requirement_ko": "모든 후보 용어를 P/I/O로 분류하고 O 용어를 삭제함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 3,
+          "requirement_ko": "AND Humans[Mesh]를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 4,
+          "requirement_ko": "연구설계 필터를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 5,
+          "requirement_ko": "언어·출판유형 제한을 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 6,
+          "requirement_ko": "v4와 같은 날짜 시작점만 유지함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 7,
+          "requirement_ko": "P와 I에 MeSH와 자유어를 병렬 사용함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 8,
+          "requirement_ko": "자유어 범위는 [tiab] 이상임",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 9,
+          "requirement_ko": "I에 서로 다른 용어 25개 이상과 배정 성분 전부를 포함함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 10,
+          "requirement_ko": "절단어 600개 변형 상한 경고가 없음",
+          "status": "pass",
+          "evidence": {
+            "truncation_messages": []
+          }
+        }
+      ],
+      "all_rules_pass": true
+    },
+    {
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "title_ko": "살리실산메틸·멘톨·캄파 등 외용 복합성분의 위해",
+      "query": "((\"Child\"[Mesh] OR \"Infant\"[Mesh] OR \"Adolescent\"[Mesh] OR \"Anticoagulants\"[Mesh] OR \"Platelet Aggregation Inhibitors\"[Mesh] OR child*[tiab] OR pediatric*[tiab] OR paediatric*[tiab] OR infant*[tiab] OR toddler*[tiab] OR adolescent*[tiab] OR anticoagulant*[tiab] OR antiplatelet*[tiab] OR warfarin[tiab] OR coumarin*[tiab] OR \"direct oral anticoagulant\"[tiab] OR \"direct oral anticoagulants\"[tiab] OR DOAC[tiab] OR DOACs[tiab] OR \"aspirin use\"[tiab]) AND ((\"Methyl Salicylate\"[Supplementary Concept] OR \"Menthol\"[Mesh] OR \"Camphor\"[Mesh] OR \"Thymol\"[Mesh] OR (\"Mentha\"[Mesh:noexp] AND (\"Plant Oils\"[Mesh] OR \"Oils, Volatile\"[Mesh])) OR \"Salicylates\"[Mesh] OR \"methyl salicylate\"[tiab] OR \"methyl salicylat*\"[tiab] OR methylsalicylat*[tiab] OR \"oil of wintergreen\"[tiab] OR \"wintergreen oil\"[tiab] OR \"methyl 2-hydroxybenzoate\"[tiab] OR \"2-hydroxybenzoic acid methyl ester\"[tiab] OR \"salicylic acid methyl ester\"[tiab] OR \"methyl o-hydroxybenzoate\"[tiab] OR \"gaultheria oil\"[tiab] OR \"sweet birch oil\"[tiab] OR menthol*[tiab] OR levomenthol[tiab] OR levomentholum[tiab] OR \"L-menthol\"[tiab] OR \"(-)-menthol\"[tiab] OR \"l menthol\"[tiab] OR \"2-isopropyl-5-methylcyclohexanol\"[tiab] OR \"menthyl alcohol\"[tiab] OR \"p-menthan-3-ol\"[tiab] OR hexahydrothymol[tiab] OR \"peppermint camphor\"[tiab] OR camphor*[tiab] OR \"dl-camphor\"[tiab] OR \"DL camphor\"[tiab] OR \"racemic camphor\"[tiab] OR \"synthetic camphor\"[tiab] OR \"bornan-2-one\"[tiab] OR \"2-bornanone\"[tiab] OR \"1,7,7-trimethylbicyclo[2.2.1]heptan-2-one\"[tiab] OR \"2-camphanone\"[tiab] OR \"gum camphor\"[tiab] OR camphora[tiab] OR \"Mentha oil\"[tiab] OR \"Mentha arvensis oil\"[tiab] OR \"Mentha arvensis leaf oil\"[tiab] OR \"Mentha arvensis flower oil\"[tiab] OR \"Mentha arvensis essential oil\"[tiab] OR \"Mentha canadensis oil\"[tiab] OR cornmint[tiab] OR \"corn mint oil\"[tiab] OR \"Japanese mint oil\"[tiab] OR \"field mint oil\"[tiab] OR \"wild mint oil\"[tiab] OR \"Oleum Menthae Japonicae\"[tiab] OR \"partly dementholised mint oil\"[tiab] OR \"partly dementholized mint oil\"[tiab] OR thymol[tiab] OR thymolum[tiab] OR \"5-methyl-2-(propan-2-yl)phenol\"[tiab] OR \"5-methyl-2-(1-methylethyl)phenol\"[tiab] OR \"2-isopropyl-5-methylphenol\"[tiab] OR \"6-isopropyl-m-cresol\"[tiab] OR \"3-p-cymenol\"[tiab] OR \"p-cymen-3-ol\"[tiab] OR \"3-hydroxy-p-cymene\"[tiab] OR \"thymic acid\"[tiab] OR \"thyme camphor\"[tiab] OR \"Jeil Cool Pap\"[tiab] OR \"Cool Pap Cataplasma\"[tiab] OR Salonpas[tiab] OR \"Tiger Balm\"[tiab] OR \"Vicks VapoRub\"[tiab] OR counterirritant*[tiab]) AND (\"Administration, Topical\"[Mesh] OR \"Administration, Cutaneous\"[Mesh] OR \"Transdermal Patch\"[Mesh] OR topical*[tiab] OR dermal*[tiab] OR cutaneous[tiab] OR transdermal*[tiab] OR patch*[tiab] OR plaster*[tiab] OR poultice*[tiab] OR cataplasm*[tiab] OR liniment*[tiab] OR ointment*[tiab] OR balm*[tiab] OR cream*[tiab] OR gel*[tiab] OR overdos*[tiab] OR overuse[tiab] OR \"excessive use\"[tiab] OR \"repeated use\"[tiab] OR \"repeated application\"[tiab]))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "query_sha256": "cd8809e67bd42f477d9621e8e0188bce5c5ee1259b6d6927556fdaeb624c187d",
+      "executed_at_utc": "2026-07-28T03:19:41.600746+00:00",
+      "hit_count": 517,
+      "v4_hit_count": 713,
+      "change_from_v4": {
+        "absolute": -196,
+        "ratio": 0.7251051893408135
+      },
+      "ingredient_ids": [
+        "ING-mf-src-25b653f7fbe2",
+        "ING-mf-src-4a3225f1eb5d",
+        "ING-mf-src-76b6b5a5a31f",
+        "ING-mf-src-8bebf0ac75f4",
+        "ING-mf-src-e2b868294a4f"
+      ],
+      "rule_types": [
+        "age_restriction",
+        "anticoagulant_antiplatelet",
+        "urgent_referral"
+      ],
+      "block_structure": "P AND I; ingredient names are paired with topical form or excess/repeated exposure inside I",
+      "term_counts": {
+        "P": 20,
+        "I": 91,
+        "O_removed": 7
+      },
+      "term_classification": [
+        {
+          "term": "\"Child\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Infant\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Adolescent\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Anticoagulants\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Platelet Aggregation Inhibitors\"[Mesh]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "child*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "pediatric*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "paediatric*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "infant*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "toddler*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "adolescent*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "anticoagulant*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "antiplatelet*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "warfarin[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "coumarin*[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"direct oral anticoagulant\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"direct oral anticoagulants\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "DOAC[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "DOACs[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"aspirin use\"[tiab]",
+          "classification": "P",
+          "included_in_query": true,
+          "subtype": "population_or_risk_situation"
+        },
+        {
+          "term": "\"Methyl Salicylate\"[Supplementary Concept]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Menthol\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Camphor\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Thymol\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "(\"Mentha\"[Mesh:noexp] AND (\"Plant Oils\"[Mesh] OR \"Oils, Volatile\"[Mesh]))",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Salicylates\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"methyl salicylate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"methyl salicylat*\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "methylsalicylat*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"oil of wintergreen\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"wintergreen oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"methyl 2-hydroxybenzoate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"2-hydroxybenzoic acid methyl ester\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"salicylic acid methyl ester\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"methyl o-hydroxybenzoate\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"gaultheria oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"sweet birch oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "menthol*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "levomenthol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "levomentholum[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"L-menthol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"(-)-menthol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"l menthol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"2-isopropyl-5-methylcyclohexanol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"menthyl alcohol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"p-menthan-3-ol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "hexahydrothymol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"peppermint camphor\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "camphor*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"dl-camphor\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"DL camphor\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"racemic camphor\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"synthetic camphor\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"bornan-2-one\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"2-bornanone\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"1,7,7-trimethylbicyclo[2.2.1]heptan-2-one\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"2-camphanone\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"gum camphor\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "camphora[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Mentha oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Mentha arvensis oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Mentha arvensis leaf oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Mentha arvensis flower oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Mentha arvensis essential oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Mentha canadensis oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "cornmint[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"corn mint oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Japanese mint oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"field mint oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"wild mint oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Oleum Menthae Japonicae\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"partly dementholised mint oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"partly dementholized mint oil\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "thymol[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "thymolum[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"5-methyl-2-(propan-2-yl)phenol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"5-methyl-2-(1-methylethyl)phenol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"2-isopropyl-5-methylphenol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"6-isopropyl-m-cresol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"3-p-cymenol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"p-cymen-3-ol\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"3-hydroxy-p-cymene\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"thymic acid\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"thyme camphor\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Jeil Cool Pap\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Cool Pap Cataplasma\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "Salonpas[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Tiger Balm\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Vicks VapoRub\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "counterirritant*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "ingredient_name_brand_and_class"
+        },
+        {
+          "term": "\"Administration, Topical\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "\"Administration, Cutaneous\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "\"Transdermal Patch\"[Mesh]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "topical*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "dermal*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "cutaneous[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "transdermal*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "patch*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "plaster*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "poultice*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "cataplasm*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "liniment*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "ointment*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "balm*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "cream*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "gel*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "overdos*[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "overuse[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "\"excessive use\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "\"repeated use\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "\"repeated application\"[tiab]",
+          "classification": "I",
+          "included_in_query": true,
+          "subtype": "topical_form_and_excess_exposure"
+        },
+        {
+          "term": "poison*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "toxic*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "adverse[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "bleed*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "hemorrhag*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "haemorrhag*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        },
+        {
+          "term": "death*[tiab]",
+          "classification": "O",
+          "included_in_query": false,
+          "subtype": "outcome_removed"
+        }
+      ],
+      "esearch": {
+        "count": 517,
+        "query_translation": "(\"Child\"[MeSH Terms] OR \"Infant\"[MeSH Terms] OR \"Adolescent\"[MeSH Terms] OR \"Anticoagulants\"[MeSH Terms] OR \"Platelet Aggregation Inhibitors\"[MeSH Terms] OR \"child*\"[Title/Abstract] OR \"pediatric*\"[Title/Abstract] OR \"paediatric*\"[Title/Abstract] OR \"infant*\"[Title/Abstract] OR \"toddler*\"[Title/Abstract] OR \"adolescent*\"[Title/Abstract] OR \"anticoagulant*\"[Title/Abstract] OR \"antiplatelet*\"[Title/Abstract] OR \"warfarin\"[Title/Abstract] OR \"coumarin*\"[Title/Abstract] OR \"direct oral anticoagulant\"[Title/Abstract] OR \"direct oral anticoagulants\"[Title/Abstract] OR \"DOAC\"[Title/Abstract] OR \"DOACs\"[Title/Abstract] OR \"aspirin use\"[Title/Abstract]) AND ((\"Methyl Salicylate\"[Supplementary Concept] OR \"Menthol\"[MeSH Terms] OR \"Camphor\"[MeSH Terms] OR \"Thymol\"[MeSH Terms] OR (\"Mentha\"[MeSH Terms:noexp] AND (\"Plant Oils\"[MeSH Terms] OR \"oils, volatile\"[MeSH Terms])) OR \"Salicylates\"[MeSH Terms] OR \"Methyl Salicylate\"[Title/Abstract] OR \"methyl salicylat*\"[Title/Abstract] OR \"methylsalicylat*\"[Title/Abstract] OR \"oil of wintergreen\"[Title/Abstract] OR \"wintergreen oil\"[Title/Abstract] OR \"methyl 2-hydroxybenzoate\"[Title/Abstract] OR \"2-hydroxybenzoic acid methyl ester\"[Title/Abstract] OR \"gaultheria oil\"[Title/Abstract] OR \"sweet birch oil\"[Title/Abstract] OR \"menthol*\"[Title/Abstract] OR \"levomenthol\"[Title/Abstract] OR \"L-menthol\"[Title/Abstract] OR \"Menthol\"[Title/Abstract] OR \"L-menthol\"[Title/Abstract] OR \"2-isopropyl-5-methylcyclohexanol\"[Title/Abstract] OR \"p-menthan-3-ol\"[Title/Abstract] OR \"camphor*\"[Title/Abstract] OR \"dl camphor\"[Title/Abstract] OR \"dl camphor\"[Title/Abstract] OR \"racemic camphor\"[Title/Abstract] OR \"2-bornanone\"[Title/Abstract] OR \"1 7 7 trimethylbicyclo 2 2 1 heptan 2 one\"[Title/Abstract] OR \"2-camphanone\"[Title/Abstract] OR \"camphora\"[Title/Abstract] OR \"Mentha oil\"[Title/Abstract] OR \"cornmint\"[Title/Abstract] OR \"Japanese mint oil\"[Title/Abstract] OR \"Thymol\"[Title/Abstract] OR \"5 methyl 2 propan 2 yl phenol\"[Title/Abstract] OR \"5 methyl 2 1 methylethyl phenol\"[Title/Abstract] OR \"2-isopropyl-5-methylphenol\"[Title/Abstract] OR \"3-hydroxy-p-cymene\"[Title/Abstract] OR \"thymic acid\"[Title/Abstract] OR \"Salonpas\"[Title/Abstract] OR \"Tiger Balm\"[Title/Abstract] OR \"Vicks VapoRub\"[Title/Abstract] OR \"counterirritant*\"[Title/Abstract]) AND (\"administration, topical\"[MeSH Terms] OR \"administration, cutaneous\"[MeSH Terms] OR \"Transdermal Patch\"[MeSH Terms] OR \"topical*\"[Title/Abstract] OR \"dermal*\"[Title/Abstract] OR \"cutaneous\"[Title/Abstract] OR \"transdermal*\"[Title/Abstract] OR \"patch*\"[Title/Abstract] OR \"plaster*\"[Title/Abstract] OR \"poultice*\"[Title/Abstract] OR \"cataplasm*\"[Title/Abstract] OR \"liniment*\"[Title/Abstract] OR \"ointment*\"[Title/Abstract] OR \"balm*\"[Title/Abstract] OR \"cream*\"[Title/Abstract] OR \"gel\"[Title/Abstract] OR \"overdos*\"[Title/Abstract] OR \"overuse\"[Title/Abstract] OR \"excessive use\"[Title/Abstract] OR \"repeated use\"[Title/Abstract] OR \"repeated application\"[Title/Abstract])) AND 2000/01/01:3000/12/31[Date - Publication]",
+        "warninglist": {
+          "phrasesignored": [],
+          "quotedphrasesnotfound": [
+            "\"salicylic acid methyl ester\"[tiab]",
+            "\"methyl o-hydroxybenzoate\"[tiab]",
+            "\"menthyl alcohol\"[tiab]",
+            "\"peppermint camphor\"[tiab]",
+            "\"synthetic camphor\"[tiab]",
+            "\"bornan-2-one\"[tiab]",
+            "\"gum camphor\"[tiab]",
+            "\"Mentha arvensis oil\"[tiab]",
+            "\"Mentha arvensis leaf oil\"[tiab]",
+            "\"Mentha arvensis flower oil\"[tiab]",
+            "\"Mentha arvensis essential oil\"[tiab]",
+            "\"Mentha canadensis oil\"[tiab]",
+            "\"corn mint oil\"[tiab]",
+            "\"field mint oil\"[tiab]",
+            "\"wild mint oil\"[tiab]",
+            "\"Oleum Menthae Japonicae\"[tiab]",
+            "\"partly dementholised mint oil\"[tiab]",
+            "\"partly dementholized mint oil\"[tiab]",
+            "\"6-isopropyl-m-cresol\"[tiab]",
+            "\"3-p-cymenol\"[tiab]",
+            "\"p-cymen-3-ol\"[tiab]",
+            "\"thyme camphor\"[tiab]",
+            "\"Jeil Cool Pap\"[tiab]",
+            "\"Cool Pap Cataplasma\"[tiab]"
+          ],
+          "outputmessages": []
+        },
+        "errorlist": {
+          "phrasesnotfound": [
+            "levomentholum",
+            "hexahydrothymol",
+            "thymolum"
+          ],
+          "fieldsnotfound": []
+        },
+        "response_sha256": "1cf36cf06f90f24422d26ba562fbd97797a7cce622485b543016222169304a06",
+        "http_status": 200
+      },
+      "protocol_section_3_self_check": [
+        {
+          "rule": 1,
+          "requirement_ko": "P AND I 두 개념 블록만 사용하고 C·O 블록을 결합하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 2,
+          "requirement_ko": "모든 후보 용어를 P/I/O로 분류하고 O 용어를 삭제함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 3,
+          "requirement_ko": "AND Humans[Mesh]를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 4,
+          "requirement_ko": "연구설계 필터를 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 5,
+          "requirement_ko": "언어·출판유형 제한을 사용하지 않음",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 6,
+          "requirement_ko": "v4와 같은 날짜 시작점만 유지함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 7,
+          "requirement_ko": "P와 I에 MeSH와 자유어를 병렬 사용함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 8,
+          "requirement_ko": "자유어 범위는 [tiab] 이상임",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 9,
+          "requirement_ko": "I에 서로 다른 용어 25개 이상과 배정 성분 전부를 포함함",
+          "status": "pass",
+          "evidence": null
+        },
+        {
+          "rule": 10,
+          "requirement_ko": "절단어 600개 변형 상한 경고가 없음",
+          "status": "pass",
+          "evidence": {
+            "truncation_messages": []
+          }
+        }
+      ],
+      "all_rules_pass": true
+    }
+  ],
+  "totals": {
+    "hit_count_before_cross_question_deduplication": 43249,
+    "v4_hit_count_before_cross_question_deduplication": 5742,
+    "efetch_calls": 0
+  },
+  "v4_to_v5_causal_record_ko": "v4 PICOS 프롬프트의 narrow 지시와 safety outcomes 요건이 O 블록과 Humans[Mesh]를 만들었고 10,000행 상한이 검색식 축소를 강화했다. v5는 P AND I만 사용하고 O·Humans·설계·언어·출판유형 제한을 제거했다."
+}

@@ -1,0 +1,642 @@
+{
+  "schema_version": "1.1.0",
+  "generated_at_utc": "2026-07-29T17:41:31.891537+00:00",
+  "execution_mode": "v4_candidate_links_checked_against_v5_retain_decisions",
+  "authority": {
+    "evidence_authority": "literature_explanatory_only",
+    "supports_rule_release": false,
+    "independent_blinding": false,
+    "release_ready": false
+  },
+  "inputs": {
+    "evidence_map": {
+      "path": "research_v3/otc/literature/v5/evidence_map.csv",
+      "sha256": "e4cbc617bc294e2d9dbe048b0d777c75aec7bceb98aee56ae8e5f3e2148b2649",
+      "record_count": 42822
+    },
+    "screening_decisions": {
+      "path": "research_v3/otc/literature/v5/screening/decisions.csv",
+      "sha256": "4db33044de6f806ac61ffcf04b198f7b2d0d3bacd2b2b9dffa4440188e37b9b1",
+      "distinct_decision_count": 43207,
+      "label_counts": {
+        "deprioritize": 34965,
+        "retain": 7875,
+        "uncertain": 367
+      }
+    },
+    "adjudication_manifest": {
+      "path": "research_v3/otc/literature/v5/screening/adjudication_manifest.json",
+      "sha256": "c62ae08cc128fe3294277753ef70666bd80df693fc453743a6c591ecd57c0ed5",
+      "run_complete": true,
+      "adjudicated_rows": 5000,
+      "compiled_decision_rows": 43207
+    },
+    "v4_candidate_links": {
+      "path": "research_v3/otc/rules/supporting_literature.csv",
+      "sha256": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
+      "candidate_count": 20,
+      "expected_candidate_count": 20,
+      "frozen_sha256": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
+      "read_only": true
+    },
+    "rules": {
+      "path": "research_v3/otc/rules/rules.csv",
+      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
+      "rule_count": 16,
+      "read_only": true
+    },
+    "query_definitions": {
+      "path": "research_v3/otc/literature/v5/query_definitions.json",
+      "sha256": "f33744e0ea873da4715967cbbe907088c80192a35ca3b902fab2904c397efc88",
+      "mapping_field": "questions[].rule_types",
+      "question_count": 5,
+      "read_only": true
+    }
+  },
+  "validation_policy": {
+    "candidate_resolution_identifiers": [
+      "record_id",
+      "pmid_including_all_pmids",
+      "normalized_doi",
+      "exact_title"
+    ],
+    "candidate_resolution_requirement": "every_supplied_identifier_resolves_uniquely_to_the_same_v5_record",
+    "rule_question_mapping_source": "research_v3/otc/literature/v5/query_definitions.json",
+    "screening_requirement": "retain_for_corpus_question_allowed_for_rule_type",
+    "locator_requirement": "abstract:sentence:N",
+    "quote_requirement": "exact_string_equality_with_v5_abstract_sentence",
+    "unresolved_policy": "do_not_invent_or_substitute_links"
+  },
+  "results": {
+    "rule_count": 16,
+    "resolved_rule_count": 9,
+    "unresolved_rule_count": 7,
+    "unresolved_rule_ids": [
+      "OTC-RULE-003",
+      "OTC-RULE-009",
+      "OTC-RULE-010",
+      "OTC-RULE-011",
+      "OTC-RULE-013",
+      "OTC-RULE-015",
+      "OTC-RULE-016"
+    ],
+    "emitted_link_count": 10,
+    "rejected_candidate_count": 10,
+    "rejection_counts": {
+      "no_retain_decision_for_rule_question": 4,
+      "not_in_v5_corpus": 6
+    },
+    "rules": [
+      {
+        "rule_id": "OTC-RULE-001",
+        "rule_type": "duplicate_ingredient",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 2,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-001"
+        ],
+        "rejection_counts": {
+          "not_in_v5_corpus": 1
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN",
+          "OTC-LIT-Q04-DIGESTIVE"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-002",
+        "rule_type": "duplicate_pharmacologic_class",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 1,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-002"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-003",
+        "rule_type": "max_daily_dose",
+        "status": "unresolved",
+        "unresolved_reason": "no_candidate_passed_v5_validation",
+        "candidate_count": 2,
+        "link_count": 0,
+        "link_ids": [],
+        "rejection_counts": {
+          "not_in_v5_corpus": 2
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-004",
+        "rule_type": "minimum_interval",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 1,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-003"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-005",
+        "rule_type": "age_restriction",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 2,
+        "link_count": 2,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-004",
+          "OTC-LIT-V50-LINK-005"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN",
+          "OTC-LIT-Q05-TOPICAL"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-006",
+        "rule_type": "pregnancy_lactation",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 1,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-006"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-007",
+        "rule_type": "hepatic_disease",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 1,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-007"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-008",
+        "rule_type": "renal_disease",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 1,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-008"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-009",
+        "rule_type": "gi_bleeding_ulcer",
+        "status": "unresolved",
+        "unresolved_reason": "no_candidate_passed_v5_validation",
+        "candidate_count": 1,
+        "link_count": 0,
+        "link_ids": [],
+        "rejection_counts": {
+          "not_in_v5_corpus": 1
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-010",
+        "rule_type": "sedation_driving",
+        "status": "unresolved",
+        "unresolved_reason": "no_candidate_passed_v5_validation",
+        "candidate_count": 1,
+        "link_count": 0,
+        "link_ids": [],
+        "rejection_counts": {
+          "no_retain_decision_for_rule_question": 1
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-011",
+        "rule_type": "alcohol",
+        "status": "unresolved",
+        "unresolved_reason": "no_candidate_passed_v5_validation",
+        "candidate_count": 1,
+        "link_count": 0,
+        "link_ids": [],
+        "rejection_counts": {
+          "no_retain_decision_for_rule_question": 1
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-012",
+        "rule_type": "anticoagulant_antiplatelet",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 1,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-009"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q02-NSAID",
+          "OTC-LIT-Q05-TOPICAL"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-013",
+        "rule_type": "sedative_medication",
+        "status": "unresolved",
+        "unresolved_reason": "no_candidate_passed_v5_validation",
+        "candidate_count": 1,
+        "link_count": 0,
+        "link_ids": [],
+        "rejection_counts": {
+          "not_in_v5_corpus": 1
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-014",
+        "rule_type": "decongestant_hypertension",
+        "status": "resolved",
+        "unresolved_reason": null,
+        "candidate_count": 1,
+        "link_count": 1,
+        "link_ids": [
+          "OTC-LIT-V50-LINK-010"
+        ],
+        "rejection_counts": {},
+        "allowed_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-015",
+        "rule_type": "maximum_duration",
+        "status": "unresolved",
+        "unresolved_reason": "no_candidate_passed_v5_validation",
+        "candidate_count": 2,
+        "link_count": 0,
+        "link_ids": [],
+        "rejection_counts": {
+          "no_retain_decision_for_rule_question": 2
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY",
+          "OTC-LIT-Q04-DIGESTIVE"
+        ]
+      },
+      {
+        "rule_id": "OTC-RULE-016",
+        "rule_type": "urgent_referral",
+        "status": "unresolved",
+        "unresolved_reason": "no_candidate_passed_v5_validation",
+        "candidate_count": 1,
+        "link_count": 0,
+        "link_ids": [],
+        "rejection_counts": {
+          "not_in_v5_corpus": 1
+        },
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN",
+          "OTC-LIT-Q05-TOPICAL"
+        ]
+      }
+    ],
+    "links": [
+      {
+        "source_link_id": "OTC-LIT-LINK-001",
+        "rule_id": "OTC-RULE-001",
+        "record_id": "PMID-30306812",
+        "pmid": "30306812",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "locator": "abstract:sentence:10",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-001"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-003",
+        "rule_id": "OTC-RULE-002",
+        "record_id": "PMID-26739516",
+        "pmid": "26739516",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ],
+        "locator": "abstract:sentence:13",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-002"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-006",
+        "rule_id": "OTC-RULE-004",
+        "record_id": "PMID-30030041",
+        "pmid": "30030041",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "locator": "abstract:sentence:7",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-003"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-008",
+        "rule_id": "OTC-RULE-005",
+        "record_id": "PMID-22617049",
+        "pmid": "22617049",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "locator": "abstract:sentence:7",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-004"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-007",
+        "rule_id": "OTC-RULE-005",
+        "record_id": "PMID-41803773",
+        "pmid": "41803773",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "locator": "abstract:sentence:11",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-005"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-009",
+        "rule_id": "OTC-RULE-006",
+        "record_id": "PMID-39714827",
+        "pmid": "39714827",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ],
+        "locator": "abstract:sentence:16",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-006"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-010",
+        "rule_id": "OTC-RULE-007",
+        "record_id": "PMID-26460177",
+        "pmid": "26460177",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "locator": "abstract:sentence:2",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-007"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-011",
+        "rule_id": "OTC-RULE-008",
+        "record_id": "PMID-33662136",
+        "pmid": "33662136",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ],
+        "locator": "abstract:sentence:14",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-008"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-015",
+        "rule_id": "OTC-RULE-012",
+        "record_id": "PMID-39551938",
+        "pmid": "39551938",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q02-NSAID"
+        ],
+        "locator": "abstract:sentence:8",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-009"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-017",
+        "rule_id": "OTC-RULE-014",
+        "record_id": "PMID-26022219",
+        "pmid": "26022219",
+        "resolution_method": "record_id+pmid+normalized_doi+exact_title",
+        "resolution_identifiers": [
+          "record_id",
+          "pmid",
+          "normalized_doi",
+          "exact_title"
+        ],
+        "screening_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY"
+        ],
+        "locator": "abstract:sentence:14",
+        "quote_exact_match": true,
+        "link_id": "OTC-LIT-V50-LINK-010"
+      }
+    ],
+    "rejected_candidates": [
+      {
+        "source_link_id": "OTC-LIT-LINK-002",
+        "rule_id": "OTC-RULE-001",
+        "candidate_pmid": "26149538",
+        "reason": "not_in_v5_corpus"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-004",
+        "rule_id": "OTC-RULE-003",
+        "candidate_pmid": "29516533",
+        "reason": "not_in_v5_corpus"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-005",
+        "rule_id": "OTC-RULE-003",
+        "candidate_pmid": "26149538",
+        "reason": "not_in_v5_corpus"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-012",
+        "rule_id": "OTC-RULE-009",
+        "candidate_pmid": "20178131",
+        "reason": "not_in_v5_corpus"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-013",
+        "rule_id": "OTC-RULE-010",
+        "candidate_pmid": "26999510",
+        "reason": "no_retain_decision_for_rule_question",
+        "record_id": "PMID-26999510",
+        "corpus_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY"
+        ],
+        "allowed_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY"
+        ],
+        "retained_question_ids": []
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-014",
+        "rule_id": "OTC-RULE-011",
+        "candidate_pmid": "33333080",
+        "reason": "no_retain_decision_for_rule_question",
+        "record_id": "PMID-33333080",
+        "corpus_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "allowed_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "retained_question_ids": []
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-016",
+        "rule_id": "OTC-RULE-013",
+        "candidate_pmid": "23747192",
+        "reason": "not_in_v5_corpus"
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-018",
+        "rule_id": "OTC-RULE-015",
+        "candidate_pmid": "21370947",
+        "reason": "no_retain_decision_for_rule_question",
+        "record_id": "PMID-21370947",
+        "corpus_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "allowed_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY",
+          "OTC-LIT-Q04-DIGESTIVE"
+        ],
+        "retained_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ]
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-019",
+        "rule_id": "OTC-RULE-015",
+        "candidate_pmid": "22106945",
+        "reason": "no_retain_decision_for_rule_question",
+        "record_id": "PMID-22106945",
+        "corpus_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ],
+        "allowed_question_ids": [
+          "OTC-LIT-Q03-COLD-ALLERGY",
+          "OTC-LIT-Q04-DIGESTIVE"
+        ],
+        "retained_question_ids": [
+          "OTC-LIT-Q01-ACETAMINOPHEN"
+        ]
+      },
+      {
+        "source_link_id": "OTC-LIT-LINK-020",
+        "rule_id": "OTC-RULE-016",
+        "candidate_pmid": "40579172",
+        "reason": "not_in_v5_corpus"
+      }
+    ]
+  },
+  "outputs": {
+    "supporting_literature": {
+      "path": "research_v3/otc/literature/v5/downstream/supporting_literature.csv",
+      "sha256": "c1be8df49cbcb226103899428115ec91e763a5bc2c6704e687f21c3c76f1d73c",
+      "row_count": 10
+    },
+    "manifest": {
+      "path": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json"
+    }
+  }
+}

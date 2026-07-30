@@ -1,0 +1,1187 @@
+{
+  "schema_version": "5.0.0",
+  "question_id": "OTC-LIT-Q04-DIGESTIVE",
+  "run_id": "v50_20260728T033102Z",
+  "started_at_utc": "2026-07-28T03:37:38.729412+00:00",
+  "completed_at_utc": "2026-07-28T03:40:15.981974+00:00",
+  "phase_a_probe_count": 21342,
+  "phase_b_base_count": 21342,
+  "change_since_probe": 0,
+  "query_sha256": "5b2d7d28fcc06835cabb48fe229c24a495724804bcc10cf177d1c52c0569e82c",
+  "segmentation": "non_overlapping_entrez_date_binary_intervals",
+  "segments": [
+    {
+      "label": "edat_1900_1963",
+      "query_sha256": "b597ff6a4f80d6bb7ca25643c9f205a2bfed57abeb07288f1d7138e2aa8999c4",
+      "count": 0,
+      "warnings": [
+        "\"Crease-PEG\"[tiab]",
+        "\"Crease PEG\"[tiab]",
+        "\"Prozyme 6\"[tiab]",
+        "\"Prozyme-6\"[tiab]",
+        "\"Biodiastase 2000\"[tiab]",
+        "\"Biodiastase 2000 III\"[tiab]",
+        "\"Dizet 100\"[tiab]",
+        "\"Doctor Bearse\"[tiab]",
+        "\"Festal Gold\"[tiab]",
+        "\"Festal Plus\"[tiab]",
+        "\"Aspergillus melleus protease\"[tiab]",
+        "\"Aspergillus alkaline proteinase\"[tiab]",
+        "\"diastase protease cellulase\"[tiab]",
+        "\"diastase-protease-cellulase\"[tiab]",
+        "\"diastase protease 100\"[tiab]",
+        "\"diastase-protease 100\"[tiab]",
+        "No items found."
+      ],
+      "raw_path": "segments/edat_1900_1963_esearch.xml",
+      "raw_sha256": "0c906dbaf063b751b26b86617f662ebbd2c22436eb5e77e7f61a5ce3df1ad639",
+      "interval_start": "1900/01/01",
+      "interval_end": "1963/12/31",
+      "partition_field": "Date - Entrez"
+    },
+    {
+      "label": "edat_1964_1995",
+      "query_sha256": "fd0265119efe0afe536eaa000180b9738f94af1ac91c93057f36d0608f3e39e2",
+      "count": 0,
+      "warnings": [
+        "\"Crease-PEG\"[tiab]",
+        "\"Crease PEG\"[tiab]",
+        "\"Prozyme 6\"[tiab]",
+        "\"Prozyme-6\"[tiab]",
+        "\"Biodiastase 2000\"[tiab]",
+        "\"Biodiastase 2000 III\"[tiab]",
+        "\"Dizet 100\"[tiab]",
+        "\"Doctor Bearse\"[tiab]",
+        "\"Festal Gold\"[tiab]",
+        "\"Festal Plus\"[tiab]",
+        "\"Aspergillus melleus protease\"[tiab]",
+        "\"Aspergillus alkaline proteinase\"[tiab]",
+        "\"diastase protease cellulase\"[tiab]",
+        "\"diastase-protease-cellulase\"[tiab]",
+        "\"diastase protease 100\"[tiab]",
+        "\"diastase-protease 100\"[tiab]",
+        "No items found."
+      ],
+      "raw_path": "segments/edat_1964_1995_esearch.xml",
+      "raw_sha256": "2792462860a257ba3f58fdcc59ad7eafba32b924399fd824725af872bad9059d",
+      "interval_start": "1964/01/01",
+      "interval_end": "1995/12/31",
+      "partition_field": "Date - Entrez"
+    },
+    {
+      "label": "edat_1996_2011",
+      "query_sha256": "b4b6575f3c4d510cbc9d9531a282f7258d1b7499918f71bd130c4ec09e3e2641",
+      "count": 6903,
+      "warnings": [
+        "\"Crease-PEG\"[tiab]",
+        "\"Crease PEG\"[tiab]",
+        "\"Prozyme 6\"[tiab]",
+        "\"Prozyme-6\"[tiab]",
+        "\"Biodiastase 2000\"[tiab]",
+        "\"Biodiastase 2000 III\"[tiab]",
+        "\"Dizet 100\"[tiab]",
+        "\"Doctor Bearse\"[tiab]",
+        "\"Festal Gold\"[tiab]",
+        "\"Festal Plus\"[tiab]",
+        "\"Aspergillus melleus protease\"[tiab]",
+        "\"Aspergillus alkaline proteinase\"[tiab]",
+        "\"diastase protease cellulase\"[tiab]",
+        "\"diastase-protease-cellulase\"[tiab]",
+        "\"diastase protease 100\"[tiab]",
+        "\"diastase-protease 100\"[tiab]"
+      ],
+      "raw_path": "segments/edat_1996_2011_esearch.xml",
+      "raw_sha256": "94b7c83bc590ff34def29925d0faf581efe8bd6b732355214831f464ede78a1f",
+      "interval_start": "1996/01/01",
+      "interval_end": "2011/12/31",
+      "partition_field": "Date - Entrez"
+    },
+    {
+      "label": "edat_2012_2019",
+      "query_sha256": "1a82e5275a64d9ff44f0748ccab85bce127021d2acb99038197a8e523d969440",
+      "count": 7774,
+      "warnings": [
+        "\"Crease-PEG\"[tiab]",
+        "\"Crease PEG\"[tiab]",
+        "\"Prozyme 6\"[tiab]",
+        "\"Prozyme-6\"[tiab]",
+        "\"Biodiastase 2000\"[tiab]",
+        "\"Biodiastase 2000 III\"[tiab]",
+        "\"Dizet 100\"[tiab]",
+        "\"Doctor Bearse\"[tiab]",
+        "\"Festal Gold\"[tiab]",
+        "\"Festal Plus\"[tiab]",
+        "\"Aspergillus melleus protease\"[tiab]",
+        "\"Aspergillus alkaline proteinase\"[tiab]",
+        "\"diastase protease cellulase\"[tiab]",
+        "\"diastase-protease-cellulase\"[tiab]",
+        "\"diastase protease 100\"[tiab]",
+        "\"diastase-protease 100\"[tiab]"
+      ],
+      "raw_path": "segments/edat_2012_2019_esearch.xml",
+      "raw_sha256": "c45e16c11cae99df564ffeceb07725b4f0dc5699b79c80f6a2780f907b4fb1fc",
+      "interval_start": "2012/01/01",
+      "interval_end": "2019/12/31",
+      "partition_field": "Date - Entrez"
+    },
+    {
+      "label": "edat_2020_2026",
+      "query_sha256": "d3031b44d6a346bfb4688e612e915082c16038ec6e557e5ab959f64a8256c1e8",
+      "count": 6665,
+      "warnings": [
+        "\"Crease-PEG\"[tiab]",
+        "\"Crease PEG\"[tiab]",
+        "\"Prozyme 6\"[tiab]",
+        "\"Prozyme-6\"[tiab]",
+        "\"Biodiastase 2000\"[tiab]",
+        "\"Biodiastase 2000 III\"[tiab]",
+        "\"Dizet 100\"[tiab]",
+        "\"Doctor Bearse\"[tiab]",
+        "\"Festal Gold\"[tiab]",
+        "\"Festal Plus\"[tiab]",
+        "\"Aspergillus melleus protease\"[tiab]",
+        "\"Aspergillus alkaline proteinase\"[tiab]",
+        "\"diastase protease cellulase\"[tiab]",
+        "\"diastase-protease-cellulase\"[tiab]",
+        "\"diastase protease 100\"[tiab]",
+        "\"diastase-protease 100\"[tiab]"
+      ],
+      "raw_path": "segments/edat_2020_2026_esearch.xml",
+      "raw_sha256": "154eeada0f6afc272c1f8adae02d345c838c3c7c91df19830786554fa2e9ea89",
+      "interval_start": "2020/01/01",
+      "interval_end": "2026/12/31",
+      "partition_field": "Date - Entrez"
+    },
+    {
+      "label": "edat_2027_3000",
+      "query_sha256": "bdbfe75540981ff2ed44210a3baae8d6277dd0904c8277746d7c1e657ebc9a8f",
+      "count": 0,
+      "warnings": [
+        "\"Crease-PEG\"[tiab]",
+        "\"Crease PEG\"[tiab]",
+        "\"Prozyme 6\"[tiab]",
+        "\"Prozyme-6\"[tiab]",
+        "\"Biodiastase 2000\"[tiab]",
+        "\"Biodiastase 2000 III\"[tiab]",
+        "\"Dizet 100\"[tiab]",
+        "\"Doctor Bearse\"[tiab]",
+        "\"Festal Gold\"[tiab]",
+        "\"Festal Plus\"[tiab]",
+        "\"Aspergillus melleus protease\"[tiab]",
+        "\"Aspergillus alkaline proteinase\"[tiab]",
+        "\"diastase protease cellulase\"[tiab]",
+        "\"diastase-protease-cellulase\"[tiab]",
+        "\"diastase protease 100\"[tiab]",
+        "\"diastase-protease 100\"[tiab]",
+        "No items found."
+      ],
+      "raw_path": "segments/edat_2027_3000_esearch.xml",
+      "raw_sha256": "42cdeae66a3bc209d89ca5cfd6f06da86d1441afe9eef7594aa5ee8277b5ebc4",
+      "interval_start": "2027/01/01",
+      "interval_end": "3000",
+      "partition_field": "Date - Entrez"
+    }
+  ],
+  "segment_count_sum": 21342,
+  "parsed_records": 21342,
+  "unique_pmids": 21342,
+  "efetch_batch_size": 500,
+  "efetch_calls": 44,
+  "esearch_calls": 11,
+  "raw_xml_file_count": 55,
+  "raw_xml_checksums": {
+    "base_esearch.xml": "512b7f9d4bae383960a4c2ada3fc68262cc24c46d16c1ed52d6ce6307c1262bd",
+    "efetch/003_edat_1996_2011_0001.xml": "75dbec60001577f0a1450e5c9418fb0bd2f973c1c9292e00390108e1a9c28f00",
+    "efetch/003_edat_1996_2011_0002.xml": "f026170d9d063d55964381742d418926034dac17ccf8ed10fd1c2c89bdbc37db",
+    "efetch/003_edat_1996_2011_0003.xml": "e827ffb907ee208c99cf126c049bf752a919d664353334ebe906fd4402d2f58b",
+    "efetch/003_edat_1996_2011_0004.xml": "cc5d6cd00faa4030eb0cff356eaa8c042e7f69d995f7d97b779a1fee968c66fc",
+    "efetch/003_edat_1996_2011_0005.xml": "2196ff42c8790f832999937253dbf10d6bde13a02de927e61b2bd6399204a291",
+    "efetch/003_edat_1996_2011_0006.xml": "002cd1e870db84067f2e17f34468af4e33c4d0108e70e293b94122636a47c1f3",
+    "efetch/003_edat_1996_2011_0007.xml": "c105737c5d37b43bde96a8cff8d0d46eb378e23aad058b2f3f7634158d87303e",
+    "efetch/003_edat_1996_2011_0008.xml": "a28b4f31e30635bbc1f68d79c8e658394f3b34770d5004d7ece9262de8c938cf",
+    "efetch/003_edat_1996_2011_0009.xml": "489393a2a6b974bb3cf815057d77b3daa039969a01f15f92b3f66dc6ac9dcdf7",
+    "efetch/003_edat_1996_2011_0010.xml": "76e3b41e6c7eada577fbffeb3664af769f272088f3eb6e8742a32e84f5778ac0",
+    "efetch/003_edat_1996_2011_0011.xml": "adb969182e7e2272f7ddfc469c9fe2c0d63045e354b9a9b9f8f22f5ba3a8d60b",
+    "efetch/003_edat_1996_2011_0012.xml": "667317fe738bf779fcffc257329befe33909f216eccb0996729d63711bd69c57",
+    "efetch/003_edat_1996_2011_0013.xml": "2c65463485b272eb68bd1cb2c062c4a66d748a1ab6ac913a84a21875d1a3ef50",
+    "efetch/003_edat_1996_2011_0014.xml": "0a7863e366450b95fddfe1df47586b77302d6b32fa51799d6cb74d47f1b4e680",
+    "efetch/004_edat_2012_2019_0001.xml": "8ec4603a03e62e646f7b20452c0ea266f7fbe1b5334011b9086eed1839fb12b7",
+    "efetch/004_edat_2012_2019_0002.xml": "62b55347453547ae656364893968764ac2c6f33659d0bbcaa9ba404a072d1a08",
+    "efetch/004_edat_2012_2019_0003.xml": "b36f0ec98600042f33872cb9c8762e3bce4c4c2f0f77befe19b69e9730bb4e1c",
+    "efetch/004_edat_2012_2019_0004.xml": "d18cc83f7fc55cf16f379104c50e80871f264534dc4d65c79440b647a3ed9835",
+    "efetch/004_edat_2012_2019_0005.xml": "8924b747cc8ba287c5c4b675492c1dccf51c29681966c79ce9e7129ed08467d1",
+    "efetch/004_edat_2012_2019_0006.xml": "13b6bb2c8d2eb78220a01206336381faf3612ce3635827b22c6da72242cd6443",
+    "efetch/004_edat_2012_2019_0007.xml": "4316874f537985ab3b2087aaee9335ec792cad016e3dadae5e31f3c63dbe1151",
+    "efetch/004_edat_2012_2019_0008.xml": "f7305dcfc092ab665bea0b850d3121390237c20b3f38ac9531e27ece71730f61",
+    "efetch/004_edat_2012_2019_0009.xml": "679e6167c047dcbbf7a968f41c1540eb7f8a6a932eb9ccaf7a59614e0a959558",
+    "efetch/004_edat_2012_2019_0010.xml": "663ff3b98252848944161154a17db1bb9584eeaa38b8cd5fcd8e542ce30c9062",
+    "efetch/004_edat_2012_2019_0011.xml": "e7984d1ad8361c7ca2ac0546b79a433b9f4e6e34e555ad6116437bed019972d3",
+    "efetch/004_edat_2012_2019_0012.xml": "965027a8419df61cdc142c803ac57715db6be378284dea3aa5af68198cd04a1d",
+    "efetch/004_edat_2012_2019_0013.xml": "03529a63a807b0f694488a8988a6e32a6d909c3cc48dd8fdfc9b3c0135bb5ddf",
+    "efetch/004_edat_2012_2019_0014.xml": "7f04fa4cdeb2fc75c44d6d4b266f8532e5020703b0204ef053a769ecbd3ce361",
+    "efetch/004_edat_2012_2019_0015.xml": "e4125f4eb314133070421723563f6043d784b3fa07a3dad9742245f43021c7c2",
+    "efetch/004_edat_2012_2019_0016.xml": "2aea257cec7c5389f83f9d515f91cb75c1c5687732746382791a6785226eec26",
+    "efetch/005_edat_2020_2026_0001.xml": "418a33eeccd92fa675b7be08b627542923635e46ffa16b3758a41793b8d0710e",
+    "efetch/005_edat_2020_2026_0002.xml": "5d50ca1832f93757af518f49043ccd7e82a254afd2e3aec7e2129de4d29e1089",
+    "efetch/005_edat_2020_2026_0003.xml": "df2ca659d6735e0bd9d5a562b57fa9a81301581b03dd96c9b142afbb266deee1",
+    "efetch/005_edat_2020_2026_0004.xml": "72d31f3ec4b0124ad61e0c682d8286868a0f0286938895fd82e2835b96e37a3f",
+    "efetch/005_edat_2020_2026_0005.xml": "11e019daf56ea14445552d44089bdc12e6777b1c080879d33b834467806c9eca",
+    "efetch/005_edat_2020_2026_0006.xml": "8b0ba5b372d74b4645fc239fb56a6ad951cdb8e7d14c40665552e8bfcaa6a214",
+    "efetch/005_edat_2020_2026_0007.xml": "e2540c5534e8298a95fe448c546583fc363f676cc3c504648d3f0f2308ebc7ff",
+    "efetch/005_edat_2020_2026_0008.xml": "576f1c68178b91c9d25060c16ba0c060dfd3a949a912db17f36369b9b3d449dc",
+    "efetch/005_edat_2020_2026_0009.xml": "12af5985db19a7a39a9e569a3adcb8647425636f5b364d79cb0686b5c3badb8d",
+    "efetch/005_edat_2020_2026_0010.xml": "f48a3b5ae458941dbf7054af75bdaf524e810f1410b40d5992932e8fa540637a",
+    "efetch/005_edat_2020_2026_0011.xml": "7bb5020b4ac4f2aea13198712b87fca0392be0d60abadc84ed9f29f5ec2129ba",
+    "efetch/005_edat_2020_2026_0012.xml": "4fabdd383ad2f8ac1729669cd1155deee2a450c3b34accc9443b4e6892df92d9",
+    "efetch/005_edat_2020_2026_0013.xml": "18df38eec215fdf1fe397ccc829b24c888ff52a50113d8b1637125bc61e97518",
+    "efetch/005_edat_2020_2026_0014.xml": "af5d785bde002515ef8076cb80cd4771f5e52f49a2b0bb4c1d804ea949c8e304",
+    "segments/edat_1900_1963_esearch.xml": "0c906dbaf063b751b26b86617f662ebbd2c22436eb5e77e7f61a5ce3df1ad639",
+    "segments/edat_1900_2026_esearch.xml": "6e23f4c0427c0953d19a15f93e9ad5c716952d25d98976d45240fa7f38fc2ea7",
+    "segments/edat_1964_1995_esearch.xml": "2792462860a257ba3f58fdcc59ad7eafba32b924399fd824725af872bad9059d",
+    "segments/edat_1964_2026_esearch.xml": "4121738b8b361f2d74e1db9ea9cc94f534f6466b413bcb0ac9848703b023f0ca",
+    "segments/edat_1996_2011_esearch.xml": "94b7c83bc590ff34def29925d0faf581efe8bd6b732355214831f464ede78a1f",
+    "segments/edat_1996_2026_esearch.xml": "15195a5fce75bf15148275341c85ca9deba5e5aae853dfc712bcee1e3dd602c0",
+    "segments/edat_2012_2019_esearch.xml": "c45e16c11cae99df564ffeceb07725b4f0dc5699b79c80f6a2780f907b4fb1fc",
+    "segments/edat_2012_2026_esearch.xml": "5ae2d8234a5bd7900beb2b5d74483586489d3e9eb71e7f7b04665da32b9a1570",
+    "segments/edat_2020_2026_esearch.xml": "154eeada0f6afc272c1f8adae02d345c838c3c7c91df19830786554fa2e9ea89",
+    "segments/edat_2027_3000_esearch.xml": "42cdeae66a3bc209d89ca5cfd6f06da86d1441afe9eef7594aa5ee8277b5ebc4"
+  },
+  "responses": [
+    {
+      "request_type": "esearch:base",
+      "requested_at_utc": "2026-07-28T03:37:38.729452+00:00",
+      "completed_at_utc": "2026-07-28T03:37:39.711214+00:00",
+      "status_code": 200,
+      "response_bytes": 6226,
+      "response_sha256": "512b7f9d4bae383960a4c2ada3fc68262cc24c46d16c1ed52d6ce6307c1262bd",
+      "relative_path": "base_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_1900_2026",
+      "requested_at_utc": "2026-07-28T03:37:39.711411+00:00",
+      "completed_at_utc": "2026-07-28T03:37:40.355312+00:00",
+      "status_code": 200,
+      "response_bytes": 6266,
+      "response_sha256": "6e23f4c0427c0953d19a15f93e9ad5c716952d25d98976d45240fa7f38fc2ea7",
+      "relative_path": "segments/edat_1900_2026_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"1900/01/01\"[Date - Entrez] : \"2026/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_1900_1963",
+      "requested_at_utc": "2026-07-28T03:37:40.355464+00:00",
+      "completed_at_utc": "2026-07-28T03:37:41.158357+00:00",
+      "status_code": 200,
+      "response_bytes": 6308,
+      "response_sha256": "0c906dbaf063b751b26b86617f662ebbd2c22436eb5e77e7f61a5ce3df1ad639",
+      "relative_path": "segments/edat_1900_1963_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"1900/01/01\"[Date - Entrez] : \"1963/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_1964_2026",
+      "requested_at_utc": "2026-07-28T03:37:41.158507+00:00",
+      "completed_at_utc": "2026-07-28T03:37:41.794597+00:00",
+      "status_code": 200,
+      "response_bytes": 6266,
+      "response_sha256": "4121738b8b361f2d74e1db9ea9cc94f534f6466b413bcb0ac9848703b023f0ca",
+      "relative_path": "segments/edat_1964_2026_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"1964/01/01\"[Date - Entrez] : \"2026/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_1964_1995",
+      "requested_at_utc": "2026-07-28T03:37:41.794763+00:00",
+      "completed_at_utc": "2026-07-28T03:37:42.224087+00:00",
+      "status_code": 200,
+      "response_bytes": 6308,
+      "response_sha256": "2792462860a257ba3f58fdcc59ad7eafba32b924399fd824725af872bad9059d",
+      "relative_path": "segments/edat_1964_1995_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"1964/01/01\"[Date - Entrez] : \"1995/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_1996_2026",
+      "requested_at_utc": "2026-07-28T03:37:42.224238+00:00",
+      "completed_at_utc": "2026-07-28T03:37:42.851424+00:00",
+      "status_code": 200,
+      "response_bytes": 6266,
+      "response_sha256": "15195a5fce75bf15148275341c85ca9deba5e5aae853dfc712bcee1e3dd602c0",
+      "relative_path": "segments/edat_1996_2026_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"1996/01/01\"[Date - Entrez] : \"2026/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_1996_2011",
+      "requested_at_utc": "2026-07-28T03:37:42.851578+00:00",
+      "completed_at_utc": "2026-07-28T03:37:43.360216+00:00",
+      "status_code": 200,
+      "response_bytes": 6265,
+      "response_sha256": "94b7c83bc590ff34def29925d0faf581efe8bd6b732355214831f464ede78a1f",
+      "relative_path": "segments/edat_1996_2011_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"1996/01/01\"[Date - Entrez] : \"2011/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_2012_2026",
+      "requested_at_utc": "2026-07-28T03:37:43.360360+00:00",
+      "completed_at_utc": "2026-07-28T03:37:43.960828+00:00",
+      "status_code": 200,
+      "response_bytes": 6266,
+      "response_sha256": "5ae2d8234a5bd7900beb2b5d74483586489d3e9eb71e7f7b04665da32b9a1570",
+      "relative_path": "segments/edat_2012_2026_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"2012/01/01\"[Date - Entrez] : \"2026/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_2012_2019",
+      "requested_at_utc": "2026-07-28T03:37:43.960977+00:00",
+      "completed_at_utc": "2026-07-28T03:37:44.467541+00:00",
+      "status_code": 200,
+      "response_bytes": 6265,
+      "response_sha256": "c45e16c11cae99df564ffeceb07725b4f0dc5699b79c80f6a2780f907b4fb1fc",
+      "relative_path": "segments/edat_2012_2019_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"2012/01/01\"[Date - Entrez] : \"2019/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_2020_2026",
+      "requested_at_utc": "2026-07-28T03:37:44.467699+00:00",
+      "completed_at_utc": "2026-07-28T03:37:45.000276+00:00",
+      "status_code": 200,
+      "response_bytes": 6265,
+      "response_sha256": "154eeada0f6afc272c1f8adae02d345c838c3c7c91df19830786554fa2e9ea89",
+      "relative_path": "segments/edat_2020_2026_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"2020/01/01\"[Date - Entrez] : \"2026/12/31\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "esearch:edat_2027_3000",
+      "requested_at_utc": "2026-07-28T03:37:45.000426+00:00",
+      "completed_at_utc": "2026-07-28T03:37:45.369419+00:00",
+      "status_code": 200,
+      "response_bytes": 6308,
+      "response_sha256": "42cdeae66a3bc209d89ca5cfd6f06da86d1441afe9eef7594aa5ee8277b5ebc4",
+      "relative_path": "segments/edat_2027_3000_esearch.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "term": "(((\"Dyspepsia\"[Mesh] OR \"Exocrine Pancreatic Insufficiency\"[Mesh] OR \"Digestive System Diseases\"[Mesh] OR \"Malabsorption Syndromes\"[Mesh] OR \"Cystic Fibrosis\"[Mesh] OR \"Pancreatitis, Chronic\"[Mesh] OR \"Cholestasis\"[Mesh] OR \"Liver Cirrhosis, Biliary\"[Mesh] OR \"Flatulence\"[Mesh] OR \"Colic\"[Mesh] OR dyspepsia[tiab] OR indigestion[tiab] OR maldigestion[tiab] OR \"pancreatic insufficiency\"[tiab] OR \"exocrine pancreatic insufficiency\"[tiab] OR EPI[tiab] OR \"digestive disorder\"[tiab] OR \"digestive disorders\"[tiab] OR \"gastrointestinal disorder\"[tiab] OR \"gastrointestinal disorders\"[tiab] OR \"digestive symptom\"[tiab] OR \"digestive symptoms\"[tiab] OR malabsorption[tiab] OR \"chronic pancreatitis\"[tiab] OR \"cystic fibrosis\"[tiab] OR postgastrectom*[tiab] OR \"primary biliary cholangitis\"[tiab] OR \"primary biliary cirrhosis\"[tiab] OR PBC[tiab] OR cholestasis[tiab] OR \"biliary disease\"[tiab] OR \"biliary diseases\"[tiab] OR gallstone*[tiab] OR cholelithiasis[tiab] OR flatulence[tiab] OR bloating[tiab] OR \"infantile colic\"[tiab]) AND (\"Pancreatin\"[Mesh] OR \"Pancrelipase\"[Mesh] OR \"Simethicone\"[Mesh] OR \"Ursodeoxycholic Acid\"[Mesh] OR \"Bromelains\"[Mesh] OR pancreatin[tiab] OR pancrelipase[tiab] OR pancrealipase[tiab] OR \"pancreatic extract\"[tiab] OR \"pancreatic extracts\"[tiab] OR \"pancreas extract\"[tiab] OR \"pancreatic enzyme\"[tiab] OR \"pancreatic enzymes\"[tiab] OR \"pancreatic enzyme preparation\"[tiab] OR \"pancreatic enzyme preparations\"[tiab] OR \"pancreatic enzyme replacement therapy\"[tiab] OR PERT[tiab] OR \"enteric-coated pancreatin\"[tiab] OR \"enteric coated pancreatin\"[tiab] OR Creon[tiab] OR Zenpep[tiab] OR Pancreaze[tiab] OR Pertzye[tiab] OR Ultresa[tiab] OR Panzytrat[tiab] OR bromelain*[tiab] OR bromelin*[tiab] OR ananase[tiab] OR \"pineapple enzyme\"[tiab] OR \"pineapple protease\"[tiab] OR \"stem bromelain\"[tiab] OR \"fruit bromelain\"[tiab] OR simethicone[tiab] OR simeticone[tiab] OR \"activated dimeticone\"[tiab] OR \"activated dimethicone\"[tiab] OR \"Antifoam A\"[tiab] OR Phazyme[tiab] OR Disflatyl[tiab] OR ursodeoxycholic[tiab] OR \"ursodeoxycholic acid\"[tiab] OR \"ursodesoxycholic acid\"[tiab] OR ursodiol[tiab] OR UDCA[tiab] OR ursodeoxychol*[tiab] OR ursodesoxychol*[tiab] OR ursodeoxycholate*[tiab] OR \"sodium ursodeoxycholate\"[tiab] OR \"ursacholic acid\"[tiab] OR Actigall[tiab] OR Ursofalk[tiab] OR Destolit[tiab] OR Delursan[tiab] OR Pancellase[tiab] OR Panprosin[tiab] OR \"Crease-PEG\"[tiab] OR \"Crease PEG\"[tiab] OR \"Prozyme 6\"[tiab] OR \"Prozyme-6\"[tiab] OR oryzin[tiab] OR \"Biodiastase 2000\"[tiab] OR \"Biodiastase 2000 III\"[tiab] OR \"Dizet 100\"[tiab] OR \"Cellulase AP3\"[tiab] OR \"Lipase II\"[tiab] OR Bearse[tiab] OR \"Doctor Bearse\"[tiab] OR \"Festal Gold\"[tiab] OR \"Festal Plus\"[tiab] OR ((\"Amylases\"[Mesh] OR \"Peptide Hydrolases\"[Mesh] OR \"Cellulase\"[Mesh] OR \"Cellulases\"[Mesh] OR \"Lipase\"[Mesh] OR diastase[tiab] OR \"fungal diastase\"[tiab] OR \"taka-diastase\"[tiab] OR amylase*[tiab] OR protease*[tiab] OR proteinase*[tiab] OR peptidase*[tiab] OR cellulase*[tiab] OR endoglucanase*[tiab] OR \"endo-1,4-beta-D-glucanase\"[tiab] OR \"fungal cellulase\"[tiab] OR lipase*[tiab] OR \"triacylglycerol lipase\"[tiab] OR \"triglyceride lipase\"[tiab] OR \"Aspergillus melleus protease\"[tiab] OR \"Aspergillus alkaline proteinase\"[tiab] OR \"diastase protease cellulase\"[tiab] OR \"diastase-protease-cellulase\"[tiab] OR \"diastase protease 100\"[tiab] OR \"diastase-protease 100\"[tiab]) AND (\"Administration, Oral\"[Mesh] OR oral[tiab] OR orally[tiab] OR tablet*[tiab] OR capsule*[tiab] OR granule*[tiab] OR supplement*[tiab] OR preparation*[tiab] OR therap*[tiab] OR replacement[tiab] OR enteric*[tiab] OR \"digestive enzyme\"[tiab] OR \"digestive enzymes\"[tiab] OR \"drug interaction\"[tiab] OR \"drug interactions\"[tiab])))) AND (\"2000/01/01\"[Date - Publication] : \"3000\"[Date - Publication])) AND (\"2027/01/01\"[Date - Entrez] : \"3000\"[Date - Entrez])",
+        "retmode": "xml",
+        "retmax": 0,
+        "usehistory": "y"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:1",
+      "requested_at_utc": "2026-07-28T03:37:45.369646+00:00",
+      "completed_at_utc": "2026-07-28T03:37:48.769651+00:00",
+      "status_code": 200,
+      "response_bytes": 6408728,
+      "response_sha256": "75dbec60001577f0a1450e5c9418fb0bd2f973c1c9292e00390108e1a9c28f00",
+      "relative_path": "efetch/003_edat_1996_2011_0001.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 0,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:2",
+      "requested_at_utc": "2026-07-28T03:37:48.889915+00:00",
+      "completed_at_utc": "2026-07-28T03:37:51.487543+00:00",
+      "status_code": 200,
+      "response_bytes": 5932918,
+      "response_sha256": "f026170d9d063d55964381742d418926034dac17ccf8ed10fd1c2c89bdbc37db",
+      "relative_path": "efetch/003_edat_1996_2011_0002.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:3",
+      "requested_at_utc": "2026-07-28T03:37:51.601861+00:00",
+      "completed_at_utc": "2026-07-28T03:37:54.167045+00:00",
+      "status_code": 200,
+      "response_bytes": 5758618,
+      "response_sha256": "e827ffb907ee208c99cf126c049bf752a919d664353334ebe906fd4402d2f58b",
+      "relative_path": "efetch/003_edat_1996_2011_0003.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:4",
+      "requested_at_utc": "2026-07-28T03:37:54.244290+00:00",
+      "completed_at_utc": "2026-07-28T03:37:57.346703+00:00",
+      "status_code": 200,
+      "response_bytes": 5499619,
+      "response_sha256": "cc5d6cd00faa4030eb0cff356eaa8c042e7f69d995f7d97b779a1fee968c66fc",
+      "relative_path": "efetch/003_edat_1996_2011_0004.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:5",
+      "requested_at_utc": "2026-07-28T03:37:57.471703+00:00",
+      "completed_at_utc": "2026-07-28T03:37:59.882629+00:00",
+      "status_code": 200,
+      "response_bytes": 5556874,
+      "response_sha256": "2196ff42c8790f832999937253dbf10d6bde13a02de927e61b2bd6399204a291",
+      "relative_path": "efetch/003_edat_1996_2011_0005.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:6",
+      "requested_at_utc": "2026-07-28T03:37:59.970943+00:00",
+      "completed_at_utc": "2026-07-28T03:38:02.303443+00:00",
+      "status_code": 200,
+      "response_bytes": 5341028,
+      "response_sha256": "002cd1e870db84067f2e17f34468af4e33c4d0108e70e293b94122636a47c1f3",
+      "relative_path": "efetch/003_edat_1996_2011_0006.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:7",
+      "requested_at_utc": "2026-07-28T03:38:02.380551+00:00",
+      "completed_at_utc": "2026-07-28T03:38:05.390029+00:00",
+      "status_code": 200,
+      "response_bytes": 5216516,
+      "response_sha256": "c105737c5d37b43bde96a8cff8d0d46eb378e23aad058b2f3f7634158d87303e",
+      "relative_path": "efetch/003_edat_1996_2011_0007.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:8",
+      "requested_at_utc": "2026-07-28T03:38:05.479166+00:00",
+      "completed_at_utc": "2026-07-28T03:38:07.962389+00:00",
+      "status_code": 200,
+      "response_bytes": 4900594,
+      "response_sha256": "a28b4f31e30635bbc1f68d79c8e658394f3b34770d5004d7ece9262de8c938cf",
+      "relative_path": "efetch/003_edat_1996_2011_0008.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:9",
+      "requested_at_utc": "2026-07-28T03:38:08.049395+00:00",
+      "completed_at_utc": "2026-07-28T03:38:10.396375+00:00",
+      "status_code": 200,
+      "response_bytes": 4420806,
+      "response_sha256": "489393a2a6b974bb3cf815057d77b3daa039969a01f15f92b3f66dc6ac9dcdf7",
+      "relative_path": "efetch/003_edat_1996_2011_0009.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:10",
+      "requested_at_utc": "2026-07-28T03:38:10.490657+00:00",
+      "completed_at_utc": "2026-07-28T03:38:12.950429+00:00",
+      "status_code": 200,
+      "response_bytes": 4471300,
+      "response_sha256": "76e3b41e6c7eada577fbffeb3664af769f272088f3eb6e8742a32e84f5778ac0",
+      "relative_path": "efetch/003_edat_1996_2011_0010.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:11",
+      "requested_at_utc": "2026-07-28T03:38:13.038439+00:00",
+      "completed_at_utc": "2026-07-28T03:38:15.450427+00:00",
+      "status_code": 200,
+      "response_bytes": 4277157,
+      "response_sha256": "adb969182e7e2272f7ddfc469c9fe2c0d63045e354b9a9b9f8f22f5ba3a8d60b",
+      "relative_path": "efetch/003_edat_1996_2011_0011.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:12",
+      "requested_at_utc": "2026-07-28T03:38:15.531735+00:00",
+      "completed_at_utc": "2026-07-28T03:38:17.729049+00:00",
+      "status_code": 200,
+      "response_bytes": 4230314,
+      "response_sha256": "667317fe738bf779fcffc257329befe33909f216eccb0996729d63711bd69c57",
+      "relative_path": "efetch/003_edat_1996_2011_0012.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:13",
+      "requested_at_utc": "2026-07-28T03:38:17.793305+00:00",
+      "completed_at_utc": "2026-07-28T03:38:20.318965+00:00",
+      "status_code": 200,
+      "response_bytes": 4005808,
+      "response_sha256": "2c65463485b272eb68bd1cb2c062c4a66d748a1ab6ac913a84a21875d1a3ef50",
+      "relative_path": "efetch/003_edat_1996_2011_0013.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 6000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_1996_2011:14",
+      "requested_at_utc": "2026-07-28T03:38:20.410734+00:00",
+      "completed_at_utc": "2026-07-28T03:38:22.331708+00:00",
+      "status_code": 200,
+      "response_bytes": 3281674,
+      "response_sha256": "0a7863e366450b95fddfe1df47586b77302d6b32fa51799d6cb74d47f1b4e680",
+      "relative_path": "efetch/003_edat_1996_2011_0014.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 6500,
+        "retmax": 403,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:1",
+      "requested_at_utc": "2026-07-28T03:38:22.386235+00:00",
+      "completed_at_utc": "2026-07-28T03:38:26.116029+00:00",
+      "status_code": 200,
+      "response_bytes": 9581878,
+      "response_sha256": "8ec4603a03e62e646f7b20452c0ea266f7fbe1b5334011b9086eed1839fb12b7",
+      "relative_path": "efetch/004_edat_2012_2019_0001.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 0,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:2",
+      "requested_at_utc": "2026-07-28T03:38:26.267490+00:00",
+      "completed_at_utc": "2026-07-28T03:38:29.225357+00:00",
+      "status_code": 200,
+      "response_bytes": 8850976,
+      "response_sha256": "62b55347453547ae656364893968764ac2c6f33659d0bbcaa9ba404a072d1a08",
+      "relative_path": "efetch/004_edat_2012_2019_0002.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:3",
+      "requested_at_utc": "2026-07-28T03:38:29.364386+00:00",
+      "completed_at_utc": "2026-07-28T03:38:32.502551+00:00",
+      "status_code": 200,
+      "response_bytes": 8590106,
+      "response_sha256": "b36f0ec98600042f33872cb9c8762e3bce4c4c2f0f77befe19b69e9730bb4e1c",
+      "relative_path": "efetch/004_edat_2012_2019_0003.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:4",
+      "requested_at_utc": "2026-07-28T03:38:32.627180+00:00",
+      "completed_at_utc": "2026-07-28T03:38:36.232740+00:00",
+      "status_code": 200,
+      "response_bytes": 9007988,
+      "response_sha256": "d18cc83f7fc55cf16f379104c50e80871f264534dc4d65c79440b647a3ed9835",
+      "relative_path": "efetch/004_edat_2012_2019_0004.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:5",
+      "requested_at_utc": "2026-07-28T03:38:36.377313+00:00",
+      "completed_at_utc": "2026-07-28T03:38:39.688529+00:00",
+      "status_code": 200,
+      "response_bytes": 8658630,
+      "response_sha256": "8924b747cc8ba287c5c4b675492c1dccf51c29681966c79ce9e7129ed08467d1",
+      "relative_path": "efetch/004_edat_2012_2019_0005.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:6",
+      "requested_at_utc": "2026-07-28T03:38:39.798769+00:00",
+      "completed_at_utc": "2026-07-28T03:38:42.758927+00:00",
+      "status_code": 200,
+      "response_bytes": 9138075,
+      "response_sha256": "13b6bb2c8d2eb78220a01206336381faf3612ce3635827b22c6da72242cd6443",
+      "relative_path": "efetch/004_edat_2012_2019_0006.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:7",
+      "requested_at_utc": "2026-07-28T03:38:45.211321+00:00",
+      "completed_at_utc": "2026-07-28T03:38:48.768390+00:00",
+      "status_code": 200,
+      "response_bytes": 8832737,
+      "response_sha256": "4316874f537985ab3b2087aaee9335ec792cad016e3dadae5e31f3c63dbe1151",
+      "relative_path": "efetch/004_edat_2012_2019_0007.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:8",
+      "requested_at_utc": "2026-07-28T03:38:48.986509+00:00",
+      "completed_at_utc": "2026-07-28T03:38:52.037130+00:00",
+      "status_code": 200,
+      "response_bytes": 8154477,
+      "response_sha256": "f7305dcfc092ab665bea0b850d3121390237c20b3f38ac9531e27ece71730f61",
+      "relative_path": "efetch/004_edat_2012_2019_0008.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:9",
+      "requested_at_utc": "2026-07-28T03:38:52.185463+00:00",
+      "completed_at_utc": "2026-07-28T03:38:55.324024+00:00",
+      "status_code": 200,
+      "response_bytes": 8430010,
+      "response_sha256": "679e6167c047dcbbf7a968f41c1540eb7f8a6a932eb9ccaf7a59614e0a959558",
+      "relative_path": "efetch/004_edat_2012_2019_0009.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:10",
+      "requested_at_utc": "2026-07-28T03:38:55.496801+00:00",
+      "completed_at_utc": "2026-07-28T03:38:59.023774+00:00",
+      "status_code": 200,
+      "response_bytes": 7815540,
+      "response_sha256": "663ff3b98252848944161154a17db1bb9584eeaa38b8cd5fcd8e542ce30c9062",
+      "relative_path": "efetch/004_edat_2012_2019_0010.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:11",
+      "requested_at_utc": "2026-07-28T03:38:59.209039+00:00",
+      "completed_at_utc": "2026-07-28T03:39:03.020264+00:00",
+      "status_code": 200,
+      "response_bytes": 7592566,
+      "response_sha256": "e7984d1ad8361c7ca2ac0546b79a433b9f4e6e34e555ad6116437bed019972d3",
+      "relative_path": "efetch/004_edat_2012_2019_0011.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:12",
+      "requested_at_utc": "2026-07-28T03:39:03.163453+00:00",
+      "completed_at_utc": "2026-07-28T03:39:06.236725+00:00",
+      "status_code": 200,
+      "response_bytes": 7958041,
+      "response_sha256": "965027a8419df61cdc142c803ac57715db6be378284dea3aa5af68198cd04a1d",
+      "relative_path": "efetch/004_edat_2012_2019_0012.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:13",
+      "requested_at_utc": "2026-07-28T03:39:06.359573+00:00",
+      "completed_at_utc": "2026-07-28T03:39:13.769857+00:00",
+      "status_code": 200,
+      "response_bytes": 7386317,
+      "response_sha256": "03529a63a807b0f694488a8988a6e32a6d909c3cc48dd8fdfc9b3c0135bb5ddf",
+      "relative_path": "efetch/004_edat_2012_2019_0013.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 6000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:14",
+      "requested_at_utc": "2026-07-28T03:39:13.900948+00:00",
+      "completed_at_utc": "2026-07-28T03:39:16.944350+00:00",
+      "status_code": 200,
+      "response_bytes": 6938908,
+      "response_sha256": "7f04fa4cdeb2fc75c44d6d4b266f8532e5020703b0204ef053a769ecbd3ce361",
+      "relative_path": "efetch/004_edat_2012_2019_0014.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 6500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:15",
+      "requested_at_utc": "2026-07-28T03:39:17.060790+00:00",
+      "completed_at_utc": "2026-07-28T03:39:20.389703+00:00",
+      "status_code": 200,
+      "response_bytes": 7066224,
+      "response_sha256": "e4125f4eb314133070421723563f6043d784b3fa07a3dad9742245f43021c7c2",
+      "relative_path": "efetch/004_edat_2012_2019_0015.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 7000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2012_2019:16",
+      "requested_at_utc": "2026-07-28T03:39:20.494247+00:00",
+      "completed_at_utc": "2026-07-28T03:39:22.461961+00:00",
+      "status_code": 200,
+      "response_bytes": 3557933,
+      "response_sha256": "2aea257cec7c5389f83f9d515f91cb75c1c5687732746382791a6785226eec26",
+      "relative_path": "efetch/004_edat_2012_2019_0016.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 7500,
+        "retmax": 274,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:1",
+      "requested_at_utc": "2026-07-28T03:39:22.511663+00:00",
+      "completed_at_utc": "2026-07-28T03:39:26.931373+00:00",
+      "status_code": 200,
+      "response_bytes": 12483147,
+      "response_sha256": "418a33eeccd92fa675b7be08b627542923635e46ffa16b3758a41793b8d0710e",
+      "relative_path": "efetch/005_edat_2020_2026_0001.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 0,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:2",
+      "requested_at_utc": "2026-07-28T03:39:27.140659+00:00",
+      "completed_at_utc": "2026-07-28T03:39:30.678164+00:00",
+      "status_code": 200,
+      "response_bytes": 11792643,
+      "response_sha256": "5d50ca1832f93757af518f49043ccd7e82a254afd2e3aec7e2129de4d29e1089",
+      "relative_path": "efetch/005_edat_2020_2026_0002.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:3",
+      "requested_at_utc": "2026-07-28T03:39:30.872630+00:00",
+      "completed_at_utc": "2026-07-28T03:39:35.012836+00:00",
+      "status_code": 200,
+      "response_bytes": 12035774,
+      "response_sha256": "df2ca659d6735e0bd9d5a562b57fa9a81301581b03dd96c9b142afbb266deee1",
+      "relative_path": "efetch/005_edat_2020_2026_0003.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:4",
+      "requested_at_utc": "2026-07-28T03:39:35.188624+00:00",
+      "completed_at_utc": "2026-07-28T03:39:39.392389+00:00",
+      "status_code": 200,
+      "response_bytes": 12302625,
+      "response_sha256": "72d31f3ec4b0124ad61e0c682d8286868a0f0286938895fd82e2835b96e37a3f",
+      "relative_path": "efetch/005_edat_2020_2026_0004.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 1500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:5",
+      "requested_at_utc": "2026-07-28T03:39:39.553675+00:00",
+      "completed_at_utc": "2026-07-28T03:39:42.877492+00:00",
+      "status_code": 200,
+      "response_bytes": 11828251,
+      "response_sha256": "11e019daf56ea14445552d44089bdc12e6777b1c080879d33b834467806c9eca",
+      "relative_path": "efetch/005_edat_2020_2026_0005.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:6",
+      "requested_at_utc": "2026-07-28T03:39:43.075848+00:00",
+      "completed_at_utc": "2026-07-28T03:39:46.280578+00:00",
+      "status_code": 200,
+      "response_bytes": 10690124,
+      "response_sha256": "8b0ba5b372d74b4645fc239fb56a6ad951cdb8e7d14c40665552e8bfcaa6a214",
+      "relative_path": "efetch/005_edat_2020_2026_0006.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 2500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:7",
+      "requested_at_utc": "2026-07-28T03:39:46.463222+00:00",
+      "completed_at_utc": "2026-07-28T03:39:50.431079+00:00",
+      "status_code": 200,
+      "response_bytes": 11540165,
+      "response_sha256": "e2540c5534e8298a95fe448c546583fc363f676cc3c504648d3f0f2308ebc7ff",
+      "relative_path": "efetch/005_edat_2020_2026_0007.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:8",
+      "requested_at_utc": "2026-07-28T03:39:50.604427+00:00",
+      "completed_at_utc": "2026-07-28T03:39:54.299157+00:00",
+      "status_code": 200,
+      "response_bytes": 11693073,
+      "response_sha256": "576f1c68178b91c9d25060c16ba0c060dfd3a949a912db17f36369b9b3d449dc",
+      "relative_path": "efetch/005_edat_2020_2026_0008.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 3500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:9",
+      "requested_at_utc": "2026-07-28T03:39:54.495914+00:00",
+      "completed_at_utc": "2026-07-28T03:39:57.966378+00:00",
+      "status_code": 200,
+      "response_bytes": 11625720,
+      "response_sha256": "12af5985db19a7a39a9e569a3adcb8647425636f5b364d79cb0686b5c3badb8d",
+      "relative_path": "efetch/005_edat_2020_2026_0009.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:10",
+      "requested_at_utc": "2026-07-28T03:39:58.152543+00:00",
+      "completed_at_utc": "2026-07-28T03:40:02.539807+00:00",
+      "status_code": 200,
+      "response_bytes": 11558932,
+      "response_sha256": "f48a3b5ae458941dbf7054af75bdaf524e810f1410b40d5992932e8fa540637a",
+      "relative_path": "efetch/005_edat_2020_2026_0010.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 4500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:11",
+      "requested_at_utc": "2026-07-28T03:40:02.683257+00:00",
+      "completed_at_utc": "2026-07-28T03:40:05.902017+00:00",
+      "status_code": 200,
+      "response_bytes": 11698378,
+      "response_sha256": "7bb5020b4ac4f2aea13198712b87fca0392be0d60abadc84ed9f29f5ec2129ba",
+      "relative_path": "efetch/005_edat_2020_2026_0011.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:12",
+      "requested_at_utc": "2026-07-28T03:40:06.102454+00:00",
+      "completed_at_utc": "2026-07-28T03:40:09.856386+00:00",
+      "status_code": 200,
+      "response_bytes": 10539512,
+      "response_sha256": "4fabdd383ad2f8ac1729669cd1155deee2a450c3b34accc9443b4e6892df92d9",
+      "relative_path": "efetch/005_edat_2020_2026_0012.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 5500,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:13",
+      "requested_at_utc": "2026-07-28T03:40:10.011978+00:00",
+      "completed_at_utc": "2026-07-28T03:40:13.983658+00:00",
+      "status_code": 200,
+      "response_bytes": 9964329,
+      "response_sha256": "18df38eec215fdf1fe397ccc829b24c888ff52a50113d8b1637125bc61e97518",
+      "relative_path": "efetch/005_edat_2020_2026_0013.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 6000,
+        "retmax": 500,
+        "retmode": "xml"
+      }
+    },
+    {
+      "request_type": "efetch:edat_2020_2026:14",
+      "requested_at_utc": "2026-07-28T03:40:14.118966+00:00",
+      "completed_at_utc": "2026-07-28T03:40:15.722021+00:00",
+      "status_code": 200,
+      "response_bytes": 3204053,
+      "response_sha256": "af5d785bde002515ef8076cb80cd4771f5e52f49a2b0bb4c1d804ea949c8e304",
+      "relative_path": "efetch/005_edat_2020_2026_0014.xml",
+      "parameters": {
+        "tool": "otc_safety_v50",
+        "db": "pubmed",
+        "query_key": "1",
+        "retstart": 6500,
+        "retmax": 165,
+        "retmode": "xml"
+      }
+    }
+  ],
+  "status": "complete"
+}
