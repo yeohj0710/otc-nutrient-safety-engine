@@ -8,6 +8,11 @@
     "studyDesign": "관찰연구 체계적 문헌고찰·메타분석",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/20178131/",
@@ -53,6 +58,11 @@
     "studyDesign": "다기관 후향 차트 검토",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/21370947/",
@@ -96,6 +106,11 @@
     "studyDesign": "단일기관 코호트 연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/22106945/",
@@ -139,6 +154,11 @@
     "studyDesign": "용법 모델링 비교연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/22617049/",
@@ -182,6 +202,11 @@
     "studyDesign": "부검 증례보고 2건",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/23747192/",
@@ -225,6 +250,11 @@
     "studyDesign": "시뮬레이션·서술적 종설",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/26022219/",
@@ -268,6 +298,11 @@
     "studyDesign": "7일 약물일지 기반 관찰연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/26149538/",
@@ -324,6 +359,11 @@
     "studyDesign": "서술적 종설",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/26460177/",
@@ -367,6 +407,11 @@
     "studyDesign": "자발보고 약물감시 자료 case/non-case 분석",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/26739516/",
@@ -410,6 +455,11 @@
     "studyDesign": "이중눈가림 무작위배정 교차시험",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/26999510/",
@@ -454,6 +504,11 @@
     "studyDesign": "7일 약물일지 기반 관찰연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/29516533/",
@@ -495,6 +550,11 @@
     "studyDesign": "다년도 약물일지 기반 관찰연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/30030041/",
@@ -538,6 +598,11 @@
     "studyDesign": "중독관리센터 신고 자료 후향 관찰연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/30306812/",
@@ -579,6 +644,11 @@
     "studyDesign": "수학적 모델링 연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "outside_v50_search_window",
+      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/33333080/",
@@ -622,6 +692,11 @@
     "studyDesign": "다기관 후향 코호트 연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/33662136/",
@@ -667,6 +742,11 @@
     "studyDesign": "전국 코호트 연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/39551938/",
@@ -712,6 +792,11 @@
     "studyDesign": "전국 출생 코호트 연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/39714827/",
@@ -757,6 +842,11 @@
     "studyDesign": "단일기관 10년 후향 연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": false,
+      "reason": "no_retain_decision_for_rule_question",
+      "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/40579172/",
@@ -801,6 +891,11 @@
     "studyDesign": "중독정보센터 자료 후향 관찰연구",
     "evidenceAuthority": "literature_explanatory_only",
     "supportsRuleRelease": false,
+    "v50Validation": {
+      "screened": true,
+      "reason": null,
+      "labelKo": "v5.0 선별 검증"
+    },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
     "url": "https://pubmed.ncbi.nlm.nih.gov/41803773/",

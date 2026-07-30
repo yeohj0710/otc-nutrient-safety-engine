@@ -1990,3 +1990,29 @@
   line-height: 1.65;
   word-break: keep-all;
 }
+
+/* v5.0 문헌 선별로 검증된 근거와, 검증 범위 밖 근거를 화면에서 구분한다.
+   규칙 16개를 덮으려면 2022년 이전 문헌이 필요한데 v5.0 검색 기간이 2022년부터라서
+   규칙 근거의 절반 가까이가 검증 대상이 아니었다. 그 사실을 감추지 않는다. */
+.v50Verified,
+.v50Unverified {
+  flex-basis: 100%;
+  border-radius: 5px;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  cursor: help;
+}
+
+.v50Verified {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.v50Unverified {
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #6b7280;
+}

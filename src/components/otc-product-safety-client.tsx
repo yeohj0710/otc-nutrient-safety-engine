@@ -1027,6 +1027,22 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                           <div>
                                             <span>{paper.publicationYear} · {paper.studyDesign} · {literatureRelationLabel(link?.evidenceRelation ?? paper.evidenceRelation)}</span>
                                             <b>PMID {paper.pmid}</b>
+                                            {paper.v50Validation ? (
+                                              <span
+                                                className={
+                                                  paper.v50Validation.screened
+                                                    ? styles.v50Verified
+                                                    : styles.v50Unverified
+                                                }
+                                                title={
+                                                  paper.v50Validation.screened
+                                                    ? "v5.0 문헌 선별 판정으로 검증된 근거입니다."
+                                                    : "v5.0 문헌 선별이 검증하지 않은 근거입니다. 규칙 판정은 허가원문이 정하므로 이 표시가 판정을 바꾸지는 않습니다."
+                                                }
+                                              >
+                                                {paper.v50Validation.labelKo}
+                                              </span>
+                                            ) : null}
                                           </div>
                                           <a href={paper.url} target="_blank" rel="noreferrer">
                                             {paper.title}

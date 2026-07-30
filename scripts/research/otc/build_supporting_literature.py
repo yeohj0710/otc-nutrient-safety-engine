@@ -27,6 +27,12 @@ TARGET = ROOT / "src" / "generated" / "otc-supporting-literature.json"
 RULES = ROOT / "research_v3" / "otc" / "rules" / "rules.csv"
 EVIDENCE_MAP = ROOT / "research_v3" / "otc" / "literature" / "evidence_map.csv"
 
+V50_LINKS = (
+    ROOT / "research_v3" / "otc" / "literature" / "v5" / "downstream" / "supporting_literature.csv"
+)
+# v5.0 코퍼스 기간. 이 기간 밖 문헌은 v5.0 선별이 볼 수 없으므로 검증 대상이 아니었다.
+V50_WINDOW_FIRST_YEAR = 2022
+
 REVIEW_STATUS = "agent_curated_from_v40_retained_corpus"
 EVIDENCE_AUTHORITY = "literature_explanatory_only"
 DISCLAIMER_KO = "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다."
@@ -48,6 +54,49 @@ PROFILE_CONDITIONS = {
 }
 # 복용 입력 축. 프로파일이 아니라 제품 입력이라 필터에 쓰지 않고 표시만 한다.
 DOSE_INPUT_CONDITIONS = {"hoursSincePreviousDose", "continuousDays"}
+
+
+def _v50_verified_pmids() -> set[str]:
+    """v5.0 선별 판정으로 실제 검증된 링크의 PMID 집합.
+
+    파일이 없으면 빈 집합을 돌려주고, 그 경우 모든 문헌이 unverified 로 표시된다.
+    조용히 verified 로 넘기지 않는다.
+    """
+    if not V50_LINKS.exists():
+        return set()
+    out: set[str] = set()
+    for row in _rows(V50_LINKS):
+        pmid = (row.get("pmid") or row.get("﻿pmid") or "").strip()
+        if pmid:
+            out.add(pmid)
+    return out
+
+
+_V50_VERIFIED: set[str] | None = None
+
+
+def _v50_validation(pmid: str, publication_year: int) -> dict[str, object]:
+    """이 문헌이 v5.0 선별로 검증됐는지, 아니면 왜 검증 대상이 아니었는지.
+
+    규칙 16개를 덮으려면 2022년 이전 문헌이 필요한데 v5.0 검색은 2022년부터라서,
+    규칙 근거의 절반 가까이가 검증 범위 밖에 있다. 그 사실을 화면에서 감추지 않는다.
+    """
+    global _V50_VERIFIED
+    if _V50_VERIFIED is None:
+        _V50_VERIFIED = _v50_verified_pmids()
+    if pmid in _V50_VERIFIED:
+        return {"screened": True, "reason": None, "labelKo": "v5.0 선별 검증"}
+    if publication_year < V50_WINDOW_FIRST_YEAR:
+        return {
+            "screened": False,
+            "reason": "outside_v50_search_window",
+            "labelKo": f"v5.0 검색 기간({V50_WINDOW_FIRST_YEAR}년~) 밖",
+        }
+    return {
+        "screened": False,
+        "reason": "no_retain_decision_for_rule_question",
+        "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님",
+    }
 
 
 def _rows(path: Path) -> list[dict[str, str]]:
@@ -117,6 +166,7 @@ def build() -> list[dict]:
                 "studyDesign": row["study_design"],
                 "evidenceAuthority": EVIDENCE_AUTHORITY,
                 "supportsRuleRelease": False,
+                "v50Validation": _v50_validation(pmid, int(row["publication_year"])),
                 "reviewStatus": REVIEW_STATUS,
                 "disclaimerKo": DISCLAIMER_KO,
                 "url": row["url"],

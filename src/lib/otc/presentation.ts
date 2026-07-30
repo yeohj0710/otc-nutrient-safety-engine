@@ -36,9 +36,25 @@ export type SupportingLiteratureRuleLink = {
   authorizationNoteKo: string;
 };
 
+/**
+ * 이 문헌이 v5.0 문헌 선별로 검증됐는지, 아니면 왜 검증 대상이 아니었는지.
+ * 규칙 16개를 덮으려면 2022년 이전 문헌이 필요한데 v5.0 검색 기간이 2022년부터라서
+ * 규칙 근거의 절반 가까이가 검증 범위 밖에 있다. 화면에서 이를 구분해 표시한다.
+ * 문헌은 설명용 근거일 뿐이므로 이 값이 규칙 판정을 바꾸지는 않는다.
+ */
+export type SupportingLiteratureV50Validation = {
+  screened: boolean;
+  reason:
+    | null
+    | "outside_v50_search_window"
+    | "no_retain_decision_for_rule_question";
+  labelKo: string;
+};
+
 export type SupportingLiterature = {
   pmid: string;
   doi: string;
+  v50Validation: SupportingLiteratureV50Validation;
   title: string;
   journal: string;
   publicationYear: number;
