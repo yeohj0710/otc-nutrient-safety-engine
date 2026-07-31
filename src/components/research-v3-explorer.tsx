@@ -62,14 +62,23 @@ export function ResearchV3Explorer({ meta }: { meta: Meta }) {
     <main className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.header}>
-          <p className={styles.eyebrow}>연세대학교 약학대학 · 권혁찬 · 연구용 v3</p>
+          <p className={styles.eyebrow}>선행 계보 자료 · 현재 연구의 결과가 아닙니다</p>
           <h1>하루 총량, 기준과 함께 확인해요</h1>
           <p>제품 라벨의 같은 성분을 모두 더한 뒤 입력하세요. 현재 화면은 전문가 검토 전 연구 초안입니다.</p>
         </header>
 
+        {/*
+          이 연구는 2026-07-27 개정(AM-OTC-001)으로 고함량 영양성분에서 국내
+          일반의약품 중복복용으로 방향을 바꿨다. 이 화면은 그 전에 만든 것이라
+          지우지 않고 남기되, 현재 결과로 읽히지 않도록 맨 위에서 밝힌다.
+        */}
         <aside className={styles.notice} aria-label="연구 상태">
-          <strong>진단·처방 도구가 아닙니다.</strong>
-          <span>공개 가능한 규칙 {meta.releasedRuleCount}건 · 검토 중 초안 {meta.ruleCount}건</span>
+          <strong>이 화면은 방향을 바꾸기 전의 계보 자료입니다.</strong>
+          <span>
+            현재 연구는 국내 일반의약품 중복복용이며, 그 내용은 <a href="/research">연구 정보</a>에
+            있습니다. 여기의 KDRI 기준 초안은 현재 연구의 결과가 아니므로 인용하지 마십시오.
+            공개 가능한 규칙 {meta.releasedRuleCount}건 · 검토 중 초안 {meta.ruleCount}건
+          </span>
         </aside>
 
         <form className={styles.form} onSubmit={submit}>

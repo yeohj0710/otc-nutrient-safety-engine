@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "1.0.0",
+  "track": "v5.0-mecir-search",
+  "generatedFrom": {
+    "ledger": "research_v3/logs/v50_run_report.json",
+    "scoring": "research_v3/logs/v50_scoring_report.json",
+    "links": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json"
+  },
+  "authorization": {
+    "analysedProducts": 13,
+    "collectedProducts": 16,
+    "uniqueIngredients": 28,
+    "productIngredientLinks": 47,
+    "administrationConstraints": 32,
+    "ruleCount": 16,
+    "releasedRuleCount": 15
+  },
+  "literature": {
+    "questions": [
+      {
+        "id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "titleKo": "아세트아미노펜 용량·간격·간질환·음주 관련 위해",
+        "hits": 9264,
+        "previousHits": 2709,
+        "dateFrom": "2010/01/01"
+      },
+      {
+        "id": "OTC-LIT-Q02-NSAID",
+        "titleKo": "이부프로펜·덱시부프로펜·나프록센의 중복과 주요 위해",
+        "hits": 6456,
+        "previousHits": 683,
+        "dateFrom": "2010/01/01"
+      },
+      {
+        "id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "titleKo": "감기·알레르기 복합성분의 진정·운전·혈압·병용 위해",
+        "hits": 5670,
+        "previousHits": 1533,
+        "dateFrom": "2010/01/01"
+      },
+      {
+        "id": "OTC-LIT-Q04-DIGESTIVE",
+        "titleKo": "소화효소·담즙산·가스제거 성분 복합 사용의 안전성",
+        "hits": 21342,
+        "previousHits": 104,
+        "dateFrom": "2000/01/01"
+      },
+      {
+        "id": "OTC-LIT-Q05-TOPICAL",
+        "titleKo": "살리실산메틸·멘톨·캄파 등 외용 복합성분의 위해",
+        "hits": 517,
+        "previousHits": 713,
+        "dateFrom": "2000/01/01"
+      }
+    ],
+    "hitTotal": 43249,
+    "previousHitTotal": 5742,
+    "uniquePapers": 42822,
+    "screeningUnits": 43207,
+    "xmlFiles": 105
+  },
+  "screening": {
+    "classifier": {
+      "deprioritize": 33683,
+      "retain": 7278,
+      "uncertain": 2246
+    },
+    "adjudicatedRows": 5000,
+    "adjudicationDisagreements": 2787,
+    "adjudicationDisagreementRate": 55.74,
+    "final": {
+      "deprioritize": 34965,
+      "retain": 7875,
+      "uncertain": 367
+    },
+    "finalRetainFromAdjudication": 1193,
+    "finalRetainFromClassifierOnly": 6682,
+    "classifierValidation": {
+      "cases": 42,
+      "passed": 27,
+      "failed": 15
+    }
+  },
+  "scoring": {
+    "sampleRows": 894,
+    "populationRows": 43207,
+    "strata": 33,
+    "bootstrapDraws": 10000,
+    "agreement": 86.93,
+    "agreementCi": [
+      84.87,
+      88.83
+    ],
+    "sensitivity": 46.92,
+    "sensitivityCi": [
+      40.29,
+      53.58
+    ],
+    "specificity": 95.84,
+    "specificityCi": [
+      93.81,
+      97.66
+    ],
+    "kappa": 0.493,
+    "pipelineRetainShare": 18.23,
+    "scorerRetainShare": 11.95,
+    "disagreementByDirection": {
+      "deprioritize->retain": 20,
+      "deprioritize->uncertain": 4,
+      "retain->deprioritize": 155,
+      "retain->uncertain": 7,
+      "uncertain->deprioritize": 66,
+      "uncertain->retain": 54
+    },
+    "truthOpenedBeforeLock": false
+  },
+  "ruleLiterature": {
+    "ruleCount": 16,
+    "resolvedRuleCount": 9,
+    "unresolvedRuleCount": 7,
+    "unresolvedRuleIds": [
+      "OTC-RULE-003",
+      "OTC-RULE-009",
+      "OTC-RULE-010",
+      "OTC-RULE-011",
+      "OTC-RULE-013",
+      "OTC-RULE-015",
+      "OTC-RULE-016"
+    ],
+    "linkCount": 10,
+    "rejectedCount": 10,
+    "rejectionCounts": {
+      "no_retain_decision_for_rule_question": 4,
+      "not_in_v5_corpus": 6
+    }
+  },
+  "flags": {
+    "independentBlinding": false,
+    "releaseReady": false,
+    "humanReferenceRows": 0,
+    "overallExecutionStatus": "partial"
+  },
+  "limitations": [
+    "재판정 입력·출력·프롬프트·검사 해시는 보존됐다. 실행자/task ID, provider/model, 시작·종료 시각, 선행 질문 영수증은 보존되지 않아 특정 에이전트 귀속, 실제 질문 간 순서, 질문 내 병렬 처리를 산출물만으로 독립 증명할 수 없다.",
+    "Phase A/B는 재실행하지 않았고 현재 질의·probe·XML 105개·체크섬·evidence map의 내부 무결성을 확인했다. 다만 방어 시작 시점 해시 기준선이 없어 그 시점 이후 불변성을 암호학적으로 증명할 수 없다.",
+    "보호 경로의 기준선 추적 파일 434개는 Git blob과 현재 바이트를 파일별로 대조했다. 현재 ignored 파일은 경로·크기·SHA-256을 기록했지만 동결 기준선에 ignored 파일 목록과 해시가 없어 과거 내용 동일성은 증명하지 못한다.",
+    "불변식 사례는 AI가 작성한 회귀 점검이며 사람 참조표준이 아니다. 실패 사례는 그대로 기록하며 분류기 원본을 다시 쓰지 않는다."
+  ]
+}

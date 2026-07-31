@@ -33,7 +33,11 @@ export function SiteFrame({ children }: { children: React.ReactNode }) {
           </Link>
           <nav className="flex items-center gap-1 text-[11px] font-bold text-[#667085]" aria-label="주요 메뉴">
             <Link href="/#checker" className="rounded-lg px-3 py-2 hover:bg-[#f3f5f7] hover:text-[#17223b]">약 점검</Link>
-            <Link href="/research-v3" className="rounded-lg px-3 py-2 hover:bg-[#f3f5f7] hover:text-[#17223b]">연구 정보</Link>
+            {/*
+              전에는 여기가 /research-v3 를 가리켰다. 그 화면은 AM-OTC-001 로 방향을
+              바꾸기 전의 고함량 영양성분 기준 초안이라, 이 연구의 정보가 아니다.
+            */}
+            <Link href="/research" className="rounded-lg px-3 py-2 hover:bg-[#f3f5f7] hover:text-[#17223b]">연구 정보</Link>
           </nav>
         </div>
       </header>
