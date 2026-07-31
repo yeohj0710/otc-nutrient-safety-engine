@@ -17,6 +17,13 @@ research_v3/logs/v50_run_report.json               -text
 research_v3/logs/v50_FINAL.md                      -text
 research_v3/logs/DECISIONS_v50.md                  -text
 
+# 기존 LF worktree 바이트를 그대로 요구하는 v5.0 입력만 고정한다. 혼합 줄바꿈 입력은
+# checkout 바이트에 의존하지 않고 고정 기준 커밋의 Git blob 계보로 검증한다.
+research_v3/otc/normalized/administration_constraints.csv              -text
+research_v3/otc/rules/evidence_text_overrides.csv                       -text
+research_v3/otc/literature/v5/downstream/literature_link_manifest.json  -text
+research_v3/otc/literature/v5/downstream/supporting_literature.csv      -text
+
 # 버전 지도. 해시 기록 대상은 아니지만 여형준 저장소와 같은 규칙을 적용한다.
 docs/version_map.md                                -text
 

@@ -5,8 +5,12 @@ import io
 import json
 
 from scripts.research.otc.build_v51_literature_classification import (
+    BASELINE_COMMIT,
+    BOUNDARY_HELPER,
+    GENERATOR,
     OUTPUT_AUDIT,
     OUTPUT_CSV,
+    _sha256,
     _semantic_json_sha256,
     build_artifacts,
     build_rows,
@@ -32,7 +36,9 @@ def test_runtime_observation_hash_ignores_embedded_v51_classification(tmp_path) 
     assert _semantic_json_sha256(target) != legacy_hash
 
 
-def test_v4_candidates_are_partitioned_and_v50_links_have_1_5_4_classification() -> None:
+def test_v4_candidates_are_partitioned_and_v50_links_have_1_5_4_classification() -> (
+    None
+):
     rows = build_rows()
     emitted = [row for row in rows if row["lineage_status"] == "v50_emitted"]
     rejected = [row for row in rows if row["v50_rejection_reason"]]
@@ -52,9 +58,10 @@ def test_v4_candidates_are_partitioned_and_v50_links_have_1_5_4_classification()
 
 def test_rejected_legacy_links_are_never_allowed_in_result_ui() -> None:
     rejected = [row for row in build_rows() if row["v50_rejection_reason"]]
-    assert {
-        row["v50_rejection_reason"] for row in rejected
-    } == {"not_in_v5_corpus", "no_retain_decision_for_rule_question"}
+    assert {row["v50_rejection_reason"] for row in rejected} == {
+        "not_in_v5_corpus",
+        "no_retain_decision_for_rule_question",
+    }
     assert all(row["semantic_classification"] == "" for row in rejected)
     assert all(row["ui_policy"] == "exclude_from_result_ui" for row in rejected)
     assert all(row["ui_direct_label_allowed"] == "false" for row in rejected)
@@ -113,8 +120,26 @@ def test_audit_records_authority_boundary_and_runtime_risk_counts() -> None:
     assert audit["runtime_risk_snapshot"]["served_papers"] == 19
     assert audit["runtime_risk_snapshot"]["served_links"] == 20
     assert audit["runtime_risk_snapshot"]["rejected_legacy_links_reachable"] == 8
-    assert audit["runtime_risk_snapshot"]["rejected_legacy_distinct_papers_reachable"] == 7
+    assert (
+        audit["runtime_risk_snapshot"]["rejected_legacy_distinct_papers_reachable"] == 7
+    )
     assert audit["runtime_risk_snapshot"]["rejected_legacy_links_draft_inactive"] == 2
+    rules_input = audit["inputs"]["rules"]
+    assert rules_input["basis"] == "baseline_git_blob"
+    assert rules_input["baseline_commit"] == BASELINE_COMMIT
+    assert rules_input["bytes"] == 5596
+    assert rules_input["sha256"] == (
+        "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e"
+    )
+    assert rules_input["legacy_recorded_raw_sha256"] == (
+        "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a"
+    )
+    assert rules_input["sha256"] != rules_input["legacy_recorded_raw_sha256"]
+    for name, path in (("generator", GENERATOR), ("boundary_helper", BOUNDARY_HELPER)):
+        lineage = audit["inputs"][name]
+        assert lineage["basis"] == "worktree_bytes"
+        assert lineage["bytes"] == path.stat().st_size
+        assert lineage["sha256"] == _sha256(path)
     assert all(audit["checks"].values())
     assert audit["valid"] is True
 

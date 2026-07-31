@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "release_lineage": "v5.1",
-  "source_lineage": "v5.0_read_only",
+  "source_lineage": "v5.0_pinned_baseline_git_blobs",
   "generator": "scripts/research/otc/build_v51_evidence_review.py",
-  "generator_sha256": "e11daa248e96658fa483cd80a2b2e0a6d3f8ff91df92121cd0c9f5e1bd6d9874",
+  "generator_sha256": "773e9e6213c9d3a2a4f11be6fab81ce4f335ad65bcad5130b0521d0b8547f64a",
   "raw_manifest_updated_at_utc": "2026-07-14T02:56:31.878369+00:00",
   "source_retrieved_at_utc_values": [
     "2026-07-14T02:10:14.255342+00:00",
@@ -12,62 +12,108 @@
   ],
   "inputs": {
     "scripts/research/otc/build_v51_evidence_review.py": {
-      "bytes": 51348,
-      "sha256": "e11daa248e96658fa483cd80a2b2e0a6d3f8ff91df92121cd0c9f5e1bd6d9874"
+      "basis": "worktree_bytes",
+      "bytes": 53973,
+      "sha256": "773e9e6213c9d3a2a4f11be6fab81ce4f335ad65bcad5130b0521d0b8547f64a"
+    },
+    "scripts/research/otc/audit_v51_boundaries.py": {
+      "basis": "worktree_bytes",
+      "bytes": 35465,
+      "sha256": "63a0c61f430ae1da793fde2500eca61c8422867d5dacaab820df8339e87f7b8b"
     },
     "research_v3/otc/rules/official_evidence_candidates.csv": {
-      "bytes": 140736,
-      "sha256": "e1497be67bf58328436ec0438a8829a8f01b89f8f4c251a76838c10ae52b2b8b"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "10835703de50db3adfc0d4c8c63551d7df389838",
+      "bytes": 140382,
+      "sha256": "28b152300b07f373e78786b9981994b5a1a7b23967e533e2f1219a568912ea7b"
     },
     "research_v3/otc/rules/rule_evidence_shortlist.csv": {
-      "bytes": 21882,
-      "sha256": "d19c892ec2f084a6e5ff1548b387fc750c3a27b5eb6a680668df011b7f70066c"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d78d94781a620d7f23e59f5a495e2ac1de848bf9",
+      "bytes": 21840,
+      "sha256": "d28b6acda5161669057f30ff4f103ebca52a1457bc37ab111e7a932552a0610d"
     },
     "research_v3/otc/rules/evidence_text_overrides.csv": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f6da3b82def332a6a18689c083ca0f33f064d965",
       "bytes": 2924,
       "sha256": "eaff26a1629513ed86e27fd37411cad6957f97236483d02dabe6dc2ca35122fc"
     },
     "research_v3/otc/rules/rules.csv": {
-      "bytes": 5613,
-      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "41b72ad957c04bf922aeb1fdeb50e2b436420440",
+      "bytes": 5596,
+      "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e"
     },
     "research_v3/otc/rules/runtime_rule_bindings.csv": {
-      "bytes": 1335,
-      "sha256": "476c7277c04a0136c5bfe3e651b08830b8b1544500541965ecac4f635fe23ec2"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f2de18406fef4d9cb3426f437c2020f6dde1eea1",
+      "bytes": 1321,
+      "sha256": "d838f851a5623574df76500a3dd33c1c2e3f77564ac5965d341220cb21d93931"
     },
     "research_v3/otc/review/expert_rule_review.csv": {
-      "bytes": 2033,
-      "sha256": "c49b5b23c11edfed2f20194fbced7a9ffc4619d07b4a1217503d379894b79a01"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "256ed460f90e70877feb33fe51ab6845987f4b02",
+      "bytes": 2016,
+      "sha256": "3128775dbc69e7a7aa77eb5fd3ce14b7874df8e3638699adfe4baa63e4314a2c"
     },
     "research_v3/otc/normalized/product_master.csv": {
-      "bytes": 8700,
-      "sha256": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "c1d7d6dbd24a46e89dc8275cf7eb1c50fbc2abd7",
+      "bytes": 8683,
+      "sha256": "93e8f21b00e5e2ee8963777fa04aba7b0e5cf46f2a9d68172db65576c25bf99b"
     },
     "research_v3/otc/normalized/products.json": {
-      "bytes": 56765,
-      "sha256": "7153b9f257ba97adbaa9b0be9735775b4f8f3804282decae48bc70bf66862c88"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "b4c2265df28c44e562df4dd7a0e725b47d11fa14",
+      "bytes": 55467,
+      "sha256": "e48e7c3c2757cc3c0cec4ca0f83e5c24fac4a36c933da07539d03b38408afbc7"
     },
     "research_v3/otc/normalized/product_ingredient.csv": {
-      "bytes": 24865,
-      "sha256": "83ed4b53483c5e3e6b9296defce1548504f6b81bcd7aa59e42142a440fb6580e"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "9ef9cdc92fb45a0dbcf30e0cf107c5c9400d46b8",
+      "bytes": 24758,
+      "sha256": "0df01ea231278762dd3992066a3545fac303d28e06a820e22b4f74c1b54a7e70"
     },
     "research_v3/otc/normalized/ingredient_master.csv": {
-      "bytes": 5596,
-      "sha256": "6925c5ac1236bbd6ebd3a53e5a58f853b849c3efccefa2d03ddb798689fae737"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "1b7cb84b5e8ac78fda58f914e9492b0fc3f8c630",
+      "bytes": 5564,
+      "sha256": "e4f0fe786d11a6e8870b6ddfc3c48fcd7174d10ccfec2baac12c1756c7a1545a"
     },
     "research_v3/otc/normalized/analysis_exclusions.csv": {
-      "bytes": 418,
-      "sha256": "08d30264f6be6225a2761f1699f33f48a20efa5705db2782c64537fac9a6729f"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "c9ba4c317a4faabfd9f92442c3ca7cb013fe957c",
+      "bytes": 416,
+      "sha256": "54e360f3b50bca4486b1904a69bd43736aed79446267117920529864a6a5cfa5"
     },
     "research_v3/otc/extracted/nedrug/page_manifest.csv": {
-      "bytes": 28888,
-      "sha256": "28d7625c08d040d73f3b9a648f58a5bea368d7b5ee8cdd06847f23a70c87ec84"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "624f46153369d20c15354a22cc8c59b1e644a143",
+      "bytes": 28793,
+      "sha256": "5bc57a9f19fc5d51eb7ce8aa6b830fab2eed7f41ce4da329eee2c78c1933304a"
     },
     "research_v3/otc/raw/nedrug/manifest.json": {
-      "bytes": 15357,
-      "sha256": "a3402f7581ddcd8f6e9d488a4f0eb6074c2e2eafaa90c0ac53f0ac04ee9c2805"
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "7726045f47b4194b267d44e360de927dbcd844d9",
+      "bytes": 14935,
+      "sha256": "ca74ae9372c139ea8f09dbb37910a941ced616479f65ec3e6605c42adfade049"
     },
     "src/lib/otc/engine.ts": {
+      "basis": "worktree_bytes",
       "bytes": 52418,
       "sha256": "05c7fb63c630caf3d2110faf522069c7d22705376149402e8a7d3242485c1c21"
     }

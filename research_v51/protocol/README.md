@@ -83,14 +83,28 @@ v5.1 연구 산출물은 `research_v51/` 아래에만 새 파일로 만든다. �
 
 ## 검증 환경이 다르면 같은 검사가 모두 가능하지 않다
 
-baseline은 Windows의 `C:\dev\otc-nutrient-safety-engine`에서 만들었다. 핵심 파일 SHA-256은
-그 작업 트리의 원시 바이트 기준이다. 다른 `core.autocrlf` 설정으로 체크아웃하면 Git 내용이
-같아도 텍스트 파일의 원시 바이트 해시가 달라질 수 있다. 이때 해시를 새 값으로 바꾸지 말고
-Git tree와 줄바꿈 설정을 먼저 확인한다.
+baseline은 Windows의 `C:\dev\otc-nutrient-safety-engine`에서 만들었다. 보호된 `research_v3`
+핵심 파일의 이식 가능한 SHA-256은 고정 commit의 Git blob 바이트를 기준으로 한다. 감사기는
+`HEAD:research_v3` tree와 tracked·untracked 상태도 따로 확인한다. 따라서 `core.autocrlf`
+설정이 달라도 같은 Git tree는 같은 기준 입력으로 계산되며, 작업 트리의 실제 변경은 허용하지
+않는다.
 
-G 드라이브 논문은 로컬 Windows 환경에만 있다. 감사 환경에 G 드라이브가 없으면 로컬 경계가
-`valid=true`여도 `verification_complete=false`다. 이 상태는 보존 검증 완료가 아니며 최종
-감사를 생성할 수 없다. G 드라이브가 연결된 환경에서 파일이 없거나 해시가 다르면 실패한다.
+G 드라이브 논문은 로컬 Windows 환경에만 있다. 기본 최종 감사는 저장소 안의 고정 입력과
+산출물을 이식 가능한 범위에서 생성·검사하고, 외부 논문 검사를 건너뛴 사실을 명시한다. 최종
+로컬 보고에는 `--require-external` 검사를 추가로 통과해야 한다. G 드라이브가 연결된 환경에서
+논문 파일이 없거나 해시가 다르면 이 외부 검사는 실패한다.
+
+외부 논문은 같은 파일 핸들의 identity·크기·SHA-256을 읽기 전후와 반환 직전에 다시 확인한다.
+Google Drive 가상 볼륨이 link count를 0으로 보고하면 Windows 볼륨 플래그에서 hardlink 미지원이
+확인된 경우에만 허용한다. hardlink 지원 여부를 확인하지 못하거나 지원 볼륨에서 link count가
+0이면 검사를 실패 처리한다.
+
+최종 감사 출력 3개는 제품 행렬, 규칙 행렬, `final_metrics.json` 순서로 게시한다. 첫 출력을
+게시한 뒤 오류가 나면 생성기는 동시 작성자의 파일을 지울 수 있는 자동 rollback을 하지 않고
+partial-publication 오류로 중단한다. `--check`로 혼합 출력 세트를 확인한 뒤 원인을 해결하고
+생성기를 다시 실행해야 한다. `final_metrics.json`은 완료 표지 역할을 하도록 항상 마지막에
+게시한다. 예외 경로에서는 임시 pathname도 자동 삭제하지 않으며 오류의 `retained_staged`에
+남은 경로를 표시한다. 정상 완료 시에는 세 임시 파일이 모두 정본 경로로 이동하므로 남지 않는다.
 
 `research_v3/`에는 baseline 당시 이미 존재하던 ignored 파일이 있다. 감사기는 Git이 무시하지
 않는 새 untracked 파일을 차단하지만, 기존 ignored 파일의 과거 동일성은 증명하지 않는다.

@@ -11,29 +11,63 @@
   "inputs": {
     "v50_manifest": {
       "path": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "258307a3edcd6042cd46fce8aee08abf54139e61",
+      "bytes": 19142,
       "sha256": "f74325d2c3dc8121ce7c638cabd15a47fff3cecaa875f109c45d24a87da1f2fe",
       "read_only": true
     },
     "v50_supporting_literature": {
       "path": "research_v3/otc/literature/v5/downstream/supporting_literature.csv",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "55634bf6a090bfd49a041ab5e07e4522ab6bbce1",
+      "bytes": 12879,
       "sha256": "c1be8df49cbcb226103899428115ec91e763a5bc2c6704e687f21c3c76f1d73c",
-      "rows": 10,
-      "read_only": true
+      "read_only": true,
+      "legacy_recorded_raw_sha256": "c1be8df49cbcb226103899428115ec91e763a5bc2c6704e687f21c3c76f1d73c",
+      "rows": 10
     },
     "v4_candidate_links": {
       "path": "research_v3/otc/rules/supporting_literature.csv",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "705b712307f62c533073ed5f4e50ff1fae89423e",
+      "bytes": 23879,
       "sha256": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
-      "rows": 20,
-      "read_only": true
+      "read_only": true,
+      "legacy_recorded_raw_sha256": "a09a98590f60d6edc8312878843c3dd2b14c63ca35eecf9ef33f9b16c068734d",
+      "rows": 20
     },
     "rules": {
       "path": "research_v3/otc/rules/rules.csv",
-      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
-      "rows": 16,
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "41b72ad957c04bf922aeb1fdeb50e2b436420440",
+      "bytes": 5596,
+      "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e",
+      "read_only": true,
+      "legacy_recorded_raw_sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
+      "rows": 16
+    },
+    "generator": {
+      "path": "scripts/research/otc/build_v51_literature_classification.py",
+      "basis": "worktree_bytes",
+      "bytes": 33741,
+      "sha256": "159aaaeea48d17f2dec7abaab28aa75c6f233854867b85cb6118f554f685ae9c",
+      "read_only": true
+    },
+    "boundary_helper": {
+      "path": "scripts/research/otc/audit_v51_boundaries.py",
+      "basis": "worktree_bytes",
+      "bytes": 35465,
+      "sha256": "63a0c61f430ae1da793fde2500eca61c8422867d5dacaab820df8339e87f7b8b",
       "read_only": true
     },
     "runtime_literature_observation": {
       "path": "src/generated/otc-supporting-literature.json",
+      "basis": "worktree_semantic_projection",
       "semantic_sha256": "105df1fd25f63f5e076cc9036a62d96b95bffd52966716e61bb853c90d416a30",
       "projection": "runtime_without_v51Classification",
       "read_only": true

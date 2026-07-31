@@ -46,6 +46,9 @@ AUDIT_ROOT_RELATIVE = Path("research_v51/audit")
 METRICS_RELATIVE = AUDIT_ROOT_RELATIVE / "final_metrics.json"
 PRODUCT_MATRIX_RELATIVE = AUDIT_ROOT_RELATIVE / "product_support_matrix.csv"
 RULE_MATRIX_RELATIVE = AUDIT_ROOT_RELATIVE / "active_rule_matrix.csv"
+PROTECTED_INPUT_PREFIX = "research_v3/"
+PORTABLE_VERIFICATION_SCOPE = "portable_repository"
+EXTERNAL_VERIFICATION_SCOPE = "portable_repository_and_external_canonical_artifacts"
 
 STATIC_INPUTS = {
     "baseline": "research_v51/audit/baseline_manifest.json",
@@ -57,9 +60,7 @@ STATIC_INPUTS = {
     ),
     "review_audit": "research_v51/audit/review_packet_audit.json",
     "expert_packet": "research_v51/review/expert_review_packet.md",
-    "review_packet_generator": (
-        "scripts/research/otc/build_v51_review_packet.py"
-    ),
+    "review_packet_generator": ("scripts/research/otc/build_v51_review_packet.py"),
     "review_triage_validator": (
         "scripts/research/otc/validate_v51_shortlist_triage.py"
     ),
@@ -67,16 +68,13 @@ STATIC_INPUTS = {
     "source_freshness_generator": (
         "scripts/research/otc/audit_v51_source_freshness.py"
     ),
-    "final_audit_generator": (
-        "scripts/research/otc/build_v51_final_audit.py"
-    ),
+    "boundary_audit_generator": ("scripts/research/otc/audit_v51_boundaries.py"),
+    "final_audit_generator": ("scripts/research/otc/build_v51_final_audit.py"),
     "runtime": "src/generated/otc-runtime.json",
     "rules": "research_v3/otc/rules/rules.csv",
     "runtime_bindings": "research_v3/otc/rules/runtime_rule_bindings.csv",
     "rule_shortlist": "research_v3/otc/rules/rule_evidence_shortlist.csv",
-    "constraints": (
-        "research_v3/otc/normalized/administration_constraints.csv"
-    ),
+    "constraints": ("research_v3/otc/normalized/administration_constraints.csv"),
     "product_master": "research_v3/otc/normalized/product_master.csv",
 }
 
@@ -201,18 +199,14 @@ def compact_json(value: Any) -> str:
 
 
 def json_payload(value: Any) -> bytes:
-    return (
-        json.dumps(value, ensure_ascii=False, indent=2) + "\n"
-    ).encode("utf-8")
+    return (json.dumps(value, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
 
 
 def canonical_json_payload(value: Any) -> bytes:
     return compact_json(value).encode("utf-8")
 
 
-def csv_payload(
-    fields: tuple[str, ...], rows: list[dict[str, str]]
-) -> bytes:
+def csv_payload(fields: tuple[str, ...], rows: list[dict[str, str]]) -> bytes:
     buffer = io.StringIO(newline="")
     writer = csv.DictWriter(
         buffer,
@@ -290,7 +284,10 @@ def safely_read_input(
         after = os.fstat(descriptor)
         if require_single_link and after.st_nlink != 1:
             raise ValueError(f"final audit {role} must not be a hard link: {lexical}")
-        if file_identity(opened) != file_identity(after) or len(payload) != after.st_size:
+        if (
+            file_identity(opened) != file_identity(after)
+            or len(payload) != after.st_size
+        ):
             raise ValueError(f"final audit {role} changed while reading: {lexical}")
         snapshot = {
             "path": lexical,
@@ -386,29 +383,71 @@ def file_lineage(
         record["rows"] = len(rows)
     if fields is not None:
         record["fields"] = fields
+    for field in ("basis", "baseline_commit", "git_blob_oid"):
+        if field in snapshot:
+            record[field] = snapshot[field]
     return record
+
+
+def content_snapshot(
+    raw_snapshot: dict[str, Any],
+    root: Path,
+) -> dict[str, Any]:
+    """Select immutable baseline bytes for protected research_v3 content.
+
+    The raw worktree snapshot remains the TOCTOU and aliasing view.  This
+    second view makes parsing and lineage independent of checkout EOL policy.
+    """
+
+    relative = relative_path(raw_snapshot["path"], root)
+    if not relative.startswith(PROTECTED_INPUT_PREFIX):
+        return raw_snapshot
+    baseline_commit = boundary_audit.EXPECTED_BASELINE_COMMIT
+    payload = boundary_audit.git_blob_bytes(root, baseline_commit, relative)
+    return {
+        "path": raw_snapshot["path"],
+        "bytes": payload,
+        "sha256": sha256_bytes(payload),
+        "basis": "baseline_git_blob",
+        "baseline_commit": baseline_commit,
+        "git_blob_oid": boundary_audit.git_blob_oid(
+            root,
+            baseline_commit,
+            relative,
+        ),
+    }
 
 
 def load_inputs(root: Path = ROOT) -> dict[str, Any]:
     root = root.resolve()
     paths = {name: repo_path(root, value) for name, value in STATIC_INPUTS.items()}
-    snapshots = {
-        name: safely_read_input(path, root) for name, path in paths.items()
-    }
+    snapshots: dict[str, dict[str, Any]] = {}
+    content_snapshots: dict[str, dict[str, Any]] = {}
 
-    baseline = parse_json(snapshots["baseline"]["bytes"], paths["baseline"])
+    def capture(name: str, path: Path) -> None:
+        raw_snapshot = safely_read_input(path, root)
+        snapshots[name] = raw_snapshot
+        content_snapshots[name] = content_snapshot(raw_snapshot, root)
+
+    for name, path in paths.items():
+        capture(name, path)
+
+    baseline = parse_json(content_snapshots["baseline"]["bytes"], paths["baseline"])
     inventory = parse_json(
-        snapshots["evidence_inventory"]["bytes"], paths["evidence_inventory"]
+        content_snapshots["evidence_inventory"]["bytes"],
+        paths["evidence_inventory"],
     )
-    runtime = parse_json(snapshots["runtime"]["bytes"], paths["runtime"])
+    runtime = parse_json(content_snapshots["runtime"]["bytes"], paths["runtime"])
     literature_audit = parse_json(
-        snapshots["literature_audit"]["bytes"], paths["literature_audit"]
+        content_snapshots["literature_audit"]["bytes"],
+        paths["literature_audit"],
     )
     review_audit = parse_json(
-        snapshots["review_audit"]["bytes"], paths["review_audit"]
+        content_snapshots["review_audit"]["bytes"], paths["review_audit"]
     )
     source_freshness = parse_json(
-        snapshots["source_freshness"]["bytes"], paths["source_freshness"]
+        content_snapshots["source_freshness"]["bytes"],
+        paths["source_freshness"],
     )
 
     inventory_artifacts = inventory.get("artifacts", {})
@@ -420,16 +459,14 @@ def load_inputs(root: Path = ROOT) -> dict[str, Any]:
         if relative not in inventory_artifacts:
             raise ValueError(f"evidence inventory artifact missing: {relative}")
         paths[name] = repo_path(root, relative)
-        snapshots[name] = safely_read_input(paths[name], root)
+        capture(name, paths[name])
 
     applicability = runtime.get("ruleApplicabilityProvenance", {})
     applicability_relative = applicability.get("path", "")
     if not applicability_relative:
         raise ValueError("runtime ruleApplicabilityProvenance.path is missing")
     paths["active_applicability"] = repo_path(root, applicability_relative)
-    snapshots["active_applicability"] = safely_read_input(
-        paths["active_applicability"], root
-    )
+    capture("active_applicability", paths["active_applicability"])
 
     freshness_pinned_texts: dict[str, bytes] = {}
     sources = source_freshness.get("sources")
@@ -446,8 +483,8 @@ def load_inputs(root: Path = ROOT) -> dict[str, Any]:
         if relative in freshness_pinned_texts:
             raise ValueError(f"duplicate freshness pinned text path: {relative}")
         paths[name] = path
-        snapshots[name] = safely_read_input(path, root)
-        freshness_pinned_texts[relative] = snapshots[name]["bytes"]
+        capture(name, path)
+        freshness_pinned_texts[relative] = content_snapshots[name]["bytes"]
 
     json_data = {
         "baseline": baseline,
@@ -473,7 +510,7 @@ def load_inputs(root: Path = ROOT) -> dict[str, Any]:
     csv_data: dict[str, list[dict[str, str]]] = {}
     csv_fields: dict[str, list[str]] = {}
     for name in csv_names:
-        fields, rows = parse_csv(snapshots[name]["bytes"], paths[name])
+        fields, rows = parse_csv(content_snapshots[name]["bytes"], paths[name])
         csv_fields[name] = fields
         csv_data[name] = rows
 
@@ -481,13 +518,13 @@ def load_inputs(root: Path = ROOT) -> dict[str, Any]:
     for name, path in paths.items():
         if name in csv_data:
             record = file_lineage(
-                snapshots[name],
+                content_snapshots[name],
                 root,
                 rows=csv_data[name],
                 fields=csv_fields[name],
             )
         else:
-            record = file_lineage(snapshots[name], root)
+            record = file_lineage(content_snapshots[name], root)
         lineage[record["path"]] = record
 
     input_snapshots = {
@@ -503,24 +540,20 @@ def load_inputs(root: Path = ROOT) -> dict[str, Any]:
         "json": json_data,
         "csv": csv_data,
         "fields": csv_fields,
-        "packet_bytes": snapshots["expert_packet"]["bytes"],
+        "packet_bytes": content_snapshots["expert_packet"]["bytes"],
         "freshness_pinned_texts": freshness_pinned_texts,
         "input_snapshots": dict(sorted(input_snapshots.items())),
         "lineage": dict(sorted(lineage.items())),
     }
 
 
-def require_fields(
-    row: dict[str, Any], fields: tuple[str, ...], label: str
-) -> None:
+def require_fields(row: dict[str, Any], fields: tuple[str, ...], label: str) -> None:
     missing = [field for field in fields if field not in row]
     if missing:
         raise ValueError(f"missing fields for {label}: {missing}")
 
 
-def require_nonblank(
-    row: dict[str, Any], fields: tuple[str, ...], label: str
-) -> None:
+def require_nonblank(row: dict[str, Any], fields: tuple[str, ...], label: str) -> None:
     require_fields(row, fields, label)
     blank = [field for field in fields if not str(row[field]).strip()]
     if blank:
@@ -614,9 +647,7 @@ def applicability_from_row(row: dict[str, str]) -> dict[str, Any]:
             result[runtime_field] = int(raw)
         elif value_type == "boolean":
             if raw not in {"true", "false"}:
-                raise ValueError(
-                    f"invalid boolean applicability {source_field}: {raw}"
-                )
+                raise ValueError(f"invalid boolean applicability {source_field}: {raw}")
             result[runtime_field] = raw == "true"
         else:
             raise ValueError(f"unknown applicability value type: {value_type}")
@@ -741,9 +772,7 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
     )
     expected_counts = inventory["counts"]
     require_equal(len(units), expected_counts["evidence_units"], "evidence units")
-    require_equal(
-        len(links), expected_counts["evidence_rule_links"], "evidence links"
-    )
+    require_equal(len(links), expected_counts["evidence_rule_links"], "evidence links")
     require_equal(len(queue), expected_counts["expert_review_queue"], "expert queue")
     require_equal(
         dict(status_counts),
@@ -767,9 +796,7 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
     )
     operational_contract = inventory["candidate_operational_status_contract"]
     require_equal(
-        operational_status_counts[
-            "active_existing_released_primary_evidence"
-        ],
+        operational_status_counts["active_existing_released_primary_evidence"],
         operational_contract["active_count"],
         "inventory active candidate count",
     )
@@ -785,9 +812,7 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
     )
     require_equal(
         expected_counts["operational_evidence_rows"],
-        operational_status_counts[
-            "active_existing_released_primary_evidence"
-        ],
+        operational_status_counts["active_existing_released_primary_evidence"],
         "operational evidence rows",
     )
 
@@ -946,12 +971,10 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
                 f"expert queue {candidate_id} projection {queue_field}",
             )
         expected_review_locator = (
-            link["shortlist_source_locator"]
-            or link["raw_candidate_source_locator"]
+            link["shortlist_source_locator"] or link["raw_candidate_source_locator"]
         )
         expected_review_text = (
-            link["shortlist_evidence_text"]
-            or link["raw_candidate_evidence_text"]
+            link["shortlist_evidence_text"] or link["raw_candidate_evidence_text"]
         )
         require_equal(
             row["proposed_review_source_locator"],
@@ -996,9 +1019,7 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
         ),
         "triage_items": len(triage),
         "triage_recommended_status_counts": dict(sorted(triage_status.items())),
-        "triage_semantic_relation_counts": dict(
-            sorted(semantic_relations.items())
-        ),
+        "triage_semantic_relation_counts": dict(sorted(semantic_relations.items())),
         "evidence_source_urls_complete": True,
         "evidence_source_locators_complete": True,
     }
@@ -1024,7 +1045,9 @@ def analyze_literature(inputs: dict[str, Any]) -> dict[str, Any]:
         if row["lineage_status"] == "v50_emitted":
             v50_link_id = row["v50_link_id"]
             if not v50_link_id:
-                raise ValueError(f"emitted literature link has no v50 ID: {classification_id}")
+                raise ValueError(
+                    f"emitted literature link has no v50 ID: {classification_id}"
+                )
             if v50_link_id in seen_v50_links:
                 raise ValueError(f"duplicate v50 literature link ID: {v50_link_id}")
             seen_v50_links.add(v50_link_id)
@@ -1067,11 +1090,11 @@ def analyze_literature(inputs: dict[str, Any]) -> dict[str, Any]:
         )
 
     emitted = [row for row in rows if row["lineage_status"] == "v50_emitted"]
-    excluded = [
-        row for row in rows if row["ui_policy"] == "exclude_from_result_ui"
-    ]
+    excluded = [row for row in rows if row["ui_policy"] == "exclude_from_result_ui"]
     semantic = Counter(row["semantic_classification"] for row in emitted)
-    direct_capable = [row for row in emitted if row["ui_direct_label_allowed"] == "true"]
+    direct_capable = [
+        row for row in emitted if row["ui_direct_label_allowed"] == "true"
+    ]
     counts = audit["counts"]
     require_equal(len(rows), counts["v4_candidate_rows"], "literature rows")
     require_equal(len(emitted), counts["v50_emitted_rows"], "emitted literature")
@@ -1281,14 +1304,11 @@ def analyze_review_packet(inputs: dict[str, Any]) -> dict[str, Any]:
         row["candidate_operational_status"] for row in queue
     )
     activated_items = sum(
-        row["candidate_operational_status"]
-        != "inactive_candidate"
-        for row in queue
+        row["candidate_operational_status"] != "inactive_candidate" for row in queue
     )
     inactive_candidate_items = queue_operational_counts["inactive_candidate"]
     human_review_prefilled = sum(
-        any(row[field] for field in REVIEW_PACKET_HUMAN_REVIEW_FIELDS)
-        for row in queue
+        any(row[field] for field in REVIEW_PACKET_HUMAN_REVIEW_FIELDS) for row in queue
     )
     require_equal(counts["queue_rows"], len(queue), "review packet queue rows")
     require_equal(
@@ -1355,9 +1375,7 @@ def analyze_review_packet(inputs: dict[str, Any]) -> dict[str, Any]:
             sorted(queue_operational_counts.items())
         ),
         "human_expert_verification_required": True,
-        "required_human_review_fields": list(
-            REVIEW_PACKET_HUMAN_REVIEW_FIELDS
-        ),
+        "required_human_review_fields": list(REVIEW_PACKET_HUMAN_REVIEW_FIELDS),
         "items_with_required_regression_tests": counts[
             "items_with_required_regression_tests"
         ],
@@ -1382,7 +1400,12 @@ def validate_baseline_hashes(inputs: dict[str, Any]) -> dict[str, Any]:
     baseline = inputs["json"]["baseline"]
     by_path = {record["path"]: record for record in baseline["core_artifacts"]}
     root = inputs["root"]
-    baseline_commit = baseline["baseline"]["commit"]
+    baseline_commit = boundary_audit.EXPECTED_BASELINE_COMMIT
+    require_equal(
+        baseline["baseline"]["commit"],
+        baseline_commit,
+        "manifest/pinned baseline commit",
+    )
     if re.fullmatch(r"[0-9a-f]{40}", baseline_commit) is None:
         raise ValueError(f"invalid baseline commit: {baseline_commit}")
 
@@ -1395,9 +1418,7 @@ def validate_baseline_hashes(inputs: dict[str, Any]) -> dict[str, Any]:
         "baseline protected path set",
     )
     recorded_tree_oid = protected_records["research_v3"]["baseline_tree_oid"]
-    baseline_tree_oid = git_output(
-        root, "rev-parse", f"{baseline_commit}:research_v3"
-    )
+    baseline_tree_oid = git_output(root, "rev-parse", f"{baseline_commit}:research_v3")
     require_equal(
         baseline_tree_oid,
         recorded_tree_oid,
@@ -1429,32 +1450,54 @@ def validate_baseline_hashes(inputs: dict[str, Any]) -> dict[str, Any]:
     ):
         path = relative_path(inputs["paths"][name], inputs["root"])
         actual = inputs["lineage"][path]
+        require_equal(
+            actual.get("basis"),
+            "baseline_git_blob",
+            f"baseline blob basis {path}",
+        )
+        require_equal(
+            actual.get("baseline_commit"),
+            baseline_commit,
+            f"baseline blob commit {path}",
+        )
         if name != "runtime_bindings":
             expected = by_path.get(path)
             if expected is None:
                 raise ValueError(f"baseline core artifact missing: {path}")
-            require_equal(
-                actual["bytes"], expected["bytes"], f"baseline {path} bytes"
-            )
-            require_equal(
-                actual["sha256"], expected["sha256"], f"baseline {path} hash"
-            )
+            require_equal(actual["bytes"], expected["bytes"], f"baseline {path} bytes")
+            require_equal(actual["sha256"], expected["sha256"], f"baseline {path} hash")
 
-        baseline_blob_oid = git_output(
-            root, "rev-parse", f"{baseline_commit}:{path}"
+        baseline_blob_oid = boundary_audit.git_blob_oid(
+            root,
+            baseline_commit,
+            path,
         )
-        worktree_blob_oid = git_output(
-            root, "hash-object", f"--path={path}", path
+        baseline_blob = boundary_audit.git_blob_bytes(
+            root,
+            baseline_commit,
+            path,
         )
         require_equal(
-            worktree_blob_oid,
+            actual.get("git_blob_oid"),
             baseline_blob_oid,
-            f"protected baseline blob {path}",
+            f"baseline blob OID {path}",
+        )
+        require_equal(
+            actual["bytes"],
+            len(baseline_blob),
+            f"baseline blob bytes {path}",
+        )
+        require_equal(
+            actual["sha256"],
+            sha256_bytes(baseline_blob),
+            f"baseline blob hash {path}",
         )
         consumed[path] = {
             "bytes": actual["bytes"],
             "sha256": actual["sha256"],
-            "baseline_git_blob_oid": baseline_blob_oid,
+            "basis": actual["basis"],
+            "baseline_commit": actual["baseline_commit"],
+            "git_blob_oid": baseline_blob_oid,
         }
 
     return {
@@ -1467,36 +1510,118 @@ def validate_baseline_hashes(inputs: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def validate_complete_boundary_verification(inputs: dict[str, Any]) -> dict[str, Any]:
-    result = boundary_audit.audit(
-        repo=inputs["root"],
-        manifest_path=inputs["paths"]["baseline"],
-        check_external=True,
-    )
-    return require_complete_boundary_result(result)
+def declared_external_paths(inputs: dict[str, Any]) -> tuple[str, ...]:
+    artifacts = inputs["json"]["baseline"].get("external_canonical_artifacts")
+    if not isinstance(artifacts, list):
+        raise ValueError("baseline external_canonical_artifacts must be a list")
+    paths: list[str] = []
+    for index, artifact in enumerate(artifacts, 1):
+        if not isinstance(artifact, dict) or not str(artifact.get("path", "")):
+            raise ValueError(f"invalid external artifact declaration: {index}")
+        paths.append(str(artifact["path"]))
+    if len(paths) != len(set(paths)):
+        raise ValueError("duplicate external artifact declaration")
+    return tuple(paths)
 
 
-def require_complete_boundary_result(result: dict[str, Any]) -> dict[str, Any]:
+def require_boundary_result(
+    result: dict[str, Any],
+    *,
+    require_external: bool,
+    external_paths: tuple[str, ...],
+) -> dict[str, Any]:
     require_equal(result.get("valid"), True, "boundary audit valid")
-    require_equal(
-        result.get("verification_complete"),
-        True,
-        "boundary audit verification_complete",
-    )
+    require_equal(result.get("errors"), [], "boundary errors")
     external = result.get("external_verification")
     if not isinstance(external, dict):
         raise ValueError("boundary audit external_verification must be an object")
-    require_equal(external.get("requested"), True, "boundary external requested")
     require_equal(
-        external.get("verified_artifacts"),
         external.get("required_artifacts"),
-        "boundary external verified artifacts",
+        len(external_paths),
+        "boundary external required artifacts",
     )
+
+    if require_external:
+        require_equal(
+            result.get("verification_complete"),
+            True,
+            "boundary audit verification_complete",
+        )
+        require_equal(external.get("requested"), True, "boundary external requested")
+        require_equal(
+            external.get("verified_artifacts"),
+            len(external_paths),
+            "boundary external verified artifacts",
+        )
+        require_equal(result.get("warnings"), [], "boundary warnings")
+    else:
+        require_equal(
+            result.get("verification_complete"),
+            False,
+            "boundary audit portable verification_complete",
+        )
+        require_equal(
+            external.get("requested"),
+            False,
+            "boundary external requested",
+        )
+        require_equal(
+            external.get("verified_artifacts"),
+            0,
+            "boundary external verified artifacts",
+        )
+        expected_warnings = [
+            f"EXTERNAL_ARTIFACT_CHECK_SKIPPED path={path}" for path in external_paths
+        ]
+        require_equal(result.get("warnings"), expected_warnings, "boundary warnings")
+
+    # This record is embedded in final_metrics.json, so it deliberately states
+    # the portable invariant and policy rather than the invocation's live mode.
     return {
         "valid": True,
-        "verification_complete": True,
-        "external_artifacts_verified": external["verified_artifacts"],
+        "verification_scope": PORTABLE_VERIFICATION_SCOPE,
+        "portable_repository_verified": True,
+        "external_artifacts_declared": len(external_paths),
+        "external_artifacts_required_for_final_local_report": True,
     }
+
+
+def validate_boundary_verification(
+    inputs: dict[str, Any],
+    *,
+    require_external: bool,
+) -> dict[str, Any]:
+    external_paths = declared_external_paths(inputs)
+    result = boundary_audit.audit(
+        repo=inputs["root"],
+        manifest_path=inputs["paths"]["baseline"],
+        check_external=require_external,
+    )
+    return require_boundary_result(
+        result,
+        require_external=require_external,
+        external_paths=external_paths,
+    )
+
+
+def require_complete_boundary_result(result: dict[str, Any]) -> dict[str, Any]:
+    external = result.get("external_verification")
+    if not isinstance(external, dict):
+        raise ValueError("boundary audit external_verification must be an object")
+    required_artifacts = external.get("required_artifacts")
+    if not isinstance(required_artifacts, int) or required_artifacts < 0:
+        raise ValueError("boundary external required_artifacts must be nonnegative")
+    return require_boundary_result(
+        result,
+        require_external=True,
+        external_paths=tuple(str(index) for index in range(required_artifacts)),
+    )
+
+
+def validate_complete_boundary_verification(inputs: dict[str, Any]) -> dict[str, Any]:
+    """Compatibility entry point for the explicit full external gate."""
+
+    return validate_boundary_verification(inputs, require_external=True)
 
 
 def revalidate_package_boundary(package: dict[str, Any]) -> None:
@@ -1506,9 +1631,13 @@ def revalidate_package_boundary(package: dict[str, Any]) -> None:
     result = boundary_audit.audit(
         repo=package["root"],
         manifest_path=manifest_path,
-        check_external=True,
+        check_external=package["require_external"],
     )
-    require_complete_boundary_result(result)
+    require_boundary_result(
+        result,
+        require_external=package["require_external"],
+        external_paths=package["external_artifact_paths"],
+    )
 
 
 def analyze_source_freshness(
@@ -1535,7 +1664,7 @@ def analyze_source_freshness(
 
 
 def analyze_runtime(
-    inputs: dict[str, Any]
+    inputs: dict[str, Any],
 ) -> tuple[dict[str, Any], list[dict[str, str]], list[dict[str, str]]]:
     runtime = inputs["json"]["runtime"]
     csv_data = inputs["csv"]
@@ -1551,12 +1680,16 @@ def analyze_runtime(
 
     rule_source_by_id = unique_by_key(rules, "rule_id", "rule source")
     released_source = {
-        key: row for key, row in rule_source_by_id.items() if row["status"] == "released"
+        key: row
+        for key, row in rule_source_by_id.items()
+        if row["status"] == "released"
     }
     runtime_rules = runtime.get("releasedRules")
     if not isinstance(runtime_rules, list):
         raise ValueError("runtime releasedRules must be a list")
-    runtime_rule_by_id = unique_by_key(runtime_rules, "ruleId", "runtime released rules")
+    runtime_rule_by_id = unique_by_key(
+        runtime_rules, "ruleId", "runtime released rules"
+    )
     require_equal(set(runtime_rule_by_id), set(released_source), "released rule IDs")
     require_equal(runtime["rulesReleased"], len(runtime_rules), "rulesReleased")
     require_equal(
@@ -1691,9 +1824,10 @@ def analyze_runtime(
                 ("sourceId", "sourceVersion", "excerptKo"),
                 f"released rule {rule_id} evidence",
             )
-            if re.fullmatch(
-                r"sha256:[0-9a-f]{64}", str(evidence["sourceVersion"])
-            ) is None:
+            if (
+                re.fullmatch(r"sha256:[0-9a-f]{64}", str(evidence["sourceVersion"]))
+                is None
+            ):
                 raise ValueError(
                     f"released rule {rule_id} sourceVersion is not an exact SHA-256 pin"
                 )
@@ -1727,17 +1861,13 @@ def analyze_runtime(
                 "scope": runtime_rule["scope"],
                 "lineage_status": runtime_rule["lineageStatus"],
                 "applicability_json": compact_json(runtime_rule["applicability"]),
-                "applicability_field_count": str(
-                    len(runtime_rule["applicability"])
-                ),
+                "applicability_field_count": str(len(runtime_rule["applicability"])),
                 "source_evidence_count": str(len(evidence)),
                 "source_item_sequences": ";".join(
                     row["itemSequence"] for row in evidence
                 ),
                 "source_ids": ";".join(row["sourceId"] for row in evidence),
-                "source_versions": ";".join(
-                    row["sourceVersion"] for row in evidence
-                ),
+                "source_versions": ";".join(row["sourceVersion"] for row in evidence),
                 "source_urls": ";".join(row["url"] for row in evidence),
                 "source_locators_json": compact_json(
                     [row["locator"] for row in evidence]
@@ -1814,7 +1944,9 @@ def analyze_runtime(
         product = runtime_product_by_item[item_sequence]
         source = product_source_by_item[item_sequence]
         require_equal(product["productId"], source["product_id"], f"{item_sequence} ID")
-        require_equal(product["productName"], source["product_name"], f"{item_sequence} name")
+        require_equal(
+            product["productName"], source["product_name"], f"{item_sequence} name"
+        )
         require_equal(
             product["authorizationStatus"],
             source["authorization_status"],
@@ -1907,7 +2039,9 @@ def analyze_runtime(
             constraint_ids.append(constraint_id)
             source_constraint = constraint_source_by_id.get(constraint_id)
             if source_constraint is None:
-                raise ValueError(f"runtime ADMIN ID missing from source: {constraint_id}")
+                raise ValueError(
+                    f"runtime ADMIN ID missing from source: {constraint_id}"
+                )
             require_equal(
                 source_constraint["item_sequence"],
                 item_sequence,
@@ -2016,9 +2150,7 @@ def analyze_runtime(
                 "admin_derived_support_type_association_count": str(
                     len(admin_derived_types)
                 ),
-                "admin_derived_support_type_labels": ";".join(
-                    admin_derived_types
-                ),
+                "admin_derived_support_type_labels": ";".join(admin_derived_types),
                 "dose_or_interval_label_count": str(dose_count),
                 "broader_safety_label_count": str(broader_count),
                 "administration_constraint_count": str(len(constraints)),
@@ -2064,7 +2196,9 @@ def analyze_runtime(
             raise ValueError(f"duplicate product/rule binding: {pair}")
         source_binding_pairs.add(pair)
         if row["rule_id"] not in released_ids:
-            raise ValueError(f"runtime binding references inactive rule: {row['rule_id']}")
+            raise ValueError(
+                f"runtime binding references inactive rule: {row['rule_id']}"
+            )
         require_equal(
             row["binding_status"],
             "human_expert_verified",
@@ -2144,25 +2278,21 @@ def analyze_runtime(
             "unique products[].supportedReleasedRuleIds pairs, exactly matching "
             "runtime_rule_bindings.csv"
         ),
-        "administration_derived_type_associations": len(
-            admin_derived_support_pairs
-        ),
+        "administration_derived_type_associations": len(admin_derived_support_pairs),
         "administration_derived_type_association_definition": (
             "supportedRuleTypes pairs attributable to mapped ADMIN constraints "
             "after subtracting types already supplied by direct released rules"
         ),
         "cross_product_or_global_rules": len(cross_product_or_global_rule_ids),
-        "cross_product_or_global_rule_ids": sorted(
-            cross_product_or_global_rule_ids
-        ),
+        "cross_product_or_global_rule_ids": sorted(cross_product_or_global_rule_ids),
         "structured_runtime_binding_rows": len(runtime_bindings),
         "administration_constraints": len(runtime_constraints),
-        "authorization_constraints_count": runtime[
-            "authorizationConstraintsCount"
-        ],
+        "authorization_constraints_count": runtime["authorizationConstraintsCount"],
         "support_tier_counts": dict(sorted(support_tiers.items())),
         "administration_constraint_type_counts": dict(
-            sorted(Counter(row["constraint_type"] for row in constraints_source).items())
+            sorted(
+                Counter(row["constraint_type"] for row in constraints_source).items()
+            )
         ),
         "released_rule_ids": sorted(released_ids),
         "administration_constraint_ids": sorted(admin_ids),
@@ -2220,6 +2350,7 @@ def compute(
     metrics_path: Path,
     product_matrix_path: Path,
     rule_matrix_path: Path,
+    require_external: bool = False,
 ) -> dict[str, Any]:
     root = inputs["root"]
     require_output_paths(
@@ -2230,7 +2361,10 @@ def compute(
         input_paths=tuple(inputs["paths"].values()),
     )
     baseline_protection = validate_baseline_hashes(inputs)
-    boundary_verification = validate_complete_boundary_verification(inputs)
+    boundary_verification = validate_boundary_verification(
+        inputs,
+        require_external=require_external,
+    )
     runtime, product_rows, rule_rows = analyze_runtime(inputs)
     evidence = analyze_evidence(inputs)
     literature = analyze_literature(inputs)
@@ -2244,9 +2378,7 @@ def compute(
     literature_baseline = baseline["v50_literature"]
     state_baseline = baseline["state"]
     comparisons = {
-        "products": count_comparison(
-            runtime_baseline["products"], runtime["products"]
-        ),
+        "products": count_comparison(runtime_baseline["products"], runtime["products"]),
         "released_rules": count_comparison(
             runtime_baseline["rules_released"], runtime["released_rules"]
         ),
@@ -2381,9 +2513,9 @@ def compute(
         "track": "v5.1-final-mechanical-audit",
         "baseline_commit": inputs["json"]["baseline"]["baseline"]["commit"],
         "generator": "scripts/research/otc/build_v51_final_audit.py",
-        "generator_sha256": inputs["lineage"][
-            STATIC_INPUTS["final_audit_generator"]
-        ]["sha256"],
+        "generator_sha256": inputs["lineage"][STATIC_INPUTS["final_audit_generator"]][
+            "sha256"
+        ],
         "computation_policy": {
             "mechanical_sources_only": True,
             "ui_code_used": False,
@@ -2401,6 +2533,8 @@ def compute(
             "evidence_units_are_status_free": True,
             "literature_authority": "explanatory_only",
             "release_ready_requires_human_review": True,
+            "portable_repository_verification": True,
+            "external_artifacts_required_for_final_local_report": True,
         },
         "inputs": inputs["lineage"],
         "protected_baseline": baseline_protection,
@@ -2417,7 +2551,8 @@ def compute(
             "runtime_schema_is_2_1_0": True,
             "protected_research_v3_tree_matches_baseline": True,
             "protected_research_v3_worktree_is_clean": True,
-            "boundary_verification_is_complete": True,
+            "portable_repository_verification_is_complete": True,
+            "external_verification_is_required_for_final_local_report": True,
             "all_consumed_protected_inputs_match_baseline": True,
             "released_rules_match_v50_released_ids": True,
             "released_rules_have_applicability": True,
@@ -2480,6 +2615,14 @@ def compute(
         "input_paths": tuple(inputs["paths"].values()),
         "input_snapshots": inputs["input_snapshots"],
         "boundary_manifest_path": inputs["paths"]["baseline"],
+        "external_artifact_paths": declared_external_paths(inputs),
+        "require_external": require_external,
+        "verification_scope": (
+            EXTERNAL_VERIFICATION_SCOPE
+            if require_external
+            else PORTABLE_VERIFICATION_SCOPE
+        ),
+        "final_local_report_ready": require_external,
         "output_paths": {
             "final_metrics": metrics_path,
             "product_support_matrix": product_matrix_path,
@@ -2494,6 +2637,7 @@ def build(
     metrics_path: Path | None = None,
     product_matrix_path: Path | None = None,
     rule_matrix_path: Path | None = None,
+    require_external: bool = False,
 ) -> dict[str, Any]:
     root = root.resolve()
     metrics_path = metrics_path or root / METRICS_RELATIVE
@@ -2505,6 +2649,7 @@ def build(
         metrics_path=metrics_path,
         product_matrix_path=product_matrix_path,
         rule_matrix_path=rule_matrix_path,
+        require_external=require_external,
     )
 
 
@@ -2524,13 +2669,6 @@ class StagedOutput:
     payload: bytes
     device: int
     inode: int
-
-
-@dataclass
-class PriorOutput:
-    existed: bool
-    payload: bytes | None
-    backup: StagedOutput | None
 
 
 def _open_delete_shared_read(path: Path) -> int:
@@ -2620,7 +2758,9 @@ def _revalidate_held_output_set(
 
     appeared = [path for path in missing_paths if path.exists()]
     if appeared:
-        raise ValueError(f"missing final audit outputs appeared during check: {appeared}")
+        raise ValueError(
+            f"missing final audit outputs appeared during check: {appeared}"
+        )
 
     paths = package["output_paths"]
     require_output_paths(
@@ -2637,10 +2777,13 @@ def _validate_staged_path(staged: StagedOutput) -> None:
     if not stat.S_ISREG(opened.st_mode) or opened.st_nlink != 1:
         raise ValueError(f"unsafe staged final audit descriptor: {staged.path}")
     if (opened.st_dev, opened.st_ino) != (staged.device, staged.inode):
-        raise ValueError(f"staged final audit descriptor identity changed: {staged.path}")
-    if opened.st_size != len(staged.payload) or _read_descriptor(
-        staged.descriptor
-    ) != staged.payload:
+        raise ValueError(
+            f"staged final audit descriptor identity changed: {staged.path}"
+        )
+    if (
+        opened.st_size != len(staged.payload)
+        or _read_descriptor(staged.descriptor) != staged.payload
+    ):
         raise ValueError(f"staged final audit payload changed: {staged.path}")
     metadata = os.lstat(staged.path)
     if (
@@ -2692,9 +2835,13 @@ def _replace_staged_output(
     staged: StagedOutput,
     destination: Path,
     root: Path,
+    *,
+    published_paths: set[Path] | None = None,
 ) -> None:
     _validate_staged_path(staged)
     os.replace(staged.path, destination)
+    if published_paths is not None:
+        published_paths.add(destination)
     try:
         _verify_published_payload(staged, destination, root)
     finally:
@@ -2703,15 +2850,11 @@ def _replace_staged_output(
 
 
 def _close_staged(staged: StagedOutput) -> None:
-    try:
-        if staged.descriptor >= 0:
-            os.close(staged.descriptor)
-            staged.descriptor = -1
-    finally:
-        try:
-            staged.path.unlink()
-        except FileNotFoundError:
-            pass
+    """Release a staged handle without deleting an uncertain pathname."""
+
+    if staged.descriptor >= 0:
+        os.close(staged.descriptor)
+        staged.descriptor = -1
 
 
 def stage_output(path: Path, payload: bytes, audit_root: Path) -> StagedOutput:
@@ -2721,9 +2864,9 @@ def stage_output(path: Path, payload: bytes, audit_root: Path) -> StagedOutput:
     temporary = Path(temporary_name)
     if temporary.parent.resolve() != audit_root.resolve():
         os.close(descriptor)
-        temporary.unlink()
         raise ValueError(f"staged output left canonical audit directory: {temporary}")
     held_descriptor: int | None = None
+    staged: StagedOutput | None = None
     try:
         with os.fdopen(descriptor, "wb") as handle:
             handle.write(payload)
@@ -2742,81 +2885,15 @@ def stage_output(path: Path, payload: bytes, audit_root: Path) -> StagedOutput:
         )
         _validate_staged_path(staged)
         return staged
-    except BaseException:
-        if held_descriptor is not None:
+    except BaseException as error:
+        if staged is not None:
+            _close_staged(staged)
+        elif held_descriptor is not None:
             os.close(held_descriptor)
-        try:
-            temporary.unlink()
-        except FileNotFoundError:
-            pass
-        raise
-
-
-def _capture_prior_outputs(
-    paths: list[Path],
-    root: Path,
-    audit_root: Path,
-) -> dict[Path, PriorOutput]:
-    prior: dict[Path, PriorOutput] = {}
-    for path in paths:
-        try:
-            snapshot = safely_read_input(
-                path,
-                root,
-                require_single_link=True,
-                role="output",
-            )
-        except FileNotFoundError:
-            prior[path] = PriorOutput(False, None, None)
-            continue
-        backup = stage_output(path, snapshot["bytes"], audit_root)
-        prior[path] = PriorOutput(True, snapshot["bytes"], backup)
-    return prior
-
-
-def _rollback_outputs(
-    attempted: list[Path],
-    prior: dict[Path, PriorOutput],
-    root: Path,
-) -> None:
-    errors: list[str] = []
-    for destination in reversed(attempted):
-        previous = prior[destination]
-        try:
-            if previous.existed:
-                if previous.backup is None:
-                    raise ValueError(f"missing rollback backup: {destination}")
-                _replace_staged_output(previous.backup, destination, root)
-            else:
-                try:
-                    destination.unlink()
-                except FileNotFoundError:
-                    pass
-        except Exception as error:
-            errors.append(f"{destination}: {type(error).__name__}: {error}")
-
-    for destination in attempted:
-        previous = prior[destination]
-        try:
-            if previous.existed:
-                observed = safely_read_input(
-                    destination,
-                    root,
-                    require_single_link=True,
-                    role="rollback output",
-                )
-                if observed["bytes"] != previous.payload:
-                    raise ValueError("restored bytes differ")
-            else:
-                try:
-                    os.lstat(destination)
-                except FileNotFoundError:
-                    continue
-                raise ValueError("new output still exists")
-        except Exception as error:
-            errors.append(f"{destination}: {type(error).__name__}: {error}")
-    if errors:
-        raise RuntimeError(f"final audit rollback failed: {errors}")
+        raise RuntimeError(
+            "staged final audit output failed; automatic temp deletion is "
+            f"disabled, retained={temporary}"
+        ) from error
 
 
 def write(package: dict[str, Any]) -> None:
@@ -2838,13 +2915,11 @@ def write(package: dict[str, Any]) -> None:
         paths["final_metrics"],
     ]
     staged: dict[Path, StagedOutput] = {}
-    prior: dict[Path, PriorOutput] = {}
-    attempted: list[Path] = []
+    published_paths: set[Path] = set()
     published_snapshots: list[dict[str, Any]] = []
     try:
         for path, payload in outputs.items():
             staged[path] = stage_output(path, payload, audit_root)
-        prior = _capture_prior_outputs(publish_order, root, audit_root)
 
         # This is the commit boundary: every parsed input must still be the same
         # file identity and the same bytes immediately before any replacement.
@@ -2869,8 +2944,12 @@ def write(package: dict[str, Any]) -> None:
                 paths["active_rule_matrix"],
                 input_paths=package["input_paths"],
             )
-            attempted.append(path)
-            _replace_staged_output(staged[path], path, root)
+            _replace_staged_output(
+                staged[path],
+                path,
+                root,
+                published_paths=published_paths,
+            )
 
         revalidate_input_snapshots(package)
         revalidate_package_boundary(package)
@@ -2905,24 +2984,31 @@ def write(package: dict[str, Any]) -> None:
             if descriptor >= 0:
                 os.close(descriptor)
                 snapshot["descriptor"] = -1
-        try:
-            _rollback_outputs(attempted, prior, root)
-        except Exception as rollback_error:
+        retained_staged = sorted(
+            str(staged.path)
+            for staged in staged.values()
+            if staged.descriptor >= 0 and staged.path.exists()
+        )
+        if published_paths:
             raise RuntimeError(
-                f"final audit publish failed and rollback failed: {rollback_error}"
+                "final audit publish failed after partial publication; automatic "
+                "rollback and temp deletion are disabled to preserve concurrent "
+                "writer data. Run --check, resolve the failed input or path, and "
+                "rerun the writer. "
+                f"published={sorted(str(path) for path in published_paths)} "
+                f"retained_staged={retained_staged}"
+            ) from error
+        if retained_staged:
+            raise RuntimeError(
+                "final audit staging failed; automatic temp deletion is disabled. "
+                f"retained_staged={retained_staged}"
             ) from error
         raise
     finally:
         for snapshot in published_snapshots:
             if snapshot["descriptor"] >= 0:
                 os.close(snapshot["descriptor"])
-        all_staged = [*staged.values()]
-        all_staged.extend(
-            previous.backup
-            for previous in prior.values()
-            if previous.backup is not None
-        )
-        for temporary in all_staged:
+        for temporary in staged.values():
             _close_staged(temporary)
 
 
@@ -2981,6 +3067,14 @@ def check(package: dict[str, Any]) -> list[dict[str, Any]]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--require-external",
+        action="store_true",
+        help=(
+            "Require both declared external canonical artifacts before marking "
+            "the final local report ready."
+        ),
+    )
     parser.add_argument("--metrics", type=Path, default=ROOT / METRICS_RELATIVE)
     parser.add_argument(
         "--product-matrix",
@@ -2997,6 +3091,7 @@ def main() -> int:
         metrics_path=args.metrics.resolve(),
         product_matrix_path=args.product_matrix.resolve(),
         rule_matrix_path=args.rule_matrix.resolve(),
+        require_external=args.require_external,
     )
     mismatches = check(package) if args.check else []
     if not args.check:
@@ -3004,12 +3099,14 @@ def main() -> int:
     result = {
         "valid": not mismatches,
         "mode": "check" if args.check else "write",
+        "verification_scope": package["verification_scope"],
+        "final_local_report_ready": (
+            package["final_local_report_ready"] and not mismatches
+        ),
         "counts": {
             "products": len(package["product_matrix_rows"]),
             "released_rules": len(package["rule_matrix_rows"]),
-            "evidence_units": package["metrics"]["v51"]["evidence"][
-                "evidence_units"
-            ],
+            "evidence_units": package["metrics"]["v51"]["evidence"]["evidence_units"],
             "evidence_rule_links": package["metrics"]["v51"]["evidence"][
                 "evidence_rule_links"
             ],

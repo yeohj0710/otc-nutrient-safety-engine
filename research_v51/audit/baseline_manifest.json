@@ -44,23 +44,23 @@
     },
     {
       "path": "research_v3/logs/v50_scoring_report.json",
-      "bytes": 17264,
-      "sha256": "c1b836c7e08a7d259e5ac4c48d7ccfb9e1fb58603b2ad5bfdd0a02af25ae00cb"
+      "bytes": 16724,
+      "sha256": "361547b555e167d70e65a934c80e73368bd914a0902b41f69d6d5daca4f1df5f"
     },
     {
       "path": "research_v3/otc/normalized/product_master.csv",
-      "bytes": 8700,
-      "sha256": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc"
+      "bytes": 8683,
+      "sha256": "93e8f21b00e5e2ee8963777fa04aba7b0e5cf46f2a9d68172db65576c25bf99b"
     },
     {
       "path": "research_v3/otc/normalized/ingredient_master.csv",
-      "bytes": 5596,
-      "sha256": "6925c5ac1236bbd6ebd3a53e5a58f853b849c3efccefa2d03ddb798689fae737"
+      "bytes": 5564,
+      "sha256": "e4f0fe786d11a6e8870b6ddfc3c48fcd7174d10ccfec2baac12c1756c7a1545a"
     },
     {
       "path": "research_v3/otc/normalized/product_ingredient.csv",
-      "bytes": 24865,
-      "sha256": "83ed4b53483c5e3e6b9296defce1548504f6b81bcd7aa59e42142a440fb6580e"
+      "bytes": 24758,
+      "sha256": "0df01ea231278762dd3992066a3545fac303d28e06a820e22b4f74c1b54a7e70"
     },
     {
       "path": "research_v3/otc/normalized/administration_constraints.csv",
@@ -69,18 +69,18 @@
     },
     {
       "path": "research_v3/otc/rules/rules.csv",
-      "bytes": 5613,
-      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a"
+      "bytes": 5596,
+      "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e"
     },
     {
       "path": "research_v3/otc/rules/rule_evidence_shortlist.csv",
-      "bytes": 21882,
-      "sha256": "d19c892ec2f084a6e5ff1548b387fc750c3a27b5eb6a680668df011b7f70066c"
+      "bytes": 21840,
+      "sha256": "d28b6acda5161669057f30ff4f103ebca52a1457bc37ab111e7a932552a0610d"
     },
     {
       "path": "research_v3/otc/rules/official_evidence_candidates.csv",
-      "bytes": 140736,
-      "sha256": "e1497be67bf58328436ec0438a8829a8f01b89f8f4c251a76838c10ae52b2b8b"
+      "bytes": 140382,
+      "sha256": "28b152300b07f373e78786b9981994b5a1a7b23967e533e2f1219a568912ea7b"
     },
     {
       "path": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json",
@@ -173,16 +173,17 @@
     }
   },
   "count_sources": {
-    "authorization_layer": "research_v3/otc/normalized/*.csv and research_v3/otc/rules/rules.csv",
+    "authorization_layer": "6dbdad5:research_v3/otc/normalized/*.csv and 6dbdad5:research_v3/otc/rules/rules.csv",
     "runtime_baseline_snapshot": "6dbdad5:src/generated/otc-runtime.json",
-    "candidate_evidence": "research_v3/otc/rules/rule_evidence_shortlist.csv and official_evidence_candidates.csv",
-    "v50_literature": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json and supporting_literature.csv",
-    "v50_screening": "research_v3/logs/v50_run_report.json",
-    "v50_scoring_ai_reference": "research_v3/logs/v50_scoring_report.json",
-    "state": "research_v3/logs/v50_run_report.json"
+    "candidate_evidence": "6dbdad5:research_v3/otc/rules/rule_evidence_shortlist.csv and official_evidence_candidates.csv",
+    "v50_literature": "6dbdad5:research_v3/otc/literature/v5/downstream/literature_link_manifest.json and supporting_literature.csv",
+    "v50_screening": "6dbdad5:research_v3/logs/v50_run_report.json",
+    "v50_scoring_ai_reference": "6dbdad5:research_v3/logs/v50_scoring_report.json",
+    "state": "6dbdad5:research_v3/logs/v50_run_report.json"
   },
   "environment_limits": {
-    "hash_basis": "raw working-tree bytes on the Windows baseline environment",
+    "hash_basis": "Git blob bytes at the pinned baseline commit, before checkout text conversion",
+    "legacy_hash_basis_note": "Earlier draft values captured raw Windows working-tree bytes; those nonportable values are superseded by the pinned baseline Git blob identity.",
     "external_thesis_available_in_ci": false,
     "non_ignored_untracked_files_are_checked": true,
     "ignored_files_are_not_historically_verifiable": true,

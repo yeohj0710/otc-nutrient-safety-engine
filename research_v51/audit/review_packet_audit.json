@@ -77,8 +77,8 @@
       "sha256": "7f96751eef65d9f44e108a6ee99917f921cd5e5a766af4be52ab702fc303b9db"
     },
     "research_v51/audit/evidence_inventory.json": {
-      "bytes": 13717,
-      "sha256": "4a26ffc19890828f367c74caa10917aea29a8153ccfaeb337bef98b36933d307"
+      "bytes": 16267,
+      "sha256": "813847f34ec4a20f5fe746debae06b2f6a079fe6438cae67a552adc3a80c9b8e"
     },
     "scripts/research/otc/build_v51_review_packet.py": {
       "bytes": 55793,

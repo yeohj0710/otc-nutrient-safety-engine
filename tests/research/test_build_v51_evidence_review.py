@@ -128,15 +128,16 @@ def test_build_keeps_human_review_and_source_provenance_honest() -> None:
     overridden = [row for row in links if row["evidence_text_override"] == "true"]
     assert len(overridden) == 7
     assert all(row["evidence_text_override_reason"] for row in overridden)
-    changed = [row for row in links if row["shortlist_changed_from_candidate"] == "true"]
+    changed = [
+        row for row in links if row["shortlist_changed_from_candidate"] == "true"
+    ]
     assert [row["evidence_candidate_id"] for row in changed] == [
         "SAFE-OTC-01-NB-P2-B12-urgent_referral"
     ]
     rule_016 = next(
         row
         for row in verified
-        if row["evidence_candidate_id"]
-        == "SAFE-OTC-01-NB-P2-B12-urgent_referral"
+        if row["evidence_candidate_id"] == "SAFE-OTC-01-NB-P2-B12-urgent_referral"
     )
     assert rule_016["raw_candidate_source_locator"] == (
         "사용상의주의사항 PDF p.2, 문단 12"
@@ -147,12 +148,10 @@ def test_build_keeps_human_review_and_source_provenance_honest() -> None:
     assert rule_016["operational_source_locator"] == (
         "사용상의주의사항 PDF p.2, 문단 12-19"
     )
-    assert rule_016["operational_evidence_text"] == rule_016[
-        "shortlist_evidence_text"
-    ]
-    assert rule_016["operational_evidence_text"] != rule_016[
-        "raw_candidate_evidence_text"
-    ]
+    assert rule_016["operational_evidence_text"] == rule_016["shortlist_evidence_text"]
+    assert (
+        rule_016["operational_evidence_text"] != rule_016["raw_candidate_evidence_text"]
+    )
 
 
 def test_expert_queue_never_prefills_human_decisions() -> None:
@@ -199,32 +198,38 @@ def test_expert_queue_never_prefills_human_decisions() -> None:
 def test_build_rejects_candidate_text_that_does_not_match_extracted_paragraph(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    original_read_csv = builder.read_csv
+    original_read_csv = builder.read_protected_csv
 
-    def read_csv_with_tampered_candidate(path: Path) -> list[dict[str, str]]:
-        rows = original_read_csv(path)
-        if path.name == "official_evidence_candidates.csv":
+    def read_csv_with_tampered_candidate(
+        root: Path, relative: str
+    ) -> list[dict[str, str]]:
+        rows = original_read_csv(root, relative)
+        if Path(relative).name == "official_evidence_candidates.csv":
             rows[0]["evidence_text"] += " tampered"
         return rows
 
-    monkeypatch.setattr(builder, "read_csv", read_csv_with_tampered_candidate)
-    with pytest.raises(ValueError, match="evidence text mismatch with extracted paragraph"):
+    monkeypatch.setattr(builder, "read_protected_csv", read_csv_with_tampered_candidate)
+    with pytest.raises(
+        ValueError, match="evidence text mismatch with extracted paragraph"
+    ):
         builder.build(ROOT)
 
 
 def test_build_rejects_candidate_locator_that_disagrees_with_candidate_id(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    original_read_csv = builder.read_csv
+    original_read_csv = builder.read_protected_csv
 
-    def read_csv_with_tampered_locator(path: Path) -> list[dict[str, str]]:
-        rows = original_read_csv(path)
-        if path.name == "official_evidence_candidates.csv":
+    def read_csv_with_tampered_locator(
+        root: Path, relative: str
+    ) -> list[dict[str, str]]:
+        rows = original_read_csv(root, relative)
+        if Path(relative).name == "official_evidence_candidates.csv":
             prefix, _ = rows[0]["source_locator"].rsplit(" ", 1)
             rows[0]["source_locator"] = f"{prefix} 999"
         return rows
 
-    monkeypatch.setattr(builder, "read_csv", read_csv_with_tampered_locator)
+    monkeypatch.setattr(builder, "read_protected_csv", read_csv_with_tampered_locator)
     with pytest.raises(ValueError, match="candidate ID/source locator mismatch"):
         builder.build(ROOT)
 
@@ -232,18 +237,20 @@ def test_build_rejects_candidate_locator_that_disagrees_with_candidate_id(
 def test_build_validates_product_and_source_url_on_every_candidate_link(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    original_read_csv = builder.read_csv
+    original_read_csv = builder.read_protected_csv
     replacement = next(
         row
         for row in original_read_csv(
-            ROOT / "research_v3" / "otc" / "normalized" / "product_master.csv"
+            ROOT, "research_v3/otc/normalized/product_master.csv"
         )
         if row["candidate_id"] == "SAFE-OTC-05"
     )
 
-    def read_csv_with_cross_product_source(path: Path) -> list[dict[str, str]]:
-        rows = original_read_csv(path)
-        if path.name == "official_evidence_candidates.csv":
+    def read_csv_with_cross_product_source(
+        root: Path, relative: str
+    ) -> list[dict[str, str]]:
+        rows = original_read_csv(root, relative)
+        if Path(relative).name == "official_evidence_candidates.csv":
             target = next(
                 row
                 for row in rows
@@ -254,7 +261,9 @@ def test_build_validates_product_and_source_url_on_every_candidate_link(
             target["product_name"] = replacement["product_name"]
         return rows
 
-    monkeypatch.setattr(builder, "read_csv", read_csv_with_cross_product_source)
+    monkeypatch.setattr(
+        builder, "read_protected_csv", read_csv_with_cross_product_source
+    )
     with pytest.raises(ValueError, match="candidate/source URL mismatch"):
         builder.build(ROOT)
 
@@ -290,9 +299,7 @@ def test_checked_in_v51_artifacts_match_builder() -> None:
     assert inventory["review_boundary"]["expert_review_queue_human_fields"] == (
         builder.QUEUE_HUMAN_REVIEW_FIELDS
     )
-    assert "reviewer_role" in inventory["review_boundary"][
-        "reviewer_metadata_policy"
-    ]
+    assert "reviewer_role" in inventory["review_boundary"]["reviewer_metadata_policy"]
     assert inventory["counts"]["shortlist_source_overlay_changes"] == 1
     assert inventory["counts"]["candidate_operational_status_counts"] == {
         "active_existing_released_primary_evidence": 15,
@@ -300,20 +307,45 @@ def test_checked_in_v51_artifacts_match_builder() -> None:
     }
     assert inventory["counts"]["reviewed_primary_evidence_rows"] == 15
     assert inventory["counts"]["operational_evidence_rows"] == 15
-    assert inventory["review_boundary"][
-        "expert_review_queue_operational_status"
-    ] == "inactive_candidate"
-    assert inventory["review_boundary"][
-        "existing_human_expert_verified_primary_rows"
-    ] == 15
+    assert (
+        inventory["review_boundary"]["expert_review_queue_operational_status"]
+        == "inactive_candidate"
+    )
+    assert (
+        inventory["review_boundary"]["existing_human_expert_verified_primary_rows"]
+        == 15
+    )
     assert inventory["review_boundary"]["new_human_expert_reviews"] == 0
     assert inventory["source_version_contract"]["source_version"].startswith(
         "SHA-256 identity of the archived local MFDS PDF bytes"
     )
-    assert "normalized extracted text" in inventory["source_version_contract"][
-        "freshness_policy"
-    ]
+    assert (
+        "normalized extracted text"
+        in inventory["source_version_contract"]["freshness_policy"]
+    )
     assert inventory["generator_sha256"] == sha256(ROOT / inventory["generator"])
+    assert inventory["schema_version"] == "1.1.0"
+    assert inventory["source_lineage"] == "v5.0_pinned_baseline_git_blobs"
+    helper = inventory["inputs"]["scripts/research/otc/audit_v51_boundaries.py"]
+    assert helper == {
+        "basis": "worktree_bytes",
+        "bytes": (ROOT / "scripts/research/otc/audit_v51_boundaries.py").stat().st_size,
+        "sha256": sha256(ROOT / "scripts/research/otc/audit_v51_boundaries.py"),
+    }
+    protected = inventory["inputs"][
+        "research_v3/otc/rules/official_evidence_candidates.csv"
+    ]
+    assert protected["basis"] == "baseline_git_blob"
+    assert protected["baseline_commit"] == builder.BASELINE_COMMIT
+    assert protected["git_blob_oid"] == builder.boundary_audit.git_blob_oid(
+        ROOT,
+        builder.BASELINE_COMMIT,
+        "research_v3/otc/rules/official_evidence_candidates.csv",
+    )
+    assert protected["bytes"] == 140382
+    assert protected["sha256"] == (
+        "28b152300b07f373e78786b9981994b5a1a7b23967e533e2f1219a568912ea7b"
+    )
     assert inventory["provenance_verification"] == {
         "raw_pdf_bytes_rehashed": True,
         "extracted_page_text_rehashed": True,

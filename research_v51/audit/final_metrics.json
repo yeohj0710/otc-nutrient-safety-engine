@@ -3,7 +3,7 @@
   "track": "v5.1-final-mechanical-audit",
   "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
   "generator": "scripts/research/otc/build_v51_final_audit.py",
-  "generator_sha256": "92e162aec9150a30b29103bb8ba61f2df4312fbdb16227e3f773eabf8e870886",
+  "generator_sha256": "07344c19f33138acfe2dc6de7cbaa988d4cb89f9cbe2cdf2313c859ecc9a76d9",
   "computation_policy": {
     "mechanical_sources_only": true,
     "ui_code_used": false,
@@ -13,108 +13,170 @@
     "evidence_status_assignment_level": "360 evidence_rule_links",
     "evidence_units_are_status_free": true,
     "literature_authority": "explanatory_only",
-    "release_ready_requires_human_review": true
+    "release_ready_requires_human_review": true,
+    "portable_repository_verification": true,
+    "external_artifacts_required_for_final_local_report": true
   },
   "inputs": {
     "research_v3/otc/extracted/nedrug/196800036/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/196800036/NB.txt",
       "bytes": 7591,
-      "sha256": "c5663263880dcaec315dc3d0ae9cd206db97c2e1a230f4d203742a9340155500"
+      "sha256": "c5663263880dcaec315dc3d0ae9cd206db97c2e1a230f4d203742a9340155500",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "07d8a2fd9a7fb34976c29eb744ee324286a0c11a"
     },
     "research_v3/otc/extracted/nedrug/197500016/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/197500016/NB.txt",
       "bytes": 27137,
-      "sha256": "fe69b6223fdc99471638072853607845dd59cb9998df3ec88620e89803fde28c"
+      "sha256": "fe69b6223fdc99471638072853607845dd59cb9998df3ec88620e89803fde28c",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "bd0b71626c33de41b273a2f5cb464e8a73f97ec9"
     },
     "research_v3/otc/extracted/nedrug/197500016/UD.txt": {
       "path": "research_v3/otc/extracted/nedrug/197500016/UD.txt",
       "bytes": 1179,
-      "sha256": "f37cb7e3604cad4189be8d54c4d765405daac791e1d66c32a25c80fe421c5598"
+      "sha256": "f37cb7e3604cad4189be8d54c4d765405daac791e1d66c32a25c80fe421c5598",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "494f3006f25a8f63ac27bc1de680e9cb548c9edd"
     },
     "research_v3/otc/extracted/nedrug/198400250/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/198400250/NB.txt",
       "bytes": 1978,
-      "sha256": "f369be29dc1a706a26f1e95575dbae62706f22b8f496c0ab9b1d9e4928c6840d"
+      "sha256": "f369be29dc1a706a26f1e95575dbae62706f22b8f496c0ab9b1d9e4928c6840d",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "5c7a062af76ea284fb75628f035baf15a6908000"
     },
     "research_v3/otc/extracted/nedrug/198601920/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/198601920/NB.txt",
       "bytes": 22876,
-      "sha256": "1e181b0ebaf1aa05456be198caa64d63934c85e5b7b05834c944b7975c9645c8"
+      "sha256": "1e181b0ebaf1aa05456be198caa64d63934c85e5b7b05834c944b7975c9645c8",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "90e6c22f0e8d00bf98e0f108cc60d4763deafdc7"
     },
     "research_v3/otc/extracted/nedrug/198601920/UD.txt": {
       "path": "research_v3/otc/extracted/nedrug/198601920/UD.txt",
       "bytes": 1065,
-      "sha256": "6ca2612987d1449038b5fb7ab42e3628faa46274b214407114a62b81bd3cf05d"
+      "sha256": "6ca2612987d1449038b5fb7ab42e3628faa46274b214407114a62b81bd3cf05d",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "2070116780715a50e6fca8e671797d970d08d161"
     },
     "research_v3/otc/extracted/nedrug/198700405/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/198700405/NB.txt",
       "bytes": 1480,
-      "sha256": "b0abca454b34e4abc442275a3d7cdbcbf6e2fa397730cad8cd7bcd2232897af1"
+      "sha256": "b0abca454b34e4abc442275a3d7cdbcbf6e2fa397730cad8cd7bcd2232897af1",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "ac0eae851d59ecd31eb4dd631c8f7a5317d58e61"
     },
     "research_v3/otc/extracted/nedrug/199400202/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/199400202/NB.txt",
       "bytes": 7491,
-      "sha256": "bc74cdd2b1d034bdafb4988085c614a9a9389f10921ca5287544396b21b105c5"
+      "sha256": "bc74cdd2b1d034bdafb4988085c614a9a9389f10921ca5287544396b21b105c5",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "0beeaac080b02488e9df63aa9c5aa6ee83650682"
     },
     "research_v3/otc/extracted/nedrug/199801026/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/199801026/NB.txt",
       "bytes": 1145,
-      "sha256": "08a562d9bc686a9251aeaf769f4b405ff0ca2f2bd5bcf9c0b448ba29a878ede2"
+      "sha256": "08a562d9bc686a9251aeaf769f4b405ff0ca2f2bd5bcf9c0b448ba29a878ede2",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "c3b53f7df8de288592ecb601d3b0ff48fb8e097e"
     },
     "research_v3/otc/extracted/nedrug/199801026/UD.txt": {
       "path": "research_v3/otc/extracted/nedrug/199801026/UD.txt",
       "bytes": 137,
-      "sha256": "4c42d5e25694f6df3ed1e98237ac50d5fc38d988ae9751304303e5508a00e7fb"
+      "sha256": "4c42d5e25694f6df3ed1e98237ac50d5fc38d988ae9751304303e5508a00e7fb",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f6eca8d2e8c02684e19b14c2c4f5afcb0ba5cde4"
     },
     "research_v3/otc/extracted/nedrug/199900926/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/199900926/NB.txt",
       "bytes": 1492,
-      "sha256": "d9809ea362a77d523c104f4f611559d51b20e8a305e38899eaf38b42e74d1d2f"
+      "sha256": "d9809ea362a77d523c104f4f611559d51b20e8a305e38899eaf38b42e74d1d2f",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "12c84d44875a190f71d935eb78f597f9ab8c2868"
     },
     "research_v3/otc/extracted/nedrug/200300406/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/200300406/NB.txt",
       "bytes": 1436,
-      "sha256": "0e2ddd8eea290d12cd9412184f507fdd176b4197f6a4bbdb91673d85f5d4aad9"
+      "sha256": "0e2ddd8eea290d12cd9412184f507fdd176b4197f6a4bbdb91673d85f5d4aad9",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "3a1cbe1644381635ab7b60f6ad1a724ee8f69c24"
     },
     "research_v3/otc/extracted/nedrug/200501321/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/200501321/NB.txt",
       "bytes": 3195,
-      "sha256": "6e6b9b1be176a6545f921284de43a9abbc2ef551c0eff6d934dea88b6827cabf"
+      "sha256": "6e6b9b1be176a6545f921284de43a9abbc2ef551c0eff6d934dea88b6827cabf",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "5370670eafa2c60a29fa79986a9f399b004ae27d"
     },
     "research_v3/otc/extracted/nedrug/200610765/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/200610765/NB.txt",
       "bytes": 8662,
-      "sha256": "d8f53715a2260c8990909dcee5c98396fb87df1631068189771cf868453f23df"
+      "sha256": "d8f53715a2260c8990909dcee5c98396fb87df1631068189771cf868453f23df",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "7f910beb1feef46d34f0558f09cf0dc6d2435075"
     },
     "research_v3/otc/extracted/nedrug/200610765/UD.txt": {
       "path": "research_v3/otc/extracted/nedrug/200610765/UD.txt",
       "bytes": 1591,
-      "sha256": "f8353e46763043a2110b6ea246e49694739125cddd19542c6b7b4391980ded0c"
+      "sha256": "f8353e46763043a2110b6ea246e49694739125cddd19542c6b7b4391980ded0c",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "5d0586b912bc1d2a85dffeba9731a9709a0f53c5"
     },
     "research_v3/otc/extracted/nedrug/201110646/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/201110646/NB.txt",
       "bytes": 34923,
-      "sha256": "04f5c26cb39c9b1e7dcb135b1fb139e69774054d30de5a719742db7b06d6c97e"
+      "sha256": "04f5c26cb39c9b1e7dcb135b1fb139e69774054d30de5a719742db7b06d6c97e",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "9613f96ecc084de987e2daf90c323169cf8ef94f"
     },
     "research_v3/otc/extracted/nedrug/202106092/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/202106092/NB.txt",
       "bytes": 8418,
-      "sha256": "5d13ec494383fe2619482aa8c08e93d0e161be4a15cf8d6cdb3a507d9bcba5a6"
+      "sha256": "5d13ec494383fe2619482aa8c08e93d0e161be4a15cf8d6cdb3a507d9bcba5a6",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d0729a3915c4ffe9ef9032131a84afc0d57d2237"
     },
     "research_v3/otc/extracted/nedrug/202106092/UD.txt": {
       "path": "research_v3/otc/extracted/nedrug/202106092/UD.txt",
       "bytes": 295,
-      "sha256": "4574509f23567c3d5eaf7ca3676bbdba1f4be8f8a3c4bc75219caedf4028b39a"
+      "sha256": "4574509f23567c3d5eaf7ca3676bbdba1f4be8f8a3c4bc75219caedf4028b39a",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "3760d9a33547b530b33935585d0352a340ee6d51"
     },
     "research_v3/otc/extracted/nedrug/202200525/NB.txt": {
       "path": "research_v3/otc/extracted/nedrug/202200525/NB.txt",
       "bytes": 8550,
-      "sha256": "47db39945c92a7ac02c192df801d4bd81f0c5e26cae25b138646f8a8779539bb"
+      "sha256": "47db39945c92a7ac02c192df801d4bd81f0c5e26cae25b138646f8a8779539bb",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d4ebab8b23f31f16c7b2b42cf0b4f76d5b1d06eb"
     },
     "research_v3/otc/extracted/nedrug/202200525/UD.txt": {
       "path": "research_v3/otc/extracted/nedrug/202200525/UD.txt",
       "bytes": 1072,
-      "sha256": "7dbffa24d6f48e28096112e8621fa291b659e14b9b945340ca51aadfa3e114b8"
+      "sha256": "7dbffa24d6f48e28096112e8621fa291b659e14b9b945340ca51aadfa3e114b8",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f9f8b20ead4b953c4d0b8f8c5cecee250897bf1d"
     },
     "research_v3/otc/normalized/administration_constraints.csv": {
       "path": "research_v3/otc/normalized/administration_constraints.csv",
@@ -134,12 +196,15 @@
         "source_sha256",
         "record_status",
         "derivation_method"
-      ]
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "045936762fc145c479a0073a96b625fad4c55d8b"
     },
     "research_v3/otc/normalized/product_master.csv": {
       "path": "research_v3/otc/normalized/product_master.csv",
-      "bytes": 8700,
-      "sha256": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc",
+      "bytes": 8683,
+      "sha256": "93e8f21b00e5e2ee8963777fa04aba7b0e5cf46f2a9d68172db65576c25bf99b",
       "rows": 16,
       "fields": [
         "candidate_id",
@@ -162,12 +227,15 @@
         "calculation_blocker",
         "analysis_status",
         "analysis_exclusion_reason"
-      ]
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "c1d7d6dbd24a46e89dc8275cf7eb1c50fbc2abd7"
     },
     "research_v3/otc/rules/rule_evidence_shortlist.csv": {
       "path": "research_v3/otc/rules/rule_evidence_shortlist.csv",
-      "bytes": 21882,
-      "sha256": "d19c892ec2f084a6e5ff1548b387fc750c3a27b5eb6a680668df011b7f70066c",
+      "bytes": 21840,
+      "sha256": "d28b6acda5161669057f30ff4f103ebca52a1457bc37ab111e7a932552a0610d",
       "rows": 48,
       "fields": [
         "rule_id",
@@ -184,12 +252,15 @@
         "evidence_text",
         "review_status",
         "supports_release"
-      ]
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d78d94781a620d7f23e59f5a495e2ac1de848bf9"
     },
     "research_v3/otc/rules/rules.csv": {
       "path": "research_v3/otc/rules/rules.csv",
-      "bytes": 5613,
-      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
+      "bytes": 5596,
+      "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e",
       "rows": 16,
       "fields": [
         "rule_id",
@@ -201,12 +272,15 @@
         "next_action_ko",
         "source_id",
         "source_locator"
-      ]
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "41b72ad957c04bf922aeb1fdeb50e2b436420440"
     },
     "research_v3/otc/rules/runtime_rule_bindings.csv": {
       "path": "research_v3/otc/rules/runtime_rule_bindings.csv",
-      "bytes": 1335,
-      "sha256": "476c7277c04a0136c5bfe3e651b08830b8b1544500541965ecac4f635fe23ec2",
+      "bytes": 1321,
+      "sha256": "d838f851a5623574df76500a3dd33c1c2e3f77564ac5965d341220cb21d93931",
       "rows": 13,
       "fields": [
         "rule_id",
@@ -220,27 +294,30 @@
         "binding_status",
         "supports_release",
         "red_flag_terms"
-      ]
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f2de18406fef4d9cb3426f437c2020f6dde1eea1"
     },
     "research_v51/audit/baseline_manifest.json": {
       "path": "research_v51/audit/baseline_manifest.json",
-      "bytes": 7036,
-      "sha256": "25fc8fa3e511db59dbecb0d3d2e1455fbefa6db5300c15c028644f518acf4816"
+      "bytes": 7288,
+      "sha256": "35d9cc747a45b2027b29b4da250c8ecd159bae28def43e6562180859e5c0148d"
     },
     "research_v51/audit/evidence_inventory.json": {
       "path": "research_v51/audit/evidence_inventory.json",
-      "bytes": 13717,
-      "sha256": "4a26ffc19890828f367c74caa10917aea29a8153ccfaeb337bef98b36933d307"
+      "bytes": 16267,
+      "sha256": "813847f34ec4a20f5fe746debae06b2f6a079fe6438cae67a552adc3a80c9b8e"
     },
     "research_v51/audit/literature_link_classification_audit.json": {
       "path": "research_v51/audit/literature_link_classification_audit.json",
-      "bytes": 3754,
-      "sha256": "35be19b2f3a0ee0e8ac8f011fa1b9161f17a4d884738654925cad34b6866d0c8"
+      "bytes": 5407,
+      "sha256": "39e0454392bdb5a086f8150994d448f8264bd990ee2fa1bb770053b15d475863"
     },
     "research_v51/audit/review_packet_audit.json": {
       "path": "research_v51/audit/review_packet_audit.json",
       "bytes": 5332,
-      "sha256": "7a34fad62ea93ebc64eb31d6b425437b171fdee8fe431010f015a6cf5bce6874"
+      "sha256": "26a155237a77d94fd30683bbfe2fefddc43735bd7bde8b8ca19f560cdab60162"
     },
     "research_v51/audit/source_freshness_snapshot.json": {
       "path": "research_v51/audit/source_freshness_snapshot.json",
@@ -480,6 +557,11 @@
         "expert_question_ko"
       ]
     },
+    "scripts/research/otc/audit_v51_boundaries.py": {
+      "path": "scripts/research/otc/audit_v51_boundaries.py",
+      "bytes": 35465,
+      "sha256": "63a0c61f430ae1da793fde2500eca61c8422867d5dacaab820df8339e87f7b8b"
+    },
     "scripts/research/otc/audit_v51_source_freshness.py": {
       "path": "scripts/research/otc/audit_v51_source_freshness.py",
       "bytes": 60380,
@@ -487,8 +569,8 @@
     },
     "scripts/research/otc/build_v51_final_audit.py": {
       "path": "scripts/research/otc/build_v51_final_audit.py",
-      "bytes": 112613,
-      "sha256": "92e162aec9150a30b29103bb8ba61f2df4312fbdb16227e3f773eabf8e870886"
+      "bytes": 117588,
+      "sha256": "07344c19f33138acfe2dc6de7cbaa988d4cb89f9cbe2cdf2313c859ecc9a76d9"
     },
     "scripts/research/otc/build_v51_review_packet.py": {
       "path": "scripts/research/otc/build_v51_review_packet.py",
@@ -516,34 +598,46 @@
       "research_v3/otc/normalized/administration_constraints.csv": {
         "bytes": 10325,
         "sha256": "88b33b109e602527655e814f794bc19f7a5166553fd6c701f92bd7e53f49b669",
-        "baseline_git_blob_oid": "045936762fc145c479a0073a96b625fad4c55d8b"
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "045936762fc145c479a0073a96b625fad4c55d8b"
       },
       "research_v3/otc/normalized/product_master.csv": {
-        "bytes": 8700,
-        "sha256": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc",
-        "baseline_git_blob_oid": "c1d7d6dbd24a46e89dc8275cf7eb1c50fbc2abd7"
+        "bytes": 8683,
+        "sha256": "93e8f21b00e5e2ee8963777fa04aba7b0e5cf46f2a9d68172db65576c25bf99b",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "c1d7d6dbd24a46e89dc8275cf7eb1c50fbc2abd7"
       },
       "research_v3/otc/rules/rule_evidence_shortlist.csv": {
-        "bytes": 21882,
-        "sha256": "d19c892ec2f084a6e5ff1548b387fc750c3a27b5eb6a680668df011b7f70066c",
-        "baseline_git_blob_oid": "d78d94781a620d7f23e59f5a495e2ac1de848bf9"
+        "bytes": 21840,
+        "sha256": "d28b6acda5161669057f30ff4f103ebca52a1457bc37ab111e7a932552a0610d",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "d78d94781a620d7f23e59f5a495e2ac1de848bf9"
       },
       "research_v3/otc/rules/rules.csv": {
-        "bytes": 5613,
-        "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a",
-        "baseline_git_blob_oid": "41b72ad957c04bf922aeb1fdeb50e2b436420440"
+        "bytes": 5596,
+        "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "41b72ad957c04bf922aeb1fdeb50e2b436420440"
       },
       "research_v3/otc/rules/runtime_rule_bindings.csv": {
-        "bytes": 1335,
-        "sha256": "476c7277c04a0136c5bfe3e651b08830b8b1544500541965ecac4f635fe23ec2",
-        "baseline_git_blob_oid": "f2de18406fef4d9cb3426f437c2020f6dde1eea1"
+        "bytes": 1321,
+        "sha256": "d838f851a5623574df76500a3dd33c1c2e3f77564ac5965d341220cb21d93931",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "f2de18406fef4d9cb3426f437c2020f6dde1eea1"
       }
     }
   },
   "boundary_verification": {
     "valid": true,
-    "verification_complete": true,
-    "external_artifacts_verified": 2
+    "verification_scope": "portable_repository",
+    "portable_repository_verified": true,
+    "external_artifacts_declared": 2,
+    "external_artifacts_required_for_final_local_report": true
   },
   "baseline_vs_v51": {
     "products": {
@@ -1246,7 +1340,8 @@
     "runtime_schema_is_2_1_0": true,
     "protected_research_v3_tree_matches_baseline": true,
     "protected_research_v3_worktree_is_clean": true,
-    "boundary_verification_is_complete": true,
+    "portable_repository_verification_is_complete": true,
+    "external_verification_is_required_for_final_local_report": true,
     "all_consumed_protected_inputs_match_baseline": true,
     "released_rules_match_v50_released_ids": true,
     "released_rules_have_applicability": true,
@@ -1331,7 +1426,7 @@
     "final_metrics": {
       "path": "research_v51/audit/final_metrics.json",
       "hash_scope": "canonical JSON with outputs.final_metrics.semantic_sha256 empty",
-      "semantic_sha256": "1e70984f828780db5c2c745a5f77e1ebe7450c82f1fb2d4b7a9a28529cb6536d"
+      "semantic_sha256": "fe660920ae77c5bad913b66ce86e23e49e3b28cab080f59f9b4a962778e4b31f"
     }
   },
   "valid": true

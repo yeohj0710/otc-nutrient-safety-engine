@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import json
 import os
+import sys
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
@@ -138,8 +139,7 @@ def test_compute_reports_required_baseline_and_v51_metrics() -> None:
     assert current["official_source_freshness"]["new_rules_activated"] == 0
     assert current["runtime"]["release_ready"] is False
     assert all(
-        comparison["unchanged"]
-        for comparison in metrics["baseline_vs_v51"].values()
+        comparison["unchanged"] for comparison in metrics["baseline_vs_v51"].values()
     )
 
 
@@ -179,17 +179,24 @@ def test_released_rules_and_admin_constraints_stay_separate() -> None:
         "direct_product": 13,
         "cross_product_or_global": 2,
     }
-    assert sum(
-        int(row["historical_support_type_label_count"]) for row in product_rows
-    ) == 26
-    assert sum(
-        int(row["direct_released_rule_binding_count"]) for row in product_rows
-    ) == 13
-    assert sum(
-        int(row["admin_derived_support_type_association_count"])
-        for row in product_rows
-    ) == 13
-    assert sum(int(row["administration_constraint_count"]) for row in product_rows) == 32
+    assert (
+        sum(int(row["historical_support_type_label_count"]) for row in product_rows)
+        == 26
+    )
+    assert (
+        sum(int(row["direct_released_rule_binding_count"]) for row in product_rows)
+        == 13
+    )
+    assert (
+        sum(
+            int(row["admin_derived_support_type_association_count"])
+            for row in product_rows
+        )
+        == 13
+    )
+    assert (
+        sum(int(row["administration_constraint_count"]) for row in product_rows) == 32
+    )
     assert Counter(row["numeric_finding_decision_bases"] for row in product_rows) == {
         "administration_constraint": 12,
         "administration_constraint;released_rule": 1,
@@ -233,6 +240,58 @@ def test_duplicate_identity_and_missing_source_fail() -> None:
         compute_from(missing_source)
 
 
+def test_protected_inputs_use_pinned_blob_content_and_keep_raw_snapshot(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    relative = "research_v3/otc/rules/rule_evidence_shortlist.csv"
+    path = ROOT / relative
+    baseline_payload = builder.boundary_audit.git_blob_bytes(
+        ROOT,
+        builder.boundary_audit.EXPECTED_BASELINE_COMMIT,
+        relative,
+    )
+    checkout_payload = baseline_payload.replace(b"\n", b"\r\n")
+    assert checkout_payload != baseline_payload
+    real_read = builder.safely_read_input
+
+    def checkout_with_crlf(
+        candidate: Path,
+        root: Path,
+        **kwargs: object,
+    ) -> dict[str, object]:
+        snapshot = real_read(candidate, root, **kwargs)
+        if candidate == path:
+            snapshot["bytes"] = checkout_payload
+            snapshot["sha256"] = builder.sha256_bytes(checkout_payload)
+        return snapshot
+
+    monkeypatch.setattr(builder, "safely_read_input", checkout_with_crlf)
+    inputs = builder.load_inputs(ROOT)
+
+    assert inputs["input_snapshots"][relative]["bytes"] == checkout_payload
+    assert inputs["lineage"][relative] == {
+        "path": relative,
+        "bytes": len(baseline_payload),
+        "sha256": builder.sha256_bytes(baseline_payload),
+        "rows": len(builder.parse_csv(baseline_payload, path)[1]),
+        "fields": builder.parse_csv(baseline_payload, path)[0],
+        "basis": "baseline_git_blob",
+        "baseline_commit": builder.boundary_audit.EXPECTED_BASELINE_COMMIT,
+        "git_blob_oid": builder.boundary_audit.git_blob_oid(
+            ROOT,
+            builder.boundary_audit.EXPECTED_BASELINE_COMMIT,
+            relative,
+        ),
+    }
+    assert (
+        inputs["csv"]["rule_shortlist"]
+        == builder.parse_csv(
+            baseline_payload,
+            path,
+        )[1]
+    )
+
+
 def test_expert_queue_requires_blank_reviewer_role() -> None:
     inputs = builder.load_inputs(ROOT)
     missing_field = copy.deepcopy(inputs)
@@ -241,16 +300,14 @@ def test_expert_queue_requires_blank_reviewer_role() -> None:
         builder.analyze_evidence(missing_field)
 
     prefilled = copy.deepcopy(inputs)
-    prefilled["csv"]["expert_queue"][0]["reviewer_role"] = (
-        "pharmacist_expert"
-    )
+    prefilled["csv"]["expert_queue"][0]["reviewer_role"] = "pharmacist_expert"
     with pytest.raises(ValueError, match="expert queue has prefilled review"):
         builder.analyze_evidence(prefilled)
 
     missing_audit_role = copy.deepcopy(inputs)
-    required_fields = missing_audit_role["json"]["review_audit"][
-        "activation_boundary"
-    ]["required_human_review_fields"]
+    required_fields = missing_audit_role["json"]["review_audit"]["activation_boundary"][
+        "required_human_review_fields"
+    ]
     required_fields.remove("reviewer_role")
     with pytest.raises(ValueError, match="required human review fields"):
         builder.analyze_review_packet(missing_audit_role)
@@ -312,9 +369,9 @@ def test_support_decomposition_and_freshness_lineage_mismatch_fail() -> None:
         compute_from(mismatched_binding)
 
     mismatched_freshness = copy.deepcopy(inputs)
-    mismatched_freshness["json"]["source_freshness"]["inputs"][
-        "evidenceRuleLinks"
-    ]["sha256"] = "0" * 64
+    mismatched_freshness["json"]["source_freshness"]["inputs"]["evidenceRuleLinks"][
+        "sha256"
+    ] = "0" * 64
     with pytest.raises(ValueError, match="freshness evidence input sha256"):
         compute_from(mismatched_freshness)
 
@@ -343,8 +400,7 @@ def test_freshness_recomputes_pinned_text_and_validates_utc_timestamp() -> None:
     source = next(
         row
         for row in forged["json"]["source_freshness"]["sources"]
-        if row["url"]
-        != forged["json"]["source_freshness"]["volatilityProbe"]["url"]
+        if row["url"] != forged["json"]["source_freshness"]["volatilityProbe"]["url"]
     )
     source["pinnedSemanticTextSha256"] = "0" * 64
     source["remoteSemanticTextSha256"] = "0" * 64
@@ -384,9 +440,7 @@ def test_final_audit_shared_freshness_validator_rejects_pdf_hash_and_time() -> N
         builder.analyze_source_freshness(forged_pdf, now_utc=STABLE_NOW)
 
     future = copy.deepcopy(inputs)
-    future["json"]["source_freshness"]["accessedAtUtc"] = (
-        "2026-08-01T00:00:01+00:00"
-    )
+    future["json"]["source_freshness"]["accessedAtUtc"] = "2026-08-01T00:00:01+00:00"
     with pytest.raises(ValueError, match="valid audit window"):
         builder.analyze_source_freshness(future, now_utc=STABLE_NOW)
 
@@ -519,9 +573,7 @@ def test_final_audit_validates_review_triage_validator_lineage() -> None:
         packet_generator
     ]["sha256"]
     validator_path = "scripts/research/otc/validate_v51_shortlist_triage.py"
-    inputs["json"]["review_audit"]["inputs"][validator_path]["sha256"] = (
-        "0" * 64
-    )
+    inputs["json"]["review_audit"]["inputs"][validator_path]["sha256"] = "0" * 64
 
     with pytest.raises(ValueError, match="review triage validator"):
         builder.analyze_review_packet(inputs)
@@ -537,10 +589,72 @@ def test_final_audit_pins_canonical_review_packet_path() -> None:
         builder.analyze_review_packet(inputs)
 
 
-def test_boundary_verification_must_be_complete(
+def test_boundary_verification_enforces_portable_and_external_scopes(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     inputs = builder.load_inputs(ROOT)
+    external_paths = [
+        artifact["path"]
+        for artifact in inputs["json"]["baseline"]["external_canonical_artifacts"]
+    ]
+
+    calls: list[bool] = []
+
+    def successful_audit(**kwargs: object) -> dict[str, object]:
+        check_external = bool(kwargs["check_external"])
+        calls.append(check_external)
+        return {
+            "valid": True,
+            "verification_complete": check_external,
+            "external_verification": {
+                "requested": check_external,
+                "required_artifacts": len(external_paths),
+                "verified_artifacts": len(external_paths) if check_external else 0,
+            },
+            "errors": [],
+            "warnings": (
+                []
+                if check_external
+                else [
+                    f"EXTERNAL_ARTIFACT_CHECK_SKIPPED path={path}"
+                    for path in external_paths
+                ]
+            ),
+        }
+
+    monkeypatch.setattr(builder.boundary_audit, "audit", successful_audit)
+    portable = builder.validate_boundary_verification(
+        inputs,
+        require_external=False,
+    )
+    external = builder.validate_boundary_verification(
+        inputs,
+        require_external=True,
+    )
+
+    assert calls == [False, True]
+    assert portable == external
+    assert portable == {
+        "valid": True,
+        "verification_scope": "portable_repository",
+        "portable_repository_verified": True,
+        "external_artifacts_declared": 2,
+        "external_artifacts_required_for_final_local_report": True,
+    }
+
+    def extra_portable_warning(**_kwargs: object) -> dict[str, object]:
+        result = successful_audit(check_external=False)
+        result["warnings"] = [*result["warnings"], "UNEXPECTED_WARNING"]
+        return result
+
+    monkeypatch.setattr(
+        builder.boundary_audit,
+        "audit",
+        extra_portable_warning,
+    )
+    with pytest.raises(ValueError, match="boundary warnings"):
+        builder.validate_boundary_verification(inputs, require_external=False)
+
     monkeypatch.setattr(
         builder.boundary_audit,
         "audit",
@@ -552,10 +666,156 @@ def test_boundary_verification_must_be_complete(
                 "required_artifacts": 2,
                 "verified_artifacts": 0,
             },
+            "errors": [],
+            "warnings": [],
         },
     )
     with pytest.raises(ValueError, match="verification_complete"):
-        builder.validate_complete_boundary_verification(inputs)
+        builder.validate_boundary_verification(inputs, require_external=True)
+
+
+def test_metrics_bytes_do_not_depend_on_external_verification_mode(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    inputs = builder.load_inputs(ROOT)
+    external_paths = [
+        artifact["path"]
+        for artifact in inputs["json"]["baseline"]["external_canonical_artifacts"]
+    ]
+
+    def scoped_audit(**kwargs: object) -> dict[str, object]:
+        check_external = bool(kwargs["check_external"])
+        return {
+            "valid": True,
+            "verification_complete": check_external,
+            "external_verification": {
+                "requested": check_external,
+                "required_artifacts": len(external_paths),
+                "verified_artifacts": len(external_paths) if check_external else 0,
+            },
+            "errors": [],
+            "warnings": (
+                []
+                if check_external
+                else [
+                    f"EXTERNAL_ARTIFACT_CHECK_SKIPPED path={path}"
+                    for path in external_paths
+                ]
+            ),
+        }
+
+    monkeypatch.setattr(builder.boundary_audit, "audit", scoped_audit)
+    portable = builder.compute(
+        inputs,
+        require_external=False,
+        **output_paths(),
+    )
+    external = builder.compute(
+        inputs,
+        require_external=True,
+        **output_paths(),
+    )
+
+    assert portable["metrics_bytes"] == external["metrics_bytes"]
+    assert portable["verification_scope"] == "portable_repository"
+    assert portable["final_local_report_ready"] is False
+    assert external["verification_scope"] == (
+        "portable_repository_and_external_canonical_artifacts"
+    )
+    assert external["final_local_report_ready"] is True
+
+
+def test_cli_reports_verification_scope_and_final_report_readiness(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    package, _protected_input = minimal_write_package(tmp_path)
+    package.update(
+        {
+            "product_matrix_rows": [{}],
+            "rule_matrix_rows": [{}],
+            "metrics": {
+                "v51": {
+                    "evidence": {
+                        "evidence_units": 1,
+                        "evidence_rule_links": 1,
+                    }
+                }
+            },
+            "verification_scope": (
+                "portable_repository_and_external_canonical_artifacts"
+            ),
+            "final_local_report_ready": True,
+        }
+    )
+    observed_require_external: list[bool] = []
+
+    def fake_build(**kwargs: object) -> dict[str, object]:
+        observed_require_external.append(bool(kwargs["require_external"]))
+        return package
+
+    monkeypatch.setattr(builder, "build", fake_build)
+    monkeypatch.setattr(builder, "check", lambda _package: [])
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["build_v51_final_audit.py", "--check", "--require-external"],
+    )
+
+    assert builder.main() == 0
+    result = json.loads(capsys.readouterr().out)
+    assert observed_require_external == [True]
+    assert result["verification_scope"] == (
+        "portable_repository_and_external_canonical_artifacts"
+    )
+    assert result["final_local_report_ready"] is True
+
+
+def test_package_boundary_revalidation_keeps_selected_scope(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    inputs = builder.load_inputs(ROOT)
+    external_paths = tuple(
+        artifact["path"]
+        for artifact in inputs["json"]["baseline"]["external_canonical_artifacts"]
+    )
+    observed: list[bool] = []
+
+    def scoped_audit(**kwargs: object) -> dict[str, object]:
+        check_external = bool(kwargs["check_external"])
+        observed.append(check_external)
+        return {
+            "valid": True,
+            "verification_complete": check_external,
+            "external_verification": {
+                "requested": check_external,
+                "required_artifacts": len(external_paths),
+                "verified_artifacts": len(external_paths) if check_external else 0,
+            },
+            "errors": [],
+            "warnings": (
+                []
+                if check_external
+                else [
+                    f"EXTERNAL_ARTIFACT_CHECK_SKIPPED path={path}"
+                    for path in external_paths
+                ]
+            ),
+        }
+
+    monkeypatch.setattr(builder.boundary_audit, "audit", scoped_audit)
+    package = {
+        "root": ROOT,
+        "boundary_manifest_path": inputs["paths"]["baseline"],
+        "external_artifact_paths": external_paths,
+        "require_external": False,
+    }
+    builder.revalidate_package_boundary(package)
+    package["require_external"] = True
+    builder.revalidate_package_boundary(package)
+
+    assert observed == [False, True]
 
 
 def test_input_swap_after_compute_aborts_before_output_commit(tmp_path: Path) -> None:
@@ -563,12 +823,12 @@ def test_input_swap_after_compute_aborts_before_output_commit(tmp_path: Path) ->
     assert len(builder.check(package)) == 3
 
     protected_input.write_bytes(b"swapped-after-compute")
-    with pytest.raises(ValueError, match="input changed after compute"):
+    with pytest.raises(RuntimeError, match="automatic temp deletion is disabled"):
         builder.write(package)
 
     assert protected_input.read_bytes() == b"swapped-after-compute"
     assert all(not path.exists() for path in builder.expected_outputs(package))
-    assert list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp")) == []
+    assert len(list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp"))) == 3
 
 
 def test_input_identity_change_with_same_bytes_aborts(tmp_path: Path) -> None:
@@ -579,10 +839,11 @@ def test_input_identity_change_with_same_bytes_aborts(tmp_path: Path) -> None:
         ns=(metadata.st_atime_ns, metadata.st_mtime_ns + 2_000_000_000),
     )
 
-    with pytest.raises(ValueError, match="input changed after compute"):
+    with pytest.raises(RuntimeError, match="automatic temp deletion is disabled"):
         builder.write(package)
 
     assert all(not path.exists() for path in builder.expected_outputs(package))
+    assert len(list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp"))) == 3
 
 
 def test_output_swap_to_input_hardlink_aborts_without_overwrite(tmp_path: Path) -> None:
@@ -598,6 +859,35 @@ def test_output_swap_to_input_hardlink_aborts_without_overwrite(tmp_path: Path) 
     assert metrics_path.read_bytes() == b"protected-input"
     assert not package["output_paths"]["product_support_matrix"].exists()
     assert not package["output_paths"]["active_rule_matrix"].exists()
+
+
+def test_stage_failure_preserves_new_owner_of_temp_path(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    audit_root = tmp_path / builder.AUDIT_ROOT_RELATIVE
+    audit_root.mkdir(parents=True)
+    concurrent_payload = b"concurrent-internal-temp-owner"
+    reused_path: Path | None = None
+
+    def replace_before_validation(staged: builder.StagedOutput) -> None:
+        nonlocal reused_path
+        staged.path.unlink()
+        staged.path.write_bytes(concurrent_payload)
+        reused_path = staged.path
+        raise ValueError("injected staged identity mismatch")
+
+    monkeypatch.setattr(builder, "_validate_staged_path", replace_before_validation)
+
+    with pytest.raises(RuntimeError, match="retained="):
+        builder.stage_output(
+            audit_root / "final_metrics.json",
+            b"generated-output",
+            audit_root,
+        )
+
+    assert reused_path is not None
+    assert reused_path.read_bytes() == concurrent_payload
 
 
 def test_write_atomically_replaces_existing_output_inodes(tmp_path: Path) -> None:
@@ -652,17 +942,20 @@ def test_write_holds_output_set_through_final_post_commit_read(
                 attacked = True
         return snapshot
 
-    monkeypatch.setattr(builder, "safely_read_input", swap_metrics_during_last_output_read)
+    monkeypatch.setattr(
+        builder, "safely_read_input", swap_metrics_during_last_output_read
+    )
 
-    with pytest.raises(
-        ValueError,
-        match="hard link|identity|aliases an input|input changed after compute",
-    ):
+    with pytest.raises(RuntimeError, match="partial publication"):
         builder.write(package)
 
     assert attacked is True
     assert rule_output_reads == 2
-    assert {path: path.read_bytes() for path in old_payloads} == old_payloads
+    product_path = package["output_paths"]["product_support_matrix"]
+    assert product_path.read_bytes() == package["product_matrix_bytes"]
+    assert rule_path.read_bytes() == package["rule_matrix_bytes"]
+    assert metrics_path.read_bytes() == b"protected-input"
+    assert os.path.samefile(metrics_path, protected_input)
     assert protected_input.read_bytes() == b"protected-input"
 
 
@@ -701,18 +994,22 @@ def test_write_revalidates_inputs_while_all_output_handles_are_held(
                 attacked = True
         return snapshot
 
-    monkeypatch.setattr(builder, "safely_read_input", mutate_input_during_second_rule_read)
+    monkeypatch.setattr(
+        builder, "safely_read_input", mutate_input_during_second_rule_read
+    )
 
-    with pytest.raises(ValueError, match="input changed after compute"):
+    with pytest.raises(RuntimeError, match="partial publication"):
         builder.write(package)
 
     assert attacked is True
     assert rule_output_reads == 2
     assert protected_input.read_bytes() == b"changed-during-post-commit-read"
-    assert {path: path.read_bytes() for path in old_payloads} == old_payloads
+    assert {
+        path: path.read_bytes() for path in builder.expected_outputs(package)
+    } == builder.expected_outputs(package)
 
 
-def test_staged_path_swap_to_input_hardlink_is_detected_and_rolled_back(
+def test_staged_path_swap_to_input_hardlink_leaves_partial_state(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -726,8 +1023,7 @@ def test_staged_path_swap_to_input_hardlink_is_detected_and_rolled_back(
         destination_path = Path(destination)
         if (
             not attacked
-            and destination_path
-            == package["output_paths"]["product_support_matrix"]
+            and destination_path == package["output_paths"]["product_support_matrix"]
         ):
             source_path.unlink()
             os.link(protected_input, source_path)
@@ -736,16 +1032,20 @@ def test_staged_path_swap_to_input_hardlink_is_detected_and_rolled_back(
 
     monkeypatch.setattr(builder.os, "replace", swap_before_replace)
 
-    with pytest.raises(ValueError, match="staged|post-replace"):
+    with pytest.raises(RuntimeError, match="partial publication"):
         builder.write(package)
 
     assert attacked is True
     assert protected_input.read_bytes() == b"protected-input"
-    assert all(not path.exists() for path in builder.expected_outputs(package))
-    assert list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp")) == []
+    product_path = package["output_paths"]["product_support_matrix"]
+    assert product_path.read_bytes() == b"protected-input"
+    assert os.path.samefile(product_path, protected_input)
+    assert not package["output_paths"]["active_rule_matrix"].exists()
+    assert not package["output_paths"]["final_metrics"].exists()
+    assert len(list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp"))) == 2
 
 
-def test_second_publish_failure_rolls_back_all_outputs(
+def test_second_publish_failure_leaves_first_output_and_preserves_others(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -769,14 +1069,134 @@ def test_second_publish_failure_rolls_back_all_outputs(
 
     monkeypatch.setattr(builder.os, "replace", fail_second_replace)
 
-    with pytest.raises(OSError, match="injected second replace failure"):
+    with pytest.raises(RuntimeError, match="partial publication"):
         builder.write(package)
 
-    assert replace_count >= 3
-    assert {
-        path: path.read_bytes() for path in old_payloads
-    } == old_payloads
-    assert list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp")) == []
+    assert replace_count == 2
+    product_path = package["output_paths"]["product_support_matrix"]
+    assert product_path.read_bytes() == package["product_matrix_bytes"]
+    rule_path = package["output_paths"]["active_rule_matrix"]
+    metrics_path = package["output_paths"]["final_metrics"]
+    assert rule_path.read_bytes() == old_payloads[rule_path]
+    assert metrics_path.read_bytes() == old_payloads[metrics_path]
+    assert len(list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp"))) == 2
+
+
+def test_partial_publish_cleanup_preserves_new_owner_of_old_temp_path(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    package, _protected_input = minimal_write_package(tmp_path)
+    product_path = package["output_paths"]["product_support_matrix"]
+    rule_path = package["output_paths"]["active_rule_matrix"]
+    concurrent_payload = b"concurrent-temp-owner-data"
+    concurrent_temp_path: Path | None = None
+    real_replace = os.replace
+
+    def publish_then_reuse_source(source: str | Path, destination: str | Path) -> None:
+        nonlocal concurrent_temp_path
+        source_path = Path(source)
+        destination_path = Path(destination)
+        if destination_path == rule_path:
+            raise OSError("injected second replace failure")
+        real_replace(source_path, destination_path)
+        if destination_path == product_path:
+            source_path.write_bytes(concurrent_payload)
+            concurrent_temp_path = source_path
+
+    monkeypatch.setattr(builder.os, "replace", publish_then_reuse_source)
+
+    with pytest.raises(RuntimeError, match="partial publication"):
+        builder.write(package)
+
+    assert product_path.read_bytes() == package["product_matrix_bytes"]
+    assert concurrent_temp_path is not None
+    assert concurrent_temp_path.read_bytes() == concurrent_payload
+    assert len(list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp"))) == 3
+
+
+def test_publish_failure_does_not_rollback_over_concurrent_writer(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    package, _protected_input = minimal_write_package(tmp_path)
+    old_payloads = {
+        path: f"old-{index}".encode()
+        for index, path in enumerate(builder.expected_outputs(package), 1)
+    }
+    for path, payload in old_payloads.items():
+        path.write_bytes(payload)
+
+    product_path = package["output_paths"]["product_support_matrix"]
+    rule_path = package["output_paths"]["active_rule_matrix"]
+    concurrent_payload = b"concurrent-writer-output"
+    real_replace = os.replace
+
+    def replace_then_race(source: str | Path, destination: str | Path) -> None:
+        destination_path = Path(destination)
+        if destination_path == rule_path:
+            concurrent_staging = tmp_path / "concurrent-writer.tmp"
+            concurrent_staging.write_bytes(concurrent_payload)
+            real_replace(concurrent_staging, product_path)
+            raise OSError("injected second replace failure")
+        real_replace(source, destination_path)
+
+    monkeypatch.setattr(builder.os, "replace", replace_then_race)
+
+    with pytest.raises(RuntimeError, match="partial publication"):
+        builder.write(package)
+
+    assert product_path.read_bytes() == concurrent_payload
+    assert rule_path.read_bytes() == old_payloads[rule_path]
+    metrics_path = package["output_paths"]["final_metrics"]
+    assert metrics_path.read_bytes() == old_payloads[metrics_path]
+    assert len(list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp"))) == 2
+
+
+def test_publish_failure_preserves_concurrent_same_inode_write(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    package, _protected_input = minimal_write_package(tmp_path)
+    old_payloads = {
+        path: f"old-{index}".encode()
+        for index, path in enumerate(builder.expected_outputs(package), 1)
+    }
+    for path, payload in old_payloads.items():
+        path.write_bytes(payload)
+
+    product_path = package["output_paths"]["product_support_matrix"]
+    rule_path = package["output_paths"]["active_rule_matrix"]
+    concurrent_payload = b"concurrent-same-inode-output"
+    real_replace = os.replace
+    concurrent_identity: tuple[int, int] | None = None
+
+    def replace_then_write_in_place(
+        source: str | Path, destination: str | Path
+    ) -> None:
+        nonlocal concurrent_identity
+        destination_path = Path(destination)
+        if destination_path == rule_path:
+            before = product_path.stat()
+            product_path.write_bytes(concurrent_payload)
+            after = product_path.stat()
+            assert (before.st_dev, before.st_ino) == (after.st_dev, after.st_ino)
+            concurrent_identity = (after.st_dev, after.st_ino)
+            raise OSError("injected second replace failure")
+        real_replace(source, destination_path)
+
+    monkeypatch.setattr(builder.os, "replace", replace_then_write_in_place)
+
+    with pytest.raises(RuntimeError, match="partial publication"):
+        builder.write(package)
+
+    after = product_path.stat()
+    assert concurrent_identity == (after.st_dev, after.st_ino)
+    assert product_path.read_bytes() == concurrent_payload
+    assert rule_path.read_bytes() == old_payloads[rule_path]
+    metrics_path = package["output_paths"]["final_metrics"]
+    assert metrics_path.read_bytes() == old_payloads[metrics_path]
+    assert len(list((tmp_path / builder.AUDIT_ROOT_RELATIVE).glob("*.tmp"))) == 2
 
 
 def test_final_metrics_is_published_after_both_matrices(
@@ -837,11 +1257,7 @@ def test_check_holds_all_outputs_through_coordinated_hardlink_swap(
     ) -> dict[str, object]:
         nonlocal attacked
         snapshot = real_read(path, root, **kwargs)
-        if (
-            not attacked
-            and kwargs.get("role") == "output"
-            and path == metrics_path
-        ):
+        if not attacked and kwargs.get("role") == "output" and path == metrics_path:
             path.unlink()
             os.link(protected_input, path)
             attacked = True
@@ -894,9 +1310,7 @@ def test_check_revalidates_outputs_after_final_boundary_check(
     assert metrics_path.read_bytes() == b"protected-input"
 
 
-def test_all_consumed_research_v3_inputs_are_protected(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+def test_all_consumed_research_v3_inputs_are_protected() -> None:
     inputs = builder.load_inputs(ROOT)
     product_path = "research_v3/otc/normalized/product_master.csv"
     mismatched_product = copy.deepcopy(inputs)
@@ -904,20 +1318,21 @@ def test_all_consumed_research_v3_inputs_are_protected(
     with pytest.raises(ValueError, match=f"baseline {product_path} hash"):
         compute_from(mismatched_product)
 
-    real_git_output = builder.git_output
+    runtime_binding_path = "research_v3/otc/rules/runtime_rule_bindings.csv"
+    mismatched_oid = copy.deepcopy(inputs)
+    mismatched_oid["lineage"][runtime_binding_path]["git_blob_oid"] = "0" * 40
+    with pytest.raises(ValueError, match="baseline blob OID"):
+        compute_from(mismatched_oid)
 
-    def mismatched_runtime_binding_blob(root: Path, *args: str) -> str:
-        if (
-            args[0] == "hash-object"
-            and args[-1]
-            == "research_v3/otc/rules/runtime_rule_bindings.csv"
-        ):
-            return "0" * 40
-        return real_git_output(root, *args)
-
-    monkeypatch.setattr(builder, "git_output", mismatched_runtime_binding_blob)
-    with pytest.raises(ValueError, match="protected baseline blob"):
-        compute_from(inputs)
+    for path, lineage in inputs["lineage"].items():
+        if not path.startswith("research_v3/"):
+            continue
+        assert lineage["basis"] == "baseline_git_blob"
+        assert (
+            lineage["baseline_commit"]
+            == builder.boundary_audit.EXPECTED_BASELINE_COMMIT
+        )
+        assert len(lineage["git_blob_oid"]) == 40
 
 
 def test_source_freshness_volatility_probe_is_fail_closed() -> None:
@@ -934,9 +1349,10 @@ def test_source_freshness_volatility_probe_is_fail_closed() -> None:
     stable_probe["secondPdfSha256"] = stable_probe["firstPdfSha256"]
     stable_probe["pdfBytesStable"] = True
     stable_probe["interpretation"] = "no_byte_volatility_observed"
-    assert builder.analyze_source_freshness(stable)["volatility_probe"][
-        "pdf_bytes_stable"
-    ] is True
+    assert (
+        builder.analyze_source_freshness(stable)["volatility_probe"]["pdf_bytes_stable"]
+        is True
+    )
 
     mutations = (
         ("url", "https://nedrug.mfds.go.kr/dsie/pdf/drb/999999999/NB"),
@@ -963,7 +1379,9 @@ def test_output_payloads_are_deterministic_and_self_describing() -> None:
     metrics = copy.deepcopy(first["metrics"])
     expected_hash = metrics["outputs"]["final_metrics"]["semantic_sha256"]
     metrics["outputs"]["final_metrics"]["semantic_sha256"] = ""
-    assert builder.sha256_bytes(builder.canonical_json_payload(metrics)) == expected_hash
+    assert (
+        builder.sha256_bytes(builder.canonical_json_payload(metrics)) == expected_hash
+    )
     assert metrics["computation_policy"]["ui_code_used"] is False
     protected = metrics["protected_baseline"]
     assert protected["worktree_clean"] is True
@@ -975,18 +1393,19 @@ def test_output_payloads_are_deterministic_and_self_describing() -> None:
     )
     freshness_path = "research_v51/audit/source_freshness_snapshot.json"
     freshness_generator_path = "scripts/research/otc/audit_v51_source_freshness.py"
-    triage_validator_path = (
-        "scripts/research/otc/validate_v51_shortlist_triage.py"
-    )
+    boundary_generator_path = "scripts/research/otc/audit_v51_boundaries.py"
+    triage_validator_path = "scripts/research/otc/validate_v51_shortlist_triage.py"
     assert freshness_path in first["metrics"]["inputs"]
     assert freshness_generator_path in first["metrics"]["inputs"]
+    assert boundary_generator_path in first["metrics"]["inputs"]
     assert triage_validator_path in first["metrics"]["inputs"]
     assert (
-        first["metrics"]["v51"]["official_source_freshness"]["input_artifacts"]
-        ["evidenceRuleLinks"]["sha256"]
-        == first["metrics"]["inputs"][
-            "research_v51/evidence/evidence_rule_links.csv"
+        first["metrics"]["v51"]["official_source_freshness"]["input_artifacts"][
+            "evidenceRuleLinks"
         ]["sha256"]
+        == first["metrics"]["inputs"]["research_v51/evidence/evidence_rule_links.csv"][
+            "sha256"
+        ]
     )
     assert not any(
         path.startswith("app/") or path.startswith("src/lib/")

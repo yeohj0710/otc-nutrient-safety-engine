@@ -2,16 +2,22 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 import json
 import re
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
+try:
+    from scripts.research.otc import audit_v51_boundaries as boundary_audit
+except ModuleNotFoundError:  # Direct `python path/to/script.py` execution.
+    import audit_v51_boundaries as boundary_audit
+
 
 ROOT = Path(__file__).resolve().parents[3]
-OTC = ROOT / "research_v3" / "otc"
 OUTPUT = ROOT / "research_v51"
+BASELINE_COMMIT = boundary_audit.EXPECTED_BASELINE_COMMIT
 
 UNIT_FIELDS = [
     "evidence_unit_id",
@@ -159,6 +165,7 @@ QUEUE_HUMAN_REVIEW_FIELDS = [
 
 INPUT_PATHS = [
     "scripts/research/otc/build_v51_evidence_review.py",
+    "scripts/research/otc/audit_v51_boundaries.py",
     "research_v3/otc/rules/official_evidence_candidates.csv",
     "research_v3/otc/rules/rule_evidence_shortlist.csv",
     "research_v3/otc/rules/evidence_text_overrides.csv",
@@ -174,11 +181,43 @@ INPUT_PATHS = [
     "research_v3/otc/raw/nedrug/manifest.json",
     "src/lib/otc/engine.ts",
 ]
+PROTECTED_INPUT_PATHS = frozenset(
+    relative for relative in INPUT_PATHS if relative.startswith("research_v3/")
+)
 
 
-def read_csv(path: Path) -> list[dict[str, str]]:
-    with path.open(encoding="utf-8-sig", newline="") as handle:
-        return list(csv.DictReader(handle))
+def read_csv_bytes(payload: bytes) -> list[dict[str, str]]:
+    return list(csv.DictReader(io.StringIO(payload.decode("utf-8-sig"), newline="")))
+
+
+def read_protected_csv(root: Path, relative: str) -> list[dict[str, str]]:
+    return read_csv_bytes(
+        boundary_audit.git_blob_bytes(root, BASELINE_COMMIT, relative)
+    )
+
+
+def read_protected_json(root: Path, relative: str) -> dict[str, object]:
+    payload = boundary_audit.git_blob_bytes(root, BASELINE_COMMIT, relative)
+    return json.loads(payload.decode("utf-8-sig"))
+
+
+def require_protected_boundary(root: Path) -> None:
+    errors = boundary_audit.git_boundary_errors(
+        root, boundary_audit.pinned_boundary_manifest()
+    )
+    if errors:
+        raise ValueError("v5.0 protected boundary invalid: " + " | ".join(errors))
+
+
+def protected_input_lineage(root: Path, relative: str) -> dict[str, object]:
+    payload = boundary_audit.git_blob_bytes(root, BASELINE_COMMIT, relative)
+    return {
+        "basis": "baseline_git_blob",
+        "baseline_commit": BASELINE_COMMIT,
+        "git_blob_oid": boundary_audit.git_blob_oid(root, BASELINE_COMMIT, relative),
+        "bytes": len(payload),
+        "sha256": sha256_bytes(payload),
+    }
 
 
 def sha256_bytes(payload: bytes) -> str:
@@ -226,7 +265,9 @@ def runtime_condition(rows: list[dict[str, str]]) -> str:
         "red_flag_terms",
     ]
     conditions = []
-    for row in sorted(rows, key=lambda value: tuple(value.get(field, "") for field in fields)):
+    for row in sorted(
+        rows, key=lambda value: tuple(value.get(field, "") for field in fields)
+    ):
         conditions.append(
             "|".join(f"{field}={row[field]}" for field in fields if row.get(field))
         )
@@ -250,7 +291,9 @@ def source_paragraph(source_locator: str) -> int:
 def candidate_page_paragraph(evidence_candidate_id: str) -> tuple[str, int]:
     match = re.search(r"-P(\d+)-B(\d+)-", evidence_candidate_id)
     if not match:
-        raise ValueError(f"page/paragraph missing from candidate ID: {evidence_candidate_id}")
+        raise ValueError(
+            f"page/paragraph missing from candidate ID: {evidence_candidate_id}"
+        )
     return match.group(1), int(match.group(2))
 
 
@@ -273,7 +316,11 @@ def engine_links(root: Path, rule_types: set[str]) -> dict[str, str]:
         )
         if line_number is None:
             line_number = next(
-                (index for index, line in enumerate(lines, 1) if f'"{rule_type}"' in line),
+                (
+                    index
+                    for index, line in enumerate(lines, 1)
+                    if f'"{rule_type}"' in line
+                ),
                 None,
             )
         if line_number is None:
@@ -283,24 +330,38 @@ def engine_links(root: Path, rule_types: set[str]) -> dict[str, str]:
 
 
 def build(root: Path = ROOT) -> dict[str, object]:
-    otc = root / "research_v3" / "otc"
-    candidates = read_csv(otc / "rules" / "official_evidence_candidates.csv")
-    shortlist = read_csv(otc / "rules" / "rule_evidence_shortlist.csv")
-    overrides = read_csv(otc / "rules" / "evidence_text_overrides.csv")
-    rules = read_csv(otc / "rules" / "rules.csv")
-    bindings = read_csv(otc / "rules" / "runtime_rule_bindings.csv")
-    reviews = read_csv(otc / "review" / "expert_rule_review.csv")
-    products = read_csv(otc / "normalized" / "product_master.csv")
-    normalized_products = json.loads(
-        (otc / "normalized" / "products.json").read_text(encoding="utf-8")
+    require_protected_boundary(root)
+    candidates = read_protected_csv(
+        root, "research_v3/otc/rules/official_evidence_candidates.csv"
     )
-    product_ingredients = read_csv(otc / "normalized" / "product_ingredient.csv")
-    ingredients = read_csv(otc / "normalized" / "ingredient_master.csv")
-    exclusions = read_csv(otc / "normalized" / "analysis_exclusions.csv")
-    pages = read_csv(otc / "extracted" / "nedrug" / "page_manifest.csv")
-    raw_manifest = json.loads(
-        (otc / "raw" / "nedrug" / "manifest.json").read_text(encoding="utf-8")
+    shortlist = read_protected_csv(
+        root, "research_v3/otc/rules/rule_evidence_shortlist.csv"
     )
+    overrides = read_protected_csv(
+        root, "research_v3/otc/rules/evidence_text_overrides.csv"
+    )
+    rules = read_protected_csv(root, "research_v3/otc/rules/rules.csv")
+    bindings = read_protected_csv(
+        root, "research_v3/otc/rules/runtime_rule_bindings.csv"
+    )
+    reviews = read_protected_csv(root, "research_v3/otc/review/expert_rule_review.csv")
+    products = read_protected_csv(root, "research_v3/otc/normalized/product_master.csv")
+    normalized_products = read_protected_json(
+        root, "research_v3/otc/normalized/products.json"
+    )
+    product_ingredients = read_protected_csv(
+        root, "research_v3/otc/normalized/product_ingredient.csv"
+    )
+    ingredients = read_protected_csv(
+        root, "research_v3/otc/normalized/ingredient_master.csv"
+    )
+    exclusions = read_protected_csv(
+        root, "research_v3/otc/normalized/analysis_exclusions.csv"
+    )
+    pages = read_protected_csv(
+        root, "research_v3/otc/extracted/nedrug/page_manifest.csv"
+    )
+    raw_manifest = read_protected_json(root, "research_v3/otc/raw/nedrug/manifest.json")
 
     if len(candidates) != 360:
         raise ValueError(f"expected 360 v5.0 candidates, found {len(candidates)}")
@@ -308,9 +369,13 @@ def build(root: Path = ROOT) -> dict[str, object]:
     shortlist_by_id = unique_by_key(shortlist, "evidence_candidate_id")
     override_by_id = unique_by_key(overrides, "evidence_candidate_id")
     if len(shortlist) != 48 or not set(shortlist_by_id) <= set(candidate_by_id):
-        raise ValueError("v5.0 shortlist must contain 48 candidate IDs from the 360-row master")
+        raise ValueError(
+            "v5.0 shortlist must contain 48 candidate IDs from the 360-row master"
+        )
     if len(overrides) != 7 or not set(override_by_id) <= set(candidate_by_id):
-        raise ValueError("v5.0 evidence overrides must contain 7 candidate IDs from the master")
+        raise ValueError(
+            "v5.0 evidence overrides must contain 7 candidate IDs from the master"
+        )
 
     rule_by_type = unique_by_key(rules, "rule_type")
     review_by_rule = unique_by_key(reviews, "rule_id")
@@ -364,12 +429,18 @@ def build(root: Path = ROOT) -> dict[str, object]:
         page_index = int(row["page"]) - 1
         values = extracted_pages[row["text_path"]]
         if page_index >= len(values):
-            raise ValueError(f"extracted page missing: {row['text_path']} p.{row['page']}")
+            raise ValueError(
+                f"extracted page missing: {row['text_path']} p.{row['page']}"
+            )
         normalized_page = values[page_index]
         if sha256_bytes(normalized_page.encode("utf-8")) != row["page_text_sha256"]:
-            raise ValueError(f"page text byte hash mismatch: {row['text_path']} p.{row['page']}")
+            raise ValueError(
+                f"page text byte hash mismatch: {row['text_path']} p.{row['page']}"
+            )
         if len(normalized_page) != int(row["character_count"]):
-            raise ValueError(f"page text character count mismatch: {row['text_path']} p.{row['page']}")
+            raise ValueError(
+                f"page text character count mismatch: {row['text_path']} p.{row['page']}"
+            )
         pdf_hashes[(row["item_sequence"], row["document_type"])].add(row["pdf_sha256"])
         page_key = (row["item_sequence"], row["document_type"], row["page"])
         if page_key in page_text_hashes:
@@ -469,7 +540,9 @@ def build(root: Path = ROOT) -> dict[str, object]:
 
     location_groups: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
     for candidate in candidates:
-        location_groups[(candidate["source_url"], candidate["source_locator"])].append(candidate)
+        location_groups[(candidate["source_url"], candidate["source_locator"])].append(
+            candidate
+        )
     if len(location_groups) != 328:
         raise ValueError(f"expected 328 source locations, found {len(location_groups)}")
 
@@ -501,25 +574,33 @@ def build(root: Path = ROOT) -> dict[str, object]:
         if normalized_product is None:
             raise ValueError(f"normalized product missing: {first['item_sequence']}")
         if normalized_product["candidate_id"] != first["candidate_id"]:
-            raise ValueError(f"candidate/product identity mismatch: {first['item_sequence']}")
+            raise ValueError(
+                f"candidate/product identity mismatch: {first['item_sequence']}"
+            )
         if first["document_type"] not in {"UD", "NB"}:
-            raise ValueError(f"unsupported candidate document: {first['document_type']}")
+            raise ValueError(
+                f"unsupported candidate document: {first['document_type']}"
+            )
         document_url_field = (
-            "dosage_pdf_url" if first["document_type"] == "UD" else "precautions_pdf_url"
+            "dosage_pdf_url"
+            if first["document_type"] == "UD"
+            else "precautions_pdf_url"
         )
         if normalized_product[document_url_field] != first["source_url"]:
-            raise ValueError(f"candidate/source URL mismatch: {first['evidence_candidate_id']}")
+            raise ValueError(
+                f"candidate/source URL mismatch: {first['evidence_candidate_id']}"
+            )
         pairs = sorted(ingredient_pairs_by_product[product["product_id"]])
         if not pairs:
-            raise ValueError(f"candidate product has no ingredient names: {product['product_id']}")
+            raise ValueError(
+                f"candidate product has no ingredient names: {product['product_id']}"
+            )
         pdf_key = (first["item_sequence"], first["document_type"])
         hashes = pdf_hashes.get(pdf_key)
         if not hashes:
             raise ValueError(f"candidate PDF hash missing: {pdf_key}")
         pdf_sha256 = next(iter(hashes))
-        raw_pdf_path = (
-            f"research_v3/otc/raw/nedrug/{first['item_sequence']}/{first['document_type']}.pdf"
-        )
+        raw_pdf_path = f"research_v3/otc/raw/nedrug/{first['item_sequence']}/{first['document_type']}.pdf"
         if raw_hash_by_path.get(raw_pdf_path) != pdf_sha256:
             raise ValueError(f"raw manifest PDF hash mismatch: {raw_pdf_path}")
         page_key = (
@@ -530,7 +611,10 @@ def build(root: Path = ROOT) -> dict[str, object]:
         page_text_sha256 = page_text_hashes.get(page_key)
         if not page_text_sha256:
             raise ValueError(f"candidate page text hash missing: {page_key}")
-        texts = sorted({row["evidence_text"] for row in rows}, key=lambda value: (-len(value), value))
+        texts = sorted(
+            {row["evidence_text"] for row in rows},
+            key=lambda value: (-len(value), value),
+        )
         text_group_ids = sorted(
             {
                 duplicate_text_group[normalize_text(text)]
@@ -640,7 +724,9 @@ def build(root: Path = ROOT) -> dict[str, object]:
             raise ValueError(
                 f"evidence text override provenance mismatch: {candidate['evidence_candidate_id']}"
             )
-        text_group_id = duplicate_text_group.get(normalize_text(candidate["evidence_text"]), "")
+        text_group_id = duplicate_text_group.get(
+            normalize_text(candidate["evidence_text"]), ""
+        )
         shortlist_changed = bool(
             shortlist_row
             and (
@@ -688,9 +774,15 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "raw_candidate_source_locator": candidate["source_locator"],
                 "raw_candidate_evidence_text": candidate["evidence_text"],
                 "evidence_text_override": bool_text(bool(override)),
-                "evidence_text_override_reason": override["correction_reason"] if override else "",
-                "shortlist_source_locator": shortlist_row["source_locator"] if shortlist_row else "",
-                "shortlist_evidence_text": shortlist_row["evidence_text"] if shortlist_row else "",
+                "evidence_text_override_reason": override["correction_reason"]
+                if override
+                else "",
+                "shortlist_source_locator": shortlist_row["source_locator"]
+                if shortlist_row
+                else "",
+                "shortlist_evidence_text": shortlist_row["evidence_text"]
+                if shortlist_row
+                else "",
                 "shortlist_changed_from_candidate": bool_text(shortlist_changed),
                 "reviewed_source_locator": reviewed_source_locator,
                 "reviewed_evidence_text": reviewed_evidence_text,
@@ -704,13 +796,17 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "next_action_ko": rule["next_action_ko"],
                 "referenced_code_link": code_links[candidate["rule_type"]],
                 "shortlist_rank": shortlist_row["rank"] if shortlist_row else "",
-                "recommendation": shortlist_row["recommendation"] if shortlist_row else "",
+                "recommendation": shortlist_row["recommendation"]
+                if shortlist_row
+                else "",
                 "evidence_status": evidence_status,
                 "candidate_operational_status": candidate_operational_status,
                 "status_reason": status_reason,
                 "analysis_status": product["analysis_status"],
                 "analysis_exclusion_reason": (
-                    exclusion["exclusion_reason"] if exclusion else product["analysis_exclusion_reason"]
+                    exclusion["exclusion_reason"]
+                    if exclusion
+                    else product["analysis_exclusion_reason"]
                 ),
                 "duplicate_flag": bool_text(
                     unit["duplicate_location"] == "true" or bool(text_group_id)
@@ -745,9 +841,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
     }
     if dict(status_counts) != expected_status_counts:
         raise ValueError(f"unexpected v5.1 status counts: {dict(status_counts)}")
-    operational_counts = Counter(
-        row["candidate_operational_status"] for row in links
-    )
+    operational_counts = Counter(row["candidate_operational_status"] for row in links)
     expected_operational_counts = {
         "active_existing_released_primary_evidence": 15,
         "inactive_candidate": 345,
@@ -771,11 +865,9 @@ def build(root: Path = ROOT) -> dict[str, object]:
             and row["reviewed_at"]
             and row["reviewed_source_locator"]
             and row["reviewed_evidence_text"]
-            and row["operational_source_locator"]
-            == row["reviewed_source_locator"]
+            and row["operational_source_locator"] == row["reviewed_source_locator"]
             and row["operational_evidence_text"] == row["reviewed_evidence_text"]
-            and re.fullmatch(r"sha256:[0-9a-f]{64}", row["source_version"])
-            is not None
+            and re.fullmatch(r"sha256:[0-9a-f]{64}", row["source_version"]) is not None
             and row["source_version"] == f"sha256:{row['source_pdf_sha256']}"
         )
         if active != bool(active_contract):
@@ -803,9 +895,11 @@ def build(root: Path = ROOT) -> dict[str, object]:
         and row["candidate_operational_status"]
         == "active_existing_released_primary_evidence"
     ]
-    if len(rule_016_active) != 1 or rule_016_active[0][
-        "operational_source_locator"
-    ] != "사용상의주의사항 PDF p.2, 문단 12-19":
+    if (
+        len(rule_016_active) != 1
+        or rule_016_active[0]["operational_source_locator"]
+        != "사용상의주의사항 PDF p.2, 문단 12-19"
+    ):
         raise ValueError(
             "OTC-RULE-016 operational evidence must use the human-reviewed locator"
         )
@@ -827,9 +921,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "rule_id": link["rule_id"],
                 "rule_type": link["rule_type"],
                 "referenced_rule_status": link["referenced_rule_status"],
-                "candidate_operational_status": link[
-                    "candidate_operational_status"
-                ],
+                "candidate_operational_status": link["candidate_operational_status"],
                 "shortlist_rank": link["shortlist_rank"],
                 "recommendation": link["recommendation"],
                 "product_name": link["product_name"],
@@ -838,9 +930,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "ingredient_names": link["ingredient_names"],
                 "ingredient_scope": link["ingredient_scope"],
                 "current_rule_scope": link["rule_scope"],
-                "referenced_runtime_condition": link[
-                    "referenced_runtime_condition"
-                ],
+                "referenced_runtime_condition": link["referenced_runtime_condition"],
                 "proposed_message_ko": link["rule_message_ko"],
                 "proposed_next_action_ko": link["next_action_ko"],
                 "source_id": link["source_id"],
@@ -848,12 +938,8 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "source_version": link["source_version"],
                 "retrieved_at": link["retrieved_at"],
                 "retrieved_at_utc": link["retrieved_at_utc"],
-                "raw_candidate_source_locator": link[
-                    "raw_candidate_source_locator"
-                ],
-                "raw_candidate_evidence_text": link[
-                    "raw_candidate_evidence_text"
-                ],
+                "raw_candidate_source_locator": link["raw_candidate_source_locator"],
+                "raw_candidate_evidence_text": link["raw_candidate_evidence_text"],
                 "proposed_review_source_locator": (
                     link["shortlist_source_locator"]
                     or link["raw_candidate_source_locator"]
@@ -864,9 +950,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 ),
                 "reviewed_source_locator": link["reviewed_source_locator"],
                 "reviewed_evidence_text": link["reviewed_evidence_text"],
-                "operational_source_locator": link[
-                    "operational_source_locator"
-                ],
+                "operational_source_locator": link["operational_source_locator"],
                 "operational_evidence_text": link["operational_evidence_text"],
                 "evidence_text_override": link["evidence_text_override"],
                 "evidence_text_override_reason": link["evidence_text_override_reason"],
@@ -892,8 +976,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
     if len(queue) != 33:
         raise ValueError(f"expected 33 expert review rows, found {len(queue)}")
     if any(
-        row["candidate_operational_status"] != "inactive_candidate"
-        for row in queue
+        row["candidate_operational_status"] != "inactive_candidate" for row in queue
     ):
         raise ValueError("expert review queue contains an active candidate")
     if any(
@@ -912,25 +995,31 @@ def build(root: Path = ROOT) -> dict[str, object]:
         )
 
     exact_text_counts = Counter(row["evidence_text"] for row in candidates)
-    normalized_text_counts = Counter(normalize_text(row["evidence_text"]) for row in candidates)
+    normalized_text_counts = Counter(
+        normalize_text(row["evidence_text"]) for row in candidates
+    )
     location_counts = Counter(
         (row["source_url"], row["source_locator"]) for row in candidates
     )
     inputs = {}
     for relative in INPUT_PATHS:
-        path = root / relative
-        inputs[relative] = {
-            "bytes": path.stat().st_size,
-            "sha256": sha256_file(path),
-        }
+        if relative in PROTECTED_INPUT_PATHS:
+            inputs[relative] = protected_input_lineage(root, relative)
+        else:
+            path = root / relative
+            inputs[relative] = {
+                "basis": "worktree_bytes",
+                "bytes": path.stat().st_size,
+                "sha256": sha256_file(path),
+            }
     manifest = {
-        "schema_version": "1.0.0",
+        "schema_version": "1.1.0",
         "release_lineage": "v5.1",
-        "source_lineage": "v5.0_read_only",
+        "source_lineage": "v5.0_pinned_baseline_git_blobs",
         "generator": "scripts/research/otc/build_v51_evidence_review.py",
-        "generator_sha256": inputs[
-            "scripts/research/otc/build_v51_evidence_review.py"
-        ]["sha256"],
+        "generator_sha256": inputs["scripts/research/otc/build_v51_evidence_review.py"][
+            "sha256"
+        ],
         "raw_manifest_updated_at_utc": raw_manifest["retrieved_at_utc"],
         "source_retrieved_at_utc_values": sorted(
             {row["retrieved_at_utc"] for row in normalized_products}
@@ -1095,7 +1184,9 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "first direct ruleType assignment, otherwise first exact quoted rule_type; "
                 "informational link, not release authority"
             ),
-            "line_numbers_bound_to_input_sha256": inputs["src/lib/otc/engine.ts"]["sha256"],
+            "line_numbers_bound_to_input_sha256": inputs["src/lib/otc/engine.ts"][
+                "sha256"
+            ],
             "regeneration_required_after_engine_change": True,
         },
         "review_boundary": {
@@ -1112,7 +1203,14 @@ def build(root: Path = ROOT) -> dict[str, object]:
             ),
         },
     }
-    return {"evidence_units": units, "evidence_rule_links": links, "expert_review_queue": queue, "manifest": manifest}
+    package = {
+        "evidence_units": units,
+        "evidence_rule_links": links,
+        "expert_review_queue": queue,
+        "manifest": manifest,
+    }
+    require_protected_boundary(root)
+    return package
 
 
 def write_csv(path: Path, fields: list[str], rows: list[dict[str, str]]) -> None:
@@ -1124,6 +1222,7 @@ def write_csv(path: Path, fields: list[str], rows: list[dict[str, str]]) -> None
 
 
 def write(package: dict[str, object], output: Path = OUTPUT) -> dict[str, object]:
+    require_protected_boundary(ROOT)
     paths = {
         "evidence_units": output / "evidence" / "evidence_units.csv",
         "evidence_rule_links": output / "evidence" / "evidence_rule_links.csv",
@@ -1132,11 +1231,15 @@ def write(package: dict[str, object], output: Path = OUTPUT) -> dict[str, object
     }
     write_csv(paths["evidence_units"], UNIT_FIELDS, package["evidence_units"])
     write_csv(paths["evidence_rule_links"], LINK_FIELDS, package["evidence_rule_links"])
-    write_csv(paths["expert_review_queue"], QUEUE_FIELDS, package["expert_review_queue"])
+    write_csv(
+        paths["expert_review_queue"], QUEUE_FIELDS, package["expert_review_queue"]
+    )
 
     manifest = dict(package["manifest"])
     manifest["artifacts"] = {
-        str(path.relative_to(ROOT)).replace("\\", "/") if path.is_relative_to(ROOT) else path.name: {
+        str(path.relative_to(ROOT)).replace("\\", "/")
+        if path.is_relative_to(ROOT)
+        else path.name: {
             "rows": len(package[name]),
             "bytes": path.stat().st_size,
             "sha256": sha256_file(path),
@@ -1152,6 +1255,7 @@ def write(package: dict[str, object], output: Path = OUTPUT) -> dict[str, object
     paths["manifest"].write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+    require_protected_boundary(ROOT)
     return {"paths": paths, "manifest": manifest}
 
 

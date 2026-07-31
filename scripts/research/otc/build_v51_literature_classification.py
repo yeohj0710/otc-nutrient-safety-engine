@@ -21,8 +21,18 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
+try:
+    from scripts.research.otc import audit_v51_boundaries as boundary_audit
+except ModuleNotFoundError:  # Direct `python path/to/script.py` execution.
+    import audit_v51_boundaries as boundary_audit
+
 
 ROOT = Path(__file__).resolve().parents[3]
+BASELINE_COMMIT = boundary_audit.EXPECTED_BASELINE_COMMIT
+GENERATOR = (
+    ROOT / "scripts" / "research" / "otc" / "build_v51_literature_classification.py"
+)
+BOUNDARY_HELPER = ROOT / "scripts" / "research" / "otc" / "audit_v51_boundaries.py"
 V50_MANIFEST = (
     ROOT
     / "research_v3"
@@ -39,10 +49,7 @@ RUNTIME_LITERATURE = ROOT / "src" / "generated" / "otc-supporting-literature.jso
 
 OUTPUT_CSV = ROOT / "research_v51" / "literature" / "link_classification.csv"
 OUTPUT_AUDIT = (
-    ROOT
-    / "research_v51"
-    / "audit"
-    / "literature_link_classification_audit.json"
+    ROOT / "research_v51" / "audit" / "literature_link_classification_audit.json"
 )
 
 SCHEMA_VERSION = "1.0.0"
@@ -285,9 +292,8 @@ REJECTION_EXPLANATIONS = {
 }
 
 
-def _read_csv(path: Path) -> list[dict[str, str]]:
-    with path.open("r", encoding="utf-8-sig", newline="") as handle:
-        return list(csv.DictReader(handle))
+def _read_csv_bytes(payload: bytes) -> list[dict[str, str]]:
+    return list(csv.DictReader(io.StringIO(payload.decode("utf-8-sig"), newline="")))
 
 
 def _sha256(path: Path) -> str:
@@ -300,6 +306,50 @@ def _sha256(path: Path) -> str:
 
 def _sha256_bytes(content: bytes) -> str:
     return hashlib.sha256(content).hexdigest()
+
+
+def _protected_blob(path: Path) -> bytes:
+    relative = path.relative_to(ROOT).as_posix()
+    return boundary_audit.git_blob_bytes(ROOT, BASELINE_COMMIT, relative)
+
+
+def _protected_input_record(
+    path: Path,
+    *,
+    legacy_recorded_raw_sha256: str | None = None,
+) -> dict[str, object]:
+    relative = path.relative_to(ROOT).as_posix()
+    payload = _protected_blob(path)
+    record: dict[str, object] = {
+        "path": relative,
+        "basis": "baseline_git_blob",
+        "baseline_commit": BASELINE_COMMIT,
+        "git_blob_oid": boundary_audit.git_blob_oid(ROOT, BASELINE_COMMIT, relative),
+        "bytes": len(payload),
+        "sha256": _sha256_bytes(payload),
+        "read_only": True,
+    }
+    if legacy_recorded_raw_sha256 is not None:
+        record["legacy_recorded_raw_sha256"] = legacy_recorded_raw_sha256
+    return record
+
+
+def _worktree_input_record(path: Path) -> dict[str, object]:
+    return {
+        "path": path.relative_to(ROOT).as_posix(),
+        "basis": "worktree_bytes",
+        "bytes": path.stat().st_size,
+        "sha256": _sha256(path),
+        "read_only": True,
+    }
+
+
+def _require_protected_boundary() -> None:
+    errors = boundary_audit.git_boundary_errors(
+        ROOT, boundary_audit.pinned_boundary_manifest()
+    )
+    if errors:
+        raise ValueError("v5.0 protected boundary invalid: " + " | ".join(errors))
 
 
 def _semantic_json_sha256(path: Path) -> str:
@@ -356,10 +406,11 @@ def _load_inputs() -> tuple[
     list[dict[str, str]],
     list[dict],
 ]:
-    manifest = json.loads(V50_MANIFEST.read_text(encoding="utf-8"))
-    v50_rows = _read_csv(V50_LINKS)
-    legacy_rows = _read_csv(V4_CANDIDATES)
-    rule_rows = _read_csv(RULES)
+    _require_protected_boundary()
+    manifest = json.loads(_protected_blob(V50_MANIFEST).decode("utf-8-sig"))
+    v50_rows = _read_csv_bytes(_protected_blob(V50_LINKS))
+    legacy_rows = _read_csv_bytes(_protected_blob(V4_CANDIDATES))
+    rule_rows = _read_csv_bytes(_protected_blob(RULES))
     runtime_papers = json.loads(RUNTIME_LITERATURE.read_text(encoding="utf-8"))
 
     _require_fields(V50_LINKS, v50_rows, {"link_id", "rule_id", "pmid", "locator"})
@@ -370,17 +421,7 @@ def _load_inputs() -> tuple[
     )
     _require_fields(RULES, rule_rows, {"rule_id", "rule_type", "status"})
 
-    recorded = manifest["inputs"]
-    hash_checks = {
-        V50_LINKS: manifest["outputs"]["supporting_literature"]["sha256"],
-        V4_CANDIDATES: recorded["v4_candidate_links"]["sha256"],
-        RULES: recorded["rules"]["sha256"],
-    }
-    for path, expected in hash_checks.items():
-        actual = _sha256(path)
-        if actual != expected:
-            raise ValueError(f"{path}: v5.0 recorded SHA-256 mismatch: {actual} != {expected}")
-
+    _require_protected_boundary()
     return manifest, v50_rows, legacy_rows, rule_rows, runtime_papers
 
 
@@ -388,9 +429,7 @@ def build_rows() -> list[dict[str, str]]:
     manifest, v50_rows, legacy_rows, _, _ = _load_inputs()
     results = manifest["results"]
     accepted = {item["source_link_id"]: item for item in results["links"]}
-    rejected = {
-        item["source_link_id"]: item for item in results["rejected_candidates"]
-    }
+    rejected = {item["source_link_id"]: item for item in results["rejected_candidates"]}
     source_ids = {row["link_id"] for row in legacy_rows}
 
     if set(accepted) & set(rejected):
@@ -398,7 +437,9 @@ def build_rows() -> list[dict[str, str]]:
     if set(accepted) | set(rejected) != source_ids:
         raise ValueError("v4 candidate links are not completely partitioned by v5.0")
     if set(accepted) != set(CLASSIFICATION_DECISIONS):
-        raise ValueError("classification decisions do not cover the emitted v5.0 links exactly")
+        raise ValueError(
+            "classification decisions do not cover the emitted v5.0 links exactly"
+        )
 
     v50_by_id = {row["link_id"]: row for row in v50_rows}
     if len(v50_by_id) != len(v50_rows):
@@ -461,7 +502,9 @@ def build_rows() -> list[dict[str, str]]:
             rejection = rejected[source_link_id]
             reason = str(rejection["reason"])
             if reason not in REJECTION_EXPLANATIONS:
-                raise ValueError(f"{source_link_id}: unsupported rejection reason {reason}")
+                raise ValueError(
+                    f"{source_link_id}: unsupported rejection reason {reason}"
+                )
             row = {
                 **common,
                 "v50_link_id": "",
@@ -515,9 +558,13 @@ def _validate_rows(
     if len(rows) != 20 or len(emitted) != 10 or len(rejected) != 10:
         raise ValueError("v4/v5 row accounting must be 20 = 10 emitted + 10 rejected")
     if classifications != expected_classifications:
-        raise ValueError(f"unexpected semantic classification counts: {classifications}")
+        raise ValueError(
+            f"unexpected semantic classification counts: {classifications}"
+        )
     if dict(rejection_counts) != manifest["results"]["rejection_counts"]:
-        raise ValueError(f"rejection counts differ from v5.0 manifest: {rejection_counts}")
+        raise ValueError(
+            f"rejection counts differ from v5.0 manifest: {rejection_counts}"
+        )
     if {row["v50_link_id"] for row in emitted} != {row["link_id"] for row in v50_rows}:
         raise ValueError("emitted v5.0 link ids do not match downstream CSV")
     if len({row["rule_id"] for row in emitted}) != 9:
@@ -543,7 +590,9 @@ def _validate_rows(
         raise ValueError("invalid component alignment")
     for row in emitted:
         if row["semantic_classification"] not in SEMANTIC_CLASSIFICATIONS:
-            raise ValueError(f"{row['source_link_id']}: invalid semantic classification")
+            raise ValueError(
+                f"{row['source_link_id']}: invalid semantic classification"
+            )
         if row["semantic_classification"] == "direct_match":
             if row["ui_policy"] != "direct" or row["ui_direct_label_allowed"] != "true":
                 raise ValueError("direct_match must permit a direct label")
@@ -565,7 +614,9 @@ def _validate_rows(
                 or row["ui_direct_label_allowed"] != "true"
                 or not any(scope)
             ):
-                raise ValueError("mixed_scope needs an explicit conditional direct scope")
+                raise ValueError(
+                    "mixed_scope needs an explicit conditional direct scope"
+                )
     if any(
         row["ui_policy"] != "exclude_from_result_ui"
         or row["ui_direct_label_allowed"] != "false"
@@ -585,7 +636,9 @@ def _render_csv(rows: list[dict[str, str]]) -> bytes:
 
 def _runtime_snapshot(runtime_papers: list[dict]) -> dict[str, int]:
     links = [link for paper in runtime_papers for link in paper["ruleLinks"]]
-    screened_papers = [paper for paper in runtime_papers if paper["v50Validation"]["screened"]]
+    screened_papers = [
+        paper for paper in runtime_papers if paper["v50Validation"]["screened"]
+    ]
     screened_links = [link for paper in screened_papers for link in paper["ruleLinks"]]
     return {
         "served_papers": len(runtime_papers),
@@ -603,7 +656,9 @@ def build_audit(rows: list[dict[str, str]], csv_bytes: bytes) -> dict:
     rejected = [row for row in rows if row["v50_rejection_reason"]]
     classification_counts = Counter(row["semantic_classification"] for row in emitted)
     rejection_counts = Counter(row["v50_rejection_reason"] for row in rejected)
-    reachable_rejected = [row for row in rejected if row["legacy_runtime_reachable"] == "true"]
+    reachable_rejected = [
+        row for row in rejected if row["legacy_runtime_reachable"] == "true"
+    ]
 
     checks = {
         "v4_candidate_rows_partitioned_once": len(rows) == len(legacy_rows) == 20,
@@ -665,31 +720,37 @@ def build_audit(rows: list[dict[str, str]], csv_bytes: bytes) -> dict:
             "evidence_authority": "literature_explanatory_only",
         },
         "inputs": {
-            "v50_manifest": {
-                "path": V50_MANIFEST.relative_to(ROOT).as_posix(),
-                "sha256": _sha256(V50_MANIFEST),
-                "read_only": True,
-            },
+            "v50_manifest": _protected_input_record(V50_MANIFEST),
             "v50_supporting_literature": {
-                "path": V50_LINKS.relative_to(ROOT).as_posix(),
-                "sha256": _sha256(V50_LINKS),
+                **_protected_input_record(
+                    V50_LINKS,
+                    legacy_recorded_raw_sha256=manifest["outputs"][
+                        "supporting_literature"
+                    ]["sha256"],
+                ),
                 "rows": len(v50_rows),
-                "read_only": True,
             },
             "v4_candidate_links": {
-                "path": V4_CANDIDATES.relative_to(ROOT).as_posix(),
-                "sha256": _sha256(V4_CANDIDATES),
+                **_protected_input_record(
+                    V4_CANDIDATES,
+                    legacy_recorded_raw_sha256=manifest["inputs"]["v4_candidate_links"][
+                        "sha256"
+                    ],
+                ),
                 "rows": len(legacy_rows),
-                "read_only": True,
             },
             "rules": {
-                "path": RULES.relative_to(ROOT).as_posix(),
-                "sha256": _sha256(RULES),
+                **_protected_input_record(
+                    RULES,
+                    legacy_recorded_raw_sha256=manifest["inputs"]["rules"]["sha256"],
+                ),
                 "rows": len(rule_rows),
-                "read_only": True,
             },
+            "generator": _worktree_input_record(GENERATOR),
+            "boundary_helper": _worktree_input_record(BOUNDARY_HELPER),
             "runtime_literature_observation": {
                 "path": RUNTIME_LITERATURE.relative_to(ROOT).as_posix(),
+                "basis": "worktree_semantic_projection",
                 "semantic_sha256": _semantic_json_sha256(RUNTIME_LITERATURE),
                 "projection": "runtime_without_v51Classification",
                 "read_only": True,
@@ -715,7 +776,8 @@ def build_audit(rows: list[dict[str, str]], csv_bytes: bytes) -> dict:
             "rejected_legacy_distinct_papers_reachable": len(
                 {row["pmid"] for row in reachable_rejected}
             ),
-            "rejected_legacy_links_draft_inactive": len(rejected) - len(reachable_rejected),
+            "rejected_legacy_links_draft_inactive": len(rejected)
+            - len(reachable_rejected),
         },
         "checks": checks,
         "outputs": {
@@ -736,9 +798,9 @@ def build_artifacts() -> tuple[bytes, bytes]:
     rows = build_rows()
     csv_bytes = _render_csv(rows)
     audit = build_audit(rows, csv_bytes)
-    audit_bytes = (
-        json.dumps(audit, ensure_ascii=False, indent=2) + "\n"
-    ).encode("utf-8")
+    audit_bytes = (json.dumps(audit, ensure_ascii=False, indent=2) + "\n").encode(
+        "utf-8"
+    )
     return csv_bytes, audit_bytes
 
 
@@ -747,21 +809,25 @@ def write(
     audit_path: Path = OUTPUT_AUDIT,
 ) -> tuple[Path, Path]:
     csv_bytes, audit_bytes = build_artifacts()
+    _require_protected_boundary()
     classification_path.parent.mkdir(parents=True, exist_ok=True)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
     classification_path.write_bytes(csv_bytes)
     audit_path.write_bytes(audit_bytes)
+    _require_protected_boundary()
     return classification_path, audit_path
 
 
 def check() -> None:
     csv_bytes, audit_bytes = build_artifacts()
+    _require_protected_boundary()
     expected = ((OUTPUT_CSV, csv_bytes), (OUTPUT_AUDIT, audit_bytes))
     for path, content in expected:
         if not path.is_file():
             raise SystemExit(f"missing generated artifact: {path}")
         if path.read_bytes() != content:
             raise SystemExit(f"generated artifact is stale: {path}")
+    _require_protected_boundary()
 
 
 def main() -> int:
