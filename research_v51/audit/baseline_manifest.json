@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "baseline_id": "v5.1-preservation-baseline-2026-07-31",
+  "captured_at": "2026-07-31",
+  "baseline": {
+    "commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+    "short_commit": "6dbdad5",
+    "branch_at_capture": "codex/v5.1-safety-expansion",
+    "repository_root_at_capture": "C:/dev/otc-nutrient-safety-engine"
+  },
+  "boundary": {
+    "allowed_research_output_root": "research_v51",
+    "protected_paths": [
+      {
+        "path": "research_v3",
+        "baseline_tree_oid": "325001631c37e6fe8749a021c13a2ccc75bdf5b9"
+      }
+    ],
+    "fail_on_head_divergence": true,
+    "fail_on_staged_or_unstaged_change": true,
+    "fail_on_non_ignored_untracked_file": true,
+    "ignored_files_are_not_baseline_verified": true
+  },
+  "core_artifacts": [
+    {
+      "path": "research_v3/protocol/protocol-v5.0-mecir-search.md",
+      "bytes": 11673,
+      "sha256": "f48d5b6334f80f95cc3ab36c472be15dccc48abeb1153a357395acfe0827c86e"
+    },
+    {
+      "path": "research_v3/protocol/amendments.csv",
+      "bytes": 7170,
+      "sha256": "0db47b54aa0af9a66963a8f96a399f98fa954ca1a9877474453368a62cbb2edc"
+    },
+    {
+      "path": "research_v3/logs/v50_run_report.json",
+      "bytes": 32084493,
+      "sha256": "ec496af45d1d631a432aa6ede1dfb18ad52f444038a36c8f57c3592affa88802"
+    },
+    {
+      "path": "research_v3/logs/v50_FINAL.md",
+      "bytes": 4880,
+      "sha256": "c4fe948ac1bf9e01342991a952a91b2708e5cd89938bfd1899b23a4dad9e3ee7"
+    },
+    {
+      "path": "research_v3/logs/v50_scoring_report.json",
+      "bytes": 17264,
+      "sha256": "c1b836c7e08a7d259e5ac4c48d7ccfb9e1fb58603b2ad5bfdd0a02af25ae00cb"
+    },
+    {
+      "path": "research_v3/otc/normalized/product_master.csv",
+      "bytes": 8700,
+      "sha256": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc"
+    },
+    {
+      "path": "research_v3/otc/normalized/ingredient_master.csv",
+      "bytes": 5596,
+      "sha256": "6925c5ac1236bbd6ebd3a53e5a58f853b849c3efccefa2d03ddb798689fae737"
+    },
+    {
+      "path": "research_v3/otc/normalized/product_ingredient.csv",
+      "bytes": 24865,
+      "sha256": "83ed4b53483c5e3e6b9296defce1548504f6b81bcd7aa59e42142a440fb6580e"
+    },
+    {
+      "path": "research_v3/otc/normalized/administration_constraints.csv",
+      "bytes": 10325,
+      "sha256": "88b33b109e602527655e814f794bc19f7a5166553fd6c701f92bd7e53f49b669"
+    },
+    {
+      "path": "research_v3/otc/rules/rules.csv",
+      "bytes": 5613,
+      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a"
+    },
+    {
+      "path": "research_v3/otc/rules/rule_evidence_shortlist.csv",
+      "bytes": 21882,
+      "sha256": "d19c892ec2f084a6e5ff1548b387fc750c3a27b5eb6a680668df011b7f70066c"
+    },
+    {
+      "path": "research_v3/otc/rules/official_evidence_candidates.csv",
+      "bytes": 140736,
+      "sha256": "e1497be67bf58328436ec0438a8829a8f01b89f8f4c251a76838c10ae52b2b8b"
+    },
+    {
+      "path": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json",
+      "bytes": 19142,
+      "sha256": "f74325d2c3dc8121ce7c638cabd15a47fff3cecaa875f109c45d24a87da1f2fe"
+    },
+    {
+      "path": "research_v3/otc/literature/v5/downstream/supporting_literature.csv",
+      "bytes": 12879,
+      "sha256": "c1be8df49cbcb226103899428115ec91e763a5bc2c6704e687f21c3c76f1d73c"
+    }
+  ],
+  "external_canonical_artifacts": [
+    {
+      "path": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\06_졸업논문\\권혁찬_졸업논문_최종본.docx",
+      "drive_root": "G:/",
+      "bytes": 570286,
+      "sha256": "d23e74c4735fcbe069e6fadccc229796f92baa8aa670571e3b58338f6e0eaad1"
+    },
+    {
+      "path": "G:\\내 드라이브\\여형준님\\24 전공심화실습(1)\\권혁찬\\06_졸업논문\\권혁찬_졸업논문_최종본.pdf",
+      "drive_root": "G:/",
+      "bytes": 1101300,
+      "sha256": "a13d551352f5f5b0517270372bbaadf7185d892c41bdee8f9292c6519fa38457"
+    }
+  ],
+  "verified_counts": {
+    "authorization_layer": {
+      "product_master_rows": 16,
+      "analysis_products": 13,
+      "ineligible_products": 2,
+      "excluded_products": 1,
+      "ingredient_master_rows": 31,
+      "calculation_ingredients": 28,
+      "product_ingredient_rows": 106,
+      "selected_product_ingredient_bindings": 47,
+      "administration_constraints": 32,
+      "rules_total": 16,
+      "rules_released": 15,
+      "rules_draft": 1
+    },
+    "runtime_baseline_snapshot": {
+      "products": 13,
+      "rules_released": 15,
+      "product_rule_bindings": 26,
+      "dose_or_interval_only_products": 10,
+      "disease_or_medication_capable_products": 3
+    },
+    "candidate_evidence": {
+      "shortlist_rows": 48,
+      "shortlist_human_expert_verified": 15,
+      "shortlist_not_expert_verified": 33,
+      "official_candidate_rows": 360,
+      "official_candidates_not_expert_verified": 360
+    },
+    "v50_literature": {
+      "rules_total": 16,
+      "rules_with_direct_links": 9,
+      "rules_without_direct_links": 7,
+      "direct_links": 10,
+      "unique_linked_pmids": 10,
+      "rejected_candidates": 10,
+      "not_in_v5_corpus": 6,
+      "no_retain_decision_for_rule_question": 4
+    },
+    "v50_screening": {
+      "pubmed_hits": 43249,
+      "unique_papers": 42822,
+      "screening_units": 43207,
+      "semantic_adjudication_rows": 5000,
+      "semantic_disagreements": 2787,
+      "semantic_disagreement_rate": 0.5574,
+      "final_retain": 7875,
+      "final_deprioritize": 34965,
+      "final_uncertain": 367
+    },
+    "v50_scoring_ai_reference": {
+      "sample_rows": 894,
+      "agreement_vs_ai_reference": 0.8692847041110544,
+      "sensitivity_vs_ai_reference": 0.46924310776942385,
+      "specificity_vs_ai_reference": 0.9584482830533825,
+      "cohen_kappa_vs_ai_reference_weighted": 0.49327672329891975
+    },
+    "state": {
+      "human_reference_rows": 0,
+      "independent_blinding": false,
+      "semantic_adjudication_independent_blinding_ai": false,
+      "release_ready": false,
+      "overall_execution_status": "partial"
+    }
+  },
+  "count_sources": {
+    "authorization_layer": "research_v3/otc/normalized/*.csv and research_v3/otc/rules/rules.csv",
+    "runtime_baseline_snapshot": "6dbdad5:src/generated/otc-runtime.json",
+    "candidate_evidence": "research_v3/otc/rules/rule_evidence_shortlist.csv and official_evidence_candidates.csv",
+    "v50_literature": "research_v3/otc/literature/v5/downstream/literature_link_manifest.json and supporting_literature.csv",
+    "v50_screening": "research_v3/logs/v50_run_report.json",
+    "v50_scoring_ai_reference": "research_v3/logs/v50_scoring_report.json",
+    "state": "research_v3/logs/v50_run_report.json"
+  },
+  "environment_limits": {
+    "hash_basis": "raw working-tree bytes on the Windows baseline environment",
+    "external_thesis_available_in_ci": false,
+    "non_ignored_untracked_files_are_checked": true,
+    "ignored_files_are_not_historically_verifiable": true,
+    "historical_test_counts_are_not_part_of_this_baseline": true
+  }
+}

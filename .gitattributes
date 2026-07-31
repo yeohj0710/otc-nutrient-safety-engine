@@ -19,3 +19,11 @@ research_v3/logs/DECISIONS_v50.md                  -text
 
 # 버전 지도. 해시 기록 대상은 아니지만 여형준 저장소와 같은 규칙을 적용한다.
 docs/version_map.md                                -text
+
+# v5.1 감사 산출물은 생성기와 입력의 SHA-256을 서로 기록한다. 새 worktree에서도
+# 생성 당시의 LF/CRLF 바이트를 그대로 체크아웃해야 `--check`가 재현된다.
+research_v51/**                                    -text whitespace=cr-at-eol
+scripts/research/otc/*v51*.py                      -text whitespace=cr-at-eol
+src/generated/otc-runtime.json                     -text whitespace=cr-at-eol
+src/generated/otc-supporting-literature.json       -text whitespace=cr-at-eol
+src/lib/otc/engine.ts                              -text whitespace=cr-at-eol
