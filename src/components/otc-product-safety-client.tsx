@@ -704,6 +704,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
         !issue.productId ||
         !emptyRequiredDoseFields.has(`${issue.productId}:${issue.field}`),
     ) ?? [];
+  const showClearResult =
+    pendingDoseDrafts.length === 0 &&
+    orderedFindings.length === 0 &&
+    visibleInputIssues.length === 0;
+  const showResultSummary =
+    orderedFindings.length > 0 || visibleInputIssues.length > 0;
 
   const quickCheckSummaries = useMemo(
     () =>
@@ -1528,8 +1534,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     </div>
                   </header>
 
-                  {orderedFindings.length === 0 &&
-                  visibleInputIssues.length === 0 ? (
+                  {showClearResult ? (
                     <div className={styles.clearResult}>
                       <span aria-hidden="true">✓</span>
                       <div>
@@ -1541,7 +1546,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         </p>
                       </div>
                     </div>
-                  ) : (
+                  ) : showResultSummary ? (
                     <>
                       <div
                         className={styles.resultSummary}
@@ -1672,7 +1677,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         })}
                       </div>
                     </>
-                  )}
+                  ) : null}
                 </section>
 
                 <section

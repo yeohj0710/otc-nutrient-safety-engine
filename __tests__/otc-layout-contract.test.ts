@@ -221,6 +221,16 @@ describe("OTC checker layout contract", () => {
     expect(componentSource).not.toContain("dosesPerDay: Number(event.target.value)");
   });
 
+  it("does not show the clear result while required dose fields are incomplete", () => {
+    expect(componentSource).toMatch(
+      /pendingDoseDrafts\.length === 0 &&\s+orderedFindings\.length === 0 &&\s+visibleInputIssues\.length === 0/,
+    );
+    expect(componentSource).toMatch(
+      /const showResultSummary =\s+orderedFindings\.length > 0 \|\| visibleInputIssues\.length > 0/,
+    );
+    expect(componentSource).toContain(") : showResultSummary ? (");
+  });
+
   it("uses accessible help, focus, touch, spacing, and safe-area contracts", () => {
     expect(componentSource).toContain('role="tooltip"');
     expect(componentSource).toContain('event.key === "Escape"');
