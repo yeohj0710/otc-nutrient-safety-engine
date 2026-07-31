@@ -1,6 +1,7 @@
 import csv
 import json
 import re
+from collections import Counter
 
 from scripts.research.otc.build_supporting_literature import (
     DISCLAIMER_KO,
@@ -67,6 +68,46 @@ def test_draft_rule_literature_is_marked_as_unreleased() -> None:
     draft_links = [link for link in links if link["ruleType"] == "maximum_duration"]
     assert draft_links
     assert all(link["ruleReleased"] is False for link in draft_links)
+
+
+def test_v51_semantic_classification_is_complete_and_fail_closed() -> None:
+    links = [link for paper in build() for link in paper["ruleLinks"]]
+    classifications = [link["v51Classification"] for link in links]
+
+    assert len(links) == 20
+    assert len({item["classificationId"] for item in classifications}) == 20
+    assert Counter(item["semanticClassification"] for item in classifications) == {
+        "direct_match": 1,
+        "background_context": 5,
+        "mixed_scope": 4,
+        None: 10,
+    }
+    assert Counter(item["uiPolicy"] for item in classifications) == {
+        "direct": 1,
+        "background_only": 5,
+        "direct_when_scope_matches_else_background": 4,
+        "exclude_from_result_ui": 10,
+    }
+    assert all(item["humanExpertReviewed"] is False for item in classifications)
+    assert all(item["supportsRuleRelease"] is False for item in classifications)
+
+    excluded = [
+        item
+        for item in classifications
+        if item["uiPolicy"] == "exclude_from_result_ui"
+    ]
+    assert len(excluded) == 10
+    assert all(item["uiDirectLabelAllowed"] is False for item in excluded)
+    assert all(
+        set(item["directScope"])
+        == {
+            "ingredientIds",
+            "productItemSequences",
+            "profileConditions",
+            "medicationTerms",
+        }
+        for item in classifications
+    )
 
 
 def test_personalization_axis_uses_observed_values_only() -> None:
