@@ -1,0 +1,39 @@
+name: CI
+
+# 이 저장소에는 CI 가 없었다. 사이트 검사와, 화면이 쓰는 생성물이 원장과 어긋나지
+# 않는지 확인하는 검사를 돌린다.
+#
+# 연구 파이프라인 재실행은 여기서 하지 않는다. 코퍼스와 선별 산출물이 해시로 봉인돼
+# 있어 다시 돌리면 원장과 어긋난다(프로토콜 v5.0 §6).
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+
+      # 커밋된 생성물이 생성기를 다시 돌린 결과와 같은지 확인한다. 화면이 쓰는 값이
+      # 소스와 어긋난 채로 배포되는 것을 막는다.
+      - name: 생성물이 최신인지 확인
+        run: |
+          npm run prepare:knowledge
+          if ! git diff --quiet -- src/generated; then
+            echo "::error::src/generated 이 생성기 결과와 다릅니다. 로컬에서 npm run prepare:knowledge 후 커밋하세요."
+            git --no-pager diff --stat -- src/generated
+            exit 1
+          fi
+          echo "생성물 최신"

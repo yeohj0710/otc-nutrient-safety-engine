@@ -128,6 +128,14 @@ export function ResearchSummary() {
             {n(lit.screeningUnits)}건입니다. 원본 XML {lit.xmlFiles}개와 체크섬을
             보존했습니다.
           </p>
+          <div className={styles.note}>
+            <strong>다섯 질문 중 외용 복합성분만 줄었습니다.</strong> 이 질문은 이전
+            검색식에서 결과 용어(adverse · bleeding · poison · toxic)에 가장 많이
+            의존했는데, 표준에 맞추려고 결과 블록을 빼면서 인출 동력이 가장 크게
+            빠졌습니다. 게다가 이 질문만 노출 블록이 두 겹으로 묶이고 대상 블록은
+            검색어 20개로 가장 좁습니다. 검색식은 바꾸지 않고 원인만 기록했습니다
+            (개정 이력 AM-OTC-005).
+          </div>
         </section>
 
         <section className={styles.section}>
