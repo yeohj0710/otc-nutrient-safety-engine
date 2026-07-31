@@ -1,6 +1,15 @@
 # 원시 PubMed 응답은 SHA-256 재현성을 위해 줄바꿈을 변환하지 않는다.
 research_v3/otc/literature/searches/**/*.xml -text
 
+# v2 검색·AI 매니페스트가 아래 파일의 Git blob SHA-256을 기록한다.
+# core.autocrlf 설정과 관계없이 기록된 LF 바이트를 그대로 체크아웃한다.
+research_v2/search/pubmed_queries/*.txt -text
+research_v2/ai_eval/prompts/*.md        -text
+
+# 레거시 결정론적 생성기가 LF JSON을 다시 쓰므로 CRLF checkout에서도 작업 트리를 보존한다.
+src/generated/knowledge-index.json      -text
+src/generated/literature-candidates.json -text
+
 # ---------------------------------------------------------------------------
 # 원장이 SHA-256 을 기록하는 경로 (2026-07-31 등록).
 #
