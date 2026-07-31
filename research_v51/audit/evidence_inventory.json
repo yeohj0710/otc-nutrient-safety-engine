@@ -1,0 +1,343 @@
+{
+  "schema_version": "1.0.0",
+  "release_lineage": "v5.1",
+  "source_lineage": "v5.0_read_only",
+  "generator": "scripts/research/otc/build_v51_evidence_review.py",
+  "generator_sha256": "e11daa248e96658fa483cd80a2b2e0a6d3f8ff91df92121cd0c9f5e1bd6d9874",
+  "raw_manifest_updated_at_utc": "2026-07-14T02:56:31.878369+00:00",
+  "source_retrieved_at_utc_values": [
+    "2026-07-14T02:10:14.255342+00:00",
+    "2026-07-14T02:14:48.264374+00:00",
+    "2026-07-14T02:56:31.878369+00:00"
+  ],
+  "inputs": {
+    "scripts/research/otc/build_v51_evidence_review.py": {
+      "bytes": 51348,
+      "sha256": "e11daa248e96658fa483cd80a2b2e0a6d3f8ff91df92121cd0c9f5e1bd6d9874"
+    },
+    "research_v3/otc/rules/official_evidence_candidates.csv": {
+      "bytes": 140736,
+      "sha256": "e1497be67bf58328436ec0438a8829a8f01b89f8f4c251a76838c10ae52b2b8b"
+    },
+    "research_v3/otc/rules/rule_evidence_shortlist.csv": {
+      "bytes": 21882,
+      "sha256": "d19c892ec2f084a6e5ff1548b387fc750c3a27b5eb6a680668df011b7f70066c"
+    },
+    "research_v3/otc/rules/evidence_text_overrides.csv": {
+      "bytes": 2924,
+      "sha256": "eaff26a1629513ed86e27fd37411cad6957f97236483d02dabe6dc2ca35122fc"
+    },
+    "research_v3/otc/rules/rules.csv": {
+      "bytes": 5613,
+      "sha256": "64eef7476f2e82174d5f140832829512544899ecc314cbc15bd4f7ff691ed29a"
+    },
+    "research_v3/otc/rules/runtime_rule_bindings.csv": {
+      "bytes": 1335,
+      "sha256": "476c7277c04a0136c5bfe3e651b08830b8b1544500541965ecac4f635fe23ec2"
+    },
+    "research_v3/otc/review/expert_rule_review.csv": {
+      "bytes": 2033,
+      "sha256": "c49b5b23c11edfed2f20194fbced7a9ffc4619d07b4a1217503d379894b79a01"
+    },
+    "research_v3/otc/normalized/product_master.csv": {
+      "bytes": 8700,
+      "sha256": "5146972fb2b15bc2031e26f9307a1e5883cde2ddfcc295a2ae126c1a50b6a8bc"
+    },
+    "research_v3/otc/normalized/products.json": {
+      "bytes": 56765,
+      "sha256": "7153b9f257ba97adbaa9b0be9735775b4f8f3804282decae48bc70bf66862c88"
+    },
+    "research_v3/otc/normalized/product_ingredient.csv": {
+      "bytes": 24865,
+      "sha256": "83ed4b53483c5e3e6b9296defce1548504f6b81bcd7aa59e42142a440fb6580e"
+    },
+    "research_v3/otc/normalized/ingredient_master.csv": {
+      "bytes": 5596,
+      "sha256": "6925c5ac1236bbd6ebd3a53e5a58f853b849c3efccefa2d03ddb798689fae737"
+    },
+    "research_v3/otc/normalized/analysis_exclusions.csv": {
+      "bytes": 418,
+      "sha256": "08d30264f6be6225a2761f1699f33f48a20efa5705db2782c64537fac9a6729f"
+    },
+    "research_v3/otc/extracted/nedrug/page_manifest.csv": {
+      "bytes": 28888,
+      "sha256": "28d7625c08d040d73f3b9a648f58a5bea368d7b5ee8cdd06847f23a70c87ec84"
+    },
+    "research_v3/otc/raw/nedrug/manifest.json": {
+      "bytes": 15357,
+      "sha256": "a3402f7581ddcd8f6e9d488a4f0eb6074c2e2eafaa90c0ac53f0ac04ee9c2805"
+    },
+    "src/lib/otc/engine.ts": {
+      "bytes": 52418,
+      "sha256": "05c7fb63c630caf3d2110faf522069c7d22705376149402e8a7d3242485c1c21"
+    }
+  },
+  "artifacts": {
+    "research_v51/evidence/evidence_units.csv": {
+      "rows": 328,
+      "bytes": 296314,
+      "sha256": "be36b3993070e424cedbe4a8cba888d40577c542ffb170f0032de46e332ba2f9",
+      "fields": [
+        "evidence_unit_id",
+        "candidate_id",
+        "item_sequence",
+        "product_id",
+        "product_name",
+        "ingredient_ids",
+        "ingredient_names",
+        "ingredient_scope",
+        "document_type",
+        "source_id",
+        "source_url",
+        "source_version",
+        "source_pdf_sha256",
+        "source_page_text_sha256",
+        "retrieved_at",
+        "retrieved_at_utc",
+        "source_locator",
+        "representative_evidence_text",
+        "evidence_text_variant_count",
+        "evidence_text_variants_json",
+        "evidence_text_override_count",
+        "candidate_link_count",
+        "rule_types",
+        "duplicate_flag",
+        "duplicate_group",
+        "duplicate_location",
+        "duplicate_location_group_id",
+        "duplicate_text",
+        "duplicate_text_group_ids"
+      ]
+    },
+    "research_v51/evidence/evidence_rule_links.csv": {
+      "rows": 360,
+      "bytes": 456598,
+      "sha256": "c9db382f14c96bf3cd305a6312a745b3c53a53a37f1861cbcb670bedfef0a255",
+      "fields": [
+        "evidence_candidate_id",
+        "evidence_unit_id",
+        "rule_id",
+        "rule_type",
+        "referenced_rule_status",
+        "severity",
+        "candidate_id",
+        "item_sequence",
+        "product_id",
+        "product_name",
+        "ingredient_ids",
+        "ingredient_names",
+        "ingredient_scope",
+        "document_type",
+        "source_id",
+        "source_url",
+        "source_version",
+        "source_pdf_sha256",
+        "source_page_text_sha256",
+        "retrieved_at",
+        "retrieved_at_utc",
+        "raw_candidate_source_locator",
+        "raw_candidate_evidence_text",
+        "evidence_text_override",
+        "evidence_text_override_reason",
+        "shortlist_source_locator",
+        "shortlist_evidence_text",
+        "shortlist_changed_from_candidate",
+        "reviewed_source_locator",
+        "reviewed_evidence_text",
+        "operational_source_locator",
+        "operational_evidence_text",
+        "rule_scope",
+        "referenced_runtime_condition",
+        "rule_message_ko",
+        "next_action_ko",
+        "referenced_code_link",
+        "shortlist_rank",
+        "recommendation",
+        "evidence_status",
+        "candidate_operational_status",
+        "status_reason",
+        "analysis_status",
+        "analysis_exclusion_reason",
+        "duplicate_flag",
+        "duplicate_group",
+        "duplicate_location",
+        "duplicate_location_group_id",
+        "duplicate_text",
+        "duplicate_text_group_id",
+        "reviewer_id",
+        "reviewer_role",
+        "reviewed_at"
+      ]
+    },
+    "research_v51/review/expert_review_queue.csv": {
+      "rows": 33,
+      "bytes": 50221,
+      "sha256": "9b0e669760dbeb1b094441b74c80128296c3629e7d0c6ca81e07b740a89cf766",
+      "fields": [
+        "evidence_candidate_id",
+        "evidence_unit_id",
+        "rule_id",
+        "rule_type",
+        "referenced_rule_status",
+        "candidate_operational_status",
+        "shortlist_rank",
+        "recommendation",
+        "product_name",
+        "item_sequence",
+        "ingredient_ids",
+        "ingredient_names",
+        "ingredient_scope",
+        "current_rule_scope",
+        "referenced_runtime_condition",
+        "proposed_message_ko",
+        "proposed_next_action_ko",
+        "source_id",
+        "source_url",
+        "source_version",
+        "retrieved_at",
+        "retrieved_at_utc",
+        "raw_candidate_source_locator",
+        "raw_candidate_evidence_text",
+        "proposed_review_source_locator",
+        "proposed_review_evidence_text",
+        "reviewed_source_locator",
+        "reviewed_evidence_text",
+        "operational_source_locator",
+        "operational_evidence_text",
+        "evidence_text_override",
+        "evidence_text_override_reason",
+        "referenced_code_link",
+        "duplicate_flag",
+        "duplicate_group",
+        "review_status",
+        "status_reason",
+        "review_question",
+        "adoption_options",
+        "required_regression_tests",
+        "review_decision",
+        "review_comment",
+        "reviewer_id",
+        "reviewer_role",
+        "reviewed_at"
+      ]
+    }
+  },
+  "counts": {
+    "source_candidates": 360,
+    "evidence_units": 328,
+    "evidence_rule_links": 360,
+    "expert_review_queue": 33,
+    "unique_products": 14,
+    "unique_rule_types": 16,
+    "evidence_text_overrides": 7,
+    "shortlist_source_overlay_changes": 1,
+    "status_counts": {
+      "verified_primary": 15,
+      "needs_expert_review": 33,
+      "rejected": 4,
+      "provisional": 308
+    },
+    "candidate_operational_status_counts": {
+      "active_existing_released_primary_evidence": 15,
+      "inactive_candidate": 345
+    },
+    "reviewed_primary_evidence_rows": 15,
+    "operational_evidence_rows": 15,
+    "excluded_product_candidates": 4,
+    "source_location_duplicate_groups": 28,
+    "source_location_duplicate_extra_links": 32,
+    "unique_exact_evidence_texts": 264,
+    "exact_text_duplicate_groups": 70,
+    "unique_normalized_evidence_texts": 249,
+    "normalized_text_duplicate_groups": 75
+  },
+  "status_contract": {
+    "assignment_level": "evidence_rule_links; evidence units remain status-free because one source location can support multiple rule tags",
+    "verified_primary": "v5.0 shortlist primary, human_expert_verified, supports_release=true, released rule, pharmacist approve",
+    "needs_expert_review": "v5.0 shortlist row without row-level expert verification",
+    "rejected": "candidate belongs to a product excluded from analysis and runtime",
+    "provisional": "machine-matched authorization candidate not selected for the v5.0 shortlist",
+    "activation_warning": "evidence_status is a review classification, not the operational activation field"
+  },
+  "candidate_operational_status_contract": {
+    "assignment_level": "evidence_rule_links",
+    "field": "candidate_operational_status",
+    "active_existing_released_primary_evidence": "existing v5.0 primary evidence with human_expert_verified, supports_release=true, referenced released rule, pharmacist approve, and nonblank reviewer metadata",
+    "inactive_candidate": "every needs_expert_review, provisional, or rejected candidate; no review classification or referenced runtime/code context can activate a candidate",
+    "active_count": 15,
+    "inactive_count": 345,
+    "context_only_fields": [
+      "referenced_rule_status",
+      "referenced_runtime_condition",
+      "referenced_code_link"
+    ],
+    "reviewed_evidence_fields": [
+      "reviewed_source_locator",
+      "reviewed_evidence_text"
+    ],
+    "operational_evidence_fields": [
+      "operational_source_locator",
+      "operational_evidence_text",
+      "source_version"
+    ]
+  },
+  "duplicate_contract": {
+    "evidence_unit_key": [
+      "source_url",
+      "source_locator"
+    ],
+    "duplicate_location": "multiple rule-tag links share one evidence unit",
+    "duplicate_text": "NFKC/casefold/alphanumeric-normalized text occurs at multiple evidence units",
+    "candidate_links_are_preserved": true
+  },
+  "ingredient_contract": {
+    "scope": "product_authorized_ingredient_set_not_excerpt_attribution",
+    "derivation": "product_id join, deduplicated by ingredient_id, preferred_name_ko display",
+    "warning": "ingredient_ids and ingredient_names describe the product formula; they do not claim that every listed ingredient is named or supported by each evidence excerpt"
+  },
+  "provenance_verification": {
+    "raw_pdf_bytes_rehashed": true,
+    "extracted_page_text_rehashed": true,
+    "candidate_product_identity_cross_checked": true,
+    "candidate_document_url_cross_checked": true,
+    "candidate_locator_id_cross_checked": true,
+    "candidate_paragraphs_revalidated": true,
+    "evidence_text_overrides_hash_checked": true
+  },
+  "source_version_contract": {
+    "source_version": "SHA-256 identity of the archived local MFDS PDF bytes used for this snapshot",
+    "source_page_text_sha256": "SHA-256 of the extracted page text and the canonical content provenance for semantic comparison",
+    "dynamic_endpoint_warning": "MFDS PDF endpoints can regenerate byte-different PDFs at the same URL; remote PDF byte mismatch alone does not establish semantic drift",
+    "freshness_policy": "compare normalized extracted text before classifying semantic source drift"
+  },
+  "shortlist_overlay_contract": {
+    "source_of_truth": "official_evidence_candidates.csv source_url/source_locator/evidence_text",
+    "raw_candidate_fields": "raw_candidate_source_locator and raw_candidate_evidence_text",
+    "overlay_fields": "shortlist_source_locator and shortlist_evidence_text",
+    "reviewed_fields": "reviewed_source_locator and reviewed_evidence_text; populated only for verified primary evidence",
+    "operational_fields": "operational_source_locator and operational_evidence_text; populated only for active_existing_released_primary_evidence",
+    "policy": "preserve raw candidates and shortlist context separately; active evidence uses the human-reviewed locator/text, including OTC-RULE-016 p.2 paragraphs 12-19"
+  },
+  "code_link_contract": {
+    "path": "src/lib/otc/engine.ts",
+    "field": "referenced_code_link",
+    "derivation": "first direct ruleType assignment, otherwise first exact quoted rule_type; informational link, not release authority",
+    "line_numbers_bound_to_input_sha256": "05c7fb63c630caf3d2110faf522069c7d22705376149402e8a7d3242485c1c21",
+    "regeneration_required_after_engine_change": true
+  },
+  "review_boundary": {
+    "expert_review_queue_status": "needs_expert_review",
+    "expert_review_queue_operational_status": "inactive_candidate",
+    "human_decisions_prefilled": 0,
+    "existing_human_expert_verified_primary_rows": 15,
+    "new_human_expert_reviews": 0,
+    "expert_review_queue_human_fields": [
+      "review_decision",
+      "review_comment",
+      "reviewer_id",
+      "reviewer_role",
+      "reviewed_at"
+    ],
+    "reviewer_metadata_policy": "only verified_primary rows preserve existing pharmacist reviewer_id and reviewer_role and reviewed_at; all expert review queue reviewer fields remain blank until human review"
+  }
+}
