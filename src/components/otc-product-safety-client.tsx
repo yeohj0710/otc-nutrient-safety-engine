@@ -198,6 +198,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const [symptomText, setSymptomText] = useState("");
   const [activeTherapeuticClass, setActiveTherapeuticClass] = useState("전체");
   const [isEvaluating, setIsEvaluating] = useState(false);
+  const [activeQuickCheck, setActiveQuickCheck] = useState("");
 
   const results = useMemo(() => searchRuntime(runtime, query), [runtime, query]);
   const releasedRuleTypes = useMemo(
@@ -316,6 +317,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
   const addProduct = (product: OtcProduct) => {
     if (selectedIds.has(product.productId)) return;
+    setActiveQuickCheck("");
     setSelected((items) => [
       ...items,
       { product, unitsPerDose: 1, dosesPerDay: 1 },
@@ -338,6 +340,19 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     setMedicationText(nextProfile.medications.join(", "));
     setSymptomText(nextProfile.redFlagSymptoms.join(", "));
     setQuery("");
+    setActiveQuickCheck(quickCheck.label);
+    // 예시를 눌러도 결과가 화면 밖에 그려지면 아무 일도 안 일어난 것처럼 보인다.
+    // 판정이 다시 계산된 다음 프레임에 결과로 데려간다.
+    // 넓은 화면에서는 결과 패널이 이미 옆에 붙어 있으므로, 안 보일 때만 움직인다.
+    requestAnimationFrame(() => {
+      const target = document.getElementById("safety-result");
+      if (!target) return;
+      const box = target.getBoundingClientRect();
+      const visible =
+        box.top >= 0 && box.top < window.innerHeight * 0.6 && box.bottom > 0;
+      if (visible) return;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
   };
 
   const resetAll = () => {
@@ -346,6 +361,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     setProfile(initialProfile);
     setMedicationText("");
     setSymptomText("");
+    setActiveQuickCheck("");
   };
 
   return (
@@ -355,23 +371,31 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           <span className={styles.liveDot} aria-hidden="true" />
           <div>
             <strong>바로 점검해보기</strong>
-            <p>대표 조합을 불러온 뒤 내 복용량에 맞게 바꿀 수 있어요.</p>
+            <p>누르면 약이 담기고 점검 결과까지 바로 나와요. 그다음 내 복용량에 맞게 바꾸면 됩니다.</p>
           </div>
         </div>
         <div className={styles.quickCheckList}>
-          {quickChecks.map((quickCheck) => (
-            <button
-              key={quickCheck.label}
-              type="button"
-              className={styles.quickCheckButton}
-              onClick={() => applyQuickCheck(quickCheck)}
-              aria-label={`${quickCheck.label}: ${quickCheck.description}`}
-              title={quickCheck.description}
-            >
-              <span>{quickCheck.label}</span>
-              <b aria-hidden="true">→</b>
-            </button>
-          ))}
+          {quickChecks.map((quickCheck) => {
+            const active = activeQuickCheck === quickCheck.label;
+            return (
+              <button
+                key={quickCheck.label}
+                type="button"
+                className={styles.quickCheckButton}
+                data-active={active || undefined}
+                aria-pressed={active}
+                onClick={() => applyQuickCheck(quickCheck)}
+                aria-label={`${quickCheck.label}: ${quickCheck.description}`}
+                title={quickCheck.description}
+              >
+                <span>
+                  {quickCheck.label}
+                  <em>{quickCheck.description}</em>
+                </span>
+                <b aria-hidden="true">→</b>
+              </button>
+            );
+          })}
         </div>
       </div>
 
