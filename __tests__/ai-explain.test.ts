@@ -150,7 +150,7 @@ describe("explainSafetyResults", () => {
     if (response.ok) {
       expect(response.explanation.summaryTitle).toContain("AI 정리");
       expect(response.explanation.ruleCardActions[0]?.ruleId).toBe("RULE-VITK-WARFARIN-CONSISTENCY");
-      expect(response.meta.model).toBe("gpt-5.4-mini");
+      expect(response.meta.model).toBe("gpt-5.6-luna");
     }
   });
 });
