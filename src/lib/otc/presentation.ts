@@ -37,17 +37,19 @@ export type SupportingLiteratureRuleLink = {
 };
 
 /**
- * 이 문헌이 v5.0 문헌 선별로 검증됐는지, 아니면 왜 검증 대상이 아니었는지.
- * 규칙 16개를 덮으려면 2022년 이전 문헌이 필요한데 v5.0 검색 기간이 2022년부터라서
- * 규칙 근거의 절반 가까이가 검증 범위 밖에 있다. 화면에서 이를 구분해 표시한다.
- * 문헌은 설명용 근거일 뿐이므로 이 값이 규칙 판정을 바꾸지는 않는다.
+ * 이 문헌이 v5.0 문헌 선별로 검증됐는지, 아니면 왜 검증되지 못했는지.
+ * 규칙 16개 중 9개만 문헌이 연결됐고 연결은 10건이라, 화면이 서빙하는 문헌의 절반 가까이가
+ * v5.0 검증 밖에 있다. 화면에서 이를 구분해 표시한다.
+ * 사유는 v5.0 하류 매니페스트가 기록한 값 그대로이며 출판연도로 추정하지 않는다
+ * (`AM-OTC-004`). 문헌은 설명용 근거일 뿐이므로 이 값이 규칙 판정을 바꾸지는 않는다.
  */
 export type SupportingLiteratureV50Validation = {
   screened: boolean;
   reason:
     | null
-    | "outside_v50_search_window"
-    | "no_retain_decision_for_rule_question";
+    | "not_in_v5_corpus"
+    | "no_retain_decision_for_rule_question"
+    | "unknown";
   labelKo: string;
 };
 

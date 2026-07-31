@@ -4,6 +4,13 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
+## Which version is final
+
+`docs/version_map.md` is the answer sheet. The one thing to remember: **this study ends at
+v5.0, 여형준's supplement study (`nutrition-safety-engine`) ends at v4.0.** This repo also
+contains a `research_v3/logs/v40_run_report.json`, which is a *superseded* track here — do
+not read numbers across the two repos by filename.
+
 ## Project navigation
 
 Before exploring the repo from scratch, check `docs/project_map.md`.
@@ -27,11 +34,19 @@ Before exploring the repo from scratch, check `docs/project_map.md`.
 - The literature layer covers 9 of the 16 rules with 10 links. The other 7 rules
   (`OTC-RULE-003` max_daily_dose, `009` gi_bleeding_ulcer, `010` sedation_driving,
   `011` alcohol, `013` sedative_medication, `015` maximum_duration, `016` urgent_referral)
-  have no linked literature because their supporting papers were published before the
-  v5.0 search window opened on 2022-01-01 — 8 of the 9 unverified papers are from
-  2010–2021. This is a search-window gap, not a screening failure. Report it as a
-  result; do not describe the literature layer as the study's contribution
-  (see `research_v3/protocol/amendments.csv` AM-OTC-003).
+  have no linked literature for two reasons recorded in
+  `research_v3/otc/literature/v5/downstream/literature_link_manifest.json`:
+  6 candidate rejections (5 distinct papers) are `not_in_v5_corpus` — the AM-OTC-002
+  query, which dropped the outcome block and kept only P AND I, did not retrieve them;
+  4 are `no_retain_decision_for_rule_question` — the paper is in the corpus but was not
+  retained for a question the rule is allowed to draw from (the two `015` papers are
+  retained for Q01 while the rule allows only Q03/Q04).
+  **This is not a search-window gap.** The executed date filters are 2010/01/01 for
+  Q01–Q03 and 2000/01/01 for Q04–Q05 (embedded in the hashed query strings), the v5.0
+  corpus spans publication years 2000–2026, and all 9 unlinked candidates fall inside
+  their rule's allowed-question window. AM-OTC-003 stated a 2022-01-01 window as the
+  cause; `AM-OTC-004` corrects that. Report the gap as a result; do not describe the
+  literature layer as the study's contribution.
 - Keep authorization evidence and literature evidence in separate fields. Preserve conflicts as `conflict`.
 - Every rule-to-literature link needs a sentence-level locator (`abstract:sentence:N`) plus the quoted sentence. `scripts/research/otc/build_supporting_literature.py` re-checks the quote against the corpus abstract on every build.
 - New literature artifacts belong only under `research_v3/otc/literature/`. Do not modify `research_v3/search/provisional_pubmed_20260710/`.
@@ -43,7 +58,10 @@ Before exploring the repo from scratch, check `docs/project_map.md`.
   The v5.0 semantic adjudication selection: **false** — it was recorded true with no
   execution receipt and was corrected by `V50-PC-001` (see `research_v3/logs/DECISIONS_v50.md`).
   Do not restate this flag as globally true; cite the layer.
-- `release_ready` remains false. Do not deploy from this workflow.
+- `release_ready` remains false; deployment is not clinical release approval. Deploy only
+  when the researcher explicitly asks. The site was deployed on 2026-07-30 on that
+  instruction (https://otc-nutrient-safety-engine.vercel.app); an earlier blanket
+  "do not deploy" rule no longer matches practice and was replaced by `AM-OTC-004`.
 - v4.0 screening is complete: 5,724/5,724 rows, coverage 1.0, human decisions 0. Performance may be cited only alongside the fact that the reference standard is an AI evaluator.
 - Do not delete `tools/search_pipeline/embase_adapter.py`.
 - Keep 신신파스아렉스 source records but exclude it from analysis and runtime.
@@ -53,4 +71,4 @@ Before exploring the repo from scratch, check `docs/project_map.md`.
 
 ## Verification
 
-Run `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build` after site changes. Do not deploy.
+Run `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build` after site changes. Deploy only on an explicit request from the researcher.

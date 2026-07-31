@@ -1,2 +1,21 @@
 # 원시 PubMed 응답은 SHA-256 재현성을 위해 줄바꿈을 변환하지 않는다.
 research_v3/otc/literature/searches/**/*.xml -text
+
+# ---------------------------------------------------------------------------
+# 원장이 SHA-256 을 기록하는 경로 (2026-07-31 등록).
+#
+# core.autocrlf=true 에서는 표시하지 않은 텍스트 파일이 LF 로 커밋되고 CRLF 로 체크아웃되어,
+# 내용을 고치지 않았는데도 기록된 해시가 깨진다. 아래 경로는 v50_run_report.json 또는
+# v50_protected_final_audit.json 이 해시를 기록하므로 바이트를 고정한다.
+#
+# 등록 시점에 각 파일의 blob 바이트와 디스크 바이트가 같은지
+# `git hash-object --path` 대 `--no-filters` 로 확인했다(전부 일치).
+# ---------------------------------------------------------------------------
+research_v3/protocol/protocol-v5.0-mecir-search.md -text
+research_v3/protocol/amendments.csv                -text
+research_v3/logs/v50_run_report.json               -text
+research_v3/logs/v50_FINAL.md                      -text
+research_v3/logs/DECISIONS_v50.md                  -text
+
+# 버전 지도. 해시 기록 대상은 아니지만 여형준 저장소와 같은 규칙을 적용한다.
+docs/version_map.md                                -text

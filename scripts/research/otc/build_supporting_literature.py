@@ -30,8 +30,23 @@ EVIDENCE_MAP = ROOT / "research_v3" / "otc" / "literature" / "evidence_map.csv"
 V50_LINKS = (
     ROOT / "research_v3" / "otc" / "literature" / "v5" / "downstream" / "supporting_literature.csv"
 )
-# v5.0 코퍼스 기간. 이 기간 밖 문헌은 v5.0 선별이 볼 수 없으므로 검증 대상이 아니었다.
-V50_WINDOW_FIRST_YEAR = 2022
+# 미검증 사유는 추정하지 않고 v5.0 하류 매니페스트가 기록한 값을 그대로 쓴다.
+# 출판연도로 사유를 유추하던 이전 방식은 AM-OTC-004 로 폐기했다. v5.0 검색 기간은
+# 질문별로 2010-01-01(Q01~Q03) 또는 2000-01-01(Q04~Q05)이고 코퍼스 출판연도 범위는
+# 2000~2026 이라, 기간 때문에 빠진 후보는 한 편도 없다.
+V50_MANIFEST = (
+    ROOT
+    / "research_v3"
+    / "otc"
+    / "literature"
+    / "v5"
+    / "downstream"
+    / "literature_link_manifest.json"
+)
+V50_REASON_LABELS = {
+    "not_in_v5_corpus": "v5.0 코퍼스에 없음(검색식 미인출)",
+    "no_retain_decision_for_rule_question": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님",
+}
 
 REVIEW_STATUS = "agent_curated_from_v40_retained_corpus"
 EVIDENCE_AUTHORITY = "literature_explanatory_only"
@@ -72,30 +87,51 @@ def _v50_verified_pmids() -> set[str]:
     return out
 
 
-_V50_VERIFIED: set[str] | None = None
+def _v50_rejection_reasons() -> dict[str, str]:
+    """v5.0 검증을 통과하지 못한 후보의 PMID → 사유.
 
-
-def _v50_validation(pmid: str, publication_year: int) -> dict[str, object]:
-    """이 문헌이 v5.0 선별로 검증됐는지, 아니면 왜 검증 대상이 아니었는지.
-
-    규칙 16개를 덮으려면 2022년 이전 문헌이 필요한데 v5.0 검색은 2022년부터라서,
-    규칙 근거의 절반 가까이가 검증 범위 밖에 있다. 그 사실을 화면에서 감추지 않는다.
+    매니페스트가 없으면 빈 사전을 돌려주고, 그 경우 미검증 문헌의 사유는 unknown 이 된다.
+    사유를 출판연도로 추정하지 않는다.
     """
-    global _V50_VERIFIED
+    if not V50_MANIFEST.exists():
+        return {}
+    data = json.loads(V50_MANIFEST.read_text(encoding="utf-8"))
+    out: dict[str, str] = {}
+    for entry in data.get("results", {}).get("rejected_candidates", []):
+        pmid = str(entry.get("candidate_pmid") or "").strip()
+        reason = str(entry.get("reason") or "").strip()
+        if not pmid or not reason:
+            continue
+        if pmid in out and out[pmid] != reason:
+            raise SystemExit(f"PMID {pmid} 의 미검증 사유가 서로 다르다: {out[pmid]} vs {reason}")
+        out[pmid] = reason
+    return out
+
+
+_V50_VERIFIED: set[str] | None = None
+_V50_REJECTED: dict[str, str] | None = None
+
+
+def _v50_validation(pmid: str) -> dict[str, object]:
+    """이 문헌이 v5.0 선별로 검증됐는지, 아니면 왜 검증되지 못했는지.
+
+    규칙 16개 중 9개만 문헌이 연결됐고 연결은 10건이다. 나머지가 왜 빠졌는지를
+    화면에서 감추지 않는다. 사유는 v5.0 하류 매니페스트가 기록한 값 그대로다.
+    """
+    global _V50_VERIFIED, _V50_REJECTED
     if _V50_VERIFIED is None:
         _V50_VERIFIED = _v50_verified_pmids()
+    if _V50_REJECTED is None:
+        _V50_REJECTED = _v50_rejection_reasons()
     if pmid in _V50_VERIFIED:
         return {"screened": True, "reason": None, "labelKo": "v5.0 선별 검증"}
-    if publication_year < V50_WINDOW_FIRST_YEAR:
-        return {
-            "screened": False,
-            "reason": "outside_v50_search_window",
-            "labelKo": f"v5.0 검색 기간({V50_WINDOW_FIRST_YEAR}년~) 밖",
-        }
+    reason = _V50_REJECTED.get(pmid)
+    if reason is None:
+        return {"screened": False, "reason": "unknown", "labelKo": "v5.0 검증 기록 없음"}
     return {
         "screened": False,
-        "reason": "no_retain_decision_for_rule_question",
-        "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님",
+        "reason": reason,
+        "labelKo": V50_REASON_LABELS.get(reason, f"v5.0 미검증({reason})"),
     }
 
 
@@ -166,7 +202,7 @@ def build() -> list[dict]:
                 "studyDesign": row["study_design"],
                 "evidenceAuthority": EVIDENCE_AUTHORITY,
                 "supportsRuleRelease": False,
-                "v50Validation": _v50_validation(pmid, int(row["publication_year"])),
+                "v50Validation": _v50_validation(pmid),
                 "reviewStatus": REVIEW_STATUS,
                 "disclaimerKo": DISCLAIMER_KO,
                 "url": row["url"],

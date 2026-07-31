@@ -10,8 +10,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "not_in_v5_corpus",
+      "labelKo": "v5.0 코퍼스에 없음(검색식 미인출)"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -60,8 +60,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "no_retain_decision_for_rule_question",
+      "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -108,8 +108,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "no_retain_decision_for_rule_question",
+      "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -204,8 +204,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "not_in_v5_corpus",
+      "labelKo": "v5.0 코퍼스에 없음(검색식 미인출)"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -300,8 +300,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "not_in_v5_corpus",
+      "labelKo": "v5.0 코퍼스에 없음(검색식 미인출)"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -457,8 +457,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "no_retain_decision_for_rule_question",
+      "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -506,8 +506,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "not_in_v5_corpus",
+      "labelKo": "v5.0 코퍼스에 없음(검색식 미인출)"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -646,8 +646,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "outside_v50_search_window",
-      "labelKo": "v5.0 검색 기간(2022년~) 밖"
+      "reason": "no_retain_decision_for_rule_question",
+      "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
@@ -844,8 +844,8 @@
     "supportsRuleRelease": false,
     "v50Validation": {
       "screened": false,
-      "reason": "no_retain_decision_for_rule_question",
-      "labelKo": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님"
+      "reason": "not_in_v5_corpus",
+      "labelKo": "v5.0 코퍼스에 없음(검색식 미인출)"
     },
     "reviewStatus": "agent_curated_from_v40_retained_corpus",
     "disclaimerKo": "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다.",
