@@ -1,5 +1,13 @@
-import { evaluateOtcSafety } from "./engine";
-import type { OtcProduct, SelectedProduct, UserProfile } from "./schema";
+import {
+  evaluateOtcSafety,
+  isExecutableReleasedRulePolicy,
+} from "./engine";
+import type {
+  OtcProduct,
+  ReleasedRulePolicy,
+  SelectedProduct,
+  UserProfile,
+} from "./schema";
 
 export type IndependentScenarioIndexRow = {
   scenario_id: string;
@@ -34,8 +42,8 @@ export type IndependentScenarioPayload = {
 export type ReleasedRuntime = {
   rulesReleased: number;
   releasedRuleTypes: string[];
+  releasedRules: ReleasedRulePolicy[];
   products: OtcProduct[];
-  urgentReferralBindings?: Array<{ itemSequence: string; terms: string[] }>;
 };
 
 export type IndependentPrediction = {
@@ -43,6 +51,89 @@ export type IndependentPrediction = {
   prediction: "0" | "1";
   findingRuleTypes: string[];
 };
+
+export function assertReleasedRuntimeIntegrity(runtime: ReleasedRuntime): void {
+  if (
+    !Number.isInteger(runtime.rulesReleased) ||
+    runtime.rulesReleased <= 0 ||
+    !Array.isArray(runtime.releasedRules) ||
+    runtime.releasedRules.length !== runtime.rulesReleased
+  ) {
+    throw new Error("released_runtime_required_for_prediction");
+  }
+
+  const seenRuleIds = new Set<string>();
+  for (const value of runtime.releasedRules) {
+    const ruleId =
+      value && typeof value === "object"
+        ? (value as Partial<ReleasedRulePolicy>).ruleId
+        : undefined;
+    if (typeof ruleId !== "string" || !ruleId.trim()) continue;
+    if (seenRuleIds.has(ruleId)) {
+      throw new Error(`released_runtime_duplicate_rule_id:${ruleId}`);
+    }
+    seenRuleIds.add(ruleId);
+  }
+
+  if (!runtime.releasedRules.every(isExecutableReleasedRulePolicy)) {
+    throw new Error("released_runtime_policy_integrity_failed");
+  }
+
+  const productBySequence = new Map(
+    runtime.products.map((product) => [product.itemSequence, product]),
+  );
+  for (const policy of runtime.releasedRules) {
+    const seenEvidence = new Set<string>();
+    for (const evidence of policy.evidence) {
+      let protocol = "";
+      try {
+        protocol = new URL(evidence.url).protocol;
+      } catch {
+        throw new Error(`released_runtime_policy_integrity_failed:${policy.ruleId}`);
+      }
+      const product = productBySequence.get(evidence.itemSequence);
+      const evidenceKey = [
+        evidence.sourceId,
+        evidence.sourceVersion,
+        evidence.locator,
+        evidence.url,
+        evidence.itemSequence,
+      ].join("|");
+      if (
+        !/^sha256:[a-f0-9]{64}$/.test(evidence.sourceVersion) ||
+        !["http:", "https:"].includes(protocol) ||
+        !product ||
+        product.productName !== evidence.productName ||
+        seenEvidence.has(evidenceKey)
+      ) {
+        throw new Error(`released_runtime_policy_integrity_failed:${policy.ruleId}`);
+      }
+      seenEvidence.add(evidenceKey);
+    }
+  }
+
+  if (
+    !Array.isArray(runtime.releasedRuleTypes) ||
+    runtime.releasedRuleTypes.some(
+      (ruleType) => typeof ruleType !== "string" || !ruleType.trim(),
+    )
+  ) {
+    throw new Error("released_runtime_rule_types_mismatch");
+  }
+  const declaredRuleTypes = [...new Set(runtime.releasedRuleTypes)].sort();
+  const actualRuleTypes = [
+    ...new Set(runtime.releasedRules.map((policy) => policy.ruleType)),
+  ].sort();
+  if (
+    declaredRuleTypes.length !== runtime.releasedRuleTypes.length ||
+    declaredRuleTypes.length !== actualRuleTypes.length ||
+    declaredRuleTypes.some(
+      (ruleType, index) => ruleType !== actualRuleTypes[index],
+    )
+  ) {
+    throw new Error("released_runtime_rule_types_mismatch");
+  }
+}
 
 export function predictLockedIndependentScenarios(
   rows: IndependentScenarioIndexRow[],
@@ -53,14 +144,10 @@ export function predictLockedIndependentScenarios(
     throw new Error("all_human_reference_labels_must_be_locked_before_prediction");
   }
   if (rows.some((row) => row.prediction !== "")) throw new Error("predictions_already_present");
-  if (!runtime.rulesReleased || runtime.releasedRuleTypes.length !== runtime.rulesReleased) {
-    throw new Error("released_runtime_required_for_prediction");
-  }
+  assertReleasedRuntimeIntegrity(runtime);
 
   const payloadById = new Map(payloads.map((payload) => [payload.scenarioId, payload]));
   const productBySequence = new Map(runtime.products.map((product) => [product.itemSequence, product]));
-  const enabledRuleTypes = new Set(runtime.releasedRuleTypes);
-
   return rows.map((row) => {
     const payload = payloadById.get(row.scenario_id);
     if (!payload) throw new Error(`missing_case_payload:${row.scenario_id}`);
@@ -79,7 +166,9 @@ export function predictLockedIndependentScenarios(
         continuousDays: input.continuousDays,
       }];
     });
-    const result = evaluateOtcSafety(selected, payload.userProfile, enabledRuleTypes, runtime.urgentReferralBindings ?? []);
+    const result = evaluateOtcSafety(selected, payload.userProfile, {
+      releasedRules: runtime.releasedRules,
+    });
     return {
       scenarioId: row.scenario_id,
       prediction: result.findings.length ? "1" : "0",

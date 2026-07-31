@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "2.0.0",
-  "generatedAt": "2026-07-16",
+  "schemaVersion": "2.1.0",
+  "generatedAt": "2026-08-01",
   "researchDirection": "korean_otc_product_safety",
   "releaseReady": false,
   "rulesReleased": 15,
@@ -21,6 +21,413 @@
     "decongestant_hypertension",
     "urgent_referral"
   ],
+  "authorizationConstraintsCount": 32,
+  "releasedRules": [
+    {
+      "ruleId": "OTC-RULE-001",
+      "ruleType": "duplicate_ingredient",
+      "scope": "acetaminophen_containing_selected_products",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "ingredientIds": [
+          "ING-acetaminophen"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-001",
+          "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+          "itemSequence": "202106092",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+          "locator": "사용상의주의사항 PDF p.1, 문단 12",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+          "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다."
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-002",
+      "ruleType": "duplicate_pharmacologic_class",
+      "scope": "ibuprofen_and_other_NSAIDs",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "pharmacologicClasses": [
+          "NSAID"
+        ],
+        "requiredAnchorIngredientIds": [
+          "ING-ibuprofen"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-002",
+          "productName": "어린이부루펜시럽(이부프로펜)",
+          "itemSequence": "198601920",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+          "locator": "사용상의주의사항 PDF p.2, 문단 17",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+          "excerptKo": "2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다."
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-003",
+      "ruleType": "max_daily_dose",
+      "scope": "acetaminophen_tylenol500_age_12_plus",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "202106092"
+        ],
+        "ingredientIds": [
+          "ING-acetaminophen"
+        ],
+        "administrationConstraintTypes": [
+          "maximum_daily_ingredient_amount"
+        ],
+        "minimumAgeYears": 12
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-003",
+          "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+          "itemSequence": "202106092",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
+          "locator": "용법용량 PDF p.1, 문단 4",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+          "excerptKo": "1일 최대 4그램 (8정)을 초과하여 복용하지 않는다."
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-004",
+      "ruleType": "minimum_interval",
+      "scope": "tylenol500_age_12_plus",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "202106092"
+        ],
+        "ingredientIds": [
+          "ING-acetaminophen"
+        ],
+        "administrationConstraintTypes": [
+          "minimum_interval_hours"
+        ],
+        "minimumAgeYears": 12
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-004",
+          "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+          "itemSequence": "202106092",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
+          "locator": "용법용량 PDF p.1, 문단 3",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+          "excerptKo": "1회 1~2정씩 1일 3-4회 (4-6시간 마다) 필요시 복용한다."
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-005",
+      "ruleType": "age_restriction",
+      "scope": "tylenol500_minimum_age_12",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "202106092"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-005",
+          "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+          "itemSequence": "202106092",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
+          "locator": "용법용량 PDF p.1, 문단 2",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+          "excerptKo": "만 12세 이상 소아 및 성인:"
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-006",
+      "ruleType": "pregnancy_lactation",
+      "scope": "ibuprofen_pregnancy_lactation",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "198601920"
+        ],
+        "pregnancyTrimesters": [
+          3
+        ],
+        "lactationSupported": false
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-006",
+          "productName": "어린이부루펜시럽(이부프로펜)",
+          "itemSequence": "198601920",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+          "locator": "사용상의주의사항 PDF p.2, 문단 9",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+          "excerptKo": "11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다)"
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-007",
+      "ruleType": "hepatic_disease",
+      "scope": "acetaminophen_liver_disease",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "202106092"
+        ],
+        "ingredientIds": [
+          "ING-acetaminophen"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-007",
+          "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+          "itemSequence": "202106092",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+          "locator": "사용상의주의사항 PDF p.1, 문단 24",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+          "excerptKo": "1) 간장애 또는 그 병력이 있는 환자"
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-008",
+      "ruleType": "renal_disease",
+      "scope": "ibuprofen_kidney_disease",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "198601920"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-008",
+          "productName": "어린이부루펜시럽(이부프로펜)",
+          "itemSequence": "198601920",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+          "locator": "사용상의주의사항 PDF p.3, 문단 2",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+          "excerptKo": "4) 신장장애 또는 그 병력이 있는 환자"
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-009",
+      "ruleType": "gi_bleeding_ulcer",
+      "scope": "ibuprofen_gi_bleeding_or_ulcer",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "198601920"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-009",
+          "productName": "어린이부루펜시럽(이부프로펜)",
+          "itemSequence": "198601920",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+          "locator": "사용상의주의사항 PDF p.1, 문단 17",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+          "excerptKo": "3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다."
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-010",
+      "ruleType": "sedation_driving",
+      "scope": "pancol_a_driving",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "196800036"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-010",
+          "productName": "판콜에이내복액",
+          "itemSequence": "196800036",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
+          "locator": "사용상의주의사항 PDF p.3, 문단 8",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+          "excerptKo": "4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것."
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-011",
+      "ruleType": "alcohol",
+      "scope": "acetaminophen_regular_alcohol_use",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "202106092"
+        ],
+        "ingredientIds": [
+          "ING-acetaminophen"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-011",
+          "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+          "itemSequence": "202106092",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+          "locator": "사용상의주의사항 PDF p.1, 문단 3",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+          "excerptKo": "1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열 진통제를 복용해야 할 경우 반드시 의사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 간손상이 유발될 수 있다."
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-012",
+      "ruleType": "anticoagulant_antiplatelet",
+      "scope": "ibuprofen_warfarin_or_coumarin_anticoagulant",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "198601920"
+        ],
+        "medicationTerms": [
+          "warfarin",
+          "와파린",
+          "coumarin",
+          "쿠마린",
+          "쿠마린계 항응고제"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-012",
+          "productName": "어린이부루펜시럽(이부프로펜)",
+          "itemSequence": "198601920",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+          "locator": "사용상의주의사항 PDF p.4, 문단 10",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+          "excerptKo": "5) 쿠마린계 항응혈제(와파린 등) (쿠마린계 항응혈제와 병용투여 시 그 작용을 증강시킬 수 있고, 중증의 위장관계 출혈의 위험이 높아질 수 있다.)"
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-013",
+      "ruleType": "sedative_medication",
+      "scope": "pancol_a_sedative_or_overlapping_cold_medicine",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "196800036"
+        ],
+        "medicationTerms": [
+          "sedative",
+          "진정제",
+          "수면제"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-013",
+          "productName": "판콜에이내복액",
+          "itemSequence": "196800036",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
+          "locator": "사용상의주의사항 PDF p.1, 문단 20",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+          "excerptKo": "3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것. 진해(기침을 그치게 함)거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제를 함유하는 내복약(비염(코염)용 경구제, 멀미약, 알레르기용약)"
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-014",
+      "ruleType": "decongestant_hypertension",
+      "scope": "pancol_a_phenylephrine_hypertension",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "196800036"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-014",
+          "productName": "판콜에이내복액",
+          "itemSequence": "196800036",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
+          "locator": "사용상의주의사항 PDF p.2, 문단 4",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+          "excerptKo": "4. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의 할 것. … 4) 간장질환, 신장(콩팥)질환, 심장질환, 갑상선질환, 당뇨병, 고혈압, 위십이지장궤양, 녹내장(예: 눈의 통증, 눈이 침침함 등), 배뇨(소변을 눔)곤란 등이 있는 사람, 몸이 약한 사람 또는 고열이 있는 사람"
+        }
+      ]
+    },
+    {
+      "ruleId": "OTC-RULE-016",
+      "ruleType": "urgent_referral",
+      "scope": "tylenol500_stop_and_consult_symptoms",
+      "lineageStatus": "mapped_from_v50_released_rule",
+      "applicability": {
+        "productItemSequences": [
+          "202106092"
+        ],
+        "urgentTerms": [
+          "호흡곤란",
+          "온몸이 붉어짐",
+          "혈관부기",
+          "두드러기",
+          "천식발작",
+          "얼굴부기",
+          "저혈압",
+          "쇽",
+          "스티븐스-존슨",
+          "스티븐스 존슨",
+          "독성표피괴사",
+          "리엘 증후군"
+        ]
+      },
+      "evidence": [
+        {
+          "ruleId": "OTC-RULE-016",
+          "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+          "itemSequence": "202106092",
+          "sourceId": "MFDS-NEDRUG-DETAIL",
+          "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+          "locator": "사용상의주의사항 PDF p.2, 문단 12-19",
+          "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+          "excerptKo": "복용을 즉각 중지하고 의사·치과의사·약사와 상의할 것. 쇽·아나필락시양 증상(호흡곤란·온몸이 붉어짐·혈관부기·두드러기), 천식발작, 얼굴부기·저혈압·쇽, 스티븐스-존슨 증후군·독성표피괴사용해 등"
+        }
+      ]
+    }
+  ],
+  "ruleApplicabilityProvenance": {
+    "path": "research_v51/evidence/active_rule_applicability.csv",
+    "sha256": "4bd0f7f631138893f5ff5bb308e1d1f90508784a4b9005e8ce7d5356aa453f7d",
+    "normalization": "utf8_lf",
+    "lineageStatus": "mapped_from_v50_released_rule"
+  },
   "ruleEvidenceByType": {
     "duplicate_ingredient": [
       {
@@ -28,9 +435,18 @@
         "productName": "타이레놀정500밀리그람(아세트아미노펜)",
         "itemSequence": "202106092",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
         "locator": "사용상의주의사항 PDF p.1, 문단 12",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
-        "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다."
+        "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.",
+        "ruleType": "duplicate_ingredient",
+        "scope": "acetaminophen_containing_selected_products",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "ingredientIds": [
+            "ING-acetaminophen"
+          ]
+        }
       }
     ],
     "duplicate_pharmacologic_class": [
@@ -39,9 +455,21 @@
         "productName": "어린이부루펜시럽(이부프로펜)",
         "itemSequence": "198601920",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
         "locator": "사용상의주의사항 PDF p.2, 문단 17",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
-        "excerptKo": "2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다."
+        "excerptKo": "2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.",
+        "ruleType": "duplicate_pharmacologic_class",
+        "scope": "ibuprofen_and_other_NSAIDs",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "pharmacologicClasses": [
+            "NSAID"
+          ],
+          "requiredAnchorIngredientIds": [
+            "ING-ibuprofen"
+          ]
+        }
       }
     ],
     "max_daily_dose": [
@@ -50,9 +478,25 @@
         "productName": "타이레놀정500밀리그람(아세트아미노펜)",
         "itemSequence": "202106092",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
         "locator": "용법용량 PDF p.1, 문단 4",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
-        "excerptKo": "1일 최대 4그램 (8정)을 초과하여 복용하지 않는다."
+        "excerptKo": "1일 최대 4그램 (8정)을 초과하여 복용하지 않는다.",
+        "ruleType": "max_daily_dose",
+        "scope": "acetaminophen_tylenol500_age_12_plus",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "202106092"
+          ],
+          "ingredientIds": [
+            "ING-acetaminophen"
+          ],
+          "administrationConstraintTypes": [
+            "maximum_daily_ingredient_amount"
+          ],
+          "minimumAgeYears": 12
+        }
       }
     ],
     "minimum_interval": [
@@ -61,9 +505,25 @@
         "productName": "타이레놀정500밀리그람(아세트아미노펜)",
         "itemSequence": "202106092",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
         "locator": "용법용량 PDF p.1, 문단 3",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
-        "excerptKo": "1회 1~2정씩 1일 3-4회 (4-6시간 마다) 필요시 복용한다."
+        "excerptKo": "1회 1~2정씩 1일 3-4회 (4-6시간 마다) 필요시 복용한다.",
+        "ruleType": "minimum_interval",
+        "scope": "tylenol500_age_12_plus",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "202106092"
+          ],
+          "ingredientIds": [
+            "ING-acetaminophen"
+          ],
+          "administrationConstraintTypes": [
+            "minimum_interval_hours"
+          ],
+          "minimumAgeYears": 12
+        }
       }
     ],
     "age_restriction": [
@@ -72,9 +532,18 @@
         "productName": "타이레놀정500밀리그람(아세트아미노펜)",
         "itemSequence": "202106092",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
         "locator": "용법용량 PDF p.1, 문단 2",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
-        "excerptKo": "만 12세 이상 소아 및 성인:"
+        "excerptKo": "만 12세 이상 소아 및 성인:",
+        "ruleType": "age_restriction",
+        "scope": "tylenol500_minimum_age_12",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "202106092"
+          ]
+        }
       }
     ],
     "pregnancy_lactation": [
@@ -83,9 +552,22 @@
         "productName": "어린이부루펜시럽(이부프로펜)",
         "itemSequence": "198601920",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
         "locator": "사용상의주의사항 PDF p.2, 문단 9",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
-        "excerptKo": "11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다)"
+        "excerptKo": "11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다)",
+        "ruleType": "pregnancy_lactation",
+        "scope": "ibuprofen_pregnancy_lactation",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "198601920"
+          ],
+          "pregnancyTrimesters": [
+            3
+          ],
+          "lactationSupported": false
+        }
       }
     ],
     "hepatic_disease": [
@@ -94,9 +576,21 @@
         "productName": "타이레놀정500밀리그람(아세트아미노펜)",
         "itemSequence": "202106092",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
         "locator": "사용상의주의사항 PDF p.1, 문단 24",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
-        "excerptKo": "1) 간장애 또는 그 병력이 있는 환자"
+        "excerptKo": "1) 간장애 또는 그 병력이 있는 환자",
+        "ruleType": "hepatic_disease",
+        "scope": "acetaminophen_liver_disease",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "202106092"
+          ],
+          "ingredientIds": [
+            "ING-acetaminophen"
+          ]
+        }
       }
     ],
     "renal_disease": [
@@ -105,9 +599,18 @@
         "productName": "어린이부루펜시럽(이부프로펜)",
         "itemSequence": "198601920",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
         "locator": "사용상의주의사항 PDF p.3, 문단 2",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
-        "excerptKo": "4) 신장장애 또는 그 병력이 있는 환자"
+        "excerptKo": "4) 신장장애 또는 그 병력이 있는 환자",
+        "ruleType": "renal_disease",
+        "scope": "ibuprofen_kidney_disease",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "198601920"
+          ]
+        }
       }
     ],
     "gi_bleeding_ulcer": [
@@ -116,9 +619,18 @@
         "productName": "어린이부루펜시럽(이부프로펜)",
         "itemSequence": "198601920",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
         "locator": "사용상의주의사항 PDF p.1, 문단 17",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
-        "excerptKo": "3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다."
+        "excerptKo": "3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다.",
+        "ruleType": "gi_bleeding_ulcer",
+        "scope": "ibuprofen_gi_bleeding_or_ulcer",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "198601920"
+          ]
+        }
       }
     ],
     "sedation_driving": [
@@ -127,9 +639,18 @@
         "productName": "판콜에이내복액",
         "itemSequence": "196800036",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
         "locator": "사용상의주의사항 PDF p.3, 문단 8",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
-        "excerptKo": "4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것."
+        "excerptKo": "4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.",
+        "ruleType": "sedation_driving",
+        "scope": "pancol_a_driving",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "196800036"
+          ]
+        }
       }
     ],
     "alcohol": [
@@ -138,9 +659,21 @@
         "productName": "타이레놀정500밀리그람(아세트아미노펜)",
         "itemSequence": "202106092",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
         "locator": "사용상의주의사항 PDF p.1, 문단 3",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
-        "excerptKo": "1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열 진통제를 복용해야 할 경우 반드시 의사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 간손상이 유발될 수 있다."
+        "excerptKo": "1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열 진통제를 복용해야 할 경우 반드시 의사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 간손상이 유발될 수 있다.",
+        "ruleType": "alcohol",
+        "scope": "acetaminophen_regular_alcohol_use",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "202106092"
+          ],
+          "ingredientIds": [
+            "ING-acetaminophen"
+          ]
+        }
       }
     ],
     "anticoagulant_antiplatelet": [
@@ -149,9 +682,25 @@
         "productName": "어린이부루펜시럽(이부프로펜)",
         "itemSequence": "198601920",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
         "locator": "사용상의주의사항 PDF p.4, 문단 10",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
-        "excerptKo": "5) 쿠마린계 항응혈제(와파린 등) (쿠마린계 항응혈제와 병용투여 시 그 작용을 증강시킬 수 있고, 중증의 위장관계 출혈의 위험이 높아질 수 있다.)"
+        "excerptKo": "5) 쿠마린계 항응혈제(와파린 등) (쿠마린계 항응혈제와 병용투여 시 그 작용을 증강시킬 수 있고, 중증의 위장관계 출혈의 위험이 높아질 수 있다.)",
+        "ruleType": "anticoagulant_antiplatelet",
+        "scope": "ibuprofen_warfarin_or_coumarin_anticoagulant",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "198601920"
+          ],
+          "medicationTerms": [
+            "warfarin",
+            "와파린",
+            "coumarin",
+            "쿠마린",
+            "쿠마린계 항응고제"
+          ]
+        }
       }
     ],
     "sedative_medication": [
@@ -160,9 +709,23 @@
         "productName": "판콜에이내복액",
         "itemSequence": "196800036",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
         "locator": "사용상의주의사항 PDF p.1, 문단 20",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
-        "excerptKo": "3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것. 진해(기침을 그치게 함)거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제를 함유하는 내복약(비염(코염)용 경구제, 멀미약, 알레르기용약)"
+        "excerptKo": "3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것. 진해(기침을 그치게 함)거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제를 함유하는 내복약(비염(코염)용 경구제, 멀미약, 알레르기용약)",
+        "ruleType": "sedative_medication",
+        "scope": "pancol_a_sedative_or_overlapping_cold_medicine",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "196800036"
+          ],
+          "medicationTerms": [
+            "sedative",
+            "진정제",
+            "수면제"
+          ]
+        }
       }
     ],
     "decongestant_hypertension": [
@@ -171,9 +734,18 @@
         "productName": "판콜에이내복액",
         "itemSequence": "196800036",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
         "locator": "사용상의주의사항 PDF p.2, 문단 4",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
-        "excerptKo": "4. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의 할 것. … 4) 간장질환, 신장(콩팥)질환, 심장질환, 갑상선질환, 당뇨병, 고혈압, 위십이지장궤양, 녹내장(예: 눈의 통증, 눈이 침침함 등), 배뇨(소변을 눔)곤란 등이 있는 사람, 몸이 약한 사람 또는 고열이 있는 사람"
+        "excerptKo": "4. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의 할 것. … 4) 간장질환, 신장(콩팥)질환, 심장질환, 갑상선질환, 당뇨병, 고혈압, 위십이지장궤양, 녹내장(예: 눈의 통증, 눈이 침침함 등), 배뇨(소변을 눔)곤란 등이 있는 사람, 몸이 약한 사람 또는 고열이 있는 사람",
+        "ruleType": "decongestant_hypertension",
+        "scope": "pancol_a_phenylephrine_hypertension",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "196800036"
+          ]
+        }
       }
     ],
     "urgent_referral": [
@@ -182,9 +754,32 @@
         "productName": "타이레놀정500밀리그람(아세트아미노펜)",
         "itemSequence": "202106092",
         "sourceId": "MFDS-NEDRUG-DETAIL",
+        "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
         "locator": "사용상의주의사항 PDF p.2, 문단 12-19",
         "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
-        "excerptKo": "복용을 즉각 중지하고 의사·치과의사·약사와 상의할 것. 쇽·아나필락시양 증상(호흡곤란·온몸이 붉어짐·혈관부기·두드러기), 천식발작, 얼굴부기·저혈압·쇽, 스티븐스-존슨 증후군·독성표피괴사용해 등"
+        "excerptKo": "복용을 즉각 중지하고 의사·치과의사·약사와 상의할 것. 쇽·아나필락시양 증상(호흡곤란·온몸이 붉어짐·혈관부기·두드러기), 천식발작, 얼굴부기·저혈압·쇽, 스티븐스-존슨 증후군·독성표피괴사용해 등",
+        "ruleType": "urgent_referral",
+        "scope": "tylenol500_stop_and_consult_symptoms",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {
+          "productItemSequences": [
+            "202106092"
+          ],
+          "urgentTerms": [
+            "호흡곤란",
+            "온몸이 붉어짐",
+            "혈관부기",
+            "두드러기",
+            "천식발작",
+            "얼굴부기",
+            "저혈압",
+            "쇽",
+            "스티븐스-존슨",
+            "스티븐스 존슨",
+            "독성표피괴사",
+            "리엘 증후군"
+          ]
+        }
       }
     ]
   },
@@ -310,6 +905,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-201110646-MAX-DOSES",
@@ -319,6 +915,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:4cd4f68e2c3b4cb4653ca61b3707b379e2b55c7fdfafadc3cf8f3ec9e6d52f08",
             "locator": "용법용량 PDF p.1 · 1일 2~4회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/UD"
           }
@@ -331,6 +928,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:4cd4f68e2c3b4cb4653ca61b3707b379e2b55c7fdfafadc3cf8f3ec9e6d52f08",
             "locator": "용법용량 PDF p.1 · 1회 300mg",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/UD"
           }
@@ -344,6 +942,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:4cd4f68e2c3b4cb4653ca61b3707b379e2b55c7fdfafadc3cf8f3ec9e6d52f08",
             "locator": "용법용량 PDF p.1 · 1일 덱시부프로펜 1,200mg 상한",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/UD"
           }
@@ -384,6 +983,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-197500016-MAX-DOSES",
@@ -393,6 +993,7 @@
           "derivationMethod": "upper_envelope_from_explicit_regimens",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:989b9ab7b54bbde65b3d441b208c18d5b5b3c6aeff972ac9e6ba87023ad32944",
             "locator": "용법용량 PDF p.1 · 적응증별 허가 용법의 1일 투여 횟수 상한",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD"
           }
@@ -405,6 +1006,7 @@
           "derivationMethod": "upper_envelope_from_explicit_regimens",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:989b9ab7b54bbde65b3d441b208c18d5b5b3c6aeff972ac9e6ba87023ad32944",
             "locator": "용법용량 PDF p.1 · 초회량 750mg",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD"
           }
@@ -418,6 +1020,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:989b9ab7b54bbde65b3d441b208c18d5b5b3c6aeff972ac9e6ba87023ad32944",
             "locator": "용법용량 PDF p.1 · 1일 총용량 1,250mg 상한",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD"
           }
@@ -459,6 +1062,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-200610765-MAX-DOSES",
@@ -468,6 +1072,7 @@
           "derivationMethod": "upper_envelope_from_explicit_regimens",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:3a75d5a7f583d737489e3c4c2d8b41e21f5e434f9b3c9eebcdf39500fc00bb74",
             "locator": "용법용량 PDF p.1 · 1일 1회 또는 5mg씩 2회 분할",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/UD"
           }
@@ -480,6 +1085,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:3a75d5a7f583d737489e3c4c2d8b41e21f5e434f9b3c9eebcdf39500fc00bb74",
             "locator": "용법용량 PDF p.1 · 1일 10mg 또는 5mg씩 분할",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/UD"
           }
@@ -493,6 +1099,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:3a75d5a7f583d737489e3c4c2d8b41e21f5e434f9b3c9eebcdf39500fc00bb74",
             "locator": "용법용량 PDF p.1 · 1일 세티리진염산염 10mg",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/UD"
           }
@@ -546,6 +1153,14 @@
         "minimum_interval",
         "urgent_referral"
       ],
+      "supportedReleasedRuleIds": [
+        "OTC-RULE-003",
+        "OTC-RULE-004",
+        "OTC-RULE-005",
+        "OTC-RULE-007",
+        "OTC-RULE-011",
+        "OTC-RULE-016"
+      ],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-202106092-MAX-DOSES",
@@ -555,6 +1170,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
             "locator": "용법용량 PDF p.1 · 1일 3~4회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
           }
@@ -567,6 +1183,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
             "locator": "용법용량 PDF p.1 · 1회 1~2정",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
           }
@@ -580,6 +1197,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
             "locator": "용법용량 PDF p.1 · 1일 최대 4g(8정)",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
           }
@@ -592,6 +1210,7 @@
           "derivationMethod": "explicit_lower_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
             "locator": "용법용량 PDF p.1 · 4~6시간 간격",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD"
           }
@@ -634,6 +1253,7 @@
         "max_daily_dose",
         "minimum_interval"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-202200525-MAX-DOSES",
@@ -643,6 +1263,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:c1cc41edcfa122cf1d0f48546e702504e04a18fe11560d752e789b34dd354300",
             "locator": "용법용량 PDF p.1 · 1일 5회 상한",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD"
           }
@@ -655,6 +1276,7 @@
           "derivationMethod": "upper_envelope_from_explicit_regimens",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:c1cc41edcfa122cf1d0f48546e702504e04a18fe11560d752e789b34dd354300",
             "locator": "용법용량 PDF p.1 · 연령·체중표의 1회 권장용량 상한 20mL",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD"
           }
@@ -667,6 +1289,7 @@
           "derivationMethod": "explicit_lower_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:c1cc41edcfa122cf1d0f48546e702504e04a18fe11560d752e789b34dd354300",
             "locator": "용법용량 PDF p.1 · 4~6시간 간격",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD"
           }
@@ -716,6 +1339,12 @@
         "pregnancy_lactation",
         "renal_disease"
       ],
+      "supportedReleasedRuleIds": [
+        "OTC-RULE-006",
+        "OTC-RULE-008",
+        "OTC-RULE-009",
+        "OTC-RULE-012"
+      ],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-198601920-MAX-DOSES",
@@ -725,6 +1354,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a",
             "locator": "용법용량 PDF p.1 · 1일 3~4회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD"
           }
@@ -737,6 +1367,7 @@
           "derivationMethod": "upper_envelope_from_explicit_regimens",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a",
             "locator": "용법용량 PDF p.1 · 성인 1회 이부프로펜 600mg 상한",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD"
           }
@@ -750,6 +1381,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a",
             "locator": "용법용량 PDF p.1 · 1일 이부프로펜 3,200mg 상한",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD"
           }
@@ -866,6 +1498,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-198700405-MAX-DOSES",
@@ -875,6 +1508,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:44c605bd4719bdbea9bdf50372d62a1a338cd462276489358e228f2cb675ea7d",
             "locator": "용법용량 PDF p.1 · 1일 3회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/UD"
           }
@@ -887,6 +1521,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:44c605bd4719bdbea9bdf50372d62a1a338cd462276489358e228f2cb675ea7d",
             "locator": "용법용량 PDF p.1 · 1회 1정",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/UD"
           }
@@ -1029,6 +1664,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-200300406-MAX-DOSES",
@@ -1038,6 +1674,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:19cfabcf1738b4a279f9692af4c151af9fbb1bf06ea16be2fda0cd36caf569e0",
             "locator": "용법용량 PDF p.1 · 1일 3회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200300406/UD"
           }
@@ -1050,6 +1687,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:19cfabcf1738b4a279f9692af4c151af9fbb1bf06ea16be2fda0cd36caf569e0",
             "locator": "용법용량 PDF p.1 · 1회 1정",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/200300406/UD"
           }
@@ -1166,6 +1804,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-199900926-MAX-DOSES",
@@ -1175,6 +1814,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:7c7a6e8ca4b6ce34ce8e76a4f0c950571ef81e270bef2c96fb2ab5b052630c80",
             "locator": "용법용량 PDF p.1 · 1일 3회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199900926/UD"
           }
@@ -1187,6 +1827,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:7c7a6e8ca4b6ce34ce8e76a4f0c950571ef81e270bef2c96fb2ab5b052630c80",
             "locator": "용법용량 PDF p.1 · 1회 1정",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199900926/UD"
           }
@@ -1264,6 +1905,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-199801026-MAX-DOSES",
@@ -1273,6 +1915,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:c71c27f2e6cc95fdda0d723c926260f309c96cf7aafbc3b5887802ae6362e958",
             "locator": "용법용량 PDF p.1 · 1일 3회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199801026/UD"
           }
@@ -1285,6 +1928,7 @@
           "derivationMethod": "upper_envelope_from_explicit_regimens",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:c71c27f2e6cc95fdda0d723c926260f309c96cf7aafbc3b5887802ae6362e958",
             "locator": "용법용량 PDF p.1 · 성인 1회 1~2정",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199801026/UD"
           }
@@ -1401,6 +2045,11 @@
         "sedation_driving",
         "sedative_medication"
       ],
+      "supportedReleasedRuleIds": [
+        "OTC-RULE-010",
+        "OTC-RULE-013",
+        "OTC-RULE-014"
+      ],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-196800036-MAX-DOSES",
@@ -1410,6 +2059,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:0aa1264c5f459b4614378fe9e259e7d60d9e2b8588a1c54673cc056555b876da",
             "locator": "용법용량 PDF p.1 · 1일 3회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/UD"
           }
@@ -1422,6 +2072,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:0aa1264c5f459b4614378fe9e259e7d60d9e2b8588a1c54673cc056555b876da",
             "locator": "용법용량 PDF p.1 · 1회 30mL(1병)",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/UD"
           }
@@ -1492,6 +2143,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-199400202-MAX-DOSES",
@@ -1501,6 +2153,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:702c9270df46d2a78c22d6331abcb5affde3ccd2d14567bc8b07ae2b8f676d8a",
             "locator": "용법용량 PDF p.1 · 1일 3회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/UD"
           }
@@ -1513,6 +2166,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:702c9270df46d2a78c22d6331abcb5affde3ccd2d14567bc8b07ae2b8f676d8a",
             "locator": "용법용량 PDF p.1 · 1회 1정",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/UD"
           }
@@ -1603,6 +2257,7 @@
       "supportedRuleTypes": [
         "max_daily_dose"
       ],
+      "supportedReleasedRuleIds": [],
       "administrationConstraints": [
         {
           "constraintId": "ADMIN-198400250-MAX-DOSES",
@@ -1612,6 +2267,7 @@
           "derivationMethod": "explicit_upper_bound",
           "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:9d42736581a6c048e0213c281b48f2963bee3eb7c39d73c49cb12cb7777e0118",
             "locator": "용법용량 PDF p.1 · 1일 1~2회",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/UD"
           }

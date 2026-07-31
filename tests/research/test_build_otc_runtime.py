@@ -9,17 +9,37 @@ def test_runtime_uses_only_active_calculation_ready_products():
     assert runtime["rulesReleased"] == 15
     assert len(runtime["releasedRuleTypes"]) == 15
     assert len(runtime["ruleEvidenceByType"]) == 15
-    assert runtime["ruleEvidenceByType"]["duplicate_ingredient"] == [
-        {
-            "ruleId": "OTC-RULE-001",
-            "productName": "타이레놀정500밀리그람(아세트아미노펜)",
-            "itemSequence": "202106092",
-            "sourceId": "MFDS-NEDRUG-DETAIL",
-            "locator": "사용상의주의사항 PDF p.1, 문단 12",
-            "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
-            "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.",
-        }
-    ]
+    duplicate_evidence = runtime["ruleEvidenceByType"]["duplicate_ingredient"]
+    assert len(duplicate_evidence) == 1
+    expected_policy_metadata = {
+        "ruleType": "duplicate_ingredient",
+        "scope": "acetaminophen_containing_selected_products",
+        "lineageStatus": "mapped_from_v50_released_rule",
+        "applicability": {"ingredientIds": ["ING-acetaminophen"]},
+    }
+    assert {
+        key: duplicate_evidence[0][key] for key in expected_policy_metadata
+    } == expected_policy_metadata
+    assert {
+        key: duplicate_evidence[0][key]
+        for key in (
+            "ruleId",
+            "productName",
+            "itemSequence",
+            "sourceId",
+            "locator",
+            "url",
+            "excerptKo",
+        )
+    } == {
+        "ruleId": "OTC-RULE-001",
+        "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+        "itemSequence": "202106092",
+        "sourceId": "MFDS-NEDRUG-DETAIL",
+        "locator": "사용상의주의사항 PDF p.1, 문단 12",
+        "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+        "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.",
+    }
     for evidence_rows in runtime["ruleEvidenceByType"].values():
         assert len(evidence_rows) == 1
         rule_evidence = evidence_rows[0]
@@ -134,6 +154,7 @@ def test_runtime_converts_100ml_liquid_basis_to_per_ml():
         "derivationMethod": "explicit_upper_bound",
         "evidence": {
             "sourceId": "MFDS-NEDRUG-DETAIL",
+            "sourceVersion": "sha256:989b9ab7b54bbde65b3d441b208c18d5b5b3c6aeff972ac9e6ba87023ad32944",
             "locator": "용법용량 PDF p.1 · 1일 총용량 1,250mg 상한",
             "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD",
         },

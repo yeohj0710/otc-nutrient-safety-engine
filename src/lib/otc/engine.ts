@@ -2,8 +2,12 @@ import type {
   AdministrationConstraint,
   EvaluationCoverageGap,
   EvidenceLink,
+  OtcEvaluationOptions,
   OtcIngredient,
   OtcProduct,
+  ReleasedRuleEvidenceLink,
+  ReleasedRulePolicy,
+  RuleApplicability,
   RuleEvidenceLink,
   SafetyEvaluation,
   SafetyFinding,
@@ -14,67 +18,471 @@ import type {
 } from "./schema";
 
 const uniqueEvidence = <T extends EvidenceLink>(links: T[]): T[] =>
-  [...new Map(links.map((link) => [`${link.sourceId}|${link.locator}`, link])).values()];
+  [
+    ...new Map(
+      links.map((link) => [
+        `${link.sourceId}|${link.sourceVersion ?? ""}|${link.locator}|${link.url}`,
+        link,
+      ]),
+    ).values(),
+  ];
 
-const anticoagulantTerms = ["warfarin", "와파린", "apixaban", "아픽사반", "aspirin", "아스피린"];
-const sedativeTerms = ["sedative", "진정", "수면"];
+const normalizeTerm = (value: string) =>
+  value
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[\s\-_.·]/g, "");
 
-const medicationsContain = (profile: UserProfile, terms: string[]) =>
-  profile.medications.some((medication) =>
-    terms.some((term) => medication.toLowerCase().includes(term)),
+const textMatchesTerms = (value: string, terms: readonly string[]) => {
+  const normalizedValue = normalizeTerm(value);
+  return terms.some((term) => {
+    const normalizedTerm = normalizeTerm(term);
+    return normalizedTerm.length > 0 && normalizedValue.includes(normalizedTerm);
+  });
+};
+
+const medicationItems = (profile: UserProfile) =>
+  profile.medications.flatMap((medication) =>
+    medication
+      .normalize("NFKC")
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean),
   );
 
-const medicationMatchesTerms = (medication: string, terms: string[]) =>
-  terms.some((term) => medication.toLowerCase().includes(term));
+const medicationMatchesTerms = (medication: string, terms: readonly string[]) => {
+  const normalizedMedication = normalizeTerm(medication);
+  return terms.some((term) => {
+    const normalizedTerm = normalizeTerm(term);
+    return normalizedTerm.length > 0 && normalizedMedication === normalizedTerm;
+  });
+};
 
-const matchingMedications = (profile: UserProfile, terms: string[]) =>
-  profile.medications.filter((medication) => medicationMatchesTerms(medication, terms));
-
-const symptomMatchesTerms = (symptom: string, terms: string[]) =>
-  terms.some(
-    (term) => symptom.includes(term) || (symptom.length >= 2 && term.includes(symptom)),
+const matchingMedications = (profile: UserProfile, terms: readonly string[]) =>
+  medicationItems(profile).filter((medication) =>
+    medicationMatchesTerms(medication, terms),
   );
+
+const isPositiveFinite = (value: number) => Number.isFinite(value) && value > 0;
 
 const constraintRuleType = (constraint: AdministrationConstraint) =>
   constraint.type === "minimum_interval_hours" ? "minimum_interval" : "max_daily_dose";
 
-const isPositiveFinite = (value: number) => Number.isFinite(value) && value > 0;
+const isEvaluationOptions = (
+  value: OtcEvaluationOptions | ReadonlySet<string> | undefined,
+): value is OtcEvaluationOptions =>
+  Boolean(
+    value &&
+      "releasedRules" in value &&
+      Array.isArray((value as OtcEvaluationOptions).releasedRules),
+  );
 
-function supportedRuleTypes(
-  product: OtcProduct,
-  urgentReferralBindings?: UrgentReferralBinding[],
-) {
-  const supported = new Set(product.supportedRuleTypes ?? []);
-  for (const constraint of product.administrationConstraints ?? []) {
-    if (isPositiveFinite(constraint.value)) supported.add(constraintRuleType(constraint));
+const isRuleTypeSet = (
+  value: OtcEvaluationOptions | ReadonlySet<string> | undefined,
+): value is ReadonlySet<string> =>
+  Boolean(value && "has" in value && typeof value.has === "function");
+
+const isNonemptyStringArray = (value: unknown): value is string[] =>
+  Array.isArray(value) &&
+  value.length > 0 &&
+  value.every(
+    (item) => typeof item === "string" && item.trim().length > 0,
+  );
+
+const isRuleApplicability = (value: unknown): value is RuleApplicability => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+  const applicability = value as Record<string, unknown>;
+  const stringArrayFields = [
+    "productItemSequences",
+    "ingredientIds",
+    "pharmacologicClasses",
+    "requiredAnchorIngredientIds",
+    "medicationTerms",
+    "urgentTerms",
+  ];
+  const supportedFields = new Set([
+    ...stringArrayFields,
+    "administrationConstraintTypes",
+    "pregnancyTrimesters",
+    "minimumAgeYears",
+    "lactationSupported",
+  ]);
+  const fields = Object.keys(applicability);
+  if (!fields.length || fields.some((field) => !supportedFields.has(field))) {
+    return false;
   }
-  for (const ingredient of product.ingredients) {
-    if (ingredient.maxDailyAmount !== undefined) supported.add("max_daily_dose");
-    if (ingredient.minimumIntervalHours !== undefined) supported.add("minimum_interval");
-    for (const flag of ingredient.flags) supported.add(flag);
-  }
-  if (product.minimumAgeYears !== undefined) supported.add("age_restriction");
-  if (product.maximumContinuousDays !== undefined) supported.add("maximum_duration");
-  for (const flag of product.flags) supported.add(flag);
   if (
-    urgentReferralBindings === undefined ||
-    urgentReferralBindings.some((binding) => binding.itemSequence === product.itemSequence)
+    stringArrayFields.some(
+      (field) =>
+        applicability[field] !== undefined &&
+        !isNonemptyStringArray(applicability[field]),
+    )
   ) {
-    supported.add("urgent_referral");
+    return false;
   }
-  return supported;
+  const constraintTypes = applicability.administrationConstraintTypes;
+  if (
+    constraintTypes !== undefined &&
+    (!isNonemptyStringArray(constraintTypes) ||
+      constraintTypes.some(
+        (constraintType) =>
+          ![
+            "maximum_units_per_dose",
+            "maximum_doses_per_day",
+            "maximum_daily_ingredient_amount",
+            "minimum_interval_hours",
+          ].includes(constraintType),
+      ))
+  ) {
+    return false;
+  }
+  const trimesters = applicability.pregnancyTrimesters;
+  if (
+    trimesters !== undefined &&
+    (!Array.isArray(trimesters) ||
+      trimesters.length === 0 ||
+      trimesters.some((trimester) => ![1, 2, 3].includes(trimester as number)))
+  ) {
+    return false;
+  }
+  const minimumAgeYears = applicability.minimumAgeYears;
+  if (
+    minimumAgeYears !== undefined &&
+    (typeof minimumAgeYears !== "number" ||
+      !Number.isFinite(minimumAgeYears) ||
+      minimumAgeYears < 0)
+  ) {
+    return false;
+  }
+  return (
+    applicability.lactationSupported === undefined ||
+    typeof applicability.lactationSupported === "boolean"
+  );
+};
+
+export const isExecutableReleasedRulePolicy = (
+  value: unknown,
+): value is ReleasedRulePolicy => {
+  if (!value || typeof value !== "object") return false;
+  const policy = value as Partial<ReleasedRulePolicy>;
+  if (
+    typeof policy.ruleId !== "string" ||
+    !policy.ruleId.trim() ||
+    typeof policy.ruleType !== "string" ||
+    !policy.ruleType.trim() ||
+    typeof policy.scope !== "string" ||
+    !policy.scope.trim() ||
+    policy.lineageStatus !== "mapped_from_v50_released_rule" ||
+    !isRuleApplicability(policy.applicability) ||
+    !Array.isArray(policy.evidence) ||
+    policy.evidence.length === 0
+  ) {
+    return false;
+  }
+  return policy.evidence.every(
+    (evidence) =>
+      Boolean(evidence) &&
+      typeof evidence === "object" &&
+      evidence.ruleId === policy.ruleId &&
+      typeof evidence.sourceId === "string" &&
+      evidence.sourceId.trim().length > 0 &&
+      typeof evidence.sourceVersion === "string" &&
+      evidence.sourceVersion.trim().length > 0 &&
+      typeof evidence.locator === "string" &&
+      evidence.locator.trim().length > 0 &&
+      typeof evidence.url === "string" &&
+      evidence.url.trim().length > 0 &&
+      typeof evidence.itemSequence === "string" &&
+      evidence.itemSequence.trim().length > 0 &&
+      typeof evidence.productName === "string" &&
+      evidence.productName.trim().length > 0 &&
+      typeof evidence.excerptKo === "string" &&
+      evidence.excerptKo.trim().length > 0,
+  );
+};
+
+function policiesFromLegacyArguments(
+  enabledRuleTypes: ReadonlySet<string> | undefined,
+  urgentReferralBindings: UrgentReferralBinding[] | undefined,
+  ruleEvidenceByType: Record<string, RuleEvidenceLink[]> | undefined,
+): ReleasedRulePolicy[] {
+  if (!enabledRuleTypes || !ruleEvidenceByType) return [];
+
+  const byRuleId = new Map<string, ReleasedRulePolicy>();
+  for (const [legacyRuleType, links] of Object.entries(ruleEvidenceByType)) {
+    if (!Array.isArray(links)) continue;
+    for (const link of links) {
+      if (!link || typeof link !== "object") continue;
+      const ruleType = link.ruleType ?? legacyRuleType;
+      const sourceVersion = link.sourceVersion;
+      if (
+        typeof link.ruleId !== "string" ||
+        !link.ruleId.trim() ||
+        typeof ruleType !== "string" ||
+        !ruleType.trim() ||
+        !enabledRuleTypes.has(ruleType) ||
+        !link.scope ||
+        link.lineageStatus !== "mapped_from_v50_released_rule" ||
+        !isRuleApplicability(link.applicability) ||
+        typeof sourceVersion !== "string" ||
+        sourceVersion.trim().length === 0
+      ) {
+        continue;
+      }
+      const releasedLink: ReleasedRuleEvidenceLink = {
+        ...link,
+        sourceVersion,
+      };
+      const existing = byRuleId.get(link.ruleId);
+      if (existing) {
+        existing.evidence.push(releasedLink);
+        continue;
+      }
+      const applicability = { ...link.applicability };
+      if (
+        ruleType === "urgent_referral" &&
+        !applicability.urgentTerms?.length
+      ) {
+        const scopedItems = new Set(
+          applicability.productItemSequences ?? [link.itemSequence],
+        );
+        applicability.urgentTerms = (urgentReferralBindings ?? [])
+          .filter((binding) => scopedItems.has(binding.itemSequence))
+          .flatMap((binding) => binding.terms);
+      }
+      byRuleId.set(link.ruleId, {
+        ruleId: link.ruleId,
+        ruleType,
+        scope: link.scope,
+        lineageStatus: link.lineageStatus,
+        applicability,
+        evidence: [releasedLink],
+      });
+    }
+  }
+  return [...byRuleId.values()].filter(isExecutableReleasedRulePolicy);
 }
+
+function resolvePolicies(
+  optionsOrEnabledRuleTypes: OtcEvaluationOptions | ReadonlySet<string> | undefined,
+  urgentReferralBindings: UrgentReferralBinding[] | undefined,
+  ruleEvidenceByType: Record<string, RuleEvidenceLink[]> | undefined,
+): ReleasedRulePolicy[] {
+  if (isEvaluationOptions(optionsOrEnabledRuleTypes)) {
+    const seenRuleIds = new Set<string>();
+    const duplicateRuleIds = new Set<string>();
+    for (const value of optionsOrEnabledRuleTypes.releasedRules) {
+      if (!value || typeof value !== "object") continue;
+      const ruleId = (value as Partial<ReleasedRulePolicy>).ruleId;
+      if (typeof ruleId !== "string" || !ruleId.trim()) continue;
+      if (seenRuleIds.has(ruleId)) duplicateRuleIds.add(ruleId);
+      seenRuleIds.add(ruleId);
+    }
+    const executable = optionsOrEnabledRuleTypes.releasedRules.filter(
+      isExecutableReleasedRulePolicy,
+    );
+    return executable.filter((policy) => !duplicateRuleIds.has(policy.ruleId));
+  }
+  return policiesFromLegacyArguments(
+    isRuleTypeSet(optionsOrEnabledRuleTypes)
+      ? optionsOrEnabledRuleTypes
+      : undefined,
+    urgentReferralBindings,
+    ruleEvidenceByType,
+  );
+}
+
+const policyAppliesToProduct = (
+  policy: ReleasedRulePolicy,
+  product: OtcProduct,
+  ageYears: number | undefined,
+) => {
+  const applicability = policy.applicability;
+  if (
+    applicability.productItemSequences?.length &&
+    !applicability.productItemSequences.includes(product.itemSequence)
+  ) {
+    return false;
+  }
+  if (
+    applicability.ingredientIds?.length &&
+    !product.ingredients.some((ingredient) =>
+      applicability.ingredientIds?.includes(ingredient.ingredientId),
+    )
+  ) {
+    return false;
+  }
+  if (
+    applicability.pharmacologicClasses?.length &&
+    !product.ingredients.some((ingredient) =>
+      ingredient.pharmacologicClasses.some((group) =>
+        applicability.pharmacologicClasses?.includes(group),
+      ),
+    )
+  ) {
+    return false;
+  }
+  if (applicability.administrationConstraintTypes?.length) {
+    const hasDirectConstraint = (product.administrationConstraints ?? []).some(
+      (constraint) =>
+        applicability.administrationConstraintTypes?.includes(constraint.type),
+    );
+    const hasLegacyConstraint = applicability.administrationConstraintTypes.some(
+      (constraintType) =>
+        constraintType === "maximum_daily_ingredient_amount"
+          ? product.ingredients.some(
+              (ingredient) => ingredient.maxDailyAmount !== undefined,
+            )
+          : constraintType === "minimum_interval_hours"
+            ? product.ingredients.some(
+                (ingredient) => ingredient.minimumIntervalHours !== undefined,
+              )
+            : false,
+    );
+    if (!hasDirectConstraint && !hasLegacyConstraint) return false;
+  }
+  if (
+    applicability.minimumAgeYears !== undefined &&
+    (ageYears === undefined || ageYears < applicability.minimumAgeYears)
+  ) {
+    return false;
+  }
+  return true;
+};
 
 export function evaluateOtcSafety(
   selected: SelectedProduct[],
   profile: UserProfile,
-  enabledRuleTypes?: ReadonlySet<string>,
+  optionsOrEnabledRuleTypes?: OtcEvaluationOptions | ReadonlySet<string>,
   urgentReferralBindings?: UrgentReferralBinding[],
   ruleEvidenceByType?: Record<string, RuleEvidenceLink[]>,
 ): SafetyEvaluation {
+  const releasedRules = resolvePolicies(
+    optionsOrEnabledRuleTypes,
+    urgentReferralBindings,
+    ruleEvidenceByType,
+  );
+  const rulesByType = new Map<string, ReleasedRulePolicy[]>();
+  for (const rule of releasedRules) {
+    const sameType = rulesByType.get(rule.ruleType) ?? [];
+    sameType.push(rule);
+    rulesByType.set(rule.ruleType, sameType);
+  }
+  const applicabilityAgeYears =
+    profile.ageYears !== undefined &&
+    Number.isFinite(profile.ageYears) &&
+    profile.ageYears >= 0 &&
+    profile.ageYears <= 120
+      ? profile.ageYears
+      : undefined;
+  const policiesForProduct = (ruleType: string, product: OtcProduct) =>
+    (rulesByType.get(ruleType) ?? []).filter((policy) =>
+      policyAppliesToProduct(policy, product, applicabilityAgeYears),
+    );
+  const releasedRuleById = new Map(
+    releasedRules.map((rule) => [rule.ruleId, rule]),
+  );
+  const allowsSeparateAdministrationConstraintDecision = (
+    ruleId: string,
+    product: OtcProduct,
+    constraintType: AdministrationConstraint["type"],
+  ) => {
+    const template = releasedRuleById.get(ruleId);
+    if (!template) return false;
+    // A scoped released rule keeps its own ID only inside that product scope.
+    // Other products may still use their exact MFDS constraint ID. If the scoped
+    // product misses another condition (for example age), do not fall back to ADMIN.
+    const itemIsInReleasedScope =
+      template.applicability.productItemSequences?.includes(
+        product.itemSequence,
+      ) ?? false;
+    if (!itemIsInReleasedScope) return true;
+    if (
+      template.applicability.minimumAgeYears !== undefined &&
+      (applicabilityAgeYears === undefined ||
+        applicabilityAgeYears < template.applicability.minimumAgeYears)
+    ) {
+      return false;
+    }
+    return !template.applicability.administrationConstraintTypes?.includes(
+      constraintType,
+    );
+  };
+
+  const policyMatchesConstraint = (
+    policy: ReleasedRulePolicy,
+    constraintType: AdministrationConstraint["type"],
+  ) =>
+    !policy.applicability.administrationConstraintTypes?.length ||
+    policy.applicability.administrationConstraintTypes.includes(constraintType);
+
   const findings: SafetyFinding[] = [];
   const inputIssues: SafetyInputIssue[] = [];
+  const coverageGaps: EvaluationCoverageGap[] = [];
   const issueFields = new Map<string, Set<SafetyInputIssue["field"]>>();
+
+  const addFinding = (
+    policy: ReleasedRulePolicy,
+    finding: Omit<SafetyFinding, "ruleId" | "ruleType" | "decisionBasis">,
+  ) => {
+    const findingId = findings.some((candidate) => candidate.findingId === finding.findingId)
+      ? `${finding.findingId}:${policy.ruleId}`
+      : finding.findingId;
+    findings.push({
+      ...finding,
+      findingId,
+      ruleId: policy.ruleId,
+      decisionBasis: "released_rule",
+      ruleType: policy.ruleType,
+    });
+  };
+
+  const addConstraintFinding = (
+    constraint: AdministrationConstraint,
+    finding: Omit<SafetyFinding, "ruleId" | "ruleType" | "decisionBasis">,
+  ) => {
+    findings.push({
+      ...finding,
+      ruleId: constraint.constraintId,
+      decisionBasis: "administration_constraint",
+      ruleType: constraintRuleType(constraint),
+    });
+  };
+
+  const addCoverageGap = (gap: EvaluationCoverageGap) => {
+    if (coverageGaps.some((candidate) => candidate.gapId === gap.gapId)) return;
+    coverageGaps.push(gap);
+  };
+
+  const addProductCoverageGap = (
+    product: OtcProduct,
+    ruleType: string,
+    checkLabel: string,
+    dimension = ruleType,
+  ) => {
+    addCoverageGap({
+      gapId: `coverage:${product.productId}:${dimension}`,
+      ruleType,
+      titleKo: `${checkLabel} 기준을 확인하지 못했습니다`,
+      detailKo: `${product.productName}에 적용할 검증된 ${checkLabel} 기준이 현재 앱에 연결되어 있지 않습니다. 제품 포장과 허가사항을 직접 확인하세요.`,
+      productIds: [product.productId],
+    });
+  };
+
+  const addCombinationCoverageGap = (
+    gapId: string,
+    ruleType: string,
+    detailKo: string,
+    productIds: string[],
+  ) => {
+    addCoverageGap({
+      gapId,
+      ruleType,
+      titleKo: "선택한 제품 조합의 판정 범위를 확인하지 못했습니다",
+      detailKo,
+      productIds: [...new Set(productIds)],
+    });
+  };
 
   const addInputIssue = (
     productId: string | undefined,
@@ -94,29 +502,59 @@ export function evaluateOtcSafety(
   for (const item of selected) {
     const productName = item.product.productName;
     if (!isPositiveFinite(item.unitsPerDose)) {
-      addInputIssue(item.product.productId, "unitsPerDose", `${productName}의 1회 복용량은 0보다 큰 숫자로 입력하세요.`);
+      addInputIssue(
+        item.product.productId,
+        "unitsPerDose",
+        `${productName}의 1회 복용량을 0보다 큰 숫자로 입력하세요.`,
+      );
     }
     if (!isPositiveFinite(item.dosesPerDay) || !Number.isInteger(item.dosesPerDay)) {
-      addInputIssue(item.product.productId, "dosesPerDay", `${productName}의 하루 복용 횟수는 1 이상의 정수로 입력하세요.`);
+      addInputIssue(
+        item.product.productId,
+        "dosesPerDay",
+        `${productName}의 하루 복용 횟수를 1 이상의 정수로 입력하세요.`,
+      );
     }
     if (
       item.hoursSincePreviousDose !== undefined &&
       (!Number.isFinite(item.hoursSincePreviousDose) || item.hoursSincePreviousDose < 0)
     ) {
-      addInputIssue(item.product.productId, "hoursSincePreviousDose", `${productName}의 지난 복용 후 시간은 0 이상의 숫자로 입력하세요.`);
+      addInputIssue(
+        item.product.productId,
+        "hoursSincePreviousDose",
+        `${productName}의 이전 복용 후 시간을 0 이상의 숫자로 입력하세요.`,
+      );
     }
     if (
       item.continuousDays !== undefined &&
       (!isPositiveFinite(item.continuousDays) || !Number.isInteger(item.continuousDays))
     ) {
-      addInputIssue(item.product.productId, "continuousDays", `${productName}의 연속 복용일은 1 이상의 정수로 입력하세요.`);
+      addInputIssue(
+        item.product.productId,
+        "continuousDays",
+        `${productName}의 연속 복용일을 1 이상의 정수로 입력하세요.`,
+      );
     }
   }
   if (
     profile.ageYears !== undefined &&
     (!Number.isFinite(profile.ageYears) || profile.ageYears < 0 || profile.ageYears > 120)
   ) {
-    addInputIssue(undefined, "ageYears", "나이는 0세부터 120세 사이의 숫자로 입력하세요.");
+    addInputIssue(
+      undefined,
+      "ageYears",
+      "나이를 0세부터 120세 사이의 숫자로 입력하세요.",
+    );
+  }
+  if (
+    profile.pregnancyTrimester !== undefined &&
+    ![1, 2, 3].includes(profile.pregnancyTrimester)
+  ) {
+    addInputIssue(
+      undefined,
+      "pregnancyTrimester",
+      "임신 주기는 1기, 2기, 3기 중에서 선택하세요.",
+    );
   }
 
   const hasIssue = (productId: string, ...fields: SafetyInputIssue["field"][]) =>
@@ -138,78 +576,172 @@ export function evaluateOtcSafety(
     }
   }
 
-  const dailyConstraints = selectedForDose.flatMap((item) =>
-    (item.product.administrationConstraints ?? [])
-      .filter(
-        (constraint) =>
-          constraint.type === "maximum_daily_ingredient_amount" &&
-          constraint.ingredientId &&
-          isPositiveFinite(constraint.value),
-      )
-      .map((constraint) => ({ constraint, product: item.product })),
-  );
   const ingredientDailyTotals: Record<string, { amount: number; unit: string }> = {};
   for (const [ingredientId, uses] of ingredientUses) {
-    const unit = uses[0].ingredient.unit;
-    if (uses.some((use) => use.ingredient.unit !== unit)) continue;
-    const amount = uses.reduce((sum, use) => sum + use.daily, 0);
-    ingredientDailyTotals[ingredientId] = { amount, unit };
-    if (uses.length > 1) {
-      findings.push({
-        findingId: `duplicate-ingredient:${ingredientId}`,
-        ruleType: "duplicate_ingredient",
-        severity: "high",
-        titleKo: "같은 성분이 여러 제품에 들어 있습니다",
-        detailKo: `${uses.map((use) => use.selected.product.productName).join(", ")}에 ${uses[0].ingredient.nameKo}이(가) 겹칩니다. 계산된 하루 총량은 ${amount} ${unit}입니다.`,
-        nextActionKo: "추가 복용 전 제품 포장과 허가사항을 확인하고 약사 또는 의사와 상담하세요.",
-        productIds: uses.map((use) => use.selected.product.productId),
-        ingredientIds: [ingredientId],
-        calculatedAmount: amount,
-        unit,
-        evidence: uniqueEvidence(
-          uses.flatMap((use) => [use.ingredient.evidence, use.selected.product.evidence]),
-        ),
-      });
+    const productIds = [...new Set(uses.map((use) => use.selected.product.productId))];
+    const units = new Set(uses.map((use) => use.ingredient.unit));
+    if (units.size > 1) {
+      addCombinationCoverageGap(
+        `coverage:combination:${ingredientId}:unit-mismatch`,
+        "duplicate_ingredient",
+        `${ingredientId}의 단위가 ${[...units].join(", ")}로 서로 달라 총량과 중복을 판정하지 않았습니다. 제품 허가사항을 직접 확인하세요.`,
+        productIds,
+      );
+      continue;
     }
 
-    const constraints = dailyConstraints.filter(
-      ({ constraint }) =>
-        constraint.ingredientId === ingredientId && constraint.valueUnit === unit,
+    const unit = uses[0].ingredient.unit;
+    const amount = uses.reduce((sum, use) => sum + use.daily, 0);
+    ingredientDailyTotals[ingredientId] = { amount, unit };
+
+    if (productIds.length > 1) {
+      const duplicatePolicies = (rulesByType.get("duplicate_ingredient") ?? []).filter(
+        (policy) =>
+          policy.applicability.ingredientIds?.includes(ingredientId) &&
+          uses.every((use) =>
+            policyAppliesToProduct(
+              policy,
+              use.selected.product,
+              applicabilityAgeYears,
+            ),
+          ),
+      );
+      if (duplicatePolicies.length) {
+        for (const policy of duplicatePolicies) {
+          addFinding(policy, {
+            findingId: `duplicate-ingredient:${ingredientId}`,
+            severity: "high",
+            titleKo: "같은 성분이 여러 제품에 들어 있습니다",
+            detailKo: `${uses.map((use) => use.selected.product.productName).join(", ")}에 ${uses[0].ingredient.nameKo}이(가) 겹칩니다. 계산된 하루 총량은 ${amount} ${unit}입니다.`,
+            nextActionKo: "추가 복용 전 제품 포장과 허가사항을 확인하고 약사 또는 의사와 상담하세요.",
+            productIds,
+            ingredientIds: [ingredientId],
+            calculatedAmount: amount,
+            unit,
+            evidence: uniqueEvidence(
+              uses.flatMap((use) => [
+                use.ingredient.evidence,
+                use.selected.product.evidence,
+              ]),
+            ),
+          });
+        }
+      } else {
+        addCombinationCoverageGap(
+          `coverage:combination:${ingredientId}:duplicate-ingredient`,
+          "duplicate_ingredient",
+          `${uses.map((use) => use.selected.product.productName).join(", ")}에 ${uses[0].ingredient.nameKo}이(가) 겹치지만, 이 성분 조합을 판정할 승인 규칙이 없습니다.`,
+          productIds,
+        );
+      }
+    }
+
+    const directLimits = [
+      ...new Map(
+        uses.flatMap((use) =>
+          (use.selected.product.administrationConstraints ?? [])
+            .filter(
+              (constraint) =>
+                constraint.type === "maximum_daily_ingredient_amount" &&
+                constraint.ingredientId === ingredientId &&
+                constraint.valueUnit === unit &&
+                isPositiveFinite(constraint.value),
+            )
+            .map((constraint) => [
+              constraint.constraintId,
+              {
+                value: constraint.value,
+                evidence: constraint.evidence,
+                constraint,
+                product: use.selected.product,
+              },
+            ] as const),
+        ),
+      ).values(),
+    ];
+    const productsWithDirectLimits = new Set(
+      directLimits.map((limit) => limit.product.productId),
     );
-    const legacyLimits = uses
-      .filter((use) => use.ingredient.maxDailyAmount !== undefined)
-      .map((use) => ({
-        value: use.ingredient.maxDailyAmount as number,
-        evidence: use.ingredient.evidence,
-      }));
-    const limits = constraints.length
-      ? constraints.map(({ constraint }) => ({
-          value: constraint.value,
-          evidence: constraint.evidence,
-        }))
-      : legacyLimits;
-    if (limits.length) {
-      const limit = Math.min(...limits.map((row) => row.value));
-      if (amount > limit) {
-        findings.push({
-          findingId: `max-daily:${ingredientId}`,
-          ruleType: "max_daily_dose",
-          severity: "high",
-          titleKo: "확인된 최대 1일 용량을 초과합니다",
-          detailKo: `${uses[0].ingredient.nameKo}의 계산된 하루 총량 ${amount} ${unit}이 기준 ${limit} ${unit}보다 큽니다.`,
-          nextActionKo: "추가 복용하지 말고 약사 또는 의사와 상담하세요.",
-          productIds: uses.map((use) => use.selected.product.productId),
-          ingredientIds: [ingredientId],
-          calculatedAmount: amount,
-          referenceAmount: limit,
-          unit,
-          evidence: uniqueEvidence(limits.map((row) => row.evidence)),
-        });
+    const legacyLimitRows = [
+      ...new Map(
+        uses
+          .filter(
+            (use) =>
+              use.ingredient.maxDailyAmount !== undefined &&
+              !productsWithDirectLimits.has(use.selected.product.productId),
+          )
+          .map((use) => [
+            `${use.selected.product.productId}|${use.ingredient.maxDailyAmount}|${use.ingredient.evidence.sourceId}|${use.ingredient.evidence.locator}|${use.ingredient.evidence.url}`,
+            {
+              value: use.ingredient.maxDailyAmount as number,
+              evidence: use.ingredient.evidence,
+              product: use.selected.product,
+              constraint: undefined,
+            },
+          ]),
+      ).values(),
+    ];
+    for (const limitRow of [...directLimits, ...legacyLimitRows]) {
+      const scopedUses = uses.filter(
+        (use) => use.selected.product.productId === limitRow.product.productId,
+      );
+      const scopedAmount = scopedUses.reduce((sum, use) => sum + use.daily, 0);
+      if (scopedAmount > limitRow.value) {
+        const policies = (rulesByType.get("max_daily_dose") ?? []).filter((policy) =>
+          policyMatchesConstraint(
+            policy,
+            "maximum_daily_ingredient_amount",
+          ) &&
+          (!policy.applicability.ingredientIds?.length ||
+            policy.applicability.ingredientIds.includes(ingredientId)) &&
+          policyAppliesToProduct(
+            policy,
+            limitRow.product,
+            applicabilityAgeYears,
+          ),
+        );
+        const limitIdentity =
+          limitRow.constraint?.constraintId ?? `legacy-${ingredientId}`;
+        const finding = {
+            findingId: `max-daily:${limitRow.product.productId}:${limitIdentity}`,
+            severity: "high",
+            titleKo: "확인된 최대 1일 용량을 초과합니다",
+            detailKo: `${scopedUses[0].ingredient.nameKo}의 ${limitRow.product.productName} 하루 총량 ${scopedAmount} ${unit}이 이 제품의 기준 ${limitRow.value} ${unit}보다 큽니다.`,
+            nextActionKo: "추가 복용하지 말고 약사 또는 의사와 상담하세요.",
+            productIds: [limitRow.product.productId],
+            ingredientIds: [ingredientId],
+            calculatedAmount: scopedAmount,
+            referenceAmount: limitRow.value,
+            unit,
+            evidence: [limitRow.evidence],
+          } satisfies Omit<SafetyFinding, "ruleId" | "ruleType" | "decisionBasis">;
+        if (policies.length > 0) {
+          for (const policy of policies) addFinding(policy, finding);
+        } else if (
+          limitRow.constraint &&
+          allowsSeparateAdministrationConstraintDecision(
+            "OTC-RULE-003",
+            limitRow.product,
+            limitRow.constraint.type,
+          )
+        ) {
+          addConstraintFinding(limitRow.constraint, finding);
+        } else {
+          addCombinationCoverageGap(
+            `coverage:${limitRow.product.productId}:${ingredientId}:unmapped-maximum-source`,
+            "max_daily_dose",
+            `${scopedUses[0].ingredient.nameKo}의 초과 상한을 안정적인 ruleId 또는 허가 제약 ID에 연결하지 못했습니다.`,
+            [limitRow.product.productId],
+          );
+        }
       }
     }
   }
 
-  const classUses = new Map<string, Array<{ selected: SelectedProduct; ingredient: OtcIngredient }>>();
+  const classUses = new Map<
+    string,
+    Array<{ selected: SelectedProduct; ingredient: OtcIngredient }>
+  >();
   for (const item of selected) {
     for (const ingredient of item.product.ingredients) {
       for (const group of ingredient.pharmacologicClasses) {
@@ -219,22 +751,51 @@ export function evaluateOtcSafety(
       }
     }
   }
-  for (const duplicateClass of ["NSAID", "antihistamine"]) {
-    const classDuplicates = classUses.get(duplicateClass) ?? [];
-    if (new Set(classDuplicates.map((use) => use.ingredient.ingredientId)).size <= 1) continue;
-    findings.push({
-      findingId: `duplicate-class:${duplicateClass}`,
-      ruleType: "duplicate_pharmacologic_class",
-      severity: "high",
-      titleKo: duplicateClass === "NSAID" ? "NSAID 계열 성분이 겹칩니다" : "항히스타민 성분이 겹칩니다",
-      detailKo: `${classDuplicates.map((use) => use.ingredient.nameKo).join(", ")}이(가) 함께 선택되었습니다.`,
-      nextActionKo: "함께 복용하지 말고 약사 또는 의사와 상담하세요.",
-      productIds: [...new Set(classDuplicates.map((use) => use.selected.product.productId))],
-      ingredientIds: [...new Set(classDuplicates.map((use) => use.ingredient.ingredientId))],
-      evidence: uniqueEvidence(
-        classDuplicates.flatMap((use) => [use.ingredient.evidence, use.selected.product.evidence]),
-      ),
-    });
+  for (const [group, uses] of classUses) {
+    const productIds = [...new Set(uses.map((use) => use.selected.product.productId))];
+    const ingredientIds = [...new Set(uses.map((use) => use.ingredient.ingredientId))];
+    if (productIds.length <= 1 || ingredientIds.length <= 1) continue;
+
+    const policies = (rulesByType.get("duplicate_pharmacologic_class") ?? []).filter(
+      (policy) => {
+        if (!policy.applicability.pharmacologicClasses?.includes(group)) return false;
+        const anchors = policy.applicability.requiredAnchorIngredientIds ?? [];
+        if (!anchors.every((anchor) => ingredientIds.includes(anchor))) return false;
+        return uses.every((use) =>
+          policyAppliesToProduct(
+            policy,
+            use.selected.product,
+            applicabilityAgeYears,
+          ),
+        );
+      },
+    );
+    if (policies.length) {
+      for (const policy of policies) {
+        addFinding(policy, {
+          findingId: `duplicate-class:${group}`,
+          severity: "high",
+          titleKo: `${group} 계열 성분이 겹칩니다`,
+          detailKo: `${[...new Set(uses.map((use) => use.ingredient.nameKo))].join(", ")}을(를) 함께 선택했습니다.`,
+          nextActionKo: "함께 복용하지 말고 약사 또는 의사와 상담하세요.",
+          productIds,
+          ingredientIds,
+          evidence: uniqueEvidence(
+            uses.flatMap((use) => [
+              use.ingredient.evidence,
+              use.selected.product.evidence,
+            ]),
+          ),
+        });
+      }
+    } else {
+      addCombinationCoverageGap(
+        `coverage:combination:${group}:duplicate-class`,
+        "duplicate_pharmacologic_class",
+        `${group} 계열 성분이 여러 제품에 포함되어 있지만, 이 조합을 판정할 승인 규칙이 없습니다.`,
+        productIds,
+      );
+    }
   }
 
   for (const item of selected) {
@@ -242,15 +803,19 @@ export function evaluateOtcSafety(
     const constraints = (product.administrationConstraints ?? []).filter((constraint) =>
       isPositiveFinite(constraint.value),
     );
+    const maximumPolicies = policiesForProduct("max_daily_dose", product);
     for (const constraint of constraints) {
+      if (constraintRuleType(constraint) !== "max_daily_dose") continue;
       if (
         constraint.type === "maximum_units_per_dose" &&
         !hasIssue(product.productId, "unitsPerDose") &&
         item.unitsPerDose > constraint.value
       ) {
-          findings.push({
+        const constraintPolicies = maximumPolicies.filter((policy) =>
+          policyMatchesConstraint(policy, constraint.type),
+        );
+        const finding = {
             findingId: `maximum-units-per-dose:${product.productId}:${constraint.constraintId}`,
-            ruleType: "max_daily_dose",
             severity: "high",
             titleKo: "확인된 1회 복용량을 초과합니다",
             detailKo: `${product.productName}의 입력값 ${item.unitsPerDose}${product.doseUnitLabel}이 허가 용법의 1회 상한 ${constraint.value}${product.doseUnitLabel}보다 큽니다.`,
@@ -261,16 +826,29 @@ export function evaluateOtcSafety(
             referenceAmount: constraint.value,
             unit: product.doseUnitLabel,
             evidence: [constraint.evidence],
-          });
+          } satisfies Omit<SafetyFinding, "ruleId" | "ruleType" | "decisionBasis">;
+        if (constraintPolicies.length) {
+          for (const policy of constraintPolicies) addFinding(policy, finding);
+        } else if (
+          allowsSeparateAdministrationConstraintDecision(
+            "OTC-RULE-003",
+            product,
+            constraint.type,
+          )
+        ) {
+          addConstraintFinding(constraint, finding);
+        }
       }
       if (
         constraint.type === "maximum_doses_per_day" &&
         !hasIssue(product.productId, "dosesPerDay") &&
         item.dosesPerDay > constraint.value
       ) {
-          findings.push({
+        const constraintPolicies = maximumPolicies.filter((policy) =>
+          policyMatchesConstraint(policy, constraint.type),
+        );
+        const finding = {
             findingId: `maximum-doses-per-day:${product.productId}:${constraint.constraintId}`,
-            ruleType: "max_daily_dose",
             severity: "high",
             titleKo: "확인된 하루 복용 횟수를 초과합니다",
             detailKo: `${product.productName}의 입력값 하루 ${item.dosesPerDay}회가 허가 용법의 상한 ${constraint.value}회보다 큽니다.`,
@@ -281,7 +859,18 @@ export function evaluateOtcSafety(
             referenceAmount: constraint.value,
             unit: "회/일",
             evidence: [constraint.evidence],
-          });
+          } satisfies Omit<SafetyFinding, "ruleId" | "ruleType" | "decisionBasis">;
+        if (constraintPolicies.length) {
+          for (const policy of constraintPolicies) addFinding(policy, finding);
+        } else if (
+          allowsSeparateAdministrationConstraintDecision(
+            "OTC-RULE-003",
+            product,
+            constraint.type,
+          )
+        ) {
+          addConstraintFinding(constraint, finding);
+        }
       }
     }
 
@@ -289,44 +878,85 @@ export function evaluateOtcSafety(
       item.hoursSincePreviousDose !== undefined &&
       !hasIssue(product.productId, "hoursSincePreviousDose")
     ) {
+      const intervalPolicies = policiesForProduct("minimum_interval", product).filter(
+        (policy) => policyMatchesConstraint(policy, "minimum_interval_hours"),
+      );
       const intervalConstraints = constraints.filter(
         (constraint) => constraint.type === "minimum_interval_hours",
       );
-      if (intervalConstraints.length) {
-        const minimumInterval = Math.max(...intervalConstraints.map((constraint) => constraint.value));
+      const legacyIntervals = product.ingredients
+        .filter((ingredient) => ingredient.minimumIntervalHours !== undefined)
+        .map((ingredient) => ({
+          value: ingredient.minimumIntervalHours as number,
+          evidence: ingredient.evidence,
+          ingredientId: ingredient.ingredientId,
+        }));
+      const intervals = intervalConstraints.length
+        ? intervalConstraints.map((constraint) => ({
+            value: constraint.value,
+            evidence: constraint.evidence,
+            ingredientId: constraint.ingredientId,
+            constraint,
+          }))
+        : legacyIntervals.map((interval) => ({
+            ...interval,
+            constraint: undefined,
+          }));
+      if (intervals.length) {
+        const minimumInterval = Math.max(...intervals.map((row) => row.value));
         if (item.hoursSincePreviousDose < minimumInterval) {
-          findings.push({
-            findingId: `minimum-interval:${product.productId}:${intervalConstraints[0].constraintId}`,
-            ruleType: "minimum_interval",
-            severity: "high",
-            titleKo: "복용 간격이 짧습니다",
-            detailKo: `입력 간격 ${item.hoursSincePreviousDose}시간이 확인된 최소 간격 ${minimumInterval}시간보다 짧습니다.`,
-            nextActionKo: "다음 복용 시점을 약사 또는 의사에게 확인하세요.",
-            productIds: [product.productId],
-            ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
-            calculatedAmount: item.hoursSincePreviousDose,
-            referenceAmount: minimumInterval,
-            unit: "시간",
-            evidence: uniqueEvidence(intervalConstraints.map((constraint) => constraint.evidence)),
-          });
-        }
-      } else {
-        for (const ingredient of product.ingredients) {
-          if (
-            ingredient.minimumIntervalHours !== undefined &&
-            item.hoursSincePreviousDose < ingredient.minimumIntervalHours
-          ) {
-            findings.push({
-              findingId: `minimum-interval:${product.productId}:${ingredient.ingredientId}`,
-              ruleType: "minimum_interval",
+          const strictestRows = intervals.filter(
+            (row) => row.value === minimumInterval,
+          );
+          if (intervalConstraints.length && strictestRows.length !== 1) {
+            addProductCoverageGap(
+              product,
+              "minimum_interval",
+              "최소 복용 간격의 단일 허가 근거",
+              "minimum_interval:ambiguous-source",
+            );
+          } else {
+            const strictest = strictestRows[0];
+            const strictestPolicies = intervalPolicies.filter(
+              (policy) =>
+                !strictest.ingredientId ||
+                !policy.applicability.ingredientIds?.length ||
+                policy.applicability.ingredientIds.includes(
+                  strictest.ingredientId,
+                ),
+            );
+            const finding = {
+              findingId: `minimum-interval:${product.productId}:${strictest.constraint?.constraintId ?? strictest.ingredientId}`,
               severity: "high",
               titleKo: "복용 간격이 짧습니다",
-              detailKo: `입력 간격 ${item.hoursSincePreviousDose}시간이 확인된 최소 간격 ${ingredient.minimumIntervalHours}시간보다 짧습니다.`,
+              detailKo: `입력 간격 ${item.hoursSincePreviousDose}시간이 확인된 최소 간격 ${minimumInterval}시간보다 짧습니다.`,
               nextActionKo: "다음 복용 시점을 약사 또는 의사에게 확인하세요.",
               productIds: [product.productId],
-              ingredientIds: [ingredient.ingredientId],
-              evidence: [ingredient.evidence],
-            });
+              ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
+              calculatedAmount: item.hoursSincePreviousDose,
+              referenceAmount: minimumInterval,
+              unit: "시간",
+              evidence: [strictest.evidence],
+              } satisfies Omit<SafetyFinding, "ruleId" | "ruleType" | "decisionBasis">;
+            if (strictestPolicies.length) {
+              for (const policy of strictestPolicies) addFinding(policy, finding);
+            } else if (
+              strictest.constraint &&
+              allowsSeparateAdministrationConstraintDecision(
+                "OTC-RULE-004",
+                product,
+                strictest.constraint.type,
+              )
+            ) {
+              addConstraintFinding(strictest.constraint, finding);
+            } else {
+              addProductCoverageGap(
+                product,
+                "minimum_interval",
+                "최소 복용 간격의 안정적인 ruleId 또는 허가 제약 ID",
+                "minimum_interval:unmapped-source",
+              );
+            }
           }
         }
       }
@@ -338,135 +968,279 @@ export function evaluateOtcSafety(
       product.minimumAgeYears !== undefined &&
       profile.ageYears < product.minimumAgeYears
     ) {
-      findings.push({
-        findingId: `age:${product.productId}`,
-        ruleType: "age_restriction",
-        severity: "high",
-        titleKo: "연령 제한을 확인하세요",
-        detailKo: `${product.productName}은(는) 확인된 최소 연령 ${product.minimumAgeYears}세보다 어린 사용자에게 해당하지 않습니다.`,
-        nextActionKo: "소아용 제품과 용량을 의사 또는 약사에게 확인하세요.",
-        productIds: [product.productId],
-        ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
-        evidence: [product.evidence],
-      });
+      for (const policy of policiesForProduct("age_restriction", product)) {
+        addFinding(policy, {
+          findingId: `age:${product.productId}`,
+          severity: "high",
+          titleKo: "연령 제한을 확인하세요",
+          detailKo: `${product.productName}의 확인된 최소 연령 ${product.minimumAgeYears}세보다 입력한 나이가 어립니다.`,
+          nextActionKo: "소아용 제품과 용량을 의사 또는 약사에게 확인하세요.",
+          productIds: [product.productId],
+          ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
+          evidence: [product.evidence],
+        });
+      }
     }
+
     if (
       item.continuousDays !== undefined &&
       !hasIssue(product.productId, "continuousDays") &&
       product.maximumContinuousDays !== undefined &&
       item.continuousDays > product.maximumContinuousDays
     ) {
-      findings.push({
-        findingId: `duration:${product.productId}`,
-        ruleType: "maximum_duration",
-        severity: "caution",
-        titleKo: "연속 복용 기간을 확인하세요",
-        detailKo: `입력한 ${item.continuousDays}일이 확인된 기간 ${product.maximumContinuousDays}일을 넘습니다.`,
-        nextActionKo: "증상이 지속되면 추가 복용 대신 진료 또는 약사 상담을 받으세요.",
-        productIds: [product.productId],
-        ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
-        evidence: [product.evidence],
-      });
-    }
-
-    const flags = new Set([
-      ...product.flags,
-      ...product.ingredients.flatMap((ingredient) => ingredient.flags),
-    ]);
-    const pregnancyCondition = profile.pregnant && profile.lactating
-      ? "임신 중·수유 중"
-      : profile.pregnant
-        ? "임신 중"
-        : "수유 중";
-    const conditional: Array<[boolean, string, string, string, string]> = [
-      [Boolean((profile.pregnant || profile.lactating) && flags.has("pregnancy_lactation")), "pregnancy_lactation", "임신·수유 중 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", pregnancyCondition],
-      [Boolean(profile.liverDisease && flags.has("hepatic_disease")), "hepatic_disease", "간질환 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "간질환 또는 과거 간질환"],
-      [Boolean(profile.kidneyDisease && flags.has("renal_disease")), "renal_disease", "신장질환 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "신장질환 또는 과거 신장질환"],
-      [Boolean(profile.giBleedingOrUlcer && flags.has("gi_bleeding_ulcer")), "gi_bleeding_ulcer", "위장관 출혈·궤양 위험을 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "위장관 출혈·궤양"],
-      [Boolean(profile.willDrive && flags.has("sedation_driving")), "sedation_driving", "졸림과 운전 주의를 확인하세요", "운전·기계 조작을 피하고 허가사항을 확인하세요.", "복용 후 운전"],
-      [Boolean(profile.alcohol && flags.has("alcohol")), "alcohol", "정기적인 음주 관련 주의를 확인하세요", "복용 전 약사 또는 의사와 상담하세요.", "매일 3잔 이상 정기적으로 음주"],
-      [Boolean(profile.hypertensionOrCardiovascularDisease && flags.has("decongestant_hypertension")), "decongestant_hypertension", "비충혈제거제와 혈압 관련 주의를 확인하세요", "복용 전 의사 또는 약사와 상담하세요.", "고혈압·심혈관질환"],
-      [Boolean(medicationsContain(profile, anticoagulantTerms) && flags.has("anticoagulant_antiplatelet")), "anticoagulant_antiplatelet", "항응고제·항혈소판제 병용 주의를 확인하세요", "처방한 의료진 또는 약사와 상담하세요.", `복용 중인 약: ${matchingMedications(profile, anticoagulantTerms).join(", ")}`],
-      [Boolean(medicationsContain(profile, sedativeTerms) && flags.has("sedative_medication")), "sedative_medication", "진정성 약물 병용 주의를 확인하세요", "복용 전 약사 또는 의사와 상담하세요.", `복용 중인 약: ${matchingMedications(profile, sedativeTerms).join(", ")}`],
-    ];
-    for (const [matches, ruleType, title, action, conditionDetail] of conditional) {
-      if (!matches) continue;
-      findings.push({
-        findingId: `${ruleType}:${product.productId}`,
-        ruleType,
-        severity: "high",
-        titleKo: title,
-        detailKo: `입력 조건(${conditionDetail})이 ${product.productName}의 허가상 주의 조건과 일치합니다.`,
-        nextActionKo: action,
-        productIds: [product.productId],
-        ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
-        evidence: uniqueEvidence([
-          product.evidence,
-          ...product.ingredients.map((ingredient) => ingredient.evidence),
-        ]),
-      });
+      for (const policy of policiesForProduct("maximum_duration", product)) {
+        addFinding(policy, {
+          findingId: `duration:${product.productId}`,
+          severity: "caution",
+          titleKo: "연속 복용 기간을 확인하세요",
+          detailKo: `입력한 ${item.continuousDays}일이 확인된 기간 ${product.maximumContinuousDays}일을 넘습니다.`,
+          nextActionKo: "증상이 지속되면 추가 복용 대신 진료 또는 약사 상담을 받으세요.",
+          productIds: [product.productId],
+          ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
+          evidence: [product.evidence],
+        });
+      }
     }
   }
 
-  const applicableUrgentBindings = urgentReferralBindings?.filter((binding) =>
-    selected.some((item) => item.product.itemSequence === binding.itemSequence),
-  );
-  const applicableUrgentTerms = applicableUrgentBindings?.flatMap((binding) => binding.terms) ?? [];
-  const urgentMatches = urgentReferralBindings
-    ? profile.redFlagSymptoms.filter((symptom) =>
-        symptomMatchesTerms(symptom, applicableUrgentTerms),
-      )
-    : profile.redFlagSymptoms;
-  if (urgentMatches.length) {
-    findings.push({
-      findingId: "urgent:red-flag",
-      ruleType: "urgent_referral",
-      severity: "urgent",
-      titleKo: "즉시 상담 또는 진료가 필요할 수 있습니다",
-      detailKo: `입력한 증상: ${[...new Set(urgentMatches)].join(", ")}`,
-      nextActionKo: "지체하지 말고 의료기관 또는 응급상담을 이용하세요.",
-      productIds: selected.map((item) => item.product.productId),
-      ingredientIds: [...ingredientUses.keys()],
-      evidence: uniqueEvidence(selected.map((item) => item.product.evidence)),
-    });
-  }
-
-  const coverageGaps: EvaluationCoverageGap[] = [];
-  const addCoverageGap = (
-    product: OtcProduct,
-    ruleType: string,
-    checkLabel: string,
-    dimension = ruleType,
-  ) => {
-    const gapId = `coverage:${product.productId}:${dimension}`;
-    if (coverageGaps.some((gap) => gap.gapId === gapId)) return;
-    coverageGaps.push({
-      gapId,
-      ruleType,
-      titleKo: `${checkLabel} 기준을 확인하지 못했습니다`,
-      detailKo: `${product.productName}에 적용할 검증된 ${checkLabel} 기준이 현재 런타임에 연결되지 않았습니다. 제품 포장과 허가사항을 직접 확인하세요.`,
-      productIds: [product.productId],
-    });
-  };
-  const conditionalChecks: Array<[boolean | undefined, string, string]> = [
-    [profile.pregnant || profile.lactating, "pregnancy_lactation", "임신·수유"],
-    [profile.liverDisease, "hepatic_disease", "간질환"],
-    [profile.kidneyDisease, "renal_disease", "신장질환"],
-    [profile.giBleedingOrUlcer, "gi_bleeding_ulcer", "위장관 출혈·궤양"],
-    [profile.willDrive, "sedation_driving", "졸림·운전"],
-    [profile.alcohol, "alcohol", "음주 병용"],
-    [profile.hypertensionOrCardiovascularDisease, "decongestant_hypertension", "고혈압·심혈관질환"],
-    [medicationsContain(profile, anticoagulantTerms), "anticoagulant_antiplatelet", "항응고제·항혈소판제 병용"],
-    [medicationsContain(profile, sedativeTerms), "sedative_medication", "진정성 약물 병용"],
+  const conditionDefinitions: Array<{
+    requested: boolean;
+    ruleType: string;
+    titleKo: string;
+    nextActionKo: string;
+    detailKo: (policy: ReleasedRulePolicy) => string;
+    policyMatches?: (policy: ReleasedRulePolicy) => boolean;
+  }> = [
+    {
+      requested: Boolean(profile.liverDisease),
+      ruleType: "hepatic_disease",
+      titleKo: "간질환 관련 주의를 확인하세요",
+      nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
+      detailKo: () => "간질환 또는 과거 간질환",
+    },
+    {
+      requested: Boolean(profile.kidneyDisease),
+      ruleType: "renal_disease",
+      titleKo: "신장질환 관련 주의를 확인하세요",
+      nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
+      detailKo: () => "신장질환 또는 과거 신장질환",
+    },
+    {
+      requested: Boolean(profile.giBleedingOrUlcer),
+      ruleType: "gi_bleeding_ulcer",
+      titleKo: "위장관 출혈·궤양 위험을 확인하세요",
+      nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
+      detailKo: () => "위장관 출혈 또는 궤양",
+    },
+    {
+      requested: Boolean(profile.willDrive),
+      ruleType: "sedation_driving",
+      titleKo: "졸림과 운전 주의를 확인하세요",
+      nextActionKo: "운전·기계 조작을 피하고 허가사항을 확인하세요.",
+      detailKo: () => "복용 후 운전",
+    },
+    {
+      requested: Boolean(profile.alcohol),
+      ruleType: "alcohol",
+      titleKo: "정기적인 음주 관련 주의를 확인하세요",
+      nextActionKo: "복용 전 약사 또는 의사와 상담하세요.",
+      detailKo: () => "매일 3잔 이상 정기적으로 음주",
+    },
+    {
+      requested: Boolean(profile.hypertensionOrCardiovascularDisease),
+      ruleType: "decongestant_hypertension",
+      titleKo: "비충혈제거제와 혈압 관련 주의를 확인하세요",
+      nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
+      detailKo: () => "고혈압 또는 심혈관질환",
+    },
+    {
+      requested: (rulesByType.get("anticoagulant_antiplatelet") ?? []).some(
+        (policy) =>
+          matchingMedications(profile, policy.applicability.medicationTerms ?? []).length > 0,
+      ),
+      ruleType: "anticoagulant_antiplatelet",
+      titleKo: "항응고제 병용 주의를 확인하세요",
+      nextActionKo: "처방한 의료진 또는 약사와 상담하세요.",
+      detailKo: (policy) =>
+        `복용 중인 약: ${matchingMedications(profile, policy.applicability.medicationTerms ?? []).join(", ")}`,
+      policyMatches: (policy) =>
+        matchingMedications(
+          profile,
+          policy.applicability.medicationTerms ?? [],
+        ).length > 0,
+    },
+    {
+      requested: (rulesByType.get("sedative_medication") ?? []).some(
+        (policy) =>
+          matchingMedications(profile, policy.applicability.medicationTerms ?? []).length > 0,
+      ),
+      ruleType: "sedative_medication",
+      titleKo: "진정 작용 약물 병용 주의를 확인하세요",
+      nextActionKo: "복용 전 약사 또는 의사와 상담하세요.",
+      detailKo: (policy) =>
+        `복용 중인 약: ${matchingMedications(profile, policy.applicability.medicationTerms ?? []).join(", ")}`,
+      policyMatches: (policy) =>
+        matchingMedications(
+          profile,
+          policy.applicability.medicationTerms ?? [],
+        ).length > 0,
+    },
   ];
+
   for (const item of selected) {
     const product = item.product;
-    const supported = supportedRuleTypes(product, urgentReferralBindings);
-    const isSupported = (ruleType: string) =>
-      supported.has(ruleType) && (!enabledRuleTypes || enabledRuleTypes.has(ruleType));
+
+    if (profile.pregnant || profile.lactating) {
+      const pregnancyPolicies = policiesForProduct("pregnancy_lactation", product);
+      let supported = false;
+      for (const policy of pregnancyPolicies) {
+        const pregnancySupported = Boolean(
+          profile.pregnant &&
+            profile.pregnancyTrimester !== undefined &&
+            policy.applicability.pregnancyTrimesters?.includes(
+              profile.pregnancyTrimester,
+            ),
+        );
+        const lactationSupported = Boolean(
+          profile.lactating && policy.applicability.lactationSupported,
+        );
+        if (!pregnancySupported && !lactationSupported) continue;
+        supported = true;
+        addFinding(policy, {
+          findingId: `pregnancy_lactation:${product.productId}`,
+          severity: "high",
+          titleKo: "임신 중 복용 주의를 확인하세요",
+          detailKo: `입력한 조건(임신 ${profile.pregnancyTrimester}기)이 ${product.productName}의 확인된 주의 조건과 일치합니다.`,
+          nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
+          productIds: [product.productId],
+          ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
+          evidence: uniqueEvidence([
+            product.evidence,
+            ...product.ingredients.map((ingredient) => ingredient.evidence),
+          ]),
+        });
+      }
+      const hasUnsupportedPregnancy = Boolean(
+        profile.pregnant &&
+          (!profile.pregnancyTrimester ||
+            !pregnancyPolicies.some((policy) =>
+              policy.applicability.pregnancyTrimesters?.includes(
+                profile.pregnancyTrimester as 1 | 2 | 3,
+              ),
+            )),
+      );
+      const hasUnsupportedLactation = Boolean(
+        profile.lactating &&
+          !pregnancyPolicies.some((policy) => policy.applicability.lactationSupported),
+      );
+      if (!supported || hasUnsupportedPregnancy || hasUnsupportedLactation) {
+        addProductCoverageGap(
+          product,
+          "pregnancy_lactation",
+          "입력한 임신·수유 상태",
+        );
+      }
+    }
+
+    for (const definition of conditionDefinitions) {
+      if (!definition.requested) continue;
+      const policies = policiesForProduct(definition.ruleType, product).filter(
+        (policy) => definition.policyMatches?.(policy) ?? true,
+      );
+      if (!policies.length) {
+        addProductCoverageGap(product, definition.ruleType, definition.titleKo);
+        continue;
+      }
+      for (const policy of policies) {
+        addFinding(policy, {
+          findingId: `${definition.ruleType}:${product.productId}`,
+          severity: "high",
+          titleKo: definition.titleKo,
+          detailKo: `입력 조건(${definition.detailKo(policy)})이 ${product.productName}의 확인된 주의 조건과 일치합니다.`,
+          nextActionKo: definition.nextActionKo,
+          productIds: [product.productId],
+          ingredientIds: product.ingredients.map((ingredient) => ingredient.ingredientId),
+          evidence: uniqueEvidence([
+            product.evidence,
+            ...product.ingredients.map((ingredient) => ingredient.evidence),
+          ]),
+        });
+      }
+    }
+  }
+
+  const matchedSymptoms = new Set<string>();
+  for (const policy of rulesByType.get("urgent_referral") ?? []) {
+    const matchedProducts = selected.filter((item) =>
+      policyAppliesToProduct(
+        policy,
+        item.product,
+        applicabilityAgeYears,
+      ),
+    );
+    if (!matchedProducts.length) continue;
+    const terms = policy.applicability.urgentTerms ?? [];
+    const symptoms = profile.redFlagSymptoms.filter((symptom) =>
+      textMatchesTerms(symptom, terms),
+    );
+    if (!symptoms.length) continue;
+    symptoms.forEach((symptom) => matchedSymptoms.add(symptom));
+    addFinding(policy, {
+      findingId: `urgent:red-flag:${policy.ruleId}`,
+      severity: "urgent",
+      titleKo: "즉시 상담 또는 진료가 필요할 수 있습니다",
+      detailKo: `입력한 증상: ${[...new Set(symptoms)].join(", ")}`,
+      nextActionKo: "지체하지 말고 의료기관 또는 응급상담을 이용하세요.",
+      productIds: matchedProducts.map((item) => item.product.productId),
+      ingredientIds: [
+        ...new Set(
+          matchedProducts.flatMap((item) =>
+            item.product.ingredients.map((ingredient) => ingredient.ingredientId),
+          ),
+        ),
+      ],
+      evidence: uniqueEvidence(
+        matchedProducts.map((item) => item.product.evidence),
+      ),
+    });
+  }
+
+  const unrecognizedSymptoms = profile.redFlagSymptoms.filter(
+    (symptom) => !matchedSymptoms.has(symptom),
+  );
+  if (unrecognizedSymptoms.length > 0) {
+    addCoverageGap({
+      gapId: "coverage:profile:unrecognized-symptoms",
+      ruleType: "urgent_referral",
+      titleKo: "입력한 증상을 분류하지 못했습니다",
+      detailKo: `${unrecognizedSymptoms.join(", ")}은(는) 선택한 제품의 검증된 긴급 증상 표현과 일치하지 않습니다. 증상이 심하거나 계속되면 의료기관 또는 약사에게 직접 확인하세요.`,
+      productIds: selected.map((item) => item.product.productId),
+    });
+  }
+
+  const recognizedMedicationTerms = releasedRules.flatMap(
+    (policy) => policy.applicability.medicationTerms ?? [],
+  );
+  const unrecognizedMedications = medicationItems(profile).filter(
+    (medication) =>
+      !medicationMatchesTerms(medication, recognizedMedicationTerms),
+  );
+  if (unrecognizedMedications.length > 0) {
+    addCoverageGap({
+      gapId: "coverage:profile:unrecognized-medications",
+      ruleType: "medication_interaction",
+      titleKo: "입력한 복용약을 분류하지 못했습니다",
+      detailKo: `${unrecognizedMedications.join(", ")}은(는) 현재 복용약 분류에 연결되어 있지 않습니다. 약사 또는 의사에게 직접 확인하세요.`,
+      productIds: selected.map((item) => item.product.productId),
+    });
+  }
+
+  for (const item of selected) {
+    const product = item.product;
     const doseConstraints = (product.administrationConstraints ?? []).filter((constraint) =>
       isPositiveFinite(constraint.value),
     );
+    const maximumPolicies = policiesForProduct("max_daily_dose", product);
     const hasMaximumUnits = doseConstraints.some(
       (constraint) => constraint.type === "maximum_units_per_dose",
     );
@@ -484,99 +1258,136 @@ export function evaluateOtcSafety(
               ingredient.unit === constraint.valueUnit,
           ),
       ) || product.ingredients.some((ingredient) => ingredient.maxDailyAmount !== undefined);
-    if (!isSupported("max_daily_dose")) {
+
+    const directMaximumSupported = doseConstraints.some(
+      (constraint) =>
+        constraintRuleType(constraint) === "max_daily_dose" &&
+        allowsSeparateAdministrationConstraintDecision(
+          "OTC-RULE-003",
+          product,
+          constraint.type,
+        ),
+    );
+    if (!maximumPolicies.length && !directMaximumSupported) {
       if (!hasIssue(product.productId, "unitsPerDose", "dosesPerDay")) {
-        addCoverageGap(product, "max_daily_dose", "1회·하루 복용량");
+        addProductCoverageGap(product, "max_daily_dose", "1회·하루 복용량");
       }
     } else {
       if (!hasIssue(product.productId, "unitsPerDose") && !hasMaximumUnits) {
-        addCoverageGap(product, "max_daily_dose", "1회 복용량", "max_daily_dose:units");
+        addProductCoverageGap(
+          product,
+          "max_daily_dose",
+          "1회 복용량",
+          "max_daily_dose:units",
+        );
       }
       if (!hasIssue(product.productId, "dosesPerDay") && !hasMaximumFrequency) {
-        addCoverageGap(product, "max_daily_dose", "하루 복용 횟수", "max_daily_dose:frequency");
+        addProductCoverageGap(
+          product,
+          "max_daily_dose",
+          "하루 복용 횟수",
+          "max_daily_dose:frequency",
+        );
       }
       if (
         !hasIssue(product.productId, "unitsPerDose", "dosesPerDay") &&
         !hasMaximumDailyAmount &&
         !(hasMaximumUnits && hasMaximumFrequency)
       ) {
-        addCoverageGap(product, "max_daily_dose", "하루 총복용량", "max_daily_dose:total");
+        addProductCoverageGap(
+          product,
+          "max_daily_dose",
+          "하루 총복용량",
+          "max_daily_dose:total",
+        );
       }
     }
+
     if (
       item.hoursSincePreviousDose !== undefined &&
-      !hasIssue(product.productId, "hoursSincePreviousDose") &&
-      !isSupported("minimum_interval")
+      !hasIssue(product.productId, "hoursSincePreviousDose")
     ) {
-      addCoverageGap(product, "minimum_interval", "최소 복용 간격");
+      const hasInterval =
+        doseConstraints.some(
+          (constraint) => constraint.type === "minimum_interval_hours",
+        ) || product.ingredients.some(
+          (ingredient) => ingredient.minimumIntervalHours !== undefined,
+        );
+      const directIntervalSupported = doseConstraints.some(
+        (constraint) =>
+          constraint.type === "minimum_interval_hours" &&
+          allowsSeparateAdministrationConstraintDecision(
+            "OTC-RULE-004",
+            product,
+            constraint.type,
+          ),
+      );
+      if (
+        (!policiesForProduct("minimum_interval", product).length &&
+          !directIntervalSupported) ||
+        !hasInterval
+      ) {
+        addProductCoverageGap(product, "minimum_interval", "최소 복용 간격");
+      }
     }
+
     if (
       profile.ageYears !== undefined &&
       !inputIssues.some((issue) => issue.field === "ageYears") &&
-      !isSupported("age_restriction")
+      (!policiesForProduct("age_restriction", product).length ||
+        product.minimumAgeYears === undefined)
     ) {
-      addCoverageGap(product, "age_restriction", "연령");
+      addProductCoverageGap(product, "age_restriction", "연령");
     }
+
     if (
       item.continuousDays !== undefined &&
       !hasIssue(product.productId, "continuousDays") &&
-      !isSupported("maximum_duration")
+      (!policiesForProduct("maximum_duration", product).length ||
+        product.maximumContinuousDays === undefined)
     ) {
-      addCoverageGap(product, "maximum_duration", "연속 복용 기간");
+      addProductCoverageGap(product, "maximum_duration", "연속 복용 기간");
     }
-    for (const [requested, ruleType, label] of conditionalChecks) {
-      if (requested && !isSupported(ruleType)) addCoverageGap(product, ruleType, label);
-    }
-    if (profile.redFlagSymptoms.length > 0 && !isSupported("urgent_referral")) {
-      addCoverageGap(product, "urgent_referral", "입력 증상");
+
+    if (
+      profile.redFlagSymptoms.length > 0 &&
+      !policiesForProduct("urgent_referral", product).length
+    ) {
+      addProductCoverageGap(product, "urgent_referral", "입력 증상");
     }
   }
-  const unrecognizedMedications = profile.medications.filter(
-    (medication) =>
-      medication.trim() &&
-      !medicationMatchesTerms(medication, anticoagulantTerms) &&
-      !medicationMatchesTerms(medication, sedativeTerms),
+
+  const itemSequenceByProductId = new Map(
+    selected.map((item) => [item.product.productId, item.product.itemSequence]),
   );
-  if (unrecognizedMedications.length > 0) {
-    coverageGaps.push({
-      gapId: "coverage:profile:unrecognized-medications",
-      ruleType: "medication_interaction",
-      titleKo: "입력한 병용약을 분류하지 못했습니다",
-      detailKo: `${unrecognizedMedications.join(", ")}은(는) 현재 병용약 분류에 연결되지 않았습니다. 약사 또는 의사에게 직접 확인하세요.`,
-      productIds: selected.map((item) => item.product.productId),
-    });
-  }
-  const unrecognizedSymptoms =
-    applicableUrgentTerms.length > 0
-      ? profile.redFlagSymptoms.filter(
-          (symptom) => !symptomMatchesTerms(symptom, applicableUrgentTerms),
-        )
-      : [];
-  if (unrecognizedSymptoms.length > 0) {
-    coverageGaps.push({
-      gapId: "coverage:profile:unrecognized-symptoms",
-      ruleType: "urgent_referral",
-      titleKo: "입력한 증상을 분류하지 못했습니다",
-      detailKo: `${unrecognizedSymptoms.join(", ")}은(는) 선택한 제품의 검증된 긴급 증상 표현과 일치하지 않습니다. 증상이 심하거나 계속되면 의료기관 또는 약사에게 직접 확인하세요.`,
-      productIds: selected.map((item) => item.product.productId),
-    });
+  const policyById = new Map(releasedRules.map((policy) => [policy.ruleId, policy]));
+  for (const finding of findings) {
+    if (!finding.ruleId) continue;
+    const policy = policyById.get(finding.ruleId);
+    if (!policy) continue;
+    const findingItemSequences = new Set(
+      finding.productIds
+        .map((productId) => itemSequenceByProductId.get(productId))
+        .filter((value): value is string => Boolean(value)),
+    );
+    const directEvidence = uniqueEvidence(
+      policy.evidence.filter((evidence) =>
+        findingItemSequences.has(evidence.itemSequence),
+      ),
+    );
+    if (directEvidence.length) finding.ruleEvidence = directEvidence;
   }
 
   const order = { urgent: 0, high: 1, caution: 2, information: 3 } as const;
-  const enabledFindings = enabledRuleTypes
-    ? findings.filter((finding) => enabledRuleTypes.has(finding.ruleType))
-    : findings;
-  for (const finding of enabledFindings) {
-    const ruleEvidence = uniqueEvidence(ruleEvidenceByType?.[finding.ruleType] ?? []);
-    if (ruleEvidence.length > 0) finding.ruleEvidence = ruleEvidence;
-  }
-  enabledFindings.sort(
+  findings.sort(
     (left, right) =>
       order[left.severity] - order[right.severity] ||
       left.findingId.localeCompare(right.findingId),
   );
+  coverageGaps.sort((left, right) => left.gapId.localeCompare(right.gapId));
+
   return {
-    findings: enabledFindings,
+    findings,
     inputIssues,
     coverageGaps,
     ingredientDailyTotals,
