@@ -1071,6 +1071,10 @@ def join_rows(
                 queue["item_sequence"],
                 queue["rule_id"],
             ),
+            item_sequence=queue["item_sequence"],
+            proposed_trigger=triage["proposed_trigger"],
+            expected_decision=triage["expected_decision_ko"],
+            recommended_status=triage["recommended_status"],
         )
         for queue_field, triage_field in IDENTITY_FIELDS:
             if queue[queue_field] != triage[triage_field]:
@@ -1174,6 +1178,10 @@ def regression_test_scenarios(
     *,
     candidate_id: str,
     candidate_anchors: tuple[str, ...],
+    item_sequence: str = "",
+    proposed_trigger: str = "",
+    expected_decision: str = "",
+    recommended_status: str = "",
 ) -> list[tuple[str, str]]:
     entries = [entry.strip() for entry in value.split("|") if entry.strip()]
     scenarios: dict[str, str] = {}
@@ -1220,6 +1228,39 @@ def regression_test_scenarios(
                 f"duplicate regression test scenario for {candidate_id}: {scenario}"
             )
         normalized_scenarios.add(normalized)
+    if item_sequence:
+        for token in ("normal", "boundary", "false_positive"):
+            sequence_values = re.findall(r"(?:item_sequence|품목기준코드)=(\d+)", scenarios[token])
+            if not sequence_values or any(value != item_sequence for value in sequence_values):
+                raise ValueError(
+                    f"regression test product mismatch for {candidate_id}: "
+                    f"{token}={scenarios[token]}"
+                )
+        non_target_values = re.findall(
+            r"품목기준코드=(\d+)", scenarios["non_target"]
+        )
+        if not non_target_values or item_sequence in non_target_values:
+            raise ValueError(
+                f"non-target regression product is invalid for {candidate_id}"
+            )
+    normalized_trigger = one_line(proposed_trigger)
+    if normalized_trigger and any(
+        normalized_trigger not in scenarios[token] for token in ("normal", "boundary")
+    ):
+        raise ValueError(
+            f"semantic triage trigger is missing from regression tests for {candidate_id}"
+        )
+    normalized_expected = one_line(expected_decision)
+    if (
+        normalized_expected
+        and recommended_status != "rejected"
+        and any(normalized_expected not in scenarios[token] for token in ("normal", "boundary"))
+    ):
+        raise ValueError(
+            f"semantic triage decision is missing from regression tests for {candidate_id}"
+        )
+    if "scope_only_no_structured_binding" in value:
+        raise ValueError(f"generic runtime condition leaked into {candidate_id}")
     return [(token, scenarios[token]) for token in REGRESSION_TEST_LABELS]
 
 
@@ -1326,6 +1367,10 @@ def render_markdown(
                 queue["item_sequence"],
                 queue["rule_id"],
             ),
+            item_sequence=queue["item_sequence"],
+            proposed_trigger=triage["proposed_trigger"],
+            expected_decision=triage["expected_decision_ko"],
+            recommended_status=triage["recommended_status"],
         )
         ingredients = ", ".join(
             ingredient.strip()

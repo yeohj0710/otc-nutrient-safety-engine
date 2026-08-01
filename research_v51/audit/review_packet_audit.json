@@ -3,7 +3,7 @@
   "release_lineage": "v5.1",
   "source_lineage": "v5.0_read_only",
   "generator": "scripts/research/otc/build_v51_review_packet.py",
-  "generator_sha256": "7fcb6f618cd80c688ad176c6b15cdf546e0b27a2117ee0577f219fd03cfc4e0b",
+  "generator_sha256": "c9a71a6f65d63ac84d8c5816ec168e4a46e039a5282601f3bbca6fd8059d4988",
   "inputs": {
     "research_v51/review/expert_review_queue.csv": {
       "rows": 33,
@@ -61,8 +61,8 @@
         "reviewer_role",
         "reviewed_at"
       ],
-      "bytes": 110473,
-      "sha256": "315585bdb3ad8146cc0ba55aaa6e8df4850816b03644ef5bcf05afdd8d631c7f"
+      "bytes": 148785,
+      "sha256": "dad992b216f3967dfd5c007b119e434222012962bb78b43a1fd64f0101711bb1"
     },
     "research_v51/review/shortlist_semantic_triage.csv": {
       "rows": 33,
@@ -84,12 +84,12 @@
       "sha256": "7f96751eef65d9f44e108a6ee99917f921cd5e5a766af4be52ab702fc303b9db"
     },
     "research_v51/audit/evidence_inventory.json": {
-      "bytes": 22295,
-      "sha256": "279f393074f0fd473d67de3b48531380baaaa32e258a4c4bd3018358f81e6e29"
+      "bytes": 22504,
+      "sha256": "237b55583b2b966ff174174d5a9e699f18125fd621761657114c3432fd5a9386"
     },
     "scripts/research/otc/build_v51_review_packet.py": {
-      "bytes": 64692,
-      "sha256": "7fcb6f618cd80c688ad176c6b15cdf546e0b27a2117ee0577f219fd03cfc4e0b"
+      "bytes": 66866,
+      "sha256": "c9a71a6f65d63ac84d8c5816ec168e4a46e039a5282601f3bbca6fd8059d4988"
     },
     "scripts/research/otc/validate_v51_shortlist_triage.py": {
       "bytes": 10040,
@@ -99,8 +99,8 @@
   "artifact": {
     "path": "research_v51/review/expert_review_packet.md",
     "items": 33,
-    "bytes": 147513,
-    "sha256": "5e07dd3083229a6d82b2e505c95d1c4f4348c10317e53c273058232f60adb62b"
+    "bytes": 186056,
+    "sha256": "b613689cae311a21eeacdee250a2a1480815030c12662705e160e399e689ab24"
   },
   "counts": {
     "queue_rows": 33,

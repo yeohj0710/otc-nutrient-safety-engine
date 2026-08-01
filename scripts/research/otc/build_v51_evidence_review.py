@@ -185,6 +185,7 @@ QUEUE_HUMAN_REVIEW_FIELDS = [
 INPUT_PATHS = [
     "scripts/research/otc/build_v51_evidence_review.py",
     "scripts/research/otc/audit_v51_boundaries.py",
+    "research_v51/review/shortlist_semantic_triage.csv",
     "research_v3/otc/rules/official_evidence_candidates.csv",
     "research_v3/otc/rules/rule_evidence_shortlist.csv",
     "research_v3/otc/rules/evidence_text_overrides.csv",
@@ -200,6 +201,22 @@ INPUT_PATHS = [
     "research_v3/otc/raw/nedrug/manifest.json",
     "src/lib/otc/engine.ts",
 ]
+TRIAGE_RELATIVE = "research_v51/review/shortlist_semantic_triage.csv"
+TRIAGE_REQUIRED_FIELDS = {
+    "evidence_candidate_id",
+    "rule_id",
+    "rule_type",
+    "product_name",
+    "item_sequence",
+    "current_scope",
+    "semantic_relation",
+    "recommended_status",
+    "proposed_trigger",
+    "expected_decision_ko",
+    "decision_reason_ko",
+    "expert_question_ko",
+}
+TRIAGE_ALLOWED_STATUSES = {"needs_expert_review", "provisional", "rejected"}
 REVISION_STATUS_REPORTED = "reported_in_archived_mfds_change_history"
 REVISION_STATUS_NOT_REPORTED = "not_reported_in_archived_mfds_change_history"
 REVISION_DOCUMENT_TOKENS = {
@@ -474,7 +491,14 @@ def extracted_paragraphs(page: str) -> list[str]:
 
 
 def source_block_ends_sentence(value: str) -> bool:
-    return bool(re.search(r"[.!?。！？](?:[\"'”’\]}>）〉》」』】]*)$", value.rstrip()))
+    stripped = value.rstrip()
+    bracket_pairs = (("(", ")"), ("[", "]"), ("{", "}"), ("（", "）"))
+    if any(
+        stripped.count(opening) != stripped.count(closing)
+        for opening, closing in bracket_pairs
+    ):
+        return False
+    return bool(re.search(r"[.!?。！？](?:[\"'”’\]}>）〉》」』】]*)$", stripped))
 
 
 def official_source_for_locator(
@@ -534,29 +558,87 @@ def official_text_for_locator(
     )[1]
 
 
-def required_regression_tests(link: dict[str, str]) -> str:
+def non_target_product_fixture(
+    link: dict[str, str],
+    *,
+    products: list[dict[str, str]],
+    ingredient_pairs_by_product: dict[str, set[tuple[str, str]]],
+) -> tuple[str, str, str]:
+    candidate_ingredients = set(link["ingredient_ids"].split(";"))
+    for product in sorted(products, key=lambda row: row["item_sequence"]):
+        if (
+            product["analysis_status"] != "included"
+            or product["item_sequence"] == link["item_sequence"]
+        ):
+            continue
+        ingredient_ids = {
+            ingredient_id
+            for ingredient_id, _ in ingredient_pairs_by_product[product["product_id"]]
+        }
+        if candidate_ingredients.isdisjoint(ingredient_ids):
+            return (
+                product["item_sequence"],
+                product["product_name"],
+                ";".join(sorted(ingredient_ids)),
+            )
+    raise ValueError(
+        "candidate-specific regression test has no disjoint non-target product: "
+        f"{link['evidence_candidate_id']}"
+    )
+
+
+def required_regression_tests(
+    link: dict[str, str],
+    triage: dict[str, str],
+    *,
+    non_target: tuple[str, str, str],
+) -> str:
     identity = regression_field_text(
-        f"제품={link['product_name']}; 품목기준코드={link['item_sequence']}; "
+        f"후보={link['evidence_candidate_id']}; 제품={link['product_name']}; "
+        f"품목기준코드={link['item_sequence']}; 성분ID={link['ingredient_ids']}; "
         f"규칙={link['rule_id']}/{link['rule_type']}"
     )
-    condition = regression_field_text(link["referenced_runtime_condition"])
-    message = regression_field_text(link["rule_message_ko"])
+    condition = regression_field_text(triage["proposed_trigger"])
+    expected = regression_field_text(triage["expected_decision_ko"])
+    status = triage["recommended_status"]
+    non_target_sequence, non_target_name, non_target_ingredients = non_target
+    if status == "rejected":
+        normal_expectation = (
+            f"권고상태=rejected; 예상판정={expected}; 예상={link['rule_id']} 미발동"
+        )
+        boundary_expectation = (
+            "양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 "
+            f"예상={link['rule_id']} 미발동"
+        )
+    else:
+        normal_expectation = (
+            f"사람 승인 전 예상={link['rule_id']} 미발동; "
+            f"채택 후 예상판정={expected}"
+        )
+        boundary_expectation = (
+            "경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; "
+            f"채택 후 예상판정={expected}; 경계밖 fixture=후보조건 중 정확히 한 조건을 "
+            f"비발동 쪽 1단위 또는 불일치값으로 변경; 예상={link['rule_id']} 미발동"
+        )
     return "|".join(
         (
-            f"normal={identity}; 적용조건={condition}; 예상문구={message}",
             (
-                f"boundary={identity}; 적용조건={condition}; 숫자 조건은 포함 경계값과 "
-                "바로 밖 값을, 문자 조건은 정확히 일치하는 값과 불일치하는 값을 검사; "
-                f"포함·일치 값의 예상문구={message}; 제외·불일치 값에서는 "
-                f"{link['rule_id']} 미발동"
+                f"normal={identity}; 후보조건={condition}; 입력 fixture=후보조건 정확히 충족; "
+                f"{normal_expectation}"
             ),
             (
-                f"non_target=품목기준코드!={link['item_sequence']}; 동일 조건 입력; "
-                f"예상={link['rule_id']} 미발동"
+                f"boundary={identity}; 후보조건={condition}; {boundary_expectation}"
             ),
             (
-                f"false_positive={identity}; 적용조건 불충족; "
-                f"예상={link['rule_id']} 미발동"
+                f"non_target=후보={link['evidence_candidate_id']}; 비대상제품={non_target_name}; "
+                f"품목기준코드={non_target_sequence}; 성분ID={non_target_ingredients}; "
+                f"후보조건={condition}; 예상={link['rule_id']} 미발동; 후보판정문 미표시"
+            ),
+            (
+                f"false_positive={identity}; 후보조건={condition}; 오탐 fixture=동일 제품에서 "
+                "제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 "
+                f"-유사를 붙여 정확히 한 조건을 불충족; 예상={link['rule_id']} 미발동; "
+                "지원하지 않는 입력이면 coverage gap 표시"
             ),
         )
     )
@@ -655,10 +737,16 @@ def build(root: Path = ROOT) -> dict[str, object]:
         root, "research_v3/otc/extracted/nedrug/page_manifest.csv"
     )
     raw_manifest = read_protected_json(root, "research_v3/otc/raw/nedrug/manifest.json")
+    triage = read_csv_bytes((root / TRIAGE_RELATIVE).read_bytes())
 
     if len(candidates) != 360:
         raise ValueError(f"expected 360 v5.0 candidates, found {len(candidates)}")
     candidate_by_id = unique_by_key(candidates, "evidence_candidate_id")
+    if len(triage) != 33:
+        raise ValueError(f"expected 33 semantic triage rows, found {len(triage)}")
+    if set(triage[0]) != TRIAGE_REQUIRED_FIELDS:
+        raise ValueError("semantic triage fields do not match the required contract")
+    triage_by_id = unique_by_key(triage, "evidence_candidate_id")
     shortlist_by_id = unique_by_key(shortlist, "evidence_candidate_id")
     override_by_id = unique_by_key(overrides, "evidence_candidate_id")
     if len(shortlist) != 48 or not set(shortlist_by_id) <= set(candidate_by_id):
@@ -1179,6 +1267,35 @@ def build(root: Path = ROOT) -> dict[str, object]:
     }
     if dict(status_counts) != expected_status_counts:
         raise ValueError(f"unexpected v5.1 status counts: {dict(status_counts)}")
+    review_links = {
+        row["evidence_candidate_id"]: row
+        for row in links
+        if row["evidence_status"] == "needs_expert_review"
+    }
+    if set(triage_by_id) != set(review_links):
+        raise ValueError("semantic triage candidate IDs do not match the expert queue")
+    for candidate_id, triage_row in triage_by_id.items():
+        link = review_links[candidate_id]
+        for field, expected in {
+            "rule_id": link["rule_id"],
+            "rule_type": link["rule_type"],
+            "product_name": link["product_name"],
+            "item_sequence": link["item_sequence"],
+            "current_scope": link["rule_scope"],
+        }.items():
+            if triage_row[field] != expected:
+                raise ValueError(
+                    f"semantic triage {field} mismatch for {candidate_id}: "
+                    f"{triage_row[field]!r} != {expected!r}"
+                )
+        if triage_row["recommended_status"] not in TRIAGE_ALLOWED_STATUSES:
+            raise ValueError(
+                f"unsupported semantic triage status for {candidate_id}: "
+                f"{triage_row['recommended_status']}"
+            )
+        for field in ("proposed_trigger", "expected_decision_ko"):
+            if not triage_row[field].strip():
+                raise ValueError(f"semantic triage {field} is blank for {candidate_id}")
     operational_counts = Counter(row["candidate_operational_status"] for row in links)
     expected_operational_counts = {
         "active_existing_released_primary_evidence": 15,
@@ -1252,6 +1369,12 @@ def build(root: Path = ROOT) -> dict[str, object]:
     for link in links:
         if link["evidence_status"] != "needs_expert_review":
             continue
+        triage_row = triage_by_id[link["evidence_candidate_id"]]
+        non_target = non_target_product_fixture(
+            link,
+            products=products,
+            ingredient_pairs_by_product=ingredient_pairs_by_product,
+        )
         queue.append(
             {
                 "evidence_candidate_id": link["evidence_candidate_id"],
@@ -1310,7 +1433,9 @@ def build(root: Path = ROOT) -> dict[str, object]:
                     "확인하세요. 이 후보는 전문가 승인 전까지 운영에 사용하지 않습니다."
                 ),
                 "adoption_options": "adopt|revise|reject",
-                "required_regression_tests": required_regression_tests(link),
+                "required_regression_tests": required_regression_tests(
+                    link, triage_row, non_target=non_target
+                ),
                 "review_decision": "",
                 "review_comment": "",
                 "reviewer_id": "",

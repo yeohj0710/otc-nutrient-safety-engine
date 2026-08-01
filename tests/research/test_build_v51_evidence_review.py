@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import re
 from collections import Counter
 from datetime import date
 from pathlib import Path
@@ -189,7 +190,16 @@ def test_official_source_expands_pdf_blocks_to_complete_context() -> None:
     assert pancol["official_source_text"].endswith(
         "아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다."
     )
-    for row in (dexpeed, pancol):
+    dose_table = next(
+        row
+        for row in links
+        if row["evidence_candidate_id"] == "SAFE-OTC-05-UD-P1-B10-max_daily_dose"
+    )
+    assert dose_table["official_source_locator"] == "용법용량 PDF p.1, 문단 10-17"
+    assert dose_table["official_source_text"].endswith(
+        "1~2세 50~100mg (2.5~5mL) 400mg (20mL)"
+    )
+    for row in (dexpeed, pancol, dose_table):
         queue_row = queue_by_id[row["evidence_candidate_id"]]
         assert queue_row["official_source_locator"] == row["official_source_locator"]
         assert queue_row["official_source_text"] == row["official_source_text"]
@@ -255,6 +265,12 @@ def test_every_candidate_has_document_revision_date_or_explicit_reason() -> None
 
 def test_expert_queue_never_prefills_human_decisions() -> None:
     queue = builder.build(ROOT)["expert_review_queue"]
+    triage_by_id = {
+        row["evidence_candidate_id"]: row
+        for row in builder.read_csv_bytes(
+            (ROOT / builder.TRIAGE_RELATIVE).read_bytes()
+        )
+    }
     assert all(row["review_status"] == "needs_expert_review" for row in queue)
     assert all(
         row["candidate_operational_status"] == "inactive_candidate"
@@ -278,10 +294,11 @@ def test_expert_queue_never_prefills_human_decisions() -> None:
         and row["item_sequence"] in row["required_regression_tests"]
         and row["rule_id"] in row["required_regression_tests"]
         and row["rule_type"] in row["required_regression_tests"]
-        and builder.regression_field_text(row["referenced_runtime_condition"])
+        and builder.regression_field_text(
+            triage_by_id[row["evidence_candidate_id"]]["proposed_trigger"]
+        )
         in row["required_regression_tests"]
-        and builder.regression_field_text(row["proposed_message_ko"])
-        in row["required_regression_tests"]
+        and "scope_only_no_structured_binding" not in row["required_regression_tests"]
         and all(
             scenario in row["required_regression_tests"]
             for scenario in (
@@ -294,6 +311,17 @@ def test_expert_queue_never_prefills_human_decisions() -> None:
         and row["required_regression_tests"].count("|") == 3
         for row in queue
     )
+    for row in queue:
+        tests = row["required_regression_tests"]
+        scenarios = dict(entry.split("=", 1) for entry in tests.split("|"))
+        for token in ("normal", "boundary", "false_positive"):
+            values = re.findall(
+                r"(?:item_sequence|품목기준코드)=(\d+)", scenarios[token]
+            )
+            assert values and set(values) == {row["item_sequence"]}
+        assert row["item_sequence"] not in re.findall(
+            r"품목기준코드=(\d+)", scenarios["non_target"]
+        )
     assert all(
         "rule_status" not in row
         and "current_runtime_condition" not in row

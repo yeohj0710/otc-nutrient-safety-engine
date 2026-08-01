@@ -3,7 +3,7 @@
   "release_lineage": "v5.1",
   "source_lineage": "v5.0_pinned_baseline_git_blobs",
   "generator": "scripts/research/otc/build_v51_evidence_review.py",
-  "generator_sha256": "fdae547abb0ea56328a556ded99a28cda6834c31ebebd3f849bee9eca1701bbe",
+  "generator_sha256": "16124d09986d0f5724421edee289ea46cb247c12e15b650fec9869b1d417407d",
   "raw_manifest_updated_at_utc": "2026-07-14T02:56:31.878369+00:00",
   "source_retrieved_at_utc_values": [
     "2026-07-14T02:10:14.255342+00:00",
@@ -13,13 +13,18 @@
   "inputs": {
     "scripts/research/otc/build_v51_evidence_review.py": {
       "basis": "worktree_bytes",
-      "bytes": 68447,
-      "sha256": "fdae547abb0ea56328a556ded99a28cda6834c31ebebd3f849bee9eca1701bbe"
+      "bytes": 73714,
+      "sha256": "16124d09986d0f5724421edee289ea46cb247c12e15b650fec9869b1d417407d"
     },
     "scripts/research/otc/audit_v51_boundaries.py": {
       "basis": "worktree_bytes",
       "bytes": 35465,
       "sha256": "63a0c61f430ae1da793fde2500eca61c8422867d5dacaab820df8339e87f7b8b"
+    },
+    "research_v51/review/shortlist_semantic_triage.csv": {
+      "basis": "worktree_bytes",
+      "bytes": 27882,
+      "sha256": "7f96751eef65d9f44e108a6ee99917f921cd5e5a766af4be52ab702fc303b9db"
     },
     "research_v3/otc/rules/official_evidence_candidates.csv": {
       "basis": "baseline_git_blob",
@@ -259,8 +264,8 @@
     },
     "research_v51/evidence/evidence_rule_links.csv": {
       "rows": 360,
-      "bytes": 807916,
-      "sha256": "7b90d60eecb92d78be3c73d3a8403f401ca537ec747c7ca52cc50a884b40920f",
+      "bytes": 833226,
+      "sha256": "d5d7c6bf0785ee8e201907da26cc50e4d2429df2ff2934d561f991425ad7ec4c",
       "fields": [
         "evidence_candidate_id",
         "evidence_unit_id",
@@ -325,8 +330,8 @@
     },
     "research_v51/review/expert_review_queue.csv": {
       "rows": 33,
-      "bytes": 110473,
-      "sha256": "315585bdb3ad8146cc0ba55aaa6e8df4850816b03644ef5bcf05afdd8d631c7f",
+      "bytes": 148785,
+      "sha256": "dad992b216f3967dfd5c007b119e434222012962bb78b43a1fd64f0101711bb1",
       "fields": [
         "evidence_candidate_id",
         "evidence_unit_id",

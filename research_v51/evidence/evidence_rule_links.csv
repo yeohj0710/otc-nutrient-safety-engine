@@ -78,7 +78,13 @@ EXP-OTC-01-NB-P10-B12-maximum_duration,OTC-V51-EU-5e0024872c4cd37b,OTC-RULE-015,
 EXP-OTC-01-NB-P10-B15-decongestant_hypertension,OTC-V51-EU-63bdc79881fec296,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,f13fa39f7256fb4b5bd3d52085e3da28bde9f8ad4df9dbb98420a15d4d4dccf5,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.10, 문단 15",축과 관련이 있는 알레르기 또는 과민반응 후 발생하는 심혈관계 증상으로 심근경색을 초래할 수 있다.,"사용상의주의사항 PDF p.10, 문단 14-15","18) 코니스 증후군 : 이 약 투여 환자에게서 코니스 증후군 사례가 보고되었다. 코니스 증후군은 관상동맥 수
 
 축과 관련이 있는 알레르기 또는 과민반응 후 발생하는 심혈관계 증상으로 심근경색을 초래할 수 있다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P10-B16-maximum_duration,OTC-V51-EU-c8024976aa8ff52a,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,f13fa39f7256fb4b5bd3d52085e3da28bde9f8ad4df9dbb98420a15d4d4dccf5,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.10, 문단 16",19) 비스테로이드성 소염(항염)진통제를 장기간 복용하는 여성에서 일시적인 불임이 보고되었다.,"사용상의주의사항 PDF p.10, 문단 16",19) 비스테로이드성 소염(항염)진통제를 장기간 복용하는 여성에서 일시적인 불임이 보고되었다.,false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-01-NB-P10-B16-maximum_duration,OTC-V51-EU-c8024976aa8ff52a,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,f13fa39f7256fb4b5bd3d52085e3da28bde9f8ad4df9dbb98420a15d4d4dccf5,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.10, 문단 16",19) 비스테로이드성 소염(항염)진통제를 장기간 복용하는 여성에서 일시적인 불임이 보고되었다.,"사용상의주의사항 PDF p.10, 문단 16-19","19) 비스테로이드성 소염(항염)진통제를 장기간 복용하는 여성에서 일시적인 불임이 보고되었다.
+
+20) 소염(항염)진통제에 의한 치료는 원인요법이 아닌 대증요법(증상별로 치료하는 방법)임에 유의한다.
+
+21) 임상검사치에 대한 영향 : 드물게 요소질소, 트랜스아미나제, 알칼리포스파타제의 증가, 헤모글로빈과 헤
+
+마토크리트치의 감소, 혈소판 응집저하, 출혈시간 연장이 나타날 수 있다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
 EXP-OTC-01-NB-P11-B14-pregnancy_lactation,OTC-V51-EU-a407be4ec65c921b,OTC-RULE-006,pregnancy_lactation,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,33bfeed8cd7f740766b65737aacd760e30d9897fa6b13bfbe89e664e88b84b66,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.11, 문단 14",된 일부 시판 후 사례에서는 교환 수혈이나 투석 같은 침습적 시술이 필요했다. 임신 20~30주 동안 이 약의,"사용상의주의사항 PDF p.11, 문단 8-17","8. 임부에 대한 투여
 
 1) 임신 약 20주 이후 이 약을 포함한 비스테로이드성 소염제(NSAIDs)의 사용은 태아 신기능 이상을 일으켜
@@ -370,7 +376,9 @@ EXP-OTC-01-NB-P3-B17-sedation_driving,OTC-V51-EU-e8ab47919ecaf56c,OTC-RULE-010,s
 이 있다. 그러므로 운전이나 기계를 작동하는 경우에는 주의해서 복용해야 한다. 1회 또는 단기간 복용하는
 
 경우에는 특별한 주의가 필요하지 않다.",false,,"사용상의주의사항 PDF p.3, 문단 17",이 있다. 그러므로 운전이나 기계를 작동하는 경우에는 주의해서 복용해야 한다. 1회 또는 단기간 복용하는,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,2,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P3-B19-maximum_duration,OTC-V51-EU-57139ac9ca0c97b4,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c513b07831fc5fcec984735a3b4f40cce41f39e754e65b94488ffd1d061dc341,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.3, 문단 19",3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.,"사용상의주의사항 PDF p.3, 문단 19",3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.,false,,"사용상의주의사항 PDF p.3, 문단 19",3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,2,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
+EXP-OTC-01-NB-P3-B19-maximum_duration,OTC-V51-EU-57139ac9ca0c97b4,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c513b07831fc5fcec984735a3b4f40cce41f39e754e65b94488ffd1d061dc341,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.3, 문단 19",3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.,"사용상의주의사항 PDF p.3, 문단 19-20","3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.
+
+5. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의할 것.",false,,"사용상의주의사항 PDF p.3, 문단 19",3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,2,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
 EXP-OTC-01-NB-P3-B23-hepatic_disease,OTC-V51-EU-8b49085aab13ce21,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c513b07831fc5fcec984735a3b4f40cce41f39e754e65b94488ffd1d061dc341,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.3, 문단 23",3) 간장애 또는 그 병력이 있는 환자,"사용상의주의사항 PDF p.3, 문단 21-26","1) 혈액이상 또는 그 병력이 있는 환자
 
 2) 출혈경향이 있는 환자(혈소판 기능이상이 일어날 수 있다.)
@@ -1148,7 +1156,13 @@ EXP-OTC-01-NB-P5-B24-anticoagulant_antiplatelet,OTC-V51-EU-920234f0af129770,OTC-
 혈소판 응집을 억제한다. 그래서 덱시부프로펜을 혈전(혈관막힘)용해제, 티클로피딘, 항혈전(혈관막힘)제와
 
 병용(함께 복용)시 항혈소판 효과가 증가하는 위험이 있다.",false,,,,false,,,,,ibuprofen_warfarin_or_coumarin_anticoagulant,item_sequence=198601920|flags=anticoagulant_antiplatelet,항응고제 또는 항혈소판제와 병용할 때 주의가 필요할 수 있습니다.,복용 전 처방한 의료진 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1061,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P5-B28-sedative_medication,OTC-V51-EU-b050a3810011a3f3,OTC-RULE-013,sedative_medication,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,bcb16c6f770535f887796ba763aabefb22038439e8ae8e8eadbef8243d86fd05,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 28","(13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬","사용상의주의사항 PDF p.5, 문단 28-29","(13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬
+EXP-OTC-01-NB-P5-B28-sedative_medication,OTC-V51-EU-b050a3810011a3f3,OTC-RULE-013,sedative_medication,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,bcb16c6f770535f887796ba763aabefb22038439e8ae8e8eadbef8243d86fd05,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 28","(13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬","사용상의주의사항 PDF p.5, 문단 25-29","(12) 혈중 칼륨농도를 증가시키는 약물(예, 칼륨 저류(쌓임)형 이뇨제, ACE 억제제, 안지오텐신-Ⅱ 수용체 길
+
+항제(억제제), 시클로스포린과 타크로리무스와 같은 면역억제제, 트리메토프림, 헤파린 등) : 병용투여(함
+
+께 복용) 시 고칼륨혈증이 나타날 수 있으므로 이러한 경우 칼륨 수치의 정기적인 관찰이 필요하다.
+
+(13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬
 
 수 있다.",false,,"사용상의주의사항 PDF p.5, 문단 28","(13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬",false,,,,,pancol_a_sedative_or_overlapping_cold_medicine,item_sequence=196800036|flags=sedative_medication,진정 작용이 있는 약물과 함께 복용할 때 주의가 필요할 수 있습니다.,복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1077,2,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
 EXP-OTC-01-NB-P5-B5-decongestant_hypertension,OTC-V51-EU-bb3bf6c8490be14d,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,bcb16c6f770535f887796ba763aabefb22038439e8ae8e8eadbef8243d86fd05,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 5",억제제 또는 안지오텐신Ⅱ 수용체 길항제(억제제)의 항고혈압효과가 감소될 수 있다는 보고가 있으므로 이,"사용상의주의사항 PDF p.5, 문단 4-7","(5) ACE 억제제 또는 안지오텐신Ⅱ 수용체 길항제(억제제) : 비스테로이드성 소염(항염)진통제에 의해 ACE
@@ -1194,14 +1208,22 @@ EXP-OTC-01-NB-P7-B17-decongestant_hypertension,OTC-V51-EU-2af05b4623c677e4,OTC-R
 가할 수 있다. 또한 고혈압이나 신부전 환자는 체액저류(체액고임)가 나타날 수 있다. 특히 고령자(노인)에게
 
 서 고혈압이나 심부전이 나타날 수 있다. 빈도 불명의 코니스 증후군이 나타날 수 있다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P7-B27-anticoagulant_antiplatelet,OTC-V51-EU-35880de7552c1a8e,OTC-RULE-012,anticoagulant_antiplatelet,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,576c1739d10fcd8293ac1e5a168683b8fa033bf784857483d51f12d89782e0de,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.7, 문단 27","며, 필요시 혈액응고검사(항응고제투여시), 혈중 칼륨농도검사[칼륨저류(쌓임)제 투여시] 또는 혈중 리튬농","사용상의주의사항 PDF p.7, 문단 25-28","(1) 이 약을 장기간 투여하는 환자는 정기적으로 임상검사(요검사, 전혈구 검사(CBC) 및 이화학적 검사 등 혈
+EXP-OTC-01-NB-P7-B27-anticoagulant_antiplatelet,OTC-V51-EU-35880de7552c1a8e,OTC-RULE-012,anticoagulant_antiplatelet,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,576c1739d10fcd8293ac1e5a168683b8fa033bf784857483d51f12d89782e0de,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.7, 문단 27","며, 필요시 혈액응고검사(항응고제투여시), 혈중 칼륨농도검사[칼륨저류(쌓임)제 투여시] 또는 혈중 리튬농","사용상의주의사항 PDF p.7, 문단 23-28","2) 소염(항염)진통제에 의한 치료는 원인요법이 아닌 대증요법(증상별로 치료하는 방법)임에 유의한다.
+
+3) 만성질환에 사용하는 경우에는 다음사항을 고려한다.
+
+(1) 이 약을 장기간 투여하는 환자는 정기적으로 임상검사(요검사, 전혈구 검사(CBC) 및 이화학적 검사 등 혈
 
 액 검사, 간기능 검사 등)를 실시하고 이상이 있을 경우 감량(줄임), 휴약(복용중지) 등의 적절한 처치를 하
 
 며, 필요시 혈액응고검사(항응고제투여시), 혈중 칼륨농도검사[칼륨저류(쌓임)제 투여시] 또는 혈중 리튬농
 
 도검사를 정기적으로 시행한다. 간질환 또는 신질환과 관련된 임상 증상이나 전신적인 징후(예, 호산구증가",false,,,,false,,,,,ibuprofen_warfarin_or_coumarin_anticoagulant,item_sequence=198601920|flags=anticoagulant_antiplatelet,항응고제 또는 항혈소판제와 병용할 때 주의가 필요할 수 있습니다.,복용 전 처방한 의료진 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1061,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P7-B28-hepatic_disease,OTC-V51-EU-bdbb5fe0014935a5,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,576c1739d10fcd8293ac1e5a168683b8fa033bf784857483d51f12d89782e0de,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.7, 문단 28","도검사를 정기적으로 시행한다. 간질환 또는 신질환과 관련된 임상 증상이나 전신적인 징후(예, 호산구증가","사용상의주의사항 PDF p.7, 문단 25-28","(1) 이 약을 장기간 투여하는 환자는 정기적으로 임상검사(요검사, 전혈구 검사(CBC) 및 이화학적 검사 등 혈
+EXP-OTC-01-NB-P7-B28-hepatic_disease,OTC-V51-EU-bdbb5fe0014935a5,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,576c1739d10fcd8293ac1e5a168683b8fa033bf784857483d51f12d89782e0de,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.7, 문단 28","도검사를 정기적으로 시행한다. 간질환 또는 신질환과 관련된 임상 증상이나 전신적인 징후(예, 호산구증가","사용상의주의사항 PDF p.7, 문단 23-28","2) 소염(항염)진통제에 의한 치료는 원인요법이 아닌 대증요법(증상별로 치료하는 방법)임에 유의한다.
+
+3) 만성질환에 사용하는 경우에는 다음사항을 고려한다.
+
+(1) 이 약을 장기간 투여하는 환자는 정기적으로 임상검사(요검사, 전혈구 검사(CBC) 및 이화학적 검사 등 혈
 
 액 검사, 간기능 검사 등)를 실시하고 이상이 있을 경우 감량(줄임), 휴약(복용중지) 등의 적절한 처치를 하
 
@@ -1227,7 +1249,7 @@ EXP-OTC-01-NB-P8-B11-age_restriction,OTC-V51-EU-d2ed189c95d4cd8b,OTC-RULE-005,ag
 (팔다리 찬느낌) 등의 증상이 나타날 수 있으므로 특히 고열을 수반하는 유아, 소아 및 고령자(노인) 또는 소
 
 모성질환 환자에는 투여 후 환자의 상태에 충분히 주의한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P8-B16-gi_bleeding_ulcer,OTC-V51-EU-19c561003f236ddf,OTC-RULE-009,gi_bleeding_ulcer,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 16",7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈,"사용상의주의사항 PDF p.8, 문단 16-22","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+EXP-OTC-01-NB-P8-B16-gi_bleeding_ulcer,OTC-V51-EU-19c561003f236ddf,OTC-RULE-009,gi_bleeding_ulcer,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 16",7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈,"사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
 
 의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
 
@@ -1239,8 +1261,18 @@ EXP-OTC-01-NB-P8-B16-gi_bleeding_ulcer,OTC-V51-EU-19c561003f236ddf,OTC-RULE-009,
 
 취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
 
-인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.",false,,,,false,,,,,ibuprofen_gi_bleeding_or_ulcer,item_sequence=198601920|flags=gi_bleeding_ulcer,위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1030,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P8-B17-gi_bleeding_ulcer,OTC-V51-EU-93abf8afe31a13d0,OTC-RULE-009,gi_bleeding_ulcer,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 17",의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력,"사용상의주의사항 PDF p.8, 문단 16-22","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+
+시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
+
+이뇨제를 복용중인 환자가 비스테로이드성 소염(항염)진통제 복용시 이들 요법에 대한 반응이 감소될 수 있
+
+다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
+
+여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,ibuprofen_gi_bleeding_or_ulcer,item_sequence=198601920|flags=gi_bleeding_ulcer,위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1030,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-01-NB-P8-B17-gi_bleeding_ulcer,OTC-V51-EU-93abf8afe31a13d0,OTC-RULE-009,gi_bleeding_ulcer,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 17",의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력,"사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
 
 의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
 
@@ -1252,8 +1284,18 @@ EXP-OTC-01-NB-P8-B17-gi_bleeding_ulcer,OTC-V51-EU-93abf8afe31a13d0,OTC-RULE-009,
 
 취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
 
-인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.",false,,,,false,,,,,ibuprofen_gi_bleeding_or_ulcer,item_sequence=198601920|flags=gi_bleeding_ulcer,위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1030,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P8-B19-gi_bleeding_ulcer,OTC-V51-EU-9ce1db3d8f74921d,OTC-RULE-009,gi_bleeding_ulcer,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 19",출혈의 발생 위험이 10배 이상 증가하였다. 위장관계 출혈을 증가시키는 다른 위험인자로는 경구(먹는)용 코,"사용상의주의사항 PDF p.8, 문단 16-22","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+
+시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
+
+이뇨제를 복용중인 환자가 비스테로이드성 소염(항염)진통제 복용시 이들 요법에 대한 반응이 감소될 수 있
+
+다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
+
+여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,ibuprofen_gi_bleeding_or_ulcer,item_sequence=198601920|flags=gi_bleeding_ulcer,위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1030,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-01-NB-P8-B19-gi_bleeding_ulcer,OTC-V51-EU-9ce1db3d8f74921d,OTC-RULE-009,gi_bleeding_ulcer,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 19",출혈의 발생 위험이 10배 이상 증가하였다. 위장관계 출혈을 증가시키는 다른 위험인자로는 경구(먹는)용 코,"사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
 
 의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
 
@@ -1265,8 +1307,18 @@ EXP-OTC-01-NB-P8-B19-gi_bleeding_ulcer,OTC-V51-EU-9ce1db3d8f74921d,OTC-RULE-009,
 
 취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
 
-인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.",false,,,,false,,,,,ibuprofen_gi_bleeding_or_ulcer,item_sequence=198601920|flags=gi_bleeding_ulcer,위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1030,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P8-B20-alcohol,OTC-V51-EU-b14e41e2d927a99e,OTC-RULE-011,alcohol,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 20","르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제의 장기 사용 알코올 섭","사용상의주의사항 PDF p.8, 문단 16-22","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+
+시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
+
+이뇨제를 복용중인 환자가 비스테로이드성 소염(항염)진통제 복용시 이들 요법에 대한 반응이 감소될 수 있
+
+다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
+
+여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,ibuprofen_gi_bleeding_or_ulcer,item_sequence=198601920|flags=gi_bleeding_ulcer,위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1030,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-01-NB-P8-B20-alcohol,OTC-V51-EU-b14e41e2d927a99e,OTC-RULE-011,alcohol,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 20","르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제의 장기 사용 알코올 섭","사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
 
 의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
 
@@ -1278,8 +1330,18 @@ EXP-OTC-01-NB-P8-B20-alcohol,OTC-V51-EU-b14e41e2d927a99e,OTC-RULE-011,alcohol,re
 
 취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
 
-인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-b14e41e2d927a99e,true,OTC-V51-EU-b14e41e2d927a99e,false,,,,
-EXP-OTC-01-NB-P8-B20-anticoagulant_antiplatelet,OTC-V51-EU-b14e41e2d927a99e,OTC-RULE-012,anticoagulant_antiplatelet,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 20","르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제의 장기 사용 알코올 섭","사용상의주의사항 PDF p.8, 문단 16-22","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+
+시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
+
+이뇨제를 복용중인 환자가 비스테로이드성 소염(항염)진통제 복용시 이들 요법에 대한 반응이 감소될 수 있
+
+다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
+
+여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-b14e41e2d927a99e,true,OTC-V51-EU-b14e41e2d927a99e,false,,,,
+EXP-OTC-01-NB-P8-B20-anticoagulant_antiplatelet,OTC-V51-EU-b14e41e2d927a99e,OTC-RULE-012,anticoagulant_antiplatelet,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 20","르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제의 장기 사용 알코올 섭","사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
 
 의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
 
@@ -1291,8 +1353,18 @@ EXP-OTC-01-NB-P8-B20-anticoagulant_antiplatelet,OTC-V51-EU-b14e41e2d927a99e,OTC-
 
 취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
 
-인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.",false,,,,false,,,,,ibuprofen_warfarin_or_coumarin_anticoagulant,item_sequence=198601920|flags=anticoagulant_antiplatelet,항응고제 또는 항혈소판제와 병용할 때 주의가 필요할 수 있습니다.,복용 전 처방한 의료진 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1061,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-b14e41e2d927a99e,true,OTC-V51-EU-b14e41e2d927a99e,false,,,,
-EXP-OTC-01-NB-P8-B21-age_restriction,OTC-V51-EU-f81bb4b7be2cdf1b,OTC-RULE-005,age_restriction,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 21","취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노","사용상의주의사항 PDF p.8, 문단 16-22","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+
+시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
+
+이뇨제를 복용중인 환자가 비스테로이드성 소염(항염)진통제 복용시 이들 요법에 대한 반응이 감소될 수 있
+
+다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
+
+여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,ibuprofen_warfarin_or_coumarin_anticoagulant,item_sequence=198601920|flags=anticoagulant_antiplatelet,항응고제 또는 항혈소판제와 병용할 때 주의가 필요할 수 있습니다.,복용 전 처방한 의료진 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1061,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-b14e41e2d927a99e,true,OTC-V51-EU-b14e41e2d927a99e,false,,,,
+EXP-OTC-01-NB-P8-B21-age_restriction,OTC-V51-EU-f81bb4b7be2cdf1b,OTC-RULE-005,age_restriction,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 21","취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노","사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
 
 의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
 
@@ -1304,8 +1376,32 @@ EXP-OTC-01-NB-P8-B21-age_restriction,OTC-V51-EU-f81bb4b7be2cdf1b,OTC-RULE-005,ag
 
 취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
 
-인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P8-B23-decongestant_hypertension,OTC-V51-EU-96317ca702ea99e2,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 23","8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화","사용상의주의사항 PDF p.8, 문단 23-27","8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+
+시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
+
+이뇨제를 복용중인 환자가 비스테로이드성 소염(항염)진통제 복용시 이들 요법에 대한 반응이 감소될 수 있
+
+다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
+
+여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-01-NB-P8-B23-decongestant_hypertension,OTC-V51-EU-96317ca702ea99e2,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 23","8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화","사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+
+의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
+
+이 있는 환자의 경우 이러한 위험인자가 없는 환자에 비해 비스테로이드성 소염(항염)진통제 투여시 위장관
+
+출혈의 발생 위험이 10배 이상 증가하였다. 위장관계 출혈을 증가시키는 다른 위험인자로는 경구(먹는)용 코
+
+르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제의 장기 사용 알코올 섭
+
+취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
+
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
 
 시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
 
@@ -1314,7 +1410,21 @@ EXP-OTC-01-NB-P8-B23-decongestant_hypertension,OTC-V51-EU-96317ca702ea99e2,OTC-R
 다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
 
 여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-076157b685063601,false,,true,OTC-V51-TEXT-076157b685063601,,,
-EXP-OTC-01-NB-P8-B24-decongestant_hypertension,OTC-V51-EU-a7ab1f020b9acf58,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 24","시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형","사용상의주의사항 PDF p.8, 문단 23-27","8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+EXP-OTC-01-NB-P8-B24-decongestant_hypertension,OTC-V51-EU-a7ab1f020b9acf58,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 24","시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형","사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+
+의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
+
+이 있는 환자의 경우 이러한 위험인자가 없는 환자에 비해 비스테로이드성 소염(항염)진통제 투여시 위장관
+
+출혈의 발생 위험이 10배 이상 증가하였다. 위장관계 출혈을 증가시키는 다른 위험인자로는 경구(먹는)용 코
+
+르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제의 장기 사용 알코올 섭
+
+취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
+
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
 
 시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
 
@@ -1323,7 +1433,21 @@ EXP-OTC-01-NB-P8-B24-decongestant_hypertension,OTC-V51-EU-a7ab1f020b9acf58,OTC-R
 다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
 
 여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P8-B26-decongestant_hypertension,OTC-V51-EU-cd0c7c5fcb0b4ff5,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 26",다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투,"사용상의주의사항 PDF p.8, 문단 23-27","8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
+EXP-OTC-01-NB-P8-B26-decongestant_hypertension,OTC-V51-EU-cd0c7c5fcb0b4ff5,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,c2fa86a2ab8f0f16b41b9cfa1fdb2ea57325b9be20b91786f5f58ebe24e93da0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 26",다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투,"사용상의주의사항 PDF p.8, 문단 16-27","7) 위장관계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 출혈
+
+의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 출혈의 병력
+
+이 있는 환자의 경우 이러한 위험인자가 없는 환자에 비해 비스테로이드성 소염(항염)진통제 투여시 위장관
+
+출혈의 발생 위험이 10배 이상 증가하였다. 위장관계 출혈을 증가시키는 다른 위험인자로는 경구(먹는)용 코
+
+르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제의 장기 사용 알코올 섭
+
+취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관계 이상반응에 대한 자발적 보고의 대부분은 고령자(노
+
+인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여야 한다.
+
+8) 고혈압 : 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압을 일으키거나, 기존의 고혈압을 악화
 
 시킬 수 있으며, 이로 인해 심혈관계 유해사례의 발생률이 증가될 수도 있다. 티아지드계 이뇨제 또는 루프형
 
@@ -1332,11 +1456,15 @@ EXP-OTC-01-NB-P8-B26-decongestant_hypertension,OTC-V51-EU-cd0c7c5fcb0b4ff5,OTC-R
 다. 이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투
 
 여 초기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-01-NB-P9-B16-hepatic_disease,OTC-V51-EU-962a6ca63021d500,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,a80d3a5e573a3065a4bbd127ea60eb5b9b4d19b2dca622b469c3bd60c9078ea0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.9, 문단 16","여기간 동안 주의깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호","사용상의주의사항 PDF p.9, 문단 15-17","간기능 이상을 암시하는 증상 및/또는 징후가 있는 환자 또는 간기능 시험 결과 비정상인 환자에 있어서는 투
+EXP-OTC-01-NB-P9-B16-hepatic_disease,OTC-V51-EU-962a6ca63021d500,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,a80d3a5e573a3065a4bbd127ea60eb5b9b4d19b2dca622b469c3bd60c9078ea0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.9, 문단 16","여기간 동안 주의깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호","사용상의주의사항 PDF p.9, 문단 15-19","간기능 이상을 암시하는 증상 및/또는 징후가 있는 환자 또는 간기능 시험 결과 비정상인 환자에 있어서는 투
 
 여기간 동안 주의깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호
 
-산구증가증, 발진)가 발현되는 경우에는 이 약의 투여를 중지한다.",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-64b46da2eb98dc64,false,,true,OTC-V51-TEXT-64b46da2eb98dc64,,,
+산구증가증, 발진)가 발현되는 경우에는 이 약의 투여를 중지한다.
+
+13) 이 약을 포함한 비스테로이드성 소염(항염)진통제의 투여로 빈혈이 나타날 수 있으므로 이 약의 장기 투
+
+여에 의해 빈혈의 증상 또는 징후가 나타나는 경우에는 헤모글로빈치 또는 헤마토크리트치 검사를 해야 한다.",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-64b46da2eb98dc64,false,,true,OTC-V51-TEXT-64b46da2eb98dc64,,,
 EXP-OTC-01-NB-P9-B22-anticoagulant_antiplatelet,OTC-V51-EU-0ad0b24301f73634,OTC-RULE-012,anticoagulant_antiplatelet,released,high,EXP-OTC-01,201110646,MFDS-201110646,덱스피드연질캡슐(덱시부프로펜),ING-dexibuprofen,덱시부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB,sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,2026-01-02,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394,a80d3a5e573a3065a4bbd127ea60eb5b9b4d19b2dca622b469c3bd60c9078ea0,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.9, 문단 22",역적(회복가능)이다. 응고 관련 질환이 있거나 항응고제를 투여하고 있는 경우와 같이 혈소판 기능 변경에 의,"사용상의주의사항 PDF p.9, 문단 20-23","비스테로이드성 소염(항염)진통제는 혈소판 응집을 억제하며, 일부 환자에서는 출혈 시간을 연장시키는 것
 
 이 확인되었다. 아스피린과 달리 이 약의 혈소판 기능에 대한 영향은 상대적으로 작고 지속기간이 짧으며 가
@@ -1363,13 +1491,17 @@ EXP-OTC-02-NB-P1-B10-decongestant_hypertension,OTC-V51-EU-ed83a6275a1c03cd,OTC-R
 질환의 병력이 없는 경우에도 마찬가지로 적용된다. 환자는 중대한 심혈관계 독성의 징후 및/또는 증상 및 이
 
 러한 증상이 발현(드러냄)되는 경우 취할 조치에 대하여 사전에 알고 있어야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-505a7d643b33b60b,false,,true,OTC-V51-TEXT-505a7d643b33b60b,,,
-EXP-OTC-02-NB-P1-B14-age_restriction,OTC-V51-EU-7c1891b1026bee51,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,51b20428d6453857b54af8372a240a90422dfff00ce9a5cd03063528dc09dd1b,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 14",있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창,"사용상의주의사항 PDF p.1, 문단 12-15","3) 위장관(창자)계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 위 또는 장관(창자)의 출혈, 궤
+EXP-OTC-02-NB-P1-B14-age_restriction,OTC-V51-EU-7c1891b1026bee51,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,51b20428d6453857b54af8372a240a90422dfff00ce9a5cd03063528dc09dd1b,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 14",있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창,"사용상의주의사항 PDF p.1, 문단 12-17","3) 위장관(창자)계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 위 또는 장관(창자)의 출혈, 궤
 
 양 및 천공(뚫림)을 포함한 중대한 위장관(창자)계 이상반응의 위험을 증가시킬 수 있으며, 이는 치명적일 수
 
 있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창
 
-자)계 이상반응의 위험이 더 클 수 있다.",false,,"사용상의주의사항 PDF p.1, 문단 14",있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,3,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
+자)계 이상반응의 위험이 더 클 수 있다.
+
+투여 기간이 길어질수록 중대한 위장관(창자)계 이상반응의 발생 가능성이 증가될 수 있으나 단기 투여시 이
+
+러한 위험이 완전히 배제되는 것은 아니다.",false,,"사용상의주의사항 PDF p.1, 문단 14",있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,3,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
 EXP-OTC-02-NB-P1-B18-gi_bleeding_ulcer,OTC-V51-EU-94df347a335efb83,OTC-RULE-009,gi_bleeding_ulcer,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,51b20428d6453857b54af8372a240a90422dfff00ce9a5cd03063528dc09dd1b,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 18",이 약을 투여하는 동안 위장관(창자)계 궤양 또는 출혈의 증상 및 징후에 대하여 신중히 모니터링 하여야 하,"사용상의주의사항 PDF p.1, 문단 18-22","이 약을 투여하는 동안 위장관(창자)계 궤양 또는 출혈의 증상 및 징후에 대하여 신중히 모니터링 하여야 하
 
 며, 중증(심한 증상)의 위장관(창자)계 이상반응이 의심되는 경우 즉시 추가적인 평가 및 치료를 실시하여야
@@ -1776,7 +1908,9 @@ MCTD)환자에게는 신중히 투여한다. 또한 때때로 졸음, 인식기�
 림, 정력감퇴, 피로, 우울, 비정상적인 꿈, 집중능력 상실, 지남력상실(방향감각장애), 불면, 근육통, 근쇠약이
 
 나타날 수 있다.",false,,"사용상의주의사항 PDF p.3, 문단 12","MCTD)환자에게는 신중히 투여한다. 또한 때때로 졸음, 인식기능장애 드물게 현기(어지러움), 두통, 수족저",false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,3,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P3-B8-renal_disease,OTC-V51-EU-923c7b2883d10d7b,OTC-RULE-008,renal_disease,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,36578ece138d5f2e82c2b426a27b0724f03a40fe2f6a0c51aae7a387ca94a8af,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.3, 문단 8","5) 신장(콩팥) : 드물게 신장애(신장장애), 사구체 신염(신장염), 혈뇨, 고칼륨 혈증, 간질성 신염(신장염), 신","사용상의주의사항 PDF p.3, 문단 8-9","5) 신장(콩팥) : 드물게 신장애(신장장애), 사구체 신염(신장염), 혈뇨, 고칼륨 혈증, 간질성 신염(신장염), 신
+EXP-OTC-02-NB-P3-B8-renal_disease,OTC-V51-EU-923c7b2883d10d7b,OTC-RULE-008,renal_disease,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,36578ece138d5f2e82c2b426a27b0724f03a40fe2f6a0c51aae7a387ca94a8af,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.3, 문단 8","5) 신장(콩팥) : 드물게 신장애(신장장애), 사구체 신염(신장염), 혈뇨, 고칼륨 혈증, 간질성 신염(신장염), 신","사용상의주의사항 PDF p.3, 문단 7-9","4) 간장 : 드물게 GOT, GPT치의 상승, 황달, 간염이 나타날 수 있다.
+
+5) 신장(콩팥) : 드물게 신장애(신장장애), 사구체 신염(신장염), 혈뇨, 고칼륨 혈증, 간질성 신염(신장염), 신
 
 증후군, 신장(콩팥) 유두괴사, 단백뇨(단백질이 섞인 오줌), 신부전이 나타날 수 있다.",false,,,,false,,,,,ibuprofen_kidney_disease,item_sequence=198601920|flags=renal_disease,신장질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1023,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
 EXP-OTC-02-NB-P4-B12-age_restriction,OTC-V51-EU-f8a34520de9d9cff,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,540e4f860175715d6e93e4c59c52b32030b15836ec12310b7f2693f725e180da,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.4, 문단 12",등이 나타날 수 있으므로 특히 고열을 수반하는 소아 및 고령자(노인) 또는 소모성 질환 환자에게는 투여 후,"사용상의주의사항 PDF p.4, 문단 11-14","5) 환자의 상태를 충분히 관찰하고 이상반응의 발현(드러냄)에 유의한다. 과도한 체온강하, 허탈, 사지냉각
@@ -1868,11 +2002,17 @@ EXP-OTC-02-NB-P4-B3-hepatic_disease,OTC-V51-EU-06a94e2ab7775a9c,OTC-RULE-007,hep
 EXP-OTC-02-NB-P5-B2-decongestant_hypertension,OTC-V51-EU-36d93c96629e086b,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 2",이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투여 초,"사용상의주의사항 PDF p.5, 문단 2-3","이 약을 포함한 비스테로이드성 소염(항염)진통제는 고혈압 환자에서 신중히 투여해야 한다. 이 약의 투여 초
 
 기와 투여기간 동안에 혈압을 면밀히 모니터링해야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P5-B20-hepatic_disease,OTC-V51-EU-3be4613149692be6,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 20","여기간 동안 주의깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호","사용상의주의사항 PDF p.5, 문단 19-21","간기능 이상을 암시하는 증상 및/또는 징후가 있는 환자 또는 간기능 시험 결과 비정상인 환자에 있어서는 투
+EXP-OTC-02-NB-P5-B20-hepatic_disease,OTC-V51-EU-3be4613149692be6,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 20","여기간 동안 주의깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호","사용상의주의사항 PDF p.5, 문단 19-24","간기능 이상을 암시하는 증상 및/또는 징후가 있는 환자 또는 간기능 시험 결과 비정상인 환자에 있어서는 투
 
 여기간 동안 주의깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호
 
-산구증가증, 발진)가 발현(드러냄)되는 경우에는 이 약의 투여를 중지한다.",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-64b46da2eb98dc64,false,,true,OTC-V51-TEXT-64b46da2eb98dc64,,,
+산구증가증, 발진)가 발현(드러냄)되는 경우에는 이 약의 투여를 중지한다.
+
+13) 이 약을 포함한 비스테로이드성 소염(항염)진통제의 투여로 빈혈이 나타날 수 있으므로 이 약의 장기 투
+
+여에 의해 빈혈의 증상 또는 징후가 나타나는 경우에는 헤모글로빈치 또는 헤마토크리트(적혈구용적률)치 검
+
+사를 해야 한다.",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-64b46da2eb98dc64,false,,true,OTC-V51-TEXT-64b46da2eb98dc64,,,
 EXP-OTC-02-NB-P5-B27-anticoagulant_antiplatelet,OTC-V51-EU-c8cfdc45ddb00237,OTC-RULE-012,anticoagulant_antiplatelet,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 27",역적이다. 응고 관련 질환이 있거나 항응고제를 투여하고 있는 경우와 같이 혈소판 기능 변경에 의해 부정적,"사용상의주의사항 PDF p.5, 문단 25-28","비스테로이드성 소염(항염)진통제는 혈소판 응집을 억제하며, 일부 환자에서는 출혈 시간을 연장시키는 것
 
 이 확인되었다. 아스피린과 달리 이 약의 혈소판 기능에 대한 영향은 상대적으로 작고 지속기간이 짧으며 가
@@ -1880,21 +2020,35 @@ EXP-OTC-02-NB-P5-B27-anticoagulant_antiplatelet,OTC-V51-EU-c8cfdc45ddb00237,OTC-
 역적이다. 응고 관련 질환이 있거나 항응고제를 투여하고 있는 경우와 같이 혈소판 기능 변경에 의해 부정적
 
 인 영향을 받을 수 있는 환자는 이 약 투여시 신중히 모니터링 하여야 한다.",false,,,,false,,,,,ibuprofen_warfarin_or_coumarin_anticoagulant,item_sequence=198601920|flags=anticoagulant_antiplatelet,항응고제 또는 항혈소판제와 병용할 때 주의가 필요할 수 있습니다.,복용 전 처방한 의료진 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1061,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P5-B7-maximum_duration,OTC-V51-EU-154d9781c3497de9,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 7",10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어,"사용상의주의사항 PDF p.5, 문단 7-10","10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어
+EXP-OTC-02-NB-P5-B7-maximum_duration,OTC-V51-EU-154d9781c3497de9,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 7",10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어,"사용상의주의사항 PDF p.5, 문단 4-10","9) 울혈성심부전 및 부종(부기): 이 약을 포함한 비스테로이드성 소염(항염)진통제를 복용하는 일부 환자에
+
+서 체액저류(체액 고임) 및 부종(부기)(말초적인 부종(부기) 포함)이 관찰되었다. 이 약은 체액저류(체액 고
+
+임) 또는 심기능 부전 환자에는 신중히 투여한다.
+
+10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어
 
 날 수 있다. 또한, 신혈류를 유지하는데 프로스타글란딘의 역할이 중요하므로, 심부전 환자, 신기능 부전 환
 
 자, 간기능 부전 환자, 이뇨제나 ACE 저해제(억제제)를 투여 중인 환자, 고령자(노인) 등에서는 특별한 주의
 
 가 필요하다. 투약을 중단하면 대부분 치료 전 상태로 회복된다.",false,,"사용상의주의사항 PDF p.5, 문단 7",10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,3,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,true,text:OTC-V51-TEXT-4eaeab9f37d85e27,false,,true,OTC-V51-TEXT-4eaeab9f37d85e27,,,
-EXP-OTC-02-NB-P5-B9-age_restriction,OTC-V51-EU-0e19c99241fd3142,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 9","자, 간기능 부전 환자, 이뇨제나 ACE 저해제(억제제)를 투여 중인 환자, 고령자(노인) 등에서는 특별한 주의","사용상의주의사항 PDF p.5, 문단 7-10","10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어
+EXP-OTC-02-NB-P5-B9-age_restriction,OTC-V51-EU-0e19c99241fd3142,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,363b1e755e67931594e53330d82294be3f44be2b6db259634ba0f90e5ed9c641,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.5, 문단 9","자, 간기능 부전 환자, 이뇨제나 ACE 저해제(억제제)를 투여 중인 환자, 고령자(노인) 등에서는 특별한 주의","사용상의주의사항 PDF p.5, 문단 4-10","9) 울혈성심부전 및 부종(부기): 이 약을 포함한 비스테로이드성 소염(항염)진통제를 복용하는 일부 환자에
+
+서 체액저류(체액 고임) 및 부종(부기)(말초적인 부종(부기) 포함)이 관찰되었다. 이 약은 체액저류(체액 고
+
+임) 또는 심기능 부전 환자에는 신중히 투여한다.
+
+10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어
 
 날 수 있다. 또한, 신혈류를 유지하는데 프로스타글란딘의 역할이 중요하므로, 심부전 환자, 신기능 부전 환
 
 자, 간기능 부전 환자, 이뇨제나 ACE 저해제(억제제)를 투여 중인 환자, 고령자(노인) 등에서는 특별한 주의
 
 가 필요하다. 투약을 중단하면 대부분 치료 전 상태로 회복된다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P6-B16-maximum_duration,OTC-V51-EU-0bd0f756c6cbe244,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,b44e30ee8bbdc15a232f36ffaaef312e3b26102cdc1c51bf2392ae345fcf5f78,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.6, 문단 16",다. 장기간 코르티코스테로이드를 복용해 온 환자에게 이 약을 투여하고자 할 경우에는 서서히 용량을 감소시,"사용상의주의사항 PDF p.6, 문단 15-17","코르티코스테로이드의 갑작스러운 투여 중단은 코르티코스테로이드 - 반응성 질환의 악화를 초래할 수 있
+EXP-OTC-02-NB-P6-B16-maximum_duration,OTC-V51-EU-0bd0f756c6cbe244,OTC-RULE-015,maximum_duration,draft,caution,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,b44e30ee8bbdc15a232f36ffaaef312e3b26102cdc1c51bf2392ae345fcf5f78,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.6, 문단 16",다. 장기간 코르티코스테로이드를 복용해 온 환자에게 이 약을 투여하고자 할 경우에는 서서히 용량을 감소시,"사용상의주의사항 PDF p.6, 문단 14-17","17) 이 약은 코르티코이드 제제를 대체하거나 코르티코이드 결핍증을 치료하기 위한 약물로 사용될 수 없다.
+
+코르티코스테로이드의 갑작스러운 투여 중단은 코르티코스테로이드 - 반응성 질환의 악화를 초래할 수 있
 
 다. 장기간 코르티코스테로이드를 복용해 온 환자에게 이 약을 투여하고자 할 경우에는 서서히 용량을 감소시
 
@@ -1904,8 +2058,18 @@ EXP-OTC-02-NB-P6-B19-duplicate_pharmacologic_class,OTC-V51-EU-ff2b4c5b66dec2d9,O
 1) 다른 비스테로이드성 소염(항염)진통제(NSAIDs) 및 나프록센 유도체와 병용(함께 복용)할 경우 이상반응
 
 의 위험이 증가할 수 있으므로 병용(함께 복용)하지 않는다.",false,,,,false,,,,,ibuprofen_and_other_NSAIDs,scope_only_no_structured_binding,같은 NSAID 계열 성분을 함께 복용할 수 있습니다.,함께 복용하지 말고 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:759,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P6-B23-decongestant_hypertension,OTC-V51-EU-282b4e57af9e54fc,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,b44e30ee8bbdc15a232f36ffaaef312e3b26102cdc1c51bf2392ae345fcf5f78,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.6, 문단 23",3) 프로프라놀롤 및 다른 β-차단제: 이 약과의 병용(함께 복용)투여로 인해 항고혈압 효과가 감소될 수 있다.,"사용상의주의사항 PDF p.6, 문단 23",3) 프로프라놀롤 및 다른 β-차단제: 이 약과의 병용(함께 복용)투여로 인해 항고혈압 효과가 감소될 수 있다.,false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P6-B25-decongestant_hypertension,OTC-V51-EU-0864b55c0442d497,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,b44e30ee8bbdc15a232f36ffaaef312e3b26102cdc1c51bf2392ae345fcf5f78,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.6, 문단 25",① 비스테로이드성 소염(항염)진통제에 의해 ACE 저해제(억제제)의 항고혈압효과가 감소될 수 있다는 보,"사용상의주의사항 PDF p.6, 문단 24-27","4) ACE 저해제(억제제)(캅토프릴 등)
+EXP-OTC-02-NB-P6-B23-decongestant_hypertension,OTC-V51-EU-282b4e57af9e54fc,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,b44e30ee8bbdc15a232f36ffaaef312e3b26102cdc1c51bf2392ae345fcf5f78,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.6, 문단 23",3) 프로프라놀롤 및 다른 β-차단제: 이 약과의 병용(함께 복용)투여로 인해 항고혈압 효과가 감소될 수 있다.,"사용상의주의사항 PDF p.6, 문단 23-27","3) 프로프라놀롤 및 다른 β-차단제: 이 약과의 병용(함께 복용)투여로 인해 항고혈압 효과가 감소될 수 있다.
+
+4) ACE 저해제(억제제)(캅토프릴 등)
+
+① 비스테로이드성 소염(항염)진통제에 의해 ACE 저해제(억제제)의 항고혈압효과가 감소될 수 있다는 보
+
+고가 있으므로 이 약과 ACE 저해제(억제제)를 병용(함께 복용)투여하는 경우 이러한 상호작용을 염두에
+
+두어야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-02-NB-P6-B25-decongestant_hypertension,OTC-V51-EU-0864b55c0442d497,OTC-RULE-014,decongestant_hypertension,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,b44e30ee8bbdc15a232f36ffaaef312e3b26102cdc1c51bf2392ae345fcf5f78,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.6, 문단 25",① 비스테로이드성 소염(항염)진통제에 의해 ACE 저해제(억제제)의 항고혈압효과가 감소될 수 있다는 보,"사용상의주의사항 PDF p.6, 문단 23-27","3) 프로프라놀롤 및 다른 β-차단제: 이 약과의 병용(함께 복용)투여로 인해 항고혈압 효과가 감소될 수 있다.
+
+4) ACE 저해제(억제제)(캅토프릴 등)
 
 ① 비스테로이드성 소염(항염)진통제에 의해 ACE 저해제(억제제)의 항고혈압효과가 감소될 수 있다는 보
 
@@ -1978,13 +2142,21 @@ EXP-OTC-02-NB-P8-B22-pregnancy_lactation,OTC-V51-EU-c40843f35e6c278e,OTC-RULE-00
 이 약은 모유로의 이행이 일어나 신생아에서 프로스타글란딘 합성을 억제하는 이상반응을 일으키므로 수유
 
 부에는 투여하지 않는다.",false,,,,false,,,,,ibuprofen_pregnancy_lactation,item_sequence=198601920|flags=pregnancy_lactation,임신 또는 수유 중 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1094,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P8-B25-age_restriction,OTC-V51-EU-494f456779b4f82e,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,748466e8fd005ac52cb9fff70c480536bf6bd2b5a0fa83f1f334bc8e635c8776,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 25",9. 소아에 대한 투여,"사용상의주의사항 PDF p.8, 문단 25-26","9. 소아에 대한 투여
+EXP-OTC-02-NB-P8-B25-age_restriction,OTC-V51-EU-494f456779b4f82e,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,748466e8fd005ac52cb9fff70c480536bf6bd2b5a0fa83f1f334bc8e635c8776,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 25",9. 소아에 대한 투여,"사용상의주의사항 PDF p.8, 문단 25-27","9. 소아에 대한 투여
 
-1) 2세 이하의 영아(갓난아기)에 대한 안전성은 확립되어 있지 않으므로 투여하지 않는 것이 바람직하다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P8-B26-age_restriction,OTC-V51-EU-8840e331fe5d727f,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,748466e8fd005ac52cb9fff70c480536bf6bd2b5a0fa83f1f334bc8e635c8776,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 26",1) 2세 이하의 영아(갓난아기)에 대한 안전성은 확립되어 있지 않으므로 투여하지 않는 것이 바람직하다.,"사용상의주의사항 PDF p.8, 문단 25-26","9. 소아에 대한 투여
+1) 2세 이하의 영아(갓난아기)에 대한 안전성은 확립되어 있지 않으므로 투여하지 않는 것이 바람직하다.
 
-1) 2세 이하의 영아(갓난아기)에 대한 안전성은 확립되어 있지 않으므로 투여하지 않는 것이 바람직하다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P8-B27-age_restriction,OTC-V51-EU-3854e85ccfcdae98,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,748466e8fd005ac52cb9fff70c480536bf6bd2b5a0fa83f1f334bc8e635c8776,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 27",2) 소아에 있어서 필요한 최소량으로 신중히 투여하고 이상반응의 발현(드러냄)에 특히 유의한다.,"사용상의주의사항 PDF p.8, 문단 27",2) 소아에 있어서 필요한 최소량으로 신중히 투여하고 이상반응의 발현(드러냄)에 특히 유의한다.,false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+2) 소아에 있어서 필요한 최소량으로 신중히 투여하고 이상반응의 발현(드러냄)에 특히 유의한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-02-NB-P8-B26-age_restriction,OTC-V51-EU-8840e331fe5d727f,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,748466e8fd005ac52cb9fff70c480536bf6bd2b5a0fa83f1f334bc8e635c8776,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 26",1) 2세 이하의 영아(갓난아기)에 대한 안전성은 확립되어 있지 않으므로 투여하지 않는 것이 바람직하다.,"사용상의주의사항 PDF p.8, 문단 25-27","9. 소아에 대한 투여
+
+1) 2세 이하의 영아(갓난아기)에 대한 안전성은 확립되어 있지 않으므로 투여하지 않는 것이 바람직하다.
+
+2) 소아에 있어서 필요한 최소량으로 신중히 투여하고 이상반응의 발현(드러냄)에 특히 유의한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-02-NB-P8-B27-age_restriction,OTC-V51-EU-3854e85ccfcdae98,OTC-RULE-005,age_restriction,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,748466e8fd005ac52cb9fff70c480536bf6bd2b5a0fa83f1f334bc8e635c8776,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 27",2) 소아에 있어서 필요한 최소량으로 신중히 투여하고 이상반응의 발현(드러냄)에 특히 유의한다.,"사용상의주의사항 PDF p.8, 문단 25-27","9. 소아에 대한 투여
+
+1) 2세 이하의 영아(갓난아기)에 대한 안전성은 확립되어 있지 않으므로 투여하지 않는 것이 바람직하다.
+
+2) 소아에 있어서 필요한 최소량으로 신중히 투여하고 이상반응의 발현(드러냄)에 특히 유의한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
 EXP-OTC-02-NB-P8-B5-pregnancy_lactation,OTC-V51-EU-04276f4ad304aa85,OTC-RULE-006,pregnancy_lactation,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,748466e8fd005ac52cb9fff70c480536bf6bd2b5a0fa83f1f334bc8e635c8776,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.8, 문단 5",7. 임부에 대한 투여,"사용상의주의사항 PDF p.8, 문단 5-7","7. 임부에 대한 투여
 
 1) 이 약을 임부에게 투여한 임상자료가 없다. 동물실험에서 주산기(출산전후기)에 투여하여 분만지연, 난산
@@ -2024,7 +2196,13 @@ EXP-OTC-02-NB-P9-B2-age_restriction,OTC-V51-EU-207790f8f17e510c,OTC-RULE-005,age
 량부터 투여를 시작하여 필요한 최소량으로 투여하고 이상반응의 발현(드러냄)에 특히 유의하는 등 환자의
 
 상태를 관찰하면서 신중히 투여한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-02-NB-P9-B9-sedation_driving,OTC-V51-EU-f9e202ca61be1906,OTC-RULE-010,sedation_driving,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,9c1f686b6fd803dc86efaad393ca13ed765a4c0f4dac13b93aca28945ed6c1a7,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.9, 문단 9","과량투여시 졸음, 가슴쓰림, 소화불량, 구역, 구토가 나타나며 이러한 경우에는 위세척을 하고 약용탄을 사용","사용상의주의사항 PDF p.9, 문단 8-10","12. 과량투여시의 처치
+EXP-OTC-02-NB-P9-B9-sedation_driving,OTC-V51-EU-f9e202ca61be1906,OTC-RULE-010,sedation_driving,released,high,EXP-OTC-02,197500016,MFDS-197500016,낙센정(나프록센),ING-naproxen,나프록센,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB,sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,2024-12-12,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6,9c1f686b6fd803dc86efaad393ca13ed765a4c0f4dac13b93aca28945ed6c1a7,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.9, 문단 9","과량투여시 졸음, 가슴쓰림, 소화불량, 구역, 구토가 나타나며 이러한 경우에는 위세척을 하고 약용탄을 사용","사용상의주의사항 PDF p.9, 문단 5-10","11. 임상검사치에 대한 영향
+
+1) 17-케토제닉 스테로이드의 측정에 영향을 주므로 측정 72시간 전에 이 약의 투여를 중지한다.
+
+2) 혈소판의 응집을 억제하고 출혈시간을 연장시킬 수 있으므로 출혈시간을 측정할 때는 주의한다.
+
+12. 과량투여시의 처치
 
 과량투여시 졸음, 가슴쓰림, 소화불량, 구역, 구토가 나타나며 이러한 경우에는 위세척을 하고 약용탄을 사용
 
@@ -2044,10 +2222,28 @@ EXP-OTC-02-UD-P1-B8-minimum_interval,OTC-V51-EU-a030f22eb61c4172,OTC-RULE-004,mi
 성인 나프록센으로서 초회량(처음 복용량)으로 500mg을 경구투여(복용)한 후 6-8시간간격으로 250mg씩
 
 투여한다. 1일 총용량이 1250mg을 초과하지 않도록 한다.",false,,,,false,,,,,tylenol500_age_12_plus,item_sequence=202106092|ingredient_id=ING-acetaminophen|minimum_interval_hours=4,이전 복용 후 확인된 최소 간격이 지나지 않았습니다.,다음 복용 시점을 약사 또는 의사에게 확인하세요.,src/lib/otc/engine.ts:69,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-03-NB-P1-B15-alcohol,OTC-V51-EU-e543013b653f3798,OTC-RULE-011,alcohol,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 15",1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.,"사용상의주의사항 PDF p.1, 문단 14-15","3. 이 약을 복용(사용)하는 동안 다음의 행위를 하지 말 것
+EXP-OTC-03-NB-P1-B15-alcohol,OTC-V51-EU-e543013b653f3798,OTC-RULE-011,alcohol,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 15",1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.,"사용상의주의사항 PDF p.1, 문단 14-22","3. 이 약을 복용(사용)하는 동안 다음의 행위를 하지 말 것
 
-1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-03-NB-P1-B17-renal_disease,OTC-V51-EU-514444c778f2cebf,OTC-RULE-008,renal_disease,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 17",1) 신장애(신장장애) 환자(높은 혈중 농도가 지속될 수 있다),"사용상의주의사항 PDF p.1, 문단 16-22","4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
+1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.
+
+4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
+
+1) 신장애(신장장애) 환자(높은 혈중 농도가 지속될 수 있다)
+
+2) 간장애 환자(높은 혈중 농도가 지속될 수 있다)
+
+3) 노인(높은 혈중 농도가 지속될 수 있다)
+
+이 약은 주로 신장을 통해 배설되므로 일반적으로 신기능이 저하되어 있는 노인에서는 혈중 농도 과다상태
+
+가 지속될 수 있으므로 저용량으로 신중히 투여를 시작하고 이상이 인정될 경우에는 감량하거나 복용중지
+
+하고 적절한 처치를 한다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+EXP-OTC-03-NB-P1-B17-renal_disease,OTC-V51-EU-514444c778f2cebf,OTC-RULE-008,renal_disease,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 17",1) 신장애(신장장애) 환자(높은 혈중 농도가 지속될 수 있다),"사용상의주의사항 PDF p.1, 문단 14-22","3. 이 약을 복용(사용)하는 동안 다음의 행위를 하지 말 것
+
+1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.
+
+4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
 
 1) 신장애(신장장애) 환자(높은 혈중 농도가 지속될 수 있다)
 
@@ -2060,7 +2256,11 @@ EXP-OTC-03-NB-P1-B17-renal_disease,OTC-V51-EU-514444c778f2cebf,OTC-RULE-008,rena
 가 지속될 수 있으므로 저용량으로 신중히 투여를 시작하고 이상이 인정될 경우에는 감량하거나 복용중지
 
 하고 적절한 처치를 한다.",false,,,,false,,,,,ibuprofen_kidney_disease,item_sequence=198601920|flags=renal_disease,신장질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1023,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-03-NB-P1-B18-hepatic_disease,OTC-V51-EU-4a5dd81c1e4ad9cf,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 18",2) 간장애 환자(높은 혈중 농도가 지속될 수 있다),"사용상의주의사항 PDF p.1, 문단 16-22","4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
+EXP-OTC-03-NB-P1-B18-hepatic_disease,OTC-V51-EU-4a5dd81c1e4ad9cf,OTC-RULE-007,hepatic_disease,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 18",2) 간장애 환자(높은 혈중 농도가 지속될 수 있다),"사용상의주의사항 PDF p.1, 문단 14-22","3. 이 약을 복용(사용)하는 동안 다음의 행위를 하지 말 것
+
+1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.
+
+4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
 
 1) 신장애(신장장애) 환자(높은 혈중 농도가 지속될 수 있다)
 
@@ -2073,7 +2273,11 @@ EXP-OTC-03-NB-P1-B18-hepatic_disease,OTC-V51-EU-4a5dd81c1e4ad9cf,OTC-RULE-007,he
 가 지속될 수 있으므로 저용량으로 신중히 투여를 시작하고 이상이 인정될 경우에는 감량하거나 복용중지
 
 하고 적절한 처치를 한다.",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-03-NB-P1-B19-age_restriction,OTC-V51-EU-51a0863bfdecc7fe,OTC-RULE-005,age_restriction,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 19",3) 노인(높은 혈중 농도가 지속될 수 있다),"사용상의주의사항 PDF p.1, 문단 16-22","4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
+EXP-OTC-03-NB-P1-B19-age_restriction,OTC-V51-EU-51a0863bfdecc7fe,OTC-RULE-005,age_restriction,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 19",3) 노인(높은 혈중 농도가 지속될 수 있다),"사용상의주의사항 PDF p.1, 문단 14-22","3. 이 약을 복용(사용)하는 동안 다음의 행위를 하지 말 것
+
+1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.
+
+4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
 
 1) 신장애(신장장애) 환자(높은 혈중 농도가 지속될 수 있다)
 
@@ -2086,7 +2290,11 @@ EXP-OTC-03-NB-P1-B19-age_restriction,OTC-V51-EU-51a0863bfdecc7fe,OTC-RULE-005,ag
 가 지속될 수 있으므로 저용량으로 신중히 투여를 시작하고 이상이 인정될 경우에는 감량하거나 복용중지
 
 하고 적절한 처치를 한다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-EXP-OTC-03-NB-P1-B20-age_restriction,OTC-V51-EU-423129efc30c4d31,OTC-RULE-005,age_restriction,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 20",이 약은 주로 신장을 통해 배설되므로 일반적으로 신기능이 저하되어 있는 노인에서는 혈중 농도 과다상태,"사용상의주의사항 PDF p.1, 문단 16-22","4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
+EXP-OTC-03-NB-P1-B20-age_restriction,OTC-V51-EU-423129efc30c4d31,OTC-RULE-005,age_restriction,released,high,EXP-OTC-03,200610765,MFDS-200610765,지르텍정(세티리진염산염),ING-cetirizine_hydrochloride,세티리진염산염,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200610765/NB,sha256:34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,2023-04-20,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200610765/detail.html#tblChf; change_item=사용상의 주의사항,,34406f284ca4e7d5a0b3ff1c667fc32531b25d2311b61733a701a7c01f01ef57,94ec7cf2e6e7f7a505b7105a086b34ffca1ad377beb1ba60386e01fe3b37a06f,2026-07-14,2026-07-14T02:56:31.878369+00:00,"사용상의주의사항 PDF p.1, 문단 20",이 약은 주로 신장을 통해 배설되므로 일반적으로 신기능이 저하되어 있는 노인에서는 혈중 농도 과다상태,"사용상의주의사항 PDF p.1, 문단 14-22","3. 이 약을 복용(사용)하는 동안 다음의 행위를 하지 말 것
+
+1) 다른 항히스타민제와 마찬가지로 과량의 알코올과 함께 투여하지 않는다.
+
+4. 다음과 같은 사람은 이 약을 복용(사용)하기 전에 의사, 치과의사, 약사와 상의할 것
 
 1) 신장애(신장장애) 환자(높은 혈중 농도가 지속될 수 있다)
 
@@ -3629,21 +3837,39 @@ SAFE-OTC-05-NB-P1-B12-decongestant_hypertension,OTC-V51-EU-4bce104a73838235,OTC-
 야 한다. 또한 심혈관계 위험 요소(예. 고혈압, 고지혈증, 당뇨병, 흡연)를 가지고 있는 환자가 고용량 이부프
 
 로펜(1일 2400mg)이 필요한 경우 장기간 치료를 시작하기 전에 신중히 고려해야한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-NB-P1-B17-gi_bleeding_ulcer,OTC-V51-EU-6947c5246a46fc36,OTC-RULE-009,gi_bleeding_ulcer,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,f6deaa453e8f185136bb7ab9bcbc0659fbaf5cbeddb2e83d9176c18184a64e38,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 17","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다.","사용상의주의사항 PDF p.1, 문단 17-20","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등
+SAFE-OTC-05-NB-P1-B17-gi_bleeding_ulcer,OTC-V51-EU-6947c5246a46fc36,OTC-RULE-009,gi_bleeding_ulcer,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,f6deaa453e8f185136bb7ab9bcbc0659fbaf5cbeddb2e83d9176c18184a64e38,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 17","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다.","사용상의주의사항 PDF p.1, 문단 14-20","임상연구 결과 고용량(1일 2400mg) 이부프로펜 사용이 동맥 혈전 증상(심근경색증 또는 뇌졸중)에 대한 위
+
+험성을 다소 증가시킬 수 있다고 나타났다. 종합적으로 역학연구 결과 저용량 이부프로펜(예. 1일 1200 mg
+
+이하)과 동맥 혈전 증상의 위험성 증가간의 연관성은 증명되지 않았다.
+
+3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등
 
 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다. 이러한 이상반응은 투여 기간 동안에 경고 증
 
 상 없이 발생할 수 있다. 고령자(노인)이거나 이 약을 장기복용한 환자일수록 위장관계 이상반응 발생가능성
 
 은 증가할 수 있다.",true,PDF 시각 줄바꿈으로 나뉜 연속 문장 복원,"사용상의주의사항 PDF p.1, 문단 17","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다.",false,"사용상의주의사항 PDF p.1, 문단 17","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다.","사용상의주의사항 PDF p.1, 문단 17","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다.",ibuprofen_gi_bleeding_or_ulcer,item_sequence=198601920|flags=gi_bleeding_ulcer,위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1030,1,recommended_primary,verified_primary,active_existing_released_primary_evidence,expert_primary_released,included,,false,,false,,false,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z
-SAFE-OTC-05-NB-P1-B19-age_restriction,OTC-V51-EU-36ddbcb5d431dcc8,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,f6deaa453e8f185136bb7ab9bcbc0659fbaf5cbeddb2e83d9176c18184a64e38,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 19",상 없이 발생할 수 있다. 고령자(노인)이거나 이 약을 장기복용한 환자일수록 위장관계 이상반응 발생가능성,"사용상의주의사항 PDF p.1, 문단 17-20","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등
+SAFE-OTC-05-NB-P1-B19-age_restriction,OTC-V51-EU-36ddbcb5d431dcc8,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,f6deaa453e8f185136bb7ab9bcbc0659fbaf5cbeddb2e83d9176c18184a64e38,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 19",상 없이 발생할 수 있다. 고령자(노인)이거나 이 약을 장기복용한 환자일수록 위장관계 이상반응 발생가능성,"사용상의주의사항 PDF p.1, 문단 14-20","임상연구 결과 고용량(1일 2400mg) 이부프로펜 사용이 동맥 혈전 증상(심근경색증 또는 뇌졸중)에 대한 위
+
+험성을 다소 증가시킬 수 있다고 나타났다. 종합적으로 역학연구 결과 저용량 이부프로펜(예. 1일 1200 mg
+
+이하)과 동맥 혈전 증상의 위험성 증가간의 연관성은 증명되지 않았다.
+
+3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등
 
 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다. 이러한 이상반응은 투여 기간 동안에 경고 증
 
 상 없이 발생할 수 있다. 고령자(노인)이거나 이 약을 장기복용한 환자일수록 위장관계 이상반응 발생가능성
 
 은 증가할 수 있다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-36ddbcb5d431dcc8,true,OTC-V51-EU-36ddbcb5d431dcc8,false,,,,
-SAFE-OTC-05-NB-P1-B19-maximum_duration,OTC-V51-EU-36ddbcb5d431dcc8,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,f6deaa453e8f185136bb7ab9bcbc0659fbaf5cbeddb2e83d9176c18184a64e38,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 19",상 없이 발생할 수 있다. 고령자(노인)이거나 이 약을 장기복용한 환자일수록 위장관계 이상반응 발생가능성,"사용상의주의사항 PDF p.1, 문단 17-20","3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등
+SAFE-OTC-05-NB-P1-B19-maximum_duration,OTC-V51-EU-36ddbcb5d431dcc8,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,f6deaa453e8f185136bb7ab9bcbc0659fbaf5cbeddb2e83d9176c18184a64e38,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 19",상 없이 발생할 수 있다. 고령자(노인)이거나 이 약을 장기복용한 환자일수록 위장관계 이상반응 발생가능성,"사용상의주의사항 PDF p.1, 문단 14-20","임상연구 결과 고용량(1일 2400mg) 이부프로펜 사용이 동맥 혈전 증상(심근경색증 또는 뇌졸중)에 대한 위
+
+험성을 다소 증가시킬 수 있다고 나타났다. 종합적으로 역학연구 결과 저용량 이부프로펜(예. 1일 1200 mg
+
+이하)과 동맥 혈전 증상의 위험성 증가간의 연관성은 증명되지 않았다.
+
+3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등
 
 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다. 이러한 이상반응은 투여 기간 동안에 경고 증
 
@@ -3718,7 +3944,7 @@ SAFE-OTC-05-NB-P1-B7-maximum_duration,OTC-V51-EU-8c725fb1b58150e8,OTC-RULE-015,m
 전 반응, 심근경색증 및 뇌졸중의 위험이 증가한다. 심혈관계 질환 또는 심혈관계 질환의 위험 인자가 있는 환
 
 자이거나 이 약을 장기 복용한 환자일수록 심혈관계 이상반응 발생가능성은 증가한다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-8c725fb1b58150e8,true,OTC-V51-EU-8c725fb1b58150e8,false,,,,
-SAFE-OTC-05-NB-P2-B1-renal_disease,OTC-V51-EU-94134c9801da30df,OTC-RULE-008,renal_disease,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 1",4) 심한 신장장애 환자,"사용상의주의사항 PDF p.2, 문단 1-16","4) 심한 신장장애 환자
+SAFE-OTC-05-NB-P2-B1-renal_disease,OTC-V51-EU-94134c9801da30df,OTC-RULE-008,renal_disease,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 1",4) 심한 신장장애 환자,"사용상의주의사항 PDF p.2, 문단 1-19","4) 심한 신장장애 환자
 
 5) 심한 심장기능부전 환자
 
@@ -3748,9 +3974,14 @@ SAFE-OTC-05-NB-P2-B1-renal_disease,OTC-V51-EU-94134c9801da30df,OTC-RULE-008,rena
 
 3. 이 약을 복용하는 동안 다음의 행위를 하지 말 것
 
-1) 이 약의 권장용량을 초과하여 복용해서는 안된다.",false,,,,false,,,,,ibuprofen_kidney_disease,item_sequence=198601920|flags=renal_disease,신장질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1023,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-aae1e4d37e708622,false,,true,OTC-V51-TEXT-aae1e4d37e708622,,,
-SAFE-OTC-05-NB-P2-B17-duplicate_pharmacologic_class,OTC-V51-EU-68ae7400234c3c30,OTC-RULE-002,duplicate_pharmacologic_class,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,false,,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,false,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,ibuprofen_and_other_NSAIDs,scope_only_no_structured_binding,같은 NSAID 계열 성분을 함께 복용할 수 있습니다.,함께 복용하지 말고 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:759,1,recommended_primary,verified_primary,active_existing_released_primary_evidence,expert_primary_released,included,,false,,false,,false,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z
-SAFE-OTC-05-NB-P2-B2-decongestant_hypertension,OTC-V51-EU-7e0e0d7ac0a0bf5d,OTC-RULE-014,decongestant_hypertension,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 2",5) 심한 심장기능부전 환자,"사용상의주의사항 PDF p.2, 문단 1-16","4) 심한 신장장애 환자
+1) 이 약의 권장용량을 초과하여 복용해서는 안된다.
+
+2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.
+
+3) 모유로의 이행이 보고되고, 이로 인해 영아에서 심각한 이상반응 발생이 우려되므로 약물투여의 중요성을
+
+고려하여 수유를 중단하거나 약물투여를 중단해야 한다.",false,,,,false,,,,,ibuprofen_kidney_disease,item_sequence=198601920|flags=renal_disease,신장질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1023,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-aae1e4d37e708622,false,,true,OTC-V51-TEXT-aae1e4d37e708622,,,
+SAFE-OTC-05-NB-P2-B17-duplicate_pharmacologic_class,OTC-V51-EU-68ae7400234c3c30,OTC-RULE-002,duplicate_pharmacologic_class,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,"사용상의주의사항 PDF p.2, 문단 1-19","4) 심한 신장장애 환자
 
 5) 심한 심장기능부전 환자
 
@@ -3780,9 +4011,56 @@ SAFE-OTC-05-NB-P2-B2-decongestant_hypertension,OTC-V51-EU-7e0e0d7ac0a0bf5d,OTC-R
 
 3. 이 약을 복용하는 동안 다음의 행위를 하지 말 것
 
-1) 이 약의 권장용량을 초과하여 복용해서는 안된다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-NB-P2-B20-sedation_driving,OTC-V51-EU-2dc0998bfd262347,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 20",4) 복용하는 동안 환자의 반응시간에 영향을 미칠 수 있으므로 운전을 할 때나 기계조작 시 주의가 필요하다.,"사용상의주의사항 PDF p.2, 문단 20",4) 복용하는 동안 환자의 반응시간에 영향을 미칠 수 있으므로 운전을 할 때나 기계조작 시 주의가 필요하다.,false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-NB-P2-B21-alcohol,OTC-V51-EU-ef775612b8c92727,OTC-RULE-011,alcohol,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 21",알코올과의 병용 시 더 크게 영향을 미칠 수 있다.,"사용상의주의사항 PDF p.2, 문단 21",알코올과의 병용 시 더 크게 영향을 미칠 수 있다.,false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+1) 이 약의 권장용량을 초과하여 복용해서는 안된다.
+
+2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.
+
+3) 모유로의 이행이 보고되고, 이로 인해 영아에서 심각한 이상반응 발생이 우려되므로 약물투여의 중요성을
+
+고려하여 수유를 중단하거나 약물투여를 중단해야 한다.",false,,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,false,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,"사용상의주의사항 PDF p.2, 문단 17",2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.,ibuprofen_and_other_NSAIDs,scope_only_no_structured_binding,같은 NSAID 계열 성분을 함께 복용할 수 있습니다.,함께 복용하지 말고 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:759,1,recommended_primary,verified_primary,active_existing_released_primary_evidence,expert_primary_released,included,,false,,false,,false,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z
+SAFE-OTC-05-NB-P2-B2-decongestant_hypertension,OTC-V51-EU-7e0e0d7ac0a0bf5d,OTC-RULE-014,decongestant_hypertension,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 2",5) 심한 심장기능부전 환자,"사용상의주의사항 PDF p.2, 문단 1-19","4) 심한 신장장애 환자
+
+5) 심한 심장기능부전 환자
+
+6) 심한 고혈압 환자
+
+7) 이 약의 성분에 과민증이 있는 환자
+
+8) 기관지천식 또는 그 병력이 있는 환자
+
+9) 아스피린이나 다른 비스테로이드성 소염진통제(COX-2 저해제 포함)에 대하여 천식, 두드러기, 알레르기
+
+반응과 같은 과민반응 또는 그 병력이 있는 환자
+
+10) 관상동맥(심장동맥) 우회로술(CABG) 전후 통증발생환자
+
+11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을
+
+투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다)
+
+12) 항암요법으로 고용량 메토트렉세이트를 투여중인 환자
+
+13) 이 약은 유당을 함유하고 있으므로, 갈락토오스 불내성(galactose intolerance), Lapp 유당분해효소 결
+
+핍증(Lapp lactase deficiency) 또는 포도당-갈락토오스 흡수장애(glucose-galactose malabsorption) 등
+
+의 유전적인 문제가 있는 환자에게는 투여하면 안 된다.(해당제제에 한함)
+
+3. 이 약을 복용하는 동안 다음의 행위를 하지 말 것
+
+1) 이 약의 권장용량을 초과하여 복용해서는 안된다.
+
+2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.
+
+3) 모유로의 이행이 보고되고, 이로 인해 영아에서 심각한 이상반응 발생이 우려되므로 약물투여의 중요성을
+
+고려하여 수유를 중단하거나 약물투여를 중단해야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+SAFE-OTC-05-NB-P2-B20-sedation_driving,OTC-V51-EU-2dc0998bfd262347,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 20",4) 복용하는 동안 환자의 반응시간에 영향을 미칠 수 있으므로 운전을 할 때나 기계조작 시 주의가 필요하다.,"사용상의주의사항 PDF p.2, 문단 20-21","4) 복용하는 동안 환자의 반응시간에 영향을 미칠 수 있으므로 운전을 할 때나 기계조작 시 주의가 필요하다.
+
+알코올과의 병용 시 더 크게 영향을 미칠 수 있다.",false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+SAFE-OTC-05-NB-P2-B21-alcohol,OTC-V51-EU-ef775612b8c92727,OTC-RULE-011,alcohol,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 21",알코올과의 병용 시 더 크게 영향을 미칠 수 있다.,"사용상의주의사항 PDF p.2, 문단 20-21","4) 복용하는 동안 환자의 반응시간에 영향을 미칠 수 있으므로 운전을 할 때나 기계조작 시 주의가 필요하다.
+
+알코올과의 병용 시 더 크게 영향을 미칠 수 있다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
 SAFE-OTC-05-NB-P2-B25-hepatic_disease,OTC-V51-EU-9bd5b60c8bd5de03,OTC-RULE-007,hepatic_disease,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 25","3) 간경화, 간장애 또는 그 병력이 있는 환자","사용상의주의사항 PDF p.2, 문단 22-25","4. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의할 것
 
 1) 혈액이상 또는 그 병력이 있는 환자
@@ -3790,7 +4068,7 @@ SAFE-OTC-05-NB-P2-B25-hepatic_disease,OTC-V51-EU-9bd5b60c8bd5de03,OTC-RULE-007,h
 2) 출혈경향이 있는 환자(혈소판 기능이상이 일어날 수 있다)
 
 3) 간경화, 간장애 또는 그 병력이 있는 환자",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-6e8b831000f7376c,false,,true,OTC-V51-TEXT-6e8b831000f7376c,,,
-SAFE-OTC-05-NB-P2-B3-decongestant_hypertension,OTC-V51-EU-0cb8981ac5bd46da,OTC-RULE-014,decongestant_hypertension,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 3",6) 심한 고혈압 환자,"사용상의주의사항 PDF p.2, 문단 1-16","4) 심한 신장장애 환자
+SAFE-OTC-05-NB-P2-B3-decongestant_hypertension,OTC-V51-EU-0cb8981ac5bd46da,OTC-RULE-014,decongestant_hypertension,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 3",6) 심한 고혈압 환자,"사용상의주의사항 PDF p.2, 문단 1-19","4) 심한 신장장애 환자
 
 5) 심한 심장기능부전 환자
 
@@ -3820,8 +4098,14 @@ SAFE-OTC-05-NB-P2-B3-decongestant_hypertension,OTC-V51-EU-0cb8981ac5bd46da,OTC-R
 
 3. 이 약을 복용하는 동안 다음의 행위를 하지 말 것
 
-1) 이 약의 권장용량을 초과하여 복용해서는 안된다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-26ff3eb28aa410fb,false,,true,OTC-V51-TEXT-26ff3eb28aa410fb,,,
-SAFE-OTC-05-NB-P2-B9-pregnancy_lactation,OTC-V51-EU-9c34f5ff6bc9e33a,OTC-RULE-006,pregnancy_lactation,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),"사용상의주의사항 PDF p.2, 문단 1-16","4) 심한 신장장애 환자
+1) 이 약의 권장용량을 초과하여 복용해서는 안된다.
+
+2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.
+
+3) 모유로의 이행이 보고되고, 이로 인해 영아에서 심각한 이상반응 발생이 우려되므로 약물투여의 중요성을
+
+고려하여 수유를 중단하거나 약물투여를 중단해야 한다.",false,,,,false,,,,,pancol_a_phenylephrine_hypertension,item_sequence=196800036|flags=decongestant_hypertension,고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1051,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-26ff3eb28aa410fb,false,,true,OTC-V51-TEXT-26ff3eb28aa410fb,,,
+SAFE-OTC-05-NB-P2-B9-pregnancy_lactation,OTC-V51-EU-9c34f5ff6bc9e33a,OTC-RULE-006,pregnancy_lactation,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,14615a754fc607e9403a18a9b2412fdd78700445695de73bcefc08c66eb74f1a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),"사용상의주의사항 PDF p.2, 문단 1-19","4) 심한 신장장애 환자
 
 5) 심한 심장기능부전 환자
 
@@ -3851,7 +4135,13 @@ SAFE-OTC-05-NB-P2-B9-pregnancy_lactation,OTC-V51-EU-9c34f5ff6bc9e33a,OTC-RULE-00
 
 3. 이 약을 복용하는 동안 다음의 행위를 하지 말 것
 
-1) 이 약의 권장용량을 초과하여 복용해서는 안된다.",true,PDF 시각 줄바꿈으로 나뉜 연속 문장 복원,"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),false,"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),ibuprofen_pregnancy_lactation,item_sequence=198601920|flags=pregnancy_lactation,임신 또는 수유 중 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1094,1,recommended_primary,verified_primary,active_existing_released_primary_evidence,expert_primary_released,included,,false,,false,,false,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z
+1) 이 약의 권장용량을 초과하여 복용해서는 안된다.
+
+2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다.
+
+3) 모유로의 이행이 보고되고, 이로 인해 영아에서 심각한 이상반응 발생이 우려되므로 약물투여의 중요성을
+
+고려하여 수유를 중단하거나 약물투여를 중단해야 한다.",true,PDF 시각 줄바꿈으로 나뉜 연속 문장 복원,"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),false,"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),"사용상의주의사항 PDF p.2, 문단 9",11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다),ibuprofen_pregnancy_lactation,item_sequence=198601920|flags=pregnancy_lactation,임신 또는 수유 중 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1094,1,recommended_primary,verified_primary,active_existing_released_primary_evidence,expert_primary_released,included,,false,,false,,false,,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z
 SAFE-OTC-05-NB-P3-B1-hepatic_disease,OTC-V51-EU-53d23fe54dd9f116,OTC-RULE-007,hepatic_disease,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,78fb371571e9a92ac97a268b66a54e58d4f32b84650876741850ef712185a15e,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 1","3) 간경화, 간장애 또는 그 병력이 있는 환자","사용상의주의사항 PDF p.3, 문단 1-17","3) 간경화, 간장애 또는 그 병력이 있는 환자
 
 4) 신장장애 또는 그 병력이 있는 환자
@@ -4544,41 +4834,7 @@ SAFE-OTC-05-NB-P4-B25-hepatic_disease,OTC-V51-EU-aa43c1f1225b9d5e,OTC-RULE-007,h
 6) 면역계 : 과민증 또는 아나필락시스 반응, 천식발작, 두드러기, 습진, 자반(자주색반점), 발진, 가려움증
 
 7) 호흡기계 : 천식, 기관지수축, 호흡곤란 또는 쌕쌕거림",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-NB-P5-B16-sedation_driving,OTC-V51-EU-b7e405b3e6310633,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,54c833b5aeb3ac32ac70561c6b856925765306e402f24747882c1a2c72dd2dbc,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.5, 문단 16","(5) 신경계 이상: 어지러움, 졸음, 두통, 의식소실, 경련","사용상의주의사항 PDF p.5, 문단 12-20","(1) 귀와 미로(속귀) 이상: 어지러움
-
-(2) 위장관계 이상: 복통, 구역, 구토
-
-(3) 간∙쓸개 이상: 간기능 이상
-
-(4) 대사 및 영양학적 이상: 고칼륨혈증, 대사산증, 저칼륨혈증*
-
-(5) 신경계 이상: 어지러움, 졸음, 두통, 의식소실, 경련
-
-(6) 신장(콩팥) 및 비뇨기계 이상: 신부전, 신세뇨관 산증*
-
-(7) 호흡기, 가슴 및 세로칸 이상: 호흡곤란, 호흡 억제
-
-(8) 혈관계 이상: 저혈압
-
-*시판 후 경험으로 일일 권장용량을 초과하여 장기간 복용한 환자에게서 보고되었다.",false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-NB-P5-B20-maximum_duration,OTC-V51-EU-7d5fe87179b4d57c,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,54c833b5aeb3ac32ac70561c6b856925765306e402f24747882c1a2c72dd2dbc,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.5, 문단 20",*시판 후 경험으로 일일 권장용량을 초과하여 장기간 복용한 환자에게서 보고되었다.,"사용상의주의사항 PDF p.5, 문단 12-20","(1) 귀와 미로(속귀) 이상: 어지러움
-
-(2) 위장관계 이상: 복통, 구역, 구토
-
-(3) 간∙쓸개 이상: 간기능 이상
-
-(4) 대사 및 영양학적 이상: 고칼륨혈증, 대사산증, 저칼륨혈증*
-
-(5) 신경계 이상: 어지러움, 졸음, 두통, 의식소실, 경련
-
-(6) 신장(콩팥) 및 비뇨기계 이상: 신부전, 신세뇨관 산증*
-
-(7) 호흡기, 가슴 및 세로칸 이상: 호흡곤란, 호흡 억제
-
-(8) 혈관계 이상: 저혈압
-
-*시판 후 경험으로 일일 권장용량을 초과하여 장기간 복용한 환자에게서 보고되었다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-NB-P5-B3-sedation_driving,OTC-V51-EU-0f3d9ee799a9e850,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,54c833b5aeb3ac32ac70561c6b856925765306e402f24747882c1a2c72dd2dbc,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.5, 문단 3","9) 정신신경계 : 졸음, 어지러움, 우울, 두통, 뇌혈관 사고 또는 신경질, 무균성 수막염 또는 수막염(심한 두","사용상의주의사항 PDF p.5, 문단 1-11","7) 호흡기계 : 천식, 기관지수축, 호흡곤란 또는 쌕쌕거림
+SAFE-OTC-05-NB-P5-B16-sedation_driving,OTC-V51-EU-b7e405b3e6310633,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,54c833b5aeb3ac32ac70561c6b856925765306e402f24747882c1a2c72dd2dbc,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.5, 문단 16","(5) 신경계 이상: 어지러움, 졸음, 두통, 의식소실, 경련","사용상의주의사항 PDF p.5, 문단 1-20","7) 호흡기계 : 천식, 기관지수축, 호흡곤란 또는 쌕쌕거림
 
 8) 감각기계 : 암점(시야불능부위) 등 시각장애, 난청(귀먹음), 이명(귀울림), 미각이상, 현기증
 
@@ -4598,7 +4854,103 @@ SAFE-OTC-05-NB-P5-B3-sedation_driving,OTC-V51-EU-0f3d9ee799a9e850,OTC-RULE-010,s
 
 종
 
-13) 이 약의 과량 복용 시 다음과 같은 이상반응이 나타날 수 있다.",false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+13) 이 약의 과량 복용 시 다음과 같은 이상반응이 나타날 수 있다.
+
+(1) 귀와 미로(속귀) 이상: 어지러움
+
+(2) 위장관계 이상: 복통, 구역, 구토
+
+(3) 간∙쓸개 이상: 간기능 이상
+
+(4) 대사 및 영양학적 이상: 고칼륨혈증, 대사산증, 저칼륨혈증*
+
+(5) 신경계 이상: 어지러움, 졸음, 두통, 의식소실, 경련
+
+(6) 신장(콩팥) 및 비뇨기계 이상: 신부전, 신세뇨관 산증*
+
+(7) 호흡기, 가슴 및 세로칸 이상: 호흡곤란, 호흡 억제
+
+(8) 혈관계 이상: 저혈압
+
+*시판 후 경험으로 일일 권장용량을 초과하여 장기간 복용한 환자에게서 보고되었다.",false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+SAFE-OTC-05-NB-P5-B20-maximum_duration,OTC-V51-EU-7d5fe87179b4d57c,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,54c833b5aeb3ac32ac70561c6b856925765306e402f24747882c1a2c72dd2dbc,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.5, 문단 20",*시판 후 경험으로 일일 권장용량을 초과하여 장기간 복용한 환자에게서 보고되었다.,"사용상의주의사항 PDF p.5, 문단 1-20","7) 호흡기계 : 천식, 기관지수축, 호흡곤란 또는 쌕쌕거림
+
+8) 감각기계 : 암점(시야불능부위) 등 시각장애, 난청(귀먹음), 이명(귀울림), 미각이상, 현기증
+
+9) 정신신경계 : 졸음, 어지러움, 우울, 두통, 뇌혈관 사고 또는 신경질, 무균성 수막염 또는 수막염(심한 두
+
+통, 구역, 구토, 불면, 목이 뻣뻣함, 발열 또는 의식장애 등의 증상)
+
+10) 순환기계 : 혈압저하, 혈압상승, 심계항진(두근거림), 심부전, 심근경색증 또는 협심증, 코니스 증후군(심
+
+근경색을 초래할 수 있는 알레르기성 또는 과민성 관상동맥연축)
+
+11) 신장(콩팥) : 급성신부전, 핍뇨(소변감소), 혈뇨, 요단백, BUN, 혈중크레아티닌의 상승, 고칼륨혈증,. 간
+
+질성 콩팥염, 콩팥염증후군, 콩팥유두괴사, 요량 감소, 전신부종 및 이에 수반하는 숨가쁨, 나른함
+
+12) 기타 : 안와주위부종(눈주변 부기), 안면부종(얼굴부기), 권태감, 발열, 비출혈(코피), 부종(부기), 말초부
+
+종
+
+13) 이 약의 과량 복용 시 다음과 같은 이상반응이 나타날 수 있다.
+
+(1) 귀와 미로(속귀) 이상: 어지러움
+
+(2) 위장관계 이상: 복통, 구역, 구토
+
+(3) 간∙쓸개 이상: 간기능 이상
+
+(4) 대사 및 영양학적 이상: 고칼륨혈증, 대사산증, 저칼륨혈증*
+
+(5) 신경계 이상: 어지러움, 졸음, 두통, 의식소실, 경련
+
+(6) 신장(콩팥) 및 비뇨기계 이상: 신부전, 신세뇨관 산증*
+
+(7) 호흡기, 가슴 및 세로칸 이상: 호흡곤란, 호흡 억제
+
+(8) 혈관계 이상: 저혈압
+
+*시판 후 경험으로 일일 권장용량을 초과하여 장기간 복용한 환자에게서 보고되었다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+SAFE-OTC-05-NB-P5-B3-sedation_driving,OTC-V51-EU-0f3d9ee799a9e850,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,54c833b5aeb3ac32ac70561c6b856925765306e402f24747882c1a2c72dd2dbc,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.5, 문단 3","9) 정신신경계 : 졸음, 어지러움, 우울, 두통, 뇌혈관 사고 또는 신경질, 무균성 수막염 또는 수막염(심한 두","사용상의주의사항 PDF p.5, 문단 1-20","7) 호흡기계 : 천식, 기관지수축, 호흡곤란 또는 쌕쌕거림
+
+8) 감각기계 : 암점(시야불능부위) 등 시각장애, 난청(귀먹음), 이명(귀울림), 미각이상, 현기증
+
+9) 정신신경계 : 졸음, 어지러움, 우울, 두통, 뇌혈관 사고 또는 신경질, 무균성 수막염 또는 수막염(심한 두
+
+통, 구역, 구토, 불면, 목이 뻣뻣함, 발열 또는 의식장애 등의 증상)
+
+10) 순환기계 : 혈압저하, 혈압상승, 심계항진(두근거림), 심부전, 심근경색증 또는 협심증, 코니스 증후군(심
+
+근경색을 초래할 수 있는 알레르기성 또는 과민성 관상동맥연축)
+
+11) 신장(콩팥) : 급성신부전, 핍뇨(소변감소), 혈뇨, 요단백, BUN, 혈중크레아티닌의 상승, 고칼륨혈증,. 간
+
+질성 콩팥염, 콩팥염증후군, 콩팥유두괴사, 요량 감소, 전신부종 및 이에 수반하는 숨가쁨, 나른함
+
+12) 기타 : 안와주위부종(눈주변 부기), 안면부종(얼굴부기), 권태감, 발열, 비출혈(코피), 부종(부기), 말초부
+
+종
+
+13) 이 약의 과량 복용 시 다음과 같은 이상반응이 나타날 수 있다.
+
+(1) 귀와 미로(속귀) 이상: 어지러움
+
+(2) 위장관계 이상: 복통, 구역, 구토
+
+(3) 간∙쓸개 이상: 간기능 이상
+
+(4) 대사 및 영양학적 이상: 고칼륨혈증, 대사산증, 저칼륨혈증*
+
+(5) 신경계 이상: 어지러움, 졸음, 두통, 의식소실, 경련
+
+(6) 신장(콩팥) 및 비뇨기계 이상: 신부전, 신세뇨관 산증*
+
+(7) 호흡기, 가슴 및 세로칸 이상: 호흡곤란, 호흡 억제
+
+(8) 혈관계 이상: 저혈압
+
+*시판 후 경험으로 일일 권장용량을 초과하여 장기간 복용한 환자에게서 보고되었다.",false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
 SAFE-OTC-05-NB-P6-B13-age_restriction,OTC-V51-EU-a3c7de86ec930faa,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,9a9ea3e1f01a99e01bf876c3fb757392a666d89ac460b0eb98d5b705bbaf281d,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.6, 문단 13",느낌) 등이 나타날 수 있으므로 특히 고열을 수반하는 소아 및 고령자(노인) 또는 소모성 질환 환자의 경우에,"사용상의주의사항 PDF p.6, 문단 12-14","(6) 이 약은 가능한 최단 기간 동안 최소 유효용량으로 복용한다. 과도한 체온강하, 허탈, 사지냉각(팔다리 찬
 
 느낌) 등이 나타날 수 있으므로 특히 고열을 수반하는 소아 및 고령자(노인) 또는 소모성 질환 환자의 경우에
@@ -4639,11 +4991,15 @@ SAFE-OTC-05-NB-P6-B25-decongestant_hypertension,OTC-V51-EU-f553d21330c50983,OTC-
 SAFE-OTC-05-NB-P6-B4-maximum_duration,OTC-V51-EU-52c94e275272bcde,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,9a9ea3e1f01a99e01bf876c3fb757392a666d89ac460b0eb98d5b705bbaf281d,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.6, 문단 4","가. 장기 복용하는 경우 정기적인 임상검사(요검사, 혈액검사, 간기능검사 등)를 받고 이상이 있을 경우 감량","사용상의주의사항 PDF p.6, 문단 4-5","가. 장기 복용하는 경우 정기적인 임상검사(요검사, 혈액검사, 간기능검사 등)를 받고 이상이 있을 경우 감량
 
 (줄임), 복용중지 등의 적절한 조치를 해야 한다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-NB-P7-B15-hepatic_disease,OTC-V51-EU-34d24e3fbf4697e1,OTC-RULE-007,hepatic_disease,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,4f24a40f7bd67966d82776cb7f2a1ee73d783d3b200fc04bca08cda39eb59013,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.7, 문단 15","여기간 동안 주의 깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호","사용상의주의사항 PDF p.7, 문단 14-16","간기능 이상을 암시하는 증상 및/또는 징후가 있는 환자 또는 간기능 시험 결과 비정상인 환자에 있어서는 투
+SAFE-OTC-05-NB-P7-B15-hepatic_disease,OTC-V51-EU-34d24e3fbf4697e1,OTC-RULE-007,hepatic_disease,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,4f24a40f7bd67966d82776cb7f2a1ee73d783d3b200fc04bca08cda39eb59013,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.7, 문단 15","여기간 동안 주의 깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호","사용상의주의사항 PDF p.7, 문단 14-18","간기능 이상을 암시하는 증상 및/또는 징후가 있는 환자 또는 간기능 시험 결과 비정상인 환자에 있어서는 투
 
 여기간 동안 주의 깊게 간기능의 악화 여부를 관찰하고, 간질환과 관련된 임상 증상이나 전신적인 징후(예: 호
 
-산구증가증, 발진)가 발현되는 경우에는 이 약의 투여를 중지한다.",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-64b46da2eb98dc64,false,,true,OTC-V51-TEXT-64b46da2eb98dc64,,,
+산구증가증, 발진)가 발현되는 경우에는 이 약의 투여를 중지한다.
+
+(14) 이 약을 포함한 비스테로이드성 소염진통제의 투여로 빈혈이 나타날 수 있으므로 이 약의 장기 투여에
+
+의해 빈혈의 증상 또는 징후가 나타나는 경우에는 헤모글로빈치 또는 헤마토크리트치 검사를 해야 한다.",false,,,,false,,,,,acetaminophen_liver_disease,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease,간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1016,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-64b46da2eb98dc64,false,,true,OTC-V51-TEXT-64b46da2eb98dc64,,,
 SAFE-OTC-05-NB-P7-B21-anticoagulant_antiplatelet,OTC-V51-EU-a437194017df6f06,OTC-RULE-012,anticoagulant_antiplatelet,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB,sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,2024-11-05,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=사용상의 주의사항,,56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba,4f24a40f7bd67966d82776cb7f2a1ee73d783d3b200fc04bca08cda39eb59013,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.7, 문단 21",다. 응고 관련 질환이 있거나 항응고제를 투여하고 있는 경우와 같이 혈소판 기능 변경에 의해 부정적인 영향,"사용상의주의사항 PDF p.7, 문단 19-22","비스테로이드성 소염진통제는 혈소판 응집을 억제하며, 일부 환자에서는 출혈 시간을 연장시키는 것이 확인
 
 되었다. 아스피린과 달리 이 약의 혈소판 기능에 대한 영향은 상대적으로 작고 지속기간이 짧으며 가역적이
@@ -4678,16 +5034,36 @@ SAFE-OTC-05-NB-P8-B9-maximum_duration,OTC-V51-EU-5202e85cd6a13a08,OTC-RULE-015,m
 있다. 장기간 코르티코스테로이드를 복용해 온 환자에게 이 약을 투여하고자 할 경우에는 서서히 용량을 감소
 
 시켜야 한다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-05-UD-P1-B10-max_daily_dose,OTC-V51-EU-34aeeab7909cb28d,OTC-RULE-003,max_daily_dose,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,UD,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD,sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,2025-09-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=용법·용량,,32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,9abcd4e2b2ddf8b20bf01b9812bcfc12bfb17d8fedd0cbe121f3114c04feb796,2026-07-14,2026-07-14T02:10:14.255342+00:00,"용법용량 PDF p.1, 문단 10",어린이 1회 용량 및 1일 최대 용량,"용법용량 PDF p.1, 문단 10-12","어린이 1회 용량 및 1일 최대 용량
+SAFE-OTC-05-UD-P1-B10-max_daily_dose,OTC-V51-EU-34aeeab7909cb28d,OTC-RULE-003,max_daily_dose,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,UD,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD,sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,2025-09-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=용법·용량,,32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,9abcd4e2b2ddf8b20bf01b9812bcfc12bfb17d8fedd0cbe121f3114c04feb796,2026-07-14,2026-07-14T02:10:14.255342+00:00,"용법용량 PDF p.1, 문단 10",어린이 1회 용량 및 1일 최대 용량,"용법용량 PDF p.1, 문단 10-17","어린이 1회 용량 및 1일 최대 용량
 
 연령 1회 용량 1일 최대용량
 
-200~250mg (10~12.",false,,"용법용량 PDF p.1, 문단 10",어린이 1회 용량 및 1일 최대 용량,false,,,,,acetaminophen_tylenol500_age_12_plus,item_sequence=202106092|ingredient_id=ING-acetaminophen|max_daily_amount=4000,계산된 하루 총량이 확인된 최대 1일 용량을 초과합니다.,추가 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:69,3,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
-SAFE-OTC-05-UD-P1-B11-max_daily_dose,OTC-V51-EU-27bf3e4e394d9a7e,OTC-RULE-003,max_daily_dose,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,UD,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD,sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,2025-09-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=용법·용량,,32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,9abcd4e2b2ddf8b20bf01b9812bcfc12bfb17d8fedd0cbe121f3114c04feb796,2026-07-14,2026-07-14T02:10:14.255342+00:00,"용법용량 PDF p.1, 문단 11",연령 1회 용량 1일 최대용량,"용법용량 PDF p.1, 문단 10-12","어린이 1회 용량 및 1일 최대 용량
+200~250mg (10~12.
+
+11~14세 1000mg (50mL)
+
+5mL)
+
+7~10세 150~200mg (7.5~10mL) 800mg (40mL)
+
+3~6세 100~150mg (5~7.5mL) 600mg (30mL)
+
+1~2세 50~100mg (2.5~5mL) 400mg (20mL)",false,,"용법용량 PDF p.1, 문단 10",어린이 1회 용량 및 1일 최대 용량,false,,,,,acetaminophen_tylenol500_age_12_plus,item_sequence=202106092|ingredient_id=ING-acetaminophen|max_daily_amount=4000,계산된 하루 총량이 확인된 최대 1일 용량을 초과합니다.,추가 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:69,3,alternative_context,needs_expert_review,inactive_candidate,shortlisted_context_not_expert_verified,included,,false,,false,,false,,,,
+SAFE-OTC-05-UD-P1-B11-max_daily_dose,OTC-V51-EU-27bf3e4e394d9a7e,OTC-RULE-003,max_daily_dose,released,high,SAFE-OTC-05,198601920,MFDS-198601920,어린이부루펜시럽(이부프로펜),ING-ibuprofen,이부프로펜,product_authorized_ingredient_set_not_excerpt_attribution,UD,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD,sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,2025-09-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change_item=용법·용량,,32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a,9abcd4e2b2ddf8b20bf01b9812bcfc12bfb17d8fedd0cbe121f3114c04feb796,2026-07-14,2026-07-14T02:10:14.255342+00:00,"용법용량 PDF p.1, 문단 11",연령 1회 용량 1일 최대용량,"용법용량 PDF p.1, 문단 10-17","어린이 1회 용량 및 1일 최대 용량
 
 연령 1회 용량 1일 최대용량
 
-200~250mg (10~12.",false,,,,false,,,,,acetaminophen_tylenol500_age_12_plus,item_sequence=202106092|ingredient_id=ING-acetaminophen|max_daily_amount=4000,계산된 하루 총량이 확인된 최대 1일 용량을 초과합니다.,추가 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:69,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+200~250mg (10~12.
+
+11~14세 1000mg (50mL)
+
+5mL)
+
+7~10세 150~200mg (7.5~10mL) 800mg (40mL)
+
+3~6세 100~150mg (5~7.5mL) 600mg (30mL)
+
+1~2세 50~100mg (2.5~5mL) 400mg (20mL)",false,,,,false,,,,,acetaminophen_tylenol500_age_12_plus,item_sequence=202106092|ingredient_id=ING-acetaminophen|max_daily_amount=4000,계산된 하루 총량이 확인된 최대 1일 용량을 초과합니다.,추가 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:69,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
 SAFE-OTC-06-NB-P1-B11-urgent_referral,OTC-V51-EU-739e6e823d7e17eb,OTC-RULE-016,urgent_referral,released,urgent,SAFE-OTC-06,198700405,MFDS-198700405,베아제정,ING-mf-src-0546ff64775e;ING-mf-src-06cdde4eaaee;ING-mf-src-484bf5816144;ING-mf-src-5abce34aadf5;ING-mf-src-7ace07a0f45d;ING-mf-src-7ae387262216;ING-mf-src-a742c02533bc,판셀라제;판프로신;판크레아틴장용과립;시메티콘;우르소데옥시콜산;디아스타제·프로테아제·셀룰라제;리파제,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198700405/NB,sha256:4c63fc46e5f4152d8a11a71ab4f595bc70c78b0e87b5c9911a15fbe96225b259,2026-01-23,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198700405/detail.html#tblChf; change_item=사용상의 주의사항,,4c63fc46e5f4152d8a11a71ab4f595bc70c78b0e87b5c9911a15fbe96225b259,bf2c3108347c9f37cffdea770d670ab0b16f90b3a7b6ce718923b89b86949d06,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 11","3. 다음과 같은 경우 이 약의 복용을 즉각 중지하고 의사, 치과의사, 약사와 상의할 것. 상담시 이 첨부문서를 소","사용상의주의사항 PDF p.1, 문단 8-12","1) 본인 또는 가족이 알레르기 체질인 사람
 
 2) 임부 또는 임신하고 있을 가능성이 있는 여성
@@ -5149,13 +5525,69 @@ SAFE-OTC-10-NB-P3-B3-age_restriction,OTC-V51-EU-0e4a533ba2945acd,OTC-RULE-005,ag
 6. 소아에 대한 투여
 
 만2세 미만에게 투여하지 않는다. 다만, 꼭 필요한 경우 의사의 진료를 받는다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-ec1695b4dce1da26,false,,true,OTC-V51-TEXT-ec1695b4dce1da26,,,
-SAFE-OTC-10-NB-P3-B6-maximum_duration,OTC-V51-EU-ba453755b63ff0f5,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 6",2) 장기간 계속 복용하지 말 것.,"사용상의주의사항 PDF p.3, 문단 6",2) 장기간 계속 복용하지 말 것.,false,,"사용상의주의사항 PDF p.3, 문단 6",2) 장기간 계속 복용하지 말 것.,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,1,recommended_primary,needs_expert_review,inactive_candidate,pharmacist_requested_revision,included,,true,text:OTC-V51-TEXT-35426ad1efada9d0,false,,true,OTC-V51-TEXT-35426ad1efada9d0,,,
-SAFE-OTC-10-NB-P3-B7-alcohol,OTC-V51-EU-bdc05c8e65d4a3b3,OTC-RULE-011,alcohol,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 7",3) 복용시에는 음주하지 말 것.,"사용상의주의사항 PDF p.3, 문단 7",3) 복용시에는 음주하지 말 것.,false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-2aa6a1048d98b4b2,false,,true,OTC-V51-TEXT-2aa6a1048d98b4b2,,,
-SAFE-OTC-10-NB-P3-B8-sedation_driving,OTC-V51-EU-3112ebb6655615d8,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,false,,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,false,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,1,recommended_primary,verified_primary,active_existing_released_primary_evidence,expert_primary_released,included,,true,text:OTC-V51-TEXT-26a5da1d048e1842,false,,true,OTC-V51-TEXT-26a5da1d048e1842,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z
-SAFE-OTC-10-NB-P3-B9-alcohol,OTC-V51-EU-5df1f7536b4fc3c6,OTC-RULE-011,alcohol,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 9","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 9-10","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+SAFE-OTC-10-NB-P3-B6-maximum_duration,OTC-V51-EU-ba453755b63ff0f5,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 6",2) 장기간 계속 복용하지 말 것.,"사용상의주의사항 PDF p.3, 문단 4-10","7. 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+
+이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,"사용상의주의사항 PDF p.3, 문단 6",2) 장기간 계속 복용하지 말 것.,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,1,recommended_primary,needs_expert_review,inactive_candidate,pharmacist_requested_revision,included,,true,text:OTC-V51-TEXT-35426ad1efada9d0,false,,true,OTC-V51-TEXT-35426ad1efada9d0,,,
+SAFE-OTC-10-NB-P3-B7-alcohol,OTC-V51-EU-bdc05c8e65d4a3b3,OTC-RULE-011,alcohol,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 7",3) 복용시에는 음주하지 말 것.,"사용상의주의사항 PDF p.3, 문단 4-10","7. 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+
+이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-2aa6a1048d98b4b2,false,,true,OTC-V51-TEXT-2aa6a1048d98b4b2,,,
+SAFE-OTC-10-NB-P3-B8-sedation_driving,OTC-V51-EU-3112ebb6655615d8,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,"사용상의주의사항 PDF p.3, 문단 4-10","7. 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+
+이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,false,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,"사용상의주의사항 PDF p.3, 문단 8",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,1,recommended_primary,verified_primary,active_existing_released_primary_evidence,expert_primary_released,included,,true,text:OTC-V51-TEXT-26a5da1d048e1842,false,,true,OTC-V51-TEXT-26a5da1d048e1842,EXT-PHARM-001,pharmacist_expert,2026-07-14T06:44:02.643Z
+SAFE-OTC-10-NB-P3-B9-alcohol,OTC-V51-EU-5df1f7536b4fc3c6,OTC-RULE-011,alcohol,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 9","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 4-10","7. 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
 
 이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-5df1f7536b4fc3c6;text:OTC-V51-TEXT-949c565446a70dbe,true,OTC-V51-EU-5df1f7536b4fc3c6,true,OTC-V51-TEXT-949c565446a70dbe,,,
-SAFE-OTC-10-NB-P3-B9-sedative_medication,OTC-V51-EU-5df1f7536b4fc3c6,OTC-RULE-013,sedative_medication,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 9","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 9-10","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+SAFE-OTC-10-NB-P3-B9-sedative_medication,OTC-V51-EU-5df1f7536b4fc3c6,OTC-RULE-013,sedative_medication,released,high,SAFE-OTC-10,196800036,MFDS-196800036,판콜에이내복액,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;펜톡시베린시트르산염;페닐레프린염산염;구아이페네신;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB,sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d,b8e4c66663b2e71f1ac3df51e4f3bf43cf580ea702df5c14f115de4274bec41a,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 9","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 4-10","7. 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
 
 이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,pancol_a_sedative_or_overlapping_cold_medicine,item_sequence=196800036|flags=sedative_medication,진정 작용이 있는 약물과 함께 복용할 때 주의가 필요할 수 있습니다.,복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1077,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-5df1f7536b4fc3c6;text:OTC-V51-TEXT-949c565446a70dbe,true,OTC-V51-EU-5df1f7536b4fc3c6,true,OTC-V51-TEXT-949c565446a70dbe,,,
 SAFE-OTC-11-NB-P1-B10-max_daily_dose,OTC-V51-EU-7a4198b7b364c13e,OTC-RULE-003,max_daily_dose,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,46c39fdd99625236a5adf8d75e889f86c162f2c48319be7399014376533e823c,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 10","3) 이 약은 아세트아미노펜을 함유하고 있다. 아세트아미노펜으로 일일 최대 용량(4,000mg)을 초과할 경우","사용상의주의사항 PDF p.1, 문단 10-12","3) 이 약은 아세트아미노펜을 함유하고 있다. 아세트아미노펜으로 일일 최대 용량(4,000mg)을 초과할 경우
@@ -5493,11 +5925,43 @@ SAFE-OTC-11-NB-P2-B7-renal_disease,OTC-V51-EU-854337cca6982400,OTC-RULE-008,rena
 (5) 다음과 같은 경우 이 약의 복용을 즉각 중지하고 의사, 치과의사, 약사와 상의할 것. 상담 시 가능한 한 이 첨
 
 부문서를 소지할 것.",false,,,,false,,,,,ibuprofen_kidney_disease,item_sequence=198601920|flags=renal_disease,신장질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1023,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-854337cca6982400,true,OTC-V51-EU-854337cca6982400,false,,,,
-SAFE-OTC-11-NB-P3-B10-sedation_driving,OTC-V51-EU-f7bb8a661787f5ae,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 10",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,"사용상의주의사항 PDF p.3, 문단 10",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-26a5da1d048e1842,false,,true,OTC-V51-TEXT-26a5da1d048e1842,,,
-SAFE-OTC-11-NB-P3-B11-alcohol,OTC-V51-EU-d0f88df9fd4ea281,OTC-RULE-011,alcohol,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 11","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 11-12","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+SAFE-OTC-11-NB-P3-B10-sedation_driving,OTC-V51-EU-f7bb8a661787f5ae,OTC-RULE-010,sedation_driving,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 10",4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.,"사용상의주의사항 PDF p.3, 문단 6-12","(7) 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+
+이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,pancol_a_driving,item_sequence=196800036|flags=sedation_driving,졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.,운전·기계 조작을 피하고 허가사항을 확인하세요.,src/lib/otc/engine.ts:1037,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-26a5da1d048e1842,false,,true,OTC-V51-TEXT-26a5da1d048e1842,,,
+SAFE-OTC-11-NB-P3-B11-alcohol,OTC-V51-EU-d0f88df9fd4ea281,OTC-RULE-011,alcohol,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 11","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 6-12","(7) 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
 
 이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-d0f88df9fd4ea281;text:OTC-V51-TEXT-949c565446a70dbe,true,OTC-V51-EU-d0f88df9fd4ea281,true,OTC-V51-TEXT-949c565446a70dbe,,,
-SAFE-OTC-11-NB-P3-B11-sedative_medication,OTC-V51-EU-d0f88df9fd4ea281,OTC-RULE-013,sedative_medication,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 11","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 11-12","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+SAFE-OTC-11-NB-P3-B11-sedative_medication,OTC-V51-EU-d0f88df9fd4ea281,OTC-RULE-013,sedative_medication,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 11","5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력","사용상의주의사항 PDF p.3, 문단 6-12","(7) 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
 
 이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,pancol_a_sedative_or_overlapping_cold_medicine,item_sequence=196800036|flags=sedative_medication,진정 작용이 있는 약물과 함께 복용할 때 주의가 필요할 수 있습니다.,복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1077,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,location:OTC-V51-EU-d0f88df9fd4ea281;text:OTC-V51-TEXT-949c565446a70dbe,true,OTC-V51-EU-d0f88df9fd4ea281,true,OTC-V51-TEXT-949c565446a70dbe,,,
 SAFE-OTC-11-NB-P3-B4-age_restriction,OTC-V51-EU-058431c96351c075,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 4",(6) 소아에 대한 투여,"사용상의주의사항 PDF p.3, 문단 3-5","3) 5∼6회 복용하여도 증상이 좋아지지 않을 경우
@@ -5510,8 +5974,32 @@ SAFE-OTC-11-NB-P3-B5-age_restriction,OTC-V51-EU-b536a66dafeffb07,OTC-RULE-005,ag
 (6) 소아에 대한 투여
 
 만2세 미만에게 투여하지 않는다. 다만, 꼭 필요한 경우 의사의 진료를 받는다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-ec1695b4dce1da26,false,,true,OTC-V51-TEXT-ec1695b4dce1da26,,,
-SAFE-OTC-11-NB-P3-B8-maximum_duration,OTC-V51-EU-5cce6b5535057b65,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 8",2) 장기간 계속 복용하지 말 것.,"사용상의주의사항 PDF p.3, 문단 8",2) 장기간 계속 복용하지 말 것.,false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-35426ad1efada9d0,false,,true,OTC-V51-TEXT-35426ad1efada9d0,,,
-SAFE-OTC-11-NB-P3-B9-alcohol,OTC-V51-EU-ce62170b9a07c263,OTC-RULE-011,alcohol,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 9",3) 복용시에는 음주하지 말 것.,"사용상의주의사항 PDF p.3, 문단 9",3) 복용시에는 음주하지 말 것.,false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-2aa6a1048d98b4b2,false,,true,OTC-V51-TEXT-2aa6a1048d98b4b2,,,
+SAFE-OTC-11-NB-P3-B8-maximum_duration,OTC-V51-EU-5cce6b5535057b65,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 8",2) 장기간 계속 복용하지 말 것.,"사용상의주의사항 PDF p.3, 문단 6-12","(7) 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+
+이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-35426ad1efada9d0,false,,true,OTC-V51-TEXT-35426ad1efada9d0,,,
+SAFE-OTC-11-NB-P3-B9-alcohol,OTC-V51-EU-ce62170b9a07c263,OTC-RULE-011,alcohol,released,high,SAFE-OTC-11,199400202,MFDS-199400202,판피린티정,ING-acetaminophen;ING-chlorpheniramine_maleate;ING-mf-src-dc293e7de142,아세트아미노펜;클로르페니라민말레산염;카페인무수물,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/199400202/NB,sha256:394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,2025-11-10,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/199400202/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,394dcb8cb13506733955aea7f804a9202c0f70d037f2ea37488eaf40831299f3,c0b3a1fc977e0949861c8c685508c174986b4d448d91404789d59b7321faf931,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.3, 문단 9",3) 복용시에는 음주하지 말 것.,"사용상의주의사항 PDF p.3, 문단 6-12","(7) 기타 이 약의 복용시 주의할 사항
+
+1) 정해진 용법·용량을 잘 지킬 것.
+
+2) 장기간 계속 복용하지 말 것.
+
+3) 복용시에는 음주하지 말 것.
+
+4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것.
+
+5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력
+
+이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.",false,,,,false,,,,,acetaminophen_regular_alcohol_use,item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol,음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.,음주 중 복용 전 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:1044,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-2aa6a1048d98b4b2,false,,true,OTC-V51-TEXT-2aa6a1048d98b4b2,,,
 SAFE-OTC-12-NB-P1-B11-age_restriction,OTC-V51-EU-6b8f383f1a36579c,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-12,198400250,MFDS-198400250,제일쿨파프,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-8bebf0ac75f4;ING-mf-src-e2b868294a4f,dl-캄파;박하유;L-멘톨;살리실산메틸;티몰,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/NB,sha256:7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198400250/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,685ff84a13127a96e22563ed8714ba821ff23c1992a6e284d82681703bab1416,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 11",5) 소아(경련을 유발할 수 있다),"사용상의주의사항 PDF p.1, 문단 6-16","1) 지금까지 약이나 화장품 등에 의한 알레르기 증상(예를 들면 발진ㆍ발적(충혈되어 붉어짐),
 
 가려움, 옻 등에 의한 피부염 등)이 나타난 적이 있는 환자
@@ -5575,8 +6063,22 @@ SAFE-OTC-12-NB-P1-B13-pregnancy_lactation,OTC-V51-EU-5ab8beaa94a69f19,OTC-RULE-0
 이 약의 사용으로 발진ㆍ발적(충혈되어 붉어짐), 가려움 등의 증상이 나타나는 경우에는 사용을
 
 중지하고 약사 또는 의사와 상의한다.",false,,,,false,,,,,ibuprofen_pregnancy_lactation,item_sequence=198601920|flags=pregnancy_lactation,임신 또는 수유 중 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1094,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,true,text:OTC-V51-TEXT-e15644147190f757,false,,true,OTC-V51-TEXT-e15644147190f757,,,
-SAFE-OTC-12-NB-P1-B19-age_restriction,OTC-V51-EU-f7b92328f21185aa,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-12,198400250,MFDS-198400250,제일쿨파프,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-8bebf0ac75f4;ING-mf-src-e2b868294a4f,dl-캄파;박하유;L-멘톨;살리실산메틸;티몰,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/NB,sha256:7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198400250/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,685ff84a13127a96e22563ed8714ba821ff23c1992a6e284d82681703bab1416,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 19",2) 소아에게 사용할 경우에는 보호자의 지도ㆍ감독하에 사용한다.,"사용상의주의사항 PDF p.1, 문단 19",2) 소아에게 사용할 경우에는 보호자의 지도ㆍ감독하에 사용한다.,false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
-SAFE-OTC-12-NB-P1-B20-maximum_duration,OTC-V51-EU-3bb6f96d56cfe883,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-12,198400250,MFDS-198400250,제일쿨파프,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-8bebf0ac75f4;ING-mf-src-e2b868294a4f,dl-캄파;박하유;L-멘톨;살리실산메틸;티몰,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/NB,sha256:7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198400250/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,685ff84a13127a96e22563ed8714ba821ff23c1992a6e284d82681703bab1416,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 20",3) 5∼6일간 투여 후에도 증상의 개선이 보이지 않을 경우에는 사용을 중지하고 약사 또는 의사와 상의한,"사용상의주의사항 PDF p.1, 문단 20-21","3) 5∼6일간 투여 후에도 증상의 개선이 보이지 않을 경우에는 사용을 중지하고 약사 또는 의사와 상의한
+SAFE-OTC-12-NB-P1-B19-age_restriction,OTC-V51-EU-f7b92328f21185aa,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-12,198400250,MFDS-198400250,제일쿨파프,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-8bebf0ac75f4;ING-mf-src-e2b868294a4f,dl-캄파;박하유;L-멘톨;살리실산메틸;티몰,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/NB,sha256:7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198400250/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,685ff84a13127a96e22563ed8714ba821ff23c1992a6e284d82681703bab1416,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 19",2) 소아에게 사용할 경우에는 보호자의 지도ㆍ감독하에 사용한다.,"사용상의주의사항 PDF p.1, 문단 17-21","4. 일반적 주의
+
+1) 정해진 용법ㆍ용량을 잘 지킨다.
+
+2) 소아에게 사용할 경우에는 보호자의 지도ㆍ감독하에 사용한다.
+
+3) 5∼6일간 투여 후에도 증상의 개선이 보이지 않을 경우에는 사용을 중지하고 약사 또는 의사와 상의한
+
+다.",false,,,,false,,,,,tylenol500_minimum_age_12,item_sequence=202106092|minimum_age_years=12,입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.,소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.,src/lib/otc/engine.ts:971,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
+SAFE-OTC-12-NB-P1-B20-maximum_duration,OTC-V51-EU-3bb6f96d56cfe883,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-12,198400250,MFDS-198400250,제일쿨파프,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-8bebf0ac75f4;ING-mf-src-e2b868294a4f,dl-캄파;박하유;L-멘톨;살리실산메틸;티몰,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/198400250/NB,sha256:7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/198400250/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,7ece295164b10e58f41ced27c0e36ead02992fbf77d83c5247b110414bbe837a,685ff84a13127a96e22563ed8714ba821ff23c1992a6e284d82681703bab1416,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 20",3) 5∼6일간 투여 후에도 증상의 개선이 보이지 않을 경우에는 사용을 중지하고 약사 또는 의사와 상의한,"사용상의주의사항 PDF p.1, 문단 17-21","4. 일반적 주의
+
+1) 정해진 용법ㆍ용량을 잘 지킨다.
+
+2) 소아에게 사용할 경우에는 보호자의 지도ㆍ감독하에 사용한다.
+
+3) 5∼6일간 투여 후에도 증상의 개선이 보이지 않을 경우에는 사용을 중지하고 약사 또는 의사와 상의한
 
 다.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,provisional,inactive_candidate,machine_candidate_not_shortlisted,included,,false,,false,,false,,,,
 SAFE-OTC-13-NB-P1-B11-age_restriction,OTC-V51-EU-65fba105181dbce6,OTC-RULE-005,age_restriction,released,high,SAFE-OTC-13,200501321,MFDS-200501321,신신파스아렉스,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-7b94fcb9d067;ING-mf-src-8bebf0ac75f4;ING-mf-src-a7ea13276326;ING-mf-src-d142ee358812,dl-캄파;박하유;L-멘톨;산화아연;살리실산메틸;니코틴산벤질(피리딘-베타-카르복실산벤질에스테르);노닐산바닐릴아미드,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200501321/NB,sha256:5dde7046aecf43f233d2a3372f79adde3ebd261a02dc03bb0b43de16a67f36fa,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200501321/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,5dde7046aecf43f233d2a3372f79adde3ebd261a02dc03bb0b43de16a67f36fa,7ab01dc096141671dcf6ae02b90d4662095f236ffc2a3fe8337c10405b130a09,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 11",5) 소아(경련을 유발할 수 있다),"사용상의주의사항 PDF p.1, 문단 3-14","1) 30개월 이하의 유아
@@ -5648,10 +6150,18 @@ SAFE-OTC-13-NB-P1-B13-pregnancy_lactation,OTC-V51-EU-50311732776225e2,OTC-RULE-0
 7) 수유부
 
 3. 다음의 경우에는 곧 사용을 중지하고, 이 설명서를 갖고 의사 또는 약사와 상담하여 주십시오.",false,,,,false,,,,,ibuprofen_pregnancy_lactation,item_sequence=198601920|flags=pregnancy_lactation,임신 또는 수유 중 주의가 필요한 제품이 포함되어 있습니다.,복용 전 의사 또는 약사와 상담하세요.,src/lib/otc/engine.ts:1094,,,rejected,inactive_candidate,analysis_excluded_product,excluded,ambiguous_authorized_package_size,true,text:OTC-V51-TEXT-e15644147190f757,false,,true,OTC-V51-TEXT-e15644147190f757,,,
-SAFE-OTC-13-NB-P1-B16-maximum_duration,OTC-V51-EU-a8e09447c5abbe53,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-13,200501321,MFDS-200501321,신신파스아렉스,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-7b94fcb9d067;ING-mf-src-8bebf0ac75f4;ING-mf-src-a7ea13276326;ING-mf-src-d142ee358812,dl-캄파;박하유;L-멘톨;산화아연;살리실산메틸;니코틴산벤질(피리딘-베타-카르복실산벤질에스테르);노닐산바닐릴아미드,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200501321/NB,sha256:5dde7046aecf43f233d2a3372f79adde3ebd261a02dc03bb0b43de16a67f36fa,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200501321/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,5dde7046aecf43f233d2a3372f79adde3ebd261a02dc03bb0b43de16a67f36fa,7ab01dc096141671dcf6ae02b90d4662095f236ffc2a3fe8337c10405b130a09,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 16",2) 5-6일간 사용하여도 증상이 개선되지 않는 경우,"사용상의주의사항 PDF p.1, 문단 15-18","1) 피부의 발진, 발적(충혈되어 붉어짐), 가려움, 통증
+SAFE-OTC-13-NB-P1-B16-maximum_duration,OTC-V51-EU-a8e09447c5abbe53,OTC-RULE-015,maximum_duration,draft,caution,SAFE-OTC-13,200501321,MFDS-200501321,신신파스아렉스,ING-mf-src-25b653f7fbe2;ING-mf-src-4a3225f1eb5d;ING-mf-src-76b6b5a5a31f;ING-mf-src-7b94fcb9d067;ING-mf-src-8bebf0ac75f4;ING-mf-src-a7ea13276326;ING-mf-src-d142ee358812,dl-캄파;박하유;L-멘톨;산화아연;살리실산메틸;니코틴산벤질(피리딘-베타-카르복실산벤질에스테르);노닐산바닐릴아미드,product_authorized_ingredient_set_not_excerpt_attribution,NB,MFDS-NEDRUG-DETAIL,https://nedrug.mfds.go.kr/dsie/pdf/drb/200501321/NB,sha256:5dde7046aecf43f233d2a3372f79adde3ebd261a02dc03bb0b43de16a67f36fa,2022-10-22,reported_in_archived_mfds_change_history,baseline_git_blob:research_v3/otc/raw/nedrug/200501321/detail.html#tblChf; change_item=사용상주의사항변경(부작용포함),,5dde7046aecf43f233d2a3372f79adde3ebd261a02dc03bb0b43de16a67f36fa,7ab01dc096141671dcf6ae02b90d4662095f236ffc2a3fe8337c10405b130a09,2026-07-14,2026-07-14T02:10:14.255342+00:00,"사용상의주의사항 PDF p.1, 문단 16",2) 5-6일간 사용하여도 증상이 개선되지 않는 경우,"사용상의주의사항 PDF p.1, 문단 15-22","1) 피부의 발진, 발적(충혈되어 붉어짐), 가려움, 통증
 
 2) 5-6일간 사용하여도 증상이 개선되지 않는 경우
 
 4. 일반적 주의
 
-1) 어린이에 사용할 경우에는 보호자의 지도 감독하에 사용하여 주십시오.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,rejected,inactive_candidate,analysis_excluded_product,excluded,ambiguous_authorized_package_size,false,,false,,false,,,,
+1) 어린이에 사용할 경우에는 보호자의 지도 감독하에 사용하여 주십시오.
+
+2) 환부(질환 부위)의 부위는 청결하게 하고, 땀 등은 잘 닦은 후 붙여 주십시오
+
+3) 붙인 환부(질환 부위)를 난로나 전기담요 등으로 따뜻하게 하지 말아 주십시오.
+
+4) 붙인 상태로 목욕을 하면 강한 자극을 느끼게 되므로 목욕하기 30분에서 1시간전에 떼어내어 주십시오.
+
+또한 목욕 직후의 첨부는 피하여 주십시오.",false,,,,false,,,,,pancol_a_continuous_use,scope_only_no_structured_binding,허가된 연속 복용 기간을 넘었을 수 있습니다.,증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.,src/lib/otc/engine.ts:991,,,rejected,inactive_candidate,analysis_excluded_product,excluded,ambiguous_authorized_package_size,false,,false,,false,,,,
