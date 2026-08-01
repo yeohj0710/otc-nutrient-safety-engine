@@ -4,6 +4,7 @@ import csv
 import hashlib
 import json
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 import pytest
@@ -152,6 +153,104 @@ def test_build_keeps_human_review_and_source_provenance_honest() -> None:
     assert (
         rule_016["operational_evidence_text"] != rule_016["raw_candidate_evidence_text"]
     )
+    assert rule_016["official_source_text"]
+    assert len(rule_016["official_source_text"]) > len(
+        rule_016["shortlist_evidence_text"]
+    )
+
+
+def test_official_source_expands_pdf_blocks_to_complete_context() -> None:
+    package = builder.build(ROOT)
+    links = package["evidence_rule_links"]
+    queue_by_id = {
+        row["evidence_candidate_id"]: row for row in package["expert_review_queue"]
+    }
+
+    dexpeed = next(
+        row
+        for row in links
+        if row["evidence_candidate_id"] == "EXP-OTC-01-NB-P1-B23-age_restriction"
+    )
+    assert dexpeed["official_source_locator"] == (
+        "사용상의주의사항 PDF p.1, 문단 21-24"
+    )
+    assert dexpeed["official_source_text"].startswith("3) 위장관계 위험:")
+    assert dexpeed["official_source_text"].endswith("더 클 수 있다.")
+
+    pancol = next(
+        row
+        for row in links
+        if row["evidence_candidate_id"] == "SAFE-OTC-10-NB-P1-B12-duplicate_ingredient"
+    )
+    assert pancol["official_source_locator"] == ("사용상의주의사항 PDF p.1, 문단 10-12")
+    assert pancol["official_source_text"].startswith(
+        "3) 이 약은 아세트아미노펜을 함유하고 있다."
+    )
+    assert pancol["official_source_text"].endswith(
+        "아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다."
+    )
+    for row in (dexpeed, pancol):
+        queue_row = queue_by_id[row["evidence_candidate_id"]]
+        assert queue_row["official_source_locator"] == row["official_source_locator"]
+        assert queue_row["official_source_text"] == row["official_source_text"]
+
+
+def test_every_candidate_has_document_revision_date_or_explicit_reason() -> None:
+    package = builder.build(ROOT)
+    collections = (
+        package["evidence_units"],
+        package["evidence_rule_links"],
+        package["expert_review_queue"],
+    )
+
+    for rows in collections:
+        for row in rows:
+            if row["document_revision_status"] == builder.REVISION_STATUS_REPORTED:
+                assert date.fromisoformat(row["document_revision_date"])
+                assert row["document_revision_basis"].startswith(
+                    "baseline_git_blob:research_v3/otc/raw/nedrug/"
+                )
+                assert "#tblChf; change_item=" in row["document_revision_basis"]
+                assert not row["document_revision_reason"]
+            else:
+                assert (
+                    row["document_revision_status"]
+                    == builder.REVISION_STATUS_NOT_REPORTED
+                )
+                assert not row["document_revision_date"]
+                assert not row["document_revision_basis"]
+                assert row["document_revision_reason"]
+
+    links = package["evidence_rule_links"]
+    assert Counter(row["document_revision_status"] for row in links) == {
+        builder.REVISION_STATUS_REPORTED: 355,
+        builder.REVISION_STATUS_NOT_REPORTED: 5,
+    }
+    assert {
+        (row["item_sequence"], row["document_type"])
+        for row in links
+        if row["document_revision_status"] == builder.REVISION_STATUS_NOT_REPORTED
+    } == {("202106092", "UD"), ("202200525", "UD")}
+    tylenol_nb = next(
+        row
+        for row in links
+        if row["item_sequence"] == "201110646" and row["document_type"] == "NB"
+    )
+    assert tylenol_nb["document_revision_date"] == "2026-01-02"
+
+    detail_inputs = {
+        relative: lineage
+        for relative, lineage in package["manifest"]["inputs"].items()
+        if relative.endswith("/detail.html")
+    }
+    assert len(detail_inputs) == 14
+    assert all(
+        lineage["basis"] == "baseline_git_blob"
+        and lineage["baseline_commit"] == builder.BASELINE_COMMIT
+        and lineage["git_blob_oid"]
+        and lineage["sha256"]
+        for lineage in detail_inputs.values()
+    )
 
 
 def test_expert_queue_never_prefills_human_decisions() -> None:
@@ -164,12 +263,35 @@ def test_expert_queue_never_prefills_human_decisions() -> None:
         and row["referenced_code_link"].startswith("src/lib/otc/engine.ts:")
         and row["raw_candidate_source_locator"]
         and row["raw_candidate_evidence_text"]
+        and row["official_source_locator"]
+        and row["official_source_text"]
         and row["proposed_review_source_locator"]
         and row["proposed_review_evidence_text"]
         and not row["reviewed_source_locator"]
         and not row["reviewed_evidence_text"]
         and not row["operational_source_locator"]
         and not row["operational_evidence_text"]
+        for row in queue
+    )
+    assert all(
+        row["product_name"] in row["required_regression_tests"]
+        and row["item_sequence"] in row["required_regression_tests"]
+        and row["rule_id"] in row["required_regression_tests"]
+        and row["rule_type"] in row["required_regression_tests"]
+        and builder.regression_field_text(row["referenced_runtime_condition"])
+        in row["required_regression_tests"]
+        and builder.regression_field_text(row["proposed_message_ko"])
+        in row["required_regression_tests"]
+        and all(
+            scenario in row["required_regression_tests"]
+            for scenario in (
+                "normal=",
+                "boundary=",
+                "non_target=",
+                "false_positive=",
+            )
+        )
+        and row["required_regression_tests"].count("|") == 3
         for row in queue
     )
     assert all(
@@ -231,6 +353,24 @@ def test_build_rejects_candidate_locator_that_disagrees_with_candidate_id(
 
     monkeypatch.setattr(builder, "read_protected_csv", read_csv_with_tampered_locator)
     with pytest.raises(ValueError, match="candidate ID/source locator mismatch"):
+        builder.build(ROOT)
+
+
+def test_build_rejects_tampered_archived_detail_git_blob(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    original_git_blob_bytes = builder.boundary_audit.git_blob_bytes
+
+    def tampered_git_blob_bytes(root: Path, revision: str, relative: str) -> bytes:
+        payload = original_git_blob_bytes(root, revision, relative)
+        if relative.endswith("/201110646/detail.html"):
+            return payload + b"tampered"
+        return payload
+
+    monkeypatch.setattr(
+        builder.boundary_audit, "git_blob_bytes", tampered_git_blob_bytes
+    )
+    with pytest.raises(ValueError, match="baseline Git blob identity mismatch"):
         builder.build(ROOT)
 
 
@@ -324,7 +464,7 @@ def test_checked_in_v51_artifacts_match_builder() -> None:
         in inventory["source_version_contract"]["freshness_policy"]
     )
     assert inventory["generator_sha256"] == sha256(ROOT / inventory["generator"])
-    assert inventory["schema_version"] == "1.1.0"
+    assert inventory["schema_version"] == "1.2.0"
     assert inventory["source_lineage"] == "v5.0_pinned_baseline_git_blobs"
     helper = inventory["inputs"]["scripts/research/otc/audit_v51_boundaries.py"]
     assert helper == {
@@ -348,6 +488,7 @@ def test_checked_in_v51_artifacts_match_builder() -> None:
     )
     assert inventory["provenance_verification"] == {
         "raw_pdf_bytes_rehashed": True,
+        "archived_detail_html_git_blobs_hashed": True,
         "extracted_page_text_rehashed": True,
         "candidate_product_identity_cross_checked": True,
         "candidate_document_url_cross_checked": True,

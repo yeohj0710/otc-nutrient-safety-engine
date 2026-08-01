@@ -12,6 +12,7 @@ import stat
 import tempfile
 from collections import Counter
 from dataclasses import dataclass
+from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
 
@@ -30,9 +31,7 @@ QUEUE_RELATIVE = Path("research_v51/review/expert_review_queue.csv")
 TRIAGE_RELATIVE = Path("research_v51/review/shortlist_semantic_triage.csv")
 PACKET_RELATIVE = Path("research_v51/review/expert_review_packet.md")
 AUDIT_RELATIVE = Path("research_v51/audit/review_packet_audit.json")
-EVIDENCE_INVENTORY_RELATIVE = Path(
-    "research_v51/audit/evidence_inventory.json"
-)
+EVIDENCE_INVENTORY_RELATIVE = Path("research_v51/audit/evidence_inventory.json")
 TRIAGE_VALIDATOR_RELATIVE = Path(
     "scripts/research/otc/validate_v51_shortlist_triage.py"
 )
@@ -46,9 +45,13 @@ EVIDENCE_INVENTORY_PATH = ROOT / EVIDENCE_INVENTORY_RELATIVE
 EXPECTED_ITEMS = 33
 OFFICIAL_SOURCE_PATTERN = re.compile(
     r"https://nedrug\.mfds\.go\.kr/dsie/pdf/drb/"
-    r"(?P<item_sequence>[0-9]+)/(?:NB|UD)"
+    r"(?P<item_sequence>[0-9]+)/(?P<document_type>NB|UD)"
 )
 SOURCE_VERSION_PATTERN = re.compile(r"sha256:[0-9a-f]{64}")
+SOURCE_LOCATOR_PATTERN = re.compile(
+    r"^(?P<section>사용상의주의사항|용법용량) PDF p\.(?P<page>[1-9][0-9]*), "
+    r"문단 (?P<start>[1-9][0-9]*)(?:-(?P<end>[1-9][0-9]*))?$"
+)
 HANGUL_PATTERN = re.compile(r"[가-힣]")
 ALLOWED_RECOMMENDED_STATUSES = {
     "needs_expert_review",
@@ -61,6 +64,10 @@ REGRESSION_TEST_LABELS = {
     "non_target": "비대상",
     "false_positive": "오탐 방지",
 }
+DOCUMENT_REVISION_REPORTED = "reported_in_archived_mfds_change_history"
+DOCUMENT_REVISION_NOT_REPORTED = "not_reported_in_archived_mfds_change_history"
+ALLOWED_DOCUMENT_TYPES = {"NB", "UD"}
+DOCUMENT_TYPE_SECTIONS = {"NB": "사용상의주의사항", "UD": "용법용량"}
 
 QUEUE_REQUIRED_FIELDS = (
     "evidence_candidate_id",
@@ -70,15 +77,23 @@ QUEUE_REQUIRED_FIELDS = (
     "candidate_operational_status",
     "product_name",
     "item_sequence",
+    "ingredient_names",
     "current_rule_scope",
     "referenced_runtime_condition",
     "proposed_message_ko",
     "proposed_next_action_ko",
+    "document_type",
     "source_id",
     "source_url",
     "source_version",
+    "document_revision_date",
+    "document_revision_status",
+    "document_revision_basis",
+    "document_revision_reason",
+    "retrieved_at_utc",
     "raw_candidate_source_locator",
     "raw_candidate_evidence_text",
+    "official_source_locator",
     "proposed_review_source_locator",
     "proposed_review_evidence_text",
     "reviewed_source_locator",
@@ -94,6 +109,7 @@ QUEUE_REQUIRED_FIELDS = (
     "reviewer_role",
     "reviewed_at",
 )
+QUEUE_CSV_REQUIRED_FIELDS = (*QUEUE_REQUIRED_FIELDS, "official_source_text")
 
 TRIAGE_REQUIRED_FIELDS = (
     "evidence_candidate_id",
@@ -139,6 +155,14 @@ INACTIVE_EVIDENCE_FIELDS = (
     "operational_evidence_text",
 )
 
+CONDITIONALLY_VALIDATED_QUEUE_FIELDS = (
+    "ingredient_names",
+    "document_revision_date",
+    "document_revision_status",
+    "document_revision_basis",
+    "document_revision_reason",
+)
+
 ALLOWED_RENDERED_PACKET_DISCLAIMER_LINES = frozenset(
     {
         "경고: `release_ready=true`로 간주하지 않는다.",
@@ -155,9 +179,7 @@ def _absolute_lexical_path(path: Path) -> Path:
 
 
 def _is_link_or_junction(path: Path) -> bool:
-    return path.is_symlink() or (
-        hasattr(path, "is_junction") and path.is_junction()
-    )
+    return path.is_symlink() or (hasattr(path, "is_junction") and path.is_junction())
 
 
 def _validate_canonical_output(
@@ -177,7 +199,9 @@ def _validate_canonical_output(
 
     current = root_path
     if _is_link_or_junction(current):
-        raise ValueError(f"{label} output root cannot be a symlink or junction: {current}")
+        raise ValueError(
+            f"{label} output root cannot be a symlink or junction: {current}"
+        )
     for part in relative.parts:
         current = current / part
         if _is_link_or_junction(current):
@@ -221,13 +245,6 @@ class _StagedOutput:
     payload: bytes
     device: int
     inode: int
-
-
-@dataclass
-class _PriorOutput:
-    existed: bool
-    payload: bytes | None
-    backup: _StagedOutput | None
 
 
 @dataclass(frozen=True)
@@ -360,8 +377,7 @@ def _capture_review_input_set_once(
                     or (before.st_dev, before.st_ino) != identity
                 ):
                     raise ValueError(
-                        f"review packet {label} input changed while opening: "
-                        f"{lexical}"
+                        f"review packet {label} input changed while opening: {lexical}"
                     )
                 if identity in opened_identities:
                     raise ValueError(
@@ -420,14 +436,11 @@ def _capture_review_input_set_once(
                 or _read_descriptor(descriptor) != snapshot.payload
             ):
                 raise ValueError(
-                    f"review packet {label} input pathname changed: "
-                    f"{snapshot.path}"
+                    f"review packet {label} input pathname changed: {snapshot.path}"
                 )
         return snapshots
     finally:
-        for _lexical, _relative, _before, descriptor, _opened in (
-            opened_inputs.values()
-        ):
+        for _lexical, _relative, _before, descriptor, _opened in opened_inputs.values():
             os.close(descriptor)
 
 
@@ -510,9 +523,10 @@ def _validate_staged_output(staged: _StagedOutput) -> None:
         or (opened.st_dev, opened.st_ino) != (staged.device, staged.inode)
     ):
         raise ValueError(f"unsafe staged review packet output: {staged.path}")
-    if opened.st_size != len(staged.payload) or _read_descriptor(
-        staged.descriptor
-    ) != staged.payload:
+    if (
+        opened.st_size != len(staged.payload)
+        or _read_descriptor(staged.descriptor) != staged.payload
+    ):
         raise ValueError(f"staged review packet payload changed: {staged.path}")
     metadata = os.lstat(staged.path)
     if (
@@ -620,9 +634,12 @@ def _replace_staged_output(
     destination: Path,
     *,
     keep_open: bool = False,
+    published_paths: set[Path] | None = None,
 ) -> None:
     _validate_staged_output(staged)
     os.replace(staged.path, destination)
+    if published_paths is not None:
+        published_paths.add(destination)
     try:
         _verify_published_output(staged, destination)
     finally:
@@ -632,54 +649,11 @@ def _replace_staged_output(
 
 
 def _close_staged_output(staged: _StagedOutput) -> None:
+    """Release a staged handle without deleting an uncertain pathname."""
+
     if staged.descriptor >= 0:
         os.close(staged.descriptor)
         staged.descriptor = -1
-    staged.path.unlink(missing_ok=True)
-
-
-def _capture_prior_outputs(paths: list[Path]) -> dict[Path, _PriorOutput]:
-    prior: dict[Path, _PriorOutput] = {}
-    for path in paths:
-        try:
-            snapshot = _read_regular_output(path)
-        except FileNotFoundError:
-            prior[path] = _PriorOutput(False, None, None)
-            continue
-        payload = snapshot["payload"]
-        prior[path] = _PriorOutput(True, payload, _stage_output(path, payload))
-    return prior
-
-
-def _rollback_outputs(
-    attempted: list[Path],
-    prior: dict[Path, _PriorOutput],
-) -> None:
-    errors: list[str] = []
-    for destination in reversed(attempted):
-        previous = prior[destination]
-        try:
-            if previous.existed:
-                if previous.backup is None:
-                    raise ValueError(f"missing review packet rollback backup: {destination}")
-                _replace_staged_output(previous.backup, destination)
-            else:
-                destination.unlink(missing_ok=True)
-        except Exception as error:
-            errors.append(f"{destination}: {type(error).__name__}: {error}")
-    for destination in attempted:
-        previous = prior[destination]
-        try:
-            if previous.existed:
-                observed = _read_regular_output(destination)["payload"]
-                if observed != previous.payload:
-                    raise ValueError("restored bytes differ")
-            elif destination.exists():
-                raise ValueError("new output still exists")
-        except Exception as error:
-            errors.append(f"{destination}: {type(error).__name__}: {error}")
-    if errors:
-        raise RuntimeError(f"review packet rollback failed: {errors}")
 
 
 _RE_FLAG_NAMES = {
@@ -773,36 +747,27 @@ def forbidden_claim_patterns(
     value: str,
     forbidden_claims: tuple[re.Pattern[str], ...] = TRIAGE_FORBIDDEN_CLAIMS,
 ) -> list[str]:
-    return [
-        pattern.pattern
-        for pattern in forbidden_claims
-        if pattern.search(value)
-    ]
+    return [pattern.pattern for pattern in forbidden_claims if pattern.search(value)]
 
 
 def validate_inactive_triage_claims(
     row: dict[str, str],
     *,
-    forbidden_claims: tuple[
-        re.Pattern[str], ...
-    ] = TRIAGE_FORBIDDEN_CLAIMS,
+    forbidden_claims: tuple[re.Pattern[str], ...] = TRIAGE_FORBIDDEN_CLAIMS,
 ) -> None:
     candidate_id = row.get("evidence_candidate_id", "").strip()
     joined_text = "\n".join(row.get(field, "") for field in TRIAGE_REQUIRED_FIELDS)
     matches = forbidden_claim_patterns(joined_text, forbidden_claims)
     if matches:
         raise ValueError(
-            "FORBIDDEN_REVIEW_OR_ACTIVATION_CLAIM "
-            f"id={candidate_id} patterns={matches}"
+            f"FORBIDDEN_REVIEW_OR_ACTIVATION_CLAIM id={candidate_id} patterns={matches}"
         )
 
 
 def validate_rendered_packet_claims(
     markdown: str,
     *,
-    forbidden_claims: tuple[
-        re.Pattern[str], ...
-    ] = TRIAGE_FORBIDDEN_CLAIMS,
+    forbidden_claims: tuple[re.Pattern[str], ...] = TRIAGE_FORBIDDEN_CLAIMS,
 ) -> None:
     prohibited: list[str] = []
     for raw_line in markdown.splitlines():
@@ -941,9 +906,10 @@ def validate_queue_inventory(
     }:
         raise ValueError("evidence inventory operational status counts are invalid")
     review_boundary = inventory.get("review_boundary", {})
-    if review_boundary.get(
-        "expert_review_queue_operational_status"
-    ) != "inactive_candidate":
+    if (
+        review_boundary.get("expert_review_queue_operational_status")
+        != "inactive_candidate"
+    ):
         raise ValueError("evidence inventory does not mark the expert queue inactive")
     if (
         review_boundary.get("existing_human_expert_verified_primary_rows") != 15
@@ -961,9 +927,7 @@ def join_rows(
     triage_rows: list[dict[str, str]],
     *,
     expected_items: int = EXPECTED_ITEMS,
-    forbidden_claims: tuple[
-        re.Pattern[str], ...
-    ] = TRIAGE_FORBIDDEN_CLAIMS,
+    forbidden_claims: tuple[re.Pattern[str], ...] = TRIAGE_FORBIDDEN_CLAIMS,
 ) -> list[dict[str, dict[str, str]]]:
     require_fields_present(
         queue_rows,
@@ -980,7 +944,12 @@ def join_rows(
         tuple(
             field
             for field in QUEUE_REQUIRED_FIELDS
-            if field not in (*HUMAN_REVIEW_FIELDS, *INACTIVE_EVIDENCE_FIELDS)
+            if field
+            not in (
+                *HUMAN_REVIEW_FIELDS,
+                *INACTIVE_EVIDENCE_FIELDS,
+                *CONDITIONALLY_VALIDATED_QUEUE_FIELDS,
+            )
         ),
         "expert review queue",
     )
@@ -1022,13 +991,9 @@ def join_rows(
                 f"queue item is not awaiting expert review: {candidate_id}"
             )
         if queue["candidate_operational_status"] != "inactive_candidate":
-            raise ValueError(
-                f"queue item is operationally active: {candidate_id}"
-            )
+            raise ValueError(f"queue item is operationally active: {candidate_id}")
         evidence_leaks = [
-            field
-            for field in INACTIVE_EVIDENCE_FIELDS
-            if queue.get(field, "").strip()
+            field for field in INACTIVE_EVIDENCE_FIELDS if queue.get(field, "").strip()
         ]
         if evidence_leaks:
             raise ValueError(
@@ -1042,6 +1007,15 @@ def join_rows(
             raise ValueError(
                 f"human review fields are prefilled for {candidate_id}: {prefilled}"
             )
+        ingredient_names = [
+            ingredient.strip()
+            for ingredient in queue["ingredient_names"].split(";")
+            if ingredient.strip()
+        ]
+        if not ingredient_names:
+            raise ValueError(f"ingredient names are missing for {candidate_id}")
+        if len(ingredient_names) != len(set(ingredient_names)):
+            raise ValueError(f"ingredient names contain duplicates for {candidate_id}")
         source_match = OFFICIAL_SOURCE_PATTERN.fullmatch(queue["source_url"])
         if source_match is None:
             raise ValueError(
@@ -1053,11 +1027,51 @@ def join_rows(
                 f"item_sequence={queue['item_sequence']}, "
                 f"source_url={queue['source_url']}"
             )
+        if source_match.group("document_type") != queue["document_type"]:
+            raise ValueError(
+                f"source document type mismatch for {candidate_id}: "
+                f"document_type={queue['document_type']}, "
+                f"source_url={queue['source_url']}"
+            )
+        locator_match = SOURCE_LOCATOR_PATTERN.fullmatch(
+            queue["official_source_locator"]
+        )
+        if locator_match is None:
+            raise ValueError(
+                f"invalid official source locator for {candidate_id}: "
+                f"{queue['official_source_locator']}"
+            )
+        if (
+            locator_match.group("section")
+            != DOCUMENT_TYPE_SECTIONS[queue["document_type"]]
+        ):
+            raise ValueError(
+                f"official source locator document mismatch for {candidate_id}: "
+                f"{queue['official_source_locator']}"
+            )
+        locator_start = int(locator_match.group("start"))
+        locator_end = int(locator_match.group("end") or locator_start)
+        if locator_end < locator_start:
+            raise ValueError(
+                f"official source locator range is reversed for {candidate_id}: "
+                f"{queue['official_source_locator']}"
+            )
         if SOURCE_VERSION_PATTERN.fullmatch(queue["source_version"]) is None:
             raise ValueError(
                 f"source version is not SHA-256 pinned for {candidate_id}: "
                 f"{queue['source_version']}"
             )
+        validate_document_metadata(queue, candidate_id)
+        official_source_text(queue, candidate_id)
+        regression_test_scenarios(
+            queue["required_regression_tests"],
+            candidate_id=candidate_id,
+            candidate_anchors=(
+                queue["product_name"],
+                queue["item_sequence"],
+                queue["rule_id"],
+            ),
+        )
         for queue_field, triage_field in IDENTITY_FIELDS:
             if queue[queue_field] != triage[triage_field]:
                 raise ValueError(
@@ -1067,9 +1081,7 @@ def join_rows(
                 )
         status = triage["recommended_status"]
         if status not in ALLOWED_RECOMMENDED_STATUSES:
-            raise ValueError(
-                f"invalid recommended status for {candidate_id}: {status}"
-            )
+            raise ValueError(f"invalid recommended status for {candidate_id}: {status}")
         validate_inactive_triage_claims(
             triage,
             forbidden_claims=forbidden_claims,
@@ -1092,17 +1104,123 @@ def one_line(value: str) -> str:
     return " ".join(value.split())
 
 
-def regression_test_text(value: str) -> str:
-    tokens = [token.strip() for token in value.split("|") if token.strip()]
-    if len(tokens) != len(set(tokens)):
-        raise ValueError(f"duplicate regression test token: {value}")
-    unknown = sorted(set(tokens) - set(REGRESSION_TEST_LABELS))
+def validate_document_metadata(queue: dict[str, str], candidate_id: str) -> None:
+    document_type = queue["document_type"].strip()
+    if document_type not in ALLOWED_DOCUMENT_TYPES:
+        raise ValueError(
+            f"unsupported document type for {candidate_id}: {document_type}"
+        )
+
+    access_timestamp = queue["retrieved_at_utc"].strip()
+    try:
+        accessed_at = datetime.fromisoformat(access_timestamp.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError(
+            f"invalid access timestamp for {candidate_id}: {access_timestamp}"
+        ) from error
+    if accessed_at.tzinfo is None or accessed_at.utcoffset() != timezone.utc.utcoffset(
+        accessed_at
+    ):
+        raise ValueError(
+            f"access timestamp is not UTC for {candidate_id}: {access_timestamp}"
+        )
+
+    revision_date = queue["document_revision_date"].strip()
+    raw_revision_status = queue["document_revision_status"]
+    revision_status = raw_revision_status.strip()
+    if raw_revision_status != revision_status:
+        raise ValueError(
+            f"document revision status has surrounding whitespace for {candidate_id}"
+        )
+    revision_basis = queue["document_revision_basis"].strip()
+    revision_reason = queue["document_revision_reason"].strip()
+    if revision_status == DOCUMENT_REVISION_REPORTED:
+        if not revision_date or not revision_basis or revision_reason:
+            raise ValueError(
+                f"invalid reported document revision metadata for {candidate_id}"
+            )
+        try:
+            date.fromisoformat(revision_date)
+        except ValueError as error:
+            raise ValueError(
+                f"invalid document revision date for {candidate_id}: {revision_date}"
+            ) from error
+        return
+    if revision_status == DOCUMENT_REVISION_NOT_REPORTED:
+        if revision_date or revision_basis or not revision_reason:
+            raise ValueError(
+                f"invalid not-reported document revision metadata for {candidate_id}"
+            )
+        return
+    raise ValueError(
+        f"unsupported document revision status for {candidate_id}: {revision_status}"
+    )
+
+
+def official_source_text(queue: dict[str, str], candidate_id: str) -> str:
+    if "official_source_text" in queue:
+        value = queue["official_source_text"].strip()
+        if not value:
+            raise ValueError(f"official source text is blank for {candidate_id}")
+    else:
+        value = queue["proposed_review_evidence_text"].strip()
+    if not value:
+        raise ValueError(f"official source text is missing for {candidate_id}")
+    return value
+
+
+def regression_test_scenarios(
+    value: str,
+    *,
+    candidate_id: str,
+    candidate_anchors: tuple[str, ...],
+) -> list[tuple[str, str]]:
+    entries = [entry.strip() for entry in value.split("|") if entry.strip()]
+    scenarios: dict[str, str] = {}
+    for entry in entries:
+        if "=" not in entry:
+            raise ValueError(
+                "regression tests must use category=scenario entries for "
+                f"{candidate_id}: {entry}"
+            )
+        token, raw_scenario = entry.split("=", 1)
+        token = token.strip()
+        scenario = one_line(raw_scenario)
+        if token in scenarios:
+            raise ValueError(
+                f"duplicate regression test token for {candidate_id}: {token}"
+            )
+        scenarios[token] = scenario
+
+    unknown = sorted(set(scenarios) - set(REGRESSION_TEST_LABELS))
     if unknown:
         raise ValueError(f"unknown regression test tokens: {unknown}")
-    if set(tokens) != set(REGRESSION_TEST_LABELS):
-        missing = sorted(set(REGRESSION_TEST_LABELS) - set(tokens))
+    if set(scenarios) != set(REGRESSION_TEST_LABELS):
+        missing = sorted(set(REGRESSION_TEST_LABELS) - set(scenarios))
         raise ValueError(f"missing regression test tokens: {missing}")
-    return "·".join(REGRESSION_TEST_LABELS[token] for token in tokens)
+
+    anchors = tuple(
+        one_line(anchor) for anchor in candidate_anchors if one_line(anchor)
+    )
+    normalized_scenarios: set[str] = set()
+    for token, scenario in scenarios.items():
+        if len(scenario) < 20:
+            raise ValueError(
+                f"regression test scenario is not specific for {candidate_id}: "
+                f"{token}={scenario}"
+            )
+        if not any(anchor in scenario for anchor in anchors):
+            raise ValueError(
+                f"regression test scenario does not identify candidate {candidate_id}: "
+                f"{token}={scenario}"
+            )
+        normalized = scenario.casefold()
+        if normalized in normalized_scenarios:
+            raise ValueError(
+                f"duplicate regression test scenario for {candidate_id}: {scenario}"
+            )
+        normalized_scenarios.add(normalized)
+    return [(token, scenarios[token]) for token in REGRESSION_TEST_LABELS]
 
 
 def markdown_text(value: str) -> str:
@@ -1155,6 +1273,14 @@ def render_markdown(
         f"- 비활성 후보: {summary['inactive_candidate_items']}개",
         "- 채택 시 필수 회귀 테스트를 적은 항목: "
         f"{summary['items_with_required_regression_tests']}개",
+        "- 구체적 회귀 테스트 시나리오를 적은 항목: "
+        f"{summary['items_with_specific_regression_scenarios']}개",
+        "- 완결 공식 원문을 수록한 항목: "
+        f"{summary['items_with_official_source_text']}개",
+        "- 완결 원문이 없어 이전 큐 검토 원문을 대신 사용한 항목: "
+        f"{summary['items_using_proposed_source_fallback']}개",
+        "- 문서 개정일 또는 부재 사유를 수록한 항목: "
+        f"{summary['items_with_document_revision_metadata']}개",
         "",
         "### 권고 상태별 수",
         "",
@@ -1192,7 +1318,33 @@ def render_markdown(
     for index, item in enumerate(items, 1):
         queue = item["queue"]
         triage = item["triage"]
-        required_tests = regression_test_text(queue["required_regression_tests"])
+        required_tests = regression_test_scenarios(
+            queue["required_regression_tests"],
+            candidate_id=queue["evidence_candidate_id"],
+            candidate_anchors=(
+                queue["product_name"],
+                queue["item_sequence"],
+                queue["rule_id"],
+            ),
+        )
+        ingredients = ", ".join(
+            ingredient.strip()
+            for ingredient in queue["ingredient_names"].split(";")
+            if ingredient.strip()
+        )
+        if queue["document_revision_status"].strip() == DOCUMENT_REVISION_REPORTED:
+            revision_lines = [
+                f"- 문서 개정일: `{inline_code(queue['document_revision_date'])}`",
+                f"- 문서 개정 상태: `{inline_code(queue['document_revision_status'])}`",
+                f"- 문서 개정 근거: {markdown_text(queue['document_revision_basis'])}",
+            ]
+        else:
+            revision_lines = [
+                "- 문서 개정일: 공개 기록 없음",
+                f"- 문서 개정 상태: `{inline_code(queue['document_revision_status'])}`",
+                "- 문서 개정일 부재 사유: "
+                f"{markdown_text(queue['document_revision_reason'])}",
+            ]
         lines.extend(
             [
                 f"## {index}. {markdown_text(queue['evidence_candidate_id'])}",
@@ -1203,22 +1355,26 @@ def render_markdown(
                 f"`{inline_code(queue['rule_type'])}`",
                 "- 후보 운영 상태: "
                 f"`{inline_code(queue['candidate_operational_status'])}`",
-                "- 참조 규칙 상태: "
-                f"`{inline_code(queue['referenced_rule_status'])}`",
+                f"- 참조 규칙 상태: `{inline_code(queue['referenced_rule_status'])}`",
                 f"- 제품: {markdown_text(queue['product_name'])} "
                 f"(`{inline_code(queue['item_sequence'])}`)",
+                f"- 성분: {markdown_text(ingredients)}",
+                f"- 문서 유형: `{inline_code(queue['document_type'])}`",
                 f"- 공식 허가 원문: [{markdown_text(queue['source_id'])}]"
                 f"({queue['source_url']})",
                 f"- 원문 버전: `{inline_code(queue['source_version'])}`",
+                *revision_lines,
+                f"- 접근일(UTC): `{inline_code(queue['retrieved_at_utc'])}`",
                 "- 원시 후보 원문 위치: "
                 f"{markdown_text(queue['raw_candidate_source_locator'])}",
-                "- 검토 제안 원문 위치: "
+                "- 검토용 공식 원문 위치: "
+                f"{markdown_text(queue['official_source_locator'])}",
+                "- 검토 제안 원문 위치(감사용 후보 범위): "
                 f"{markdown_text(queue['proposed_review_source_locator'])}",
                 f"- 참조 규칙 범위: `{inline_code(queue['current_rule_scope'])}`",
                 "- 참조 규칙 실행 조건: "
                 f"`{inline_code(queue['referenced_runtime_condition'])}`",
-                "- 참조 코드 위치: "
-                f"`{inline_code(queue['referenced_code_link'])}`",
+                f"- 참조 코드 위치: `{inline_code(queue['referenced_code_link'])}`",
                 "- 제안 적용 범위·판정 조건: "
                 f"{markdown_text(triage['proposed_trigger'])}",
                 f"- 후보 판정문: {markdown_text(triage['expected_decision_ko'])}",
@@ -1226,11 +1382,17 @@ def render_markdown(
                 f"- 현재 후보 다음 행동: {markdown_text(queue['proposed_next_action_ko'])}",
                 f"- 판단 근거: {markdown_text(triage['decision_reason_ko'])}",
                 f"- 전문가 확인 질문: {markdown_text(triage['expert_question_ko'])}",
-                "- 원시 후보 원문: "
+                "- 검토용 공식 원문: "
+                f"{markdown_text(official_source_text(queue, queue['evidence_candidate_id']))}",
+                "- 원시 후보 원문(감사용 조각): "
                 f"{markdown_text(queue['raw_candidate_evidence_text'])}",
-                "- 검토 제안 원문: "
+                "- 검토 제안 원문(감사용 조각): "
                 f"{markdown_text(queue['proposed_review_evidence_text'])}",
-                f"- 채택 시 필수 회귀 테스트: {required_tests}",
+                "- 채택 시 필수 회귀 테스트:",
+                *[
+                    f"  - {REGRESSION_TEST_LABELS[token]}: {markdown_text(scenario)}"
+                    for token, scenario in required_tests
+                ],
                 "- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각",
                 "- 검토자 ID:",
                 "- 검토자 역할:",
@@ -1247,9 +1409,7 @@ def build_from_rows(
     triage_rows: list[dict[str, str]],
     *,
     expected_items: int = EXPECTED_ITEMS,
-    forbidden_claims: tuple[
-        re.Pattern[str], ...
-    ] = TRIAGE_FORBIDDEN_CLAIMS,
+    forbidden_claims: tuple[re.Pattern[str], ...] = TRIAGE_FORBIDDEN_CLAIMS,
 ) -> dict[str, Any]:
     items = join_rows(
         queue_rows,
@@ -1259,6 +1419,9 @@ def build_from_rows(
     )
     candidate_operational_status_counts = sorted_counts(
         [item["queue"]["candidate_operational_status"] for item in items]
+    )
+    items_with_official_source_text = sum(
+        bool(item["queue"].get("official_source_text", "").strip()) for item in items
     )
     summary = {
         "queue_rows": len(queue_rows),
@@ -1286,6 +1449,12 @@ def build_from_rows(
             "inactive_candidate", 0
         ),
         "items_with_required_regression_tests": len(items),
+        "items_with_specific_regression_scenarios": len(items),
+        "items_with_official_source_text": items_with_official_source_text,
+        "items_using_proposed_source_fallback": (
+            len(items) - items_with_official_source_text
+        ),
+        "items_with_document_revision_metadata": len(items),
     }
     markdown = render_markdown(items, summary)
     validate_rendered_packet_claims(
@@ -1336,7 +1505,7 @@ def build(
     queue_fields, queue_rows = parse_csv_bytes(
         queue_snapshot.payload,
         queue_snapshot.path,
-        QUEUE_REQUIRED_FIELDS,
+        QUEUE_CSV_REQUIRED_FIELDS,
     )
     triage_fields, triage_rows = parse_csv_bytes(
         triage_snapshot.payload,
@@ -1347,9 +1516,7 @@ def build(
         inventory_snapshot.payload,
         inventory_snapshot.path,
     )
-    forbidden_claims = forbidden_claims_from_validator_bytes(
-        validator_snapshot.payload
-    )
+    forbidden_claims = forbidden_claims_from_validator_bytes(validator_snapshot.payload)
     validate_queue_inventory(
         root=root,
         queue_path=queue_snapshot.path,
@@ -1420,6 +1587,12 @@ def build(
             "reviewed_or_operational_evidence_on_queue_items": [],
             "all_source_versions_sha256_pinned": True,
             "all_items_include_required_regression_tests": True,
+            "all_items_include_specific_regression_scenarios": True,
+            "all_items_include_official_source_text": (
+                package["summary"]["items_with_official_source_text"]
+                == package["summary"]["packet_items"]
+            ),
+            "all_items_include_document_revision_metadata": True,
             "triage_forbidden_claim_validator_shared": True,
             "rendered_packet_forbidden_claim_scan": True,
         },
@@ -1431,9 +1604,7 @@ def build(
                 "candidate_operational_status_counts"
             ],
             "activated_items": package["summary"]["activated_items"],
-            "inactive_candidate_items": package["summary"][
-                "inactive_candidate_items"
-            ],
+            "inactive_candidate_items": package["summary"]["inactive_candidate_items"],
             "required_human_review_fields": list(HUMAN_REVIEW_FIELDS),
             "context_only_fields": [
                 "referenced_rule_status",
@@ -1476,13 +1647,11 @@ def write(
     }
     publish_order = [packet_path, audit_path]
     staged: dict[Path, _StagedOutput] = {}
-    prior: dict[Path, _PriorOutput] = {}
-    attempted: list[Path] = []
+    published_paths: set[Path] = set()
     try:
         _revalidate_package_input_snapshots(package)
         for path, payload in payloads.items():
             staged[path] = _stage_output(path, payload)
-        prior = _capture_prior_outputs(publish_order)
         validate_review_output_paths(
             packet_path=packet_path,
             audit_path=audit_path,
@@ -1496,8 +1665,12 @@ def write(
                 root=root,
             )
             _revalidate_package_input_snapshots(package)
-            attempted.append(path)
-            _replace_staged_output(staged[path], path, keep_open=True)
+            _replace_staged_output(
+                staged[path],
+                path,
+                keep_open=True,
+                published_paths=published_paths,
+            )
         validate_review_output_paths(
             packet_path=packet_path,
             audit_path=audit_path,
@@ -1509,26 +1682,28 @@ def write(
         _revalidate_package_input_snapshots(package)
         _verify_published_output_set(staged, payloads)
     except BaseException as error:
-        for path in attempted:
-            published = staged[path]
-            if published.descriptor >= 0:
-                os.close(published.descriptor)
-                published.descriptor = -1
-        try:
-            _rollback_outputs(attempted, prior)
-        except Exception as rollback_error:
+        retained_staged = sorted(
+            str(output.path)
+            for output in staged.values()
+            if output.descriptor >= 0 and output.path.exists()
+        )
+        if published_paths:
             raise RuntimeError(
-                f"review packet publish failed and rollback failed: {rollback_error}"
+                "review packet publish failed after partial publication; automatic "
+                "rollback and temp deletion are disabled to preserve concurrent "
+                "writer data. Rebuild the packet, resolve the failed input or path, "
+                "and rerun the writer. "
+                f"published={sorted(str(path) for path in published_paths)} "
+                f"retained_staged={retained_staged}"
+            ) from error
+        if retained_staged:
+            raise RuntimeError(
+                "review packet staging failed; automatic temp deletion is disabled. "
+                f"retained_staged={retained_staged}"
             ) from error
         raise
     finally:
-        all_staged = [*staged.values()]
-        all_staged.extend(
-            previous.backup
-            for previous in prior.values()
-            if previous.backup is not None
-        )
-        for temporary in all_staged:
+        for temporary in staged.values():
             _close_staged_output(temporary)
 
 

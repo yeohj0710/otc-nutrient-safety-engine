@@ -3,7 +3,7 @@
   "release_lineage": "v5.1",
   "source_lineage": "v5.0_read_only",
   "generator": "scripts/research/otc/build_v51_review_packet.py",
-  "generator_sha256": "e2d81616ef4d899b9bdb27ee499e4facf4f1878c0198d700b2de2a46618c231e",
+  "generator_sha256": "7fcb6f618cd80c688ad176c6b15cdf546e0b27a2117ee0577f219fd03cfc4e0b",
   "inputs": {
     "research_v51/review/expert_review_queue.csv": {
       "rows": 33,
@@ -25,13 +25,20 @@
         "referenced_runtime_condition",
         "proposed_message_ko",
         "proposed_next_action_ko",
+        "document_type",
         "source_id",
         "source_url",
         "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
         "retrieved_at",
         "retrieved_at_utc",
         "raw_candidate_source_locator",
         "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
         "proposed_review_source_locator",
         "proposed_review_evidence_text",
         "reviewed_source_locator",
@@ -54,8 +61,8 @@
         "reviewer_role",
         "reviewed_at"
       ],
-      "bytes": 50221,
-      "sha256": "9b0e669760dbeb1b094441b74c80128296c3629e7d0c6ca81e07b740a89cf766"
+      "bytes": 110473,
+      "sha256": "315585bdb3ad8146cc0ba55aaa6e8df4850816b03644ef5bcf05afdd8d631c7f"
     },
     "research_v51/review/shortlist_semantic_triage.csv": {
       "rows": 33,
@@ -77,12 +84,12 @@
       "sha256": "7f96751eef65d9f44e108a6ee99917f921cd5e5a766af4be52ab702fc303b9db"
     },
     "research_v51/audit/evidence_inventory.json": {
-      "bytes": 16267,
-      "sha256": "813847f34ec4a20f5fe746debae06b2f6a079fe6438cae67a552adc3a80c9b8e"
+      "bytes": 22295,
+      "sha256": "279f393074f0fd473d67de3b48531380baaaa32e258a4c4bd3018358f81e6e29"
     },
     "scripts/research/otc/build_v51_review_packet.py": {
-      "bytes": 55793,
-      "sha256": "e2d81616ef4d899b9bdb27ee499e4facf4f1878c0198d700b2de2a46618c231e"
+      "bytes": 64692,
+      "sha256": "7fcb6f618cd80c688ad176c6b15cdf546e0b27a2117ee0577f219fd03cfc4e0b"
     },
     "scripts/research/otc/validate_v51_shortlist_triage.py": {
       "bytes": 10040,
@@ -92,8 +99,8 @@
   "artifact": {
     "path": "research_v51/review/expert_review_packet.md",
     "items": 33,
-    "bytes": 76591,
-    "sha256": "01e92f2c943f02f2a38813aae0951fe4b599a393d816d3a95b561962d81d845d"
+    "bytes": 147513,
+    "sha256": "5e07dd3083229a6d82b2e505c95d1c4f4348c10317e53c273058232f60adb62b"
   },
   "counts": {
     "queue_rows": 33,
@@ -121,7 +128,11 @@
     },
     "activated_items": 0,
     "inactive_candidate_items": 33,
-    "items_with_required_regression_tests": 33
+    "items_with_required_regression_tests": 33,
+    "items_with_specific_regression_scenarios": 33,
+    "items_with_official_source_text": 33,
+    "items_using_proposed_source_fallback": 0,
+    "items_with_document_revision_metadata": 33
   },
   "checks": {
     "expected_items": 33,
@@ -139,6 +150,9 @@
     "reviewed_or_operational_evidence_on_queue_items": [],
     "all_source_versions_sha256_pinned": true,
     "all_items_include_required_regression_tests": true,
+    "all_items_include_specific_regression_scenarios": true,
+    "all_items_include_official_source_text": true,
+    "all_items_include_document_revision_metadata": true,
     "triage_forbidden_claim_validator_shared": true,
     "rendered_packet_forbidden_claim_scan": true
   },

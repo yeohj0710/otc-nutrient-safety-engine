@@ -134,11 +134,31 @@ ADMIN_CONSTRAINT_TO_SUPPORT_TYPE = {
 }
 MFDS_PDF_PATTERN = re.compile(
     r"https://nedrug\.mfds\.go\.kr/dsie/pdf/drb/"
-    r"(?P<item_sequence>[0-9]+)/(?:NB|UD)"
+    r"(?P<item_sequence>[0-9]+)/(?P<document_type>NB|UD)"
 )
 MFDS_PRODUCT_PATTERN = re.compile(
     r"https://nedrug\.mfds\.go\.kr/pbp/CCBBB01/getItemDetail\?"
     r"itemSeq=(?P<item_sequence>[0-9]+)"
+)
+ISO_DOCUMENT_REVISION_DATE_PATTERN = re.compile(r"[0-9]{4}-[0-9]{2}-[0-9]{2}")
+DOCUMENT_REVISION_FIELDS = (
+    "document_revision_date",
+    "document_revision_status",
+    "document_revision_basis",
+    "document_revision_reason",
+)
+DOCUMENT_REVISION_STATUSES = {
+    "reported_in_archived_mfds_change_history",
+    "not_reported_in_archived_mfds_change_history",
+}
+MFDS_DOCUMENT_NAME_BY_TYPE = {
+    "NB": "사용상의주의사항",
+    "UD": "용법용량",
+}
+MFDS_PARAGRAPH_LOCATOR_PATTERN = re.compile(
+    r"(?P<document_name>사용상의주의사항|용법용량) PDF "
+    r"p\.(?P<page>[1-9][0-9]*), 문단 (?P<start>[1-9][0-9]*)"
+    r"(?:-(?P<end>[1-9][0-9]*))?"
 )
 
 APPLICABILITY_FIELDS = (
@@ -581,6 +601,56 @@ def require_equal(observed: Any, expected: Any, label: str) -> None:
         )
 
 
+def require_document_revision_metadata(
+    row: dict[str, Any],
+    label: str,
+) -> str:
+    require_fields(row, DOCUMENT_REVISION_FIELDS, label)
+    for field in DOCUMENT_REVISION_FIELDS:
+        value = str(row[field])
+        if value != value.strip():
+            raise ValueError(
+                f"document revision field has surrounding whitespace for "
+                f"{label}: {field}"
+            )
+    revision_date = str(row["document_revision_date"]).strip()
+    status = str(row["document_revision_status"]).strip()
+    basis = str(row["document_revision_basis"]).strip()
+    reason = str(row["document_revision_reason"]).strip()
+
+    if status not in DOCUMENT_REVISION_STATUSES:
+        raise ValueError(f"invalid document revision status for {label}: {status!r}")
+    if status == "reported_in_archived_mfds_change_history":
+        if ISO_DOCUMENT_REVISION_DATE_PATTERN.fullmatch(revision_date) is None:
+            raise ValueError(
+                f"reported document revision date must be ISO YYYY-MM-DD for "
+                f"{label}: {revision_date!r}"
+            )
+        try:
+            datetime.strptime(revision_date, "%Y-%m-%d")
+        except ValueError as error:
+            raise ValueError(
+                f"reported document revision date is invalid for {label}: "
+                f"{revision_date!r}"
+            ) from error
+        if not basis:
+            raise ValueError(f"reported document revision basis is blank for {label}")
+        if reason:
+            raise ValueError(
+                f"reported document revision reason must be blank for {label}"
+            )
+    else:
+        if revision_date or basis:
+            raise ValueError(
+                f"unreported document revision date and basis must be blank for {label}"
+            )
+        if not reason:
+            raise ValueError(
+                f"unreported document revision reason is blank for {label}"
+            )
+    return status
+
+
 def require_mfds_pdf_source(
     row: dict[str, Any],
     label: str,
@@ -588,6 +658,8 @@ def require_mfds_pdf_source(
     item_key: str,
     url_key: str,
     locator_key: str,
+    document_type_key: str | None = None,
+    strict_paragraph_locator: bool = False,
 ) -> None:
     require_nonblank(row, (item_key, url_key, locator_key), label)
     match = MFDS_PDF_PATTERN.fullmatch(str(row[url_key]))
@@ -598,6 +670,39 @@ def require_mfds_pdf_source(
             f"MFDS source product mismatch for {label}: "
             f"item={row[item_key]}, url={row[url_key]}"
         )
+    document_type = match.group("document_type")
+    if document_type_key is not None:
+        require_nonblank(row, (document_type_key,), label)
+        require_equal(
+            str(row[document_type_key]),
+            document_type,
+            f"MFDS source document type for {label}",
+        )
+    if strict_paragraph_locator:
+        require_mfds_paragraph_locator(
+            str(row[locator_key]),
+            document_type,
+            f"{label} {locator_key}",
+        )
+
+
+def require_mfds_paragraph_locator(
+    locator: str,
+    document_type: str,
+    label: str,
+) -> None:
+    match = MFDS_PARAGRAPH_LOCATOR_PATTERN.fullmatch(locator)
+    if match is None:
+        raise ValueError(f"invalid MFDS paragraph locator for {label}: {locator!r}")
+    require_equal(
+        match.group("document_name"),
+        MFDS_DOCUMENT_NAME_BY_TYPE[document_type],
+        f"MFDS locator document name for {label}",
+    )
+    start = int(match.group("start"))
+    end = int(match.group("end") or start)
+    if end < start:
+        raise ValueError(f"reversed MFDS paragraph range for {label}: {locator!r}")
 
 
 def require_mfds_product_source(
@@ -702,6 +807,7 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
     triage_by_id = unique_by_key(triage, "evidence_candidate_id", "triage")
 
     unit_locations: set[tuple[str, str]] = set()
+    unit_revision_status_counts: Counter[str] = Counter()
     for unit_id, row in unit_by_id.items():
         require_mfds_pdf_source(
             row,
@@ -709,13 +815,20 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
             item_key="item_sequence",
             url_key="source_url",
             locator_key="source_locator",
+            document_type_key="document_type",
+            strict_paragraph_locator=True,
         )
+        require_nonblank(row, ("document_type",), f"evidence unit {unit_id}")
         location = (row["source_url"], row["source_locator"])
         if location in unit_locations:
             raise ValueError(f"duplicate evidence unit source location: {location}")
         unit_locations.add(location)
+        unit_revision_status_counts[
+            require_document_revision_metadata(row, f"evidence unit {unit_id}")
+        ] += 1
 
     links_per_unit: Counter[str] = Counter()
+    link_revision_status_counts: Counter[str] = Counter()
     for candidate_id, row in link_by_id.items():
         require_mfds_pdf_source(
             row,
@@ -723,6 +836,8 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
             item_key="item_sequence",
             url_key="source_url",
             locator_key="raw_candidate_source_locator",
+            document_type_key="document_type",
+            strict_paragraph_locator=True,
         )
         require_nonblank(
             row,
@@ -732,8 +847,19 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
                 "source_pdf_sha256",
                 "source_page_text_sha256",
                 "candidate_operational_status",
+                "document_type",
+                "official_source_locator",
+                "official_source_text",
             ),
             f"evidence link {candidate_id}",
+        )
+        link_revision_status_counts[
+            require_document_revision_metadata(row, f"evidence link {candidate_id}")
+        ] += 1
+        require_mfds_paragraph_locator(
+            row["official_source_locator"],
+            row["document_type"],
+            f"evidence link {candidate_id} official_source_locator",
         )
         require_equal(
             row["source_version"],
@@ -747,7 +873,12 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
             )
         unit = unit_by_id[unit_id]
         for link_field, unit_field in (
+            ("document_type", "document_type"),
             ("source_version", "source_version"),
+            ("document_revision_date", "document_revision_date"),
+            ("document_revision_status", "document_revision_status"),
+            ("document_revision_basis", "document_revision_basis"),
+            ("document_revision_reason", "document_revision_reason"),
             ("source_pdf_sha256", "source_pdf_sha256"),
             ("source_page_text_sha256", "source_page_text_sha256"),
             ("raw_candidate_source_locator", "source_locator"),
@@ -783,6 +914,11 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
         dict(operational_status_counts),
         expected_counts["candidate_operational_status_counts"],
         "candidate operational status counts",
+    )
+    require_equal(
+        dict(link_revision_status_counts),
+        expected_counts.get("document_revision_status_counts"),
+        "document revision status counts",
     )
     require_equal(
         inventory["review_boundary"]["human_decisions_prefilled"],
@@ -905,6 +1041,7 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
         "active operational evidence IDs",
     )
 
+    queue_revision_status_counts: Counter[str] = Counter()
     for candidate_id, row in queue_by_id.items():
         require_mfds_pdf_source(
             row,
@@ -912,16 +1049,29 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
             item_key="item_sequence",
             url_key="source_url",
             locator_key="proposed_review_source_locator",
+            document_type_key="document_type",
+            strict_paragraph_locator=True,
         )
         require_nonblank(
             row,
             (
                 "raw_candidate_source_locator",
                 "raw_candidate_evidence_text",
+                "document_type",
+                "official_source_locator",
+                "official_source_text",
                 "proposed_review_source_locator",
                 "proposed_review_evidence_text",
             ),
             f"expert queue {candidate_id}",
+        )
+        queue_revision_status_counts[
+            require_document_revision_metadata(row, f"expert queue {candidate_id}")
+        ] += 1
+        require_mfds_paragraph_locator(
+            row["official_source_locator"],
+            row["document_type"],
+            f"expert queue {candidate_id} official_source_locator",
         )
         require_equal(
             row["review_status"],
@@ -954,21 +1104,35 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
             ("evidence_unit_id", "evidence_unit_id"),
             ("rule_id", "rule_id"),
             ("rule_type", "rule_type"),
+            ("document_type", "document_type"),
             ("referenced_rule_status", "referenced_rule_status"),
             ("referenced_runtime_condition", "referenced_runtime_condition"),
             ("referenced_code_link", "referenced_code_link"),
             ("candidate_operational_status", "candidate_operational_status"),
             ("raw_candidate_source_locator", "raw_candidate_source_locator"),
             ("raw_candidate_evidence_text", "raw_candidate_evidence_text"),
+            ("official_source_locator", "official_source_locator"),
+            ("official_source_text", "official_source_text"),
             ("current_rule_scope", "rule_scope"),
             ("source_id", "source_id"),
             ("source_url", "source_url"),
             ("source_version", "source_version"),
+            ("document_revision_date", "document_revision_date"),
+            ("document_revision_status", "document_revision_status"),
+            ("document_revision_basis", "document_revision_basis"),
+            ("document_revision_reason", "document_revision_reason"),
         ):
             require_equal(
                 row[queue_field],
                 link[link_field],
                 f"expert queue {candidate_id} projection {queue_field}",
+            )
+        unit = unit_by_id[row["evidence_unit_id"]]
+        for field in ("document_type", *DOCUMENT_REVISION_FIELDS):
+            require_equal(
+                row[field],
+                unit[field],
+                f"expert queue {candidate_id} unit provenance {field}",
             )
         expected_review_locator = (
             link["shortlist_source_locator"] or link["raw_candidate_source_locator"]
@@ -1020,6 +1184,23 @@ def analyze_evidence(inputs: dict[str, Any]) -> dict[str, Any]:
         "triage_items": len(triage),
         "triage_recommended_status_counts": dict(sorted(triage_status.items())),
         "triage_semantic_relation_counts": dict(sorted(semantic_relations.items())),
+        "structured_document_revision_units": len(units),
+        "structured_document_revision_links": len(links),
+        "structured_document_revision_queue_items": len(queue),
+        "document_revision_status_counts": dict(
+            sorted(link_revision_status_counts.items())
+        ),
+        "document_revision_unit_status_counts": dict(
+            sorted(unit_revision_status_counts.items())
+        ),
+        "document_revision_queue_status_counts": dict(
+            sorted(queue_revision_status_counts.items())
+        ),
+        "official_source_text_complete_links": len(links),
+        "official_source_text_complete_queue_items": len(queue),
+        "official_source_locator_complete_links": len(links),
+        "official_source_locator_complete_queue_items": len(queue),
+        "all_360_evidence_links_have_structured_document_revision_metadata": True,
         "evidence_source_urls_complete": True,
         "evidence_source_locators_complete": True,
     }
@@ -2470,6 +2651,41 @@ def compute(
     require_equal(runtime["administration_constraints"], 32, "ADMIN constraints")
     require_equal(evidence["evidence_units"], 328, "v5.1 evidence units")
     require_equal(evidence["evidence_rule_links"], 360, "v5.1 evidence links")
+    require_equal(
+        evidence["structured_document_revision_links"],
+        360,
+        "structured document revision evidence links",
+    )
+    require_equal(
+        evidence["structured_document_revision_units"],
+        328,
+        "structured document revision evidence units",
+    )
+    require_equal(
+        evidence["structured_document_revision_queue_items"],
+        33,
+        "structured document revision expert queue items",
+    )
+    require_equal(
+        evidence["official_source_text_complete_links"],
+        360,
+        "official source text evidence links",
+    )
+    require_equal(
+        evidence["official_source_text_complete_queue_items"],
+        33,
+        "official source text expert queue items",
+    )
+    require_equal(
+        evidence["official_source_locator_complete_links"],
+        360,
+        "official source locator evidence links",
+    )
+    require_equal(
+        evidence["official_source_locator_complete_queue_items"],
+        33,
+        "official source locator expert queue items",
+    )
     require_equal(literature["v50_emitted_links"], 10, "literature emitted")
     require_equal(literature["v50_emitted_rules"], 9, "literature rules")
     require_equal(literature["direct_capable_links"], 5, "direct-capable literature")
@@ -2531,6 +2747,9 @@ def compute(
             ),
             "evidence_status_assignment_level": "360 evidence_rule_links",
             "evidence_units_are_status_free": True,
+            "evidence_document_revision_metadata_assignment_level": (
+                "all 360 evidence_rule_links"
+            ),
             "literature_authority": "explanatory_only",
             "release_ready_requires_human_review": True,
             "portable_repository_verification": True,
@@ -2567,6 +2786,9 @@ def compute(
             "all_rule_sources_have_url_and_locator": True,
             "all_constraint_sources_have_url_and_locator": True,
             "all_evidence_sources_have_url_and_locator": True,
+            "all_360_evidence_links_have_structured_document_revision_metadata": True,
+            "all_evidence_links_and_queue_items_have_official_source_text": True,
+            "all_evidence_links_and_queue_items_have_official_source_locator": True,
             "all_literature_sources_have_pubmed_id_and_locator": True,
             "triage_joins_all_33_unverified_links_once": True,
             "expert_packet_activation_is_zero": True,

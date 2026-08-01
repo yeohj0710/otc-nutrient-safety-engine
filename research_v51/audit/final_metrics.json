@@ -3,7 +3,7 @@
   "track": "v5.1-final-mechanical-audit",
   "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
   "generator": "scripts/research/otc/build_v51_final_audit.py",
-  "generator_sha256": "07344c19f33138acfe2dc6de7cbaa988d4cb89f9cbe2cdf2313c859ecc9a76d9",
+  "generator_sha256": "e6a55e6203e563caf5fd9c02a63d82fa45b49b96e746280f0dcb5d4ff9fed8e8",
   "computation_policy": {
     "mechanical_sources_only": true,
     "ui_code_used": false,
@@ -12,6 +12,7 @@
     "admin_derived_support_type_source": "mapped administrationConstraints[].type minus direct released-rule types",
     "evidence_status_assignment_level": "360 evidence_rule_links",
     "evidence_units_are_status_free": true,
+    "evidence_document_revision_metadata_assignment_level": "all 360 evidence_rule_links",
     "literature_authority": "explanatory_only",
     "release_ready_requires_human_review": true,
     "portable_repository_verification": true,
@@ -306,8 +307,8 @@
     },
     "research_v51/audit/evidence_inventory.json": {
       "path": "research_v51/audit/evidence_inventory.json",
-      "bytes": 16267,
-      "sha256": "813847f34ec4a20f5fe746debae06b2f6a079fe6438cae67a552adc3a80c9b8e"
+      "bytes": 22295,
+      "sha256": "279f393074f0fd473d67de3b48531380baaaa32e258a4c4bd3018358f81e6e29"
     },
     "research_v51/audit/literature_link_classification_audit.json": {
       "path": "research_v51/audit/literature_link_classification_audit.json",
@@ -316,13 +317,13 @@
     },
     "research_v51/audit/review_packet_audit.json": {
       "path": "research_v51/audit/review_packet_audit.json",
-      "bytes": 5332,
-      "sha256": "26a155237a77d94fd30683bbfe2fefddc43735bd7bde8b8ca19f560cdab60162"
+      "bytes": 5929,
+      "sha256": "d750b9a7faa33f9255f40d57d90eedcb315718aab0de175a6f52cfe98c186e9b"
     },
     "research_v51/audit/source_freshness_snapshot.json": {
       "path": "research_v51/audit/source_freshness_snapshot.json",
       "bytes": 30383,
-      "sha256": "17214155ac606a40fa4274f3e76f53a7dc27b497396fd5dab1b967076133ba99"
+      "sha256": "b84cded6c864131be0704fcc660c89cb0a6921cb1084289b14e479cbf7e3f2da"
     },
     "research_v51/evidence/active_rule_applicability.csv": {
       "path": "research_v51/evidence/active_rule_applicability.csv",
@@ -348,8 +349,8 @@
     },
     "research_v51/evidence/evidence_rule_links.csv": {
       "path": "research_v51/evidence/evidence_rule_links.csv",
-      "bytes": 456598,
-      "sha256": "c9db382f14c96bf3cd305a6312a745b3c53a53a37f1861cbcb670bedfef0a255",
+      "bytes": 807916,
+      "sha256": "7b90d60eecb92d78be3c73d3a8403f401ca537ec747c7ca52cc50a884b40920f",
       "rows": 360,
       "fields": [
         "evidence_candidate_id",
@@ -369,12 +370,18 @@
         "source_id",
         "source_url",
         "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
         "source_pdf_sha256",
         "source_page_text_sha256",
         "retrieved_at",
         "retrieved_at_utc",
         "raw_candidate_source_locator",
         "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
         "evidence_text_override",
         "evidence_text_override_reason",
         "shortlist_source_locator",
@@ -409,8 +416,8 @@
     },
     "research_v51/evidence/evidence_units.csv": {
       "path": "research_v51/evidence/evidence_units.csv",
-      "bytes": 296314,
-      "sha256": "be36b3993070e424cedbe4a8cba888d40577c542ffb170f0032de46e332ba2f9",
+      "bytes": 353897,
+      "sha256": "15c59cc7bf0f07118d172668d848731815dc4f69a9fe3fcd26e6c843ce73f18a",
       "rows": 328,
       "fields": [
         "evidence_unit_id",
@@ -425,6 +432,10 @@
         "source_id",
         "source_url",
         "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
         "source_pdf_sha256",
         "source_page_text_sha256",
         "retrieved_at",
@@ -481,13 +492,13 @@
     },
     "research_v51/review/expert_review_packet.md": {
       "path": "research_v51/review/expert_review_packet.md",
-      "bytes": 76591,
-      "sha256": "01e92f2c943f02f2a38813aae0951fe4b599a393d816d3a95b561962d81d845d"
+      "bytes": 147513,
+      "sha256": "5e07dd3083229a6d82b2e505c95d1c4f4348c10317e53c273058232f60adb62b"
     },
     "research_v51/review/expert_review_queue.csv": {
       "path": "research_v51/review/expert_review_queue.csv",
-      "bytes": 50221,
-      "sha256": "9b0e669760dbeb1b094441b74c80128296c3629e7d0c6ca81e07b740a89cf766",
+      "bytes": 110473,
+      "sha256": "315585bdb3ad8146cc0ba55aaa6e8df4850816b03644ef5bcf05afdd8d631c7f",
       "rows": 33,
       "fields": [
         "evidence_candidate_id",
@@ -507,13 +518,20 @@
         "referenced_runtime_condition",
         "proposed_message_ko",
         "proposed_next_action_ko",
+        "document_type",
         "source_id",
         "source_url",
         "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
         "retrieved_at",
         "retrieved_at_utc",
         "raw_candidate_source_locator",
         "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
         "proposed_review_source_locator",
         "proposed_review_evidence_text",
         "reviewed_source_locator",
@@ -569,13 +587,13 @@
     },
     "scripts/research/otc/build_v51_final_audit.py": {
       "path": "scripts/research/otc/build_v51_final_audit.py",
-      "bytes": 117588,
-      "sha256": "07344c19f33138acfe2dc6de7cbaa988d4cb89f9cbe2cdf2313c859ecc9a76d9"
+      "bytes": 126544,
+      "sha256": "e6a55e6203e563caf5fd9c02a63d82fa45b49b96e746280f0dcb5d4ff9fed8e8"
     },
     "scripts/research/otc/build_v51_review_packet.py": {
       "path": "scripts/research/otc/build_v51_review_packet.py",
-      "bytes": 55793,
-      "sha256": "e2d81616ef4d899b9bdb27ee499e4facf4f1878c0198d700b2de2a46618c231e"
+      "bytes": 64692,
+      "sha256": "7fcb6f618cd80c688ad176c6b15cdf546e0b27a2117ee0577f219fd03cfc4e0b"
     },
     "scripts/research/otc/validate_v51_shortlist_triage.py": {
       "path": "scripts/research/otc/validate_v51_shortlist_triage.py",
@@ -1239,6 +1257,26 @@
         "potential_product_extension": 16,
         "wrong_scope": 9
       },
+      "structured_document_revision_units": 328,
+      "structured_document_revision_links": 360,
+      "structured_document_revision_queue_items": 33,
+      "document_revision_status_counts": {
+        "not_reported_in_archived_mfds_change_history": 5,
+        "reported_in_archived_mfds_change_history": 355
+      },
+      "document_revision_unit_status_counts": {
+        "not_reported_in_archived_mfds_change_history": 5,
+        "reported_in_archived_mfds_change_history": 323
+      },
+      "document_revision_queue_status_counts": {
+        "not_reported_in_archived_mfds_change_history": 1,
+        "reported_in_archived_mfds_change_history": 32
+      },
+      "official_source_text_complete_links": 360,
+      "official_source_text_complete_queue_items": 33,
+      "official_source_locator_complete_links": 360,
+      "official_source_locator_complete_queue_items": 33,
+      "all_360_evidence_links_have_structured_document_revision_metadata": true,
       "evidence_source_urls_complete": true,
       "evidence_source_locators_complete": true
     },
@@ -1300,14 +1338,14 @@
       "items_with_required_regression_tests": 33
     },
     "official_source_freshness": {
-      "accessed_at_utc": "2026-07-31T17:38:34.905563+00:00",
+      "accessed_at_utc": "2026-08-01T03:14:25.185992+00:00",
       "generator": "scripts/research/otc/audit_v51_source_freshness.py",
       "generator_sha256": "350f13db08a9b5709116e6ca42e7df6ec9faea3d21cf87cd77df0a64148a2cda",
       "input_artifacts": {
         "evidenceRuleLinks": {
           "path": "research_v51/evidence/evidence_rule_links.csv",
-          "bytes": 456598,
-          "sha256": "c9db382f14c96bf3cd305a6312a745b3c53a53a37f1861cbcb670bedfef0a255"
+          "bytes": 807916,
+          "sha256": "7b90d60eecb92d78be3c73d3a8403f401ca537ec747c7ca52cc50a884b40920f"
         }
       },
       "official_source_urls": 20,
@@ -1356,6 +1394,9 @@
     "all_rule_sources_have_url_and_locator": true,
     "all_constraint_sources_have_url_and_locator": true,
     "all_evidence_sources_have_url_and_locator": true,
+    "all_360_evidence_links_have_structured_document_revision_metadata": true,
+    "all_evidence_links_and_queue_items_have_official_source_text": true,
+    "all_evidence_links_and_queue_items_have_official_source_locator": true,
     "all_literature_sources_have_pubmed_id_and_locator": true,
     "triage_joins_all_33_unverified_links_once": true,
     "expert_packet_activation_is_zero": true,
@@ -1426,7 +1467,7 @@
     "final_metrics": {
       "path": "research_v51/audit/final_metrics.json",
       "hash_scope": "canonical JSON with outputs.final_metrics.semantic_sha256 empty",
-      "semantic_sha256": "fe660920ae77c5bad913b66ce86e23e49e3b28cab080f59f9b4a962778e4b31f"
+      "semantic_sha256": "7b2a6b55134395f526b296d2d59b8c04eb2873f439b02c747ee2fa96b3abe120"
     }
   },
   "valid": true

@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "release_lineage": "v5.1",
   "source_lineage": "v5.0_pinned_baseline_git_blobs",
   "generator": "scripts/research/otc/build_v51_evidence_review.py",
-  "generator_sha256": "773e9e6213c9d3a2a4f11be6fab81ce4f335ad65bcad5130b0521d0b8547f64a",
+  "generator_sha256": "fdae547abb0ea56328a556ded99a28cda6834c31ebebd3f849bee9eca1701bbe",
   "raw_manifest_updated_at_utc": "2026-07-14T02:56:31.878369+00:00",
   "source_retrieved_at_utc_values": [
     "2026-07-14T02:10:14.255342+00:00",
@@ -13,8 +13,8 @@
   "inputs": {
     "scripts/research/otc/build_v51_evidence_review.py": {
       "basis": "worktree_bytes",
-      "bytes": 53973,
-      "sha256": "773e9e6213c9d3a2a4f11be6fab81ce4f335ad65bcad5130b0521d0b8547f64a"
+      "bytes": 68447,
+      "sha256": "fdae547abb0ea56328a556ded99a28cda6834c31ebebd3f849bee9eca1701bbe"
     },
     "scripts/research/otc/audit_v51_boundaries.py": {
       "basis": "worktree_bytes",
@@ -116,13 +116,111 @@
       "basis": "worktree_bytes",
       "bytes": 52418,
       "sha256": "05c7fb63c630caf3d2110faf522069c7d22705376149402e8a7d3242485c1c21"
+    },
+    "research_v3/otc/raw/nedrug/196800036/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d854a2408de9b904afc0d6034cc21feee0a2cbdf",
+      "bytes": 1131469,
+      "sha256": "442ce2c47590c45de082b9379e320c2cff0b7135a69503abecc585f7623148e5"
+    },
+    "research_v3/otc/raw/nedrug/197500016/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "231d292d1bf68cda278c7cefa52f7cdda85796c4",
+      "bytes": 271182,
+      "sha256": "f122dcec86ff79ed5a08d8ee9b607ec7600ec9b7fd0466d6004762054218b5e5"
+    },
+    "research_v3/otc/raw/nedrug/198400250/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "0ec9d4943ca0f7d6cca4fca8a04166aa5295b333",
+      "bytes": 292686,
+      "sha256": "d97533232e47096a32f8375e7a9412077370a8c4489d48d501716b8f974fb9b4"
+    },
+    "research_v3/otc/raw/nedrug/198601920/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "c3a828002e29b585c96baa7ae282e7c327d31705",
+      "bytes": 195952,
+      "sha256": "0ca0e486a80739b9af648b0accb26496a1e7d9b15faf70092463eb785c94db26"
+    },
+    "research_v3/otc/raw/nedrug/198700405/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "cb5d40eb1c92d0871eaf77e1ebfd702e729140d7",
+      "bytes": 267087,
+      "sha256": "9ff028d6cd46e138e3c368b452c64043f92e2f0ec3fae4048c190cf6bb9dd4f7"
+    },
+    "research_v3/otc/raw/nedrug/199400202/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "445fcd03492d09c317b8ce5a27dec8384322eb3b",
+      "bytes": 1048664,
+      "sha256": "ad2441570f34f29c75c2ca719ddba992e82857080b1c729f16172d6ac92556e1"
+    },
+    "research_v3/otc/raw/nedrug/199801026/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f33461ffbb27939b7b8ed00f49149ba422c058ec",
+      "bytes": 656486,
+      "sha256": "310301628da20028b5a8ce6e101f7e584492918ed10a1a8dee4aefddc352a321"
+    },
+    "research_v3/otc/raw/nedrug/199900926/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "86e9ded5d8dde59941a8f45bbee9ebf7ce758f19",
+      "bytes": 346801,
+      "sha256": "a582ceebfbec4ccda415f84b0d14f0d752390d41dea7bf0486462dc38ba66aa7"
+    },
+    "research_v3/otc/raw/nedrug/200300406/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "ca8cb80e16ca1ac38b91ed7e9411260da80e30da",
+      "bytes": 326717,
+      "sha256": "33e53a0be3ef8dd32b8ec79b5c783454eb5c6aa1eeb26485f8d2a25aa1b1e1d9"
+    },
+    "research_v3/otc/raw/nedrug/200501321/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "3dd58d1b6c21550dc206f9fe98d8b4b2d26d869f",
+      "bytes": 523067,
+      "sha256": "2f916518b4e2ad12c01df8cd5540c834688e638a822e5327aa5b470239f88365"
+    },
+    "research_v3/otc/raw/nedrug/200610765/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "295c0de3e7c36ef5c7bf5a574e54b27ebf582ef1",
+      "bytes": 387066,
+      "sha256": "e565f8d6fb4a320cd730bae55f91343e46e05b728a8135e1b9db4cc653f34657"
+    },
+    "research_v3/otc/raw/nedrug/201110646/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "4fc3cf1c7c0e3b085533684cd9c232dedae7c419",
+      "bytes": 354303,
+      "sha256": "adf963f69bbd36583971efa4c4f36282e7a6884c62cdbd812a129b2122d92d69"
+    },
+    "research_v3/otc/raw/nedrug/202106092/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "30d4c3b7b0272e698fa3b53aa7be45c77f311293",
+      "bytes": 375894,
+      "sha256": "18d26576cf828e761a693f7700bb261940da32aee49f2306e1ea5592b35be942"
+    },
+    "research_v3/otc/raw/nedrug/202200525/detail.html": {
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "eaafe385ba61607234e1eb2f358423540068a30d",
+      "bytes": 273633,
+      "sha256": "f72b7a5f46322ea7117db290cbd6b5ed3db6fc2dd9c3a93ad982c5e9e5a09db2"
     }
   },
   "artifacts": {
     "research_v51/evidence/evidence_units.csv": {
       "rows": 328,
-      "bytes": 296314,
-      "sha256": "be36b3993070e424cedbe4a8cba888d40577c542ffb170f0032de46e332ba2f9",
+      "bytes": 353897,
+      "sha256": "15c59cc7bf0f07118d172668d848731815dc4f69a9fe3fcd26e6c843ce73f18a",
       "fields": [
         "evidence_unit_id",
         "candidate_id",
@@ -136,6 +234,10 @@
         "source_id",
         "source_url",
         "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
         "source_pdf_sha256",
         "source_page_text_sha256",
         "retrieved_at",
@@ -157,8 +259,8 @@
     },
     "research_v51/evidence/evidence_rule_links.csv": {
       "rows": 360,
-      "bytes": 456598,
-      "sha256": "c9db382f14c96bf3cd305a6312a745b3c53a53a37f1861cbcb670bedfef0a255",
+      "bytes": 807916,
+      "sha256": "7b90d60eecb92d78be3c73d3a8403f401ca537ec747c7ca52cc50a884b40920f",
       "fields": [
         "evidence_candidate_id",
         "evidence_unit_id",
@@ -177,12 +279,18 @@
         "source_id",
         "source_url",
         "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
         "source_pdf_sha256",
         "source_page_text_sha256",
         "retrieved_at",
         "retrieved_at_utc",
         "raw_candidate_source_locator",
         "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
         "evidence_text_override",
         "evidence_text_override_reason",
         "shortlist_source_locator",
@@ -217,8 +325,8 @@
     },
     "research_v51/review/expert_review_queue.csv": {
       "rows": 33,
-      "bytes": 50221,
-      "sha256": "9b0e669760dbeb1b094441b74c80128296c3629e7d0c6ca81e07b740a89cf766",
+      "bytes": 110473,
+      "sha256": "315585bdb3ad8146cc0ba55aaa6e8df4850816b03644ef5bcf05afdd8d631c7f",
       "fields": [
         "evidence_candidate_id",
         "evidence_unit_id",
@@ -237,13 +345,20 @@
         "referenced_runtime_condition",
         "proposed_message_ko",
         "proposed_next_action_ko",
+        "document_type",
         "source_id",
         "source_url",
         "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
         "retrieved_at",
         "retrieved_at_utc",
         "raw_candidate_source_locator",
         "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
         "proposed_review_source_locator",
         "proposed_review_evidence_text",
         "reviewed_source_locator",
@@ -286,6 +401,10 @@
     "candidate_operational_status_counts": {
       "active_existing_released_primary_evidence": 15,
       "inactive_candidate": 345
+    },
+    "document_revision_status_counts": {
+      "reported_in_archived_mfds_change_history": 355,
+      "not_reported_in_archived_mfds_change_history": 5
     },
     "reviewed_primary_evidence_rows": 15,
     "operational_evidence_rows": 15,
@@ -343,6 +462,7 @@
   },
   "provenance_verification": {
     "raw_pdf_bytes_rehashed": true,
+    "archived_detail_html_git_blobs_hashed": true,
     "extracted_page_text_rehashed": true,
     "candidate_product_identity_cross_checked": true,
     "candidate_document_url_cross_checked": true,
@@ -353,6 +473,8 @@
   "source_version_contract": {
     "source_version": "SHA-256 identity of the archived local MFDS PDF bytes used for this snapshot",
     "source_page_text_sha256": "SHA-256 of the extracted page text and the canonical content provenance for semantic comparison",
+    "document_revision_date": "latest document-type-specific change date parsed from the archived MFDS detail HTML change-history table",
+    "document_revision_unavailable_policy": "when no UD/NB-specific change-history row is present, keep the date and basis blank and record an explicit not-reported status and reason",
     "dynamic_endpoint_warning": "MFDS PDF endpoints can regenerate byte-different PDFs at the same URL; remote PDF byte mismatch alone does not establish semantic drift",
     "freshness_policy": "compare normalized extracted text before classifying semantic source drift"
   },

@@ -7,6 +7,8 @@ import json
 import re
 import unicodedata
 from collections import Counter, defaultdict
+from datetime import date
+from html.parser import HTMLParser
 from pathlib import Path
 
 try:
@@ -32,6 +34,10 @@ UNIT_FIELDS = [
     "source_id",
     "source_url",
     "source_version",
+    "document_revision_date",
+    "document_revision_status",
+    "document_revision_basis",
+    "document_revision_reason",
     "source_pdf_sha256",
     "source_page_text_sha256",
     "retrieved_at",
@@ -69,12 +75,18 @@ LINK_FIELDS = [
     "source_id",
     "source_url",
     "source_version",
+    "document_revision_date",
+    "document_revision_status",
+    "document_revision_basis",
+    "document_revision_reason",
     "source_pdf_sha256",
     "source_page_text_sha256",
     "retrieved_at",
     "retrieved_at_utc",
     "raw_candidate_source_locator",
     "raw_candidate_evidence_text",
+    "official_source_locator",
+    "official_source_text",
     "evidence_text_override",
     "evidence_text_override_reason",
     "shortlist_source_locator",
@@ -125,13 +137,20 @@ QUEUE_FIELDS = [
     "referenced_runtime_condition",
     "proposed_message_ko",
     "proposed_next_action_ko",
+    "document_type",
     "source_id",
     "source_url",
     "source_version",
+    "document_revision_date",
+    "document_revision_status",
+    "document_revision_basis",
+    "document_revision_reason",
     "retrieved_at",
     "retrieved_at_utc",
     "raw_candidate_source_locator",
     "raw_candidate_evidence_text",
+    "official_source_locator",
+    "official_source_text",
     "proposed_review_source_locator",
     "proposed_review_evidence_text",
     "reviewed_source_locator",
@@ -181,9 +200,139 @@ INPUT_PATHS = [
     "research_v3/otc/raw/nedrug/manifest.json",
     "src/lib/otc/engine.ts",
 ]
-PROTECTED_INPUT_PATHS = frozenset(
-    relative for relative in INPUT_PATHS if relative.startswith("research_v3/")
-)
+REVISION_STATUS_REPORTED = "reported_in_archived_mfds_change_history"
+REVISION_STATUS_NOT_REPORTED = "not_reported_in_archived_mfds_change_history"
+REVISION_DOCUMENT_TOKENS = {
+    "UD": ("용법용량",),
+    "NB": ("사용상주의사항", "사용상의주의사항"),
+}
+
+
+class MfdsChangeHistoryParser(HTMLParser):
+    """Collect cells from the archived MFDS change-history table."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.found_table = False
+        self.caption = ""
+        self.rows: list[list[str]] = []
+        self._capturing = False
+        self._table_depth = 0
+        self._caption_parts: list[str] | None = None
+        self._row: list[str] | None = None
+        self._cell_parts: list[str] | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag == "table":
+            if self._capturing:
+                self._table_depth += 1
+                return
+            if dict(attrs).get("id") == "tblChf":
+                self.found_table = True
+                self._capturing = True
+                self._table_depth = 1
+            return
+        if not self._capturing:
+            return
+        if tag == "caption":
+            self._caption_parts = []
+        elif tag == "tr":
+            self._row = []
+        elif tag in {"th", "td"} and self._row is not None:
+            self._cell_parts = []
+
+    def handle_data(self, data: str) -> None:
+        if self._cell_parts is not None:
+            self._cell_parts.append(data)
+        if self._caption_parts is not None:
+            self._caption_parts.append(data)
+
+    def handle_endtag(self, tag: str) -> None:
+        if not self._capturing:
+            return
+        if tag in {"th", "td"} and self._cell_parts is not None:
+            if self._row is not None:
+                self._row.append(" ".join("".join(self._cell_parts).split()))
+            self._cell_parts = None
+        elif tag == "tr" and self._row is not None:
+            if self._row:
+                self.rows.append(self._row)
+            self._row = None
+        elif tag == "caption" and self._caption_parts is not None:
+            self.caption = " ".join("".join(self._caption_parts).split())
+            self._caption_parts = None
+        elif tag == "table":
+            self._table_depth -= 1
+            if self._table_depth == 0:
+                self._capturing = False
+
+
+def document_revision_metadata(
+    payload: bytes, relative: str, document_type: str
+) -> dict[str, str]:
+    if document_type not in REVISION_DOCUMENT_TOKENS:
+        raise ValueError(f"unsupported revision document type: {document_type}")
+    parser = MfdsChangeHistoryParser()
+    parser.feed(payload.decode("utf-8-sig"))
+    parser.close()
+    if not parser.found_table:
+        return {
+            "document_revision_date": "",
+            "document_revision_status": REVISION_STATUS_NOT_REPORTED,
+            "document_revision_basis": "",
+            "document_revision_reason": (
+                "change_history_table_not_present_in_archived_mfds_detail"
+            ),
+        }
+    if "변경이력" not in normalize_text(parser.caption):
+        raise ValueError(f"MFDS change history caption mismatch: {relative}")
+    if not parser.rows or [normalize_text(value) for value in parser.rows[0][:3]] != [
+        "순번",
+        "변경일자",
+        "변경항목",
+    ]:
+        raise ValueError(f"MFDS change history columns mismatch: {relative}")
+
+    matching: list[tuple[str, str]] = []
+    for row in parser.rows[1:]:
+        if len(row) < 3:
+            continue
+        date_match = re.search(r"\d{4}-\d{2}-\d{2}", row[1])
+        if not date_match:
+            continue
+        revision_date = date_match.group(0)
+        try:
+            date.fromisoformat(revision_date)
+        except ValueError as exc:
+            raise ValueError(
+                f"invalid MFDS change history date: {relative} {revision_date}"
+            ) from exc
+        change_item = re.sub(r"^변경항목\s*", "", row[2]).strip()
+        normalized_item = normalize_text(change_item)
+        if any(
+            token in normalized_item
+            for token in REVISION_DOCUMENT_TOKENS[document_type]
+        ):
+            matching.append((revision_date, change_item))
+
+    if not matching:
+        return {
+            "document_revision_date": "",
+            "document_revision_status": REVISION_STATUS_NOT_REPORTED,
+            "document_revision_basis": "",
+            "document_revision_reason": (
+                f"no_{document_type.lower()}_entry_in_archived_mfds_change_history"
+            ),
+        }
+    revision_date, change_item = max(matching, key=lambda value: value[0])
+    return {
+        "document_revision_date": revision_date,
+        "document_revision_status": REVISION_STATUS_REPORTED,
+        "document_revision_basis": (
+            f"baseline_git_blob:{relative}#tblChf; change_item={change_item}"
+        ),
+        "document_revision_reason": "",
+    }
 
 
 def read_csv_bytes(payload: bytes) -> list[dict[str, str]]:
@@ -218,6 +367,17 @@ def protected_input_lineage(root: Path, relative: str) -> dict[str, object]:
         "bytes": len(payload),
         "sha256": sha256_bytes(payload),
     }
+
+
+def require_git_blob_identity(root: Path, relative: str, payload: bytes) -> None:
+    expected_oid = boundary_audit.git_blob_oid(root, BASELINE_COMMIT, relative)
+    header = f"blob {len(payload)}\0".encode("ascii")
+    actual_oid = hashlib.sha1(header + payload, usedforsecurity=False).hexdigest()
+    if actual_oid != expected_oid:
+        raise ValueError(
+            f"baseline Git blob identity mismatch: {relative} "
+            f"expected={expected_oid} observed={actual_oid}"
+        )
 
 
 def sha256_bytes(payload: bytes) -> str:
@@ -282,10 +442,18 @@ def source_page(source_locator: str) -> str:
 
 
 def source_paragraph(source_locator: str) -> int:
-    match = re.search(r"문단\s+(\d+)", source_locator)
+    return source_paragraph_span(source_locator)[0]
+
+
+def source_paragraph_span(source_locator: str) -> tuple[int, int]:
+    match = re.search(r"문단\s+(\d+)(?:-(\d+))?", source_locator)
     if not match:
         raise ValueError(f"source paragraph missing from locator: {source_locator}")
-    return int(match.group(1))
+    start = int(match.group(1))
+    end = int(match.group(2) or start)
+    if end < start:
+        raise ValueError(f"source paragraph range is reversed: {source_locator}")
+    return start, end
 
 
 def candidate_page_paragraph(evidence_candidate_id: str) -> tuple[str, int]:
@@ -303,6 +471,131 @@ def extracted_paragraphs(page: str) -> list[str]:
         for value in re.split(r"(?:\r?\n){2,}", page)
         if value.strip()
     ]
+
+
+def source_block_ends_sentence(value: str) -> bool:
+    return bool(re.search(r"[.!?。！？](?:[\"'”’\]}>）〉》」』】]*)$", value.rstrip()))
+
+
+def official_source_for_locator(
+    page_text_by_key: dict[tuple[str, str, str], str],
+    *,
+    item_sequence: str,
+    document_type: str,
+    source_locator: str,
+) -> tuple[str, str]:
+    page_key = (item_sequence, document_type, source_page(source_locator))
+    page_text = page_text_by_key.get(page_key)
+    if page_text is None:
+        raise ValueError(f"official source page missing from page manifest: {page_key}")
+    paragraphs = extracted_paragraphs(page_text)
+    selected_start, selected_end = source_paragraph_span(source_locator)
+    if selected_end > len(paragraphs):
+        raise ValueError(
+            "official source paragraph range missing from extracted page: "
+            f"{item_sequence} {document_type} {source_locator}"
+        )
+    expanded_start = selected_start
+    while expanded_start > 1 and not source_block_ends_sentence(
+        paragraphs[expanded_start - 2]
+    ):
+        expanded_start -= 1
+    expanded_end = selected_end
+    while expanded_end < len(paragraphs) and not source_block_ends_sentence(
+        paragraphs[expanded_end - 1]
+    ):
+        expanded_end += 1
+    expanded_span = (
+        str(expanded_start)
+        if expanded_start == expanded_end
+        else f"{expanded_start}-{expanded_end}"
+    )
+    expanded_locator = re.sub(
+        r"(문단\s+)\d+(?:-\d+)?",
+        lambda match: f"{match.group(1)}{expanded_span}",
+        source_locator,
+        count=1,
+    )
+    return expanded_locator, "\n\n".join(paragraphs[expanded_start - 1 : expanded_end])
+
+
+def official_text_for_locator(
+    page_text_by_key: dict[tuple[str, str, str], str],
+    *,
+    item_sequence: str,
+    document_type: str,
+    source_locator: str,
+) -> str:
+    return official_source_for_locator(
+        page_text_by_key,
+        item_sequence=item_sequence,
+        document_type=document_type,
+        source_locator=source_locator,
+    )[1]
+
+
+def required_regression_tests(link: dict[str, str]) -> str:
+    identity = regression_field_text(
+        f"제품={link['product_name']}; 품목기준코드={link['item_sequence']}; "
+        f"규칙={link['rule_id']}/{link['rule_type']}"
+    )
+    condition = regression_field_text(link["referenced_runtime_condition"])
+    message = regression_field_text(link["rule_message_ko"])
+    return "|".join(
+        (
+            f"normal={identity}; 적용조건={condition}; 예상문구={message}",
+            (
+                f"boundary={identity}; 적용조건={condition}; 숫자 조건은 포함 경계값과 "
+                "바로 밖 값을, 문자 조건은 정확히 일치하는 값과 불일치하는 값을 검사; "
+                f"포함·일치 값의 예상문구={message}; 제외·불일치 값에서는 "
+                f"{link['rule_id']} 미발동"
+            ),
+            (
+                f"non_target=품목기준코드!={link['item_sequence']}; 동일 조건 입력; "
+                f"예상={link['rule_id']} 미발동"
+            ),
+            (
+                f"false_positive={identity}; 적용조건 불충족; "
+                f"예상={link['rule_id']} 미발동"
+            ),
+        )
+    )
+
+
+def regression_field_text(value: str) -> str:
+    without_alternatives = re.sub(r"\s*\|\|\s*", " OR ", value)
+    return " ".join(without_alternatives.replace("|", " AND ").split())
+
+
+def require_complete_revision_metadata(
+    rows: list[dict[str, str]], *, artifact: str
+) -> None:
+    for row in rows:
+        status = row["document_revision_status"]
+        if status == REVISION_STATUS_REPORTED:
+            try:
+                date.fromisoformat(row["document_revision_date"])
+            except ValueError as exc:
+                raise ValueError(
+                    f"{artifact} has invalid document revision date: "
+                    f"{row.get('evidence_candidate_id') or row.get('evidence_unit_id')}"
+                ) from exc
+            valid = bool(
+                row["document_revision_basis"] and not row["document_revision_reason"]
+            )
+        elif status == REVISION_STATUS_NOT_REPORTED:
+            valid = bool(
+                not row["document_revision_date"]
+                and not row["document_revision_basis"]
+                and row["document_revision_reason"]
+            )
+        else:
+            valid = False
+        if not valid:
+            raise ValueError(
+                f"{artifact} has incomplete document revision metadata: "
+                f"{row.get('evidence_candidate_id') or row.get('evidence_unit_id')}"
+            )
 
 
 def engine_links(root: Path, rule_types: set[str]) -> dict[str, str]:
@@ -461,6 +754,28 @@ def build(root: Path = ROOT) -> dict[str, object]:
         for record in raw_manifest["records"]
         for item in record["files"]
     }
+    detail_paths = sorted(
+        {
+            f"research_v3/otc/raw/nedrug/{row['item_sequence']}/detail.html"
+            for row in candidates
+        }
+    )
+    revision_by_document: dict[tuple[str, str], dict[str, str]] = {}
+    document_types_by_item: dict[str, set[str]] = defaultdict(set)
+    for candidate in candidates:
+        document_types_by_item[candidate["item_sequence"]].add(
+            candidate["document_type"]
+        )
+    for relative in detail_paths:
+        item_sequence = Path(relative).parent.name
+        payload = boundary_audit.git_blob_bytes(root, BASELINE_COMMIT, relative)
+        require_git_blob_identity(root, relative, payload)
+        if relative not in raw_hash_by_path:
+            raise ValueError(f"raw manifest detail HTML entry missing: {relative}")
+        for document_type in sorted(document_types_by_item[item_sequence]):
+            revision_by_document[(item_sequence, document_type)] = (
+                document_revision_metadata(payload, relative, document_type)
+            )
     code_links = engine_links(root, set(rule_by_type))
 
     for candidate in candidates:
@@ -611,6 +926,9 @@ def build(root: Path = ROOT) -> dict[str, object]:
         page_text_sha256 = page_text_hashes.get(page_key)
         if not page_text_sha256:
             raise ValueError(f"candidate page text hash missing: {page_key}")
+        revision = revision_by_document.get(pdf_key)
+        if revision is None:
+            raise ValueError(f"candidate document revision metadata missing: {pdf_key}")
         texts = sorted(
             {row["evidence_text"] for row in rows},
             key=lambda value: (-len(value), value),
@@ -643,6 +961,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "source_id": first["source_id"],
                 "source_url": first["source_url"],
                 "source_version": f"sha256:{pdf_sha256}",
+                **revision,
                 "source_pdf_sha256": pdf_sha256,
                 "source_page_text_sha256": page_text_sha256,
                 "retrieved_at": product["retrieved_at"],
@@ -665,6 +984,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
             }
         )
 
+    require_complete_revision_metadata(units, artifact="evidence_units")
     unit_by_id = {row["evidence_unit_id"]: row for row in units}
     links: list[dict[str, str]] = []
     for candidate in candidates:
@@ -748,6 +1068,17 @@ def build(root: Path = ROOT) -> dict[str, object]:
             and shortlist_row
             else ""
         )
+        proposed_source_locator = (
+            shortlist_row["source_locator"]
+            if shortlist_row
+            else candidate["source_locator"]
+        )
+        official_source_locator, official_source_text = official_source_for_locator(
+            page_text_by_key,
+            item_sequence=candidate["item_sequence"],
+            document_type=candidate["document_type"],
+            source_locator=proposed_source_locator,
+        )
         links.append(
             {
                 "evidence_candidate_id": candidate["evidence_candidate_id"],
@@ -767,12 +1098,18 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "source_id": candidate["source_id"],
                 "source_url": candidate["source_url"],
                 "source_version": unit["source_version"],
+                "document_revision_date": unit["document_revision_date"],
+                "document_revision_status": unit["document_revision_status"],
+                "document_revision_basis": unit["document_revision_basis"],
+                "document_revision_reason": unit["document_revision_reason"],
                 "source_pdf_sha256": unit["source_pdf_sha256"],
                 "source_page_text_sha256": unit["source_page_text_sha256"],
                 "retrieved_at": unit["retrieved_at"],
                 "retrieved_at_utc": unit["retrieved_at_utc"],
                 "raw_candidate_source_locator": candidate["source_locator"],
                 "raw_candidate_evidence_text": candidate["evidence_text"],
+                "official_source_locator": official_source_locator,
+                "official_source_text": official_source_text,
                 "evidence_text_override": bool_text(bool(override)),
                 "evidence_text_override_reason": override["correction_reason"]
                 if override
@@ -832,6 +1169,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
         )
 
     links.sort(key=lambda row: row["evidence_candidate_id"])
+    require_complete_revision_metadata(links, artifact="evidence_rule_links")
     status_counts = Counter(row["evidence_status"] for row in links)
     expected_status_counts = {
         "verified_primary": 15,
@@ -933,13 +1271,20 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "referenced_runtime_condition": link["referenced_runtime_condition"],
                 "proposed_message_ko": link["rule_message_ko"],
                 "proposed_next_action_ko": link["next_action_ko"],
+                "document_type": link["document_type"],
                 "source_id": link["source_id"],
                 "source_url": link["source_url"],
                 "source_version": link["source_version"],
+                "document_revision_date": link["document_revision_date"],
+                "document_revision_status": link["document_revision_status"],
+                "document_revision_basis": link["document_revision_basis"],
+                "document_revision_reason": link["document_revision_reason"],
                 "retrieved_at": link["retrieved_at"],
                 "retrieved_at_utc": link["retrieved_at_utc"],
                 "raw_candidate_source_locator": link["raw_candidate_source_locator"],
                 "raw_candidate_evidence_text": link["raw_candidate_evidence_text"],
+                "official_source_locator": link["official_source_locator"],
+                "official_source_text": link["official_source_text"],
                 "proposed_review_source_locator": (
                     link["shortlist_source_locator"]
                     or link["raw_candidate_source_locator"]
@@ -965,7 +1310,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
                     "확인하세요. 이 후보는 전문가 승인 전까지 운영에 사용하지 않습니다."
                 ),
                 "adoption_options": "adopt|revise|reject",
-                "required_regression_tests": "normal|boundary|non_target|false_positive",
+                "required_regression_tests": required_regression_tests(link),
                 "review_decision": "",
                 "review_comment": "",
                 "reviewer_id": "",
@@ -975,6 +1320,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
         )
     if len(queue) != 33:
         raise ValueError(f"expected 33 expert review rows, found {len(queue)}")
+    require_complete_revision_metadata(queue, artifact="expert_review_queue")
     if any(
         row["candidate_operational_status"] != "inactive_candidate" for row in queue
     ):
@@ -1002,8 +1348,8 @@ def build(root: Path = ROOT) -> dict[str, object]:
         (row["source_url"], row["source_locator"]) for row in candidates
     )
     inputs = {}
-    for relative in INPUT_PATHS:
-        if relative in PROTECTED_INPUT_PATHS:
+    for relative in [*INPUT_PATHS, *detail_paths]:
+        if relative.startswith("research_v3/"):
             inputs[relative] = protected_input_lineage(root, relative)
         else:
             path = root / relative
@@ -1013,7 +1359,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
                 "sha256": sha256_file(path),
             }
     manifest = {
-        "schema_version": "1.1.0",
+        "schema_version": "1.2.0",
         "release_lineage": "v5.1",
         "source_lineage": "v5.0_pinned_baseline_git_blobs",
         "generator": "scripts/research/otc/build_v51_evidence_review.py",
@@ -1043,6 +1389,9 @@ def build(root: Path = ROOT) -> dict[str, object]:
             ),
             "status_counts": expected_status_counts,
             "candidate_operational_status_counts": expected_operational_counts,
+            "document_revision_status_counts": dict(
+                Counter(row["document_revision_status"] for row in links)
+            ),
             "reviewed_primary_evidence_rows": sum(
                 bool(row["reviewed_source_locator"] and row["reviewed_evidence_text"])
                 for row in links
@@ -1133,6 +1482,7 @@ def build(root: Path = ROOT) -> dict[str, object]:
         },
         "provenance_verification": {
             "raw_pdf_bytes_rehashed": True,
+            "archived_detail_html_git_blobs_hashed": True,
             "extracted_page_text_rehashed": True,
             "candidate_product_identity_cross_checked": True,
             "candidate_document_url_cross_checked": True,
@@ -1147,6 +1497,14 @@ def build(root: Path = ROOT) -> dict[str, object]:
             "source_page_text_sha256": (
                 "SHA-256 of the extracted page text and the canonical content provenance "
                 "for semantic comparison"
+            ),
+            "document_revision_date": (
+                "latest document-type-specific change date parsed from the archived MFDS "
+                "detail HTML change-history table"
+            ),
+            "document_revision_unavailable_policy": (
+                "when no UD/NB-specific change-history row is present, keep the date and "
+                "basis blank and record an explicit not-reported status and reason"
             ),
             "dynamic_endpoint_warning": (
                 "MFDS PDF endpoints can regenerate byte-different PDFs at the same URL; "

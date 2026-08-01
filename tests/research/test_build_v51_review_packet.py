@@ -54,6 +54,14 @@ def fixture_rows(count: int = 33) -> tuple[list[dict[str, str]], list[dict[str, 
         product_name = f"검토 제품 {index:02d}"
         item_sequence = f"{index:09d}"
         current_scope = f"scope_{index:02d}"
+        required_regression_tests = "|".join(
+            (
+                f"normal={product_name} 일반 입력에서는 후보 경고가 표시되지 않는다",
+                f"boundary={product_name} 3일 경계 입력에서는 후보 경고가 표시된다",
+                f"non_target={product_name}이 아닌 제품 입력에서는 후보 경고가 표시되지 않는다",
+                f"false_positive={product_name}의 기간 미입력 상태에서는 후보 경고가 표시되지 않는다",
+            )
+        )
         queue_rows.append(
             {
                 "evidence_candidate_id": candidate_id,
@@ -63,31 +71,41 @@ def fixture_rows(count: int = 33) -> tuple[list[dict[str, str]], list[dict[str, 
                 "candidate_operational_status": "inactive_candidate",
                 "product_name": product_name,
                 "item_sequence": item_sequence,
+                "ingredient_names": f"검토 성분 {index:02d}",
                 "current_rule_scope": current_scope,
                 "referenced_runtime_condition": f"item_sequence={item_sequence}",
                 "proposed_message_ko": "현재 후보 사용자 문구",
                 "proposed_next_action_ko": "약사에게 문의하세요.",
+                "document_type": "NB",
                 "source_id": "MFDS-NEDRUG-DETAIL",
                 "source_url": (
-                    "https://nedrug.mfds.go.kr/dsie/pdf/drb/"
-                    f"{item_sequence}/NB"
+                    f"https://nedrug.mfds.go.kr/dsie/pdf/drb/{item_sequence}/NB"
                 ),
                 "source_version": f"sha256:{index:064x}",
+                "document_revision_date": "2025-01-02",
+                "document_revision_status": (
+                    "reported_in_archived_mfds_change_history"
+                ),
+                "document_revision_basis": (
+                    "baseline_git_blob:detail.html#tblChf; change_item=사용상의주의사항"
+                ),
+                "document_revision_reason": "",
+                "retrieved_at_utc": "2026-07-31T17:38:34+00:00",
                 "raw_candidate_source_locator": "사용상의주의사항 PDF p.1, 문단 1",
                 "raw_candidate_evidence_text": "공식 원문 후보 문장",
-                "proposed_review_source_locator": (
-                    "사용상의주의사항 PDF p.1, 문단 1"
-                ),
+                "official_source_locator": "사용상의주의사항 PDF p.1, 문단 1-3",
+                "proposed_review_source_locator": ("사용상의주의사항 PDF p.1, 문단 1"),
                 "proposed_review_evidence_text": "검토할 공식 원문 후보 문장",
+                "official_source_text": (
+                    "공식 문단의 첫 문장이다. 이어지는 두 번째 문장까지 검토한다."
+                ),
                 "reviewed_source_locator": "",
                 "reviewed_evidence_text": "",
                 "operational_source_locator": "",
                 "operational_evidence_text": "",
                 "referenced_code_link": "src/lib/otc/engine.ts:100",
                 "review_status": "needs_expert_review",
-                "required_regression_tests": (
-                    "normal|boundary|non_target|false_positive"
-                ),
+                "required_regression_tests": required_regression_tests,
                 "review_decision": "",
                 "review_comment": "",
                 "reviewer_id": "",
@@ -140,18 +158,31 @@ def test_packet_joins_every_queue_item_once_and_stays_inactive() -> None:
     assert "참조 규칙 실행 조건" in package["markdown"]
     assert "참조 코드 위치" in package["markdown"]
     assert "원시 후보 원문 위치" in package["markdown"]
+    assert "검토용 공식 원문 위치" in package["markdown"]
     assert "검토 제안 원문 위치" in package["markdown"]
+    assert package["markdown"].count("- 문서 유형: `NB`") == 33
+    assert package["markdown"].count("- 문서 개정일: `2025-01-02`") == 33
+    assert package["markdown"].count("- 접근일(UTC): `2026-07-31T17:38:34+00:00`") == 33
     assert "제안 적용 범위·판정 조건" in package["markdown"]
     assert "후보 판정문" in package["markdown"]
     assert "판단 근거" in package["markdown"]
     assert "전문가 확인 질문" in package["markdown"]
-    required_tests = "- 채택 시 필수 회귀 테스트: 정상·경계·비대상·오탐 방지"
-    assert package["markdown"].count(required_tests) == 33
+    assert package["markdown"].count("- 성분: 검토 성분") == 33
+    assert (
+        package["markdown"].count("- 검토용 공식 원문: 공식 문단의 첫 문장이다.") == 33
+    )
+    assert package["markdown"].count("- 채택 시 필수 회귀 테스트:") == 33
+    for label in ("정상", "경계", "비대상", "오탐 방지"):
+        assert package["markdown"].count(f"  - {label}:") == 33
     assert package["markdown"].count("- 검토자 ID:") == 33
     assert package["markdown"].count("- 검토자 역할:") == 33
     assert package["markdown"].count("- 검토일:") == 33
     assert package["markdown"].count("- 검토 의견:") == 33
     assert package["summary"]["items_with_required_regression_tests"] == 33
+    assert package["summary"]["items_with_specific_regression_scenarios"] == 33
+    assert package["summary"]["items_with_official_source_text"] == 33
+    assert package["summary"]["items_using_proposed_source_fallback"] == 0
+    assert package["summary"]["items_with_document_revision_metadata"] == 33
 
 
 def test_packet_order_is_deterministic() -> None:
@@ -205,9 +236,7 @@ def test_identity_mismatch_and_unverified_activation_fail() -> None:
         builder.build_from_rows(operationally_active, triage_rows)
 
     reviewed = copy.deepcopy(queue_rows)
-    reviewed[0]["reviewed_source_locator"] = (
-        "사용상의주의사항 PDF p.1, 문단 1"
-    )
+    reviewed[0]["reviewed_source_locator"] = "사용상의주의사항 PDF p.1, 문단 1"
     with pytest.raises(
         ValueError, match="inactive queue item carries reviewed or operational evidence"
     ):
@@ -326,20 +355,130 @@ def test_korean_decision_reason_and_question_are_required() -> None:
         builder.build_from_rows(queue_rows, english_only)
 
 
-def test_all_required_regression_test_categories_are_required() -> None:
+def test_ingredient_and_complete_official_source_are_rendered() -> None:
+    queue_rows, triage_rows = fixture_rows()
+    queue_rows[0]["ingredient_names"] = "성분 A;성분 B"
+    queue_rows[0]["proposed_review_evidence_text"] = "간에서 잘린 후보 조각"
+    queue_rows[0]["official_source_text"] = (
+        "공식 문단의 첫 문장이다. 공식 문단의 끝 문장이다."
+    )
+
+    package = builder.build_from_rows(queue_rows, triage_rows)
+
+    assert "- 성분: 성분 A, 성분 B" in package["markdown"]
+    assert (
+        "- 검토용 공식 원문: 공식 문단의 첫 문장이다. 공식 문단의 끝 문장이다."
+        in package["markdown"]
+    )
+    assert "- 검토용 공식 원문: 간에서 잘린 후보 조각" not in package["markdown"]
+
+
+def test_official_source_text_falls_back_for_legacy_queue_rows() -> None:
+    queue_rows, triage_rows = fixture_rows()
+    queue_rows[0].pop("official_source_text")
+    queue_rows[0]["proposed_review_evidence_text"] = "이전 큐의 검토 원문"
+
+    package = builder.build_from_rows(queue_rows, triage_rows)
+
+    assert "- 검토용 공식 원문: 이전 큐의 검토 원문" in package["markdown"]
+    assert package["summary"]["items_with_official_source_text"] == 32
+    assert package["summary"]["items_using_proposed_source_fallback"] == 1
+
+    blank_new_field = copy.deepcopy(queue_rows)
+    blank_new_field[0]["official_source_text"] = "  "
+    with pytest.raises(ValueError, match="official source text is blank"):
+        builder.build_from_rows(blank_new_field, triage_rows)
+
+
+def test_ingredient_names_are_required() -> None:
+    queue_rows, triage_rows = fixture_rows()
+    queue_rows[0]["ingredient_names"] = ""
+
+    with pytest.raises(ValueError, match="ingredient names are missing"):
+        builder.build_from_rows(queue_rows, triage_rows)
+
+
+def test_document_revision_and_access_metadata_are_validated_and_rendered() -> None:
+    queue_rows, triage_rows = fixture_rows()
+    not_reported = queue_rows[0]
+    not_reported["document_revision_date"] = ""
+    not_reported["document_revision_status"] = (
+        "not_reported_in_archived_mfds_change_history"
+    )
+    not_reported["document_revision_basis"] = ""
+    not_reported["document_revision_reason"] = (
+        "no_nb_entry_in_archived_mfds_change_history"
+    )
+
+    package = builder.build_from_rows(queue_rows, triage_rows)
+
+    assert "- 문서 개정일: 공개 기록 없음" in package["markdown"]
+    assert (
+        "- 문서 개정일 부재 사유: "
+        r"no\_nb\_entry\_in\_archived\_mfds\_change\_history" in package["markdown"]
+    )
+
+    invalid_reported = copy.deepcopy(queue_rows)
+    invalid_reported[1]["document_revision_date"] = ""
+    with pytest.raises(ValueError, match="reported document revision metadata"):
+        builder.build_from_rows(invalid_reported, triage_rows)
+
+    invalid_absence = copy.deepcopy(queue_rows)
+    invalid_absence[0]["document_revision_date"] = "2025-01-02"
+    with pytest.raises(ValueError, match="not-reported document revision metadata"):
+        builder.build_from_rows(invalid_absence, triage_rows)
+
+    invalid_access = copy.deepcopy(queue_rows)
+    invalid_access[0]["retrieved_at_utc"] = "2026-07-31"
+    with pytest.raises(ValueError, match="access timestamp"):
+        builder.build_from_rows(invalid_access, triage_rows)
+
+    invalid_locator = copy.deepcopy(queue_rows)
+    invalid_locator[0]["official_source_locator"] = "사용상의주의사항 PDF 문단 1"
+    with pytest.raises(ValueError, match="invalid official source locator"):
+        builder.build_from_rows(invalid_locator, triage_rows)
+
+    padded_status = copy.deepcopy(queue_rows)
+    padded_status[0]["document_revision_status"] = (
+        " reported_in_archived_mfds_change_history "
+    )
+    with pytest.raises(ValueError, match="surrounding whitespace"):
+        builder.build_from_rows(padded_status, triage_rows)
+
+
+def test_all_required_regression_test_scenarios_are_specific() -> None:
     queue_rows, triage_rows = fixture_rows()
     incomplete = copy.deepcopy(queue_rows)
-    incomplete[0]["required_regression_tests"] = "normal|boundary"
+    incomplete[0]["required_regression_tests"] = "|".join(
+        incomplete[0]["required_regression_tests"].split("|")[:2]
+    )
 
     with pytest.raises(ValueError, match="missing regression test tokens"):
         builder.build_from_rows(incomplete, triage_rows)
 
+    generic = copy.deepcopy(queue_rows)
+    generic[0]["required_regression_tests"] = (
+        "normal|boundary|non_target|false_positive"
+    )
+    with pytest.raises(ValueError, match="category=scenario"):
+        builder.build_from_rows(generic, triage_rows)
+
+    unanchored = copy.deepcopy(queue_rows)
+    unanchored[0]["required_regression_tests"] = "|".join(
+        (
+            "normal=일반적인 성인 권장 입력에서는 후보 경고를 표시하지 않는다",
+            "boundary=정확한 기간 경계 입력에서는 후보 경고를 표시한다",
+            "non_target=전혀 다른 비대상 제품 입력에서는 후보 경고를 표시하지 않는다",
+            "false_positive=복용 기간을 입력하지 않은 상태에서는 후보 경고를 표시하지 않는다",
+        )
+    )
+    with pytest.raises(ValueError, match="does not identify candidate"):
+        builder.build_from_rows(unanchored, triage_rows)
+
 
 def test_expert_queue_must_match_evidence_inventory() -> None:
     queue_path = ROOT / "research_v51" / "review" / "expert_review_queue.csv"
-    inventory_path = (
-        ROOT / "research_v51" / "audit" / "evidence_inventory.json"
-    )
+    inventory_path = ROOT / "research_v51" / "audit" / "evidence_inventory.json"
     queue_fields, queue_rows = builder.read_csv(
         queue_path, builder.QUEUE_REQUIRED_FIELDS
     )
@@ -429,45 +568,69 @@ def test_build_executes_forbidden_patterns_from_validator_snapshot(
         builder.build(tmp_path)
 
 
-def test_validator_change_between_output_replacements_rolls_back_pair(
+@pytest.mark.parametrize("packet_existed", (True, False), ids=("overwrite", "unlink"))
+def test_input_change_after_first_publish_preserves_concurrent_writer_output(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
+    packet_existed: bool,
 ) -> None:
-    copy_review_packet_input_set(tmp_path)
-    package = builder.build(tmp_path)
+    package = {"markdown": "new-packet\n", "audit": {"new": True}}
     packet_path = tmp_path / builder.PACKET_RELATIVE
     audit_path = tmp_path / builder.AUDIT_RELATIVE
     packet_path.parent.mkdir(parents=True, exist_ok=True)
     audit_path.parent.mkdir(parents=True, exist_ok=True)
     old_packet = b"old-packet\n"
     old_audit = b'{"old": true}\n'
-    packet_path.write_bytes(old_packet)
+    concurrent_packet = b"concurrent-writer-packet\n"
+    if packet_existed:
+        packet_path.write_bytes(old_packet)
     audit_path.write_bytes(old_audit)
-    validator_path = tmp_path / builder.TRIAGE_VALIDATOR_RELATIVE
     real_replace = builder._replace_staged_output
     attacked = False
 
-    def replace_then_change_validator(
+    def reject_changed_input(_package: dict[str, object]) -> None:
+        if attacked:
+            raise ValueError("review packet input snapshot set changed")
+
+    def replace_then_publish_concurrently(
         staged: builder._StagedOutput,
         destination: Path,
         *,
         keep_open: bool = False,
+        published_paths: set[Path] | None = None,
     ) -> None:
         nonlocal attacked
-        real_replace(staged, destination, keep_open=keep_open)
+        real_replace(
+            staged,
+            destination,
+            keep_open=keep_open,
+            published_paths=published_paths,
+        )
         if destination == packet_path and not attacked:
-            validator_path.write_bytes(
-                validator_path.read_bytes() + b"\n# lineage changed\n"
-            )
+            # Windows holds the just-published inode open. Close this test-owned
+            # descriptor to model a concurrent writer on platforms where an
+            # unlinked-but-open destination can be replaced immediately.
+            os.close(staged.descriptor)
+            staged.descriptor = -1
+            concurrent_temporary = packet_path.with_suffix(".concurrent")
+            concurrent_temporary.write_bytes(concurrent_packet)
+            os.replace(concurrent_temporary, packet_path)
             attacked = True
 
     monkeypatch.setattr(
         builder,
         "_replace_staged_output",
-        replace_then_change_validator,
+        replace_then_publish_concurrently,
+    )
+    monkeypatch.setattr(
+        builder,
+        "_revalidate_package_input_snapshots",
+        reject_changed_input,
     )
 
-    with pytest.raises(ValueError, match="review packet input.*changed"):
+    with pytest.raises(
+        RuntimeError, match="failed after partial publication"
+    ) as caught:
         builder.write(
             package,
             packet_path=packet_path,
@@ -475,9 +638,12 @@ def test_validator_change_between_output_replacements_rolls_back_pair(
             root=tmp_path,
         )
 
-    assert attacked is True
-    assert packet_path.read_bytes() == old_packet
+    assert attacked is True, f"{caught.value}; cause={caught.value.__cause__!r}"
+    assert packet_path.read_bytes() == concurrent_packet
     assert audit_path.read_bytes() == old_audit
+    if packet_existed:
+        assert old_packet != concurrent_packet
+    assert list(audit_path.parent.glob(f".{audit_path.name}.*.tmp"))
 
 
 def test_checked_in_packet_and_audit_match_generator() -> None:
@@ -489,19 +655,14 @@ def test_checked_in_packet_and_audit_match_generator() -> None:
     assert packet_path.read_text(encoding="utf-8") == package["markdown"]
     assert json.loads(audit_path.read_text(encoding="utf-8")) == package["audit"]
     assert package["audit"]["checks"]["all_queue_items_joined_exactly_once"]
-    assert package["audit"]["checks"][
-        "expert_queue_matches_evidence_inventory"
-    ]
-    assert package["audit"]["checks"][
-        "all_items_include_required_regression_tests"
-    ]
-    assert package["audit"]["counts"][
-        "items_with_required_regression_tests"
-    ] == 33
+    assert package["audit"]["checks"]["expert_queue_matches_evidence_inventory"]
+    assert package["audit"]["checks"]["all_items_include_required_regression_tests"]
+    assert package["audit"]["checks"]["all_items_include_specific_regression_scenarios"]
+    assert package["audit"]["checks"]["all_items_include_official_source_text"]
+    assert package["audit"]["checks"]["all_items_include_document_revision_metadata"]
+    assert package["audit"]["counts"]["items_with_required_regression_tests"] == 33
     assert package["audit"]["activation_boundary"]["activated_items"] == 0
-    assert package["audit"]["activation_boundary"][
-        "inactive_candidate_items"
-    ] == 33
+    assert package["audit"]["activation_boundary"]["inactive_candidate_items"] == 33
     assert package["audit"]["activation_boundary"][
         "candidate_operational_status_counts"
     ] == {"inactive_candidate": 33}
@@ -512,30 +673,37 @@ def test_checked_in_packet_and_audit_match_generator() -> None:
     assert package["audit"]["activation_boundary"][
         "required_human_review_fields"
     ] == list(builder.HUMAN_REVIEW_FIELDS)
-    assert "reviewer_role" in package["audit"]["activation_boundary"][
-        "required_human_review_fields"
-    ]
+    assert (
+        "reviewer_role"
+        in package["audit"]["activation_boundary"]["required_human_review_fields"]
+    )
     validator_path = ROOT / builder.TRIAGE_VALIDATOR_RELATIVE
     validator_record = package["audit"]["inputs"][
         builder.TRIAGE_VALIDATOR_RELATIVE.as_posix()
     ]
-    assert validator_record["sha256"] == hashlib.sha256(
-        validator_path.read_bytes()
-    ).hexdigest()
+    assert (
+        validator_record["sha256"]
+        == hashlib.sha256(validator_path.read_bytes()).hexdigest()
+    )
     inventory_record = package["audit"]["inputs"][
         "research_v51/audit/evidence_inventory.json"
     ]
-    assert inventory_record["sha256"] == hashlib.sha256(
-        inventory_path.read_bytes()
-    ).hexdigest()
-    assert package["audit"]["generator_sha256"] == hashlib.sha256(
-        (ROOT / package["audit"]["generator"]).read_bytes()
-    ).hexdigest()
+    assert (
+        inventory_record["sha256"]
+        == hashlib.sha256(inventory_path.read_bytes()).hexdigest()
+    )
+    assert (
+        package["audit"]["generator_sha256"]
+        == hashlib.sha256(
+            (ROOT / package["audit"]["generator"]).read_bytes()
+        ).hexdigest()
+    )
     packet_bytes = packet_path.read_bytes()
     assert package["audit"]["artifact"]["bytes"] == len(packet_bytes)
-    assert package["audit"]["artifact"]["sha256"] == hashlib.sha256(
-        packet_bytes
-    ).hexdigest()
+    assert (
+        package["audit"]["artifact"]["sha256"]
+        == hashlib.sha256(packet_bytes).hexdigest()
+    )
 
 
 def test_review_packet_write_uses_only_canonical_atomic_outputs(
@@ -558,7 +726,7 @@ def test_review_packet_write_uses_only_canonical_atomic_outputs(
     assert list(audit_path.parent.glob(f".{audit_path.name}.*.tmp")) == []
 
 
-def test_review_packet_staged_hardlink_swap_rolls_back_both_outputs(
+def test_review_packet_staged_hardlink_swap_does_not_roll_back_published_outputs(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -592,7 +760,7 @@ def test_review_packet_staged_hardlink_swap_rolls_back_both_outputs(
 
     monkeypatch.setattr(builder.os, "replace", swap_second_stage)
 
-    with pytest.raises(ValueError, match="staged|post-replace"):
+    with pytest.raises(RuntimeError, match="failed after partial publication"):
         builder.write(
             {"markdown": "new-packet\n", "audit": {"new": True}},
             packet_path=packet_path,
@@ -601,15 +769,17 @@ def test_review_packet_staged_hardlink_swap_rolls_back_both_outputs(
         )
 
     assert attacked is True
-    assert packet_path.read_bytes() == old_packet
-    assert audit_path.read_bytes() == old_audit
+    assert packet_path.read_bytes() == b"new-packet\n"
+    assert audit_path.read_bytes() == b"ATTACK"
     assert protected.read_bytes() == b"ATTACK"
-    assert protected.stat().st_nlink == 1
+    assert protected.stat().st_nlink == 2
+    assert old_packet != packet_path.read_bytes()
+    assert old_audit != audit_path.read_bytes()
     assert list(packet_path.parent.glob(f".{packet_path.name}.*.tmp")) == []
     assert list(audit_path.parent.glob(f".{audit_path.name}.*.tmp")) == []
 
 
-def test_review_packet_holds_output_pair_through_final_recheck(
+def test_review_packet_final_recheck_does_not_overwrite_concurrent_replacement(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -644,9 +814,11 @@ def test_review_packet_holds_output_pair_through_final_recheck(
                 attacked = True
         return snapshot
 
-    monkeypatch.setattr(builder, "_read_regular_output", swap_packet_during_last_audit_read)
+    monkeypatch.setattr(
+        builder, "_read_regular_output", swap_packet_during_last_audit_read
+    )
 
-    with pytest.raises(ValueError, match="hard link|identity|post-commit"):
+    with pytest.raises(RuntimeError, match="failed after partial publication"):
         builder.write(
             package,
             packet_path=packet_path,
@@ -656,9 +828,10 @@ def test_review_packet_holds_output_pair_through_final_recheck(
 
     assert audit_new_reads == 2
     assert attacked is True
-    assert {path: path.read_bytes() for path in old_payloads} == old_payloads
+    assert packet_path.read_bytes() == b"ATTACK"
+    assert audit_path.read_bytes() == expected_audit
     assert protected.read_bytes() == b"ATTACK"
-    assert protected.stat().st_nlink == 1
+    assert protected.stat().st_nlink == 2
 
 
 @pytest.mark.parametrize(

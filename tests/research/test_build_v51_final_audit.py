@@ -5,7 +5,7 @@ import json
 import os
 import sys
 from collections import Counter
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import pytest
@@ -15,7 +15,6 @@ from scripts.research.otc import build_v51_review_packet as packet_builder
 
 
 ROOT = Path(__file__).resolve().parents[2]
-STABLE_NOW = datetime(2026, 8, 1, 0, 0, tzinfo=timezone.utc)
 
 
 def output_paths(root: Path = ROOT) -> dict[str, Path]:
@@ -28,6 +27,41 @@ def output_paths(root: Path = ROOT) -> dict[str, Path]:
 
 def compute_from(inputs: dict) -> dict:
     return builder.compute(inputs, **output_paths(inputs["root"]))
+
+
+def inputs_with_document_revision_fixture() -> dict:
+    inputs = builder.load_inputs(ROOT)
+    reported = {
+        "document_revision_date": "2026-07-31",
+        "document_revision_status": "reported_in_archived_mfds_change_history",
+        "document_revision_basis": "test fixture archived MFDS change history",
+        "document_revision_reason": "",
+    }
+    units = {row["evidence_unit_id"]: row for row in inputs["csv"]["evidence_units"]}
+    for unit in units.values():
+        unit.update(reported)
+    links = {
+        row["evidence_candidate_id"]: row for row in inputs["csv"]["evidence_links"]
+    }
+    for link in links.values():
+        unit = units[link["evidence_unit_id"]]
+        for field in builder.DOCUMENT_REVISION_FIELDS:
+            link[field] = unit[field]
+        link["official_source_locator"] = (
+            link["shortlist_source_locator"] or link["raw_candidate_source_locator"]
+        )
+        link["official_source_text"] = link["raw_candidate_evidence_text"]
+    for queue_row in inputs["csv"]["expert_queue"]:
+        link = links[queue_row["evidence_candidate_id"]]
+        queue_row["document_type"] = link["document_type"]
+        for field in builder.DOCUMENT_REVISION_FIELDS:
+            queue_row[field] = link[field]
+        queue_row["official_source_locator"] = link["official_source_locator"]
+        queue_row["official_source_text"] = link["official_source_text"]
+    inputs["json"]["evidence_inventory"]["counts"][
+        "document_revision_status_counts"
+    ] = {"reported_in_archived_mfds_change_history": len(links)}
+    return inputs
 
 
 def minimal_write_package(tmp_path: Path) -> tuple[dict, Path]:
@@ -90,6 +124,26 @@ def test_compute_reports_required_baseline_and_v51_metrics() -> None:
     }
     assert current["evidence"]["operational_evidence_rows"] == 15
     assert current["evidence"]["inactive_candidate_rows"] == 345
+    assert current["evidence"]["structured_document_revision_units"] == 328
+    assert current["evidence"]["structured_document_revision_links"] == 360
+    assert current["evidence"]["structured_document_revision_queue_items"] == 33
+    assert sum(current["evidence"]["document_revision_status_counts"].values()) == 360
+    assert current["evidence"]["official_source_text_complete_links"] == 360
+    assert current["evidence"]["official_source_text_complete_queue_items"] == 33
+    assert current["evidence"]["official_source_locator_complete_links"] == 360
+    assert current["evidence"]["official_source_locator_complete_queue_items"] == 33
+    assert (
+        current["evidence"][
+            "all_360_evidence_links_have_structured_document_revision_metadata"
+        ]
+        is True
+    )
+    assert (
+        metrics["checks"][
+            "all_360_evidence_links_have_structured_document_revision_metadata"
+        ]
+        is True
+    )
     assert current["evidence"]["triage_recommended_status_counts"] == {
         "needs_expert_review": 17,
         "provisional": 2,
@@ -313,6 +367,208 @@ def test_expert_queue_requires_blank_reviewer_role() -> None:
         builder.analyze_review_packet(missing_audit_role)
 
 
+def test_document_revision_fixture_reports_all_structured_rows() -> None:
+    observed = builder.analyze_evidence(inputs_with_document_revision_fixture())
+
+    assert observed["structured_document_revision_units"] == 328
+    assert observed["structured_document_revision_links"] == 360
+    assert observed["structured_document_revision_queue_items"] == 33
+    assert observed["document_revision_status_counts"] == {
+        "reported_in_archived_mfds_change_history": 360
+    }
+    assert observed["official_source_text_complete_links"] == 360
+    assert observed["official_source_text_complete_queue_items"] == 33
+    assert observed["official_source_locator_complete_links"] == 360
+    assert observed["official_source_locator_complete_queue_items"] == 33
+
+
+@pytest.mark.parametrize(
+    ("changes", "message"),
+    (
+        (
+            {"document_revision_status": "unknown"},
+            "invalid document revision status",
+        ),
+        (
+            {"document_revision_date": "2026-02-30"},
+            "reported document revision date is invalid",
+        ),
+        (
+            {"document_revision_date": "2026-8-01"},
+            "must be ISO YYYY-MM-DD",
+        ),
+        (
+            {"document_revision_basis": ""},
+            "reported document revision basis is blank",
+        ),
+        (
+            {"document_revision_reason": "must not coexist with a date"},
+            "reported document revision reason must be blank",
+        ),
+        (
+            {"document_revision_status": " reported_in_archived_mfds_change_history"},
+            "document revision field has surrounding whitespace",
+        ),
+        (
+            {
+                "document_revision_date": "",
+                "document_revision_status": (
+                    "not_reported_in_archived_mfds_change_history"
+                ),
+                "document_revision_basis": "",
+                "document_revision_reason": "",
+            },
+            "unreported document revision reason is blank",
+        ),
+        (
+            {
+                "document_revision_status": (
+                    "not_reported_in_archived_mfds_change_history"
+                ),
+                "document_revision_reason": "history omitted the document type",
+            },
+            "unreported document revision date and basis must be blank",
+        ),
+    ),
+)
+def test_document_revision_status_contract_rejects_tampering(
+    changes: dict[str, str],
+    message: str,
+) -> None:
+    inputs = inputs_with_document_revision_fixture()
+    inputs["csv"]["evidence_units"][0].update(changes)
+
+    with pytest.raises(ValueError, match=message):
+        builder.analyze_evidence(inputs)
+
+
+def test_link_document_revision_must_match_its_unit() -> None:
+    inputs = inputs_with_document_revision_fixture()
+    link = inputs["csv"]["evidence_links"][0]
+    link.update(
+        {
+            "document_revision_date": "",
+            "document_revision_status": (
+                "not_reported_in_archived_mfds_change_history"
+            ),
+            "document_revision_basis": "",
+            "document_revision_reason": "tampered but internally valid metadata",
+        }
+    )
+
+    with pytest.raises(ValueError, match="unit provenance document_revision_date"):
+        builder.analyze_evidence(inputs)
+
+
+@pytest.mark.parametrize(
+    ("target", "field", "message"),
+    (
+        (
+            "evidence_links",
+            "official_source_locator",
+            "blank fields.*official_source_locator",
+        ),
+        (
+            "evidence_links",
+            "official_source_text",
+            "blank fields.*official_source_text",
+        ),
+        (
+            "expert_queue",
+            "official_source_locator",
+            "blank fields.*official_source_locator",
+        ),
+        ("expert_queue", "official_source_text", "blank fields.*official_source_text"),
+        ("expert_queue", "document_type", "blank fields.*document_type"),
+    ),
+)
+def test_official_source_text_and_queue_document_type_reject_tampering(
+    target: str,
+    field: str,
+    message: str,
+) -> None:
+    inputs = inputs_with_document_revision_fixture()
+    inputs["csv"][target][0][field] = ""
+
+    with pytest.raises(ValueError, match=message):
+        builder.analyze_evidence(inputs)
+
+
+def test_queue_document_revision_must_match_link_and_unit() -> None:
+    inputs = inputs_with_document_revision_fixture()
+    queue_row = inputs["csv"]["expert_queue"][0]
+    queue_row.update(
+        {
+            "document_revision_date": "",
+            "document_revision_status": (
+                "not_reported_in_archived_mfds_change_history"
+            ),
+            "document_revision_basis": "",
+            "document_revision_reason": "tampered but internally valid metadata",
+        }
+    )
+
+    with pytest.raises(ValueError, match="projection document_revision_date mismatch"):
+        builder.analyze_evidence(inputs)
+
+
+@pytest.mark.parametrize(
+    ("field", "replacement"),
+    (
+        ("official_source_locator", "사용상의주의사항 PDF p.999, 문단 1"),
+        ("official_source_text", "tampered but nonblank official source text"),
+    ),
+)
+def test_queue_official_source_projection_must_match_link(
+    field: str,
+    replacement: str,
+) -> None:
+    inputs = inputs_with_document_revision_fixture()
+    queue_row = next(
+        row for row in inputs["csv"]["expert_queue"] if row["document_type"] == "NB"
+    )
+    queue_row[field] = replacement
+
+    with pytest.raises(ValueError, match=f"projection {field} mismatch"):
+        builder.analyze_evidence(inputs)
+
+
+@pytest.mark.parametrize(
+    ("locator", "message"),
+    (
+        (
+            "용법용량 PDF p.1, 문단 2",
+            "MFDS locator document name.*mismatch",
+        ),
+        ("사용상의주의사항 PDF page 1, 문단 2", "invalid MFDS paragraph locator"),
+        ("사용상의주의사항 PDF p.1, 문단 9-2", "reversed MFDS paragraph range"),
+    ),
+)
+def test_official_source_locator_rejects_wrong_document_and_ranges(
+    locator: str,
+    message: str,
+) -> None:
+    inputs = inputs_with_document_revision_fixture()
+    link = next(
+        row for row in inputs["csv"]["evidence_links"] if row["document_type"] == "NB"
+    )
+    link["official_source_locator"] = locator
+
+    with pytest.raises(ValueError, match=message):
+        builder.analyze_evidence(inputs)
+
+
+def test_source_url_document_type_must_match_structured_document_type() -> None:
+    inputs = inputs_with_document_revision_fixture()
+    link = next(
+        row for row in inputs["csv"]["evidence_links"] if row["document_type"] == "NB"
+    )
+    link["source_url"] = link["source_url"].removesuffix("/NB") + "/UD"
+
+    with pytest.raises(ValueError, match="MFDS source document type.*mismatch"):
+        builder.analyze_evidence(inputs)
+
+
 def test_mismatched_applicability_and_protected_output_fail() -> None:
     inputs = builder.load_inputs(ROOT)
     mismatched = copy.deepcopy(inputs)
@@ -417,11 +673,14 @@ def test_freshness_recomputes_pinned_text_and_validates_utc_timestamp() -> None:
 
 def test_final_audit_shared_freshness_validator_rejects_pdf_hash_and_time() -> None:
     inputs = builder.load_inputs(ROOT)
+    snapshot_now = datetime.fromisoformat(
+        inputs["json"]["source_freshness"]["accessedAtUtc"]
+    ).astimezone(timezone.utc)
     generator_path = builder.STATIC_INPUTS["source_freshness_generator"]
     inputs["json"]["source_freshness"]["generatorSha256"] = inputs["lineage"][
         generator_path
     ]["sha256"]
-    observed = builder.analyze_source_freshness(inputs, now_utc=STABLE_NOW)
+    observed = builder.analyze_source_freshness(inputs, now_utc=snapshot_now)
     assert observed["official_source_urls"] == 20
     assert observed["candidate_excerpt_matches"] == 360
     assert observed["release_ready"] is False
@@ -437,19 +696,21 @@ def test_final_audit_shared_freshness_validator_rejects_pdf_hash_and_time() -> N
     source["remotePdfSha256"] = "0" * 64
     source["snapshotPdfByteMatch"] = True
     with pytest.raises(ValueError, match="pinned PDF hash"):
-        builder.analyze_source_freshness(forged_pdf, now_utc=STABLE_NOW)
+        builder.analyze_source_freshness(forged_pdf, now_utc=snapshot_now)
 
     future = copy.deepcopy(inputs)
-    future["json"]["source_freshness"]["accessedAtUtc"] = "2026-08-01T00:00:01+00:00"
+    future["json"]["source_freshness"]["accessedAtUtc"] = (
+        snapshot_now + timedelta(seconds=1)
+    ).isoformat()
     with pytest.raises(ValueError, match="valid audit window"):
-        builder.analyze_source_freshness(future, now_utc=STABLE_NOW)
+        builder.analyze_source_freshness(future, now_utc=snapshot_now)
 
     pre_baseline = copy.deepcopy(inputs)
     pre_baseline["json"]["source_freshness"]["accessedAtUtc"] = (
         "2026-07-30T23:59:59+00:00"
     )
     with pytest.raises(ValueError, match="valid audit window"):
-        builder.analyze_source_freshness(pre_baseline, now_utc=STABLE_NOW)
+        builder.analyze_source_freshness(pre_baseline, now_utc=snapshot_now)
 
 
 @pytest.mark.parametrize("claim", ("human_expert_verified", "release_ready=true"))
