@@ -179,8 +179,12 @@ describe("OTC checker layout contract", () => {
 
   it("shows product and profile support boundaries before evaluation", () => {
     expect(componentSource).toContain("buildProductSupportSummary");
-    expect(presentationSource).toContain("용량·간격만 확인 가능");
-    expect(componentSource).toContain("현재 선택에서는 판정에 사용되지 않음");
+    expect(presentationSource).toContain(
+      'activeCheckTypes.includes("minimum_interval")',
+    );
+    expect(componentSource).toContain("inputSupportStatusMessage");
+    expect(componentSource).toContain("현재 입력값에 지원 범위 밖 항목 있음");
+    expect(componentSource).toContain("hasCoverageGapFor");
     expect(componentSource).toContain("현재 점검에 사용되지 않음");
     expect(styleSource).toContain(".productSupport");
     expect(styleSource).toContain(".inputSupportStatus");

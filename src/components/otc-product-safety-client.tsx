@@ -18,6 +18,7 @@ import {
   splitSupportingLiteratureForFinding,
   type FindingLiteratureMatch,
   type ProductSupportSummary,
+  type SplitSupportingLiterature,
   type SupportingLiterature,
 } from "@/src/lib/otc/presentation";
 import {
@@ -32,6 +33,7 @@ import type {
   OtcProduct,
   ReleasedRulePolicy,
   RuleEvidenceLink,
+  SafetyFinding,
   SelectedProduct,
   UserProfile,
 } from "@/src/lib/otc/schema";
@@ -385,23 +387,62 @@ function ProductSupportDetails({
   );
 }
 
+type InputSupportStatusContext = {
+  selectedCount: number;
+  supportedCount: number;
+  hasCurrentInput: boolean;
+  hasCoverageGap: boolean;
+  hasInputIssue: boolean;
+};
+
+export function inputSupportStatusMessage({
+  selectedCount,
+  supportedCount,
+  hasCurrentInput,
+  hasCoverageGap,
+  hasInputIssue,
+}: InputSupportStatusContext): string {
+  if (selectedCount === 0) return "제품을 담으면 지원 여부를 표시합니다.";
+  if (!hasCurrentInput) {
+    return supportedCount === 0
+      ? "입력해도 현재 선택 제품에서는 판정하지 않음"
+      : `입력 시 선택 제품 ${selectedCount}개 중 ${supportedCount}개에서 판정`;
+  }
+  if (hasInputIssue) return "입력값을 확인해야 판정할 수 있음";
+  if (hasCoverageGap) {
+    return supportedCount === 0
+      ? "현재 입력값은 지원 범위 밖 · 추가 확인 조건 참고"
+      : `지원 행렬 ${selectedCount}개 중 ${supportedCount}개 · 현재 입력값에 지원 범위 밖 항목 있음`;
+  }
+  return supportedCount === 0
+    ? "현재 입력값은 지원 범위 밖 · 추가 확인 조건 참고"
+    : `현재 입력값을 선택 제품 ${selectedCount}개 중 ${supportedCount}개에서 판정`;
+}
+
 function InputSupportStatus({
   id,
   selectedCount,
   supportedCount,
+  hasCurrentInput,
+  hasCoverageGap,
+  hasInputIssue,
 }: {
   id: string;
-  selectedCount: number;
-  supportedCount: number;
-}) {
+} & InputSupportStatusContext) {
   const state =
-    selectedCount === 0 ? "idle" : supportedCount === 0 ? "none" : "supported";
-  const message =
     selectedCount === 0
-      ? "제품을 담으면 지원 여부를 표시합니다."
-      : supportedCount === 0
-        ? "현재 선택에서는 판정에 사용되지 않음"
-        : `선택 제품 ${selectedCount}개 중 ${supportedCount}개에서 판정`;
+      ? "idle"
+      : supportedCount === 0 ||
+          (hasCurrentInput && (hasCoverageGap || hasInputIssue))
+        ? "none"
+        : "supported";
+  const message = inputSupportStatusMessage({
+    selectedCount,
+    supportedCount,
+    hasCurrentInput,
+    hasCoverageGap,
+    hasInputIssue,
+  });
   return (
     <small id={id} className={styles.inputSupportStatus} data-state={state}>
       {message}
@@ -464,6 +505,60 @@ export function LiteratureCard({
           <strong>허가원문과 다른 점</strong>
           {link.authorizationNoteKo}
         </p>
+      )}
+    </article>
+  );
+}
+
+export function FindingLiteratureGroup({
+  finding,
+  matches,
+}: {
+  finding: Pick<SafetyFinding, "findingId" | "titleKo">;
+  matches: SplitSupportingLiterature;
+}) {
+  const { direct, background } = matches;
+  return (
+    <article className={styles.literatureGroup}>
+      <header>
+        <h4>{finding.titleKo}</h4>
+        <span>
+          직접 일치 {direct.length}편 · 배경 문헌 {background.length}편
+        </span>
+      </header>
+      {direct.length > 0 ? (
+        <div className={styles.literatureList}>
+          {direct.map((match) => (
+            <LiteratureCard
+              key={`${finding.findingId}:direct:${match.link.linkId}`}
+              match={match}
+              scopeLabel="현재 판정과 직접 일치"
+              kind="direct"
+            />
+          ))}
+        </div>
+      ) : (
+        <p className={styles.evidenceEmpty}>
+          현재 성분과 직접 일치하는 논문은 없습니다.
+        </p>
+      )}
+      {background.length > 0 && (
+        <details className={styles.otherIngredientLiterature}>
+          <summary>같은 규칙의 배경 문헌 {background.length}편</summary>
+          <p>
+            현재 판정의 직접 근거가 아님 · 판정 결과를 바꾸지 않는 참고 자료
+          </p>
+          <div className={styles.literatureList}>
+            {background.map((match) => (
+              <LiteratureCard
+                key={`${finding.findingId}:background:${match.link.linkId}`}
+                match={match}
+                scopeLabel="현재 판정의 직접 근거가 아님"
+                kind="background"
+              />
+            ))}
+          </div>
+        </details>
       )}
     </article>
   );
@@ -674,6 +769,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       );
       return ruleTypes.some((ruleType) => activeCheckTypes.has(ruleType));
     }).length;
+  const hasCoverageGapFor = (ruleTypes: readonly string[]) =>
+    evaluation?.coverageGaps.some((gap) => ruleTypes.includes(gap.ruleType)) ??
+    false;
+  const hasInputIssueFor = (fields: readonly string[]) =>
+    evaluation?.inputIssues.some((issue) => fields.includes(issue.field)) ?? false;
   const ageSupportCount = selectedSupportCount(["age_restriction"]);
   const medicationSupportCount = selectedSupportCount([
     "anticoagulant_antiplatelet",
@@ -1257,6 +1357,9 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   id="age-years-support"
                   selectedCount={selected.length}
                   supportedCount={ageSupportCount}
+                  hasCurrentInput={profile.ageYears !== undefined}
+                  hasCoverageGap={hasCoverageGapFor(["age_restriction"])}
+                  hasInputIssue={hasInputIssueFor(["ageYears"])}
                 />
               </span>
               <span className={styles.inputWithUnit}>
@@ -1318,6 +1421,9 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           id={supportId}
                           selectedCount={selected.length}
                           supportedCount={selectedSupportCount([ruleType])}
+                          hasCurrentInput={Boolean(profile[key])}
+                          hasCoverageGap={hasCoverageGapFor([ruleType])}
+                          hasInputIssue={false}
                         />
                       </span>
                     </label>
@@ -1338,6 +1444,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     supportedCount={selectedSupportCount([
                       "pregnancy_lactation",
                     ])}
+                    hasCurrentInput
+                    hasCoverageGap={hasCoverageGapFor([
+                      "pregnancy_lactation",
+                    ])}
+                    hasInputIssue={hasInputIssueFor(["pregnancyTrimester"])}
                   />
                 </span>
                 <select
@@ -1373,6 +1484,13 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   id="other-medications-support"
                   selectedCount={selected.length}
                   supportedCount={medicationSupportCount}
+                  hasCurrentInput={profile.medications.length > 0}
+                  hasCoverageGap={hasCoverageGapFor([
+                    "anticoagulant_antiplatelet",
+                    "sedative_medication",
+                    "medication_interaction",
+                  ])}
+                  hasInputIssue={false}
                 />
               </span>
               <textarea
@@ -1408,6 +1526,9 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   id="red-flag-symptoms-support"
                   selectedCount={selected.length}
                   supportedCount={symptomSupportCount}
+                  hasCurrentInput={profile.redFlagSymptoms.length > 0}
+                  hasCoverageGap={hasCoverageGapFor(["urgent_referral"])}
+                  hasInputIssue={false}
                 />
               </span>
               <textarea
@@ -1911,55 +2032,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           literatureByFinding.get(finding.findingId)?.direct ?? [];
                         const background =
                           literatureByFinding.get(finding.findingId)?.background ?? [];
-                        if (direct.length === 0 && background.length === 0) return null;
                         return (
-                          <article
-                            className={styles.literatureGroup}
+                          <FindingLiteratureGroup
                             key={"direct-literature:" + finding.findingId}
-                          >
-                            <header>
-                              <h4>{finding.titleKo}</h4>
-                              <span>
-                                직접 일치 {direct.length}편 · 배경 문헌 {background.length}편
-                              </span>
-                            </header>
-                            {direct.length > 0 ? (
-                              <div className={styles.literatureList}>
-                                {direct.map((match) => (
-                                  <LiteratureCard
-                                    key={`${finding.findingId}:direct:${match.link.linkId}`}
-                                    match={match}
-                                    scopeLabel="현재 판정과 직접 일치"
-                                    kind="direct"
-                                  />
-                                ))}
-                              </div>
-                            ) : (
-                              <p className={styles.evidenceEmpty}>
-                                현재 성분과 직접 일치하는 논문은 없습니다.
-                              </p>
-                            )}
-                            {background.length > 0 && (
-                              <details className={styles.otherIngredientLiterature}>
-                                <summary>
-                                  같은 규칙의 배경 문헌 {background.length}편
-                                </summary>
-                                <p>
-                                  현재 판정의 직접 근거가 아님 · 판정 결과를 바꾸지 않는 참고 자료
-                                </p>
-                                <div className={styles.literatureList}>
-                                  {background.map((match) => (
-                                    <LiteratureCard
-                                      key={`${finding.findingId}:background:${match.link.linkId}`}
-                                      match={match}
-                                      scopeLabel="현재 판정의 직접 근거가 아님"
-                                      kind="background"
-                                    />
-                                  ))}
-                                </div>
-                              </details>
-                            )}
-                          </article>
+                            finding={finding}
+                            matches={{ direct, background }}
+                          />
                         );
                       })}
                     </div>

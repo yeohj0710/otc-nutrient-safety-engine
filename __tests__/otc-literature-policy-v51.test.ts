@@ -7,7 +7,10 @@ import { describe, expect, it } from "vitest";
 
 import literatureData from "@/src/generated/otc-supporting-literature.json";
 import runtimeData from "@/src/generated/otc-runtime.json";
-import { LiteratureCard } from "@/src/components/otc-product-safety-client";
+import {
+  FindingLiteratureGroup,
+  LiteratureCard,
+} from "@/src/components/otc-product-safety-client";
 import {
   literatureHomepageStatusSummary,
   literatureStatusLabel,
@@ -355,6 +358,33 @@ const linkIds = (split: SplitSupportingLiterature, kind: "direct" | "background"
   split[kind].map(({ link }) => link.linkId);
 
 describe("v5.1 literature result policy", () => {
+  it("keeps a literature-empty finding visible beside findings that have papers", () => {
+    const finding: SafetyFinding = {
+      findingId: "finding-without-literature",
+      ruleId: "OTC-RULE-TEST",
+      decisionBasis: "released_rule",
+      ruleType: "test_rule",
+      severity: "caution",
+      titleKo: "문헌 없는 혼합 판정",
+      detailKo: "검증용 판정",
+      nextActionKo: "검증용 조치",
+      productIds: ["P1"],
+      ingredientIds: ["ING-1"],
+      evidence: [],
+    };
+
+    const html = renderToStaticMarkup(
+      createElement(FindingLiteratureGroup, {
+        finding,
+        matches: { direct: [], background: [] },
+      }),
+    );
+
+    expect(html).toContain("문헌 없는 혼합 판정");
+    expect(html).toContain("직접 일치 0편 · 배경 문헌 0편");
+    expect(html).toContain("현재 성분과 직접 일치하는 논문은 없습니다.");
+  });
+
   it("pins all 10 emitted and all 10 rejected legacy link classifications", () => {
     const generatedLinkIds = papers
       .flatMap((paper) => paper.ruleLinks.map((link) => link.linkId))

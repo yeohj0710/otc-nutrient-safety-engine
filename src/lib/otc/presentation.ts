@@ -213,6 +213,11 @@ export function buildProductSupportSummary(
   const conditionRuleTypes = activeCheckTypes.filter(
     (ruleType) => !doseAndIntervalRuleTypes.has(ruleType),
   );
+  const doseAndIntervalLabels = [
+    ...(activeCheckTypes.includes("max_daily_dose") ? ["용량"] : []),
+    ...(activeCheckTypes.includes("minimum_interval") ? ["간격"] : []),
+  ];
+  const doseAndIntervalSummary = doseAndIntervalLabels.join("·");
   const labelsFor = (ruleTypes: string[]) => [
     ...new Set(
       ruleTypes.map(
@@ -232,8 +237,10 @@ export function buildProductSupportSummary(
       activeCheckTypes.length === 0
         ? "현재 지원하는 점검 유형 없음"
         : conditionRuleTypes.length === 0
-          ? "용량·간격만 확인 가능"
-          : "용량·간격 외 조건도 확인 가능",
+          ? `${doseAndIntervalSummary || "제품별 조건"}만 확인 가능`
+          : doseAndIntervalSummary
+            ? `${doseAndIntervalSummary} 외 조건도 확인 가능`
+            : "제품별 조건만 확인 가능",
     supportedCheckTypeCount: activeCheckTypes.length,
   };
 }

@@ -374,11 +374,17 @@ describe("OTC evidence presentation", () => {
       supportedCheckTypeCount: 2,
     });
 
+    const maximumOnly = buildProductSupportSummary(
+      product,
+      new Set(["max_daily_dose"]),
+    );
+    expect(maximumOnly.summaryKo).toBe("용량만 확인 가능");
+
     const broader = buildProductSupportSummary(
       product,
       new Set(["max_daily_dose", "hepatic_disease"]),
     );
-    expect(broader.summaryKo).toBe("용량·간격 외 조건도 확인 가능");
+    expect(broader.summaryKo).toBe("용량 외 조건도 확인 가능");
     expect(broader.conditionLabels).toEqual(["간질환"]);
     expect(broader.supportedCheckTypeCount).toBe(2);
     expect(broader.releasedRuleBindingCount).toBe(1);

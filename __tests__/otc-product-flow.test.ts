@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   buildQuickCheckSelection,
   buildSelectedProducts,
+  inputSupportStatusMessage,
   quickChecks,
   searchRuntime,
   type OtcRuntime,
@@ -52,6 +53,47 @@ const runtime: OtcRuntime = {
 };
 
 describe("product-name search flow", () => {
+  it("distinguishes the support matrix from the current input coverage", () => {
+    expect(
+      inputSupportStatusMessage({
+        selectedCount: 2,
+        supportedCount: 1,
+        hasCurrentInput: false,
+        hasCoverageGap: false,
+        hasInputIssue: false,
+      }),
+    ).toBe("입력 시 선택 제품 2개 중 1개에서 판정");
+    expect(
+      inputSupportStatusMessage({
+        selectedCount: 2,
+        supportedCount: 2,
+        hasCurrentInput: true,
+        hasCoverageGap: true,
+        hasInputIssue: false,
+      }),
+    ).toBe(
+      "지원 행렬 2개 중 2개 · 현재 입력값에 지원 범위 밖 항목 있음",
+    );
+    expect(
+      inputSupportStatusMessage({
+        selectedCount: 2,
+        supportedCount: 2,
+        hasCurrentInput: true,
+        hasCoverageGap: false,
+        hasInputIssue: false,
+      }),
+    ).toBe("현재 입력값을 선택 제품 2개 중 2개에서 판정");
+    expect(
+      inputSupportStatusMessage({
+        selectedCount: 1,
+        supportedCount: 1,
+        hasCurrentInput: true,
+        hasCoverageGap: false,
+        hasInputIssue: true,
+      }),
+    ).toBe("입력값을 확인해야 판정할 수 있음");
+  });
+
   it("shows no results before the user searches", () => {
     expect(searchRuntime(runtime, "")).toEqual({ verified: [], candidates: [] });
   });
@@ -135,21 +177,33 @@ describe("product-name search flow", () => {
       productName: item.productName,
       ...buildProductSupportSummary(item, releasedRuleTypes),
     }));
-    const limited = summaries.filter(
+    const doseOnly = summaries.filter(
+      (summary) => summary.summaryKo === "용량만 확인 가능",
+    );
+    const doseAndIntervalOnly = summaries.filter(
       (summary) => summary.summaryKo === "용량·간격만 확인 가능",
     );
-    const broader = summaries.filter(
+    const doseWithConditions = summaries.filter(
+      (summary) => summary.summaryKo === "용량 외 조건도 확인 가능",
+    );
+    const doseAndIntervalWithConditions = summaries.filter(
       (summary) => summary.summaryKo === "용량·간격 외 조건도 확인 가능",
     );
 
-    expect(limited).toHaveLength(10);
-    expect(broader).toHaveLength(3);
-    expect(broader.map((summary) => summary.productName)).toEqual([
-      "타이레놀정500밀리그람(아세트아미노펜)",
+    expect(doseOnly).toHaveLength(9);
+    expect(doseAndIntervalOnly.map((summary) => summary.productName)).toEqual([
+      "어린이타이레놀현탁액(아세트아미노펜)",
+    ]);
+    expect(doseWithConditions.map((summary) => summary.productName)).toEqual([
       "어린이부루펜시럽(이부프로펜)",
       "판콜에이내복액",
     ]);
-    expect(broader[0].conditionLabels).toEqual([
+    expect(
+      doseAndIntervalWithConditions.map((summary) => summary.productName),
+    ).toEqual([
+      "타이레놀정500밀리그람(아세트아미노펜)",
+    ]);
+    expect(doseAndIntervalWithConditions[0].conditionLabels).toEqual([
       "연령",
       "정기 음주",
       "간질환",
