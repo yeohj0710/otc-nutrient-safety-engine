@@ -258,4 +258,46 @@ describe("OTC checker layout contract", () => {
     expect(componentSource).toContain('setActiveTherapeuticClass("전체")');
     expect(componentSource).toContain("setOpenFindingIds({})");
   });
+
+  it("keeps the primary product flow on the spacing scale with readable support text", () => {
+    expect(styleSource).toMatch(
+      /\.workspaceGrid\s*\{[\s\S]*?gap:\s*var\(--space-6\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.inputColumn\s*\{[\s\S]*?gap:\s*var\(--space-6\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.searchResults > button,[\s\S]*?padding:\s*var\(--space-3\) var\(--space-4\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.productShelfGrid\s*\{[\s\S]*?gap:\s*var\(--space-2\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.selectedCardHeader\s*\{[\s\S]*?padding:\s*var\(--space-4\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.profileBody\s*\{[\s\S]*?gap:\s*var\(--space-4\);[\s\S]*?padding:\s*var\(--space-4\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.resultBody\s*\{[\s\S]*?padding:\s*var\(--space-6\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.productSupportTitle\s*\{[\s\S]*?font-size:\s*12px/,
+    );
+    expect(styleSource).toMatch(
+      /\.productSupportDetails,[\s\S]*?font-size:\s*12px/,
+    );
+    expect(styleSource).toMatch(
+      /\.inputSupportStatus\s*\{[\s\S]*?font-size:\s*12px/,
+    );
+    expect(styleSource).toMatch(
+      /\.resultScope span\s*\{[\s\S]*?font-size:\s*12px/,
+    );
+    expect(styleSource).toMatch(
+      /\.findings\s*\{[\s\S]*?gap:\s*var\(--space-3\);[\s\S]*?margin-top:\s*var\(--space-3\)/,
+    );
+    expect(styleSource).toMatch(
+      /\.findingDisclosure > summary\s*\{[\s\S]*?gap:\s*var\(--space-3\);[\s\S]*?padding:\s*var\(--space-3\) var\(--space-4\)/,
+    );
+  });
 });

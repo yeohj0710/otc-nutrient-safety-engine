@@ -22,7 +22,7 @@ export function ResearchSummary() {
   const rl = summary.ruleLiterature;
 
   return (
-    <main className={styles.page}>
+    <main id="main-content" tabIndex={-1} className={styles.page}>
       <div className={styles.shell}>
         <header className={styles.header}>
           <p className={styles.eyebrow}>연세대학교 약학대학 · 권혁찬 · 졸업연구 v5.0</p>

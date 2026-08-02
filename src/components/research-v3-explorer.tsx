@@ -59,7 +59,7 @@ export function ResearchV3Explorer({ meta }: { meta: Meta }) {
   }
 
   return (
-    <main className={styles.page}>
+    <main id="main-content" tabIndex={-1} className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.header}>
           <p className={styles.eyebrow}>선행 계보 자료 · 현재 연구의 결과가 아닙니다</p>

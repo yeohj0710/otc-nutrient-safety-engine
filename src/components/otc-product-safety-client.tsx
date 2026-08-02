@@ -3,6 +3,10 @@
 import { useId, useMemo, useRef, useState } from "react";
 
 import literatureData from "@/src/generated/otc-supporting-literature.json";
+import {
+  rulePoolFor,
+  rulePoolPapers,
+} from "@/src/lib/otc/rule-literature-pool";
 import { evaluateOtcSafety } from "@/src/lib/otc/engine";
 import {
   buildFindingContext,
@@ -514,7 +518,7 @@ export function FindingLiteratureGroup({
   finding,
   matches,
 }: {
-  finding: Pick<SafetyFinding, "findingId" | "titleKo">;
+  finding: Pick<SafetyFinding, "findingId" | "titleKo" | "ruleId">;
   matches: SplitSupportingLiterature;
 }) {
   const { direct, background } = matches;
@@ -560,7 +564,62 @@ export function FindingLiteratureGroup({
           </div>
         </details>
       )}
+      <ScreeningPassedLiterature ruleId={finding.ruleId} />
     </article>
+  );
+}
+
+const POOL_PAGE = 20;
+
+/**
+ * 선별 통과 문헌. 위의 검증 근거와 지위가 다르다는 사실을 화면이 직접 말한다.
+ * 인용 대조를 거치지 않았고 규칙을 배포시키지 못한다.
+ */
+function ScreeningPassedLiterature({ ruleId }: { ruleId: string }) {
+  const [shown, setShown] = useState(POOL_PAGE);
+  const rule = rulePoolFor(ruleId);
+  if (!rule || rule.listed === 0) return null;
+  const papers = rulePoolPapers(ruleId, 0, shown);
+
+  return (
+    <details className={styles.otherIngredientLiterature}>
+      <summary>선별 통과 문헌 {rule.listed.toLocaleString("ko-KR")}편</summary>
+      <p>
+        이 규칙이 허용한 질문에서 v5.0 선별이 retain 으로 판정하고, 규칙 유형의 위해 표현이
+        제목·초록에 나타난 문헌입니다. 위의 검증 근거와 달리{" "}
+        <strong>문장 인용 대조를 거치지 않았고</strong> 판정 결과를 바꾸지 않습니다.
+        {rule.truncated > 0
+          ? ` 조건에 맞는 문헌은 ${rule.rule_type_matched_total.toLocaleString("ko-KR")}편이고 그중 ${rule.listed.toLocaleString("ko-KR")}편을 싣습니다.`
+          : ""}
+      </p>
+      <ul>
+        {papers.map((paper) => (
+          <li key={paper.record_id}>
+            {paper.url ? (
+              <a href={paper.url} target="_blank" rel="noreferrer">
+                {paper.title || paper.record_id}
+              </a>
+            ) : (
+              (paper.title || paper.record_id)
+            )}
+            <small>
+              {[paper.journal, paper.year, paper.has_abstract ? null : "제목만"]
+                .filter(Boolean)
+                .join(" · ")}
+            </small>
+          </li>
+        ))}
+      </ul>
+      {shown < rule.listed ? (
+        <button
+          type="button"
+          onClick={() => setShown((value) => value + POOL_PAGE)}
+          className={styles.poolMoreButton}
+        >
+          {Math.min(POOL_PAGE, rule.listed - shown)}편 더 보기
+        </button>
+      ) : null}
+    </details>
   );
 }
 

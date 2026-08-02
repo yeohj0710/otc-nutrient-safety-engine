@@ -41,6 +41,10 @@ export async function generateMetadata(props: {
     title: `${cleanDisplayText(detail.rule.nutrientOrIngredient)} 안전 안내`,
     description:
       cleanDisplayText(detail.rule.action || detail.rule.messageShort) ?? "",
+    robots: {
+      index: false,
+      follow: false,
+    },
     alternates: {
       canonical: `/rules/${detail.rule.id}`,
     },
@@ -91,7 +95,11 @@ export default async function RuleDetailPage(props: {
   };
 
   return (
-    <main className="app-page min-h-screen px-4 py-8 md:px-6 lg:px-6">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="app-page min-h-screen px-4 py-8 md:px-6 lg:px-6"
+    >
       <div className="page-shell-narrow space-y-6">
         <div className="surface-card-strong flex flex-col gap-5 rounded-[2rem] px-6 py-6 md:flex-row md:items-end md:justify-between">
           <div>

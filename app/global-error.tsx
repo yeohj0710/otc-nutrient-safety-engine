@@ -11,7 +11,14 @@ export default function GlobalError({
   return (
     <html lang="ko">
       <body className="min-h-screen bg-[linear-gradient(180deg,_#f7f4ee_0%,_#f2efe7_100%)] px-4 py-8 md:px-6">
-        <main className="mx-auto max-w-3xl rounded-[2rem] border border-red-200 bg-white p-8 shadow-sm">
+        <a href="#main-content" className="skip-link">
+          본문 바로가기
+        </a>
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="mx-auto max-w-3xl rounded-[2rem] border border-red-200 bg-white p-8 shadow-sm"
+        >
           <p className="text-xs uppercase tracking-[0.24em] text-red-700">
             Global Error
           </p>
