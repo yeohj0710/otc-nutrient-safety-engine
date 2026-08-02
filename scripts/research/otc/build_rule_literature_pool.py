@@ -85,15 +85,74 @@ RULE_TYPE_PATTERNS: dict[str, str] = {
         r"decongestant|pseudoephedrine|phenylephrine|blood pressure|hypertens|"
         r"cardiovascular|vasoconstrict",
     "maximum_duration":
-        r"duration of (?:use|treatment|therapy)|prolonged use|long-?term use|"
-        r"chronic use|consecutive days|beyond \d+ days|"
-        r"(?:more|longer) than \d+ (?:days|weeks) of (?:use|treatment)",
+        r"duration of (?:use|treatment|therapy|symptom)|prolonged (?:use|treatment|"
+        r"exposure|administration)|long-?term (?:use|treatment|administration|therapy)|"
+        r"chronic (?:use|administration|exposure)|consecutive days|"
+        r"(?:more|longer|greater) than \d+ ?(?:days|weeks)|repeated (?:use|dos|administ)|"
+        r"treatment duration|continued (?:use|treatment)|persist\w* (?:use|symptom)|"
+        r"overuse|misuse|rebound|self-?medicat|excessive duration|"
+        r"maximum (?:duration|treatment period)|\d+ ?(?:days|weeks) of (?:use|treatment|therapy)",
     "urgent_referral":
         r"emergency|urgent|refer(?:ral)? to|seek medical|hospital|warning sign|"
         r"immediate(?:ly)? (?:stop|discontinu|consult)",
 }
 
+# 유형 표현만으로는 너무 넓게 걸리는 규칙에 맥락 조건을 함께 건다. 두 패턴이 모두
+# 맞아야 후보가 된다. `maximum_duration` 이 그 경우였다 — "long-term use" 는 어떤
+# 처방약 논문에나 나와서, 판콜에이 연속 복용이라는 규칙 의미와 무관한 문헌이 상위에
+# 올라왔다. 자가치료·일반의약품 맥락을 함께 요구하면 규칙이 뜻하는 상황만 남는다.
+RULE_TYPE_CONTEXT: dict[str, str] = {
+    "maximum_duration":
+        r"over-?the-?counter|otc|non-?prescription|nonprescription|self-?medicat|"
+        r"self-?care|self-?treat|cough|common cold|rhinitis|allerg|antihistamin|"
+        r"decongestant|antitussive|expectorant|laxative|antacid|"
+        r"proton pump|dyspepsia|digestive enzyme|pharmacist|community pharmacy|"
+        r"symptomatic (?:relief|treatment)|rebound|overuse|misuse",
+}
+
 MAX_PER_RULE = 400  # 화면 페이징 상한. 초과분은 잘린 수를 함께 기록한다.
+
+# ── 상태 표지 ────────────────────────────────────────────────────────────────
+# 사용자가 화면에서 입력하는 항목이 논문에 실제로 언급되는지를 표시한다. 조회할 때
+# 이 표지로 점수를 매겨, 간질환을 입력한 사람에게는 간을 다룬 문헌이 먼저 오게 한다.
+# 결정적 정규식이고 언어모델을 부르지 않는다. 비트마스크로 담아 파일이 커지지 않게 한다.
+PROFILE_FACETS: list[tuple[str, str]] = [
+    ("pediatric", r"child|paediatric|pediatric|infant|neonat|adolescent|under \d+ years"),
+    ("elderly", r"elder|older adult|geriatric|aged \d{2}|senior"),
+    ("pregnancy", r"pregnan|gestation|fetal|foetal|teratogen"),
+    ("lactation", r"lactat|breast-?feed|nursing mother"),
+    ("liver", r"hepat|liver|cirrho|transaminase|jaundice"),
+    ("kidney", r"renal|kidney|nephro|dialysis|creatinine|glomerular"),
+    ("gi_bleed", r"gastrointestinal bleed|gi bleed|peptic ulcer|gastric ulcer|"
+                 r"haemorrhage|hemorrhage|gastropathy|erosion"),
+    ("hypertension", r"hypertens|blood pressure|cardiovascular|myocardial|stroke|arrhythm"),
+    ("driving", r"sedat|drowsi|somnolen|psychomotor|driving|vigilance|reaction time"),
+    ("alcohol", r"alcohol|ethanol|drinking"),
+    ("anticoagulant", r"warfarin|anticoagul|antiplatelet|clopidogrel|coumarin|inr|aspirin"),
+    ("sedative", r"sedative|hypnotic|benzodiazep|cns depress|anxiolytic|barbiturate|zolpidem"),
+    ("overdose", r"overdose|over-?dose|toxicity|poison|intoxicat|supratherapeutic"),
+]
+
+# 허가원문 성분 이름으로 검색하기 위한 영문 표기.
+INGREDIENT_TERMS: list[tuple[str, str]] = [
+    ("acetaminophen", r"acetaminophen|paracetamol|apap"),
+    ("ibuprofen", r"ibuprofen"),
+    ("dexibuprofen", r"dexibuprofen"),
+    ("naproxen", r"naproxen"),
+    ("aspirin", r"aspirin|acetylsalicylic"),
+    ("chlorpheniramine", r"chlorphenir|chlorphenamine"),
+    ("pheniramine", r"pheniramine"),
+    ("cetirizine", r"cetirizine"),
+    ("pseudoephedrine", r"pseudoephedrine|phenylephrine"),
+    ("dextromethorphan", r"dextromethorphan"),
+    ("guaifenesin", r"guaifenesin"),
+    ("caffeine", r"caffeine"),
+    ("pancreatin", r"pancreatin|pancrelipase|digestive enzyme"),
+    ("ursodeoxycholic", r"ursodeoxycholic|udca"),
+    ("simethicone", r"simethicone|dimethicone"),
+    ("methyl_salicylate", r"methyl salicylate|salicylate"),
+    ("menthol", r"menthol|camphor"),
+]
 
 # ── 문장 선택 ────────────────────────────────────────────────────────────────
 # 여형준 연구가 확장 근거 1,899행에 인용문을 붙일 때 쓴 것과 같은 방식이다
@@ -201,6 +260,15 @@ def main() -> int:
             }
             haystack[record] = f"{row.get('title', '')} {row.get('abstract', '')}".lower()
             abstracts[record] = row.get("abstract") or ""
+            text = haystack[record]
+            papers[record]["f"] = sum(
+                1 << i for i, (_, pat) in enumerate(PROFILE_FACETS)
+                if re.search(pat, text, re.IGNORECASE)
+            )
+            papers[record]["g"] = sum(
+                1 << i for i, (_, pat) in enumerate(INGREDIENT_TERMS)
+                if re.search(pat, text, re.IGNORECASE)
+            )
 
     # 4. 규칙별 두 단계 좁히기
     out_rules: dict[str, object] = {}
@@ -213,12 +281,21 @@ def main() -> int:
         if pattern is None:
             raise SystemExit(f"규칙 유형에 표현 정의가 없습니다: {rule_type}")
         regex = re.compile(pattern, re.IGNORECASE)
+        context_pattern = RULE_TYPE_CONTEXT.get(rule_type)
+        context_regex = (
+            re.compile(context_pattern, re.IGNORECASE) if context_pattern else None
+        )
 
         question_pool: set[str] = set()
         for question in rule["allowed_question_ids"]:
             question_pool |= retain.get(question, set())
 
-        matched = [r for r in sorted(question_pool) if regex.search(haystack.get(r, ""))]
+        matched = [
+            r
+            for r in sorted(question_pool)
+            if regex.search(haystack.get(r, ""))
+            and (context_regex is None or context_regex.search(haystack.get(r, "")))
+        ]
 
         def relevance(record: str) -> tuple[int, int, int, int, str]:
             """관련도. 제목에서 맞으면 가장 크게 치고, 초록 히트 수로 다음을 가른다."""
@@ -298,6 +375,9 @@ def main() -> int:
             },
         },
         "rule_type_patterns": RULE_TYPE_PATTERNS,
+        "rule_type_context_patterns": RULE_TYPE_CONTEXT,
+        "profile_facets": [name for name, _ in PROFILE_FACETS],
+        "ingredient_terms": [name for name, _ in INGREDIENT_TERMS],
         "totals": {
             "rules": len(out_rules),
             "unique_papers_listed": len(used),

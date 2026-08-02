@@ -517,9 +517,13 @@ export function LiteratureCard({
 export function FindingLiteratureGroup({
   finding,
   matches,
+  profile,
+  selected,
 }: {
   finding: Pick<SafetyFinding, "findingId" | "titleKo" | "ruleId">;
   matches: SplitSupportingLiterature;
+  profile?: UserProfile;
+  selected?: readonly SelectedProduct[];
 }) {
   const { direct, background } = matches;
   return (
@@ -564,7 +568,11 @@ export function FindingLiteratureGroup({
           </div>
         </details>
       )}
-      <ScreeningPassedLiterature ruleId={finding.ruleId} />
+      <ScreeningPassedLiterature
+        ruleId={finding.ruleId}
+        profile={profile}
+        selected={selected}
+      />
     </article>
   );
 }
@@ -583,11 +591,22 @@ function locatorText(locator: string) {
  * 선별 통과 문헌. 위의 검증 근거와 지위가 다르다는 사실을 화면이 직접 말한다.
  * 인용 대조를 거치지 않았고 규칙을 배포시키지 못한다.
  */
-function ScreeningPassedLiterature({ ruleId }: { ruleId: string }) {
+function ScreeningPassedLiterature({
+  ruleId,
+  profile,
+  selected,
+}: {
+  ruleId: string;
+  profile?: UserProfile;
+  selected?: readonly SelectedProduct[];
+}) {
   const [shown, setShown] = useState(POOL_PAGE);
   const rule = rulePoolFor(ruleId);
+  const papers = useMemo(
+    () => (rule ? rulePoolPapers(ruleId, 0, shown, { profile, selected }) : []),
+    [rule, ruleId, shown, profile, selected],
+  );
   if (!rule || rule.listed === 0) return null;
-  const papers = rulePoolPapers(ruleId, 0, shown);
 
   return (
     <details className={styles.otherIngredientLiterature}>
@@ -2116,6 +2135,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                             key={"direct-literature:" + finding.findingId}
                             finding={finding}
                             matches={{ direct, background }}
+                            profile={profile}
+                            selected={selected}
                           />
                         );
                       })}
