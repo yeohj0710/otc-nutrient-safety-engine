@@ -20,9 +20,9 @@
   "local_v51_branch": {
     "branch": "codex/v5.1-safety-expansion",
     "commits_ahead_of_main": 14,
-    "pushed": false,
+    "pushed": true,
     "is_submission_canonical": false,
-    "note": "v5.1 은 안전 범위 확장 감사 트랙이고 제출 정본이 아니다. released 규칙 15개와 규칙–문헌 연결 9규칙·10건을 하나도 늘리지 않았다(research_v51/audit/final_metrics.json 의 baseline_vs_v51 전 항목 delta 0). 산출물은 research_v51/ 에만 있고 research_v3/ 와 운영 사이트에는 반영되지 않았다."
+    "note": "v5.1 은 안전 범위 확장 감사 트랙이고 제출 정본이 아니다. released 규칙 15개와 규칙–문헌 연결 9규칙·10건을 하나도 늘리지 않았다(research_v51/audit/final_metrics.json 의 baseline_vs_v51 전 항목 delta 0). 산출물은 research_v51/ 에만 있고 research_v3/ 와 운영 사이트에는 반영되지 않았다. 2026-08-02 에 브랜치를 origin 에 올렸다. main 은 그대로다."
   },
   "deployment": {
     "provider": "vercel",
@@ -49,8 +49,8 @@
       "lint": "pass",
       "test": {
         "status": "pass",
-        "tests": "77/77",
-        "files": "14/14"
+        "tests": "278/278",
+        "files": "19/19"
       },
       "build": "pass",
       "generated_artifacts_up_to_date": "pass",
@@ -80,5 +80,37 @@
   },
   "independent_blinding": false,
   "release_ready": false,
-  "release_ready_note": "사이트 배포는 임상적 공개 승인이 아니다. 사람 참조표준 0건이므로 false 를 유지한다."
+  "release_ready_note": "사이트 배포는 임상적 공개 승인이 아니다. 사람 참조표준 0건이므로 false 를 유지한다.",
+  "post_submission_changes": [
+    {
+      "date": "2026-08-02",
+      "branch": "codex/v5.1-safety-expansion",
+      "commit": "d69e528fd1f75131aea778d3a6077c518e58c2d8",
+      "what": "규칙마다 선별 통과 문헌 층을 붙였다",
+      "why": "사이트가 서빙하던 규칙 근거 문헌이 20건(고유 19편)뿐이라 규칙당 1~2편이었다. v5.0 코퍼스의 retain 7,875행을 화면이 전혀 쓰지 않았다.",
+      "note": "이 변경은 v5.1 브랜치 위에 있다. v5.1 커밋이 같은 컴포넌트를 먼저 고쳐 main 으로 분리해 옮길 수 없었다. main 은 제출 정본 그대로다.",
+      "two_tiers": {
+        "verified_evidence": "9 rules / 10 links. 문장 locator + 원문 인용 대조 통과. 변경 없음",
+        "screening_passed": "16 rules / 고유 3,449편. 인용 대조 없음. 규칙 배포 권한 없음"
+      },
+      "unresolved_rules_now_have_reading": {
+        "OTC-RULE-003 max_daily_dose": 807,
+        "OTC-RULE-016 urgent_referral": 863,
+        "OTC-RULE-009 gi_bleeding_ulcer": 497,
+        "OTC-RULE-011 alcohol": 207,
+        "OTC-RULE-010 sedation_driving": 202,
+        "OTC-RULE-013 sedative_medication": 112,
+        "OTC-RULE-015 maximum_duration": 44
+      },
+      "research_v3_touched": false,
+      "thesis_numbers_changed": false,
+      "verification": {
+        "tests": "278/278",
+        "typecheck": "pass",
+        "lint": "pass",
+        "build": "pass",
+        "site": 200
+      }
+    }
+  ]
 }
