@@ -16,7 +16,6 @@ import {
   groupFindingsForDisplay,
   literaturePlacementLabel,
   literatureRelationLabel,
-  productLiteratureCoverage,
   productsForTherapeuticClass,
   ruleEvidenceForFinding,
   splitSupportingLiteratureForFinding,
@@ -351,12 +350,10 @@ function authorizationLimitNote(product: OtcProduct): string | null {
 function ProductSupportDetails({
   summary,
   product,
-  literatureCoverage,
   showLimitTooltip = false,
 }: {
   summary: ProductSupportSummary;
   product: OtcProduct;
-  literatureCoverage: { v5Linked: number; directCapable: number };
   showLimitTooltip?: boolean;
 }) {
   const detailText = summary.detailLabels.join(" · ");
@@ -371,12 +368,6 @@ function ProductSupportDetails({
       {detailText && (
         <small className={styles.productSupportDetails}>{detailText}</small>
       )}
-      <small className={styles.productSupportCounts}>
-        지원 점검 유형 {summary.supportedCheckTypeCount}종 · 공개 규칙 연결{" "}
-        {summary.releasedRuleBindingCount}건 · 허가 조건{" "}
-        {summary.administrationConstraintCount}건 · v5.0 연결 문헌{" "}
-        {literatureCoverage.v5Linked}편
-      </small>
       {limitNote && (
         <small className={styles.authorizationLimitNote}>
           허가 상한은 개인 권장량이 아닙니다.
@@ -447,8 +438,14 @@ function InputSupportStatus({
     hasCoverageGap,
     hasInputIssue,
   });
+  // 약을 담기 전에는 항목마다 같은 안내가 반복돼 화면만 채운다. 읽어 줄 화면
+  // 낭독기에는 남기고 눈에는 보이지 않게 한다.
   return (
-    <small id={id} className={styles.inputSupportStatus} data-state={state}>
+    <small
+      id={id}
+      className={state === "idle" ? "sr-only" : styles.inputSupportStatus}
+      data-state={state}
+    >
       {message}
     </small>
   );
@@ -693,20 +690,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
         ]),
       ),
     [releasedRuleTypes, runtime.products],
-  );
-  const productLiteratureById = useMemo(
-    () =>
-      new Map(
-        runtime.products.map((product) => [
-          product.productId,
-          productLiteratureCoverage(
-            product,
-            literatureData as SupportingLiterature[],
-            runtime.releasedRules ?? [],
-          ),
-        ]),
-      ),
-    [runtime.products, runtime.releasedRules],
   );
   const releasedRuleEvidenceById = useMemo(
     () =>
@@ -1046,8 +1029,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
         <div className={styles.quickStartCopy}>
           <span className={styles.liveDot} aria-hidden="true" />
           <div>
-            <h2 id="quick-start-heading">실제 결과가 보이는 데모</h2>
-            <p>각 데모는 현재 엔진과 연결 데이터로 바로 계산합니다. 숫자는 고정 문구가 아닙니다.</p>
+            <h2 id="quick-start-heading">바로 점검해보기</h2>
+            <p>대표 조합을 불러온 뒤 내 복용량에 맞게 바꿀 수 있습니다.</p>
           </div>
         </div>
         <div className={styles.quickCheckList}>
@@ -1069,10 +1052,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   <em>{quickCheck.description}</em>
                   {summary && (
                     <small>
-                      실제 결과 {summary.findingCount === 0 ? "주의 0개" : `주의 ${summary.findingCount}개`} · 현재 제품 규칙 원문 {summary.directAuthorizationSourceCount}건 (전체 일치 {summary.fullAuthorizationMatchCount} · 일부 일치 {summary.partialAuthorizationMatchCount}) · 직접 일치 문헌 {summary.directPaperCount}편
-                      {summary.coverageGapCount > 0
-                        ? ` · 확인 밖 ${summary.coverageGapCount}개`
-                        : ""}
+                      주의 {summary.findingCount}개 · 허가 원문{" "}
+                      {summary.directAuthorizationSourceCount}건
                     </small>
                   )}
                 </span>
@@ -1168,13 +1149,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           ? ` 외 ${product.ingredients.length - 3}개`
                           : ""}
                       </small>
-                      {productSupportById.get(product.productId) && (
-                        <ProductSupportDetails
-                          summary={productSupportById.get(product.productId)!}
-                          product={product}
-                          literatureCoverage={productLiteratureById.get(product.productId)!}
-                        />
-                      )}
                     </span>
                     <b>{selectedIds.has(product.productId) ? "담김" : "+ 담기"}</b>
                   </button>
@@ -1237,13 +1211,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           ? ` 외 ${product.ingredients.length - 2}개`
                           : ""}
                       </small>
-                      {productSupportById.get(product.productId) && (
-                        <ProductSupportDetails
-                          summary={productSupportById.get(product.productId)!}
-                          product={product}
-                          literatureCoverage={productLiteratureById.get(product.productId)!}
-                        />
-                      )}
                       <b>{selectedIds.has(product.productId) ? "담김" : "+ 담기"}</b>
                     </button>
                   ))}
@@ -1291,7 +1258,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           <ProductSupportDetails
                             summary={productSupportById.get(item.product.productId)!}
                             product={item.product}
-                            literatureCoverage={productLiteratureById.get(item.product.productId)!}
                             showLimitTooltip
                           />
                         )}
@@ -1453,8 +1419,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           <div className={styles.profileBody}>
             <p className={styles.profileScopeNotice}>
               제품별 공개 안전성 규칙이나 허가 사용·복용 조건이 연결된 입력만
-              판정에 사용합니다. 각 입력 옆에서 현재 선택 제품의 지원 수를
-              확인하세요.
+              판정에 사용합니다.
             </p>
             <label className={styles.fieldLabel}>
               <span>

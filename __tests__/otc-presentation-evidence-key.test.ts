@@ -13,7 +13,7 @@ const duplicateFinding = (
   decisionBasis: "released_rule",
   ruleType: "duplicate_ingredient",
   severity: "high",
-  titleKo: "같은 성분이 여러 제품에 들어 있습니다",
+  titleKo: "여러 제품에 겹치는 같은 성분",
   detailKo: `${ingredientId} 성분이 겹칩니다.`,
   nextActionKo: "포장과 허가사항을 확인하세요.",
   productIds: ["P1", "P2"],

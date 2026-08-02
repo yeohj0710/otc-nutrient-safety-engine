@@ -463,7 +463,7 @@ export function evaluateOtcSafety(
     addCoverageGap({
       gapId: `coverage:${product.productId}:${dimension}`,
       ruleType,
-      titleKo: `${checkLabel} 기준을 확인하지 못했습니다`,
+      titleKo: `${checkLabel} 기준 확인 불가`,
       detailKo: `${product.productName}에 적용할 검증된 ${checkLabel} 기준이 현재 앱에 연결되어 있지 않습니다. 제품 포장과 허가사항을 직접 확인하세요.`,
       productIds: [product.productId],
     });
@@ -478,7 +478,7 @@ export function evaluateOtcSafety(
     addCoverageGap({
       gapId,
       ruleType,
-      titleKo: "선택한 제품 조합의 판정 범위를 확인하지 못했습니다",
+      titleKo: "선택한 제품 조합의 판정 범위 밖",
       detailKo,
       productIds: [...new Set(productIds)],
     });
@@ -611,7 +611,7 @@ export function evaluateOtcSafety(
           addFinding(policy, {
             findingId: `duplicate-ingredient:${ingredientId}`,
             severity: "high",
-            titleKo: "같은 성분이 여러 제품에 들어 있습니다",
+            titleKo: "여러 제품에 겹치는 같은 성분",
             detailKo: `${uses.map((use) => use.selected.product.productName).join(", ")}에 ${uses[0].ingredient.nameKo}이(가) 겹칩니다. 계산된 하루 총량은 ${amount} ${unit}입니다.`,
             nextActionKo: "추가 복용 전 제품 포장과 허가사항을 확인하고 약사 또는 의사와 상담하세요.",
             productIds,
@@ -705,7 +705,7 @@ export function evaluateOtcSafety(
         const finding = {
             findingId: `max-daily:${limitRow.product.productId}:${limitIdentity}`,
             severity: "high",
-            titleKo: "확인된 최대 1일 용량을 초과합니다",
+            titleKo: "허가 1일 최대 용량 초과",
             detailKo: `${scopedUses[0].ingredient.nameKo}의 ${limitRow.product.productName} 하루 총량 ${scopedAmount} ${unit}이 이 제품의 기준 ${limitRow.value} ${unit}보다 큽니다.`,
             nextActionKo: "추가 복용하지 말고 약사 또는 의사와 상담하세요.",
             productIds: [limitRow.product.productId],
@@ -775,7 +775,7 @@ export function evaluateOtcSafety(
         addFinding(policy, {
           findingId: `duplicate-class:${group}`,
           severity: "high",
-          titleKo: `${group} 계열 성분이 겹칩니다`,
+          titleKo: `${group} 계열 성분 중복`,
           detailKo: `${[...new Set(uses.map((use) => use.ingredient.nameKo))].join(", ")}을(를) 함께 선택했습니다.`,
           nextActionKo: "함께 복용하지 말고 약사 또는 의사와 상담하세요.",
           productIds,
@@ -817,7 +817,7 @@ export function evaluateOtcSafety(
         const finding = {
             findingId: `maximum-units-per-dose:${product.productId}:${constraint.constraintId}`,
             severity: "high",
-            titleKo: "확인된 1회 복용량을 초과합니다",
+            titleKo: "허가 1회 복용량 초과",
             detailKo: `${product.productName}의 입력값 ${item.unitsPerDose}${product.doseUnitLabel}이 허가 용법의 1회 상한 ${constraint.value}${product.doseUnitLabel}보다 큽니다.`,
             nextActionKo: "추가 복용하지 말고 제품 포장과 허가사항을 확인한 뒤 약사 또는 의사와 상담하세요.",
             productIds: [product.productId],
@@ -850,7 +850,7 @@ export function evaluateOtcSafety(
         const finding = {
             findingId: `maximum-doses-per-day:${product.productId}:${constraint.constraintId}`,
             severity: "high",
-            titleKo: "확인된 하루 복용 횟수를 초과합니다",
+            titleKo: "허가 하루 복용 횟수 초과",
             detailKo: `${product.productName}의 입력값 하루 ${item.dosesPerDay}회가 허가 용법의 상한 ${constraint.value}회보다 큽니다.`,
             nextActionKo: "추가 복용하지 말고 제품 포장과 허가사항을 확인한 뒤 약사 또는 의사와 상담하세요.",
             productIds: [product.productId],
@@ -928,7 +928,7 @@ export function evaluateOtcSafety(
             const finding = {
               findingId: `minimum-interval:${product.productId}:${strictest.constraint?.constraintId ?? strictest.ingredientId}`,
               severity: "high",
-              titleKo: "복용 간격이 짧습니다",
+              titleKo: "허가 최소 복용 간격 미만",
               detailKo: `입력 간격 ${item.hoursSincePreviousDose}시간이 확인된 최소 간격 ${minimumInterval}시간보다 짧습니다.`,
               nextActionKo: "다음 복용 시점을 약사 또는 의사에게 확인하세요.",
               productIds: [product.productId],
@@ -972,7 +972,7 @@ export function evaluateOtcSafety(
         addFinding(policy, {
           findingId: `age:${product.productId}`,
           severity: "high",
-          titleKo: "연령 제한을 확인하세요",
+          titleKo: "연령 제한 확인 필요",
           detailKo: `${product.productName}의 확인된 최소 연령 ${product.minimumAgeYears}세보다 입력한 나이가 어립니다.`,
           nextActionKo: "소아용 제품과 용량을 의사 또는 약사에게 확인하세요.",
           productIds: [product.productId],
@@ -992,7 +992,7 @@ export function evaluateOtcSafety(
         addFinding(policy, {
           findingId: `duration:${product.productId}`,
           severity: "caution",
-          titleKo: "연속 복용 기간을 확인하세요",
+          titleKo: "연속 복용 기간 확인 필요",
           detailKo: `입력한 ${item.continuousDays}일이 확인된 기간 ${product.maximumContinuousDays}일을 넘습니다.`,
           nextActionKo: "증상이 지속되면 추가 복용 대신 진료 또는 약사 상담을 받으세요.",
           productIds: [product.productId],
@@ -1014,42 +1014,42 @@ export function evaluateOtcSafety(
     {
       requested: Boolean(profile.liverDisease),
       ruleType: "hepatic_disease",
-      titleKo: "간질환 관련 주의를 확인하세요",
+      titleKo: "간질환 관련 주의",
       nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
       detailKo: () => "간질환 또는 과거 간질환",
     },
     {
       requested: Boolean(profile.kidneyDisease),
       ruleType: "renal_disease",
-      titleKo: "신장질환 관련 주의를 확인하세요",
+      titleKo: "신장질환 관련 주의",
       nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
       detailKo: () => "신장질환 또는 과거 신장질환",
     },
     {
       requested: Boolean(profile.giBleedingOrUlcer),
       ruleType: "gi_bleeding_ulcer",
-      titleKo: "위장관 출혈·궤양 위험을 확인하세요",
+      titleKo: "위장관 출혈·궤양 위험",
       nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
       detailKo: () => "위장관 출혈 또는 궤양",
     },
     {
       requested: Boolean(profile.willDrive),
       ruleType: "sedation_driving",
-      titleKo: "졸림과 운전 주의를 확인하세요",
+      titleKo: "졸림·운전 주의",
       nextActionKo: "운전·기계 조작을 피하고 허가사항을 확인하세요.",
       detailKo: () => "복용 후 운전",
     },
     {
       requested: Boolean(profile.alcohol),
       ruleType: "alcohol",
-      titleKo: "정기적인 음주 관련 주의를 확인하세요",
+      titleKo: "정기적 음주 관련 주의",
       nextActionKo: "복용 전 약사 또는 의사와 상담하세요.",
       detailKo: () => "매일 3잔 이상 정기적으로 음주",
     },
     {
       requested: Boolean(profile.hypertensionOrCardiovascularDisease),
       ruleType: "decongestant_hypertension",
-      titleKo: "비충혈제거제와 혈압 관련 주의를 확인하세요",
+      titleKo: "비충혈제거제·혈압 관련 주의",
       nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
       detailKo: () => "고혈압 또는 심혈관질환",
     },
@@ -1059,7 +1059,7 @@ export function evaluateOtcSafety(
           matchingMedications(profile, policy.applicability.medicationTerms ?? []).length > 0,
       ),
       ruleType: "anticoagulant_antiplatelet",
-      titleKo: "항응고제 병용 주의를 확인하세요",
+      titleKo: "항응고제 병용 주의",
       nextActionKo: "처방한 의료진 또는 약사와 상담하세요.",
       detailKo: (policy) =>
         `복용 중인 약: ${matchingMedications(profile, policy.applicability.medicationTerms ?? []).join(", ")}`,
@@ -1075,7 +1075,7 @@ export function evaluateOtcSafety(
           matchingMedications(profile, policy.applicability.medicationTerms ?? []).length > 0,
       ),
       ruleType: "sedative_medication",
-      titleKo: "진정 작용 약물 병용 주의를 확인하세요",
+      titleKo: "진정 작용 약물 병용 주의",
       nextActionKo: "복용 전 약사 또는 의사와 상담하세요.",
       detailKo: (policy) =>
         `복용 중인 약: ${matchingMedications(profile, policy.applicability.medicationTerms ?? []).join(", ")}`,
@@ -1109,7 +1109,7 @@ export function evaluateOtcSafety(
         addFinding(policy, {
           findingId: `pregnancy_lactation:${product.productId}`,
           severity: "high",
-          titleKo: "임신 중 복용 주의를 확인하세요",
+          titleKo: "임신 중 복용 주의",
           detailKo: `입력한 조건(임신 ${profile.pregnancyTrimester}기)이 ${product.productName}의 확인된 주의 조건과 일치합니다.`,
           nextActionKo: "복용 전 의사 또는 약사와 상담하세요.",
           productIds: [product.productId],
@@ -1188,7 +1188,7 @@ export function evaluateOtcSafety(
     addFinding(policy, {
       findingId: `urgent:red-flag:${policy.ruleId}`,
       severity: "urgent",
-      titleKo: "즉시 상담 또는 진료가 필요할 수 있습니다",
+      titleKo: "즉시 상담·진료 검토 필요",
       detailKo: `입력한 증상: ${[...new Set(symptoms)].join(", ")}`,
       nextActionKo: "지체하지 말고 의료기관 또는 응급상담을 이용하세요.",
       productIds: matchedProducts.map((item) => item.product.productId),
@@ -1212,7 +1212,7 @@ export function evaluateOtcSafety(
     addCoverageGap({
       gapId: "coverage:profile:unrecognized-symptoms",
       ruleType: "urgent_referral",
-      titleKo: "입력한 증상을 분류하지 못했습니다",
+      titleKo: "분류하지 못한 증상 입력",
       detailKo: `${unrecognizedSymptoms.join(", ")}은(는) 선택한 제품의 검증된 긴급 증상 표현과 일치하지 않습니다. 증상이 심하거나 계속되면 의료기관 또는 약사에게 직접 확인하세요.`,
       productIds: selected.map((item) => item.product.productId),
     });
@@ -1229,7 +1229,7 @@ export function evaluateOtcSafety(
     addCoverageGap({
       gapId: "coverage:profile:unrecognized-medications",
       ruleType: "medication_interaction",
-      titleKo: "입력한 복용약을 분류하지 못했습니다",
+      titleKo: "분류하지 못한 복용약 입력",
       detailKo: `${unrecognizedMedications.join(", ")}은(는) 현재 복용약 분류에 연결되어 있지 않습니다. 약사 또는 의사에게 직접 확인하세요.`,
       productIds: selected.map((item) => item.product.productId),
     });

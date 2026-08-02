@@ -80,7 +80,7 @@ describe("OTC evidence presentation", () => {
       decisionBasis: "released_rule",
       ruleType: "duplicate_ingredient",
       severity: "high",
-      titleKo: "같은 성분이 여러 제품에 들어 있습니다",
+      titleKo: "여러 제품에 겹치는 같은 성분",
       detailKo: `${ingredientId} 성분이 겹칩니다.`,
       nextActionKo: "포장과 허가사항을 확인하세요.",
       productIds: ["P2", "P1"],
@@ -105,7 +105,7 @@ describe("OTC evidence presentation", () => {
     expect(grouped).toHaveLength(1);
     expect(grouped[0].productIds).toEqual(["P1", "P2"]);
     expect(grouped[0].ingredientIds).toEqual(["ING-A", "ING-B", "ING-C"]);
-    expect(grouped[0].titleKo).toBe("같은 성분 3개가 여러 제품에 들어 있습니다");
+    expect(grouped[0].titleKo).toBe("여러 제품에 겹치는 같은 성분 3개");
     expect(grouped[0].detailKo).toContain("성분A, 성분B, 성분C");
     expect(grouped[0].evidence).toHaveLength(1);
     expect(grouped[0].members).toEqual(findings);
@@ -722,7 +722,7 @@ describe("OTC evidence presentation", () => {
       decisionBasis: "released_rule",
       ruleType: "duplicate_ingredient",
       severity: "high",
-      titleKo: "같은 성분이 여러 제품에 들어 있습니다",
+      titleKo: "여러 제품에 겹치는 같은 성분",
       detailKo: "소화제 성분이 겹칩니다.",
       nextActionKo: "상담하세요.",
       productIds: selected.map(({ product }) => product.productId),

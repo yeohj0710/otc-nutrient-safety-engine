@@ -309,7 +309,7 @@ export function groupFindingsForDisplay(
     return {
       ...primary,
       findingId: `group:${groupId}`,
-      titleKo: `같은 성분 ${ingredientIds.length}개가 여러 제품에 들어 있습니다`,
+      titleKo: `여러 제품에 겹치는 같은 성분 ${ingredientIds.length}개`,
       detailKo: `겹치는 성분은 ${ingredientLabels.join(", ")}입니다. 성분별 하루 입력량은 결과 아래에서 확인할 수 있습니다.`,
       productIds: [...new Set(members.flatMap((item) => item.productIds))].sort(),
       ingredientIds,
