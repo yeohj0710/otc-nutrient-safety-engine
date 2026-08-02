@@ -2807,3 +2807,13 @@
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
+
+.poolQuote {
+  margin: 0.4rem 0 0.3rem;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(31, 107, 77, 0.35);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: inherit;
+  opacity: 0.92;
+}

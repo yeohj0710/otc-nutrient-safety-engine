@@ -27,7 +27,10 @@ export type PoolRule = {
   truncated: number;
   verified_link_count: number;
   record_ids: string[];
+  quotes: Record<string, { locator: string; quote: string }>;
 };
+
+export type PoolEntry = PoolPaper & { locator: string; quote: string };
 
 type Pool = {
   schema_version: string;
@@ -37,7 +40,13 @@ type Pool = {
     quote_verified: boolean;
     human_expert_reviewed: number;
   };
-  totals: { rules: number; unique_papers_listed: number; retain_rows_in_corpus: number };
+  totals: {
+    rules: number;
+    unique_papers_listed: number;
+    quotable_sentences: number;
+    title_only_quotes: number;
+    retain_rows_in_corpus: number;
+  };
   rules: Record<string, PoolRule>;
   papers: Record<string, PoolPaper>;
 };
@@ -51,11 +60,16 @@ export function rulePoolFor(ruleId: string): PoolRule | null {
   return data.rules[ruleId] ?? null;
 }
 
-export function rulePoolPapers(ruleId: string, offset = 0, limit = 20): PoolPaper[] {
+export function rulePoolPapers(ruleId: string, offset = 0, limit = 20): PoolEntry[] {
   const rule = data.rules[ruleId];
   if (!rule) return [];
   return rule.record_ids
     .slice(offset, offset + limit)
-    .map((id) => data.papers[id])
-    .filter(Boolean);
+    .map((id) => {
+      const paper = data.papers[id];
+      if (!paper) return null;
+      const q = rule.quotes[id];
+      return { ...paper, locator: q?.locator ?? "", quote: q?.quote ?? "" };
+    })
+    .filter((entry): entry is PoolEntry => entry !== null);
 }

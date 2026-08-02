@@ -571,6 +571,14 @@ export function FindingLiteratureGroup({
 
 const POOL_PAGE = 20;
 
+/** `abstract:sentence:7` 을 사람이 읽는 말로. 어느 문장을 인용했는지 밝힌다. */
+function locatorText(locator: string) {
+  if (!locator) return null;
+  if (locator === "TITLE") return "제목에서 인용";
+  const match = /^abstract:sentence:(\d+)$/.exec(locator);
+  return match ? `초록 ${match[1]}번째 문장` : locator;
+}
+
 /**
  * 선별 통과 문헌. 위의 검증 근거와 지위가 다르다는 사실을 화면이 직접 말한다.
  * 인용 대조를 거치지 않았고 규칙을 배포시키지 못한다.
@@ -588,6 +596,8 @@ function ScreeningPassedLiterature({ ruleId }: { ruleId: string }) {
         이 규칙이 허용한 질문에서 v5.0 선별이 retain 으로 판정하고, 규칙 유형의 위해 표현이
         제목·초록에 나타난 문헌입니다. 위의 검증 근거와 달리{" "}
         <strong>문장 인용 대조를 거치지 않았고</strong> 판정 결과를 바꾸지 않습니다.
+        {" "}인용문은 초록에서 규칙 유형과 가장 가까운 문장을 결정적으로 고른 것이고,
+        번역하지 않은 영어 원문입니다.
         {rule.truncated > 0
           ? ` 조건에 맞는 문헌은 ${rule.rule_type_matched_total.toLocaleString("ko-KR")}편이고 그중 ${rule.listed.toLocaleString("ko-KR")}편을 싣습니다.`
           : ""}
@@ -602,8 +612,18 @@ function ScreeningPassedLiterature({ ruleId }: { ruleId: string }) {
             ) : (
               (paper.title || paper.record_id)
             )}
+            {paper.quote ? (
+              <blockquote lang="en" className={styles.poolQuote}>
+                {paper.quote}
+              </blockquote>
+            ) : null}
             <small>
-              {[paper.journal, paper.year, paper.has_abstract ? null : "제목만"]
+              {[
+                paper.journal,
+                paper.year,
+                locatorText(paper.locator),
+                paper.has_abstract ? null : "초록 없음",
+              ]
                 .filter(Boolean)
                 .join(" · ")}
             </small>

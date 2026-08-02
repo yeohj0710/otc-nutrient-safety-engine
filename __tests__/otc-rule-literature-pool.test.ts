@@ -56,14 +56,37 @@ describe("규칙별 선별 통과 문헌 풀", () => {
     }
   });
 
-  it("수록한 논문은 전부 메타데이터를 갖는다", () => {
+  it("수록한 논문은 전부 메타데이터와 인용문을 갖는다", () => {
     const papers = rulePoolPapers("OTC-RULE-003", 0, 20);
     expect(papers).toHaveLength(20);
     for (const paper of papers) {
       expect(paper.record_id).toBeTruthy();
       expect(paper.title).toBeTruthy();
       expect(paper.url).toMatch(/^https:\/\/pubmed\.ncbi\.nlm\.nih\.gov\/\d+\/$/);
+      // 인용문과 그 문장이 초록의 몇 번째인지가 함께 있어야 한다.
+      expect(paper.quote.length).toBeGreaterThan(20);
+      expect(paper.locator).toMatch(/^(abstract:sentence:\d+|TITLE)$/);
     }
+  });
+
+  it("규칙 16개 전부에 인용 가능한 문장이 있다", () => {
+    expect(rulePoolTotals.quotable_sentences).toBeGreaterThan(2000);
+    // 제목을 인용한 경우는 초록이 아예 없는 논문뿐이고 2% 미만이어야 한다.
+    expect(rulePoolTotals.title_only_quotes).toBeLessThan(
+      rulePoolTotals.quotable_sentences * 0.02,
+    );
+    for (const ruleId of RULE_IDS) {
+      const papers = rulePoolPapers(ruleId, 0, 5);
+      expect(papers.length, ruleId).toBeGreaterThan(0);
+      for (const paper of papers) expect(paper.quote, ruleId).toBeTruthy();
+    }
+  });
+
+  it("같은 논문이라도 규칙이 다르면 다른 문장을 인용할 수 있다", () => {
+    // 문장은 규칙 관점에서 고르므로 인용문 수가 고유 논문 수보다 많다.
+    expect(rulePoolTotals.quotable_sentences).toBeGreaterThan(
+      rulePoolTotals.unique_papers_listed,
+    );
   });
 
   it("페이징이 겹치지 않는다", () => {

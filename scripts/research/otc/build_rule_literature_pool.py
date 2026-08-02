@@ -43,13 +43,16 @@ csv.field_size_limit(1 << 30)
 # 새 판단을 넣지 않으려고 유형 이름이 가리키는 임상 개념만 적는다.
 RULE_TYPE_PATTERNS: dict[str, str] = {
     "duplicate_ingredient":
-        r"duplicat|co-?ingest|concomitant|multiple product|combination product|"
-        r"-containing|overlap|simultaneous",
+        r"duplicat\w* (?:medicat|therap|ingredient|dos)|co-?ingest|"
+        r"multiple (?:product|preparation|medicat)|combination product|"
+        r"\w+-containing product|therapeutic duplication|simultaneous(?:ly)? "
+        r"(?:tak|us|administ)|concomitant (?:use|administration|intake)",
     "duplicate_pharmacologic_class":
         r"nsaid|non-?steroidal|duplicat|same class|concomitant|combination",
     "max_daily_dose":
-        r"maximum daily|daily dose|overdose|over-?dose|supratherapeutic|exceed|"
-        r"excessive dose|dose limit|4 ?g|4000 ?mg",
+        r"maximum (?:daily |recommended )?dos|daily dose|overdose|over-?dose|"
+        r"supratherapeutic|excessive dos|dose limit|exceed\w* the (?:maximum|"
+        r"recommended|daily)|4 ?g(?:/day| daily)|4000 ?mg",
     "minimum_interval":
         r"dosing interval|dose interval|every \d+ ?h|frequency of (?:dos|administ)|"
         r"repeated dos|inter-?dose",
@@ -69,7 +72,9 @@ RULE_TYPE_PATTERNS: dict[str, str] = {
         r"sedat|drowsi|somnolen|psychomotor|driving|vigilance|impair(?:ed|ment) "
         r"(?:alert|perform)|reaction time",
     "alcohol":
-        r"alcohol|ethanol|drinking|alcoholic",
+        r"alcohol (?:use|consumption|intake|abuse|ingestion)|alcoholic\s+"
+        r"(?:patient|liver|beverage|hepat)|ethanol|chronic alcohol|"
+        r"concurrent alcohol|heavy drink",
     "anticoagulant_antiplatelet":
         r"warfarin|anticoagul|antiplatelet|clopidogrel|coumarin|inr\b|"
         r"bleeding risk|aspirin",
@@ -81,13 +86,59 @@ RULE_TYPE_PATTERNS: dict[str, str] = {
         r"cardiovascular|vasoconstrict",
     "maximum_duration":
         r"duration of (?:use|treatment|therapy)|prolonged use|long-?term use|"
-        r"chronic use|consecutive days|beyond \d+ days",
+        r"chronic use|consecutive days|beyond \d+ days|"
+        r"(?:more|longer) than \d+ (?:days|weeks) of (?:use|treatment)",
     "urgent_referral":
         r"emergency|urgent|refer(?:ral)? to|seek medical|hospital|warning sign|"
         r"immediate(?:ly)? (?:stop|discontinu|consult)",
 }
 
 MAX_PER_RULE = 400  # 화면 페이징 상한. 초과분은 잘린 수를 함께 기록한다.
+
+# ── 문장 선택 ────────────────────────────────────────────────────────────────
+# 여형준 연구가 확장 근거 1,899행에 인용문을 붙일 때 쓴 것과 같은 방식이다
+# (v3.0 build_site_v3.split_sentences · choose_key_finding). 결정적 점수식이고
+# 언어모델을 부르지 않는다. 다른 점 하나: 여형준은 질문별 결과 용어로 점수를
+# 매기지만 여기서는 그 자리에 규칙 유형의 위해 표현을 넣는다. 규칙마다 다른
+# 문장이 뽑혀야 그 규칙의 근거로 읽히기 때문이다.
+NUMBER_RE = re.compile(r"(?<![A-Za-z])\d+(?:[.,]\d+)?")
+DIRECTION_RE = re.compile(
+    r"increase|decrease|reduce|improv|worsen|higher|lower|associated|risk|"
+    r"safe|tolerat|adverse|toxic|significant|no effect|did not|mortality|bleed",
+    re.IGNORECASE,
+)
+
+
+def split_sentences(text: str) -> list[str]:
+    stripped = text.strip()
+    if not stripped:
+        return []
+    return [
+        part.strip()
+        for part in re.split(r"(?<=[.!?])\s+(?=[A-Z0-9\[])", stripped)
+        if part.strip()
+    ]
+
+
+def choose_key_sentence(
+    title: str, abstract: str, rule_regex: re.Pattern[str]
+) -> tuple[str, str]:
+    if not abstract.strip():
+        return "TITLE", title.strip()
+    sentences = split_sentences(abstract)
+    if not sentences:
+        return "TITLE", title.strip()
+    scored: list[tuple[int, int, str]] = []
+    for index, sentence in enumerate(sentences, start=1):
+        score = 0
+        score += 6 if rule_regex.search(sentence) else 0
+        score += 5 if DIRECTION_RE.search(sentence) else 0
+        score += 3 if NUMBER_RE.search(sentence) else 0
+        score += 2 if re.search(r"result|conclu|finding", sentence, re.IGNORECASE) else 0
+        score += min(len(sentence) // 160, 2)
+        scored.append((score, -index, sentence))
+    _, negative_index, sentence = max(scored)
+    return f"abstract:sentence:{-negative_index}", sentence
 
 
 def sha256_file(path: Path) -> str:
@@ -129,6 +180,7 @@ def main() -> int:
     # 3. 필요한 레코드만 코퍼스에서 읽는다(94 MB 전체를 메모리에 올리지 않는다).
     papers: dict[str, dict[str, object]] = {}
     haystack: dict[str, str] = {}
+    abstracts: dict[str, str] = {}
     with EVIDENCE_MAP.open(encoding="utf-8-sig", newline="") as handle:
         for row in csv.DictReader(handle):
             record = row["record_id"]
@@ -148,6 +200,7 @@ def main() -> int:
                 "url": f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/" if pmid else "",
             }
             haystack[record] = f"{row.get('title', '')} {row.get('abstract', '')}".lower()
+            abstracts[record] = row.get("abstract") or ""
 
     # 4. 규칙별 두 단계 좁히기
     out_rules: dict[str, object] = {}
@@ -166,16 +219,28 @@ def main() -> int:
             question_pool |= retain.get(question, set())
 
         matched = [r for r in sorted(question_pool) if regex.search(haystack.get(r, ""))]
-        # 초록이 있는 문헌을 앞에, 그 다음 최신순으로 둔다.
-        matched.sort(
-            key=lambda r: (
-                0 if papers[r]["has_abstract"] else 1,
-                -int(papers[r]["year"] or 0),
-                r,
-            )
-        )
+
+        def relevance(record: str) -> tuple[int, int, int, int, str]:
+            """관련도. 제목에서 맞으면 가장 크게 치고, 초록 히트 수로 다음을 가른다."""
+            title = str(papers[record]["title"]).lower()
+            abstract = abstracts.get(record, "").lower()
+            title_hit = 1 if regex.search(title) else 0
+            hits = len(regex.findall(abstract)) + len(regex.findall(title))
+            has_abstract = 1 if papers[record]["has_abstract"] else 0
+            # 인용 문장이 나오는 쪽을 앞에 둔다. 초록이 없으면 제목밖에 인용할 수 없다.
+            return (-title_hit, -has_abstract, -min(hits, 20),
+                    -int(papers[record]["year"] or 0), record)
+
+        matched.sort(key=relevance)
         kept = matched[:MAX_PER_RULE]
         used.update(kept)
+        # 이 규칙의 관점에서 초록의 어느 문장을 인용할지 고른다.
+        quotes: dict[str, dict[str, str]] = {}
+        for record in kept:
+            locator, sentence = choose_key_sentence(
+                str(papers[record]["title"]), abstracts.get(record, ""), regex
+            )
+            quotes[record] = {"locator": locator, "quote": sentence}
         out_rules[rule_id] = {
             "rule_type": rule_type,
             "status": rule_rows.get(rule_id, {}).get("status", ""),
@@ -186,6 +251,7 @@ def main() -> int:
             "truncated": max(0, len(matched) - len(kept)),
             "verified_link_count": rule["link_count"],
             "record_ids": kept,
+            "quotes": quotes,
         }
         report.append((rule_id, rule_type, len(question_pool), len(matched), len(kept)))
 
@@ -208,6 +274,11 @@ def main() -> int:
             "step_1": "규칙의 allowed_question_ids 에서 decision=retain 인 레코드",
             "step_2": "규칙 유형의 위해 표현이 title+abstract 에 나타나는 레코드",
             "ordering": "초록 있음 우선, 그다음 최신 출판연도",
+            "step_3": (
+                "규칙 관점에서 초록의 인용 문장을 고른다. v3.0 build_site_v3 의 "
+                "split_sentences·choose_key_finding 과 같은 점수식이며, 질문별 결과 용어 "
+                "자리에 규칙 유형의 위해 표현을 넣는다"
+            ),
             "per_rule_cap": MAX_PER_RULE,
             "deterministic": True,
             "language_model_calls": 0,
@@ -230,6 +301,15 @@ def main() -> int:
         "totals": {
             "rules": len(out_rules),
             "unique_papers_listed": len(used),
+            "quotable_sentences": sum(
+                len(r["quotes"]) for r in out_rules.values()  # type: ignore[index]
+            ),
+            "title_only_quotes": sum(
+                1
+                for r in out_rules.values()
+                for q in r["quotes"].values()  # type: ignore[index,union-attr]
+                if q["locator"] == "TITLE"
+            ),
             "retain_rows_in_corpus": sum(len(v) for v in retain.values()),
         },
         "rules": out_rules,
