@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "track": "v5.0_mecir_search",
+  "purpose": "봉인된 원장 v50_run_report.json 이후에 일어난 인계 사실 기록. 원장 본문과 research_v3/ 는 고치지 않는다. 이 파일이 research_v3/ 밖에 있는 이유는 로컬 v5.1 감사가 research_v3 트리 OID 를 기준선과 통째로 대조하기 때문이다.",
+  "ledger": {
+    "path": "research_v3/logs/v50_run_report.json",
+    "sha256": "ec496af45d1d631a432aa6ede1dfb18ad52f444038a36c8f57c3592affa88802",
+    "summary": "research_v3/logs/v50_FINAL.md",
+    "decisions": "research_v3/logs/DECISIONS_v50.md",
+    "amendments": "research_v3/protocol/amendments.csv"
+  },
+  "git": {
+    "branch": "main",
+    "head": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+    "head_subject": "feat(audit): 학위논문 수치 감사를 자동화한다",
+    "head_date": "2026-07-31T18:14:32+09:00",
+    "remote": "https://github.com/yeohj0710/otc-nutrient-safety-engine.git",
+    "submission_baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9"
+  },
+  "local_v51_branch": {
+    "branch": "codex/v5.1-safety-expansion",
+    "commits_ahead_of_main": 14,
+    "pushed": false,
+    "is_submission_canonical": false,
+    "note": "v5.1 은 안전 범위 확장 감사 트랙이고 제출 정본이 아니다. released 규칙 15개와 규칙–문헌 연결 9규칙·10건을 하나도 늘리지 않았다(research_v51/audit/final_metrics.json 의 baseline_vs_v51 전 항목 delta 0). 산출물은 research_v51/ 에만 있고 research_v3/ 와 운영 사이트에는 반영되지 않았다."
+  },
+  "deployment": {
+    "provider": "vercel",
+    "method": "npx vercel --prod --yes",
+    "note": "이 저장소는 GitHub 연동이 없어 push 로는 배포되지 않는다.",
+    "production_alias": "https://otc-nutrient-safety-engine.vercel.app",
+    "site_data_track": "v5.0"
+  },
+  "submission": {
+    "sealed_at": "2026-08-02",
+    "thesis": {
+      "path": "G:/내 드라이브/여형준님/24 전공심화실습(1)/권혁찬/06_졸업논문/권혁찬_졸업논문_최종본.docx",
+      "pages": 19,
+      "tables": 7,
+      "figures": 3
+    },
+    "deliverable_list": "G:/내 드라이브/여형준님/24 전공심화실습(1)/권혁찬/제출물_목록_260802.md",
+    "appendix": "03_최종산출물/03_연구부록 (18 files, SHA-256 18/18 match)",
+    "verification_pack": "03_최종산출물/04_검증자료 (5 files)",
+    "verification": {
+      "executed_at": "2026-08-02",
+      "execution_note": "제출 정본 커밋을 별도 worktree 로 체크아웃해 실행했다.",
+      "typecheck": "pass",
+      "lint": "pass",
+      "test": {
+        "status": "pass",
+        "tests": "77/77",
+        "files": "14/14"
+      },
+      "build": "pass",
+      "generated_artifacts_up_to_date": "pass",
+      "rule_literature_links": {
+        "rules": 16,
+        "released": 15,
+        "resolved_rules": 9,
+        "emitted_links": 10,
+        "unresolved_rules": 7,
+        "rejection_counts": {
+          "not_in_v5_corpus": 6,
+          "no_retain_decision_for_rule_question": 4
+        },
+        "cross_checks_passed": 3
+      },
+      "site": {
+        "url": "https://otc-nutrient-safety-engine.vercel.app",
+        "http_status": 200
+      }
+    },
+    "remaining_for_researcher": [
+      "제출 정보 절의 학과 양식 행정 정보 입력 (표지·심사위원·제출일)",
+      "논문 통독 확인. 서술 방향이 연구자 판단과 맞는지",
+      "AM-OTC-003 기여 재서술의 지도교수 승인 확인",
+      "발표덱 29장 피드백"
+    ]
+  },
+  "independent_blinding": false,
+  "release_ready": false,
+  "release_ready_note": "사이트 배포는 임상적 공개 승인이 아니다. 사람 참조표준 0건이므로 false 를 유지한다."
+}
