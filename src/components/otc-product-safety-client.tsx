@@ -531,7 +531,9 @@ export function FindingLiteratureGroup({
       <header>
         <h4>{finding.titleKo}</h4>
         <span>
-          직접 일치 {direct.length}편 · 배경 문헌 {background.length}편
+          {direct.length || background.length
+            ? `검증 근거 직접 일치 ${direct.length}편 · 배경 ${background.length}편`
+            : "검증 근거 0편 — 아래 선별 통과 문헌만 있습니다"}
         </span>
       </header>
       {direct.length > 0 ? (
@@ -547,7 +549,7 @@ export function FindingLiteratureGroup({
         </div>
       ) : (
         <p className={styles.evidenceEmpty}>
-          현재 성분과 직접 일치하는 논문은 없습니다.
+          이 규칙에는 문장 인용 대조를 통과한 검증 근거가 없습니다.
         </p>
       )}
       {background.length > 0 && (
@@ -840,7 +842,13 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const hasBackgroundLiterature = [...literatureByFinding.values()].some(
     (matches) => matches.background.length > 0,
   );
-  const hasFinalLiterature = hasDirectLiterature || hasBackgroundLiterature;
+  // 검증 근거가 없는 판정에도 선별 통과 문헌은 있다. 그 층까지 세지 않으면
+  // 미연결 규칙에서 이 절이 통째로 사라져, 읽을거리를 주려던 목적과 반대가 된다.
+  const hasScreeningPassedLiterature = orderedFindings.some(
+    (finding) => (rulePoolFor(finding.ruleId)?.listed ?? 0) > 0,
+  );
+  const hasFinalLiterature =
+    hasDirectLiterature || hasBackgroundLiterature || hasScreeningPassedLiterature;
   const hasRepresentativeRuleEvidence = [...ruleEvidenceByFinding.values()].some(
     (display) => display.representative.length > 0,
   );
@@ -2130,6 +2138,9 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           literatureByFinding.get(finding.findingId)?.direct ?? [];
                         const background =
                           literatureByFinding.get(finding.findingId)?.background ?? [];
+                        const pooled = rulePoolFor(finding.ruleId)?.listed ?? 0;
+                        if (!direct.length && !background.length && !pooled)
+                          return null;
                         return (
                           <FindingLiteratureGroup
                             key={"direct-literature:" + finding.findingId}

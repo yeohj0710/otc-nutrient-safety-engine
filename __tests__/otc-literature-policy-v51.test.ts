@@ -381,8 +381,10 @@ describe("v5.1 literature result policy", () => {
     );
 
     expect(html).toContain("문헌 없는 혼합 판정");
-    expect(html).toContain("직접 일치 0편 · 배경 문헌 0편");
-    expect(html).toContain("현재 성분과 직접 일치하는 논문은 없습니다.");
+    // 검증 근거가 0편이어도 판정은 화면에 남고, 그 사실을 그대로 말한다.
+    expect(html).toContain("검증 근거 0편");
+    expect(html).toContain("문장 인용 대조를 통과한 검증 근거가 없습니다");
+    
   });
 
   it("pins all 10 emitted and all 10 rejected legacy link classifications", () => {

@@ -58,7 +58,7 @@ describe("OTC checker layout contract", () => {
 
   it("shows same-rule papers without calling them direct ingredient evidence", () => {
     expect(componentSource).toContain(
-      "현재 성분과 직접 일치하는 논문은 없습니다.",
+      "문장 인용 대조를 통과한 검증 근거가 없습니다",
     );
     expect(componentSource).toContain("같은 규칙의 배경 문헌");
     expect(componentSource).toContain("현재 판정의 직접 근거가 아님");
