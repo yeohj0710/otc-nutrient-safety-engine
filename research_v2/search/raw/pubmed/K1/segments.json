@@ -1,0 +1,8 @@
+[
+  {
+    "start": "unbounded",
+    "end": "unbounded",
+    "count": 5697,
+    "query": "(\n  \"Vitamin D\"[Mesh]\n  OR \"vitamin D\"[tiab]\n  OR cholecalciferol[tiab]\n  OR ergocalciferol[tiab]\n  OR calcifediol[tiab]\n)\nAND\n(\n  \"Dietary Supplements\"[Mesh]\n  OR supplement*[tiab]\n  OR dosing[tiab]\n  OR bolus[tiab]\n  OR \"high dose\"[tiab]\n  OR \"high-dose\"[tiab]\n  OR calcium[tiab]\n)\nAND\n(\n  \"Hypercalcemia\"[Mesh]\n  OR \"Hypercalciuria\"[Mesh]\n  OR \"Kidney Calculi\"[Mesh]\n  OR hypercalcem*[tiab]\n  OR hypercalciur*[tiab]\n  OR nephrolithiasis[tiab]\n  OR urolithiasis[tiab]\n  OR \"kidney stone\"[tiab]\n  OR \"kidney stones\"[tiab]\n  OR toxic*[tiab]\n  OR \"adverse event\"[tiab]\n  OR \"adverse events\"[tiab]\n)"
+  }
+]

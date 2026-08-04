@@ -1,0 +1,51 @@
+{
+  "node_id": "K2",
+  "query_sha256": "cd801112724a82edf69ee2a4251869173a7495fee563b11c819af379dab9b2fe",
+  "search_date": "2026-07-10",
+  "hit_count": 402,
+  "exported_count": 402,
+  "imported_count": 402,
+  "segment_count": 1,
+  "contact_source": "git_config_user_email",
+  "contact_value_stored": false,
+  "tool": "kwon_pubmed_feasibility",
+  "request_rate_limit_per_second": 2.5,
+  "raw_files": [
+    {
+      "path": "efetch_0001.xml",
+      "size": 4096641,
+      "sha256": "9a0214857e25eab886eec4051f307282c5923c996465f4fa2d5ffa75ec77fe10"
+    },
+    {
+      "path": "efetch_0002.xml",
+      "size": 1584483,
+      "sha256": "0c2d8f0f93894a74303ef6ced8b9bf361e0eebfcaa8b7f70f442dcdd4a80407c"
+    },
+    {
+      "path": "efetch_0003.xml",
+      "size": 16520,
+      "sha256": "3a7621b1e260814c541480f70d48bb797f3bd9980154f39af829cf4e0a35bc99"
+    },
+    {
+      "path": "esearch_count.json",
+      "size": 109,
+      "sha256": "b00ceaf41d6f6d7731122c1c469765c38d9af3253a926ab80bff3a2fef30e7a0"
+    },
+    {
+      "path": "query.txt",
+      "size": 721,
+      "sha256": "29cce14af7136aab5c1e2588793f3357babdf36e1c508d2352e314f313b356b7"
+    },
+    {
+      "path": "segments.json",
+      "size": 847,
+      "sha256": "164b3134f97b8a4bcc0a7598a42b54e73dc8a012df63281433d7ae9b214b74d8"
+    },
+    {
+      "path": "uids_001.json",
+      "size": 5934,
+      "sha256": "55dc130a94a692cdda02d35e88e06e7166cf6167d0cef1008e47bf209064f994"
+    }
+  ],
+  "raw_files_sha256": "d975bbd242e7c4aca923382745cf11c83c797f8a6957de653eb224723511a8d5"
+}

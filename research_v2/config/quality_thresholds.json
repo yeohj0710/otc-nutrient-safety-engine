@@ -1,0 +1,11 @@
+{
+  "screening_recall_point_estimate_min": 0.95,
+  "extraction_required_field_accuracy_min": 0.9,
+  "provenance_completeness_required": 1.0,
+  "scenario_hazard_sensitivity_point_estimate_min": 0.95,
+  "sentinel_critical_false_negative_max": 0,
+  "minimum_validation_scenarios": 100,
+  "recommended_validation_scenarios": 120,
+  "minimum_screening_gold_items": 300,
+  "minimum_screening_gold_positive": 60
+}

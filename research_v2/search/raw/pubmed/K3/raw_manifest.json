@@ -1,0 +1,85 @@
+{
+  "node_id": "K3",
+  "query_sha256": "401008c45eff51486b82b81d8b0ef155938e46b0d3afd3e7cc43b98bd365d244",
+  "search_date": "2026-07-10",
+  "hit_count": 1805,
+  "exported_count": 1805,
+  "imported_count": 1805,
+  "segment_count": 1,
+  "contact_source": "git_config_user_email",
+  "contact_value_stored": false,
+  "tool": "kwon_pubmed_feasibility",
+  "request_rate_limit_per_second": 2.5,
+  "raw_files": [
+    {
+      "path": "efetch_0001.xml",
+      "size": 4255486,
+      "sha256": "94da282c1a342eee1bfe3097bb2c1fbbafb05a6cec4fbb69255f229403756a3e"
+    },
+    {
+      "path": "efetch_0002.xml",
+      "size": 4937581,
+      "sha256": "c18b37938143d766278fa505c49f6a96fbe5292f7bddfa82bc49314c29fb2a9e"
+    },
+    {
+      "path": "efetch_0003.xml",
+      "size": 4553309,
+      "sha256": "d6d51faaf57af7c34c0bc03a0fba600b8261f40f591823b4853a529100aef54f"
+    },
+    {
+      "path": "efetch_0004.xml",
+      "size": 3893199,
+      "sha256": "a4088e0ac5434979628d135a9ad8a951c8005eb5068461ec3923670baed79faa"
+    },
+    {
+      "path": "efetch_0005.xml",
+      "size": 3211388,
+      "sha256": "97f0ef9fff31731eba84fd5fdebad63390d5141b3c5266cb03eef0944357ea72"
+    },
+    {
+      "path": "efetch_0006.xml",
+      "size": 2353733,
+      "sha256": "8b9f032843a8ed4bc1031a4ae889da1febff9a47d8f33e16484b176d20e2c22a"
+    },
+    {
+      "path": "efetch_0007.xml",
+      "size": 1874349,
+      "sha256": "6ba1a659f349186dfd7f70082dcc7a5f877e33927d5158f204653078ecf0cd30"
+    },
+    {
+      "path": "efetch_0008.xml",
+      "size": 1507918,
+      "sha256": "f586510ae683182d82f27c7edd9839f37260337b06c7c0e979f1d4f0fc07c45f"
+    },
+    {
+      "path": "efetch_0009.xml",
+      "size": 1421385,
+      "sha256": "7af7d809f162fc7b9db779e90be9e896bf2fcd360c203ccaf276d5513c5f51f0"
+    },
+    {
+      "path": "efetch_0010.xml",
+      "size": 34772,
+      "sha256": "42ee440394060cda0d8c0ed857b685fbf68d0c7ca96664160be8ca7649251984"
+    },
+    {
+      "path": "esearch_count.json",
+      "size": 110,
+      "sha256": "9a4627c8ec31f805d3c48612b31b3cb7de59929d6071ff15f55226f8d1b73f1d"
+    },
+    {
+      "path": "query.txt",
+      "size": 793,
+      "sha256": "bf5261fdcd94896e5cc7d398b7a49fbee297efe71fc1b6a359e0c360ec73240d"
+    },
+    {
+      "path": "segments.json",
+      "size": 926,
+      "sha256": "03dcbd808b41e28785d92dd6a36bcdf6a42509d11256393a22507b6eda2c5432"
+    },
+    {
+      "path": "uids_001.json",
+      "size": 26782,
+      "sha256": "77e48613d6114c936f7435dc899445b9e30642bf7e6c98a28b16b9f5a3e2cd50"
+    }
+  ]
+}

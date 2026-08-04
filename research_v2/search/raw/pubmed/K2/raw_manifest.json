@@ -1,0 +1,45 @@
+{
+  "node_id": "K2",
+  "query_sha256": "2878df35b3fa3579ca3d13eed1271c67d8a00ac9cbebb7d9e066c25c864ff299",
+  "search_date": "2026-07-10",
+  "hit_count": 387,
+  "exported_count": 387,
+  "imported_count": 387,
+  "segment_count": 1,
+  "contact_source": "git_config_user_email",
+  "contact_value_stored": false,
+  "tool": "kwon_pubmed_feasibility",
+  "request_rate_limit_per_second": 2.5,
+  "raw_files": [
+    {
+      "path": "efetch_0001.xml",
+      "size": 4028295,
+      "sha256": "ba081fe5bfb834eb0d3c6ba7bad938773bcef2cd10f6d37ca9a10e8229f70a9b"
+    },
+    {
+      "path": "efetch_0002.xml",
+      "size": 1511657,
+      "sha256": "4f5dc961153a6a3443ce9035546edd3d5c61135cc9bb77169acd34edcb1857f1"
+    },
+    {
+      "path": "esearch_count.json",
+      "size": 109,
+      "sha256": "eb14147ea3a4387be8bdabb106f0a3d77c6043ae18bb9b2095fb11ad71973093"
+    },
+    {
+      "path": "query.txt",
+      "size": 641,
+      "sha256": "7604bbdc13e1bfe9a3ebc69ef0eadf8e23bf3cf1a2dd7041a3272c0bbb2677f6"
+    },
+    {
+      "path": "segments.json",
+      "size": 767,
+      "sha256": "1689907480956d86587879297290551233c293835aac236571f816f3088ff425"
+    },
+    {
+      "path": "uids_001.json",
+      "size": 5717,
+      "sha256": "25bb91f5bf5aca872f9f64f7f8c17946c645c1d67341834751f894f299e45c7d"
+    }
+  ]
+}

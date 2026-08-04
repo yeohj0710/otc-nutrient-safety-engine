@@ -1,0 +1,25 @@
+{
+  "status": "human_and_external_inputs_required",
+  "checked_at_utc": "2026-07-10T11:47:00Z",
+  "source_commit": "70dc6bf5f5446887bc67b966485417493e85af5c",
+  "checks": {
+    "worktree_clean": true,
+    "NCBI_EMAIL_present": false,
+    "NCBI_API_KEY_present": false,
+    "human_action_packet_changed_from_blank_template": false,
+    "official_thesis_template_found_in_scoped_drive_folder": false
+  },
+  "blank_packet_sha256": "71d1cc479f6355b0852dc8dd67d85af322951224f396c04ef364c44bf1f2e87c",
+  "blocking_actions": [
+    "H-001 protocol and K1-K5 approval",
+    "H-002 independent PRESS review",
+    "H-003 licensed database full exports",
+    "H-004 second reviewer and adjudicator decisions",
+    "H-005 blinded scenario gold and expert content-validity ratings",
+    "H-006 institutional IRB or exemption determination before human recruitment",
+    "H-007 valid NCBI contact email in local environment",
+    "H-008 official thesis format confirmation"
+  ],
+  "blocked_gates": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "integrity_rule": "Do not invent approvals, database exports, human judgements, expert ratings, or thesis results."
+}

@@ -1,0 +1,5 @@
+decision_id,date_time_utc,gate,topic,decision,alternatives_considered,rationale,data_seen_before_decision,impact,approved_by,commit_sha,status
+D-0001,2026-07-10T02:14:51Z,0,project_identity,"권혁찬 2021194024와 otc-nutrient-safety-engine을 활성 연구 정체성으로 고정","여형준 패키지 전제 유지|새 저장소 생성","사용자 명시적 교정과 권혁찬 연구계획서 및 remote가 일치",false,"Gate 0과 모든 v2 계보 기준 변경",user,,active
+D-0002,2026-07-10T02:14:51Z,0,clinical_nodes,"K1 비타민 D±칼슘; K2 비타민 B6/B군; K3 철분; K4 마그네슘; K5 아연","기존 3개 검색축 유지|비타민 A/E/K 포함","2026-06-18 계획서 대표 입력 상황과 성분·함량 중심 질문",false,"Gate 1 사람 승인 전 임시 고정",codex,,provisional
+D-0003,2026-07-10T02:14:51Z,0,legacy_disposition,"기존 검색·선별·추출·rule seed·시나리오 수치를 legacy_untrusted로 격리","기존 수치 재사용","상위 N 절단과 사람 판정·원문 검증 부재",true,"v2 결과는 원자료에서 재생성",codex,,active
+D-0004,2026-07-10T02:35:00Z,1,research_type_and_search_timing,"방법론 개발·검증 연구와 실험 및 분석논문 양식을 잠정 적용; 승인과 검토 전 최종 검색 미실행","종설논문 유지|즉시 검색 실행","패키지 우선 원칙과 결과 전 프로토콜 동결 요구",false,"Gate 1 승인과 Gate 2 검토를 사람 작업으로 유지",codex,,provisional

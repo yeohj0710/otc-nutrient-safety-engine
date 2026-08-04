@@ -1,0 +1,121 @@
+{
+  "node_id": "K5",
+  "query_sha256": "9e3801c2def015aa3794235079c5d4b61a01a4d6cea912099ed396b2c4125c17",
+  "search_date": "2026-07-10",
+  "hit_count": 3248,
+  "exported_count": 3248,
+  "imported_count": 3248,
+  "segment_count": 1,
+  "contact_source": "git_config_user_email",
+  "contact_value_stored": false,
+  "tool": "kwon_pubmed_feasibility",
+  "request_rate_limit_per_second": 2.5,
+  "raw_files": [
+    {
+      "path": "efetch_0001.xml",
+      "size": 4948652,
+      "sha256": "41fc08b6da30d7556075b01e8d53b705490adba169ddb8534a139dbdb71619dc"
+    },
+    {
+      "path": "efetch_0002.xml",
+      "size": 5447105,
+      "sha256": "9d2091b6f28fb072935a54b1ba4a8f36abf18c241e98ce8aa3d29ce95fdc94ed"
+    },
+    {
+      "path": "efetch_0003.xml",
+      "size": 5924708,
+      "sha256": "de13bdd20915ceb45e0063aa80a10091aef23eec953a3ae45b9241513ef36ee7"
+    },
+    {
+      "path": "efetch_0004.xml",
+      "size": 5151611,
+      "sha256": "4557208d26c32b6b97f50c73b59f193d23e0a1e81f2f63558bbe4a9a08477689"
+    },
+    {
+      "path": "efetch_0005.xml",
+      "size": 5142989,
+      "sha256": "4bf378a18cf56205c2fccac1c4f12326abf8f5b015332c7b943422b2cdc00a96"
+    },
+    {
+      "path": "efetch_0006.xml",
+      "size": 4331172,
+      "sha256": "b5a384100c58499ec7eb020de128d10d7a712096733668f7147aad7e97073dcb"
+    },
+    {
+      "path": "efetch_0007.xml",
+      "size": 3829600,
+      "sha256": "ca4c7a3162f035c80a291385cc824f841364b3e32768e35c654701f8b05b5156"
+    },
+    {
+      "path": "efetch_0008.xml",
+      "size": 3432009,
+      "sha256": "153abc7f44f7ff8b8eac440e6ca3f89e9b8a53d4fcdc3e66e4425a9dd817f106"
+    },
+    {
+      "path": "efetch_0009.xml",
+      "size": 2976135,
+      "sha256": "0a4f532f7d1f81f51b557db177a63ccd62f7b5c4d779873ac6de81c55df6f885"
+    },
+    {
+      "path": "efetch_0010.xml",
+      "size": 2421111,
+      "sha256": "7e31ca87853890a6aa6f6e8db8631a1109c3ccdf0574cb2c6bd6e90b29031ca4"
+    },
+    {
+      "path": "efetch_0011.xml",
+      "size": 2502823,
+      "sha256": "cfca5098bac1504ddd8ec245b7335c18c255fbbfbe243d5acd3e6dfc33892261"
+    },
+    {
+      "path": "efetch_0012.xml",
+      "size": 1977409,
+      "sha256": "b56eca19146b74af4499581667d0beabe6ef990caebf12be90c69d27bdaaf31e"
+    },
+    {
+      "path": "efetch_0013.xml",
+      "size": 1574440,
+      "sha256": "b1e11635c0387a712055468c52ac77a0bf337790b7b2d37a1152cdab63de2719"
+    },
+    {
+      "path": "efetch_0014.xml",
+      "size": 1632035,
+      "sha256": "e741e173fe771a5018b2e236e304bf9c40cd2e36feeb8aa4594eb05cd537cd18"
+    },
+    {
+      "path": "efetch_0015.xml",
+      "size": 1478478,
+      "sha256": "b2c27ec651cd74eb71d33df158bb7323a2e969919f9009f4326688cdd48b371c"
+    },
+    {
+      "path": "efetch_0016.xml",
+      "size": 1304272,
+      "sha256": "ff1171e7fa4834c15f274c895de9d7ea6fd6c10d17a9df57ce9c8a50c593a381"
+    },
+    {
+      "path": "efetch_0017.xml",
+      "size": 270504,
+      "sha256": "bee31ba218609cc584fd7ad913a9125585b68668873ea2709da7c3ff8815e842"
+    },
+    {
+      "path": "esearch_count.json",
+      "size": 110,
+      "sha256": "d9f82054c5ab682b89ecfb4a5a11a0dc90df4994ccf61ae66edb868d3f0172cc"
+    },
+    {
+      "path": "query.txt",
+      "size": 805,
+      "sha256": "d28eea12a6f75a9c225821b3431f75b29632f065f775216d55572b34d90df6e0"
+    },
+    {
+      "path": "segments.json",
+      "size": 940,
+      "sha256": "37ffa757bf0a94d47e9dae55e3e05af7d8891c8e17386461a8569eb9ec7b87b5"
+    },
+    {
+      "path": "uids_001.json",
+      "size": 48281,
+      "sha256": "216e938ff28298d4cbf0aa03e21d03aaf42423c42e5ca1267b46e357e3d54fd3"
+    }
+  ],
+  "raw_files_sha256": "6921ac4d8ec3e84a3ae0950ff074d808bd481ab0b67aa4f1b70284869c3d4169"
+}

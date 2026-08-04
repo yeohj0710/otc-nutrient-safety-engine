@@ -1,0 +1,19 @@
+{
+  "status": "prompts_frozen_model_not_selected",
+  "prompts": [
+    {
+      "name": "extraction_v0.1.md",
+      "path": "research_v2/ai_eval/prompts/extraction_v0.1.md",
+      "sha256": "acf2b8fc011f8e0938baa5a48967f15dcf98945d74e48ee085f04ff71341e80c"
+    },
+    {
+      "name": "screening_v0.1.md",
+      "path": "research_v2/ai_eval/prompts/screening_v0.1.md",
+      "sha256": "359c7e3d67b859f96e36e57604b68c476cad654c3f278e300dcde2b4a4456b8d"
+    }
+  ],
+  "held_out_tuning_prohibited": true,
+  "model": null,
+  "model_version": null,
+  "run_executed": false
+}

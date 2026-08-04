@@ -1,0 +1,1 @@
+run_id,split,field_name,field_type,n_gold,n_predicted,n_exact_match,n_relaxed_match,n_unsupported,n_omitted,exact_accuracy,relaxed_accuracy,unsupported_rate,omission_rate,locator_accuracy,notes

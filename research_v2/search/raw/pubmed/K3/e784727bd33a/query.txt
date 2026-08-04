@@ -1,0 +1,42 @@
+(
+  "Iron"[Mesh]
+  OR "Ferrous Compounds"[Mesh]
+  OR "iron supplement"[tiab]
+  OR "iron supplements"[tiab]
+  OR "oral iron"[tiab]
+  OR "elemental iron"[tiab]
+  OR "ferrous sulfate"[tiab]
+  OR "ferrous sulphate"[tiab]
+  OR "ferrous fumarate"[tiab]
+  OR "ferrous gluconate"[tiab]
+)
+AND
+(
+  "Dietary Supplements"[Mesh]
+  OR supplement*[tiab]
+  OR preparation*[tiab]
+  OR tablet*[tiab]
+  OR capsule*[tiab]
+  OR oral[tiab]
+)
+AND
+(
+  "Drug-Related Side Effects and Adverse Reactions"[Mesh]
+  OR "adverse event"[tiab]
+  OR "adverse events"[tiab]
+  OR "adverse effect"[tiab]
+  OR "adverse effects"[tiab]
+  OR "side effect"[tiab]
+  OR "side effects"[tiab]
+  OR tolerab*[tiab]
+  OR "gastrointestinal adverse"[tiab]
+  OR nausea[tiab]
+  OR vomiting[tiab]
+  OR constipation[tiab]
+  OR diarrhea[tiab]
+  OR diarrhoea[tiab]
+  OR "abdominal pain"[tiab]
+  OR "iron overload"[tiab]
+  OR hemochromatosis[tiab]
+  OR haemochromatosis[tiab]
+)

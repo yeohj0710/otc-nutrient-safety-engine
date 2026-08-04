@@ -1,0 +1,8 @@
+[
+  {
+    "start": "unbounded",
+    "end": "unbounded",
+    "count": 387,
+    "query": "(\n  \"Vitamin B 6\"[Mesh]\n  OR \"vitamin B6\"[tiab]\n  OR \"vitamin B-6\"[tiab]\n  OR pyridoxin*[tiab]\n  OR \"pyridoxal 5 phosphate\"[tiab]\n  OR \"pyridoxal-5-phosphate\"[tiab]\n  OR \"B complex\"[tiab]\n  OR \"B-complex\"[tiab]\n)\nAND\n(\n  \"Dietary Supplements\"[Mesh]\n  OR supplement*[tiab]\n  OR dose[tiab]\n  OR dosage[tiab]\n  OR intake[tiab]\n  OR chronic[tiab]\n  OR long-term[tiab]\n)\nAND\n(\n  \"Peripheral Nervous System Diseases\"[Mesh]\n  OR \"Neurotoxicity Syndromes\"[Mesh]\n  OR neuropath*[tiab]\n  OR neurotoxic*[tiab]\n  OR paresthes*[tiab]\n  OR paraesthes*[tiab]\n  OR \"sensory neuronopathy\"[tiab]\n  OR \"gait disturbance\"[tiab]\n)"
+  }
+]

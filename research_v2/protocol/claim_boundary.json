@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "amendment_id": "AMEND-001",
+  "status": "active_scope_reduction",
+  "study_design": "pubmed_single_reviewer_feasibility",
+  "databases_in_scope": ["PubMed"],
+  "clinical_nodes": ["K1", "K2", "K3", "K4", "K5"],
+  "allowed_claims": [
+    "pubmed_search_yield",
+    "single_reviewer_included_evidence",
+    "five_node_evidence_distribution",
+    "source_locator_completeness",
+    "deterministic_engine_behavior",
+    "technical_regression_results",
+    "reproducibility"
+  ],
+  "prohibited_claims": [
+    "complete_multidatabase_systematic_review",
+    "independent_dual_review",
+    "expert_validated_clinical_rules",
+    "clinical_sensitivity_or_specificity",
+    "diagnosis_or_treatment_recommendation",
+    "evidence_absence_outside_pubmed"
+  ],
+  "not_evaluated_metrics": [
+    "ai_screening_held_out_recall",
+    "independent_scenario_clinical_sensitivity",
+    "independent_scenario_clinical_specificity",
+    "expert_i_cvi",
+    "expert_s_cvi"
+  ],
+  "required_disclosures": [
+    "pubmed_only",
+    "single_reviewer",
+    "no_independent_expert_validation",
+    "research_prototype_not_for_clinical_use"
+  ]
+}

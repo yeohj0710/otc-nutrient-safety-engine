@@ -1,0 +1,22 @@
+{
+  "artifact": "권혁찬_연구_사람작업패킷_20260710.xlsx",
+  "sha256": "71d1cc479f6355b0852dc8dd67d85af322951224f396c04ef364c44bf1f2e87c",
+  "generated_at_utc": "2026-07-10T11:40:00Z",
+  "status": "blank_human_input_packet",
+  "sheets": [
+    "안내",
+    "H001_프로토콜승인",
+    "H002_PRESS",
+    "H003_DB전체Export",
+    "H004_검토자배정",
+    "H005_전문가검토",
+    "H008_공식서식"
+  ],
+  "verification": {
+    "all_sheets_rendered": true,
+    "formula_error_scan": "no matches",
+    "protocol_status_with_blank_inputs": "open",
+    "db_reconciliation_with_blank_inputs": "check"
+  },
+  "note": "Workbook contains no fabricated approvals, reviewer identities, database counts, or expert ratings."
+}

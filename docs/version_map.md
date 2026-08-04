@@ -26,7 +26,7 @@
 
 | 경로 | 상태 | 크기 |
 |---|---|---|
-| `research_v2/` | 영양성분 시절 **구세대**. **2026-08-04 에 저장소에서 뺐다**(커밋 `54c4eeb`). 필요하면 그 커밋의 부모에서 꺼낸다 | 지워짐 (390 MiB, 246 파일이었다) |
+| `research_v2/` | 영양성분 시절 **구세대이지만 지우면 안 된다.** 빌드와 테스트가 이 경로를 읽는다(§5 참고) | 390 MiB, 246 파일 |
 | `execution_package/` | 2026-07-10 **구세대**. 영양성분 방향 실행 패키지이고 v5.0 체인에 들어가지 않는다. README 머리말이 여형준 패키지 문구를 그대로 두고 있으나 `project_identity.json` 은 권혁찬으로 맞고 `disallowed_primary_repo_identity: "여형준"` 가드가 있다. 수치를 여기서 인용하지 않는다 | 84 파일 |
 | `research_v3/` | **v5.0 제출 정본**. 로컬 v5.1에서 읽기만 | — |
 | `research_v51/` | **로컬 v5.1 안전 확장**. 제출 정본과 분리 | — |
@@ -201,7 +201,7 @@ worktree의 안내문 생성기로 사용하지 않는다. 프로토콜을 바�
 
 - `research_v3/otc/literature/screening_discarded_local3b/` (6 MiB)
 - `research_v3/otc/literature/v5/etc/pycache-*` (10개 폴더)
-- ~~`research_v2/` (390 MiB)~~ — 2026-08-04 에 처리했다. 아래를 본다
+- ~~`research_v2/` (390 MiB)~~ — **지우면 안 된다.** 2026-08-04 에 지웠다가 되돌렸다. 아래를 본다
 
 ### 2026-08-04 에 정리한 것
 
@@ -217,13 +217,20 @@ worktree의 안내문 생성기로 사용하지 않는다. 프로토콜을 바�
 셋 다 `241447b` 기준이었고 그 커밋은 `codex/v5.1-safety-expansion` 과 원격에 모두 있다.
 작업 트리도 깨끗해서 잃은 것이 없다.
 
-**같은 날 `research_v2/` 246 파일도 뺐다**(커밋 `54c4eeb`). 원장 `v50_run_report.json` ·
-`v50_FINAL.md` · `amendments.csv` · `DECISIONS_v50.md` 에 언급이 0건이고, 남아 있던 참조는
-`docs/SITE_RELEASE_20260712.md` 와 `docs/superpowers/plans/2026-07-10-*.md` 뿐이었다.
-추적 파일이라 git 이력에서 복구할 수 있다. 추적되지 않던 옛 논문 초안
-`research_v2/thesis/etc/권혁찬_졸업논문_사이트반영전_20260712.docx` 한 개는 복구가 불가능하므로
-지우지 않고 `C:\dev\_archive\260804_구세대자료\` 로 옮겼다.
-추적 파일 수는 2,601 → **2,355** 개가 됐다.
+### ★ `research_v2/` 는 지우면 안 된다 (2026-08-04 에 지웠다가 되돌림)
+
+같은 날 `research_v2/` 246 파일을 "구세대" 로 보고 뺐다가(`54c4eeb`) 곧바로 되돌렸다.
+**원장에 언급이 없다는 것만 보고 판단한 것이 틀렸다.** 이 경로는 문서가 아니라 **빌드가 읽는
+실행 경로**다.
+
+- `npm test` 가 부르는 `npm run prepare:knowledge` →
+  `scripts/build-literature-candidates.ts` 가 `research_v2/project_identity.json` 을 읽는다.
+  없으면 ENOENT 로 죽어서 테스트가 한 건도 못 돈다.
+- `scripts/research/` 의 파이썬 스크립트 20여 개가 `research_v2` 를 기본 루트로 쓴다.
+- `tests/research_v2/` 와 `tests/research/` 의 테스트가 이 경로를 읽는다.
+
+**삭제 후보를 판단할 때 원장·프로토콜만 보지 말고 `grep -rn "<경로>" scripts src app tools
+tests __tests__` 를 끝까지(잘라 보지 말고) 확인한다.**
 
 ## 6. G드라이브는 규칙이 다르다 — 옮겼다
 

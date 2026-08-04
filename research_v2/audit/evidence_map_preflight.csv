@@ -1,0 +1,6 @@
+clinical_node_id,verified_study_count,verified_report_count,outcome_count,design_counts_json,grade_counts_json,effect_rows_with_measure,meta_analysis_candidate,synthesis_status
+K1,0,0,0,{},{},0,false,no_verified_extraction
+K2,0,0,0,{},{},0,false,no_verified_extraction
+K3,0,0,0,{},{},0,false,no_verified_extraction
+K4,0,0,0,{},{},0,false,no_verified_extraction
+K5,0,0,0,{},{},0,false,no_verified_extraction

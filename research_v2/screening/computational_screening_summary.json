@@ -1,0 +1,19 @@
+{
+  "identified_occurrences": 16194,
+  "duplicates_removed": 304,
+  "unique_records": 15890,
+  "proposal_counts": {
+    "explicit_exclude_candidate": 280,
+    "priority_include_candidate": 6106,
+    "retain_uncertain": 9504
+  },
+  "node_membership_counts": {
+    "K1": 5697,
+    "K2": 402,
+    "K3": 3105,
+    "K4": 3742,
+    "K5": 3248
+  },
+  "human_final_decisions": 0,
+  "claim_boundary": "pubmed_single_reviewer_feasibility"
+}
