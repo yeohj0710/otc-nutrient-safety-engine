@@ -150,7 +150,12 @@ function createClient(apiKey: string) {
 }
 
 function isTimeoutError(error: unknown) {
-  return error instanceof Error && (/timeout/i.test(error.message) || /abort/i.test(error.message));
+  // OpenAI SDK 는 "Request timed out." 을 낸다 — /timeout/ 만 보면 이걸 놓쳐서
+  // 타임아웃이 openai_error 로 잘못 분류된다.
+  return (
+    error instanceof Error &&
+    (/time(?:d)?\s*out/i.test(error.message) || /abort/i.test(error.message))
+  );
 }
 
 function buildInstructions() {

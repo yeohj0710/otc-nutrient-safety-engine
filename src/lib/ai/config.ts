@@ -1,6 +1,9 @@
 export const AI_EXPLAIN_MODEL = "gpt-5.6-luna";
-/** 추론 모델이라 웜 2~4초, 콜드는 더 걸린다. 8초는 콜드에서 자주 끊겼다. */
-export const AI_EXPLAIN_TIMEOUT_MS = 14_000;
+/**
+ * 이 화면의 출력 스키마는 요약·경보·묶음·다음단계·규칙액션까지 8개 필드라
+ * 생성이 길다. 14초로 뒀더니 프로덕션에서 전건 "Request timed out." 이었다.
+ */
+export const AI_EXPLAIN_TIMEOUT_MS = 45_000;
 export const AI_EXPLAIN_MAX_RULES_PER_BUCKET = 4;
 export const AI_EXPLAIN_MAX_EVIDENCE_PER_RULE = 1;
 export const AI_EXPLAIN_MAX_TEXT_LENGTH = 180;
