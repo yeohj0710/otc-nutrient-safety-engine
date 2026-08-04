@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="checker" className="px-3 pb-8 sm:px-6 sm:pb-12">
+      <section id="checker" className="px-4 pb-8 pt-1 sm:px-6 sm:pb-12 sm:pt-2">
         <div className="mx-auto max-w-[1240px]">
           <OtcProductSafetyClient runtime={runtimeData as OtcRuntime} />
         </div>

@@ -865,7 +865,7 @@
 
 .fieldLabel > span:first-child,
 .conditionFieldset legend {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
   color: #475467;
   font-size: 13px;
   font-weight: 800;
@@ -1066,7 +1066,7 @@
 
 .alertField {
   border-top: 1px solid #edf0f3;
-  padding-top: 15px;
+  padding-top: 16px;
 }
 
 .alertField > small {
@@ -1512,7 +1512,7 @@
 }
 
 .findingRationale {
-  margin-top: 9px;
+  margin-top: 8px;
   border: 1px solid #eadfce;
   border-radius: 9px;
   background: #fff;
@@ -1566,7 +1566,7 @@
 .officialEvidencePreview,
 .literaturePreview,
 .literatureEmpty {
-  margin-top: 9px;
+  margin-top: 8px;
   border: 1px solid #bad8cf;
   border-radius: 9px;
   background: #f5fbf9;
@@ -1619,7 +1619,7 @@
 .productEvidencePreview {
   display: grid;
   gap: 4px;
-  margin-top: 9px;
+  margin-top: 8px;
   border-top: 1px solid #d2e6e0;
   padding-top: 8px;
 }
@@ -1696,7 +1696,7 @@
 }
 
 .otherIngredientLiterature {
-  margin-top: 9px;
+  margin-top: 8px;
   border-top: 1px solid #dce3e9;
   padding-top: 8px;
 }
@@ -1755,7 +1755,7 @@
 }
 
 .nextAction {
-  margin-top: 9px;
+  margin-top: 8px;
   border-radius: 8px;
   background: #f5f1ea;
   padding: 8px 9px;
@@ -1785,7 +1785,7 @@
 
 .findings details,
 .totalDetails {
-  margin-top: 9px;
+  margin-top: 8px;
   border-top: 1px solid #eee6da;
   padding-top: 8px;
 }
@@ -1950,7 +1950,7 @@
 }
 
 .coverageDetails > div {
-  margin-top: 9px;
+  margin-top: 8px;
   border-top: 1px solid #e3e8ed;
   padding-top: 9px;
 }
