@@ -12,8 +12,12 @@ const aiRuleCardActionSchema = z.object({
 export const aiExplanationSchema = z.object({
   summaryTitle: z.string().min(1),
   summaryParagraph: z.string().min(1),
+  // ruleId 를 필수로 둬서 각 경보가 엔진 판정 하나에 묶이게 한다. 이 결속이
+  // 없으면 모델이 등급만 자유롭게 골라 부풀릴 수 있다(실제로 참고 → 일반 주의로
+  // 올렸다). 심판은 이 ruleId 의 엔진 등급과 severity 가 같은지만 보면 된다.
   topAlerts: z.array(
     z.object({
+      ruleId: z.string().min(1),
       title: z.string().min(1),
       severity: aiSeverityLabelSchema,
       reason: z.string().min(1),

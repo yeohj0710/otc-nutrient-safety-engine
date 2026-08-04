@@ -120,8 +120,12 @@ describe("explainSafetyResults", () => {
               summaryParagraph: "비타민 D와 vitamin K 관련 경고가 우선적으로 보입니다.",
               topAlerts: [
                 {
+                  ruleId: "RULE-VITK-WARFARIN-CONSISTENCY",
                   title: "비타민 K와 warfarin 관련 경고",
-                  severity: "금지/중단",
+                  // 엔진이 이 규칙에 준 등급은 "강한 주의"다. 예전 픽스처는 이를
+                  // "금지/중단"으로 올려 적고도 통과했다 — 심판이 그 부풀리기를
+                  // 잡으면서 드러났다.
+                  severity: "강한 주의",
                   reason: "deterministic 결과에 warfarin 상호작용 규칙이 포함되어 있습니다. 출처: Vitamin K - Health Professional Fact Sheet",
                 },
               ],

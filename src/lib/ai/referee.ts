@@ -67,10 +67,9 @@ function collectNumbers(text: string) {
   return found;
 }
 
-/** payload 안에 실제로 등장한 ruleId 와 심각도 라벨. */
+/** payload 가 준 규칙별 등급. 경보는 반드시 이 표 안의 한 줄과 같아야 한다. */
 function allowedFromPayload(payload: unknown) {
-  const ruleIds = new Set<string>();
-  const severities = new Set<string>();
+  const severityByRule = new Map<string, string>();
   const walk = (value: unknown) => {
     if (Array.isArray(value)) {
       for (const item of value) walk(item);
@@ -78,12 +77,13 @@ function allowedFromPayload(payload: unknown) {
     }
     if (!value || typeof value !== "object") return;
     const row = value as Record<string, unknown>;
-    if (typeof row.ruleId === "string") ruleIds.add(row.ruleId);
-    if (typeof row.severity === "string") severities.add(row.severity);
+    if (typeof row.ruleId === "string" && typeof row.severity === "string") {
+      severityByRule.set(row.ruleId, row.severity);
+    }
     for (const item of Object.values(row)) walk(item);
   };
   walk(payload);
-  return { ruleIds, severities };
+  return severityByRule;
 }
 
 export function refereeExplanation({
@@ -91,23 +91,28 @@ export function refereeExplanation({
   payload,
 }: RefereeInput): RefereeVerdict {
   const rejections: string[] = [];
-  const { ruleIds, severities } = allowedFromPayload(payload);
+  const severityByRule = allowedFromPayload(payload);
   const allowedNumbers = collectNumbers(collectStrings(payload).join("\n"));
 
-  // 1) 엔진이 낸 적 없는 심각도를 붙이면 안 된다.
+  // 1) 경보는 엔진 판정 하나에 묶이고 그 등급을 그대로 써야 한다.
   //
-  // 다만 최하위 등급인 "참고"는 언제나 허용한다. 이 검사의 목적은 등급 부풀리기
-  // 차단인데 최하단은 부풀릴 수가 없고, 모델이 개별 항목을 묶어 설명할 때
-  // 자연스럽게 쓰는 라벨이라 막으면 심판이 상시 발동한다.
+  // 예전에는 "엔진이 낸 적 없는 라벨"만 막았는데, 그러면 엔진이 참고·일반 주의를
+  // 둘 다 낸 화면에서 모델이 참고짜리 항목에 일반 주의를 붙여도 통과했다. 등급을
+  // 규칙에 결속하면 부풀리기가 구조적으로 불가능해진다.
   for (const alert of explanation.topAlerts) {
-    if (alert.severity !== "참고" && !severities.has(alert.severity)) {
-      rejections.push(`unseen_severity:${alert.severity}`);
+    const engineSeverity = severityByRule.get(alert.ruleId);
+    if (!engineSeverity) {
+      rejections.push(`unknown_rule:${alert.ruleId}`);
+    } else if (engineSeverity !== alert.severity) {
+      rejections.push(
+        `severity_mismatch:${alert.ruleId}:${engineSeverity}->${alert.severity}`,
+      );
     }
   }
 
   // 2) 엔진이 준 적 없는 규칙을 가리키면 안 된다.
   for (const action of explanation.ruleCardActions) {
-    if (!ruleIds.has(action.ruleId)) {
+    if (!severityByRule.has(action.ruleId)) {
       rejections.push(`unknown_rule:${action.ruleId}`);
     }
   }

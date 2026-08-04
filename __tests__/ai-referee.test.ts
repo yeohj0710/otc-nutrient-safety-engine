@@ -31,6 +31,7 @@ const base: AiExplanation = {
   summaryParagraph: "두 제품 모두 아세트아미노펜을 포함해 성분이 중복됩니다.",
   topAlerts: [
     {
+      ruleId: "RULE-DUP-APAP",
       title: "성분 중복",
       severity: "일반 주의",
       reason: "동일 성분이 두 제품에 들어 있습니다.",
@@ -52,28 +53,38 @@ describe("ai explanation referee", () => {
     expect(refereeExplanation({ explanation: base, payload }).ok).toBe(true);
   });
 
-  it("rejects a severity the engine never produced", () => {
-    // 엔진이 "일반 주의"만 냈는데 모델이 "금지/중단"으로 올리면 판정이 바뀐다.
+  it.each(["금지/중단", "강한 주의", "참고"])(
+    "rejects any severity that differs from the bound rule: %s",
+    (severity) => {
+      // 엔진이 이 규칙에 "일반 주의"를 줬다. 올리든 내리든 다른 값은 판정을 바꾼다.
+      const verdict = refereeExplanation({
+        explanation: {
+          ...base,
+          topAlerts: [{ ...base.topAlerts[0], severity: severity as never }],
+        },
+        payload,
+      });
+      expect(verdict.ok).toBe(false);
+      if (!verdict.ok) {
+        expect(
+          verdict.rejections.some((r) => r.startsWith("severity_mismatch")),
+        ).toBe(true);
+      }
+    },
+  );
+
+  it("rejects an alert bound to a rule the engine never sent", () => {
     const verdict = refereeExplanation({
       explanation: {
         ...base,
-        topAlerts: [{ ...base.topAlerts[0], severity: "금지/중단" }],
+        topAlerts: [{ ...base.topAlerts[0], ruleId: "RULE-GHOST" }],
       },
       payload,
     });
     expect(verdict.ok).toBe(false);
     if (!verdict.ok) {
-      expect(verdict.rejections.some((r) => r.startsWith("unseen_severity"))).toBe(true);
+      expect(verdict.rejections.some((r) => r.startsWith("unknown_rule"))).toBe(true);
     }
-  });
-
-  it("allows the lowest label 참고 even when the engine did not emit it", () => {
-    // 등급 부풀리기 차단이 목적이므로 최하단은 막지 않는다.
-    const verdict = refereeExplanation({
-      explanation: { ...base, topAlerts: [{ ...base.topAlerts[0], severity: "참고" }] },
-      payload,
-    });
-    expect(verdict.ok).toBe(true);
   });
 
   it("rejects a rule id the engine never sent", () => {
