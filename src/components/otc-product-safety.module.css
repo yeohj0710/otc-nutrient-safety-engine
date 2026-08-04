@@ -2938,3 +2938,101 @@
   font-weight: 700;
   color: #1d4ed8;
 }
+
+/* 문장으로 약 찾기. 성분을 고르는 것은 모델, 제품을 찾는 것은 결정론 검색이다. */
+.phraseBox {
+  margin-bottom: 12px;
+  padding: 16px;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.phraseLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #17223b;
+}
+
+.phraseLabel > span {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #1d4ed8;
+  font-size: 11px;
+  color: #fff;
+}
+
+.phraseHelp {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #52525b;
+}
+
+.phraseRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.phraseInput {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+}
+
+.phraseButton {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #1d4ed8;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+.phraseButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.phraseResult {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: #52525b;
+}
+
+.phraseTerm {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+.phraseNote {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #52525b;
+}

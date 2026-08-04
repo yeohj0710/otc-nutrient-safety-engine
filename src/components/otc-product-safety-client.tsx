@@ -715,6 +715,58 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       selected,
     ],
   );
+  // 문장으로 약 찾기. 제품명을 모르는 사람이 상황을 그대로 적으면 지금 검색은
+  // 아무것도 못 찾는다. 모델은 성분명만 고르고, 그 성분으로 제품을 찾는 것은
+  // 지금까지와 같은 결정론 검색이다. 고른 성분은 화면에 그대로 보여 준다.
+  const [phrase, setPhrase] = useState("");
+  const [phrasePending, setPhrasePending] = useState(false);
+  const [phraseTerms, setPhraseTerms] = useState<string[]>([]);
+  const [phraseNote, setPhraseNote] = useState("");
+
+  const ingredientVocabulary = useMemo(() => {
+    const names = new Set<string>();
+    for (const product of runtime.products) {
+      for (const ingredient of product.ingredients) names.add(ingredient.nameKo);
+    }
+    return [...names];
+  }, [runtime.products]);
+
+  async function resolvePhrase() {
+    const text = phrase.trim();
+    if (!text || phrasePending) return;
+    setPhrasePending(true);
+    setPhraseTerms([]);
+    setPhraseNote("");
+    try {
+      const res = await fetch("/api/otc-search", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, ingredients: ingredientVocabulary }),
+      });
+      const body = (await res.json()) as {
+        ok?: boolean;
+        ingredients?: string[];
+        note?: string;
+        reason?: string;
+      };
+      if (body?.ok && body.ingredients?.length) {
+        setPhraseTerms(body.ingredients);
+        setPhraseNote(body.note ?? "");
+        setQuery(body.ingredients[0]);
+      } else {
+        setPhraseNote(
+          body?.reason === "no_match"
+            ? "이 말과 이어지는 성분을 못 찾았어요. 제품명으로 찾아보세요."
+            : "지금은 문장으로 찾기를 쓸 수 없어요. 아래에서 제품명으로 찾아보세요.",
+        );
+      }
+    } catch {
+      setPhraseNote("문장을 정리하지 못했어요. 아래에서 제품명으로 찾아보세요.");
+    } finally {
+      setPhrasePending(false);
+    }
+  }
+
   // 한 번에 한 단계만 펼친다. 셋을 동시에 펼쳐 두면 어디부터 봐야 하는지가
   // 화면에 안 드러난다. 끝난 단계는 한 줄 요약으로 접고 눌러서 다시 연다.
   const [openStep, setOpenStep] = useState<1 | 2>(1);
@@ -1234,6 +1286,52 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 </details>
               </details>
             )}
+            <div className={styles.phraseBox}>
+              <p className={styles.phraseLabel}>
+                <span>AI</span> 문장으로 찾기
+              </p>
+              <p className={styles.phraseHelp}>
+                제품명을 몰라도 됩니다. 어떤 약인지 그대로 적으면 관련 성분을 골라
+                검색어로 넣어 드려요.
+              </p>
+              <div className={styles.phraseRow}>
+                <input
+                  value={phrase}
+                  onChange={(event) => setPhrase(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") void resolvePhrase();
+                  }}
+                  maxLength={200}
+                  placeholder="예: 머리 아플 때 먹는 약"
+                  aria-label="찾는 약 설명"
+                  className={styles.phraseInput}
+                />
+                <button
+                  type="button"
+                  onClick={() => void resolvePhrase()}
+                  disabled={phrasePending || !phrase.trim()}
+                  className={styles.phraseButton}
+                >
+                  {phrasePending ? "찾는 중" : "성분 찾기"}
+                </button>
+              </div>
+              {phraseTerms.length > 0 && (
+                <p className={styles.phraseResult}>
+                  <span>고른 성분</span>
+                  {phraseTerms.map((term) => (
+                    <button
+                      key={term}
+                      type="button"
+                      className={styles.phraseTerm}
+                      onClick={() => setQuery(term)}
+                    >
+                      {term}
+                    </button>
+                  ))}
+                </p>
+              )}
+              {phraseNote && <p className={styles.phraseNote}>{phraseNote}</p>}
+            </div>
             <label className={styles.searchBox}>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m21 21-4.35-4.35m1.35-5.15A6.5 6.5 0 1 1 5 11.5a6.5 6.5 0 0 1 13 0Z" />
