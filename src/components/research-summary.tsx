@@ -155,9 +155,9 @@ export function ResearchSummary() {
             <thead>
               <tr>
                 <th>단계</th>
-                <th style={{ textAlign: "right" }}>retain</th>
-                <th style={{ textAlign: "right" }}>deprioritize</th>
-                <th style={{ textAlign: "right" }}>uncertain</th>
+                <th style={{ textAlign: "right" }}>유지</th>
+                <th style={{ textAlign: "right" }}>후순위</th>
+                <th style={{ textAlign: "right" }}>판정 보류</th>
               </tr>
             </thead>
             <tbody>
@@ -181,7 +181,7 @@ export function ResearchSummary() {
           </table>
           <div className={styles.note}>
             <strong>
-              최종 retain {n(sc.final.retain)}건 가운데 재판정을 거친 것은{" "}
+              최종 유지 {n(sc.final.retain)}건 가운데 재판정을 거친 것은{" "}
               {n(sc.finalRetainFromAdjudication)}건뿐입니다.
             </strong>{" "}
             나머지 {n(sc.finalRetainFromClassifierOnly)}건은 재판정 표본에 들지 않아 분류기
@@ -232,11 +232,11 @@ export function ResearchSummary() {
           </dl>
           <div className={styles.note}>
             <strong>
-              파이프라인이 더 많이 남깁니다 — 전수 retain {sg.pipelineRetainShare}% 대 채점자
+              파이프라인이 더 많이 남깁니다 — 전수 유지 {sg.pipelineRetainShare}% 대 채점자
               추정 {sg.scorerRetainShare}%.
             </strong>{" "}
-            불일치도 retain→deprioritize{" "}
-            {sg.disagreementByDirection["retain->deprioritize"]}건 대 deprioritize→retain{" "}
+            불일치도 유지→후순위{" "}
+            {sg.disagreementByDirection["retain->deprioritize"]}건 대 후순위→유지{" "}
             {sg.disagreementByDirection["deprioritize->retain"]}건으로 한쪽이 지배적입니다.
             이것을 오차라고 부르지 않습니다. 판정 경향의 계통적 차이입니다. 채점 라벨은
             봉인된 참조 라벨을 열기 전에 해시로 잠갔습니다.
@@ -280,7 +280,7 @@ export function ResearchSummary() {
               .join(" · ")}{" "}
             입니다. 사유는 두 가지로, 후보 논문이 v5.0 코퍼스에 인출되지 않은 경우{" "}
             {rl.rejectionCounts.not_in_v5_corpus}건과, 코퍼스에는 있으나 그 규칙이 허용한
-            질문에서 retain 판정을 받지 못한 경우{" "}
+            질문에서 유지 판정을 받지 못한 경우{" "}
             {rl.rejectionCounts.no_retain_decision_for_rule_question}건입니다. 검색 기간
             때문에 빠진 후보는 없습니다. 기간 제한은 질문별로 2010-01-01 또는 2000-01-01
             부터이고 코퍼스 출판연도는 2000~2026년이며, 미연결 후보는 모두 그 안에 있습니다.
@@ -322,7 +322,7 @@ export function ResearchSummary() {
           수치 출처 · research_v3/logs/v50_run_report.json ·
           v50_scoring_report.json · literature_link_manifest.json
           <br />
-          independent_blinding = false · release_ready = false · 사람 판정 0건
+          사람 맹검 없음 · 배포 준비 상태 거짓 · 사람 판정 0건
         </p>
       </div>
     </main>

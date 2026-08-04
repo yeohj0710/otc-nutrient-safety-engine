@@ -612,7 +612,7 @@ function ScreeningPassedLiterature({
     <details className={styles.otherIngredientLiterature}>
       <summary>선별 통과 문헌 {rule.listed.toLocaleString("ko-KR")}편</summary>
       <p>
-        이 규칙이 허용한 질문에서 v5.0 선별이 retain 으로 판정하고, 규칙 유형의 위해 표현이
+        이 규칙이 허용한 질문에서 v5.0 선별이 유지로 판정하고, 규칙 유형의 위해 표현이
         제목·초록에 나타난 문헌입니다. 위의 검증 근거와 달리{" "}
         <strong>문장 인용 대조를 거치지 않았고</strong> 판정 결과를 바꾸지 않습니다.
         {" "}인용문은 초록에서 규칙 유형과 가장 가까운 문장을 결정적으로 고른 것이고,
