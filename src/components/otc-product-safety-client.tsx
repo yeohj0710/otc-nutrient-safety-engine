@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 
 import literatureData from "@/src/generated/otc-supporting-literature.json";
 import {
@@ -8,6 +8,7 @@ import {
   rulePoolPapers,
 } from "@/src/lib/otc/rule-literature-pool";
 import { evaluateOtcSafety } from "@/src/lib/otc/engine";
+import type { AiExplainResponse } from "@/src/lib/ai/schema";
 import {
   buildFindingContext,
   buildProductSupportSummary,
@@ -714,6 +715,52 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       selected,
     ],
   );
+  // 판정이 끝난 뒤에만 보조 설명을 부른다. 모델은 엔진이 이미 확정한 findings 만
+  // 읽으므로 어떤 규칙이 걸렸는지는 이 호출로 바뀌지 않는다. 심판에 걸리거나
+  // 키가 없으면 서버가 ok:false 를 주고 화면은 엔진 결과만 그대로 보여준다.
+  const [aiExplain, setAiExplain] = useState<AiExplainResponse | null>(null);
+  const [aiExplainPending, setAiExplainPending] = useState(false);
+
+  useEffect(() => {
+    if (!evaluation || evaluation.findings.length === 0) {
+      void Promise.resolve().then(() => setAiExplain(null));
+      return;
+    }
+    const controller = new AbortController();
+    // 효과 본문에서 동기로 setState 하면 렌더가 연쇄된다. 요청 시작과 함께
+    // 마이크로태스크로 미룬다(동작은 같다).
+    void Promise.resolve().then(() => {
+      if (controller.signal.aborted) return;
+      setAiExplainPending(true);
+      setAiExplain(null);
+    });
+    fetch("/api/otc-explain", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      signal: controller.signal,
+      body: JSON.stringify({
+        evaluation,
+        productNames: selected.map((item) => item.product.productName),
+        profileSummary: [
+          profile.ageYears ? `${profile.ageYears}세` : "",
+          profile.pregnant ? "임신 중" : "",
+          profile.medications?.length ? `병용약 ${profile.medications.join(", ")}` : "",
+        ]
+          .filter(Boolean)
+          .join(" · ") || "프로필 정보 없음",
+      }),
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((body: AiExplainResponse | null) => {
+        if (!controller.signal.aborted) setAiExplain(body);
+      })
+      .catch(() => undefined)
+      .finally(() => {
+        if (!controller.signal.aborted) setAiExplainPending(false);
+      });
+    return () => controller.abort();
+  }, [evaluation, profile, selected]);
+
   const ingredientNames = useMemo(
     () =>
       new Map(
@@ -1665,6 +1712,38 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   점검 결과: 주의 {orderedFindings.length}개, 확인하지 못한 범위{" "}
                   {groupedCoverageGaps.length}종류
                 </p>
+
+                {(aiExplainPending || aiExplain?.ok) && (
+                  <section className={styles.aiExplainPanel} aria-labelledby="ai-explain-title">
+                    <p className={styles.aiExplainBadge}>
+                      <span>AI 요약</span>
+                      {aiExplainPending && <span> · 쓰는 중…</span>}
+                    </p>
+                    {aiExplain?.ok && (
+                      <>
+                        <h3 id="ai-explain-title" className={styles.aiExplainTitle}>
+                          {aiExplain.explanation.summaryTitle}
+                        </h3>
+                        <p className={styles.aiExplainBody}>
+                          {aiExplain.explanation.summaryParagraph}
+                        </p>
+                        {aiExplain.explanation.topAlerts.length > 0 && (
+                          <ul className={styles.aiExplainList}>
+                            {aiExplain.explanation.topAlerts.map((alert) => (
+                              <li key={`${alert.title}-${alert.severity}`}>
+                                <strong>[{alert.severity}] {alert.title}</strong> {alert.reason}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                        <p className={styles.aiExplainNote}>
+                          판정은 아래 엔진 결과가 정본입니다. 이 요약은 그 결과를 읽기 쉽게 옮긴
+                          것이고, 복용 시작·중단·용량은 판단하지 않습니다.
+                        </p>
+                      </>
+                    )}
+                  </section>
+                )}
 
                 {pendingDoseDrafts.length > 0 && (
                   <div className={styles.dosePendingNotice}>

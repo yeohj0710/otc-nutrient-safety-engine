@@ -2817,3 +2817,45 @@
   color: inherit;
   opacity: 0.92;
 }
+
+/* AI 보조 요약. 판정 정본은 아래 엔진 결과이고 이 상자는 그 위 요약이다. */
+.aiExplainPanel {
+  margin: 0 0 16px;
+  padding: 16px;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  border-radius: 12px;
+  background: rgba(37, 99, 235, 0.05);
+}
+
+.aiExplainBadge {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.aiExplainTitle {
+  margin: 8px 0 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.aiExplainBody {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.aiExplainList {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.aiExplainNote {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #52525b;
+}
