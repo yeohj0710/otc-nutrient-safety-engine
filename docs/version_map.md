@@ -27,6 +27,7 @@
 | 경로 | 상태 | 크기 |
 |---|---|---|
 | `research_v2/` | 영양성분 시절 **구세대**. 탐색 자료로만 | 390 MiB, 246 파일 |
+| `execution_package/` | 2026-07-10 **구세대**. 영양성분 방향 실행 패키지이고 v5.0 체인에 들어가지 않는다. README 머리말이 여형준 패키지 문구를 그대로 두고 있으나 `project_identity.json` 은 권혁찬으로 맞고 `disallowed_primary_repo_identity: "여형준"` 가드가 있다. 수치를 여기서 인용하지 않는다 | 84 파일 |
 | `research_v3/` | **v5.0 제출 정본**. 로컬 v5.1에서 읽기만 | — |
 | `research_v51/` | **로컬 v5.1 안전 확장**. 제출 정본과 분리 | — |
 
@@ -201,6 +202,20 @@ worktree의 안내문 생성기로 사용하지 않는다. 프로토콜을 바�
 - `research_v3/otc/literature/screening_discarded_local3b/` (6 MiB)
 - `research_v3/otc/literature/v5/etc/pycache-*` (10개 폴더)
 - `research_v2/` (390 MiB) — 구세대 계보 근거라 논문에서 인용하지 않을 것이 확실할 때만
+
+### 2026-08-04 에 정리한 것
+
+`etc/` 가 5,532 MiB · 53,896 파일이었는데 39 MiB · 112 파일로 줄였다. 지운 셋은 전부 v5.1
+검증 부산물이고 추적 파일이 0개였으며 다시 만들 수 있다.
+
+| 지운 것 | 크기 | 방법 |
+|---|---|---|
+| `etc/v51-eol-false-clone/` | 2,438 MiB | 줄바꿈 검증용 전체 클론. commit `241447b` 로 본체와 같아 삭제 |
+| `etc/v51-clean-worktree/` | 2,409 MiB | **git worktree 로 등록돼 있어 `git worktree remove` 를 썼다.** 손으로 지우면 등록이 깨진다 |
+| `etc/v51-py312-lock-venv/` | 646 MiB | 잠금 환경 검증용 가상환경 |
+
+셋 다 `241447b` 기준이었고 그 커밋은 `codex/v5.1-safety-expansion` 과 원격에 모두 있다.
+작업 트리도 깨끗해서 잃은 것이 없다. 추적 파일 수는 2,601 개로 그대로다.
 
 ## 6. G드라이브는 규칙이 다르다 — 옮겼다
 
