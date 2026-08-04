@@ -15,6 +15,7 @@ import {
   AI_EXPLAIN_TIMEOUT_MS,
   getOpenAIApiKey,
 } from "@/src/lib/ai/config";
+import { refereeExplanation } from "@/src/lib/ai/referee";
 import {
   aiExplainRequestSchema,
   aiExplainResponseSchema,
@@ -235,6 +236,27 @@ export async function explainSafetyResults(
         ok: false,
         reason: "invalid_response",
         notice: "보조 설명 형식이 올바르지 않아 기본 결과만 표시합니다.",
+      });
+    }
+
+    // 모델이 엔진 판정을 부풀리거나 없는 규칙·숫자를 지어냈는지 결정론으로 본다.
+    // 걸리면 보조 설명 전체를 버린다 — 부분만 지우면 남은 문장이 지워진 문장을
+    // 가리켜 더 위험하다.
+    const verdict = refereeExplanation({
+      explanation: explanation.data,
+      payload: compactPayload,
+    });
+
+    if (!verdict.ok) {
+      console.warn("[ai-explain] refereed out", {
+        requestId,
+        rejections: verdict.rejections.slice(0, 6),
+      });
+
+      return aiExplainResponseSchema.parse({
+        ok: false,
+        reason: "refereed_out",
+        notice: "보조 설명이 검사 기준을 벗어나 기본 결과만 표시합니다.",
       });
     }
 

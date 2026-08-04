@@ -62,7 +62,14 @@ export const aiExplainResponseSchema = z.discriminatedUnion("ok", [
   }),
   z.object({
     ok: z.literal(false),
-    reason: z.enum(["missing_api_key", "invalid_response", "timeout", "openai_error"]),
+    reason: z.enum([
+      "missing_api_key",
+      "invalid_response",
+      "timeout",
+      "openai_error",
+      // 심판이 걸러 낸 경우. 모델은 응답했지만 화면에 내보내지 않았다는 뜻이다.
+      "refereed_out",
+    ]),
     notice: z.string().min(1),
   }),
 ]);
