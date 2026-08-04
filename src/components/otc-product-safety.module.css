@@ -2859,3 +2859,63 @@
   line-height: 1.5;
   color: #52525b;
 }
+
+/* ── 단계 플로우 ──────────────────────────────────────────────────────────
+   한 번에 한 단계만 펼친다. 접힌 단계는 헤더와 한 줄 요약만 남긴다.
+   패널 내부 구조를 몰라도 되도록 헤더·요약을 뺀 나머지를 통째로 감춘다. */
+.panel[data-collapsed="true"] > *:not(.panelHeader):not(.stepSummary) {
+  display: none;
+}
+
+.stepToggle {
+  flex-shrink: 0;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.stepToggle:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+  color: #1d4ed8;
+}
+
+.stepSummary {
+  margin: 0;
+  padding: var(--space-4);
+  font-size: 13px;
+  line-height: 1.6;
+  color: #52525b;
+}
+
+.catalogScopeSummary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.catalogScopeSummary::-webkit-details-marker {
+  display: none;
+}
+
+.catalogScopeSummary::after {
+  content: " ▾";
+  color: #94a3b8;
+}
+
+.catalogScope[open] > .catalogScopeSummary::after {
+  content: " ▴";
+}
+
+/* 헤더는 index · 제목 · 배지 3열 그리드다. 토글이 붙으면 4열로 늘려야
+   버튼이 다음 줄로 떨어지지 않는다. 토글이 없는 헤더는 그대로 둔다. */
+.panelHeader:has(.stepToggle) {
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+}

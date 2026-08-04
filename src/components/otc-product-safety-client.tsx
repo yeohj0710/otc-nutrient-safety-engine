@@ -715,6 +715,15 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       selected,
     ],
   );
+  // 한 번에 한 단계만 펼친다. 셋을 동시에 펼쳐 두면 어디부터 봐야 하는지가
+  // 화면에 안 드러난다. 끝난 단계는 한 줄 요약으로 접고 눌러서 다시 연다.
+  const [openStep, setOpenStep] = useState<1 | 2>(1);
+  const hasSelection = selected.length > 0;
+  useEffect(() => {
+    // 약을 처음 담으면 다음 단계로 넘긴다. 되돌리는 것은 사용자가 직접 한다.
+    if (hasSelection) void Promise.resolve().then(() => setOpenStep(2));
+  }, [hasSelection]);
+
   // 판정이 끝난 뒤에만 보조 설명을 부른다. 모델은 엔진이 이미 확정한 findings 만
   // 읽으므로 어떤 규칙이 걸렸는지는 이 호출로 바뀌지 않는다. 심판에 걸리거나
   // 키가 없으면 서버가 ok:false 를 주고 화면은 엔진 결과만 그대로 보여준다.
@@ -1113,7 +1122,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
       <div className={styles.workspaceGrid}>
         <div className={styles.inputColumn}>
-        <section className={styles.panel} aria-labelledby="medicine-heading">
+        <section
+          className={styles.panel}
+          data-collapsed={openStep !== 1 && hasSelection ? "true" : "false"}
+          aria-labelledby="medicine-heading"
+        >
           <header className={styles.panelHeader}>
             <span className={styles.panelIndex}>1</span>
             <div>
@@ -1121,11 +1134,31 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               <p>제품명만 찾으면 성분과 함량을 자동으로 불러와요.</p>
             </div>
             <span className={styles.countBadge}>{selected.length}개</span>
+            {hasSelection && (
+              <button
+                type="button"
+                className={styles.stepToggle}
+                aria-expanded={openStep === 1}
+                onClick={() => setOpenStep(openStep === 1 ? 2 : 1)}
+              >
+                {openStep === 1 ? "접기" : "바꾸기"}
+              </button>
+            )}
           </header>
+          {openStep !== 1 && hasSelection && (
+            <p className={styles.stepSummary}>
+              {selected.map((item) => item.product.productName).join(" · ")}
+            </p>
+          )}
 
           <div className={styles.searchArea}>
             {runtime.catalogCoverage && (
-              <div className={styles.catalogScope}>
+              // 카탈로그 규모·연결 현황은 연구 방법 설명이지 약을 담는 데 필요한
+              // 정보가 아니다. 본문에 펼쳐 두면 1단계가 안내문부터 시작한다.
+              <details className={styles.catalogScope}>
+                <summary className={styles.catalogScopeSummary}>
+                  점검 가능한 제품 {runtime.products.length}개 · 자료 범위 보기
+                </summary>
                 <p className={styles.catalogSummary}>
                   판매 SKU {runtime.catalogCoverage.sourceSkuCount}건 중 {runtime.catalogCoverage.healthKrConfirmedCount}건이 약학정보원 공식 품목 {runtime.catalogCoverage.healthKrConfirmedUniqueProductCount}개와 연결됐고, <strong>현재 {runtime.products.length}개 제품을 점검할 수 있어요.</strong>
                 </p>
@@ -1147,7 +1180,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     )}
                   </div>
                 </details>
-              </div>
+              </details>
             )}
             <label className={styles.searchBox}>
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1453,7 +1486,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           </div>
         </section>
 
-        <section className={styles.panel} aria-labelledby="profile-heading">
+        <section
+          className={styles.panel}
+          data-collapsed={openStep !== 2 ? "true" : "false"}
+          aria-labelledby="profile-heading"
+        >
           <header className={styles.panelHeader}>
             <span className={styles.panelIndex}>2</span>
             <div>
@@ -1461,7 +1498,22 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               <p>해당 항목만 골라주세요. 입력 내용은 저장하지 않아요.</p>
             </div>
             <span className={styles.countBadge}>{activeConditionCount}개</span>
+            <button
+              type="button"
+              className={styles.stepToggle}
+              aria-expanded={openStep === 2}
+              onClick={() => setOpenStep(openStep === 2 ? 1 : 2)}
+            >
+              {openStep === 2 ? "접기" : "입력하기"}
+            </button>
           </header>
+          {openStep !== 2 && (
+            <p className={styles.stepSummary}>
+              {activeConditionCount > 0
+                ? `조건 ${activeConditionCount}개를 반영했습니다.`
+                : "해당하는 조건이 있으면 눌러서 입력하세요."}
+            </p>
+          )}
 
           <div className={styles.profileBody}>
             <p className={styles.profileScopeNotice}>
