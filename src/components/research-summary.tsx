@@ -139,16 +139,16 @@ export function ResearchSummary() {
         </section>
 
         <section className={styles.section}>
-          <h2>3. 선별은 두 층입니다</h2>
+          <h2>3. 선별은 두 단계입니다</h2>
           <p>
             결정적 텍스트 분류기가 {n(lit.screeningUnits)}건 전량에 라벨을 부여하고
-            (커버리지 1.0), 의미 재판정 층이 그중 {n(sc.adjudicatedRows)}건을 제목·초록으로
+            (커버리지 1.0), 의미 재판정이 그중 {n(sc.adjudicatedRows)}건을 제목·초록으로
             다시 판정해 덮어썼습니다. 레코드마다 언어모델에 물어본 것이 아닙니다.
           </p>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>층</th>
+                <th>단계</th>
                 <th style={{ textAlign: "right" }}>retain</th>
                 <th style={{ textAlign: "right" }}>deprioritize</th>
                 <th style={{ textAlign: "right" }}>uncertain</th>
@@ -156,7 +156,7 @@ export function ResearchSummary() {
             </thead>
             <tbody>
               <tr>
-                <td>분류기 (전량)</td>
+                <td>전량 분류</td>
                 <td style={{ textAlign: "right" }}>{n(sc.classifier.retain)}</td>
                 <td style={{ textAlign: "right" }}>{n(sc.classifier.deprioritize)}</td>
                 <td style={{ textAlign: "right" }}>{n(sc.classifier.uncertain)}</td>
