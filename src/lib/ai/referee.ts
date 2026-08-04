@@ -44,10 +44,27 @@ function collectStrings(value: unknown, out: string[] = []): string[] {
   return out;
 }
 
+/**
+ * 검사 대상 숫자만 고른다.
+ *
+ * 모든 숫자를 보면 "1일 3회", "1단계" 같은 관용 표현의 1 까지 환각으로 잡혀
+ * 심판이 상시 발동한다(실제로 프로덕션 첫 호출이 unsupported_number:1 로
+ * 전건 거부됐다). 막아야 하는 것은 용량·상한 같은 크기이므로 두 자리 이상이거나
+ * 단위가 바로 붙은 숫자만 본다.
+ */
+const UNIT = "(?:mg|g|mcg|µg|ug|ml|mL|L|IU|%|정|캡슐|포|알|배|세)";
+
 function collectNumbers(text: string) {
-  return new Set(
-    (text.match(/\d+(?:[.,]\d+)*/g) ?? []).map((n) => n.replace(/,/g, "")),
-  );
+  const found = new Set<string>();
+  // 템플릿 리터럴 안에서는 \d 가 그냥 d 로 죽는다. 반드시 \\d 로 쓴다.
+  for (const match of text.matchAll(
+    new RegExp(`(\\d+(?:[.,]\\d+)*)\\s*${UNIT}?`, "g"),
+  )) {
+    const raw = match[1].replace(/,/g, "");
+    const hasUnit = match[0].length > match[1].length;
+    if (hasUnit || raw.replace(/[^0-9]/g, "").length >= 2) found.add(raw);
+  }
+  return found;
 }
 
 /** payload 안에 실제로 등장한 ruleId 와 심각도 라벨. */
