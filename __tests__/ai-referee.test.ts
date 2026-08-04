@@ -67,6 +67,15 @@ describe("ai explanation referee", () => {
     }
   });
 
+  it("allows the lowest label 참고 even when the engine did not emit it", () => {
+    // 등급 부풀리기 차단이 목적이므로 최하단은 막지 않는다.
+    const verdict = refereeExplanation({
+      explanation: { ...base, topAlerts: [{ ...base.topAlerts[0], severity: "참고" }] },
+      payload,
+    });
+    expect(verdict.ok).toBe(true);
+  });
+
   it("rejects a rule id the engine never sent", () => {
     const verdict = refereeExplanation({
       explanation: {

@@ -95,8 +95,12 @@ export function refereeExplanation({
   const allowedNumbers = collectNumbers(collectStrings(payload).join("\n"));
 
   // 1) 엔진이 낸 적 없는 심각도를 붙이면 안 된다.
+  //
+  // 다만 최하위 등급인 "참고"는 언제나 허용한다. 이 검사의 목적은 등급 부풀리기
+  // 차단인데 최하단은 부풀릴 수가 없고, 모델이 개별 항목을 묶어 설명할 때
+  // 자연스럽게 쓰는 라벨이라 막으면 심판이 상시 발동한다.
   for (const alert of explanation.topAlerts) {
-    if (!severities.has(alert.severity)) {
+    if (alert.severity !== "참고" && !severities.has(alert.severity)) {
       rejections.push(`unseen_severity:${alert.severity}`);
     }
   }
