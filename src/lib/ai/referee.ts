@@ -109,23 +109,33 @@ export function refereeExplanation({
   }
 
   // 3) 사람이 읽는 모든 문장에 대해 숫자·되묻기·과잉 단정을 본다.
-  const prose = [
-    explanation.summaryTitle,
-    explanation.summaryParagraph,
-    ...explanation.topAlerts.flatMap((item) => [item.title, item.reason]),
-    ...explanation.groupedFindings.flatMap((group) => [
-      group.sectionTitle,
-      ...group.items,
+  //
+  // missingInformation 만 되묻기를 허용한다. 이 칸은 엔진의 "조건 부족" 목록이라
+  // 물음 형태가 자연스럽고, 화면에 프로필 입력란이라는 답할 자리가 실제로 있다.
+  // 나머지 칸은 설명문이라 물음표가 오면 답을 받을 곳이 없다.
+  const prose: { line: string; mayAsk: boolean }[] = [
+    { line: explanation.summaryTitle, mayAsk: false },
+    { line: explanation.summaryParagraph, mayAsk: false },
+    ...explanation.topAlerts.flatMap((item) => [
+      { line: item.title, mayAsk: false },
+      { line: item.reason, mayAsk: false },
     ]),
-    ...explanation.missingInformation,
-    ...explanation.userFriendlyNextSteps,
-    ...explanation.ruleCardActions.map((item) => item.recommendation),
-    explanation.disclaimer,
+    ...explanation.groupedFindings.flatMap((group) => [
+      { line: group.sectionTitle, mayAsk: false },
+      ...group.items.map((item) => ({ line: item, mayAsk: false })),
+    ]),
+    ...explanation.missingInformation.map((line) => ({ line, mayAsk: true })),
+    ...explanation.userFriendlyNextSteps.map((line) => ({ line, mayAsk: false })),
+    ...explanation.ruleCardActions.map((item) => ({
+      line: item.recommendation,
+      mayAsk: false,
+    })),
+    { line: explanation.disclaimer, mayAsk: false },
   ];
 
-  for (const [index, line] of prose.entries()) {
+  for (const [index, { line, mayAsk }] of prose.entries()) {
     if (line.length > MAX_PARAGRAPH_CHARS) rejections.push(`too_long:${index}`);
-    if (QUESTION.test(line)) rejections.push(`question:${index}`);
+    if (!mayAsk && QUESTION.test(line)) rejections.push(`question:${index}`);
     for (const pattern of OVERREACH) {
       if (pattern.test(line)) {
         rejections.push(`overreach:${index}:${pattern.source}`);

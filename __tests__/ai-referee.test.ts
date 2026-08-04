@@ -122,11 +122,19 @@ describe("ai explanation referee", () => {
     expect(verdict.ok).toBe(false);
   });
 
-  it("rejects questions because the screen has nowhere to put an answer", () => {
+  it("rejects questions in narrative fields where no answer can be given", () => {
     const verdict = refereeExplanation({
       explanation: { ...base, summaryParagraph: "다른 약도 드시나요?" },
       payload,
     });
     expect(verdict.ok).toBe(false);
+  });
+
+  it("allows questions only in missingInformation, which the profile form answers", () => {
+    const verdict = refereeExplanation({
+      explanation: { ...base, missingInformation: ["하루 몇 정을 드시나요?"] },
+      payload,
+    });
+    expect(verdict.ok).toBe(true);
   });
 });
