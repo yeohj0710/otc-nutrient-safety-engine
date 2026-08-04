@@ -176,3 +176,33 @@ export function refereeExplanation({
   if (rejections.length) return { ok: false, rejections };
   return { ok: true };
 }
+
+/**
+ * 판정 한 건을 풀어 쓴 한 줄을 검사한다.
+ *
+ * 전체 설명과 달리 이 문장은 판정 하나에만 붙으므로, 그 판정이 준 숫자와 낱말
+ * 안에서만 말해야 한다. 등급은 아예 요구하지 않는다 — 화면이 엔진 등급을 그대로
+ * 쓰고 모델은 이유만 풀어 쓴다.
+ */
+export function refereeFindingLine({
+  line,
+  allowedText,
+}: {
+  line: unknown;
+  /** 이 판정이 실제로 담고 있는 문자열 전부. */
+  allowedText: string;
+}): { ok: true; line: string } | { ok: false; reason: string } {
+  if (typeof line !== "string") return { ok: false, reason: "not_string" };
+  const text = line.trim();
+  if (!text) return { ok: false, reason: "empty" };
+  if (text.length > 160) return { ok: false, reason: "too_long" };
+  if (QUESTION.test(text)) return { ok: false, reason: "question" };
+  for (const pattern of OVERREACH) {
+    if (pattern.test(text)) return { ok: false, reason: `overreach:${pattern.source}` };
+  }
+  const allowed = collectNumbers(allowedText);
+  for (const number of collectNumbers(text)) {
+    if (!allowed.has(number)) return { ok: false, reason: `unsupported_number:${number}` };
+  }
+  return { ok: true, line: text };
+}

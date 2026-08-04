@@ -883,6 +883,58 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   );
   // 검증 근거가 없는 판정에도 선별 통과 문헌은 있다. 그 층까지 세지 않으면
   // 미연결 규칙에서 이 절이 통째로 사라져, 읽을거리를 주려던 목적과 반대가 된다.
+  // 판정마다 따로 부른다. 한 번에 다 넘기면 개별 판정의 요지가 뭉개져서
+  // "여러 제품의 용량 또는 투여 방식" 같은 문장이 나온다. 건별로 부르면 그
+  // 판정이 왜 걸렸는지만 말한다. 실패하거나 심판에 걸린 건은 그냥 안 보인다.
+  const [findingLines, setFindingLines] = useState<Record<string, string>>({});
+  const findingKey = orderedFindings.map((f) => f.findingId).join("|");
+  useEffect(() => {
+    if (!orderedFindings.length) {
+      void Promise.resolve().then(() => setFindingLines({}));
+      return;
+    }
+    const controller = new AbortController();
+    const names = selected.map((item) => item.product.productName);
+    void Promise.resolve().then(() => setFindingLines({}));
+    Promise.all(
+      orderedFindings.slice(0, 8).map(async (finding) => {
+        try {
+          const res = await fetch("/api/otc-finding", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            signal: controller.signal,
+            body: JSON.stringify({
+              ruleType: finding.ruleType,
+              titleKo: finding.titleKo,
+              detailKo: finding.detailKo,
+              nextActionKo: finding.nextActionKo,
+              amount:
+                finding.calculatedAmount !== undefined && finding.unit
+                  ? `${finding.calculatedAmount}${finding.unit}`
+                  : "",
+              reference:
+                finding.referenceAmount !== undefined && finding.unit
+                  ? `${finding.referenceAmount}${finding.unit}`
+                  : "",
+              productNames: names,
+            }),
+          });
+          const body = (await res.json()) as { ok?: boolean; line?: string };
+          if (body?.ok && body.line) return [finding.findingId, body.line] as const;
+        } catch {
+          // 개별 실패는 그 카드만 설명 없이 둔다.
+        }
+        return null;
+      }),
+    ).then((pairs) => {
+      if (controller.signal.aborted) return;
+      setFindingLines(Object.fromEntries(pairs.filter(Boolean) as (readonly [string, string])[]));
+    });
+    return () => controller.abort();
+    // findingKey 로 같은 판정 묶음에는 다시 부르지 않는다.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [findingKey]);
+
   const hasScreeningPassedLiterature = orderedFindings.some(
     (finding) => (rulePoolFor(finding.ruleId)?.listed ?? 0) > 0,
   );
@@ -1940,6 +1992,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                   />
                                 </summary>
                                 <div className={styles.findingContent}>
+                                  {findingLines[finding.findingId] && (
+                                    <p className={styles.findingPlain}>
+                                      <span>쉬운 설명</span>
+                                      {findingLines[finding.findingId]}
+                                    </p>
+                                  )}
                                   <div className={styles.nextAction}>
                                     <span>지금 할 일</span>
                                     <strong>{finding.nextActionKo}</strong>
