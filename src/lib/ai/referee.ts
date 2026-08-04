@@ -110,6 +110,20 @@ export function refereeExplanation({
     }
   }
 
+  // 1-b) 같은 규칙을 여러 번 경고하거나 엔진이 찾은 것보다 많이 경고하면
+  //      문제가 실제보다 많아 보인다. 경보는 판정을 넘어설 수 없다.
+  //
+  //      여형준 쪽 "문단당 인용 상한"과 목적은 같지만 형태가 다르다. 거기서는
+  //      한 문단이 기록 여러 개를 달 수 있어 항목 안을 제한해야 했고, 여기서는
+  //      경보 하나가 규칙 하나에 묶여 있어 항목 수만 보면 된다.
+  const alertRuleIds = explanation.topAlerts.map((alert) => alert.ruleId);
+  if (new Set(alertRuleIds).size !== alertRuleIds.length) {
+    rejections.push("duplicate_alert_rule");
+  }
+  if (alertRuleIds.length > severityByRule.size) {
+    rejections.push(`too_many_alerts:${alertRuleIds.length}/${severityByRule.size}`);
+  }
+
   // 2) 엔진이 준 적 없는 규칙을 가리키면 안 된다.
   for (const action of explanation.ruleCardActions) {
     if (!severityByRule.has(action.ruleId)) {

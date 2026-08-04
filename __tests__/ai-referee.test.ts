@@ -73,6 +73,18 @@ describe("ai explanation referee", () => {
     },
   );
 
+  it("rejects the same rule warned about twice", () => {
+    // 같은 판정을 두 번 적으면 문제가 실제보다 많아 보인다.
+    const verdict = refereeExplanation({
+      explanation: { ...base, topAlerts: [base.topAlerts[0], base.topAlerts[0]] },
+      payload,
+    });
+    expect(verdict.ok).toBe(false);
+    if (!verdict.ok) {
+      expect(verdict.rejections).toContain("duplicate_alert_rule");
+    }
+  });
+
   it("rejects an alert bound to a rule the engine never sent", () => {
     const verdict = refereeExplanation({
       explanation: {
