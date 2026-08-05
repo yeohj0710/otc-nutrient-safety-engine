@@ -133,7 +133,11 @@ export default async function IngredientReferenceDetailPage(props: {
   });
 
   return (
-    <main className="app-page min-h-screen px-4 pb-20 pt-6 md:px-5 lg:px-6">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="app-page min-h-screen px-4 pb-20 pt-6 md:px-5 lg:px-6"
+    >
       <div className="page-shell-narrow space-y-6">
         <section className="surface-card-strong rounded-[2rem] px-6 py-6">
           <p className="eyebrow">영양소 근거 자세히 보기</p>

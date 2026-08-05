@@ -871,41 +871,90 @@ AI 참조표준 대비 재현도라는 점, 분류기와 참조표준의 부분�
 """
     (REPORTS_DIR / "notion_update.md").write_text(notion, encoding="utf-8")
 
-    readme = f"""# 국내 일반의약품 안전성 조회 연구
+    # 이 생성기는 보존된 v4.0 보고서도 만들지만 저장소 안내문은 v5.0 제출 정본과
+    # 로컬 v5.1 경계를 설명해야 한다. 세 안내문을 정본과 같은 문자열로 유지한다.
+    readme = """# 국내 일반의약품 안전성 조회 연구
 
-이 저장소는 국내 일반의약품을 제품명으로 입력해 중복 성분, 최대용량, 복용 간격, 연령, 질환과 병용약 위험 신호를 찾는 연구용 시스템이다.
+이 저장소는 국내 일반의약품을 제품명으로 입력해 중복 성분, 최대용량, 복용 간격, 연령,
+질환과 병용약 위험 신호를 찾는 연구용 시스템이다.
+
+## 먼저 구분할 두 연구 상태
+
+- 제출한 최종 연구는 v5.0이다. 정본은 `research_v3/`이며 수정하지 않는다.
+- v5.1은 v5.0 정본을 기준으로 안전 범위와 화면 표시를 점검하는 로컬 확장이다.
+  v5.1은 제출 최종본이나 임상 배포본이 아니다.
+
+버전별 정본과 수치는 `docs/version_map.md`에서 확인한다.
 
 ## 두 근거층
 
 - 식약처 허가원문은 제품, 성분, 함량, 복용 조건과 규칙 판정을 결정한다.
-- PubMed 문헌은 위해 연관성을 설명하는 참고 근거다. 문헌은 허가 판정을 바꾸지 않는다.
+- PubMed 문헌은 위해 연관성을 설명하는 참고 근거다. 문헌은 허가 판정을 바꾸거나 규칙을
+  release하지 않는다.
 
-허가원문 분석 집합은 제품 {metrics['products']}개, 성분 {metrics['ingredients']}개, 계산 연결 {metrics['bindings']}개, 복용 조건 {metrics['constraints']}개다. 규칙 {metrics['rules_total']}개 중 released {metrics['rules_released']}개는 source와 locator를 가진다.
+허가원문 분석 집합은 제품 13개, 성분 28개, 계산 연결 47개, 복용 조건 32개다. 규칙
+16개 중 released 15개는 source와 locator를 가진다.
 
-## v4.0 상태
+## v5.0 제출 최종 상태
 
-AI가 PICOS 질문 {metrics['questions']}개를 만들고 PubMed에서 고유 PMID {metrics['corpus_rows']:,}개를 수집했다. 코퍼스 전체를 선별해 커버리지 {metrics['coverage']:.1f}을 달성했고 사람 판정은 {metrics['human_decisions']}건이다. 선별의 AI 참조표준 대비 F1은 {num(metrics['ref_f1'])}, 규칙엔진의 AI 참조표준 대비 특이도는 {num(metrics['blind_specificity'])}, 민감도는 {num(metrics['blind_sensitivity'])}다.
+v5.0은 선별 단위 43,207건과 고유 논문 42,822편을 다뤘다. 최종 판정은 retain 7,875건,
+deprioritize 34,965건, uncertain 367건이다. 5,000건을 재판정했고 채점 arm은 894행이다.
+문헌은 규칙 16개 중 9개에 10건을 연결했다.
 
-상태는 `complete={str(metrics['flag_complete']).lower()}`, `performance_claim_allowed={str(metrics['flag_performance_claim']).lower()}`이며, 성능 수치를 인용할 때는 **AI 참조표준 대비**라는 사실과 평가자가 사람이 아니라는 사실을 함께 적어야 한다. `independent_blinding={str(metrics['flag_blinding_human']).lower()}`, `release_ready={str(metrics['flag_release_ready']).lower()}`다.
+채점 arm의 `agreement_vs_ai_reference`는 86.93%, `sensitivity_vs_ai_reference`는 46.92%,
+`specificity_vs_ai_reference`는 95.84%, Cohen κ는 0.493이다. 이 값은 사람 기준 임상 정확도가
+아니라 AI 참조표준 대비 결과다. v5.0 semantic adjudication selection의
+`independent_blinding_ai=false`이며 `release_ready=false`다.
+
+## 로컬 v5.1 안전 확장
+
+v5.1 기준선은 commit `6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9`이다. v5.1은 제품
+13개, released 규칙 15개와 허가 복용 조건 32개를 유지한다. 제품 10개는 용량·간격 조건만
+지원하고 3개는 그보다 넓은 안전 규칙을 지원한다.
+
+허가 근거 후보 연결 360건 중 15건은 v5.0에서 사람 전문가와 약사가 검토한 기존 released 규칙의
+운영 근거다. 나머지 345건은 비활성이다. 비활성 후보는 `needs_expert_review` 33건,
+`provisional` 308건, 제외 제품의 `rejected` 4건이다. v5.1에서 새로 활성화한 규칙이나 후보는
+없고 `release_ready=false`다.
+
+v5.0에서 결과에 사용한 문헌 링크 10건은 v5.1에서 정확한 직접 일치 1건, 범위를 함께 밝혀야
+하는 직접 문헌 4건, 배경 문헌 5건으로 나눴다. v5.0에서 거절한 링크 10건은 결과 화면에서
+제외한다. 문헌은 어느 분류에서도 규칙 release 권한을 갖지 않는다.
+
+## 보존된 v4.0 비교 기록
+
+v4.0에서 AI가 PICOS 질문 5개를 만들고 PubMed 고유 PMID 5,724개를 수집했다. 코퍼스 전체를
+선별해 커버리지 1.0을 달성했고 사람 판정은 0건이다. 선별의 AI 참조표준 대비 F1은 0.8484,
+규칙엔진의 AI 참조표준 대비 특이도는 1.0000, 민감도는 0.5702다.
+
+v4.0 기록의 상태는 `complete=true`, `performance_claim_allowed=true`다. 성능 수치를 인용할
+때는 **AI 참조표준 대비**라는 사실과 평가자가 사람이 아니라는 사실을 함께 적어야 한다.
+`independent_blinding=false`, `release_ready=false`다. 당시 검증에서는 연구 시험 192개와 앱
+시험 73개가 통과했고 정적 경로 156개를 생성했다. 이 수치를 현재 v5.1 검증 결과로 쓰지 않는다.
 
 ## 주요 경로
 
-- 허가원문 연구 데이터: `research_v3/otc/`
-- AI PICOS: `research_v3/otc/literature/picos/picos_definition.json`
-- PubMed 코퍼스: `research_v3/otc/literature/evidence_map.csv`
-- 문헌 선별: `research_v3/otc/literature/screening/`
-- AI 참조표준: `research_v3/measurement/screener_vs_ai_reference.json`
-- 규칙엔진 맹검평가: `research_v3/otc/validation/ai_independent_evaluation.json`
-- 규칙과 문헌 근거: `research_v3/otc/rules/`
-- 실행 보고서: `research_v3/logs/v40_run_report.json`
+- v5.0 제출 정본과 실행 원장: `research_v3/`, `research_v3/logs/v50_run_report.json`
+- v5.0 MECIR 문헌층: `research_v3/otc/literature/v5/`
+- v5.1 프로토콜과 상태 계약: `research_v51/protocol/README.md`
+- v5.1 근거 후보와 운영 범위: `research_v51/evidence/`
+- v5.1 전문가 검토 큐: `research_v51/review/`
+- v5.1 문헌 분류: `research_v51/literature/link_classification.csv`
+- v5.1 기계 감사와 지원 행렬: `research_v51/audit/`
+- 재현 명령 안내: `REPRODUCE.md`
 
 ## 코드와 배포
 
 - GitHub: https://github.com/yeohj0710/otc-nutrient-safety-engine
 - 공개 주소: https://otc-nutrient-safety-engine.vercel.app
-- {deployment_sentence(metrics)}
+- 사용자 지시로 production에 배포했다. 배포 ID는 `dpl_A1YDFPUijJCXWnVKdojUxP4pEZvn`이다.
+  사이트 배포와 임상 배포 승인은 다르므로 `release_ready=false`를 유지한다.
+- 로컬 v5.1 작업은 push, PR 생성 또는 production 배포를 하지 않는다.
 
-## 검증 명령
+## 검증
+
+버전별 실행 순서와 네트워크가 필요한 검사는 `REPRODUCE.md`를 따른다. 코드 전체 검증 명령은
+다음과 같다.
 
 ```powershell
 .\\.venv-research\\Scripts\\python.exe -m pytest tests\\research -q
@@ -915,90 +964,121 @@ npm test
 npm run build
 ```
 
-최근 실행에서 연구 시험 {metrics['research_tests']}개, 앱 시험 {metrics['app_tests']}개가 통과했고 정적 경로 {metrics['static_paths']}개를 생성했다.
-
 이 시스템은 연구용 프로토타입이며 의료진의 진단이나 복약 결정을 대체하지 않는다.
+
+Reference basis: tossfeed-easy-finance
 """
     (ROOT / "README.md").write_text(readme, encoding="utf-8")
 
-    agents = f"""<!-- BEGIN:nextjs-agent-rules -->
+    agents = """<!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-## Which version is final
+## 어떤 버전이 최종인가
 
-`docs/version_map.md` is the answer sheet. The one thing to remember: **this study ends at
-v5.0, 여형준's supplement study (`nutrition-safety-engine`) ends at v4.0.** This repo also
-contains a `research_v3/logs/v40_run_report.json`, which is a *superseded* track here — do
-not read numbers across the two repos by filename.
+`docs/version_map.md`를 기준으로 판단한다. 이 저장소의 **제출 최종 연구는 v5.0**이고,
+`nutrition-safety-engine`의 여형준 영양성분 연구는 v4.0이 최종이다. 이 저장소의
+`research_v3/logs/v40_run_report.json`은 v5.0이 대체한 선행 트랙이다. 두 저장소의 수치를
+파일명만 보고 섞지 않는다.
 
-## Project navigation
+로컬 v5.1은 제출 최종본이 아니라 안전 범위 확장 트랙이다. v5.0 정본은 `research_v3/`,
+v5.1 산출물은 `research_v51/`에 둔다.
 
-Before exploring the repo from scratch, check `docs/project_map.md`.
+## 프로젝트 탐색
 
-- Main page: `app/page.tsx`
-- Main client UI: `src/components/rule-explorer-client.tsx`
-- OTC checker UI: `src/components/otc-product-safety-client.tsx`
-- Result card UI: `src/components/rule-card.tsx`
-- Safety engine: `src/lib/safety-engine/index.ts`
-- OTC rule engine: `src/lib/otc/engine.ts`
-- Knowledge loader/normalizer: `src/lib/knowledge/`
-- Primary legacy data source: `data/knowledge_pack.json`
-- Runtime index: `src/generated/knowledge-index.json`
-- Project map: `docs/project_map.md`
+저장소를 처음 탐색할 때는 `docs/project_map.md`를 먼저 읽는다.
 
-## v4.0 research boundary
+- 메인 페이지: `app/page.tsx`
+- 메인 클라이언트 UI: `src/components/rule-explorer-client.tsx`
+- OTC 조회 UI: `src/components/otc-product-safety-client.tsx`
+- 결과 카드 UI: `src/components/rule-card.tsx`
+- 기존 안전 엔진: `src/lib/safety-engine/index.ts`
+- OTC 규칙 엔진: `src/lib/otc/engine.ts`
+- 지식 로더와 정규화: `src/lib/knowledge/`
+- 이전 데이터 원본: `data/knowledge_pack.json`
+- 현재 OTC 런타임: `src/generated/otc-runtime.json`
+- 이전 런타임 인덱스: `src/generated/knowledge-index.json`
+- v5.1 프로토콜: `research_v51/protocol/README.md`
+- 프로젝트 지도: `docs/project_map.md`
 
-- The active question is Korean OTC product-name safety lookup.
-- MFDS authorization records are the deterministic authority for product, ingredient, amount, administration constraints, and rule decisions.
-- PubMed is a separate AI-selected literature layer. It supports evidence claims but cannot override authorization facts or released rule logic.
-- The literature layer covers 9 of the 16 rules with 10 links. The other 7 rules
-  (`OTC-RULE-003` max_daily_dose, `009` gi_bleeding_ulcer, `010` sedation_driving,
-  `011` alcohol, `013` sedative_medication, `015` maximum_duration, `016` urgent_referral)
-  have no linked literature for two reasons recorded in
-  `research_v3/otc/literature/v5/downstream/literature_link_manifest.json`:
-  6 candidate rejections (5 distinct papers) are `not_in_v5_corpus` — the AM-OTC-002
-  query, which dropped the outcome block and kept only P AND I, did not retrieve them;
-  4 are `no_retain_decision_for_rule_question` — the paper is in the corpus but was not
-  retained for a question the rule is allowed to draw from (the two `015` papers are
-  retained for Q01 while the rule allows only Q03/Q04).
-  **This is not a search-window gap.** The executed date filters are 2010/01/01 for
-  Q01–Q03 and 2000/01/01 for Q04–Q05 (embedded in the hashed query strings), the v5.0
-  corpus spans publication years 2000–2026, and all 9 unlinked candidates fall inside
-  their rule's allowed-question window. AM-OTC-003 stated a 2022-01-01 window as the
-  cause; `AM-OTC-004` corrects that. Report the gap as a result; do not describe the
-  literature layer as the study's contribution.
-- Keep authorization evidence and literature evidence in separate fields. Preserve conflicts as `conflict`.
-- Every rule-to-literature link needs a sentence-level locator (`abstract:sentence:N`) plus the quoted sentence. `scripts/research/otc/build_supporting_literature.py` re-checks the quote against the corpus abstract on every build.
-- New literature artifacts belong only under `research_v3/otc/literature/`. Do not modify `research_v3/search/provisional_pubmed_20260710/`.
-- Human judgment files are preserved legacy inputs and must not enter the v4.0 chain: `research_v3/screening/`, `research_v3/human_review_minimal/`, expert review artifacts, and `human_reference_label`.
-- AI-reference metrics must name their source: `sensitivity_vs_ai_reference`, `specificity_vs_ai_reference`, `agreement_vs_ai_reference`, `ai_reference_standard`, `ai_cross_checked`. Never write a bare "민감도".
-- `independent_blinding` means human blinding and remains false. AI blinding uses
-  `independent_blinding_ai`, and its value is **per layer, not global**. v4.0 literature
-  screening: true, evidenced by `research_v3/otc/validation/ai_independent_evaluation.json`.
-  The v5.0 semantic adjudication selection: **false** — it was recorded true with no
-  execution receipt and was corrected by `V50-PC-001` (see `research_v3/logs/DECISIONS_v50.md`).
-  Do not restate this flag as globally true; cite the layer.
-- `release_ready` remains false; deployment is not clinical release approval. Deploy only
-  when the researcher explicitly asks. The site was deployed on 2026-07-30 on that
-  instruction (https://otc-nutrient-safety-engine.vercel.app); an earlier blanket
-  "do not deploy" rule no longer matches practice and was replaced by `AM-OTC-004`.
-- v4.0 screening is complete: {metrics['screened']:,}/{metrics['corpus_rows']:,} rows, coverage {metrics['coverage']:.1f}, human decisions {metrics['human_decisions']}. Performance may be cited only alongside the fact that the reference standard is an AI evaluator.
-- Do not delete `tools/search_pipeline/embase_adapter.py`.
-- Keep 신신파스아렉스 source records but exclude it from analysis and runtime.
-- Released rules require both source and locator. The {metrics['constraints']} administration constraints and {metrics['rules_released']} released rules are different states.
-- The systematic search pipeline is Python-based and separate from the Next.js runtime. Its code is in `tools/search_pipeline/` and its preserved outputs are in `data/systematic_search/`.
-- Treat `data/knowledge_pack.json` and prior nutrient search outputs as superseded exploratory material only.
+## v5.0 제출 정본 경계
 
-## Verification
+- 연구 질문은 국내 일반의약품의 제품명 기반 안전성 조회다.
+- 식약처 허가자료가 제품, 성분, 함량, 복용 조건과 규칙 판정의 결정 근거다.
+- PubMed는 AI가 선별한 별도 설명 근거층이다. 문헌은 허가 사실이나 released 규칙 논리를
+  덮어쓰지 않는다.
+- v5.0 문헌층은 규칙 16개 중 9개에 링크 10건을 연결한다. 미연결 규칙은
+  `OTC-RULE-003` max_daily_dose, `009` gi_bleeding_ulcer, `010` sedation_driving,
+  `011` alcohol, `013` sedative_medication, `015` maximum_duration, `016` urgent_referral이다.
+- 미연결 사유는 `research_v3/otc/literature/v5/downstream/literature_link_manifest.json`에
+  기록돼 있다. 후보 거절 6건(고유 논문 5편)은 `not_in_v5_corpus`이고, 4건은
+  `no_retain_decision_for_rule_question`이다. `015` 후보 두 편은 Q01에서 retain이지만 규칙이
+  허용하는 질문은 Q03·Q04다.
+- 미연결은 검색 기간 공백이 아니다. 실제 필터는 Q01~Q03 2010/01/01 이후,
+  Q04~Q05 2000/01/01 이후이며 해시한 질의문에 포함된다. v5.0 코퍼스의 출판연도는
+  2000~2026이고, 미연결 후보 9편은 모두 해당 규칙의 허용 질문 기간 안에 있다.
+  AM-OTC-003의 2022-01-01 원인 설명은 `AM-OTC-004`가 정정했다. 이 공백은 결과로 보고하고
+  문헌층 자체를 연구 기여로 쓰지 않는다.
+- 허가 근거와 문헌 근거는 별도 필드에 둔다. 충돌은 `conflict`로 보존한다.
+- 규칙–문헌 링크는 문장 locator(`abstract:sentence:N`)와 인용 문장을 가져야 한다.
+  `scripts/research/otc/build_supporting_literature.py`가 빌드마다 코퍼스 초록과 대조한다.
+- v5.0 문헌 정본은 `research_v3/otc/literature/`에 있으며 읽기 전용이다.
+  `research_v3/search/provisional_pubmed_20260710/`도 수정하지 않는다.
+- `research_v3/screening/`, `research_v3/human_review_minimal/`, 전문가 검토 산출물과
+  `human_reference_label`은 보존된 사람 판단 계보에 속한다. v4.0 또는 v5.0 실행 체인에 넣지 않는다.
+- AI 참조표준 지표는 `sensitivity_vs_ai_reference`, `specificity_vs_ai_reference`,
+  `agreement_vs_ai_reference`, `ai_reference_standard`, `ai_cross_checked`처럼 출처를 이름에
+  포함한다. 출처 없는 ‘민감도’라고 쓰지 않는다.
+- `independent_blinding`은 사람 맹검을 뜻하며 false다. AI 맹검은
+  `independent_blinding_ai`로 기록하고 계층별로 해석한다. v4.0 문헌 선별은 true이고 근거는
+  `research_v3/otc/validation/ai_independent_evaluation.json`이다. v5.0 semantic adjudication
+  selection은 실행 영수증이 없어 false다. `V50-PC-001`과
+  `research_v3/logs/DECISIONS_v50.md`가 이를 정정했다.
+- v4.0 선별 기록은 5,724/5,724행, 커버리지 1.0, 사람 판정 0건이다. 성능 수치는 평가자가
+  AI 참조표준이라는 사실과 함께 쓴다.
+- `release_ready=false`다. 사이트 배포는 임상 배포 승인이 아니다. 사이트는 연구자의 지시로
+  2026-07-30 production에 배포했다. `AM-OTC-004`가 이전의 일괄 배포 금지 문구를 이 원칙으로
+  바꿨다. 이후 배포도 연구자가 명시적으로 요청할 때만 한다.
+- `tools/search_pipeline/embase_adapter.py`를 삭제하지 않는다.
+- 신신파스아렉스의 출처 기록은 보존하되 분석과 런타임에서는 제외한다.
+- released 규칙은 source와 locator를 모두 가져야 한다. 복용 조건 32개와 released 규칙
+  15개는 서로 다른 상태다.
+- Python 체계적 검색 파이프라인은 Next.js 런타임과 분리한다. 코드는
+  `tools/search_pipeline/`, 보존 산출물은 `data/systematic_search/`에 있다.
+- `data/knowledge_pack.json`과 이전 영양성분 검색 결과는 대체된 탐색 자료로만 취급한다.
 
-Run `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build` after site changes. Deploy only on an explicit request from the researcher.
+## 로컬 v5.1 안전 확장 경계
+
+- 기준선은 commit `6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9`이다. `research_v3/`와
+  저장소 밖 v5.0 논문 정본을 수정하지 않는다.
+- v5.1 연구 산출물은 `research_v51/`에 둔다. v5.1 문헌 분류나 새 문헌 산출물도
+  `research_v51/literature/`에 둔다. 이것이 위 v5.0 문헌 경로 규칙의 명시적 예외다.
+- 현재 `verified_primary` 15건은 v5.0의 `human_expert_verified`, `supports_release=true`,
+  released 규칙과 약사 검토 메타데이터를 모두 상속한 운영 근거다.
+- 나머지 후보 연결 345건은 모두 비활성이다. 구성은 `needs_expert_review` 33건,
+  `provisional` 308건, 제외 제품의 `rejected` 4건이다. 일반적인 근거 라벨
+  `verified_primary`만으로 미래 후보를 승인하거나 활성화하지 않는다.
+- 새 후보를 활성화하려면 사람의 명시적 승인, 안정적인 rule ID, 허가 source·version·locator,
+  적용 범위, 사용자 문구와 정상·경계·비대상·오탐 방지 테스트가 모두 필요하다.
+- released 규칙 15개와 `ADMIN-*` 허가 복용 조건 32개를 다른 ID와 판정 근거로 유지한다.
+  과거 `supportedRuleTypes` 26건을 released 규칙 연결 수로 해석하지 않는다.
+- v5.1 문헌 분류는 정확한 직접 일치 1건, 범위 한정 직접 문헌 4건, 배경 문헌 5건이다.
+  v5.0에서 거절한 10건은 결과 UI에서 제외한다. 어떤 문헌도 규칙 release 권한이 없다.
+- v5.1에서 새로 활성화한 규칙이나 후보는 없다. `release_ready=false`를 유지한다.
+- v5.1은 로컬 브랜치와 로컬 커밋까지만 허용한다. 연구자가 명시적으로 승인하기 전에는
+  push, PR, production 배포, 공개 게시 또는 G 드라이브 정본 교체를 하지 않는다.
+
+## 검증
+
+사이트를 바꾼 뒤 `npm run typecheck`, `npm run lint`, `npm test`, `npm run build`를 실행한다.
+v5.1 경계와 산출물 검증 순서는 `REPRODUCE.md`를 따른다. 배포는 연구자가 명시적으로 요청할
+때만 한다.
 """
     (ROOT / "AGENTS.md").write_text(agents, encoding="utf-8")
 
-    project_map = f"""# Project map
+    project_map = """# Project map
 
 ## 사용자 화면
 
@@ -1012,46 +1092,86 @@ Run `npm run typecheck`, `npm run lint`, `npm test`, and `npm run build` after s
 ## 결정 엔진
 
 - `src/lib/otc/engine.ts`: 허가원문 기반 OTC 판정 규칙
+- `src/lib/otc/schema.ts`: v5.1 런타임 데이터 계약
 - `src/lib/otc/presentation.ts`: 판정 근거와 참고 문헌의 표시 분리
+- `src/generated/otc-runtime.json`: 제품, released 규칙, `ADMIN-*` 복용 조건 런타임
+- `src/generated/otc-supporting-literature.json`: v5.1 표시 정책을 적용한 참고 문헌
 - `src/lib/safety-engine/index.ts`: 이전 계보 결정 규칙
-- `src/lib/knowledge/`: 런타임 지식 인덱스 로더와 정규화
-- `src/types/knowledge.ts`: Zod 스키마와 핵심 타입
+- `src/lib/knowledge/`: 이전 런타임 지식 인덱스 로더와 정규화
+- `src/types/knowledge.ts`: 이전 지식 인덱스의 Zod 스키마와 핵심 타입
 
-## 연구 데이터
+## v5.0 제출 정본 — 읽기 전용
 
-- `research_v3/otc/normalized/`: 제품 {metrics['products']}개, 성분 {metrics['ingredients']}개, 계산 연결 {metrics['bindings']}개, 복용 조건 {metrics['constraints']}개
-- `research_v3/otc/rules/rules.csv`: 전체 규칙 {metrics['rules_total']}개, released {metrics['rules_released']}개
-- `research_v3/otc/rules/supporting_literature.csv`: 규칙×논문 링크 {metrics['link_total']}건(문장 단위 locator 필수)
-- `research_v3/otc/rules/literature_link_manifest.json`: 규칙별 연결 현황과 충돌 {metrics['link_conflicts']}건
-- `research_v3/otc/literature/picos/`: AI 자율 PICOS 질문 {metrics['questions']}개
+- `research_v3/otc/normalized/`: 제품 16행(분석 13), 성분 31행(계산 28), 제품–성분
+  106행(계산 선택 47), 복용 조건 32행
+- `research_v3/otc/rules/rules.csv`: 전체 규칙 16개, released 15개
+- `research_v3/otc/literature/v5/`: v5.0 MECIR 검색, 분류기 선별, semantic adjudication과 최종 결정
+- `research_v3/otc/validation/screening_ai_reference_v50/`: 43,207건 모집단의 완전분할 층화
+  설계, 실제 맹검·채점 표본 894행, 잠금 라벨과 영수증
+- `research_v3/otc/synthesis/screener_vs_ai_reference_v50.json`: v5.0 채점 arm의 설계가중 비교 결과
+- `research_v3/logs/v50_run_report.json`: v5.0 최종 수치와 해시의 단일 원장
+- `research_v3/logs/v50_*`: v5.0 실행 원장, 판단 기록과 채점 결과
+
+## 보존된 v4.0 비교 자료
+
+- `research_v3/otc/rules/supporting_literature.csv`: 규칙×논문 링크 20건(문장 단위 locator 필수)
+- `research_v3/otc/rules/literature_link_manifest.json`: 규칙별 연결 현황과 충돌 4건
+- `research_v3/otc/literature/picos/`: AI 자율 PICOS 질문 5개
 - `research_v3/otc/literature/searches/`: PubMed 원시 XML, 메타데이터와 SHA-256
-- `research_v3/otc/literature/evidence_map.csv`: 고유 PMID {metrics['corpus_rows']:,}개 코퍼스
-- `research_v3/otc/literature/screening/`: 배치 {metrics['batch_count']}개와 판정 체크포인트, 커버리지 {metrics['coverage']:.1f}
-- `research_v3/measurement/ai_reference/`: 층화 표본 {metrics['ref_sample']}건과 라운드별 판정
+- `research_v3/otc/literature/evidence_map.csv`: 고유 PMID 5,724개 코퍼스
+- `research_v3/otc/literature/screening/`: 배치 115개와 판정 체크포인트, 커버리지 1.0
+- `research_v3/measurement/ai_reference/`: 층화 표본 300건과 라운드별 판정
 - `research_v3/otc/validation/ai_independent_cases/`: 무라벨 사례
 - `research_v3/otc/validation/ai_independent_evaluation/`: 라운드 카드, 잠금 라벨, 예측 감사
+
+## 로컬 v5.1 안전 확장
+
+- `research_v51/protocol/README.md`: v5.0 보호 경계, 후보 상태, 문헌 권한과 로컬 작업 범위
+- `research_v51/evidence/evidence_units.csv`: 중복을 정리한 허가 근거 단위 328건
+- `research_v51/evidence/evidence_rule_links.csv`: 상태를 가진 후보–규칙 연결 360건
+- `research_v51/evidence/active_rule_applicability.csv`: 기존 released 규칙 15개의 제한된 적용 범위
+- `research_v51/review/expert_review_queue.csv`: 비활성 전문가 검토 후보 33건
+- `research_v51/review/expert_review_packet.md`: 채택·수정·거절 판단과 필수 회귀 테스트 검토지
+- `research_v51/literature/link_classification.csv`: 직접 1건, 범위 한정 직접 4건, 배경 5건과 UI 제외 10건
+- `research_v51/audit/baseline_manifest.json`: v5.0 기준선과 보호 대상 해시
+- `research_v51/audit/source_freshness_snapshot.json`: 식약처 원격 문서 20개의 의미 동일성 감사
+- `research_v51/audit/product_support_matrix.csv`: 제품 10개 용량·간격 전용, 3개 확장 안전 지원
+- `research_v51/audit/active_rule_matrix.csv`: released 규칙별 적용 범위와 출처 버전
+- `research_v51/audit/final_metrics.json`: v5.0 기준선과 로컬 v5.1의 기계 집계
 
 ## 보존 계보
 
 - `data/knowledge_pack.json`: 이전 영양성분 탐색 자료. 활성 OTC 성과에 합산하지 않음
 - `data/systematic_search/`: 이전 검색 파이프라인 산출물
 - `research_v3/otc/rules/supporting_literature_pre_v40.csv`: v4.0 검색 밖에서 큐레이션된 문헌
-- `src/generated/knowledge-index.json`: 현재 Next.js 런타임 인덱스
+- `src/generated/knowledge-index.json`: 이전 Next.js 런타임 인덱스
 
 ## 실행 스크립트
 
-- `tools/v40_literature_pipeline.py`: PICOS 생성, ESearch, EFetch와 코퍼스 정규화
-- `tools/agent_screening.py`: 선별 배치 생성·카드 렌더링·적재·커버리지 검증
-- `tools/ai_reference_standard.py`: P3-A 층화 표본, 라운드 카드, 가중 지표
-- `tools/ai_independent_cases.py`: P3-B 무라벨 사례 생성
-- `tools/ai_independent_eval.py`: P3-B 카드 렌더링, 라벨 잠금, 지표 산출
-- `scripts/research/otc/predict-ai-independent.ts`: 잠금 검증 후 엔진 예측 기록
-- `tools/build_rule_literature_links.py`: 문헌 링크 검증과 매니페스트
-- `tools/build_v40_reporting.py`: 논문·문서·지표 재생성
-- `tools/build_v40_run_report.py`: 실행 보고서 생성
+- `tools/v40_literature_pipeline.py`: v4.0 PICOS 생성, ESearch, EFetch와 코퍼스 정규화
+- `tools/agent_screening.py`: v4.0 선별 배치 생성·카드 렌더링·적재·커버리지 검증
+- `tools/ai_reference_standard.py`: v4.0 P3-A 층화 표본, 라운드 카드, 가중 지표
+- `tools/ai_independent_cases.py`: v4.0 P3-B 무라벨 사례 생성
+- `tools/ai_independent_eval.py`: v4.0 P3-B 카드 렌더링, 라벨 잠금, 지표 산출
+- `scripts/research/otc/predict-ai-independent.ts`: v4.0 잠금 검증 후 엔진 예측 기록
+- `tools/build_rule_literature_links.py`: v4.0 문헌 링크 검증과 매니페스트 생성
+- `tools/build_v40_run_report.py`: v4.0 실행 보고서 생성
+- `tools/v50_scoring/`: v5.0 완전분할 층화 표본, 채점 하네스, 잠금 후 비교 보고
+- `scripts/research/otc/build_v51_evidence_review.py`: v5.1 근거 단위, 후보 상태와 검토 큐 생성
+- `scripts/research/otc/validate_v51_shortlist_triage.py`: 33건 의미 분류 계약 검증
+- `scripts/research/otc/build_v51_review_packet.py`: 전문가 검토지와 감사 파일 생성
+- `scripts/research/otc/build_runtime.py`: 제품, released 규칙과 `ADMIN-*` 복용 조건 런타임 생성
+- `scripts/research/otc/build_v51_literature_classification.py`: v5.0 링크 20건의 v5.1 표시 정책 생성
+- `scripts/research/otc/build_supporting_literature.py`: 표시 정책을 검증해 참고 문헌 런타임 생성
+- `scripts/research/otc/audit_v51_boundaries.py`: `research_v3/`와 외부 논문 정본 보호 감사
+- `scripts/research/otc/audit_v51_source_freshness.py`: 식약처 원격 문서 의미 동일성 감사
+- `scripts/research/otc/build_v51_final_audit.py`: 제품·규칙·근거·문헌 상태의 기계 집계
+- `tools/build_v40_reporting.py`: 보존된 v4.0 논문·문서·지표 생성기
 - `tools/search_pipeline/`: 보존된 Python 검색 파이프라인
 
 ## 검증
+
+버전별 순서와 네트워크 조건은 `REPRODUCE.md`를 따른다.
 
 ```powershell
 .\\.venv-research\\Scripts\\python.exe -m pytest tests\\research -q
@@ -1061,7 +1181,10 @@ npm test
 npm run build
 ```
 
-최근 실행: 연구 시험 {metrics['research_tests']}개, 앱 시험 {metrics['app_tests']}개 통과, 정적 경로 {metrics['static_paths']}개.
+보존된 v4.0 run report의 최근 실행은 연구 시험 192개, 앱 시험 73개, 정적 경로 156개다.
+이 숫자는 현재 v5.1 검증 건수가 아니며 v5.0 기준선 감사값도 아니다.
+
+Reference basis: tossfeed-easy-finance
 """
     (ROOT / "docs/project_map.md").write_text(project_map, encoding="utf-8")
 

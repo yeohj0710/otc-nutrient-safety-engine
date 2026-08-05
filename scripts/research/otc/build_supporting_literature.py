@@ -1,7 +1,9 @@
 """규칙↔문헌 연결표를 사이트 런타임 JSON 으로 굽는다.
 
-입력은 `research_v3/otc/rules/supporting_literature.csv` (규칙 1건 × 논문 1편 = 1행)이고,
-출력은 논문 단위로 묶은 `src/generated/otc-supporting-literature.json` 이다.
+입력은 `research_v3/otc/rules/supporting_literature.csv` (규칙 1건 × 논문 1편 = 1행)와
+`research_v51/literature/link_classification.csv`이고, 출력은 논문 단위로 묶은
+`src/generated/otc-supporting-literature.json` 이다. 기존 20개 연결은 감사 계보로 모두
+보존하되 v5.1 분류가 결과 화면에서 제외·배경·조건부 직접 일치를 결정하게 한다.
 
 문헌은 판정 권한이 없다. 모든 행의 `supports_rule_release` 는 false 여야 하며, 규칙 배포
 근거는 `rules.csv` 의 `source_id`·`source_locator`(허가원문)만이다. 이 스크립트는 그 경계를
@@ -43,6 +45,9 @@ V50_MANIFEST = (
     / "downstream"
     / "literature_link_manifest.json"
 )
+V51_CLASSIFICATIONS = (
+    ROOT / "research_v51" / "literature" / "link_classification.csv"
+)
 V50_REASON_LABELS = {
     "not_in_v5_corpus": "v5.0 코퍼스에 없음(검색식 미인출)",
     "no_retain_decision_for_rule_question": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님",
@@ -53,6 +58,17 @@ EVIDENCE_AUTHORITY = "literature_explanatory_only"
 DISCLAIMER_KO = "참고 문헌은 판정 근거가 아니며 허가원문 판정을 바꾸지 않습니다."
 EVIDENCE_RELATIONS = {"supports_caution", "contextualizes_uncertainty", "supports_mechanism"}
 AUTHORIZATION_ALIGNMENTS = {"consistent", "conflict"}
+V51_SEMANTIC_CLASSIFICATIONS = {
+    "direct_match",
+    "background_context",
+    "mixed_scope",
+}
+V51_UI_POLICIES = {
+    "direct",
+    "background_only",
+    "direct_when_scope_matches_else_background",
+    "exclude_from_result_ui",
+}
 # 사용자 프로파일 축. 판정 카드에서 문헌을 걸러내는 데 쓴다.
 PROFILE_CONDITIONS = {
     "pregnant",
@@ -140,11 +156,90 @@ def _rows(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def _parse_bool(value: str, *, field: str, row_id: str) -> bool:
+    normalized = value.strip().lower()
+    if normalized == "true":
+        return True
+    if normalized == "false":
+        return False
+    raise ValueError(f"{row_id}: {field} must be true or false")
+
+
+def _v51_classifications() -> dict[str, dict[str, object]]:
+    """v5.1 의미 분류를 원래 문헌 연결 ID별 런타임 메타데이터로 읽는다."""
+    classifications: dict[str, dict[str, object]] = {}
+    for row in _rows(V51_CLASSIFICATIONS):
+        classification_id = row["classification_id"].strip()
+        source_link_id = row["source_link_id"].strip()
+        if not classification_id or not source_link_id:
+            raise ValueError("v5.1 literature classification is missing an id")
+        if source_link_id in classifications:
+            raise ValueError(f"duplicate v5.1 classification for {source_link_id}")
+
+        semantic = row["semantic_classification"].strip() or None
+        if semantic is not None and semantic not in V51_SEMANTIC_CLASSIFICATIONS:
+            raise ValueError(
+                f"{classification_id}: invalid semantic classification {semantic}"
+            )
+        ui_policy = row["ui_policy"].strip()
+        if ui_policy not in V51_UI_POLICIES:
+            raise ValueError(f"{classification_id}: invalid UI policy {ui_policy}")
+
+        human_reviewed = _parse_bool(
+            row["human_expert_reviewed"],
+            field="human_expert_reviewed",
+            row_id=classification_id,
+        )
+        supports_release = _parse_bool(
+            row["supports_rule_release"],
+            field="supports_rule_release",
+            row_id=classification_id,
+        )
+        direct_label_allowed = _parse_bool(
+            row["ui_direct_label_allowed"],
+            field="ui_direct_label_allowed",
+            row_id=classification_id,
+        )
+        if human_reviewed or supports_release:
+            raise ValueError(
+                f"{classification_id}: v5.1 literature cannot claim expert review or rule-release authority"
+            )
+        if ui_policy == "exclude_from_result_ui" and direct_label_allowed:
+            raise ValueError(
+                f"{classification_id}: excluded literature cannot allow a direct label"
+            )
+
+        def split(field: str) -> list[str]:
+            return [item.strip() for item in row[field].split(";") if item.strip()]
+
+        classifications[source_link_id] = {
+            "classificationId": classification_id,
+            "lineageStatus": row["lineage_status"].strip(),
+            "semanticClassification": semantic,
+            "uiPolicy": ui_policy,
+            "uiDirectLabelAllowed": direct_label_allowed,
+            "directScope": {
+                "ingredientIds": split("direct_scope_ingredient_ids"),
+                "productItemSequences": split(
+                    "direct_scope_product_item_sequences"
+                ),
+                "profileConditions": split("direct_scope_profile_conditions"),
+                "medicationTerms": split("direct_scope_medication_terms"),
+            },
+            "classificationReasonKo": row["classification_reason_ko"].strip(),
+            "uiBoundaryKo": row["ui_boundary_ko"].strip(),
+            "humanExpertReviewed": human_reviewed,
+            "supportsRuleRelease": supports_release,
+        }
+    return classifications
+
+
 def build() -> list[dict]:
     rule_rows = _rows(RULES)
     rule_types_by_id = {row["rule_id"]: row["rule_type"] for row in rule_rows}
     released_rule_types = {row["rule_type"] for row in rule_rows if row["status"] == "released"}
     abstracts = {row["pmid"]: row["abstract"] for row in _rows(EVIDENCE_MAP)}
+    v51_classifications = _v51_classifications()
 
     papers: dict[str, dict] = {}
     seen_links: set[str] = set()
@@ -153,6 +248,10 @@ def build() -> list[dict]:
         if link_id in seen_links:
             raise ValueError(f"duplicate link_id: {link_id}")
         seen_links.add(link_id)
+
+        v51_classification = v51_classifications.get(link_id)
+        if v51_classification is None:
+            raise ValueError(f"{link_id}: missing v5.1 semantic classification")
 
         pmid = row["pmid"].strip()
         if not re.fullmatch(r"\d{7,8}", pmid):
@@ -229,6 +328,7 @@ def build() -> list[dict]:
                 "limitationKo": row["limitation_ko"],
                 "authorizationAlignment": row["authorization_alignment"],
                 "authorizationNoteKo": row["authorization_note_ko"],
+                "v51Classification": v51_classification,
             }
         )
         for ingredient_id in (v for v in row["ingredient_ids"].split(";") if v):
@@ -240,6 +340,13 @@ def build() -> list[dict]:
         for condition in dose_input_conditions:
             if condition not in paper["doseInputConditions"]:
                 paper["doseInputConditions"].append(condition)
+
+    extra_classifications = set(v51_classifications) - seen_links
+    if extra_classifications:
+        raise ValueError(
+            "v5.1 classifications without a source literature link: "
+            f"{sorted(extra_classifications)}"
+        )
 
     linked_rule_ids = {
         link["ruleId"] for paper in papers.values() for link in paper["ruleLinks"]

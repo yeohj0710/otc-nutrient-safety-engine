@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "release_lineage": "v5.1",
+  "source_lineage": "v5.0_read_only",
+  "generator": "scripts/research/otc/build_v51_review_packet.py",
+  "generator_sha256": "c9a71a6f65d63ac84d8c5816ec168e4a46e039a5282601f3bbca6fd8059d4988",
+  "inputs": {
+    "research_v51/review/expert_review_queue.csv": {
+      "rows": 33,
+      "fields": [
+        "evidence_candidate_id",
+        "evidence_unit_id",
+        "rule_id",
+        "rule_type",
+        "referenced_rule_status",
+        "candidate_operational_status",
+        "shortlist_rank",
+        "recommendation",
+        "product_name",
+        "item_sequence",
+        "ingredient_ids",
+        "ingredient_names",
+        "ingredient_scope",
+        "current_rule_scope",
+        "referenced_runtime_condition",
+        "proposed_message_ko",
+        "proposed_next_action_ko",
+        "document_type",
+        "source_id",
+        "source_url",
+        "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
+        "retrieved_at",
+        "retrieved_at_utc",
+        "raw_candidate_source_locator",
+        "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
+        "proposed_review_source_locator",
+        "proposed_review_evidence_text",
+        "reviewed_source_locator",
+        "reviewed_evidence_text",
+        "operational_source_locator",
+        "operational_evidence_text",
+        "evidence_text_override",
+        "evidence_text_override_reason",
+        "referenced_code_link",
+        "duplicate_flag",
+        "duplicate_group",
+        "review_status",
+        "status_reason",
+        "review_question",
+        "adoption_options",
+        "required_regression_tests",
+        "review_decision",
+        "review_comment",
+        "reviewer_id",
+        "reviewer_role",
+        "reviewed_at"
+      ],
+      "bytes": 148785,
+      "sha256": "dad992b216f3967dfd5c007b119e434222012962bb78b43a1fd64f0101711bb1"
+    },
+    "research_v51/review/shortlist_semantic_triage.csv": {
+      "rows": 33,
+      "fields": [
+        "evidence_candidate_id",
+        "rule_id",
+        "rule_type",
+        "product_name",
+        "item_sequence",
+        "current_scope",
+        "semantic_relation",
+        "recommended_status",
+        "proposed_trigger",
+        "expected_decision_ko",
+        "decision_reason_ko",
+        "expert_question_ko"
+      ],
+      "bytes": 27882,
+      "sha256": "7f96751eef65d9f44e108a6ee99917f921cd5e5a766af4be52ab702fc303b9db"
+    },
+    "research_v51/audit/evidence_inventory.json": {
+      "bytes": 22504,
+      "sha256": "237b55583b2b966ff174174d5a9e699f18125fd621761657114c3432fd5a9386"
+    },
+    "scripts/research/otc/build_v51_review_packet.py": {
+      "bytes": 66866,
+      "sha256": "c9a71a6f65d63ac84d8c5816ec168e4a46e039a5282601f3bbca6fd8059d4988"
+    },
+    "scripts/research/otc/validate_v51_shortlist_triage.py": {
+      "bytes": 10040,
+      "sha256": "deda91e61debae818bf8f6df77c73ea31acea605ec2d61b44e0d9f98968bf181"
+    }
+  },
+  "artifact": {
+    "path": "research_v51/review/expert_review_packet.md",
+    "items": 33,
+    "bytes": 186056,
+    "sha256": "b613689cae311a21eeacdee250a2a1480815030c12662705e160e399e689ab24"
+  },
+  "counts": {
+    "queue_rows": 33,
+    "triage_rows": 33,
+    "packet_items": 33,
+    "unique_candidate_ids": 33,
+    "recommended_status_counts": {
+      "needs_expert_review": 17,
+      "provisional": 2,
+      "rejected": 14
+    },
+    "semantic_relation_counts": {
+      "direct_same_scope": 3,
+      "duplicate_context": 5,
+      "potential_product_extension": 16,
+      "wrong_scope": 9
+    },
+    "queue_duplicate_ids": 0,
+    "triage_duplicate_ids": 0,
+    "queue_without_triage": 0,
+    "triage_without_queue": 0,
+    "human_review_prefilled": 0,
+    "candidate_operational_status_counts": {
+      "inactive_candidate": 33
+    },
+    "activated_items": 0,
+    "inactive_candidate_items": 33,
+    "items_with_required_regression_tests": 33,
+    "items_with_specific_regression_scenarios": 33,
+    "items_with_official_source_text": 33,
+    "items_using_proposed_source_fallback": 0,
+    "items_with_document_revision_metadata": 33
+  },
+  "checks": {
+    "expected_items": 33,
+    "expert_queue_matches_evidence_inventory": true,
+    "all_queue_items_joined_exactly_once": true,
+    "queue_duplicate_ids": [],
+    "triage_duplicate_ids": [],
+    "queue_without_triage": [],
+    "triage_without_queue": [],
+    "identity_mismatches": [],
+    "non_official_source_urls": [],
+    "prefilled_human_review_items": [],
+    "all_human_review_fields_blank": true,
+    "operationally_active_queue_items": [],
+    "reviewed_or_operational_evidence_on_queue_items": [],
+    "all_source_versions_sha256_pinned": true,
+    "all_items_include_required_regression_tests": true,
+    "all_items_include_specific_regression_scenarios": true,
+    "all_items_include_official_source_text": true,
+    "all_items_include_document_revision_metadata": true,
+    "triage_forbidden_claim_validator_shared": true,
+    "rendered_packet_forbidden_claim_scan": true
+  },
+  "activation_boundary": {
+    "human_expert_verification_required": true,
+    "recommended_status_is_not_human_approval": true,
+    "candidate_operational_status_field": "candidate_operational_status",
+    "candidate_operational_status_counts": {
+      "inactive_candidate": 33
+    },
+    "activated_items": 0,
+    "inactive_candidate_items": 33,
+    "required_human_review_fields": [
+      "review_decision",
+      "review_comment",
+      "reviewer_id",
+      "reviewer_role",
+      "reviewed_at"
+    ],
+    "context_only_fields": [
+      "referenced_rule_status",
+      "referenced_runtime_condition",
+      "referenced_code_link"
+    ],
+    "prohibited_targets_before_approval": [
+      "engine",
+      "runtime",
+      "UI",
+      "operational_decision"
+    ]
+  }
+}

@@ -21,6 +21,7 @@ const eslintConfig = defineConfig([
     "node_modules/**",
     ".venv-research/**",
     ".pytest_cache/**",
+    "etc/**",
     "output/**",
     "exports/**",
     "research_v2/search/raw/**",

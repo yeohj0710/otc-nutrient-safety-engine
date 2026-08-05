@@ -17,7 +17,11 @@ export default function Error({
   }, [error]);
 
   return (
-    <main className="app-page min-h-screen px-4 py-8 md:px-6 md:py-10">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="app-page min-h-screen px-4 py-8 md:px-6 md:py-10"
+    >
       <div className="page-shell-narrow">
         <section className="surface-card-strong rounded-[2.2rem] px-7 py-9 md:px-10 md:py-12">
           <p className="eyebrow">Error</p>

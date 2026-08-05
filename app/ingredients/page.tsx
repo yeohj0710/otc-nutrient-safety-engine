@@ -8,13 +8,21 @@ export const metadata: Metadata = {
   title: "영양소별 근거 자료",
   description:
     "영양소별로 연결된 논문과 공공 자료를 모아 보고, 해당 영양소의 핵심 근거 맥락과 외부 원문 링크를 바로 확인합니다.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function IngredientReferencesPage() {
   const ingredients = getIngredientReferenceBrowseData();
 
   return (
-    <main className="app-page min-h-screen px-4 pb-20 pt-6 md:px-5 lg:px-6">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="app-page min-h-screen px-4 pb-20 pt-6 md:px-5 lg:px-6"
+    >
       <div className="page-shell space-y-6">
         <section className="surface-card-strong rounded-[2rem] px-6 py-6">
           <p className="eyebrow">근거 자료 모음</p>

@@ -12,8 +12,12 @@ const aiRuleCardActionSchema = z.object({
 export const aiExplanationSchema = z.object({
   summaryTitle: z.string().min(1),
   summaryParagraph: z.string().min(1),
+  // ruleId 를 필수로 둬서 각 경보가 엔진 판정 하나에 묶이게 한다. 이 결속이
+  // 없으면 모델이 등급만 자유롭게 골라 부풀릴 수 있다(실제로 참고 → 일반 주의로
+  // 올렸다). 심판은 이 ruleId 의 엔진 등급과 severity 가 같은지만 보면 된다.
   topAlerts: z.array(
     z.object({
+      ruleId: z.string().min(1),
       title: z.string().min(1),
       severity: aiSeverityLabelSchema,
       reason: z.string().min(1),
@@ -62,7 +66,14 @@ export const aiExplainResponseSchema = z.discriminatedUnion("ok", [
   }),
   z.object({
     ok: z.literal(false),
-    reason: z.enum(["missing_api_key", "invalid_response", "timeout", "openai_error"]),
+    reason: z.enum([
+      "missing_api_key",
+      "invalid_response",
+      "timeout",
+      "openai_error",
+      // 심판이 걸러 낸 경우. 모델은 응답했지만 화면에 내보내지 않았다는 뜻이다.
+      "refereed_out",
+    ]),
     notice: z.string().min(1),
   }),
 ]);

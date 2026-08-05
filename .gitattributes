@@ -1,6 +1,15 @@
 # 원시 PubMed 응답은 SHA-256 재현성을 위해 줄바꿈을 변환하지 않는다.
 research_v3/otc/literature/searches/**/*.xml -text
 
+# v2 검색·AI 매니페스트가 아래 파일의 Git blob SHA-256을 기록한다.
+# core.autocrlf 설정과 관계없이 기록된 LF 바이트를 그대로 체크아웃한다.
+research_v2/search/pubmed_queries/*.txt -text
+research_v2/ai_eval/prompts/*.md        -text
+
+# 레거시 결정론적 생성기가 LF JSON을 다시 쓰므로 CRLF checkout에서도 작업 트리를 보존한다.
+src/generated/knowledge-index.json      -text
+src/generated/literature-candidates.json -text
+
 # ---------------------------------------------------------------------------
 # 원장이 SHA-256 을 기록하는 경로 (2026-07-31 등록).
 #
@@ -17,5 +26,20 @@ research_v3/logs/v50_run_report.json               -text
 research_v3/logs/v50_FINAL.md                      -text
 research_v3/logs/DECISIONS_v50.md                  -text
 
+# 기존 LF worktree 바이트를 그대로 요구하는 v5.0 입력만 고정한다. 혼합 줄바꿈 입력은
+# checkout 바이트에 의존하지 않고 고정 기준 커밋의 Git blob 계보로 검증한다.
+research_v3/otc/normalized/administration_constraints.csv              -text
+research_v3/otc/rules/evidence_text_overrides.csv                       -text
+research_v3/otc/literature/v5/downstream/literature_link_manifest.json  -text
+research_v3/otc/literature/v5/downstream/supporting_literature.csv      -text
+
 # 버전 지도. 해시 기록 대상은 아니지만 여형준 저장소와 같은 규칙을 적용한다.
 docs/version_map.md                                -text
+
+# v5.1 감사 산출물은 생성기와 입력의 SHA-256을 서로 기록한다. 새 worktree에서도
+# 생성 당시의 LF/CRLF 바이트를 그대로 체크아웃해야 `--check`가 재현된다.
+research_v51/**                                    -text whitespace=cr-at-eol
+scripts/research/otc/*v51*.py                      -text whitespace=cr-at-eol
+src/generated/otc-runtime.json                     -text whitespace=cr-at-eol
+src/generated/otc-supporting-literature.json       -text whitespace=cr-at-eol
+src/lib/otc/engine.ts                              -text whitespace=cr-at-eol

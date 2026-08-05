@@ -2,6 +2,7 @@ export type Severity = "information" | "caution" | "high" | "urgent";
 
 export type EvidenceLink = {
   sourceId: string;
+  sourceVersion?: string;
   locator: string;
   url: string;
 };
@@ -11,6 +12,40 @@ export type RuleEvidenceLink = EvidenceLink & {
   productName: string;
   itemSequence: string;
   excerptKo: string;
+  ruleType?: string;
+  scope?: string;
+  lineageStatus?: "mapped_from_v50_released_rule";
+  applicability?: RuleApplicability;
+};
+
+export type ReleasedRuleEvidenceLink = RuleEvidenceLink & {
+  sourceVersion: string;
+};
+
+export type RuleApplicability = {
+  productItemSequences?: string[];
+  ingredientIds?: string[];
+  pharmacologicClasses?: string[];
+  requiredAnchorIngredientIds?: string[];
+  administrationConstraintTypes?: AdministrationConstraintType[];
+  medicationTerms?: string[];
+  minimumAgeYears?: number;
+  pregnancyTrimesters?: Array<1 | 2 | 3>;
+  lactationSupported?: boolean;
+  urgentTerms?: string[];
+};
+
+export type ReleasedRulePolicy = {
+  ruleId: string;
+  ruleType: string;
+  scope: string;
+  lineageStatus: "mapped_from_v50_released_rule";
+  applicability: RuleApplicability;
+  evidence: ReleasedRuleEvidenceLink[];
+};
+
+export type OtcEvaluationOptions = {
+  releasedRules: readonly ReleasedRulePolicy[];
 };
 
 export type AdministrationConstraintType =
@@ -57,6 +92,7 @@ export type OtcProduct = {
   ingredients: OtcIngredient[];
   administrationConstraints?: AdministrationConstraint[];
   supportedRuleTypes?: string[];
+  supportedReleasedRuleIds?: string[];
   minimumAgeYears?: number;
   maximumContinuousDays?: number;
   flags: string[];
@@ -74,6 +110,7 @@ export type SelectedProduct = {
 export type UserProfile = {
   ageYears?: number;
   pregnant?: boolean;
+  pregnancyTrimester?: 1 | 2 | 3;
   lactating?: boolean;
   liverDisease?: boolean;
   kidneyDisease?: boolean;
@@ -92,6 +129,8 @@ export type UrgentReferralBinding = {
 
 export type SafetyFinding = {
   findingId: string;
+  ruleId: string;
+  decisionBasis: "released_rule" | "administration_constraint";
   ruleType: string;
   severity: Severity;
   titleKo: string;
@@ -109,7 +148,13 @@ export type SafetyFinding = {
 export type SafetyInputIssue = {
   issueId: string;
   productId?: string;
-  field: "unitsPerDose" | "dosesPerDay" | "hoursSincePreviousDose" | "continuousDays" | "ageYears";
+  field:
+    | "unitsPerDose"
+    | "dosesPerDay"
+    | "hoursSincePreviousDose"
+    | "continuousDays"
+    | "ageYears"
+    | "pregnancyTrimester";
   messageKo: string;
 };
 

@@ -2,7 +2,7 @@
  * P3-B 규칙엔진 예측 기록기.
  *
  * 이 스크립트는 AI 참조 라벨이 잠긴 뒤에만 실행한다. 잠금 파일의 SHA-256 을 먼저 검증하고,
- * 그 다음에야 배포된 규칙만으로 엔진 예측을 계산해 감사 로그에 기록한다. 참조 라벨은 읽지
+ * 그 다음에야 배포된 규칙과 검증된 허가 제약으로 엔진 예측을 계산해 감사 로그에 기록한다. 참조 라벨은 읽지
  * 않으며(잠금 파일에서 case_id 목록과 해시만 사용), 지표 계산도 하지 않는다. 지표는
  * `tools/ai_independent_eval.py finalize` 가 잠금 시각 < 예측 시각을 검증한 뒤 계산한다.
  */
@@ -11,7 +11,13 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { evaluateOtcSafety } from "../../../src/lib/otc/engine";
-import type { OtcProduct, SelectedProduct, UserProfile } from "../../../src/lib/otc/schema";
+import { assertReleasedRuntimeIntegrity } from "../../../src/lib/otc/independent-evaluation";
+import type {
+  OtcProduct,
+  ReleasedRulePolicy,
+  SelectedProduct,
+  UserProfile,
+} from "../../../src/lib/otc/schema";
 
 // tsx 가 CJS 로 변환하면 import.meta.dirname 이 undefined 라 저장소 루트에서 실행하는 것을 전제로 한다.
 const root = process.cwd();
@@ -25,7 +31,11 @@ const evalDir = resolve(validation, "ai_independent_evaluation");
 const lockPath = resolve(evalDir, "ai_reference_labels.locked.json");
 const lockDigestPath = resolve(evalDir, "ai_reference_labels.lock.sha256.json");
 const runtimePath = resolve(root, "src/generated/otc-runtime.json");
-const auditPath = resolve(evalDir, "ai_independent_prediction_audit.json");
+// v5.1 runtime predictions must not overwrite the protected v5.0 measurement.
+const auditPath = resolve(
+  root,
+  "research_v51/audit/ai_independent_prediction_audit.json",
+);
 
 type VerifiedProductInput = {
   inputType: "verified_product";
@@ -47,8 +57,9 @@ type CasePayload = {
 type ReleasedRuntime = {
   rulesReleased: number;
   releasedRuleTypes: string[];
+  releasedRules: ReleasedRulePolicy[];
+  authorizationConstraintsCount: number;
   products: OtcProduct[];
-  urgentReferralBindings?: Array<{ itemSequence: string; terms: string[] }>;
 };
 
 function sha256(path: string): string {
@@ -74,15 +85,11 @@ const lock = readJson<{
   labels: Array<{ case_id: string; track: string; target_rule_type: string | null }>;
 }>(lockPath);
 
-// 2) 배포 런타임 확인. 배포 규칙 수와 규칙 유형 수가 어긋나면 예측하지 않는다.
+// 2) 배포 런타임 확인. 규칙 수·ID·실행 정책·근거·유형이 하나라도 어긋나면 예측하지 않는다.
 const runtime = readJson<ReleasedRuntime>(runtimePath);
-if (!runtime.rulesReleased || runtime.releasedRuleTypes.length !== runtime.rulesReleased) {
-  throw new Error("released_runtime_required_for_prediction");
-}
+assertReleasedRuntimeIntegrity(runtime);
 
 const productBySequence = new Map(runtime.products.map((product) => [product.itemSequence, product]));
-const enabledRuleTypes = new Set(runtime.releasedRuleTypes);
-
 function loadCase(caseId: string): CasePayload {
   const path = caseId.startsWith("AIC-OTC-")
     ? resolve(caseDir, `${caseId}.json`)
@@ -115,8 +122,7 @@ const cases = lock.labels.map((entry) => {
   const result = evaluateOtcSafety(
     selected,
     payload.userProfile,
-    enabledRuleTypes,
-    runtime.urgentReferralBindings ?? [],
+    { releasedRules: runtime.releasedRules },
   );
   const findingRuleTypes = [...new Set(result.findings.map((finding) => finding.ruleType))].sort();
   return {
@@ -131,7 +137,8 @@ const cases = lock.labels.map((entry) => {
 const audit = {
   schema_version: "1.0.0",
   research_direction: "korean_otc_product_safety",
-  prediction_mode: "deterministic_released_rules_only",
+  source_case_lineage: "research_v3/otc/validation",
+  prediction_mode: "deterministic_released_rules_and_authorization_constraints",
   purpose_ko:
     "P3-B AI 맹검 독립평가의 엔진 예측 기록. 잠금 파일 해시를 검증한 뒤에만 예측했다.",
   predicted_at_utc: new Date().toISOString(),
@@ -139,6 +146,7 @@ const audit = {
   locked_at_utc: lockDigest.locked_at_utc,
   runtime_sha256: sha256(runtimePath),
   rules_released: runtime.rulesReleased,
+  authorization_constraints: runtime.authorizationConstraintsCount,
   releasedRuleTypes: [...runtime.releasedRuleTypes].sort(),
   cases_total: cases.length,
   engine_positive_count: cases.filter((item) => item.enginePositive).length,

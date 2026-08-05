@@ -20,7 +20,11 @@ export default function SourcesPage() {
   const sources = getSourceBrowseData();
 
   return (
-    <main className="app-page min-h-screen px-4 py-4 sm:px-6 lg:px-6">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="app-page min-h-screen px-4 py-4 sm:px-6 lg:px-6"
+    >
       <div className="page-shell flex flex-col gap-4">
         <section className="surface-card rounded-[1.15rem] px-4 py-4">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">

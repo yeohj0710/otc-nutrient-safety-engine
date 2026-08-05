@@ -1,0 +1,16 @@
+rule_id,rule_type,scope,lineage_status,product_item_sequences,ingredient_ids,pharmacologic_classes,required_anchor_ingredient_ids,administration_constraint_types,medication_terms,minimum_age_years,pregnancy_trimesters,lactation_supported,urgent_terms
+OTC-RULE-001,duplicate_ingredient,acetaminophen_containing_selected_products,mapped_from_v50_released_rule,,ING-acetaminophen,,,,,,,,
+OTC-RULE-002,duplicate_pharmacologic_class,ibuprofen_and_other_NSAIDs,mapped_from_v50_released_rule,,,NSAID,ING-ibuprofen,,,,,,
+OTC-RULE-003,max_daily_dose,acetaminophen_tylenol500_age_12_plus,mapped_from_v50_released_rule,202106092,ING-acetaminophen,,,maximum_daily_ingredient_amount,,12,,,
+OTC-RULE-004,minimum_interval,tylenol500_age_12_plus,mapped_from_v50_released_rule,202106092,ING-acetaminophen,,,minimum_interval_hours,,12,,,
+OTC-RULE-005,age_restriction,tylenol500_minimum_age_12,mapped_from_v50_released_rule,202106092,,,,,,,,,
+OTC-RULE-006,pregnancy_lactation,ibuprofen_pregnancy_lactation,mapped_from_v50_released_rule,198601920,,,,,,,3,false,
+OTC-RULE-007,hepatic_disease,acetaminophen_liver_disease,mapped_from_v50_released_rule,202106092,ING-acetaminophen,,,,,,,,
+OTC-RULE-008,renal_disease,ibuprofen_kidney_disease,mapped_from_v50_released_rule,198601920,,,,,,,,,
+OTC-RULE-009,gi_bleeding_ulcer,ibuprofen_gi_bleeding_or_ulcer,mapped_from_v50_released_rule,198601920,,,,,,,,,
+OTC-RULE-010,sedation_driving,pancol_a_driving,mapped_from_v50_released_rule,196800036,,,,,,,,,
+OTC-RULE-011,alcohol,acetaminophen_regular_alcohol_use,mapped_from_v50_released_rule,202106092,ING-acetaminophen,,,,,,,,
+OTC-RULE-012,anticoagulant_antiplatelet,ibuprofen_warfarin_or_coumarin_anticoagulant,mapped_from_v50_released_rule,198601920,,,,,warfarin;와파린;coumarin;쿠마린;쿠마린계 항응고제,,,,
+OTC-RULE-013,sedative_medication,pancol_a_sedative_or_overlapping_cold_medicine,mapped_from_v50_released_rule,196800036,,,,,sedative;진정제;수면제,,,,
+OTC-RULE-014,decongestant_hypertension,pancol_a_phenylephrine_hypertension,mapped_from_v50_released_rule,196800036,,,,,,,,,
+OTC-RULE-016,urgent_referral,tylenol500_stop_and_consult_symptoms,mapped_from_v50_released_rule,202106092,,,,,,,,,호흡곤란;온몸이 붉어짐;혈관부기;두드러기;천식발작;얼굴부기;저혈압;쇽;스티븐스-존슨;스티븐스 존슨;독성표피괴사;리엘 증후군

@@ -32,7 +32,24 @@
         "selectionReasonKo": "NSAID의 위장관 출혈 위험 크기를 메타분석 수치로 제시합니다.",
         "limitationKo": "관찰연구 메타분석이며 개인의 절대 위험을 정하지 않습니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-012",
+          "lineageStatus": "v50_rejected_not_in_v5_corpus",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "v5.0 P AND I 검색식이 논문을 인출하지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -82,7 +99,24 @@
         "selectionReasonKo": "연속 복용 기간이 길어질 때의 위험을 정의 수준에서 설명하며, 허가원문에 일수 기준이 없다는 점과 대비됩니다.",
         "limitationKo": "N-아세틸시스테인 치료 환자의 후향 차트 검토라 일반 복용자 집단이 아닙니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-018",
+          "lineageStatus": "v50_rejected_no_retain_decision_for_rule_question",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "논문이 규칙에 허용된 질문에서 최종 retain 판정을 받지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -130,7 +164,24 @@
         "selectionReasonKo": "한 번에 많이 먹는 것보다 나누어 오래 먹는 양상이 더 나쁠 수 있다는 점을 보여 줍니다.",
         "limitationKo": "영국 단일기관 코호트이며 중증 간손상으로 입원한 환자만 대상입니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-019",
+          "lineageStatus": "v50_rejected_no_retain_decision_for_rule_question",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "논문이 규칙에 허용된 질문에서 최종 retain 판정을 받지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -178,7 +229,24 @@
         "selectionReasonKo": "연령 기준만으로 용량을 정할 때 생기는 오차를 보여 주므로 연령 제한 경고를 설명합니다.",
         "limitationKo": "영국 제품 표기를 대상으로 한 모델링 연구이며 실제 복용 결과를 관찰하지 않았습니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-008",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "background_context",
+          "uiPolicy": "background_only",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "영국 소아용 파라세타몰 연령대별 용량 모델 연구이며, 국내 타이레놀 500 mg 정제의 12세 최소 연령 조건을 직접 검증하지 않았다.",
+          "uiBoundaryKo": "소아 연령대별 용량 오류의 배경으로만 표시한다. 국내 500 mg 정제의 12세 제한과 직접 일치한다고 쓰지 않는다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -226,7 +294,24 @@
         "selectionReasonKo": "클로르페니라민 함유 감기약의 졸음이 다른 진정 요인과 겹칠 때의 위험을 보여 줍니다.",
         "limitationKo": "부검 2건의 증례보고라 근거 수준이 낮고 인과관계를 일반화할 수 없습니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-016",
+          "lineageStatus": "v50_rejected_not_in_v5_corpus",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "v5.0 P AND I 검색식이 논문을 인출하지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -274,7 +359,31 @@
         "selectionReasonKo": "판콜에이내복액처럼 페닐레프린과 아세트아미노펜이 함께 든 제품에서 고혈압 주의가 필요한 이유를 설명합니다.",
         "limitationKo": "시뮬레이션과 서술적 종설이며 실제 환자 대상 임상 결과가 아닙니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-017",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "mixed_scope",
+          "uiPolicy": "direct_when_scope_matches_else_background",
+          "uiDirectLabelAllowed": true,
+          "directScope": {
+            "ingredientIds": [
+              "ING-acetaminophen",
+              "ING-mf-src-4b985f9d3bdb"
+            ],
+            "productItemSequences": [
+              "196800036"
+            ],
+            "profileConditions": [
+              "hypertensionOrCardiovascularDisease=true"
+            ],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "연구는 페닐레프린과 파라세타몰 경구 복합 노출에서 혈압 상승 가능성을 다룬다. 기존 행은 아세트아미노펜만 선언해 결합 노출을 기계적으로 표현하지 못한다.",
+          "uiBoundaryKo": "판콜에이내복액처럼 아세트아미노펜과 페닐레프린을 모두 포함한 제품에서만 직접 일치로 표시한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -323,7 +432,24 @@
         "selectionReasonKo": "중복 복용이 단독으로 일어나지 않고 용량·간격 이탈과 함께 나타난다는 점을 보여 줍니다.",
         "limitationKo": "미국 성인 패널의 7일 자기기록 관찰연구이며 인과관계를 확인한 연구가 아닙니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-002",
+          "lineageStatus": "v50_rejected_not_in_v5_corpus",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "v5.0 P AND I 검색식이 논문을 인출하지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       },
       {
         "linkId": "OTC-LIT-LINK-005",
@@ -337,7 +463,24 @@
         "selectionReasonKo": "허가 상한 초과가 드물지 않으며 초과 시 상한을 크게 웃돈다는 점을 수치로 보여 줍니다.",
         "limitationKo": "미국 성인 패널 관찰연구이며 국내 제품·허가 기준과 다릅니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-005",
+          "lineageStatus": "v50_rejected_not_in_v5_corpus",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "v5.0 P AND I 검색식이 논문을 인출하지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -383,7 +526,24 @@
         "selectionReasonKo": "간질환자에서 아세트아미노펜 사용을 제한해 온 근거와 그 불확실성을 함께 설명합니다.",
         "limitationKo": "종설이며 만성 간질환자 대상 권고를 확정하지 않았습니다.",
         "authorizationAlignment": "conflict",
-        "authorizationNoteKo": "같은 초록은 과소용량이 오히려 효과를 못 내게 할 수 있다고 적어 무조건적 제한에 이의를 답니다. 허가원문의 간장애 주의를 그대로 두고 이 견해차를 conflict 로 보존합니다."
+        "authorizationNoteKo": "같은 초록은 과소용량이 오히려 효과를 못 내게 할 수 있다고 적어 무조건적 제한에 이의를 답니다. 허가원문의 간장애 주의를 그대로 두고 이 견해차를 conflict 로 보존합니다.",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-010",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "background_context",
+          "uiPolicy": "background_only",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "논문 주제는 간기능 저하 환자의 아세트아미노펜 사용이지만, 연결 문장은 일반 과량과 간효소 상승을 설명한다. 만성 간질환자의 구체적 제한을 직접 확정하지 않는다.",
+          "uiBoundaryKo": "간질환 주의의 불확실성을 설명하는 배경 연구로만 표시하고 conflict를 유지한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -431,7 +591,24 @@
         "selectionReasonKo": "같은 계열을 겹쳐 쓰는 것이 단독 사용보다 위험 신호가 크다는 점을 설명합니다.",
         "limitationKo": "이탈리아 자발보고 자료의 보고오즈비여서 발생률이 아니며 보고 편향이 있습니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-003",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "background_context",
+          "uiPolicy": "background_only",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "NSAID와 저용량 아스피린 병용의 위장관 이상반응 신호를 다루지만, 현재 규칙이 만드는 두 비아스피린 NSAID 조합별 직접 비교는 아니다.",
+          "uiBoundaryKo": "NSAID 계열 중복의 배경 연구로만 표시한다. 특정 두 제품 조합의 직접 근거라고 쓰지 않는다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -479,7 +656,24 @@
         "selectionReasonKo": "졸림 유발 정도가 항히스타민 세대에 따라 다르다는 점을 보여 줍니다.",
         "limitationKo": "건강한 일본인 대상 단회 투여 무작위배정 시험이며 실제 도로 주행이 아닙니다.",
         "authorizationAlignment": "conflict",
-        "authorizationNoteKo": "허가원문은 세티리진 제품에도 운전 시 용량 초과 금지와 졸음 가능성을 적습니다. 이 연구는 2세대 항히스타민의 수행 저하를 관찰하지 못했으므로 허가 문구와 어긋나며, 허가 판정을 바꾸지 않고 conflict 로 보존합니다."
+        "authorizationNoteKo": "허가원문은 세티리진 제품에도 운전 시 용량 초과 금지와 졸음 가능성을 적습니다. 이 연구는 2세대 항히스타민의 수행 저하를 관찰하지 못했으므로 허가 문구와 어긋나며, 허가 판정을 바꾸지 않고 conflict 로 보존합니다.",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-013",
+          "lineageStatus": "v50_rejected_no_retain_decision_for_rule_question",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "논문이 규칙에 허용된 질문에서 최종 retain 판정을 받지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -528,7 +722,24 @@
         "selectionReasonKo": "종합감기약과 해열진통제를 함께 쓸 때 하루 총량이 넘어가는 경로를 보여 줍니다.",
         "limitationKo": "미국 온라인 패널의 자기기록이며 국내 허가 상한 자체를 정하지 않습니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-004",
+          "lineageStatus": "v50_rejected_not_in_v5_corpus",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "v5.0 P AND I 검색식이 논문을 인출하지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -574,7 +785,24 @@
         "selectionReasonKo": "복용 간격을 모르면 재복용이 앞당겨진다는 연결을 보여 주므로 최소 간격 경고의 배경입니다.",
         "limitationKo": "미국 성인 자기기록 관찰연구이고 대상 제형이 국내 허가 제형과 다릅니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-006",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "background_context",
+          "uiPolicy": "background_only",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "연구는 아세트아미노펜 650 mg 서방형의 8시간 간격 인지와 조기 재복용을 다룬다. 현재 규칙의 타이레놀 500 mg 일반정 4시간 최소 간격과 제형·간격 값이 다르다.",
+          "uiBoundaryKo": "복용 간격 오류의 배경으로만 표시한다. 4시간 기준을 뒷받침하는 직접 문헌으로 표시하지 않는다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -622,7 +850,28 @@
         "selectionReasonKo": "같은 성분이 여러 제품에 겹치는 상황이 실제로 과량 노출로 이어진다는 것을 보여 주므로 성분 중복 경고의 배경 설명에 씁니다.",
         "limitationKo": "미국 중독관리센터 신고 자료라서 국내 복용 실태나 개인의 위험도를 정하지 않습니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-001",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "direct_match",
+          "uiPolicy": "direct",
+          "uiDirectLabelAllowed": true,
+          "directScope": {
+            "ingredientIds": [
+              "ING-acetaminophen"
+            ],
+            "productItemSequences": [],
+            "profileConditions": [
+              "ageYears>=12"
+            ],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "아세트아미노펜 함유 제품을 둘 이상 함께 사용한 조건과 치료적 오용 결과가 성분 중복 규칙에 직접 대응한다. 연구 대상은 미국 중독관리센터에 보고된 12세 이상 사용자로 제한된다.",
+          "uiBoundaryKo": "아세트아미노펜 중복 판정에만 직접 일치로 표시한다. 12세 미만이나 다른 성분 중복으로 일반화하지 않는다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -668,7 +917,24 @@
         "selectionReasonKo": "음주와 아세트아미노펜을 함께 쓸 때 주의하는 이유를 대사 기전으로 설명합니다.",
         "limitationKo": "수학적 모델링 연구이며 임상시험으로 확인한 결과가 아닙니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-014",
+          "lineageStatus": "v50_rejected_no_retain_decision_for_rule_question",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "논문이 규칙에 허용된 질문에서 최종 retain 판정을 받지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -716,7 +982,31 @@
         "selectionReasonKo": "기존 신장질환이 있을 때 NSAID의 신손상 위험이 커진다는 점을 직접 보여 줍니다.",
         "limitationKo": "중국 입원 소아 코호트라 국내 외래 자가 복용 상황과 다릅니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-011",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "mixed_scope",
+          "uiPolicy": "direct_when_scope_matches_else_background",
+          "uiDirectLabelAllowed": true,
+          "directScope": {
+            "ingredientIds": [
+              "ING-ibuprofen"
+            ],
+            "productItemSequences": [
+              "198601920"
+            ],
+            "profileConditions": [
+              "kidneyDisease=true",
+              "ageYears<=18"
+            ],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "입원 소아의 이부프로펜 사용, 기존 만성콩팥병, 급성신손상 결과는 직접 대응한다. 성인과 행에 선언된 덱시부프로펜·나프록센으로의 확장은 직접 검증되지 않았다.",
+          "uiBoundaryKo": "18세 이하 신장질환자의 이부프로펜 조건에서만 직접 일치로 표시한다. 연령이 없거나 성인이면 배경으로만 표시한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -766,7 +1056,35 @@
         "selectionReasonKo": "항응고제 복용자에서 NSAID 병용 시 출혈 위험이 커진다는 점을 대규모 코호트로 보여 줍니다.",
         "limitationKo": "덴마크 처방 코호트이며 정맥혈전색전증 환자 집단이라 일반 일반의약품 사용자와 다릅니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-015",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "mixed_scope",
+          "uiPolicy": "direct_when_scope_matches_else_background",
+          "uiDirectLabelAllowed": true,
+          "directScope": {
+            "ingredientIds": [
+              "ING-ibuprofen"
+            ],
+            "productItemSequences": [
+              "198601920"
+            ],
+            "profileConditions": [
+              "medications.class=oral_anticoagulant"
+            ],
+            "medicationTerms": [
+              "warfarin",
+              "와파린",
+              "apixaban",
+              "아픽사반"
+            ]
+          },
+          "classificationReasonKo": "이부프로펜을 포함한 NSAID와 경구 항응고제 병용의 출혈 결과는 직접 대응한다. aspirin 항혈소판 분기와 덱시부프로펜은 직접 연구 범위가 아니다.",
+          "uiBoundaryKo": "이부프로펜과 명시된 경구 항응고제 병용에서만 직접 표시한다. aspirin 입력에는 직접 문헌으로 표시하지 않는다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -816,7 +1134,31 @@
         "selectionReasonKo": "임신 중 NSAID 노출과 태아 신장 결과를 대규모 코호트로 다룬 자료라 임신 경고의 배경입니다.",
         "limitationKo": "대만 처방 자료 기반 코호트이며 일반의약품 자가 복용이 아니라 처방 노출을 봤습니다.",
         "authorizationAlignment": "conflict",
-        "authorizationNoteKo": "같은 초록의 결론 앞 문장(문장 15)은 형제 비교에서는 위험 증가가 뚜렷하지 않았다고 적습니다. 허가원문은 임신 말기 투여를 제한하므로 문헌이 허가 판정을 완화하지 않도록 conflict 로 보존합니다."
+        "authorizationNoteKo": "같은 초록의 결론 앞 문장(문장 15)은 형제 비교에서는 위험 증가가 뚜렷하지 않았다고 적습니다. 허가원문은 임신 말기 투여를 제한하므로 문헌이 허가 판정을 완화하지 않도록 conflict 로 보존합니다.",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-009",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "mixed_scope",
+          "uiPolicy": "direct_when_scope_matches_else_background",
+          "uiDirectLabelAllowed": true,
+          "directScope": {
+            "ingredientIds": [
+              "ING-ibuprofen"
+            ],
+            "productItemSequences": [
+              "198601920"
+            ],
+            "profileConditions": [
+              "pregnant=true",
+              "pregnancyTrimester=3"
+            ],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "임신 3기 이부프로펜 노출과 소아 신장 결과는 현재 규칙 범위에 직접 대응한다. 그러나 수유는 연구하지 않았고, 행에 함께 선언된 덱시부프로펜·나프록센의 직접 결과도 제시하지 않는다.",
+          "uiBoundaryKo": "임신 3기 이부프로펜 조건에서만 직접 일치로 표시한다. 임신 시기 미입력·1기·2기, 수유 단독 또는 다른 NSAID에는 직접 표시하지 않는다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -866,7 +1208,24 @@
         "selectionReasonKo": "즉시 상담·진료가 필요한 중대 이상 증상 경고가 어떤 상태를 겨냥하는지 설명합니다.",
         "limitationKo": "중국 3차병원 10년 후향 연구이며 일반의약품 사용자에서의 발생률을 알려 주지 않습니다.",
         "authorizationAlignment": "consistent",
-        "authorizationNoteKo": ""
+        "authorizationNoteKo": "",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-020",
+          "lineageStatus": "v50_rejected_not_in_v5_corpus",
+          "semanticClassification": null,
+          "uiPolicy": "exclude_from_result_ui",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "v5.0 P AND I 검색식이 논문을 인출하지 않아 v5.0 링크로 채택되지 않았다.",
+          "uiBoundaryKo": "v5.0 결과 UI에서 제외하고 v4 후보 계보 감사에서만 보존한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [
@@ -915,7 +1274,24 @@
         "selectionReasonKo": "연령·제형이 맞지 않는 제품을 고르는 것이 실제 오류의 주된 경로임을 보여 줍니다.",
         "limitationKo": "호주 중독정보센터 신고 자료의 후향 관찰연구이며 12세 미만만 대상입니다.",
         "authorizationAlignment": "conflict",
-        "authorizationNoteKo": "같은 초록의 결론(문장 15)은 소아 투약 오류가 간독성·사망으로 이어지는 경우는 드물다고 적어, 연령 기준을 두는 허가 문구보다 결과 심각도를 낮게 봅니다. 허가원문의 연령 기준을 그대로 두고 이 견해차를 지우지 않고 함께 보존합니다."
+        "authorizationNoteKo": "같은 초록의 결론(문장 15)은 소아 투약 오류가 간독성·사망으로 이어지는 경우는 드물다고 적어, 연령 기준을 두는 허가 문구보다 결과 심각도를 낮게 봅니다. 허가원문의 연령 기준을 그대로 두고 이 견해차를 지우지 않고 함께 보존합니다.",
+        "v51Classification": {
+          "classificationId": "V51-LIT-CLASS-007",
+          "lineageStatus": "v50_emitted",
+          "semanticClassification": "background_context",
+          "uiPolicy": "background_only",
+          "uiDirectLabelAllowed": false,
+          "directScope": {
+            "ingredientIds": [],
+            "productItemSequences": [],
+            "profileConditions": [],
+            "medicationTerms": []
+          },
+          "classificationReasonKo": "12세 미만 소아의 비의도적 파라세타몰 과량과 액상제 함량·제형 선택 오류를 다룬다. 성인용 500 mg 정제의 최소 연령 조건과 직접 대응하지 않는다.",
+          "uiBoundaryKo": "소아 투약 오류의 배경으로만 표시하고 허가원문과의 conflict를 유지한다.",
+          "humanExpertReviewed": false,
+          "supportsRuleRelease": false
+        }
       }
     ],
     "ingredientIds": [

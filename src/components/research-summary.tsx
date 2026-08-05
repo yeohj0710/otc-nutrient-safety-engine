@@ -22,7 +22,7 @@ export function ResearchSummary() {
   const rl = summary.ruleLiterature;
 
   return (
-    <main className={styles.page}>
+    <main id="main-content" tabIndex={-1} className={styles.page}>
       <div className={styles.shell}>
         <header className={styles.header}>
           <p className={styles.eyebrow}>연세대학교 약학대학 · 권혁찬 · 졸업연구 v5.0</p>
@@ -90,6 +90,12 @@ export function ResearchSummary() {
             만들었습니다. 검색식은 대상(P)과 노출(I) 두 블록만 쓰고 결과·비교·Humans·
             연구설계·언어·출판유형 제한을 두지 않습니다.
           </p>
+          <p>
+            다만 출판 기간 제한은 남겨 두었습니다. 아래 표의 시작일보다 앞서 확립된 문헌은
+            코퍼스에 들어오지 않습니다. 같은 검색식에서 시작일 제한만 풀면 건수가 1.64배가
+            됩니다. 문헌은 설명 근거이고 규칙 판정은 허가원문에서 나오므로 이 공백이 판정을
+            바꾸지는 않습니다.
+          </p>
           <table className={styles.table}>
             <thead>
               <tr>
@@ -139,24 +145,24 @@ export function ResearchSummary() {
         </section>
 
         <section className={styles.section}>
-          <h2>3. 선별은 두 층입니다</h2>
+          <h2>3. 선별은 두 단계입니다</h2>
           <p>
             결정적 텍스트 분류기가 {n(lit.screeningUnits)}건 전량에 라벨을 부여하고
-            (커버리지 1.0), 의미 재판정 층이 그중 {n(sc.adjudicatedRows)}건을 제목·초록으로
+            (커버리지 1.0), 의미 재판정이 그중 {n(sc.adjudicatedRows)}건을 제목·초록으로
             다시 판정해 덮어썼습니다. 레코드마다 언어모델에 물어본 것이 아닙니다.
           </p>
           <table className={styles.table}>
             <thead>
               <tr>
-                <th>층</th>
-                <th style={{ textAlign: "right" }}>retain</th>
-                <th style={{ textAlign: "right" }}>deprioritize</th>
-                <th style={{ textAlign: "right" }}>uncertain</th>
+                <th>단계</th>
+                <th style={{ textAlign: "right" }}>유지</th>
+                <th style={{ textAlign: "right" }}>후순위</th>
+                <th style={{ textAlign: "right" }}>판정 보류</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>분류기 (전량)</td>
+                <td>전량 분류</td>
                 <td style={{ textAlign: "right" }}>{n(sc.classifier.retain)}</td>
                 <td style={{ textAlign: "right" }}>{n(sc.classifier.deprioritize)}</td>
                 <td style={{ textAlign: "right" }}>{n(sc.classifier.uncertain)}</td>
@@ -175,7 +181,7 @@ export function ResearchSummary() {
           </table>
           <div className={styles.note}>
             <strong>
-              최종 retain {n(sc.final.retain)}건 가운데 재판정을 거친 것은{" "}
+              최종 유지 {n(sc.final.retain)}건 가운데 재판정을 거친 것은{" "}
               {n(sc.finalRetainFromAdjudication)}건뿐입니다.
             </strong>{" "}
             나머지 {n(sc.finalRetainFromClassifierOnly)}건은 재판정 표본에 들지 않아 분류기
@@ -226,11 +232,11 @@ export function ResearchSummary() {
           </dl>
           <div className={styles.note}>
             <strong>
-              파이프라인이 더 많이 남깁니다 — 전수 retain {sg.pipelineRetainShare}% 대 채점자
+              파이프라인이 더 많이 남깁니다 — 전수 유지 {sg.pipelineRetainShare}% 대 채점자
               추정 {sg.scorerRetainShare}%.
             </strong>{" "}
-            불일치도 retain→deprioritize{" "}
-            {sg.disagreementByDirection["retain->deprioritize"]}건 대 deprioritize→retain{" "}
+            불일치도 유지→후순위{" "}
+            {sg.disagreementByDirection["retain->deprioritize"]}건 대 후순위→유지{" "}
             {sg.disagreementByDirection["deprioritize->retain"]}건으로 한쪽이 지배적입니다.
             이것을 오차라고 부르지 않습니다. 판정 경향의 계통적 차이입니다. 채점 라벨은
             봉인된 참조 라벨을 열기 전에 해시로 잠갔습니다.
@@ -274,10 +280,10 @@ export function ResearchSummary() {
               .join(" · ")}{" "}
             입니다. 사유는 두 가지로, 후보 논문이 v5.0 코퍼스에 인출되지 않은 경우{" "}
             {rl.rejectionCounts.not_in_v5_corpus}건과, 코퍼스에는 있으나 그 규칙이 허용한
-            질문에서 retain 판정을 받지 못한 경우{" "}
+            질문에서 유지 판정을 받지 못한 경우{" "}
             {rl.rejectionCounts.no_retain_decision_for_rule_question}건입니다. 검색 기간
-            때문에 빠진 후보는 없습니다 — 기간 제한은 질문별로 2010-01-01 또는 2000-01-01
-            부터이고 코퍼스 출판연도는 2000~2026년입니다.
+            때문에 빠진 후보는 없습니다. 기간 제한은 질문별로 2010-01-01 또는 2000-01-01
+            부터이고 코퍼스 출판연도는 2000~2026년이며, 미연결 후보는 모두 그 안에 있습니다.
           </div>
         </section>
 
@@ -316,7 +322,7 @@ export function ResearchSummary() {
           수치 출처 · research_v3/logs/v50_run_report.json ·
           v50_scoring_report.json · literature_link_manifest.json
           <br />
-          independent_blinding = false · release_ready = false · 사람 판정 0건
+          사람 맹검 없음 · 배포 준비 상태 거짓 · 사람 판정 0건
         </p>
       </div>
     </main>

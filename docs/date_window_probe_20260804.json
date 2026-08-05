@@ -1,0 +1,47 @@
+{
+  "purpose": "기간 제한이 잘라낸 크기를 건수로만 진단. 인출·선별·채점 없음.",
+  "start_probe": "1900/01/01",
+  "per_question": [
+    {
+      "question_id": "OTC-LIT-Q01-ACETAMINOPHEN",
+      "start_original": "2010/01/01",
+      "hit_current": 9279,
+      "hit_without_start_limit": 15563,
+      "ratio": 1.6772
+    },
+    {
+      "question_id": "OTC-LIT-Q02-NSAID",
+      "start_original": "2010/01/01",
+      "hit_current": 6468,
+      "hit_without_start_limit": 13271,
+      "ratio": 2.0518
+    },
+    {
+      "question_id": "OTC-LIT-Q03-COLD-ALLERGY",
+      "start_original": "2010/01/01",
+      "hit_current": 5676,
+      "hit_without_start_limit": 13746,
+      "ratio": 2.4218
+    },
+    {
+      "question_id": "OTC-LIT-Q04-DIGESTIVE",
+      "start_original": "2000/01/01",
+      "hit_current": 21365,
+      "hit_without_start_limit": 27520,
+      "ratio": 1.2881
+    },
+    {
+      "question_id": "OTC-LIT-Q05-TOPICAL",
+      "start_original": "2000/01/01",
+      "hit_current": 517,
+      "hit_without_start_limit": 877,
+      "ratio": 1.6963
+    }
+  ],
+  "total": {
+    "current": 43305,
+    "without_start_limit": 70977,
+    "ratio": 1.639,
+    "outside_window": 27672
+  }
+}

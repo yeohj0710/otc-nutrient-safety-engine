@@ -1,0 +1,1434 @@
+# v5.1 전문가 검토 패킷
+
+> 이 패킷의 모든 항목은 사람 전문가가 검증하기 전까지 비활성이다. 권고 상태는 자동 검토 결과이며 승인 기록이 아니다.
+
+## 검토 범위와 사용 금지
+
+이 패킷은 v5.0의 미검증 후보 목록(shortlist) 33개를 검토하기 위한 읽기 전용 자료다. 사람 전문가가 원문, 적용 범위, 판정문을 확인하고 승인하기 전에는 어떤 항목도 엔진, 실행 데이터(runtime), 사용자 화면(UI) 또는 운영 판정에 연결하지 않는다.
+
+`provisional`, `needs_expert_review`, `rejected`는 자동 권고 상태다. `provisional`도 사람 전문가 검증 전에는 활성 상태가 아니다.
+
+## 결합 감사 요약
+
+- 전문가 검토 큐: 33개
+- 의미 검토 행: 33개
+- 패킷 수록 항목: 33개
+- 큐 중복 ID: 0개
+- 의미 검토 중복 ID: 0개
+- 의미 검토가 없는 큐 항목: 0개
+- 큐에 없는 의미 검토 항목: 0개
+- 사람 승인 입력: 0개
+- 활성 항목: 0개
+- 비활성 후보: 33개
+- 채택 시 필수 회귀 테스트를 적은 항목: 33개
+- 구체적 회귀 테스트 시나리오를 적은 항목: 33개
+- 완결 공식 원문을 수록한 항목: 33개
+- 완결 원문이 없어 이전 큐 검토 원문을 대신 사용한 항목: 0개
+- 문서 개정일 또는 부재 사유를 수록한 항목: 33개
+
+### 권고 상태별 수
+
+| 권고 상태 | 항목 수 |
+| --- | ---: |
+| `needs_expert_review` | 17 |
+| `provisional` | 2 |
+| `rejected` | 14 |
+
+### 의미 관계별 수
+
+| 의미 관계 | 항목 수 |
+| --- | ---: |
+| `direct_same_scope` | 3 |
+| `duplicate_context` | 5 |
+| `potential_product_extension` | 16 |
+| `wrong_scope` | 9 |
+
+## 전문가 검토 항목
+
+각 항목에서 공식 허가 원문과 위치를 먼저 확인한다. 그다음 제안 조건이 참조 규칙 범위를 부당하게 넓히지 않는지 판단한다.
+
+## 1. EXP-OTC-01-NB-P1-B23-age\_restriction
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-005` / `age_restriction`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 23
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 21-24
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 23
+- 참조 규칙 범위: `tylenol500_minimum_age_12`
+- 참조 규칙 실행 조건: `item_sequence=202106092|minimum_age_years=12`
+- 참조 코드 위치: `src/lib/otc/engine.ts:971`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 minimum\_age 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 최소 연령 제한을 만들지 않는다.
+- 현재 후보 사용자 문구: 입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.
+- 현재 후보 다음 행동: 소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.
+- 판단 근거: 원문 문단 23은 고령자에서 위장관계 이상반응 위험이 더 클 수 있다는 설명의 일부다. 최소 복용 연령이나 연령별 용량 제한을 제시하지 않으며 현재 타이레놀정500 만 12세 범위와도 다르다.
+- 전문가 확인 질문: 완결된 고령자 주의 문구를 별도 노인 위험 규칙 후보로 수집할 필요가 있는가?
+- 검토용 공식 원문: 3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 위 또는 장관의 출혈, 궤양 및 천공(뚫 림)을 포함한 중대한 위장관계 이상반응의 위험을 증가시킬 수 있으며, 이는 치명적일 수 있다. 이러한 이상반 응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관계 이상반응의 위험이 더 클 수 있다.
+- 원시 후보 원문(감사용 조각): 응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관계 이상반응의 위험이
+- 검토 제안 원문(감사용 조각): 응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관계 이상반응의 위험이
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P1-B23-age\_restriction; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-005/age\_restriction; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 최소 연령 제한을 만들지 않는다.; 예상=OTC-RULE-005 미발동
+  - 경계: 후보=EXP-OTC-01-NB-P1-B23-age\_restriction; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-005/age\_restriction; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-005 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P1-B23-age\_restriction; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 예상=OTC-RULE-005 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P1-B23-age\_restriction; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-005/age\_restriction; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-005 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 2. EXP-OTC-01-NB-P1-B3-alcohol
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-011` / `alcohol`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 3
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 1-4
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 3
+- 참조 규칙 범위: `acetaminophen_regular_alcohol_use`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1044`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=201110646 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성
+- 후보 판정문: 복용 전에 의사 또는 약사와 상의하도록 안내한다.
+- 현재 후보 사용자 문구: 음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 음주 중 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 원문 문단 3~4는 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 제품을 복용하면 위장출혈이 생길 수 있다고 직접 경고한다. 현재 범위는 아세트아미노펜의 간손상 경고이며 후보 text와 locator는 문장 후반이 빠져 있어 별도 제품 규칙으로 검토해야 한다.
+- 전문가 확인 질문: 문단 3~4를 하나의 근거 범위로 묶고 NSAID의 위장출혈 결과를 아세트아미노펜의 간손상 결과와 분리한 제품별 음주 규칙으로 채택할 것인가?
+- 검토용 공식 원문: 사용상의주의사항 1. 경고 1) 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 원시 후보 원문(감사용 조각): 1) 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 검토 제안 원문(감사용 조각): 1) 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P1-B3-alcohol; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-011/alcohol; 후보조건=검토안: item\_sequence=201110646 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-011 미발동; 채택 후 예상판정=복용 전에 의사 또는 약사와 상의하도록 안내한다.
+  - 경계: 후보=EXP-OTC-01-NB-P1-B3-alcohol; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-011/alcohol; 후보조건=검토안: item\_sequence=201110646 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=복용 전에 의사 또는 약사와 상의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-011 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P1-B3-alcohol; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=201110646 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 예상=OTC-RULE-011 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P1-B3-alcohol; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-011/alcohol; 후보조건=검토안: item\_sequence=201110646 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-011 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 3. EXP-OTC-01-NB-P1-B3-duplicate\_pharmacologic\_class
+
+- 권고 상태: `rejected`
+- 의미 관계: `duplicate_context`
+- 규칙: `OTC-RULE-002` / `duplicate_pharmacologic_class`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 3
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 1-4
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 3
+- 참조 규칙 범위: `ibuprofen_and_other_NSAIDs`
+- 참조 규칙 실행 조건: `scope_only_no_structured_binding`
+- 참조 코드 위치: `src/lib/otc/engine.ts:759`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 NSAID 계열 중복 경고를 만들지 않는다.
+- 현재 후보 사용자 문구: 같은 NSAID 계열 성분을 함께 복용할 수 있습니다.
+- 현재 후보 다음 행동: 함께 복용하지 말고 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 덱시부프로펜은 NSAID이지만 원문 문단 3~4는 매일 3잔 이상 음주자가 이 약이나 다른 해열진통제를 복용할 때 상담하라는 경고다. 같은 원문 문단 3은 OTC-RULE-011의 음주 후보로도 수집됐으며 NSAID 병용 금지를 말하지 않는다.
+- 전문가 확인 질문: 이 제품의 다른 허가원문에서 다른 NSAID와의 병용 금지 문구를 별도로 찾을 것인가?
+- 검토용 공식 원문: 사용상의주의사항 1. 경고 1) 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 원시 후보 원문(감사용 조각): 1) 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 검토 제안 원문(감사용 조각): 1) 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P1-B3-duplicate\_pharmacologic\_class; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-002/duplicate\_pharmacologic\_class; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 NSAID 계열 중복 경고를 만들지 않는다.; 예상=OTC-RULE-002 미발동
+  - 경계: 후보=EXP-OTC-01-NB-P1-B3-duplicate\_pharmacologic\_class; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-002/duplicate\_pharmacologic\_class; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-002 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P1-B3-duplicate\_pharmacologic\_class; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 예상=OTC-RULE-002 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P1-B3-duplicate\_pharmacologic\_class; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-002/duplicate\_pharmacologic\_class; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-002 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 4. EXP-OTC-01-NB-P1-B4-gi\_bleeding\_ulcer
+
+- 권고 상태: `rejected`
+- 의미 관계: `duplicate_context`
+- 규칙: `OTC-RULE-009` / `gi_bleeding_ulcer`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 4
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 1-4
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 4
+- 참조 규칙 범위: `ibuprofen_gi_bleeding_or_ulcer`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=gi_bleeding_ulcer`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1030`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 위장관 출혈·궤양 병력 경고를 만들지 않는다.
+- 현재 후보 사용자 문구: 위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 문단 4는 직전 문단 3의 정기 음주 경고가 줄바꿈된 후반부다. 정기 음주자가 복용하면 위장출혈이 유발될 수 있다는 뜻이며 위장관 출혈이나 궤양 병력을 입력 조건으로 삼는 원문이 아니다.
+- 전문가 확인 질문: 이 행을 OTC-RULE-009에서 제외하고 문단 3~4를 음주 후보 하나로 합칠 것인가?
+- 검토용 공식 원문: 사용상의주의사항 1. 경고 1) 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 원시 후보 원문(감사용 조각): 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 검토 제안 원문(감사용 조각): 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P1-B4-gi\_bleeding\_ulcer; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-009/gi\_bleeding\_ulcer; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 위장관 출혈·궤양 병력 경고를 만들지 않는다.; 예상=OTC-RULE-009 미발동
+  - 경계: 후보=EXP-OTC-01-NB-P1-B4-gi\_bleeding\_ulcer; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-009/gi\_bleeding\_ulcer; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-009 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P1-B4-gi\_bleeding\_ulcer; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 예상=OTC-RULE-009 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P1-B4-gi\_bleeding\_ulcer; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-009/gi\_bleeding\_ulcer; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-009 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 5. EXP-OTC-01-NB-P1-B5-decongestant\_hypertension
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-014` / `decongestant_hypertension`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 5
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 5-8
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 5
+- 참조 규칙 범위: `pancol_a_phenylephrine_hypertension`
+- 참조 규칙 실행 조건: `item_sequence=196800036|flags=decongestant_hypertension`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1051`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 비충혈제거제·고혈압 경고를 만들지 않는다.
+- 현재 후보 사용자 문구: 고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 원문은 덱시부프로펜을 포함한 NSAID의 심혈관계 혈전 위험을 설명한다. 제품에 페닐레프린 같은 비충혈제거제가 없으므로 판콜에이 비충혈제거제 규칙과 성분·기전·판정 문구가 다르다.
+- 전문가 확인 질문: 이 문구를 별도 NSAID 심혈관 위험 규칙 후보로 다시 수집할 것인가?
+- 검토용 공식 원문: 2) 심혈관계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 중대한 심혈관계 혈전(혈관막힘) 반 응, 심근경색증 및 뇌졸중의 위험을 증가시킬 수 있으며, 이는 치명적일 수 있다. 투여 기간에 따라 이러한 위 험이 증가될 수 있다. 심혈관계 질환 또는 심혈관계 질환의 위험 인자가 있는 환자에서는 더 위험할 수도 있 다.
+- 원시 후보 원문(감사용 조각): 2) 심혈관계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 중대한 심혈관계 혈전(혈관막힘) 반
+- 검토 제안 원문(감사용 조각): 2) 심혈관계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 중대한 심혈관계 혈전(혈관막힘) 반
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P1-B5-decongestant\_hypertension; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-014/decongestant\_hypertension; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 비충혈제거제·고혈압 경고를 만들지 않는다.; 예상=OTC-RULE-014 미발동
+  - 경계: 후보=EXP-OTC-01-NB-P1-B5-decongestant\_hypertension; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-014/decongestant\_hypertension; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-014 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P1-B5-decongestant\_hypertension; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 예상=OTC-RULE-014 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P1-B5-decongestant\_hypertension; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-014/decongestant\_hypertension; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-014 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 6. EXP-OTC-01-NB-P2-B17-pregnancy\_lactation
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-006` / `pregnancy_lactation`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.2, 문단 17
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.2, 문단 4-22
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.2, 문단 17
+- 참조 규칙 범위: `ibuprofen_pregnancy_lactation`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=pregnancy_lactation`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1094`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=201110646 AND 임신 시기가 허가문구의 ‘임신 6개월 이상’에 해당함. 현재 1·2·3기 입력만으로 6개월 경계를 정확히 표현할 수 없으므로 임신 주수 환산을 전문가가 승인하기 전에는 비활성
+- 후보 판정문: 임신 6개월 이상이면 이 제품을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 임신 또는 수유 중 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 원문은 임신 6개월 이상에서 덱스피드 복용 금지를 직접 지지한다. 현재 규칙은 어린이부루펜시럽의 임신 3기에 한정된다. 현재 엔진은 \`pregnancyTrimester\`를 입력받지만 월·주 단위 경계는 받지 않는다. 따라서 6개월 이상을 단순히 3기로 치환하면 허가 범위를 누락하거나 넓힐 수 있다. 이 원문은 수유 조건을 지지하지 않는다.
+- 전문가 확인 질문: 허가문구의 임신 6개월 이상을 몇 주부터로 판정할 것인가? 현재 \`pregnancyTrimester\` 입력만으로 판정할 수 없다면 주수 입력을 추가할 것인가? 시기 미상과 수유 중은 비판정으로 둘 것인가?
+- 검토용 공식 원문: 1) 위장관궤양이 있거나 징후가 있는 환자, 또는 그 재발병력이 있는 환자 2) 위장관이나 뇌혈관 또는 다른 부위의 출혈이 있는 환자 3) 심한 혈액이상 환자 4) 심한 간장애 환자 5) 심한 신장애(신장장애) 환자 6) 심한 심부전 환자 7) 심한 고혈압 환자 8) 이 약 및 이 약의 구성성분에 과민반응이 있는 환자 9) 기관지 천식 또는 그 병력이 있는 환자 10) 아스피린이나 다른 비스테로이드성 소염(항염)진통제(COX-2 억제제 포함)에 대하여 천식, 두드러기 또 는 알레르기 반응 병력이 있는 환자(이러한 환자에서 비스테로이드성 소염(항염)진통제 투여후 치명적인 중 증(심한 증상)의 아나필락시스(과민성)모양 반응이 드물게 보고되었다.) 11) 관상동맥 우회로술(CABG) 전후에 발생하는 통증의 치료 12) 임신 6개월 이상의 임부(비스테로이드성 소염(항염)진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다.) 13) 크론병 또는 궤양성대장염과 같은 염증성장질환 환자 14) 이전의 비스테로이드성 소염(항염)진통제 치료로 인해, 위장관 출혈 또는 천공(뚫림)이 발생한 병력이 있 는 환자 3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것.
+- 원시 후보 원문(감사용 조각): 12) 임신 6개월 이상의 임부(비스테로이드성 소염(항염)진통제와 마찬가지로 임신 말기에 이 약을 투여 시
+- 검토 제안 원문(감사용 조각): 12) 임신 6개월 이상의 임부(비스테로이드성 소염(항염)진통제와 마찬가지로 임신 말기에 이 약을 투여 시
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P2-B17-pregnancy\_lactation; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-006/pregnancy\_lactation; 후보조건=검토안: item\_sequence=201110646 AND 임신 시기가 허가문구의 ‘임신 6개월 이상’에 해당함. 현재 1·2·3기 입력만으로 6개월 경계를 정확히 표현할 수 없으므로 임신 주수 환산을 전문가가 승인하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-006 미발동; 채택 후 예상판정=임신 6개월 이상이면 이 제품을 복용하지 않도록 안내한다.
+  - 경계: 후보=EXP-OTC-01-NB-P2-B17-pregnancy\_lactation; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-006/pregnancy\_lactation; 후보조건=검토안: item\_sequence=201110646 AND 임신 시기가 허가문구의 ‘임신 6개월 이상’에 해당함. 현재 1·2·3기 입력만으로 6개월 경계를 정확히 표현할 수 없으므로 임신 주수 환산을 전문가가 승인하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=임신 6개월 이상이면 이 제품을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-006 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P2-B17-pregnancy\_lactation; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=201110646 AND 임신 시기가 허가문구의 ‘임신 6개월 이상’에 해당함. 현재 1·2·3기 입력만으로 6개월 경계를 정확히 표현할 수 없으므로 임신 주수 환산을 전문가가 승인하기 전에는 비활성; 예상=OTC-RULE-006 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P2-B17-pregnancy\_lactation; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-006/pregnancy\_lactation; 후보조건=검토안: item\_sequence=201110646 AND 임신 시기가 허가문구의 ‘임신 6개월 이상’에 해당함. 현재 1·2·3기 입력만으로 6개월 경계를 정확히 표현할 수 없으므로 임신 주수 환산을 전문가가 승인하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-006 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 7. EXP-OTC-01-NB-P2-B7-hepatic\_disease
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-007` / `hepatic_disease`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.2, 문단 7
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.2, 문단 4-22
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.2, 문단 7
+- 참조 규칙 범위: `acetaminophen_liver_disease`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1016`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=201110646 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성
+- 후보 판정문: 심한 간장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 상위 문단 3은 복용 금지 대상을 열거하고 문단 7은 심한 간장애 환자를 명시한다. 현재 엔진의 liverDisease 불리언은 경증·중증과 과거력을 구분하지 않아 그대로 연결하면 원문보다 넓게 판정한다.
+- 전문가 확인 질문: 심한 간장애를 사용자가 답할 수 있는 조건으로 어떻게 정의하고 중증도 미상은 비판정으로 둘 것인가?
+- 검토용 공식 원문: 1) 위장관궤양이 있거나 징후가 있는 환자, 또는 그 재발병력이 있는 환자 2) 위장관이나 뇌혈관 또는 다른 부위의 출혈이 있는 환자 3) 심한 혈액이상 환자 4) 심한 간장애 환자 5) 심한 신장애(신장장애) 환자 6) 심한 심부전 환자 7) 심한 고혈압 환자 8) 이 약 및 이 약의 구성성분에 과민반응이 있는 환자 9) 기관지 천식 또는 그 병력이 있는 환자 10) 아스피린이나 다른 비스테로이드성 소염(항염)진통제(COX-2 억제제 포함)에 대하여 천식, 두드러기 또 는 알레르기 반응 병력이 있는 환자(이러한 환자에서 비스테로이드성 소염(항염)진통제 투여후 치명적인 중 증(심한 증상)의 아나필락시스(과민성)모양 반응이 드물게 보고되었다.) 11) 관상동맥 우회로술(CABG) 전후에 발생하는 통증의 치료 12) 임신 6개월 이상의 임부(비스테로이드성 소염(항염)진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다.) 13) 크론병 또는 궤양성대장염과 같은 염증성장질환 환자 14) 이전의 비스테로이드성 소염(항염)진통제 치료로 인해, 위장관 출혈 또는 천공(뚫림)이 발생한 병력이 있 는 환자 3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것.
+- 원시 후보 원문(감사용 조각): 4) 심한 간장애 환자
+- 검토 제안 원문(감사용 조각): 4) 심한 간장애 환자
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P2-B7-hepatic\_disease; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-007/hepatic\_disease; 후보조건=검토안: item\_sequence=201110646 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-007 미발동; 채택 후 예상판정=심한 간장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+  - 경계: 후보=EXP-OTC-01-NB-P2-B7-hepatic\_disease; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-007/hepatic\_disease; 후보조건=검토안: item\_sequence=201110646 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=심한 간장애가 있으면 이 제품을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-007 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P2-B7-hepatic\_disease; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=201110646 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 예상=OTC-RULE-007 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P2-B7-hepatic\_disease; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-007/hepatic\_disease; 후보조건=검토안: item\_sequence=201110646 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-007 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 8. EXP-OTC-01-NB-P2-B8-renal\_disease
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-008` / `renal_disease`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.2, 문단 8
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.2, 문단 4-22
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.2, 문단 8
+- 참조 규칙 범위: `ibuprofen_kidney_disease`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=renal_disease`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1023`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=201110646 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성
+- 후보 판정문: 심한 신장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 신장질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 상위 문단 3은 복용 금지 대상을 열거하고 문단 8은 심한 신장애 환자를 명시한다. 현재 엔진의 kidneyDisease 불리언은 중증도를 구분하지 않아 그대로 연결하면 원문보다 넓게 판정한다.
+- 전문가 확인 질문: 심한 신장애를 사용자가 답할 수 있는 조건으로 어떻게 정의하고 중증도 미상은 비판정으로 둘 것인가?
+- 검토용 공식 원문: 1) 위장관궤양이 있거나 징후가 있는 환자, 또는 그 재발병력이 있는 환자 2) 위장관이나 뇌혈관 또는 다른 부위의 출혈이 있는 환자 3) 심한 혈액이상 환자 4) 심한 간장애 환자 5) 심한 신장애(신장장애) 환자 6) 심한 심부전 환자 7) 심한 고혈압 환자 8) 이 약 및 이 약의 구성성분에 과민반응이 있는 환자 9) 기관지 천식 또는 그 병력이 있는 환자 10) 아스피린이나 다른 비스테로이드성 소염(항염)진통제(COX-2 억제제 포함)에 대하여 천식, 두드러기 또 는 알레르기 반응 병력이 있는 환자(이러한 환자에서 비스테로이드성 소염(항염)진통제 투여후 치명적인 중 증(심한 증상)의 아나필락시스(과민성)모양 반응이 드물게 보고되었다.) 11) 관상동맥 우회로술(CABG) 전후에 발생하는 통증의 치료 12) 임신 6개월 이상의 임부(비스테로이드성 소염(항염)진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다.) 13) 크론병 또는 궤양성대장염과 같은 염증성장질환 환자 14) 이전의 비스테로이드성 소염(항염)진통제 치료로 인해, 위장관 출혈 또는 천공(뚫림)이 발생한 병력이 있 는 환자 3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것.
+- 원시 후보 원문(감사용 조각): 5) 심한 신장애(신장장애) 환자
+- 검토 제안 원문(감사용 조각): 5) 심한 신장애(신장장애) 환자
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P2-B8-renal\_disease; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-008/renal\_disease; 후보조건=검토안: item\_sequence=201110646 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-008 미발동; 채택 후 예상판정=심한 신장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+  - 경계: 후보=EXP-OTC-01-NB-P2-B8-renal\_disease; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-008/renal\_disease; 후보조건=검토안: item\_sequence=201110646 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=심한 신장애가 있으면 이 제품을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-008 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P2-B8-renal\_disease; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=201110646 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 예상=OTC-RULE-008 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P2-B8-renal\_disease; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-008/renal\_disease; 후보조건=검토안: item\_sequence=201110646 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-008 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 9. EXP-OTC-01-NB-P3-B17-sedation\_driving
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-010` / `sedation_driving`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.3, 문단 17
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.3, 문단 16-18
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.3, 문단 17
+- 참조 규칙 범위: `pancol_a_driving`
+- 참조 규칙 실행 조건: `item_sequence=196800036|flags=sedation_driving`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1037`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=201110646 AND will\_drive=true AND 단기 1회 복용이 아님. 복용 기간 조건을 정의하기 전에는 비활성
+- 후보 판정문: 어지러움이나 피로가 나타날 수 있으므로 운전·기계 조작 시 주의하도록 안내한다.
+- 현재 후보 사용자 문구: 졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.
+- 현재 후보 다음 행동: 운전·기계 조작을 피하고 허가사항을 확인하세요.
+- 판단 근거: 원문 문단 16~18은 반응능력 저하 가능성과 운전 주의를 직접 연결하지만 1회 또는 단기간 복용에는 특별한 주의가 필요하지 않다고 예외를 둔다. 현재 엔진은 판콜에이의 운전 회피 문구를 재사용하고 단기간의 뜻도 판정하지 못한다.
+- 전문가 확인 질문: 단기간의 기준을 며칠 또는 몇 회로 정의할 것인가, 그리고 판콜에이의 운전 회피와 덱스피드의 운전 주의를 별도 결정 문구로 나눌 것인가?
+- 검토용 공식 원문: 2) 이 약을 복용하면 이상반응으로 어지러움 또는 피로가 나타날 수 있어서 환자의 반응능력이 감소할 가능성 이 있다. 그러므로 운전이나 기계를 작동하는 경우에는 주의해서 복용해야 한다. 1회 또는 단기간 복용하는 경우에는 특별한 주의가 필요하지 않다.
+- 원시 후보 원문(감사용 조각): 이 있다. 그러므로 운전이나 기계를 작동하는 경우에는 주의해서 복용해야 한다. 1회 또는 단기간 복용하는
+- 검토 제안 원문(감사용 조각): 이 있다. 그러므로 운전이나 기계를 작동하는 경우에는 주의해서 복용해야 한다. 1회 또는 단기간 복용하는
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P3-B17-sedation\_driving; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-010/sedation\_driving; 후보조건=검토안: item\_sequence=201110646 AND will\_drive=true AND 단기 1회 복용이 아님. 복용 기간 조건을 정의하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-010 미발동; 채택 후 예상판정=어지러움이나 피로가 나타날 수 있으므로 운전·기계 조작 시 주의하도록 안내한다.
+  - 경계: 후보=EXP-OTC-01-NB-P3-B17-sedation\_driving; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-010/sedation\_driving; 후보조건=검토안: item\_sequence=201110646 AND will\_drive=true AND 단기 1회 복용이 아님. 복용 기간 조건을 정의하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=어지러움이나 피로가 나타날 수 있으므로 운전·기계 조작 시 주의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-010 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P3-B17-sedation\_driving; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=201110646 AND will\_drive=true AND 단기 1회 복용이 아님. 복용 기간 조건을 정의하기 전에는 비활성; 예상=OTC-RULE-010 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P3-B17-sedation\_driving; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-010/sedation\_driving; 후보조건=검토안: item\_sequence=201110646 AND will\_drive=true AND 단기 1회 복용이 아님. 복용 기간 조건을 정의하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-010 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 10. EXP-OTC-01-NB-P3-B19-maximum\_duration
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-015` / `maximum_duration`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `draft`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.3, 문단 19
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.3, 문단 19-20
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.3, 문단 19
+- 참조 규칙 범위: `pancol_a_continuous_use`
+- 참조 규칙 실행 조건: `scope_only_no_structured_binding`
+- 참조 코드 위치: `src/lib/otc/engine.ts:991`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 maximum\_duration 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 최대 연속 복용일 판정을 만들지 않는다.
+- 현재 후보 사용자 문구: 허가된 연속 복용 기간을 넘었을 수 있습니다.
+- 현재 후보 다음 행동: 증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.
+- 판단 근거: 원문은 장기간 고용량 복용 시 두통이 생길 수 있다는 위해 설명이다. 허용되는 최대 복용 기간이나 중단 시점을 정하지 않으며 판콜에이의 장기 계속 복용 금지와도 제품·조건이 다르다.
+- 전문가 확인 질문: 장기 고용량 두통 위험을 별도 비정량 주의 후보로 수집할 필요가 있는가?
+- 검토용 공식 원문: 3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다. 5. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의할 것.
+- 원시 후보 원문(감사용 조각): 3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.
+- 검토 제안 원문(감사용 조각): 3) 장기간 동안 고용량으로 복용하면 두통이 유발될 수 있다.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P3-B19-maximum\_duration; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 최대 연속 복용일 판정을 만들지 않는다.; 예상=OTC-RULE-015 미발동
+  - 경계: 후보=EXP-OTC-01-NB-P3-B19-maximum\_duration; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-015 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P3-B19-maximum\_duration; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 예상=OTC-RULE-015 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P3-B19-maximum\_duration; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-015 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 11. EXP-OTC-01-NB-P4-B19-anticoagulant\_antiplatelet
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-012` / `anticoagulant_antiplatelet`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.4, 문단 19
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.4, 문단 1-24
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.4, 문단 19
+- 참조 규칙 범위: `ibuprofen_warfarin_or_coumarin_anticoagulant`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=anticoagulant_antiplatelet`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1061`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=201110646 AND 혈액응고장애 또는 항응고제 투여 중. 상위 상담 지시를 locator에 포함하기 전에는 비활성
+- 후보 판정문: 복용 전에 의사 또는 약사와 상의하도록 안내한다.
+- 현재 후보 사용자 문구: 항응고제 또는 항혈소판제와 병용할 때 주의가 필요할 수 있습니다.
+- 현재 후보 다음 행동: 복용 전 처방한 의료진 또는 약사와 상담하세요.
+- 판단 근거: 문단 19는 혈액응고장애가 있거나 항응고제를 투여받는 환자를 상담 대상으로 열거한다. 현재 후보 text에는 앞쪽의 상담 지시가 없고 현재 엔진은 항응고제 종류와 혈액응고장애 입력을 충분히 구분하지 않는다.
+- 전문가 확인 질문: 상위 상담 지시와 문단 19를 어떤 locator 범위로 묶고 항응고제의 허용 용어와 혈액응고장애 입력을 어떻게 정의할 것인가?
+- 검토용 공식 원문: 6) 고혈압 환자 7) 과민반응의 병력이 있는 환자 8) 전신홍반(붉은 반점)루프스(SLE) 및 혼합결합조직병(MCTD) 환자 9) 고령자(노인)(이상반응이 나타나기 쉬우므로 소량부터 투여를 개시하고 필요한 최소량으로 투여하며, 이 상반응의 발현(드러냄)에 특히 유의하는 등 환자의 상태를 관찰하면서 신중히 투여한다.) 10) 6세 이상의 어린이(6세 미만의 어린이에 대한 안전성 및 유효성은 확립되어 있지 않다. 6세 이상의 어린 이에 있어서는 필요한 최소량으로 신중히 투여하고 이상반응의 발현(드러냄)에 특히 유의한다.) 11) 위암 환자 12) 알코올중독 환자 13) 임신 초기, 중기의 임부\[동물실험에서 대사독성(고투여량에서 착상수 및 생존수의 억제가 보였음)이 보 고되어 있으며, 다른 해열진통소염(항염)제에서 태아순환지속증(PEO) 일어났다는 보고가 있다.\], 임신을 계 획하는 여성(다른 프로스타글란딘 합성 억제제와 같이 이 약은 생식력을 감소시킨다. 임신이 어려운 여성이 나 불임검사를 받고 있는 여성은 이 약의 투여중단을 고려해야 한다.), 임신하고 있을 가능성이 있는 여성 14) 허혈심장병, 말초동맥질환, 뇌혈관 질환 환자 15) 심혈관 질환의 위험인자가 있는 환자(예, 고혈압, 고지혈증, 당뇨병, 흡연) 16) 간성 포르피린증이 있는 환자(이 약 사용으로 발작을 일으킬 수 있다.) 17) 혈액부족을 초래한 중대한 외과수술을 받은 환자 18) 이뇨제 또는 ACE 억제제를 투여 중인 환자 19) 혈액응고장애가 있거나 항응고제를 투여받고 있는 환자 20) 과거 비스테로이드성 소염(항염)진통제의 장기투여로 인한 소화관 궤양이 있는 환자로서, 이 약의 장기 투여가 필요하여 미소프로스톨 등으로 소화성궤양 치료를 병행하고 있는 환자(미소프로스톨에 의한 치료에 저항성을 나타내는 소화성궤양도 있으므로 이 약을 투여하는 중 충분히 경과를 관찰한다.) 21) 다음의 약물을 복용하는 환자 (1) 코르티코스테로이드, 알코올 : 위장관계 이상반응, 위장관 출혈의 위험이 있다.
+- 원시 후보 원문(감사용 조각): 19) 혈액응고장애가 있거나 항응고제를 투여받고 있는 환자
+- 검토 제안 원문(감사용 조각): 19) 혈액응고장애가 있거나 항응고제를 투여받고 있는 환자
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P4-B19-anticoagulant\_antiplatelet; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-012/anticoagulant\_antiplatelet; 후보조건=검토안: item\_sequence=201110646 AND 혈액응고장애 또는 항응고제 투여 중. 상위 상담 지시를 locator에 포함하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-012 미발동; 채택 후 예상판정=복용 전에 의사 또는 약사와 상의하도록 안내한다.
+  - 경계: 후보=EXP-OTC-01-NB-P4-B19-anticoagulant\_antiplatelet; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-012/anticoagulant\_antiplatelet; 후보조건=검토안: item\_sequence=201110646 AND 혈액응고장애 또는 항응고제 투여 중. 상위 상담 지시를 locator에 포함하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=복용 전에 의사 또는 약사와 상의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-012 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P4-B19-anticoagulant\_antiplatelet; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=201110646 AND 혈액응고장애 또는 항응고제 투여 중. 상위 상담 지시를 locator에 포함하기 전에는 비활성; 예상=OTC-RULE-012 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P4-B19-anticoagulant\_antiplatelet; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-012/anticoagulant\_antiplatelet; 후보조건=검토안: item\_sequence=201110646 AND 혈액응고장애 또는 항응고제 투여 중. 상위 상담 지시를 locator에 포함하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-012 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 12. EXP-OTC-01-NB-P5-B28-sedative\_medication
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-013` / `sedative_medication`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.5, 문단 28
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.5, 문단 25-29
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.5, 문단 28
+- 참조 규칙 범위: `pancol_a_sedative_or_overlapping_cold_medicine`
+- 참조 규칙 실행 조건: `item_sequence=196800036|flags=sedative_medication`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1077`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 sedative\_medication 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 진정 작용 중복 경고를 만들지 않는다.
+- 현재 후보 사용자 문구: 진정 작용이 있는 약물과 함께 복용할 때 주의가 필요할 수 있습니다.
+- 현재 후보 다음 행동: 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 원문은 페노바르비탈을 CYP2C8·CYP2C9 유도제의 예로 들어 덱시부프로펜 대사 증가와 약효 감소를 설명한다. 진정 작용의 중복이나 판콜에이의 감기약·진정제 병용 금지와는 다른 상호작용이다.
+- 전문가 확인 질문: 이 문구를 진정제 규칙에서 제외하고 효소 유도에 따른 약효 감소 상호작용 후보로 별도 수집할 필요가 있는가?
+- 검토용 공식 원문: (12) 혈중 칼륨농도를 증가시키는 약물(예, 칼륨 저류(쌓임)형 이뇨제, ACE 억제제, 안지오텐신-Ⅱ 수용체 길 항제(억제제), 시클로스포린과 타크로리무스와 같은 면역억제제, 트리메토프림, 헤파린 등) : 병용투여(함 께 복용) 시 고칼륨혈증이 나타날 수 있으므로 이러한 경우 칼륨 수치의 정기적인 관찰이 필요하다. (13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬 수 있다.
+- 원시 후보 원문(감사용 조각): (13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬
+- 검토 제안 원문(감사용 조각): (13) CYP2C8, CYP2C9의 유도제(예, 리팜피신, 페노바르비탈) : 이 약의 대사를 증가하고 약효를 감소시킬
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P5-B28-sedative\_medication; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-013/sedative\_medication; 후보조건=없음. 이 후보를 sedative\_medication 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 진정 작용 중복 경고를 만들지 않는다.; 예상=OTC-RULE-013 미발동
+  - 경계: 후보=EXP-OTC-01-NB-P5-B28-sedative\_medication; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-013/sedative\_medication; 후보조건=없음. 이 후보를 sedative\_medication 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-013 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P5-B28-sedative\_medication; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 sedative\_medication 판정에 연결하지 않음; 예상=OTC-RULE-013 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P5-B28-sedative\_medication; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-013/sedative\_medication; 후보조건=없음. 이 후보를 sedative\_medication 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-013 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 13. EXP-OTC-01-NB-P6-B13-urgent\_referral
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-016` / `urgent_referral`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 덱스피드연질캡슐(덱시부프로펜) (`201110646`)
+- 성분: 덱시부프로펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/201110646/NB)
+- 원문 버전: `sha256:1fb48f840d563a2ee2e20c1cf8d9b5d4f5461704db10a8c0970512869889b394`
+- 문서 개정일: `2026-01-02`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/201110646/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.6, 문단 13
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.6, 문단 13-14
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.6, 문단 13
+- 참조 규칙 범위: `tylenol500_stop_and_consult_symptoms`
+- 참조 규칙 실행 조건: `item_sequence=202106092|red_flag_terms=호흡곤란;온몸이 붉어짐;혈관부기;두드러기;천식발작;얼굴부기;저혈압;쇽;스티븐스-존슨;스티븐스 존슨;독성표피괴사;리엘 증후군`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1214`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=201110646 AND 뒤이은 허가원문에서 직접 추출·검증한 즉시 중지 증상 중 하나가 입력됨. 증상 목록 확정 전에는 비활성
+- 후보 판정문: 해당 증상이 나타나면 복용을 즉시 중지하고 의사·치과의사·약사와 상의하도록 안내한다.
+- 현재 후보 사용자 문구: 즉시 상담 또는 진료가 필요한 증상이 입력되었습니다.
+- 현재 후보 다음 행동: 지체하지 말고 의료기관 또는 응급상담을 이용하세요.
+- 판단 근거: 후보 문단 13~14는 즉시 중지와 상담이라는 상위 지시만 제공하고 구체적인 증상은 문단 15 이후에 이어진다. 현재 후보 한 행만으로는 안전한 trigger를 만들 수 없고 현재 긴급 규칙은 타이레놀정500 증상 목록에 한정된다.
+- 전문가 확인 질문: 어떤 후속 증상 문단을 포함하고 각 증상 용어와 locator를 어떻게 일대일로 검증할 것인가?
+- 검토용 공식 원문: 6. 다음과 같은 경우 이 약의 복용을 즉시 중지하고 의사, 치과의사, 약사와 상의할 것. 상담시 가능한한 이 첨부 문서를 소지할 것.
+- 원시 후보 원문(감사용 조각): 6. 다음과 같은 경우 이 약의 복용을 즉시 중지하고 의사, 치과의사, 약사와 상의할 것. 상담시 가능한한 이 첨부
+- 검토 제안 원문(감사용 조각): 6. 다음과 같은 경우 이 약의 복용을 즉시 중지하고 의사, 치과의사, 약사와 상의할 것. 상담시 가능한한 이 첨부
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-01-NB-P6-B13-urgent\_referral; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-016/urgent\_referral; 후보조건=검토안: item\_sequence=201110646 AND 뒤이은 허가원문에서 직접 추출·검증한 즉시 중지 증상 중 하나가 입력됨. 증상 목록 확정 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-016 미발동; 채택 후 예상판정=해당 증상이 나타나면 복용을 즉시 중지하고 의사·치과의사·약사와 상의하도록 안내한다.
+  - 경계: 후보=EXP-OTC-01-NB-P6-B13-urgent\_referral; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-016/urgent\_referral; 후보조건=검토안: item\_sequence=201110646 AND 뒤이은 허가원문에서 직접 추출·검증한 즉시 중지 증상 중 하나가 입력됨. 증상 목록 확정 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=해당 증상이 나타나면 복용을 즉시 중지하고 의사·치과의사·약사와 상의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-016 미발동
+  - 비대상: 후보=EXP-OTC-01-NB-P6-B13-urgent\_referral; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=201110646 AND 뒤이은 허가원문에서 직접 추출·검증한 즉시 중지 증상 중 하나가 입력됨. 증상 목록 확정 전에는 비활성; 예상=OTC-RULE-016 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-01-NB-P6-B13-urgent\_referral; 제품=덱스피드연질캡슐(덱시부프로펜); 품목기준코드=201110646; 성분ID=ING-dexibuprofen; 규칙=OTC-RULE-016/urgent\_referral; 후보조건=검토안: item\_sequence=201110646 AND 뒤이은 허가원문에서 직접 추출·검증한 즉시 중지 증상 중 하나가 입력됨. 증상 목록 확정 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-016 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 14. EXP-OTC-02-NB-P1-B14-age\_restriction
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-005` / `age_restriction`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 14
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 12-17
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 14
+- 참조 규칙 범위: `tylenol500_minimum_age_12`
+- 참조 규칙 실행 조건: `item_sequence=202106092|minimum_age_years=12`
+- 참조 코드 위치: `src/lib/otc/engine.ts:971`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 minimum\_age 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 최소 연령 제한을 만들지 않는다.
+- 현재 후보 사용자 문구: 입력한 연령에 적용되는 제한 또는 별도 용량 기준이 있습니다.
+- 현재 후보 다음 행동: 소아·고령자 용법을 제품 허가사항과 전문가에게 확인하세요.
+- 판단 근거: 원문 문단 14는 고령자에서 위장관계 이상반응 위험이 더 클 수 있다는 설명의 일부다. 최소 복용 연령이나 연령별 용량 제한을 제시하지 않으며 현재 타이레놀정500 만 12세 범위와도 다르다.
+- 전문가 확인 질문: 완결된 고령자 주의 문구를 별도 노인 위험 규칙 후보로 수집할 필요가 있는가?
+- 검토용 공식 원문: 3) 위장관(창자)계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 위 또는 장관(창자)의 출혈, 궤 양 및 천공(뚫림)을 포함한 중대한 위장관(창자)계 이상반응의 위험을 증가시킬 수 있으며, 이는 치명적일 수 있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창 자)계 이상반응의 위험이 더 클 수 있다. 투여 기간이 길어질수록 중대한 위장관(창자)계 이상반응의 발생 가능성이 증가될 수 있으나 단기 투여시 이 러한 위험이 완전히 배제되는 것은 아니다.
+- 원시 후보 원문(감사용 조각): 있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창
+- 검토 제안 원문(감사용 조각): 있다. 이러한 이상반응은 투여 기간 동안에 경고 증상 없이 발생할 수 있다. 고령자(노인)는 중대한 위장관(창
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P1-B14-age\_restriction; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-005/age\_restriction; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 최소 연령 제한을 만들지 않는다.; 예상=OTC-RULE-005 미발동
+  - 경계: 후보=EXP-OTC-02-NB-P1-B14-age\_restriction; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-005/age\_restriction; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-005 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P1-B14-age\_restriction; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 예상=OTC-RULE-005 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P1-B14-age\_restriction; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-005/age\_restriction; 후보조건=없음. 이 후보를 minimum\_age 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-005 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 15. EXP-OTC-02-NB-P1-B26-hepatic\_disease
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-007` / `hepatic_disease`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 26
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 23-27
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 26
+- 참조 규칙 범위: `acetaminophen_liver_disease`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=hepatic_disease`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1016`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=197500016 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성
+- 후보 판정문: 심한 간장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 간질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 상위 문단 23은 투여 금지 대상을 열거하고 문단 26은 심한 간장애 환자를 명시한다. 현재 엔진의 liverDisease 불리언은 경증·중증과 과거력을 구분하지 않아 그대로 연결하면 원문보다 넓게 판정한다.
+- 전문가 확인 질문: 심한 간장애를 사용자가 답할 수 있는 조건으로 어떻게 정의하고 중증도 미상은 비판정으로 둘 것인가?
+- 검토용 공식 원문: 2. 다음 환자에는 투여하지 말 것 1) 소화성궤양 환자 2) 심한 혈액이상 환자 3) 심한 간장애 환자 4) 심한 심기능부전 환자
+- 원시 후보 원문(감사용 조각): 3) 심한 간장애 환자
+- 검토 제안 원문(감사용 조각): 3) 심한 간장애 환자
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P1-B26-hepatic\_disease; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-007/hepatic\_disease; 후보조건=검토안: item\_sequence=197500016 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-007 미발동; 채택 후 예상판정=심한 간장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+  - 경계: 후보=EXP-OTC-02-NB-P1-B26-hepatic\_disease; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-007/hepatic\_disease; 후보조건=검토안: item\_sequence=197500016 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=심한 간장애가 있으면 이 제품을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-007 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P1-B26-hepatic\_disease; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=197500016 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 예상=OTC-RULE-007 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P1-B26-hepatic\_disease; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-007/hepatic\_disease; 후보조건=검토안: item\_sequence=197500016 AND severe\_hepatic\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-007 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 16. EXP-OTC-02-NB-P1-B3-alcohol
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-011` / `alcohol`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 3
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 1-4
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 3
+- 참조 규칙 범위: `acetaminophen_regular_alcohol_use`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|flags=alcohol`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1044`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=197500016 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성
+- 후보 판정문: 복용 전에 의사 또는 약사와 상의하도록 안내한다.
+- 현재 후보 사용자 문구: 음주와 함께 복용할 때 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 음주 중 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 원문 문단 3~4는 매일 3잔 이상 정기적으로 술을 마시는 사람이 이 제품을 복용하면 위장출혈이 생길 수 있다고 직접 경고한다. 현재 범위는 아세트아미노펜의 간손상 경고이며 후보 text와 locator는 문장 후반이 빠져 있어 별도 제품 규칙으로 검토해야 한다.
+- 전문가 확인 질문: 문단 3~4를 하나의 근거 범위로 묶고 NSAID의 위장출혈 결과를 아세트아미노펜의 간손상 결과와 분리한 제품별 음주 규칙으로 채택할 것인가?
+- 검토용 공식 원문: 사용상의주의사항 1. 경고 1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 원시 후보 원문(감사용 조각): 1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 검토 제안 원문(감사용 조각): 1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P1-B3-alcohol; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-011/alcohol; 후보조건=검토안: item\_sequence=197500016 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-011 미발동; 채택 후 예상판정=복용 전에 의사 또는 약사와 상의하도록 안내한다.
+  - 경계: 후보=EXP-OTC-02-NB-P1-B3-alcohol; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-011/alcohol; 후보조건=검토안: item\_sequence=197500016 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=복용 전에 의사 또는 약사와 상의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-011 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P1-B3-alcohol; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=197500016 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 예상=OTC-RULE-011 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P1-B3-alcohol; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-011/alcohol; 후보조건=검토안: item\_sequence=197500016 AND 매일 3잔 이상 정기적으로 음주함. 문단 3~4를 완결 근거로 묶기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-011 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 17. EXP-OTC-02-NB-P1-B3-duplicate\_pharmacologic\_class
+
+- 권고 상태: `rejected`
+- 의미 관계: `duplicate_context`
+- 규칙: `OTC-RULE-002` / `duplicate_pharmacologic_class`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 3
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 1-4
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 3
+- 참조 규칙 범위: `ibuprofen_and_other_NSAIDs`
+- 참조 규칙 실행 조건: `scope_only_no_structured_binding`
+- 참조 코드 위치: `src/lib/otc/engine.ts:759`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 NSAID 계열 중복 경고를 만들지 않는다.
+- 현재 후보 사용자 문구: 같은 NSAID 계열 성분을 함께 복용할 수 있습니다.
+- 현재 후보 다음 행동: 함께 복용하지 말고 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 나프록센은 NSAID이지만 원문 문단 3~4는 매일 3잔 이상 음주자가 이 약이나 다른 해열진통제를 복용할 때 상담하라는 경고다. 같은 원문 문단 3은 OTC-RULE-011의 음주 후보로도 수집됐으며 NSAID 병용 금지를 말하지 않는다.
+- 전문가 확인 질문: 이 제품의 다른 허가원문에서 다른 NSAID와의 병용 금지 문구를 별도로 찾을 것인가?
+- 검토용 공식 원문: 사용상의주의사항 1. 경고 1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 원시 후보 원문(감사용 조각): 1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 검토 제안 원문(감사용 조각): 1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P1-B3-duplicate\_pharmacologic\_class; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-002/duplicate\_pharmacologic\_class; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 NSAID 계열 중복 경고를 만들지 않는다.; 예상=OTC-RULE-002 미발동
+  - 경계: 후보=EXP-OTC-02-NB-P1-B3-duplicate\_pharmacologic\_class; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-002/duplicate\_pharmacologic\_class; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-002 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P1-B3-duplicate\_pharmacologic\_class; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 예상=OTC-RULE-002 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P1-B3-duplicate\_pharmacologic\_class; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-002/duplicate\_pharmacologic\_class; 후보조건=없음. 이 후보를 duplicate\_pharmacologic\_class 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-002 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 18. EXP-OTC-02-NB-P1-B4-gi\_bleeding\_ulcer
+
+- 권고 상태: `rejected`
+- 의미 관계: `duplicate_context`
+- 규칙: `OTC-RULE-009` / `gi_bleeding_ulcer`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 4
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 1-4
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 4
+- 참조 규칙 범위: `ibuprofen_gi_bleeding_or_ulcer`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=gi_bleeding_ulcer`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1030`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 위장관 출혈·궤양 병력 경고를 만들지 않는다.
+- 현재 후보 사용자 문구: 위장관 출혈 또는 궤양 위험과 관련된 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 문단 4는 직전 문단 3의 정기 음주 경고가 줄바꿈된 후반부다. 정기 음주자가 복용하면 위장출혈이 유발될 수 있다는 뜻이며 위장관 출혈이나 궤양 병력을 입력 조건으로 삼는 원문이 아니다.
+- 전문가 확인 질문: 이 행을 OTC-RULE-009에서 제외하고 문단 3~4를 음주 후보 하나로 합칠 것인가?
+- 검토용 공식 원문: 사용상의주의사항 1. 경고 1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열진통제를 복용해야 할 경우 반드시 의 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 원시 후보 원문(감사용 조각): 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 검토 제안 원문(감사용 조각): 사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 위장출혈이 유발될 수 있다.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P1-B4-gi\_bleeding\_ulcer; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-009/gi\_bleeding\_ulcer; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 위장관 출혈·궤양 병력 경고를 만들지 않는다.; 예상=OTC-RULE-009 미발동
+  - 경계: 후보=EXP-OTC-02-NB-P1-B4-gi\_bleeding\_ulcer; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-009/gi\_bleeding\_ulcer; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-009 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P1-B4-gi\_bleeding\_ulcer; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 예상=OTC-RULE-009 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P1-B4-gi\_bleeding\_ulcer; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-009/gi\_bleeding\_ulcer; 후보조건=없음. 이 후보를 gi\_bleeding\_or\_ulcer 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-009 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 19. EXP-OTC-02-NB-P1-B5-decongestant\_hypertension
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-014` / `decongestant_hypertension`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 5
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 5-8
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 5
+- 참조 규칙 범위: `pancol_a_phenylephrine_hypertension`
+- 참조 규칙 실행 조건: `item_sequence=196800036|flags=decongestant_hypertension`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1051`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 비충혈제거제·고혈압 경고를 만들지 않는다.
+- 현재 후보 사용자 문구: 고혈압 또는 심혈관질환에서 비충혈제거제 주의가 필요할 수 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 원문은 나프록센을 포함한 NSAID의 심혈관계 혈전 위험을 설명한다. 제품에 페닐레프린 같은 비충혈제거제가 없으므로 판콜에이 비충혈제거제 규칙과 성분·기전·판정 문구가 다르다.
+- 전문가 확인 질문: 이 문구를 별도 NSAID 심혈관 위험 규칙 후보로 다시 수집할 것인가?
+- 검토용 공식 원문: 2) 심혈관계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 중대한 심혈관계 혈전 (혈관 막힘)반 응, 심근경색증 및 뇌졸중의 위험을 증가시킬 수 있으며, 이는 치명적일 수 있다. 투여 기간에 따라 이러한 위 험이 증가될 수 있다. 심혈관계 질환 또는 심혈관계 질환의 위험 인자가 있는 환자에서는 더 위험할 수도 있 다.
+- 원시 후보 원문(감사용 조각): 2) 심혈관계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 중대한 심혈관계 혈전 (혈관 막힘)반
+- 검토 제안 원문(감사용 조각): 2) 심혈관계 위험: 이 약을 포함한 비스테로이드성 소염(항염)진통제는 중대한 심혈관계 혈전 (혈관 막힘)반
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P1-B5-decongestant\_hypertension; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-014/decongestant\_hypertension; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 비충혈제거제·고혈압 경고를 만들지 않는다.; 예상=OTC-RULE-014 미발동
+  - 경계: 후보=EXP-OTC-02-NB-P1-B5-decongestant\_hypertension; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-014/decongestant\_hypertension; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-014 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P1-B5-decongestant\_hypertension; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 예상=OTC-RULE-014 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P1-B5-decongestant\_hypertension; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-014/decongestant\_hypertension; 후보조건=없음. 이 후보를 decongestant\_hypertension 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-014 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 20. EXP-OTC-02-NB-P2-B1-renal\_disease
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-008` / `renal_disease`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.2, 문단 1
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.2, 문단 1-23
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.2, 문단 1
+- 참조 규칙 범위: `ibuprofen_kidney_disease`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=renal_disease`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1023`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=197500016 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성
+- 후보 판정문: 심한 신장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 신장질환과 관련해 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 직전 쪽 문단 23의 투여 금지 목록이 다음 쪽 문단 1까지 이어지고 심한 신장애 환자를 명시한다. 현재 엔진의 kidneyDisease 불리언은 중증도를 구분하지 않아 그대로 연결하면 원문보다 넓게 판정한다.
+- 전문가 확인 질문: 쪽 경계를 포함한 locator를 어떻게 기록하고 심한 신장애 중증도를 어떤 사용자 입력으로 받을 것인가?
+- 검토용 공식 원문: 5) 심한 신장애(신장장애) 환자 6) 심한 고혈압 환자 7) 이 약의 성분 또는 아스피린 등 비스테로이드성 소염(항염)진통제에 과민증이 있는 환자 8) 아스피린이나 다른 비스테로이드성 소염(항염)진통제(COX-2 저해제(억제제) 포함)에 의하여 천식, 비염 (코염), 코의 용종, 두드러기, 알레르기 반응 또는 그 병력이 있는 환자(이러한 환자에서 비스테로이드성 소염 (항염)진통제 투여후 치명적인 중증(심한 증상)의 아나필락시양 반응이 드물게 보고되었다.) 9) 관상동맥(심장동맥) 우회로술(CABG) 전후에 발생하는 통증의 치료 3. 다음 환자에는 신중히 투여할 것 1) 소화성궤양의 병력이 있는 환자 2) 혈액이상 또는 그의 병력이 있는 환자 3) 출혈경향이 있는 환자 (혈소판 기능저하가 나타날 수 있다.) 4) 간장애 또는 그의 병력이 있는 환자 5) 신장애(신장장애) 또는 그의 병력이 있는 환자 및 신혈류량이 저하된 환자 6) 심기능 장애 환자 7) 고혈압 환자 8) 과민증의 병력이 있는 환자 9) 기관지천식 환자 10) 전신성홍반(붉은 반점)성루푸스(SLE) 환자 및 혼합결합조직질환(MCTD) 환자 11) 고령자(노인) 4. 이상반응 1) 과민증 : 드물게 쇽증상(호흡곤란, 혈압강하, 서맥(느린 맥), 식은땀, 부종(부기) 등), PIE증후군(호산구증 가를 수반하는 폐침윤 : 발열, 천명(숨을 쌕쌕거림), 기침, 가래를 동반함), 두드러기, 때때로 발진, 가려움 등 의 과민증상이 나타날 수 있으므로 이러한 경우에는 투여를 중지한다.
+- 원시 후보 원문(감사용 조각): 5) 심한 신장애(신장장애) 환자
+- 검토 제안 원문(감사용 조각): 5) 심한 신장애(신장장애) 환자
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P2-B1-renal\_disease; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-008/renal\_disease; 후보조건=검토안: item\_sequence=197500016 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-008 미발동; 채택 후 예상판정=심한 신장애가 있으면 이 제품을 복용하지 않도록 안내한다.
+  - 경계: 후보=EXP-OTC-02-NB-P2-B1-renal\_disease; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-008/renal\_disease; 후보조건=검토안: item\_sequence=197500016 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=심한 신장애가 있으면 이 제품을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-008 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P2-B1-renal\_disease; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=197500016 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 예상=OTC-RULE-008 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P2-B1-renal\_disease; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-008/renal\_disease; 후보조건=검토안: item\_sequence=197500016 AND severe\_renal\_impairment=true. 중증도 입력이 생기기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-008 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 21. EXP-OTC-02-NB-P3-B11-urgent\_referral
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-016` / `urgent_referral`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.3, 문단 11
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.3, 문단 10-14
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.3, 문단 11
+- 참조 규칙 범위: `tylenol500_stop_and_consult_symptoms`
+- 참조 규칙 실행 조건: `item_sequence=202106092|red_flag_terms=호흡곤란;온몸이 붉어짐;혈관부기;두드러기;천식발작;얼굴부기;저혈압;쇽;스티븐스-존슨;스티븐스 존슨;독성표피괴사;리엘 증후군`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1214`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=197500016 AND 전문가가 승인한 무균성 수막염 의심 증상 조합·중증도 조건을 충족함. 문단 10~11의 완결 근거와 조건을 확정하기 전에는 비활성
+- 후보 판정문: 승인한 조건을 충족하면 이 제품 복용을 즉시 중지하고 의사와 상의하도록 안내한다.
+- 현재 후보 사용자 문구: 즉시 상담 또는 진료가 필요한 증상이 입력되었습니다.
+- 현재 후보 다음 행동: 지체하지 말고 의료기관 또는 응급상담을 이용하세요.
+- 판단 근거: 문단 10~11은 무균성 수막염 의심 증상과 즉시 중단·상담을 연결한다. 후보 text는 문장 후반만 담고 있으며 구역·구토·불면·발열 같은 흔한 증상을 각각 단독 문자열로 매칭하면 오탐 위험이 있다. 전문가가 증상 조합과 중증도를 정의하기 전에는 단일 증상 trigger를 만들지 않는다.
+- 전문가 확인 질문: 문단 10~11을 완결 근거로 승인할 것인가, 그리고 어떤 증상 조합이나 중증도에서 긴급 판정을 낼 것인가?
+- 검토용 공식 원문: 6) 정신신경계 : 드물게 무균성 수막염이 보고되어 있으므로 심한 두통, 구역, 구토, 불면, 목이 뻣뻣함, 발열 또는 의식장애 등의 증상이 나타나면 즉시 투여를 중단하고 의사와 상의하며, 특히 자가면역질환(SLE, MCTD)환자에게는 신중히 투여한다. 또한 때때로 졸음, 인식기능장애 드물게 현기(어지러움), 두통, 수족저 림, 정력감퇴, 피로, 우울, 비정상적인 꿈, 집중능력 상실, 지남력상실(방향감각장애), 불면, 근육통, 근쇠약이 나타날 수 있다.
+- 원시 후보 원문(감사용 조각): 또는 의식장애 등의 증상이 나타나면 즉시 투여를 중단하고 의사와 상의하며, 특히 자가면역질환(SLE,
+- 검토 제안 원문(감사용 조각): 또는 의식장애 등의 증상이 나타나면 즉시 투여를 중단하고 의사와 상의하며, 특히 자가면역질환(SLE,
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P3-B11-urgent\_referral; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-016/urgent\_referral; 후보조건=검토안: item\_sequence=197500016 AND 전문가가 승인한 무균성 수막염 의심 증상 조합·중증도 조건을 충족함. 문단 10~11의 완결 근거와 조건을 확정하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-016 미발동; 채택 후 예상판정=승인한 조건을 충족하면 이 제품 복용을 즉시 중지하고 의사와 상의하도록 안내한다.
+  - 경계: 후보=EXP-OTC-02-NB-P3-B11-urgent\_referral; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-016/urgent\_referral; 후보조건=검토안: item\_sequence=197500016 AND 전문가가 승인한 무균성 수막염 의심 증상 조합·중증도 조건을 충족함. 문단 10~11의 완결 근거와 조건을 확정하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=승인한 조건을 충족하면 이 제품 복용을 즉시 중지하고 의사와 상의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-016 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P3-B11-urgent\_referral; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=197500016 AND 전문가가 승인한 무균성 수막염 의심 증상 조합·중증도 조건을 충족함. 문단 10~11의 완결 근거와 조건을 확정하기 전에는 비활성; 예상=OTC-RULE-016 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P3-B11-urgent\_referral; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-016/urgent\_referral; 후보조건=검토안: item\_sequence=197500016 AND 전문가가 승인한 무균성 수막염 의심 증상 조합·중증도 조건을 충족함. 문단 10~11의 완결 근거와 조건을 확정하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-016 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 22. EXP-OTC-02-NB-P3-B12-sedation\_driving
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-010` / `sedation_driving`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.3, 문단 12
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.3, 문단 10-14
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.3, 문단 12
+- 참조 규칙 범위: `pancol_a_driving`
+- 참조 규칙 실행 조건: `item_sequence=196800036|flags=sedation_driving`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1037`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 sedation\_driving 판정에 연결하지 않음
+- 후보 판정문: 이 후보만으로 운전·기계 조작 회피 판정을 만들지 않는다.
+- 현재 후보 사용자 문구: 졸림을 유발해 운전이나 기계 조작에 영향을 줄 수 있습니다.
+- 현재 후보 다음 행동: 운전·기계 조작을 피하고 허가사항을 확인하세요.
+- 판단 근거: 원문 문단 12~14는 졸음 등 정신신경계 이상반응을 열거하지만 운전이나 기계 조작에 관한 지시를 포함하지 않는다. 판콜에이의 직접 운전 회피 조건을 낙센정에 옮길 근거가 아니다.
+- 전문가 확인 질문: 낙센정 허가원문에 운전 또는 기계 조작을 직접 언급하는 별도 문구가 있는지 다시 확인할 것인가?
+- 검토용 공식 원문: 6) 정신신경계 : 드물게 무균성 수막염이 보고되어 있으므로 심한 두통, 구역, 구토, 불면, 목이 뻣뻣함, 발열 또는 의식장애 등의 증상이 나타나면 즉시 투여를 중단하고 의사와 상의하며, 특히 자가면역질환(SLE, MCTD)환자에게는 신중히 투여한다. 또한 때때로 졸음, 인식기능장애 드물게 현기(어지러움), 두통, 수족저 림, 정력감퇴, 피로, 우울, 비정상적인 꿈, 집중능력 상실, 지남력상실(방향감각장애), 불면, 근육통, 근쇠약이 나타날 수 있다.
+- 원시 후보 원문(감사용 조각): MCTD)환자에게는 신중히 투여한다. 또한 때때로 졸음, 인식기능장애 드물게 현기(어지러움), 두통, 수족저
+- 검토 제안 원문(감사용 조각): MCTD)환자에게는 신중히 투여한다. 또한 때때로 졸음, 인식기능장애 드물게 현기(어지러움), 두통, 수족저
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P3-B12-sedation\_driving; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-010/sedation\_driving; 후보조건=없음. 이 후보를 sedation\_driving 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보만으로 운전·기계 조작 회피 판정을 만들지 않는다.; 예상=OTC-RULE-010 미발동
+  - 경계: 후보=EXP-OTC-02-NB-P3-B12-sedation\_driving; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-010/sedation\_driving; 후보조건=없음. 이 후보를 sedation\_driving 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-010 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P3-B12-sedation\_driving; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 sedation\_driving 판정에 연결하지 않음; 예상=OTC-RULE-010 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P3-B12-sedation\_driving; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-010/sedation\_driving; 후보조건=없음. 이 후보를 sedation\_driving 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-010 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 23. EXP-OTC-02-NB-P4-B22-anticoagulant\_antiplatelet
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-012` / `anticoagulant_antiplatelet`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.4, 문단 22
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.4, 문단 18-25
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.4, 문단 22
+- 참조 규칙 범위: `ibuprofen_warfarin_or_coumarin_anticoagulant`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=anticoagulant_antiplatelet`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1061`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=197500016 AND 항응고제 병용. 문단 18~25의 위험·주의 범위를 확정하기 전에는 비활성
+- 후보 판정문: 위장관 출혈 위험 때문에 복용 전에 처방 의료진 또는 약사와 상의하도록 안내한다.
+- 현재 후보 사용자 문구: 항응고제 또는 항혈소판제와 병용할 때 주의가 필요할 수 있습니다.
+- 현재 후보 다음 행동: 복용 전 처방한 의료진 또는 약사와 상담하세요.
+- 판단 근거: 문단 22는 항응고제 병용을 위장관 출혈 위험인자로 직접 든다. 후보 text에는 문단 18의 주의 대상과 문단 24~25의 특별 주의 지시가 빠져 있고 현재 범위의 와파린·쿠마린보다 항응고제 표현이 넓다.
+- 전문가 확인 질문: 모든 항응고제를 조건으로 둘 것인가, 특정 성분만 허용할 것인가, 그리고 특별 주의를 사용자 판정 문구로 어떻게 옮길 것인가?
+- 검토용 공식 원문: 7) 위장관(창자)계 이상반응 : 이 약을 포함한 비스테로이드성 소염(항염)진통제를 궤양성 질환 또는 위장관 (창자) 출혈의 병력이 있는 환자에게 처방시 극심한 주의를 기울여야 한다. 소화성 궤양 질환 및/또는 위장관 (창자) 출혈의 병력이 있는 환자의 경우 이러한 위험인자가 없는 환자에 비해 비스테로이드성 소염(항염)진통 제 투여시 위장관(창자) 출혈의 발생 위험이 10배 이상 증가하였다. 위장관(창자)계 출혈을 증가시키는 다른 위험인자로는 경구용 코르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제 의 장기 사용 알콜 섭취, 고령, 허약한 건강상태 등이 있다. 치명적인 위장관(창자)계 이상반응에 대한 자발적 보고의 대부분은 고령자(노인) 및 허약자에 대한 것이므로, 이러한 환자에게 이 약을 투여시 특별히 주의하여 야 한다.
+- 원시 후보 원문(감사용 조각): 위험인자로는 경구용 코르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제
+- 검토 제안 원문(감사용 조각): 위험인자로는 경구용 코르티코스테로이드 또는 항응고제 병용(함께 복용), 비스테로이드성 소염(항염)진통제
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P4-B22-anticoagulant\_antiplatelet; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-012/anticoagulant\_antiplatelet; 후보조건=검토안: item\_sequence=197500016 AND 항응고제 병용. 문단 18~25의 위험·주의 범위를 확정하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-012 미발동; 채택 후 예상판정=위장관 출혈 위험 때문에 복용 전에 처방 의료진 또는 약사와 상의하도록 안내한다.
+  - 경계: 후보=EXP-OTC-02-NB-P4-B22-anticoagulant\_antiplatelet; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-012/anticoagulant\_antiplatelet; 후보조건=검토안: item\_sequence=197500016 AND 항응고제 병용. 문단 18~25의 위험·주의 범위를 확정하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=위장관 출혈 위험 때문에 복용 전에 처방 의료진 또는 약사와 상의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-012 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P4-B22-anticoagulant\_antiplatelet; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=197500016 AND 항응고제 병용. 문단 18~25의 위험·주의 범위를 확정하기 전에는 비활성; 예상=OTC-RULE-012 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P4-B22-anticoagulant\_antiplatelet; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-012/anticoagulant\_antiplatelet; 후보조건=검토안: item\_sequence=197500016 AND 항응고제 병용. 문단 18~25의 위험·주의 범위를 확정하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-012 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 24. EXP-OTC-02-NB-P5-B7-maximum\_duration
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-015` / `maximum_duration`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `draft`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.5, 문단 7
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.5, 문단 4-10
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.5, 문단 7
+- 참조 규칙 범위: `pancol_a_continuous_use`
+- 참조 규칙 실행 조건: `scope_only_no_structured_binding`
+- 참조 코드 위치: `src/lib/otc/engine.ts:991`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 maximum\_duration 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 최대 연속 복용일 판정을 만들지 않는다.
+- 현재 후보 사용자 문구: 허가된 연속 복용 기간을 넘었을 수 있습니다.
+- 현재 후보 다음 행동: 증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.
+- 판단 근거: 원문은 NSAID 장기 복용 시 신장 손상 가능성과 고위험군 주의를 설명한다. 최대 허용 일수나 일수 초과 판정을 제시하지 않아 maximum\_duration 임계값의 근거가 될 수 없다.
+- 전문가 확인 질문: 장기 복용 신장 위험을 별도 비정량 질환·기간 주의 후보로 수집할 필요가 있는가?
+- 검토용 공식 원문: 9) 울혈성심부전 및 부종(부기): 이 약을 포함한 비스테로이드성 소염(항염)진통제를 복용하는 일부 환자에 서 체액저류(체액 고임) 및 부종(부기)(말초적인 부종(부기) 포함)이 관찰되었다. 이 약은 체액저류(체액 고 임) 또는 심기능 부전 환자에는 신중히 투여한다. 10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어 날 수 있다. 또한, 신혈류를 유지하는데 프로스타글란딘의 역할이 중요하므로, 심부전 환자, 신기능 부전 환 자, 간기능 부전 환자, 이뇨제나 ACE 저해제(억제제)를 투여 중인 환자, 고령자(노인) 등에서는 특별한 주의 가 필요하다. 투약을 중단하면 대부분 치료 전 상태로 회복된다.
+- 원시 후보 원문(감사용 조각): 10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어
+- 검토 제안 원문(감사용 조각): 10) 비스테로이드성 소염(항염)진통제를 장기간 복용시 신장(콩팥)유두괴사나 기타 신장(콩팥) 손상이 일어
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P5-B7-maximum\_duration; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 최대 연속 복용일 판정을 만들지 않는다.; 예상=OTC-RULE-015 미발동
+  - 경계: 후보=EXP-OTC-02-NB-P5-B7-maximum\_duration; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-015 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P5-B7-maximum\_duration; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 예상=OTC-RULE-015 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P5-B7-maximum\_duration; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=없음. 이 후보를 maximum\_duration 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-015 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 25. EXP-OTC-02-NB-P8-B5-pregnancy\_lactation
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-006` / `pregnancy_lactation`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/NB)
+- 원문 버전: `sha256:26f401879a1c0d4ba8d9a648564a7cfae48e373086d75ff4daa170f9ed0fe1a6`
+- 문서 개정일: `2024-12-12`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.8, 문단 5
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.8, 문단 5-7
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.8, 문단 5
+- 참조 규칙 범위: `ibuprofen_pregnancy_lactation`
+- 참조 규칙 실행 조건: `item_sequence=198601920|flags=pregnancy_lactation`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1094`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=197500016 AND 허가원문의 ‘임신 말기’에 해당하는 시기. \`pregnancyTrimester=3\` 대응과 문단 5~10의 완결 근거를 전문가가 승인하기 전에는 비활성
+- 후보 판정문: 임신 말기이면 이 제품을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 임신 또는 수유 중 주의가 필요한 제품이 포함되어 있습니다.
+- 현재 후보 다음 행동: 복용 전 의사 또는 약사와 상담하세요.
+- 판단 근거: 후보 문단 5는 제목뿐이고 문단 6~10이 임신 말기 투여 금지·회피를 설명한다. 현재 엔진은 \`pregnancyTrimester\`를 입력받지만 후보 locator와 text만으로는 ‘임신 말기’와 3기의 대응 및 판정을 재현할 수 없다. 문단 11 이후의 임신 20주 이후 주의사항은 별도 조건이며 임신 말기 금기와 합치면 안 된다.
+- 전문가 확인 질문: 문단 5~10을 완결 근거로 묶고 ‘임신 말기’를 \`pregnancyTrimester=3\`으로 판정해도 되는가? 문단 11 이후의 임신 20~30주 조건은 별도 규칙으로 분리할 것인가?
+- 검토용 공식 원문: 7. 임부에 대한 투여 1) 이 약을 임부에게 투여한 임상자료가 없다. 동물실험에서 주산기(출산전후기)에 투여하여 분만지연, 난산 의 발생 빈도 증가 및 새끼의 생존율 감소가 보고되어 있으므로 임신말기에는 이 약을 투여하지 않는다.
+- 원시 후보 원문(감사용 조각): 7. 임부에 대한 투여
+- 검토 제안 원문(감사용 조각): 7. 임부에 대한 투여
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-NB-P8-B5-pregnancy\_lactation; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-006/pregnancy\_lactation; 후보조건=검토안: item\_sequence=197500016 AND 허가원문의 ‘임신 말기’에 해당하는 시기. \`pregnancyTrimester=3\` 대응과 문단 5~10의 완결 근거를 전문가가 승인하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-006 미발동; 채택 후 예상판정=임신 말기이면 이 제품을 복용하지 않도록 안내한다.
+  - 경계: 후보=EXP-OTC-02-NB-P8-B5-pregnancy\_lactation; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-006/pregnancy\_lactation; 후보조건=검토안: item\_sequence=197500016 AND 허가원문의 ‘임신 말기’에 해당하는 시기. \`pregnancyTrimester=3\` 대응과 문단 5~10의 완결 근거를 전문가가 승인하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=임신 말기이면 이 제품을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-006 미발동
+  - 비대상: 후보=EXP-OTC-02-NB-P8-B5-pregnancy\_lactation; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=197500016 AND 허가원문의 ‘임신 말기’에 해당하는 시기. \`pregnancyTrimester=3\` 대응과 문단 5~10의 완결 근거를 전문가가 승인하기 전에는 비활성; 예상=OTC-RULE-006 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-NB-P8-B5-pregnancy\_lactation; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-006/pregnancy\_lactation; 후보조건=검토안: item\_sequence=197500016 AND 허가원문의 ‘임신 말기’에 해당하는 시기. \`pregnancyTrimester=3\` 대응과 문단 5~10의 완결 근거를 전문가가 승인하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-006 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 26. EXP-OTC-02-UD-P1-B3-minimum\_interval
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-004` / `minimum_interval`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 낙센정(나프록센) (`197500016`)
+- 성분: 나프록센
+- 문서 유형: `UD`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/197500016/UD)
+- 원문 버전: `sha256:989b9ab7b54bbde65b3d441b208c18d5b5b3c6aeff972ac9e6ba87023ad32944`
+- 문서 개정일: `2010-06-20`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/197500016/detail.html#tblChf; change\_item=용법용량변경
+- 접근일(UTC): `2026-07-14T02:56:31.878369+00:00`
+- 원시 후보 원문 위치: 용법용량 PDF p.1, 문단 3
+- 검토용 공식 원문 위치: 용법용량 PDF p.1, 문단 1-3
+- 검토 제안 원문 위치(감사용 후보 범위): 용법용량 PDF p.1, 문단 3
+- 참조 규칙 범위: `tylenol500_age_12_plus`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|minimum_interval_hours=4`
+- 참조 코드 위치: `src/lib/otc/engine.ts:69`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=197500016 AND 성인 AND 적응증이 류마티양 관절염·골관절염·강직성 척추염 중 하나 AND 이전 복용 후 12시간 미만
+- 후보 판정문: 해당 적응증에서는 이전 복용 후 12시간이 지나기 전에 다음 용량을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 이전 복용 후 확인된 최소 간격이 지나지 않았습니다.
+- 현재 후보 다음 행동: 다음 복용 시점을 약사 또는 의사에게 확인하세요.
+- 판단 근거: 원문 문단 3의 12시간 간격은 낙센정 성인의 특정 적응증 용법이다. 현재 엔진은 적응증을 입력받지 않으므로 낙센정 전체에 12시간을 적용하면 다른 허가 용법까지 잘못 제한할 수 있다.
+- 전문가 확인 질문: 적응증 입력 없이 12시간 기준을 낙센정 전체 용법에 적용해도 되는가, 아니면 적응증 선택을 추가해야 하는가?
+- 검토용 공식 원문: 용법용량 1. 류마티양 관절염, 골관절염, 강직성 척추염 성인 나프록센으로서 1회 250-500mg 1일 2회(12시간마다) 경구투여(복용)한다.
+- 원시 후보 원문(감사용 조각): 성인 나프록센으로서 1회 250-500mg 1일 2회(12시간마다) 경구투여(복용)한다.
+- 검토 제안 원문(감사용 조각): 성인 나프록센으로서 1회 250-500mg 1일 2회(12시간마다) 경구투여(복용)한다.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=EXP-OTC-02-UD-P1-B3-minimum\_interval; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-004/minimum\_interval; 후보조건=검토안: item\_sequence=197500016 AND 성인 AND 적응증이 류마티양 관절염·골관절염·강직성 척추염 중 하나 AND 이전 복용 후 12시간 미만; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-004 미발동; 채택 후 예상판정=해당 적응증에서는 이전 복용 후 12시간이 지나기 전에 다음 용량을 복용하지 않도록 안내한다.
+  - 경계: 후보=EXP-OTC-02-UD-P1-B3-minimum\_interval; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-004/minimum\_interval; 후보조건=검토안: item\_sequence=197500016 AND 성인 AND 적응증이 류마티양 관절염·골관절염·강직성 척추염 중 하나 AND 이전 복용 후 12시간 미만; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=해당 적응증에서는 이전 복용 후 12시간이 지나기 전에 다음 용량을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-004 미발동
+  - 비대상: 후보=EXP-OTC-02-UD-P1-B3-minimum\_interval; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=검토안: item\_sequence=197500016 AND 성인 AND 적응증이 류마티양 관절염·골관절염·강직성 척추염 중 하나 AND 이전 복용 후 12시간 미만; 예상=OTC-RULE-004 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=EXP-OTC-02-UD-P1-B3-minimum\_interval; 제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 규칙=OTC-RULE-004/minimum\_interval; 후보조건=검토안: item\_sequence=197500016 AND 성인 AND 적응증이 류마티양 관절염·골관절염·강직성 척추염 중 하나 AND 이전 복용 후 12시간 미만; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-004 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 27. SAFE-OTC-01-NB-P1-B21-sedative\_medication
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-013` / `sedative_medication`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 타이레놀정500밀리그람(아세트아미노펜) (`202106092`)
+- 성분: 아세트아미노펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB)
+- 원문 버전: `sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442`
+- 문서 개정일: `2026-04-08`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/202106092/detail.html#tblChf; change\_item=사용상의 주의사항
+- 접근일(UTC): `2026-07-14T02:14:48.264374+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 21
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 13-25
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 21
+- 참조 규칙 범위: `pancol_a_sedative_or_overlapping_cold_medicine`
+- 참조 규칙 실행 조건: `item_sequence=196800036|flags=sedative_medication`
+- 참조 코드 위치: `src/lib/otc/engine.ts:1077`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=202106092 AND 바르비탈계 약물 또는 삼환계 항우울제 복용. 별도 상호작용 유형을 확정하기 전에는 비활성
+- 후보 판정문: 해당 약물을 복용한 사람은 타이레놀정500을 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 진정 작용이 있는 약물과 함께 복용할 때 주의가 필요할 수 있습니다.
+- 현재 후보 다음 행동: 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 상위 문단 13은 복용 금지 대상을 열거하고 문단 21은 바르비탈계 약물과 삼환계 항우울제를 직접 명시한다. 다만 원문은 진정 작용을 이유로 제시하지 않으며 현재 범위는 판콜에이의 진정제·중복 감기약 금지이므로 같은 규칙으로 합치면 근거 의미가 달라진다.
+- 전문가 확인 질문: 이 금기를 제품별 바르비탈계·삼환계 항우울제 상호작용 규칙으로 분리할 것인가, 아니면 sedative\_medication 유형 안에서 별도 결정 문구를 둘 것인가?
+- 검토용 공식 원문: 2. 다음과 같은 사람은 이 약을 복용하지 말 것 1) 이 약에 과민증 환자 2) 소화성궤양 환자 3) 심한 혈액 이상 환자 4) 심한 간장애 환자 5) 심한 신장(콩팥)장애 환자 6) 심한 심장기능저하 환자 7) 아스피린 천식(비스테로이드성 소염(항염)제에 의한 천식발작 유발) 또는 그 병력이 있는 환자 8) 다음의 약물을 복용한 환자 : 바르비탈계 약물, 삼환계 항우울제 9) 알코올을 복용한 사람 3. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의할 것 1) 간장애 또는 그 병력이 있는 환자 2) 신장(콩팥)장애 또는 그 병력이 있는 환자
+- 원시 후보 원문(감사용 조각): 8) 다음의 약물을 복용한 환자 : 바르비탈계 약물, 삼환계 항우울제
+- 검토 제안 원문(감사용 조각): 8) 다음의 약물을 복용한 환자 : 바르비탈계 약물, 삼환계 항우울제
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=SAFE-OTC-01-NB-P1-B21-sedative\_medication; 제품=타이레놀정500밀리그람(아세트아미노펜); 품목기준코드=202106092; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-013/sedative\_medication; 후보조건=검토안: item\_sequence=202106092 AND 바르비탈계 약물 또는 삼환계 항우울제 복용. 별도 상호작용 유형을 확정하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-013 미발동; 채택 후 예상판정=해당 약물을 복용한 사람은 타이레놀정500을 복용하지 않도록 안내한다.
+  - 경계: 후보=SAFE-OTC-01-NB-P1-B21-sedative\_medication; 제품=타이레놀정500밀리그람(아세트아미노펜); 품목기준코드=202106092; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-013/sedative\_medication; 후보조건=검토안: item\_sequence=202106092 AND 바르비탈계 약물 또는 삼환계 항우울제 복용. 별도 상호작용 유형을 확정하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=해당 약물을 복용한 사람은 타이레놀정500을 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-013 미발동
+  - 비대상: 후보=SAFE-OTC-01-NB-P1-B21-sedative\_medication; 비대상제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 후보조건=검토안: item\_sequence=202106092 AND 바르비탈계 약물 또는 삼환계 항우울제 복용. 별도 상호작용 유형을 확정하기 전에는 비활성; 예상=OTC-RULE-013 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=SAFE-OTC-01-NB-P1-B21-sedative\_medication; 제품=타이레놀정500밀리그람(아세트아미노펜); 품목기준코드=202106092; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-013/sedative\_medication; 후보조건=검토안: item\_sequence=202106092 AND 바르비탈계 약물 또는 삼환계 항우울제 복용. 별도 상호작용 유형을 확정하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-013 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 28. SAFE-OTC-04-NB-P1-B10-max\_daily\_dose
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `potential_product_extension`
+- 규칙: `OTC-RULE-003` / `max_daily_dose`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 어린이타이레놀현탁액(아세트아미노펜) (`202200525`)
+- 성분: 아세트아미노펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/NB)
+- 원문 버전: `sha256:5150a7cae99a092b9795b19c9fa1622f0ed1c1bcdd7f34613c0c4a09c0930d4b`
+- 문서 개정일: `2026-04-08`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/202200525/detail.html#tblChf; change\_item=사용상의 주의사항
+- 접근일(UTC): `2026-07-14T02:10:14.255342+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 10
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 10-12
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 10
+- 참조 규칙 범위: `acetaminophen_tylenol500_age_12_plus`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|max_daily_amount=4000`
+- 참조 코드 위치: `src/lib/otc/engine.ts:69`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=202200525 AND 아세트아미노펜 하루 총량\>4000mg. 연령·체중별 75mg/kg 기준과 함께 적용하기 전에는 비활성
+- 후보 판정문: 계산된 하루 총량이 4000mg을 넘으면 추가 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 계산된 하루 총량이 확인된 최대 1일 용량을 초과합니다.
+- 현재 후보 다음 행동: 추가 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 원문 문단 10~12는 아세트아미노펜 4000mg 일일 상한을 말하지만 현재 범위는 타이레놀정500의 만 12세 이상 사용자다. 어린이 현탁액은 75mg/kg와 1일 5회 기준이 있어 4000mg만 단순 확장하면 소아 기준을 과도하게 넓힌다.
+- 전문가 확인 질문: 4000mg을 소아 전 연령의 절대 상한으로 사용할 수 있는가, 아니면 75mg/kg와 연령·체중별 상한 중 더 낮은 값과 함께만 판정해야 하는가?
+- 검토용 공식 원문: 3) 이 약은 아세트아미노펜을 함유하고 있다. 아세트아미노펜으로 일일 최대 용량(4,000mg)을 초과할 경우 간손상을 일으킬 수 있으므로 이 약을 일일 최대 용량(4,000mg)을 초과하여 복용하여서는 아니되며, 아세트 아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.
+- 원시 후보 원문(감사용 조각): 3) 이 약은 아세트아미노펜을 함유하고 있다. 아세트아미노펜으로 일일 최대 용량(4,000mg)을 초과할 경우
+- 검토 제안 원문(감사용 조각): 3) 이 약은 아세트아미노펜을 함유하고 있다. 아세트아미노펜으로 일일 최대 용량(4,000mg)을 초과할 경우
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=SAFE-OTC-04-NB-P1-B10-max\_daily\_dose; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-003/max\_daily\_dose; 후보조건=검토안: item\_sequence=202200525 AND 아세트아미노펜 하루 총량\>4000mg. 연령·체중별 75mg/kg 기준과 함께 적용하기 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-003 미발동; 채택 후 예상판정=계산된 하루 총량이 4000mg을 넘으면 추가 복용하지 않도록 안내한다.
+  - 경계: 후보=SAFE-OTC-04-NB-P1-B10-max\_daily\_dose; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-003/max\_daily\_dose; 후보조건=검토안: item\_sequence=202200525 AND 아세트아미노펜 하루 총량\>4000mg. 연령·체중별 75mg/kg 기준과 함께 적용하기 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=계산된 하루 총량이 4000mg을 넘으면 추가 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-003 미발동
+  - 비대상: 후보=SAFE-OTC-04-NB-P1-B10-max\_daily\_dose; 비대상제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 후보조건=검토안: item\_sequence=202200525 AND 아세트아미노펜 하루 총량\>4000mg. 연령·체중별 75mg/kg 기준과 함께 적용하기 전에는 비활성; 예상=OTC-RULE-003 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=SAFE-OTC-04-NB-P1-B10-max\_daily\_dose; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-003/max\_daily\_dose; 후보조건=검토안: item\_sequence=202200525 AND 아세트아미노펜 하루 총량\>4000mg. 연령·체중별 75mg/kg 기준과 함께 적용하기 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-003 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 29. SAFE-OTC-04-NB-P1-B12-duplicate\_ingredient
+
+- 권고 상태: `provisional`
+- 의미 관계: `direct_same_scope`
+- 규칙: `OTC-RULE-001` / `duplicate_ingredient`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 어린이타이레놀현탁액(아세트아미노펜) (`202200525`)
+- 성분: 아세트아미노펜
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/NB)
+- 원문 버전: `sha256:5150a7cae99a092b9795b19c9fa1622f0ed1c1bcdd7f34613c0c4a09c0930d4b`
+- 문서 개정일: `2026-04-08`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/202200525/detail.html#tblChf; change\_item=사용상의 주의사항
+- 접근일(UTC): `2026-07-14T02:10:14.255342+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 12
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 10-12
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 12
+- 참조 규칙 범위: `acetaminophen_containing_selected_products`
+- 참조 규칙 실행 조건: `scope_only_no_structured_binding`
+- 참조 코드 위치: `src/lib/otc/engine.ts:586`
+- 제안 적용 범위·판정 조건: item\_sequence=202200525인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함
+- 후보 판정문: 아세트아미노펜 중복 경고를 표시하고 함께 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 같은 유효성분이 여러 제품에 포함되어 있습니다.
+- 현재 후보 다음 행동: 각 제품의 성분과 총 복용량을 확인하고 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 제품 성분은 ING-acetaminophen이고 원문 문단 11~12는 다른 아세트아미노펜 함유 제품과의 병용을 직접 금지한다. 후보 locator 문단 12는 줄바꿈 때문에 성분명 앞부분이 빠져 있어 보정 전에는 운영 근거로 쓸 수 없다.
+- 전문가 확인 질문: 문단 11~12를 한 문장 범위로 묶고 이 제품이 포함된 아세트아미노펜 중복 판정의 제품별 보조 근거로 채택할 것인가?
+- 검토용 공식 원문: 3) 이 약은 아세트아미노펜을 함유하고 있다. 아세트아미노펜으로 일일 최대 용량(4,000mg)을 초과할 경우 간손상을 일으킬 수 있으므로 이 약을 일일 최대 용량(4,000mg)을 초과하여 복용하여서는 아니되며, 아세트 아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.
+- 원시 후보 원문(감사용 조각): 아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.
+- 검토 제안 원문(감사용 조각): 아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=SAFE-OTC-04-NB-P1-B12-duplicate\_ingredient; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-001/duplicate\_ingredient; 후보조건=item\_sequence=202200525인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-001 미발동; 채택 후 예상판정=아세트아미노펜 중복 경고를 표시하고 함께 복용하지 않도록 안내한다.
+  - 경계: 후보=SAFE-OTC-04-NB-P1-B12-duplicate\_ingredient; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-001/duplicate\_ingredient; 후보조건=item\_sequence=202200525인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=아세트아미노펜 중복 경고를 표시하고 함께 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-001 미발동
+  - 비대상: 후보=SAFE-OTC-04-NB-P1-B12-duplicate\_ingredient; 비대상제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 후보조건=item\_sequence=202200525인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 예상=OTC-RULE-001 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=SAFE-OTC-04-NB-P1-B12-duplicate\_ingredient; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-001/duplicate\_ingredient; 후보조건=item\_sequence=202200525인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-001 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 30. SAFE-OTC-04-UD-P1-B3-minimum\_interval
+
+- 권고 상태: `rejected`
+- 의미 관계: `duplicate_context`
+- 규칙: `OTC-RULE-004` / `minimum_interval`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 어린이타이레놀현탁액(아세트아미노펜) (`202200525`)
+- 성분: 아세트아미노펜
+- 문서 유형: `UD`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/202200525/UD)
+- 원문 버전: `sha256:c1cc41edcfa122cf1d0f48546e702504e04a18fe11560d752e789b34dd354300`
+- 문서 개정일: 공개 기록 없음
+- 문서 개정 상태: `not_reported_in_archived_mfds_change_history`
+- 문서 개정일 부재 사유: no\_ud\_entry\_in\_archived\_mfds\_change\_history
+- 접근일(UTC): `2026-07-14T02:10:14.255342+00:00`
+- 원시 후보 원문 위치: 용법용량 PDF p.1, 문단 3
+- 검토용 공식 원문 위치: 용법용량 PDF p.1, 문단 1-3
+- 검토 제안 원문 위치(감사용 후보 범위): 용법용량 PDF p.1, 문단 3
+- 참조 규칙 범위: `tylenol500_age_12_plus`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|minimum_interval_hours=4`
+- 참조 코드 위치: `src/lib/otc/engine.ts:69`
+- 제안 적용 범위·판정 조건: 없음. 기존 ADMIN-202200525-MIN-INTERVAL 조건을 유지함
+- 후보 판정문: 기존 복용조건이 4시간 미만 간격을 이미 경고하므로 새 규칙 판정을 만들지 않는다.
+- 현재 후보 사용자 문구: 이전 복용 후 확인된 최소 간격이 지나지 않았습니다.
+- 현재 후보 다음 행동: 다음 복용 시점을 약사 또는 의사에게 확인하세요.
+- 판단 근거: 원문은 어린이 현탁액의 4~6시간 간격을 직접 지지하지만 현재 런타임이 같은 제품에 minimum\_interval\_hours=4를 이미 연결한다. 이 행을 별도 규칙 후보로 쓰면 같은 조건과 근거를 중복 관리한다.
+- 전문가 확인 질문: 기존 복용조건의 근거 표시만 유지하고 이 별도 규칙 후보는 기각해도 되는가?
+- 검토용 공식 원문: 용법용량 만 12세 이하의 소아: 다음 1회 권장용량을 4-6시간 마다 필요시 복용한다.
+- 원시 후보 원문(감사용 조각): 다음 1회 권장용량을 4-6시간 마다 필요시 복용한다.
+- 검토 제안 원문(감사용 조각): 다음 1회 권장용량을 4-6시간 마다 필요시 복용한다.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=SAFE-OTC-04-UD-P1-B3-minimum\_interval; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-004/minimum\_interval; 후보조건=없음. 기존 ADMIN-202200525-MIN-INTERVAL 조건을 유지함; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=기존 복용조건이 4시간 미만 간격을 이미 경고하므로 새 규칙 판정을 만들지 않는다.; 예상=OTC-RULE-004 미발동
+  - 경계: 후보=SAFE-OTC-04-UD-P1-B3-minimum\_interval; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-004/minimum\_interval; 후보조건=없음. 기존 ADMIN-202200525-MIN-INTERVAL 조건을 유지함; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-004 미발동
+  - 비대상: 후보=SAFE-OTC-04-UD-P1-B3-minimum\_interval; 비대상제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 후보조건=없음. 기존 ADMIN-202200525-MIN-INTERVAL 조건을 유지함; 예상=OTC-RULE-004 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=SAFE-OTC-04-UD-P1-B3-minimum\_interval; 제품=어린이타이레놀현탁액(아세트아미노펜); 품목기준코드=202200525; 성분ID=ING-acetaminophen; 규칙=OTC-RULE-004/minimum\_interval; 후보조건=없음. 기존 ADMIN-202200525-MIN-INTERVAL 조건을 유지함; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-004 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 31. SAFE-OTC-05-UD-P1-B10-max\_daily\_dose
+
+- 권고 상태: `rejected`
+- 의미 관계: `wrong_scope`
+- 규칙: `OTC-RULE-003` / `max_daily_dose`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 어린이부루펜시럽(이부프로펜) (`198601920`)
+- 성분: 이부프로펜
+- 문서 유형: `UD`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/UD)
+- 원문 버전: `sha256:32042f6e2725eb4b2f997244cc3d494278d48ff22b1a7863ba3428167e65df8a`
+- 문서 개정일: `2025-09-10`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/198601920/detail.html#tblChf; change\_item=용법·용량
+- 접근일(UTC): `2026-07-14T02:10:14.255342+00:00`
+- 원시 후보 원문 위치: 용법용량 PDF p.1, 문단 10
+- 검토용 공식 원문 위치: 용법용량 PDF p.1, 문단 10-17
+- 검토 제안 원문 위치(감사용 후보 범위): 용법용량 PDF p.1, 문단 10
+- 참조 규칙 범위: `acetaminophen_tylenol500_age_12_plus`
+- 참조 규칙 실행 조건: `item_sequence=202106092|ingredient_id=ING-acetaminophen|max_daily_amount=4000`
+- 참조 코드 위치: `src/lib/otc/engine.ts:69`
+- 제안 적용 범위·판정 조건: 없음. 이 후보를 OTC-RULE-003 판정에 연결하지 않음
+- 후보 판정문: 이 후보로 아세트아미노펜 4000mg 초과 판정을 만들지 않는다.
+- 현재 후보 사용자 문구: 계산된 하루 총량이 확인된 최대 1일 용량을 초과합니다.
+- 현재 후보 다음 행동: 추가 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 제품 성분은 ING-ibuprofen이고 후보 문단 10은 어린이 용량표의 제목일 뿐 기준값과 연령·체중 구간을 포함하지 않는다. 아세트아미노펜 타이레놀정500 범위와 성분·제품·조건이 모두 다르다.
+- 전문가 확인 질문: 이부프로펜 소아 용량표 전체를 별도 연령·체중 기반 규칙으로 다시 추출할 것인가?
+- 검토용 공식 원문: 어린이 1회 용량 및 1일 최대 용량 연령 1회 용량 1일 최대용량 200~250mg (10~12. 11~14세 1000mg (50mL) 5mL) 7~10세 150~200mg (7.5~10mL) 800mg (40mL) 3~6세 100~150mg (5~7.5mL) 600mg (30mL) 1~2세 50~100mg (2.5~5mL) 400mg (20mL)
+- 원시 후보 원문(감사용 조각): 어린이 1회 용량 및 1일 최대 용량
+- 검토 제안 원문(감사용 조각): 어린이 1회 용량 및 1일 최대 용량
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=SAFE-OTC-05-UD-P1-B10-max\_daily\_dose; 제품=어린이부루펜시럽(이부프로펜); 품목기준코드=198601920; 성분ID=ING-ibuprofen; 규칙=OTC-RULE-003/max\_daily\_dose; 후보조건=없음. 이 후보를 OTC-RULE-003 판정에 연결하지 않음; 입력 fixture=후보조건 정확히 충족; 권고상태=rejected; 예상판정=이 후보로 아세트아미노펜 4000mg 초과 판정을 만들지 않는다.; 예상=OTC-RULE-003 미발동
+  - 경계: 후보=SAFE-OTC-05-UD-P1-B10-max\_daily\_dose; 제품=어린이부루펜시럽(이부프로펜); 품목기준코드=198601920; 성분ID=ING-ibuprofen; 규칙=OTC-RULE-003/max\_daily\_dose; 후보조건=없음. 이 후보를 OTC-RULE-003 판정에 연결하지 않음; 양성 경계 승인 없음; 후보 문맥과 인접 입력 모두 예상=OTC-RULE-003 미발동
+  - 비대상: 후보=SAFE-OTC-05-UD-P1-B10-max\_daily\_dose; 비대상제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 후보조건=없음. 이 후보를 OTC-RULE-003 판정에 연결하지 않음; 예상=OTC-RULE-003 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=SAFE-OTC-05-UD-P1-B10-max\_daily\_dose; 제품=어린이부루펜시럽(이부프로펜); 품목기준코드=198601920; 성분ID=ING-ibuprofen; 규칙=OTC-RULE-003/max\_daily\_dose; 후보조건=없음. 이 후보를 OTC-RULE-003 판정에 연결하지 않음; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-003 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 32. SAFE-OTC-10-NB-P1-B12-duplicate\_ingredient
+
+- 권고 상태: `provisional`
+- 의미 관계: `direct_same_scope`
+- 규칙: `OTC-RULE-001` / `duplicate_ingredient`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `released`
+- 제품: 판콜에이내복액 (`196800036`)
+- 성분: 아세트아미노펜, 클로르페니라민말레산염, 펜톡시베린시트르산염, 페닐레프린염산염, 구아이페네신, 카페인무수물
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB)
+- 원문 버전: `sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d`
+- 문서 개정일: `2025-11-10`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:10:14.255342+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.1, 문단 12
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.1, 문단 10-12
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.1, 문단 12
+- 참조 규칙 범위: `acetaminophen_containing_selected_products`
+- 참조 규칙 실행 조건: `scope_only_no_structured_binding`
+- 참조 코드 위치: `src/lib/otc/engine.ts:586`
+- 제안 적용 범위·판정 조건: item\_sequence=196800036인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함
+- 후보 판정문: 아세트아미노펜 중복 경고를 표시하고 함께 복용하지 않도록 안내한다.
+- 현재 후보 사용자 문구: 같은 유효성분이 여러 제품에 포함되어 있습니다.
+- 현재 후보 다음 행동: 각 제품의 성분과 총 복용량을 확인하고 복용 전 약사 또는 의사와 상담하세요.
+- 판단 근거: 판콜에이내복액에는 ING-acetaminophen이 포함되고 원문 문단 11~12는 다른 아세트아미노펜 함유 제품과의 병용을 직접 금지한다. 후보 locator 문단 12는 줄바꿈 때문에 성분명 앞부분이 빠져 있어 보정 전에는 운영 근거로 쓸 수 없다.
+- 전문가 확인 질문: 문단 11~12를 한 문장 범위로 묶고 이 제품이 포함된 아세트아미노펜 중복 판정의 제품별 보조 근거로 채택할 것인가?
+- 검토용 공식 원문: 3) 이 약은 아세트아미노펜을 함유하고 있다. 아세트아미노펜으로 일일 최대 용량(4,000mg)을 초과할 경우 간손상을 일으킬 수 있으므로 이 약을 일일 최대 용량(4000mg)을 초과하여 복용하여서는 아니되며, 아세트 아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.
+- 원시 후보 원문(감사용 조각): 아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.
+- 검토 제안 원문(감사용 조각): 아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=SAFE-OTC-10-NB-P1-B12-duplicate\_ingredient; 제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 규칙=OTC-RULE-001/duplicate\_ingredient; 후보조건=item\_sequence=196800036인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-001 미발동; 채택 후 예상판정=아세트아미노펜 중복 경고를 표시하고 함께 복용하지 않도록 안내한다.
+  - 경계: 후보=SAFE-OTC-10-NB-P1-B12-duplicate\_ingredient; 제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 규칙=OTC-RULE-001/duplicate\_ingredient; 후보조건=item\_sequence=196800036인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=아세트아미노펜 중복 경고를 표시하고 함께 복용하지 않도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-001 미발동
+  - 비대상: 후보=SAFE-OTC-10-NB-P1-B12-duplicate\_ingredient; 비대상제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 후보조건=item\_sequence=196800036인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 예상=OTC-RULE-001 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=SAFE-OTC-10-NB-P1-B12-duplicate\_ingredient; 제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 규칙=OTC-RULE-001/duplicate\_ingredient; 후보조건=item\_sequence=196800036인 제품과 다른 ING-acetaminophen 제품이 함께 선택되고 두 제품의 성분 단위가 합산 가능함; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-001 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:
+
+## 33. SAFE-OTC-10-NB-P3-B6-maximum\_duration
+
+- 권고 상태: `needs_expert_review`
+- 의미 관계: `direct_same_scope`
+- 규칙: `OTC-RULE-015` / `maximum_duration`
+- 후보 운영 상태: `inactive_candidate`
+- 참조 규칙 상태: `draft`
+- 제품: 판콜에이내복액 (`196800036`)
+- 성분: 아세트아미노펜, 클로르페니라민말레산염, 펜톡시베린시트르산염, 페닐레프린염산염, 구아이페네신, 카페인무수물
+- 문서 유형: `NB`
+- 공식 허가 원문: [MFDS-NEDRUG-DETAIL](https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB)
+- 원문 버전: `sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d`
+- 문서 개정일: `2025-11-10`
+- 문서 개정 상태: `reported_in_archived_mfds_change_history`
+- 문서 개정 근거: baseline\_git\_blob:research\_v3/otc/raw/nedrug/196800036/detail.html#tblChf; change\_item=사용상주의사항변경(부작용포함)
+- 접근일(UTC): `2026-07-14T02:10:14.255342+00:00`
+- 원시 후보 원문 위치: 사용상의주의사항 PDF p.3, 문단 6
+- 검토용 공식 원문 위치: 사용상의주의사항 PDF p.3, 문단 4-10
+- 검토 제안 원문 위치(감사용 후보 범위): 사용상의주의사항 PDF p.3, 문단 6
+- 참조 규칙 범위: `pancol_a_continuous_use`
+- 참조 규칙 실행 조건: `scope_only_no_structured_binding`
+- 참조 코드 위치: `src/lib/otc/engine.ts:991`
+- 제안 적용 범위·판정 조건: 검토안: item\_sequence=196800036 AND continuous\_days가 전문가가 정한 장기간 기준을 초과함. 정량 기준 확정 전에는 비활성
+- 후보 판정문: 장기간 계속 복용하지 말고 증상이 지속되면 의사 또는 약사와 상의하도록 안내한다.
+- 현재 후보 사용자 문구: 허가된 연속 복용 기간을 넘었을 수 있습니다.
+- 현재 후보 다음 행동: 증상이 지속되면 추가 복용 대신 약사 또는 의사와 상담하세요.
+- 판단 근거: 제품과 원문은 현재 범위에 정확히 맞지만 문단 6은 장기간의 일수 상한을 제시하지 않는다. 현재 엔진의 maximumContinuousDays에는 숫자가 필요하므로 임의 일수를 넣으면 허가원문보다 좁거나 넓은 판정을 만든다.
+- 전문가 확인 질문: 장기간을 정량 일수로 정의할 공식 근거가 있는가, 없으면 이 항목을 계산 규칙이 아닌 비정량 안내로만 둘 것인가?
+- 검토용 공식 원문: 7. 기타 이 약의 복용시 주의할 사항 1) 정해진 용법·용량을 잘 지킬 것. 2) 장기간 계속 복용하지 말 것. 3) 복용시에는 음주하지 말 것. 4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것. 5) 바르비탈계 약물, 삼환계 항우울제 및 알코올을 투여한 환자는 다량의 아세트아미노펜을 대사시키는 능력 이 감소되어 아세트아미노펜의 혈장 반감기를 증가시킬 수 있다.
+- 원시 후보 원문(감사용 조각): 2) 장기간 계속 복용하지 말 것.
+- 검토 제안 원문(감사용 조각): 2) 장기간 계속 복용하지 말 것.
+- 채택 시 필수 회귀 테스트:
+  - 정상: 후보=SAFE-OTC-10-NB-P3-B6-maximum\_duration; 제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=검토안: item\_sequence=196800036 AND continuous\_days가 전문가가 정한 장기간 기준을 초과함. 정량 기준 확정 전에는 비활성; 입력 fixture=후보조건 정확히 충족; 사람 승인 전 예상=OTC-RULE-015 미발동; 채택 후 예상판정=장기간 계속 복용하지 말고 증상이 지속되면 의사 또는 약사와 상의하도록 안내한다.
+  - 경계: 후보=SAFE-OTC-10-NB-P3-B6-maximum\_duration; 제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=검토안: item\_sequence=196800036 AND continuous\_days가 전문가가 정한 장기간 기준을 초과함. 정량 기준 확정 전에는 비활성; 경계내 fixture=후보조건의 모든 수치·열거·문자 조건 정확히 충족; 채택 후 예상판정=장기간 계속 복용하지 말고 증상이 지속되면 의사 또는 약사와 상의하도록 안내한다.; 경계밖 fixture=후보조건 중 정확히 한 조건을 비발동 쪽 1단위 또는 불일치값으로 변경; 예상=OTC-RULE-015 미발동
+  - 비대상: 후보=SAFE-OTC-10-NB-P3-B6-maximum\_duration; 비대상제품=낙센정(나프록센); 품목기준코드=197500016; 성분ID=ING-naproxen; 후보조건=검토안: item\_sequence=196800036 AND continuous\_days가 전문가가 정한 장기간 기준을 초과함. 정량 기준 확정 전에는 비활성; 예상=OTC-RULE-015 미발동; 후보판정문 미표시
+  - 오탐 방지: 후보=SAFE-OTC-10-NB-P3-B6-maximum\_duration; 제품=판콜에이내복액; 품목기준코드=196800036; 성분ID=ING-acetaminophen;ING-chlorpheniramine\_maleate;ING-mf-src-41c782105274;ING-mf-src-4b985f9d3bdb;ING-mf-src-cd3363b1ac1f;ING-mf-src-dc293e7de142; 규칙=OTC-RULE-015/maximum\_duration; 후보조건=검토안: item\_sequence=196800036 AND continuous\_days가 전문가가 정한 장기간 기준을 초과함. 정량 기준 확정 전에는 비활성; 오탐 fixture=동일 제품에서 제안조건의 첫 수치 비교값을 비발동 쪽 1단위로 바꾸거나 첫 열거·문자값에 -유사를 붙여 정확히 한 조건을 불충족; 예상=OTC-RULE-015 미발동; 지원하지 않는 입력이면 coverage gap 표시
+- 사람 검토 결과: ☐ 채택 ☐ 수정 후 채택 ☐ 기각
+- 검토자 ID:
+- 검토자 역할:
+- 검토일:
+- 검토 의견:

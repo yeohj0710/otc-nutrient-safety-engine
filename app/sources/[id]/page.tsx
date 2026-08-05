@@ -120,7 +120,11 @@ export default async function SourceDetailPage(props: {
   ).length;
 
   return (
-    <main className="app-page min-h-screen px-4 py-8 md:px-5 lg:px-6">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="app-page min-h-screen px-4 py-8 md:px-5 lg:px-6"
+    >
       <div className="page-shell-narrow space-y-5">
         <section className="surface-card-strong rounded-[2rem] px-6 py-6">
           <div className="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">

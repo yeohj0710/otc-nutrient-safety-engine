@@ -1,0 +1,1474 @@
+{
+  "schema_version": "1.0.0",
+  "track": "v5.1-final-mechanical-audit",
+  "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+  "generator": "scripts/research/otc/build_v51_final_audit.py",
+  "generator_sha256": "e6a55e6203e563caf5fd9c02a63d82fa45b49b96e746280f0dcb5d4ff9fed8e8",
+  "computation_policy": {
+    "mechanical_sources_only": true,
+    "ui_code_used": false,
+    "historical_support_type_label_definition": "one unique (itemSequence, supportedRuleType) pair from runtime products",
+    "direct_released_rule_binding_source": "products[].supportedReleasedRuleIds, cross-checked against runtime_rule_bindings.csv",
+    "admin_derived_support_type_source": "mapped administrationConstraints[].type minus direct released-rule types",
+    "evidence_status_assignment_level": "360 evidence_rule_links",
+    "evidence_units_are_status_free": true,
+    "evidence_document_revision_metadata_assignment_level": "all 360 evidence_rule_links",
+    "literature_authority": "explanatory_only",
+    "release_ready_requires_human_review": true,
+    "portable_repository_verification": true,
+    "external_artifacts_required_for_final_local_report": true
+  },
+  "inputs": {
+    "research_v3/otc/extracted/nedrug/196800036/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/196800036/NB.txt",
+      "bytes": 7591,
+      "sha256": "c5663263880dcaec315dc3d0ae9cd206db97c2e1a230f4d203742a9340155500",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "07d8a2fd9a7fb34976c29eb744ee324286a0c11a"
+    },
+    "research_v3/otc/extracted/nedrug/197500016/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/197500016/NB.txt",
+      "bytes": 27137,
+      "sha256": "fe69b6223fdc99471638072853607845dd59cb9998df3ec88620e89803fde28c",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "bd0b71626c33de41b273a2f5cb464e8a73f97ec9"
+    },
+    "research_v3/otc/extracted/nedrug/197500016/UD.txt": {
+      "path": "research_v3/otc/extracted/nedrug/197500016/UD.txt",
+      "bytes": 1179,
+      "sha256": "f37cb7e3604cad4189be8d54c4d765405daac791e1d66c32a25c80fe421c5598",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "494f3006f25a8f63ac27bc1de680e9cb548c9edd"
+    },
+    "research_v3/otc/extracted/nedrug/198400250/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/198400250/NB.txt",
+      "bytes": 1978,
+      "sha256": "f369be29dc1a706a26f1e95575dbae62706f22b8f496c0ab9b1d9e4928c6840d",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "5c7a062af76ea284fb75628f035baf15a6908000"
+    },
+    "research_v3/otc/extracted/nedrug/198601920/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/198601920/NB.txt",
+      "bytes": 22876,
+      "sha256": "1e181b0ebaf1aa05456be198caa64d63934c85e5b7b05834c944b7975c9645c8",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "90e6c22f0e8d00bf98e0f108cc60d4763deafdc7"
+    },
+    "research_v3/otc/extracted/nedrug/198601920/UD.txt": {
+      "path": "research_v3/otc/extracted/nedrug/198601920/UD.txt",
+      "bytes": 1065,
+      "sha256": "6ca2612987d1449038b5fb7ab42e3628faa46274b214407114a62b81bd3cf05d",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "2070116780715a50e6fca8e671797d970d08d161"
+    },
+    "research_v3/otc/extracted/nedrug/198700405/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/198700405/NB.txt",
+      "bytes": 1480,
+      "sha256": "b0abca454b34e4abc442275a3d7cdbcbf6e2fa397730cad8cd7bcd2232897af1",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "ac0eae851d59ecd31eb4dd631c8f7a5317d58e61"
+    },
+    "research_v3/otc/extracted/nedrug/199400202/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/199400202/NB.txt",
+      "bytes": 7491,
+      "sha256": "bc74cdd2b1d034bdafb4988085c614a9a9389f10921ca5287544396b21b105c5",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "0beeaac080b02488e9df63aa9c5aa6ee83650682"
+    },
+    "research_v3/otc/extracted/nedrug/199801026/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/199801026/NB.txt",
+      "bytes": 1145,
+      "sha256": "08a562d9bc686a9251aeaf769f4b405ff0ca2f2bd5bcf9c0b448ba29a878ede2",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "c3b53f7df8de288592ecb601d3b0ff48fb8e097e"
+    },
+    "research_v3/otc/extracted/nedrug/199801026/UD.txt": {
+      "path": "research_v3/otc/extracted/nedrug/199801026/UD.txt",
+      "bytes": 137,
+      "sha256": "4c42d5e25694f6df3ed1e98237ac50d5fc38d988ae9751304303e5508a00e7fb",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f6eca8d2e8c02684e19b14c2c4f5afcb0ba5cde4"
+    },
+    "research_v3/otc/extracted/nedrug/199900926/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/199900926/NB.txt",
+      "bytes": 1492,
+      "sha256": "d9809ea362a77d523c104f4f611559d51b20e8a305e38899eaf38b42e74d1d2f",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "12c84d44875a190f71d935eb78f597f9ab8c2868"
+    },
+    "research_v3/otc/extracted/nedrug/200300406/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/200300406/NB.txt",
+      "bytes": 1436,
+      "sha256": "0e2ddd8eea290d12cd9412184f507fdd176b4197f6a4bbdb91673d85f5d4aad9",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "3a1cbe1644381635ab7b60f6ad1a724ee8f69c24"
+    },
+    "research_v3/otc/extracted/nedrug/200501321/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/200501321/NB.txt",
+      "bytes": 3195,
+      "sha256": "6e6b9b1be176a6545f921284de43a9abbc2ef551c0eff6d934dea88b6827cabf",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "5370670eafa2c60a29fa79986a9f399b004ae27d"
+    },
+    "research_v3/otc/extracted/nedrug/200610765/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/200610765/NB.txt",
+      "bytes": 8662,
+      "sha256": "d8f53715a2260c8990909dcee5c98396fb87df1631068189771cf868453f23df",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "7f910beb1feef46d34f0558f09cf0dc6d2435075"
+    },
+    "research_v3/otc/extracted/nedrug/200610765/UD.txt": {
+      "path": "research_v3/otc/extracted/nedrug/200610765/UD.txt",
+      "bytes": 1591,
+      "sha256": "f8353e46763043a2110b6ea246e49694739125cddd19542c6b7b4391980ded0c",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "5d0586b912bc1d2a85dffeba9731a9709a0f53c5"
+    },
+    "research_v3/otc/extracted/nedrug/201110646/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/201110646/NB.txt",
+      "bytes": 34923,
+      "sha256": "04f5c26cb39c9b1e7dcb135b1fb139e69774054d30de5a719742db7b06d6c97e",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "9613f96ecc084de987e2daf90c323169cf8ef94f"
+    },
+    "research_v3/otc/extracted/nedrug/202106092/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/202106092/NB.txt",
+      "bytes": 8418,
+      "sha256": "5d13ec494383fe2619482aa8c08e93d0e161be4a15cf8d6cdb3a507d9bcba5a6",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d0729a3915c4ffe9ef9032131a84afc0d57d2237"
+    },
+    "research_v3/otc/extracted/nedrug/202106092/UD.txt": {
+      "path": "research_v3/otc/extracted/nedrug/202106092/UD.txt",
+      "bytes": 295,
+      "sha256": "4574509f23567c3d5eaf7ca3676bbdba1f4be8f8a3c4bc75219caedf4028b39a",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "3760d9a33547b530b33935585d0352a340ee6d51"
+    },
+    "research_v3/otc/extracted/nedrug/202200525/NB.txt": {
+      "path": "research_v3/otc/extracted/nedrug/202200525/NB.txt",
+      "bytes": 8550,
+      "sha256": "47db39945c92a7ac02c192df801d4bd81f0c5e26cae25b138646f8a8779539bb",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d4ebab8b23f31f16c7b2b42cf0b4f76d5b1d06eb"
+    },
+    "research_v3/otc/extracted/nedrug/202200525/UD.txt": {
+      "path": "research_v3/otc/extracted/nedrug/202200525/UD.txt",
+      "bytes": 1072,
+      "sha256": "7dbffa24d6f48e28096112e8621fa291b659e14b9b945340ca51aadfa3e114b8",
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f9f8b20ead4b953c4d0b8f8c5cecee250897bf1d"
+    },
+    "research_v3/otc/normalized/administration_constraints.csv": {
+      "path": "research_v3/otc/normalized/administration_constraints.csv",
+      "bytes": 10325,
+      "sha256": "88b33b109e602527655e814f794bc19f7a5166553fd6c701f92bd7e53f49b669",
+      "rows": 32,
+      "fields": [
+        "constraint_id",
+        "item_sequence",
+        "constraint_type",
+        "value",
+        "value_unit",
+        "ingredient_id",
+        "source_id",
+        "source_url",
+        "source_locator",
+        "source_sha256",
+        "record_status",
+        "derivation_method"
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "045936762fc145c479a0073a96b625fad4c55d8b"
+    },
+    "research_v3/otc/normalized/product_master.csv": {
+      "path": "research_v3/otc/normalized/product_master.csv",
+      "bytes": 8683,
+      "sha256": "93e8f21b00e5e2ee8963777fa04aba7b0e5cf46f2a9d68172db65576c25bf99b",
+      "rows": 16,
+      "fields": [
+        "candidate_id",
+        "product_id",
+        "item_sequence",
+        "product_name",
+        "manufacturer_name",
+        "classification",
+        "authorization_status",
+        "dosage_form",
+        "package_unit",
+        "authorization_document_url",
+        "source_id",
+        "source_locator",
+        "retrieved_at",
+        "source_sha256",
+        "record_status",
+        "calculation_ready",
+        "selected_ingredient_variant",
+        "calculation_blocker",
+        "analysis_status",
+        "analysis_exclusion_reason"
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "c1d7d6dbd24a46e89dc8275cf7eb1c50fbc2abd7"
+    },
+    "research_v3/otc/rules/rule_evidence_shortlist.csv": {
+      "path": "research_v3/otc/rules/rule_evidence_shortlist.csv",
+      "bytes": 21840,
+      "sha256": "d28b6acda5161669057f30ff4f103ebca52a1457bc37ab111e7a932552a0610d",
+      "rows": 48,
+      "fields": [
+        "rule_id",
+        "rule_type",
+        "rank",
+        "recommendation",
+        "scope",
+        "evidence_candidate_id",
+        "product_name",
+        "item_sequence",
+        "source_id",
+        "source_url",
+        "source_locator",
+        "evidence_text",
+        "review_status",
+        "supports_release"
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "d78d94781a620d7f23e59f5a495e2ac1de848bf9"
+    },
+    "research_v3/otc/rules/rules.csv": {
+      "path": "research_v3/otc/rules/rules.csv",
+      "bytes": 5596,
+      "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e",
+      "rows": 16,
+      "fields": [
+        "rule_id",
+        "rule_type",
+        "status",
+        "severity",
+        "scope",
+        "message_ko",
+        "next_action_ko",
+        "source_id",
+        "source_locator"
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "41b72ad957c04bf922aeb1fdeb50e2b436420440"
+    },
+    "research_v3/otc/rules/runtime_rule_bindings.csv": {
+      "path": "research_v3/otc/rules/runtime_rule_bindings.csv",
+      "bytes": 1321,
+      "sha256": "d838f851a5623574df76500a3dd33c1c2e3f77564ac5965d341220cb21d93931",
+      "rows": 13,
+      "fields": [
+        "rule_id",
+        "item_sequence",
+        "ingredient_id",
+        "max_daily_amount",
+        "minimum_interval_hours",
+        "minimum_age_years",
+        "maximum_continuous_days",
+        "flags",
+        "binding_status",
+        "supports_release",
+        "red_flag_terms"
+      ],
+      "basis": "baseline_git_blob",
+      "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+      "git_blob_oid": "f2de18406fef4d9cb3426f437c2020f6dde1eea1"
+    },
+    "research_v51/audit/baseline_manifest.json": {
+      "path": "research_v51/audit/baseline_manifest.json",
+      "bytes": 7288,
+      "sha256": "35d9cc747a45b2027b29b4da250c8ecd159bae28def43e6562180859e5c0148d"
+    },
+    "research_v51/audit/evidence_inventory.json": {
+      "path": "research_v51/audit/evidence_inventory.json",
+      "bytes": 22504,
+      "sha256": "237b55583b2b966ff174174d5a9e699f18125fd621761657114c3432fd5a9386"
+    },
+    "research_v51/audit/literature_link_classification_audit.json": {
+      "path": "research_v51/audit/literature_link_classification_audit.json",
+      "bytes": 5407,
+      "sha256": "39e0454392bdb5a086f8150994d448f8264bd990ee2fa1bb770053b15d475863"
+    },
+    "research_v51/audit/review_packet_audit.json": {
+      "path": "research_v51/audit/review_packet_audit.json",
+      "bytes": 5929,
+      "sha256": "db6cf4e4a7a6ba3f9bcfe9392d96b987845a116027d59f60a3f2d051da4a3cc5"
+    },
+    "research_v51/audit/source_freshness_snapshot.json": {
+      "path": "research_v51/audit/source_freshness_snapshot.json",
+      "bytes": 30383,
+      "sha256": "b595d09757393e1b650f5389ce85ec65f4d83004f8629617ff5ee9b29518f69c"
+    },
+    "research_v51/evidence/active_rule_applicability.csv": {
+      "path": "research_v51/evidence/active_rule_applicability.csv",
+      "bytes": 2361,
+      "sha256": "4bd0f7f631138893f5ff5bb308e1d1f90508784a4b9005e8ce7d5356aa453f7d",
+      "rows": 15,
+      "fields": [
+        "rule_id",
+        "rule_type",
+        "scope",
+        "lineage_status",
+        "product_item_sequences",
+        "ingredient_ids",
+        "pharmacologic_classes",
+        "required_anchor_ingredient_ids",
+        "administration_constraint_types",
+        "medication_terms",
+        "minimum_age_years",
+        "pregnancy_trimesters",
+        "lactation_supported",
+        "urgent_terms"
+      ]
+    },
+    "research_v51/evidence/evidence_rule_links.csv": {
+      "path": "research_v51/evidence/evidence_rule_links.csv",
+      "bytes": 833226,
+      "sha256": "d5d7c6bf0785ee8e201907da26cc50e4d2429df2ff2934d561f991425ad7ec4c",
+      "rows": 360,
+      "fields": [
+        "evidence_candidate_id",
+        "evidence_unit_id",
+        "rule_id",
+        "rule_type",
+        "referenced_rule_status",
+        "severity",
+        "candidate_id",
+        "item_sequence",
+        "product_id",
+        "product_name",
+        "ingredient_ids",
+        "ingredient_names",
+        "ingredient_scope",
+        "document_type",
+        "source_id",
+        "source_url",
+        "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
+        "source_pdf_sha256",
+        "source_page_text_sha256",
+        "retrieved_at",
+        "retrieved_at_utc",
+        "raw_candidate_source_locator",
+        "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
+        "evidence_text_override",
+        "evidence_text_override_reason",
+        "shortlist_source_locator",
+        "shortlist_evidence_text",
+        "shortlist_changed_from_candidate",
+        "reviewed_source_locator",
+        "reviewed_evidence_text",
+        "operational_source_locator",
+        "operational_evidence_text",
+        "rule_scope",
+        "referenced_runtime_condition",
+        "rule_message_ko",
+        "next_action_ko",
+        "referenced_code_link",
+        "shortlist_rank",
+        "recommendation",
+        "evidence_status",
+        "candidate_operational_status",
+        "status_reason",
+        "analysis_status",
+        "analysis_exclusion_reason",
+        "duplicate_flag",
+        "duplicate_group",
+        "duplicate_location",
+        "duplicate_location_group_id",
+        "duplicate_text",
+        "duplicate_text_group_id",
+        "reviewer_id",
+        "reviewer_role",
+        "reviewed_at"
+      ]
+    },
+    "research_v51/evidence/evidence_units.csv": {
+      "path": "research_v51/evidence/evidence_units.csv",
+      "bytes": 353897,
+      "sha256": "15c59cc7bf0f07118d172668d848731815dc4f69a9fe3fcd26e6c843ce73f18a",
+      "rows": 328,
+      "fields": [
+        "evidence_unit_id",
+        "candidate_id",
+        "item_sequence",
+        "product_id",
+        "product_name",
+        "ingredient_ids",
+        "ingredient_names",
+        "ingredient_scope",
+        "document_type",
+        "source_id",
+        "source_url",
+        "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
+        "source_pdf_sha256",
+        "source_page_text_sha256",
+        "retrieved_at",
+        "retrieved_at_utc",
+        "source_locator",
+        "representative_evidence_text",
+        "evidence_text_variant_count",
+        "evidence_text_variants_json",
+        "evidence_text_override_count",
+        "candidate_link_count",
+        "rule_types",
+        "duplicate_flag",
+        "duplicate_group",
+        "duplicate_location",
+        "duplicate_location_group_id",
+        "duplicate_text",
+        "duplicate_text_group_ids"
+      ]
+    },
+    "research_v51/literature/link_classification.csv": {
+      "path": "research_v51/literature/link_classification.csv",
+      "bytes": 15519,
+      "sha256": "c9b3a734e254d153d4c716e5e25ce0a897f7d4cfd5f4791a38d29fab5fead6e1",
+      "rows": 20,
+      "fields": [
+        "classification_id",
+        "source_link_id",
+        "v50_link_id",
+        "rule_id",
+        "rule_type",
+        "pmid",
+        "lineage_status",
+        "v50_rejection_reason",
+        "semantic_classification",
+        "ingredient_alignment",
+        "population_alignment",
+        "condition_alignment",
+        "outcome_alignment",
+        "direct_scope_ingredient_ids",
+        "direct_scope_product_item_sequences",
+        "direct_scope_profile_conditions",
+        "direct_scope_medication_terms",
+        "ui_policy",
+        "ui_direct_label_allowed",
+        "legacy_runtime_reachable",
+        "supports_rule_release",
+        "human_expert_reviewed",
+        "locator",
+        "locator_quote_sha256",
+        "key_finding_ko",
+        "classification_reason_ko",
+        "ui_boundary_ko"
+      ]
+    },
+    "research_v51/review/expert_review_packet.md": {
+      "path": "research_v51/review/expert_review_packet.md",
+      "bytes": 186056,
+      "sha256": "b613689cae311a21eeacdee250a2a1480815030c12662705e160e399e689ab24"
+    },
+    "research_v51/review/expert_review_queue.csv": {
+      "path": "research_v51/review/expert_review_queue.csv",
+      "bytes": 148785,
+      "sha256": "dad992b216f3967dfd5c007b119e434222012962bb78b43a1fd64f0101711bb1",
+      "rows": 33,
+      "fields": [
+        "evidence_candidate_id",
+        "evidence_unit_id",
+        "rule_id",
+        "rule_type",
+        "referenced_rule_status",
+        "candidate_operational_status",
+        "shortlist_rank",
+        "recommendation",
+        "product_name",
+        "item_sequence",
+        "ingredient_ids",
+        "ingredient_names",
+        "ingredient_scope",
+        "current_rule_scope",
+        "referenced_runtime_condition",
+        "proposed_message_ko",
+        "proposed_next_action_ko",
+        "document_type",
+        "source_id",
+        "source_url",
+        "source_version",
+        "document_revision_date",
+        "document_revision_status",
+        "document_revision_basis",
+        "document_revision_reason",
+        "retrieved_at",
+        "retrieved_at_utc",
+        "raw_candidate_source_locator",
+        "raw_candidate_evidence_text",
+        "official_source_locator",
+        "official_source_text",
+        "proposed_review_source_locator",
+        "proposed_review_evidence_text",
+        "reviewed_source_locator",
+        "reviewed_evidence_text",
+        "operational_source_locator",
+        "operational_evidence_text",
+        "evidence_text_override",
+        "evidence_text_override_reason",
+        "referenced_code_link",
+        "duplicate_flag",
+        "duplicate_group",
+        "review_status",
+        "status_reason",
+        "review_question",
+        "adoption_options",
+        "required_regression_tests",
+        "review_decision",
+        "review_comment",
+        "reviewer_id",
+        "reviewer_role",
+        "reviewed_at"
+      ]
+    },
+    "research_v51/review/shortlist_semantic_triage.csv": {
+      "path": "research_v51/review/shortlist_semantic_triage.csv",
+      "bytes": 27882,
+      "sha256": "7f96751eef65d9f44e108a6ee99917f921cd5e5a766af4be52ab702fc303b9db",
+      "rows": 33,
+      "fields": [
+        "evidence_candidate_id",
+        "rule_id",
+        "rule_type",
+        "product_name",
+        "item_sequence",
+        "current_scope",
+        "semantic_relation",
+        "recommended_status",
+        "proposed_trigger",
+        "expected_decision_ko",
+        "decision_reason_ko",
+        "expert_question_ko"
+      ]
+    },
+    "scripts/research/otc/audit_v51_boundaries.py": {
+      "path": "scripts/research/otc/audit_v51_boundaries.py",
+      "bytes": 35465,
+      "sha256": "63a0c61f430ae1da793fde2500eca61c8422867d5dacaab820df8339e87f7b8b"
+    },
+    "scripts/research/otc/audit_v51_source_freshness.py": {
+      "path": "scripts/research/otc/audit_v51_source_freshness.py",
+      "bytes": 60380,
+      "sha256": "350f13db08a9b5709116e6ca42e7df6ec9faea3d21cf87cd77df0a64148a2cda"
+    },
+    "scripts/research/otc/build_v51_final_audit.py": {
+      "path": "scripts/research/otc/build_v51_final_audit.py",
+      "bytes": 126544,
+      "sha256": "e6a55e6203e563caf5fd9c02a63d82fa45b49b96e746280f0dcb5d4ff9fed8e8"
+    },
+    "scripts/research/otc/build_v51_review_packet.py": {
+      "path": "scripts/research/otc/build_v51_review_packet.py",
+      "bytes": 66866,
+      "sha256": "c9a71a6f65d63ac84d8c5816ec168e4a46e039a5282601f3bbca6fd8059d4988"
+    },
+    "scripts/research/otc/validate_v51_shortlist_triage.py": {
+      "path": "scripts/research/otc/validate_v51_shortlist_triage.py",
+      "bytes": 10040,
+      "sha256": "deda91e61debae818bf8f6df77c73ea31acea605ec2d61b44e0d9f98968bf181"
+    },
+    "src/generated/otc-runtime.json": {
+      "path": "src/generated/otc-runtime.json",
+      "bytes": 89971,
+      "sha256": "b45fb4d311b095027fef3b08bbbead3fd331dfdf8e9696351d2b03544a7d05d1"
+    }
+  },
+  "protected_baseline": {
+    "path": "research_v3",
+    "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+    "baseline_tree_oid": "325001631c37e6fe8749a021c13a2ccc75bdf5b9",
+    "head_tree_oid": "325001631c37e6fe8749a021c13a2ccc75bdf5b9",
+    "worktree_clean": true,
+    "consumed_inputs": {
+      "research_v3/otc/normalized/administration_constraints.csv": {
+        "bytes": 10325,
+        "sha256": "88b33b109e602527655e814f794bc19f7a5166553fd6c701f92bd7e53f49b669",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "045936762fc145c479a0073a96b625fad4c55d8b"
+      },
+      "research_v3/otc/normalized/product_master.csv": {
+        "bytes": 8683,
+        "sha256": "93e8f21b00e5e2ee8963777fa04aba7b0e5cf46f2a9d68172db65576c25bf99b",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "c1d7d6dbd24a46e89dc8275cf7eb1c50fbc2abd7"
+      },
+      "research_v3/otc/rules/rule_evidence_shortlist.csv": {
+        "bytes": 21840,
+        "sha256": "d28b6acda5161669057f30ff4f103ebca52a1457bc37ab111e7a932552a0610d",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "d78d94781a620d7f23e59f5a495e2ac1de848bf9"
+      },
+      "research_v3/otc/rules/rules.csv": {
+        "bytes": 5596,
+        "sha256": "772ed7b36f7771a414055c5d42339da721018a6695d5c1a0ba9c85c88ef2bf6e",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "41b72ad957c04bf922aeb1fdeb50e2b436420440"
+      },
+      "research_v3/otc/rules/runtime_rule_bindings.csv": {
+        "bytes": 1321,
+        "sha256": "d838f851a5623574df76500a3dd33c1c2e3f77564ac5965d341220cb21d93931",
+        "basis": "baseline_git_blob",
+        "baseline_commit": "6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9",
+        "git_blob_oid": "f2de18406fef4d9cb3426f437c2020f6dde1eea1"
+      }
+    }
+  },
+  "boundary_verification": {
+    "valid": true,
+    "verification_scope": "portable_repository",
+    "portable_repository_verified": true,
+    "external_artifacts_declared": 2,
+    "external_artifacts_required_for_final_local_report": true
+  },
+  "baseline_vs_v51": {
+    "products": {
+      "baseline": 13,
+      "v51": 13,
+      "delta": 0,
+      "unchanged": true
+    },
+    "released_rules": {
+      "baseline": 15,
+      "v51": 15,
+      "delta": 0,
+      "unchanged": true
+    },
+    "historical_support_type_labels": {
+      "baseline": 26,
+      "v51": 26,
+      "delta": 0,
+      "unchanged": true,
+      "definition": "the v5.0 field product_rule_bindings counted flattened products[].supportedRuleTypes labels, not released-rule IDs"
+    },
+    "administration_constraints": {
+      "baseline": 32,
+      "v51": 32,
+      "delta": 0,
+      "unchanged": true
+    },
+    "dose_or_interval_only_products": {
+      "baseline": 10,
+      "v51": 10,
+      "delta": 0,
+      "unchanged": true
+    },
+    "broader_safety_support_products": {
+      "baseline": 3,
+      "v51": 3,
+      "delta": 0,
+      "unchanged": true
+    },
+    "official_evidence_rule_links": {
+      "baseline": 360,
+      "v51": 360,
+      "delta": 0,
+      "unchanged": true,
+      "definition": "candidate-to-rule links; statuses apply at this 360-row level"
+    },
+    "unverified_shortlist_to_expert_packet": {
+      "baseline": 33,
+      "v51": 33,
+      "delta": 0,
+      "unchanged": true
+    },
+    "v50_emitted_literature_links": {
+      "baseline": 10,
+      "v51": 10,
+      "delta": 0,
+      "unchanged": true,
+      "definition": "v5.0 emitted links, not semantic direct matches; v5.1 classifies them as 1 direct, 4 scope-qualified, and 5 background-only"
+    },
+    "v50_emitted_literature_rules": {
+      "baseline": 9,
+      "v51": 9,
+      "delta": 0,
+      "unchanged": true
+    },
+    "release_ready": {
+      "baseline": false,
+      "v51": false,
+      "unchanged": true
+    }
+  },
+  "v51": {
+    "runtime": {
+      "schema_version": "2.1.0",
+      "source_generated_at": "2026-08-01",
+      "products": 13,
+      "released_rules": 15,
+      "released_rule_types": 15,
+      "historical_support_type_labels": 26,
+      "historical_support_type_label_definition": "unique (itemSequence, supportedRuleType) pairs from runtime products; the v5.0 baseline called these product_rule_bindings",
+      "direct_product_rule_bindings": 13,
+      "direct_product_rule_binding_definition": "unique products[].supportedReleasedRuleIds pairs, exactly matching runtime_rule_bindings.csv",
+      "administration_derived_type_associations": 13,
+      "administration_derived_type_association_definition": "supportedRuleTypes pairs attributable to mapped ADMIN constraints after subtracting types already supplied by direct released rules",
+      "cross_product_or_global_rules": 2,
+      "cross_product_or_global_rule_ids": [
+        "OTC-RULE-001",
+        "OTC-RULE-002"
+      ],
+      "structured_runtime_binding_rows": 13,
+      "administration_constraints": 32,
+      "authorization_constraints_count": 32,
+      "support_tier_counts": {
+        "broader_safety_support": 3,
+        "dose_or_interval_only": 10
+      },
+      "administration_constraint_type_counts": {
+        "maximum_daily_ingredient_amount": 5,
+        "maximum_doses_per_day": 13,
+        "maximum_units_per_dose": 12,
+        "minimum_interval_hours": 2
+      },
+      "released_rule_ids": [
+        "OTC-RULE-001",
+        "OTC-RULE-002",
+        "OTC-RULE-003",
+        "OTC-RULE-004",
+        "OTC-RULE-005",
+        "OTC-RULE-006",
+        "OTC-RULE-007",
+        "OTC-RULE-008",
+        "OTC-RULE-009",
+        "OTC-RULE-010",
+        "OTC-RULE-011",
+        "OTC-RULE-012",
+        "OTC-RULE-013",
+        "OTC-RULE-014",
+        "OTC-RULE-016"
+      ],
+      "administration_constraint_ids": [
+        "ADMIN-196800036-MAX-DOSES",
+        "ADMIN-196800036-MAX-UNITS",
+        "ADMIN-197500016-MAX-DAILY-ING-naproxen",
+        "ADMIN-197500016-MAX-DOSES",
+        "ADMIN-197500016-MAX-UNITS",
+        "ADMIN-198400250-MAX-DOSES",
+        "ADMIN-198601920-MAX-DAILY-ING-ibuprofen",
+        "ADMIN-198601920-MAX-DOSES",
+        "ADMIN-198601920-MAX-UNITS",
+        "ADMIN-198700405-MAX-DOSES",
+        "ADMIN-198700405-MAX-UNITS",
+        "ADMIN-199400202-MAX-DOSES",
+        "ADMIN-199400202-MAX-UNITS",
+        "ADMIN-199801026-MAX-DOSES",
+        "ADMIN-199801026-MAX-UNITS",
+        "ADMIN-199900926-MAX-DOSES",
+        "ADMIN-199900926-MAX-UNITS",
+        "ADMIN-200300406-MAX-DOSES",
+        "ADMIN-200300406-MAX-UNITS",
+        "ADMIN-200610765-MAX-DAILY-ING-cetirizine_hydrochloride",
+        "ADMIN-200610765-MAX-DOSES",
+        "ADMIN-200610765-MAX-UNITS",
+        "ADMIN-201110646-MAX-DAILY-ING-dexibuprofen",
+        "ADMIN-201110646-MAX-DOSES",
+        "ADMIN-201110646-MAX-UNITS",
+        "ADMIN-202106092-MAX-DAILY-ING-acetaminophen",
+        "ADMIN-202106092-MAX-DOSES",
+        "ADMIN-202106092-MAX-UNITS",
+        "ADMIN-202106092-MIN-INTERVAL",
+        "ADMIN-202200525-MAX-DOSES",
+        "ADMIN-202200525-MAX-UNITS",
+        "ADMIN-202200525-MIN-INTERVAL"
+      ],
+      "admin_ids_in_released_rules": [],
+      "release_ready": false,
+      "released_rules_explicit": [
+        {
+          "ruleId": "OTC-RULE-001",
+          "ruleType": "duplicate_ingredient",
+          "scope": "acetaminophen_containing_selected_products",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "ingredientIds": [
+              "ING-acetaminophen"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-001",
+              "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+              "itemSequence": "202106092",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+              "locator": "사용상의주의사항 PDF p.1, 문단 12",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+              "excerptKo": "아세트아미노펜을 포함하는 다른 제품과 함께 복용하여서는 안 된다."
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-002",
+          "ruleType": "duplicate_pharmacologic_class",
+          "scope": "ibuprofen_and_other_NSAIDs",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "pharmacologicClasses": [
+              "NSAID"
+            ],
+            "requiredAnchorIngredientIds": [
+              "ING-ibuprofen"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-002",
+              "productName": "어린이부루펜시럽(이부프로펜)",
+              "itemSequence": "198601920",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+              "locator": "사용상의주의사항 PDF p.2, 문단 17",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+              "excerptKo": "2) 일반적으로 다른 비스테로이드성 소염진통제(NSAIDs)와 함께 복용하지 않는다."
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-003",
+          "ruleType": "max_daily_dose",
+          "scope": "acetaminophen_tylenol500_age_12_plus",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "202106092"
+            ],
+            "ingredientIds": [
+              "ING-acetaminophen"
+            ],
+            "administrationConstraintTypes": [
+              "maximum_daily_ingredient_amount"
+            ],
+            "minimumAgeYears": 12
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-003",
+              "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+              "itemSequence": "202106092",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
+              "locator": "용법용량 PDF p.1, 문단 4",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+              "excerptKo": "1일 최대 4그램 (8정)을 초과하여 복용하지 않는다."
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-004",
+          "ruleType": "minimum_interval",
+          "scope": "tylenol500_age_12_plus",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "202106092"
+            ],
+            "ingredientIds": [
+              "ING-acetaminophen"
+            ],
+            "administrationConstraintTypes": [
+              "minimum_interval_hours"
+            ],
+            "minimumAgeYears": 12
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-004",
+              "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+              "itemSequence": "202106092",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
+              "locator": "용법용량 PDF p.1, 문단 3",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+              "excerptKo": "1회 1~2정씩 1일 3-4회 (4-6시간 마다) 필요시 복용한다."
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-005",
+          "ruleType": "age_restriction",
+          "scope": "tylenol500_minimum_age_12",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "202106092"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-005",
+              "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+              "itemSequence": "202106092",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:570dbb88246895d1a6ebfd95231d814ce7391a851cc0d1cc64db99b13f6cdaf2",
+              "locator": "용법용량 PDF p.1, 문단 2",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/UD",
+              "excerptKo": "만 12세 이상 소아 및 성인:"
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-006",
+          "ruleType": "pregnancy_lactation",
+          "scope": "ibuprofen_pregnancy_lactation",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "198601920"
+            ],
+            "pregnancyTrimesters": [
+              3
+            ],
+            "lactationSupported": false
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-006",
+              "productName": "어린이부루펜시럽(이부프로펜)",
+              "itemSequence": "198601920",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+              "locator": "사용상의주의사항 PDF p.2, 문단 9",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+              "excerptKo": "11) 임신 말기 3개월 기간에 해당하는 임부(비스테로이드성 소염진통제와 마찬가지로 임신 말기에 이 약을 투여 시 태아의 동맥관을 조기 폐쇄시킬 수 있다)"
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-007",
+          "ruleType": "hepatic_disease",
+          "scope": "acetaminophen_liver_disease",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "202106092"
+            ],
+            "ingredientIds": [
+              "ING-acetaminophen"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-007",
+              "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+              "itemSequence": "202106092",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+              "locator": "사용상의주의사항 PDF p.1, 문단 24",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+              "excerptKo": "1) 간장애 또는 그 병력이 있는 환자"
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-008",
+          "ruleType": "renal_disease",
+          "scope": "ibuprofen_kidney_disease",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "198601920"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-008",
+              "productName": "어린이부루펜시럽(이부프로펜)",
+              "itemSequence": "198601920",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+              "locator": "사용상의주의사항 PDF p.3, 문단 2",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+              "excerptKo": "4) 신장장애 또는 그 병력이 있는 환자"
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-009",
+          "ruleType": "gi_bleeding_ulcer",
+          "scope": "ibuprofen_gi_bleeding_or_ulcer",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "198601920"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-009",
+              "productName": "어린이부루펜시럽(이부프로펜)",
+              "itemSequence": "198601920",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+              "locator": "사용상의주의사항 PDF p.1, 문단 17",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+              "excerptKo": "3) 위장관계 위험: 이 약을 포함한 비스테로이드성 소염진통제 복용 시 위장관의 출혈, 궤양 및 천공(뚫림) 등 치명적일 수 있는 중대한 위장관계 이상반응이 나타날 수 있다."
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-010",
+          "ruleType": "sedation_driving",
+          "scope": "pancol_a_driving",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "196800036"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-010",
+              "productName": "판콜에이내복액",
+              "itemSequence": "196800036",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
+              "locator": "사용상의주의사항 PDF p.3, 문단 8",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+              "excerptKo": "4) 복용하는 동안 졸음이 오는 경우가 있으므로 자동차 운전 또는 기계류의 운전 조작을 피할 것."
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-011",
+          "ruleType": "alcohol",
+          "scope": "acetaminophen_regular_alcohol_use",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "202106092"
+            ],
+            "ingredientIds": [
+              "ING-acetaminophen"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-011",
+              "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+              "itemSequence": "202106092",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+              "locator": "사용상의주의사항 PDF p.1, 문단 3",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+              "excerptKo": "1) 매일 세잔 이상 정기적으로 술을 마시는 사람이 이 약이나 다른 해열 진통제를 복용해야 할 경우 반드시 의사 또는 약사와 상의해야 한다. 이러한 사람이 이 약을 복용하면 간손상이 유발될 수 있다."
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-012",
+          "ruleType": "anticoagulant_antiplatelet",
+          "scope": "ibuprofen_warfarin_or_coumarin_anticoagulant",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "198601920"
+            ],
+            "medicationTerms": [
+              "warfarin",
+              "와파린",
+              "coumarin",
+              "쿠마린",
+              "쿠마린계 항응고제"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-012",
+              "productName": "어린이부루펜시럽(이부프로펜)",
+              "itemSequence": "198601920",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:56a65a632347d0b38b6b0707e872564af4c139683559beafa0f66c99bea322ba",
+              "locator": "사용상의주의사항 PDF p.4, 문단 10",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/198601920/NB",
+              "excerptKo": "5) 쿠마린계 항응혈제(와파린 등) (쿠마린계 항응혈제와 병용투여 시 그 작용을 증강시킬 수 있고, 중증의 위장관계 출혈의 위험이 높아질 수 있다.)"
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-013",
+          "ruleType": "sedative_medication",
+          "scope": "pancol_a_sedative_or_overlapping_cold_medicine",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "196800036"
+            ],
+            "medicationTerms": [
+              "sedative",
+              "진정제",
+              "수면제"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-013",
+              "productName": "판콜에이내복액",
+              "itemSequence": "196800036",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
+              "locator": "사용상의주의사항 PDF p.1, 문단 20",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+              "excerptKo": "3. 이 약을 복용하는 동안 다음의 약을 복용하지 말 것. 진해(기침을 그치게 함)거담제, 다른 감기약, 해열진통제, 진정제, 항히스타민제를 함유하는 내복약(비염(코염)용 경구제, 멀미약, 알레르기용약)"
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-014",
+          "ruleType": "decongestant_hypertension",
+          "scope": "pancol_a_phenylephrine_hypertension",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "196800036"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-014",
+              "productName": "판콜에이내복액",
+              "itemSequence": "196800036",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:4dc2cc19d6409256b5607f139786118d25b38869a1c47ee0150664b7ea18720d",
+              "locator": "사용상의주의사항 PDF p.2, 문단 4",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/196800036/NB",
+              "excerptKo": "4. 다음과 같은 사람은 이 약을 복용하기 전에 의사, 치과의사, 약사와 상의 할 것. … 4) 간장질환, 신장(콩팥)질환, 심장질환, 갑상선질환, 당뇨병, 고혈압, 위십이지장궤양, 녹내장(예: 눈의 통증, 눈이 침침함 등), 배뇨(소변을 눔)곤란 등이 있는 사람, 몸이 약한 사람 또는 고열이 있는 사람"
+            }
+          ]
+        },
+        {
+          "ruleId": "OTC-RULE-016",
+          "ruleType": "urgent_referral",
+          "scope": "tylenol500_stop_and_consult_symptoms",
+          "lineageStatus": "mapped_from_v50_released_rule",
+          "applicability": {
+            "productItemSequences": [
+              "202106092"
+            ],
+            "urgentTerms": [
+              "호흡곤란",
+              "온몸이 붉어짐",
+              "혈관부기",
+              "두드러기",
+              "천식발작",
+              "얼굴부기",
+              "저혈압",
+              "쇽",
+              "스티븐스-존슨",
+              "스티븐스 존슨",
+              "독성표피괴사",
+              "리엘 증후군"
+            ]
+          },
+          "evidence": [
+            {
+              "ruleId": "OTC-RULE-016",
+              "productName": "타이레놀정500밀리그람(아세트아미노펜)",
+              "itemSequence": "202106092",
+              "sourceId": "MFDS-NEDRUG-DETAIL",
+              "sourceVersion": "sha256:0c8ea0d7eb164b27673fc8549c42a06d874fdfa26047db8d0681b3a2f79c9442",
+              "locator": "사용상의주의사항 PDF p.2, 문단 12-19",
+              "url": "https://nedrug.mfds.go.kr/dsie/pdf/drb/202106092/NB",
+              "excerptKo": "복용을 즉각 중지하고 의사·치과의사·약사와 상의할 것. 쇽·아나필락시양 증상(호흡곤란·온몸이 붉어짐·혈관부기·두드러기), 천식발작, 얼굴부기·저혈압·쇽, 스티븐스-존슨 증후군·독성표피괴사용해 등"
+            }
+          ]
+        }
+      ],
+      "rule_003_004_scope_contract": {
+        "OTC-RULE-003": {
+          "scope": "acetaminophen_tylenol500_age_12_plus",
+          "source_item_sequence": "202106092"
+        },
+        "OTC-RULE-004": {
+          "scope": "tylenol500_age_12_plus",
+          "source_item_sequence": "202106092"
+        }
+      },
+      "decision_basis_contract": {
+        "released_rule_ids": "released_rule",
+        "administration_constraint_ids": "administration_constraint",
+        "historical_support_type_labels_are_not_rule_ids": true,
+        "admin_derived_support_types_are_not_released_rule_bindings": true
+      }
+    },
+    "evidence": {
+      "evidence_units": 328,
+      "evidence_rule_links": 360,
+      "evidence_status_counts": {
+        "needs_expert_review": 33,
+        "provisional": 308,
+        "rejected": 4,
+        "verified_primary": 15
+      },
+      "candidate_operational_status_counts": {
+        "active_existing_released_primary_evidence": 15,
+        "inactive_candidate": 345
+      },
+      "operational_evidence_rows": 15,
+      "inactive_candidate_rows": 345,
+      "legacy_human_expert_verified_links": 15,
+      "unique_products_including_excluded": 14,
+      "triage_items": 33,
+      "triage_recommended_status_counts": {
+        "needs_expert_review": 17,
+        "provisional": 2,
+        "rejected": 14
+      },
+      "triage_semantic_relation_counts": {
+        "direct_same_scope": 3,
+        "duplicate_context": 5,
+        "potential_product_extension": 16,
+        "wrong_scope": 9
+      },
+      "structured_document_revision_units": 328,
+      "structured_document_revision_links": 360,
+      "structured_document_revision_queue_items": 33,
+      "document_revision_status_counts": {
+        "not_reported_in_archived_mfds_change_history": 5,
+        "reported_in_archived_mfds_change_history": 355
+      },
+      "document_revision_unit_status_counts": {
+        "not_reported_in_archived_mfds_change_history": 5,
+        "reported_in_archived_mfds_change_history": 323
+      },
+      "document_revision_queue_status_counts": {
+        "not_reported_in_archived_mfds_change_history": 1,
+        "reported_in_archived_mfds_change_history": 32
+      },
+      "official_source_text_complete_links": 360,
+      "official_source_text_complete_queue_items": 33,
+      "official_source_locator_complete_links": 360,
+      "official_source_locator_complete_queue_items": 33,
+      "all_360_evidence_links_have_structured_document_revision_metadata": true,
+      "evidence_source_urls_complete": true,
+      "evidence_source_locators_complete": true
+    },
+    "literature": {
+      "v50_emitted_links": 10,
+      "v50_emitted_rules": 9,
+      "direct_capable_links": 5,
+      "direct_match_links": 1,
+      "scope_qualified_direct_links": 4,
+      "background_only_links": 5,
+      "excluded_legacy_links": 10,
+      "rejection_reason_counts": {
+        "no_retain_decision_for_rule_question": 4,
+        "not_in_v5_corpus": 6
+      },
+      "human_expert_reviewed": 0,
+      "supports_rule_release": 0,
+      "source_locators_complete": true,
+      "pubmed_source_urls_complete": true,
+      "pubmed_source_url_template": "https://pubmed.ncbi.nlm.nih.gov/{pmid}/",
+      "pubmed_source_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/20178131/",
+        "https://pubmed.ncbi.nlm.nih.gov/21370947/",
+        "https://pubmed.ncbi.nlm.nih.gov/22106945/",
+        "https://pubmed.ncbi.nlm.nih.gov/22617049/",
+        "https://pubmed.ncbi.nlm.nih.gov/23747192/",
+        "https://pubmed.ncbi.nlm.nih.gov/26022219/",
+        "https://pubmed.ncbi.nlm.nih.gov/26149538/",
+        "https://pubmed.ncbi.nlm.nih.gov/26460177/",
+        "https://pubmed.ncbi.nlm.nih.gov/26739516/",
+        "https://pubmed.ncbi.nlm.nih.gov/26999510/",
+        "https://pubmed.ncbi.nlm.nih.gov/29516533/",
+        "https://pubmed.ncbi.nlm.nih.gov/30030041/",
+        "https://pubmed.ncbi.nlm.nih.gov/30306812/",
+        "https://pubmed.ncbi.nlm.nih.gov/33333080/",
+        "https://pubmed.ncbi.nlm.nih.gov/33662136/",
+        "https://pubmed.ncbi.nlm.nih.gov/39551938/",
+        "https://pubmed.ncbi.nlm.nih.gov/39714827/",
+        "https://pubmed.ncbi.nlm.nih.gov/40579172/",
+        "https://pubmed.ncbi.nlm.nih.gov/41803773/"
+      ]
+    },
+    "expert_review_packet": {
+      "packet_items": 33,
+      "unique_candidate_ids": 33,
+      "new_human_expert_reviews": 0,
+      "activated_items": 0,
+      "candidate_operational_status_counts": {
+        "inactive_candidate": 33
+      },
+      "human_expert_verification_required": true,
+      "required_human_review_fields": [
+        "review_decision",
+        "review_comment",
+        "reviewer_id",
+        "reviewer_role",
+        "reviewed_at"
+      ],
+      "items_with_required_regression_tests": 33
+    },
+    "official_source_freshness": {
+      "accessed_at_utc": "2026-08-01T04:05:35.415212+00:00",
+      "generator": "scripts/research/otc/audit_v51_source_freshness.py",
+      "generator_sha256": "350f13db08a9b5709116e6ca42e7df6ec9faea3d21cf87cd77df0a64148a2cda",
+      "input_artifacts": {
+        "evidenceRuleLinks": {
+          "path": "research_v51/evidence/evidence_rule_links.csv",
+          "bytes": 833226,
+          "sha256": "d5d7c6bf0785ee8e201907da26cc50e4d2429df2ff2934d561f991425ad7ec4c"
+        }
+      },
+      "official_source_urls": 20,
+      "status_counts": {
+        "semantic_match": 20
+      },
+      "semantic_match_source_urls": 20,
+      "semantic_drift_source_urls": 0,
+      "unreachable_source_urls": 0,
+      "candidate_links": 360,
+      "candidate_excerpt_matches": 360,
+      "candidate_excerpt_mismatches": 0,
+      "verified_primary_links": 15,
+      "verified_primary_candidate_excerpt_matches": 15,
+      "verified_primary_candidate_excerpt_mismatches": 0,
+      "snapshot_pdf_byte_match_source_urls": 0,
+      "snapshot_pdf_byte_mismatch_source_urls": 20,
+      "volatility_probe": {
+        "pdf_bytes_stable": false,
+        "semantic_text_stable": true,
+        "interpretation": "volatile_pdf_bytes_same_extracted_text"
+      },
+      "new_rules_activated": 0,
+      "release_ready": false,
+      "freshness_decision_basis": "semantic_extracted_text_equality",
+      "remote_pdf_byte_mismatch_is_semantic_drift": false
+    }
+  },
+  "checks": {
+    "runtime_schema_is_2_1_0": true,
+    "protected_research_v3_tree_matches_baseline": true,
+    "protected_research_v3_worktree_is_clean": true,
+    "portable_repository_verification_is_complete": true,
+    "external_verification_is_required_for_final_local_report": true,
+    "all_consumed_protected_inputs_match_baseline": true,
+    "released_rules_match_v50_released_ids": true,
+    "released_rules_have_applicability": true,
+    "released_rules_have_authorization_source_evidence": true,
+    "rule_003_004_remain_tylenol_scoped": true,
+    "admin_ids_are_unique": true,
+    "admin_ids_are_not_released_rule_ids": true,
+    "historical_support_labels_split_into_13_direct_and_13_admin": true,
+    "cross_product_or_global_rules_are_001_and_002": true,
+    "product_membership_matches_13_included_source_products": true,
+    "all_product_sources_have_url_and_locator": true,
+    "all_rule_sources_have_url_and_locator": true,
+    "all_constraint_sources_have_url_and_locator": true,
+    "all_evidence_sources_have_url_and_locator": true,
+    "all_360_evidence_links_have_structured_document_revision_metadata": true,
+    "all_evidence_links_and_queue_items_have_official_source_text": true,
+    "all_evidence_links_and_queue_items_have_official_source_locator": true,
+    "all_literature_sources_have_pubmed_id_and_locator": true,
+    "triage_joins_all_33_unverified_links_once": true,
+    "expert_packet_activation_is_zero": true,
+    "literature_human_expert_review_is_zero": true,
+    "official_sources_are_20_of_20_semantic_matches": true,
+    "remote_pdf_byte_mismatch_is_not_treated_as_semantic_drift": true,
+    "release_ready_is_false": true,
+    "outputs_stay_under_research_v51_audit": true
+  },
+  "outputs": {
+    "product_support_matrix": {
+      "path": "research_v51/audit/product_support_matrix.csv",
+      "rows": 13,
+      "fields": [
+        "product_id",
+        "item_sequence",
+        "product_name",
+        "authorization_status",
+        "therapeutic_class",
+        "support_tier",
+        "historical_support_type_label_count",
+        "historical_support_type_labels",
+        "direct_released_rule_binding_count",
+        "direct_released_rule_ids",
+        "direct_released_rule_type_count",
+        "direct_released_rule_types",
+        "admin_derived_support_type_association_count",
+        "admin_derived_support_type_labels",
+        "dose_or_interval_label_count",
+        "broader_safety_label_count",
+        "administration_constraint_count",
+        "administration_constraint_ids",
+        "numeric_finding_decision_bases",
+        "ingredient_count",
+        "product_source_id",
+        "product_source_url",
+        "product_source_locator"
+      ],
+      "bytes": 6425,
+      "sha256": "192df980c856339b1ee20248c96fe2315c2e37007ebca36adf0ab1a733929230"
+    },
+    "active_rule_matrix": {
+      "path": "research_v51/audit/active_rule_matrix.csv",
+      "rows": 15,
+      "fields": [
+        "rule_id",
+        "rule_type",
+        "status",
+        "severity",
+        "scope",
+        "lineage_status",
+        "binding_category",
+        "direct_product_binding_count",
+        "direct_product_item_sequences",
+        "applicability_json",
+        "applicability_field_count",
+        "source_evidence_count",
+        "source_item_sequences",
+        "source_ids",
+        "source_versions",
+        "source_urls",
+        "source_locators_json",
+        "source_evidence_json"
+      ],
+      "bytes": 15359,
+      "sha256": "a18719361b9f9a3baa70058c5b246cdf76552df1f3b0376ea282110b9bfb20f1"
+    },
+    "final_metrics": {
+      "path": "research_v51/audit/final_metrics.json",
+      "hash_scope": "canonical JSON with outputs.final_metrics.semantic_sha256 empty",
+      "semantic_sha256": "920f05573b7842f40773449529652f6eb5f266b546f4c7ab96c9f03f35d566d2"
+    }
+  },
+  "valid": true
+}
