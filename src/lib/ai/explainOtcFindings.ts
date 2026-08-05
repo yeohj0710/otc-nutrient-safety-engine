@@ -111,6 +111,11 @@ function buildInstructions() {
     "topAlerts 의 각 항목에는 그 경보가 근거로 삼은 ruleId 를 반드시 넣고, severity 는 그 규칙에 주어진 값을 글자 그대로 복사하십시오. 다른 규칙의 등급을 가져오거나 새로 고르지 마십시오.",
     "ruleCardActions 의 ruleId 는 주어진 findings 의 ruleId 만 쓰십시오.",
     "복용 시작·중단·용량 변경을 지시하지 마십시오. 판단이 필요하면 약사·의사와 상의하라고만 적으십시오.",
+    "",
+    "문체:",
+    "능동형으로 쓰십시오. '판정을 받았습니다·확인되지 않아·표시됩니다' 대신 '판정했습니다·확인하지 못해·보여드립니다'로 쓰십시오. '~게 되다'도 쓰지 마십시오.",
+    "무엇을 말하는지 목적어를 밝히십시오. '일치합니다'가 아니라 '입력한 신장질환 조건이 이 제품의 주의 조건과 일치합니다'로 쓰십시오.",
+    "입으로 쓰는 말을 쓰십시오. 섭취·유의·권장 대신 먹다·보다·권하다를 쓰십시오.",
   ].join("\n");
 }
 
@@ -119,10 +124,13 @@ export async function explainOtcFindings(
 ): Promise<AiExplainResponse> {
   const apiKey = getOpenAIApiKey();
   if (!apiKey) {
+    console.warn("[otc-explain] fallback", { reason: "missing_api_key" });
     return aiExplainResponseSchema.parse({
       ok: false,
       reason: "missing_api_key",
-      notice: "요약 기능 설정이 없어 기본 결과만 표시합니다.",
+      // 화면이 이 문장을 그대로 보여준다. 실패마다 다른 말을 써야 사용자가
+      // "원래 없는 화면"과 "이번에 못 붙은 화면"을 가려낸다.
+      notice: "이 서버에는 요약 기능이 켜져 있지 않아, 아래 엔진 결과만 보여드립니다.",
     });
   }
 
@@ -147,10 +155,14 @@ export async function explainOtcFindings(
 
     const explanation = aiExplanationSchema.safeParse(parsed.output_parsed);
     if (!explanation.success) {
+      console.warn("[otc-explain] fallback", {
+        reason: "invalid_response",
+        issues: explanation.error.issues.slice(0, 4),
+      });
       return aiExplainResponseSchema.parse({
         ok: false,
         reason: "invalid_response",
-        notice: "보조 설명 형식이 올바르지 않아 기본 결과만 표시합니다.",
+        notice: "AI 응답 형식이 맞지 않아 아래 엔진 결과만 보여드립니다.",
       });
     }
 
@@ -163,7 +175,8 @@ export async function explainOtcFindings(
       return aiExplainResponseSchema.parse({
         ok: false,
         reason: "refereed_out",
-        notice: "보조 설명이 검사 기준을 벗어나 기본 결과만 표시합니다.",
+        notice:
+          "AI 가 쓴 요약이 검토 기준을 벗어나 버렸습니다. 아래 엔진 결과만 보여드립니다.",
       });
     }
 
@@ -179,7 +192,9 @@ export async function explainOtcFindings(
     return aiExplainResponseSchema.parse({
       ok: false,
       reason: timedOut ? "timeout" : "openai_error",
-      notice: "보조 설명을 만들지 못해 기본 결과만 표시합니다.",
+      notice: timedOut
+        ? "AI 응답이 제때 오지 않았습니다. 아래 엔진 결과만 보여드립니다. 다시 점검하면 붙을 수 있어요."
+        : "AI 요약을 만들지 못했습니다. 아래 엔진 결과만 보여드립니다.",
     });
   }
 }

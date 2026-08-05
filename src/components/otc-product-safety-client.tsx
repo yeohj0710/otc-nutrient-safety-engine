@@ -811,11 +811,21 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           .join(" · ") || "프로필 정보 없음",
       }),
     })
-      .then((res) => (res.ok ? res.json() : null))
+      // 실패 응답도 본문을 읽는다. 400 을 버리면 왜 못 붙었는지 말할 거리가
+      // 사라지고, 화면에서는 요약 칸이 통째로 없어진 것처럼 보인다.
+      .then((res) => res.json().catch(() => null))
       .then((body: AiExplainResponse | null) => {
         if (!controller.signal.aborted) setAiExplain(body);
       })
-      .catch(() => undefined)
+      .catch(() => {
+        if (!controller.signal.aborted) {
+          setAiExplain({
+            ok: false,
+            reason: "openai_error",
+            notice: "AI 요약을 부르지 못했습니다. 아래 엔진 결과만 보여드립니다.",
+          });
+        }
+      })
       .finally(() => {
         if (!controller.signal.aborted) setAiExplainPending(false);
       });
@@ -1915,12 +1925,28 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   {groupedCoverageGaps.length}종류
                 </p>
 
-                {(aiExplainPending || aiExplain?.ok) && (
-                  <section className={styles.aiExplainPanel} aria-labelledby="ai-explain-title">
+                {(aiExplainPending || aiExplain) && (
+                  <section
+                    className={styles.aiExplainPanel}
+                    // 제목은 요약이 붙었을 때만 그린다. 실패한 칸에서
+                    // aria-labelledby 가 없는 id 를 가리키면 이름 없는 구역이 된다.
+                    {...(aiExplain?.ok
+                      ? { "aria-labelledby": "ai-explain-title" }
+                      : { "aria-label": "AI 요약" })}
+                  >
                     <p className={styles.aiExplainBadge}>
                       <span>AI 요약</span>
                       {aiExplainPending && <span> · 쓰는 중…</span>}
+                      {!aiExplainPending && aiExplain && !aiExplain.ok && (
+                        <span> · 이번에는 못 붙였습니다</span>
+                      )}
                     </p>
+                    {/* 실패하면 칸을 통째로 감추고 있었다. 그러면 요약이 원래
+                        없는 화면인지, 이번에 못 붙은 것인지 구분할 수가 없다.
+                        판정은 아래 엔진 결과가 정본이라 잃는 내용은 없다. */}
+                    {!aiExplainPending && aiExplain && !aiExplain.ok && (
+                      <p className={styles.aiExplainNote}>{aiExplain.notice}</p>
+                    )}
                     {aiExplain?.ok && (
                       <>
                         <h3 id="ai-explain-title" className={styles.aiExplainTitle}>

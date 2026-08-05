@@ -1,5 +1,9 @@
 .workspace {
+  /* 반 단계 둘. 4px 격자로는 라벨과 그 아래 한 줄 사이(2px), 문단과 작은
+     설명 사이(6px)를 못 잡는다. 이 둘이 없어서 1·3·5·7px 이 제각각 쓰였다. */
+  --space-0-5: 2px;
   --space-1: 4px;
+  --space-1-5: 6px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
@@ -44,7 +48,7 @@
 }
 
 .quickStartCopy p {
-  margin-top: 2px;
+  margin-top: var(--space-0-5);
   color: var(--workspace-muted);
   font-size: 13px;
   line-height: 1.5;
@@ -118,7 +122,7 @@
 .quickCheckButton span {
   display: grid;
   min-width: 0;
-  gap: 1px;
+  gap: var(--space-0-5);
   color: var(--workspace-ink);
   font-size: 13px;
   font-weight: 700;
@@ -198,7 +202,7 @@
 }
 
 .panelHeader p {
-  margin-top: 2px;
+  margin-top: var(--space-0-5);
   color: var(--workspace-muted);
   font-size: 13px;
   line-height: 1.45;
@@ -243,14 +247,14 @@
 }
 
 .catalogDescription {
-  margin-top: 3px;
+  margin-top: var(--space-0-5);
   color: #8b95a1;
   font-size: 10px;
   line-height: 1.5;
 }
 
 .catalogRematchSummary {
-  margin-top: 6px;
+  margin-top: var(--space-1-5);
   color: #596579;
   font-size: 10px;
   font-weight: 700;
@@ -258,9 +262,9 @@
 }
 
 .catalogScope details {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   border-top: 1px solid #e3e8ed;
-  padding-top: 7px;
+  padding-top: var(--space-1-5);
 }
 
 .catalogScope summary {
@@ -273,8 +277,8 @@
 .catalogScope details > div {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin-top: 7px;
+  gap: var(--space-1-5);
+  margin-top: var(--space-1-5);
 }
 
 .catalogScope details > div span {
@@ -283,7 +287,7 @@
   align-items: center;
   border-radius: 7px;
   background: #fff;
-  padding: 0 7px;
+  padding: 0 var(--space-1-5);
   color: #5f6b7a;
   font-size: 9px;
   font-weight: 700;
@@ -391,7 +395,7 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 3px;
+  gap: var(--space-0-5);
 }
 
 .searchResults strong,
@@ -582,6 +586,8 @@
   border: 1px solid #dfe4ea;
   border-radius: 10px;
   background: #f9fafb;
+  /* 오른쪽 60px 은 리듬이 아니라 자리 예약이다. 안에 절대 배치한 배지가
+     들어와서, 글이 그 밑으로 흐르지 않게 비워 둔다. */
   padding: var(--space-3) 60px var(--space-3) var(--space-3);
   text-align: left;
 }
@@ -661,7 +667,7 @@
   min-height: 88px;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: var(--space-2);
   border: 1px dashed #cfd6de;
   border-radius: 12px;
   color: #98a2b3;
@@ -707,7 +713,7 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--space-1);
 }
 
 .selectedCardHeader strong {
@@ -740,16 +746,16 @@
   min-width: 0;
   flex-wrap: wrap;
   align-items: center;
-  gap: 4px 7px;
-  margin-top: 3px;
+  gap: var(--space-1) var(--space-1-5);
+  margin-top: var(--space-0-5);
   border-top: 1px solid #edf0f3;
-  padding-top: 6px;
+  padding-top: var(--space-1-5);
 }
 
 .catalogMatchLine > span {
   border-radius: 999px;
   background: #e8f6f1;
-  padding: 2px 6px;
+  padding: var(--space-0-5) var(--space-1-5);
   color: #17604f;
   font-size: 9px;
   font-weight: 800;
@@ -795,7 +801,7 @@
 .doseGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
+  gap: var(--space-0-5);
   border-top: 1px solid #e7ebef;
   background: #e7ebef;
 }
@@ -809,7 +815,7 @@
 .doseGrid label > span:first-child,
 .fieldLabel > span:first-child {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: var(--space-1-5);
   color: var(--workspace-muted);
   font-size: 11px;
   font-weight: 700;
@@ -822,7 +828,7 @@
   border: 1px solid #d7dde4;
   border-radius: 8px;
   background: #fff;
-  padding: 0 7px;
+  padding: 0 var(--space-1-5);
 }
 
 .inputWithUnit:focus-within {
@@ -865,14 +871,14 @@
 
 .fieldLabel > span:first-child,
 .conditionFieldset legend {
-  margin-bottom: 8px;
+  margin-bottom: var(--space-2);
   color: #475467;
   font-size: 13px;
   font-weight: 800;
 }
 
 .fieldLabel > span small {
-  margin-left: 3px;
+  margin-left: var(--space-0-5);
   color: #98a2b3;
   font-size: 11px;
   font-weight: 600;
@@ -893,7 +899,7 @@
   border-radius: 10px;
   outline: 0;
   background: #fbfcfd;
-  padding: 10px 11px;
+  padding: var(--space-3);
   color: var(--workspace-ink);
   font-size: 14px;
   line-height: 1.5;
@@ -922,7 +928,7 @@
   margin: 0;
   border-radius: 10px;
   background: #f2f6f5;
-  padding: 9px 10px;
+  padding: var(--space-2) var(--space-3);
   color: #52645f;
   font-size: 11px;
   font-weight: 650;
@@ -933,12 +939,12 @@
   border: 1px solid #d9e8e3;
   border-radius: 11px;
   background: #f7fbfa;
-  padding: 11px;
+  padding: var(--space-3);
 }
 
 .inputSupportStatus {
   display: block;
-  margin: 3px 0 0;
+  margin: var(--space-0-5) 0 0;
   color: #667085;
   font-size: 12px;
   font-weight: 750;
@@ -970,7 +976,7 @@
 
 .fieldLabel > small {
   display: block;
-  margin-top: 6px;
+  margin-top: var(--space-1-5);
   color: var(--workspace-muted);
   font-size: 11px;
   line-height: 1.5;
@@ -1049,7 +1055,7 @@
   display: grid;
   min-width: 0;
   flex: 1 1 auto;
-  gap: 2px;
+  gap: var(--space-0-5);
 }
 
 .conditionCopy strong {
@@ -1066,12 +1072,12 @@
 
 .alertField {
   border-top: 1px solid #edf0f3;
-  padding-top: 16px;
+  padding-top: var(--space-4);
 }
 
 .alertField > small {
   display: block;
-  margin-top: 6px;
+  margin-top: var(--space-1-5);
   color: var(--workspace-muted);
   font-size: 11px;
   line-height: 1.5;
@@ -1088,7 +1094,7 @@
   border: 0;
   border-radius: 8px;
   background: var(--workspace-soft);
-  padding: 0 9px;
+  padding: 0 var(--space-2);
   color: var(--workspace-muted);
   font-size: 12px;
   font-weight: 700;
@@ -1106,7 +1112,7 @@
 .resultScope {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1px;
+  gap: var(--space-0-5);
   overflow: hidden;
   margin-bottom: var(--space-3);
   border: 1px solid #dfe4ea;
@@ -1153,7 +1159,7 @@
   border: 1px dashed #cfd6de;
   border-radius: 13px;
   background: #fafbfc;
-  padding: 24px;
+  padding: var(--space-6);
   text-align: center;
 }
 
@@ -1163,7 +1169,7 @@
   height: 38px;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-3);
   border-radius: 12px;
   background: #e9edf2;
   color: #667085;
@@ -1176,7 +1182,7 @@
 
 .resultEmpty p {
   max-width: 260px;
-  margin-top: 6px;
+  margin-top: var(--space-1-5);
   color: var(--workspace-muted);
   font-size: 13px;
   line-height: 1.55;
@@ -1185,11 +1191,11 @@
 .inputNotice,
 .coverageNotice {
   display: flex;
-  gap: 11px;
+  gap: var(--space-3);
   border: 1px solid #efb8b8;
   border-radius: 13px;
   background: #fff1f1;
-  padding: 15px;
+  padding: var(--space-4);
 }
 
 .coverageNotice {
@@ -1233,7 +1239,7 @@
 
 .inputNotice p,
 .coverageNotice p {
-  margin-top: 4px;
+  margin-top: var(--space-1);
   color: #8d4444;
   font-size: 12px;
   line-height: 1.55;
@@ -1246,8 +1252,8 @@
 .inputNotice ul,
 .coverageNotice ul {
   display: grid;
-  gap: 6px;
-  margin-top: 10px;
+  gap: var(--space-1-5);
+  margin-top: var(--space-3);
   padding: 0;
   list-style: none;
 }
@@ -1261,14 +1267,14 @@
 
 .inputNotice b {
   display: block;
-  margin-top: 10px;
+  margin-top: var(--space-3);
   color: #782c31;
   font-size: 12px;
 }
 
 .coverageNotice li {
   border-top: 1px solid #eddcbe;
-  padding-top: 7px;
+  padding-top: var(--space-1-5);
 }
 
 .coverageNotice li b,
@@ -1288,16 +1294,16 @@
 .inputNotice + .resultSummary,
 .coverageNotice + .resultSummary,
 .inputNotice + .clearResult {
-  margin-top: 10px;
+  margin-top: var(--space-3);
 }
 
 .clearResult {
   display: flex;
-  gap: 11px;
+  gap: var(--space-3);
   border: 1px solid #bfddd5;
   border-radius: 13px;
   background: var(--workspace-accent-soft);
-  padding: 16px;
+  padding: var(--space-4);
 }
 
 .clearResult > span {
@@ -1320,7 +1326,7 @@
 }
 
 .clearResult p {
-  margin-top: 5px;
+  margin-top: var(--space-1-5);
   color: #477369;
   font-size: 12px;
   line-height: 1.55;
@@ -1330,7 +1336,7 @@
   border: 1px solid #f0d2aa;
   border-radius: 13px;
   background: #fff8ee;
-  padding: 14px;
+  padding: var(--space-4);
 }
 
 .resultSummary[data-urgent="true"] {
@@ -1370,7 +1376,7 @@
 }
 
 .summaryTitle p {
-  margin-top: 2px;
+  margin-top: var(--space-0-5);
   color: #765d3d;
   font-size: 12px;
   line-height: 1.5;
@@ -1382,7 +1388,7 @@
 
 .summaryEvidence {
   display: block;
-  margin-top: 7px;
+  margin-top: var(--space-1-5);
   color: #6f5c43;
   font-size: 11px;
   font-weight: 750;
@@ -1471,7 +1477,7 @@
 
 .findingSummaryCopy > h3 {
   display: block;
-  margin-top: 2px;
+  margin-top: var(--space-0-5);
   color: var(--workspace-ink);
   font-size: 15px;
   font-weight: 800;
@@ -1481,7 +1487,7 @@
 
 .findingSummaryCopy > span {
   display: -webkit-box;
-  margin-top: 3px;
+  margin-top: var(--space-0-5);
   overflow: hidden;
   color: #5f6878;
   font-size: 11px;
@@ -1508,15 +1514,15 @@
 }
 
 .findingContent {
-  padding: 0 12px 12px;
+  padding: 0 var(--space-3) var(--space-3);
 }
 
 .findingRationale {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   border: 1px solid #eadfce;
   border-radius: 9px;
   background: #fff;
-  padding: 10px;
+  padding: var(--space-3);
 }
 
 .findingRationale > span {
@@ -1526,7 +1532,7 @@
 }
 
 .findingRationale > p {
-  margin-top: 4px;
+  margin-top: var(--space-1);
   color: #333d4b;
   font-size: 13px;
   font-weight: 650;
@@ -1535,14 +1541,14 @@
 
 .findingRationale dl {
   display: grid;
-  gap: 5px;
-  margin-top: 8px;
+  gap: var(--space-1-5);
+  margin-top: var(--space-2);
 }
 
 .findingRationale dl > div {
   display: grid;
   grid-template-columns: 78px minmax(0, 1fr);
-  gap: 7px;
+  gap: var(--space-1-5);
 }
 
 .findingRationale dt,
@@ -1566,11 +1572,11 @@
 .officialEvidencePreview,
 .literaturePreview,
 .literatureEmpty {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   border: 1px solid #bad8cf;
   border-radius: 9px;
   background: #f5fbf9;
-  padding: 10px;
+  padding: var(--space-3);
 }
 
 .officialEvidencePreview header,
@@ -1579,7 +1585,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
+  gap: var(--space-1-5);
 }
 
 .officialEvidencePreview header strong,
@@ -1596,9 +1602,9 @@
 }
 
 .officialEvidencePreview blockquote {
-  margin: 8px 0 0;
+  margin: var(--space-2) 0 0;
   border-left: 3px solid #5da995;
-  padding-left: 9px;
+  padding-left: var(--space-2);
   color: #2d4b44;
   font-size: 13px;
   font-weight: 650;
@@ -1608,7 +1614,7 @@
 
 .officialEvidencePreview > a {
   display: block;
-  margin-top: 8px;
+  margin-top: var(--space-2);
   color: #17604f;
   font-size: 11px;
   font-weight: 700;
@@ -1618,10 +1624,10 @@
 
 .productEvidencePreview {
   display: grid;
-  gap: 4px;
-  margin-top: 8px;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
   border-top: 1px solid #d2e6e0;
-  padding-top: 8px;
+  padding-top: var(--space-2);
 }
 
 .productEvidencePreview > strong {
@@ -1648,7 +1654,7 @@
 
 .literaturePreview > a {
   display: block;
-  margin-top: 7px;
+  margin-top: var(--space-1-5);
   color: #275985;
   font-size: 12px;
   font-weight: 800;
@@ -1657,7 +1663,7 @@
 }
 
 .literaturePreview > p {
-  margin-top: 7px;
+  margin-top: var(--space-1-5);
   color: #526274;
   font-size: 12px;
   line-height: 1.6;
@@ -1665,14 +1671,14 @@
 
 .literaturePreview > p strong {
   display: block;
-  margin-bottom: 1px;
+  margin-bottom: var(--space-0-5);
   color: #344b64;
   font-size: 10px;
 }
 
 .literaturePreview > small {
   display: block;
-  margin-top: 7px;
+  margin-top: var(--space-1-5);
   color: #718096;
   font-size: 10px;
   line-height: 1.5;
@@ -1689,16 +1695,16 @@
 }
 
 .literatureEmpty p {
-  margin-top: 3px;
+  margin-top: var(--space-0-5);
   color: #718096;
   font-size: 12px;
   line-height: 1.55;
 }
 
 .otherIngredientLiterature {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   border-top: 1px solid #dce3e9;
-  padding-top: 8px;
+  padding-top: var(--space-2);
 }
 
 .otherIngredientLiterature summary {
@@ -1717,7 +1723,7 @@
 }
 
 .otherIngredientLiterature > p {
-  margin: 0 0 7px;
+  margin: 0 0 var(--space-1-5);
   color: #8b7355;
   font-size: 10px;
   font-weight: 700;
@@ -1725,7 +1731,7 @@
 
 .otherIngredientLiterature ul {
   display: grid;
-  gap: 6px;
+  gap: var(--space-1-5);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1734,7 +1740,7 @@
 .otherIngredientLiterature li {
   border-radius: 7px;
   background: #fff;
-  padding: 8px;
+  padding: var(--space-2);
 }
 
 .otherIngredientLiterature a {
@@ -1748,17 +1754,17 @@
 
 .otherIngredientLiterature small {
   display: block;
-  margin-top: 3px;
+  margin-top: var(--space-0-5);
   color: #718096;
   font-size: 9px;
   line-height: 1.45;
 }
 
 .nextAction {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   border-radius: 8px;
   background: #f5f1ea;
-  padding: 8px 9px;
+  padding: var(--space-2);
 }
 
 [data-severity="urgent"] .nextAction {
@@ -1767,7 +1773,7 @@
 
 .nextAction span {
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: var(--space-0-5);
   color: #8a7352;
   font-size: 10px;
   font-weight: 800;
@@ -1785,9 +1791,9 @@
 
 .findings details,
 .totalDetails {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   border-top: 1px solid #eee6da;
-  padding-top: 8px;
+  padding-top: var(--space-2);
 }
 
 .findings summary,
@@ -1800,14 +1806,14 @@
 
 .findings details > div {
   display: grid;
-  gap: 5px;
-  margin-top: 7px;
+  gap: var(--space-1-5);
+  margin-top: var(--space-1-5);
 }
 
 .evidencePanel > section + section {
-  margin-top: 10px;
+  margin-top: var(--space-3);
   border-top: 1px solid #e3e9ef;
-  padding-top: 10px;
+  padding-top: var(--space-3);
 }
 
 .evidenceSectionTitle {
@@ -1815,8 +1821,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 5px;
-  margin-bottom: 6px;
+  gap: var(--space-1-5);
+  margin-bottom: var(--space-1-5);
 }
 
 .evidenceSectionTitle strong {
@@ -1834,7 +1840,7 @@
   border: 1px solid #dce5ec;
   border-radius: 8px;
   background: #f8fafc;
-  padding: 8px;
+  padding: var(--space-2);
   text-decoration: none !important;
 }
 
@@ -1850,7 +1856,7 @@
 
 .officialEvidenceLink q {
   display: block;
-  margin-top: 5px;
+  margin-top: var(--space-1-5);
   color: #46576a;
   font-size: 11px;
   line-height: 1.55;
@@ -1858,21 +1864,21 @@
 
 .literatureList {
   display: grid;
-  gap: 7px;
+  gap: var(--space-1-5);
 }
 
 .literatureCard {
   border: 1px solid #dce5ec;
   border-radius: 9px;
   background: #f8fafc;
-  padding: 9px;
+  padding: var(--space-2);
 }
 
 .literatureCard > div:first-child {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 5px;
+  gap: var(--space-1-5);
   margin: 0;
 }
 
@@ -1885,7 +1891,7 @@
 
 .literatureCard > a {
   display: block !important;
-  margin-top: 5px;
+  margin-top: var(--space-1-5);
   color: #2f5f91 !important;
   font-size: 12px !important;
   font-weight: 750;
@@ -1893,7 +1899,7 @@
 }
 
 .literatureCard p {
-  margin-top: 6px;
+  margin-top: var(--space-1-5);
   color: #5f6f82;
   font-size: 11px;
   line-height: 1.55;
@@ -1901,24 +1907,24 @@
 
 .literatureCard p strong {
   display: block;
-  margin-bottom: 1px;
+  margin-bottom: var(--space-0-5);
   color: #333d4b;
   font-size: 10px;
 }
 
 .coverageDetails {
-  margin-top: 11px;
+  margin-top: var(--space-3);
   border: 1px solid #dfe5eb;
   border-radius: 11px;
   background: #f8fafb;
-  padding: 10px 11px;
+  padding: var(--space-3);
 }
 
 .coverageDetails summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--space-3);
   color: #4e5968;
   font-size: 11px;
   font-weight: 750;
@@ -1950,9 +1956,9 @@
 }
 
 .coverageDetails > div {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   border-top: 1px solid #e3e8ed;
-  padding-top: 9px;
+  padding-top: var(--space-2);
 }
 
 .coverageDetails > div > p {
@@ -1963,8 +1969,8 @@
 
 .coverageDetails ul {
   display: grid;
-  gap: 6px;
-  margin-top: 8px;
+  gap: var(--space-1-5);
+  margin-top: var(--space-2);
   padding: 0;
   list-style: none;
 }
@@ -1972,7 +1978,7 @@
 .coverageDetails li {
   border-radius: 8px;
   background: #fff;
-  padding: 8px;
+  padding: var(--space-2);
 }
 
 .coverageDetails li strong,
@@ -1988,12 +1994,12 @@
 }
 
 .coverageDetails li span {
-  margin-top: 2px;
+  margin-top: var(--space-0-5);
   color: #8b95a1;
 }
 
 .coverageDetails li small {
-  margin-top: 5px;
+  margin-top: var(--space-1-5);
   color: #5f6f82;
   font-size: 10px;
   line-height: 1.55;
@@ -2002,7 +2008,7 @@
 .findings details a {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-0-5);
   overflow-wrap: anywhere;
   color: #4d647f;
   font-size: 11px;
@@ -2018,23 +2024,23 @@
 }
 
 .totalDetails {
-  margin-top: 12px;
+  margin-top: var(--space-3);
   border: 1px solid #e1e6eb;
   border-radius: 10px;
   background: #f8f9fb;
-  padding: 10px;
+  padding: var(--space-3);
 }
 
 .totalDetails > div {
   display: grid;
-  gap: 5px;
-  margin-top: 8px;
+  gap: var(--space-1-5);
+  margin-top: var(--space-2);
 }
 
 .totalDetails p {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: var(--space-3);
   color: var(--workspace-muted);
   font-size: 11px;
 }
@@ -2058,10 +2064,10 @@
 }
 
 .backgroundLiteratureNotice {
-  margin: 0 0 8px;
+  margin: 0 0 var(--space-2);
   border-left: 3px solid #8091a4;
   background: #f4f6f8;
-  padding: 7px 9px;
+  padding: var(--space-1-5) var(--space-2);
   color: #526274;
   font-size: 11px;
   font-weight: 800;
@@ -2144,7 +2150,11 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  margin: -10px -8px -10px 2px;
+  /* 44px 탭 영역을 24px 아이콘 자리로 줄인다. 손가락이 닿는 넓이는 그대로
+     두고 글줄 높이만 안 밀리게 하는 값이라 탭 영역에서 거꾸로 계산한다. */
+  margin: calc((var(--tap-target) - var(--space-6)) / -2)
+    calc(var(--space-2) * -1) calc((var(--tap-target) - var(--space-6)) / -2)
+    var(--space-0-5);
 }
 
 .supportTooltip > button {
@@ -2562,6 +2572,8 @@
 
 @media (max-width: 560px) {
   .workspace {
+    /* 80px 도 자리 예약이다. 화면 아래 고정한 막대 높이라, 그 막대가 마지막
+       줄을 덮지 않게 비워 둔다. */
     padding-bottom: calc(80px + env(safe-area-inset-bottom));
   }
 
@@ -2746,7 +2758,7 @@
 .literatureLocator strong,
 .literatureConflict strong {
   display: block;
-  margin-bottom: 2px;
+  margin-bottom: var(--space-0-5);
   font-size: 12px;
 }
 
@@ -2820,8 +2832,8 @@
 
 /* AI 보조 요약. 판정 정본은 아래 엔진 결과이고 이 상자는 그 위 요약이다. */
 .aiExplainPanel {
-  margin: 0 0 16px;
-  padding: 16px;
+  margin: 0 0 var(--space-4);
+  padding: var(--space-4);
   border: 1px solid rgba(37, 99, 235, 0.22);
   border-radius: 12px;
   background: rgba(37, 99, 235, 0.05);
@@ -2835,26 +2847,26 @@
 }
 
 .aiExplainTitle {
-  margin: 8px 0 0;
+  margin: var(--space-2) 0 0;
   font-size: 15px;
   font-weight: 700;
 }
 
 .aiExplainBody {
-  margin: 6px 0 0;
+  margin: var(--space-1-5) 0 0;
   font-size: 14px;
   line-height: 1.6;
 }
 
 .aiExplainList {
-  margin: 10px 0 0;
-  padding-left: 18px;
+  margin: var(--space-3) 0 0;
+  padding-left: var(--space-4);
   font-size: 13px;
   line-height: 1.6;
 }
 
 .aiExplainNote {
-  margin: 10px 0 0;
+  margin: var(--space-3) 0 0;
   font-size: 12px;
   line-height: 1.5;
   color: #52525b;
@@ -2870,7 +2882,7 @@
 .stepToggle {
   flex-shrink: 0;
   min-height: 36px;
-  padding: 0 12px;
+  padding: 0 var(--space-3);
   border: 1px solid rgba(15, 23, 42, 0.14);
   border-radius: 10px;
   background: #fff;
@@ -2922,8 +2934,8 @@
 
 /* 판정 카드마다 붙는 한 줄 설명. 엔진 판정이 정본이고 이건 그 위 풀이다. */
 .findingPlain {
-  margin: 0 0 12px;
-  padding: 12px;
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3);
   border-radius: 10px;
   background: rgba(37, 99, 235, 0.06);
   font-size: 14px;
@@ -2933,7 +2945,7 @@
 
 .findingPlain > span {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: var(--space-1);
   font-size: 11px;
   font-weight: 700;
   color: #1d4ed8;
@@ -2941,8 +2953,8 @@
 
 /* 문장으로 약 찾기. 성분을 고르는 것은 모델, 제품을 찾는 것은 결정론 검색이다. */
 .phraseBox {
-  margin-bottom: 12px;
-  padding: 16px;
+  margin-bottom: var(--space-3);
+  padding: var(--space-4);
   border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: 12px;
   background: rgba(37, 99, 235, 0.04);
@@ -2951,7 +2963,7 @@
 .phraseLabel {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   margin: 0;
   font-size: 14px;
   font-weight: 700;
@@ -2959,7 +2971,7 @@
 }
 
 .phraseLabel > span {
-  padding: 2px 8px;
+  padding: var(--space-0-5) var(--space-2);
   border-radius: 999px;
   background: #1d4ed8;
   font-size: 11px;
@@ -2967,7 +2979,7 @@
 }
 
 .phraseHelp {
-  margin: 8px 0 0;
+  margin: var(--space-2) 0 0;
   font-size: 13px;
   line-height: 1.6;
   color: #52525b;
@@ -2975,15 +2987,15 @@
 
 .phraseRow {
   display: flex;
-  gap: 8px;
-  margin-top: 12px;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
 }
 
 .phraseInput {
   flex: 1;
   min-width: 0;
   min-height: 44px;
-  padding: 0 12px;
+  padding: 0 var(--space-3);
   border: 1px solid rgba(15, 23, 42, 0.16);
   border-radius: 10px;
   background: #fff;
@@ -2993,7 +3005,7 @@
 .phraseButton {
   flex-shrink: 0;
   min-height: 44px;
-  padding: 0 16px;
+  padding: 0 var(--space-4);
   border: 0;
   border-radius: 10px;
   background: #1d4ed8;
@@ -3012,15 +3024,15 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  margin: 12px 0 0;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
   font-size: 13px;
   color: #52525b;
 }
 
 .phraseTerm {
   min-height: 32px;
-  padding: 0 12px;
+  padding: 0 var(--space-3);
   border: 1px solid rgba(37, 99, 235, 0.35);
   border-radius: 999px;
   background: #fff;
@@ -3031,7 +3043,7 @@
 }
 
 .phraseNote {
-  margin: 8px 0 0;
+  margin: var(--space-2) 0 0;
   font-size: 13px;
   line-height: 1.6;
   color: #52525b;

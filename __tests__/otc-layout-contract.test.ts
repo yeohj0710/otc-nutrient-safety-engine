@@ -19,6 +19,14 @@ const presentationSource = readFileSync(
   resolve(process.cwd(), "src/lib/otc/presentation.ts"),
   "utf8",
 );
+const explainSource = readFileSync(
+  resolve(process.cwd(), "src/lib/ai/explainOtcFindings.ts"),
+  "utf8",
+);
+const explainRouteSource = readFileSync(
+  resolve(process.cwd(), "app/api/otc-explain/route.ts"),
+  "utf8",
+);
 
 describe("OTC checker layout contract", () => {
   it("keeps the two input panels in one independent flow column", () => {
@@ -299,5 +307,66 @@ describe("OTC checker layout contract", () => {
     expect(styleSource).toMatch(
       /\.findingDisclosure > summary\s*\{[\s\S]*?gap:\s*var\(--space-3\);[\s\S]*?padding:\s*var\(--space-3\) var\(--space-4\)/,
     );
+  });
+
+  it("writes every margin, padding, and gap on the scale", () => {
+    // 한때 1·2·3·5·6·7·9·10·11·14·15·18px 이 전부 여백으로 쓰였다. 같은 일을
+    // 하는 카드 안쪽 여백이 9·10·11px 세 가지였다는 뜻이다. 값이 아니라 역할이
+    // 흩어져 있던 것이라, 새 값을 하나 적으면 조용히 다시 흩어진다.
+    //
+    // 예외 둘은 리듬이 아니라 자리 예약이다. 절대 배치한 배지가 들어올 자리
+    // (60px)와 화면 아래 고정 막대가 덮지 않게 비운 자리(80px).
+    const RESERVED = /60px|80px/;
+    const offScale: string[] = [];
+    const declaration =
+      /(?:^|\n)\s*(margin|margin-top|margin-right|margin-bottom|margin-left|margin-block|margin-inline|padding|padding-top|padding-right|padding-bottom|padding-left|padding-block|padding-inline|gap|row-gap|column-gap)\s*:\s*([^;]+);/g;
+    for (const match of styleSource.matchAll(declaration)) {
+      const value = match[2];
+      if (RESERVED.test(value)) continue;
+      if (/(^|[\s(])-?\d+px/.test(value)) offScale.push(`${match[1]}: ${value.trim()}`);
+    }
+    expect(offScale).toEqual([]);
+
+    // 반 단계가 없으면 2px·6px 자리를 4px 격자로 못 잡아 다시 원시값이 샌다.
+    expect(styleSource).toContain("--space-0-5: 2px");
+    expect(styleSource).toContain("--space-1-5: 6px");
+  });
+
+  it("derives the tooltip inset from the tap target instead of a fixed offset", () => {
+    // 44px 탭 영역을 24px 아이콘 자리로 줄이는 음수 여백이다. -10px 로 적어 두면
+    // --tap-target 을 고칠 때 같이 안 따라와 글줄이 밀린다.
+    expect(styleSource).toMatch(
+      /\.supportTooltip\s*\{[\s\S]*?margin:\s*calc\(\(var\(--tap-target\) - var\(--space-6\)\) \/ -2\)/,
+    );
+    expect(styleSource).not.toMatch(/margin:\s*-10px -8px -10px 2px/);
+  });
+
+  it("keeps the AI summary panel on screen when the summary fails", () => {
+    // 예전에는 실패하면 칸이 통째로 사라져서, 요약이 원래 없는 화면인지 이번에
+    // 못 붙은 것인지 알 길이 없었다. 판정은 아래 엔진 결과가 정본이라 칸을
+    // 남겨도 잃는 내용이 없고, 남겨야 왜 못 붙었는지 말할 자리가 생긴다.
+    expect(componentSource).toContain("{(aiExplainPending || aiExplain) && (");
+    expect(componentSource).not.toContain("{(aiExplainPending || aiExplain?.ok) && (");
+    expect(componentSource).toContain("{aiExplain.notice}");
+    expect(componentSource).toContain("이번에는 못 붙였습니다");
+    // 400 응답도 본문을 읽어야 까닭이 남는다.
+    expect(componentSource).not.toContain("res.ok ? res.json() : null");
+  });
+
+  it("gives every AI failure its own sentence and logs the cause", () => {
+    // 실패마다 같은 문장을 쓰면 사용자가 할 일을 못 가린다. 키가 없는 서버는
+    // 다시 눌러도 안 붙고, 시간 초과는 다시 누르면 붙는다.
+    // 문구는 전부 "아래 엔진 결과만 보여드립니다"로 끝난다 — 사용자가 다음에
+    // 볼 것을 문장이 직접 말한다. 그 문장이 실패 갈래 수만큼 있고 서로 달라야 한다.
+    const notices = [...explainSource.matchAll(/"([^"]*보여드립니다[^"]*)"/g)].map((m) => m[1]);
+    expect(notices.length).toBeGreaterThanOrEqual(5);
+    expect(new Set(notices).size).toBe(notices.length);
+    for (const reason of ["missing_api_key", "invalid_response", "refereed_out"]) {
+      expect(explainSource).toMatch(new RegExp(`reason:\\s*"${reason}"`));
+    }
+    expect(explainSource).toMatch(/console\.warn\("\[otc-explain\] fallback"/);
+    // notice 는 화면에 그대로 나간다. 원본 오류 메시지를 넣으면 영어 스택이 보인다.
+    expect(explainRouteSource).not.toMatch(/notice:\s*message/);
+    expect(explainRouteSource).toMatch(/console\.warn\("\[otc-explain\]/);
   });
 });

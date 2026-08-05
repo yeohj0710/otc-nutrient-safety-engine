@@ -39,7 +39,18 @@ export async function POST(request: Request) {
 
     return NextResponse.json(response);
   } catch (error) {
-    const message = error instanceof Error ? error.message : "요청을 처리하지 못했습니다.";
-    return NextResponse.json({ ok: false, reason: "openai_error", notice: message }, { status: 400 });
+    // notice 는 화면에 그대로 나가는 문장이다. 여기에 원본 오류 메시지를 넣으면
+    // 영어 스택 문구와 내부 사정이 사용자에게 보인다. 원인은 로그로 남긴다.
+    console.warn("[otc-explain] request failed", {
+      message: error instanceof Error ? error.message : "unknown",
+    });
+    return NextResponse.json(
+      {
+        ok: false,
+        reason: "openai_error",
+        notice: "AI 요약을 만들지 못했습니다. 아래 엔진 결과만 보여드립니다.",
+      },
+      { status: 400 },
+    );
   }
 }
