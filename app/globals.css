@@ -327,6 +327,16 @@ summary:focus-visible,
   padding-left: max(var(--space-4), env(safe-area-inset-left));
 }
 
+@media (max-width: 560px) {
+  /* 점검 화면은 아래에 막대를 하나 띄운다(선택 요약 · 결과 보기). 그 막대가
+     문서 맨 끝에서 바닥글 마지막 줄을 덮었다 — 이미 맨 아래라 더 내릴 수도
+     없었다. 막대 높이만큼 페이지 끝을 비워 둔다. 점검 도구 안쪽이 아니라
+     여기서 비워야 도구 아래 문단과 바닥글까지 같이 지켜진다. */
+  .site-frame {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  }
+}
+
 .site-footer-inner {
   display: flex;
   width: 100%;
