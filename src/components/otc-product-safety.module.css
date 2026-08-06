@@ -29,13 +29,22 @@
   color: var(--workspace-ink);
 }
 
-/* 지금 어느 단계인지. 세 칸짜리 한 줄이고 눌러서 옮겨 다닌다. */
+/* 지금 어느 단계인지. 세 칸짜리 한 줄이고 눌러서 옮겨 다닌다.
+   스크롤을 내려도 붙어 있어야 "지금 어디"가 화면에서 사라지지 않는다.
+   머리띠(.site-header)가 sticky top:0 이라 그 아래에 세운다. 조상 쪽
+   overflow-x 는 clip 이라 scroll container 를 만들지 않아 sticky 가 산다. */
 .stepper {
+  position: sticky;
+  z-index: 20;
+  top: calc(4rem + var(--space-2));
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-2);
   margin: 0 0 var(--space-4);
-  padding: 0;
+  border-radius: 12px;
+  background: rgba(243, 245, 247, 0.92);
+  padding: var(--space-1);
+  backdrop-filter: blur(8px);
   list-style: none;
 }
 
@@ -50,7 +59,7 @@
   border-radius: 10px;
   background: #fff;
   padding: 0 var(--space-3);
-  color: #8a94a6;
+  color: #5f6b7a;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
@@ -65,8 +74,8 @@
   justify-content: center;
   border-radius: 999px;
   background: #eef1f4;
-  color: #8a94a6;
-  font-size: 11px;
+  color: #5f6b7a;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -103,7 +112,7 @@
 .exampleLabel {
   margin: 0 0 var(--space-2);
   color: #17604f;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -188,13 +197,13 @@
 
 .quickCheckButton span em {
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
 }
 
 .quickCheckButton b {
-  color: #8aa49d;
+  color: #4f6f67;
   font-size: 14px;
   font-weight: 500;
 }
@@ -240,7 +249,7 @@
   border-radius: var(--space-2);
   background: var(--workspace-navy);
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -286,8 +295,8 @@
 }
 
 .catalogSummary {
-  color: #6b7684;
-  font-size: 12px;
+  color: #5a6472;
+  font-size: 13px;
   line-height: 1.6;
 }
 
@@ -298,15 +307,15 @@
 
 .catalogDescription {
   margin-top: var(--space-0-5);
-  color: #8b95a1;
-  font-size: 10px;
+  color: #5f6b7a;
+  font-size: 13px;
   line-height: 1.5;
 }
 
 .catalogRematchSummary {
   margin-top: var(--space-1-5);
   color: #596579;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.5;
 }
@@ -319,7 +328,7 @@
 
 .catalogScope summary {
   color: #596579;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 750;
   cursor: pointer;
 }
@@ -339,7 +348,7 @@
   background: #fff;
   padding: 0 var(--space-1-5);
   color: #5f6b7a;
-  font-size: 9px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -381,7 +390,7 @@
 }
 
 .searchBox input::placeholder {
-  color: #98a2b3;
+  color: #667085;
   font-weight: 500;
 }
 
@@ -461,7 +470,7 @@
 .pendingResult small {
   overflow: hidden;
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -469,7 +478,7 @@
 .quickCheckButton span small {
   margin-top: var(--space-1);
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.45;
   overflow: visible;
@@ -479,7 +488,7 @@
 
 .pendingResult .pendingExclusion {
   color: #9a5b00;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 750;
   text-overflow: clip;
   white-space: normal;
@@ -499,7 +508,7 @@
 
 .productSupportTitle {
   color: #17604f;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 850;
   line-height: 1.4;
   overflow-wrap: anywhere;
@@ -514,7 +523,7 @@
   display: block;
   overflow: visible;
   color: #667085;
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 650;
   line-height: 1.4;
@@ -524,7 +533,7 @@
 }
 
 .productSupportCounts {
-  color: #8b95a1;
+  color: #5f6b7a;
   font-variant-numeric: tabular-nums;
 }
 
@@ -541,7 +550,7 @@
 .pendingResult b {
   flex: 0 0 auto;
   color: var(--workspace-accent);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -563,7 +572,7 @@
 
 .searchEmpty span {
   color: var(--workspace-muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -580,13 +589,13 @@
 
 .productShelfHeader span {
   color: #333d4b;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
 .productShelfHeader b {
-  color: #6b7684;
-  font-size: 11px;
+  color: #5a6472;
+  font-size: 13px;
 }
 
 .classSelect {
@@ -598,8 +607,8 @@
 }
 
 .classSelect > span {
-  color: #6b7684;
-  font-size: 11px;
+  color: #5a6472;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -609,8 +618,8 @@
   border-radius: var(--space-2);
   background: #fff;
   padding: 0 var(--space-8) 0 var(--space-3);
-  color: #6b7684;
-  font-size: 11px;
+  color: #5a6472;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -662,13 +671,13 @@
 
 .productShelfGrid > button > span {
   color: #333d4b;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 750;
 }
 
 .productShelfGrid > button > small {
-  color: #8b95a1;
-  font-size: 10px;
+  color: #5f6b7a;
+  font-size: 13px;
 }
 
 .productShelfGrid > button > b {
@@ -676,7 +685,7 @@
   top: 50%;
   right: 10px;
   color: #247a68;
-  font-size: 10px;
+  font-size: 13px;
   transform: translateY(-50%);
 }
 
@@ -703,7 +712,7 @@
   border-radius: 8px;
   background: transparent;
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
 }
 
@@ -720,7 +729,7 @@
   gap: var(--space-2);
   border: 1px dashed #cfd6de;
   border-radius: 12px;
-  color: #98a2b3;
+  color: #667085;
 }
 
 .emptySelection span {
@@ -776,7 +785,7 @@
   display: -webkit-box;
   overflow: hidden;
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -807,7 +816,7 @@
   background: #e8f6f1;
   padding: var(--space-0-5) var(--space-1-5);
   color: #17604f;
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -823,7 +832,7 @@
 
 .catalogMatchLine > a {
   color: #17604f;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 750;
   text-decoration: underline;
   text-underline-offset: 2px;
@@ -865,7 +874,7 @@
   background: #f8f9fb;
   padding: 0 var(--space-3);
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   list-style: none;
   cursor: pointer;
@@ -877,7 +886,7 @@
 
 .doseExtra > summary::after {
   content: " ▾";
-  color: #98a2b3;
+  color: #667085;
 }
 
 .doseExtra[open] > summary::after {
@@ -923,7 +932,7 @@
 
 .stepAdvance span {
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.5;
 }
@@ -939,7 +948,7 @@
   display: block;
   margin-bottom: var(--space-1-5);
   color: var(--workspace-muted);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -970,14 +979,14 @@
 }
 
 .inputWithUnit input::placeholder {
-  color: #b1bac5;
+  color: #7c8899;
   font-weight: 500;
 }
 
 .inputWithUnit b {
   flex: 0 0 auto;
   color: var(--workspace-muted);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 650;
 }
 
@@ -995,14 +1004,14 @@
 .conditionFieldset legend {
   margin-bottom: var(--space-2);
   color: #475467;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
 .fieldLabel > span small {
   margin-left: var(--space-0-5);
-  color: #98a2b3;
-  font-size: 11px;
+  color: #667085;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -1043,7 +1052,7 @@
 }
 
 .fieldLabel textarea::placeholder {
-  color: #98a2b3;
+  color: #667085;
 }
 
 .profileScopeNotice {
@@ -1052,7 +1061,7 @@
   background: #f2f6f5;
   padding: var(--space-2) var(--space-3);
   color: #52645f;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 650;
   line-height: 1.55;
 }
@@ -1073,7 +1082,7 @@
   background: #eef1f4;
   padding: var(--space-0-5) var(--space-2);
   color: #667085;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 750;
   line-height: 1.4;
   white-space: nowrap;
@@ -1092,7 +1101,7 @@
 .fieldLabel > span .inputSupportStatus {
   margin-left: 0;
   color: #667085;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 750;
 }
 
@@ -1108,7 +1117,7 @@
   display: block;
   margin-top: var(--space-1-5);
   color: var(--workspace-muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -1133,7 +1142,7 @@
   background: #fbfcfd;
   padding: var(--space-2);
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -1167,7 +1176,7 @@
   border-radius: 6px;
   background: #fff;
   color: transparent;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .conditionGrid label[data-checked="true"] > span:first-of-type {
@@ -1190,13 +1199,13 @@
 
 .conditionCopy strong {
   color: inherit;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.35;
 }
 
 .conditionCopy .inputSupportStatus {
   margin: 0;
-  font-size: 9px;
+  font-size: 13px;
   line-height: 1.35;
 }
 
@@ -1209,12 +1218,18 @@
   display: block;
   margin-top: var(--space-1-5);
   color: var(--workspace-muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
+/* 머리띠(64px) 아래에 단계 표시가 또 붙어 있다. 그 둘을 다 비워 두지 않으면
+   결과로 데려간 자리에서 패널 머리글이 단계 표시에 가린다. */
+.panel {
+  scroll-margin-top: calc(4rem + var(--space-12) + var(--space-3));
+}
+
 .resultPanel {
-  scroll-margin-top: calc(4rem + var(--space-4));
+  scroll-margin-top: calc(4rem + var(--space-12) + var(--space-3));
   isolation: isolate;
 }
 
@@ -1225,7 +1240,7 @@
   background: var(--workspace-soft);
   padding: 0 var(--space-2);
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -1259,7 +1274,7 @@
 
 .resultScope strong {
   color: var(--workspace-ink);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 850;
   line-height: 1.4;
   font-variant-numeric: tabular-nums;
@@ -1267,7 +1282,7 @@
 
 .resultScope span {
   color: var(--workspace-muted);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
   line-height: 1.4;
   overflow-wrap: anywhere;
@@ -1368,13 +1383,13 @@
 .inputNotice p,
 .coverageNotice p {
   margin-top: var(--space-1);
-  color: #8d4444;
-  font-size: 12px;
+  color: #7c3a3a;
+  font-size: 13px;
   line-height: 1.55;
 }
 
 .coverageNotice p {
-  color: #765d3d;
+  color: #63512f;
 }
 
 .inputNotice ul,
@@ -1388,7 +1403,7 @@
 
 .inputNotice li {
   color: #782c31;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
   line-height: 1.5;
 }
@@ -1397,7 +1412,7 @@
   display: block;
   margin-top: var(--space-3);
   color: #782c31;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .coverageNotice li {
@@ -1408,8 +1423,8 @@
 .coverageNotice li b,
 .coverageNotice li span {
   display: block;
-  color: #765d3d;
-  font-size: 12px;
+  color: #63512f;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -1444,7 +1459,7 @@
   border-radius: 999px;
   background: var(--workspace-accent);
   color: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
 }
 
@@ -1456,7 +1471,7 @@
 .clearResult p {
   margin-top: var(--space-1-5);
   color: #477369;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -1488,7 +1503,7 @@
   border-radius: 50%;
   background: #f6dfbd;
   color: #87520b;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -1505,20 +1520,20 @@
 
 .summaryTitle p {
   margin-top: var(--space-0-5);
-  color: #765d3d;
-  font-size: 12px;
+  color: #63512f;
+  font-size: 13px;
   line-height: 1.5;
 }
 
 .resultSummary[data-urgent="true"] .summaryTitle p {
-  color: #8d4444;
+  color: #7c3a3a;
 }
 
 .summaryEvidence {
   display: block;
   margin-top: var(--space-2);
   color: #667085;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.6;
   font-variant-numeric: tabular-nums;
@@ -1578,8 +1593,8 @@
   justify-content: center;
   border-radius: 8px;
   background: #f7e7ce;
-  color: #9a5a0d;
-  font-size: 11px;
+  color: #8a4f08;
+  font-size: 14px;
   font-weight: 850;
 }
 
@@ -1596,7 +1611,7 @@
 .findingSummaryCopy > small {
   display: block;
   color: #a3630f;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
   line-height: 1.35;
 }
@@ -1619,8 +1634,8 @@
   display: -webkit-box;
   margin-top: var(--space-0-5);
   overflow: hidden;
-  color: #5f6878;
-  font-size: 11px;
+  color: #4e5768;
+  font-size: 13px;
   line-height: 1.45;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -1657,7 +1672,7 @@
 
 .findingRationale > span {
   color: #7c5a2c;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 850;
 }
 
@@ -1684,12 +1699,12 @@
 .findingRationale dt,
 .findingRationale dd {
   margin: 0;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
 .findingRationale dt {
-  color: #8b95a1;
+  color: #5f6b7a;
   font-weight: 750;
 }
 
@@ -1721,13 +1736,13 @@
 .officialEvidencePreview header strong,
 .literaturePreview header strong {
   color: #17604f;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .officialEvidencePreview header span,
 .literaturePreview header span {
-  color: #718096;
-  font-size: 9px;
+  color: #5b6a7f;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -1746,7 +1761,7 @@
   display: block;
   margin-top: var(--space-2);
   color: #17604f;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.5;
   overflow-wrap: anywhere;
@@ -1762,12 +1777,12 @@
 
 .productEvidencePreview > strong {
   color: #4d7068;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .productEvidencePreview > a {
   color: #3d665d;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 650;
   line-height: 1.45;
   overflow-wrap: anywhere;
@@ -1786,7 +1801,7 @@
   display: block;
   margin-top: var(--space-1-5);
   color: #275985;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   line-height: 1.5;
   overflow-wrap: anywhere;
@@ -1795,7 +1810,7 @@
 .literaturePreview > p {
   margin-top: var(--space-1-5);
   color: #526274;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
 }
 
@@ -1803,14 +1818,14 @@
   display: block;
   margin-bottom: var(--space-0-5);
   color: #344b64;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .literaturePreview > small {
   display: block;
   margin-top: var(--space-1-5);
-  color: #718096;
-  font-size: 10px;
+  color: #5b6a7f;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -1821,13 +1836,13 @@
 
 .literatureEmpty strong {
   color: #4e5968;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .literatureEmpty p {
   margin-top: var(--space-0-5);
-  color: #718096;
-  font-size: 12px;
+  color: #5b6a7f;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -1844,7 +1859,7 @@
   list-style: none;
   align-items: center;
   color: #2f5f91;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -1854,8 +1869,8 @@
 
 .otherIngredientLiterature > p {
   margin: 0 0 var(--space-1-5);
-  color: #8b7355;
-  font-size: 10px;
+  color: #6b5537;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -1876,7 +1891,7 @@
 .otherIngredientLiterature a {
   display: block;
   color: #344b64;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 750;
   line-height: 1.45;
   overflow-wrap: anywhere;
@@ -1885,8 +1900,8 @@
 .otherIngredientLiterature small {
   display: block;
   margin-top: var(--space-0-5);
-  color: #718096;
-  font-size: 9px;
+  color: #5b6a7f;
+  font-size: 13px;
   line-height: 1.45;
 }
 
@@ -1904,8 +1919,8 @@
 .nextAction span {
   display: block;
   margin-bottom: var(--space-0-5);
-  color: #8a7352;
-  font-size: 10px;
+  color: #6f5c3f;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -1929,7 +1944,7 @@
 .findings summary,
 .totalDetails summary {
   color: var(--workspace-muted);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   list-style-position: inside;
 }
@@ -1957,12 +1972,12 @@
 
 .evidenceSectionTitle strong {
   color: #333d4b;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .evidenceSectionTitle span {
-  color: #8b95a1;
-  font-size: 9px;
+  color: #5f6b7a;
+  font-size: 13px;
   font-weight: 650;
 }
 
@@ -1976,7 +1991,7 @@
 
 .officialEvidenceLink strong {
   color: #17604f;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .officialEvidenceLink span {
@@ -1988,7 +2003,7 @@
   display: block;
   margin-top: var(--space-1-5);
   color: #46576a;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -2014,8 +2029,8 @@
 
 .literatureCard > div:first-child span,
 .literatureCard > div:first-child b {
-  color: #8b95a1;
-  font-size: 10px;
+  color: #5f6b7a;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -2023,7 +2038,7 @@
   display: block !important;
   margin-top: var(--space-1-5);
   color: #2f5f91 !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   font-weight: 750;
   line-height: 1.45;
 }
@@ -2031,7 +2046,7 @@
 .literatureCard p {
   margin-top: var(--space-1-5);
   color: #5f6f82;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -2039,7 +2054,7 @@
   display: block;
   margin-bottom: var(--space-0-5);
   color: #333d4b;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .coverageDetails {
@@ -2056,7 +2071,7 @@
   justify-content: space-between;
   gap: var(--space-3);
   color: #4e5968;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 750;
   cursor: pointer;
   list-style: none;
@@ -2069,7 +2084,7 @@
 .coverageDetails summary::before {
   content: "▸";
   flex: 0 0 auto;
-  color: #8b95a1;
+  color: #5f6b7a;
 }
 
 .coverageDetails[open] summary::before {
@@ -2081,8 +2096,8 @@
 }
 
 .coverageDetails summary b {
-  color: #8b95a1;
-  font-size: 9px;
+  color: #5f6b7a;
+  font-size: 13px;
 }
 
 .coverageDetails > div {
@@ -2092,8 +2107,8 @@
 }
 
 .coverageDetails > div > p {
-  color: #6b7684;
-  font-size: 10px;
+  color: #5a6472;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -2115,7 +2130,7 @@
 .coverageDetails li span,
 .coverageDetails li small {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.45;
 }
 
@@ -2125,13 +2140,13 @@
 
 .coverageDetails li span {
   margin-top: var(--space-0-5);
-  color: #8b95a1;
+  color: #5f6b7a;
 }
 
 .coverageDetails li small {
   margin-top: var(--space-1-5);
   color: #5f6f82;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -2141,7 +2156,7 @@
   gap: var(--space-0-5);
   overflow-wrap: anywhere;
   color: #4d647f;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.45;
   text-decoration: underline;
   text-decoration-color: #b9c4d0;
@@ -2172,7 +2187,7 @@
   justify-content: space-between;
   gap: var(--space-3);
   color: var(--workspace-muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 
 .totalDetails p strong {
@@ -2199,14 +2214,14 @@
   background: #f4f6f8;
   padding: var(--space-1-5) var(--space-2);
   color: #526274;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
   line-height: 1.5;
 }
 
 .workspace small,
 .workspace em {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .catalogDescription,
@@ -2265,13 +2280,13 @@
 .findings details a,
 .totalDetails p,
 .backgroundLiteratureNotice {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .doseHelp {
   margin: var(--space-2) 0 0;
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.55;
 }
@@ -2298,7 +2313,7 @@
   border-radius: 999px;
   background: transparent;
   color: #315c54;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -2314,7 +2329,7 @@
   box-shadow: 0 12px 32px rgba(23, 34, 59, 0.16);
   padding: var(--space-3);
   color: #344054;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.55;
 }
@@ -2338,7 +2353,7 @@
   border-radius: var(--space-2);
   background: #dceefa;
   color: #15527a;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -2355,7 +2370,7 @@
 .dosePendingNotice p {
   margin-top: var(--space-1);
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
@@ -2414,8 +2429,8 @@
 .evidenceVault > summary::after {
   content: "▾ 펼치기";
   flex: 0 0 auto;
-  color: #8a94a6;
-  font-size: 12px;
+  color: #5f6b7a;
+  font-size: 13px;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -2456,7 +2471,7 @@
   background: #f4f6f8;
   padding: var(--space-2) var(--space-3);
   color: #4e5968;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
   line-height: 1.6;
   word-break: keep-all;
@@ -2513,7 +2528,7 @@
   justify-content: space-between;
   gap: var(--space-3);
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -2560,7 +2575,7 @@
 .evidenceGroup > header span,
 .literatureGroup > header span {
   color: #667085;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
 }
 
@@ -2571,7 +2586,7 @@
 
 .evidenceGroup > div > strong {
   color: #344054;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .evidenceEmpty,
@@ -2581,7 +2596,7 @@
   background: #f5f7f9;
   padding: var(--space-3);
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.6;
   word-break: keep-all;
@@ -2594,7 +2609,7 @@
   background: #fff8eb;
   padding: var(--space-3);
   color: #704b12;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
   line-height: 1.6;
   word-break: keep-all;
@@ -2612,7 +2627,7 @@
 .resultSection > .coverageDetails > p {
   margin: 0;
   color: #7a5310;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -2638,8 +2653,8 @@
 
 .resultSection > .coverageDetails li span,
 .resultSection > .coverageDetails li small {
-  color: #6f6048;
-  font-size: 12px;
+  color: #5c4f3a;
+  font-size: 13px;
   line-height: 1.5;
 }
 
@@ -2682,7 +2697,7 @@
 .literatureStatusHeading {
   margin: 0;
   color: #344054;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -2697,7 +2712,7 @@
   background: #f8fafb;
   padding: var(--space-2) var(--space-3);
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 650;
 }
 
@@ -2713,7 +2728,7 @@
   background: #eef2f6;
   padding: var(--space-1) var(--space-2);
   color: #475467;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -2735,8 +2750,8 @@
   border-top: 1px solid #e9edf1;
   background: #fafbfc;
   padding: var(--space-3) var(--space-4);
-  color: #7b8493;
-  font-size: 12px;
+  color: #5b6472;
+  font-size: 13px;
   font-weight: 650;
 }
 
@@ -2761,9 +2776,23 @@
     padding-bottom: calc(80px + env(safe-area-inset-bottom));
   }
 
+  /* 좁은 화면에서는 아래 고정 막대가 이미 결과로 데려간다. 단계 표시까지
+     붙여 두면 위아래로 화면을 두 겹 깎아 먹는다. */
+  .stepper {
+    position: static;
+    padding: 0;
+    background: none;
+    backdrop-filter: none;
+  }
+
   .stepper button {
     padding: 0 var(--space-2);
-    font-size: 12px;
+    font-size: 13px;
+  }
+
+  .panel,
+  .resultPanel {
+    scroll-margin-top: calc(4rem + var(--space-3));
   }
 
   .quickCheckList {
@@ -2777,7 +2806,7 @@
   }
 
   .quickCheckButton span {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .quickCheckButton span,
@@ -2864,7 +2893,7 @@
 
   .mobileResultLink span {
     color: #bdc8d6;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .mobileResultLink strong {
@@ -2906,6 +2935,18 @@
   .findingChevron {
     transition: none;
   }
+
+  /* 움직임을 줄여 달라고 한 사람에게는 자리만 잡아 주고 흔들지 않는다.
+     반짝임은 멈추되 회색 띠는 남겨야 "기다리는 중"이라는 뜻이 유지된다. */
+  .skeletonLine,
+  .inlineSpinner,
+  .resultBody > * {
+    animation: none;
+  }
+
+  .skeletonLine {
+    background: rgba(15, 23, 42, 0.1);
+  }
 }
 
 .literatureDisclaimer {
@@ -2914,7 +2955,7 @@
   background: #edf5f2;
   padding: var(--space-2) var(--space-3);
   color: #3d6459;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.6;
   word-break: keep-all;
@@ -2923,7 +2964,7 @@
 .literatureLocator {
   margin: var(--space-2) 0 0;
   color: #5b6b76;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.6;
   word-break: break-word;
 }
@@ -2932,7 +2973,7 @@
 .literatureConflict strong {
   display: block;
   margin-bottom: var(--space-0-5);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .literatureConflict {
@@ -2941,7 +2982,7 @@
   background: #fdf6e9;
   padding: var(--space-2) var(--space-3);
   color: #7a5310;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.65;
   word-break: keep-all;
 }
@@ -2953,7 +2994,7 @@
   flex-basis: 100%;
   border-radius: var(--space-2);
   padding: var(--space-1) var(--space-2);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.01em;
   cursor: default;
@@ -3003,6 +3044,83 @@
   opacity: 0.92;
 }
 
+/* 기다리는 동안 자리 잡아 두기.
+   빈 상자만 띄우면 "오는 중"과 "원래 없음"이 같은 모양이 된다. 들어올 글의
+   모양을 미리 그려 두면 화면이 얼마나 더 기다리면 되는지도 같이 말해 준다. */
+@keyframes skeletonShimmer {
+  from {
+    background-position: 180% 0;
+  }
+
+  to {
+    background-position: -80% 0;
+  }
+}
+
+.skeletonStack {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.skeletonLine {
+  display: block;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.06) 0%,
+      rgba(15, 23, 42, 0.12) 45%,
+      rgba(15, 23, 42, 0.06) 90%
+    )
+    0 0 / 220% 100%;
+  animation: skeletonShimmer 1.4s linear infinite;
+}
+
+.skeletonLine[data-w="title"] {
+  width: 62%;
+  height: 18px;
+}
+
+.skeletonLine[data-w="short"] {
+  width: 74%;
+}
+
+.inlineSpinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 var(--space-1) 0 var(--space-2);
+  border: 2px solid rgba(29, 78, 216, 0.25);
+  border-top-color: #1d4ed8;
+  border-radius: 999px;
+  vertical-align: -1px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 결과가 새로 그려질 때 살짝 떠오르게 한다. 값이 바뀐 것을 눈이 먼저 안다. */
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.resultBody > * {
+  animation: riseIn 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* AI 보조 요약. 판정 정본은 아래 엔진 결과이고 이 상자는 그 위 요약이다. */
 .aiExplainPanel {
   margin: 0 0 var(--space-4);
@@ -3014,7 +3132,7 @@
 
 .aiExplainBadge {
   margin: 0;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   color: #1d4ed8;
 }
@@ -3040,7 +3158,7 @@
 
 .aiExplainNote {
   margin: var(--space-3) 0 0;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   color: #52525b;
 }
@@ -3119,7 +3237,7 @@
 .findingPlain > span {
   display: block;
   margin-bottom: var(--space-1);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   color: #1d4ed8;
 }
@@ -3147,7 +3265,7 @@
   padding: var(--space-0-5) var(--space-2);
   border-radius: 999px;
   background: #1d4ed8;
-  font-size: 11px;
+  font-size: 13px;
   color: #fff;
 }
 

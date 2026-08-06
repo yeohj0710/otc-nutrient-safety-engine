@@ -251,8 +251,10 @@ describe("OTC checker layout contract", () => {
     expect(styleSource).toContain("--tap-target: 44px");
     expect(styleSource).toContain("min-height: var(--tap-target)");
     expect(styleSource).toContain("env(safe-area-inset-bottom)");
+    // 머리띠(4rem) 아래에 단계 표시가 또 붙어 있다. 둘을 다 비우지 않으면
+    // 결과로 데려간 자리에서 패널 머리글이 단계 표시에 가린다.
     expect(styleSource).toMatch(
-      /\.resultPanel\s*\{[\s\S]*?scroll-margin-top:\s*calc\(4rem \+ var\(--space-4\)\)/,
+      /\.resultPanel\s*\{[\s\S]*?scroll-margin-top:\s*calc\(4rem \+ var\(--space-12\) \+ var\(--space-3\)\)/,
     );
     expect(styleSource).toContain(":focus-visible");
     expect(styleSource).toContain("@media (prefers-reduced-motion: reduce)");
@@ -289,18 +291,23 @@ describe("OTC checker layout contract", () => {
     expect(styleSource).toMatch(
       /\.resultBody\s*\{[\s\S]*?padding:\s*var\(--space-6\)/,
     );
+    // 13px 이 보조 설명의 기본이고 12px 이 바닥이다. 예전에는 9~11px 짜리
+    // 설명줄이 화면 곳곳에 있었는데, 한글은 같은 px 에서 라틴 문자보다 작아
+    // 보여서 그 크기에 회색까지 겹치면 읽는 일 자체가 일이 된다.
     expect(styleSource).toMatch(
-      /\.productSupportTitle\s*\{[\s\S]*?font-size:\s*12px/,
+      /\.productSupportTitle\s*\{[\s\S]*?font-size:\s*13px/,
     );
     expect(styleSource).toMatch(
-      /\.productSupportDetails,[\s\S]*?font-size:\s*12px/,
+      /\.productSupportDetails,[\s\S]*?font-size:\s*13px/,
     );
     expect(styleSource).toMatch(
-      /\.inputSupportStatus\s*\{[\s\S]*?font-size:\s*12px/,
+      /\.inputSupportStatus\s*\{[\s\S]*?font-size:\s*13px/,
     );
     expect(styleSource).toMatch(
-      /\.resultScope span\s*\{[\s\S]*?font-size:\s*12px/,
+      /\.resultScope span\s*\{[\s\S]*?font-size:\s*13px/,
     );
+    // 바닥 아래로 다시 새지 않게 막는다.
+    expect(styleSource).not.toMatch(/font-size:\s*(?:[1-9]|10|11)px/);
     expect(styleSource).toMatch(
       /\.findings\s*\{[\s\S]*?gap:\s*var\(--space-3\);[\s\S]*?margin-top:\s*var\(--space-3\)/,
     );

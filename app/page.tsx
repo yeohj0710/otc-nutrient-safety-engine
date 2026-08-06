@@ -47,7 +47,7 @@ export default function Home() {
           {/* 본문(점검 도구)이 920px 한 줄로 서므로 머리글도 같은 폭에 맞춘다.
               폭이 어긋나면 제목과 도구가 서로 다른 화면처럼 보인다. */}
           <div className="mx-auto w-full max-w-[920px]">
-            <p className="inline-flex min-h-8 items-center rounded-lg bg-[#e8f5f1] px-3 text-[12px] font-extrabold text-[#17604f]">
+            <p className="inline-flex min-h-8 items-center rounded-lg bg-[#e8f5f1] px-3 text-[13px] font-extrabold text-[#17604f]">
               국내 OTC 근거 조회
             </p>
             <h1 className="mt-3 break-keep text-[32px] font-extrabold leading-[1.25] tracking-[-0.035em] sm:text-[42px]">
@@ -57,7 +57,7 @@ export default function Home() {
               제품명만 담으면 중복 성분과 하루 사용량, 연령·질환·병용약 주의를
               식약처 허가 원문까지 연결해 보여줍니다.
             </p>
-            <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-bold text-[#667085]">
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-[13px] font-bold text-[#667085]">
               <span className="inline-flex min-h-8 items-center rounded-lg border border-[#eed7b7] bg-[#fff8ee] px-3 text-[#87520b]">
                 연구용 시제품 · 임상 사용 승인 아님
               </span>
@@ -87,17 +87,17 @@ export default function Home() {
             ["근거까지 바로 확인", "각 주의 항목에서 식약처 허가 원문과 판정에 맞는 학술문헌을 함께 볼 수 있습니다."],
           ].map(([title, description], index) => (
             <div key={title} className="flex gap-3">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#20324f] text-[10px] font-extrabold text-white">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#20324f] text-[13px] font-extrabold text-white">
                 {index + 1}
               </span>
               <div>
                 <h2 className="text-[15px] font-extrabold text-[#17223b]">{title}</h2>
-                <p className="mt-1 break-keep text-[13px] font-medium leading-[1.6] text-[#667085]">{description}</p>
+                <p className="mt-1 break-keep text-[14px] font-medium leading-[1.65] text-[#667085]">{description}</p>
               </div>
             </div>
           ))}
         </div>
-        <p className="mt-6 break-keep border-t border-[#eef1f4] pt-5 text-[12px] font-medium leading-[1.7] text-[#8a94a6]">
+        <p className="mt-6 break-keep border-t border-[#eef1f4] pt-5 text-[13px] font-medium leading-[1.7] text-[#5f6b7a]">
           이 시제품은 공개 안전성 규칙과 제품별 허가 사용·복용 조건만 판정합니다.
           제품별 직접 규칙 연결 {productRuleBindingCount}건과 허가 사용·복용 조건 {administrationConstraintCount}건을 사용합니다.
           v5.0 채택 문헌 {v5LiteratureRuleCount}규칙 {v5LiteratureLinkCount}건은

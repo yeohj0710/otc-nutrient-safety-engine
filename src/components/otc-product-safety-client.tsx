@@ -975,15 +975,24 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   // "여러 제품의 용량 또는 투여 방식" 같은 문장이 나온다. 건별로 부르면 그
   // 판정이 왜 걸렸는지만 말한다. 실패하거나 심판에 걸린 건은 그냥 안 보인다.
   const [findingLines, setFindingLines] = useState<Record<string, string>>({});
+  // 쉬운 설명이 오는 데 몇 초 걸린다. 그동안 자리를 비워 두면 원래 없는
+  // 카드인지 아직 오는 중인지 구분이 안 된다.
+  const [findingLinesPending, setFindingLinesPending] = useState(false);
   const findingKey = orderedFindings.map((f) => f.findingId).join("|");
   useEffect(() => {
     if (!orderedFindings.length) {
-      void Promise.resolve().then(() => setFindingLines({}));
+      void Promise.resolve().then(() => {
+        setFindingLines({});
+        setFindingLinesPending(false);
+      });
       return;
     }
     const controller = new AbortController();
     const names = selected.map((item) => item.product.productName);
-    void Promise.resolve().then(() => setFindingLines({}));
+    void Promise.resolve().then(() => {
+      setFindingLines({});
+      setFindingLinesPending(true);
+    });
     Promise.all(
       orderedFindings.slice(0, 8).map(async (finding) => {
         try {
@@ -1017,6 +1026,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     ).then((pairs) => {
       if (controller.signal.aborted) return;
       setFindingLines(Object.fromEntries(pairs.filter(Boolean) as (readonly [string, string])[]));
+      setFindingLinesPending(false);
     });
     return () => controller.abort();
     // findingKey 로 같은 판정 묶음에는 다시 부르지 않는다.
@@ -2006,11 +2016,29 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   >
                     <p className={styles.aiExplainBadge}>
                       <span>AI 요약</span>
-                      {aiExplainPending && <span> · 쓰는 중…</span>}
+                      {aiExplainPending && (
+                        <>
+                          <span
+                            aria-hidden="true"
+                            className={styles.inlineSpinner}
+                          />
+                          <span> 쓰는 중…</span>
+                        </>
+                      )}
                       {!aiExplainPending && aiExplain && !aiExplain.ok && (
                         <span> · 이번에는 못 붙였습니다</span>
                       )}
                     </p>
+                    {/* 빈 상자만 띄워 두면 요약이 오는 중인지 실패한 것인지
+                        모른다. 들어올 글의 모양을 미리 그려 둔다. */}
+                    {aiExplainPending && (
+                      <div aria-hidden="true" className={styles.skeletonStack}>
+                        <span className={styles.skeletonLine} data-w="title" />
+                        <span className={styles.skeletonLine} />
+                        <span className={styles.skeletonLine} />
+                        <span className={styles.skeletonLine} data-w="short" />
+                      </div>
+                    )}
                     {/* 실패하면 칸을 통째로 감추고 있었다. 그러면 요약이 원래
                         없는 화면인지, 이번에 못 붙은 것인지 구분할 수가 없다.
                         판정은 아래 엔진 결과가 정본이라 잃는 내용은 없다. */}
@@ -2159,12 +2187,26 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                   />
                                 </summary>
                                 <div className={styles.findingContent}>
-                                  {findingLines[finding.findingId] && (
+                                  {findingLines[finding.findingId] ? (
                                     <p className={styles.findingPlain}>
                                       <span>쉬운 설명</span>
                                       {findingLines[finding.findingId]}
                                     </p>
-                                  )}
+                                  ) : findingLinesPending ? (
+                                    <p
+                                      aria-hidden="true"
+                                      className={styles.findingPlain}
+                                    >
+                                      <span>쉬운 설명을 쓰는 중…</span>
+                                      <span className={styles.skeletonStack}>
+                                        <span className={styles.skeletonLine} />
+                                        <span
+                                          className={styles.skeletonLine}
+                                          data-w="short"
+                                        />
+                                      </span>
+                                    </p>
+                                  ) : null}
                                   <div className={styles.nextAction}>
                                     <span>지금 할 일</span>
                                     <strong>{finding.nextActionKo}</strong>
