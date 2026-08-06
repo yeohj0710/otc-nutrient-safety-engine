@@ -391,6 +391,13 @@ type InputSupportStatusContext = {
   hasInputIssue: boolean;
 };
 
+/**
+ * 낭독기가 읽어 줄 문장.
+ *
+ * 예전에는 "지원 행렬 2개 중 2개 · 현재 입력값에 지원 범위 밖 항목 있음"처럼
+ * 도구 안쪽 이름을 그대로 읽었다. 화면에 보이든 소리로 들리든 알아들을 수 없는
+ * 말이면 없는 것과 같다. 담은 약을 놓고 이 조건을 보는지 아닌지만 말한다.
+ */
 export function inputSupportStatusMessage({
   selectedCount,
   supportedCount,
@@ -398,42 +405,45 @@ export function inputSupportStatusMessage({
   hasCoverageGap,
   hasInputIssue,
 }: InputSupportStatusContext): string {
-  if (selectedCount === 0) return "제품을 담으면 지원 여부를 표시합니다.";
+  if (selectedCount === 0) return "약을 담으면 이 조건을 보는지 알려드려요.";
   if (!hasCurrentInput) {
     return supportedCount === 0
-      ? "입력해도 현재 선택 제품에서는 판정하지 않음"
-      : `입력 시 선택 제품 ${selectedCount}개 중 ${supportedCount}개에서 판정`;
+      ? "담은 약에는 이 조건을 보지 않아요."
+      : `적으시면 담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 봐요.`;
   }
-  if (hasInputIssue) return "입력값을 확인해야 판정할 수 있음";
+  if (hasInputIssue) return "적으신 값을 고쳐야 볼 수 있어요.";
   if (hasCoverageGap) {
     return supportedCount === 0
-      ? "현재 입력값은 지원 범위 밖 · 추가 확인 조건 참고"
-      : `지원 행렬 ${selectedCount}개 중 ${supportedCount}개 · 현재 입력값에 지원 범위 밖 항목 있음`;
+      ? "적으신 내용은 지금 규칙이 다루지 않아요. 결과의 확인하지 못한 범위에 적어 둡니다."
+      : `담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 보고, 나머지는 확인하지 못한 범위로 남깁니다.`;
   }
   return supportedCount === 0
-    ? "현재 입력값은 지원 범위 밖 · 추가 확인 조건 참고"
-    : `현재 입력값을 선택 제품 ${selectedCount}개 중 ${supportedCount}개에서 판정`;
+    ? "적으신 내용은 지금 규칙이 다루지 않아요."
+    : `적으신 내용을 담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 봐요.`;
 }
 
 /**
- * 눈에 보이는 짧은 표.
+ * 눈에 보이는 한 마디.
  *
- * 입력 항목이 열한 개인데 항목마다 한 문장씩 달리면, 고르기도 전에 화면이 설명
- * 문장으로 덮인다. 눈에는 몇 개에서 판정하는지만 남기고 문장은 낭독기 쪽에 둔다.
+ * 예전에는 "1/2 판정", "판정 안 함", "범위 밖 있음"을 붙였다. 분수도 "판정"도
+ * 이 화면 안에서만 뜻이 통하는 말이라, 읽는 사람은 뭘 어쩌라는 건지 알 수 없었다.
+ *
+ * 그리고 잘 되는 경우에는 아무 말도 하지 않는다. 항목이 열한 개인데 전부에
+ * 딱지가 붙으면 그중 진짜 걸린 것이 묻힌다. 이 조건을 못 보거나 반만 볼 때만
+ * 말한다 — 딱지가 없으면 정상이라는 뜻이다.
  */
 function supportBadgeText({
   selectedCount,
   supportedCount,
   hasCurrentInput,
-  hasCoverageGap,
   hasInputIssue,
 }: InputSupportStatusContext) {
   if (selectedCount === 0) return "";
-  if (hasCurrentInput && hasInputIssue) return "입력값 확인";
-  if (supportedCount === 0) return "판정 안 함";
-  if (hasCurrentInput && hasCoverageGap)
-    return `${supportedCount}/${selectedCount} 판정 · 범위 밖 있음`;
-  return `${supportedCount}/${selectedCount} 판정`;
+  if (hasCurrentInput && hasInputIssue) return "값을 확인해 주세요";
+  if (supportedCount === 0) return "담은 약엔 안 따져요";
+  if (supportedCount < selectedCount)
+    return `담은 약 ${selectedCount}개 중 ${supportedCount}개만`;
+  return "";
 }
 
 function InputSupportStatus({

@@ -62,7 +62,7 @@ describe("product-name search flow", () => {
         hasCoverageGap: false,
         hasInputIssue: false,
       }),
-    ).toBe("입력 시 선택 제품 2개 중 1개에서 판정");
+    ).toBe("적으시면 담은 약 2개 가운데 1개에서 봐요.");
     expect(
       inputSupportStatusMessage({
         selectedCount: 2,
@@ -72,7 +72,7 @@ describe("product-name search flow", () => {
         hasInputIssue: false,
       }),
     ).toBe(
-      "지원 행렬 2개 중 2개 · 현재 입력값에 지원 범위 밖 항목 있음",
+      "담은 약 2개 가운데 2개에서 보고, 나머지는 확인하지 못한 범위로 남깁니다.",
     );
     expect(
       inputSupportStatusMessage({
@@ -82,7 +82,7 @@ describe("product-name search flow", () => {
         hasCoverageGap: false,
         hasInputIssue: false,
       }),
-    ).toBe("현재 입력값을 선택 제품 2개 중 2개에서 판정");
+    ).toBe("적으신 내용을 담은 약 2개 가운데 2개에서 봐요.");
     expect(
       inputSupportStatusMessage({
         selectedCount: 1,
@@ -91,7 +91,7 @@ describe("product-name search flow", () => {
         hasCoverageGap: false,
         hasInputIssue: true,
       }),
-    ).toBe("입력값을 확인해야 판정할 수 있음");
+    ).toBe("적으신 값을 고쳐야 볼 수 있어요.");
   });
 
   it("shows no results before the user searches", () => {
