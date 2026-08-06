@@ -2390,6 +2390,173 @@
   padding-top: 0;
 }
 
+.officialDurSection {
+  border-top-color: #b8d6cc;
+}
+
+.officialDurNotice {
+  display: grid;
+  gap: var(--space-1);
+  border: 1px solid #b8d6cc;
+  border-radius: var(--space-2);
+  background: #f0f8f5;
+  padding: var(--space-3);
+  color: #245b4d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.officialDurNotice strong {
+  font-weight: 800;
+}
+
+.officialDurNotice span {
+  color: #48675f;
+}
+
+.officialDurProductList {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.officialDurProduct {
+  display: grid;
+  gap: var(--space-3);
+  border: 1px solid #dbe7e3;
+  border-radius: var(--space-2);
+  background: #fff;
+  padding: var(--space-3);
+}
+
+.officialDurProduct > header,
+.officialDurType > header,
+.officialDurRecord > header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.officialDurProduct > header h4 {
+  color: var(--workspace-ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.officialDurProduct > header span,
+.officialDurProduct > header strong,
+.officialDurType > header span,
+.officialDurRecord > header span {
+  color: var(--workspace-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.officialDurProduct > header strong {
+  flex: 0 0 auto;
+  color: #17604f;
+  font-weight: 800;
+}
+
+.officialDurTypeList,
+.officialDurRecordList {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.officialDurType {
+  display: grid;
+  gap: var(--space-2);
+  border-top: 1px solid #e7ecea;
+  padding-top: var(--space-3);
+}
+
+.officialDurType h5 {
+  color: var(--workspace-ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.officialDurRecord {
+  display: grid;
+  gap: var(--space-2);
+  border: 1px solid #e7ecea;
+  border-radius: var(--space-2);
+  background: #fbfdfc;
+  padding: var(--space-3);
+}
+
+.officialDurRecord > header strong {
+  color: #17604f;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.officialDurMatch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  color: #475467;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.officialDurMatch span {
+  color: #17604f;
+  font-weight: 800;
+}
+
+.officialDurFields {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+}
+
+.officialDurFields > div {
+  display: grid;
+  grid-template-columns: minmax(120px, auto) minmax(0, 1fr);
+  gap: var(--space-2);
+}
+
+.officialDurFields dt {
+  color: #667085;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.officialDurFields dd {
+  margin: 0;
+  color: #344054;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.officialDurRecord > a {
+  color: #17604f;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.officialDurMore {
+  border-top: 1px solid #e7ecea;
+  padding-top: var(--space-2);
+}
+
+.officialDurMore summary {
+  min-height: var(--tap-target);
+  padding: var(--space-2) 0;
+  color: #17604f;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 
 .resultSectionHeading {
   display: flex;

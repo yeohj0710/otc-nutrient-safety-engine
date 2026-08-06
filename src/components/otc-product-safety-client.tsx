@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 
+import officialSafetyLayerData from "@/src/generated/otc-official-safety-layer.json";
 import literatureData from "@/src/generated/otc-supporting-literature.json";
 import {
   rulePoolFor,
@@ -61,6 +62,49 @@ type CatalogExistingMatch = {
   sourceUrl: string;
   mfdsPromotionEvidenceComplete: false;
 };
+
+type OfficialDurRecord = {
+  ruleType: string;
+  ingredientCode: string | null;
+  matchedIngredients: Array<{
+    role: "primary" | "mixture";
+    ingredientCode: string | null;
+    durIngredientName: string;
+    productIngredientNames: string[];
+  }>;
+  source: {
+    provider: string | null;
+    candidateOnly: boolean;
+    dataset: string;
+  };
+  fields: Record<string, string | null>;
+};
+
+type OfficialSafetyLayer = {
+  candidateOnly: boolean;
+  clinicalUseProhibited: boolean;
+  sourceLayers: {
+    dur: {
+      datasets: Record<
+        string,
+        {
+          sourceSnapshots: Array<{ source_url?: string | null }>;
+        }
+      >;
+    };
+  };
+  products: Array<{
+    itemSequence: string;
+    officialProductName: string;
+    dur: {
+      records: Record<string, OfficialDurRecord[]>;
+    };
+  }>;
+};
+
+const officialSafetyLayer =
+  officialSafetyLayerData as unknown as OfficialSafetyLayer;
+const OFFICIAL_DUR_PREVIEW_LIMIT = 3;
 
 export type OtcRuntime = {
   schemaVersion: string;
@@ -380,6 +424,185 @@ function ProductSupportDetails({
         </small>
       )}
     </span>
+  );
+}
+
+function OfficialDurRecordCard({
+  record,
+  sourceUrl,
+  index,
+}: {
+  record: OfficialDurRecord;
+  sourceUrl: string | null;
+  index: number;
+}) {
+  const rawFields = Object.entries(record.fields).filter(([, value]) => {
+    if (value === null || value === undefined) return false;
+    return String(value).trim().length > 0;
+  });
+  const matchedNames = [
+    ...new Set(
+      record.matchedIngredients.flatMap(
+        (ingredient) => ingredient.productIngredientNames,
+      ),
+    ),
+  ];
+  const recordKey =
+    record.fields.DUR_SEQ ?? record.ingredientCode ?? `${record.ruleType}-${index}`;
+
+  return (
+    <article className={styles.officialDurRecord}>
+      <header>
+        <strong>{record.ruleType}</strong>
+        <span>{recordKey}</span>
+      </header>
+      <p className={styles.officialDurMatch}>
+        <span>성분 연결</span>
+        {matchedNames.length > 0 ? matchedNames.join(", ") : "원문 성분명 확인 필요"}
+      </p>
+      <dl className={styles.officialDurFields}>
+        {rawFields.map(([field, value]) => (
+          <div key={field}>
+            <dt>{field}</dt>
+            <dd>{String(value)}</dd>
+          </div>
+        ))}
+      </dl>
+      {sourceUrl && (
+        <a href={sourceUrl} target="_blank" rel="noreferrer">
+          식약처 원문 출처
+        </a>
+      )}
+    </article>
+  );
+}
+
+function OfficialDurTypeGroup({
+  datasetKey,
+  records,
+}: {
+  datasetKey: string;
+  records: OfficialDurRecord[];
+}) {
+  const sourceUrl =
+    officialSafetyLayer.sourceLayers.dur.datasets[datasetKey]
+      ?.sourceSnapshots[0]?.source_url ?? null;
+  const preview = records.slice(0, OFFICIAL_DUR_PREVIEW_LIMIT);
+  const remaining = records.slice(OFFICIAL_DUR_PREVIEW_LIMIT);
+  const type = records[0]?.ruleType ?? datasetKey;
+
+  return (
+    <article className={styles.officialDurType}>
+      <header>
+        <h5>{type}</h5>
+        <span>공식 원문 {records.length}건</span>
+      </header>
+      <div className={styles.officialDurRecordList}>
+        {preview.map((record, index) => (
+          <OfficialDurRecordCard
+            key={`${datasetKey}:${record.fields.DUR_SEQ ?? index}`}
+            record={record}
+            sourceUrl={sourceUrl}
+            index={index}
+          />
+        ))}
+      </div>
+      {remaining.length > 0 && (
+        <details className={styles.officialDurMore}>
+          <summary>나머지 원문 {remaining.length}건 보기</summary>
+          <div className={styles.officialDurRecordList}>
+            {remaining.map((record, index) => (
+              <OfficialDurRecordCard
+                key={`${datasetKey}:remaining:${record.fields.DUR_SEQ ?? index}`}
+                record={record}
+                sourceUrl={sourceUrl}
+                index={index + OFFICIAL_DUR_PREVIEW_LIMIT}
+              />
+            ))}
+          </div>
+        </details>
+      )}
+    </article>
+  );
+}
+
+function OfficialDurEvidenceSection({
+  products,
+}: {
+  products: OfficialSafetyLayer["products"];
+}) {
+  const productsWithDur = products.filter((product) =>
+    Object.values(product.dur.records).some((records) => records.length > 0),
+  );
+  const recordCount = productsWithDur.reduce(
+    (total, product) =>
+      total +
+      Object.values(product.dur.records).reduce(
+        (productTotal, records) => productTotal + records.length,
+        0,
+      ),
+    0,
+  );
+
+  return (
+    <section
+      className={`${styles.resultSection} ${styles.officialDurSection}`}
+      aria-labelledby="official-dur-heading"
+      aria-label="식약처 DUR 원문 · 기존 판정 근거와 분리"
+    >
+      <header className={styles.resultSectionHeading}>
+        <div>
+          <h3 id="official-dur-heading">식약처 DUR 원문</h3>
+          <p>
+            기존 판정 규칙과 참고 문헌에 섞지 않고, 선택한 제품의 공식 DUR 원문만 따로 표시합니다.
+          </p>
+        </div>
+      </header>
+      <div className={styles.officialDurNotice}>
+        <strong>공식 데이터 후보 · 임상 판단에 직접 사용하지 않음</strong>
+        <span>
+          아래 내용은 원문 필드와 연결 정보입니다. 현재 안전성 판정과 참고 문헌의 내용을 바꾸지 않습니다.
+        </span>
+      </div>
+      <p className={styles.summaryEvidence}>
+        선택 제품 {products.length}개 중 {productsWithDur.length}개 · 공식 DUR 원문 {recordCount}건
+      </p>
+      <div className={styles.officialDurProductList}>
+        {products.map((product) => {
+          const groups = Object.entries(product.dur.records).filter(
+            ([, records]) => records.length > 0,
+          );
+          return (
+            <article className={styles.officialDurProduct} key={product.itemSequence}>
+              <header>
+                <div>
+                  <h4>{product.officialProductName}</h4>
+                  <span>품목기준코드 {product.itemSequence}</span>
+                </div>
+                <strong>
+                  {groups.reduce((total, [, records]) => total + records.length, 0)}건
+                </strong>
+              </header>
+              {groups.length > 0 ? (
+                <div className={styles.officialDurTypeList}>
+                  {groups.map(([datasetKey, records]) => (
+                    <OfficialDurTypeGroup
+                      key={`${product.itemSequence}:${datasetKey}`}
+                      datasetKey={datasetKey}
+                      records={records}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <p className={styles.evidenceEmpty}>
+                  연결된 공식 DUR 원문이 없습니다. 이 화면에서 새로운 금기를 추정하지 않습니다.
+                </p>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
@@ -705,6 +928,18 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     () => selectedDrafts.map(parseSelectedProductDraft),
     [selectedDrafts],
   );
+  const officialDurProducts = useMemo(() => {
+    const productsByItemSequence = new Map(
+      officialSafetyLayer.products.map((product) => [
+        product.itemSequence,
+        product,
+      ]),
+    );
+    return selected.flatMap(({ product }) => {
+      const officialProduct = productsByItemSequence.get(product.itemSequence);
+      return officialProduct ? [officialProduct] : [];
+    });
+  }, [selected]);
 
   const results = useMemo(() => searchRuntime(runtime, query), [runtime, query]);
   const releasedRuleTypes = useMemo(
@@ -2455,6 +2690,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     </div>
                   )}
                 </section>
+
+                <OfficialDurEvidenceSection products={officialDurProducts} />
 
                 <section
                   className={styles.resultSection}
