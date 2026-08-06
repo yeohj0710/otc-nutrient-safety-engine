@@ -1,0 +1,345 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-08-06T11:14:10.862Z",
+  "candidateOnly": true,
+  "clinicalUseProhibited": true,
+  "source": {
+    "dataset": "permit",
+    "manifestGeneratedAt": "2026-08-06T09:29:37.525Z",
+    "recordCount": 42971,
+    "expectedRecordCount": 42971,
+    "catalogSha256": "4f834e143617912106a79dd8ff6ddbabd37f5b41ce3161073ed55bee981f6ce3",
+    "sourceSnapshot": {
+      "source_snapshot_id": "SNAP-MFDS-PERMIT-CD469A98C713FFA8",
+      "source_id": "SRC-MFDS-PERMIT-15095677",
+      "provider": "mfds_permit",
+      "official": true,
+      "source_url": "https://apis.data.go.kr/1471000/DrugPrdtPrmsnInfoService07/getDrugPrdtPrmsnDtlInq06",
+      "fetched_at": "2026-08-06T09:24:10.114Z",
+      "effective_at": null,
+      "terms_url": "https://www.data.go.kr/ugs/selectPortalPolicyView.do",
+      "usage_rights": "unknown",
+      "commercial_use": "allowed",
+      "cache_policy": "allowed",
+      "redistribution": "allowed",
+      "ai_context_use": "allowed",
+      "http_status": 200,
+      "content_sha256": "cd469a98c713ffa8b567c07c3e1b6d833475c5f34ec7c68187699cafb3486413",
+      "content_type": "application/json",
+      "parser_version": "mfds-permit-07-dtl06-v1",
+      "record_count": 42971,
+      "page_count": 1218,
+      "next_cursor": null,
+      "status": "parsed",
+      "raw_retention_policy": "none",
+      "uncertainty": "Probed 2026-08-06: HTTP 200, totalCount 42971 on getDrugPrdtPrmsnDtlInq06. The operation path stays an activation-time setting; MFDS pins detail at 06 while the service is 07, so re-check Swagger before each run. Portal Type-0 terms were recorded, but record-level third-party rights remain unresolved until activation review."
+    },
+    "joinKey": "itemSeq"
+  },
+  "products": [
+    {
+      "itemSequence": "201110646",
+      "productId": "MFDS-201110646",
+      "runtimeProductName": "덱스피드연질캡슐(덱시부프로펜)",
+      "officialProductName": "덱스피드연질캡슐(덱시부프로펜)",
+      "official": {
+        "materialName": "총량 : 이 약 1캡슐(1,000밀리그램) 중|성분명 : 덱시부프로펜|분량 : 300|단위 : 밀리그램|규격 : KP|성분정보 : |비고 :",
+        "dosageForm": "무색 내지 연청색의 투명한 내용물을 함유하는 청색 투명의 타원형 연질캡슐제",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "197500016",
+      "productId": "MFDS-197500016",
+      "runtimeProductName": "낙센정(나프록센)",
+      "officialProductName": "낙센정(나프록센)",
+      "official": {
+        "materialName": "총량 : 이 약 1정(267 mg) 중|성분명 : 나프록센|분량 : 250|단위 : 밀리그램|규격 : KP|성분정보 : |비고 :",
+        "dosageForm": "미황색(연노랑의) 장방형 정제\r\n",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "200610765",
+      "productId": "MFDS-200610765",
+      "runtimeProductName": "지르텍정(세티리진염산염)",
+      "officialProductName": "지르텍정(세티리진염산염)",
+      "official": {
+        "materialName": "총량 : 이 약 1정(118.95밀리그램) 중-제조방법|성분명 : 세티리진염산염|분량 : 10|단위 : 밀리그램|규격 : EP|성분정보 : |비고 :",
+        "dosageForm": "흰색의 장방형 필름코팅정 \n\n",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "202106092",
+      "productId": "MFDS-202106092",
+      "runtimeProductName": "타이레놀정500밀리그람(아세트아미노펜)",
+      "officialProductName": "타이레놀정500밀리그람(아세트아미노펜)",
+      "official": {
+        "materialName": "총량 : 1정615.04밀리그램|성분명 : 아세트아미노펜|분량 : 500|단위 : 밀리그램|규격 : USP|성분정보 : |비고 :",
+        "dosageForm": "흰색의 장방형 필름코팅정제",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "202200525",
+      "productId": "MFDS-202200525",
+      "runtimeProductName": "어린이타이레놀현탁액(아세트아미노펜)",
+      "officialProductName": "어린이타이레놀현탁액(아세트아미노펜)",
+      "official": {
+        "materialName": "총량 : 100밀리리터|성분명 : 아세트아미노펜(미분화)|분량 : 3.2|단위 : 그램|규격 : 별규|성분정보 : |비고 :",
+        "dosageForm": "백색 내지 미백색의 체리향 현탁액",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "198601920",
+      "productId": "MFDS-198601920",
+      "runtimeProductName": "어린이부루펜시럽(이부프로펜)",
+      "officialProductName": "어린이부루펜시럽(이부프로펜)",
+      "official": {
+        "materialName": "총량 : 100mL 중|성분명 : 이부프로펜|분량 : 2|단위 : 그램|규격 : KP|성분정보 : |비고 :",
+        "dosageForm": "오렌지 냄새를 가진 흰색 내지 연한노란색의 시럽성 현탁액\n",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "198700405",
+      "productId": "MFDS-198700405",
+      "runtimeProductName": "베아제정",
+      "officialProductName": "베아제정",
+      "official": {
+        "materialName": "총량 : 1정537밀리그램|성분명 : 디아스타제·프로테아제·셀룰라제|분량 : 50|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 섬유소붕괴력 25단위/일 이상;총량 : 1정537밀리그램|성분명 : 리파제|분량 : 15|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 지방소화력 100단위/일 이상;총량 : 1정537밀리그램|성분명 : 판프로신|분량 : 20|단위 : 밀리그램|규격 : 별첨규격(전과동)|성분정보 : |비고 : 단백소화력 1,500단위/일 이상;총량 : 1정537밀리그램|성분명 : 판셀라제|분량 : 30|단위 : 밀리그램|규격 : 별첨규격(전과동)|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 섬유소붕괴력 25단위/일 이상;총량 : 1정537밀리그램|성분명 : 판크레아틴장용과립|분량 : 78.6|단위 : 밀리그램|규격 : 별규|성분정보 : |비고 : 단백소화력 1,500단위/일 이상, 지방소화력 100단위/일 이상 ;총량 : 1정537밀리그램|성분명 : 우르소데옥시콜산|분량 : 10|단위 : 밀리그램|규격 : JP|성분정보 : |비고 : ;총량 : 1정537밀리그램|성분명 : 시메티콘|분량 : 40|단위 : 밀리그램|규격 : USP|성분정보 : |비고 :",
+        "dosageForm": "연녹색의 장방형 필름코팅정제이다.",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "200300406",
+      "productId": "MFDS-200300406",
+      "runtimeProductName": "닥터베아제정",
+      "officialProductName": "닥터베아제정",
+      "official": {
+        "materialName": "총량 : 1정605밀리그램|성분명 : 디아스타제·프로테아제·셀룰라제|분량 : 50.00|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 섬유소당화력 13단위/일 이상 ;총량 : 1정605밀리그램|성분명 : 판셀라제|분량 : 30.00|단위 : 밀리그램|규격 : 별첨규격(전과동)|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 섬유소당화력 13단위/일 이상;총량 : 1정605밀리그램|성분명 : 크리아제-PEG|분량 : 80.00|단위 : 밀리그램|규격 : 별첨규격(전과동)|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 지방소화력 100단위/일 이상 ;총량 : 1정605밀리그램|성분명 : 디아스타제·프로테아제100|분량 : 10.00|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상;총량 : 1정605밀리그램|성분명 : 판프로신|분량 : 20.00|단위 : 밀리그램|규격 : 별첨규격(전과동)|성분정보 : |비고 : 단백소화력 1,500단위/일 이상;총량 : 1정605밀리그램|성분명 : 리파제|분량 : 30.00|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 지방소화력 100단위/일 이상;총량 : 1정605밀리그램|성분명 : 브로멜라인|분량 : 10.00|단위 : 밀리그램|규격 : 별첨규격(전과동)|성분정보 : |비고 : 단백소화력 1,500단위/일 이상 ;총량 : 1정605밀리그램|성분명 : 우르소데옥시콜산|분량 : 10.00|단위 : 밀리그램|규격 : JP|성분정보 : |비고 : ;총량 : 1정605밀리그램|성분명 : 시메티콘|분량 : 70.00|단위 : 밀리그램|규격 : USP|성분정보 : |비고 :",
+        "dosageForm": "주황색의 장방형 필름코팅 정제",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "199900926",
+      "productId": "MFDS-199900926",
+      "runtimeProductName": "훼스탈골드정",
+      "officialProductName": "훼스탈골드정",
+      "official": {
+        "materialName": "총량 : 이 약 1정(662mg) 중|성분명 : 판크레아틴|분량 : 150|단위 : 밀리그램|규격 : EP|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 지방소화력 100단위/일 이상;총량 : 이 약 1정(662mg) 중|성분명 : 디아스타제·프로테아제·셀룰라제|분량 : 10|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 섬유소당화력 13단위/일 이상;총량 : 이 약 1정(662mg) 중|성분명 : 프로자임6|분량 : 10|단위 : 밀리그램|규격 : 별첨규격(전과동)|성분정보 : |비고 : 단백소화력 1,500단위/일 이상;총량 : 이 약 1정(662mg) 중|성분명 : 리파제|분량 : 15|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 지방소화력 100단위/일 이상;총량 : 이 약 1정(662mg) 중|성분명 : 셀룰라제|분량 : 9|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 섬유소당화력 13단위/일 이상;총량 : 이 약 1정(662mg) 중|성분명 : 우르소데옥시콜산|분량 : 20|단위 : 밀리그램|규격 : JP|성분정보 : |비고 : ;총량 : 이 약 1정(662mg) 중|성분명 : 시메티콘|분량 : 60|단위 : 밀리그램|규격 : USP|성분정보 : |비고 :",
+        "dosageForm": "흰색의 달걀형 장용성 필름코팅정",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "199801026",
+      "productId": "MFDS-199801026",
+      "runtimeProductName": "훼스탈플러스정",
+      "officialProductName": "훼스탈플러스정",
+      "official": {
+        "materialName": "총량 : 이 약 1정(616.8mg) 중|성분명 : 판크레아틴|분량 : 315.0|단위 : 밀리그램|규격 : EP|성분정보 : |비고 : 전분당화력 250단위/일 이상, 단백소화력 1,500단위/일 이상, 지방소화력 100단위/일 이상;총량 : 이 약 1정(616.8mg) 중|성분명 : 셀룰라제|분량 : 10.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : 섬유소당화력 13단위/일 이상;총량 : 이 약 1정(616.8mg) 중|성분명 : 우르소데옥시콜산|분량 : 10.0|단위 : 밀리그램|규격 : JP|성분정보 : |비고 : ;총량 : 이 약 1정(616.8mg) 중|성분명 : 시메티콘|분량 : 30.0|단위 : 밀리그램|규격 : USP|성분정보 : |비고 :",
+        "dosageForm": "하얀색의 달걀형 장용성 필름코팅정",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "196800036",
+      "productId": "MFDS-196800036",
+      "runtimeProductName": "판콜에이내복액",
+      "officialProductName": "판콜에이내복액",
+      "official": {
+        "materialName": "총량 : 1병 (30mL) 중|성분명 : 아세트아미노펜|분량 : 300.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 1병 (30mL) 중|성분명 : 구아이페네신|분량 : 80.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 1병 (30mL) 중|성분명 : 펜톡시베린시트르산염|분량 : 15.0|단위 : 밀리그램|규격 : JP|성분정보 : |비고 : ;총량 : 1병 (30mL) 중|성분명 : 페닐레프린염산염|분량 : 10.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 1병 (30mL) 중|성분명 : 클로르페니라민말레산염|분량 : 2.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 1병 (30mL) 중|성분명 : 카페인무수물|분량 : 30.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 :",
+        "dosageForm": "미황색의 투명한 액제",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "199400202",
+      "productId": "MFDS-199400202",
+      "runtimeProductName": "판피린티정",
+      "officialProductName": "판피린티정",
+      "official": {
+        "materialName": "총량 : 이 약 1정(589mg) 중|성분명 : 아세트아미노펜|분량 : 300.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1정(589mg) 중|성분명 : 클로르페니라민말레산염|분량 : 2.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1정(589mg) 중|성분명 : 카페인무수물|분량 : 30.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 :",
+        "dosageForm": "흰색의 장방형 정제\r\n",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    },
+    {
+      "itemSequence": "198400250",
+      "productId": "MFDS-198400250",
+      "runtimeProductName": "제일쿨파프",
+      "officialProductName": "제일쿨파프",
+      "official": {
+        "materialName": "총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-내수용|성분명 : 살리실산메틸|분량 : 262.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-내수용|성분명 : L-멘톨|분량 : 175.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-내수용|성분명 : dl-캄파|분량 : 122.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-내수용|성분명 : 박하유|분량 : 87.5|단위 : 밀리그램|규격 : KP|성분정보 : 멘톨로서 26.3mg|비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-내수용|성분명 : 티몰|분량 : 17.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용I|성분명 : 살리실산메틸|분량 : 262.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용I|성분명 : L-멘톨|분량 : 175.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용I|성분명 : dl-캄파|분량 : 122.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용I|성분명 : 박하유|분량 : 87.5|단위 : 밀리그램|규격 : KP|성분정보 : 멘톨로서26.3mg|비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용I|성분명 : 티몰|분량 : 17.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용II|성분명 : 살리실산메틸|분량 : 262.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용II|성분명 : L-멘톨|분량 : 175.0|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용II|성분명 : dl-캄파|분량 : 122.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용II|성분명 : 박하유|분량 : 87.5|단위 : 밀리그램|규격 : KP|성분정보 : 멘톨로서 26.3mg|비고 : ;총량 : 이 약 1매 중 [1.내수용(14cm x 10cm, 19.3g) 2.수출용I(14cm x 10cm, 17.5g) 3.수출용II(12.5cm x 11.2cm, 17.5g)-수출용II|성분명 : 티몰|분량 : 17.5|단위 : 밀리그램|규격 : KP|성분정보 : |비고 :",
+        "dosageForm": "이 약은 백색-담회백색의 약액을 폴리에스텔 필름에 도포하고(바르고) 부직포를 덮은 것으로 특이한 \n냄새가있는 카타플라스마제이다.",
+        "classification": "일반의약품",
+        "authorizationStatus": "정상"
+      },
+      "source": {
+        "dataset": "permit",
+        "provider": "mfds_permit",
+        "itemSequenceField": "itemSeq",
+        "officialFields": {
+          "materialName": "MATERIAL_NAME",
+          "dosageForm": "CHART",
+          "classification": "ETC_OTC_CODE",
+          "authorizationStatus": "CANCEL_NAME"
+        }
+      }
+    }
+  ],
+  "matching": {
+    "requestedCount": 13,
+    "matchedCount": 13,
+    "missingItemSequences": []
+  }
+}
