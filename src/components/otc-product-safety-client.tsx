@@ -415,16 +415,35 @@ export function inputSupportStatusMessage({
     : `현재 입력값을 선택 제품 ${selectedCount}개 중 ${supportedCount}개에서 판정`;
 }
 
-function InputSupportStatus({
-  id,
+/**
+ * 눈에 보이는 짧은 표.
+ *
+ * 입력 항목이 열한 개인데 항목마다 한 문장씩 달리면, 고르기도 전에 화면이 설명
+ * 문장으로 덮인다. 눈에는 몇 개에서 판정하는지만 남기고 문장은 낭독기 쪽에 둔다.
+ */
+function supportBadgeText({
   selectedCount,
   supportedCount,
   hasCurrentInput,
   hasCoverageGap,
   hasInputIssue,
+}: InputSupportStatusContext) {
+  if (selectedCount === 0) return "";
+  if (hasCurrentInput && hasInputIssue) return "입력값 확인";
+  if (supportedCount === 0) return "판정 안 함";
+  if (hasCurrentInput && hasCoverageGap)
+    return `${supportedCount}/${selectedCount} 판정 · 범위 밖 있음`;
+  return `${supportedCount}/${selectedCount} 판정`;
+}
+
+function InputSupportStatus({
+  id,
+  ...context
 }: {
   id: string;
 } & InputSupportStatusContext) {
+  const { selectedCount, supportedCount, hasCurrentInput, hasCoverageGap, hasInputIssue } =
+    context;
   const state =
     selectedCount === 0
       ? "idle"
@@ -432,23 +451,23 @@ function InputSupportStatus({
           (hasCurrentInput && (hasCoverageGap || hasInputIssue))
         ? "none"
         : "supported";
-  const message = inputSupportStatusMessage({
-    selectedCount,
-    supportedCount,
-    hasCurrentInput,
-    hasCoverageGap,
-    hasInputIssue,
-  });
-  // 약을 담기 전에는 항목마다 같은 안내가 반복돼 화면만 채운다. 읽어 줄 화면
-  // 낭독기에는 남기고 눈에는 보이지 않게 한다.
+  const badge = supportBadgeText(context);
+  // 문장은 aria-describedby 가 가리키는 자리라 그대로 남긴다. 화면에는 표만 보인다.
   return (
-    <small
-      id={id}
-      className={state === "idle" ? "sr-only" : styles.inputSupportStatus}
-      data-state={state}
-    >
-      {message}
-    </small>
+    <>
+      <small id={id} className="sr-only">
+        {inputSupportStatusMessage(context)}
+      </small>
+      {badge ? (
+        <small
+          aria-hidden="true"
+          className={styles.inputSupportStatus}
+          data-state={state}
+        >
+          {badge}
+        </small>
+      ) : null}
+    </>
   );
 }
 
@@ -769,11 +788,18 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
   // 한 번에 한 단계만 펼친다. 셋을 동시에 펼쳐 두면 어디부터 봐야 하는지가
   // 화면에 안 드러난다. 끝난 단계는 한 줄 요약으로 접고 눌러서 다시 연다.
-  const [openStep, setOpenStep] = useState<1 | 2>(1);
+  // 3단계(결과)를 고르면 입력 두 칸이 모두 접혀 결과만 남는다.
+  const [openStep, setOpenStep] = useState<1 | 2 | 3>(1);
   const hasSelection = selected.length > 0;
   useEffect(() => {
     // 약을 처음 담으면 다음 단계로 넘긴다. 되돌리는 것은 사용자가 직접 한다.
-    if (hasSelection) void Promise.resolve().then(() => setOpenStep(2));
+    // 이미 다른 단계를 보고 있으면 건드리지 않는다 — 예시 버튼은 약과 조건을
+    // 한꺼번에 채우고 곧장 결과로 보내는데, 여기서 2로 되돌리면 그 이동이
+    // 취소된다.
+    if (hasSelection)
+      void Promise.resolve().then(() =>
+        setOpenStep((step) => (step === 1 ? 2 : step)),
+      );
   }, [hasSelection]);
 
   // 판정이 끝난 뒤에만 보조 설명을 부른다. 모델은 엔진이 이미 확정한 findings 만
@@ -1070,68 +1096,51 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const showResultSummary =
     orderedFindings.length > 0 || visibleInputIssues.length > 0;
 
+  // 예시 칩에 붙는 미리보기. 눌러 보기 전에 무엇이 나올지 한 마디로 알려 준다.
+  // 칩에 실제로 그리는 값만 센다 — 예전에는 허가 원문·문헌 건수까지 미리 세어
+  // 두고 화면에는 쓰지 않았다.
   const quickCheckSummaries = useMemo(
     () =>
       new Map(
         quickChecks.map((quickCheck) => {
           const demoSelected = buildQuickCheckSelection(runtime, quickCheck);
-          const demoProfile = {
-            ...initialProfile,
-            ...quickCheck.profilePatch,
-          };
           const demoEvaluation = evaluateOtcSafety(
             demoSelected,
-            demoProfile,
+            { ...initialProfile, ...quickCheck.profilePatch },
             { releasedRules: runtime.releasedRules ?? [] },
           );
-          const demoFindings = groupFindingsForDisplay(
-            demoEvaluation.findings,
-            ingredientNames,
-          );
-          const directPmids = new Set(
-            demoFindings.flatMap((finding) =>
-              splitSupportingLiteratureForFinding(
-                finding,
-                literatureData as SupportingLiterature[],
-                demoSelected,
-                demoProfile,
-              ).direct.map(({ paper }) => paper.pmid),
-            ),
-          );
-          const authorizationDisplays = demoFindings.map((finding) => {
-            const runtimeEvidence =
-              finding.decisionBasis === "released_rule"
-                ? releasedRuleEvidenceById.get(finding.ruleId) ?? []
-                : [];
-            return ruleEvidenceForFinding(finding, demoSelected, [
-              ...(finding.ruleEvidence ?? []),
-              ...runtimeEvidence,
-            ]);
-          });
           return [
             quickCheck.label,
             {
-              findingCount: demoFindings.length,
+              findingCount: groupFindingsForDisplay(
+                demoEvaluation.findings,
+                ingredientNames,
+              ).length,
               coverageGapCount: demoEvaluation.coverageGaps.length,
-              directPaperCount: directPmids.size,
-              directAuthorizationSourceCount: authorizationDisplays.reduce(
-                (count, display) => count + display.direct.length,
-                0,
-              ),
-              fullAuthorizationMatchCount: authorizationDisplays.filter(
-                (display) => display.productMatch === "all",
-              ).length,
-              partialAuthorizationMatchCount: authorizationDisplays.filter(
-                (display) => display.productMatch === "partial",
-              ).length,
             },
           ] as const;
         }),
       ),
-    [ingredientNames, releasedRuleEvidenceById, runtime],
+    [ingredientNames, runtime],
   );
 
   const clearActiveDemo = () => setActiveQuickCheck("");
+
+  // 결과로 넘어간다. 입력 두 칸은 접히고 화면에 결과만 남는다.
+  const goToResult = () => {
+    setOpenStep(3);
+    requestAnimationFrame(() => {
+      const target = document.getElementById("safety-result");
+      if (!target) return;
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      target.scrollIntoView({
+        behavior: reduceMotion ? "auto" : "smooth",
+        block: "start",
+      });
+    });
+  };
 
   const addProduct = (product: OtcProduct) => {
     if (selectedIds.has(product.productId)) return;
@@ -1162,9 +1171,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     setSymptomText(nextProfile.redFlagSymptoms.join(", "));
     setQuery("");
     setActiveQuickCheck(quickCheck.label);
+    // 예시는 약과 조건을 한꺼번에 채우므로 볼 것은 결과뿐이다. 입력 두 칸을
+    // 접어 두고 결과만 남긴다.
+    setOpenStep(3);
     // 예시를 눌러도 결과가 화면 밖에 그려지면 아무 일도 안 일어난 것처럼 보인다.
     // 판정이 다시 계산된 다음 프레임에 결과로 데려간다.
-    // 넓은 화면에서는 결과 패널이 이미 옆에 붙어 있으므로, 안 보일 때만 움직인다.
     requestAnimationFrame(() => {
       const target = document.getElementById("safety-result");
       if (!target) return;
@@ -1193,46 +1204,41 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     setOpenFindingIds({});
   };
 
+  // 지금 어느 단계에 있는지 한 줄로 보여 준다. 예전에는 화면에 열린 상자가
+  // 다섯 개라 어디부터 봐야 하는지가 화면에 안 드러났다.
+  const steps = [
+    { index: 1 as const, label: "약 담기", done: hasSelection },
+    { index: 2 as const, label: "내 조건", done: activeConditionCount > 0 },
+    { index: 3 as const, label: "결과 보기", done: Boolean(evaluation) },
+  ];
+
   return (
     <div className={styles.workspace}>
-      <section className={styles.quickStart} aria-labelledby="quick-start-heading">
-        <div className={styles.quickStartCopy}>
-          <span className={styles.liveDot} aria-hidden="true" />
-          <div>
-            <h2 id="quick-start-heading">바로 점검해보기</h2>
-            <p>대표 조합을 불러온 뒤 내 복용량에 맞게 바꿀 수 있습니다.</p>
-          </div>
-        </div>
-        <div className={styles.quickCheckList}>
-          {quickChecks.map((quickCheck) => {
-            const active = activeQuickCheck === quickCheck.label;
-            const summary = quickCheckSummaries.get(quickCheck.label);
-            return (
-              <button
-                key={quickCheck.label}
-                type="button"
-                className={styles.quickCheckButton}
-                data-active={active || undefined}
-                aria-pressed={active}
-                onClick={() => applyQuickCheck(quickCheck)}
-                aria-label={`${quickCheck.label}: ${quickCheck.description}`}
-              >
-                <span>
-                  {quickCheck.label}
-                  <em>{quickCheck.description}</em>
-                  {summary && (
-                    <small>
-                      주의 {summary.findingCount}개 · 허가 원문{" "}
-                      {summary.directAuthorizationSourceCount}건
-                    </small>
-                  )}
-                </span>
-                <b aria-hidden="true">→</b>
-              </button>
-            );
-          })}
-        </div>
-      </section>
+      <ol className={styles.stepper} aria-label="점검 순서">
+        {steps.map((step) => (
+          <li
+            key={step.index}
+            data-active={openStep === step.index || undefined}
+            data-done={step.done || undefined}
+          >
+            <button
+              type="button"
+              aria-current={openStep === step.index ? "step" : undefined}
+              onClick={() => {
+                setOpenStep(step.index);
+                if (step.index === 3) {
+                  document
+                    .getElementById("safety-result")
+                    ?.scrollIntoView({ block: "start" });
+                }
+              }}
+            >
+              <span aria-hidden="true">{step.done ? "✓" : step.index}</span>
+              {step.label}
+            </button>
+          </li>
+        ))}
+      </ol>
 
       <div className={styles.workspaceGrid}>
         <div className={styles.inputColumn}>
@@ -1266,6 +1272,39 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           )}
 
           <div className={styles.searchArea}>
+            {/* 예시는 약과 조건을 한꺼번에 채운다. 예전에는 화면 맨 위에 큰 띠로
+                따로 서 있어서, 약을 담는 일과 무슨 관계인지 보이지 않았다. */}
+            <div className={styles.exampleBlock}>
+              <p className={styles.exampleLabel}>
+                예시로 해보기
+                <small>대표 조합을 담고 조건까지 채운 뒤 결과로 갑니다.</small>
+              </p>
+              <div className={styles.quickCheckList}>
+                {quickChecks.map((quickCheck) => {
+                  const active = activeQuickCheck === quickCheck.label;
+                  const summary = quickCheckSummaries.get(quickCheck.label);
+                  return (
+                    <button
+                      key={quickCheck.label}
+                      type="button"
+                      className={styles.quickCheckButton}
+                      data-active={active || undefined}
+                      aria-pressed={active}
+                      onClick={() => applyQuickCheck(quickCheck)}
+                      aria-label={`${quickCheck.label}: ${quickCheck.description}`}
+                    >
+                      <span>
+                        {quickCheck.label}
+                        <em>{quickCheck.description}</em>
+                        {summary && <small>주의 {summary.findingCount}개</small>}
+                      </span>
+                      <b aria-hidden="true">→</b>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             {runtime.catalogCoverage && (
               // 카탈로그 규모·연결 현황은 연구 방법 설명이지 약을 담는 데 필요한
               // 정보가 아니다. 본문에 펼쳐 두면 1단계가 안내문부터 시작한다.
@@ -1588,6 +1627,18 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           <b>회</b>
                         </span>
                       </label>
+                    </div>
+                    {/* 네 칸을 한 줄에 늘어놓으면 무엇이 꼭 필요한 값인지 안
+                        보인다. 계산에 반드시 있어야 하는 두 칸만 남기고, 나머지
+                        둘은 값이 들어 있을 때만 펼친다. */}
+                    <details
+                      className={styles.doseExtra}
+                      open={Boolean(
+                        item.hoursSincePreviousDose || item.continuousDays,
+                      )}
+                    >
+                      <summary>간격·연속 사용도 넣기</summary>
+                      <div className={styles.doseGrid}>
                       <label>
                         <span>지난 사용·복용 후</span>
                         <span className={styles.inputWithUnit}>
@@ -1630,7 +1681,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           <b>일</b>
                         </span>
                       </label>
-                    </div>
+                      </div>
+                    </details>
                     <p
                       id={`${item.product.productId}-dose-help`}
                       className={styles.doseHelp}
@@ -1644,6 +1696,15 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               </div>
             )}
           </div>
+
+          {hasSelection && (
+            <div className={styles.stepAdvance}>
+              <button type="button" onClick={() => setOpenStep(2)}>
+                다음 · 내 조건 더하기
+              </button>
+              <span>해당하는 조건이 없으면 건너뛰고 결과를 봐도 됩니다.</span>
+            </div>
+          )}
         </section>
 
         <section
@@ -1886,6 +1947,15 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               </small>
             </label>
           </div>
+
+          {hasSelection && (
+            <div className={styles.stepAdvance}>
+              <button type="button" onClick={goToResult}>
+                결과 보기
+              </button>
+              <span>입력을 고치면 결과는 바로 다시 계산합니다.</span>
+            </div>
+          )}
         </section>
         </div>
 
@@ -2004,29 +2074,10 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 )}
 
                 <section
-                  className={styles.resultScope}
-                  aria-label="이번 선택에서 확인한 범위"
-                >
-                  <div>
-                    <strong>{selected.length}</strong>
-                    <span>선택 제품</span>
-                  </div>
-                  <div>
-                    <strong>{selectedReleasedRuleBindingCount}</strong>
-                    <span>제품별 공개 규칙 연결</span>
-                  </div>
-                  <div>
-                    <strong>{selectedAdministrationConstraintCount}</strong>
-                    <span>허가 사용·복용 조건</span>
-                  </div>
-                </section>
-
-                <section
                   className={styles.resultSection}
                   aria-labelledby="result-actions-heading"
                 >
                   <header className={styles.resultSectionHeading}>
-                    <span>1</span>
                     <div>
                       <h3 id="result-actions-heading">주의 항목과 지금 할 일</h3>
                       <p>가장 높은 주의부터 이유와 다음 행동을 확인하세요.</p>
@@ -2062,14 +2113,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                             </p>
                           </div>
                         </div>
-                        <small className={styles.summaryEvidence}>
-                          현재 제품 규칙 원문 전체 일치{" "}
-                          {findingsWithAllDirectRuleEvidence}개 · 일부 일치{" "}
-                          {findingsWithPartialDirectRuleEvidence}개 · 대표 제품 원문만{" "}
-                          {findingsWithRepresentativeRuleEvidence}개 · 직접 일치 문헌{" "}
-                          {findingsWithDirectLiterature}/{orderedFindings.length} · 배경 문헌{" "}
-                          {findingsWithBackgroundLiterature}/{orderedFindings.length}
-                        </small>
                       </div>
 
                       <div className={styles.findings}>
@@ -2185,13 +2228,60 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   ) : null}
                 </section>
 
+                {/* 이번에 무엇을 근거로 봤는지. 결론을 읽은 다음에 오는 것이라
+                    주의 항목 아래에 둔다. */}
+                <section
+                  className={styles.resultScope}
+                  aria-label="이번 선택에서 확인한 범위"
+                >
+                  <div>
+                    <strong>{selected.length}</strong>
+                    <span>선택 제품</span>
+                  </div>
+                  <div>
+                    <strong>{selectedReleasedRuleBindingCount}</strong>
+                    <span>제품별 공개 규칙 연결</span>
+                  </div>
+                  <div>
+                    <strong>{selectedAdministrationConstraintCount}</strong>
+                    <span>허가 사용·복용 조건</span>
+                  </div>
+                </section>
+
+                {/* 근거 서랍.
+                    예전에는 여기 다섯 절이 전부 펼쳐진 채로 결과 아래에 붙어
+                    있었다. 판정 하나에 허가 원문 카드·문헌 카드가 몇 장씩 붙으니
+                    화면이 근거로 덮여, 정작 무엇을 봐야 하는지가 묻혔다.
+                    판정은 위가 정본이고 여기는 그 판정이 어디서 나왔는지다. */}
+                <details className={styles.evidenceVault}>
+                  <summary>
+                    <span>
+                      근거와 확인 범위 자세히 보기
+                      <small>
+                        허가 원문 · 확인 못 한 범위 · 성분별 계산 · 참고 문헌
+                      </small>
+                    </span>
+                  </summary>
+
+                  <p className={styles.vaultHelp}>
+                    판정은 위 주의 항목이 정본입니다. 아래는 그 판정이 어느
+                    허가 원문에서 나왔는지와, 이번에 확인하지 못한 범위입니다.
+                  </p>
+                  <p className={styles.summaryEvidence}>
+                    현재 제품 규칙 원문 전체 일치{" "}
+                    {findingsWithAllDirectRuleEvidence}개 · 일부 일치{" "}
+                    {findingsWithPartialDirectRuleEvidence}개 · 대표 제품 원문만{" "}
+                    {findingsWithRepresentativeRuleEvidence}개 · 직접 일치 문헌{" "}
+                    {findingsWithDirectLiterature}/{orderedFindings.length} · 배경 문헌{" "}
+                    {findingsWithBackgroundLiterature}/{orderedFindings.length}
+                  </p>
+
                 <section
                   className={styles.resultSection}
                   aria-labelledby="direct-authorization-heading"
                   aria-label="판정에 사용한 식약처 허가 근거"
                 >
                   <header className={styles.resultSectionHeading}>
-                    <span>2</span>
                     <div>
                       <h3 id="direct-authorization-heading">
                         현재 제품의 식약처 허가 원문
@@ -2311,7 +2401,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   aria-labelledby="coverage-heading"
                 >
                   <header className={styles.resultSectionHeading}>
-                    <span>3</span>
                     <div>
                       <h3 id="coverage-heading">확인하지 못한 범위</h3>
                       <p>
@@ -2350,7 +2439,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   aria-labelledby="calculation-heading"
                 >
                   <header className={styles.resultSectionHeading}>
-                    <span>4</span>
                     <div>
                       <h3 id="calculation-heading">성분별 계산 상세</h3>
                       <p>
@@ -2392,7 +2480,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   aria-label="참고 문헌 · 판정 근거 아님"
                 >
                   <header className={styles.resultSectionHeading}>
-                    <span>5</span>
                     <div>
                       <h3 id="v5-literature-heading">
                         v5.0 채택 PubMed 문헌
@@ -2442,7 +2529,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   aria-labelledby="background-evidence-heading"
                 >
                   <header className={styles.resultSectionHeading}>
-                    <span>6</span>
                     <div>
                       <h3 id="background-evidence-heading">
                         대표 제품 허가 원문
@@ -2506,16 +2592,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     </p>
                   )}
                 </section>
+                </details>
               </>
             )}
           </div>
 
           <footer className={styles.resultFooter}>
-            <span>
-              이번 선택: 제품별 공개 규칙 연결{" "}
-              {selectedReleasedRuleBindingCount}건 · 허가 사용·복용 조건{" "}
-              {selectedAdministrationConstraintCount}건
-            </span>
             <span>연구용 시제품 · 임상 사용 승인 아님</span>
           </footer>
         </aside>

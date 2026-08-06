@@ -40,34 +40,34 @@ export default function Home() {
     <main id="main-content" className="min-h-screen bg-[#f3f5f7] text-[#17223b]">
       <section className="px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-11">
         <div className="mx-auto max-w-[1240px]">
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <div>
-              <p className="inline-flex min-h-8 items-center rounded-lg bg-[#e8f5f1] px-3 text-[12px] font-extrabold text-[#17604f]">
-                국내 OTC 근거 조회
-              </p>
-              <h1 className="mt-3 max-w-3xl break-keep text-[32px] font-extrabold leading-[1.25] tracking-[-0.035em] sm:text-[42px]">
-                함께 쓰는 약의 중복 성분·용량 점검
-              </h1>
-              <p className="mt-3 max-w-3xl break-keep text-[15px] font-medium leading-[1.65] text-[#667085] sm:text-[17px]">
-                제품명만 담으면 중복 성분과 하루 사용량, 연령·질환·병용약 주의를
-                식약처 허가 원문까지 연결해 보여줍니다.
-              </p>
-            </div>
-            <div className="flex max-w-md flex-wrap gap-2 lg:justify-end" aria-label="시스템 데이터 현황">
-              <span className="inline-flex min-h-10 items-center rounded-lg border border-[#dce2e8] bg-white px-3.5 text-[12px] font-bold text-[#475467]">
-                허가 확인 제품 {runtimeData.products.length}개
-              </span>
-              <span className="inline-flex min-h-10 items-center rounded-lg border border-[#dce2e8] bg-white px-3.5 text-[12px] font-bold text-[#475467]">
-                공개 안전성 규칙 {runtimeData.rulesReleased}개 · 허가 복용 조건{" "}
-                {administrationConstraintCount}건
-              </span>
-              <span className="inline-flex min-h-10 items-center rounded-lg border border-[#dce2e8] bg-white px-3.5 text-[12px] font-bold text-[#475467]">
-                채택 문헌 {v5LiteratureRuleCount}규칙 · {v5LiteratureLinkCount}건
-              </span>
-              <span className="inline-flex min-h-10 items-center rounded-lg border border-[#eed7b7] bg-[#fff8ee] px-3.5 text-[12px] font-bold text-[#87520b]">
+          {/* 머리글은 제목·한 줄 설명·한계 한 줄까지만 둔다. 예전에는 여기에
+              숫자 배지 넷이 상자를 이루고 있어서, 도구를 쓰기도 전에 읽을 것이
+              네 덩이 더 있었다. 같은 숫자는 화면 맨 아래 연구 범위 문단이 이미
+              적고 있다. */}
+          {/* 본문(점검 도구)이 920px 한 줄로 서므로 머리글도 같은 폭에 맞춘다.
+              폭이 어긋나면 제목과 도구가 서로 다른 화면처럼 보인다. */}
+          <div className="mx-auto w-full max-w-[920px]">
+            <p className="inline-flex min-h-8 items-center rounded-lg bg-[#e8f5f1] px-3 text-[12px] font-extrabold text-[#17604f]">
+              국내 OTC 근거 조회
+            </p>
+            <h1 className="mt-3 break-keep text-[32px] font-extrabold leading-[1.25] tracking-[-0.035em] sm:text-[42px]">
+              함께 쓰는 약의 중복 성분·용량 점검
+            </h1>
+            <p className="mt-3 break-keep text-[15px] font-medium leading-[1.65] text-[#667085] sm:text-[17px]">
+              제품명만 담으면 중복 성분과 하루 사용량, 연령·질환·병용약 주의를
+              식약처 허가 원문까지 연결해 보여줍니다.
+            </p>
+            <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-bold text-[#667085]">
+              <span className="inline-flex min-h-8 items-center rounded-lg border border-[#eed7b7] bg-[#fff8ee] px-3 text-[#87520b]">
                 연구용 시제품 · 임상 사용 승인 아님
               </span>
-            </div>
+              <span className="break-keep font-medium">
+                허가 확인 제품 {runtimeData.products.length}개 · 공개 안전성 규칙{" "}
+                {runtimeData.rulesReleased}개 · 허가 복용 조건{" "}
+                {administrationConstraintCount}건 · 채택 문헌{" "}
+                {v5LiteratureLinkCount}건
+              </span>
+            </p>
           </div>
         </div>
       </section>
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       <section className="border-t border-[#e1e5ea] bg-white px-4 py-7 sm:px-6">
-        <div className="mx-auto max-w-[1240px]">
+        <div className="mx-auto w-full max-w-[920px]">
         <div className="grid gap-5 sm:grid-cols-3 sm:gap-8">
           {[
             ["제품명부터 시작", "성분을 몰라도 제품을 검색해 함께 복용하는 조합을 만들 수 있습니다."],
