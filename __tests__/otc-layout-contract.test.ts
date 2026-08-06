@@ -291,23 +291,31 @@ describe("OTC checker layout contract", () => {
     expect(styleSource).toMatch(
       /\.resultBody\s*\{[\s\S]*?padding:\s*var\(--space-6\)/,
     );
-    // 13px 이 보조 설명의 기본이고 12px 이 바닥이다. 예전에는 9~11px 짜리
+    // 14px 이 보조 설명의 기본이고 그 아래는 쓰지 않는다. 예전에는 9~11px 짜리
     // 설명줄이 화면 곳곳에 있었는데, 한글은 같은 px 에서 라틴 문자보다 작아
     // 보여서 그 크기에 회색까지 겹치면 읽는 일 자체가 일이 된다.
     expect(styleSource).toMatch(
-      /\.productSupportTitle\s*\{[\s\S]*?font-size:\s*13px/,
+      /\.productSupportTitle\s*\{[\s\S]*?font-size:\s*14px/,
     );
     expect(styleSource).toMatch(
-      /\.productSupportDetails,[\s\S]*?font-size:\s*13px/,
+      /\.productSupportDetails,[\s\S]*?font-size:\s*14px/,
     );
     expect(styleSource).toMatch(
-      /\.inputSupportStatus\s*\{[\s\S]*?font-size:\s*13px/,
+      /\.inputSupportStatus\s*\{[\s\S]*?font-size:\s*14px/,
     );
     expect(styleSource).toMatch(
-      /\.resultScope span\s*\{[\s\S]*?font-size:\s*13px/,
+      /\.resultScope span\s*\{[\s\S]*?font-size:\s*14px/,
     );
     // 바닥 아래로 다시 새지 않게 막는다.
-    expect(styleSource).not.toMatch(/font-size:\s*(?:[1-9]|10|11)px/);
+    expect(styleSource).not.toMatch(/font-size:\s*(?:[1-9]|1[0-3])px/);
+    // 입력칸 안쪽 여백. 6px 이던 시절 숫자가 왼쪽 벽에 붙어 보였다.
+    expect(styleSource).toMatch(
+      /\.inputWithUnit\s*\{[\s\S]*?padding:\s*0 var\(--space-4\)/,
+    );
+    // grid 자식인 배지가 줄 전체로 늘어나면 막대처럼 보인다.
+    expect(styleSource).toMatch(
+      /\.conditionCopy \.inputSupportStatus\s*\{[\s\S]*?justify-self:\s*start/,
+    );
     expect(styleSource).toMatch(
       /\.findings\s*\{[\s\S]*?gap:\s*var\(--space-3\);[\s\S]*?margin-top:\s*var\(--space-3\)/,
     );
