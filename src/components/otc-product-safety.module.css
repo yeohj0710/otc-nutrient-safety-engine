@@ -42,9 +42,10 @@
   gap: var(--space-2);
   margin: 0 0 var(--space-4);
   border-radius: 12px;
-  background: rgba(243, 245, 247, 0.92);
+  /* 반투명으로 두면 칸 사이 틈으로 아래 글자가 흘러가는 게 비쳐 고장처럼
+     보인다. 페이지 바탕색 그대로 덮는다. */
+  background: #f3f5f7;
   padding: var(--space-1);
-  backdrop-filter: blur(8px);
   list-style: none;
 }
 
@@ -2777,23 +2778,19 @@
      여기서 비우면 점검 도구의 마지막 줄만 지켜지고, 그 아래 연구 범위 문단과
      바닥글은 그대로 덮인다 — 실측에서 바닥글 마지막 줄이 막대 밑에 깔렸다. */
 
-  /* 좁은 화면에서는 아래 고정 막대가 이미 결과로 데려간다. 단계 표시까지
-     붙여 두면 위아래로 화면을 두 겹 깎아 먹는다. */
+  /* 좁은 화면에서도 붙여 둔다.
+     화면을 깎는 값은 44px, 844px 화면의 5.2% 다. 대신 벌어 주는 것이 크다 —
+     근거 서랍을 펼친 결과가 4.7화면이라, 맨 아래에서 약을 바꾸려면 1단계까지
+     4,277px(5.1화면)을 거슬러 올라가야 했다. 아래 고정 막대는 결과로 데려갈
+     뿐 되돌아오지는 못한다. 되돌아오는 길이 이것뿐이다. */
   .stepper {
-    position: static;
-    padding: 0;
-    background: none;
-    backdrop-filter: none;
+    top: calc(4rem + var(--space-1));
+    padding: var(--space-0-5);
   }
 
   .stepper button {
     padding: 0 var(--space-2);
     font-size: 14px;
-  }
-
-  .panel,
-  .resultPanel {
-    scroll-margin-top: calc(4rem + var(--space-3));
   }
 
   .quickCheckList {

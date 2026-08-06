@@ -1136,11 +1136,22 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
   const clearActiveDemo = () => setActiveQuickCheck("");
 
-  // 결과로 넘어간다. 입력 두 칸은 접히고 화면에 결과만 남는다.
-  const goToResult = () => {
-    setOpenStep(3);
+  // 단계를 고르면 그 칸으로 데려간다.
+  //
+  // 예전에는 3단계(결과)만 움직였다. 그래서 결과 맨 아래에서 "약 담기"를 눌러도
+  // 화면이 그대로였고, 접기·펴기만 조용히 바뀌어 아무 일도 안 일어난 것처럼
+  // 보였다. 좁은 화면에서 결과는 근거 서랍까지 펴면 4.7화면이라, 되돌아가는
+  // 길이 이 버튼뿐이다.
+  const STEP_ANCHOR = {
+    1: "step-medicine",
+    2: "step-profile",
+    3: "safety-result",
+  } as const;
+
+  const goToStep = (step: 1 | 2 | 3) => {
+    setOpenStep(step);
     requestAnimationFrame(() => {
-      const target = document.getElementById("safety-result");
+      const target = document.getElementById(STEP_ANCHOR[step]);
       if (!target) return;
       const reduceMotion = window.matchMedia(
         "(prefers-reduced-motion: reduce)",
@@ -1151,6 +1162,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       });
     });
   };
+
+  const goToResult = () => goToStep(3);
 
   const addProduct = (product: OtcProduct) => {
     if (selectedIds.has(product.productId)) return;
@@ -1234,14 +1247,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             <button
               type="button"
               aria-current={openStep === step.index ? "step" : undefined}
-              onClick={() => {
-                setOpenStep(step.index);
-                if (step.index === 3) {
-                  document
-                    .getElementById("safety-result")
-                    ?.scrollIntoView({ block: "start" });
-                }
-              }}
+              onClick={() => goToStep(step.index)}
             >
               <span aria-hidden="true">{step.done ? "✓" : step.index}</span>
               {step.label}
@@ -1253,6 +1259,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       <div className={styles.workspaceGrid}>
         <div className={styles.inputColumn}>
         <section
+          id="step-medicine"
           className={styles.panel}
           data-collapsed={openStep !== 1 && hasSelection ? "true" : "false"}
           aria-labelledby="medicine-heading"
@@ -1709,7 +1716,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
           {hasSelection && (
             <div className={styles.stepAdvance}>
-              <button type="button" onClick={() => setOpenStep(2)}>
+              <button type="button" onClick={() => goToStep(2)}>
                 다음 · 내 조건 더하기
               </button>
               <span>해당하는 조건이 없으면 건너뛰고 결과를 봐도 됩니다.</span>
@@ -1718,6 +1725,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
         </section>
 
         <section
+          id="step-profile"
           className={styles.panel}
           data-collapsed={openStep !== 2 ? "true" : "false"}
           aria-labelledby="profile-heading"
