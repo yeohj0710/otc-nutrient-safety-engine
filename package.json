@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "npm@11.6.2",
   "scripts": {
-    "prepare:knowledge": "tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts",
+    "prepare:knowledge": "node scripts/verify-kr-drug-data.mjs && tsx scripts/build-knowledge-index.ts && tsx scripts/build-literature-candidates.ts",
     "dev": "tsx scripts/dev-with-knowledge-watch.ts",
     "build": "npm run prepare:knowledge && next build",
     "start": "next start",
