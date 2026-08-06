@@ -353,6 +353,24 @@ describe("OTC checker layout contract", () => {
     expect(componentSource).not.toContain("res.ok ? res.json() : null");
   });
 
+  it("tells the summary writer not to issue instructions", () => {
+    // 예전 지시문이 "판단이 필요하면 약사·의사와 상의하라고만 적으십시오"로
+    // 끝나서, 요약이 엔진의 nextAction 을 그대로 옮겨 "…확인하고 약사 또는
+    // 의사와 상담하십시오"라고 시키는 문장이 화면에 나갔다. 할 일은 판정마다
+    // 붙는 "지금 할 일" 칸이 이미 적고 있으므로 요약이 다시 시킬 자리가 아니다.
+    // 문체 문제이므로 심판이 아니라 프롬프트에서 막는다.
+    expect(explainSource).not.toContain("약사·의사와 상의하라고만 적으십시오");
+    expect(explainSource).toContain("시키는 말투를 쓰지 마십시오");
+    for (const ending of ["~하십시오", "~하세요", "~해 주세요", "~해야 합니다"]) {
+      expect(explainSource, ending).toContain(`'${ending}'`);
+    }
+    expect(explainSource).toContain(
+      "엔진이 적어 둔 nextAction 을 요약문에 옮겨 적지 마십시오",
+    );
+    // 고쳐 쓰기 짝이 있어야 무엇으로 바꾸라는 것인지가 지시문 안에서 닫힌다.
+    expect(explainSource).toContain("이렇게 쓰지 마십시오 → 이렇게 쓰십시오:");
+  });
+
   it("gives every AI failure its own sentence and logs the cause", () => {
     // 실패마다 같은 문장을 쓰면 사용자가 할 일을 못 가린다. 키가 없는 서버는
     // 다시 눌러도 안 붙고, 시간 초과는 다시 누르면 붙는다.
