@@ -6,7 +6,7 @@ import {
   type PoolQuery,
 } from "@/src/lib/otc/rule-literature-pool";
 import runtimeJson from "@/src/generated/otc-runtime.json";
-import poolJson from "@/src/generated/otc-rule-literature-pool.json";
+import poolJson from "@/src/generated/recollect/rule-literature-pool.json";
 import type { UserProfile } from "@/src/lib/otc/schema";
 
 const runtime = runtimeJson as unknown as {
@@ -60,6 +60,7 @@ function gini(values: number[]) {
  *
  * 예전에는 빌드 때 정한 순서를 그대로 잘라 규칙마다 같은 20건만 보여줬다. 인용문
  * 4,660개 가운데 화면에 닿는 것이 320개(6.9%)뿐이었고 지니계수는 0.931 이었다.
+ * (그때는 옛 트랙이었고, 지금 풀은 재수집 트랙이라 인용문이 5,909개다.)
  * 지금은 입력한 상태·성분 적합도로 점수를 매기고, 점수 구간을 띠로 나눈 뒤 띠마다
  * 조회별 회전값으로 하나씩 꺼내 페이지를 엮는다.
  */

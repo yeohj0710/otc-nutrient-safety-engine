@@ -77,6 +77,44 @@ v5.1 산출물은 `research_v51/`에 둔다.
   `tools/search_pipeline/`, 보존 산출물은 `data/systematic_search/`에 있다.
 - `data/knowledge_pack.json`과 이전 영양성분 검색 결과는 대체된 탐색 자료로만 취급한다.
 
+## 문헌 재수집 트랙 (사이트가 지금 보여 주는 수치)
+
+사이트의 연구 정보 화면과 규칙별 문헌 풀은 **재수집 트랙**을 읽는다. 제출한 논문의
+v5.0 원장이 아니다. 둘을 섞지 않는다.
+
+| | 코퍼스 | 일치도 | 채점 표본 | 상태 |
+|---|---|---|---|---|
+| v5.0 (제출본) | 43,207행 | 86.93% | 894행 | 봉인, 논문 근거 |
+| recollect-v2 (사이트) | 79,404행 | 84.21% | 2,505행 | 배포 중 |
+
+바뀐 것은 검색 기간 제한을 없앤 것과 개정 `AM-OTC-006`(대상 블록을 필수에서 선택으로)
+둘뿐이다. 검색어와 분류 방식은 그대로다. 코퍼스가 1.84배가 됐다.
+
+- 원장은 이 저장소 밖에 있다. `C:\dev\evidence-recollect\data\kwon\`
+  (`corpus/evidence_map.csv`, `screen/redo-20260820/effective.decisions.jsonl`,
+  `score-20260820/`, `fulltext/fulltext.jsonl`, 집계는 `report.json`).
+  선별 판정의 원장은 `effective.decisions.jsonl` 이다.
+- 사이트가 쓰는 값은 `src/generated/recollect/` 에 굽고 커밋한다. 생성기는
+  `scripts/research/otc/build_recollect_research_summary.py` 와
+  `build_recollect_rule_literature_pool.py` 다. 두 번째 것은 도출식(위해 표현, 맥락 조건,
+  상태 표지, 인용 문장 점수식)을 옛 빌더 `build_rule_literature_pool.py` 에서 import 해서
+  쓴다. 베끼지 않는다.
+- **`research_v3/logs/v50_run_report.json` 과 `v50_scoring_report.json` 을 고치지 않는다.**
+  제출한 논문의 근거다. 재수집 값은 새 파일에만 쓴다. 옛 요약
+  `src/generated/v50-research-summary.json` 도 그대로 두고,
+  `__tests__/v50-research-summary.test.ts` 가 그 파일과 봉인 원장의 대조를 계속 지킨다.
+- 검증 근거(규칙 9개, 링크 10건)는 봉인한 `literature_link_manifest.json` 그대로다.
+  재수집이 바꾸지 않는다. 규칙이 허용하는 질문(`allowed_question_ids`)도 그 파일에서 읽는다.
+- 근거 층은 79,404 → 유지 23,712 → 규칙별 문헌 풀 14,676편 → 검증 근거 10건이다.
+  풀은 규칙당 400편 상한을 걸어 화면에 5,072편을 싣고, 잘린 수는 규칙마다 `truncated` 에
+  남는다. 상한은 전송량 때문이며 도출 자체를 자르지 않는다.
+- 카파 0.630 은 원장에 없어 생성기가 계산한다. 층 가중치는 `sample.json` 의 N/n 이고,
+  같은 가중치로 일치도를 다시 구해 84.21% 와 어긋나면 생성기가 멈춘다.
+- **대조군 분류기를 돌리지 않았다.** 로컬 Qwen 이라 7만 건이 오래 걸리고, 대조군도
+  언어모델이라 "규칙 대 AI" 대조가 성립하지 않는다. 일부러 안 돌린 것이므로 되살리지 않는다.
+- 여형준 연구(`nutrition-safety-engine`)의 재수집 트랙과 수치를 섞지 않는다. 질문도
+  코퍼스도 판정 기준도 다르다. 코드 구조만 서로 참고한다.
+
 ## 로컬 v5.1 안전 확장 경계
 
 - 기준선은 commit `6dbdad518e2fa7b2ed7b9a8048e0c47dba5b6ae9`이다. `research_v3/`와

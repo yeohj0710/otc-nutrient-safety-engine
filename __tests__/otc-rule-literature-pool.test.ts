@@ -71,14 +71,29 @@ describe("규칙별 선별 통과 문헌 풀", () => {
 
   it("규칙 16개 전부에 인용 가능한 문장이 있다", () => {
     expect(rulePoolTotals.quotable_sentences).toBeGreaterThan(2000);
-    // 제목을 인용한 경우는 초록이 아예 없는 논문뿐이고 2% 미만이어야 한다.
+    // 제목을 인용한 경우는 초록이 아예 없는 논문뿐이다. 재수집 코퍼스는 제목만 있는
+    // 행이 8,376건이고 그중 7,670건이 유지로 판정돼, 옛 트랙보다 이 비율이 높다.
+    // 상한을 올리되 "초록이 있으면 초록을 인용한다"는 불변식은 아래에서 따로 잡는다.
     expect(rulePoolTotals.title_only_quotes).toBeLessThan(
-      rulePoolTotals.quotable_sentences * 0.02,
+      rulePoolTotals.quotable_sentences * 0.06,
     );
     for (const ruleId of RULE_IDS) {
       const papers = rulePoolPapers(ruleId, 0, 5);
       expect(papers.length, ruleId).toBeGreaterThan(0);
       for (const paper of papers) expect(paper.quote, ruleId).toBeTruthy();
+    }
+  });
+
+  it("초록이 있으면 제목을 인용하지 않는다", () => {
+    for (const ruleId of RULE_IDS) {
+      const rule = rulePoolFor(ruleId)!;
+      for (const [recordId, quote] of Object.entries(rule.quotes)) {
+        if (quote.locator !== "TITLE") continue;
+        const paper = rulePoolPapers(ruleId, 0, rule.listed).find(
+          (item) => item.record_id === recordId,
+        );
+        expect(paper?.has_abstract, `${ruleId}/${recordId}`).toBe(false);
+      }
     }
   });
 
@@ -110,5 +125,9 @@ describe("규칙별 선별 통과 문헌 풀", () => {
     expect(manifest.results.emitted_link_count).toBe(10);
     expect(rulePoolTotals.rules).toBe(16);
     expect(rulePoolTotals.unique_papers_listed).toBeGreaterThan(1000);
+    // 도출 결과는 상한을 적용하기 전 값이고, 화면 수록분은 그 부분집합이다.
+    expect(rulePoolTotals.unique_papers_matched).toBeGreaterThanOrEqual(
+      rulePoolTotals.unique_papers_listed,
+    );
   });
 });

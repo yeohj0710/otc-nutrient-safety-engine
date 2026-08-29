@@ -43,3 +43,6 @@ scripts/research/otc/*v51*.py                      -text whitespace=cr-at-eol
 src/generated/otc-runtime.json                     -text whitespace=cr-at-eol
 src/generated/otc-supporting-literature.json       -text whitespace=cr-at-eol
 src/lib/otc/engine.ts                              -text whitespace=cr-at-eol
+
+# 재수집 트랙 생성물. 빌더가 LF 로 쓰므로 체크아웃도 LF 여야 재생성 diff 가 안 뜬다.
+src/generated/recollect/*.json                     -text whitespace=cr-at-eol

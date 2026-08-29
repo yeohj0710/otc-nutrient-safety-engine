@@ -16,6 +16,8 @@
 - `src/lib/otc/presentation.ts`: 판정 근거와 참고 문헌의 표시 분리
 - `src/generated/otc-runtime.json`: 제품, released 규칙, `ADMIN-*` 복용 조건 런타임
 - `src/generated/otc-supporting-literature.json`: v5.1 표시 정책을 적용한 참고 문헌
+- `src/generated/recollect/research-summary.json`: 연구 정보 화면이 쓰는 재수집 트랙 수치
+- `src/generated/recollect/rule-literature-pool.json`: 재수집 트랙 규칙별 선별 통과 문헌
 - `src/lib/safety-engine/index.ts`: 이전 계보 결정 규칙
 - `src/lib/knowledge/`: 이전 런타임 지식 인덱스 로더와 정규화
 - `src/types/knowledge.ts`: 이전 지식 인덱스의 Zod 스키마와 핵심 타입
@@ -90,6 +92,8 @@
 - `scripts/research/otc/build_runtime.py`: 제품, released 규칙과 `ADMIN-*` 복용 조건 런타임 생성
 - `scripts/research/otc/build_v51_literature_classification.py`: v5.0 링크 20건의 v5.1 표시 정책 생성
 - `scripts/research/otc/build_supporting_literature.py`: 표시 정책을 검증해 참고 문헌 런타임 생성
+- `scripts/research/otc/build_recollect_research_summary.py`: 재수집 트랙 수치를 연구 정보 화면용 JSON 으로 생성
+- `scripts/research/otc/build_recollect_rule_literature_pool.py`: 재수집 트랙 규칙별 문헌 풀 생성
 - `scripts/research/otc/audit_v51_boundaries.py`: `research_v3/`와 외부 논문 정본 보호 감사
 - `scripts/research/otc/audit_v51_source_freshness.py`: 식약처 원격 문서 의미 동일성 감사
 - `scripts/research/otc/build_v51_final_audit.py`: 제품·규칙·근거·문헌 상태의 기계 집계

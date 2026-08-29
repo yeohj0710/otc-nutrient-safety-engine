@@ -1,0 +1,243 @@
+{
+  "schemaVersion": "1.0.0",
+  "track": "recollect-v2",
+  "study": "kwon",
+  "label": "권혁찬 · 국내 일반의약품",
+  "builtAt": "2026-08-21T03:20:13+00:00",
+  "generatedAt": "2026-08-29T11:59:03+00:00",
+  "generatedFrom": {
+    "report": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\report.json",
+      "sha256": "28fbe91f26f7cc5d514e3e41e5bf8ce5537570f13e1a408640344d6b10b2f208"
+    },
+    "corpus": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\corpus\\evidence_map.csv",
+      "sha256": "c46469721fe7e7f0da947369368794c0ea33bb12afbd9b3968dc7724e3d2971b"
+    },
+    "decisions": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\screen\\redo-20260820\\effective.decisions.jsonl",
+      "sha256": "b448509ab3367858460751e807356e4ad1dd8aba2fc5628c1d88d8cbadcb221e"
+    },
+    "scoring": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\score-20260820\\scoring_report.json",
+      "sha256": "ebcee8256cf672aeaa97dfdba287f6bbef5c74d0bde74ba6084900ca6f5cdccb"
+    },
+    "fulltext": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\fulltext\\fulltext.jsonl",
+      "sha256": "cc406847893dc0a80835ed9ebd1469aeeeedf349c04976d03aed868bf4d2f8b4"
+    },
+    "supersededLedger": "research_v3/logs/v50_run_report.json (봉인 · 비교 열에만 사용)"
+  },
+  "authorization": {
+    "analysedProducts": 13,
+    "collectedProducts": 16,
+    "uniqueIngredients": 28,
+    "productIngredientLinks": 47,
+    "administrationConstraints": 32,
+    "ruleCount": 16,
+    "releasedRuleCount": 15
+  },
+  "search": {
+    "dateLimitRemoved": true,
+    "amendment": "AM-OTC-006",
+    "amendmentWhat": "대상(P) 블록을 필수에서 선택으로 내렸다. 검색어 자체는 그대로다",
+    "questions": [
+      {
+        "id": "OTC-LIT-Q01-ACETAMINOPHEN",
+        "titleKo": "아세트아미노펜 용량·간격·간질환·음주 관련 위해",
+        "rows": 17240,
+        "previousRows": 9259,
+        "hitsOld": 9264,
+        "hitsAfterDateRemoval": 15569,
+        "hitsAfterAmendment": 17783
+      },
+      {
+        "id": "OTC-LIT-Q02-NSAID",
+        "titleKo": "이부프로펜·덱시부프로펜·나프록센의 중복과 주요 위해",
+        "rows": 16272,
+        "previousRows": 6448,
+        "hitsOld": 6456,
+        "hitsAfterDateRemoval": 13272,
+        "hitsAfterAmendment": 16581
+      },
+      {
+        "id": "OTC-LIT-Q03-COLD-ALLERGY",
+        "titleKo": "감기·알레르기 복합성분의 진정·운전·혈압·병용 위해",
+        "rows": 16485,
+        "previousRows": 5669,
+        "hitsOld": 5670,
+        "hitsAfterDateRemoval": 13747,
+        "hitsAfterAmendment": 16672
+      },
+      {
+        "id": "OTC-LIT-Q04-DIGESTIVE",
+        "titleKo": "소화효소·담즙산·가스제거 성분 복합 사용의 안전성",
+        "rows": 28279,
+        "previousRows": 21314,
+        "hitsOld": 21342,
+        "hitsAfterDateRemoval": 27535,
+        "hitsAfterAmendment": 28794
+      },
+      {
+        "id": "OTC-LIT-Q05-TOPICAL",
+        "titleKo": "살리실산메틸·멘톨·캄파 등 외용 복합성분의 위해",
+        "rows": 1128,
+        "previousRows": 517,
+        "hitsOld": 517,
+        "hitsAfterDateRemoval": 877,
+        "hitsAfterAmendment": 1135
+      }
+    ],
+    "hitsOldTotal": 43249,
+    "hitsAfterDateRemovalTotal": 71000,
+    "hitsAfterAmendmentTotal": 80965
+  },
+  "corpus": {
+    "rows": 79404,
+    "uniquePapers": 77394,
+    "rowsWithAbstract": 71028,
+    "rowsTitleOnly": 8376,
+    "duplicatesRemoved": 1902,
+    "previousRows": 43207,
+    "growthVsPrevious": 1.84,
+    "xmlFiles": 419
+  },
+  "screening": {
+    "screened": 79404,
+    "final": {
+      "retain": 23712,
+      "deprioritize": 55615,
+      "uncertain": 77
+    },
+    "retainedPapers": 22692,
+    "coverage": 1.0,
+    "humanDecisions": 0,
+    "amendments": [
+      {
+        "id": "AM-REC-010",
+        "what": "초록 없이 제목만 있는 행을 다시 판정했습니다",
+        "rows": 8376,
+        "newLabels": {
+          "retain": 7670,
+          "deprioritize": 694,
+          "uncertain": 12
+        }
+      },
+      {
+        "id": "AM-REC-011",
+        "what": "사유 칸이 빈 채로 기록된 행을 다시 판정했습니다",
+        "rows": 2950,
+        "newLabels": {
+          "retain": 1216,
+          "deprioritize": 1734,
+          "uncertain": 0
+        }
+      }
+    ],
+    "amendmentOverlapRows": 310,
+    "changedFromEarlierPass": 8388
+  },
+  "fulltext": {
+    "checkedPapers": 22692,
+    "withPmcid": 4455,
+    "withFulltext": 2933,
+    "shareOfRetainedPct": 12.9,
+    "shareOfPmcLinkedPct": 65.8,
+    "medianChars": 24216
+  },
+  "scoring": {
+    "sampleRows": 2505,
+    "populationRows": 79404,
+    "eligiblePopulation": 76899,
+    "excludedFromEarlierArm": 2505,
+    "strata": 3,
+    "stratumRows": {
+      "deprioritize": {
+        "N": 53809,
+        "n": 1696
+      },
+      "retain": {
+        "N": 23014,
+        "n": 749
+      },
+      "uncertain": {
+        "N": 76,
+        "n": 60
+      }
+    },
+    "seed": "recollect-v2-kwon-20260820-arm2",
+    "agreement": 84.21,
+    "agreementCi": [
+      82.82,
+      85.63
+    ],
+    "sensitivity": 76.23,
+    "specificity": 87.69,
+    "kappa": 0.63,
+    "kappaMethod": "설계 가중 3분류 비가중 카파. 층 가중치는 N/n",
+    "pipelineRetainShare": 29.86,
+    "scorerRetainShare": 31.44,
+    "retainShareRatio": 1.053,
+    "disagreementByDirection": {
+      "retain->deprioritize": 178,
+      "deprioritize->retain": 208,
+      "uncertain->retain": 27,
+      "uncertain->deprioritize": 30
+    },
+    "lockedAt": "2026-08-20T08:17:08+00:00",
+    "openedAt": "2026-08-21T03:13:44+00:00",
+    "truthOpenedBeforeLock": false
+  },
+  "ruleLiterature": {
+    "ruleCount": 16,
+    "resolvedRuleCount": 9,
+    "unresolvedRuleCount": 7,
+    "unresolvedRuleIds": [
+      "OTC-RULE-003",
+      "OTC-RULE-009",
+      "OTC-RULE-010",
+      "OTC-RULE-011",
+      "OTC-RULE-013",
+      "OTC-RULE-015",
+      "OTC-RULE-016"
+    ],
+    "linkCount": 10,
+    "verifiedTrack": "v5.0 (봉인)"
+  },
+  "rulePool": {
+    "rules": 16,
+    "unique_papers_matched": 14676,
+    "rule_paper_pairs": 25370,
+    "rule_question_paper_rows": 25454,
+    "unique_papers_listed": 5072,
+    "quotable_sentences": 5909,
+    "title_only_quotes": 260,
+    "retain_rows_in_corpus": 23712,
+    "retain_papers_in_corpus": 22692
+  },
+  "comparator": {
+    "required": false,
+    "classified": 0,
+    "note": "로컬 Qwen 이라 7만 건이 오래 걸린다. 게다가 대조군 자체가 LLM 이라 '규칙 대 AI' 대조가 성립하지 않는다. 배선이 되면 돌리고, 안 되면 건너뛴다."
+  },
+  "flags": {
+    "independentBlinding": false,
+    "releaseReady": false,
+    "humanReferenceRows": 0,
+    "invariantsChecked": 6,
+    "invariantsFailed": 0
+  },
+  "limitations": [
+    "사람이 판정한 참조표준이 0건입니다. 어떤 값도 임상적 정확도나 검증 완료를 뜻하지 않습니다.",
+    "자료원은 PubMed 하나입니다. 제2 데이터베이스, 회색문헌, 인용 검색을 하지 않았습니다.",
+    "유지 22,692편 가운데 원문을 확보한 것은 2,933편(12.9%)입니다. 나머지는 제목과 초록만 읽었습니다.",
+    "선별 사유가 빈 채로 기록된 행이 2,950건 있었습니다. 2026-08-20 재판정으로 라벨은 다시 받았지만, 그때 적은 사유는 원래 판정의 사유가 아니라 재판정의 사유입니다.",
+    "대조군 분류기를 돌리지 않았습니다. 대조군도 언어모델이라 규칙 대 AI 대조가 성립하지 않습니다.",
+    "판매량 자료가 없습니다. 분석 제품 13개는 대표 일반의약품 후보이며 판매 순위 집합이 아닙니다."
+  ],
+  "reminder": [
+    "선별 성능 지표는 전부 _vs_ai_reference 로 쓴다. 맨 민감도·특이도로 쓰지 않는다.",
+    "사람 판정 0건이다. 임상적 정확도가 아니라 두 인공지능 판정의 재현도다.",
+    "두 연구의 수치를 하나의 결론으로 합치지 않는다."
+  ]
+}

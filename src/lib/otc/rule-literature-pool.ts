@@ -1,10 +1,14 @@
-import pool from "@/src/generated/otc-rule-literature-pool.json";
+import pool from "@/src/generated/recollect/rule-literature-pool.json";
 import type { SelectedProduct, UserProfile } from "@/src/lib/otc/schema";
 
 /**
  * 규칙별 선별 통과 문헌. 검증 근거(문장 locator 와 원문 인용 대조를 통과한 10건)
  * 아래 층이며 지위가 다르다. 이 층의 문헌은 규칙을 배포시키지 못하고 판정을 바꾸지
- * 않는다. 생성기는 scripts/research/otc/build_rule_literature_pool.py 다.
+ * 않는다.
+ *
+ * 자료는 재수집 트랙(recollect-v2 · kwon)이다. 생성기는
+ * scripts/research/otc/build_recollect_rule_literature_pool.py 이며, 도출식은
+ * 옛 빌더 build_rule_literature_pool.py 에서 그대로 가져와 쓴다.
  */
 export type PoolPaper = {
   record_id: string;
@@ -47,10 +51,16 @@ type Pool = {
   };
   totals: {
     rules: number;
+    /** 두 단계 좁히기를 통과한 고유 논문. 규칙당 상한을 적용하기 전 값이다. */
+    unique_papers_matched: number;
+    rule_paper_pairs: number;
+    rule_question_paper_rows: number;
+    /** 그중 화면에 싣는 고유 논문. 규칙당 상한을 적용한 뒤 값이다. */
     unique_papers_listed: number;
     quotable_sentences: number;
     title_only_quotes: number;
     retain_rows_in_corpus: number;
+    retain_papers_in_corpus: number;
   };
   profile_facets: string[];
   ingredient_terms: string[];
@@ -200,6 +210,7 @@ const orderCache = new Map<string, PoolEntry[]>();
  *
  * 예전에는 빌드 때 정한 순서를 그대로 잘라 보여줬다. 그래서 어떤 상태를 입력하든
  * 규칙마다 같은 20건만 화면에 닿았고, 인용문 4,660개 가운데 320개(6.9%)만 노출됐다.
+ * (그때 수치이고, 지금은 재수집 트랙이라 인용문이 5,909개다.)
  * 지금은 세 가지를 함께 쓴다.
  *   ① 상태 적합도  입력한 항목과 성분을 실제로 언급한 문헌을 위로 올린다
  *   ② 다양성       이미 고른 인용문과 낱말이 겹치면 뒤로 민다
