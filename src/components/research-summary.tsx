@@ -25,8 +25,6 @@ export function ResearchSummary() {
   const sg = summary.scoring;
   const rl = summary.ruleLiterature;
   const pool = summary.rulePool;
-  const byId = (id: string) =>
-    search.questions.find((item) => item.id.startsWith(id))!;
 
   return (
     <main id="main-content" tabIndex={-1} className={styles.page}>
@@ -43,12 +41,6 @@ export function ResearchSummary() {
             <span className={styles.flag}>사람 맹검 독립평가 미완료</span>
             <span className={styles.flag}>임상 사용 승인 아님</span>
             <span className={styles.flag}>대조군 분류기 미실행</span>
-          </div>
-          <div className={styles.note} style={{ marginTop: 18 }}>
-            <strong>제출한 논문의 수치와 다릅니다.</strong> 논문은 검색 기간을 제한해 모은
-            코퍼스 {n(corpus.previousRows)}행으로 썼습니다. 이 화면은 그 뒤에 기간 제한을
-            없애고 다시 모은 {n(corpus.rows)}행으로 계산한 값입니다. 논문 원장은 봉인해
-            두었고 여기서 고치지 않았습니다.
           </div>
         </header>
 
@@ -104,44 +96,29 @@ export function ResearchSummary() {
             연구설계, 언어, 출판유형 제한을 두지 않습니다.
           </p>
           <p>
-            처음에는 여기에 출판 기간 제한이 남아 있었습니다. 질문에 따라 2010-01-01 또는
-            2000-01-01 이전 문헌이 통째로 빠졌습니다. 재수집에서 그 제한을 없앴고, 개정{" "}
-            {search.amendment}로 대상 블록을 필수에서 선택으로 내렸습니다. 검색어는 한 개도
-            바꾸지 않았습니다. 검색 건수는 {n(search.hitsOldTotal)}건에서 기간 제한을 빼자{" "}
-            {n(search.hitsAfterDateRemovalTotal)}건이 되었고, 개정까지 적용하니{" "}
-            {n(search.hitsAfterAmendmentTotal)}건이 되었습니다.
+            출판일자 제한은 상한과 하한 모두 두지 않았습니다. 과량 복용과 성분 중복의 위해
+            보고가 특정 시점 이후에만 있는 것이 아니기 때문입니다. 대상 블록에는 과량과
+            중복, 용량 어휘가 들어 있습니다.
           </p>
           <table className={styles.table}>
             <thead>
               <tr>
                 <th>질문</th>
-                <th className="num">이전 코퍼스</th>
-                <th className="num">재수집 코퍼스</th>
-                <th className="num">배수</th>
+                <th className="num">선별 단위</th>
               </tr>
             </thead>
             <tbody>
               {search.questions.map((q) => (
                 <tr key={q.id}>
                   <td>{q.titleKo}</td>
-                  <td className="num">{n(q.previousRows)}</td>
                   <td className="num" style={{ fontWeight: 700 }}>
                     {n(q.rows)}
-                  </td>
-                  <td className="num" style={{ color: "#6b7a73" }}>
-                    {(q.rows / q.previousRows).toFixed(2)}배
                   </td>
                 </tr>
               ))}
               <tr>
                 <td style={{ fontWeight: 800 }}>합계</td>
-                <td className="num" style={{ fontWeight: 800 }}>
-                  {n(corpus.previousRows)}
-                </td>
                 <td className="num" style={{ fontWeight: 800 }}>{n(corpus.rows)}</td>
-                <td className="num" style={{ fontWeight: 800 }}>
-                  {corpus.growthVsPrevious}배
-                </td>
               </tr>
             </tbody>
           </table>
@@ -152,16 +129,6 @@ export function ResearchSummary() {
             {n(corpus.rowsTitleOnly)}건입니다. 원본 XML {n(corpus.xmlFiles)}개와 체크섬을
             보존했습니다.
           </p>
-          <div className={styles.note}>
-            <strong>다섯 질문이 모두 늘었고, 늘어난 정도가 다릅니다.</strong> 소화기
-            질문은 원래 기간 제한이 2000-01-01이라{" "}
-            {(byId("OTC-LIT-Q04").rows / byId("OTC-LIT-Q04").previousRows).toFixed(2)}배에
-            그쳤고, 2010-01-01로 잘려 있던 감기와 알레르기 질문은{" "}
-            {(byId("OTC-LIT-Q03").rows / byId("OTC-LIT-Q03").previousRows).toFixed(2)}배가
-            되었습니다. 이전 검색에서 가장 작았던 외용 질문도{" "}
-            {n(byId("OTC-LIT-Q05").previousRows)}행에서 {n(byId("OTC-LIT-Q05").rows)}행이
-            되었습니다.
-          </div>
         </section>
 
         <section className={styles.section}>
