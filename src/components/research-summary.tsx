@@ -4,16 +4,6 @@ import styles from "./research-summary.module.css";
 
 const n = (value: number) => value.toLocaleString("ko-KR");
 
-const ruleNames: Record<string, string> = {
-  "OTC-RULE-003": "1일 최대량",
-  "OTC-RULE-009": "위장관 출혈과 궤양",
-  "OTC-RULE-010": "진정과 운전",
-  "OTC-RULE-011": "음주",
-  "OTC-RULE-013": "진정제 병용",
-  "OTC-RULE-015": "최대 연속 복용",
-  "OTC-RULE-016": "긴급 진료 권고",
-};
-
 const day = (iso: string) => iso.slice(0, 10);
 
 export function ResearchSummary() {
@@ -23,7 +13,6 @@ export function ResearchSummary() {
   const sc = summary.screening;
   const ft = summary.fulltext;
   const sg = summary.scoring;
-  const rl = summary.ruleLiterature;
   const pool = summary.rulePool;
 
   return (
@@ -47,7 +36,7 @@ export function ResearchSummary() {
         <section className={styles.section}>
           <h2>1. 판정을 내리는 층, 식약처 허가원문</h2>
           <p>
-            제품, 성분, 함량, 복용 조건, 규칙 판정을 확정하는 결정층입니다. 규칙이
+            제품, 성분, 함량, 복용 조건, 규칙 판정을 확정하는 층입니다. 규칙이
             배포되려면 허가원문의 출처와 원문 위치를 모두 갖춰야 하고, 문헌 링크는 이
             조건에 관여하지 않습니다. 문헌을 다시 모아도 이 층은 그대로입니다.
           </p>
@@ -92,12 +81,12 @@ export function ResearchSummary() {
           <h2>2. 설명을 붙이는 층, PubMed 문헌</h2>
           <p>
             인공지능이 허가원문에서 확인한 성분과 규칙 유형만 입력받아 질문 5개와 검색식을
-            만들었습니다. 검색식은 대상(P)과 노출(I) 두 블록만 쓰고 결과, 비교, Humans,
+            만들었습니다. 검색식은 대상(P)과 노출(I) 두 조건만 쓰고 결과, 비교, 사람 대상 필터,
             연구설계, 언어, 출판유형 제한을 두지 않습니다.
           </p>
           <p>
             출판일자 제한은 상한과 하한 모두 두지 않았습니다. 과량 복용과 성분 중복의 위해
-            보고가 특정 시점 이후에만 있는 것이 아니기 때문입니다. 대상 블록에는 과량과
+            보고가 특정 시점 이후에만 있는 것이 아니기 때문입니다. 대상 조건에는 과량과
             중복, 용량 어휘가 들어 있습니다.
           </p>
           <table className={styles.table}>
@@ -276,11 +265,10 @@ export function ResearchSummary() {
         <section className={styles.section}>
           <h2>6. 규칙에 문헌을 붙여봤더니</h2>
           <p>
-            문헌은 두 층으로 나뉘고 지위가 다릅니다. 위층은 문장 위치와 원문 인용을 대조해
-            통과한 <strong>검증 근거</strong>이고, 아래층은 규칙이 허용한 질문에서 선별이
-            유지로 판정하고 규칙 유형의 위해 표현이 제목이나 초록에 나타난{" "}
-            <strong>선별 통과 문헌</strong>입니다. 아래층은 인용 대조를 거치지 않았고 규칙을
-            배포시키지 못합니다.
+            선별을 통과한 문헌은 규칙별 후보 문헌으로 연동합니다. 후보 문헌은 규칙이
+            허용한 질문에서 선별이 유지로 판정하고 규칙 유형의 위해 표현이 제목이나
+            초록에 나타난 논문입니다. 무관한 질문의 문헌이 규칙에 붙지 않도록 규칙마다
+            허용 질문을 정해 두었고, 문헌은 설명 자료일 뿐 규칙을 배포시키지 못합니다.
           </p>
           <table className={styles.table}>
             <thead>
@@ -302,14 +290,11 @@ export function ResearchSummary() {
                 <td>논문으로 {n(sc.retainedPapers)}편</td>
               </tr>
               <tr>
-                <td>규칙별 후보 문헌</td>
-                <td className="num">{n(pool.unique_papers_matched)}</td>
-                <td>인용 대조 없음, 규칙 배포 불가</td>
-              </tr>
-              <tr>
-                <td style={{ fontWeight: 800 }}>검증 근거</td>
-                <td className="num" style={{ fontWeight: 800 }}>{rl.linkCount}</td>
-                <td>규칙 {rl.resolvedRuleCount}개, 인용 대조 통과</td>
+                <td style={{ fontWeight: 800 }}>규칙별 후보 문헌</td>
+                <td className="num" style={{ fontWeight: 800 }}>
+                  {n(pool.unique_papers_matched)}
+                </td>
+                <td>규칙 16개 전부, 조회 화면에서 열람</td>
               </tr>
             </tbody>
           </table>
@@ -319,16 +304,8 @@ export function ResearchSummary() {
             {n(pool.rule_question_paper_rows)}건이 됩니다. 화면에는 규칙마다 상한을 두어
             고유 논문 {n(pool.unique_papers_listed)}편, 인용문{" "}
             {n(pool.quotable_sentences)}개를 싣고, 잘라낸 수는 규칙마다 함께 적습니다.
+            조건에 맞는 논문이 없으면 다른 논문으로 채우지 않고 비워 둡니다.
           </p>
-          <div className={styles.note}>
-            <strong>
-              중복복용이 이 연구의 주제인데 1일 최대량 규칙에 검증된 문헌 근거가 0건입니다.
-            </strong>{" "}
-            검증 근거가 없는 규칙은{" "}
-            {rl.unresolvedRuleIds.map((id) => ruleNames[id] ?? id).join(", ")} 입니다. 검증
-            근거 {rl.linkCount}건은 문장 위치와 인용 대조를 통과해 확정한 목록입니다. 이 규칙들도 아래층 문헌은 있으므로 화면에서 읽을 것은 있지만, 그것이
-            규칙을 배포시키지는 못합니다.
-          </div>
         </section>
 
         <section className={styles.section}>
