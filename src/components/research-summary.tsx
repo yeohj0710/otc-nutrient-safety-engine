@@ -126,7 +126,7 @@ export function ResearchSummary() {
             고유 논문 {n(corpus.uniquePapers)}편이고, 논문과 질문 조합으로 센 선별 단위가{" "}
             {n(corpus.rows)}건입니다. 중복 {n(corpus.duplicatesRemoved)}행을 걷어냈습니다.
             초록이 있는 행이 {n(corpus.rowsWithAbstract)}건, 제목만 있는 행이{" "}
-            {n(corpus.rowsTitleOnly)}건입니다. 원본 XML {n(corpus.xmlFiles)}개와 체크섬을
+            {n(corpus.rowsTitleOnly)}건입니다. 원본 응답 {n(corpus.xmlFiles)}개와 검증값을
             보존했습니다.
           </p>
         </section>
@@ -134,10 +134,9 @@ export function ResearchSummary() {
         <section className={styles.section}>
           <h2>3. 선별 결과와 재판정</h2>
           <p>
-            선별은 {n(sc.screened)}건 전량에 라벨을 부여했습니다(커버리지{" "}
-            {sc.coverage.toFixed(1)}).
-            사람 판정은 {sc.humanDecisions}건이고, 판정 원장은 질문과 레코드 조합을 고유
-            키로 씁니다.
+            선별은 {n(sc.screened)}건 전량을 빠짐없이 판정했습니다. 사람 판정은{" "}
+            {sc.humanDecisions}건이고, 판정 원장은 질문과 논문 조합마다 판정 하나를
+            남깁니다.
           </p>
           <table className={styles.table}>
             <thead>
@@ -176,7 +175,7 @@ export function ResearchSummary() {
           </p>
           <div className={styles.note}>
             <strong>
-              두 차례 개정으로 {n(sc.changedFromEarlierPass)}건의 라벨이 바뀌었습니다.
+              두 차례 개정으로 {n(sc.changedFromEarlierPass)}건의 판정이 바뀌었습니다.
             </strong>{" "}
             {sc.amendments.map((item) => (
               <span key={item.id}>
@@ -240,30 +239,30 @@ export function ResearchSummary() {
             <div className={styles.stat}>
               <dt>sensitivity_vs_ai_reference</dt>
               <dd>{sg.sensitivity}%</dd>
-              <small>파이프라인 유지를 채점자가 유지로</small>
+              <small>선별 유지를 채점자가 유지로</small>
             </div>
             <div className={styles.stat}>
               <dt>specificity_vs_ai_reference</dt>
               <dd>{sg.specificity}%</dd>
-              <small>파이프라인 비유지를 채점자가 비유지로</small>
+              <small>선별 비유지를 채점자가 비유지로</small>
             </div>
             <div className={styles.stat}>
               <dt>Cohen κ</dt>
               <dd>{sg.kappa.toFixed(3)}</dd>
-              <small>설계 가중, 3분류</small>
+              <small>층 가중, 3분류</small>
             </div>
           </dl>
           <p style={{ marginTop: 12 }}>
             표본 {n(sg.sampleRows)}행, 모집단 {n(sg.populationRows)}행, 층{" "}
-            {sg.strata}개입니다. 표본은 앞선 채점 arm이 이미 쓴{" "}
+            {sg.strata}개입니다. 표본은 앞선 채점이 이미 쓴{" "}
             {n(sg.excludedFromEarlierArm)}행을 뺀 {n(sg.eligiblePopulation)}행에서
-            뽑았습니다. 추출 시드는 <code>{sg.seed}</code>입니다. 채점 라벨은{" "}
-            {day(sg.lockedAt)}에 해시로 잠갔고 참조 라벨은 {day(sg.openedAt)}에
+            뽑았습니다. 추출 순서는 난수 없이 정해져 같은 입력에서 그대로 재현됩니다.
+            채점 판정은 {day(sg.lockedAt)}에 잠갔고 참조 판정은 {day(sg.openedAt)}에
             열었습니다.
           </p>
           <div className={styles.note}>
             <strong>
-              두 판정이 남기는 양은 거의 같습니다. 파이프라인 유지 {sg.pipelineRetainShare}%
+              두 판정이 남기는 양은 거의 같습니다. 선별 유지 {sg.pipelineRetainShare}%
               대 채점자 추정 {sg.scorerRetainShare}%, 비 {sg.retainShareRatio}배입니다.
             </strong>{" "}
             방향별로 보면 유지에서 후순위가{" "}
@@ -293,7 +292,7 @@ export function ResearchSummary() {
             </thead>
             <tbody>
               <tr>
-                <td>코퍼스</td>
+                <td>수집 문헌</td>
                 <td className="num">{n(corpus.rows)}</td>
                 <td>선별 단위</td>
               </tr>
@@ -303,7 +302,7 @@ export function ResearchSummary() {
                 <td>논문으로 {n(sc.retainedPapers)}편</td>
               </tr>
               <tr>
-                <td>규칙별 문헌 풀</td>
+                <td>규칙별 후보 문헌</td>
                 <td className="num">{n(pool.unique_papers_matched)}</td>
                 <td>인용 대조 없음, 규칙 배포 불가</td>
               </tr>
@@ -315,8 +314,8 @@ export function ResearchSummary() {
             </tbody>
           </table>
           <p style={{ marginTop: 12 }}>
-            규칙별 문헌 풀은 고유 논문 {n(pool.unique_papers_matched)}편입니다. 한 논문이
-            여러 규칙의 풀에 들어가므로 규칙과 논문을 짝으로 세면{" "}
+            규칙별 후보 문헌은 고유 논문 {n(pool.unique_papers_matched)}편입니다. 한 논문이
+            여러 규칙의 후보에 들어가므로 규칙과 논문을 짝으로 세면{" "}
             {n(pool.rule_question_paper_rows)}건이 됩니다. 화면에는 규칙마다 상한을 두어
             고유 논문 {n(pool.unique_papers_listed)}편, 인용문{" "}
             {n(pool.quotable_sentences)}개를 싣고, 잘라낸 수는 규칙마다 함께 적습니다.
@@ -327,8 +326,7 @@ export function ResearchSummary() {
             </strong>{" "}
             검증 근거가 없는 규칙은{" "}
             {rl.unresolvedRuleIds.map((id) => ruleNames[id] ?? id).join(", ")} 입니다. 검증
-            근거 {rl.linkCount}건은 봉인한 v5.0 산출물 그대로이고 재수집이 바꾸지
-            않았습니다. 이 규칙들도 아래층 문헌은 있으므로 화면에서 읽을 것은 있지만, 그것이
+            근거 {rl.linkCount}건은 문장 위치와 인용 대조를 통과해 확정한 목록입니다. 이 규칙들도 아래층 문헌은 있으므로 화면에서 읽을 것은 있지만, 그것이
             규칙을 배포시키지는 못합니다.
           </div>
         </section>
