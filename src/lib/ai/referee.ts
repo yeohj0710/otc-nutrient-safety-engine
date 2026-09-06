@@ -62,7 +62,7 @@ function collectNumbers(text: string) {
   )) {
     const raw = match[1].replace(/,/g, "");
     const hasUnit = match[0].length > match[1].length;
-    if (hasUnit || raw.replace(/[^0-9]/g, "").length >= 2) found.add(raw);
+    if (hasUnit || raw.replace(/[^0-9]/g, "").length >= 2) found.add(String(Number(raw)));
   }
   return found;
 }

@@ -1,4 +1,6 @@
-# Project map
+# 프로젝트 지도
+
+현재 연구의 수치와 재현 기준은 `research/final/manifest.json`과 `REPRODUCE.md`입니다. 아래 과거 자료는 실행 의존성과 연구 이력을 보존하기 위해 남겨 두었습니다.
 
 ## 사용자 화면
 
@@ -22,7 +24,7 @@
 - `src/lib/knowledge/`: 이전 런타임 지식 인덱스 로더와 정규화
 - `src/types/knowledge.ts`: 이전 지식 인덱스의 Zod 스키마와 핵심 타입
 
-## v5.0 제출 정본 — 읽기 전용
+## 보존된 초기 제출 자료 — 읽기 전용
 
 - `research_v3/otc/normalized/`: 제품 16행(분석 13), 성분 31행(계산 28), 제품–성분
   106행(계산 선택 47), 복용 조건 32행

@@ -6,6 +6,15 @@ import { isRetractedPublication, retractedPublicationNotice } from "@/src/lib/pu
 import officialSafetyLayerData from "@/src/generated/otc-official-safety-layer.json";
 import literatureData from "@/src/generated/otc-supporting-literature.json";
 import {
+  candidateLiteratureForFinding,
+  candidateStatusLabel,
+  counselingCandidateReview,
+  counselingCandidates,
+  describeFindingLiterature,
+  type CandidateMatch,
+  type FindingLiteratureCoverage,
+} from "@/src/lib/otc/counseling-candidates";
+import {
   rulePoolFor,
   rulePoolPapers,
 } from "@/src/lib/otc/rule-literature-pool";
@@ -747,9 +756,21 @@ export function LiteratureCard({
         <strong>표시 범위</strong>
         {link.v51Classification.uiBoundaryKo}
       </p>
+      {match.applicability ? (
+        <p>
+          <strong>
+            {match.applicability.status === "missing_information"
+              ? "입력 정보 부족"
+              : "연구 대상과 차이"}
+          </strong>
+          {match.applicability.detailKo}
+        </p>
+      ) : null}
       <p>
         <strong>적용 한계</strong>
-        {link.limitationKo}
+        {match.applicability
+          ? link.limitationKo.replace(match.applicability.detailKo, "").trim()
+          : link.limitationKo}
       </p>
       <p className={styles.literatureLocator}>
         <strong>인용 위치</strong>
@@ -765,27 +786,99 @@ export function LiteratureCard({
   );
 }
 
+/** 검토 문헌의 적용 상태를 배지 문구로. 직접 근거가 아닌 이유를 카드가 바로 말한다. */
+function backgroundScopeLabel(match: FindingLiteratureMatch) {
+  if (match.applicability?.status === "missing_information") return "입력 정보 부족";
+  if (match.applicability?.status === "population_difference") return "연구 대상과 차이";
+  return "현재 판정의 직접 근거가 아님";
+}
+
+/**
+ * 추가 선별 후보 카드. 검토 문헌과 지위가 다르다. 재수집 트랙 선별 통과 문헌 가운데
+ * 에이전트가 초록을 읽고 고른 것이고, 인용 문장이 초록에 있는지만 대조했다.
+ * 연구 대상, 사용량과 기간, 결과, 입력과 다른 점을 나눠 적어 사람이 바로 견줄 수 있게 한다.
+ */
+export function CandidateLiteratureCard({ match }: { match: CandidateMatch }) {
+  const { paper } = match;
+  return (
+    <article className={styles.literatureCard}>
+      <div>
+        <span>
+          {paper.year}, {paper.studyDesignKo}
+        </span>
+        <b>PMID {paper.pmid}</b>
+        <span className={styles.v50Unverified}>추가 선별 후보</span>
+        <span className={styles.literatureScopeBadge}>{candidateStatusLabel(match.status)}</span>
+      </div>
+      <a href={paper.url} target="_blank" rel="noreferrer">
+        {paper.title}
+      </a>
+      <p>
+        <strong>연구 대상</strong>
+        {paper.populationKo}
+      </p>
+      <p>
+        <strong>사용량과 기간</strong>
+        {paper.exposureKo}
+      </p>
+      <p>
+        <strong>연구 결과</strong>
+        {paper.outcomeKo}
+      </p>
+      <p>
+        <strong>입력과 다른 점</strong>
+        {[match.applicability?.detailKo, paper.applicabilityKo, match.ingredientNoteKo]
+          .filter(Boolean)
+          .join(" ")}
+      </p>
+      <p className={styles.literatureLocator}>
+        <strong>인용 위치</strong>
+        {paper.quotes.map((item, index) => (
+          <span key={`${paper.pmid}:${item.locator}`}>
+            {index > 0 ? " " : ""}
+            {item.locator}, <q>{item.quote}</q>
+          </span>
+        ))}
+      </p>
+      {paper.authorizationAlignment === "conflict" && (
+        <p className={styles.literatureConflict}>
+          <strong>허가원문과 다른 점</strong>
+          {paper.authorizationNoteKo}
+        </p>
+      )}
+      <p>
+        <strong>검토 지위</strong>
+        인용 문장이 저장한 초록에 있는지와 성분, 주제를 에이전트가 확인했습니다. 사람 전문가
+        검토와 규칙 승인은 거치지 않았고, 판정 근거가 아닙니다.
+      </p>
+    </article>
+  );
+}
+
 export function FindingLiteratureGroup({
   finding,
   matches,
+  candidates = [],
+  coverage,
   profile,
   selected,
 }: {
   finding: Pick<SafetyFinding, "findingId" | "titleKo" | "ruleId">;
   matches: SplitSupportingLiterature;
+  candidates?: CandidateMatch[];
+  coverage?: FindingLiteratureCoverage;
   profile?: UserProfile;
   selected?: readonly SelectedProduct[];
 }) {
   const { direct, background } = matches;
+  const summary =
+    coverage ??
+    describeFindingLiterature(matches, candidates, rulePoolFor(finding.ruleId)?.listed ?? 0);
   return (
     <article className={styles.literatureGroup}>
       <header>
         <h4>{finding.titleKo}</h4>
-        <span>
-          {direct.length || background.length
-            ? `검증 근거 직접 일치 ${direct.length}편, 배경 ${background.length}편`
-            : "검증 근거 0편, 아래 선별 통과 문헌만 있습니다"}
-        </span>
+        <span>{summary.headlineKo}</span>
       </header>
       {direct.length > 0 ? (
         <div className={styles.literatureList}>
@@ -800,22 +893,45 @@ export function FindingLiteratureGroup({
         </div>
       ) : (
         <p className={styles.evidenceEmpty}>
-          이 규칙에는 문장 인용 대조를 통과한 검증 근거가 없습니다.
+          {summary.status === "reviewed_conditional"
+            ? summary.detailKo
+            : "이 규칙에는 문장 인용 대조를 통과한 검증 근거가 없습니다."}
+          {summary.status === "none" || summary.status === "candidate_only"
+            ? ` ${summary.detailKo}`
+            : ""}
         </p>
       )}
       {background.length > 0 && (
-        <details className={styles.otherIngredientLiterature}>
+        <details className={styles.otherIngredientLiterature} open={direct.length === 0}>
           <summary>같은 규칙의 배경 문헌 {background.length}편</summary>
           <p>
-            현재 판정의 직접 근거가 아님, 판정 결과를 바꾸지 않는 참고 자료
+            현재 판정의 직접 근거가 아님, 판정 결과를 바꾸지 않는 참고 자료. 입력 정보가
+            부족하거나 연구 대상이 달라 직접 근거로 올리지 않은 문헌은 카드마다 그 이유를 적었습니다.
           </p>
           <div className={styles.literatureList}>
             {background.map((match) => (
               <LiteratureCard
                 key={`${finding.findingId}:background:${match.link.linkId}`}
                 match={match}
-                scopeLabel="현재 판정의 직접 근거가 아님"
+                scopeLabel={backgroundScopeLabel(match)}
                 kind="background"
+              />
+            ))}
+          </div>
+        </details>
+      )}
+      {candidates.length > 0 && (
+        <details
+          className={styles.otherIngredientLiterature}
+          open={direct.length === 0 && background.length === 0}
+        >
+          <summary>추가 선별 후보 {candidates.length}편, 에이전트가 초록을 읽고 고름</summary>
+          <p>{counselingCandidateReview.reviewNoteKo}</p>
+          <div className={styles.literatureList}>
+            {candidates.map((match) => (
+              <CandidateLiteratureCard
+                key={`${finding.findingId}:candidate:${match.paper.pmid}`}
+                match={match}
               />
             ))}
           </div>
@@ -1179,6 +1295,61 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       ),
     [orderedFindings, profile, selected],
   );
+  // 검토 문헌이 없는 판정에도 성분과 주제가 맞는 추가 선별 후보를 붙이고,
+  // 판정마다 "직접 일치 / 입력 정보 부족 / 연구 대상과 차이 / 후보만 / 없음"을 한 문장으로 정한다.
+  const candidatesByFinding = useMemo(
+    () =>
+      new Map(
+        orderedFindings.map((finding) => [
+          finding.findingId,
+          candidateLiteratureForFinding(finding, selected, profile),
+        ]),
+      ),
+    [orderedFindings, profile, selected],
+  );
+  const coverageByFinding = useMemo(
+    () =>
+      new Map(
+        orderedFindings.map((finding) => [
+          finding.findingId,
+          describeFindingLiterature(
+            literatureByFinding.get(finding.findingId) ?? { direct: [], background: [] },
+            candidatesByFinding.get(finding.findingId) ?? [],
+            finding.decisionBasis === "released_rule" ? (rulePoolFor(finding.ruleId)?.listed ?? 0) : 0,
+          ),
+        ]),
+      ),
+    [orderedFindings, literatureByFinding, candidatesByFinding],
+  );
+  // AI 요약을 기다리거나 못 받았을 때도 입력과 근거의 관계를 읽을 수 있게 판정마다 한 줄로 잇는다.
+  const groundingLines = useMemo(
+    () =>
+      orderedFindings.slice(0, 4).map((finding) => {
+        const context = buildFindingContext(finding, selected);
+        const amount =
+          finding.calculatedAmount !== undefined && finding.referenceAmount !== undefined && finding.unit
+            ? `입력 ${finding.calculatedAmount}${finding.unit}, 허가 기준 ${finding.referenceAmount}${finding.unit}.`
+            : "";
+        const facts = context.ingredientFacts.length
+          ? `${context.productNames.join(", ")}의 ${context.ingredientFacts.join(", ")}.`
+          : context.productNames.length
+            ? `${context.productNames.join(", ")}.`
+            : "";
+        const coverage = coverageByFinding.get(finding.findingId);
+        return {
+          findingId: finding.findingId,
+          title: finding.titleKo,
+          text: [facts, amount, coverage?.headlineKo ?? ""].filter(Boolean).join(" "),
+        };
+      }),
+    [orderedFindings, selected, coverageByFinding],
+  );
+  const paperTitleByPmid = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const paper of literatureData as SupportingLiterature[]) map.set(paper.pmid, paper.title);
+    for (const paper of counselingCandidates) map.set(paper.pmid, paper.title);
+    return map;
+  }, []);
   const ruleEvidenceByFinding = useMemo(
     () =>
       new Map(
@@ -1287,8 +1458,11 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const hasScreeningPassedLiterature = orderedFindings.some(
     (finding) => (rulePoolFor(finding.ruleId)?.listed ?? 0) > 0,
   );
+  const hasCandidateLiterature = [...candidatesByFinding.values()].some(
+    (matches) => matches.length > 0,
+  );
   const hasFinalLiterature =
-    hasDirectLiterature || hasBackgroundLiterature || hasScreeningPassedLiterature;
+    hasDirectLiterature || hasBackgroundLiterature || hasCandidateLiterature || hasScreeningPassedLiterature;
   const hasRepresentativeRuleEvidence = [...ruleEvidenceByFinding.values()].some(
     (display) => display.representative.length > 0,
   );
@@ -2342,6 +2516,18 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     {!aiExplainPending && aiExplain && !aiExplain.ok && (
                       <p className={styles.aiExplainNote}>{aiExplain.notice}</p>
                     )}
+                    {/* 요약이 오기 전과 못 받았을 때도 입력값, 허가 기준, 문헌 상태가
+                        어떻게 이어지는지는 읽을 수 있어야 한다. 엔진 값으로 만든 줄이라
+                        모델을 기다리지 않는다. */}
+                    {!aiExplain?.ok && groundingLines.length > 0 && (
+                      <ul className={styles.aiExplainList}>
+                        {groundingLines.map((line) => (
+                          <li key={`grounding:${line.findingId}`}>
+                            <strong>{line.title}</strong> {line.text}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     {aiExplain?.ok && (
                       <>
                         <h3 id="ai-explain-title" className={styles.aiExplainTitle}>
@@ -2359,10 +2545,28 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                             ))}
                           </ul>
                         )}
-                        {aiExplain.evidenceDiscussion?.map((item,index)=>(
+                        {aiExplain.evidenceDiscussion?.map((item, index) => (
                           <div key={`${item.ruleId}-${index}`}>
                             <p className={styles.aiExplainBody}>{item.text}</p>
-                            {item.pmids.map(pmid=><a key={pmid} href={`https://pubmed.ncbi.nlm.nih.gov/${pmid}/`} target="_blank" rel="noreferrer">연구 출처 {pmid} </a>)}
+                            {item.pmids.length > 0 && (
+                              <p className={styles.aiExplainNote}>
+                                출처:{" "}
+                                {item.pmids.map((pmid, position) => (
+                                  <span key={pmid}>
+                                    {position > 0 ? ", " : ""}
+                                    <a
+                                      href={`https://pubmed.ncbi.nlm.nih.gov/${pmid}/`}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                    >
+                                      {paperTitleByPmid.get(pmid)
+                                        ? `${paperTitleByPmid.get(pmid)!.slice(0, 70)}${paperTitleByPmid.get(pmid)!.length > 70 ? "…" : ""} (PMID ${pmid})`
+                                        : `PMID ${pmid}`}
+                                    </a>
+                                  </span>
+                                ))}
+                              </p>
+                            )}
                           </div>
                         ))}
                         <p className={styles.aiExplainNote}>
@@ -2832,8 +3036,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         문장과 출처를 대조한 PubMed 문헌
                       </h3>
                       <p>
-                        현재 판정과 직접 일치한 문헌과 배경 문헌을 한 판정 안에서
-                        구분합니다.
+                        판정마다 직접 일치, 입력 정보 부족, 연구 대상과 차이, 추가 선별
+                        후보, 관련 문헌 없음을 구분합니다.
                       </p>
                     </div>
                   </header>
@@ -2850,14 +3054,18 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                           literatureByFinding.get(finding.findingId)?.direct ?? [];
                         const background =
                           literatureByFinding.get(finding.findingId)?.background ?? [];
+                        const candidates =
+                          candidatesByFinding.get(finding.findingId) ?? [];
                         const pooled = rulePoolFor(finding.ruleId)?.listed ?? 0;
-                        if (!direct.length && !background.length && !pooled)
+                        if (!direct.length && !background.length && !candidates.length && !pooled)
                           return null;
                         return (
                           <FindingLiteratureGroup
                             key={"direct-literature:" + finding.findingId}
                             finding={finding}
                             matches={{ direct, background }}
+                            candidates={candidates}
+                            coverage={coverageByFinding.get(finding.findingId)}
                             profile={profile}
                             selected={selected}
                           />

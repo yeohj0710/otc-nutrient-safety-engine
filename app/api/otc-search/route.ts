@@ -11,7 +11,7 @@ import {
 } from "@/src/lib/ai/config";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 // 사람이 쓴 말을 검색어로 옮긴다. "머리 아플 때 먹는 약" 처럼 제품명을 모르는
 // 사람이 그냥 상황을 적으면 지금 검색은 아무것도 못 찾는다.
@@ -69,7 +69,7 @@ export async function POST(request: Request) {
       input: [{ role: "user", content: [{ type: "input_text", text }] }],
       text: { format: outputFormat },
       reasoning: { effort: AI_EXPLAIN_REASONING_EFFORT },
-      max_output_tokens: 1600,
+      max_output_tokens: 16000,
       store: false,
     });
 

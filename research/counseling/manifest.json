@@ -1,0 +1,11 @@
+{
+  "source": "existing_screening_candidates",
+  "corpus_sha256": "50342004de69cfed864d532cd0affcae21f4aa22bf3f515e5b8ab19eb0c07b0f",
+  "pool_sha256": "818b82ce3c9659f77334d7ac79f66e411a3c6b24f5f61694d6948316f143ad6d",
+  "payload_sha256": "8c739d80af77e92f377ea34807c34e4f4915313959c3bcec07a43d4e734da832",
+  "records": 4877,
+  "quote_matches": 5703,
+  "verification": "literal_quote_in_saved_abstract_only",
+  "semantic_review": false,
+  "supports_rule_release": false
+}

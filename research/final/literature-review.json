@@ -1,0 +1,366 @@
+{
+  "protocol": "R20260905",
+  "model": "gpt-5.6-luna",
+  "scope": "posthoc_link_review",
+  "results": [
+    {
+      "source_link_id": "OTC-LIT-LINK-001",
+      "link_id": "OTC-LIT-V50-LINK-001",
+      "record_id": "PMID-30306812",
+      "rule_id": "OTC-RULE-001",
+      "abstract_sha256": "605842987b63b477a05e16cc56ceff9a164d00a8faf5f742d6a054441d66de9c",
+      "before": {
+        "key_finding_ko": "미국 중독관리센터에 접수된 아세트아미노펜 복합제 치료적 오용 사례의 24.8%에서 아세트아미노펜 함유 제품이 두 개 이상 함께 쓰였습니다.",
+        "selection_reason_ko": "같은 성분이 여러 제품에 겹치는 상황이 실제로 과량 노출로 이어진다는 것을 보여 주므로 성분 중복 경고의 배경 설명에 씁니다.",
+        "limitation_ko": "미국 중독관리센터 신고 자료라서 국내 복용 실태나 개인의 위험도를 정하지 않습니다.",
+        "locator": "abstract:sentence:10",
+        "locator_quote_en": "More than one acetaminophen-containing product was involved in 24.8% of exposures."
+      },
+      "after": {
+        "key_finding_ko": "미국 중독관리센터에 접수된 아세트아미노펜 복합제 치료적 오용 사례의 24.8%에서 아세트아미노펜 함유 제품이 두 개 이상 함께 쓰였습니다.",
+        "selection_reason_ko": "미국 중독관리센터 신고 중 아세트아미노펜 함유 제품 2개 이상이 관여한 노출이 24.8%였다는 결과가 성분 중복 경고의 배경을 제공한다. 이 연구만으로 중복 사용이 과량 노출을 일으킨다고 단정하지 않는다.",
+        "limitation_ko": "미국 NPDS 신고 자료라 실제 발생률·국내 복용 실태·개인 위험도를 정하지 않으며, 신고·선택·혼란 편향이 있을 수 있다.",
+        "locator": "abstract:sentence:10",
+        "locator_quote_en": "More than one acetaminophen-containing product was involved in 24.8% of exposures."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-001",
+        "record_id": "PMID-30306812",
+        "rule_id": "OTC-RULE-001",
+        "keep": true,
+        "issues": [
+          "selection_reason_causality"
+        ],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": "미국 중독관리센터 신고 중 아세트아미노펜 함유 제품 2개 이상이 관여한 노출이 24.8%였다는 결과가 성분 중복 경고의 배경을 제공한다. 이 연구만으로 중복 사용이 과량 노출을 일으킨다고 단정하지 않는다.",
+        "corrected_limitation_ko": "미국 NPDS 신고 자료라 실제 발생률·국내 복용 실태·개인 위험도를 정하지 않으며, 신고·선택·혼란 편향이 있을 수 있다.",
+        "corrected_quote": null,
+        "why_ko": "인용 위치와 24.8% 수치는 초록과 일치하고, 규칙은 국내 허가사항에서 오며 문헌은 중복 경고의 일반 배경만 제공하므로 유지한다.",
+        "evidence_quote": "More than one acetaminophen-containing product was involved in 24.8% of exposures."
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-003",
+      "link_id": "OTC-LIT-V50-LINK-002",
+      "record_id": "PMID-26739516",
+      "rule_id": "OTC-RULE-002",
+      "abstract_sha256": "4b9c8d4e3e237bc9c5878b289dff670b83749ffd086f1715cee377423accfe9f",
+      "before": {
+        "key_finding_ko": "위장관 이상반응과의 연관성은 NSAID와 저용량 아스피린을 함께 쓴 경우에 가장 높았고 각각 단독 사용에서 가장 낮았습니다.",
+        "selection_reason_ko": "같은 계열을 겹쳐 쓰는 것이 단독 사용보다 위험 신호가 크다는 점을 설명합니다.",
+        "limitation_ko": "이탈리아 자발보고 자료의 보고오즈비여서 발생률이 아니며 보고 편향이 있습니다.",
+        "locator": "abstract:sentence:13",
+        "locator_quote_en": "The highest associations were found for the combined use of NSAIDs and/or LDA, whilst the lowest associations were for their respective monotherapy."
+      },
+      "after": {
+        "key_finding_ko": "위장관 이상반응과의 연관성은 NSAID와 저용량 아스피린을 함께 쓴 경우에 가장 높았고 각각 단독 사용에서 가장 낮았습니다.",
+        "selection_reason_ko": "이탈리아 자발보고에서 NSAID·저용량 아스피린 병용 보고의 불균형 신호가 각각 단독요법보다 높았다는 결과가 같은 계열 중복 경고의 배경을 제공한다. 발생 위험이나 인과를 확정하지 않는다.",
+        "limitation_ko": "자발보고의 보고오즈비는 발생률이 아니며 보고 편향이 있다. 이 연구는 이탈리아 자료이고 병용 성분도 국내 제품과 다를 수 있다.",
+        "locator": "abstract:sentence:13",
+        "locator_quote_en": "The highest associations were found for the combined use of NSAIDs and/or LDA, whilst the lowest associations were for their respective monotherapy."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-002",
+        "record_id": "PMID-26739516",
+        "rule_id": "OTC-RULE-002",
+        "keep": true,
+        "issues": [
+          "association_not_causation"
+        ],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": "이탈리아 자발보고에서 NSAID·저용량 아스피린 병용 보고의 불균형 신호가 각각 단독요법보다 높았다는 결과가 같은 계열 중복 경고의 배경을 제공한다. 발생 위험이나 인과를 확정하지 않는다.",
+        "corrected_limitation_ko": "자발보고의 보고오즈비는 발생률이 아니며 보고 편향이 있다. 이 연구는 이탈리아 자료이고 병용 성분도 국내 제품과 다를 수 있다.",
+        "corrected_quote": null,
+        "why_ko": "인용문과 sentence 13 위치가 초록과 일치한다. ROR 신호를 위험률로 과장하지 않도록 선택 사유를 고쳐 유지한다.",
+        "evidence_quote": "The highest associations were found for the combined use of NSAIDs and/or LDA, whilst the lowest associations were for their respective monotherapy."
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-006",
+      "link_id": "OTC-LIT-V50-LINK-003",
+      "record_id": "PMID-30030041",
+      "rule_id": "OTC-RULE-004",
+      "abstract_sha256": "8879de073b1c9e1e5f529a61e1e5be63aeb1665b8ceebd371d71164255e37b63",
+      "before": {
+        "key_finding_ko": "650 mg 서방정 사용자는 8시간 복용 간격을 아는 비율이 낮았고 너무 이른 재복용이 더 잦았습니다.",
+        "selection_reason_ko": "복용 간격을 모르면 재복용이 앞당겨진다는 연결을 보여 주므로 최소 간격 경고의 배경입니다.",
+        "limitation_ko": "미국 성인 자기기록 관찰연구이고 대상 제형이 국내 허가 제형과 다릅니다.",
+        "locator": "abstract:sentence:7",
+        "locator_quote_en": "Users of 650-mg ER formulations were significantly less likely to know their dosing interval of 8 hours (33% vs. 49%; P < 0.0001) and more likely to redose too soon (26% vs. 10%; P < 0.0001) and to use other acetaminophen medications concomitantly (14% vs. 7%; P < 0.0001)."
+      },
+      "after": {
+        "key_finding_ko": "650 mg 서방정 사용자는 8시간 복용 간격을 안다고 답한 비율이 유의하게 낮았고(33% 대 49%), 너무 이르게 재복용한 비율은 유의하게 높았습니다(26% 대 10%).",
+        "selection_reason_ko": "650 mg 서방정 사용자에서 8시간 간격 인지가 낮고 조기 재복용이 많았다는 관찰 결과가 최소 간격 안내의 배경을 제공한다. 간격 인지 부족이 조기 재복용을 직접 일으킨다고 단정하지 않는다.",
+        "limitation_ko": "미국 성인의 7일 자기기록 관찰연구이고 650 mg 서방 제형 중심이라 국내 500 mg 허가 제형과 다르며 인과관계를 확정하지 않는다.",
+        "locator": "abstract:sentence:7",
+        "locator_quote_en": "Users of 650-mg ER formulations were significantly less likely to know their dosing interval of 8 hours (33% vs. 49%; P < 0.0001) and more likely to redose too soon (26% vs. 10%; P < 0.0001) and to use other acetaminophen medications concomitantly (14% vs. 7%; P < 0.0001)."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-003",
+        "record_id": "PMID-30030041",
+        "rule_id": "OTC-RULE-004",
+        "keep": true,
+        "issues": [
+          "missing_statistical_significance",
+          "selection_reason_causality"
+        ],
+        "corrected_key_finding_ko": "650 mg 서방정 사용자는 8시간 복용 간격을 안다고 답한 비율이 유의하게 낮았고(33% 대 49%), 너무 이르게 재복용한 비율은 유의하게 높았습니다(26% 대 10%).",
+        "corrected_selection_reason_ko": "650 mg 서방정 사용자에서 8시간 간격 인지가 낮고 조기 재복용이 많았다는 관찰 결과가 최소 간격 안내의 배경을 제공한다. 간격 인지 부족이 조기 재복용을 직접 일으킨다고 단정하지 않는다.",
+        "corrected_limitation_ko": "미국 성인의 7일 자기기록 관찰연구이고 650 mg 서방 제형 중심이라 국내 500 mg 허가 제형과 다르며 인과관계를 확정하지 않는다.",
+        "corrected_quote": null,
+        "why_ko": "locator quote는 초록에 있으나 기존 한국어 요약이 유의성과 수치를 생략하고 선택 사유가 인과처럼 읽힐 수 있어 보정한다.",
+        "evidence_quote": "On days when 650-mg extended-release (ER) formulations were taken, exceeding 4 grams was significantly more likely"
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-008",
+      "link_id": "OTC-LIT-V50-LINK-004",
+      "record_id": "PMID-22617049",
+      "rule_id": "OTC-RULE-005",
+      "abstract_sha256": "b6e2c9f82480f35bb00c1587991cad0207cedb9f007ee5cc4623708871b82371",
+      "before": {
+        "key_finding_ko": "기존 제품 표기 용법으로는 저체중 소아가 권장 1회량·1일 총량의 약 두 배를 받을 위험이 있었고 1세와 6세에서 특히 두드러졌습니다.",
+        "selection_reason_ko": "연령 기준만으로 용량을 정할 때 생기는 오차를 보여 주므로 연령 제한 경고를 설명합니다.",
+        "limitation_ko": "영국 제품 표기를 대상으로 한 모델링 연구이며 실제 복용 결과를 관찰하지 않았습니다.",
+        "locator": "abstract:sentence:7",
+        "locator_quote_en": "RESULTS: With the current product dosing instructions, underweight children are at risk of receiving approximately two times the recommended single and cumulative daily dose of paracetamol, particularly at age 1 year and 6 years."
+      },
+      "after": {
+        "key_finding_ko": "기존 제품 표기 용법으로는 저체중 소아가 권장 1회량·1일 총량의 약 두 배를 받을 위험이 있었고 1세와 6세에서 특히 두드러졌습니다.",
+        "selection_reason_ko": "연령 기준만으로 용량을 정할 때 생기는 오차를 보여 주므로 연령 제한 경고를 설명합니다.",
+        "limitation_ko": "영국 제품 표기와 저체중 소아의 이론적 모델링 연구라 실제 복용 결과와 국내 타이레놀 500 mg 허가 연령 제한을 직접 입증하지 않는다.",
+        "locator": "abstract:sentence:7",
+        "locator_quote_en": "RESULTS: With the current product dosing instructions, underweight children are at risk of receiving approximately two times the recommended single and cumulative daily dose of paracetamol, particularly at age 1 year and 6 years."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-004",
+        "record_id": "PMID-22617049",
+        "rule_id": "OTC-RULE-005",
+        "keep": true,
+        "issues": [
+          "domestic_rule_extrapolation"
+        ],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": null,
+        "corrected_limitation_ko": "영국 제품 표기와 저체중 소아의 이론적 모델링 연구라 실제 복용 결과와 국내 타이레놀 500 mg 허가 연령 제한을 직접 입증하지 않는다.",
+        "corrected_quote": null,
+        "why_ko": "저체중 소아의 용량 초과 모델 결과와 locator가 일치한다. 국내 연령 제한 자체를 입증한 문헌으로 확대하지 않도록 한계를 보강해 유지한다.",
+        "evidence_quote": "underweight children are at risk of receiving approximately two times the recommended single and cumulative daily dose of paracetamol"
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-007",
+      "link_id": "OTC-LIT-V50-LINK-005",
+      "record_id": "PMID-41803773",
+      "rule_id": "OTC-RULE-005",
+      "abstract_sha256": "d26f3798d0426418d4f37fffba6e13c49c04e93b4f518d04cf51f01ed0894280",
+      "before": {
+        "key_finding_ko": "소아 파라세타몰 투약 오류의 가장 흔한 원인은 보호자 간 의사소통 착오와 함량·제형 선택 오류였습니다.",
+        "selection_reason_ko": "연령·제형이 맞지 않는 제품을 고르는 것이 실제 오류의 주된 경로임을 보여 줍니다.",
+        "limitation_ko": "호주 중독정보센터 신고 자료의 후향 관찰연구이며 12세 미만만 대상입니다.",
+        "locator": "abstract:sentence:11",
+        "locator_quote_en": "A communication error between caregivers and strength/formulation selection errors were the most frequently cited reasons for error."
+      },
+      "after": {
+        "key_finding_ko": "소아 파라세타몰 투약 오류의 가장 흔한 원인은 보호자 간 의사소통 착오와 함량·제형 선택 오류였습니다.",
+        "selection_reason_ko": "연령·제형이 맞지 않는 제품을 고르는 것이 실제 오류의 주된 경로임을 보여 줍니다.",
+        "limitation_ko": "호주 중독정보센터 신고 자료의 후향 관찰연구이며 12세 미만만 대상입니다.",
+        "locator": "abstract:sentence:11",
+        "locator_quote_en": "A communication error between caregivers and strength/formulation selection errors were the most frequently cited reasons for error."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-005",
+        "record_id": "PMID-41803773",
+        "rule_id": "OTC-RULE-005",
+        "keep": true,
+        "issues": [],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": null,
+        "corrected_limitation_ko": null,
+        "corrected_quote": null,
+        "why_ko": "원문 초록의 오류 원인 문장과 한국어 요약이 일치하고, 소아 용량·제형 오류 경고의 배경으로 직접 연결된다. 심각한 결과가 드물었다는 결론도 함께 고려해야 한다.",
+        "evidence_quote": "A communication error between caregivers and strength/formulation selection errors were the most frequently cited reasons for error."
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-009",
+      "link_id": "OTC-LIT-V50-LINK-006",
+      "record_id": "PMID-39714827",
+      "rule_id": "OTC-RULE-006",
+      "abstract_sha256": "41014e99f961d433e207c8a0946b4bda4176b1096c58aafce84c9b7d674c08c1",
+      "before": {
+        "key_finding_ko": "임신 중 NSAID 처방에는 주의가 필요하며, 특히 3분기 이부프로펜에서 소아 만성콩팥병 위험이 높게 나타났습니다.",
+        "selection_reason_ko": "임신 중 NSAID 노출과 태아 신장 결과를 대규모 코호트로 다룬 자료라 임신 경고의 배경입니다.",
+        "limitation_ko": "대만 처방 자료 기반 코호트이며 일반의약품 자가 복용이 아니라 처방 노출을 봤습니다.",
+        "locator": "abstract:sentence:16",
+        "locator_quote_en": "However, the findings underscore the need for caution when prescribing NSAIDs during pregnancy, particularly indomethacin and ketorolac in the first trimester, mefenamic acid and diclofenac in the second trimester, and ibuprofen in the third trimester, to ensure the safety of the offspring's kidneys."
+      },
+      "after": {
+        "key_finding_ko": "대만 단태아 코호트에서는 임신 중 NSAID 처방과 소아 CKD가 연관되었습니다(wHR 1.10, 95% CI 1.05-1.15). 그러나 형제 비교에서는 태아 신독성과의 연관성이 관찰되지 않았고, 3분기 이부프로펜 단태아 분석의 wHR은 1.34(95% CI 1.07-1.68)였습니다.",
+        "selection_reason_ko": "임신 중 NSAID 처방과 자녀 신장 결과의 연관성을 보여 임신 주의의 배경이 되지만, 형제 비교에서 연관성이 없어 인과나 이부프로펜의 국내 위험 수치를 확정하지 않는다.",
+        "limitation_ko": "대만 처방자료 기반 코호트이며 일반의약품 자가복용과 다르다. 단태아 분석과 형제 비교 결과가 달라 잔여 혼란과 가족 요인을 배제할 수 없고, 국내 허가사항 수치를 입증하지 않는다.",
+        "locator": "abstract:sentence:12",
+        "locator_quote_en": "No association was observed between NSAID use and fetal nephrotoxicity in sibling comparisons."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-006",
+        "record_id": "PMID-39714827",
+        "rule_id": "OTC-RULE-006",
+        "keep": true,
+        "issues": [
+          "key_finding_contradicts_sibling_analysis",
+          "missing_uncertainty"
+        ],
+        "corrected_key_finding_ko": "대만 단태아 코호트에서는 임신 중 NSAID 처방과 소아 CKD가 연관되었습니다(wHR 1.10, 95% CI 1.05-1.15). 그러나 형제 비교에서는 태아 신독성과의 연관성이 관찰되지 않았고, 3분기 이부프로펜 단태아 분석의 wHR은 1.34(95% CI 1.07-1.68)였습니다.",
+        "corrected_selection_reason_ko": "임신 중 NSAID 처방과 자녀 신장 결과의 연관성을 보여 임신 주의의 배경이 되지만, 형제 비교에서 연관성이 없어 인과나 이부프로펜의 국내 위험 수치를 확정하지 않는다.",
+        "corrected_limitation_ko": "대만 처방자료 기반 코호트이며 일반의약품 자가복용과 다르다. 단태아 분석과 형제 비교 결과가 달라 잔여 혼란과 가족 요인을 배제할 수 없고, 국내 허가사항 수치를 입증하지 않는다.",
+        "corrected_quote": "No association was observed between NSAID use and fetal nephrotoxicity in sibling comparisons.",
+        "why_ko": "기존 요약은 3분기 이부프로펜 위험만 강조하고 형제 비교의 음성 결과를 누락했다. 초록의 수치·부정·범위를 모두 보존하도록 수정해 유지한다.",
+        "evidence_quote": "No association was observed between NSAID use and fetal nephrotoxicity in sibling comparisons."
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-010",
+      "link_id": "OTC-LIT-V50-LINK-007",
+      "record_id": "PMID-26460177",
+      "rule_id": "OTC-RULE-007",
+      "abstract_sha256": "cc9da0c81d266de39e171e607c429f332e6ece0237cf507e016b7b9a71f8fa34",
+      "before": {
+        "key_finding_ko": "파라세타몰 과량은 전격간부전으로 이어질 수 있고, 단기·장기 사용 모두 간효소 상승과 연관되어 보고되었습니다.",
+        "selection_reason_ko": "간질환자에서 아세트아미노펜 사용을 제한해 온 근거와 그 불확실성을 함께 설명합니다.",
+        "limitation_ko": "종설이며 만성 간질환자 대상 권고를 확정하지 않았습니다.",
+        "locator": "abstract:sentence:2",
+        "locator_quote_en": "Fulminant hepatic failure has been a well documented consequence of paracetamol overdose since its introduction, while short and long term use have both been associated with elevation of liver transaminases, a surrogate marker for acute liver injury."
+      },
+      "after": {
+        "key_finding_ko": "파라세타몰 과량은 전격간부전으로 이어질 수 있고, 단기·장기 사용 모두 간효소 상승과 연관되어 보고되었습니다.",
+        "selection_reason_ko": "간질환자에서 아세트아미노펜 사용을 제한해 온 근거와 그 불확실성을 함께 설명합니다.",
+        "limitation_ko": "종설이며 만성 간질환자 대상 권고를 확정하지 않았습니다.",
+        "locator": "abstract:sentence:2",
+        "locator_quote_en": "Fulminant hepatic failure has been a well documented consequence of paracetamol overdose since its introduction, while short and long term use have both been associated with elevation of liver transaminases, a surrogate marker for acute liver injury."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-007",
+        "record_id": "PMID-26460177",
+        "rule_id": "OTC-RULE-007",
+        "keep": true,
+        "issues": [],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": null,
+        "corrected_limitation_ko": null,
+        "corrected_quote": null,
+        "why_ko": "인용문은 초록 sentence 2와 일치하며 전격간부전·간효소 상승·불확실성을 원문 강도대로 요약한다. 간질환 허가 주의 자체는 문헌이 아닌 규칙 출처가 담당한다.",
+        "evidence_quote": "Fulminant hepatic failure has been a well documented consequence of paracetamol overdose since its introduction"
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-011",
+      "link_id": "OTC-LIT-V50-LINK-008",
+      "record_id": "PMID-33662136",
+      "rule_id": "OTC-RULE-008",
+      "abstract_sha256": "260e4ff128cef398b666290355a7d391f0834fe1dc932bc270ba4147b2ed487c",
+      "before": {
+        "key_finding_ko": "이부프로펜 사용은 만성콩팥병이 있는 소아에서 없는 소아보다 급성신손상 위험이 더 크게 나타났습니다.",
+        "selection_reason_ko": "기존 신장질환이 있을 때 NSAID의 신손상 위험이 커진다는 점을 직접 보여 줍니다.",
+        "limitation_ko": "중국 입원 소아 코호트라 국내 외래 자가 복용 상황과 다릅니다.",
+        "locator": "abstract:sentence:14",
+        "locator_quote_en": "Ibuprofen use was associated with a greater hazard in children who had chronic kidney disease vs those without (HR, 2.31 [95% CI, 1.73-3.10] vs 1.19 [95% CI, 1.09-1.29]), required intensive care vs those without this need (HR, 1.47 [95% CI, 1.24-1.75] vs 1.18 [95% CI, 1.07-1.29]), or were older vs younger (>10 years and >1 year to 10 years vs 1 month to 1 year) (HR, 1.64 [95% CI, 1.32-2.05]; 1.36 [95% CI, 1.23-1.52] vs 0.99 [95% CI, 0.86-1.13])."
+      },
+      "after": {
+        "key_finding_ko": "이부프로펜 사용은 만성콩팥병이 있는 소아에서 없는 소아보다 급성신손상 위험이 더 크게 나타났습니다.",
+        "selection_reason_ko": "입원 소아 코호트에서 이부프로펜 사용과 AKI가 연관되었고 CKD 소아에서 연관 정도가 더 크게 나타났다는 결과가 신장질환 주의의 배경을 제공한다. 관찰 연구이므로 인과를 확정하지 않는다.",
+        "limitation_ko": "중국 입원 소아 코호트라 국내 외래 자가복용과 다르며, 조정된 연관성은 인과나 국내 제품 위험 수치를 입증하지 않는다.",
+        "locator": "abstract:sentence:14",
+        "locator_quote_en": "Ibuprofen use was associated with a greater hazard in children who had chronic kidney disease vs those without (HR, 2.31 [95% CI, 1.73-3.10] vs 1.19 [95% CI, 1.09-1.29]), required intensive care vs those without this need (HR, 1.47 [95% CI, 1.24-1.75] vs 1.18 [95% CI, 1.07-1.29]), or were older vs younger (>10 years and >1 year to 10 years vs 1 month to 1 year) (HR, 1.64 [95% CI, 1.32-2.05]; 1.36 [95% CI, 1.23-1.52] vs 0.99 [95% CI, 0.86-1.13])."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-008",
+        "record_id": "PMID-33662136",
+        "rule_id": "OTC-RULE-008",
+        "keep": true,
+        "issues": [
+          "observational_association"
+        ],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": "입원 소아 코호트에서 이부프로펜 사용과 AKI가 연관되었고 CKD 소아에서 연관 정도가 더 크게 나타났다는 결과가 신장질환 주의의 배경을 제공한다. 관찰 연구이므로 인과를 확정하지 않는다.",
+        "corrected_limitation_ko": "중국 입원 소아 코호트라 국내 외래 자가복용과 다르며, 조정된 연관성은 인과나 국내 제품 위험 수치를 입증하지 않는다.",
+        "corrected_quote": null,
+        "why_ko": "CKD 하위군의 hazard ratio 인용은 초록과 일치한다. 관찰 연관성을 인과로 읽지 않도록 선택 사유와 한계를 보강해 유지한다.",
+        "evidence_quote": "Ibuprofen use was associated with a statistically significantly increased risk of hospital-acquired AKI"
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-015",
+      "link_id": "OTC-LIT-V50-LINK-009",
+      "record_id": "PMID-39551938",
+      "rule_id": "OTC-RULE-012",
+      "abstract_sha256": "96dde47e6c60a4140eac19590a7daaa8f0f472c9d9dfa91257dce85213802750",
+      "before": {
+        "key_finding_ko": "정맥혈전색전증으로 경구 항응고제를 쓰는 환자가 NSAID를 함께 복용하면 출혈 발생률이 두 배 이상이었습니다.",
+        "selection_reason_ko": "항응고제 복용자에서 NSAID 병용 시 출혈 위험이 커진다는 점을 대규모 코호트로 보여 줍니다.",
+        "limitation_ko": "덴마크 처방 코호트이며 정맥혈전색전증 환자 집단이라 일반 일반의약품 사용자와 다릅니다.",
+        "locator": "abstract:sentence:8",
+        "locator_quote_en": "CONCLUSIONS: Patients treated with oral anticoagulants for VTE had a more than two-fold increased bleeding rate when using NSAIDs."
+      },
+      "after": {
+        "key_finding_ko": "정맥혈전색전증으로 경구 항응고제를 쓰는 환자가 NSAID를 함께 복용하면 출혈 발생률이 두 배 이상이었습니다.",
+        "selection_reason_ko": "항응고제 복용자에서 NSAID 병용 시 출혈 위험이 커진다는 점을 대규모 코호트로 보여 줍니다.",
+        "limitation_ko": "덴마크 VTE 환자의 경구 항응고제 처방 코호트로, 항응고제 종류와 환자군이 국내 일반의약품 사용자 또는 규칙에 적힌 warfarin·coumarin과 완전히 같지 않다. 관찰 연관성은 국내 제품 허가 수치를 입증하지 않는다.",
+        "locator": "abstract:sentence:8",
+        "locator_quote_en": "CONCLUSIONS: Patients treated with oral anticoagulants for VTE had a more than two-fold increased bleeding rate when using NSAIDs."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-009",
+        "record_id": "PMID-39551938",
+        "rule_id": "OTC-RULE-012",
+        "keep": true,
+        "issues": [
+          "rule_anticoagulant_scope"
+        ],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": null,
+        "corrected_limitation_ko": "덴마크 VTE 환자의 경구 항응고제 처방 코호트로, 항응고제 종류와 환자군이 국내 일반의약품 사용자 또는 규칙에 적힌 warfarin·coumarin과 완전히 같지 않다. 관찰 연관성은 국내 제품 허가 수치를 입증하지 않는다.",
+        "corrected_quote": null,
+        "why_ko": "2배 이상 출혈 증가는 초록 결론과 일치하고 규칙의 NSAID·항응고제 병용 주의에 직접 맞는다. 연구 항응고제 범위와 규칙 범위를 분리하도록 한계를 보강한다.",
+        "evidence_quote": "Patients treated with oral anticoagulants for VTE had a more than two-fold increased bleeding rate when using NSAIDs."
+      }
+    },
+    {
+      "source_link_id": "OTC-LIT-LINK-017",
+      "link_id": "OTC-LIT-V50-LINK-010",
+      "record_id": "PMID-26022219",
+      "rule_id": "OTC-RULE-014",
+      "abstract_sha256": "3b9746e34857b16b67518756bfd63224df5b056e00abe5c17fa0b5b1df0273f2",
+      "before": {
+        "key_finding_ko": "페닐레프린과 파라세타몰 경구 복합요법은 심혈관 여력이 낮은 사람에서 페닐레프린 단독보다 혈압을 더 올릴 수 있습니다.",
+        "selection_reason_ko": "판콜에이내복액처럼 페닐레프린과 아세트아미노펜이 함께 든 제품에서 고혈압 주의가 필요한 이유를 설명합니다.",
+        "limitation_ko": "시뮬레이션과 서술적 종설이며 실제 환자 대상 임상 결과가 아닙니다.",
+        "locator": "abstract:sentence:14",
+        "locator_quote_en": "CONCLUSIONS: Combination paracetamol phenylephrine oral therapy has potential to increase blood pressure more than phenylephrine alone in those with cardiovascular compromise."
+      },
+      "after": {
+        "key_finding_ko": "페닐레프린과 파라세타몰 경구 복합요법은 심혈관 여력이 낮은 사람에서 페닐레프린 단독보다 혈압을 더 올릴 수 있습니다.",
+        "selection_reason_ko": "감기용 phenylephrine·paracetamol 복합요법이 심혈관 취약군에서 혈압을 더 올릴 가능성을 시뮬레이션한 문헌으로, 국내 판콜에이 제품 자체를 검증한 연구는 아니다.",
+        "limitation_ko": "문헌고찰과 약동학·약력학 시뮬레이션이며 실제 환자 임상 결과가 아니다. 영국·해외 제형과 가정에 기반하므로 국내 제품의 허가 용량·위험을 직접 입증하지 않는다.",
+        "locator": "abstract:sentence:14",
+        "locator_quote_en": "CONCLUSIONS: Combination paracetamol phenylephrine oral therapy has potential to increase blood pressure more than phenylephrine alone in those with cardiovascular compromise."
+      },
+      "review": {
+        "link_id": "OTC-LIT-V50-LINK-010",
+        "record_id": "PMID-26022219",
+        "rule_id": "OTC-RULE-014",
+        "keep": true,
+        "issues": [
+          "domestic_product_extrapolation",
+          "simulation_not_clinical_outcome"
+        ],
+        "corrected_key_finding_ko": null,
+        "corrected_selection_reason_ko": "감기용 phenylephrine·paracetamol 복합요법이 심혈관 취약군에서 혈압을 더 올릴 가능성을 시뮬레이션한 문헌으로, 국내 판콜에이 제품 자체를 검증한 연구는 아니다.",
+        "corrected_limitation_ko": "문헌고찰과 약동학·약력학 시뮬레이션이며 실제 환자 임상 결과가 아니다. 영국·해외 제형과 가정에 기반하므로 국내 제품의 허가 용량·위험을 직접 입증하지 않는다.",
+        "corrected_quote": null,
+        "why_ko": "인용문은 초록 결론과 일치하고 Q03 고혈압 경고 배경에 직접 맞는다. 판콜에이 자체의 임상 검증처럼 읽히지 않도록 선택 사유와 한계를 수정해 유지한다.",
+        "evidence_quote": "Combination paracetamol phenylephrine oral therapy has potential to increase blood pressure more than phenylephrine alone"
+      }
+    }
+  ]
+}

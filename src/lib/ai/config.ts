@@ -1,20 +1,22 @@
+import type { ReasoningEffort } from "openai/resources/shared";
+
 export const AI_EXPLAIN_MODEL = "gpt-5.6-luna";
 /**
- * 이 화면의 출력 스키마는 요약·경보·묶음·다음단계·규칙액션까지 8개 필드라
- * 생성이 길다. 14초로 뒀더니 프로덕션에서 전건 "Request timed out." 이었다.
+ * Luna max가 환자 조건과 원자료를 대조하고 설명을 마칠 시간을 확보한다.
+ * Vercel 함수 상한 300초 안에서 실패 사유와 대체 설명까지 반환한다.
  */
-export const AI_EXPLAIN_TIMEOUT_MS = 45_000;
+export const AI_EXPLAIN_TIMEOUT_MS = 240_000;
 export const AI_EXPLAIN_MAX_RULES_PER_BUCKET = 4;
 export const AI_EXPLAIN_MAX_EVIDENCE_PER_RULE = 1;
 export const AI_EXPLAIN_MAX_TEXT_LENGTH = 180;
 /**
- * 추론 모델은 이 예산을 추론에 먼저 쓴다. 900 이면 추론만 하다 메시지 없이
- * status=incomplete 로 끝나 output_parsed 가 비고, 화면은 매번 "형식이 올바르지
- * 않다"는 폴백을 본다. 2,000 이상 확보한다.
+ * 추론과 답변에 함께 쓰는 예산이다. 실제 max 호출에서 설명 생성 전
+ * 예산이 소진되지 않도록 24,000토큰을 확보한다.
  */
-export const AI_EXPLAIN_MAX_OUTPUT_TOKENS = 2_400;
-/** 이 화면은 설명만 하면 되므로 추론을 깊게 돌릴 이유가 없다. */
-export const AI_EXPLAIN_REASONING_EFFORT = "low" as const;
+export const AI_EXPLAIN_MAX_OUTPUT_TOKENS = 24_000;
+/** 환자 조건과 문헌의 세부 결과를 대조하는 상담 설명 설정. */
+// 설치된 SDK의 타입 목록보다 Luna의 지원 범위가 넓다. 전송 값은 공식 모델 문서의 max로 고정한다.
+export const AI_EXPLAIN_REASONING_EFFORT = "max" as unknown as ReasoningEffort;
 export const AI_EXPLAIN_CACHE_TTL_MS = 5 * 60 * 1000;
 
 export function getOpenAIApiKey() {

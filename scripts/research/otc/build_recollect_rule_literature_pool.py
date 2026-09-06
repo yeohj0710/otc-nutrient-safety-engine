@@ -31,10 +31,11 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[3]
-TRACK_ROOT = Path(r"C:\dev\evidence-recollect\data\kwon")
+TRACK_ROOT = ROOT.parent / "evidence-recollect" / "data" / "kwon"
 
-CORPUS = TRACK_ROOT / "corpus" / "evidence_map.csv"
-DECISIONS = TRACK_ROOT / "screen" / "redo-20260820" / "effective.decisions.jsonl"
+CORPUS = TRACK_ROOT / "final" / "evidence_map.csv"
+DECISIONS = TRACK_ROOT / "final" / "effective.decisions.jsonl"
+CORRECTION_SUMMARY = TRACK_ROOT / "final" / "summary.json"
 MANIFEST = (
     ROOT
     / "research_v3"
@@ -46,9 +47,6 @@ MANIFEST = (
 )
 RULES = ROOT / "research_v3" / "otc" / "rules" / "rules.csv"
 TARGET = ROOT / "src" / "generated" / "recollect" / "rule-literature-pool.json"
-
-# 확정된 도출 결과. 어긋나면 입력이나 도출식이 달라졌다는 뜻이므로 멈춘다.
-EXPECTED_UNIQUE_PAPERS = 14676
 
 csv.field_size_limit(1 << 30)
 
@@ -83,12 +81,17 @@ def sha256_file(path: Path) -> str:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--check", action="store_true", help="파일을 쓰지 않고 집계만 보고한다")
+    parser.add_argument("--check", action="store_true", help="다시 도출한 전체 내용이 저장된 자료와 같은지 검사한다")
     args = parser.parse_args()
 
-    for path in (CORPUS, DECISIONS, MANIFEST, RULES):
+    for path in (CORPUS, DECISIONS, CORRECTION_SUMMARY, MANIFEST, RULES):
         if not path.is_file():
             raise SystemExit(f"입력이 없습니다: {path}")
+
+    correction = json.loads(CORRECTION_SUMMARY.read_text(encoding="utf-8"))
+    if (sha256_file(DECISIONS) != correction["effective_sha256"]
+            or sha256_file(CORPUS) != correction["corpus_sha256"]):
+        raise SystemExit("사후 정정 원장 또는 코퍼스 해시가 다릅니다")
 
     # 1. 질문별 유지 집합
     retain: dict[str, set[str]] = {}
@@ -101,6 +104,9 @@ def main() -> int:
             row = json.loads(line)
             if row["decision"] == "retain":
                 retain.setdefault(row["question_id"], set()).add(row["record_id"])
+    if (decision_rows != correction["corpus_rows"]
+            or sum(len(v) for v in retain.values()) != correction["final_counts"]["retain"]):
+        raise SystemExit("사후 정정 원장의 행 수가 다릅니다")
 
     # 2. 규칙 메타
     with RULES.open(encoding="utf-8-sig", newline="") as handle:
@@ -242,12 +248,6 @@ def main() -> int:
     )
     print(f"화면 수록 고유 논문 {len(listed_papers):,}편 (규칙당 상한 {MAX_PER_RULE})")
 
-    if len(matched_papers) != EXPECTED_UNIQUE_PAPERS:
-        raise SystemExit(
-            f"유형일치 고유 논문이 {len(matched_papers):,}편입니다. "
-            f"확정값 {EXPECTED_UNIQUE_PAPERS:,}편과 다릅니다. 입력이나 도출식을 확인하십시오."
-        )
-
     payload = {
         "schema_version": "1.0.0",
         "track": "recollect-v2",
@@ -283,6 +283,10 @@ def main() -> int:
             "same_as": "scripts/research/otc/build_rule_literature_pool.py (표현·점수식을 import)",
         },
         "inputs": {
+            "posthoc_correction": {
+                "path": str(CORRECTION_SUMMARY), "sha256": sha256_file(CORRECTION_SUMMARY),
+                "protocol": correction["protocol"], "reviewed_rows": correction["reviewed_rows"],
+            },
             "decisions": {
                 "path": str(DECISIONS),
                 "sha256": sha256_file(DECISIONS),
@@ -322,6 +326,9 @@ def main() -> int:
     }
 
     if args.check:
+        if not TARGET.is_file() or json.loads(TARGET.read_text(encoding="utf-8")) != payload:
+            raise SystemExit("다시 도출한 문헌 목록·인용·집계·출처가 저장된 자료와 다릅니다")
+        print("저장된 문헌 목록·인용·집계·출처와 정확히 일치합니다")
         return 0
 
     TARGET.parent.mkdir(parents=True, exist_ok=True)

@@ -1,41 +1,25 @@
 import { NextResponse } from "next/server";
 
 import { explainOtcFindings } from "@/src/lib/ai/explainOtcFindings";
-import type { SafetyEvaluation } from "@/src/lib/otc/schema";
+import { parseOtcExplainInput } from "@/src/lib/ai/otc-explain-input";
 
 export const runtime = "nodejs";
 /** 모델 생성이 20초를 넘길 수 있어 함수 예산을 명시한다. */
-export const maxDuration = 60;
+export const maxDuration = 300;
 
-// 메인 화면의 OTC 제품 점검 결과를 설명한다. 판정은 클라이언트 엔진이 이미
-// 끝냈고 여기서는 그 결과만 읽는다 — 어떤 규칙이 걸렸는지는 바뀌지 않는다.
+// 화면과 같은 엔진으로 판정을 재현한 뒤 제품 원자료와 함께 설명한다.
 
 export async function POST(request: Request) {
   try {
-    const payload = (await request.json()) as {
-      evaluation?: SafetyEvaluation;
-      productNames?: unknown;
-      profileSummary?: unknown;
-    };
-
-    const evaluation = payload.evaluation;
-    if (!evaluation || !Array.isArray(evaluation.findings)) {
+    const input = parseOtcExplainInput(await request.json());
+    if (!input) {
       return NextResponse.json(
-        { ok: false, reason: "invalid_response", notice: "점검 결과가 없어 설명을 만들지 않았습니다." },
+        { ok: false, reason: "invalid_response", notice: "제품이나 입력값을 확인하지 못했습니다. 제품과 복용량을 확인한 뒤 다시 점검하세요." },
         { status: 400 },
       );
     }
 
-    const response = await explainOtcFindings({
-      evaluation,
-      productNames: Array.isArray(payload.productNames)
-        ? payload.productNames.filter((item): item is string => typeof item === "string")
-        : [],
-      profileSummary:
-        typeof payload.profileSummary === "string" && payload.profileSummary.trim()
-          ? payload.profileSummary
-          : "프로필 정보 없음",
-    });
+    const response = await explainOtcFindings(input);
 
     return NextResponse.json(response);
   } catch (error) {

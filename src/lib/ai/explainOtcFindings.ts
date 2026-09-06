@@ -1,6 +1,10 @@
 import "server-only";
 
 import OpenAI from "openai";
+import { z } from "zod";
+import { zodTextFormat } from "openai/helpers/zod";
+import { createHash } from "node:crypto";
+import { buildOtcCounselingContext, validateOtcDiscussion } from "@/src/lib/ai/otc-counseling-context";
 
 import {
   AI_EXPLAIN_MAX_OUTPUT_TOKENS,
@@ -12,11 +16,9 @@ import {
 import { refereeExplanation } from "@/src/lib/ai/referee";
 import {
   aiExplainResponseSchema,
-  aiExplanationSchema,
-  aiExplanationTextFormat,
   type AiExplainResponse,
 } from "@/src/lib/ai/schema";
-import type { SafetyEvaluation, Severity } from "@/src/lib/otc/schema";
+import type { SafetyEvaluation, Severity, SelectedProduct, UserProfile } from "@/src/lib/otc/schema";
 
 // 메인 화면(OtcProductSafetyClient)이 쓰는 엔진은 otc/engine.ts 이고 출력이
 // SafetyEvaluation 이다. 기존 explainSafetyResults 는 구 knowledge-pack 엔진
@@ -27,7 +29,7 @@ import type { SafetyEvaluation, Severity } from "@/src/lib/otc/schema";
 // 어떤 규칙이 걸렸는지는 바꾸지 못한다.
 
 /** 심판이 비교할 라벨. 엔진 severity 를 화면 표현으로만 옮긴다. */
-function severityToLabel(severity: Severity) {
+function severityToLabel(severity: Severity): "금지/중단" | "강한 주의" | "일반 주의" | "참고" {
   // OTC 엔진의 등급은 information | caution | high | urgent 네 단계다.
   // 구 엔진(contraindicated/avoid/warn/monitor)과 값이 달라 그대로 못 쓴다.
   switch (severity) {
@@ -44,6 +46,7 @@ function severityToLabel(severity: Severity) {
 
 const MAX_FINDINGS = 8;
 const MAX_TEXT = 220;
+const explanationCache = new Map<string, {expiresAt:number; response:AiExplainResponse}>();
 
 function cut(text: string | undefined, limit = MAX_TEXT) {
   const value = (text ?? "").trim();
@@ -54,6 +57,8 @@ export type OtcExplainInput = {
   evaluation: SafetyEvaluation;
   productNames: string[];
   profileSummary: string;
+  selected?: SelectedProduct[];
+  profile?: UserProfile;
 };
 
 /**
@@ -62,6 +67,7 @@ export type OtcExplainInput = {
  */
 export function buildOtcPayload(input: OtcExplainInput) {
   return {
+    counseling: buildOtcCounselingContext(input.evaluation, input.selected ?? [], input.profile),
     profileSummary: cut(input.profileSummary, 300),
     products: input.productNames.slice(0, 12).map((name) => cut(name, 60)),
     totals: {
@@ -101,6 +107,13 @@ function buildInstructions() {
   return [
     "당신은 일반의약품 함께복용 점검 결과를 쉬운 한국어로 풀어 쓰는 보조 설명자입니다.",
     "이미 계산된 판정 결과만 바탕으로 설명합니다.",
+    "먼저 환자가 입력한 구체적인 질환·복용약·복용량과 제품의 실제 성분을 연결해 무엇을 확인해야 하는지 설명합니다. 단순히 주의 항목 개수나 시스템이 판정했다는 이야기로 채우지 않습니다.",
+    "counseling에는 실제 제품의 함량·사용량, 환자 조건, 허가원문과 검토한 논문의 결과가 있습니다. 용량 초과는 입력량과 허가값을 같은 제품에 연결하고, 병용은 어떤 성분과 어떤 병용약 때문에 주의가 필요한지 밝힙니다.",
+    "calculation의 amount와 reference는 구조화한 허가 기준에 입력값을 대조한 계산 결과입니다. sources에서 출처를 확인하되, 계산값을 허가원문의 직접 인용으로 표현하지 않습니다. productUse의 doseUnitLabel로 정·캡슐·mL 등 실제 복용 단위를 씁니다.",
+    "evidenceDiscussion에는 규칙당 문단 하나로 연구 대상, 성분, 연구 설계, 사용량과 기간, 구체적인 결과, 그리고 입력한 환자에게 적용할 때의 차이를 설명합니다. papers의 population, exposure, outcome, limitation 값을 그대로 근거로 씁니다. 근거가 없는 수치, 조합, 효과를 만들지 않습니다.",
+    "evidenceDiscussion의 ruleId와 pmids는 해당 counseling.evidence 항목에 제공한 값만 씁니다. relation이 direct가 아닌 문헌(입력 정보 부족, 연구 대상과 차이, 배경)은 이 환자와 성분을 직접 검증한 결과로 쓰지 않으며, statusKo와 limitation이 말하는 이유(어떤 입력이 비어 있는지, 무엇이 다른지)를 그 문단 안에서 밝힙니다. 논문의 위험비를 개인의 절대 위험으로 바꾸지 않습니다. 논문은 허가 판정을 바꾸지 않습니다.",
+    "reviewStatus가 agent_screened_candidate인 문헌은 추가 선별 후보입니다. 그 문헌을 언급하는 문단에는 '추가 선별 후보'라는 말을 넣고, 검토를 마친 근거나 승인된 근거처럼 쓰지 않습니다. 후보의 지위는 statusKo 그대로 씁니다.",
+    "literature.status가 none이면 '논문이 없습니다'로 끝내지 말고, authorization의 허가원문과 calculation으로 무엇을 확인했는지, 문헌으로는 무엇을 확인하지 못했는지를 구체적으로 씁니다. literature.headlineKo와 detailKo에 그 이유가 있습니다.",
     "규칙 매칭 여부를 새로 판단하지 마십시오. 판정은 엔진이 이미 끝냈습니다.",
     "주어진 자료에 없는 용량·상한·기간 숫자를 쓰지 마십시오.",
     "되묻지 마십시오. 물음표를 쓰지 마십시오. 화면에는 답을 받을 자리가 없습니다.",
@@ -150,29 +163,37 @@ export async function explainOtcFindings(
   }
 
   const payload = buildOtcPayload(input);
-  const client = new OpenAI({ apiKey, timeout: AI_EXPLAIN_TIMEOUT_MS });
+  const key = createHash("sha256").update(JSON.stringify({model:AI_EXPLAIN_MODEL,effort:AI_EXPLAIN_REASONING_EFFORT,instructions:buildInstructions(),payload})).digest("hex");
+  const cached = explanationCache.get(key);
+  if (cached && cached.expiresAt > Date.now() && cached.response.ok) return {...cached.response,meta:{...cached.response.meta,cached:true}};
+  const client = new OpenAI({ apiKey, timeout: AI_EXPLAIN_TIMEOUT_MS, maxRetries: 0 });
+  // 실제 화면에 필요한 문장만 생성한다. 경보와 등급은 엔진 값에서 그대로 만든다.
+  const ruleIds = [...new Set(payload.counseling.evidence.map(row=>row.ruleId))];
+  const detailedSchema = z.object({summaryTitle:z.string(),summaryParagraph:z.string(),evidenceDiscussion:z.array(z.object({text:z.string(),ruleId:z.enum((ruleIds.length ? ruleIds : ["none"]) as [string,...string[]]),pmids:z.array(z.string())}))});
 
   try {
     const parsed = await client.responses.parse({
       model: AI_EXPLAIN_MODEL,
-      instructions: buildInstructions(),
+      instructions: buildInstructions() + "\n출력은 summaryTitle, summaryParagraph, evidenceDiscussion만 작성합니다. 요약은 3문장 이내, 문헌 설명은 환자와 가장 관련 있는 규칙 3개 이내, 규칙당 4문장 이내입니다. 경보와 다음 행동은 화면이 엔진 값에서 표시하므로 별도로 작성하지 않습니다. 입력에 없는 결과를 채우려고 하지 않습니다.",
       input: [
         {
           role: "user",
           content: [{ type: "input_text", text: JSON.stringify(payload) }],
         },
       ],
-      text: { format: aiExplanationTextFormat },
+      text: { format: zodTextFormat(ruleIds.length ? detailedSchema : detailedSchema.omit({evidenceDiscussion:true}),"otc_personalized_explanation") },
       reasoning: { effort: AI_EXPLAIN_REASONING_EFFORT },
       max_output_tokens: AI_EXPLAIN_MAX_OUTPUT_TOKENS,
       store: false,
     });
 
-    const explanation = aiExplanationSchema.safeParse(parsed.output_parsed);
+    const generated = detailedSchema.safeParse(parsed.output_parsed ? {...parsed.output_parsed, ...(!ruleIds.length ? {evidenceDiscussion:[]} : {})} : null);
+    const explanation = generated.success ? {success:true as const,data:{...generated.data,evidenceDiscussion:generated.data.evidenceDiscussion ?? [],topAlerts:payload.findings.filter(f=>f.severity!=="참고").slice(0,3).map(f=>({ruleId:f.ruleId,title:f.title,severity:f.severity,reason:f.detail})),groupedFindings:[],missingInformation:[],userFriendlyNextSteps:[],ruleCardActions:[],disclaimer:"문헌은 허가사항 판정을 보충하며 개인의 안전성을 보증하지 않습니다."}} : generated;
     if (!explanation.success) {
       console.warn("[otc-explain] fallback", {
         reason: "invalid_response",
         issues: explanation.error.issues.slice(0, 4),
+        status: parsed.status, usage: parsed.usage,
       });
       return aiExplainResponseSchema.parse({
         ok: false,
@@ -183,9 +204,10 @@ export async function explainOtcFindings(
 
     // 엔진이 하지 않은 판단을 더했는지 결정론으로 본다. 걸리면 전체를 버린다.
     const verdict = refereeExplanation({ explanation: explanation.data, payload });
-    if (!verdict.ok) {
+    const discussionErrors=validateOtcDiscussion(explanation.data.evidenceDiscussion,payload.counseling);
+    if (!verdict.ok || discussionErrors.length) {
       console.warn("[otc-explain] refereed out", {
-        rejections: verdict.rejections.slice(0, 6),
+        rejections: [...(!verdict.ok?verdict.rejections:[]),...discussionErrors].slice(0, 6),
       });
       return aiExplainResponseSchema.parse({
         ok: false,
@@ -195,11 +217,15 @@ export async function explainOtcFindings(
       });
     }
 
-    return aiExplainResponseSchema.parse({
+    const response = aiExplainResponseSchema.parse({
       ok: true,
       explanation: explanation.data,
-      meta: { cached: false, model: AI_EXPLAIN_MODEL, requestId: "otc" },
+      evidenceDiscussion: explanation.data.evidenceDiscussion,
+      meta: { cached: false, model: AI_EXPLAIN_MODEL, effort:AI_EXPLAIN_REASONING_EFFORT, requestId: "otc" },
     });
+    if (explanationCache.size >= 120) explanationCache.delete(explanationCache.keys().next().value as string);
+    explanationCache.set(key,{expiresAt:Date.now()+5*60_000,response});
+    return response;
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown";
     const timedOut = /time(?:d)?\s*out/i.test(message) || /abort/i.test(message);

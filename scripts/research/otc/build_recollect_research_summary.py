@@ -1,7 +1,7 @@
 """재수집 트랙(recollect-v2 · kwon)의 수치를 연구 정보 화면용 JSON 으로 굽는다.
 
 옛 트랙 원장(`research_v3/logs/v50_run_report.json`,
-`v50_scoring_report.json`)은 제출한 논문의 근거다. 여기서 읽지도 쓰지도 않는다.
+`v50_scoring_report.json`)은 과거 제출본의 근거다. 여기서 수정하지 않는다.
 단 하나, 옛 코퍼스의 질문별 행 수만 비교 열에 쓰려고 읽는다.
 
 새 트랙 원장은 다른 저장소에 있다.
@@ -32,12 +32,15 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[3]
-TRACK_ROOT = Path(r"C:\dev\evidence-recollect\data\kwon")
+TRACK_ROOT = ROOT.parent / "evidence-recollect" / "data" / "kwon"
 
 REPORT = TRACK_ROOT / "report.json"
-CORPUS = TRACK_ROOT / "corpus" / "evidence_map.csv"
+CORPUS = TRACK_ROOT / "final" / "evidence_map.csv"
+METADATA = TRACK_ROOT / "final" / "metadata_manifest.json"
 CORPUS_MANIFEST = TRACK_ROOT / "corpus" / "corpus_manifest.json"
 DECISIONS = TRACK_ROOT / "screen" / "redo-20260820" / "effective.decisions.jsonl"
+CORRECTED_DECISIONS = TRACK_ROOT / "final" / "effective.decisions.jsonl"
+CORRECTION_SUMMARY = TRACK_ROOT / "final" / "summary.json"
 SCORING = TRACK_ROOT / "score-20260820" / "scoring_report.json"
 SCORES = TRACK_ROOT / "score-20260820" / "scores.jsonl"
 SAMPLE = TRACK_ROOT / "score-20260820" / "sample.json"
@@ -120,7 +123,7 @@ def weighted_scoring(report_scoring: dict[str, Any]) -> dict[str, Any]:
         for row in read_jsonl(SCORES)
     }
     sample = json.loads(SAMPLE.read_text(encoding="utf-8"))
-    weight = {s["stratum"]: s["N"] / s["n"] for s in sample["strata"]}
+    weight = {s["stratum"]: s["weight"] for s in sample["strata"]}
 
     missing = [key for key in scorer if key not in pipeline]
     if missing:
@@ -147,7 +150,7 @@ def weighted_scoring(report_scoring: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "kappa": round(kappa, 3),
-        "kappaMethod": "설계 가중 3분류 비가중 카파. 층 가중치는 N/n",
+        "kappaMethod": "설계 가중 3분류 비가중 카파. 보존된 층 가중치(N/n, 소수 셋째 자리 반올림) 사용",
         "agreementRecomputed": recomputed,
         "seed": sample["seed"],
         "strata": len(sample["strata"]),
@@ -160,7 +163,7 @@ def weighted_scoring(report_scoring: dict[str, Any]) -> dict[str, Any]:
 def main() -> None:
     for path in (
         REPORT, CORPUS, CORPUS_MANIFEST, DECISIONS, SCORING, SCORES, SAMPLE,
-        FULLTEXT, QUERIES, OLD_LEDGER, RULES, LINKS,
+        FULLTEXT, QUERIES, OLD_LEDGER, RULES, LINKS, CORRECTED_DECISIONS, CORRECTION_SUMMARY, METADATA,
     ):
         if not path.is_file():
             raise SystemExit(f"입력이 없습니다: {path}")
@@ -168,12 +171,18 @@ def main() -> None:
     report = json.loads(REPORT.read_text(encoding="utf-8"))
     manifest = json.loads(CORPUS_MANIFEST.read_text(encoding="utf-8"))
     scoring = json.loads(SCORING.read_text(encoding="utf-8"))
+    correction = json.loads(CORRECTION_SUMMARY.read_text(encoding="utf-8"))
+    metadata = json.loads(METADATA.read_text(encoding="utf-8"))
+    if (sha256_file(CORRECTED_DECISIONS) != correction["effective_sha256"]
+            or sha256_file(CORPUS) != correction["corpus_sha256"]
+            or sha256_file(METADATA) != correction["metadata_manifest_sha256"]):
+        raise SystemExit("최종 정정 원장 또는 문헌 메타데이터의 해시가 다릅니다")
     queries = json.loads(QUERIES.read_text(encoding="utf-8"))
     old_ledger = json.loads(OLD_LEDGER.read_text(encoding="utf-8"))
     links = json.loads(LINKS.read_text(encoding="utf-8"))["results"]
 
     old_rows = old_ledger["phases"]["B"]["full_record"]["per_question_membership_rows"]
-    rows_now = report["corpus"]["per_question"]
+    rows_now = metadata["per_question"]
     hits = {q["question_id"]: q for q in queries["questions"]}
 
     questions = [
@@ -208,8 +217,11 @@ def main() -> None:
         "generatedAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "generatedFrom": {
             "report": {"path": str(REPORT), "sha256": sha256_file(REPORT)},
-            "corpus": {"path": str(CORPUS), "sha256": report["corpus"]["csv_sha256"]},
+            "corpus": {"path": str(CORPUS), "sha256": sha256_file(CORPUS)},
+            "metadataRepair": {"path": str(METADATA), "sha256": sha256_file(METADATA)},
             "decisions": {"path": str(DECISIONS), "sha256": sha256_file(DECISIONS)},
+            "correctedDecisions": {"path": str(CORRECTED_DECISIONS), "sha256": sha256_file(CORRECTED_DECISIONS)},
+            "posthocCorrection": {"path": str(CORRECTION_SUMMARY), "sha256": sha256_file(CORRECTION_SUMMARY)},
             "scoring": {"path": str(SCORING), "sha256": sha256_file(SCORING)},
             "fulltext": {"path": str(FULLTEXT), "sha256": sha256_file(FULLTEXT)},
             "supersededLedger": "research_v3/logs/v50_run_report.json (봉인 · 비교 열에만 사용)",
@@ -234,23 +246,28 @@ def main() -> None:
             "hitsAfterAmendmentTotal": sum(q["hitsAfterAmendment"] for q in questions),
         },
         "corpus": {
-            "rows": report["corpus"]["rows"],
-            "uniquePapers": report["corpus"]["unique_papers"],
-            "rowsWithAbstract": report["corpus"]["rows_with_abstract"],
-            "rowsTitleOnly": report["corpus"]["rows_title_only"],
-            "duplicatesRemoved": manifest["duplicates_removed"],
+            "rows": metadata["final_rows"],
+            "uniquePapers": metadata["unique_papers"],
+            "rowsWithAbstract": metadata["rows_with_abstract"],
+            "rowsTitleOnly": metadata["rows_title_only"],
+            "duplicatesRemoved": metadata["duplicate_pmid_rows_removed"],
+            "beforeCorrectionRows": metadata["baseline_rows"],
+            "restoredRows": metadata["restored_rows"],
+            "correctedDoiRows": metadata["doi_corrected_rows"],
             "previousRows": report["corpus"]["old_rows"],
-            "growthVsPrevious": report["corpus"]["growth_vs_old"],
+            "growthVsPrevious": round(metadata["final_rows"] / report["corpus"]["old_rows"], 3),
             "xmlFiles": len(xml_files),
         },
         "screening": {
-            "screened": report["screening"]["screened"],
-            "final": {
+            "screened": sum(correction["final_counts"].values()),
+            "final": correction["final_counts"],
+            "beforeCorrection": {
                 "retain": report["screening"]["final"]["유지"],
                 "deprioritize": report["screening"]["final"]["후순위"],
                 "uncertain": report["screening"]["final"]["판정 보류"],
             },
-            "retainedPapers": report["screening"]["retained_papers"],
+            "retainedPapers": correction["final_retained_papers"],
+            "posthocCorrection": correction,
             "coverage": report["screening"]["coverage"],
             "humanDecisions": report["screening"]["human_decisions"],
             "amendments": [
@@ -271,6 +288,7 @@ def main() -> None:
             "changedFromEarlierPass": report["amendments"]["disagreements_with_old"]["union"],
         },
         "fulltext": {
+            "scope": "before_posthoc_correction",
             "checkedPapers": report["fulltext"]["checked"],
             "withPmcid": report["fulltext"]["with_pmcid"],
             "withFulltext": report["fulltext"]["with_fulltext"],
@@ -279,8 +297,13 @@ def main() -> None:
             "medianChars": report["fulltext"]["median_chars"],
         },
         "scoring": {
+            "evaluationScope": "before_posthoc_correction",
             "sampleRows": scoring["scored"],
             "populationRows": scoring["population"],
+            "analysisVersion": scoring["analysis_version"],
+            "analysisUpdatedAt": scoring["analysis_updated_at"],
+            "reference": scoring["reference"],
+            "pipelineRetainShareScope": scoring["pipeline_retain_share_scope"],
             "eligiblePopulation": weighted["eligiblePopulation"],
             "excludedFromEarlierArm": weighted["excludedFromEarlierArm"],
             "strata": weighted["strata"],
@@ -290,6 +313,8 @@ def main() -> None:
             "agreementCi": scoring["agreement_ci"],
             "sensitivity": scoring["sensitivity_vs_ai_reference"],
             "specificity": scoring["specificity_vs_ai_reference"],
+            "positivePredictiveValue": scoring["positive_predictive_value_vs_ai_reference"],
+            "negativePredictiveValue": scoring["negative_predictive_value_vs_ai_reference"],
             "kappa": weighted["kappa"],
             "kappaMethod": weighted["kappaMethod"],
             "pipelineRetainShare": scoring["pipeline_retain_share"],
@@ -312,7 +337,7 @@ def main() -> None:
             "unresolvedRuleCount": links["unresolved_rule_count"],
             "unresolvedRuleIds": links["unresolved_rule_ids"],
             "linkCount": links["emitted_link_count"],
-            "verifiedTrack": "v5.0 (봉인)",
+            "verifiedTrack": "허가원문 규칙·원문 인용 연결, R20260905 사후 정정",
         },
         "rulePool": pool_totals,
         "comparator": {
@@ -322,18 +347,21 @@ def main() -> None:
         },
         "flags": {
             "independentBlinding": False,
-            "releaseReady": False,
+            "clinicalReleaseReady": False,
+            "researchCorrectionApplied": True,
             "humanReferenceRows": report["screening"]["human_decisions"],
             "invariantsChecked": report["invariants"]["checked"],
             "invariantsFailed": report["invariants"]["failed"],
         },
         "limitations": [
             "사람이 판정한 참조표준이 0건입니다. 어떤 값도 임상적 정확도나 검증 완료를 뜻하지 않습니다.",
+            f"사후 검토 {correction['reviewed_rows']:,}행의 사유를 문헌 ID에 맞춰 기록하고 {correction['label_changes']:,}행의 판정을 바꿨습니다. 맹검 지표는 정정 전 평가이며, 정정 후 성능을 뜻하지 않습니다.",
+            f"DOI 추출과 PMID 중복 제거를 고쳐 누락된 {metadata['restored_rows']:,}행을 복원하고 처음 선별했습니다. 기존 {metadata['baseline_rows']:,}행 중 DOI {metadata['doi_corrected_rows']:,}건을 정정했습니다.",
             "자료원은 PubMed 하나입니다. 제2 데이터베이스, 회색문헌, 인용 검색을 하지 않았습니다.",
             (
-                f"유지 {report['screening']['retained_papers']:,}편 가운데 "
+                f"정정 전 유지 {report['screening']['retained_papers']:,}편 가운데 "
                 f"원문을 확보한 것은 {report['fulltext']['with_fulltext']:,}편"
-                f"({report['fulltext']['share_of_retained_pct']}%)입니다. 나머지는 제목과 초록만 읽었습니다."
+                f"({report['fulltext']['share_of_retained_pct']}%)입니다. 현재 문헌 후보 선별과 사후 검토는 제목·초록·주제어를 기준으로 합니다."
             ),
             (
                 f"선별 사유가 빈 채로 기록된 행이 "

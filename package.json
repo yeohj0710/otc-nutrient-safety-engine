@@ -10,7 +10,10 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "npm run prepare:knowledge && vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:research": "python scripts/research/otc/build_recollect_research_summary.py",
+    "validate:literature": "python scripts/research/otc/build_recollect_rule_literature_pool.py --check",
+    "validate:research": "python ../evidence-recollect/reproduce.py verify kwon"
   },
   "dependencies": {
     "next": "16.2.1",

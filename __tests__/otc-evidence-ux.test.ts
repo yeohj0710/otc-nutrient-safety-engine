@@ -736,18 +736,22 @@ describe("OTC evidence presentation", () => {
         ({ paper }) => paper.pmid,
       ),
     ).toEqual([]);
-    expect(
-      backgroundLiteratureForFinding(finding, papers, selected).map(
-        ({ paper }) => paper.pmid,
-      ),
-    ).toEqual([]);
-    expect(
-      splitSupportingLiteratureForFinding(finding, papers, selected, {
-        ageYears: 11,
-        medications: [],
-        redFlagSymptoms: [],
-      }),
-    ).toEqual({ direct: [], background: [] });
+    // 나이를 비우면 예전에는 문헌이 통째로 사라졌다. 지금은 직접 근거로 올리지 않되
+    // "입력 정보 부족" 이유를 달아 배경으로 남긴다. 나이가 연구 대상과 다르면
+    // "연구 대상과 차이"로 남긴다. 어느 쪽도 직접 근거는 아니다.
+    const unknownAge = backgroundLiteratureForFinding(finding, papers, selected);
+    expect(unknownAge.map(({ paper }) => paper.pmid)).toEqual(["30306812"]);
+    expect(unknownAge[0].applicability?.status).toBe("missing_information");
+    expect(unknownAge[0].applicability?.missing).toEqual(["나이"]);
+    const childSplit = splitSupportingLiteratureForFinding(finding, papers, selected, {
+      ageYears: 11,
+      medications: [],
+      redFlagSymptoms: [],
+    });
+    expect(childSplit.direct).toEqual([]);
+    expect(childSplit.background.map(({ paper }) => paper.pmid)).toEqual(["30306812"]);
+    expect(childSplit.background[0].applicability?.status).toBe("population_difference");
+    expect(childSplit.background[0].applicability?.different).toEqual(["나이"]);
     expect(
       directLiteratureForFinding(finding, papers, selected, {
         ageYears: 30,

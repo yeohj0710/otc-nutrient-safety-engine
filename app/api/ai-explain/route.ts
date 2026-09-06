@@ -5,7 +5,7 @@ import { aiExplainRequestSchema } from "@/src/lib/ai/schema";
 
 export const runtime = "nodejs";
 /** 모델 생성이 20초를 넘길 수 있어 함수 예산을 명시한다. */
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 export async function POST(request: Request) {
   try {

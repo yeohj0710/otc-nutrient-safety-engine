@@ -58,9 +58,11 @@ export const aiExplainResponseSchema = z.discriminatedUnion("ok", [
   z.object({
     ok: z.literal(true),
     explanation: aiExplanationSchema,
+    evidenceDiscussion: z.array(z.object({ text:z.string(), ruleId:z.string(), pmids:z.array(z.string()) })).optional(),
     meta: z.object({
       cached: z.boolean(),
       model: z.string().min(1),
+      effort: z.string().optional(),
       requestId: z.string().min(1),
     }),
   }),

@@ -1,0 +1,970 @@
+{
+  "schemaVersion": "otc-counseling-candidates-1",
+  "reviewStatus": "agent_semantic_review_of_existing_screening_candidates",
+  "reviewNoteKo": "재수집 트랙 선별 통과 문헌(rule-literature-pool) 가운데 규칙 유형과 성분이 맞는 후보를 에이전트가 초록 전문을 읽고 골랐다. 인용 문장은 저장한 초록에 글자 그대로 있는지 대조한다. 사람 전문가 검토와 규칙 승인은 거치지 않았다.",
+  "reviewedAt": "2026-09-06",
+  "humanExpertReviewed": false,
+  "supportsRuleRelease": false,
+  "changesAuthorizationDecision": false,
+  "verification": "literal_quote_in_saved_abstract_and_agent_semantic_review",
+  "sourcesSha256": "8c739d80af77e92f377ea34807c34e4f4915313959c3bcec07a43d4e734da832",
+  "curatedSha256": "9fdcf205ba0b0d29640192b32aec5988079af1cee4b3066a125a07ff5585aef2",
+  "entries": [
+    {
+      "pmid": "12236853",
+      "recordId": "PMID-12236853",
+      "title": "Dose-response relationships between individual nonaspirin nonsteroidal anti-inflammatory drugs (NANSAIDs) and serious upper gastrointestinal bleeding: a meta-analysis based on individual patient data.",
+      "journal": "British journal of clinical pharmacology",
+      "year": "2002",
+      "publicationTypes": "Journal Article|Meta-Analysis|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12236853/",
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "duplicate_pharmacologic_class",
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "덱시부프로펜은 따로 분석하지 않았습니다. 이부프로펜 결과를 그대로 옮길 수 없습니다."
+        }
+      ],
+      "relation": "candidate",
+      "priority": 1,
+      "quotes": [
+        {
+          "quote": "Ibuprofen showed the lowest odds ratio (OR = 1.7; 95% confidence interval 1.1, 2.5), followed by diclofenac (4.9; 3.3, 7.1), indomethacin (6.0; 3.6, 10.0), naproxen (9.1; 6.0-13.7), piroxicam (13.1; 7.9-21.8) and ketoprofen (34.9; 12.7, 96.5).",
+          "locator": "abstract:sentence:5"
+        },
+        {
+          "quote": "Concurrent use of more than one NANSAID substantially increased risk.",
+          "locator": "abstract:sentence:8"
+        }
+      ],
+      "studyDesignKo": "환자-대조군 연구 3건의 개별 환자 자료 메타분석",
+      "populationKo": "스페인 카탈루냐, 잉글랜드, 스코틀랜드, 스웨덴 병원의 상부 위장관 출혈 환자 2,472명과 대조군 5,877명",
+      "exposureKo": "아스피린이 아닌 소염진통제(NSAID) 각각의 용량과 사용 기간",
+      "outcomeKo": "이부프로펜은 교차비 1.7로 가장 낮았고 나프록센은 9.1이었습니다. 통상 용량 범위 안에서도 용량이 오르면 위험이 4~8배로 올랐고, 사용 첫 주에 가장 높았으며, NSAID를 두 가지 이상 함께 쓰면 위험이 크게 늘었습니다.",
+      "applicabilityKo": "1990~2000년대 유럽 성인 입원 환자 자료라 국내 일반의약품 자가복용과 다르고, 덱시부프로펜은 따로 분석하지 않았습니다. 교차비는 개인의 발생 확률이 아닙니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "00a6663985d999372da896152b2764e3ebeb183feaf5bbdd515b916970bf9e30"
+    },
+    {
+      "pmid": "16390354",
+      "recordId": "PMID-16390354",
+      "title": "Repeated-dose effects of mequitazine, cetirizine and dexchlorpheniramine on driving and psychomotor performance.",
+      "journal": "British journal of clinical pharmacology",
+      "year": "2006",
+      "publicationTypes": "Journal Article|Randomized Controlled Trial|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16390354/",
+      "ruleTypes": [
+        "sedation_driving",
+        "sedative_medication"
+      ],
+      "backgroundForRuleTypes": [
+        "sedative_medication"
+      ],
+      "ingredientIds": [
+        "ING-chlorpheniramine_maleate"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 1,
+      "quotes": [
+        {
+          "quote": "RESULTS: Dexchlorpheniramine and mequitazine significantly impaired driving performance on the highway driving test on the first day; dexchlorpheniramine increased Standard Deviation of Lateral Position by 2 cm [95% confidence interval (CI) 0.5, 3.8] and mequitazine by 2.5 cm (CI 1.0, 4.3).",
+          "locator": "abstract:sentence:6"
+        },
+        {
+          "quote": "These effects on driving performance disappeared after 8 days of treatment.",
+          "locator": "abstract:sentence:7"
+        }
+      ],
+      "studyDesignKo": "무작위 교차 임상시험(실제 도로 주행 시험)",
+      "populationKo": "건강한 성인 자원자 16명",
+      "exposureKo": "덱스클로르페니라민 서방정 6 mg 하루 2회, 세티리진 10 mg, 메퀴타진 10 mg, 위약을 각 8일씩",
+      "outcomeKo": "덱스클로르페니라민은 첫날 고속도로 주행에서 차선 이탈 폭이 2 cm 늘었고, 8일째에는 이 영향이 사라졌습니다. 세티리진은 어느 시험에서도 영향이 없었습니다.",
+      "applicabilityKo": "판콜에이의 클로르페니라민말레산염 2.5 mg(한 병)과 성분 형태와 용량이 다르고, 건강한 성인이 약만 먹은 조건이라 감기 증상이나 카페인 같은 다른 성분과 함께 있을 때의 영향은 알 수 없습니다. 진정제나 수면제를 함께 먹은 경우는 연구하지 않았습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "4fbce2fdb119c743b63c1c5010d438f13639341ec0310ee5049ecf6ea1f6a436"
+    },
+    {
+      "pmid": "22017233",
+      "recordId": "PMID-22017233",
+      "title": "Over-the-counter ibuprofen and risk of gastrointestinal bleeding complications: a systematic literature review.",
+      "journal": "Current medical research and opinion",
+      "year": "2012",
+      "publicationTypes": "Evaluation Study|Journal Article|Research Support, Non-U.S. Gov't|Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22017233/",
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-ibuprofen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "덱시부프로펜은 이부프로펜의 활성 이성질체입니다. 이 연구는 이부프로펜만 다뤄 덱시부프로펜 결과로 옮길 수 없습니다."
+        }
+      ],
+      "relation": "candidate",
+      "priority": 1,
+      "quotes": [
+        {
+          "quote": "The frequency of a GI-related hospitalization was <0.2% for patients on OTC-comparable doses.",
+          "locator": "abstract:sentence:7"
+        },
+        {
+          "quote": "The incidence of a GI bleeding-related event increased with age and the use of concomitant medications, and there was a general, though not always statistically significant, ibuprofen dose-response relationship.",
+          "locator": "abstract:sentence:9"
+        }
+      ],
+      "studyDesignKo": "체계적 문헌고찰(관찰연구 9건, 임상시험 10건, 메타분석 1건, 2010년까지)",
+      "populationKo": "일반의약품 용량(하루 1,200 mg 이하)의 이부프로펜을 먹은 사람들. 대부분 성인 대상 연구",
+      "exposureKo": "이부프로펜 하루 1,200 mg 이하",
+      "outcomeKo": "위장관 출혈로 입원한 비율은 0.2% 미만, 발생률은 1,000인년당 0~3.19건이었고, 나이가 많거나 다른 약을 함께 쓰면 늘었습니다. 비사용자 대비 상대위험은 1.1~2.4였습니다.",
+      "applicabilityKo": "위장관 출혈이나 궤양 병력이 있는 사람만 따로 본 결과는 초록에 없고, 어린이 시럽 사용자 자료도 아닙니다. 국내 허가 상한보다 낮은 용량 범위의 연구입니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "08d9f7749859b2ca8de4885026299b41eb0665629c4458817ef60454ba2c3bce"
+    },
+    {
+      "pmid": "22407198",
+      "recordId": "PMID-22407198",
+      "title": "Toxicity from repeated doses of acetaminophen in children: assessment of causality and dose in reported cases.",
+      "journal": "American journal of therapeutics",
+      "year": "2014",
+      "publicationTypes": "Journal Article|Research Support, N.I.H., Extramural|Research Support, Non-U.S. Gov't|Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22407198/",
+      "ruleTypes": [
+        "max_daily_dose",
+        "minimum_interval"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 1,
+      "quotes": [
+        {
+          "quote": "Although we identified numerous examples of liver injury and death after repeated doses of acetaminophen, all the deaths and all but 6 cases of hepatic abnormalities involved doses more than 75 mg/kg per day.",
+          "locator": "abstract:sentence:10"
+        }
+      ],
+      "studyDesignKo": "보고 사례 검토(미국 중독센터, 문헌, FDA 이상반응, 제조사 안전보고)와 전문가 판정",
+      "populationKo": "아세트아미노펜을 반복해서 먹은 6세 미만 어린이. 이상반응 보고 2,531건 가운데 간손상 76건과 사망 26건",
+      "exposureKo": "여러 날에 걸친 반복 복용. 하루 체중 1 kg당 75 mg 이하를 치료 용량으로 봤습니다.",
+      "outcomeKo": "사망 전부와 간손상 대부분이 하루 75 mg/kg을 넘긴 경우였고, 치료 용량 범위에서는 간 이상 6건, 사망 0건이었습니다.",
+      "applicabilityKo": "국내 어린이용 현탁액 허가는 나이별 1회량과 하루 횟수 상한으로 적혀 있고, 이 연구는 체중당 하루 총량(75 mg/kg)을 기준으로 봅니다. 보고 자료라 실제 발생률은 알 수 없고 기록이 불완전한 사례가 많았습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=5"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "2d4329c7602c05a9ae882e5be851ae9d2800a8f435ace545ddddedac1bfbfaf1"
+    },
+    {
+      "pmid": "22851428",
+      "recordId": "PMID-22851428",
+      "title": "Effect of therapeutic doses of acetaminophen (up to 4 g/day) on serum alanine aminotransferase levels in subjects consuming ethanol: systematic review and meta-analysis of randomized controlled trials.",
+      "journal": "Pharmacotherapy",
+      "year": "2012",
+      "publicationTypes": "Journal Article|Meta-Analysis|Research Support, N.I.H., Extramural|Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22851428/",
+      "ruleTypes": [
+        "alcohol",
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 1,
+      "quotes": [
+        {
+          "quote": "We found that the difference in mean change from baseline ALT levels between the acetaminophen and placebo groups on day 4 was 0.0 U/L (95% confidence interval -0.2-0.1 U/L).",
+          "locator": "abstract:sentence:8"
+        },
+        {
+          "quote": "There were no reports of liver dysfunction, liver failure, or death in any of the trials.",
+          "locator": "abstract:sentence:9"
+        }
+      ],
+      "studyDesignKo": "무작위 위약대조 임상시험 6건의 체계적 문헌고찰과 5건의 메타분석",
+      "populationKo": "술을 마시는 성인. 아세트아미노펜군 551명, 위약군 350명",
+      "exposureKo": "아세트아미노펜 하루 4 g 이하를 며칠 동안(4일째 ALT 측정)",
+      "outcomeKo": "4일째 ALT 변화가 위약과 차이가 없었고(0.0 U/L), 간기능 이상, 간부전, 사망 보고가 없었습니다.",
+      "applicabilityKo": "며칠 동안의 단기 복용 시험만 모은 결과라, 오래 먹거나 상한을 넘기거나 이미 간질환이 있는 경우는 알 수 없습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "conflict",
+      "authorizationNoteKo": "허가문은 술을 자주 마시는 사람의 간손상 위험을 경고합니다. 이 분석은 4일 단기 시험에서 간효소가 오르지 않았다고 보고하므로 견해차로 기록하고, 허가 경고는 그대로 둡니다.",
+      "abstractSha256": "2435a49b2693c97bf1236a8a909fcd93a23cd5c0b536b94996528e482e2fe36b"
+    },
+    {
+      "pmid": "26888096",
+      "recordId": "PMID-26888096",
+      "title": "Bioavailability of paracetamol with/without caffeine in Egyptian patients with hepatitis C virus.",
+      "journal": "European journal of clinical pharmacology",
+      "year": "2016",
+      "publicationTypes": "Journal Article|Randomized Controlled Trial|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26888096/",
+      "ruleTypes": [
+        "hepatic_disease"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 1,
+      "quotes": [
+        {
+          "quote": "CONCLUSIONS: Liver dysfunction modified the PK of paracetamol expressed as earlier effective paracetamol concentration, with obvious decrease in its clearance.",
+          "locator": "abstract:sentence:8"
+        }
+      ],
+      "studyDesignKo": "무작위 약동학 연구(타액 농도 측정)",
+      "populationKo": "이집트의 건강한 자원자 20명과 C형간염(Child-Pugh B) 환자 20명",
+      "exposureKo": "아세트아미노펜 1,000 mg 1회(카페인 130 mg 병용군 포함), 밤새 금식 뒤",
+      "outcomeKo": "간질환 환자에서 최고 농도와 노출량(AUC)이 건강한 사람보다 약 64~95% 높았고 청소율이 뚜렷이 낮았습니다. 카페인을 함께 먹으면 흡수가 빨라지고 반감기가 길어졌습니다.",
+      "applicabilityKo": "한 번 먹은 뒤의 농도 변화만 본 연구라 반복 복용 시 축적이나 간손상 발생은 확인하지 못했고, 입력한 간질환의 종류와 정도가 이 환자군(Child-Pugh B)과 같은지 알 수 없습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "liverDisease=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "c2bd1b226e4837c8c9f8bf9d63adf7d7a404e157701aab2f4988c763b4966adf"
+    },
+    {
+      "pmid": "31037361",
+      "recordId": "PMID-31037361",
+      "title": "Incidence, etiology, predictors and outcomes of suspected drug hypersensitivity reactions in a tertiary care university hospital's emergency department : A retrospective study.",
+      "journal": "Wiener klinische Wochenschrift",
+      "year": "2019",
+      "publicationTypes": "Journal Article",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31037361/",
+      "ruleTypes": [
+        "urgent_referral"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 1,
+      "quotes": [
+        {
+          "quote": "Only five patients (7 per 100,000 ED visits) were diagnosed with drug-induced anaphylaxis, and only five patients were provisionally diagnosed with severe non-immediate reactions with systemic involvement.",
+          "locator": "abstract:sentence:7"
+        },
+        {
+          "quote": "The most common causes of drug hypersensitivity reactions were amoxicillin and paracetamol.",
+          "locator": "abstract:sentence:9"
+        }
+      ],
+      "studyDesignKo": "응급실 기록 74,929건의 후향 분석",
+      "populationKo": "2012~2015년 한 대학병원 응급실 방문자",
+      "exposureKo": "약물 과민반응이 의심된 방문(전체의 0.87%)",
+      "outcomeKo": "대부분 가벼운 증상으로 호전했고, 약물 유발 아나필락시스는 방문 10만 건당 7건이었습니다. 가장 흔한 원인 약은 아목시실린과 아세트아미노펜이었습니다.",
+      "applicabilityKo": "어느 나라 병원인지와 증상별 원인 약은 초록에 없고, 입력한 증상이 이 약 때문인지 판정하는 연구가 아닙니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "f3e2c68c39c2af726842f8808c3c289c65a3d2e5f747652be00a8f157daa8efa"
+    },
+    {
+      "pmid": "16461878",
+      "recordId": "PMID-16461878",
+      "title": "Antipyretic treatment in young children with fever: acetaminophen, ibuprofen, or both alternating in a randomized, double-blind study.",
+      "journal": "Archives of pediatrics & adolescent medicine",
+      "year": "2006",
+      "publicationTypes": "Comparative Study|Journal Article|Randomized Controlled Trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16461878/",
+      "ruleTypes": [
+        "minimum_interval"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen",
+        "ING-ibuprofen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 2,
+      "quotes": [
+        {
+          "quote": "CONCLUSIONS: An alternating treatment regimen of acetaminophen (12.5 mg/kg per dose) and ibuprofen (5 mg/kg per dose) every 4 hours for 3 days, regardless of the initial loading medication, is more effective than monotherapy in lowering fever in infants and children.",
+          "locator": "abstract:sentence:10"
+        },
+        {
+          "quote": "None of the regimens were associated with a significantly higher number of emergency department visits (P = .65) or serious long-term complications (P = .66).",
+          "locator": "abstract:sentence:8"
+        }
+      ],
+      "studyDesignKo": "무작위 이중맹검 평행군 임상시험",
+      "populationKo": "이스라엘 지역 소아 외래 3곳의 6~36개월 발열 어린이 464명",
+      "exposureKo": "아세트아미노펜 12.5 mg/kg 6시간마다, 이부프로펜 5 mg/kg 8시간마다, 또는 두 약을 4시간마다 번갈아 3일 동안",
+      "outcomeKo": "번갈아 먹인 군이 체온이 더 낮고 열이 더 빨리 내렸으며, 응급실 방문이나 심각한 합병증은 세 군이 다르지 않았습니다.",
+      "applicabilityKo": "아세트아미노펜만 먹은 군은 6시간 간격이었고, 4시간 간격은 두 약을 번갈아 먹인 설계라 같은 약을 4시간마다 먹는 상황과 다릅니다. 3세 이하 발열 어린이의 3일 연구라 성인이나 장기 복용에는 적용할 수 없습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=3"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "a1de85e345ade1537885baaebda3a348c5673890faa8f4a5737a5da59eb8b4d7"
+    },
+    {
+      "pmid": "17593074",
+      "recordId": "PMID-17593074",
+      "title": "A randomized trial to determine the change in alanine aminotransferase during 10 days of paracetamol (acetaminophen) administration in subjects who consume moderate amounts of alcohol.",
+      "journal": "Alimentary pharmacology & therapeutics",
+      "year": "2007",
+      "publicationTypes": "Journal Article|Randomized Controlled Trial|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17593074/",
+      "ruleTypes": [
+        "alcohol"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 2,
+      "quotes": [
+        {
+          "quote": "Paracetamol and placebo groups had no change from baseline values at day 4, but the paracetamol group had an increase in mean ALT at day 11 of 8.7 IU/L.",
+          "locator": "abstract:sentence:8"
+        },
+        {
+          "quote": "CONCLUSION: Therapeutic dosing of paracetamol administered for 10 days appears to elevate serum ALT in moderate drinkers, but does not produce clinically evident liver injury.",
+          "locator": "abstract:sentence:10"
+        }
+      ],
+      "studyDesignKo": "무작위 이중맹검 위약대조 임상시험",
+      "populationKo": "하루 1~3잔 술을 마시는 성인(인원은 초록에 없음)",
+      "exposureKo": "아세트아미노펜 하루 4 g을 10일 동안",
+      "outcomeKo": "4일째는 변화가 없었지만 11일째 ALT가 평균 8.7 IU/L 올랐고, 간손상 증상이나 간부전 기준에 이른 사람은 없었습니다.",
+      "applicabilityKo": "하루 1~3잔 마시는 사람의 10일 결과라, 더 많이 마시거나 더 오래 먹는 경우에는 그대로 옮길 수 없습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "c706de09f2de140af731d82b92b17906f19de9a90600ab07764a0d2ddbf17c97"
+    },
+    {
+      "pmid": "18181241",
+      "recordId": "PMID-18181241",
+      "title": "Effects of a sedative antihistamine, D-chlorpheniramine, on regional cerebral perfusion and performance during simulated car driving.",
+      "journal": "Human psychopharmacology",
+      "year": "2008",
+      "publicationTypes": "Controlled Clinical Trial|Journal Article|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18181241/",
+      "ruleTypes": [
+        "sedation_driving",
+        "sedative_medication"
+      ],
+      "backgroundForRuleTypes": [
+        "sedative_medication"
+      ],
+      "ingredientIds": [
+        "ING-chlorpheniramine_maleate"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 2,
+      "quotes": [
+        {
+          "quote": "RESULTS: Performance evaluation revealed that the number of lane deviations significantly increased in the D-chlorpheniramine condition compared with the placebo condition (p < 0.01).",
+          "locator": "abstract:sentence:6"
+        },
+        {
+          "quote": "Subjective sleepiness was not significantly different between the two drug conditions.",
+          "locator": "abstract:sentence:7"
+        }
+      ],
+      "studyDesignKo": "단일맹검 교차 연구(운전 시뮬레이터와 뇌혈류 PET)",
+      "populationKo": "건강한 오른손잡이 남성 14명",
+      "exposureKo": "d-클로르페니라민 서방정 6 mg 1회 또는 위약",
+      "outcomeKo": "약을 먹은 뒤 시뮬레이터 주행에서 차선 이탈 횟수가 늘었지만, 스스로 느끼는 졸림은 위약과 다르지 않았습니다.",
+      "applicabilityKo": "졸린 느낌이 없어도 운전 수행이 떨어질 수 있다는 점을 보여주지만, 남성 14명의 시뮬레이터 연구이고 판콜에이의 2.5 mg 복합제와 용량이 다릅니다. 다른 진정 약물을 함께 먹은 경우는 연구하지 않았습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "6c81adeaa75fa687d7e2bf5b2274448f6bd443c9cb76109862be3c1bf29b6e6c"
+    },
+    {
+      "pmid": "22812902",
+      "recordId": "PMID-22812902",
+      "title": "Adverse cutaneous drug reactions among hospitalized patients: five year surveillance.",
+      "journal": "Cutaneous and ocular toxicology",
+      "year": "2013",
+      "publicationTypes": "Journal Article",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22812902/",
+      "ruleTypes": [
+        "urgent_referral"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen",
+        "ING-mf-src-4b985f9d3bdb"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 2,
+      "quotes": [
+        {
+          "quote": "The culprit drugs were antibiotics (24.5%), non-steroid anti-inflammatory drugs (NSAID) (22.4%), anticonvulsants (13.8%), antihypertensive agents (8.5%), paracetamol with or without pseudoephedrine or phenylephrine (6.4%), intravenous contrasts (3.2%), terbinafine (2.1%), biologic agents (2.1%) and various other medications (17.0%).",
+          "locator": "abstract:sentence:7"
+        }
+      ],
+      "studyDesignKo": "입원 환자 5년 후향 감시",
+      "populationKo": "한 피부과에 입원한 2,801명 가운데 피부 약물이상반응 94명(3.3%)",
+      "exposureKo": "원인 약: 항생제 24.5%, NSAID 22.4%, 아세트아미노펜(슈도에페드린이나 페닐레프린 복합 포함) 6.4%",
+      "outcomeKo": "가장 흔한 형태는 홍역모양 발진(59.6%)이었고, 두드러기와 혈관부종 4.3%, 스티븐스존슨증후군과 독성표피괴사 중첩 2.1%였습니다. 사망은 없었고 증상은 대개 0~15일 안에 나타났습니다.",
+      "applicabilityKo": "피부과 입원 환자만 모은 자료라 전체 사용자의 발생률이 아니고, 아세트아미노펜 복합제 사용자에게 얼마나 자주 생기는지는 알 수 없습니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "8fc6d09f00b4f90a298a0bd501db97c261964252766e046f042d7b5ca7e4703d"
+    },
+    {
+      "pmid": "25460554",
+      "recordId": "PMID-25460554",
+      "title": "Risk of upper and lower gastrointestinal bleeding in patients taking nonsteroidal anti-inflammatory drugs, antiplatelet agents, or anticoagulants.",
+      "journal": "Clinical gastroenterology and hepatology : the official clinical practice journal of the American Gastroenterological Association",
+      "year": "2015",
+      "publicationTypes": "Journal Article|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25460554/",
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "anticoagulant_antiplatelet"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "NSAID를 한 묶음으로 본 연구라 덱시부프로펜만의 결과는 없습니다."
+        }
+      ],
+      "relation": "candidate",
+      "priority": 2,
+      "quotes": [
+        {
+          "quote": "NSAID use was also associated with increased risk of gastrointestinal bleeding and greater for upper (RR, 2.6; 95% CI, 2.0-3.5) than lower gastrointestinal bleeding (RR, 1.4; 95% CI, 1.0-1.9).",
+          "locator": "abstract:sentence:9"
+        },
+        {
+          "quote": "Use of anticoagulants appears to be the strongest risk factor for gastrointestinal bleeding.",
+          "locator": "abstract:sentence:12"
+        }
+      ],
+      "studyDesignKo": "환자-대조군 연구",
+      "populationKo": "위장관 출혈로 입원한 환자 978명(상부 563명, 평균 63.6세, 하부 415명, 평균 70.8세)과 대조군 1,008명",
+      "exposureKo": "입원 전 7일 안의 NSAID, 저용량 아스피린, 항혈소판제, 항응고제 사용",
+      "outcomeKo": "NSAID는 상부 위장관 출혈 상대위험 2.6, 하부 1.4였고, 항응고제(4.2)가 가장 큰 위험 요인이었습니다.",
+      "applicabilityKo": "NSAID 종류별 결과와 항응고제와 NSAID를 함께 쓴 경우의 위험은 초록에 따로 없고, 평균 60~70대 입원 환자 자료라 어린이 시럽 사용자와 다릅니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "7498dee6c8a2aaf78aa283c6b70d2acb38e041a2b95d672b45d61899b36599ce"
+    },
+    {
+      "pmid": "39825523",
+      "recordId": "PMID-39825523",
+      "title": "Analgesic Overdose in Patients With Dental Pain. A Cross-Sectional Study in Two Dental Emergency Clinics.",
+      "journal": "Basic & clinical pharmacology & toxicology",
+      "year": "2025",
+      "publicationTypes": "Journal Article|Multicenter Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39825523/",
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen",
+        "ING-ibuprofen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 2,
+      "quotes": [
+        {
+          "quote": "Results showed that 82.8% (n = 149) had taken at least one type of analgesic, and 9% (n = 15) had exceeded the recommended maximum dosage.",
+          "locator": "abstract:sentence:5"
+        }
+      ],
+      "studyDesignKo": "단면 조사(설문과 면담)",
+      "populationKo": "덴마크 코펜하겐의 치과 응급진료소 두 곳을 찾은 치통 환자 180명",
+      "exposureKo": "환자가 스스로 먹은 진통제. 아세트아미노펜 75.6%, 이부프로펜 54.4%",
+      "outcomeKo": "9%(15명)가 권장 최대 용량을 넘겨 먹었고, 아세트아미노펜의 하루 최대량을 아는 사람은 39%뿐이었습니다. 간손상 같은 몸의 결과는 재지 않았습니다.",
+      "applicabilityKo": "치통이 있는 성인의 자기보고 자료라, 입력한 복용량이 상한을 넘었을 때 몸에 어떤 일이 생기는지는 이 연구로 알 수 없습니다. 덴마크의 권장 상한이 국내 허가 상한과 같은지도 초록에 없습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "6f3077eec34e9524cd396c35d2541f55a456318d8225823a2db3da1ba6e3af9a"
+    },
+    {
+      "pmid": "7884951",
+      "recordId": "PMID-7884951",
+      "title": "An assessment of the safety of pediatric ibuprofen. A practitioner-based randomized clinical trial.",
+      "journal": "JAMA",
+      "year": "1995",
+      "publicationTypes": "Clinical Trial|Journal Article|Multicenter Study|Randomized Controlled Trial|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7884951/",
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "urgent_referral",
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-ibuprofen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 2,
+      "quotes": [
+        {
+          "quote": "Four children had diagnoses of acute, nonmajor gastrointestinal bleeding (two in each ibuprofen dosage group); among ibuprofen-treated children, the observed risk of gastrointestinal bleeding, 7.2 per 100,000 (95% confidence interval, 2 to 18 per 100,000), was not significantly different from the risk among acetaminophen-treated children (P = .31).",
+          "locator": "abstract:sentence:9"
+        },
+        {
+          "quote": "There were no hospitalizations for acute renal failure or anaphylaxis; the upper 95% confidence bound for the risk of either of these outcomes was 5.4 per 100,000 ibuprofen-treated children.",
+          "locator": "abstract:sentence:10"
+        }
+      ],
+      "studyDesignKo": "의원 기반 무작위 이중맹검 임상시험(아세트아미노펜 대조)",
+      "populationKo": "미국 소아과와 가정의학과 외래의 발열 어린이 84,192명",
+      "exposureKo": "이부프로펜 5 mg/kg 또는 10 mg/kg, 아세트아미노펜 12 mg/kg. 단기 사용",
+      "outcomeKo": "위장관 출혈 입원은 이부프로펜군 10만 명당 7.2명으로 아세트아미노펜군과 차이가 없었고, 급성 신부전이나 아나필락시스 입원은 없었습니다.",
+      "applicabilityKo": "위장관 출혈이나 궤양 병력이 있는 어린이를 따로 보지 않았고, 단기 사용 결과라 오래 먹는 경우와 가벼운 부작용은 알 수 없습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=17"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "da824301da6dbd64ed7932b08f70ce84c666cdfaed1aeb6027e886d9e36e550f"
+    },
+    {
+      "pmid": "10506264",
+      "recordId": "PMID-10506264",
+      "title": "The safety of acetaminophen and ibuprofen among children younger than two years old.",
+      "journal": "Pediatrics",
+      "year": "1999",
+      "publicationTypes": "Clinical Trial|Journal Article|Randomized Controlled Trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10506264/",
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "urgent_referral",
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 3,
+      "quotes": [
+        {
+          "quote": "The risk of hospitalization with gastrointestinal bleeding among children randomized to ibuprofen was 17 per 100 000 (95% confidence interval, 3.5-49 per 100 000) but was not significantly greater than the risk among children given acetaminophen.",
+          "locator": "abstract:sentence:10"
+        },
+        {
+          "quote": "No children were hospitalized for acute renal failure, anaphylaxis, or Reye's syndrome.",
+          "locator": "abstract:sentence:8"
+        }
+      ],
+      "studyDesignKo": "의원 기반 무작위 임상시험",
+      "populationKo": "2세 미만 발열 어린이 27,065명",
+      "exposureKo": "아세트아미노펜 12 mg/kg, 이부프로펜 5 mg/kg 또는 10 mg/kg. 단기 사용",
+      "outcomeKo": "4주 안 입원 위험은 1.4%로 약에 따라 다르지 않았고, 위장관 출혈 입원 3명은 모두 이부프로펜군이었지만 아세트아미노펜군과 통계적으로 차이가 없었습니다. 급성 신부전, 아나필락시스, 라이증후군 입원은 없었습니다.",
+      "applicabilityKo": "단기 사용과 한 가지 약만 쓴 경우의 결과라, 오래 먹거나 두 약을 함께 쓰는 경우는 알 수 없다고 저자들이 밝혔습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=1"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "bafbde7261cdd7cd916ec085bebd544c3d0e28ee072cac276660d994b943852c"
+    },
+    {
+      "pmid": "11929388",
+      "recordId": "PMID-11929388",
+      "title": "Influence of acute and chronic alcohol intake on the clinical course and outcome in acetaminophen overdose.",
+      "journal": "Alimentary pharmacology & therapeutics",
+      "year": "2002",
+      "publicationTypes": "Journal Article|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11929388/",
+      "ruleTypes": [
+        "alcohol"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 3,
+      "quotes": [
+        {
+          "quote": "The relative risks for hepatic coma and death were 5.3 (95% confidence interval, 2.2-12.4) and 1.4 (95% confidence interval, 0.5-3.9), respectively, in the chronic alcohol intake group compared with the no chronic alcohol intake group.",
+          "locator": "abstract:sentence:8"
+        },
+        {
+          "quote": "CONCLUSIONS: Chronic alcohol intake enhances acetaminophen hepatotoxicity, whereas acute alcohol intake does not affect the clinical course.",
+          "locator": "abstract:sentence:10"
+        }
+      ],
+      "studyDesignKo": "연속 환자 209명의 관찰 연구(회귀분석)",
+      "populationKo": "아세트아미노펜을 한 번에 과량 복용한 환자 209명. 만성 음주 27.3%, 급성 음주 21.5%",
+      "exposureKo": "한 번의 과량 복용. 만성 음주 여부와 급성 음주 여부를 나눠 봄",
+      "outcomeKo": "만성 음주자는 간성 혼수 위험이 5.3배였고, 사망 위험 차이(1.4배)는 통계적으로 뚜렷하지 않았습니다. 급성 음주는 경과에 영향이 없었습니다.",
+      "applicabilityKo": "과량 복용 환자의 경과이므로 허가 용량 안에서 먹는 사람에게 그대로 적용할 수 없습니다. 만성 음주가 있으면 과량 시 간손상이 더 심하다는 뜻입니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "c5f23252f46309e2a1eac19a6d254b5a299303d111106af742479294590199ed"
+    },
+    {
+      "pmid": "15049392",
+      "recordId": "PMID-15049392",
+      "title": "Antihistamines and driving ability: evidence from on-the-road driving studies during normal traffic.",
+      "journal": "Annals of allergy, asthma & immunology : official publication of the American College of Allergy, Asthma, & Immunology",
+      "year": "2004",
+      "publicationTypes": "Comparative Study|Journal Article|Research Support, Non-U.S. Gov't|Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15049392/",
+      "ruleTypes": [
+        "sedation_driving"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-chlorpheniramine_maleate",
+        "ING-cetirizine_hydrochloride"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate_background",
+      "priority": 3,
+      "quotes": [
+        {
+          "quote": "RESULTS: First-generation antihistamines (diphenhydramine, triprolidine, terfenadine, dexchlorpheniramine, clemastine) significantly impair driving performance after both one-time and repeated (daily) administration.",
+          "locator": "abstract:sentence:7"
+        },
+        {
+          "quote": "Tolerance develops after 4 to 5 days of administration, but impairment is not absent.",
+          "locator": "abstract:sentence:9"
+        }
+      ],
+      "studyDesignKo": "실제 도로 주행 시험 16건의 문헌고찰",
+      "populationKo": "이중맹검 위약대조 주행 연구의 참가자(성인 자원자)",
+      "exposureKo": "1세대 항히스타민제(덱스클로르페니라민 포함)와 2세대 항히스타민제(세티리진 포함)의 1회 및 반복 복용",
+      "outcomeKo": "1세대 약은 1회와 반복 복용 모두에서 주행을 뚜렷이 떨어뜨렸고, 2세대 약도 용량과 시간에 따라 떨어뜨릴 수 있었습니다. 4~5일 뒤 내성이 생기지만 영향이 없어지지는 않았습니다.",
+      "applicabilityKo": "여러 연구를 요약한 고찰이라 클로르페니라민 2.5 mg 복합제 자체를 시험한 결과가 아니며, 감기 환자가 아닌 자원자 자료입니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "5246a8634f92dde956c9d709ac278b5af81c9ca7e749d7b8a2402b44b594dfe5"
+    },
+    {
+      "pmid": "17357380",
+      "recordId": "PMID-17357380",
+      "title": "Aminotransferase activities in healthy subjects receiving three-day dosing of 4, 6, or 8 grams per day of acetaminophen.",
+      "journal": "Clinical toxicology (Philadelphia, Pa.)",
+      "year": "2007",
+      "publicationTypes": "Journal Article|Randomized Controlled Trial|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17357380/",
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 3,
+      "quotes": [
+        {
+          "quote": "CONCLUSIONS: In a multiple-dose pharmacokinetics study of 4, 6, and 8 g/d of acetaminophen for 3 days, multiple aminotransferase determinations demonstrated no clinically important elevations at 1, 1.5, or 2 times the maximum recommended acetaminophen dose.",
+          "locator": "abstract:sentence:7"
+        }
+      ],
+      "studyDesignKo": "무작위 이중맹검 위약대조 약동학 연구(3일 반복 투여)",
+      "populationKo": "건강한 성인 자원자(인원은 초록에 없음)",
+      "exposureKo": "아세트아미노펜 하루 4 g, 6 g, 8 g(권장 최대량의 1배, 1.5배, 2배)을 3일 동안 반복 복용",
+      "outcomeKo": "3일 동안 간효소(AST, ALT)가 참고범위를 넘지 않았습니다. 한 명만 AST 43 U/L(상한 42)로 임상적으로 의미 없는 수준이었습니다.",
+      "applicabilityKo": "건강한 성인이 연구 감시 아래 3일만 먹은 결과입니다. 간질환, 음주, 금식, 다른 약 병용이 있거나 더 오래 먹는 경우에는 적용할 수 없고, 허가 상한을 넘겨도 된다는 근거가 아닙니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "conflict",
+      "authorizationNoteKo": "허가문은 아세트아미노펜 하루 상한을 두는데, 이 연구는 그 1.5~2배를 3일 먹어도 간효소가 오르지 않았다고 보고합니다. 허가 상한은 그대로 두고 이 견해차만 기록합니다.",
+      "abstractSha256": "aa02556f60ce85ce4fded94356e79284f5248734e0910bc1c43de0342d277555"
+    },
+    {
+      "pmid": "29948304",
+      "recordId": "PMID-29948304",
+      "title": "A case-control study of the risk of upper gastrointestinal mucosal injuries in patients prescribed concurrent NSAIDs and antithrombotic drugs based on data from the Japanese national claims database of 13 million accumulated patients.",
+      "journal": "Journal of gastroenterology",
+      "year": "2018",
+      "publicationTypes": "Journal Article",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29948304/",
+      "ruleTypes": [
+        "anticoagulant_antiplatelet",
+        "gi_bleeding_ulcer"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "NSAID를 한 묶음으로 본 연구라 덱시부프로펜만의 결과는 없습니다."
+        }
+      ],
+      "relation": "candidate",
+      "priority": 3,
+      "quotes": [
+        {
+          "quote": "Polypharmacy with NSAIDs and antithrombotic drugs increased the risk of upper GI injuries compared with single-drug therapy.",
+          "locator": "abstract:sentence:6"
+        }
+      ],
+      "studyDesignKo": "청구자료 기반 환자-대조군 연구",
+      "populationKo": "일본 의료비 청구 데이터베이스의 환자 1,300만 명(2009~2014). 소화성 궤양 143,271명, 상부 위장관 출혈 10,545명",
+      "exposureKo": "NSAID, COX-2 억제제, 저용량 아스피린, 항혈소판제, 항응고제 처방",
+      "outcomeKo": "NSAID의 소화성 궤양 교차비 1.45, 상부 위장관 출혈 1.76이었고, NSAID와 항혈전제를 함께 쓰면 단독보다 위험이 더 올랐습니다.",
+      "applicabilityKo": "처방 청구자료라 일반의약품 자가복용은 잡히지 않고, 어떤 NSAID와 어떤 항혈전제 조합인지는 초록에 없습니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "b03b9455803ac9ff7781ad8381d09b6e786086ea0e4681b3ccfe00c23705cf8a"
+    },
+    {
+      "pmid": "35633648",
+      "recordId": "PMID-35633648",
+      "title": "Severe Cutaneous Adverse Drug Reactions in Children: Epidemiological, Clinical and Etiological Aspects in Dermatology-Venereology Unit at National and Teaching Hospital of Cotonou.",
+      "journal": "West African journal of medicine",
+      "year": "2022",
+      "publicationTypes": "Journal Article",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35633648/",
+      "ruleTypes": [
+        "urgent_referral"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate_background",
+      "priority": 3,
+      "quotes": [
+        {
+          "quote": "There were 51.4% cases of Steven Johnson syndrome, 22.8% cases of Lyell syndrome, 8.5% cases of generalized and bullous fixed drug eruption, 2.9% cases of acute generalized exanthematous pustulosis and erythrodermic maculo-papular rash.",
+          "locator": "abstract:sentence:9"
+        },
+        {
+          "quote": "Penicillins (26.5%), paracetamol and sulfonamides (16.3%) were the drugs frequently incriminated.",
+          "locator": "abstract:sentence:11"
+        }
+      ],
+      "studyDesignKo": "10년 후향 기술 연구",
+      "populationKo": "베냉 코토누 국립대학병원 피부과의 0~18세 중증 피부 약물이상반응 어린이 35명(평균 9.3세)",
+      "exposureKo": "자가 복용 76.5%(부모 주도 66.7%). 원인 약은 페니실린 26.5%, 아세트아미노펜과 설폰아미드 각 16.3%",
+      "outcomeKo": "스티븐스존슨증후군 51.4%, 리엘증후군(독성표피괴사) 22.8%가 주된 형태였습니다.",
+      "applicabilityKo": "서아프리카 한 병원의 중증 사례만 모은 자료라 발생률이나 국내 어린이 상황과 직접 이어지지 않습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "2c4fc4db716b7bdea8ebcccd9d57b0438e6845f5597c767cc784f903997f79df"
+    },
+    {
+      "pmid": "18004067",
+      "recordId": "PMID-18004067",
+      "title": "Acute liver failure in two patients with regular alcohol consumption ingesting paracetamol at therapeutic dosage.",
+      "journal": "Digestion",
+      "year": "2007",
+      "publicationTypes": "Case Reports|Journal Article|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18004067/",
+      "ruleTypes": [
+        "alcohol"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate_background",
+      "priority": 4,
+      "quotes": [
+        {
+          "quote": "CASE REPORT: We describe 2 patients who were regular consumers of alcohol and who developed liver failure within 3-5 days after hospitalization and stopping alcohol consumption while being treated with 4 g paracetamol/day.",
+          "locator": "abstract:sentence:2"
+        }
+      ],
+      "studyDesignKo": "증례 보고 2건",
+      "populationKo": "술을 규칙적으로 마시던 입원 환자 2명",
+      "exposureKo": "입원해 술을 끊은 뒤 아세트아미노펜 하루 4 g",
+      "outcomeKo": "3~5일 안에 간부전이 생겼고, 한 명은 혈중 농도가 독성 범위가 아니었습니다.",
+      "applicabilityKo": "환자 2명의 보고라 얼마나 자주 생기는지 알 수 없고, 무작위 시험 결과(같은 조건에서 간효소 상승 없음)와 방향이 다릅니다. 두 종류의 근거를 함께 보아야 합니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "f5b899a4f598dcaf5fb5723d8b825167a07c57f5f4255161477548556b54f6d6"
+    },
+    {
+      "pmid": "33388821",
+      "recordId": "PMID-33388821",
+      "title": "Paracetamol overdose in the newborn and infant: a life-threatening event.",
+      "journal": "European journal of clinical pharmacology",
+      "year": "2021",
+      "publicationTypes": "Journal Article|Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33388821/",
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate_background",
+      "priority": 4,
+      "quotes": [
+        {
+          "quote": "At recommended doses, paracetamol has not been associated with liver injury in neonates, while hepatotoxicity may occur after intake of a single high dose or multiple excessive doses.",
+          "locator": "abstract:sentence:2"
+        }
+      ],
+      "studyDesignKo": "서술적 문헌고찰(증례 보고 27건 등)",
+      "populationKo": "과량의 아세트아미노펜에 노출된 신생아와 영아",
+      "exposureKo": "한 번의 고용량 또는 여러 번의 과량 복용(투약 오류, 산모 과량 복용 뒤 태반 이동 포함)",
+      "outcomeKo": "권장 용량에서는 신생아 간손상 보고가 없었고, 한 번의 고용량이나 여러 번의 과량에서 간독성이 생길 수 있었습니다.",
+      "applicabilityKo": "신생아와 영아의 증례를 모은 고찰이라 발생률을 말하지 못하고, 국내 어린이용 현탁액의 나이별 용량과 직접 대응하지 않습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=1"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "cf9e9c41967371b78de28d141427fc9e7a9fb52386d963dc7ebcea1c0e8f48ba"
+    }
+  ]
+}

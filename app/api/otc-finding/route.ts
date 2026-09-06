@@ -12,7 +12,7 @@ import {
 import { refereeFindingLine } from "@/src/lib/ai/referee";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 // 판정 한 건만 풀어 쓴다. 화면의 판정 카드마다 따로 부른다.
 //
@@ -84,7 +84,7 @@ export async function POST(request: Request) {
       // 호출 자체가 실패한다(openai_error 로 잡혔다).
       text: { format: findingLineFormat },
       reasoning: { effort: AI_EXPLAIN_REASONING_EFFORT },
-      max_output_tokens: 1600,
+      max_output_tokens: 16000,
       store: false,
     });
 

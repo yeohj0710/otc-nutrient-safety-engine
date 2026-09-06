@@ -141,9 +141,32 @@ export type DisplayFinding = SafetyFinding & {
   members: SafetyFinding[];
 };
 
+export type LiteratureApplicabilityStatus =
+  | "match"
+  | "missing_information"
+  | "population_difference";
+
+/**
+ * 문헌의 적용 조건(연령·질환·복용약)을 입력과 대조한 결과.
+ * "직접 일치"와 "관련 문헌 없음" 사이를 세 갈래로 나눈다: 조건이 맞음, 입력이 비어
+ * 대조하지 못함, 입력이 연구 대상과 다름. 뒤의 둘은 배경 자료로만 보여주고
+ * 왜 직접 근거가 아닌지 이유를 함께 적는다.
+ */
+export type LiteratureApplicability = {
+  status: LiteratureApplicabilityStatus;
+  detailKo: string;
+  /** 비어 있어서 대조하지 못한 입력 항목. */
+  missing: string[];
+  /** 입력했지만 연구 대상과 다른 항목. */
+  different: string[];
+  /** 문헌이 요구하는 조건을 사람 말로 옮긴 것. */
+  expectedKo: string[];
+};
+
 export type FindingLiteratureMatch = {
   paper: SupportingLiterature;
   link: SupportingLiteratureRuleLink;
+  applicability?: LiteratureApplicability;
 };
 
 export type SplitSupportingLiterature = {
@@ -586,6 +609,124 @@ function directScopeMatches(
   return true;
 }
 
+const profileFieldLabels: Record<string, string> = {
+  ageYears: "나이",
+  pregnancyTrimester: "임신 시기",
+  pregnant: "임신 여부",
+  lactating: "수유 여부",
+  liverDisease: "간질환 여부",
+  kidneyDisease: "신장질환 여부",
+  giBleedingOrUlcer: "위장관 출혈이나 궤양 병력",
+  hypertensionOrCardiovascularDisease: "고혈압이나 심혈관질환 여부",
+  willDrive: "운전 여부",
+  alcohol: "음주 여부",
+};
+
+const booleanConditionLabels: Record<string, [string, string]> = {
+  pregnant: ["임신 중", "임신 아님"],
+  lactating: ["수유 중", "수유 아님"],
+  liverDisease: ["간질환 있음", "간질환 없음"],
+  kidneyDisease: ["신장질환 있음", "신장질환 없음"],
+  giBleedingOrUlcer: ["위장관 출혈이나 궤양 병력 있음", "위장관 출혈이나 궤양 병력 없음"],
+  hypertensionOrCardiovascularDisease: ["고혈압이나 심혈관질환 있음", "고혈압이나 심혈관질환 없음"],
+  willDrive: ["운전 예정", "운전 안 함"],
+  alcohol: ["정기 음주", "음주 안 함"],
+};
+
+/** 복용약 칸에 약 이름 대신 계열 이름만 적은 경우. 대조할 이름이 없으니 "정보 부족"으로 본다. */
+const genericMedicationClass =
+  /항응고|anticoag|항혈전|antithromb|항혈소판|antiplatelet|혈전|진정제|수면제|sedativ|hypnotic|benzodiaz|신경안정/i;
+
+/** `ageYears>=12` 같은 조건식을 사람 말로 옮긴다. */
+export function describeProfileCondition(
+  condition: string,
+  medicationTerms: readonly string[] = [],
+): string {
+  if (condition.startsWith("medications.class=")) {
+    const examples = medicationTerms.filter((term) => /[가-힣]/.test(term));
+    return `경구 항응고제 복용${examples.length ? `(${examples.join(", ")} 등)` : ""}`;
+  }
+  const match = condition.match(/^([A-Za-z][A-Za-z0-9]*)(>=|<=|=)(.+)$/);
+  if (!match) return condition;
+  const [, field, operator, expected] = match;
+  if (field === "ageYears") {
+    if (operator === ">=") return `나이 ${expected}세 이상`;
+    if (operator === "<=") return `나이 ${expected}세 이하`;
+    return `나이 ${expected}세`;
+  }
+  if (field === "pregnancyTrimester") return `임신 ${expected}기`;
+  const labels = booleanConditionLabels[field];
+  if (labels) return expected === "true" ? labels[0] : labels[1];
+  return condition;
+}
+
+/**
+ * 문헌의 적용 조건과 입력을 대조한다. 조건이 맞으면 match, 대조할 입력이 비어 있으면
+ * missing_information, 입력했는데 다르면 population_difference 다.
+ * 관련 문헌을 숨기지 않고 왜 직접 근거가 아닌지 detailKo 로 설명하기 위한 값이다.
+ */
+export function profileScopeApplicability(
+  scope: { profileConditions: readonly string[]; medicationTerms: readonly string[] },
+  profile: UserProfile | undefined,
+): LiteratureApplicability {
+  const missing: string[] = [];
+  const different: string[] = [];
+  const medications = profile?.medications ?? [];
+  const genericMedicationOnly =
+    medications.length > 0 && medications.some((item) => genericMedicationClass.test(item));
+
+  for (const condition of scope.profileConditions) {
+    if (profileConditionMatches(condition, profile, scope.medicationTerms)) continue;
+    const field = condition.split(/>=|<=|=/)[0];
+    if (field.startsWith("medications")) {
+      (medications.length === 0 || genericMedicationOnly ? missing : different).push("복용약");
+      continue;
+    }
+    const unknown = profile?.[field as keyof UserProfile] === undefined;
+    (unknown ? missing : different).push(profileFieldLabels[field] ?? "환자 조건");
+  }
+  if (
+    scope.medicationTerms.length > 0 &&
+    !medicationMatchesScope(medications, scope.medicationTerms)
+  ) {
+    (medications.length === 0 || genericMedicationOnly ? missing : different).push("복용약");
+  }
+
+  const expectedKo = scope.profileConditions.map((condition) =>
+    describeProfileCondition(condition, scope.medicationTerms),
+  );
+  if (scope.medicationTerms.length && !scope.profileConditions.some((c) => c.startsWith("medications"))) {
+    expectedKo.push(`복용약: ${scope.medicationTerms.join(", ")}`);
+  }
+  const expectedText = expectedKo.length ? ` 이 연구의 적용 조건은 ${expectedKo.join(", ")}입니다.` : "";
+  const uniqueMissing = [...new Set(missing)];
+  const uniqueDifferent = [...new Set(different)];
+
+  if (uniqueDifferent.length) {
+    return {
+      status: "population_difference",
+      detailKo: `입력한 ${uniqueDifferent.join(", ")} 조건이 연구 대상과 다릅니다.${expectedText} 이 연구는 비교를 위한 배경 정보이며 입력한 환자의 결과로 직접 해석할 수 없습니다.`,
+      missing: uniqueMissing,
+      different: uniqueDifferent,
+      expectedKo,
+    };
+  }
+  if (uniqueMissing.length) {
+    const medicationHint =
+      uniqueMissing.includes("복용약") && genericMedicationOnly
+        ? " 복용약 칸에 계열 이름만 적혀 있어 어느 약인지 대조하지 못했습니다. 약 이름(예: 와파린)을 적으면 다시 대조합니다."
+        : "";
+    return {
+      status: "missing_information",
+      detailKo: `${uniqueMissing.join(", ")} 정보가 없어 연구 대상과 일치하는지 확인하지 못했습니다.${expectedText}${medicationHint} 관련 연구는 배경 정보로 제공하며 개인에게 직접 적용한 결과로 해석하지 않습니다.`,
+      missing: uniqueMissing,
+      different: [],
+      expectedKo,
+    };
+  }
+  return { status: "match", detailKo: "", missing: [], different: [], expectedKo };
+}
+
 const literatureMatchSort = (
   left: FindingLiteratureMatch,
   right: FindingLiteratureMatch,
@@ -713,11 +854,30 @@ export function splitSupportingLiteratureForFinding(
         background.push(match);
       } else if (directAllowed) {
         direct.push(match);
-      } else if (
-        classification.uiPolicy ===
-        "direct_when_scope_matches_else_background"
-      ) {
-        background.push(match);
+      } else {
+        // 성분·제품 범위는 맞는데 환자 조건이 안 맞거나 비어 있는 경우다. 문헌을
+        // 숨기지 않고 배경으로 내리되, 입력 부족과 대상 차이를 갈라 이유를 붙인다.
+        const productScopeMatches = exactFindings.some((sourceFinding) =>
+          directScopeMatches(sourceFinding, selected, profile, {
+            ...classification.directScope,
+            profileConditions: [],
+            medicationTerms: [],
+          }),
+        );
+        if (productScopeMatches) {
+          const applicability = profileScopeApplicability(classification.directScope, profile);
+          if (applicability.status !== "match") {
+            background.push({
+              ...match,
+              applicability,
+              link: { ...link, limitationKo: `${applicability.detailKo} ${link.limitationKo}` },
+            });
+            continue;
+          }
+        }
+        if (classification.uiPolicy === "direct_when_scope_matches_else_background") {
+          background.push(match);
+        }
       }
     }
   }

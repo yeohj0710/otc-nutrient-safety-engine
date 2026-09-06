@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import re
 import sys
@@ -48,6 +49,7 @@ V50_MANIFEST = (
 V51_CLASSIFICATIONS = (
     ROOT / "research_v51" / "literature" / "link_classification.csv"
 )
+POSTHOC_REVIEW = ROOT / "research" / "final" / "literature-review.json"
 V50_REASON_LABELS = {
     "not_in_v5_corpus": "v5.0 코퍼스에 없음(검색식 미인출)",
     "no_retain_decision_for_rule_question": "v5.0 코퍼스에 있으나 해당 질문에서 retain 아님",
@@ -234,12 +236,33 @@ def _v51_classifications() -> dict[str, dict[str, object]]:
     return classifications
 
 
+def apply_posthoc_review(row: dict, abstract: str, review: dict) -> dict:
+    if (row["link_id"] != review["source_link_id"] or row["record_id"] != review["record_id"]
+            or row["rule_id"] != review["rule_id"]):
+        raise ValueError("Posthoc literature review identity mismatch")
+    digest = hashlib.sha256(" ".join(abstract.split()).encode("utf-8")).hexdigest()
+    if digest != review["abstract_sha256"]:
+        raise ValueError("Posthoc literature review source changed")
+    if any(row.get(field) != value for field, value in review["before"].items()):
+        raise ValueError("Posthoc literature review baseline changed")
+    corrected = {**row, **review["after"]}
+    if sentence_at(abstract, parse_locator(corrected["locator"])) != corrected["locator_quote_en"]:
+        raise ValueError("Posthoc literature review quote is not at its locator")
+    return corrected
+
+
 def build() -> list[dict]:
     rule_rows = _rows(RULES)
     rule_types_by_id = {row["rule_id"]: row["rule_type"] for row in rule_rows}
     released_rule_types = {row["rule_type"] for row in rule_rows if row["status"] == "released"}
     abstracts = {row["pmid"]: row["abstract"] for row in _rows(EVIDENCE_MAP)}
     v51_classifications = _v51_classifications()
+    review_payload = json.loads(POSTHOC_REVIEW.read_text(encoding="utf-8"))
+    if review_payload.get("model") != "gpt-5.6-luna":
+        raise ValueError("Unexpected posthoc literature reviewer")
+    reviews = {r["source_link_id"]: r for r in review_payload["results"]}
+    if len(reviews) != len(review_payload["results"]):
+        raise ValueError("Duplicate posthoc literature review")
 
     papers: dict[str, dict] = {}
     seen_links: set[str] = set()
@@ -277,6 +300,8 @@ def build() -> list[dict]:
         quote = sentence_at(abstract, parse_locator(row["locator"]))
         if quote != row["locator_quote_en"]:
             raise ValueError(f"{link_id}: locator quote does not match the abstract sentence")
+        if link_id in reviews:
+            row = apply_posthoc_review(row, abstract, reviews[link_id])
 
         declared = [v for v in row["profile_conditions"].split(";") if v]
         unknown = set(declared) - PROFILE_CONDITIONS - DOSE_INPUT_CONDITIONS
@@ -329,6 +354,7 @@ def build() -> list[dict]:
                 "authorizationAlignment": row["authorization_alignment"],
                 "authorizationNoteKo": row["authorization_note_ko"],
                 "v51Classification": v51_classification,
+                "posthocReview": review_payload["protocol"] if link_id in reviews else None,
             }
         )
         for ingredient_id in (v for v in row["ingredient_ids"].split(";") if v):
@@ -342,6 +368,8 @@ def build() -> list[dict]:
                 paper["doseInputConditions"].append(condition)
 
     extra_classifications = set(v51_classifications) - seen_links
+    if set(reviews) - seen_links:
+        raise ValueError("Posthoc reviews without an original literature link")
     if extra_classifications:
         raise ValueError(
             "v5.1 classifications without a source literature link: "
