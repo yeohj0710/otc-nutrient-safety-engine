@@ -47,7 +47,7 @@ describe("OTC checker layout contract", () => {
   it("separates authorization evidence from reference literature in wording and markup", () => {
     // 판정 근거는 허가원문, 문헌은 설명용. 화면에서 두 블록이 분리돼 있어야 한다.
     expect(componentSource).toContain('aria-label="판정에 사용한 식약처 허가 근거"');
-    expect(componentSource).toContain('aria-label="참고 문헌 · 판정 근거 아님"');
+    expect(componentSource).toContain('aria-label="참고 문헌, 판정 근거 아님"');
     expect(componentSource).toContain("<strong>판정 규칙 근거</strong>");
     expect(componentSource).toContain(">참고 문헌</strong>");
     expect(componentSource).toContain("판정 근거 아님");
@@ -78,14 +78,14 @@ describe("OTC checker layout contract", () => {
   it("states the small runtime scope instead of hiding it behind one rule count", () => {
     expect(pageSource).toContain("공개 안전성 규칙");
     expect(pageSource).toContain("제품별 직접 규칙 연결");
-    expect(pageSource).toContain("허가 사용·복용 조건");
-    expect(pageSource).toContain("v5.0 채택");
+    expect(pageSource).toContain("허가 사용/복용 조건");
+    expect(pageSource).toContain("문장과 출처를 대조한 문헌");
     expect(pageSource).not.toContain("보조 문헌");
   });
 
   it("keeps released rules, authorization constraints, and literature states distinct", () => {
     expect(pageSource).toContain(
-      "공개 안전성 규칙과 제품별 허가 사용·복용 조건만 판정",
+      "공개 안전성 규칙과 제품별 허가 사용/복용 조건만 판정",
     );
     expect(pageSource).not.toContain("연결된 규칙만 판정");
     expect(pageSource).toContain("직접 일치 {v5DirectMatchLinkCount}건");
@@ -94,14 +94,14 @@ describe("OTC checker layout contract", () => {
     );
     expect(pageSource).toContain("배경 전용 {v5BackgroundOnlyLinkCount}건");
     expect(pageSource).toContain(
-      "감사 전용·결과 화면 제외 {v5ExcludedLinkCount}건",
+      "감사 전용, 결과 화면 제외 {v5ExcludedLinkCount}건",
     );
     expect(pageSource).not.toContain("v5DirectCapableLinkCount");
     expect(componentSource).toContain(
-      "공개 안전성 규칙 또는 제품별 허가 사용·복용 조건이 연결된 제품만 점검에 사용해요.",
+      "공개 안전성 규칙 또는 제품별 허가 사용/복용 조건이 연결된 제품만 점검에 사용합니다.",
     );
     expect(componentSource).toContain(
-      "제품별 공개 안전성 규칙이나 허가 사용·복용 조건이 연결된 입력만",
+      "제품별 공개 안전성 규칙이나 허가 사용/복용 조건이 연결된 입력만",
     );
     expect(componentSource).not.toContain(
       "식약처 허가 원문과 안전성 규칙까지 연결된 제품만 점검에 사용해요.",
@@ -117,7 +117,7 @@ describe("OTC checker layout contract", () => {
     expect(componentSource).toContain("선택 제품");
     expect(componentSource).toContain("지원 점검 유형");
     expect(componentSource).toContain("공개 규칙 연결");
-    expect(componentSource).toContain("사용·복용 조건");
+    expect(componentSource).toContain("사용/복용 조건");
     expect(styleSource).toContain(".resultScope");
     expect(pageSource).toContain("max-w-[1240px]");
   });
@@ -135,7 +135,7 @@ describe("OTC checker layout contract", () => {
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((left, right) => left - right));
     expect(componentSource).toContain("현재 제품의 식약처 허가 원문");
-    expect(componentSource).toContain("v5.0 채택 PubMed 문헌");
+    expect(componentSource).toContain("문장과 출처를 대조한 PubMed 문헌");
     expect(componentSource).toContain("대표 제품 허가 원문");
   });
 
@@ -181,8 +181,8 @@ describe("OTC checker layout contract", () => {
     expect(componentSource).toContain('<option value="2">2기</option>');
     expect(componentSource).toContain('<option value="3">3기</option>');
     expect(componentSource).toContain("현재 어린이부루펜의 임신 3기만 판정합니다.");
-    expect(componentSource).toContain("현재 항응고제는 와파린·쿠마린 표현만 판정합니다.");
-    expect(componentSource).toContain("아픽사반·아스피린과 다른 약은 판정하지 않고");
+    expect(componentSource).toContain("현재 항응고제는 와파린, 쿠마린 표현만 판정합니다.");
+    expect(componentSource).toContain("아픽사반, 아스피린과 다른 약은 판정하지 않고");
   });
 
   it("shows product and profile support boundaries before evaluation", () => {
@@ -199,10 +199,10 @@ describe("OTC checker layout contract", () => {
   });
 
   it("labels the checker as a research prototype in all key states", () => {
-    expect(pageSource).toContain("연구용 시제품 · 임상 사용 승인 아님");
-    expect(componentSource).toContain("연구용 시제품 · 임상 사용 승인 아님");
+    expect(pageSource).toContain("연구용 시제품, 임상 사용 승인 아님");
+    expect(componentSource).toContain("연구용 시제품, 임상 사용 승인 아님");
     expect(componentSource).toContain(
-      "제품별로 연결된 사용량·간격·질환·병용약 조건만 판정합니다.",
+      "제품별로 연결된 사용량, 간격, 질환, 병용약 조건만 판정합니다.",
     );
   });
 
@@ -363,7 +363,7 @@ describe("OTC checker layout contract", () => {
     expect(componentSource).toContain("{(aiExplainPending || aiExplain) && (");
     expect(componentSource).not.toContain("{(aiExplainPending || aiExplain?.ok) && (");
     expect(componentSource).toContain("{aiExplain.notice}");
-    expect(componentSource).toContain("이번에는 못 붙였습니다");
+    expect(componentSource).toContain("이번에는 붙이지 못했습니다");
     // 400 응답도 본문을 읽어야 까닭이 남는다.
     expect(componentSource).not.toContain("res.ok ? res.json() : null");
   });

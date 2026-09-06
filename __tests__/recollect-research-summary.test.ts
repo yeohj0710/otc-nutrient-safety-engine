@@ -15,14 +15,16 @@ import pool from "@/src/generated/recollect/rule-literature-pool.json";
  */
 const TRACK_ROOT = "C:\\dev\\evidence-recollect\\data\\kwon";
 const reportPath = `${TRACK_ROOT}\\report.json`;
-const hasLedger = existsSync(reportPath);
+const finalReportPath = `${TRACK_ROOT}\\final\\report.json`;
+const hasLedger = existsSync(reportPath) && existsSync(finalReportPath);
 const read = (path: string) => JSON.parse(readFileSync(path, "utf8"));
 
 describe("재수집 트랙 연구 정보 요약", () => {
   it("사람 참조표준이 없다는 사실을 그대로 담는다", () => {
     expect(summary.flags.humanReferenceRows).toBe(0);
     expect(summary.flags.independentBlinding).toBe(false);
-    expect(summary.flags.releaseReady).toBe(false);
+    expect(summary.flags.clinicalReleaseReady).toBe(false);
+    expect(summary.flags.researchCorrectionApplied).toBe(true);
     expect(summary.screening.humanDecisions).toBe(0);
   });
 
@@ -95,19 +97,21 @@ describe("재수집 트랙 연구 정보 요약", () => {
 
   it.runIf(hasLedger)("원장과 어긋나지 않는다", () => {
     const report = read(reportPath);
+    const finalReport = read(finalReportPath);
 
     expect(summary.track).toBe(report.track);
-    expect(summary.corpus.rows).toBe(report.corpus.rows);
-    expect(summary.corpus.uniquePapers).toBe(report.corpus.unique_papers);
+    expect(summary.corpus.rows).toBe(finalReport.corpus.final_rows);
+    expect(summary.corpus.uniquePapers).toBe(finalReport.corpus.unique_papers);
     expect(summary.corpus.previousRows).toBe(report.corpus.old_rows);
-    expect(summary.screening.final.retain).toBe(report.screening.final["유지"]);
+    expect(summary.screening.final.retain).toBe(finalReport.screening.retain);
     expect(summary.screening.final.deprioritize).toBe(
-      report.screening.final["후순위"],
+      finalReport.screening.deprioritize,
     );
     expect(summary.screening.final.uncertain).toBe(
-      report.screening.final["판정 보류"],
+      finalReport.screening.uncertain,
     );
-    expect(summary.screening.retainedPapers).toBe(report.screening.retained_papers);
+    expect(summary.screening.retainedPapers).toBe(finalReport.evidence.retain_papers_in_corpus);
+    expect(finalReport.comparison_scope).toBe("before_posthoc_correction");
     expect(summary.fulltext.withFulltext).toBe(report.fulltext.with_fulltext);
     expect(summary.fulltext.withPmcid).toBe(report.fulltext.with_pmcid);
     expect(summary.fulltext.medianChars).toBe(report.fulltext.median_chars);

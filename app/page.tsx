@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import runtimeData from "@/src/generated/otc-runtime.json";
 import supportingLiterature from "@/src/generated/otc-supporting-literature.json";
+import researchSummary from "@/src/generated/recollect/research-summary.json";
 import { OtcProductSafetyClient, type OtcRuntime } from "@/src/components/otc-product-safety-client";
 import {
   literatureHomepageStatusSummary,
@@ -27,6 +28,26 @@ const v5ConditionalDirectLinkCount = literatureStatus.conditionalDirect;
 const v5BackgroundOnlyLinkCount = literatureStatus.backgroundOnly;
 const v5ExcludedLinkCount = literatureStatus.excluded;
 
+const numberFormat = (value: number) => value.toLocaleString("ko-KR");
+const correction = researchSummary.screening.posthocCorrection;
+
+/* 알림 상자에 싣는 연구 진행 기록. 날짜는 커밋과 정정 규약 번호에서 가져온다. */
+const notices = [
+  {
+    date: "2026-09-05",
+    title: "문헌 선별 사후 정정 반영",
+    body: `검토 ${numberFormat(correction.reviewed_rows)}행을 대조해 판정을 정정했습니다. AI 채점 지표는 정정 전 값을 그대로 둡니다.`,
+  },
+  {
+    date: "2026-08-31",
+    title: "연구 정보 화면을 규칙별 문헌 연동 서술로 개편",
+  },
+  {
+    date: "2026-08-29",
+    title: "화면 수치를 문헌 재수집 결과로 교체",
+  },
+];
+
 export const metadata: Metadata = {
   title: siteName,
   description: siteDescription,
@@ -35,76 +56,137 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+function QuickIcon({ kind }: { kind: "search" | "rule" | "evidence" }) {
+  if (kind === "search") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="6.5" />
+        <path d="m20 20-4.2-4.2" />
+      </svg>
+    );
+  }
+  if (kind === "rule") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3 4 6.5v5c0 4.6 3.4 8.4 8 9.5 4.6-1.1 8-4.9 8-9.5v-5L12 3Z" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+    );
+  }
   return (
-    <main id="main-content" className="min-h-screen bg-[#f3f5f7] text-[#17223b]">
-      <section className="px-4 pb-5 pt-8 sm:px-6 sm:pb-6 sm:pt-11">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 3h9l4 4v14H6z" />
+      <path d="M15 3v4h4M9 12h6M9 16h6" />
+    </svg>
+  );
+}
+
+export default function Home() {
+  const [lead, ...rest] = notices;
+
+  return (
+    <main id="main-content" tabIndex={-1} className="app-page min-h-screen">
+      <section className="gov-hero" aria-labelledby="site-title">
         <div className="mx-auto max-w-[1240px]">
-          {/* 머리글은 제목·한 줄 설명·한계 한 줄까지만 둔다. 예전에는 여기에
-              숫자 배지 넷이 상자를 이루고 있어서, 도구를 쓰기도 전에 읽을 것이
-              네 덩이 더 있었다. 같은 숫자는 화면 맨 아래 연구 범위 문단이 이미
-              적고 있다. */}
-          {/* 본문(점검 도구)이 920px 한 줄로 서므로 머리글도 같은 폭에 맞춘다.
-              폭이 어긋나면 제목과 도구가 서로 다른 화면처럼 보인다. */}
-          <div className="mx-auto w-full max-w-[920px]">
-            <p className="inline-flex min-h-8 items-center rounded-lg bg-[#e8f5f1] px-3 text-[14px] font-extrabold text-[#17604f]">
-              국내 OTC 근거 조회
-            </p>
-            <h1 className="mt-3 break-keep text-[32px] font-extrabold leading-[1.25] tracking-[-0.035em] sm:text-[42px]">
-              함께 쓰는 약의 중복 성분·용량 점검
-            </h1>
-            <p className="mt-3 break-keep text-[16px] font-medium leading-[1.65] text-[#667085] sm:text-[18px]">
-              제품명만 담으면 중복 성분과 하루 사용량, 연령·질환·병용약 주의를
-              식약처 허가 원문까지 연결해 보여줍니다.
-            </p>
-            <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-2 text-[14px] font-bold text-[#667085]">
-              <span className="inline-flex min-h-8 items-center rounded-lg border border-[#eed7b7] bg-[#fff8ee] px-3 text-[#87520b]">
-                연구용 시제품 · 임상 사용 승인 아님
-              </span>
-              <span className="break-keep font-medium">
-                허가 확인 제품 {runtimeData.products.length}개 · 공개 안전성 규칙{" "}
-                {runtimeData.rulesReleased}개 · 허가 복용 조건{" "}
-                {administrationConstraintCount}건 · 채택 문헌{" "}
-                {v5LiteratureLinkCount}건
-              </span>
-            </p>
+          <div className="gov-hero-grid">
+            <div>
+              <p className="gov-hero-kicker">졸업논문 연구, 국내 일반의약품 근거 추적형 안전성 조회</p>
+              <h1 id="site-title" className="gov-hero-title">
+                일반의약품 함께복용 점검
+              </h1>
+              <p className="gov-hero-lead">
+                제품명을 검색해 담으면 중복 성분, 하루 사용량, 연령과 질환과 병용약 주의 항목을
+                식약처 허가 원문과 함께 확인합니다. 판정 기준은 공개 안전성 규칙과 허가사항이고,
+                AI는 설명만 돕습니다.
+              </p>
+              <p className="gov-hero-badges">
+                <span className="gov-badge gov-badge-warn">연구용 시제품, 임상 사용 승인 아님</span>
+                <span className="gov-badge">허가 확인 제품 {runtimeData.products.length}개</span>
+                <span className="gov-badge">공개 안전성 규칙 {runtimeData.rulesReleased}개</span>
+                <span className="gov-badge">허가 복용 조건 {administrationConstraintCount}건</span>
+                <span className="gov-badge">채택 문헌 {v5LiteratureLinkCount}건</span>
+              </p>
+            </div>
+
+            <aside className="gov-notice" aria-labelledby="notice-title">
+              <div className="gov-notice-tabs">
+                <span id="notice-title" className="gov-notice-tab" aria-current="true">
+                  연구 안내
+                </span>
+                <span className="gov-notice-tab">진행 기록</span>
+              </div>
+              <div className="gov-notice-lead">
+                <p className="gov-notice-date">
+                  <small>{lead.date.slice(0, 4)}</small>
+                  <strong>{lead.date.slice(5).replace("-", ".")}</strong>
+                </p>
+                <div>
+                  <h3>{lead.title}</h3>
+                  <p>{lead.body}</p>
+                </div>
+              </div>
+              <ul className="gov-notice-list">
+                {rest.map((item) => (
+                  <li key={item.date + item.title}>
+                    <span>{item.title}</span>
+                    <time dateTime={item.date}>{item.date}</time>
+                  </li>
+                ))}
+              </ul>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section id="checker" className="px-4 pb-8 pt-1 sm:px-6 sm:pb-12 sm:pt-2">
+      <section id="checker" className="px-4 pb-10 pt-6 sm:px-6 sm:pb-14 sm:pt-8">
         <div className="mx-auto max-w-[1240px]">
           <OtcProductSafetyClient runtime={runtimeData as OtcRuntime} />
         </div>
       </section>
 
-      <section className="border-t border-[#e1e5ea] bg-white px-4 py-7 sm:px-6">
-        <div className="mx-auto w-full max-w-[920px]">
-        <div className="grid gap-5 sm:grid-cols-3 sm:gap-8">
-          {[
-            ["제품명부터 시작", "성분을 몰라도 제품을 검색해 함께 복용하는 조합을 만들 수 있습니다."],
-            ["고정된 판정 기준", "AI가 위험 수준이나 용량 기준을 만들지 않습니다. 공개 안전성 규칙과 허가 복용 조건만 적용합니다."],
-            ["근거까지 바로 확인", "각 주의 항목에서 식약처 허가 원문과 판정에 맞는 학술문헌을 함께 볼 수 있습니다."],
-          ].map(([title, description], index) => (
-            <div key={title} className="flex gap-3">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#20324f] text-[14px] font-extrabold text-white">
-                {index + 1}
-              </span>
-              <div>
-                <h2 className="text-[16px] font-extrabold text-[#17223b]">{title}</h2>
-                <p className="mt-1 break-keep text-[15px] font-medium leading-[1.65] text-[#667085]">{description}</p>
+      <section id="guide" className="gov-band" aria-label="이용 안내">
+        <div className="mx-auto max-w-[1240px]">
+          <div className="gov-quick">
+            {[
+              {
+                kind: "search" as const,
+                title: "제품명부터 검색",
+                body: "성분을 몰라도 제품명으로 검색해 함께 복용하는 조합을 담을 수 있습니다.",
+              },
+              {
+                kind: "rule" as const,
+                title: "고정된 판정 기준",
+                body: "AI가 위험 수준이나 용량 기준을 만들지 않습니다. 공개 안전성 규칙과 허가 복용 조건만 적용합니다.",
+              },
+              {
+                kind: "evidence" as const,
+                title: "근거 원문 확인",
+                body: "각 주의 항목에서 식약처 허가 원문과 판정에 맞는 학술문헌을 함께 볼 수 있습니다.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="gov-quick-item">
+                <span className="gov-quick-icon">
+                  <QuickIcon kind={item.kind} />
+                </span>
+                <div>
+                  <h2>{item.title}</h2>
+                  <p>{item.body}</p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 break-keep border-t border-[#eef1f4] pt-5 text-[14px] font-medium leading-[1.7] text-[#5f6b7a]">
-          이 시제품은 공개 안전성 규칙과 제품별 허가 사용·복용 조건만 판정합니다.
-          제품별 직접 규칙 연결 {productRuleBindingCount}건과 허가 사용·복용 조건 {administrationConstraintCount}건을 사용합니다.
-          v5.0 채택 문헌 {v5LiteratureRuleCount}규칙 {v5LiteratureLinkCount}건은
-          직접 일치 {v5DirectMatchLinkCount}건, 범위 일치 시 직접 {v5ConditionalDirectLinkCount}건,
-          배경 전용 {v5BackgroundOnlyLinkCount}건으로 나뉩니다.
-          감사 전용·결과 화면 제외 {v5ExcludedLinkCount}건은 화면에 넣지 않습니다.
-        </p>
+            ))}
+          </div>
+
+          <div className="gov-scope">
+            <h2>판정 범위</h2>
+            <p>
+              이 시제품은 공개 안전성 규칙과 제품별 허가 사용/복용 조건만 판정합니다.
+              제품별 직접 규칙 연결 {productRuleBindingCount}건과 허가 사용/복용 조건 {administrationConstraintCount}건을 사용합니다.
+              문장과 출처를 대조한 문헌 {v5LiteratureRuleCount}규칙 {v5LiteratureLinkCount}건은
+              직접 일치 {v5DirectMatchLinkCount}건, 범위 일치 시 직접 {v5ConditionalDirectLinkCount}건,
+              배경 전용 {v5BackgroundOnlyLinkCount}건으로 나뉩니다.
+              감사 전용, 결과 화면 제외 {v5ExcludedLinkCount}건은 화면에 넣지 않습니다.
+            </p>
+          </div>
         </div>
       </section>
     </main>

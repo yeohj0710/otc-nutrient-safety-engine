@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 
 import { SiteFrame } from "@/src/components/site-frame";
 import { getSiteUrl, siteDescription, siteKeywords, siteName } from "@/src/lib/site";
 
 import "./globals.css";
 
-const appFont = Geist({
+/* 의약품안전나라(nedrug.mfds.go.kr)가 쓰는 본문 글꼴. 빌드 때 받아 두므로
+   방문자 기기에 설치돼 있지 않아도 같은 글꼴로 보인다. */
+const appFont = Noto_Sans_KR({
   variable: "--font-app-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 

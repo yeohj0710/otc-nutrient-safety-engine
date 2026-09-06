@@ -7,7 +7,7 @@ export default function Loading() {
       className="route-loading"
     >
       <p className="sr-only" role="status" aria-live="polite">
-        화면을 불러오는 중…
+        화면을 불러오는 중입니다.
       </p>
       <div className="route-loading-shell" aria-hidden="true">
         <div className="loading-skeleton route-loading-bar" />

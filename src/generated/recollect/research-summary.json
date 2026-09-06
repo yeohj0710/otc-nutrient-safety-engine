@@ -4,23 +4,35 @@
   "study": "kwon",
   "label": "권혁찬 · 국내 일반의약품",
   "builtAt": "2026-08-21T03:20:13+00:00",
-  "generatedAt": "2026-08-29T11:59:03+00:00",
+  "generatedAt": "2026-09-05T09:19:36+00:00",
   "generatedFrom": {
     "report": {
       "path": "C:\\dev\\evidence-recollect\\data\\kwon\\report.json",
       "sha256": "28fbe91f26f7cc5d514e3e41e5bf8ce5537570f13e1a408640344d6b10b2f208"
     },
     "corpus": {
-      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\corpus\\evidence_map.csv",
-      "sha256": "c46469721fe7e7f0da947369368794c0ea33bb12afbd9b3968dc7724e3d2971b"
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\final\\evidence_map.csv",
+      "sha256": "50342004de69cfed864d532cd0affcae21f4aa22bf3f515e5b8ab19eb0c07b0f"
+    },
+    "metadataRepair": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\final\\metadata_manifest.json",
+      "sha256": "31767a4088b94af5b350277620b6586005fd1fcfa078b34c2796f09bdae883ce"
     },
     "decisions": {
       "path": "C:\\dev\\evidence-recollect\\data\\kwon\\screen\\redo-20260820\\effective.decisions.jsonl",
       "sha256": "b448509ab3367858460751e807356e4ad1dd8aba2fc5628c1d88d8cbadcb221e"
     },
+    "correctedDecisions": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\final\\effective.decisions.jsonl",
+      "sha256": "d62e1796311b7d447543b8200f163d15deb140cff7fab70e106852d3daefc5f8"
+    },
+    "posthocCorrection": {
+      "path": "C:\\dev\\evidence-recollect\\data\\kwon\\final\\summary.json",
+      "sha256": "c087bfad8b79277286e4c0bb359d4cb3c5008a573cbb7278a1892bb1e7cc7f0d"
+    },
     "scoring": {
       "path": "C:\\dev\\evidence-recollect\\data\\kwon\\score-20260820\\scoring_report.json",
-      "sha256": "ebcee8256cf672aeaa97dfdba287f6bbef5c74d0bde74ba6084900ca6f5cdccb"
+      "sha256": "59d138c5c0d4e55dd7ecf60e0faef72127d05957f548667acde3dfa7c2f1ab72"
     },
     "fulltext": {
       "path": "C:\\dev\\evidence-recollect\\data\\kwon\\fulltext\\fulltext.jsonl",
@@ -45,7 +57,7 @@
       {
         "id": "OTC-LIT-Q01-ACETAMINOPHEN",
         "titleKo": "아세트아미노펜 용량·간격·간질환·음주 관련 위해",
-        "rows": 17240,
+        "rows": 17783,
         "previousRows": 9259,
         "hitsOld": 9264,
         "hitsAfterDateRemoval": 15569,
@@ -54,7 +66,7 @@
       {
         "id": "OTC-LIT-Q02-NSAID",
         "titleKo": "이부프로펜·덱시부프로펜·나프록센의 중복과 주요 위해",
-        "rows": 16272,
+        "rows": 16581,
         "previousRows": 6448,
         "hitsOld": 6456,
         "hitsAfterDateRemoval": 13272,
@@ -63,7 +75,7 @@
       {
         "id": "OTC-LIT-Q03-COLD-ALLERGY",
         "titleKo": "감기·알레르기 복합성분의 진정·운전·혈압·병용 위해",
-        "rows": 16485,
+        "rows": 16672,
         "previousRows": 5669,
         "hitsOld": 5670,
         "hitsAfterDateRemoval": 13747,
@@ -72,7 +84,7 @@
       {
         "id": "OTC-LIT-Q04-DIGESTIVE",
         "titleKo": "소화효소·담즙산·가스제거 성분 복합 사용의 안전성",
-        "rows": 28279,
+        "rows": 28794,
         "previousRows": 21314,
         "hitsOld": 21342,
         "hitsAfterDateRemoval": 27535,
@@ -81,7 +93,7 @@
       {
         "id": "OTC-LIT-Q05-TOPICAL",
         "titleKo": "살리실산메틸·멘톨·캄파 등 외용 복합성분의 위해",
-        "rows": 1128,
+        "rows": 1135,
         "previousRows": 517,
         "hitsOld": 517,
         "hitsAfterDateRemoval": 877,
@@ -93,23 +105,190 @@
     "hitsAfterAmendmentTotal": 80965
   },
   "corpus": {
-    "rows": 79404,
-    "uniquePapers": 77394,
-    "rowsWithAbstract": 71028,
-    "rowsTitleOnly": 8376,
-    "duplicatesRemoved": 1902,
+    "rows": 80965,
+    "uniquePapers": 79006,
+    "rowsWithAbstract": 72458,
+    "rowsTitleOnly": 8507,
+    "duplicatesRemoved": 631,
+    "beforeCorrectionRows": 79404,
+    "restoredRows": 1561,
+    "correctedDoiRows": 10099,
     "previousRows": 43207,
-    "growthVsPrevious": 1.84,
+    "growthVsPrevious": 1.874,
     "xmlFiles": 419
   },
   "screening": {
-    "screened": 79404,
+    "screened": 80965,
     "final": {
+      "retain": 20821,
+      "deprioritize": 59626,
+      "uncertain": 518
+    },
+    "beforeCorrection": {
       "retain": 23712,
       "deprioritize": 55615,
       "uncertain": 77
     },
-    "retainedPapers": 22692,
+    "retainedPapers": 19856,
+    "posthocCorrection": {
+      "study": "kwon",
+      "protocol": "R20260905",
+      "scope": "posthoc_research_correction",
+      "review_model": "gpt-5.6-luna",
+      "reviewed_rows": 10376,
+      "corpus_rows": 80965,
+      "baseline_corpus_rows": 79404,
+      "restored_rows_screened": 1561,
+      "metadata_repair": {
+        "study": "kwon",
+        "protocol": "R20260905",
+        "repair": "primary_article_doi_and_pmid_deduplication",
+        "baseline_rows": 79404,
+        "final_rows": 80965,
+        "unique_papers": 79006,
+        "restored_rows": 1561,
+        "doi_corrected_rows": 10099,
+        "duplicate_pmid_rows_removed": 631,
+        "restored_book_rows": 195,
+        "rows_with_abstract": 72458,
+        "rows_title_only": 8507,
+        "per_question": {
+          "OTC-LIT-Q01-ACETAMINOPHEN": 17783,
+          "OTC-LIT-Q02-NSAID": 16581,
+          "OTC-LIT-Q03-COLD-ALLERGY": 16672,
+          "OTC-LIT-Q04-DIGESTIVE": 28794,
+          "OTC-LIT-Q05-TOPICAL": 1135
+        },
+        "baseline_corpus_sha256": "c46469721fe7e7f0da947369368794c0ea33bb12afbd9b3968dc7724e3d2971b",
+        "final_corpus_sha256": "50342004de69cfed864d532cd0affcae21f4aa22bf3f515e5b8ab19eb0c07b0f",
+        "metadata_corrections_sha256": "2d60684f1a22d2490456bb248572edf7983449dcbe0becba5b5bed84842653fa",
+        "restored_input_sha256": "aedb3520bee025c42d8b9f66393d941e34d41b9c738a6891f5f3aad851a1dd9c",
+        "original_corpus_changed": false,
+        "non_doi_source_fields_changed": false
+      },
+      "baseline_counts": {
+        "retain": 23712,
+        "deprioritize": 55615,
+        "uncertain": 77
+      },
+      "final_counts": {
+        "retain": 20821,
+        "deprioritize": 59626,
+        "uncertain": 518
+      },
+      "final_retained_papers": 19856,
+      "final_counts_by_question": {
+        "OTC-LIT-Q01-ACETAMINOPHEN": {
+          "retain": 7422,
+          "deprioritize": 10258,
+          "uncertain": 103
+        },
+        "OTC-LIT-Q02-NSAID": {
+          "deprioritize": 8838,
+          "retain": 7633,
+          "uncertain": 110
+        },
+        "OTC-LIT-Q03-COLD-ALLERGY": {
+          "deprioritize": 13597,
+          "retain": 3009,
+          "uncertain": 66
+        },
+        "OTC-LIT-Q04-DIGESTIVE": {
+          "deprioritize": 26293,
+          "retain": 2272,
+          "uncertain": 229
+        },
+        "OTC-LIT-Q05-TOPICAL": {
+          "retain": 485,
+          "deprioritize": 640,
+          "uncertain": 10
+        }
+      },
+      "label_changes": 3703,
+      "transitions": {
+        "deprioritize -> deprioritize": 703,
+        "deprioritize -> retain": 76,
+        "deprioritize -> uncertain": 12,
+        "not_screened -> deprioritize": 980,
+        "not_screened -> retain": 558,
+        "not_screened -> uncertain": 23,
+        "retain -> deprioritize": 3077,
+        "retain -> retain": 4398,
+        "retain -> uncertain": 472,
+        "uncertain -> deprioritize": 42,
+        "uncertain -> retain": 24,
+        "uncertain -> uncertain": 11
+      },
+      "review_groups": {
+        "title_only_amendment_review": 8333,
+        "decision_reason_hash_sample": 200,
+        "restored_after_doi_dedup_repair": 1561,
+        "nonempty_abstract_uncertain": 65,
+        "listed_hash_sample": 217
+      },
+      "reviewed_insufficient_rows": 518,
+      "baseline_sha256": "b448509ab3367858460751e807356e4ad1dd8aba2fc5628c1d88d8cbadcb221e",
+      "corpus_sha256": "50342004de69cfed864d532cd0affcae21f4aa22bf3f515e5b8ab19eb0c07b0f",
+      "metadata_manifest_sha256": "31767a4088b94af5b350277620b6586005fd1fcfa078b34c2796f09bdae883ce",
+      "original_blind_scores_changed": false,
+      "independent_validation_of_corrections": false,
+      "full_corpus_semantic_re_review": false,
+      "clinical_accuracy_established": false,
+      "input_queues": [
+        {
+          "input": "C:\\dev\\evidence-recollect\\etc\\remediation\\reason_review_input.json",
+          "input_sha256": "6938f5db7f76f2739c00f0eb6384e62d00838cf155d1f4208d272c415c39619b",
+          "review": "C:\\dev\\evidence-recollect\\etc\\remediation\\reason_resolution.json",
+          "review_sha256": "a18e56af66947abca689bea6d073bde6512d66fb43491dd967026517181c92bd",
+          "rows": 65
+        },
+        {
+          "input": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_review_input.json",
+          "input_sha256": "9f4df04fdfb3449107e39a3c61fa6994b6c99905c22d15fa8e0e5f4a68d45b98",
+          "review": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_review_results.json",
+          "review_sha256": "212439f0cf871aa5c5531d3c76630da12e5d135c0ece282e5f51a09c5f7b0f31",
+          "rows": 417
+        },
+        {
+          "input": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_restored_input.json",
+          "input_sha256": "aedb3520bee025c42d8b9f66393d941e34d41b9c738a6891f5f3aad851a1dd9c",
+          "review": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_restored_results.json",
+          "review_sha256": "6378ac9a8716d3316f57fab12b67c8a714d63398fd28efa3b729960737a9cbbc",
+          "rows": 1561
+        },
+        {
+          "input": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_1_input.json",
+          "input_sha256": "b6315c8efc806eed372b8575ce1e78cc30b8a68180e8a9b7f8b6af9bdea036cd",
+          "review": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_1_results.json",
+          "review_sha256": "f4bd243e56f62958d737d77b7b7dd52c1eb6fea955c75b5f5ee0f2d00c9ad361",
+          "rows": 2084
+        },
+        {
+          "input": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_2_input.json",
+          "input_sha256": "26d847bbb0ecedb4a3ef5663595cf6f3f93e1cedaf113821e326b4d62cae0219",
+          "review": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_2_results.json",
+          "review_sha256": "8a90f23e6637bcdb2bcfa2c4c7110336f5657d730a5cd0de89f637d3ef58f177",
+          "rows": 2083
+        },
+        {
+          "input": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_3_input.json",
+          "input_sha256": "6895c6f5b45d84104c52d3f6463452cfd5fafea3266f7ab62f34d7430b35da7d",
+          "review": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_3_results.json",
+          "review_sha256": "dae52f48d955d193face4622a88b291bccff54c463bcbe4d19a720ff7031a23e",
+          "rows": 2083
+        },
+        {
+          "input": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_4_input.json",
+          "input_sha256": "019e8bdcfce2c1b9992dd58a6401a6c3c49d78b924188c27ac967ac89433e8dc",
+          "review": "C:\\dev\\evidence-recollect\\etc\\remediation\\validity\\kwon_title_4_results.json",
+          "review_sha256": "6a33b469764af9d662e1b0f678c0f8c571cc11f2e4486f317e5878b42cb3edac",
+          "rows": 2083
+        }
+      ],
+      "criteria_sha256": "da9a24c36fc99268fdec4a068890c96182e1e08a7e25d5854be55000572d686f",
+      "review_sha256": "cf850c4983c23ea72081c9934c648d5de54edbd7278a732f8c1ab8a2adb5b1fc",
+      "effective_sha256": "d62e1796311b7d447543b8200f163d15deb140cff7fab70e106852d3daefc5f8"
+    },
     "coverage": 1.0,
     "humanDecisions": 0,
     "amendments": [
@@ -138,6 +317,7 @@
     "changedFromEarlierPass": 8388
   },
   "fulltext": {
+    "scope": "before_posthoc_correction",
     "checkedPapers": 22692,
     "withPmcid": 4455,
     "withFulltext": 2933,
@@ -146,8 +326,13 @@
     "medianChars": 24216
   },
   "scoring": {
+    "evaluationScope": "before_posthoc_correction",
     "sampleRows": 2505,
     "populationRows": 79404,
+    "analysisVersion": 2,
+    "analysisUpdatedAt": "2026-09-05T04:35:58+00:00",
+    "reference": "scorer",
+    "pipelineRetainShareScope": "sampling_frame",
     "eligiblePopulation": 76899,
     "excludedFromEarlierArm": 2505,
     "strata": 3,
@@ -171,13 +356,15 @@
       82.82,
       85.63
     ],
-    "sensitivity": 76.23,
-    "specificity": 87.69,
+    "sensitivity": 72.56,
+    "specificity": 89.63,
+    "positivePredictiveValue": 76.23,
+    "negativePredictiveValue": 87.69,
     "kappa": 0.63,
-    "kappaMethod": "설계 가중 3분류 비가중 카파. 층 가중치는 N/n",
-    "pipelineRetainShare": 29.86,
+    "kappaMethod": "설계 가중 3분류 비가중 카파. 보존된 층 가중치(N/n, 소수 셋째 자리 반올림) 사용",
+    "pipelineRetainShare": 29.93,
     "scorerRetainShare": 31.44,
-    "retainShareRatio": 1.053,
+    "retainShareRatio": 1.05,
     "disagreementByDirection": {
       "retain->deprioritize": 178,
       "deprioritize->retain": 208,
@@ -202,18 +389,18 @@
       "OTC-RULE-016"
     ],
     "linkCount": 10,
-    "verifiedTrack": "v5.0 (봉인)"
+    "verifiedTrack": "허가원문 규칙·원문 인용 연결, R20260905 사후 정정"
   },
   "rulePool": {
     "rules": 16,
-    "unique_papers_matched": 14676,
-    "rule_paper_pairs": 25370,
-    "rule_question_paper_rows": 25454,
+    "unique_papers_matched": 14162,
+    "rule_paper_pairs": 25153,
+    "rule_question_paper_rows": 25229,
     "unique_papers_listed": 5072,
-    "quotable_sentences": 5909,
-    "title_only_quotes": 260,
-    "retain_rows_in_corpus": 23712,
-    "retain_papers_in_corpus": 22692
+    "quotable_sentences": 5913,
+    "title_only_quotes": 210,
+    "retain_rows_in_corpus": 20821,
+    "retain_papers_in_corpus": 19856
   },
   "comparator": {
     "required": false,
@@ -222,15 +409,18 @@
   },
   "flags": {
     "independentBlinding": false,
-    "releaseReady": false,
+    "clinicalReleaseReady": false,
+    "researchCorrectionApplied": true,
     "humanReferenceRows": 0,
     "invariantsChecked": 6,
     "invariantsFailed": 0
   },
   "limitations": [
     "사람이 판정한 참조표준이 0건입니다. 어떤 값도 임상적 정확도나 검증 완료를 뜻하지 않습니다.",
+    "사후 검토 10,376행의 사유를 문헌 ID에 맞춰 기록하고 3,703행의 판정을 바꿨습니다. 맹검 지표는 정정 전 평가이며, 정정 후 성능을 뜻하지 않습니다.",
+    "DOI 추출과 PMID 중복 제거를 고쳐 누락된 1,561행을 복원하고 처음 선별했습니다. 기존 79,404행 중 DOI 10,099건을 정정했습니다.",
     "자료원은 PubMed 하나입니다. 제2 데이터베이스, 회색문헌, 인용 검색을 하지 않았습니다.",
-    "유지 22,692편 가운데 원문을 확보한 것은 2,933편(12.9%)입니다. 나머지는 제목과 초록만 읽었습니다.",
+    "정정 전 유지 22,692편 가운데 원문을 확보한 것은 2,933편(12.9%)입니다. 현재 문헌 후보 선별과 사후 검토는 제목·초록·주제어를 기준으로 합니다.",
     "선별 사유가 빈 채로 기록된 행이 2,950건 있었습니다. 2026-08-20 재판정으로 판정은 다시 받았지만, 그때 적은 사유는 원래 판정의 사유가 아니라 재판정의 사유입니다.",
     "대조군 분류기를 돌리지 않았습니다. 대조군도 언어모델이라 규칙 대 AI 대조가 성립하지 않습니다.",
     "판매량 자료가 없습니다. 분석 제품 13개는 대표 일반의약품 후보이며 판매 순위 집합이 아닙니다."

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { isRetractedPublication, retractedPublicationNotice } from "@/src/lib/publication-status";
 
 import officialSafetyLayerData from "@/src/generated/otc-official-safety-layer.json";
 import literatureData from "@/src/generated/otc-supporting-literature.json";
@@ -153,17 +154,17 @@ const conditionOptions: Array<{
   { key: "kidneyDisease", label: "신장질환", ruleType: "renal_disease" },
   {
     key: "giBleedingOrUlcer",
-    label: "위장관 출혈·궤양",
+    label: "위장관 출혈/궤양",
     ruleType: "gi_bleeding_ulcer",
   },
   {
     key: "hypertensionOrCardiovascularDisease",
-    label: "고혈압·심혈관질환",
+    label: "고혈압/심혈관질환",
     ruleType: "decongestant_hypertension",
   },
   { key: "pregnant", label: "임신 중", ruleType: "pregnancy_lactation" },
   { key: "lactating", label: "수유 중", ruleType: "pregnancy_lactation" },
-  { key: "willDrive", label: "사용·복용 후 운전", ruleType: "sedation_driving" },
+  { key: "willDrive", label: "사용/복용 후 운전", ruleType: "sedation_driving" },
   { key: "alcohol", label: "매일 3잔 이상 정기 음주", ruleType: "alcohol" },
 ];
 
@@ -244,7 +245,7 @@ export const quickChecks: Array<{
   },
   {
     kind: "unsupported",
-    label: "소화제 2종 · 판정 미지원",
+    label: "소화제 2종 (판정 미지원)",
     description: "겹치는 성분을 추가 확인 조건으로 표시",
     productIds: ["MFDS-198700405", "MFDS-200300406"],
     profilePatch: {},
@@ -256,13 +257,13 @@ export const quickChecks: Array<{
 const initialProfile: UserProfile = { medications: [], redFlagSymptoms: [] };
 
 const catalogClassLabels: Record<string, string> = {
-  analgesic_antiinflammatory: "해열·소염진통",
+  analgesic_antiinflammatory: "해열/소염진통",
   anthelmintic: "구충제",
   antihistamine: "항히스타민",
-  cold_respiratory: "감기·호흡기",
+  cold_respiratory: "감기/호흡기",
   gastrointestinal: "위장관",
   other_otc: "기타 OTC",
-  topical_or_local: "외용·국소",
+  topical_or_local: "외용/국소",
 };
 
 const severityRank = {
@@ -401,7 +402,7 @@ function ProductSupportDetails({
   product: OtcProduct;
   showLimitTooltip?: boolean;
 }) {
-  const detailText = summary.detailLabels.join(" · ");
+  const detailText = summary.detailLabels.join(", ");
   const limitNote = authorizationLimitNote(product);
   return (
     <span
@@ -548,7 +549,7 @@ function OfficialDurEvidenceSection({
     <section
       className={`${styles.resultSection} ${styles.officialDurSection}`}
       aria-labelledby="official-dur-heading"
-      aria-label="식약처 DUR 원문 · 기존 판정 근거와 분리"
+      aria-label="식약처 DUR 원문, 기존 판정 근거와 분리"
     >
       <header className={styles.resultSectionHeading}>
         <div>
@@ -559,13 +560,13 @@ function OfficialDurEvidenceSection({
         </div>
       </header>
       <div className={styles.officialDurNotice}>
-        <strong>공식 데이터 후보 · 임상 판단에 직접 사용하지 않음</strong>
+        <strong>공식 데이터 후보, 임상 판단에 직접 사용하지 않음</strong>
         <span>
           아래 내용은 원문 필드와 연결 정보입니다. 현재 안전성 판정과 참고 문헌의 내용을 바꾸지 않습니다.
         </span>
       </div>
       <p className={styles.summaryEvidence}>
-        선택 제품 {products.length}개 중 {productsWithDur.length}개 · 공식 DUR 원문 {recordCount}건
+        선택 제품 {products.length}개 중 {productsWithDur.length}개, 공식 DUR 원문 {recordCount}건
       </p>
       <div className={styles.officialDurProductList}>
         {products.map((product) => {
@@ -628,21 +629,21 @@ export function inputSupportStatusMessage({
   hasCoverageGap,
   hasInputIssue,
 }: InputSupportStatusContext): string {
-  if (selectedCount === 0) return "약을 담으면 이 조건을 보는지 알려드려요.";
+  if (selectedCount === 0) return "약을 담으면 이 조건을 보는지 알려드립니다.";
   if (!hasCurrentInput) {
     return supportedCount === 0
-      ? "담은 약에는 이 조건을 보지 않아요."
-      : `적으시면 담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 봐요.`;
+      ? "담은 약에는 이 조건을 보지 않습니다."
+      : `입력하면 담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 봅니다.`;
   }
-  if (hasInputIssue) return "적으신 값을 고쳐야 볼 수 있어요.";
+  if (hasInputIssue) return "입력한 값을 고쳐야 볼 수 있습니다.";
   if (hasCoverageGap) {
     return supportedCount === 0
-      ? "적으신 내용은 지금 규칙이 다루지 않아요. 결과의 확인하지 못한 범위에 적어 둡니다."
+      ? "입력한 내용은 지금 규칙이 다루지 않습니다. 결과의 확인하지 못한 범위에 적어 둡니다."
       : `담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 보고, 나머지는 확인하지 못한 범위로 남깁니다.`;
   }
   return supportedCount === 0
-    ? "적으신 내용은 지금 규칙이 다루지 않아요."
-    : `적으신 내용을 담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 봐요.`;
+    ? "입력한 내용은 지금 규칙이 다루지 않습니다."
+    : `입력한 내용을 담은 약 ${selectedCount}개 가운데 ${supportedCount}개에서 봅니다.`;
 }
 
 /**
@@ -663,7 +664,7 @@ function supportBadgeText({
 }: InputSupportStatusContext) {
   if (selectedCount === 0) return "";
   if (hasCurrentInput && hasInputIssue) return "값을 확인해 주세요";
-  if (supportedCount === 0) return "담은 약엔 안 따져요";
+  if (supportedCount === 0) return "담은 약에는 해당 없음";
   if (supportedCount < selectedCount)
     return `담은 약 ${selectedCount}개 중 ${supportedCount}개만`;
   return "";
@@ -718,7 +719,7 @@ export function LiteratureCard({
     <article className={styles.literatureCard}>
       <div>
         <span>
-          {paper.publicationYear} · {paper.studyDesign} ·{" "}
+          {paper.publicationYear}, {paper.studyDesign},{" "}
           {literatureRelationLabel(link.evidenceRelation)}
         </span>
         <b>PMID {paper.pmid}</b>
@@ -739,7 +740,7 @@ export function LiteratureCard({
         {link.keyFindingKo}
       </p>
       <p>
-        <strong>v5.1 분류 이유</strong>
+        <strong>문헌 연결 범위의 근거</strong>
         {link.v51Classification.classificationReasonKo}
       </p>
       <p>
@@ -752,7 +753,7 @@ export function LiteratureCard({
       </p>
       <p className={styles.literatureLocator}>
         <strong>인용 위치</strong>
-        {link.locator} · <q>{link.locatorQuoteEn}</q>
+        {link.locator}, <q>{link.locatorQuoteEn}</q>
       </p>
       {link.authorizationAlignment === "conflict" && (
         <p className={styles.literatureConflict}>
@@ -782,7 +783,7 @@ export function FindingLiteratureGroup({
         <h4>{finding.titleKo}</h4>
         <span>
           {direct.length || background.length
-            ? `검증 근거 직접 일치 ${direct.length}편 · 배경 ${background.length}편`
+            ? `검증 근거 직접 일치 ${direct.length}편, 배경 ${background.length}편`
             : "검증 근거 0편, 아래 선별 통과 문헌만 있습니다"}
         </span>
       </header>
@@ -806,7 +807,7 @@ export function FindingLiteratureGroup({
         <details className={styles.otherIngredientLiterature}>
           <summary>같은 규칙의 배경 문헌 {background.length}편</summary>
           <p>
-            현재 판정의 직접 근거가 아님 · 판정 결과를 바꾸지 않는 참고 자료
+            현재 판정의 직접 근거가 아님, 판정 결과를 바꾸지 않는 참고 자료
           </p>
           <div className={styles.literatureList}>
             {background.map((match) => (
@@ -865,7 +866,7 @@ function ScreeningPassedLiterature({
       <summary>선별 통과 문헌 {rule.listed.toLocaleString("ko-KR")}편</summary>
       <p>
         이 규칙이 허용한 질문에서 재수집 트랙 선별이 유지로 판정하고, 규칙 유형의 위해 표현이
-        제목·초록에 나타난 문헌입니다. 위의 검증 근거와 달리{" "}
+        제목과 초록에 나타난 문헌입니다. 위의 검증 근거와 달리{" "}
         <strong>문장 인용 대조를 거치지 않았고</strong> 판정 결과를 바꾸지 않습니다.
         {" "}인용문은 초록에서 규칙 유형과 가장 가까운 문장을 결정적으로 고른 것이고,
         번역하지 않은 영어 원문입니다.
@@ -883,7 +884,9 @@ function ScreeningPassedLiterature({
             ) : (
               (paper.title || paper.record_id)
             )}
-            {paper.quote ? (
+            {isRetractedPublication(paper.publication_types) ? (
+              <p><strong>철회 상태, 서지기록</strong><br />{retractedPublicationNotice}</p>
+            ) : paper.quote ? (
               <blockquote lang="en" className={styles.poolQuote}>
                 {paper.quote}
               </blockquote>
@@ -896,7 +899,7 @@ function ScreeningPassedLiterature({
                 paper.has_abstract ? null : "초록 없음",
               ]
                 .filter(Boolean)
-                .join(" · ")}
+                .join(", ")}
             </small>
           </li>
         ))}
@@ -916,6 +919,7 @@ function ScreeningPassedLiterature({
 
 export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   const [query, setQuery] = useState("");
+  const [searchMode, setSearchMode] = useState<"product" | "phrase">("product");
   const [selectedDrafts, setSelectedDrafts] = useState<SelectedProductDraft[]>([]);
   const [profile, setProfile] = useState<UserProfile>(initialProfile);
   const [medicationText, setMedicationText] = useState("");
@@ -1072,6 +1076,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       signal: controller.signal,
       body: JSON.stringify({
         evaluation,
+        selected: selected.map(item=>({productId:item.product.productId,unitsPerDose:item.unitsPerDose,dosesPerDay:item.dosesPerDay,hoursSincePreviousDose:item.hoursSincePreviousDose,continuousDays:item.continuousDays})),
+        profile,
         productNames: selected.map((item) => item.product.productName),
         profileSummary: [
           profile.ageYears ? `${profile.ageYears}세` : "",
@@ -1079,7 +1085,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           profile.medications?.length ? `병용약 ${profile.medications.join(", ")}` : "",
         ]
           .filter(Boolean)
-          .join(" · ") || "프로필 정보 없음",
+          .join(", ") || "프로필 정보 없음",
       }),
     })
       // 실패 응답도 본문을 읽는다. 400 을 버리면 왜 못 붙었는지 말할 거리가
@@ -1482,6 +1488,196 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
   return (
     <div className={styles.workspace}>
+      {/* 검색 띠. 의약품안전나라 첫 화면처럼 제품명 검색을 맨 위에 크게 둔다.
+          제품을 찾는 것은 결정론 검색이고, 증상으로 찾기는 모델이 성분명만
+          고른다. 담긴 약과 결과는 아래 단계 칸에서 이어진다. */}
+      <section className={styles.searchHero} aria-labelledby="search-hero-title">
+        <div className={styles.searchHeroHead}>
+          <div>
+            <h2 id="search-hero-title">제품명으로 점검 시작</h2>
+            <p>포장에 적힌 제품명, 성분명, 약효군으로 검색해 담습니다.</p>
+          </div>
+          <div className={styles.searchTabs} role="tablist" aria-label="검색 방법">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={searchMode === "product"}
+              onClick={() => setSearchMode("product")}
+            >
+              제품명 검색
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={searchMode === "phrase"}
+              onClick={() => setSearchMode("phrase")}
+            >
+              증상으로 찾기 (AI)
+            </button>
+          </div>
+        </div>
+        {searchMode === "product" ? (
+          <div className={styles.searchHeroBody}>
+            <label className={styles.searchBox}>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m21 21-4.35-4.35m1.35-5.15A6.5 6.5 0 1 1 5 11.5a6.5 6.5 0 0 1 13 0Z" />
+              </svg>
+              <span className="sr-only">일반의약품 제품명, 성분명, 약효군 검색</span>
+              <input
+                name="otc-product-search"
+                type="search"
+                value={query}
+                onChange={(event) => {
+                  clearActiveDemo();
+                  setQuery(event.target.value);
+                }}
+                placeholder="예: 타이레놀, 아세트아미노펜, 감기약…"
+                autoComplete="off"
+              />
+              {query && (
+                <button type="button" onClick={() => setQuery("")} aria-label="검색어 지우기">
+                  ×
+                </button>
+              )}
+            </label>
+            {query.trim() ? (
+              <>
+              <p className="sr-only" role="status" aria-live="polite">
+                선택 가능한 제품 {results.verified.length}개, 연구 후보 {results.candidates.length}개
+              </p>
+              <div className={styles.searchResults}>
+                {results.verified.map((product) => (
+                  <button
+                    key={product.productId}
+                    type="button"
+                    onClick={() => addProduct(product)}
+                    disabled={selectedIds.has(product.productId)}
+                  >
+                    <span>
+                      <strong>{product.productName}</strong>
+                      <small>
+                        {product.ingredients
+                          .slice(0, 3)
+                          .map((ingredient) => ingredient.nameKo)
+                          .join(", ")}
+                        {product.ingredients.length > 3
+                          ? ` 외 ${product.ingredients.length - 3}개`
+                          : ""}
+                      </small>
+                    </span>
+                    <b>{selectedIds.has(product.productId) ? "담김" : "+ 담기"}</b>
+                  </button>
+                ))}
+                {results.candidates.map((candidate) => (
+                  <div className={styles.pendingResult} key={candidate.candidateId}>
+                    <span>
+                      <strong>{candidate.productName}</strong>
+                      <small>{candidate.className}</small>
+                      <small className={styles.pendingExclusion}>
+                        현재 점검에 사용되지 않음
+                      </small>
+                    </span>
+                    <b>{candidateStatus(candidate.status)}</b>
+                  </div>
+                ))}
+                {!results.verified.length && !results.candidates.length && (
+                  <div className={styles.searchEmpty}>
+                    <strong>연구 범위에서 찾지 못했습니다.</strong>
+                    <span>제품명 일부만 입력하거나 포장의 정확한 이름을 확인해 주세요.</span>
+                  </div>
+                )}
+              </div>
+              </>
+            ) : null}
+          </div>
+        ) : (
+          <div className={styles.searchHeroBody}>
+            <div className={styles.phraseBox}>
+              <p className={styles.phraseLabel}>
+                <span>AI</span> 문장으로 찾기
+              </p>
+              <p className={styles.phraseHelp}>
+                제품명을 모르면 증상이나 약의 종류를 적습니다. AI가 관련 성분을 골라
+                검색어로 넣습니다.
+              </p>
+              <div className={styles.phraseRow}>
+                <input
+                  value={phrase}
+                  onChange={(event) => setPhrase(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") void resolvePhrase();
+                  }}
+                  maxLength={200}
+                  placeholder="예: 머리 아플 때 먹는 약"
+                  aria-label="찾는 약 설명"
+                  className={styles.phraseInput}
+                />
+                <button
+                  type="button"
+                  onClick={() => void resolvePhrase()}
+                  disabled={phrasePending || !phrase.trim()}
+                  className={styles.phraseButton}
+                >
+                  {phrasePending ? "찾는 중" : "성분 찾기"}
+                </button>
+              </div>
+              {phraseTerms.length > 0 && (
+                <p className={styles.phraseResult}>
+                  <span>고른 성분</span>
+                  {phraseTerms.map((term) => (
+                    <button
+                      key={term}
+                      type="button"
+                      className={styles.phraseTerm}
+                      onClick={() => {
+                        setSearchMode("product");
+                        setQuery(term);
+                      }}
+                    >
+                      {term}
+                    </button>
+                  ))}
+                </p>
+              )}
+              {phraseNote && <p className={styles.phraseNote}>{phraseNote}</p>}
+            </div>
+          </div>
+        )}
+            {/* 예시는 약과 조건을 한꺼번에 채운다. 예전에는 화면 맨 위에 큰 띠로
+                따로 서 있어서, 약을 담는 일과 무슨 관계인지 보이지 않았다. */}
+            <div className={styles.exampleBlock}>
+              <p className={styles.exampleLabel}>
+                예시 조합으로 점검
+                <small>대표 조합을 담고 조건까지 채운 뒤 결과로 갑니다.</small>
+              </p>
+              <div className={styles.quickCheckList}>
+                {quickChecks.map((quickCheck) => {
+                  const active = activeQuickCheck === quickCheck.label;
+                  const summary = quickCheckSummaries.get(quickCheck.label);
+                  return (
+                    <button
+                      key={quickCheck.label}
+                      type="button"
+                      className={styles.quickCheckButton}
+                      data-active={active || undefined}
+                      aria-pressed={active}
+                      onClick={() => applyQuickCheck(quickCheck)}
+                      aria-label={`${quickCheck.label}: ${quickCheck.description}`}
+                    >
+                      <span>
+                        {quickCheck.label}
+                        <em>{quickCheck.description}</em>
+                        {summary && <small>주의 {summary.findingCount}개</small>}
+                      </span>
+                      <b aria-hidden="true">→</b>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+      </section>
+
       <ol className={styles.stepper} aria-label="점검 순서">
         {steps.map((step) => (
           <li
@@ -1513,7 +1709,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             <span className={styles.panelIndex}>1</span>
             <div>
               <h2 id="medicine-heading">사용 중인 약 담기</h2>
-              <p>제품명만 찾으면 성분과 함량을 자동으로 불러와요.</p>
+              <p>제품명을 검색하면 성분과 함량을 자동으로 불러옵니다.</p>
             </div>
             <span className={styles.countBadge}>{selected.length}개</span>
             {hasSelection && (
@@ -1529,60 +1725,27 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           </header>
           {openStep !== 1 && hasSelection && (
             <p className={styles.stepSummary}>
-              {selected.map((item) => item.product.productName).join(" · ")}
+              {selected.map((item) => item.product.productName).join(", ")}
             </p>
           )}
 
           <div className={styles.searchArea}>
-            {/* 예시는 약과 조건을 한꺼번에 채운다. 예전에는 화면 맨 위에 큰 띠로
-                따로 서 있어서, 약을 담는 일과 무슨 관계인지 보이지 않았다. */}
-            <div className={styles.exampleBlock}>
-              <p className={styles.exampleLabel}>
-                예시로 해보기
-                <small>대표 조합을 담고 조건까지 채운 뒤 결과로 갑니다.</small>
-              </p>
-              <div className={styles.quickCheckList}>
-                {quickChecks.map((quickCheck) => {
-                  const active = activeQuickCheck === quickCheck.label;
-                  const summary = quickCheckSummaries.get(quickCheck.label);
-                  return (
-                    <button
-                      key={quickCheck.label}
-                      type="button"
-                      className={styles.quickCheckButton}
-                      data-active={active || undefined}
-                      aria-pressed={active}
-                      onClick={() => applyQuickCheck(quickCheck)}
-                      aria-label={`${quickCheck.label}: ${quickCheck.description}`}
-                    >
-                      <span>
-                        {quickCheck.label}
-                        <em>{quickCheck.description}</em>
-                        {summary && <small>주의 {summary.findingCount}개</small>}
-                      </span>
-                      <b aria-hidden="true">→</b>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
             {runtime.catalogCoverage && (
               // 카탈로그 규모·연결 현황은 연구 방법 설명이지 약을 담는 데 필요한
               // 정보가 아니다. 본문에 펼쳐 두면 1단계가 안내문부터 시작한다.
               <details className={styles.catalogScope}>
                 <summary className={styles.catalogScopeSummary}>
-                  점검 가능한 제품 {runtime.products.length}개 · 자료 범위 보기
+                  점검 가능한 제품 {runtime.products.length}개, 자료 범위 보기
                 </summary>
                 <p className={styles.catalogSummary}>
-                  판매 SKU {runtime.catalogCoverage.sourceSkuCount}건 중 {runtime.catalogCoverage.healthKrConfirmedCount}건이 약학정보원 공식 품목 {runtime.catalogCoverage.healthKrConfirmedUniqueProductCount}개와 연결됐고, <strong>현재 {runtime.products.length}개 제품을 점검할 수 있어요.</strong>
+                  판매 SKU {runtime.catalogCoverage.sourceSkuCount}건 중 {runtime.catalogCoverage.healthKrConfirmedCount}건이 약학정보원 공식 품목 {runtime.catalogCoverage.healthKrConfirmedUniqueProductCount}개와 연결됐고, <strong>현재 {runtime.products.length}개 제품을 점검할 수 있습니다.</strong>
                 </p>
                 <p className={styles.catalogDescription}>
-                  약학정보원 연결 제품은 연구 후보입니다. 식약처 허가 원문이 확인되고 공개 안전성 규칙 또는 제품별 허가 사용·복용 조건이 연결된 제품만 점검에 사용해요.
+                  약학정보원 연결 제품은 연구 후보입니다. 식약처 허가 원문을 확인하고 공개 안전성 규칙 또는 제품별 허가 사용/복용 조건이 연결된 제품만 점검에 사용합니다.
                 </p>
                 {runtime.catalogCoverage.existingProductRematch && (
                   <p className={styles.catalogRematchSummary}>
-                    기존 연구 제품 대조: {runtime.catalogCoverage.existingProductRematch.success}개 연결 · {runtime.catalogCoverage.existingProductRematch.conflict}개 충돌 검토 · {runtime.catalogCoverage.existingProductRematch.unlinked}개 미연결
+                    기존 연구 제품 대조: {runtime.catalogCoverage.existingProductRematch.success}개 연결, {runtime.catalogCoverage.existingProductRematch.conflict}개 충돌 검토, {runtime.catalogCoverage.existingProductRematch.unlinked}개 미연결
                   </p>
                 )}
                 <details>
@@ -1597,124 +1760,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 </details>
               </details>
             )}
-            <div className={styles.phraseBox}>
-              <p className={styles.phraseLabel}>
-                <span>AI</span> 문장으로 찾기
-              </p>
-              <p className={styles.phraseHelp}>
-                제품명을 몰라도 됩니다. 어떤 약인지 그대로 적으면 관련 성분을 골라
-                검색어로 넣어 드려요.
-              </p>
-              <div className={styles.phraseRow}>
-                <input
-                  value={phrase}
-                  onChange={(event) => setPhrase(event.target.value)}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter") void resolvePhrase();
-                  }}
-                  maxLength={200}
-                  placeholder="예: 머리 아플 때 먹는 약"
-                  aria-label="찾는 약 설명"
-                  className={styles.phraseInput}
-                />
-                <button
-                  type="button"
-                  onClick={() => void resolvePhrase()}
-                  disabled={phrasePending || !phrase.trim()}
-                  className={styles.phraseButton}
-                >
-                  {phrasePending ? "찾는 중" : "성분 찾기"}
-                </button>
-              </div>
-              {phraseTerms.length > 0 && (
-                <p className={styles.phraseResult}>
-                  <span>고른 성분</span>
-                  {phraseTerms.map((term) => (
-                    <button
-                      key={term}
-                      type="button"
-                      className={styles.phraseTerm}
-                      onClick={() => setQuery(term)}
-                    >
-                      {term}
-                    </button>
-                  ))}
-                </p>
-              )}
-              {phraseNote && <p className={styles.phraseNote}>{phraseNote}</p>}
-            </div>
-            <label className={styles.searchBox}>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m21 21-4.35-4.35m1.35-5.15A6.5 6.5 0 1 1 5 11.5a6.5 6.5 0 0 1 13 0Z" />
-              </svg>
-              <span className="sr-only">일반의약품 제품명·성분명·약효군 검색</span>
-              <input
-                name="otc-product-search"
-                type="search"
-                value={query}
-                onChange={(event) => {
-                  clearActiveDemo();
-                  setQuery(event.target.value);
-                }}
-                placeholder="예: 타이레놀, 아세트아미노펜, 감기약…"
-                autoComplete="off"
-              />
-              {query && (
-                <button type="button" onClick={() => setQuery("")} aria-label="검색어 지우기">
-                  ×
-                </button>
-              )}
-            </label>
-
-            {query.trim() ? (
-              <>
-              <p className="sr-only" role="status" aria-live="polite">
-                선택 가능한 제품 {results.verified.length}개, 연구 후보 {results.candidates.length}개
-              </p>
-              <div className={styles.searchResults}>
-                {results.verified.map((product) => (
-                  <button
-                    key={product.productId}
-                    type="button"
-                    onClick={() => addProduct(product)}
-                    disabled={selectedIds.has(product.productId)}
-                  >
-                    <span>
-                      <strong>{product.productName}</strong>
-                      <small>
-                        {product.ingredients
-                          .slice(0, 3)
-                          .map((ingredient) => ingredient.nameKo)
-                          .join(" · ")}
-                        {product.ingredients.length > 3
-                          ? ` 외 ${product.ingredients.length - 3}개`
-                          : ""}
-                      </small>
-                    </span>
-                    <b>{selectedIds.has(product.productId) ? "담김" : "+ 담기"}</b>
-                  </button>
-                ))}
-                {results.candidates.map((candidate) => (
-                  <div className={styles.pendingResult} key={candidate.candidateId}>
-                    <span>
-                      <strong>{candidate.productName}</strong>
-                      <small>{candidate.className}</small>
-                      <small className={styles.pendingExclusion}>
-                        현재 점검에 사용되지 않음
-                      </small>
-                    </span>
-                    <b>{candidateStatus(candidate.status)}</b>
-                  </div>
-                ))}
-                {!results.verified.length && !results.candidates.length && (
-                  <div className={styles.searchEmpty}>
-                    <strong>연구 범위에서 찾지 못했어요.</strong>
-                    <span>제품명 일부만 입력하거나 포장의 정확한 이름을 확인해 주세요.</span>
-                  </div>
-                )}
-              </div>
-              </>
-            ) : (
               <div className={styles.productShelf} aria-label="식약처 허가 확인 제품">
                 <div className={styles.productShelfHeader}>
                   <span>허가 확인 제품 전체</span>
@@ -1747,7 +1792,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         {product.ingredients
                           .slice(0, 2)
                           .map((ingredient) => ingredient.nameKo)
-                          .join(" · ")}
+                          .join(", ")}
                         {product.ingredients.length > 2
                           ? ` 외 ${product.ingredients.length - 2}개`
                           : ""}
@@ -1757,7 +1802,6 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   ))}
                 </div>
               </div>
-            )}
           </div>
 
           <div className={styles.selectedSection}>
@@ -1778,7 +1822,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             {selected.length === 0 ? (
               <div className={styles.emptySelection}>
                 <span aria-hidden="true">+</span>
-                <p>함께 사용하거나 복용하는 약을 1개 이상 담아주세요.</p>
+                <p>함께 사용하거나 복용하는 약을 1개 이상 담아 주세요.</p>
               </div>
             ) : (
               <div className={styles.selectedList}>
@@ -1793,7 +1837,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                               (ingredient) =>
                                 `${ingredient.nameKo} ${formatAmount(ingredient.amountPerUnit)}${ingredient.unit}`,
                             )
-                            .join(" · ")}
+                            .join(", ")}
                         </small>
                         {productSupportById.get(item.product.productId) && (
                           <ProductSupportDetails
@@ -1810,7 +1854,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                 {match.matchStatus === "success" ? "약학정보원 품목 연결" : "연결 충돌 검토"}
                               </span>
                               <small>
-                                {match.officialItemName} · {match.officialManufacturer} · {match.officialDosageForm}
+                                {match.officialItemName}, {match.officialManufacturer}, {match.officialDosageForm}
                               </small>
                               <a href={match.sourceUrl} target="_blank" rel="noreferrer">
                                 약학정보원 원문
@@ -1899,10 +1943,10 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         item.hoursSincePreviousDose || item.continuousDays,
                       )}
                     >
-                      <summary>간격·연속 사용도 넣기</summary>
+                      <summary>간격과 연속 사용 입력</summary>
                       <div className={styles.doseGrid}>
                       <label>
-                        <span>지난 사용·복용 후</span>
+                        <span>지난 사용/복용 후</span>
                         <span className={styles.inputWithUnit}>
                           <input
                             name={`${item.product.productId}-hours-since-dose`}
@@ -1923,7 +1967,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         </span>
                       </label>
                       <label>
-                        <span>연속 사용·복용</span>
+                        <span>연속 사용/복용</span>
                         <span className={styles.inputWithUnit}>
                           <input
                             name={`${item.product.productId}-continuous-days`}
@@ -1962,7 +2006,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           {hasSelection && (
             <div className={styles.stepAdvance}>
               <button type="button" onClick={() => goToStep(2)}>
-                다음 · 내 조건 더하기
+                다음 단계, 내 조건 더하기
               </button>
               <span>해당하는 조건이 없으면 건너뛰고 결과를 봐도 됩니다.</span>
             </div>
@@ -1979,7 +2023,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             <span className={styles.panelIndex}>2</span>
             <div>
               <h2 id="profile-heading">내 조건 더하기</h2>
-              <p>해당 항목만 골라주세요. 입력 내용은 저장하지 않아요.</p>
+              <p>해당하는 항목만 선택합니다. 입력 내용은 저장하지 않습니다.</p>
             </div>
             <span className={styles.countBadge}>{activeConditionCount}개</span>
             <button
@@ -2001,7 +2045,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
           <div className={styles.profileBody}>
             <p className={styles.profileScopeNotice}>
-              제품별 공개 안전성 규칙이나 허가 사용·복용 조건이 연결된 입력만
+              제품별 공개 안전성 규칙이나 허가 사용/복용 조건이 연결된 입력만
               판정에 사용합니다.
             </p>
             <label className={styles.fieldLabel}>
@@ -2125,7 +2169,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   <option value="3">3기</option>
                 </select>
                 <small id="pregnancy-trimester-scope">
-                  현재 어린이부루펜의 임신 3기만 판정합니다. 모름·1기·2기는
+                  현재 어린이부루펜의 임신 3기만 판정합니다. 모름, 1기, 2기는
                   추가 확인 조건으로 남깁니다.
                 </small>
               </label>
@@ -2133,7 +2177,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
             <label className={styles.fieldLabel}>
               <span>
-                함께 사용·복용 중인 다른 약 <small>선택</small>
+                함께 사용/복용 중인 다른 약 <small>선택</small>
                 <InputSupportStatus
                   id="other-medications-support"
                   selectedCount={selected.length}
@@ -2167,9 +2211,9 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 placeholder="예: 와파린, 수면제… (쉼표로 구분)"
               />
               <small id="other-medications-scope">
-                현재 항응고제는 와파린·쿠마린 표현만 판정합니다.
-                아픽사반·아스피린과 다른 약은 판정하지 않고 추가 확인 조건으로
-                남깁니다. 진정·수면제는 연결된 제품 규칙의 용어만 분류합니다.
+                현재 항응고제는 와파린, 쿠마린 표현만 판정합니다.
+                아픽사반, 아스피린과 다른 약은 판정하지 않고 추가 확인 조건으로
+                남깁니다. 진정제와 수면제는 연결된 제품 규칙의 용어만 분류합니다.
               </small>
             </label>
 
@@ -2206,7 +2250,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
               />
               <small id="red-flag-symptoms-scope">
                 입력한 표현이 선택 제품의 허가상 긴급 증상과 일치할 때만
-                알려드려요.
+                표시합니다.
               </small>
             </label>
           </div>
@@ -2231,7 +2275,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             <span className={styles.panelIndex}>3</span>
             <div>
               <h2 id="result-heading">점검 결과</h2>
-              <p>입력을 바꾸면 바로 다시 계산해요.</p>
+              <p>입력을 바꾸면 바로 다시 계산합니다.</p>
             </div>
             {selected.length > 0 && (
               <button type="button" className={styles.resetButton} onClick={resetAll}>초기화</button>
@@ -2242,14 +2286,14 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
             {runtime.rulesReleased === 0 && selected.length > 0 ? (
               <div className={styles.resultEmpty}>
                 <span>!</span>
-                <strong>현재 위험 판정을 제공하지 않아요.</strong>
+                <strong>현재 위험 판정을 제공하지 않습니다.</strong>
                 <p>연결된 공개 규칙이 없어 제품의 허가 성분과 함량만 보여드립니다.</p>
               </div>
             ) : !evaluation ? (
               <div className={styles.resultEmpty}>
                 <span>+</span>
-                <strong>약을 담으면 결과를 확인할 수 있어요.</strong>
-                <p>제품별로 연결된 사용량·간격·질환·병용약 조건만 판정합니다.</p>
+                <strong>약을 담으면 결과를 표시합니다.</strong>
+                <p>제품별로 연결된 사용량, 간격, 질환, 병용약 조건만 판정합니다.</p>
               </div>
             ) : (
               <>
@@ -2279,7 +2323,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         </>
                       )}
                       {!aiExplainPending && aiExplain && !aiExplain.ok && (
-                        <span> · 이번에는 못 붙였습니다</span>
+                        <span>, 이번에는 붙이지 못했습니다</span>
                       )}
                     </p>
                     {/* 빈 상자만 띄워 두면 요약이 오는 중인지 실패한 것인지
@@ -2315,9 +2359,15 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                             ))}
                           </ul>
                         )}
+                        {aiExplain.evidenceDiscussion?.map((item,index)=>(
+                          <div key={`${item.ruleId}-${index}`}>
+                            <p className={styles.aiExplainBody}>{item.text}</p>
+                            {item.pmids.map(pmid=><a key={pmid} href={`https://pubmed.ncbi.nlm.nih.gov/${pmid}/`} target="_blank" rel="noreferrer">연구 출처 {pmid} </a>)}
+                          </div>
+                        ))}
                         <p className={styles.aiExplainNote}>
                           판정은 아래 엔진 결과가 정본입니다. 이 요약은 그 결과를 읽기 쉽게 옮긴
-                          것이고, 복용 시작·중단·용량은 판단하지 않습니다.
+                          것이고, 복용 시작과 중단, 용량은 판단하지 않습니다.
                         </p>
                       </>
                     )}
@@ -2326,7 +2376,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
 
                 {pendingDoseDrafts.length > 0 && (
                   <div className={styles.dosePendingNotice}>
-                    <span aria-hidden="true">1·2</span>
+                    <span aria-hidden="true">1, 2</span>
                     <div>
                       <strong>복용량을 확인하면 용량 계산을 시작합니다.</strong>
                       <p>
@@ -2369,7 +2419,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     <div className={styles.clearResult}>
                       <span aria-hidden="true">✓</span>
                       <div>
-                        <strong>연결된 기준에서는 위험 신호를 찾지 못했어요.</strong>
+                        <strong>연결된 기준에서는 위험 신호를 찾지 못했습니다.</strong>
                         <p>
                           {evaluation.coverageGaps.length > 0
                             ? "아래 확인하지 못한 범위가 남아 있습니다. 포장과 허가사항도 함께 확인하세요."
@@ -2476,7 +2526,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                                       </div>
                                       {findingContext.ingredientFacts.length > 0 && (
                                         <div>
-                                          <dt>포함 성분·함량</dt>
+                                          <dt>포함 성분과 함량</dt>
                                           <dd>
                                             {findingContext.ingredientFacts.join(", ")}
                                           </dd>
@@ -2539,7 +2589,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   </div>
                   <div>
                     <strong>{selectedAdministrationConstraintCount}</strong>
-                    <span>허가 사용·복용 조건</span>
+                    <span>허가 사용/복용 조건</span>
                   </div>
                 </section>
 
@@ -2553,7 +2603,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     <span>
                       근거와 확인 범위 자세히 보기
                       <small>
-                        허가 원문 · 확인 못 한 범위 · 성분별 계산 · 참고 문헌
+                        허가 원문, 확인 못 한 범위, 성분별 계산, 참고 문헌
                       </small>
                     </span>
                   </summary>
@@ -2564,10 +2614,10 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   </p>
                   <p className={styles.summaryEvidence}>
                     현재 제품 규칙 원문 전체 일치{" "}
-                    {findingsWithAllDirectRuleEvidence}개 · 일부 일치{" "}
-                    {findingsWithPartialDirectRuleEvidence}개 · 대표 제품 원문만{" "}
-                    {findingsWithRepresentativeRuleEvidence}개 · 직접 일치 문헌{" "}
-                    {findingsWithDirectLiterature}/{orderedFindings.length} · 배경 문헌{" "}
+                    {findingsWithAllDirectRuleEvidence}개, 일부 일치{" "}
+                    {findingsWithPartialDirectRuleEvidence}개, 대표 제품 원문만{" "}
+                    {findingsWithRepresentativeRuleEvidence}개, 직접 일치 문헌{" "}
+                    {findingsWithDirectLiterature}/{orderedFindings.length}, 배경 문헌{" "}
                     {findingsWithBackgroundLiterature}/{orderedFindings.length}
                   </p>
 
@@ -2582,7 +2632,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                         현재 제품의 식약처 허가 원문
                       </h3>
                       <p>
-                        현재 선택 제품과 직접 일치한 규칙 원문과 제품·성분·계산
+                        현재 선택 제품과 직접 일치한 규칙 원문과 제품, 성분, 계산
                         원문만 모았습니다.
                       </p>
                     </div>
@@ -2619,8 +2669,8 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                               <span>
                                 현재 제품 {display?.matchedProductCount ?? 0}/
                                 {display?.findingProductCount ?? finding.productIds.length}개
-                                직접 일치 · 규칙 원문 {display?.direct.length ?? 0}건 ·
-                                제품·계산 원문 {finding.evidence.length}건
+                                직접 일치, 규칙 원문 {display?.direct.length ?? 0}건,
+                                제품/계산 원문 {finding.evidence.length}건
                               </span>
                             </header>
                             {display && display.direct.length > 0 ? (
@@ -2658,7 +2708,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                             )}
                             {finding.evidence.length > 0 && (
                               <div>
-                                <strong>제품·성분·계산 원문</strong>
+                                <strong>제품, 성분, 계산 원문</strong>
                                 {finding.evidence.map((source) => (
                                   <a
                                     className={styles.officialEvidenceLink}
@@ -2709,7 +2759,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                   {evaluation.coverageGaps.length > 0 ? (
                     <div className={styles.coverageDetails}>
                       <p>
-                        {groupedCoverageGaps.length}종류 ·{" "}
+                        {groupedCoverageGaps.length}종류,{" "}
                         {evaluation.coverageGaps.length}개 제품 조건
                       </p>
                       <ul>
@@ -2774,12 +2824,12 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                 <section
                   className={styles.resultSection}
                   aria-labelledby="v5-literature-heading"
-                  aria-label="참고 문헌 · 판정 근거 아님"
+                  aria-label="참고 문헌, 판정 근거 아님"
                 >
                   <header className={styles.resultSectionHeading}>
                     <div>
                       <h3 id="v5-literature-heading">
-                        v5.0 채택 PubMed 문헌
+                        문장과 출처를 대조한 PubMed 문헌
                       </h3>
                       <p>
                         현재 판정과 직접 일치한 문헌과 배경 문헌을 한 판정 안에서
@@ -2816,7 +2866,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     </div>
                   ) : (
                     <p className={styles.sectionClear}>
-                      이번 결과와 연결된 v5.0 최종 문헌은 없습니다.
+                      이번 결과와 연결된 문장 대조 문헌은 없습니다.
                     </p>
                   )}
                 </section>
@@ -2895,7 +2945,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           </div>
 
           <footer className={styles.resultFooter}>
-            <span>연구용 시제품 · 임상 사용 승인 아님</span>
+            <span>연구용 시제품, 임상 사용 승인 아님</span>
           </footer>
         </aside>
       </div>

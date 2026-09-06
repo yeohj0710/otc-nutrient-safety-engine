@@ -62,7 +62,7 @@ describe("product-name search flow", () => {
         hasCoverageGap: false,
         hasInputIssue: false,
       }),
-    ).toBe("적으시면 담은 약 2개 가운데 1개에서 봐요.");
+    ).toBe("입력하면 담은 약 2개 가운데 1개에서 봅니다.");
     expect(
       inputSupportStatusMessage({
         selectedCount: 2,
@@ -82,7 +82,7 @@ describe("product-name search flow", () => {
         hasCoverageGap: false,
         hasInputIssue: false,
       }),
-    ).toBe("적으신 내용을 담은 약 2개 가운데 2개에서 봐요.");
+    ).toBe("입력한 내용을 담은 약 2개 가운데 2개에서 봅니다.");
     expect(
       inputSupportStatusMessage({
         selectedCount: 1,
@@ -91,7 +91,7 @@ describe("product-name search flow", () => {
         hasCoverageGap: false,
         hasInputIssue: true,
       }),
-    ).toBe("적으신 값을 고쳐야 볼 수 있어요.");
+    ).toBe("입력한 값을 고쳐야 볼 수 있습니다.");
   });
 
   it("shows no results before the user searches", () => {

@@ -1,147 +1,206 @@
+/* 의약품안전나라 상세 화면을 따른다. 흰 바탕, 25px 절 제목, 파란 윗선 표,
+   라벨과 값이 세로선으로 갈라지는 기본정보 줄. */
 .page {
-  --ink: #16241d;
-  --muted: #6b7a73;
-  --line: #dfe7e3;
-  --accent: #1b5e43;
+  --ink: #303030;
+  --text: #444444;
+  --muted: #626262;
+  --line: #d2d2d2;
+  --line-soft: #e2e2e2;
+  --accent: #2366aa;
+  --table-top: #2c6ecc;
+  --th: #f3f4f6;
   --amber: #b7791f;
-  --surface: #fff;
   min-height: 100vh;
-  background: #f7faf8;
-  padding: 20px 16px 72px;
+  background: #fff;
+  padding: 0 16px 72px;
   color: var(--ink);
 }
 
 .shell {
   display: grid;
-  gap: 16px;
-  max-width: 940px;
+  gap: 40px;
+  max-width: 1100px;
   margin-inline: auto;
 }
 
-.header {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface);
-  padding: 22px 22px 20px;
+.head {
+  padding-top: 24px;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.breadcrumb li + li::before {
+  content: "›";
+  margin-right: 8px;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 .eyebrow {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.header h1 {
-  margin: 8px 0 0;
+.head h1 {
+  margin: 6px 0 0;
+  border-bottom: 2px solid var(--table-top);
+  padding-bottom: 16px;
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.02em;
 }
 
-.header p {
-  margin: 10px 0 0;
-  max-width: 62ch;
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
+.head > p:last-of-type {
+  margin: 16px 0 0;
+  max-width: 72ch;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .flags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 14px;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 .flag {
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #f3f7f5;
-  padding: 5px 11px;
-  color: var(--muted);
-  font-size: 11.5px;
-  font-weight: 600;
-}
-
-.section {
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface);
-  padding: 20px 22px;
+  background: #fff;
+  padding: 0 12px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .section > h2 {
   margin: 0;
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
 }
 
 .section > p {
-  margin: 8px 0 0;
-  max-width: 66ch;
-  color: var(--muted);
-  font-size: 13.5px;
-  line-height: 1.75;
+  margin: 12px 0 0;
+  max-width: 76ch;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
 }
 
+/* 기본정보 줄. 라벨과 값 사이를 세로선으로 가른다. */
 .statGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-  margin-top: 16px;
+  gap: 0;
+  margin: 20px 0 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .stat {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #f7faf8;
-  padding: 12px 13px;
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--line-soft);
+  padding: 12px 4px;
+}
+
+.stat:last-child {
+  border-bottom: 0;
 }
 
 .stat dt {
-  color: var(--muted);
-  font-size: 11.5px;
-  font-weight: 600;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .stat dd {
-  margin: 5px 0 0;
-  font-size: 22px;
-  font-weight: 800;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  margin: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: 700;
   font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .stat small {
-  display: block;
-  margin-top: 4px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 500;
   line-height: 1.5;
 }
 
+@media (max-width: 640px) {
+  .stat {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .stat dd {
+    border-left: 0;
+    padding-left: 0;
+  }
+}
+
 .table {
   width: 100%;
-  margin-top: 16px;
+  margin-top: 20px;
+  border-top: 2px solid var(--table-top);
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .table th,
 .table td {
-  border-bottom: 1px solid var(--line);
-  padding: 9px 8px;
+  border-bottom: 1px solid var(--line-soft);
+  padding: 11px 14px;
   text-align: left;
+  color: var(--text);
 }
 
 .table th {
-  color: var(--muted);
-  font-size: 11.5px;
+  background: var(--th);
+  color: #101010;
+  font-size: 14px;
   font-weight: 700;
+}
+
+.table td + td,
+.table th + th {
+  border-left: 1px solid var(--line-soft);
 }
 
 /* 숫자 열. 전역 클래스명이라 :global 로 열어 둔다. */
@@ -152,13 +211,14 @@
 }
 
 .note {
-  margin-top: 14px;
-  border-left: 3px solid var(--amber);
-  border-radius: 0 8px 8px 0;
-  background: #fdf6ea;
-  padding: 11px 13px;
-  font-size: 12.5px;
-  line-height: 1.7;
+  margin-top: 16px;
+  border: 1px solid #ecd9bd;
+  border-left: 4px solid var(--amber);
+  background: #fffaf0;
+  padding: 12px 16px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .note strong {
@@ -166,27 +226,58 @@
 }
 
 .list {
-  margin: 14px 0 0;
+  margin: 16px 0 0;
   padding-left: 0;
   list-style: none;
   display: grid;
-  gap: 9px;
+  gap: 10px;
 }
 
 .list li {
-  border-left: 3px solid var(--line);
-  padding-left: 11px;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
+  position: relative;
+  padding-left: 14px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  top: 0.75em;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.details {
+  margin-top: 14px;
+  border: 1px solid var(--line-soft);
+  background: #f9fafb;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.details summary {
+  color: var(--ink);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.details p {
+  margin: 8px 0 0;
 }
 
 .legacy {
   border: 1px dashed #d6ccb8;
-  border-radius: 14px;
+  border-radius: 8px;
   background: #fbf7ee;
   padding: 15px 17px;
-  font-size: 12.5px;
+  font-size: 13px;
   line-height: 1.7;
   color: #6d6353;
 }
@@ -197,18 +288,23 @@
 }
 
 .footer {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.7;
-  text-align: center;
 }
 
 @media (max-width: 640px) {
-  .header h1 {
-    font-size: 21px;
+  .head h1 {
+    font-size: 22px;
+  }
+
+  .section > h2 {
+    font-size: 20px;
   }
 
   .table {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
