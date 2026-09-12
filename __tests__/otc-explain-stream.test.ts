@@ -167,6 +167,31 @@ describe("요약과 판정별 문단을 나눠 만들기", () => {
     if (!response.ok) expect(response.reason).toBe("refereed_out");
   });
 
+  it("shares one model call between two identical requests in flight", async () => {
+    let release: (() => void) | null = null;
+    const gate = new Promise<void>((resolve) => {
+      release = resolve;
+    });
+    reply = async (call) => {
+      await gate;
+      return call.instructions.includes("summaryTitle 과 summaryParagraph 만")
+        ? { output_parsed: { summaryTitle: "겹친 성분", summaryParagraph: "두 제품에 같은 성분이 있습니다." } }
+        : { output_parsed: { text: "이 판정에 붙은 연구는 성인을 대상으로 했습니다.", pmids: [] } };
+    };
+    const both = Promise.all([
+      streamOtcExplanation(explainInput({ ageYears: 51 })),
+      streamOtcExplanation(explainInput({ ageYears: 51 })),
+    ]);
+    await new Promise((resolve) => setTimeout(resolve, 10));
+    const started = calls.length;
+    release?.();
+    const [first, second] = await both;
+    // 요약 1 + 판정별 최대 3. 요청이 둘이어도 호출은 그대로다.
+    expect(started).toBeLessThanOrEqual(4);
+    expect(first.ok).toBe(true);
+    expect(second.ok).toBe(true);
+  });
+
   it("reads a streamed line back with its slot", () => {
     const { events, rest } = splitOtcNdjson(
       '{"type":"summary","summaryTitle":"t","summaryParagraph":"p","elapsedMs":30000}\nbroken\n{"type":"resu',

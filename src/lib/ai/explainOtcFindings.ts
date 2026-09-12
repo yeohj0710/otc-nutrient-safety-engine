@@ -193,6 +193,45 @@ function discussionTargets(payload: OtcPayload) {
     .map((item) => item.row);
 }
 
+/**
+ * 같은 조각을 동시에 두 번 만들지 않는다.
+ *
+ * 캐시는 끝난 뒤에야 채워지므로, 같은 입력이 몇 초 사이에 겹쳐 들어오면(개발
+ * 모드의 이중 렌더, 두 번 누르기, 같은 조합을 보는 두 사람) 모델을 그만큼 더
+ * 부른다. 먼저 온 요청이 화면을 떠나도 뒤에 온 요청까지 죽지 않도록, 구독자가
+ * 전부 사라졌을 때만 실제 호출을 끊는다.
+ */
+class InflightParts {
+  private readonly entries = new Map<string, { promise: Promise<unknown>; controller: AbortController; subscribers: number }>();
+
+  run<T>(key: string, factory: (signal: AbortSignal) => Promise<T>, signal?: AbortSignal): Promise<T> {
+    let entry = this.entries.get(key);
+    if (!entry) {
+      const controller = new AbortController();
+      const created = { promise: Promise.resolve() as Promise<unknown>, controller, subscribers: 0 };
+      created.promise = factory(controller.signal).finally(() => {
+        if (this.entries.get(key) === created) this.entries.delete(key);
+      });
+      created.promise.catch(() => undefined);
+      this.entries.set(key, created);
+      entry = created;
+    }
+    entry.subscribers += 1;
+    const current = entry;
+    signal?.addEventListener(
+      "abort",
+      () => {
+        current.subscribers -= 1;
+        if (current.subscribers <= 0) current.controller.abort();
+      },
+      { once: true },
+    );
+    return current.promise as Promise<T>;
+  }
+}
+
+const inflight = new InflightParts();
+
 function cachedPart<T>(key: string): T | null {
   const hit = partCache.get(key);
   if (!hit || hit.expiresAt <= Date.now()) return null;
@@ -252,28 +291,34 @@ export async function streamOtcExplanation(
     const partKey = createHash("sha256").update(JSON.stringify({ ...stamp, task, payload })).digest("hex");
     const hit = cachedPart<T>(partKey);
     if (hit) return hit;
-    const parsed = await client.responses.parse({
-      model: AI_EXPLAIN_MODEL,
-      instructions: `${instructions}\n\n${task}`,
-      input: [{ role: "user", content: [{ type: "input_text", text: JSON.stringify(payload) }] }],
-      text: { format: zodTextFormat(schema as z.ZodType, schemaName) },
-      reasoning: { effort: AI_EXPLAIN_REASONING_EFFORT },
-      max_output_tokens: AI_EXPLAIN_MAX_OUTPUT_TOKENS,
-      store: false,
-    }, { signal });
-    const value = schema.safeParse(parsed.output_parsed);
-    if (!value.success) {
-      console.warn("[otc-explain] fallback", {
-        reason: "invalid_response",
-        schemaName,
-        issues: value.error.issues.slice(0, 4),
-        status: parsed.status,
-        usage: parsed.usage,
-      });
-      return null;
-    }
-    rememberPart(partKey, value.data);
-    return value.data;
+    return inflight.run<T | null>(
+      partKey,
+      async (partSignal) => {
+        const parsed = await client.responses.parse({
+          model: AI_EXPLAIN_MODEL,
+          instructions: `${instructions}\n\n${task}`,
+          input: [{ role: "user", content: [{ type: "input_text", text: JSON.stringify(payload) }] }],
+          text: { format: zodTextFormat(schema as z.ZodType, schemaName) },
+          reasoning: { effort: AI_EXPLAIN_REASONING_EFFORT },
+          max_output_tokens: AI_EXPLAIN_MAX_OUTPUT_TOKENS,
+          store: false,
+        }, { signal: partSignal });
+        const value = schema.safeParse(parsed.output_parsed);
+        if (!value.success) {
+          console.warn("[otc-explain] fallback", {
+            reason: "invalid_response",
+            schemaName,
+            issues: value.error.issues.slice(0, 4),
+            status: parsed.status,
+            usage: parsed.usage,
+          });
+          return null;
+        }
+        rememberPart(partKey, value.data);
+        return value.data;
+      },
+      signal,
+    );
   };
 
   const targets = discussionTargets(payload);
