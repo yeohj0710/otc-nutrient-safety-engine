@@ -60,7 +60,11 @@ describe("추가 선별 후보 자료의 지위와 대조", () => {
       }
       expect(entry.ruleTypes.length, entry.pmid).toBeGreaterThan(0);
       for (const ruleType of entry.ruleTypes) expect(ruleTypes.has(ruleType), `${entry.pmid}:${ruleType}`).toBe(true);
-      expect(entry.ingredientIds.length, entry.pmid).toBeGreaterThan(0);
+      // 성분으로 이어지지 않는 후보는 어느 판정에도 붙지 않는다. 같은 성분이 아니라
+      // 이성질체 같은 관련 성분으로만 이어지는 자료는 relatedIngredients 로 두고,
+      // 그때는 뜻을 밝히는 설명을 함께 적는다(붙을 때 항상 배경 자료로 내려간다).
+      expect(entry.ingredientIds.length + entry.relatedIngredients.length, entry.pmid).toBeGreaterThan(0);
+      for (const related of entry.relatedIngredients) expect(related.noteKo, entry.pmid).toMatch(/[가-힣]/);
       expect(["candidate", "candidate_background"]).toContain(entry.relation);
       if (entry.authorizationAlignment === "conflict") expect(entry.authorizationNoteKo, entry.pmid).toMatch(/[가-힣]/);
     }
@@ -71,5 +75,17 @@ describe("추가 선별 후보 자료의 지위와 대조", () => {
     for (const ruleType of ["max_daily_dose", "gi_bleeding_ulcer", "sedation_driving", "alcohol", "sedative_medication", "urgent_referral"]) {
       expect(covered.has(ruleType), ruleType).toBe(true);
     }
+  });
+
+  it("reaches the ingredients whose dosing findings had nothing attached", () => {
+    // 260912 실측: 세티리진 용량 판정과 살리실산메틸 파프 횟수 판정이 문헌 0편이었다.
+    const reaches = (ingredientId: string, ruleType: string) =>
+      counselingCandidates.some(
+        (entry) =>
+          entry.ruleTypes.includes(ruleType) &&
+          [...entry.ingredientIds, ...entry.relatedIngredients.map((item) => item.ingredientId)].includes(ingredientId),
+      );
+    expect(reaches("ING-cetirizine_hydrochloride", "max_daily_dose")).toBe(true);
+    expect(reaches("ING-mf-src-8bebf0ac75f4", "max_daily_dose")).toBe(true);
   });
 });

@@ -1,14 +1,14 @@
 {
   "schemaVersion": "otc-counseling-candidates-1",
   "reviewStatus": "agent_semantic_review_of_existing_screening_candidates",
-  "reviewNoteKo": "재수집 트랙 선별 통과 문헌(rule-literature-pool) 가운데 규칙 유형과 성분이 맞는 후보를 에이전트가 초록 전문을 읽고 골랐다. 인용 문장은 저장한 초록에 글자 그대로 있는지 대조한다. 사람 전문가 검토와 규칙 승인은 거치지 않았다.",
-  "reviewedAt": "2026-09-06",
+  "reviewNoteKo": "재수집 트랙 선별 통과 문헌(rule-literature-pool) 가운데 규칙 유형과 성분이 맞는 후보를 에이전트가 초록 전문을 읽고 골랐다. 인용 문장은 저장한 초록에 글자 그대로 있는지 대조한다. 260912 에 문헌이 하나도 안 붙던 세티리진 용량 판정과 살리실산메틸 파프 횟수 판정을 채웠다. 사람 전문가 검토와 규칙 승인은 거치지 않았다.",
+  "reviewedAt": "2026-09-12",
   "humanExpertReviewed": false,
   "supportsRuleRelease": false,
   "changesAuthorizationDecision": false,
   "verification": "literal_quote_in_saved_abstract_and_agent_semantic_review",
   "sourcesSha256": "8c739d80af77e92f377ea34807c34e4f4915313959c3bcec07a43d4e734da832",
-  "curatedSha256": "9fdcf205ba0b0d29640192b32aec5988079af1cee4b3066a125a07ff5585aef2",
+  "curatedSha256": "15395ab1a459feb9f4227e8fa5e4ab5948d2dd73fe4e3a12307ed8b0ca165307",
   "entries": [
     {
       "pmid": "12236853",
@@ -801,6 +801,50 @@
       "abstractSha256": "aa02556f60ce85ce4fded94356e79284f5248734e0910bc1c43de0342d277555"
     },
     {
+      "pmid": "1971741",
+      "recordId": "PMID-1971741",
+      "title": "Quantitative effects of cetirizine and diphenhydramine on mental performance measured using an automobile driving simulator.",
+      "journal": "Annals of allergy",
+      "year": "1990",
+      "publicationTypes": "Clinical Trial|Journal Article|Randomized Controlled Trial|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1971741/",
+      "ruleTypes": [
+        "max_daily_dose",
+        "sedation_driving"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-cetirizine_hydrochloride"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 3,
+      "quotes": [
+        {
+          "quote": "Fifteen subjects were given single doses of cetirizine (20 mg, 10 mg, and 5 mg) diphenhydramine, 50 mg (positive control), and placebo (negative control) in this randomized, double-blinded, crossover study.",
+          "locator": "abstract:sentence:2"
+        },
+        {
+          "quote": "No differences between placebo and any of the three doses of cetirizine could be detected, however, diphenhydramine produced impaired mental performance and drowsiness.",
+          "locator": "abstract:sentence:4"
+        }
+      ],
+      "studyDesignKo": "무작위 이중맹검 교차 시험(한 번씩 먹고 비교)",
+      "populationKo": "건강한 성인 15명",
+      "exposureKo": "세티리진 5 mg, 10 mg, 20 mg을 각각 한 번 복용. 비교로 디펜히드라민 50 mg과 위약",
+      "outcomeKo": "운전 모의장치, 숫자기호 바꾸기, 미로 추적, 졸림 자기보고를 복용 뒤 24시간까지 쟀는데 세티리진 세 용량 모두 위약과 차이가 없었습니다. 디펜히드라민만 수행이 떨어지고 졸림이 늘었습니다.",
+      "applicabilityKo": "한 번 먹은 결과이고 잰 것은 정신 수행뿐입니다. 허가 상한을 넘겨 며칠씩 먹었을 때 몸에 무슨 일이 생기는지는 이 연구로 알 수 없고, 20 mg을 날마다 먹어도 된다는 근거도 아닙니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "conflict",
+      "authorizationNoteKo": "허가문은 세티리진 하루 상한을 두는데, 이 연구는 그 두 배인 20 mg을 한 번 먹었을 때 정신 수행이 위약과 다르지 않았다고 보고합니다. 허가 상한은 그대로 두고 이 견해차만 기록합니다.",
+      "abstractSha256": "a03b42756f78751a67c35ba45d811eb4ea592ca13fa10d9233a3e86d9e23b952"
+    },
+    {
       "pmid": "29948304",
       "recordId": "PMID-29948304",
       "title": "A case-control study of the risk of upper gastrointestinal mucosal injuries in patients prescribed concurrent NSAIDs and antithrombotic drugs based on data from the Japanese national claims database of 13 million accumulated patients.",
@@ -888,6 +932,53 @@
       "abstractSha256": "2c4fc4db716b7bdea8ebcccd9d57b0438e6845f5597c767cc784f903997f79df"
     },
     {
+      "pmid": "10860133",
+      "recordId": "PMID-10860133",
+      "title": "Potentiation of warfarin anticoagulation associated with topical methyl salicylate.",
+      "journal": "The Annals of pharmacotherapy",
+      "year": "2000",
+      "publicationTypes": "Case Reports|Journal Article",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10860133/",
+      "ruleTypes": [
+        "max_daily_dose",
+        "anticoagulant_antiplatelet"
+      ],
+      "backgroundForRuleTypes": [
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-mf-src-8bebf0ac75f4"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate",
+      "priority": 4,
+      "quotes": [
+        {
+          "quote": "CASE SUMMARY: A 22-year-old white woman presented with an INR of 12.2 after applying a topical pain-relieving gel to her knees daily for eight days.",
+          "locator": "abstract:sentence:2"
+        },
+        {
+          "quote": "While several investigators have reported this interaction with use of high-dose methyl salicylate, this case indicates that a significant interaction can occur with the use of lower topical doses of methyl salicylate as well.",
+          "locator": "abstract:sentence:5"
+        }
+      ],
+      "studyDesignKo": "증례 보고 1건",
+      "populationKo": "와파린을 먹으며 INR이 안정돼 있던 22세 여성 1명",
+      "exposureKo": "살리실산메틸이 든 국소 진통 젤을 8일 동안 날마다 무릎에 바름",
+      "outcomeKo": "혈액 응고 지표(INR)가 12.2까지 올랐습니다. 저자들은 젤에 든 적은 양의 살리실산메틸 때문으로 봤고, 살리실산메틸이 피부로 잴 수 있을 만큼 흡수된다고 설명합니다.",
+      "applicabilityKo": "한 사람의 사례이고 그 사람은 와파린을 먹고 있었습니다. 와파린을 안 먹는 사람이 파프를 허가보다 자주 붙였을 때 무슨 일이 생기는지는 이 사례로 알 수 없습니다. 바른 양과 젤의 농도도 초록에 없습니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": [
+          "와파린",
+          "warfarin"
+        ]
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "0050af1075169ef8ddea0d8017bf8e464ead340373d4337a4a2080368ea7a281"
+    },
+    {
       "pmid": "18004067",
       "recordId": "PMID-18004067",
       "title": "Acute liver failure in two patients with regular alcohol consumption ingesting paracetamol at therapeutic dosage.",
@@ -928,6 +1019,52 @@
       "abstractSha256": "f5b899a4f598dcaf5fb5723d8b825167a07c57f5f4255161477548556b54f6d6"
     },
     {
+      "pmid": "20226302",
+      "recordId": "PMID-20226302",
+      "title": "The effectiveness of levocetirizine and desloratadine in up to 4 times conventional doses in difficult-to-treat urticaria.",
+      "journal": "The Journal of allergy and clinical immunology",
+      "year": "2010",
+      "publicationTypes": "Journal Article|Randomized Controlled Trial|Research Support, Non-U.S. Gov't",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20226302/",
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-cetirizine_hydrochloride",
+          "noteKo": "레보세티리진은 세티리진의 활성 이성질체입니다. 이 연구는 레보세티리진만 다뤄 세티리진 결과로 그대로 옮길 수 없습니다."
+        }
+      ],
+      "relation": "candidate_background",
+      "priority": 4,
+      "quotes": [
+        {
+          "quote": "Eighty tertiary referral patients with chronic urticaria (age range, 19-67 years) were randomized for double-blind treatment with levocetirizine or desloratadine (40/40).",
+          "locator": "abstract:sentence:4"
+        },
+        {
+          "quote": "CONCLUSION: Increasing the dosage of levocetirizine and desloratadine up to 4-fold improves chronic urticaria symptoms without compromising safety in approximately three quarters of patients with difficult-to-treat chronic urticaria.",
+          "locator": "abstract:sentence:13"
+        }
+      ],
+      "studyDesignKo": "무작위 이중맹검 비교 시험(효과가 모자라면 주마다 용량을 올림)",
+      "populationKo": "3차 병원에 온 만성 두드러기 환자 80명, 19~67세",
+      "exposureKo": "레보세티리진 또는 데슬로라타딘을 하루 5 mg으로 시작해 증상이 남으면 주마다 10 mg, 20 mg으로 올림",
+      "outcomeKo": "5 mg에서 증상이 사라진 사람이 13명, 10 mg과 20 mg으로 올린 뒤 사라진 사람이 28명이었습니다. 용량을 올려도 졸림은 늘지 않았고, 약을 끊을 만한 중대한 이상반응은 없었습니다.",
+      "applicabilityKo": "쓴 약은 레보세티리진이고 이 연구의 5 mg이 세티리진 10 mg에 해당합니다. 3차 병원에서 만성 두드러기를 진료하며 의사가 용량을 올린 상황이라, 약국에서 산 세티리진을 스스로 늘려 먹는 경우와 같지 않습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=19"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "conflict",
+      "authorizationNoteKo": "허가문은 세티리진 하루 상한을 두는데, 이 연구는 의사 진료 아래 그 4배까지 올려도 중대한 이상반응이 없었다고 보고합니다. 허가 상한은 그대로 두고 이 견해차만 기록합니다.",
+      "abstractSha256": "232eea57d71aa0ec8dd5ff88df548916ed1a11ee5438e45ef35d34d61e64e151"
+    },
+    {
       "pmid": "33388821",
       "recordId": "PMID-33388821",
       "title": "Paracetamol overdose in the newborn and infant: a life-threatening event.",
@@ -965,6 +1102,88 @@
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": "",
       "abstractSha256": "cf9e9c41967371b78de28d141427fc9e7a9fb52386d963dc7ebcea1c0e8f48ba"
+    },
+    {
+      "pmid": "1979799",
+      "recordId": "PMID-1979799",
+      "title": "A review of the effects of antihistamines on mental processes related to automobile driving.",
+      "journal": "The Journal of allergy and clinical immunology",
+      "year": "1990",
+      "publicationTypes": "Journal Article|Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/1979799/",
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "backgroundForRuleTypes": [],
+      "ingredientIds": [
+        "ING-cetirizine_hydrochloride"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate_background",
+      "priority": 6,
+      "quotes": [
+        {
+          "quote": "The results of this series of studies show that cetirizine induced minimal changes in mental performance tests and only following the highest (20 mg) dose studied.",
+          "locator": "abstract:sentence:8"
+        }
+      ],
+      "studyDesignKo": "문헌고찰(정신 수행 검사 연구들을 모아 정리)",
+      "populationKo": "항히스타민제 정신 수행 연구에 참여한 사람들. 인원과 나이는 초록에 없습니다.",
+      "exposureKo": "세티리진을 포함한 항히스타민제. 세티리진은 가장 높은 20 mg까지 검토",
+      "outcomeKo": "세티리진은 정신 수행 검사에서 변화가 작았고, 그 변화도 검토한 가장 높은 용량인 20 mg에서만 나타났습니다.",
+      "applicabilityKo": "원 논문을 모아 요약한 글이라 몇 명이 어떤 조건에서 얼마 동안 먹었는지가 초록에 없습니다. 같은 20 mg에서 '차이 없음'으로 보고한 연구(PMID 1971741)와 결론이 갈리므로 어느 쪽도 확정으로 읽으면 안 됩니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "9fd16ff1bf38998965d05795b088497e9d22bd89817eb467871735c1515658f1"
+    },
+    {
+      "pmid": "17364628",
+      "recordId": "PMID-17364628",
+      "title": "Salicylate poisoning: an evidence-based consensus guideline for out-of-hospital management.",
+      "journal": "Clinical toxicology (Philadelphia, Pa.)",
+      "year": "2007",
+      "publicationTypes": "Journal Article|Practice Guideline|Research Support, Non-U.S. Gov't|Research Support, U.S. Gov't, P.H.S.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17364628/",
+      "ruleTypes": [
+        "max_daily_dose",
+        "urgent_referral"
+      ],
+      "backgroundForRuleTypes": [
+        "max_daily_dose",
+        "urgent_referral"
+      ],
+      "ingredientIds": [
+        "ING-mf-src-8bebf0ac75f4"
+      ],
+      "relatedIngredients": [],
+      "relation": "candidate_background",
+      "priority": 7,
+      "quotes": [
+        {
+          "quote": "For asymptomatic patients with dermal exposures to methyl salicylate or salicylic acid, the skin should be thoroughly washed with soap and water and the patient can be observed at home for development of symptoms (Grade C).",
+          "locator": "abstract:sentence:26"
+        },
+        {
+          "quote": "The presence of typical symptoms of salicylate toxicity such as hematemesis, tachypnea, hyperpnea, dyspnea, tinnitus, deafness, lethargy, seizures, unexplained lethargy, or confusion warrants referral to an emergency department for evaluation (Grade C).",
+          "locator": "abstract:sentence:16"
+        }
+      ],
+      "studyDesignKo": "전문가 합의 지침(중독관리센터의 병원 밖 대응)",
+      "populationKo": "살리실산 제제에 노출된 사람. 미국 중독관리센터 2004년 자료 4만여 건을 배경으로 만들었습니다.",
+      "exposureKo": "삼킨 경우와 피부·눈에 닿은 경우. 살리실산메틸 원액(동록유 98%)은 6세 미만이 한 모금만 삼켜도 응급실로 보내라고 적었습니다.",
+      "outcomeKo": "피부에 닿았는데 증상이 없으면 비누와 물로 씻고 집에서 지켜보라고 권합니다. 토혈, 빠른 숨, 귀울림, 난청, 처짐, 경련, 혼란 같은 증상이 있으면 응급실로 가라고 적었습니다.",
+      "applicabilityKo": "중독 사고와 삼킨 경우를 다루는 병원 밖 대응 지침입니다. 허가받은 파프를 하루에 몇 번 붙이는지를 연구한 자료가 아니므로 허가 횟수를 넘겼을 때의 결과로 읽으면 안 되고, 어떤 증상일 때 병원에 가야 하는지의 기준으로만 씁니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": "",
+      "abstractSha256": "34364af0150aad98feb1d70c35d6bfed85072bb2c6244ee86a8f8e11ccee0d4a"
     }
   ]
 }

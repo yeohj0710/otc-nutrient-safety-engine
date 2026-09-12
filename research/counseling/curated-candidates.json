@@ -2,16 +2,21 @@
   "schemaVersion": "otc-counseling-candidates-1",
   "purpose": "검토를 마친 문헌이 없는 판정에 기존 선별 후보 가운데 성분과 위해 주제가 맞는 논문을 상담 설명용으로 연결한다. 판정 근거가 아니며 허가 판정을 바꾸지 않는다.",
   "reviewStatus": "agent_semantic_review_of_existing_screening_candidates",
-  "reviewNoteKo": "재수집 트랙 선별 통과 문헌(rule-literature-pool) 가운데 규칙 유형과 성분이 맞는 후보를 에이전트가 초록 전문을 읽고 골랐다. 인용 문장은 저장한 초록에 글자 그대로 있는지 대조한다. 사람 전문가 검토와 규칙 승인은 거치지 않았다.",
-  "reviewedAt": "2026-09-06",
+  "reviewNoteKo": "재수집 트랙 선별 통과 문헌(rule-literature-pool) 가운데 규칙 유형과 성분이 맞는 후보를 에이전트가 초록 전문을 읽고 골랐다. 인용 문장은 저장한 초록에 글자 그대로 있는지 대조한다. 260912 에 문헌이 하나도 안 붙던 세티리진 용량 판정과 살리실산메틸 파프 횟수 판정을 채웠다. 사람 전문가 검토와 규칙 승인은 거치지 않았다.",
+  "reviewedAt": "2026-09-12",
   "humanExpertReviewed": false,
   "supportsRuleRelease": false,
   "changesAuthorizationDecision": false,
   "entries": [
     {
       "pmid": "39825523",
-      "ruleTypes": ["max_daily_dose"],
-      "ingredientIds": ["ING-acetaminophen", "ING-ibuprofen"],
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen",
+        "ING-ibuprofen"
+      ],
       "relation": "candidate",
       "priority": 2,
       "quotes": [
@@ -22,14 +27,23 @@
       "exposureKo": "환자가 스스로 먹은 진통제. 아세트아미노펜 75.6%, 이부프로펜 54.4%",
       "outcomeKo": "9%(15명)가 권장 최대 용량을 넘겨 먹었고, 아세트아미노펜의 하루 최대량을 아는 사람은 39%뿐이었습니다. 간손상 같은 몸의 결과는 재지 않았습니다.",
       "applicabilityKo": "치통이 있는 성인의 자기보고 자료라, 입력한 복용량이 상한을 넘었을 때 몸에 어떤 일이 생기는지는 이 연구로 알 수 없습니다. 덴마크의 권장 상한이 국내 허가 상한과 같은지도 초록에 없습니다.",
-      "appliesTo": { "profileConditions": ["ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "17357380",
-      "ruleTypes": ["max_daily_dose"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 3,
       "quotes": [
@@ -40,14 +54,24 @@
       "exposureKo": "아세트아미노펜 하루 4 g, 6 g, 8 g(권장 최대량의 1배, 1.5배, 2배)을 3일 동안 반복 복용",
       "outcomeKo": "3일 동안 간효소(AST, ALT)가 참고범위를 넘지 않았습니다. 한 명만 AST 43 U/L(상한 42)로 임상적으로 의미 없는 수준이었습니다.",
       "applicabilityKo": "건강한 성인이 연구 감시 아래 3일만 먹은 결과입니다. 간질환, 음주, 금식, 다른 약 병용이 있거나 더 오래 먹는 경우에는 적용할 수 없고, 허가 상한을 넘겨도 된다는 근거가 아닙니다.",
-      "appliesTo": { "profileConditions": ["ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "conflict",
       "authorizationNoteKo": "허가문은 아세트아미노펜 하루 상한을 두는데, 이 연구는 그 1.5~2배를 3일 먹어도 간효소가 오르지 않았다고 보고합니다. 허가 상한은 그대로 두고 이 견해차만 기록합니다."
     },
     {
       "pmid": "22407198",
-      "ruleTypes": ["max_daily_dose", "minimum_interval"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "max_daily_dose",
+        "minimum_interval"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 1,
       "quotes": [
@@ -58,14 +82,23 @@
       "exposureKo": "여러 날에 걸친 반복 복용. 하루 체중 1 kg당 75 mg 이하를 치료 용량으로 봤습니다.",
       "outcomeKo": "사망 전부와 간손상 대부분이 하루 75 mg/kg을 넘긴 경우였고, 치료 용량 범위에서는 간 이상 6건, 사망 0건이었습니다.",
       "applicabilityKo": "국내 어린이용 현탁액 허가는 나이별 1회량과 하루 횟수 상한으로 적혀 있고, 이 연구는 체중당 하루 총량(75 mg/kg)을 기준으로 봅니다. 보고 자료라 실제 발생률은 알 수 없고 기록이 불완전한 사례가 많았습니다.",
-      "appliesTo": { "profileConditions": ["ageYears<=5"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=5"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "33388821",
-      "ruleTypes": ["max_daily_dose"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate_background",
       "priority": 4,
       "quotes": [
@@ -76,14 +109,24 @@
       "exposureKo": "한 번의 고용량 또는 여러 번의 과량 복용(투약 오류, 산모 과량 복용 뒤 태반 이동 포함)",
       "outcomeKo": "권장 용량에서는 신생아 간손상 보고가 없었고, 한 번의 고용량이나 여러 번의 과량에서 간독성이 생길 수 있었습니다.",
       "applicabilityKo": "신생아와 영아의 증례를 모은 고찰이라 발생률을 말하지 못하고, 국내 어린이용 현탁액의 나이별 용량과 직접 대응하지 않습니다.",
-      "appliesTo": { "profileConditions": ["ageYears<=1"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=1"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "16461878",
-      "ruleTypes": ["minimum_interval"],
-      "ingredientIds": ["ING-acetaminophen", "ING-ibuprofen"],
+      "ruleTypes": [
+        "minimum_interval"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen",
+        "ING-ibuprofen"
+      ],
       "relation": "candidate",
       "priority": 2,
       "quotes": [
@@ -95,15 +138,30 @@
       "exposureKo": "아세트아미노펜 12.5 mg/kg 6시간마다, 이부프로펜 5 mg/kg 8시간마다, 또는 두 약을 4시간마다 번갈아 3일 동안",
       "outcomeKo": "번갈아 먹인 군이 체온이 더 낮고 열이 더 빨리 내렸으며, 응급실 방문이나 심각한 합병증은 세 군이 다르지 않았습니다.",
       "applicabilityKo": "아세트아미노펜만 먹은 군은 6시간 간격이었고, 4시간 간격은 두 약을 번갈아 먹인 설계라 같은 약을 4시간마다 먹는 상황과 다릅니다. 3세 이하 발열 어린이의 3일 연구라 성인이나 장기 복용에는 적용할 수 없습니다.",
-      "appliesTo": { "profileConditions": ["ageYears<=3"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=3"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "22017233",
-      "ruleTypes": ["gi_bleeding_ulcer", "max_daily_dose"],
-      "ingredientIds": ["ING-ibuprofen"],
-      "relatedIngredients": [{ "ingredientId": "ING-dexibuprofen", "noteKo": "덱시부프로펜은 이부프로펜의 활성 이성질체입니다. 이 연구는 이부프로펜만 다뤄 덱시부프로펜 결과로 옮길 수 없습니다." }],
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-ibuprofen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "덱시부프로펜은 이부프로펜의 활성 이성질체입니다. 이 연구는 이부프로펜만 다뤄 덱시부프로펜 결과로 옮길 수 없습니다."
+        }
+      ],
       "relation": "candidate",
       "priority": 1,
       "quotes": [
@@ -115,15 +173,32 @@
       "exposureKo": "이부프로펜 하루 1,200 mg 이하",
       "outcomeKo": "위장관 출혈로 입원한 비율은 0.2% 미만, 발생률은 1,000인년당 0~3.19건이었고, 나이가 많거나 다른 약을 함께 쓰면 늘었습니다. 비사용자 대비 상대위험은 1.1~2.4였습니다.",
       "applicabilityKo": "위장관 출혈이나 궤양 병력이 있는 사람만 따로 본 결과는 초록에 없고, 어린이 시럽 사용자 자료도 아닙니다. 국내 허가 상한보다 낮은 용량 범위의 연구입니다.",
-      "appliesTo": { "profileConditions": ["ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "12236853",
-      "ruleTypes": ["gi_bleeding_ulcer", "duplicate_pharmacologic_class", "max_daily_dose"],
-      "ingredientIds": ["ING-ibuprofen", "ING-naproxen"],
-      "relatedIngredients": [{ "ingredientId": "ING-dexibuprofen", "noteKo": "덱시부프로펜은 따로 분석하지 않았습니다. 이부프로펜 결과를 그대로 옮길 수 없습니다." }],
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "duplicate_pharmacologic_class",
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "덱시부프로펜은 따로 분석하지 않았습니다. 이부프로펜 결과를 그대로 옮길 수 없습니다."
+        }
+      ],
       "relation": "candidate",
       "priority": 1,
       "quotes": [
@@ -135,14 +210,25 @@
       "exposureKo": "아스피린이 아닌 소염진통제(NSAID) 각각의 용량과 사용 기간",
       "outcomeKo": "이부프로펜은 교차비 1.7로 가장 낮았고 나프록센은 9.1이었습니다. 통상 용량 범위 안에서도 용량이 오르면 위험이 4~8배로 올랐고, 사용 첫 주에 가장 높았으며, NSAID를 두 가지 이상 함께 쓰면 위험이 크게 늘었습니다.",
       "applicabilityKo": "1990~2000년대 유럽 성인 입원 환자 자료라 국내 일반의약품 자가복용과 다르고, 덱시부프로펜은 따로 분석하지 않았습니다. 교차비는 개인의 발생 확률이 아닙니다.",
-      "appliesTo": { "profileConditions": ["ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "7884951",
-      "ruleTypes": ["gi_bleeding_ulcer", "urgent_referral", "max_daily_dose"],
-      "ingredientIds": ["ING-ibuprofen"],
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "urgent_referral",
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-ibuprofen"
+      ],
       "relation": "candidate",
       "priority": 2,
       "quotes": [
@@ -154,14 +240,26 @@
       "exposureKo": "이부프로펜 5 mg/kg 또는 10 mg/kg, 아세트아미노펜 12 mg/kg. 단기 사용",
       "outcomeKo": "위장관 출혈 입원은 이부프로펜군 10만 명당 7.2명으로 아세트아미노펜군과 차이가 없었고, 급성 신부전이나 아나필락시스 입원은 없었습니다.",
       "applicabilityKo": "위장관 출혈이나 궤양 병력이 있는 어린이를 따로 보지 않았고, 단기 사용 결과라 오래 먹는 경우와 가벼운 부작용은 알 수 없습니다.",
-      "appliesTo": { "profileConditions": ["ageYears<=17"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=17"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "10506264",
-      "ruleTypes": ["gi_bleeding_ulcer", "urgent_referral", "max_daily_dose"],
-      "ingredientIds": ["ING-ibuprofen", "ING-acetaminophen"],
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "urgent_referral",
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 3,
       "quotes": [
@@ -173,15 +271,31 @@
       "exposureKo": "아세트아미노펜 12 mg/kg, 이부프로펜 5 mg/kg 또는 10 mg/kg. 단기 사용",
       "outcomeKo": "4주 안 입원 위험은 1.4%로 약에 따라 다르지 않았고, 위장관 출혈 입원 3명은 모두 이부프로펜군이었지만 아세트아미노펜군과 통계적으로 차이가 없었습니다. 급성 신부전, 아나필락시스, 라이증후군 입원은 없었습니다.",
       "applicabilityKo": "단기 사용과 한 가지 약만 쓴 경우의 결과라, 오래 먹거나 두 약을 함께 쓰는 경우는 알 수 없다고 저자들이 밝혔습니다.",
-      "appliesTo": { "profileConditions": ["ageYears<=1"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=1"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "25460554",
-      "ruleTypes": ["gi_bleeding_ulcer", "anticoagulant_antiplatelet"],
-      "ingredientIds": ["ING-ibuprofen", "ING-naproxen"],
-      "relatedIngredients": [{ "ingredientId": "ING-dexibuprofen", "noteKo": "NSAID를 한 묶음으로 본 연구라 덱시부프로펜만의 결과는 없습니다." }],
+      "ruleTypes": [
+        "gi_bleeding_ulcer",
+        "anticoagulant_antiplatelet"
+      ],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "NSAID를 한 묶음으로 본 연구라 덱시부프로펜만의 결과는 없습니다."
+        }
+      ],
       "relation": "candidate",
       "priority": 2,
       "quotes": [
@@ -193,15 +307,31 @@
       "exposureKo": "입원 전 7일 안의 NSAID, 저용량 아스피린, 항혈소판제, 항응고제 사용",
       "outcomeKo": "NSAID는 상부 위장관 출혈 상대위험 2.6, 하부 1.4였고, 항응고제(4.2)가 가장 큰 위험 요인이었습니다.",
       "applicabilityKo": "NSAID 종류별 결과와 항응고제와 NSAID를 함께 쓴 경우의 위험은 초록에 따로 없고, 평균 60~70대 입원 환자 자료라 어린이 시럽 사용자와 다릅니다.",
-      "appliesTo": { "profileConditions": ["ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "29948304",
-      "ruleTypes": ["anticoagulant_antiplatelet", "gi_bleeding_ulcer"],
-      "ingredientIds": ["ING-ibuprofen", "ING-naproxen"],
-      "relatedIngredients": [{ "ingredientId": "ING-dexibuprofen", "noteKo": "NSAID를 한 묶음으로 본 연구라 덱시부프로펜만의 결과는 없습니다." }],
+      "ruleTypes": [
+        "anticoagulant_antiplatelet",
+        "gi_bleeding_ulcer"
+      ],
+      "ingredientIds": [
+        "ING-ibuprofen",
+        "ING-naproxen"
+      ],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-dexibuprofen",
+          "noteKo": "NSAID를 한 묶음으로 본 연구라 덱시부프로펜만의 결과는 없습니다."
+        }
+      ],
       "relation": "candidate",
       "priority": 3,
       "quotes": [
@@ -212,16 +342,26 @@
       "exposureKo": "NSAID, COX-2 억제제, 저용량 아스피린, 항혈소판제, 항응고제 처방",
       "outcomeKo": "NSAID의 소화성 궤양 교차비 1.45, 상부 위장관 출혈 1.76이었고, NSAID와 항혈전제를 함께 쓰면 단독보다 위험이 더 올랐습니다.",
       "applicabilityKo": "처방 청구자료라 일반의약품 자가복용은 잡히지 않고, 어떤 NSAID와 어떤 항혈전제 조합인지는 초록에 없습니다.",
-      "appliesTo": { "profileConditions": [], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "16390354",
-      "ruleTypes": ["sedation_driving", "sedative_medication"],
-      "ingredientIds": ["ING-chlorpheniramine_maleate"],
+      "ruleTypes": [
+        "sedation_driving",
+        "sedative_medication"
+      ],
+      "ingredientIds": [
+        "ING-chlorpheniramine_maleate"
+      ],
       "relation": "candidate",
-      "backgroundForRuleTypes": ["sedative_medication"],
+      "backgroundForRuleTypes": [
+        "sedative_medication"
+      ],
       "priority": 1,
       "quotes": [
         "RESULTS: Dexchlorpheniramine and mequitazine significantly impaired driving performance on the highway driving test on the first day; dexchlorpheniramine increased Standard Deviation of Lateral Position by 2 cm [95% confidence interval (CI) 0.5, 3.8] and mequitazine by 2.5 cm (CI 1.0, 4.3).",
@@ -232,16 +372,28 @@
       "exposureKo": "덱스클로르페니라민 서방정 6 mg 하루 2회, 세티리진 10 mg, 메퀴타진 10 mg, 위약을 각 8일씩",
       "outcomeKo": "덱스클로르페니라민은 첫날 고속도로 주행에서 차선 이탈 폭이 2 cm 늘었고, 8일째에는 이 영향이 사라졌습니다. 세티리진은 어느 시험에서도 영향이 없었습니다.",
       "applicabilityKo": "판콜에이의 클로르페니라민말레산염 2.5 mg(한 병)과 성분 형태와 용량이 다르고, 건강한 성인이 약만 먹은 조건이라 감기 증상이나 카페인 같은 다른 성분과 함께 있을 때의 영향은 알 수 없습니다. 진정제나 수면제를 함께 먹은 경우는 연구하지 않았습니다.",
-      "appliesTo": { "profileConditions": ["ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "18181241",
-      "ruleTypes": ["sedation_driving", "sedative_medication"],
-      "ingredientIds": ["ING-chlorpheniramine_maleate"],
+      "ruleTypes": [
+        "sedation_driving",
+        "sedative_medication"
+      ],
+      "ingredientIds": [
+        "ING-chlorpheniramine_maleate"
+      ],
       "relation": "candidate",
-      "backgroundForRuleTypes": ["sedative_medication"],
+      "backgroundForRuleTypes": [
+        "sedative_medication"
+      ],
       "priority": 2,
       "quotes": [
         "RESULTS: Performance evaluation revealed that the number of lane deviations significantly increased in the D-chlorpheniramine condition compared with the placebo condition (p < 0.01).",
@@ -252,14 +404,24 @@
       "exposureKo": "d-클로르페니라민 서방정 6 mg 1회 또는 위약",
       "outcomeKo": "약을 먹은 뒤 시뮬레이터 주행에서 차선 이탈 횟수가 늘었지만, 스스로 느끼는 졸림은 위약과 다르지 않았습니다.",
       "applicabilityKo": "졸린 느낌이 없어도 운전 수행이 떨어질 수 있다는 점을 보여주지만, 남성 14명의 시뮬레이터 연구이고 판콜에이의 2.5 mg 복합제와 용량이 다릅니다. 다른 진정 약물을 함께 먹은 경우는 연구하지 않았습니다.",
-      "appliesTo": { "profileConditions": ["ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "15049392",
-      "ruleTypes": ["sedation_driving"],
-      "ingredientIds": ["ING-chlorpheniramine_maleate", "ING-cetirizine_hydrochloride"],
+      "ruleTypes": [
+        "sedation_driving"
+      ],
+      "ingredientIds": [
+        "ING-chlorpheniramine_maleate",
+        "ING-cetirizine_hydrochloride"
+      ],
       "relation": "candidate_background",
       "priority": 3,
       "quotes": [
@@ -271,14 +433,22 @@
       "exposureKo": "1세대 항히스타민제(덱스클로르페니라민 포함)와 2세대 항히스타민제(세티리진 포함)의 1회 및 반복 복용",
       "outcomeKo": "1세대 약은 1회와 반복 복용 모두에서 주행을 뚜렷이 떨어뜨렸고, 2세대 약도 용량과 시간에 따라 떨어뜨릴 수 있었습니다. 4~5일 뒤 내성이 생기지만 영향이 없어지지는 않았습니다.",
       "applicabilityKo": "여러 연구를 요약한 고찰이라 클로르페니라민 2.5 mg 복합제 자체를 시험한 결과가 아니며, 감기 환자가 아닌 자원자 자료입니다.",
-      "appliesTo": { "profileConditions": [], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "22851428",
-      "ruleTypes": ["alcohol", "max_daily_dose"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "alcohol",
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 1,
       "quotes": [
@@ -290,14 +460,24 @@
       "exposureKo": "아세트아미노펜 하루 4 g 이하를 며칠 동안(4일째 ALT 측정)",
       "outcomeKo": "4일째 ALT 변화가 위약과 차이가 없었고(0.0 U/L), 간기능 이상, 간부전, 사망 보고가 없었습니다.",
       "applicabilityKo": "며칠 동안의 단기 복용 시험만 모은 결과라, 오래 먹거나 상한을 넘기거나 이미 간질환이 있는 경우는 알 수 없습니다.",
-      "appliesTo": { "profileConditions": ["alcohol=true", "ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "conflict",
       "authorizationNoteKo": "허가문은 술을 자주 마시는 사람의 간손상 위험을 경고합니다. 이 분석은 4일 단기 시험에서 간효소가 오르지 않았다고 보고하므로 견해차로 기록하고, 허가 경고는 그대로 둡니다."
     },
     {
       "pmid": "17593074",
-      "ruleTypes": ["alcohol"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "alcohol"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 2,
       "quotes": [
@@ -309,14 +489,24 @@
       "exposureKo": "아세트아미노펜 하루 4 g을 10일 동안",
       "outcomeKo": "4일째는 변화가 없었지만 11일째 ALT가 평균 8.7 IU/L 올랐고, 간손상 증상이나 간부전 기준에 이른 사람은 없었습니다.",
       "applicabilityKo": "하루 1~3잔 마시는 사람의 10일 결과라, 더 많이 마시거나 더 오래 먹는 경우에는 그대로 옮길 수 없습니다.",
-      "appliesTo": { "profileConditions": ["alcohol=true", "ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "11929388",
-      "ruleTypes": ["alcohol"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "alcohol"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 3,
       "quotes": [
@@ -328,14 +518,24 @@
       "exposureKo": "한 번의 과량 복용. 만성 음주 여부와 급성 음주 여부를 나눠 봄",
       "outcomeKo": "만성 음주자는 간성 혼수 위험이 5.3배였고, 사망 위험 차이(1.4배)는 통계적으로 뚜렷하지 않았습니다. 급성 음주는 경과에 영향이 없었습니다.",
       "applicabilityKo": "과량 복용 환자의 경과이므로 허가 용량 안에서 먹는 사람에게 그대로 적용할 수 없습니다. 만성 음주가 있으면 과량 시 간손상이 더 심하다는 뜻입니다.",
-      "appliesTo": { "profileConditions": ["alcohol=true", "ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "18004067",
-      "ruleTypes": ["alcohol"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "alcohol"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate_background",
       "priority": 4,
       "quotes": [
@@ -346,14 +546,24 @@
       "exposureKo": "입원해 술을 끊은 뒤 아세트아미노펜 하루 4 g",
       "outcomeKo": "3~5일 안에 간부전이 생겼고, 한 명은 혈중 농도가 독성 범위가 아니었습니다.",
       "applicabilityKo": "환자 2명의 보고라 얼마나 자주 생기는지 알 수 없고, 무작위 시험 결과(같은 조건에서 간효소 상승 없음)와 방향이 다릅니다. 두 종류의 근거를 함께 보아야 합니다.",
-      "appliesTo": { "profileConditions": ["alcohol=true", "ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "alcohol=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "26888096",
-      "ruleTypes": ["hepatic_disease"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "hepatic_disease"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 1,
       "quotes": [
@@ -364,14 +574,24 @@
       "exposureKo": "아세트아미노펜 1,000 mg 1회(카페인 130 mg 병용군 포함), 밤새 금식 뒤",
       "outcomeKo": "간질환 환자에서 최고 농도와 노출량(AUC)이 건강한 사람보다 약 64~95% 높았고 청소율이 뚜렷이 낮았습니다. 카페인을 함께 먹으면 흡수가 빨라지고 반감기가 길어졌습니다.",
       "applicabilityKo": "한 번 먹은 뒤의 농도 변화만 본 연구라 반복 복용 시 축적이나 간손상 발생은 확인하지 못했고, 입력한 간질환의 종류와 정도가 이 환자군(Child-Pugh B)과 같은지 알 수 없습니다.",
-      "appliesTo": { "profileConditions": ["liverDisease=true", "ageYears>=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "liverDisease=true",
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "31037361",
-      "ruleTypes": ["urgent_referral"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "urgent_referral"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate",
       "priority": 1,
       "quotes": [
@@ -383,14 +603,22 @@
       "exposureKo": "약물 과민반응이 의심된 방문(전체의 0.87%)",
       "outcomeKo": "대부분 가벼운 증상으로 호전했고, 약물 유발 아나필락시스는 방문 10만 건당 7건이었습니다. 가장 흔한 원인 약은 아목시실린과 아세트아미노펜이었습니다.",
       "applicabilityKo": "어느 나라 병원인지와 증상별 원인 약은 초록에 없고, 입력한 증상이 이 약 때문인지 판정하는 연구가 아닙니다.",
-      "appliesTo": { "profileConditions": [], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "22812902",
-      "ruleTypes": ["urgent_referral"],
-      "ingredientIds": ["ING-acetaminophen", "ING-mf-src-4b985f9d3bdb"],
+      "ruleTypes": [
+        "urgent_referral"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen",
+        "ING-mf-src-4b985f9d3bdb"
+      ],
       "relation": "candidate",
       "priority": 2,
       "quotes": [
@@ -401,14 +629,21 @@
       "exposureKo": "원인 약: 항생제 24.5%, NSAID 22.4%, 아세트아미노펜(슈도에페드린이나 페닐레프린 복합 포함) 6.4%",
       "outcomeKo": "가장 흔한 형태는 홍역모양 발진(59.6%)이었고, 두드러기와 혈관부종 4.3%, 스티븐스존슨증후군과 독성표피괴사 중첩 2.1%였습니다. 사망은 없었고 증상은 대개 0~15일 안에 나타났습니다.",
       "applicabilityKo": "피부과 입원 환자만 모은 자료라 전체 사용자의 발생률이 아니고, 아세트아미노펜 복합제 사용자에게 얼마나 자주 생기는지는 알 수 없습니다.",
-      "appliesTo": { "profileConditions": [], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     },
     {
       "pmid": "35633648",
-      "ruleTypes": ["urgent_referral"],
-      "ingredientIds": ["ING-acetaminophen"],
+      "ruleTypes": [
+        "urgent_referral"
+      ],
+      "ingredientIds": [
+        "ING-acetaminophen"
+      ],
       "relation": "candidate_background",
       "priority": 3,
       "quotes": [
@@ -420,7 +655,162 @@
       "exposureKo": "자가 복용 76.5%(부모 주도 66.7%). 원인 약은 페니실린 26.5%, 아세트아미노펜과 설폰아미드 각 16.3%",
       "outcomeKo": "스티븐스존슨증후군 51.4%, 리엘증후군(독성표피괴사) 22.8%가 주된 형태였습니다.",
       "applicabilityKo": "서아프리카 한 병원의 중증 사례만 모은 자료라 발생률이나 국내 어린이 상황과 직접 이어지지 않습니다.",
-      "appliesTo": { "profileConditions": ["ageYears<=18"], "medicationTerms": [] },
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears<=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": ""
+    },
+    {
+      "pmid": "1971741",
+      "ruleTypes": [
+        "max_daily_dose",
+        "sedation_driving"
+      ],
+      "ingredientIds": [
+        "ING-cetirizine_hydrochloride"
+      ],
+      "relation": "candidate",
+      "priority": 3,
+      "quotes": [
+        "Fifteen subjects were given single doses of cetirizine (20 mg, 10 mg, and 5 mg) diphenhydramine, 50 mg (positive control), and placebo (negative control) in this randomized, double-blinded, crossover study.",
+        "No differences between placebo and any of the three doses of cetirizine could be detected, however, diphenhydramine produced impaired mental performance and drowsiness."
+      ],
+      "studyDesignKo": "무작위 이중맹검 교차 시험(한 번씩 먹고 비교)",
+      "populationKo": "건강한 성인 15명",
+      "exposureKo": "세티리진 5 mg, 10 mg, 20 mg을 각각 한 번 복용. 비교로 디펜히드라민 50 mg과 위약",
+      "outcomeKo": "운전 모의장치, 숫자기호 바꾸기, 미로 추적, 졸림 자기보고를 복용 뒤 24시간까지 쟀는데 세티리진 세 용량 모두 위약과 차이가 없었습니다. 디펜히드라민만 수행이 떨어지고 졸림이 늘었습니다.",
+      "applicabilityKo": "한 번 먹은 결과이고 잰 것은 정신 수행뿐입니다. 허가 상한을 넘겨 며칠씩 먹었을 때 몸에 무슨 일이 생기는지는 이 연구로 알 수 없고, 20 mg을 날마다 먹어도 된다는 근거도 아닙니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=18"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "conflict",
+      "authorizationNoteKo": "허가문은 세티리진 하루 상한을 두는데, 이 연구는 그 두 배인 20 mg을 한 번 먹었을 때 정신 수행이 위약과 다르지 않았다고 보고합니다. 허가 상한은 그대로 두고 이 견해차만 기록합니다."
+    },
+    {
+      "pmid": "20226302",
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "ingredientIds": [],
+      "relatedIngredients": [
+        {
+          "ingredientId": "ING-cetirizine_hydrochloride",
+          "noteKo": "레보세티리진은 세티리진의 활성 이성질체입니다. 이 연구는 레보세티리진만 다뤄 세티리진 결과로 그대로 옮길 수 없습니다."
+        }
+      ],
+      "relation": "candidate_background",
+      "priority": 4,
+      "quotes": [
+        "Eighty tertiary referral patients with chronic urticaria (age range, 19-67 years) were randomized for double-blind treatment with levocetirizine or desloratadine (40/40).",
+        "CONCLUSION: Increasing the dosage of levocetirizine and desloratadine up to 4-fold improves chronic urticaria symptoms without compromising safety in approximately three quarters of patients with difficult-to-treat chronic urticaria."
+      ],
+      "studyDesignKo": "무작위 이중맹검 비교 시험(효과가 모자라면 주마다 용량을 올림)",
+      "populationKo": "3차 병원에 온 만성 두드러기 환자 80명, 19~67세",
+      "exposureKo": "레보세티리진 또는 데슬로라타딘을 하루 5 mg으로 시작해 증상이 남으면 주마다 10 mg, 20 mg으로 올림",
+      "outcomeKo": "5 mg에서 증상이 사라진 사람이 13명, 10 mg과 20 mg으로 올린 뒤 사라진 사람이 28명이었습니다. 용량을 올려도 졸림은 늘지 않았고, 약을 끊을 만한 중대한 이상반응은 없었습니다.",
+      "applicabilityKo": "쓴 약은 레보세티리진이고 이 연구의 5 mg이 세티리진 10 mg에 해당합니다. 3차 병원에서 만성 두드러기를 진료하며 의사가 용량을 올린 상황이라, 약국에서 산 세티리진을 스스로 늘려 먹는 경우와 같지 않습니다.",
+      "appliesTo": {
+        "profileConditions": [
+          "ageYears>=19"
+        ],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "conflict",
+      "authorizationNoteKo": "허가문은 세티리진 하루 상한을 두는데, 이 연구는 의사 진료 아래 그 4배까지 올려도 중대한 이상반응이 없었다고 보고합니다. 허가 상한은 그대로 두고 이 견해차만 기록합니다."
+    },
+    {
+      "pmid": "1979799",
+      "ruleTypes": [
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-cetirizine_hydrochloride"
+      ],
+      "relation": "candidate_background",
+      "priority": 6,
+      "quotes": [
+        "The results of this series of studies show that cetirizine induced minimal changes in mental performance tests and only following the highest (20 mg) dose studied."
+      ],
+      "studyDesignKo": "문헌고찰(정신 수행 검사 연구들을 모아 정리)",
+      "populationKo": "항히스타민제 정신 수행 연구에 참여한 사람들. 인원과 나이는 초록에 없습니다.",
+      "exposureKo": "세티리진을 포함한 항히스타민제. 세티리진은 가장 높은 20 mg까지 검토",
+      "outcomeKo": "세티리진은 정신 수행 검사에서 변화가 작았고, 그 변화도 검토한 가장 높은 용량인 20 mg에서만 나타났습니다.",
+      "applicabilityKo": "원 논문을 모아 요약한 글이라 몇 명이 어떤 조건에서 얼마 동안 먹었는지가 초록에 없습니다. 같은 20 mg에서 '차이 없음'으로 보고한 연구(PMID 1971741)와 결론이 갈리므로 어느 쪽도 확정으로 읽으면 안 됩니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": ""
+    },
+    {
+      "pmid": "10860133",
+      "ruleTypes": [
+        "max_daily_dose",
+        "anticoagulant_antiplatelet"
+      ],
+      "backgroundForRuleTypes": [
+        "max_daily_dose"
+      ],
+      "ingredientIds": [
+        "ING-mf-src-8bebf0ac75f4"
+      ],
+      "relation": "candidate",
+      "priority": 4,
+      "quotes": [
+        "CASE SUMMARY: A 22-year-old white woman presented with an INR of 12.2 after applying a topical pain-relieving gel to her knees daily for eight days.",
+        "While several investigators have reported this interaction with use of high-dose methyl salicylate, this case indicates that a significant interaction can occur with the use of lower topical doses of methyl salicylate as well."
+      ],
+      "studyDesignKo": "증례 보고 1건",
+      "populationKo": "와파린을 먹으며 INR이 안정돼 있던 22세 여성 1명",
+      "exposureKo": "살리실산메틸이 든 국소 진통 젤을 8일 동안 날마다 무릎에 바름",
+      "outcomeKo": "혈액 응고 지표(INR)가 12.2까지 올랐습니다. 저자들은 젤에 든 적은 양의 살리실산메틸 때문으로 봤고, 살리실산메틸이 피부로 잴 수 있을 만큼 흡수된다고 설명합니다.",
+      "applicabilityKo": "한 사람의 사례이고 그 사람은 와파린을 먹고 있었습니다. 와파린을 안 먹는 사람이 파프를 허가보다 자주 붙였을 때 무슨 일이 생기는지는 이 사례로 알 수 없습니다. 바른 양과 젤의 농도도 초록에 없습니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": [
+          "와파린",
+          "warfarin"
+        ]
+      },
+      "authorizationAlignment": "consistent",
+      "authorizationNoteKo": ""
+    },
+    {
+      "pmid": "17364628",
+      "ruleTypes": [
+        "max_daily_dose",
+        "urgent_referral"
+      ],
+      "backgroundForRuleTypes": [
+        "max_daily_dose",
+        "urgent_referral"
+      ],
+      "ingredientIds": [
+        "ING-mf-src-8bebf0ac75f4"
+      ],
+      "relation": "candidate_background",
+      "priority": 7,
+      "quotes": [
+        "For asymptomatic patients with dermal exposures to methyl salicylate or salicylic acid, the skin should be thoroughly washed with soap and water and the patient can be observed at home for development of symptoms (Grade C).",
+        "The presence of typical symptoms of salicylate toxicity such as hematemesis, tachypnea, hyperpnea, dyspnea, tinnitus, deafness, lethargy, seizures, unexplained lethargy, or confusion warrants referral to an emergency department for evaluation (Grade C)."
+      ],
+      "studyDesignKo": "전문가 합의 지침(중독관리센터의 병원 밖 대응)",
+      "populationKo": "살리실산 제제에 노출된 사람. 미국 중독관리센터 2004년 자료 4만여 건을 배경으로 만들었습니다.",
+      "exposureKo": "삼킨 경우와 피부·눈에 닿은 경우. 살리실산메틸 원액(동록유 98%)은 6세 미만이 한 모금만 삼켜도 응급실로 보내라고 적었습니다.",
+      "outcomeKo": "피부에 닿았는데 증상이 없으면 비누와 물로 씻고 집에서 지켜보라고 권합니다. 토혈, 빠른 숨, 귀울림, 난청, 처짐, 경련, 혼란 같은 증상이 있으면 응급실로 가라고 적었습니다.",
+      "applicabilityKo": "중독 사고와 삼킨 경우를 다루는 병원 밖 대응 지침입니다. 허가받은 파프를 하루에 몇 번 붙이는지를 연구한 자료가 아니므로 허가 횟수를 넘겼을 때의 결과로 읽으면 안 되고, 어떤 증상일 때 병원에 가야 하는지의 기준으로만 씁니다.",
+      "appliesTo": {
+        "profileConditions": [],
+        "medicationTerms": []
+      },
       "authorizationAlignment": "consistent",
       "authorizationNoteKo": ""
     }

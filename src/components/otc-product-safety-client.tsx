@@ -6,6 +6,15 @@ import { isRetractedPublication, retractedPublicationNotice } from "@/src/lib/pu
 import officialSafetyLayerData from "@/src/generated/otc-official-safety-layer.json";
 import literatureData from "@/src/generated/otc-supporting-literature.json";
 import {
+  buildCounselingEvidenceRow,
+  groundingTextForRow,
+} from "@/src/lib/ai/otc-counseling-context";
+import {
+  otcElapsedLabel,
+  readOtcExplainResponse,
+  type OtcExplainDiscussion,
+} from "@/src/lib/ai/otc-explain-stream";
+import {
   candidateLiteratureForFinding,
   candidateStatusLabel,
   counselingCandidateReview,
@@ -1172,19 +1181,36 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
   // 키가 없으면 서버가 ok:false 를 주고 화면은 엔진 결과만 그대로 보여준다.
   const [aiExplain, setAiExplain] = useState<AiExplainResponse | null>(null);
   const [aiExplainPending, setAiExplainPending] = useState(false);
+  /** 끝난 조각부터 받아 둔다. 요약이 먼저 오고 판정별 문단이 하나씩 따라온다. */
+  const [aiStream, setAiStream] = useState<{
+    summaryTitle?: string;
+    summaryParagraph?: string;
+    discussion: OtcExplainDiscussion[];
+    elapsedMs: number;
+  }>({ discussion: [], elapsedMs: 0 });
+  // 취소한 요청이나 이전 입력의 조각이 새 결과에 섞이지 않게 요청마다 번호를 매긴다.
+  const aiSequenceRef = useRef(0);
 
   useEffect(() => {
     if (!evaluation || evaluation.findings.length === 0) {
-      void Promise.resolve().then(() => setAiExplain(null));
+      void Promise.resolve().then(() => {
+        aiSequenceRef.current += 1;
+        setAiExplain(null);
+        setAiStream({ discussion: [], elapsedMs: 0 });
+      });
       return;
     }
     const controller = new AbortController();
+    aiSequenceRef.current += 1;
+    const sequence = aiSequenceRef.current;
+    const live = () => !controller.signal.aborted && aiSequenceRef.current === sequence;
     // 효과 본문에서 동기로 setState 하면 렌더가 연쇄된다. 요청 시작과 함께
     // 마이크로태스크로 미룬다(동작은 같다).
     void Promise.resolve().then(() => {
-      if (controller.signal.aborted) return;
+      if (!live()) return;
       setAiExplainPending(true);
       setAiExplain(null);
+      setAiStream({ discussion: [], elapsedMs: 0 });
     });
     fetch("/api/otc-explain", {
       method: "POST",
@@ -1206,12 +1232,35 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
     })
       // 실패 응답도 본문을 읽는다. 400 을 버리면 왜 못 붙었는지 말할 거리가
       // 사라지고, 화면에서는 요약 칸이 통째로 없어진 것처럼 보인다.
-      .then((res) => res.json().catch(() => null))
-      .then((body: AiExplainResponse | null) => {
-        if (!controller.signal.aborted) setAiExplain(body);
-      })
+      .then((response) =>
+        readOtcExplainResponse(response, (event) => {
+          if (!live()) return;
+          if (event.type === "heartbeat") {
+            setAiStream((current) => ({ ...current, elapsedMs: event.elapsedMs }));
+            return;
+          }
+          if (event.type === "summary") {
+            setAiStream((current) => ({
+              ...current,
+              summaryTitle: event.summaryTitle,
+              summaryParagraph: event.summaryParagraph,
+              elapsedMs: event.elapsedMs,
+            }));
+            return;
+          }
+          if (event.type === "discussion") {
+            setAiStream((current) => ({
+              ...current,
+              discussion: [...current.discussion.filter((item) => item.ruleId !== event.item.ruleId), event.item],
+              elapsedMs: event.elapsedMs,
+            }));
+            return;
+          }
+          if (event.type === "result") setAiExplain(event.response);
+        }),
+      )
       .catch(() => {
-        if (!controller.signal.aborted) {
+        if (live()) {
           setAiExplain({
             ok: false,
             reason: "openai_error",
@@ -1220,7 +1269,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
         }
       })
       .finally(() => {
-        if (!controller.signal.aborted) setAiExplainPending(false);
+        if (live()) setAiExplainPending(false);
       });
     return () => controller.abort();
   }, [evaluation, profile, selected]);
@@ -1321,29 +1370,40 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
       ),
     [orderedFindings, literatureByFinding, candidatesByFinding],
   );
-  // AI 요약을 기다리거나 못 받았을 때도 입력과 근거의 관계를 읽을 수 있게 판정마다 한 줄로 잇는다.
+  // 요약이 오기 전과 못 받았을 때 읽는 줄. 서버가 상담문에 넘기는 것과 같은
+  // 자료로 만들어, 어느 약이 하루에 얼마를 넣는지와 붙은 문헌이 무엇을 보고했고
+  // 입력과 무엇이 다른지까지 적는다. 모델을 기다리지 않는다.
   const groundingLines = useMemo(
     () =>
-      orderedFindings.slice(0, 4).map((finding) => {
-        const context = buildFindingContext(finding, selected);
-        const amount =
-          finding.calculatedAmount !== undefined && finding.referenceAmount !== undefined && finding.unit
-            ? `입력 ${finding.calculatedAmount}${finding.unit}, 허가 기준 ${finding.referenceAmount}${finding.unit}.`
-            : "";
-        const facts = context.ingredientFacts.length
-          ? `${context.productNames.join(", ")}의 ${context.ingredientFacts.join(", ")}.`
-          : context.productNames.length
-            ? `${context.productNames.join(", ")}.`
-            : "";
-        const coverage = coverageByFinding.get(finding.findingId);
-        return {
-          findingId: finding.findingId,
-          title: finding.titleKo,
-          text: [facts, amount, coverage?.headlineKo ?? ""].filter(Boolean).join(" "),
-        };
-      }),
-    [orderedFindings, selected, coverageByFinding],
+      orderedFindings.slice(0, 4).map((finding) => ({
+        findingId: finding.findingId,
+        ruleId: finding.ruleId,
+        title: finding.titleKo,
+        text: groundingTextForRow(buildCounselingEvidenceRow(finding, selected, profile)),
+      })),
+    [orderedFindings, selected, profile],
   );
+  /**
+   * 화면에 실제로 그리는 값. 확정된 응답이 있으면 그것을, 아직 오는 중이면 지금까지
+   * 도착한 조각을 쓴다. 요약과 판정별 문단이 따로 오므로 둘을 같은 자리에서 고른다.
+   */
+  const shownSummaryTitle = aiExplain?.ok ? aiExplain.explanation.summaryTitle : aiStream.summaryTitle;
+  const shownSummaryParagraph = aiExplain?.ok
+    ? aiExplain.explanation.summaryParagraph
+    : aiStream.summaryParagraph;
+  const shownDiscussion = useMemo(
+    () => (aiExplain?.ok ? aiExplain.evidenceDiscussion ?? [] : aiStream.discussion),
+    [aiExplain, aiStream.discussion],
+  );
+  const explainedRuleIds = useMemo(
+    () => new Set(shownDiscussion.map((item) => item.ruleId)),
+    [shownDiscussion],
+  );
+  const pendingGroundingLines = useMemo(
+    () => groundingLines.filter((line) => !explainedRuleIds.has(line.ruleId)),
+    [groundingLines, explainedRuleIds],
+  );
+
   const paperTitleByPmid = useMemo(() => {
     const map = new Map<string, string>();
     for (const paper of literatureData as SupportingLiterature[]) map.set(paper.pmid, paper.title);
@@ -2481,7 +2541,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     className={styles.aiExplainPanel}
                     // 제목은 요약이 붙었을 때만 그린다. 실패한 칸에서
                     // aria-labelledby 가 없는 id 를 가리키면 이름 없는 구역이 된다.
-                    {...(aiExplain?.ok
+                    {...(shownSummaryTitle
                       ? { "aria-labelledby": "ai-explain-title" }
                       : { "aria-label": "AI 요약" })}
                   >
@@ -2493,7 +2553,15 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                             aria-hidden="true"
                             className={styles.inlineSpinner}
                           />
-                          <span> 쓰는 중…</span>
+                          {/* 무엇을 기다리는지와 얼마나 기다렸는지를 같이 적는다.
+                              "쓰는 중…"만 있으면 멈춘 것인지 알 수 없다. */}
+                          <span>
+                            {" "}
+                            {shownSummaryTitle
+                              ? `판정 설명 ${shownDiscussion.length}개 붙었습니다, 남은 문단 쓰는 중`
+                              : "요약 쓰는 중"}
+                            {aiStream.elapsedMs > 0 ? ` (${otcElapsedLabel(aiStream.elapsedMs)})` : "…"}
+                          </span>
                         </>
                       )}
                       {!aiExplainPending && aiExplain && !aiExplain.ok && (
@@ -2502,7 +2570,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     </p>
                     {/* 빈 상자만 띄워 두면 요약이 오는 중인지 실패한 것인지
                         모른다. 들어올 글의 모양을 미리 그려 둔다. */}
-                    {aiExplainPending && (
+                    {aiExplainPending && !shownSummaryTitle && (
                       <div aria-hidden="true" className={styles.skeletonStack}>
                         <span className={styles.skeletonLine} data-w="title" />
                         <span className={styles.skeletonLine} />
@@ -2516,64 +2584,71 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
                     {!aiExplainPending && aiExplain && !aiExplain.ok && (
                       <p className={styles.aiExplainNote}>{aiExplain.notice}</p>
                     )}
-                    {/* 요약이 오기 전과 못 받았을 때도 입력값, 허가 기준, 문헌 상태가
-                        어떻게 이어지는지는 읽을 수 있어야 한다. 엔진 값으로 만든 줄이라
-                        모델을 기다리지 않는다. */}
-                    {!aiExplain?.ok && groundingLines.length > 0 && (
+                    {shownSummaryTitle && (
+                      <>
+                        <h3 id="ai-explain-title" className={styles.aiExplainTitle}>
+                          {shownSummaryTitle}
+                        </h3>
+                        <p className={styles.aiExplainBody}>{shownSummaryParagraph}</p>
+                      </>
+                    )}
+                    {aiExplain?.ok && aiExplain.explanation.topAlerts.length > 0 && (
                       <ul className={styles.aiExplainList}>
-                        {groundingLines.map((line) => (
-                          <li key={`grounding:${line.findingId}`}>
-                            <strong>{line.title}</strong> {line.text}
+                        {aiExplain.explanation.topAlerts.map((alert) => (
+                          <li key={`${alert.title}-${alert.severity}`}>
+                            <strong>[{alert.severity}] {alert.title}</strong> {alert.reason}
                           </li>
                         ))}
                       </ul>
                     )}
-                    {aiExplain?.ok && (
-                      <>
-                        <h3 id="ai-explain-title" className={styles.aiExplainTitle}>
-                          {aiExplain.explanation.summaryTitle}
-                        </h3>
-                        <p className={styles.aiExplainBody}>
-                          {aiExplain.explanation.summaryParagraph}
-                        </p>
-                        {aiExplain.explanation.topAlerts.length > 0 && (
-                          <ul className={styles.aiExplainList}>
-                            {aiExplain.explanation.topAlerts.map((alert) => (
-                              <li key={`${alert.title}-${alert.severity}`}>
-                                <strong>[{alert.severity}] {alert.title}</strong> {alert.reason}
-                              </li>
+                    {shownDiscussion.map((item, index) => (
+                      <div key={`${item.ruleId}-${index}`}>
+                        <p className={styles.aiExplainBody}>{item.text}</p>
+                        {item.pmids.length > 0 && (
+                          <p className={styles.aiExplainNote}>
+                            출처:{" "}
+                            {item.pmids.map((pmid, position) => (
+                              <span key={pmid}>
+                                {position > 0 ? ", " : ""}
+                                <a
+                                  href={`https://pubmed.ncbi.nlm.nih.gov/${pmid}/`}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                >
+                                  {paperTitleByPmid.get(pmid)
+                                    ? `${paperTitleByPmid.get(pmid)!.slice(0, 70)}${paperTitleByPmid.get(pmid)!.length > 70 ? "…" : ""} (PMID ${pmid})`
+                                    : `PMID ${pmid}`}
+                                </a>
+                              </span>
                             ))}
-                          </ul>
+                          </p>
                         )}
-                        {aiExplain.evidenceDiscussion?.map((item, index) => (
-                          <div key={`${item.ruleId}-${index}`}>
-                            <p className={styles.aiExplainBody}>{item.text}</p>
-                            {item.pmids.length > 0 && (
-                              <p className={styles.aiExplainNote}>
-                                출처:{" "}
-                                {item.pmids.map((pmid, position) => (
-                                  <span key={pmid}>
-                                    {position > 0 ? ", " : ""}
-                                    <a
-                                      href={`https://pubmed.ncbi.nlm.nih.gov/${pmid}/`}
-                                      target="_blank"
-                                      rel="noreferrer"
-                                    >
-                                      {paperTitleByPmid.get(pmid)
-                                        ? `${paperTitleByPmid.get(pmid)!.slice(0, 70)}${paperTitleByPmid.get(pmid)!.length > 70 ? "…" : ""} (PMID ${pmid})`
-                                        : `PMID ${pmid}`}
-                                    </a>
-                                  </span>
-                                ))}
-                              </p>
-                            )}
-                          </div>
-                        ))}
-                        <p className={styles.aiExplainNote}>
-                          판정은 아래 엔진 결과가 정본입니다. 이 요약은 그 결과를 읽기 쉽게 옮긴
-                          것이고, 복용 시작과 중단, 용량은 판단하지 않습니다.
-                        </p>
+                      </div>
+                    ))}
+                    {/* 요약이 오기 전과 못 받았을 때도 입력값, 허가 기준, 문헌 상태가
+                        어떻게 이어지는지는 읽을 수 있어야 한다. 엔진 값으로 만든 줄이라
+                        모델을 기다리지 않는다. AI 문단이 붙은 판정은 빼고 남은 것만 적는다. */}
+                    {pendingGroundingLines.length > 0 && (
+                      <>
+                        {shownDiscussion.length > 0 && (
+                          <p className={styles.aiExplainNote}>
+                            아래 판정은 아직 AI 문단이 붙지 않아 엔진 값으로 정리한 줄을 보여드립니다.
+                          </p>
+                        )}
+                        <ul className={styles.aiExplainList}>
+                          {pendingGroundingLines.map((line) => (
+                            <li key={`grounding:${line.findingId}`}>
+                              <strong>{line.title}</strong> {line.text}
+                            </li>
+                          ))}
+                        </ul>
                       </>
+                    )}
+                    {aiExplain?.ok && (
+                      <p className={styles.aiExplainNote}>
+                        판정은 아래 엔진 결과가 정본입니다. 이 요약은 그 결과를 읽기 쉽게 옮긴
+                        것이고, 복용 시작과 중단, 용량은 판단하지 않습니다.
+                      </p>
                     )}
                   </section>
                 )}

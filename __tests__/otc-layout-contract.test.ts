@@ -386,6 +386,32 @@ describe("OTC checker layout contract", () => {
     expect(explainSource).toContain("이렇게 쓰지 마십시오 → 이렇게 쓰십시오:");
   });
 
+  it("shows the summary and each rule paragraph as they land, not after everything", () => {
+    // 한 번에 다 만들고 기다리면 실측 195초 동안 화면이 뼈대만 그린다.
+    expect(explainRouteSource).toContain("application/x-ndjson");
+    expect(explainSource).toContain("streamOtcExplanation");
+    expect(componentSource).toContain("readOtcExplainResponse");
+    expect(componentSource).toContain('event.type === "summary"');
+    expect(componentSource).toContain('event.type === "discussion"');
+    // 얼마나 기다렸는지 화면에 적는다. "쓰는 중…"만 있으면 멈춘 것과 구분이 안 된다.
+    expect(componentSource).toContain("otcElapsedLabel(aiStream.elapsedMs)");
+    // 취소한 요청이나 이전 입력의 조각이 새 결과에 섞이면 안 된다.
+    expect(componentSource).toContain("aiSequenceRef");
+  });
+
+  it("explains the source and the patient input while the summary is still coming", () => {
+    // 요약이 없을 때 보여주는 줄이 편수만 세면 무엇을 근거로 걸렸는지 알 수 없다.
+    expect(componentSource).toContain("groundingTextForRow(buildCounselingEvidenceRow(");
+    expect(componentSource).toContain("pendingGroundingLines");
+    expect(explainSource).toContain("buildOtcGroundingLines");
+  });
+
+  it("hands the model each product's own daily amount so it never multiplies", () => {
+    // 자기가 곱한 숫자는 심판이 자료에 없는 값으로 잡아 설명 전체를 버린다.
+    expect(explainSource).toContain("dailyContribution");
+    expect(explainSource).toContain("직접 곱하지 않습니다");
+  });
+
   it("gives every AI failure its own sentence and logs the cause", () => {
     // 실패마다 같은 문장을 쓰면 사용자가 할 일을 못 가린다. 키가 없는 서버는
     // 다시 눌러도 안 붙고, 시간 초과는 다시 누르면 붙는다.
@@ -394,8 +420,8 @@ describe("OTC checker layout contract", () => {
     const notices = [...explainSource.matchAll(/"([^"]*보여드립니다[^"]*)"/g)].map((m) => m[1]);
     expect(notices.length).toBeGreaterThanOrEqual(5);
     expect(new Set(notices).size).toBe(notices.length);
-    for (const reason of ["missing_api_key", "invalid_response", "refereed_out"]) {
-      expect(explainSource).toMatch(new RegExp(`reason:\\s*"${reason}"`));
+    for (const reason of ["missing_api_key", "invalid_response", "refereed_out", "timeout", "openai_error"]) {
+      expect(explainSource, reason).toContain(`"${reason}"`);
     }
     expect(explainSource).toMatch(/console\.warn\("\[otc-explain\] fallback"/);
     // notice 는 화면에 그대로 나간다. 원본 오류 메시지를 넣으면 영어 스택이 보인다.
