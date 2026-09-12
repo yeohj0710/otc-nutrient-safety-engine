@@ -62,6 +62,25 @@ describe("제품별 하루 성분량", () => {
   });
 });
 
+describe("사용자가 적은 복용 단위", () => {
+  it("accepts a paragraph that repeats the dose the user typed in mL", () => {
+    const input = parseOtcExplainInput({
+      selected: [{ productId: "MFDS-198601920", unitsPerDose: 5, dosesPerDay: 3 }],
+      profile: { ...emptyProfile, ageYears: 45, kidneyDisease: true },
+    })!;
+    const ctx = buildOtcCounselingContext(input.evaluation, input.selected, input.profile);
+    const row = ctx.evidence.find((item) => item.ruleId === "OTC-RULE-008")!;
+    expect(row).toBeDefined();
+    const text =
+      "어린이부루펜시럽을 1회 5 mL씩 하루 3번, 모두 15 mL 먹어 이부프로펜 300 mg이 들어갑니다. 연구 대상과 차이가 있어 배경 자료로만 봅니다.";
+    expect(validateOtcDiscussion([{ ruleId: "OTC-RULE-008", pmids: [], text }], ctx)).toEqual([]);
+    // 적지 않은 양은 그대로 막는다.
+    expect(
+      validateOtcDiscussion([{ ruleId: "OTC-RULE-008", pmids: [], text: "1회 40 mL씩 먹습니다." }], ctx),
+    ).toContain("unsupported_unit");
+  });
+});
+
 describe("모델 없이 읽는 판정 설명", () => {
   it("ties the product dose, the authorization number and the paper to the input", () => {
     const ctx = context();

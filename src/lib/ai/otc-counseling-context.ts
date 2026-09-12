@@ -420,6 +420,11 @@ export function validateOtcDiscussion(
         ...product.ingredients.map((ingredient) => `${ingredient.amountPerUnit} ${ingredient.unit}`),
         // 제품 하나가 하루에 넣는 양도 자료다. 문단이 이 값을 쓰면 통과해야 한다.
         ...product.dailyContribution.map((row) => `${row.dailyAmount} ${row.unit}`),
+        // 사용자가 적은 복용 단위 그대로. 시럽은 "1회 5 mL" 처럼 단위가 붙는데
+        // 이 값이 허용 목록에 없어 정상 문단이 unsupported_unit 으로 떨어졌다
+        // (프로덕션 OTC-RULE-008 실측).
+        `${product.unitsPerDose} ${product.doseUnitLabel}`,
+        `${product.unitsPerDose * product.dosesPerDay} ${product.doseUnitLabel}`,
       ]),
       ...Object.values(context.dailyIngredientTotals ?? {}).map((total) => `${total.amount} ${total.unit}`),
     ].join("\n");
