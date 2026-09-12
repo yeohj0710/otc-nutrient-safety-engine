@@ -187,7 +187,7 @@ describe("요약과 판정별 문단을 나눠 만들기", () => {
   });
 
   it("shares one model call between two identical requests in flight", async () => {
-    let release: (() => void) | null = null;
+    let release!: () => void;
     const gate = new Promise<void>((resolve) => {
       release = resolve;
     });
@@ -203,7 +203,7 @@ describe("요약과 판정별 문단을 나눠 만들기", () => {
     ]);
     await new Promise((resolve) => setTimeout(resolve, 10));
     const started = calls.length;
-    release?.();
+    release();
     const [first, second] = await both;
     // 요약 1 + 판정별 최대 3. 요청이 둘이어도 호출은 그대로다.
     expect(started).toBeLessThanOrEqual(4);
