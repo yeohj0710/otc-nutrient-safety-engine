@@ -3228,7 +3228,7 @@ export function OtcProductSafetyClient({ runtime }: { runtime: OtcRuntime }) {
           </div>
 
           <footer className={styles.resultFooter}>
-            <span>연구용 시제품, 임상 사용 승인 아님</span>
+            <span>연구용 시제품, 임상 사용 승인 아님. 약사 상담을 대체하지 않습니다. 복용 전 제품 포장과 허가사항을 확인하고 약사와 상담하세요.</span>
           </footer>
         </aside>
       </div>

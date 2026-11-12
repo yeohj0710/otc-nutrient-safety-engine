@@ -137,7 +137,7 @@ export function SiteFrame({ children }: { children: React.ReactNode }) {
             </div>
             <div className="site-footer-info">
               <span>연구용 시스템입니다.</span>
-              <span>의료적 진단이나 처방을 대신하지 않습니다.</span>
+              <span>의료적 진단이나 처방, 약사 상담을 대체하지 않습니다.</span>
             </div>
           </div>
           <p className="site-footer-copy">

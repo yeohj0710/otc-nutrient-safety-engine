@@ -101,6 +101,7 @@ export default function Home() {
               </p>
               <p className="gov-hero-badges">
                 <span className="gov-badge gov-badge-warn">연구용 시제품, 임상 사용 승인 아님</span>
+                <span className="gov-badge gov-badge-warn">약사 상담을 대체하지 않음</span>
                 <span className="gov-badge">허가 확인 제품 {runtimeData.products.length}개</span>
                 <span className="gov-badge">공개 안전성 규칙 {runtimeData.rulesReleased}개</span>
                 <span className="gov-badge">허가 복용 조건 {administrationConstraintCount}건</span>
